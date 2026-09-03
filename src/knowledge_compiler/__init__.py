@@ -16,6 +16,15 @@ from .models import (
 from .pipeline import compile_knowledge_model
 from .relationships import RelationshipDefinition, RelationshipFamily
 from .structure_detection import StructureDetector
+from .staged_compilation import (
+    SemanticLinkingResult,
+    StagedCompilationResult,
+    StagedSemanticExtractor,
+    SymbolDiscoveryProposal,
+    SymbolNomination,
+    SymbolTable,
+    compile_staged_knowledge_model,
+)
 from .structures import DetectedStructure, DetectedStructureSet, StructureType
 from .representation_builder import RepresentationBuilder
 from .representations import Representation, RepresentationEdge, RepresentationModel, RepresentationNode, Salience
@@ -30,6 +39,12 @@ __all__ = [
     "RelationshipDefinition",
     "RelationshipFamily",
     "StructureDetector",
+    "SemanticLinkingResult",
+    "StagedCompilationResult",
+    "StagedSemanticExtractor",
+    "SymbolDiscoveryProposal",
+    "SymbolNomination",
+    "SymbolTable",
     "DetectedStructure",
     "DetectedStructureSet",
     "StructureType",
@@ -45,4 +60,5 @@ __all__ = [
     "SourceType",
     "ValidationError",
     "compile_knowledge_model",
+    "compile_staged_knowledge_model",
 ]

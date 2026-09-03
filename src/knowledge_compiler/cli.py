@@ -33,6 +33,10 @@ from .semantic_navigation import (
     default_spec006_representations_directory,
     prepare_semantic_navigation_evaluation,
 )
+from .staged_semantic_evaluation import (
+    finalize_staged_semantic_evaluation,
+    run_staged_semantic_evaluation,
+)
 from .structures import DetectedStructureSet
 from .structure_detection import StructureDetector
 from .structure_evaluation import (
@@ -131,6 +135,20 @@ def _parser() -> argparse.ArgumentParser:
         "--prior-run-history", action="append", default=[], type=Path,
         help="preserve earlier failed attempts in the aggregate run history",
     )
+    staged_evaluation = subcommands.add_parser(
+        "evaluate-staged-semantic-compilation",
+        help="run the live SPEC-012 symbol-discovery and semantic-linking benchmark",
+    )
+    staged_evaluation.add_argument("source", type=Path)
+    staged_evaluation.add_argument("--source-metadata", required=True, type=Path)
+    staged_evaluation.add_argument("--control-proposal", required=True, type=Path)
+    staged_evaluation.add_argument("--model", default=DEFAULT_MODEL)
+    staged_evaluation.add_argument("--output-dir", required=True, type=Path)
+    staged_finalize = subcommands.add_parser(
+        "finalize-staged-semantic-compilation",
+        help="validate independent semantic review and finalize SPEC-012 comparison",
+    )
+    staged_finalize.add_argument("output_dir", type=Path)
     view = subcommands.add_parser("view-representations", help="serve a prepared representation review locally")
     view.add_argument("directory", type=Path)
     view.add_argument("--host", default="127.0.0.1")
@@ -142,6 +160,30 @@ def _parser() -> argparse.ArgumentParser:
 def main(argv: list[str] | None = None) -> int:
     args = _parser().parse_args(argv)
     try:
+        if args.command == "finalize-staged-semantic-compilation":
+            report = finalize_staged_semantic_evaluation(args.output_dir)
+            print(
+                f"Wrote {args.output_dir / 'report.json'} "
+                f"(verdict {report['verdict']})"
+            )
+            return 0
+
+        if args.command == "evaluate-staged-semantic-compilation":
+            if not os.environ.get("OPENAI_API_KEY"):
+                raise ExtractionError("OPENAI_API_KEY is required for the live SPEC-012 evaluation")
+            report = run_staged_semantic_evaluation(
+                source_path=args.source,
+                source_metadata_path=args.source_metadata,
+                control_proposal_path=args.control_proposal,
+                output_dir=args.output_dir,
+                model=args.model,
+            )
+            print(
+                f"Wrote {args.output_dir / 'report.json'} "
+                f"({report['counts']['entities']} frozen symbols; semantic review pending)"
+            )
+            return 0
+
         if args.command == "evaluate-quantum-learning-slice":
             if not os.environ.get("OPENAI_API_KEY"):
                 raise ExtractionError("OPENAI_API_KEY is required for the live SPEC-011 evaluation")
