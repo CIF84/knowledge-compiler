@@ -15,119 +15,103 @@ This document is the lightweight monitoring surface for alignment, drift, uncert
 
 | Dimension | Status | Evidence / interpretation |
 | --- | --- | --- |
-| Product alignment | ALIGNED | SPEC-005 tested the original product promise directly; the owner reported immediate cognitive improvement and a clear preference to learn with the representation available. |
-| Scope discipline | ALIGNED | Representation work stayed downstream; no extraction, ontology, structure-repair, persistence, simulation, or product-platform expansion occurred. |
-| Architecture alignment | ALIGNED | `RepresentationBuilder` consumes `KnowledgeModel` + `DetectedStructureSet` and produces a separate deterministic `RepresentationModel`. |
-| Memory alignment | ALIGNED | SPEC-005 has a paired DEBRIEF and canonical project models reflect the representation layer and human findings. |
-| Process effectiveness | ALIGNED | Fifth repo-centered cycle succeeded and added direct owner interaction after repository verification for a UI-bearing increment. |
-| Test confidence | ALIGNED | Reported suite expanded to 75 offline tests; deterministic representation regeneration and provenance integrity passed across all five domains. |
-| Complexity discipline | ALIGNED | Viewer uses zero runtime dependencies beyond standard-library serving; no frontend framework or general graph platform was introduced. |
-| Reproducibility | ALIGNED | Representation artifacts are deterministic and reported byte-for-byte reproducible. Fresh-thread reconstruction remains a separate watch item. |
-| Repository state discipline | ALIGNED | Implementation was committed and pushed before review; canonical remote state was explicit. |
-| Semantic generality | ALIGNED | The same representation layer handles five unrelated domains and preserves truthful empty output for biology. |
-| Relationship vocabulary fitness | ALIGNED | SPEC-005 required no vocabulary expansion, strengthening the freeze. |
-| Semantic relationship precision | WATCH | Upstream endpoint, chronology, state, polarity, and measurement issues remain visible in rendered output. |
-| Source grounding | ALIGNED | Learner-visible edges retain complete provenance to validated source evidence. |
-| Structure composition | ALIGNED | Existing deterministic structures map cleanly into presentation models without source reinterpretation. |
-| Representation usefulness | ALIGNED | First direct owner evaluation was strongly positive: improved orientation, engagement, and preference to learn with the tool. Evidence remains single-user qualitative. |
-| Representation integrity | ALIGNED | All five committed domain artifacts report valid references, preserved semantics, exact evidence copying, and complete provenance. |
-| Interaction coherence | WATCH | Selecting an edge does not yet persistently synchronize highlighting across graph edge, relationship control, detail, and evidence surfaces. |
-| Spatial layout | WATCH | Current placement is functional but not sufficiently structure-aware; long diagonals/uneven geometry add avoidable interpretation work. |
-| Entity/event/state modeling | WATCH | Rendering makes existing event/state endpoint limitations more obvious, but they do not yet block useful representation generally. |
-| Duplicate relationship control | ALIGNED | Duplicate support relationships remain collapsed for presentation while retaining provenance. |
-| Pedagogical salience | ALIGNED | Simple PRIMARY/SECONDARY/SPARSE handling prevents trivial one-edge structures from dominating and preserves explicit empty states. It remains coarse. |
-| Prompt complexity | WATCH | SPEC-003 grammar remains large; SPEC-005 added downstream value without increasing it. |
-| Human review burden | WATCH | Product usefulness now genuinely requires interaction-based review; focused owner evaluation worked, but broader measurement remains unproven. |
+| Product alignment | ALIGNED | SPEC-006 produced the strongest owner result so far: materially better than SPEC-005 with a very strong positive learning/cognitive response. |
+| Scope discipline | ALIGNED | SPEC-006 held semantics fixed and changed only layout/interaction; SPEC-006A fixed one focus artifact and captured a baseline without opportunistic polish. |
+| Architecture alignment | ALIGNED | Layout remains presentation-only and viewer interaction does not mutate semantic truth. |
+| Memory alignment | ALIGNED | SPEC-006 has a paired DEBRIEF and canonical models now reflect the validated layout/interaction behavior and BASELINE-001. |
+| Process effectiveness | ALIGNED | Fixed upstream artifacts enabled a clean before/after product experiment and direct human review identified the decisive result. |
+| Test confidence | ALIGNED | SPEC-006 reported 88 passing tests; SPEC-006A reported 91. Deterministic layout/identity/provenance checks remain intact. |
+| Complexity discipline | ALIGNED | No graph library, frontend framework, build pipeline, screenshot framework, or new runtime dependency was added. |
+| Reproducibility | ALIGNED | Layout generation remains deterministic and evaluation artifacts are committed. Fresh-thread reconstruction remains a separate watch item. |
+| Repository state discipline | ALIGNED | Implementation, focus fix, baseline, and project-memory updates were committed to canonical GitHub. |
+| Semantic generality | ALIGNED | The same representation/layout system handles all five domains while preserving Biology's truthful empty state. |
+| Relationship vocabulary fitness | ALIGNED | Layout/interaction work required no ontology expansion. |
+| Semantic relationship precision | WATCH | Upstream endpoint, chronology, state, polarity, and measurement issues still constrain some representations. |
+| Source grounding | ALIGNED | Provenance remains first-class and learner-visible after layout and interaction changes. |
+| Structure composition | ALIGNED | Higher-order structures remain cleanly separated from presentation behavior. |
+| Representation usefulness | ALIGNED | Owner before/after verdict strongly favors SPEC-006. |
+| Representation integrity | ALIGNED | Semantic content, canonical direction, relationship identity, and provenance remained unchanged through SPEC-006/006A. |
+| Interaction coherence | ALIGNED | Persistent selection and temporary preview now synchronize graph/control/detail/evidence as one semantic object. |
+| Spatial layout | ALIGNED | Structure-specific layout materially improved legibility on current benchmark graphs. |
+| Interface baseline | ALIGNED | `BASELINE-001` preserves the first empirically successful cognitive interaction grammar for future comparisons. |
+| Accessibility interaction | ALIGNED | Default SVG focus noise was replaced with an intentional `:focus-visible` treatment while preserving keyboard activation. |
+| Layout scale | WATCH | Current custom deterministic layout is validated only for small benchmark graphs. |
+| Entity/event/state modeling | WATCH | Known upstream state/event endpoint limitations remain visible, especially in electromagnetism, biology, and history. |
+| Pedagogical salience | ALIGNED | Existing simple salience plus truthful sparse/empty states remains adequate at current scale. |
+| Prompt complexity | WATCH | SPEC-003 grammar remains large; subsequent product value has been added without increasing it. |
+| Human review burden | WATCH | Human product review remains decisive for cognitive usefulness; broader-user evidence is still absent. |
 | Security / secret handling | WATCH | Security rules remain active; exposed SPEC-002 key rotation is not confirmed in repository evidence. |
-| Cost / effort efficiency | ALIGNED | SPEC-005 reused accepted upstream artifacts and required no model/API cost; direct human review quickly exposed the next constraints. |
+| Cost / effort efficiency | ALIGNED | SPEC-006/006A used fixed local artifacts and zero model/API cost to produce major product learning. |
 
 ## Highest-Value Current Uncertainty
 
-> Can structure-aware deterministic layout plus synchronized semantic selection make the existing representations materially easier to parse and manipulate as coherent mental models, without adding semantic inference or general frontend complexity?
+> Can a learner move from a high-level model into progressively deeper explanations, mechanisms, and evidence without losing orientation in the larger system?
 
-This should drive SPEC-006.
+This is the leading candidate for SPEC-007.
 
 ## Active Watch Items
 
 ### W-001 — Fresh-context reconstruction
-
 A genuinely fresh-thread reconstruction test remains unperformed.
 
 ### W-002 — Endpoint / event / state semantics
+Known endpoint/state weaknesses degrade some process and feedback representations.
 
-Rendering strengthens evidence that endpoint/state weaknesses degrade process and feedback representations.
-
-**Response:** keep defects visible and attributed upstream; do not redesign semantic IR until representation work shows they materially block learning value.
+**Response:** preserve attribution upstream; revisit when progressive disclosure or richer structures are materially blocked.
 
 ### W-003 — Polarity preservation
+Current causal paths and feedback candidates do not reliably encode reinforcing/balancing or prevention polarity.
 
-Current causal paths and feedback candidates do not reliably preserve positive/negative/prevention polarity.
+**Response:** do not expand predicates opportunistically.
 
-**Response:** do not expand predicates opportunistically; feedback remains explicitly a candidate.
+### W-004 — Layout scale
+The custom deterministic layout is excellent for current benchmark sizes but not proven on materially larger graphs.
 
-### W-004 — Interaction coherence
+**Response:** continue until scale produces a concrete failure before adopting a general graph-layout dependency.
 
-The same relationship appears as graph edge, relationship control, detail, and evidence, but selection state is not yet synchronized across all surfaces.
+### W-005 — Progressive disclosure / orientation
+The current interface is strong at one representation level. It is unknown whether deeper explanations/submodels can be exposed without losing the learner's place in the larger system.
 
-**Response:** test shared semantic selection with click-to-select and hover-to-preview behavior in SPEC-006.
-
-### W-005 — Spatial layout
-
-Current graph geometry is functional but not in sufficient visual harmony with the semantic structures.
-
-**Response:** test structure-specific deterministic layout grammars before broader progressive disclosure or UI polish.
+**Response:** candidate SPEC-007 should test semantic navigation against BASELINE-001 rather than broadly expanding UI.
 
 ### W-006 — Prompt complexity
-
-The canonical grammar remains materially larger after SPEC-003.
-
-**Response:** continue extracting value downstream before adding semantic prompt complexity.
+The canonical relationship grammar remains materially larger after SPEC-003.
 
 ### W-007 — Human review bottleneck
+Direct interaction provides evidence machine metrics cannot.
 
-Direct human interaction now provides product evidence that deterministic tests cannot.
+**Response:** keep product experiments narrow and compare against fixed baselines.
 
-**Response:** keep reviews focused on one product uncertainty and use fixed artifacts to minimize review burden.
+### W-008 — Broader-user generalization
+Strong usefulness evidence is owner-based.
 
-### W-008 — Inference provenance model
-
-The strict `SOURCE` vs `INFERRED` distinction remains useful. A separate supporting-evidence concept remains unproven.
+**Response:** do not build formal research infrastructure yet; first establish a stronger product surface and repeatable tasks.
 
 ### W-009 — Secret rotation
-
 SPEC-002 exposed an API key in terminal-state output.
-
-**Response:** keep rotation/secret-handling rule active until explicitly confirmed resolved outside repository state.
 
 ## Resolved / Improved Items
 
 ### R-001 — Relationship vocabulary drift
+Resolved; downstream experiments continue without vocabulary growth.
 
-Resolved in SPEC-003 and strengthened through SPEC-005: downstream structure and representation required no new predicates.
+### R-002 — Structure-detection uncertainty
+Resolved positively in SPEC-004.
 
-### R-002 — Semantic edge precision drift
+### R-003 — Minimal representation uncertainty
+Resolved positively in SPEC-005.
 
-Severe predicate/direction failures remain improved; residual upstream issues remain WATCH rather than DRIFT.
+### R-004 — Interaction coherence
+Resolved positively in SPEC-006: semantic selection is synchronized across surfaces.
 
-### R-003 — Duplicate relationships for downstream traversal/presentation
+### R-005 — Spatial-layout uncertainty
+Resolved positively at current graph scale in SPEC-006.
 
-Exact duplicate triples can be collapsed while preserving all provenance IDs/evidence.
+### R-006 — SVG focus artifact
+Resolved in SPEC-006A while preserving keyboard accessibility.
 
-### R-004 — Structure-detection uncertainty
-
-Resolved positively in SPEC-004: the current IR supports useful deterministic higher-order composition.
-
-### R-005 — Minimal representation uncertainty
-
-Resolved positively for the owner benchmark: deterministic interactive representations can materially improve cognitive orientation and are preferred as a learning aid.
-
-### R-006 — Pedagogical salience baseline
-
-Improved in SPEC-005: coarse deterministic salience plus explicit sparse/empty states is sufficient for the current benchmark.
-
-### R-007 — Local vs remote repository state
-
-Push-before-review remains reliable.
+### R-007 — Successful UI reference point
+Resolved by capturing BASELINE-001 rather than relying on memory/screenshots in conversation history.
 
 ## Drift Triggers
 
@@ -135,16 +119,16 @@ Mark a dimension `DRIFT` when examples such as these occur:
 
 - implementation bypasses `KnowledgeModel`;
 - provider-specific types leak into the semantic core;
-- representation or structure detection re-reads source independently instead of consuming canonical IR/context;
-- source-derived evidence provenance is lost;
-- detector or representation invents missing links solely for presentation completeness;
-- weak/empty structures are hidden or repaired;
-- relationship vocabulary grows without cross-domain evidence;
-- structurally valid output is treated as automatically pedagogically useful;
-- viewer interactions silently mutate canonical semantic truth;
-- generic graph aesthetics are prioritized over structure-specific cognitive legibility;
-- SPEC scope repeatedly expands;
-- project memory becomes stale relative to implementation;
+- representation re-reads source independently instead of consuming canonical context;
+- provenance is lost;
+- missing links are invented for presentation completeness;
+- weak/empty structures are hidden;
+- relationship vocabulary grows without evidence;
+- viewer interactions mutate canonical semantic truth;
+- generic visual polish makes cognitive behavior worse than BASELINE-001 without an explicit worthwhile trade-off;
+- progressive disclosure causes the learner to lose orientation without addressing that cost;
+- heavy frontend/graph infrastructure is introduced before current simple architecture demonstrably fails;
+- project memory becomes stale;
 - documentation overhead materially slows learning.
 
 ## Review Cadence
@@ -161,11 +145,8 @@ After each completed SPEC/DEBRIEF pair ask:
 8. Could a fresh context reconstruct the project?
 9. What uncertainty was reduced?
 10. What is now the highest-value uncertainty?
-
-For UI-bearing experiments also ask:
-
-11. Did a human actually interact with the artifact before acceptance?
-12. Did the interaction reveal a semantic, spatial, or behavioral problem that repository inspection could not?
+11. For UI-bearing experiments, did a human actually interact with the artifact?
+12. If BASELINE-001 is relevant, is the change BETTER / SAME / WORSE on the dimensions it claims to improve?
 
 ## Convergence Goal
 
