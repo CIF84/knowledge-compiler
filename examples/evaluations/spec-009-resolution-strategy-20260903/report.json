@@ -1,0 +1,418 @@
+{
+  "spec": "SPEC-009",
+  "experiment": "paired generic versus explicit semantic-role strategy",
+  "provider": "openai",
+  "requested_model": "gpt-5.6-luna",
+  "prompt_version": "spec-009-v1",
+  "compiler_version": "spec-009-v1",
+  "generation_attempt_count": 6,
+  "provider_call_count": 6,
+  "hidden_retries_or_favorable_run_selection": false,
+  "web_or_external_source_enrichment": false,
+  "original_process_source_assessment": {
+    "domain": "software_architecture",
+    "source_kind": "ACCEPTED_ORIGINAL_SOURCE",
+    "outcome": "INSUFFICIENT_SOURCE_DETAIL",
+    "provider_call_made": false,
+    "candidate_process_concepts": [
+      "purchase-authorization",
+      "database-schema-change"
+    ],
+    "reason": "The accepted source names process-like concepts but provides no supported internal stage sequence, and neither process concept appears in an accepted parent representation.",
+    "richer_source_procedure": "ONE_CONTROLLED_LOCAL_FIXTURE"
+  },
+  "results": [
+    {
+      "run_id": "variable-market-price.generic_detail",
+      "benchmark_id": "variable-market-price",
+      "domain": "economics",
+      "focus_semantic_role": "VARIABLE",
+      "focus_entity_id": "market-price",
+      "focus_label": "market price",
+      "strategy_id": "GENERIC_DETAIL",
+      "source_kind": "ACCEPTED_ORIGINAL_SOURCE",
+      "outcome": "SUCCESS",
+      "reason": "The source supports a finer local mechanism for market price: buyer and seller quantity responses, shortage/surplus pressure, and adjustment that narrows a shortage. These provide multiple meaningful typed relationships beyond the parent representation.",
+      "provider": "openai",
+      "actual_model": "gpt-5.6-luna",
+      "prompt_version": "spec-009-v1",
+      "compiler_version": "spec-009-v1",
+      "source_scope": {
+        "strategy": "FULL_DOCUMENT_SMALL_SOURCE",
+        "document_id": "text-e6c889f45171a12a",
+        "start_char": 0,
+        "end_char": 785,
+        "text": "In a competitive market, buyers create demand and sellers create supply. The market price coordinates their plans. When the price rises, buyers usually demand a smaller quantity, while sellers usually supply a larger quantity. When the price falls, those responses reverse.\n\nIf quantity demanded exceeds quantity supplied, a shortage puts upward pressure on price. The higher price decreases quantity demanded and increases quantity supplied until the shortage narrows. If quantity supplied exceeds quantity demanded, a surplus puts downward pressure on price.\n\nPrice elasticity measures how strongly quantity responds to a price change. When demand is less elastic, a similar reduction in supply can cause a larger price increase because buyers reduce their quantity demanded by less.",
+        "connected_relationship_ids": [
+          "rel-higher-price-decreases-demanded",
+          "rel-higher-price-increases-supplied",
+          "rel-price-decreases-demanded",
+          "rel-price-increases-supplied",
+          "rel-supply-reduction-price-increase",
+          "rel-upward-pressure-price"
+        ]
+      },
+      "entity_count": 9,
+      "relationship_count": 9,
+      "claim_count": 4,
+      "source_relationship_count": 9,
+      "inferred_relationship_count": 0,
+      "source_claim_count": 4,
+      "inferred_claim_count": 0,
+      "grounding_failures": [],
+      "rejected_extraction_preserved": false,
+      "retries": 0,
+      "structure_count": 3,
+      "structure_types": [
+        "CAUSAL_PATH",
+        "FEEDBACK_CANDIDATE"
+      ],
+      "representation_count": 2,
+      "representation_types": [
+        "CAUSAL_PATH",
+        "FEEDBACK_CANDIDATE"
+      ],
+      "usage": {
+        "input_tokens": 3170,
+        "output_tokens": 1416,
+        "total_tokens": 4586
+      },
+      "cost": "NOT_AVAILABLE"
+    },
+    {
+      "run_id": "variable-market-price.variable_causal_neighborhood",
+      "benchmark_id": "variable-market-price",
+      "domain": "economics",
+      "focus_semantic_role": "VARIABLE",
+      "focus_entity_id": "market-price",
+      "focus_label": "market price",
+      "strategy_id": "VARIABLE_CAUSAL_NEIGHBORHOOD",
+      "source_kind": "ACCEPTED_ORIGINAL_SOURCE",
+      "outcome": "INSUFFICIENT_SOURCE_DETAIL",
+      "reason": "The nominated graph is valid but does not pass the automatic finer-resolution gate.",
+      "provider": "openai",
+      "actual_model": "gpt-5.6-luna",
+      "prompt_version": "spec-009-v1",
+      "compiler_version": "spec-009-v1",
+      "source_scope": {
+        "strategy": "FULL_DOCUMENT_SMALL_SOURCE",
+        "document_id": "text-e6c889f45171a12a",
+        "start_char": 0,
+        "end_char": 785,
+        "text": "In a competitive market, buyers create demand and sellers create supply. The market price coordinates their plans. When the price rises, buyers usually demand a smaller quantity, while sellers usually supply a larger quantity. When the price falls, those responses reverse.\n\nIf quantity demanded exceeds quantity supplied, a shortage puts upward pressure on price. The higher price decreases quantity demanded and increases quantity supplied until the shortage narrows. If quantity supplied exceeds quantity demanded, a surplus puts downward pressure on price.\n\nPrice elasticity measures how strongly quantity responds to a price change. When demand is less elastic, a similar reduction in supply can cause a larger price increase because buyers reduce their quantity demanded by less.",
+        "connected_relationship_ids": [
+          "rel-higher-price-decreases-demanded",
+          "rel-higher-price-increases-supplied",
+          "rel-price-decreases-demanded",
+          "rel-price-increases-supplied",
+          "rel-supply-reduction-price-increase",
+          "rel-upward-pressure-price"
+        ]
+      },
+      "entity_count": 0,
+      "relationship_count": 0,
+      "claim_count": 0,
+      "source_relationship_count": 0,
+      "inferred_relationship_count": 0,
+      "source_claim_count": 0,
+      "inferred_claim_count": 0,
+      "grounding_failures": [],
+      "rejected_extraction_preserved": false,
+      "retries": 0,
+      "structure_count": 0,
+      "structure_types": [],
+      "representation_count": 0,
+      "representation_types": [],
+      "usage": {
+        "input_tokens": 3168,
+        "output_tokens": 1756,
+        "total_tokens": 4924
+      },
+      "cost": "NOT_AVAILABLE"
+    },
+    {
+      "run_id": "process-order-workflow.generic_detail",
+      "benchmark_id": "process-order-workflow",
+      "domain": "software_architecture_process",
+      "focus_semantic_role": "PROCESS",
+      "focus_entity_id": "order-processing-workflow",
+      "focus_label": "order-processing workflow",
+      "strategy_id": "GENERIC_DETAIL",
+      "source_kind": "SPEC_009_EXPERIMENTAL_RICHER_LOCAL_SOURCE",
+      "outcome": "GROUNDING_FAILURE",
+      "reason": "INFERRED relationships must not present source evidence",
+      "provider": "openai",
+      "actual_model": "gpt-5.6-luna",
+      "prompt_version": "spec-009-v1",
+      "compiler_version": "spec-009-v1",
+      "source_scope": {
+        "strategy": "FULL_DOCUMENT_SMALL_SOURCE",
+        "document_id": "text-79c197b799735d88",
+        "start_char": 0,
+        "end_char": 815,
+        "text": "The order-processing service contains an order-processing workflow for each submitted order. The workflow begins when the API accepts an order request. The API parses the payload before it validates the required customer and item fields. After validation succeeds, the workflow creates an order command and transfers the command to the order component.\n\nThe order component checks inventory before it requests payment authorization. Payment authorization must succeed before the order component stores the confirmed order. Storing the confirmed order completes the workflow and produces an order identifier for the API response.\n\nIf validation fails, the API returns an error instead of creating or transferring an order command. If payment authorization fails, the order component does not store a confirmed order.",
+        "connected_relationship_ids": [
+          "parent-rel-workflow-part-of-service"
+        ]
+      },
+      "entity_count": 0,
+      "relationship_count": 0,
+      "claim_count": 0,
+      "source_relationship_count": 0,
+      "inferred_relationship_count": 0,
+      "source_claim_count": 0,
+      "inferred_claim_count": 0,
+      "grounding_failures": [
+        "INFERRED relationships must not present source evidence"
+      ],
+      "rejected_extraction_preserved": true,
+      "retries": 0,
+      "structure_count": 0,
+      "structure_types": [],
+      "representation_count": 0,
+      "representation_types": [],
+      "usage": {
+        "input_tokens": 2886,
+        "output_tokens": 2131,
+        "total_tokens": 5017
+      },
+      "cost": "NOT_AVAILABLE"
+    },
+    {
+      "run_id": "process-order-workflow.process_stages",
+      "benchmark_id": "process-order-workflow",
+      "domain": "software_architecture_process",
+      "focus_semantic_role": "PROCESS",
+      "focus_entity_id": "order-processing-workflow",
+      "focus_label": "order-processing workflow",
+      "strategy_id": "PROCESS_STAGES",
+      "source_kind": "SPEC_009_EXPERIMENTAL_RICHER_LOCAL_SOURCE",
+      "outcome": "SUCCESS",
+      "reason": "The source explicitly describes multiple ordered stages, prerequisites, conditional branches, handoffs, and the workflow output.",
+      "provider": "openai",
+      "actual_model": "gpt-5.6-luna",
+      "prompt_version": "spec-009-v1",
+      "compiler_version": "spec-009-v1",
+      "source_scope": {
+        "strategy": "FULL_DOCUMENT_SMALL_SOURCE",
+        "document_id": "text-79c197b799735d88",
+        "start_char": 0,
+        "end_char": 815,
+        "text": "The order-processing service contains an order-processing workflow for each submitted order. The workflow begins when the API accepts an order request. The API parses the payload before it validates the required customer and item fields. After validation succeeds, the workflow creates an order command and transfers the command to the order component.\n\nThe order component checks inventory before it requests payment authorization. Payment authorization must succeed before the order component stores the confirmed order. Storing the confirmed order completes the workflow and produces an order identifier for the API response.\n\nIf validation fails, the API returns an error instead of creating or transferring an order command. If payment authorization fails, the order component does not store a confirmed order.",
+        "connected_relationship_ids": [
+          "parent-rel-workflow-part-of-service"
+        ]
+      },
+      "entity_count": 11,
+      "relationship_count": 12,
+      "claim_count": 4,
+      "source_relationship_count": 12,
+      "inferred_relationship_count": 0,
+      "source_claim_count": 4,
+      "inferred_claim_count": 0,
+      "grounding_failures": [],
+      "rejected_extraction_preserved": false,
+      "retries": 0,
+      "structure_count": 3,
+      "structure_types": [
+        "HIERARCHY",
+        "PROCESS_CHAIN"
+      ],
+      "representation_count": 3,
+      "representation_types": [
+        "HIERARCHY",
+        "PROCESS_CHAIN"
+      ],
+      "usage": {
+        "input_tokens": 2874,
+        "output_tokens": 1706,
+        "total_tokens": 4580
+      },
+      "cost": "NOT_AVAILABLE"
+    },
+    {
+      "run_id": "component-api.generic_detail",
+      "benchmark_id": "component-api",
+      "domain": "software_architecture",
+      "focus_semantic_role": "COMPONENT_OR_SYSTEM",
+      "focus_entity_id": "api-component",
+      "focus_label": "API component",
+      "strategy_id": "GENERIC_DETAIL",
+      "source_kind": "ACCEPTED_ORIGINAL_SOURCE",
+      "outcome": "GROUNDING_FAILURE",
+      "reason": "INFERRED relationships must not present source evidence",
+      "provider": "openai",
+      "actual_model": "gpt-5.6-luna",
+      "prompt_version": "spec-009-v1",
+      "compiler_version": "spec-009-v1",
+      "source_scope": {
+        "strategy": "FULL_DOCUMENT_SMALL_SOURCE",
+        "document_id": "text-49b42a4f08a99742",
+        "start_char": 0,
+        "end_char": 936,
+        "text": "A modular order-processing service separates the API component, order component, payment component, and database. The API component calls the order component through its published interface. The order component requires the payment component to authorize a purchase, and both components require the database to store durable state.\n\nDependency direction is constrained: the payment component must not call the API component. This separation prevents transport details from becoming part of payment logic. Published interfaces enable components to change internally without forcing callers to change, while direct access to another component's private data increases coupling.\n\nThe database is shared infrastructure, so a schema change can still affect both order and payment components. Keeping database access behind component interfaces decreases that coupling but adds implementation work and may make cross-component queries slower.",
+        "connected_relationship_ids": [
+          "rel-1",
+          "rel-5"
+        ]
+      },
+      "entity_count": 0,
+      "relationship_count": 0,
+      "claim_count": 0,
+      "source_relationship_count": 0,
+      "inferred_relationship_count": 0,
+      "source_claim_count": 0,
+      "inferred_claim_count": 0,
+      "grounding_failures": [
+        "INFERRED relationships must not present source evidence"
+      ],
+      "rejected_extraction_preserved": true,
+      "retries": 0,
+      "structure_count": 0,
+      "structure_types": [],
+      "representation_count": 0,
+      "representation_types": [],
+      "usage": {
+        "input_tokens": 2945,
+        "output_tokens": 1230,
+        "total_tokens": 4175
+      },
+      "cost": "NOT_AVAILABLE"
+    },
+    {
+      "run_id": "component-api.component_internals",
+      "benchmark_id": "component-api",
+      "domain": "software_architecture",
+      "focus_semantic_role": "COMPONENT_OR_SYSTEM",
+      "focus_entity_id": "api-component",
+      "focus_label": "API component",
+      "strategy_id": "COMPONENT_INTERNALS",
+      "source_kind": "ACCEPTED_ORIGINAL_SOURCE",
+      "outcome": "INSUFFICIENT_SOURCE_DETAIL",
+      "reason": "The source identifies that the API component uses a published interface to call the order component and that published interfaces enable internal changes, but it does not provide at least two reliable finer-grained internal parts, responsibilities, or handoffs within the API component. Treating the interface as a contained part or inventing API implementation internals would exceed the source.",
+      "provider": "openai",
+      "actual_model": "gpt-5.6-luna",
+      "prompt_version": "spec-009-v1",
+      "compiler_version": "spec-009-v1",
+      "source_scope": {
+        "strategy": "FULL_DOCUMENT_SMALL_SOURCE",
+        "document_id": "text-49b42a4f08a99742",
+        "start_char": 0,
+        "end_char": 936,
+        "text": "A modular order-processing service separates the API component, order component, payment component, and database. The API component calls the order component through its published interface. The order component requires the payment component to authorize a purchase, and both components require the database to store durable state.\n\nDependency direction is constrained: the payment component must not call the API component. This separation prevents transport details from becoming part of payment logic. Published interfaces enable components to change internally without forcing callers to change, while direct access to another component's private data increases coupling.\n\nThe database is shared infrastructure, so a schema change can still affect both order and payment components. Keeping database access behind component interfaces decreases that coupling but adds implementation work and may make cross-component queries slower.",
+        "connected_relationship_ids": [
+          "rel-1",
+          "rel-5"
+        ]
+      },
+      "entity_count": 0,
+      "relationship_count": 0,
+      "claim_count": 0,
+      "source_relationship_count": 0,
+      "inferred_relationship_count": 0,
+      "source_claim_count": 0,
+      "inferred_claim_count": 0,
+      "grounding_failures": [],
+      "rejected_extraction_preserved": false,
+      "retries": 0,
+      "structure_count": 0,
+      "structure_types": [],
+      "representation_count": 0,
+      "representation_types": [],
+      "usage": {
+        "input_tokens": 2938,
+        "output_tokens": 589,
+        "total_tokens": 3527
+      },
+      "cost": "NOT_AVAILABLE"
+    }
+  ],
+  "outcome_counts": {
+    "SUCCESS": 2,
+    "INSUFFICIENT_SOURCE_DETAIL": 2,
+    "GROUNDING_FAILURE": 2,
+    "SEMANTIC_VALIDATION_FAILURE": 0,
+    "PROVIDER_FAILURE": 0
+  },
+  "successful_child_count": 2,
+  "source_scope_equivalence": {
+    "all_pairs_equivalent": true,
+    "all_parent_context_equivalent_except_strategy_metadata": true,
+    "pairs": [
+      {
+        "benchmark_id": "variable-market-price",
+        "generic_run_id": "variable-market-price.generic_detail",
+        "type_aware_run_id": "variable-market-price.variable_causal_neighborhood",
+        "source_scope_equivalent": true,
+        "parent_context_equivalent_except_strategy_metadata": true
+      },
+      {
+        "benchmark_id": "process-order-workflow",
+        "generic_run_id": "process-order-workflow.generic_detail",
+        "type_aware_run_id": "process-order-workflow.process_stages",
+        "source_scope_equivalent": true,
+        "parent_context_equivalent_except_strategy_metadata": true
+      },
+      {
+        "benchmark_id": "component-api",
+        "generic_run_id": "component-api.generic_detail",
+        "type_aware_run_id": "component-api.component_internals",
+        "source_scope_equivalent": true,
+        "parent_context_equivalent_except_strategy_metadata": true
+      }
+    ]
+  },
+  "parent_immutability": {
+    "all_parents_unchanged": true,
+    "benchmarks": {
+      "variable-market-price": true,
+      "process-order-workflow": true,
+      "component-api": true
+    }
+  },
+  "prompt_diagnostics": {
+    "GENERIC_DETAIL": {
+      "strategy_block_characters": 511,
+      "full_instructions_characters": 9743,
+      "delta_full_characters_vs_generic": 0
+    },
+    "PROCESS_STAGES": {
+      "strategy_block_characters": 461,
+      "full_instructions_characters": 9693,
+      "delta_full_characters_vs_generic": -50
+    },
+    "VARIABLE_CAUSAL_NEIGHBORHOOD": {
+      "strategy_block_characters": 468,
+      "full_instructions_characters": 9700,
+      "delta_full_characters_vs_generic": -43
+    },
+    "COMPONENT_INTERNALS": {
+      "strategy_block_characters": 491,
+      "full_instructions_characters": 9723,
+      "delta_full_characters_vs_generic": -20
+    }
+  },
+  "prompt_change_outside_strategy_section": "The common SPEC-008 wording was structurally refactored only to insert the canonical strategy block; its grounding, evidence, insufficient-source, and trust rules remain unchanged.",
+  "complexity_budget": {
+    "type_aware_strategy_count": 3,
+    "generic_control_count": 1,
+    "maximum_generated_child_depth": 1,
+    "new_runtime_dependencies": 0,
+    "new_semantic_ir_fields": 0,
+    "new_semantic_ir_types": 0,
+    "new_experimental_boundary_types": 2,
+    "new_canonical_predicates": 0,
+    "source_fixtures_added": 1,
+    "automatic_retries": 0,
+    "recursive_architecture_introduced": false,
+    "navigation_redesign": false,
+    "personalization_machinery": false
+  },
+  "canonical_relationship_count": 20,
+  "navigation_modes": [
+    "BASELINE",
+    "REPLACEMENT",
+    "CONTEXTUAL"
+  ],
+  "cost_note": "Token usage is recorded per run. Monetary cost remains NOT_AVAILABLE unless the provider response supplies an authoritative charge."
+}

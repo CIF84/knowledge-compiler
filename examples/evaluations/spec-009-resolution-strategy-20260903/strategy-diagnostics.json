@@ -1,0 +1,75 @@
+{
+  "spec": "SPEC-009",
+  "runs": [
+    {
+      "run_id": "variable-market-price.generic_detail",
+      "strategy_id": "GENERIC_DETAIL",
+      "semantic_role": "GENERIC_CONTROL",
+      "outcome": "SUCCESS",
+      "pattern_features": {
+        "process_stage_entity_count": 2,
+        "precedence_relationship_count": 0,
+        "dependency_relationship_count": 0,
+        "process_chain_count": 0,
+        "causal_relationship_count": 7,
+        "focus_matching_entity_count": 1,
+        "focus_causal_incoming_count": 2,
+        "focus_causal_outgoing_count": 2,
+        "feedback_candidate_count": 1,
+        "part_of_relationship_count": 0,
+        "interaction_relationship_count": 0,
+        "hierarchy_count": 0
+      },
+      "diagnostic_note": "Pattern features are descriptive diagnostics, not a universal quality score."
+    },
+    {
+      "run_id": "variable-market-price.variable_causal_neighborhood",
+      "strategy_id": "VARIABLE_CAUSAL_NEIGHBORHOOD",
+      "semantic_role": "VARIABLE",
+      "outcome": "INSUFFICIENT_SOURCE_DETAIL",
+      "pattern_features": "NOT_AVAILABLE"
+    },
+    {
+      "run_id": "process-order-workflow.generic_detail",
+      "strategy_id": "GENERIC_DETAIL",
+      "semantic_role": "GENERIC_CONTROL",
+      "outcome": "GROUNDING_FAILURE",
+      "pattern_features": "NOT_AVAILABLE"
+    },
+    {
+      "run_id": "process-order-workflow.process_stages",
+      "strategy_id": "PROCESS_STAGES",
+      "semantic_role": "PROCESS",
+      "outcome": "SUCCESS",
+      "pattern_features": {
+        "process_stage_entity_count": 9,
+        "precedence_relationship_count": 3,
+        "dependency_relationship_count": 2,
+        "process_chain_count": 2,
+        "causal_relationship_count": 0,
+        "focus_matching_entity_count": 1,
+        "focus_causal_incoming_count": 0,
+        "focus_causal_outgoing_count": 0,
+        "feedback_candidate_count": 0,
+        "part_of_relationship_count": 4,
+        "interaction_relationship_count": 1,
+        "hierarchy_count": 1
+      },
+      "diagnostic_note": "Pattern features are descriptive diagnostics, not a universal quality score."
+    },
+    {
+      "run_id": "component-api.generic_detail",
+      "strategy_id": "GENERIC_DETAIL",
+      "semantic_role": "GENERIC_CONTROL",
+      "outcome": "GROUNDING_FAILURE",
+      "pattern_features": "NOT_AVAILABLE"
+    },
+    {
+      "run_id": "component-api.component_internals",
+      "strategy_id": "COMPONENT_INTERNALS",
+      "semantic_role": "COMPONENT_OR_SYSTEM",
+      "outcome": "INSUFFICIENT_SOURCE_DETAIL",
+      "pattern_features": "NOT_AVAILABLE"
+    }
+  ]
+}

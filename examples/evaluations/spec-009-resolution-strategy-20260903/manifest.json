@@ -1,0 +1,48 @@
+{
+  "spec": "SPEC-009",
+  "modes": [
+    "BASELINE",
+    "REPLACEMENT",
+    "CONTEXTUAL"
+  ],
+  "domains": [
+    {
+      "id": "variable-market-price.generic_detail",
+      "label": "Variable · market price · Generic",
+      "representation": "variable-market-price.parent.representation.json",
+      "strategy_id": "GENERIC_DETAIL",
+      "exploration": "variable-market-price.generic_detail.generated-exploration.json"
+    },
+    {
+      "id": "variable-market-price.variable_causal_neighborhood",
+      "label": "Variable · market price · Type-aware",
+      "representation": "variable-market-price.parent.representation.json",
+      "strategy_id": "VARIABLE_CAUSAL_NEIGHBORHOOD"
+    },
+    {
+      "id": "process-order-workflow.generic_detail",
+      "label": "Process · order-processing workflow · Generic",
+      "representation": "process-order-workflow.parent.representation.json",
+      "strategy_id": "GENERIC_DETAIL"
+    },
+    {
+      "id": "process-order-workflow.process_stages",
+      "label": "Process · order-processing workflow · Type-aware",
+      "representation": "process-order-workflow.parent.representation.json",
+      "strategy_id": "PROCESS_STAGES",
+      "exploration": "process-order-workflow.process_stages.generated-exploration.json"
+    },
+    {
+      "id": "component-api.generic_detail",
+      "label": "Component · API component · Generic",
+      "representation": "component-api.parent.representation.json",
+      "strategy_id": "GENERIC_DETAIL"
+    },
+    {
+      "id": "component-api.component_internals",
+      "label": "Component · API component · Type-aware",
+      "representation": "component-api.parent.representation.json",
+      "strategy_id": "COMPONENT_INTERNALS"
+    }
+  ]
+}

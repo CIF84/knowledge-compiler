@@ -252,6 +252,38 @@ def test_grounding_invariant_is_unchanged_and_rejected_output_is_preserved(
     assert result.to_dict()["rejected_extraction"] == nomination.extraction
 
 
+def test_valid_nomination_rejected_by_resolution_gate_is_preserved() -> None:
+    parent, representation = economics_parent()
+    nomination = ResolutionNomination(
+        ResolutionOutcome.SUCCESS,
+        "Valid source-grounded relationships that do not form a finer structure.",
+        {
+            "entities": [
+                {"id": "market-price", "name": "market price", "description": "The market price.", "entity_type": "VARIABLE", "aliases": []},
+                {"id": "quantity-demanded", "name": "quantity demanded", "description": "Quantity demanded.", "entity_type": "VARIABLE", "aliases": []},
+                {"id": "quantity-supplied", "name": "quantity supplied", "description": "Quantity supplied.", "entity_type": "VARIABLE", "aliases": []},
+            ],
+            "claims": [],
+            "relationships": [
+                {"id": "gate-1", "source_entity_id": "market-price", "relationship_type": "DECREASES", "target_entity_id": "quantity-demanded", "statement": "A higher price decreases quantity demanded.", "evidence": [{"quote": "The higher price decreases quantity demanded and increases quantity supplied until the shortage narrows."}], "confidence": 1.0, "origin": "SOURCE"},
+                {"id": "gate-2", "source_entity_id": "market-price", "relationship_type": "INCREASES", "target_entity_id": "quantity-supplied", "statement": "A higher price increases quantity supplied.", "evidence": [{"quote": "The higher price decreases quantity demanded and increases quantity supplied until the shortage narrows."}], "confidence": 1.0, "origin": "SOURCE"},
+            ],
+        },
+        {"provider": "fixture", "model": "gate", "prompt_version": SPEC_009_PROMPT_VERSION},
+    )
+    result = compile_resolution(
+        parent,
+        representation,
+        economics_request(ResolutionStrategyId.VARIABLE_CAUSAL_NEIGHBORHOOD),
+        FixtureResolutionExtractor(nomination),
+        compiler_version=SPEC_009_COMPILER_VERSION,
+    )
+    assert result.outcome is ResolutionOutcome.INSUFFICIENT_SOURCE_DETAIL
+    assert result.provider_metadata["resolution_assessment"]["mechanistic_detail_gain"] is False
+    assert result.rejected_extraction == nomination.extraction
+    assert result.retries == 0
+
+
 def test_offline_paired_evaluation_preserves_all_attempts_and_navigation_assets(tmp_path: Path) -> None:
     insufficient = ResolutionNomination(
         ResolutionOutcome.INSUFFICIENT_SOURCE_DETAIL,

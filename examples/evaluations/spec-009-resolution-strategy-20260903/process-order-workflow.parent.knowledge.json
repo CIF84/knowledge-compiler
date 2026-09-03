@@ -1,0 +1,55 @@
+{
+  "document": {
+    "id": "text-79c197b799735d88",
+    "text": "The order-processing service contains an order-processing workflow for each submitted order. The workflow begins when the API accepts an order request. The API parses the payload before it validates the required customer and item fields. After validation succeeds, the workflow creates an order command and transfers the command to the order component.\n\nThe order component checks inventory before it requests payment authorization. Payment authorization must succeed before the order component stores the confirmed order. Storing the confirmed order completes the workflow and produces an order identifier for the API response.\n\nIf validation fails, the API returns an error instead of creating or transferring an order command. If payment authorization fails, the order component does not store a confirmed order.",
+    "source_type": "text",
+    "metadata": {
+      "domain": "software_architecture_process",
+      "filename": "order_processing_workflow.txt",
+      "fixture_kind": "SPEC_009_EXPERIMENTAL_RICHER_LOCAL_SOURCE"
+    }
+  },
+  "entities": [
+    {
+      "id": "order-processing-service",
+      "name": "order-processing service",
+      "description": "A service that handles submitted orders.",
+      "entity_type": "SYSTEM",
+      "aliases": []
+    },
+    {
+      "id": "order-processing-workflow",
+      "name": "order-processing workflow",
+      "description": "The process used by the service to handle one submitted order.",
+      "entity_type": "PROCESS",
+      "aliases": [
+        "workflow"
+      ]
+    }
+  ],
+  "claims": [],
+  "relationships": [
+    {
+      "id": "parent-rel-workflow-part-of-service",
+      "source_entity_id": "order-processing-workflow",
+      "relationship_type": "PART_OF",
+      "target_entity_id": "order-processing-service",
+      "statement": "The order-processing workflow is part of the order-processing service.",
+      "evidence": [
+        {
+          "document_id": "text-79c197b799735d88",
+          "start_char": 0,
+          "end_char": 92,
+          "quote": "The order-processing service contains an order-processing workflow for each submitted order."
+        }
+      ],
+      "confidence": 1.0,
+      "origin": "SOURCE"
+    }
+  ],
+  "metadata": {
+    "domain": "software_architecture_process",
+    "fixture_kind": "SPEC_009_EXPERIMENTAL_RICHER_LOCAL_SOURCE",
+    "abstraction": "coarse parent prepared for bounded strategy evaluation"
+  }
+}

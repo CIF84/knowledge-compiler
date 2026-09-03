@@ -1,0 +1,1152 @@
+{
+  "outcome": "SUCCESS",
+  "request": {
+    "parent_document_id": "text-79c197b799735d88",
+    "parent_representation_id": "representation-c68ffce00bf19e99",
+    "focus_entity_id": "order-processing-workflow",
+    "focus_label": "order-processing workflow",
+    "domain": "software_architecture_process",
+    "strategy_id": "PROCESS_STAGES"
+  },
+  "source_scope": {
+    "strategy": "FULL_DOCUMENT_SMALL_SOURCE",
+    "document_id": "text-79c197b799735d88",
+    "start_char": 0,
+    "end_char": 815,
+    "text": "The order-processing service contains an order-processing workflow for each submitted order. The workflow begins when the API accepts an order request. The API parses the payload before it validates the required customer and item fields. After validation succeeds, the workflow creates an order command and transfers the command to the order component.\n\nThe order component checks inventory before it requests payment authorization. Payment authorization must succeed before the order component stores the confirmed order. Storing the confirmed order completes the workflow and produces an order identifier for the API response.\n\nIf validation fails, the API returns an error instead of creating or transferring an order command. If payment authorization fails, the order component does not store a confirmed order.",
+    "connected_relationship_ids": [
+      "parent-rel-workflow-part-of-service"
+    ]
+  },
+  "reason": "The source explicitly describes multiple ordered stages, prerequisites, conditional branches, handoffs, and the workflow output.",
+  "provider_metadata": {
+    "extractor": "llm-resolution",
+    "provider": "openai",
+    "model": "gpt-5.6-luna",
+    "prompt_version": "spec-009-v1",
+    "resolution_strategy_id": "PROCESS_STAGES",
+    "provider_request_id": "resp_056af13c878b2066016a99db36eb1887d2abf7d6c35b99165c",
+    "usage": {
+      "input_tokens": 2874,
+      "output_tokens": 1706,
+      "total_tokens": 4580
+    }
+  },
+  "artifact": {
+    "request": {
+      "parent_document_id": "text-79c197b799735d88",
+      "parent_representation_id": "representation-c68ffce00bf19e99",
+      "focus_entity_id": "order-processing-workflow",
+      "focus_label": "order-processing workflow",
+      "domain": "software_architecture_process",
+      "strategy_id": "PROCESS_STAGES"
+    },
+    "source_scope": {
+      "strategy": "FULL_DOCUMENT_SMALL_SOURCE",
+      "document_id": "text-79c197b799735d88",
+      "start_char": 0,
+      "end_char": 815,
+      "text": "The order-processing service contains an order-processing workflow for each submitted order. The workflow begins when the API accepts an order request. The API parses the payload before it validates the required customer and item fields. After validation succeeds, the workflow creates an order command and transfers the command to the order component.\n\nThe order component checks inventory before it requests payment authorization. Payment authorization must succeed before the order component stores the confirmed order. Storing the confirmed order completes the workflow and produces an order identifier for the API response.\n\nIf validation fails, the API returns an error instead of creating or transferring an order command. If payment authorization fails, the order component does not store a confirmed order.",
+      "connected_relationship_ids": [
+        "parent-rel-workflow-part-of-service"
+      ]
+    },
+    "provider": "openai",
+    "model": "gpt-5.6-luna",
+    "prompt_version": "spec-009-v1",
+    "compiler_version": "spec-009-v1",
+    "child_model": {
+      "document": {
+        "id": "text-79c197b799735d88",
+        "text": "The order-processing service contains an order-processing workflow for each submitted order. The workflow begins when the API accepts an order request. The API parses the payload before it validates the required customer and item fields. After validation succeeds, the workflow creates an order command and transfers the command to the order component.\n\nThe order component checks inventory before it requests payment authorization. Payment authorization must succeed before the order component stores the confirmed order. Storing the confirmed order completes the workflow and produces an order identifier for the API response.\n\nIf validation fails, the API returns an error instead of creating or transferring an order command. If payment authorization fails, the order component does not store a confirmed order.",
+        "source_type": "text",
+        "metadata": {
+          "domain": "software_architecture_process",
+          "filename": "order_processing_workflow.txt",
+          "fixture_kind": "SPEC_009_EXPERIMENTAL_RICHER_LOCAL_SOURCE"
+        }
+      },
+      "entities": [
+        {
+          "id": "order-processing-workflow",
+          "name": "order-processing workflow",
+          "description": "The process used by the service to handle one submitted order.",
+          "entity_type": "PROCESS",
+          "aliases": [
+            "workflow"
+          ]
+        },
+        {
+          "id": "api-acceptance",
+          "name": "API order-request acceptance",
+          "description": "The stage in which the API accepts an order request and begins the workflow.",
+          "entity_type": "PROCESS",
+          "aliases": []
+        },
+        {
+          "id": "payload-parsing",
+          "name": "payload parsing",
+          "description": "The stage in which the API parses the submitted order payload.",
+          "entity_type": "PROCESS",
+          "aliases": []
+        },
+        {
+          "id": "field-validation",
+          "name": "required-field validation",
+          "description": "The stage in which required customer and item fields are validated.",
+          "entity_type": "PROCESS",
+          "aliases": []
+        },
+        {
+          "id": "order-command-creation",
+          "name": "order command creation",
+          "description": "The stage that creates an order command after validation succeeds.",
+          "entity_type": "PROCESS",
+          "aliases": []
+        },
+        {
+          "id": "order-command",
+          "name": "order command",
+          "description": "The command transferred from the API to the order component.",
+          "entity_type": "OBJECT",
+          "aliases": []
+        },
+        {
+          "id": "order-command-transfer",
+          "name": "order command transfer",
+          "description": "The handoff of the order command to the order component.",
+          "entity_type": "PROCESS",
+          "aliases": []
+        },
+        {
+          "id": "inventory-check",
+          "name": "inventory check",
+          "description": "The order component's inventory-check stage.",
+          "entity_type": "PROCESS",
+          "aliases": []
+        },
+        {
+          "id": "payment-authorization",
+          "name": "payment authorization",
+          "description": "The stage in which payment authorization is requested and must succeed.",
+          "entity_type": "PROCESS",
+          "aliases": []
+        },
+        {
+          "id": "confirmed-order-storage",
+          "name": "confirmed-order storage",
+          "description": "The stage in which the order component stores the confirmed order.",
+          "entity_type": "PROCESS",
+          "aliases": []
+        },
+        {
+          "id": "order-identifier",
+          "name": "order identifier",
+          "description": "The identifier produced for the API response when the workflow completes.",
+          "entity_type": "OBJECT",
+          "aliases": []
+        }
+      ],
+      "claims": [
+        {
+          "id": "claim-workflow-stage-sequence",
+          "statement": "The workflow begins with API acceptance, followed by payload parsing and validation; after successful validation, an order command is created and transferred to the order component.",
+          "evidence": [
+            {
+              "document_id": "text-79c197b799735d88",
+              "start_char": 93,
+              "end_char": 352,
+              "quote": "The workflow begins when the API accepts an order request. The API parses the payload before it validates the required customer and item fields. After validation succeeds, the workflow creates an order command and transfers the command to the order component."
+            }
+          ],
+          "confidence": 1.0,
+          "origin": "SOURCE"
+        },
+        {
+          "id": "claim-component-stage-sequence",
+          "statement": "After the command reaches the order component, inventory is checked before payment authorization is requested, and successful authorization precedes storage of the confirmed order.",
+          "evidence": [
+            {
+              "document_id": "text-79c197b799735d88",
+              "start_char": 354,
+              "end_char": 522,
+              "quote": "The order component checks inventory before it requests payment authorization. Payment authorization must succeed before the order component stores the confirmed order."
+            }
+          ],
+          "confidence": 1.0,
+          "origin": "SOURCE"
+        },
+        {
+          "id": "claim-workflow-output",
+          "statement": "Storing the confirmed order completes the workflow and produces an order identifier for the API response.",
+          "evidence": [
+            {
+              "document_id": "text-79c197b799735d88",
+              "start_char": 523,
+              "end_char": 628,
+              "quote": "Storing the confirmed order completes the workflow and produces an order identifier for the API response."
+            }
+          ],
+          "confidence": 1.0,
+          "origin": "SOURCE"
+        },
+        {
+          "id": "claim-validation-branch",
+          "statement": "When validation fails, the API returns an error instead of creating or transferring an order command.",
+          "evidence": [
+            {
+              "document_id": "text-79c197b799735d88",
+              "start_char": 630,
+              "end_char": 729,
+              "quote": "If validation fails, the API returns an error instead of creating or transferring an order command."
+            }
+          ],
+          "confidence": 1.0,
+          "origin": "SOURCE"
+        }
+      ],
+      "relationships": [
+        {
+          "id": "rel-api-acceptance-part-of-workflow",
+          "source_entity_id": "api-acceptance",
+          "relationship_type": "PART_OF",
+          "target_entity_id": "order-processing-workflow",
+          "statement": "API order-request acceptance is a stage of the order-processing workflow.",
+          "evidence": [
+            {
+              "document_id": "text-79c197b799735d88",
+              "start_char": 93,
+              "end_char": 151,
+              "quote": "The workflow begins when the API accepts an order request."
+            }
+          ],
+          "confidence": 1.0,
+          "origin": "SOURCE"
+        },
+        {
+          "id": "rel-parsing-part-of-workflow",
+          "source_entity_id": "payload-parsing",
+          "relationship_type": "PART_OF",
+          "target_entity_id": "order-processing-workflow",
+          "statement": "Payload parsing is a stage of the order-processing workflow.",
+          "evidence": [
+            {
+              "document_id": "text-79c197b799735d88",
+              "start_char": 152,
+              "end_char": 237,
+              "quote": "The API parses the payload before it validates the required customer and item fields."
+            }
+          ],
+          "confidence": 1.0,
+          "origin": "SOURCE"
+        },
+        {
+          "id": "rel-validation-part-of-workflow",
+          "source_entity_id": "field-validation",
+          "relationship_type": "PART_OF",
+          "target_entity_id": "order-processing-workflow",
+          "statement": "Required-field validation is a stage of the order-processing workflow.",
+          "evidence": [
+            {
+              "document_id": "text-79c197b799735d88",
+              "start_char": 152,
+              "end_char": 237,
+              "quote": "The API parses the payload before it validates the required customer and item fields."
+            }
+          ],
+          "confidence": 1.0,
+          "origin": "SOURCE"
+        },
+        {
+          "id": "rel-acceptance-precedes-parsing",
+          "source_entity_id": "api-acceptance",
+          "relationship_type": "PRECEDES",
+          "target_entity_id": "payload-parsing",
+          "statement": "API acceptance precedes payload parsing.",
+          "evidence": [
+            {
+              "document_id": "text-79c197b799735d88",
+              "start_char": 93,
+              "end_char": 237,
+              "quote": "The workflow begins when the API accepts an order request. The API parses the payload before it validates the required customer and item fields."
+            }
+          ],
+          "confidence": 1.0,
+          "origin": "SOURCE"
+        },
+        {
+          "id": "rel-parsing-precedes-validation",
+          "source_entity_id": "payload-parsing",
+          "relationship_type": "PRECEDES",
+          "target_entity_id": "field-validation",
+          "statement": "Payload parsing precedes required-field validation.",
+          "evidence": [
+            {
+              "document_id": "text-79c197b799735d88",
+              "start_char": 152,
+              "end_char": 237,
+              "quote": "The API parses the payload before it validates the required customer and item fields."
+            }
+          ],
+          "confidence": 1.0,
+          "origin": "SOURCE"
+        },
+        {
+          "id": "rel-validation-enables-command-creation",
+          "source_entity_id": "field-validation",
+          "relationship_type": "ENABLES",
+          "target_entity_id": "order-command-creation",
+          "statement": "Successful validation enables creation of the order command.",
+          "evidence": [
+            {
+              "document_id": "text-79c197b799735d88",
+              "start_char": 238,
+              "end_char": 352,
+              "quote": "After validation succeeds, the workflow creates an order command and transfers the command to the order component."
+            }
+          ],
+          "confidence": 1.0,
+          "origin": "SOURCE"
+        },
+        {
+          "id": "rel-command-creation-creates-command",
+          "source_entity_id": "order-command-creation",
+          "relationship_type": "CREATES",
+          "target_entity_id": "order-command",
+          "statement": "Order command creation produces an order command.",
+          "evidence": [
+            {
+              "document_id": "text-79c197b799735d88",
+              "start_char": 238,
+              "end_char": 352,
+              "quote": "After validation succeeds, the workflow creates an order command and transfers the command to the order component."
+            }
+          ],
+          "confidence": 1.0,
+          "origin": "SOURCE"
+        },
+        {
+          "id": "rel-command-transferred-to-component",
+          "source_entity_id": "order-command",
+          "relationship_type": "TRANSFERS_TO",
+          "target_entity_id": "order-command-transfer",
+          "statement": "The order command is transferred in the handoff to the order component.",
+          "evidence": [
+            {
+              "document_id": "text-79c197b799735d88",
+              "start_char": 238,
+              "end_char": 352,
+              "quote": "After validation succeeds, the workflow creates an order command and transfers the command to the order component."
+            }
+          ],
+          "confidence": 1.0,
+          "origin": "SOURCE"
+        },
+        {
+          "id": "rel-inventory-precedes-payment",
+          "source_entity_id": "inventory-check",
+          "relationship_type": "PRECEDES",
+          "target_entity_id": "payment-authorization",
+          "statement": "The inventory check precedes the request for payment authorization.",
+          "evidence": [
+            {
+              "document_id": "text-79c197b799735d88",
+              "start_char": 354,
+              "end_char": 432,
+              "quote": "The order component checks inventory before it requests payment authorization."
+            }
+          ],
+          "confidence": 1.0,
+          "origin": "SOURCE"
+        },
+        {
+          "id": "rel-payment-enables-storage",
+          "source_entity_id": "confirmed-order-storage",
+          "relationship_type": "REQUIRES",
+          "target_entity_id": "payment-authorization",
+          "statement": "Confirmed-order storage requires successful payment authorization.",
+          "evidence": [
+            {
+              "document_id": "text-79c197b799735d88",
+              "start_char": 433,
+              "end_char": 522,
+              "quote": "Payment authorization must succeed before the order component stores the confirmed order."
+            }
+          ],
+          "confidence": 1.0,
+          "origin": "SOURCE"
+        },
+        {
+          "id": "rel-storage-part-of-workflow",
+          "source_entity_id": "confirmed-order-storage",
+          "relationship_type": "PART_OF",
+          "target_entity_id": "order-processing-workflow",
+          "statement": "Confirmed-order storage is the completing stage of the order-processing workflow.",
+          "evidence": [
+            {
+              "document_id": "text-79c197b799735d88",
+              "start_char": 523,
+              "end_char": 628,
+              "quote": "Storing the confirmed order completes the workflow and produces an order identifier for the API response."
+            }
+          ],
+          "confidence": 1.0,
+          "origin": "SOURCE"
+        },
+        {
+          "id": "rel-storage-creates-identifier",
+          "source_entity_id": "confirmed-order-storage",
+          "relationship_type": "CREATES",
+          "target_entity_id": "order-identifier",
+          "statement": "Storing the confirmed order produces an order identifier.",
+          "evidence": [
+            {
+              "document_id": "text-79c197b799735d88",
+              "start_char": 523,
+              "end_char": 628,
+              "quote": "Storing the confirmed order completes the workflow and produces an order identifier for the API response."
+            }
+          ],
+          "confidence": 1.0,
+          "origin": "SOURCE"
+        }
+      ],
+      "metadata": {
+        "extractor": "llm-resolution",
+        "provider": "openai",
+        "model": "gpt-5.6-luna",
+        "prompt_version": "spec-009-v1",
+        "resolution_strategy_id": "PROCESS_STAGES",
+        "provider_request_id": "resp_056af13c878b2066016a99db36eb1887d2abf7d6c35b99165c",
+        "usage": {
+          "input_tokens": 2874,
+          "output_tokens": 1706,
+          "total_tokens": 4580
+        },
+        "resolution_compiler_version": "spec-009-v1",
+        "parent_document_id": "text-79c197b799735d88",
+        "parent_representation_id": "representation-c68ffce00bf19e99",
+        "focus_entity_id": "order-processing-workflow",
+        "source_scope_strategy": "FULL_DOCUMENT_SMALL_SOURCE",
+        "resolution_strategy_semantic_role": "PROCESS"
+      }
+    },
+    "structures": {
+      "source_document_id": "text-79c197b799735d88",
+      "structures": [
+        {
+          "id": "structure-hierarchy-dfc3a14c3d28f436",
+          "structure_type": "HIERARCHY",
+          "entity_ids": [
+            "api-acceptance",
+            "confirmed-order-storage",
+            "field-validation",
+            "order-processing-workflow",
+            "payload-parsing"
+          ],
+          "relationship_ids": [
+            "rel-api-acceptance-part-of-workflow",
+            "rel-storage-part-of-workflow",
+            "rel-validation-part-of-workflow",
+            "rel-parsing-part-of-workflow"
+          ],
+          "relationship_types": [
+            "PART_OF",
+            "PART_OF",
+            "PART_OF",
+            "PART_OF"
+          ],
+          "metadata": {
+            "supporting_relationship_ids_by_edge": [
+              [
+                "rel-api-acceptance-part-of-workflow"
+              ],
+              [
+                "rel-storage-part-of-workflow"
+              ],
+              [
+                "rel-validation-part-of-workflow"
+              ],
+              [
+                "rel-parsing-part-of-workflow"
+              ]
+            ],
+            "hierarchy_relationship_type": "PART_OF",
+            "roots": [
+              "order-processing-workflow"
+            ],
+            "leaves": [
+              "api-acceptance",
+              "confirmed-order-storage",
+              "field-validation",
+              "payload-parsing"
+            ],
+            "contains_cycle": false
+          }
+        },
+        {
+          "id": "structure-process-chain-dc4302e77a8c42df",
+          "structure_type": "PROCESS_CHAIN",
+          "entity_ids": [
+            "api-acceptance",
+            "payload-parsing",
+            "field-validation"
+          ],
+          "relationship_ids": [
+            "rel-acceptance-precedes-parsing",
+            "rel-parsing-precedes-validation"
+          ],
+          "relationship_types": [
+            "PRECEDES",
+            "PRECEDES"
+          ],
+          "metadata": {
+            "supporting_relationship_ids_by_edge": [
+              [
+                "rel-acceptance-precedes-parsing"
+              ],
+              [
+                "rel-parsing-precedes-validation"
+              ]
+            ],
+            "edge_count": 2
+          }
+        },
+        {
+          "id": "structure-process-chain-aa0c61ad8a4f289b",
+          "structure_type": "PROCESS_CHAIN",
+          "entity_ids": [
+            "inventory-check",
+            "payment-authorization"
+          ],
+          "relationship_ids": [
+            "rel-inventory-precedes-payment"
+          ],
+          "relationship_types": [
+            "PRECEDES"
+          ],
+          "metadata": {
+            "supporting_relationship_ids_by_edge": [
+              [
+                "rel-inventory-precedes-payment"
+              ]
+            ],
+            "edge_count": 1
+          }
+        }
+      ],
+      "detector_version": "spec-004-v1",
+      "metadata": {
+        "structure_counts": {
+          "HIERARCHY": 1,
+          "CAUSAL_PATH": 0,
+          "PROCESS_CHAIN": 2,
+          "DEPENDENCY_CHAIN": 0,
+          "FEEDBACK_CANDIDATE": 0
+        },
+        "logical_relationship_count": 12,
+        "input_relationship_count": 12,
+        "maximum_causal_path_edges": 5
+      }
+    },
+    "representation": {
+      "document_id": "text-79c197b799735d88",
+      "title": "Unknown",
+      "domain": "unknown",
+      "representations": [
+        {
+          "id": "representation-f7d97a6c138b2647",
+          "representation_type": "HIERARCHY",
+          "source_structure_ids": [
+            "structure-hierarchy-dfc3a14c3d28f436"
+          ],
+          "title": "Hierarchy",
+          "nodes": [
+            {
+              "entity_id": "api-acceptance",
+              "label": "API order-request acceptance",
+              "description": "The stage in which the API accepts an order request and begins the workflow.",
+              "entity_type": "PROCESS"
+            },
+            {
+              "entity_id": "confirmed-order-storage",
+              "label": "confirmed-order storage",
+              "description": "The stage in which the order component stores the confirmed order.",
+              "entity_type": "PROCESS"
+            },
+            {
+              "entity_id": "field-validation",
+              "label": "required-field validation",
+              "description": "The stage in which required customer and item fields are validated.",
+              "entity_type": "PROCESS"
+            },
+            {
+              "entity_id": "order-processing-workflow",
+              "label": "order-processing workflow",
+              "description": "The process used by the service to handle one submitted order.",
+              "entity_type": "PROCESS"
+            },
+            {
+              "entity_id": "payload-parsing",
+              "label": "payload parsing",
+              "description": "The stage in which the API parses the submitted order payload.",
+              "entity_type": "PROCESS"
+            }
+          ],
+          "edges": [
+            {
+              "source_entity_id": "api-acceptance",
+              "target_entity_id": "order-processing-workflow",
+              "relationship_type": "PART_OF",
+              "relationship_label": "PART OF",
+              "meaning": "The source is a constituent or component of the target.",
+              "direction": "part_to_whole",
+              "relationship_ids": [
+                "rel-api-acceptance-part-of-workflow"
+              ],
+              "evidence": [
+                {
+                  "relationship_id": "rel-api-acceptance-part-of-workflow",
+                  "document_id": "text-79c197b799735d88",
+                  "start_char": 93,
+                  "end_char": 151,
+                  "quote": "The workflow begins when the API accepts an order request."
+                }
+              ],
+              "origins": [
+                "SOURCE"
+              ],
+              "edge_key": "edge-be63cc7962dd57b6",
+              "provenance_status": "SOURCE_EVIDENCE"
+            },
+            {
+              "source_entity_id": "confirmed-order-storage",
+              "target_entity_id": "order-processing-workflow",
+              "relationship_type": "PART_OF",
+              "relationship_label": "PART OF",
+              "meaning": "The source is a constituent or component of the target.",
+              "direction": "part_to_whole",
+              "relationship_ids": [
+                "rel-storage-part-of-workflow"
+              ],
+              "evidence": [
+                {
+                  "relationship_id": "rel-storage-part-of-workflow",
+                  "document_id": "text-79c197b799735d88",
+                  "start_char": 523,
+                  "end_char": 628,
+                  "quote": "Storing the confirmed order completes the workflow and produces an order identifier for the API response."
+                }
+              ],
+              "origins": [
+                "SOURCE"
+              ],
+              "edge_key": "edge-08bff4f534d6ddc4",
+              "provenance_status": "SOURCE_EVIDENCE"
+            },
+            {
+              "source_entity_id": "field-validation",
+              "target_entity_id": "order-processing-workflow",
+              "relationship_type": "PART_OF",
+              "relationship_label": "PART OF",
+              "meaning": "The source is a constituent or component of the target.",
+              "direction": "part_to_whole",
+              "relationship_ids": [
+                "rel-validation-part-of-workflow"
+              ],
+              "evidence": [
+                {
+                  "relationship_id": "rel-validation-part-of-workflow",
+                  "document_id": "text-79c197b799735d88",
+                  "start_char": 152,
+                  "end_char": 237,
+                  "quote": "The API parses the payload before it validates the required customer and item fields."
+                }
+              ],
+              "origins": [
+                "SOURCE"
+              ],
+              "edge_key": "edge-299052b190ce7d59",
+              "provenance_status": "SOURCE_EVIDENCE"
+            },
+            {
+              "source_entity_id": "payload-parsing",
+              "target_entity_id": "order-processing-workflow",
+              "relationship_type": "PART_OF",
+              "relationship_label": "PART OF",
+              "meaning": "The source is a constituent or component of the target.",
+              "direction": "part_to_whole",
+              "relationship_ids": [
+                "rel-parsing-part-of-workflow"
+              ],
+              "evidence": [
+                {
+                  "relationship_id": "rel-parsing-part-of-workflow",
+                  "document_id": "text-79c197b799735d88",
+                  "start_char": 152,
+                  "end_char": 237,
+                  "quote": "The API parses the payload before it validates the required customer and item fields."
+                }
+              ],
+              "origins": [
+                "SOURCE"
+              ],
+              "edge_key": "edge-9fd11fa72d3c8f6c",
+              "provenance_status": "SOURCE_EVIDENCE"
+            }
+          ],
+          "salience": "PRIMARY",
+          "warnings": [],
+          "layout": {
+            "strategy": "layered_hierarchy",
+            "orientation": "TOP_DOWN",
+            "width": 790,
+            "height": 330,
+            "nodes": [
+              {
+                "entity_id": "api-acceptance",
+                "x": 110,
+                "y": 250,
+                "layer": 1,
+                "order": 0
+              },
+              {
+                "entity_id": "confirmed-order-storage",
+                "x": 300,
+                "y": 250,
+                "layer": 1,
+                "order": 1
+              },
+              {
+                "entity_id": "field-validation",
+                "x": 490,
+                "y": 250,
+                "layer": 1,
+                "order": 2
+              },
+              {
+                "entity_id": "order-processing-workflow",
+                "x": 395,
+                "y": 80,
+                "layer": 0,
+                "order": 0
+              },
+              {
+                "entity_id": "payload-parsing",
+                "x": 680,
+                "y": 250,
+                "layer": 1,
+                "order": 3
+              }
+            ],
+            "edges": [
+              {
+                "edge_key": "edge-08bff4f534d6ddc4",
+                "path_kind": "CUBIC",
+                "points": [
+                  {
+                    "x": 300,
+                    "y": 220
+                  },
+                  {
+                    "x": 300,
+                    "y": 165
+                  },
+                  {
+                    "x": 395,
+                    "y": 165
+                  },
+                  {
+                    "x": 395,
+                    "y": 110
+                  }
+                ],
+                "label_x": 348,
+                "label_y": 156
+              },
+              {
+                "edge_key": "edge-299052b190ce7d59",
+                "path_kind": "CUBIC",
+                "points": [
+                  {
+                    "x": 490,
+                    "y": 220
+                  },
+                  {
+                    "x": 490,
+                    "y": 165
+                  },
+                  {
+                    "x": 395,
+                    "y": 165
+                  },
+                  {
+                    "x": 395,
+                    "y": 110
+                  }
+                ],
+                "label_x": 442,
+                "label_y": 156
+              },
+              {
+                "edge_key": "edge-9fd11fa72d3c8f6c",
+                "path_kind": "CUBIC",
+                "points": [
+                  {
+                    "x": 680,
+                    "y": 220
+                  },
+                  {
+                    "x": 680,
+                    "y": 165
+                  },
+                  {
+                    "x": 395,
+                    "y": 165
+                  },
+                  {
+                    "x": 395,
+                    "y": 110
+                  }
+                ],
+                "label_x": 538,
+                "label_y": 156
+              },
+              {
+                "edge_key": "edge-be63cc7962dd57b6",
+                "path_kind": "CUBIC",
+                "points": [
+                  {
+                    "x": 110,
+                    "y": 220
+                  },
+                  {
+                    "x": 110,
+                    "y": 165
+                  },
+                  {
+                    "x": 395,
+                    "y": 165
+                  },
+                  {
+                    "x": 395,
+                    "y": 110
+                  }
+                ],
+                "label_x": 252,
+                "label_y": 156
+              }
+            ],
+            "diagnostics": {
+              "crossing_count": 0,
+              "node_overlap_count": 0,
+              "connector_length": 1200.0,
+              "layer_count": 2,
+              "canonical_edges_opposing_layout_flow": 4
+            }
+          }
+        },
+        {
+          "id": "representation-a0006f532b11d8ab",
+          "representation_type": "PROCESS_CHAIN",
+          "source_structure_ids": [
+            "structure-process-chain-dc4302e77a8c42df"
+          ],
+          "title": "Process chronology",
+          "nodes": [
+            {
+              "entity_id": "api-acceptance",
+              "label": "API order-request acceptance",
+              "description": "The stage in which the API accepts an order request and begins the workflow.",
+              "entity_type": "PROCESS"
+            },
+            {
+              "entity_id": "field-validation",
+              "label": "required-field validation",
+              "description": "The stage in which required customer and item fields are validated.",
+              "entity_type": "PROCESS"
+            },
+            {
+              "entity_id": "payload-parsing",
+              "label": "payload parsing",
+              "description": "The stage in which the API parses the submitted order payload.",
+              "entity_type": "PROCESS"
+            }
+          ],
+          "edges": [
+            {
+              "source_entity_id": "api-acceptance",
+              "target_entity_id": "payload-parsing",
+              "relationship_type": "PRECEDES",
+              "relationship_label": "PRECEDES",
+              "meaning": "The source occurs before the target in time or an explicit process sequence.",
+              "direction": "earlier_to_later",
+              "relationship_ids": [
+                "rel-acceptance-precedes-parsing"
+              ],
+              "evidence": [
+                {
+                  "relationship_id": "rel-acceptance-precedes-parsing",
+                  "document_id": "text-79c197b799735d88",
+                  "start_char": 93,
+                  "end_char": 237,
+                  "quote": "The workflow begins when the API accepts an order request. The API parses the payload before it validates the required customer and item fields."
+                }
+              ],
+              "origins": [
+                "SOURCE"
+              ],
+              "edge_key": "edge-46fc552d776ad769",
+              "provenance_status": "SOURCE_EVIDENCE"
+            },
+            {
+              "source_entity_id": "payload-parsing",
+              "target_entity_id": "field-validation",
+              "relationship_type": "PRECEDES",
+              "relationship_label": "PRECEDES",
+              "meaning": "The source occurs before the target in time or an explicit process sequence.",
+              "direction": "earlier_to_later",
+              "relationship_ids": [
+                "rel-parsing-precedes-validation"
+              ],
+              "evidence": [
+                {
+                  "relationship_id": "rel-parsing-precedes-validation",
+                  "document_id": "text-79c197b799735d88",
+                  "start_char": 152,
+                  "end_char": 237,
+                  "quote": "The API parses the payload before it validates the required customer and item fields."
+                }
+              ],
+              "origins": [
+                "SOURCE"
+              ],
+              "edge_key": "edge-4398264a485508c8",
+              "provenance_status": "SOURCE_EVIDENCE"
+            }
+          ],
+          "salience": "SECONDARY",
+          "warnings": [],
+          "layout": {
+            "strategy": "chronological_axis",
+            "orientation": "LEFT_TO_RIGHT",
+            "width": 680,
+            "height": 360,
+            "nodes": [
+              {
+                "entity_id": "api-acceptance",
+                "x": 110,
+                "y": 180,
+                "layer": 0,
+                "order": 0
+              },
+              {
+                "entity_id": "field-validation",
+                "x": 570,
+                "y": 180,
+                "layer": 2,
+                "order": 0
+              },
+              {
+                "entity_id": "payload-parsing",
+                "x": 340,
+                "y": 180,
+                "layer": 1,
+                "order": 0
+              }
+            ],
+            "edges": [
+              {
+                "edge_key": "edge-4398264a485508c8",
+                "path_kind": "CUBIC",
+                "points": [
+                  {
+                    "x": 424,
+                    "y": 180
+                  },
+                  {
+                    "x": 455,
+                    "y": 180
+                  },
+                  {
+                    "x": 455,
+                    "y": 180
+                  },
+                  {
+                    "x": 486,
+                    "y": 180
+                  }
+                ],
+                "label_x": 455,
+                "label_y": 171
+              },
+              {
+                "edge_key": "edge-46fc552d776ad769",
+                "path_kind": "CUBIC",
+                "points": [
+                  {
+                    "x": 194,
+                    "y": 180
+                  },
+                  {
+                    "x": 225,
+                    "y": 180
+                  },
+                  {
+                    "x": 225,
+                    "y": 180
+                  },
+                  {
+                    "x": 256,
+                    "y": 180
+                  }
+                ],
+                "label_x": 225,
+                "label_y": 171
+              }
+            ],
+            "diagnostics": {
+              "crossing_count": 0,
+              "node_overlap_count": 0,
+              "connector_length": 124.0,
+              "layer_count": 3,
+              "canonical_edges_opposing_layout_flow": 0
+            }
+          }
+        },
+        {
+          "id": "representation-ec2b17da6229cc8e",
+          "representation_type": "PROCESS_CHAIN",
+          "source_structure_ids": [
+            "structure-process-chain-aa0c61ad8a4f289b"
+          ],
+          "title": "Process chronology",
+          "nodes": [
+            {
+              "entity_id": "inventory-check",
+              "label": "inventory check",
+              "description": "The order component's inventory-check stage.",
+              "entity_type": "PROCESS"
+            },
+            {
+              "entity_id": "payment-authorization",
+              "label": "payment authorization",
+              "description": "The stage in which payment authorization is requested and must succeed.",
+              "entity_type": "PROCESS"
+            }
+          ],
+          "edges": [
+            {
+              "source_entity_id": "inventory-check",
+              "target_entity_id": "payment-authorization",
+              "relationship_type": "PRECEDES",
+              "relationship_label": "PRECEDES",
+              "meaning": "The source occurs before the target in time or an explicit process sequence.",
+              "direction": "earlier_to_later",
+              "relationship_ids": [
+                "rel-inventory-precedes-payment"
+              ],
+              "evidence": [
+                {
+                  "relationship_id": "rel-inventory-precedes-payment",
+                  "document_id": "text-79c197b799735d88",
+                  "start_char": 354,
+                  "end_char": 432,
+                  "quote": "The order component checks inventory before it requests payment authorization."
+                }
+              ],
+              "origins": [
+                "SOURCE"
+              ],
+              "edge_key": "edge-5865ede3b904d715",
+              "provenance_status": "SOURCE_EVIDENCE"
+            }
+          ],
+          "salience": "SPARSE",
+          "warnings": [
+            "Sparse structure: this view contains only one supported relationship."
+          ],
+          "layout": {
+            "strategy": "chronological_axis",
+            "orientation": "LEFT_TO_RIGHT",
+            "width": 450,
+            "height": 360,
+            "nodes": [
+              {
+                "entity_id": "inventory-check",
+                "x": 110,
+                "y": 180,
+                "layer": 0,
+                "order": 0
+              },
+              {
+                "entity_id": "payment-authorization",
+                "x": 340,
+                "y": 180,
+                "layer": 1,
+                "order": 0
+              }
+            ],
+            "edges": [
+              {
+                "edge_key": "edge-5865ede3b904d715",
+                "path_kind": "CUBIC",
+                "points": [
+                  {
+                    "x": 194,
+                    "y": 180
+                  },
+                  {
+                    "x": 225,
+                    "y": 180
+                  },
+                  {
+                    "x": 225,
+                    "y": 180
+                  },
+                  {
+                    "x": 256,
+                    "y": 180
+                  }
+                ],
+                "label_x": 225,
+                "label_y": 171
+              }
+            ],
+            "diagnostics": {
+              "crossing_count": 0,
+              "node_overlap_count": 0,
+              "connector_length": 62.0,
+              "layer_count": 2,
+              "canonical_edges_opposing_layout_flow": 0
+            }
+          }
+        }
+      ],
+      "empty_state": null,
+      "builder_version": "spec-006-v1",
+      "warnings": [],
+      "metadata": {
+        "representation_count": 3,
+        "source_structure_count": 3,
+        "salience_counts": {
+          "PRIMARY": 1,
+          "SECONDARY": 1,
+          "SPARSE": 1
+        },
+        "layout_version": "spec-006-v1"
+      }
+    },
+    "assessment": {
+      "focus_relevance": true,
+      "mechanistic_detail_gain": true,
+      "explanatory_structure": true,
+      "source_support": true,
+      "parent_coherence": true,
+      "compression_relationship": "REQUIRES_HUMAN_REVIEW"
+    }
+  },
+  "grounding_failures": [],
+  "rejected_extraction": null,
+  "retries": 0
+}

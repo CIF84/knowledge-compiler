@@ -1,0 +1,40 @@
+{
+  "outcome": "INSUFFICIENT_SOURCE_DETAIL",
+  "request": {
+    "parent_document_id": "text-49b42a4f08a99742",
+    "parent_representation_id": "representation-985e777f01fa9ec8",
+    "focus_entity_id": "api-component",
+    "focus_label": "API component",
+    "domain": "software_architecture",
+    "strategy_id": "COMPONENT_INTERNALS"
+  },
+  "source_scope": {
+    "strategy": "FULL_DOCUMENT_SMALL_SOURCE",
+    "document_id": "text-49b42a4f08a99742",
+    "start_char": 0,
+    "end_char": 936,
+    "text": "A modular order-processing service separates the API component, order component, payment component, and database. The API component calls the order component through its published interface. The order component requires the payment component to authorize a purchase, and both components require the database to store durable state.\n\nDependency direction is constrained: the payment component must not call the API component. This separation prevents transport details from becoming part of payment logic. Published interfaces enable components to change internally without forcing callers to change, while direct access to another component's private data increases coupling.\n\nThe database is shared infrastructure, so a schema change can still affect both order and payment components. Keeping database access behind component interfaces decreases that coupling but adds implementation work and may make cross-component queries slower.",
+    "connected_relationship_ids": [
+      "rel-1",
+      "rel-5"
+    ]
+  },
+  "reason": "The source identifies that the API component uses a published interface to call the order component and that published interfaces enable internal changes, but it does not provide at least two reliable finer-grained internal parts, responsibilities, or handoffs within the API component. Treating the interface as a contained part or inventing API implementation internals would exceed the source.",
+  "provider_metadata": {
+    "extractor": "llm-resolution",
+    "provider": "openai",
+    "model": "gpt-5.6-luna",
+    "prompt_version": "spec-009-v1",
+    "resolution_strategy_id": "COMPONENT_INTERNALS",
+    "provider_request_id": "resp_091a4fdc373ff024016a99db510e5087d291e835f060683321",
+    "usage": {
+      "input_tokens": 2938,
+      "output_tokens": 589,
+      "total_tokens": 3527
+    }
+  },
+  "artifact": null,
+  "grounding_failures": [],
+  "rejected_extraction": null,
+  "retries": 0
+}

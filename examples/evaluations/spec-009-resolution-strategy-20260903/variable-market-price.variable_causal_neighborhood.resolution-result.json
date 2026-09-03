@@ -1,0 +1,52 @@
+{
+  "outcome": "INSUFFICIENT_SOURCE_DETAIL",
+  "request": {
+    "parent_document_id": "text-e6c889f45171a12a",
+    "parent_representation_id": "representation-fe3ba90cb8cfa3d6",
+    "focus_entity_id": "market-price",
+    "focus_label": "market price",
+    "domain": "economics",
+    "strategy_id": "VARIABLE_CAUSAL_NEIGHBORHOOD"
+  },
+  "source_scope": {
+    "strategy": "FULL_DOCUMENT_SMALL_SOURCE",
+    "document_id": "text-e6c889f45171a12a",
+    "start_char": 0,
+    "end_char": 785,
+    "text": "In a competitive market, buyers create demand and sellers create supply. The market price coordinates their plans. When the price rises, buyers usually demand a smaller quantity, while sellers usually supply a larger quantity. When the price falls, those responses reverse.\n\nIf quantity demanded exceeds quantity supplied, a shortage puts upward pressure on price. The higher price decreases quantity demanded and increases quantity supplied until the shortage narrows. If quantity supplied exceeds quantity demanded, a surplus puts downward pressure on price.\n\nPrice elasticity measures how strongly quantity responds to a price change. When demand is less elastic, a similar reduction in supply can cause a larger price increase because buyers reduce their quantity demanded by less.",
+    "connected_relationship_ids": [
+      "rel-higher-price-decreases-demanded",
+      "rel-higher-price-increases-supplied",
+      "rel-price-decreases-demanded",
+      "rel-price-increases-supplied",
+      "rel-supply-reduction-price-increase",
+      "rel-upward-pressure-price"
+    ]
+  },
+  "reason": "The nominated graph is valid but does not pass the automatic finer-resolution gate.",
+  "provider_metadata": {
+    "extractor": "llm-resolution",
+    "provider": "openai",
+    "model": "gpt-5.6-luna",
+    "prompt_version": "spec-009-v1",
+    "resolution_strategy_id": "VARIABLE_CAUSAL_NEIGHBORHOOD",
+    "provider_request_id": "resp_094ca3b40b88678c016a99db17a83c87d2a28a84200d4a245b",
+    "usage": {
+      "input_tokens": 3168,
+      "output_tokens": 1756,
+      "total_tokens": 4924
+    },
+    "resolution_assessment": {
+      "focus_relevance": true,
+      "mechanistic_detail_gain": false,
+      "explanatory_structure": true,
+      "source_support": true,
+      "parent_coherence": true,
+      "compression_relationship": "REQUIRES_HUMAN_REVIEW"
+    }
+  },
+  "artifact": null,
+  "grounding_failures": [],
+  "rejected_extraction": null,
+  "retries": 0
+}

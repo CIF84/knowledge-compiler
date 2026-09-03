@@ -1,0 +1,193 @@
+{
+  "spec": "SPEC-009",
+  "id": "generated-process-order-workflow-process_stages",
+  "domain": "software_architecture_process",
+  "parent_representation_id": "representation-c68ffce00bf19e99",
+  "focus_entity_id": "order-processing-workflow",
+  "focus_label": "order-processing workflow",
+  "resolution_strategy": {
+    "id": "PROCESS_STAGES",
+    "semantic_role": "PROCESS",
+    "objective": "Explain the selected process at finer resolution through its source-supported internal stages and handoffs.",
+    "seek": [
+      "ordered stages and transitions",
+      "prerequisites or dependencies between stages",
+      "outputs and handoffs produced during the process"
+    ],
+    "avoid": [
+      "forcing PRECEDES when chronology is not explicit in the source",
+      "turning surrounding causes or consequences into invented internal stages"
+    ]
+  },
+  "provenance_kind": "GENERATED_SOURCE_GROUNDED",
+  "provenance_display_label": "Generated from source",
+  "provenance_note": "Compiled with the recorded resolution strategy. Exact source spans are shown for SOURCE relationships; INFERRED relationships carry no evidence.",
+  "child_representation": {
+    "id": "representation-a0006f532b11d8ab",
+    "representation_type": "PROCESS_CHAIN",
+    "source_structure_ids": [
+      "structure-process-chain-dc4302e77a8c42df"
+    ],
+    "title": "Process chronology",
+    "nodes": [
+      {
+        "entity_id": "api-acceptance",
+        "label": "API order-request acceptance",
+        "description": "The stage in which the API accepts an order request and begins the workflow.",
+        "entity_type": "PROCESS"
+      },
+      {
+        "entity_id": "field-validation",
+        "label": "required-field validation",
+        "description": "The stage in which required customer and item fields are validated.",
+        "entity_type": "PROCESS"
+      },
+      {
+        "entity_id": "payload-parsing",
+        "label": "payload parsing",
+        "description": "The stage in which the API parses the submitted order payload.",
+        "entity_type": "PROCESS"
+      }
+    ],
+    "edges": [
+      {
+        "source_entity_id": "api-acceptance",
+        "target_entity_id": "payload-parsing",
+        "relationship_type": "PRECEDES",
+        "relationship_label": "PRECEDES",
+        "meaning": "The source occurs before the target in time or an explicit process sequence.",
+        "direction": "earlier_to_later",
+        "relationship_ids": [
+          "rel-acceptance-precedes-parsing"
+        ],
+        "evidence": [
+          {
+            "relationship_id": "rel-acceptance-precedes-parsing",
+            "document_id": "text-79c197b799735d88",
+            "start_char": 93,
+            "end_char": 237,
+            "quote": "The workflow begins when the API accepts an order request. The API parses the payload before it validates the required customer and item fields."
+          }
+        ],
+        "origins": [
+          "SOURCE"
+        ],
+        "edge_key": "edge-46fc552d776ad769",
+        "provenance_status": "SOURCE_EVIDENCE"
+      },
+      {
+        "source_entity_id": "payload-parsing",
+        "target_entity_id": "field-validation",
+        "relationship_type": "PRECEDES",
+        "relationship_label": "PRECEDES",
+        "meaning": "The source occurs before the target in time or an explicit process sequence.",
+        "direction": "earlier_to_later",
+        "relationship_ids": [
+          "rel-parsing-precedes-validation"
+        ],
+        "evidence": [
+          {
+            "relationship_id": "rel-parsing-precedes-validation",
+            "document_id": "text-79c197b799735d88",
+            "start_char": 152,
+            "end_char": 237,
+            "quote": "The API parses the payload before it validates the required customer and item fields."
+          }
+        ],
+        "origins": [
+          "SOURCE"
+        ],
+        "edge_key": "edge-4398264a485508c8",
+        "provenance_status": "SOURCE_EVIDENCE"
+      }
+    ],
+    "salience": "SECONDARY",
+    "warnings": [],
+    "layout": {
+      "strategy": "chronological_axis",
+      "orientation": "LEFT_TO_RIGHT",
+      "width": 680,
+      "height": 360,
+      "nodes": [
+        {
+          "entity_id": "api-acceptance",
+          "x": 110,
+          "y": 180,
+          "layer": 0,
+          "order": 0
+        },
+        {
+          "entity_id": "field-validation",
+          "x": 570,
+          "y": 180,
+          "layer": 2,
+          "order": 0
+        },
+        {
+          "entity_id": "payload-parsing",
+          "x": 340,
+          "y": 180,
+          "layer": 1,
+          "order": 0
+        }
+      ],
+      "edges": [
+        {
+          "edge_key": "edge-4398264a485508c8",
+          "path_kind": "CUBIC",
+          "points": [
+            {
+              "x": 424,
+              "y": 180
+            },
+            {
+              "x": 455,
+              "y": 180
+            },
+            {
+              "x": 455,
+              "y": 180
+            },
+            {
+              "x": 486,
+              "y": 180
+            }
+          ],
+          "label_x": 455,
+          "label_y": 171
+        },
+        {
+          "edge_key": "edge-46fc552d776ad769",
+          "path_kind": "CUBIC",
+          "points": [
+            {
+              "x": 194,
+              "y": 180
+            },
+            {
+              "x": 225,
+              "y": 180
+            },
+            {
+              "x": 225,
+              "y": 180
+            },
+            {
+              "x": 256,
+              "y": 180
+            }
+          ],
+          "label_x": 225,
+          "label_y": 171
+        }
+      ],
+      "diagnostics": {
+        "crossing_count": 0,
+        "node_overlap_count": 0,
+        "connector_length": 124.0,
+        "layer_count": 3,
+        "canonical_edges_opposing_layout_flow": 0
+      }
+    }
+  }
+}

@@ -375,6 +375,7 @@ def compile_resolution(
             scope,
             "The nominated graph is valid but does not pass the automatic finer-resolution gate.",
             metadata={**nomination.metadata, "resolution_assessment": asdict(assessment)},
+            rejected_extraction=nomination.extraction,
         )
     metadata = nomination.metadata
     artifact = ChildResolutionArtifact(

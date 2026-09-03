@@ -1,0 +1,588 @@
+{
+  "document_id": "text-79c197b799735d88",
+  "title": "Unknown",
+  "domain": "unknown",
+  "representations": [
+    {
+      "id": "representation-f7d97a6c138b2647",
+      "representation_type": "HIERARCHY",
+      "source_structure_ids": [
+        "structure-hierarchy-dfc3a14c3d28f436"
+      ],
+      "title": "Hierarchy",
+      "nodes": [
+        {
+          "entity_id": "api-acceptance",
+          "label": "API order-request acceptance",
+          "description": "The stage in which the API accepts an order request and begins the workflow.",
+          "entity_type": "PROCESS"
+        },
+        {
+          "entity_id": "confirmed-order-storage",
+          "label": "confirmed-order storage",
+          "description": "The stage in which the order component stores the confirmed order.",
+          "entity_type": "PROCESS"
+        },
+        {
+          "entity_id": "field-validation",
+          "label": "required-field validation",
+          "description": "The stage in which required customer and item fields are validated.",
+          "entity_type": "PROCESS"
+        },
+        {
+          "entity_id": "order-processing-workflow",
+          "label": "order-processing workflow",
+          "description": "The process used by the service to handle one submitted order.",
+          "entity_type": "PROCESS"
+        },
+        {
+          "entity_id": "payload-parsing",
+          "label": "payload parsing",
+          "description": "The stage in which the API parses the submitted order payload.",
+          "entity_type": "PROCESS"
+        }
+      ],
+      "edges": [
+        {
+          "source_entity_id": "api-acceptance",
+          "target_entity_id": "order-processing-workflow",
+          "relationship_type": "PART_OF",
+          "relationship_label": "PART OF",
+          "meaning": "The source is a constituent or component of the target.",
+          "direction": "part_to_whole",
+          "relationship_ids": [
+            "rel-api-acceptance-part-of-workflow"
+          ],
+          "evidence": [
+            {
+              "relationship_id": "rel-api-acceptance-part-of-workflow",
+              "document_id": "text-79c197b799735d88",
+              "start_char": 93,
+              "end_char": 151,
+              "quote": "The workflow begins when the API accepts an order request."
+            }
+          ],
+          "origins": [
+            "SOURCE"
+          ],
+          "edge_key": "edge-be63cc7962dd57b6",
+          "provenance_status": "SOURCE_EVIDENCE"
+        },
+        {
+          "source_entity_id": "confirmed-order-storage",
+          "target_entity_id": "order-processing-workflow",
+          "relationship_type": "PART_OF",
+          "relationship_label": "PART OF",
+          "meaning": "The source is a constituent or component of the target.",
+          "direction": "part_to_whole",
+          "relationship_ids": [
+            "rel-storage-part-of-workflow"
+          ],
+          "evidence": [
+            {
+              "relationship_id": "rel-storage-part-of-workflow",
+              "document_id": "text-79c197b799735d88",
+              "start_char": 523,
+              "end_char": 628,
+              "quote": "Storing the confirmed order completes the workflow and produces an order identifier for the API response."
+            }
+          ],
+          "origins": [
+            "SOURCE"
+          ],
+          "edge_key": "edge-08bff4f534d6ddc4",
+          "provenance_status": "SOURCE_EVIDENCE"
+        },
+        {
+          "source_entity_id": "field-validation",
+          "target_entity_id": "order-processing-workflow",
+          "relationship_type": "PART_OF",
+          "relationship_label": "PART OF",
+          "meaning": "The source is a constituent or component of the target.",
+          "direction": "part_to_whole",
+          "relationship_ids": [
+            "rel-validation-part-of-workflow"
+          ],
+          "evidence": [
+            {
+              "relationship_id": "rel-validation-part-of-workflow",
+              "document_id": "text-79c197b799735d88",
+              "start_char": 152,
+              "end_char": 237,
+              "quote": "The API parses the payload before it validates the required customer and item fields."
+            }
+          ],
+          "origins": [
+            "SOURCE"
+          ],
+          "edge_key": "edge-299052b190ce7d59",
+          "provenance_status": "SOURCE_EVIDENCE"
+        },
+        {
+          "source_entity_id": "payload-parsing",
+          "target_entity_id": "order-processing-workflow",
+          "relationship_type": "PART_OF",
+          "relationship_label": "PART OF",
+          "meaning": "The source is a constituent or component of the target.",
+          "direction": "part_to_whole",
+          "relationship_ids": [
+            "rel-parsing-part-of-workflow"
+          ],
+          "evidence": [
+            {
+              "relationship_id": "rel-parsing-part-of-workflow",
+              "document_id": "text-79c197b799735d88",
+              "start_char": 152,
+              "end_char": 237,
+              "quote": "The API parses the payload before it validates the required customer and item fields."
+            }
+          ],
+          "origins": [
+            "SOURCE"
+          ],
+          "edge_key": "edge-9fd11fa72d3c8f6c",
+          "provenance_status": "SOURCE_EVIDENCE"
+        }
+      ],
+      "salience": "PRIMARY",
+      "warnings": [],
+      "layout": {
+        "strategy": "layered_hierarchy",
+        "orientation": "TOP_DOWN",
+        "width": 790,
+        "height": 330,
+        "nodes": [
+          {
+            "entity_id": "api-acceptance",
+            "x": 110,
+            "y": 250,
+            "layer": 1,
+            "order": 0
+          },
+          {
+            "entity_id": "confirmed-order-storage",
+            "x": 300,
+            "y": 250,
+            "layer": 1,
+            "order": 1
+          },
+          {
+            "entity_id": "field-validation",
+            "x": 490,
+            "y": 250,
+            "layer": 1,
+            "order": 2
+          },
+          {
+            "entity_id": "order-processing-workflow",
+            "x": 395,
+            "y": 80,
+            "layer": 0,
+            "order": 0
+          },
+          {
+            "entity_id": "payload-parsing",
+            "x": 680,
+            "y": 250,
+            "layer": 1,
+            "order": 3
+          }
+        ],
+        "edges": [
+          {
+            "edge_key": "edge-08bff4f534d6ddc4",
+            "path_kind": "CUBIC",
+            "points": [
+              {
+                "x": 300,
+                "y": 220
+              },
+              {
+                "x": 300,
+                "y": 165
+              },
+              {
+                "x": 395,
+                "y": 165
+              },
+              {
+                "x": 395,
+                "y": 110
+              }
+            ],
+            "label_x": 348,
+            "label_y": 156
+          },
+          {
+            "edge_key": "edge-299052b190ce7d59",
+            "path_kind": "CUBIC",
+            "points": [
+              {
+                "x": 490,
+                "y": 220
+              },
+              {
+                "x": 490,
+                "y": 165
+              },
+              {
+                "x": 395,
+                "y": 165
+              },
+              {
+                "x": 395,
+                "y": 110
+              }
+            ],
+            "label_x": 442,
+            "label_y": 156
+          },
+          {
+            "edge_key": "edge-9fd11fa72d3c8f6c",
+            "path_kind": "CUBIC",
+            "points": [
+              {
+                "x": 680,
+                "y": 220
+              },
+              {
+                "x": 680,
+                "y": 165
+              },
+              {
+                "x": 395,
+                "y": 165
+              },
+              {
+                "x": 395,
+                "y": 110
+              }
+            ],
+            "label_x": 538,
+            "label_y": 156
+          },
+          {
+            "edge_key": "edge-be63cc7962dd57b6",
+            "path_kind": "CUBIC",
+            "points": [
+              {
+                "x": 110,
+                "y": 220
+              },
+              {
+                "x": 110,
+                "y": 165
+              },
+              {
+                "x": 395,
+                "y": 165
+              },
+              {
+                "x": 395,
+                "y": 110
+              }
+            ],
+            "label_x": 252,
+            "label_y": 156
+          }
+        ],
+        "diagnostics": {
+          "crossing_count": 0,
+          "node_overlap_count": 0,
+          "connector_length": 1200.0,
+          "layer_count": 2,
+          "canonical_edges_opposing_layout_flow": 4
+        }
+      }
+    },
+    {
+      "id": "representation-a0006f532b11d8ab",
+      "representation_type": "PROCESS_CHAIN",
+      "source_structure_ids": [
+        "structure-process-chain-dc4302e77a8c42df"
+      ],
+      "title": "Process chronology",
+      "nodes": [
+        {
+          "entity_id": "api-acceptance",
+          "label": "API order-request acceptance",
+          "description": "The stage in which the API accepts an order request and begins the workflow.",
+          "entity_type": "PROCESS"
+        },
+        {
+          "entity_id": "field-validation",
+          "label": "required-field validation",
+          "description": "The stage in which required customer and item fields are validated.",
+          "entity_type": "PROCESS"
+        },
+        {
+          "entity_id": "payload-parsing",
+          "label": "payload parsing",
+          "description": "The stage in which the API parses the submitted order payload.",
+          "entity_type": "PROCESS"
+        }
+      ],
+      "edges": [
+        {
+          "source_entity_id": "api-acceptance",
+          "target_entity_id": "payload-parsing",
+          "relationship_type": "PRECEDES",
+          "relationship_label": "PRECEDES",
+          "meaning": "The source occurs before the target in time or an explicit process sequence.",
+          "direction": "earlier_to_later",
+          "relationship_ids": [
+            "rel-acceptance-precedes-parsing"
+          ],
+          "evidence": [
+            {
+              "relationship_id": "rel-acceptance-precedes-parsing",
+              "document_id": "text-79c197b799735d88",
+              "start_char": 93,
+              "end_char": 237,
+              "quote": "The workflow begins when the API accepts an order request. The API parses the payload before it validates the required customer and item fields."
+            }
+          ],
+          "origins": [
+            "SOURCE"
+          ],
+          "edge_key": "edge-46fc552d776ad769",
+          "provenance_status": "SOURCE_EVIDENCE"
+        },
+        {
+          "source_entity_id": "payload-parsing",
+          "target_entity_id": "field-validation",
+          "relationship_type": "PRECEDES",
+          "relationship_label": "PRECEDES",
+          "meaning": "The source occurs before the target in time or an explicit process sequence.",
+          "direction": "earlier_to_later",
+          "relationship_ids": [
+            "rel-parsing-precedes-validation"
+          ],
+          "evidence": [
+            {
+              "relationship_id": "rel-parsing-precedes-validation",
+              "document_id": "text-79c197b799735d88",
+              "start_char": 152,
+              "end_char": 237,
+              "quote": "The API parses the payload before it validates the required customer and item fields."
+            }
+          ],
+          "origins": [
+            "SOURCE"
+          ],
+          "edge_key": "edge-4398264a485508c8",
+          "provenance_status": "SOURCE_EVIDENCE"
+        }
+      ],
+      "salience": "SECONDARY",
+      "warnings": [],
+      "layout": {
+        "strategy": "chronological_axis",
+        "orientation": "LEFT_TO_RIGHT",
+        "width": 680,
+        "height": 360,
+        "nodes": [
+          {
+            "entity_id": "api-acceptance",
+            "x": 110,
+            "y": 180,
+            "layer": 0,
+            "order": 0
+          },
+          {
+            "entity_id": "field-validation",
+            "x": 570,
+            "y": 180,
+            "layer": 2,
+            "order": 0
+          },
+          {
+            "entity_id": "payload-parsing",
+            "x": 340,
+            "y": 180,
+            "layer": 1,
+            "order": 0
+          }
+        ],
+        "edges": [
+          {
+            "edge_key": "edge-4398264a485508c8",
+            "path_kind": "CUBIC",
+            "points": [
+              {
+                "x": 424,
+                "y": 180
+              },
+              {
+                "x": 455,
+                "y": 180
+              },
+              {
+                "x": 455,
+                "y": 180
+              },
+              {
+                "x": 486,
+                "y": 180
+              }
+            ],
+            "label_x": 455,
+            "label_y": 171
+          },
+          {
+            "edge_key": "edge-46fc552d776ad769",
+            "path_kind": "CUBIC",
+            "points": [
+              {
+                "x": 194,
+                "y": 180
+              },
+              {
+                "x": 225,
+                "y": 180
+              },
+              {
+                "x": 225,
+                "y": 180
+              },
+              {
+                "x": 256,
+                "y": 180
+              }
+            ],
+            "label_x": 225,
+            "label_y": 171
+          }
+        ],
+        "diagnostics": {
+          "crossing_count": 0,
+          "node_overlap_count": 0,
+          "connector_length": 124.0,
+          "layer_count": 3,
+          "canonical_edges_opposing_layout_flow": 0
+        }
+      }
+    },
+    {
+      "id": "representation-ec2b17da6229cc8e",
+      "representation_type": "PROCESS_CHAIN",
+      "source_structure_ids": [
+        "structure-process-chain-aa0c61ad8a4f289b"
+      ],
+      "title": "Process chronology",
+      "nodes": [
+        {
+          "entity_id": "inventory-check",
+          "label": "inventory check",
+          "description": "The order component's inventory-check stage.",
+          "entity_type": "PROCESS"
+        },
+        {
+          "entity_id": "payment-authorization",
+          "label": "payment authorization",
+          "description": "The stage in which payment authorization is requested and must succeed.",
+          "entity_type": "PROCESS"
+        }
+      ],
+      "edges": [
+        {
+          "source_entity_id": "inventory-check",
+          "target_entity_id": "payment-authorization",
+          "relationship_type": "PRECEDES",
+          "relationship_label": "PRECEDES",
+          "meaning": "The source occurs before the target in time or an explicit process sequence.",
+          "direction": "earlier_to_later",
+          "relationship_ids": [
+            "rel-inventory-precedes-payment"
+          ],
+          "evidence": [
+            {
+              "relationship_id": "rel-inventory-precedes-payment",
+              "document_id": "text-79c197b799735d88",
+              "start_char": 354,
+              "end_char": 432,
+              "quote": "The order component checks inventory before it requests payment authorization."
+            }
+          ],
+          "origins": [
+            "SOURCE"
+          ],
+          "edge_key": "edge-5865ede3b904d715",
+          "provenance_status": "SOURCE_EVIDENCE"
+        }
+      ],
+      "salience": "SPARSE",
+      "warnings": [
+        "Sparse structure: this view contains only one supported relationship."
+      ],
+      "layout": {
+        "strategy": "chronological_axis",
+        "orientation": "LEFT_TO_RIGHT",
+        "width": 450,
+        "height": 360,
+        "nodes": [
+          {
+            "entity_id": "inventory-check",
+            "x": 110,
+            "y": 180,
+            "layer": 0,
+            "order": 0
+          },
+          {
+            "entity_id": "payment-authorization",
+            "x": 340,
+            "y": 180,
+            "layer": 1,
+            "order": 0
+          }
+        ],
+        "edges": [
+          {
+            "edge_key": "edge-5865ede3b904d715",
+            "path_kind": "CUBIC",
+            "points": [
+              {
+                "x": 194,
+                "y": 180
+              },
+              {
+                "x": 225,
+                "y": 180
+              },
+              {
+                "x": 225,
+                "y": 180
+              },
+              {
+                "x": 256,
+                "y": 180
+              }
+            ],
+            "label_x": 225,
+            "label_y": 171
+          }
+        ],
+        "diagnostics": {
+          "crossing_count": 0,
+          "node_overlap_count": 0,
+          "connector_length": 62.0,
+          "layer_count": 2,
+          "canonical_edges_opposing_layout_flow": 0
+        }
+      }
+    }
+  ],
+  "empty_state": null,
+  "builder_version": "spec-006-v1",
+  "warnings": [],
+  "metadata": {
+    "representation_count": 3,
+    "source_structure_count": 3,
+    "salience_counts": {
+      "PRIMARY": 1,
+      "SECONDARY": 1,
+      "SPARSE": 1
+    },
+    "layout_version": "spec-006-v1"
+  }
+}

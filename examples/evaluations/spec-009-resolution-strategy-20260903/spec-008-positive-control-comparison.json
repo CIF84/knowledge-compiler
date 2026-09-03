@@ -1,0 +1,49 @@
+{
+  "spec": "SPEC-009",
+  "benchmark_id": "variable-market-price",
+  "comparison_kind": "accepted_SPEC_008_generic_positive_control_vs_SPEC_009_generic_control",
+  "source_equivalence": {
+    "document_id": "text-e6c889f45171a12a",
+    "scope_strategy": "FULL_DOCUMENT_SMALL_SOURCE",
+    "start_char": 0,
+    "end_char": 785,
+    "same_permitted_source": true
+  },
+  "provider_model_equivalence": {
+    "provider": "openai",
+    "model": "gpt-5.6-luna",
+    "same_provider_and_model": true,
+    "spec_008_prompt_version": "spec-008-v1",
+    "spec_009_prompt_version": "spec-009-v1"
+  },
+  "spec_008_accepted_generic_child": {
+    "artifact": "../spec-008-multi-resolution-live-20260903/economics.child.knowledge.json",
+    "entity_count": 11,
+    "relationship_count": 11,
+    "claim_count": 4,
+    "source_relationship_count": 11,
+    "inferred_relationship_count": 0,
+    "structure_count": 10,
+    "representation_count": 2,
+    "independent_semantic_review": "PASS_WITH_NOTE"
+  },
+  "spec_009_generic_control_child": {
+    "artifact": "variable-market-price.generic_detail.child.knowledge.json",
+    "entity_count": 9,
+    "relationship_count": 9,
+    "claim_count": 4,
+    "source_relationship_count": 9,
+    "inferred_relationship_count": 0,
+    "structure_count": 3,
+    "representation_count": 2,
+    "independent_semantic_review": "FAIL_ENDPOINT_MODELING"
+  },
+  "semantic_differences": [
+    "The SPEC-008 child includes demand elasticity and supply reduction; the SPEC-009 Generic child omits them.",
+    "The SPEC-009 Generic child adds buyers and sellers as endpoints but substitutes quantity demanded/supplied for the source concepts demand/supply.",
+    "The SPEC-009 Generic child maps the compound shortage condition to quantity demanded alone CAUSES shortage, creating an unsupported endpoint simplification and a misleading feedback candidate.",
+    "The prior SPEC-008 Generic child is semantically stronger on this positive-control source despite both runs passing deterministic grounding."
+  ],
+  "lexical_overlap_score": null,
+  "repository_comparison_verdict": "SPEC_008_GENERIC_BETTER"
+}

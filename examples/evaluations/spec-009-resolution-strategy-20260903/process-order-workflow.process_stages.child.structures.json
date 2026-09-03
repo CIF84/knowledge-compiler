@@ -1,0 +1,118 @@
+{
+  "source_document_id": "text-79c197b799735d88",
+  "structures": [
+    {
+      "id": "structure-hierarchy-dfc3a14c3d28f436",
+      "structure_type": "HIERARCHY",
+      "entity_ids": [
+        "api-acceptance",
+        "confirmed-order-storage",
+        "field-validation",
+        "order-processing-workflow",
+        "payload-parsing"
+      ],
+      "relationship_ids": [
+        "rel-api-acceptance-part-of-workflow",
+        "rel-storage-part-of-workflow",
+        "rel-validation-part-of-workflow",
+        "rel-parsing-part-of-workflow"
+      ],
+      "relationship_types": [
+        "PART_OF",
+        "PART_OF",
+        "PART_OF",
+        "PART_OF"
+      ],
+      "metadata": {
+        "supporting_relationship_ids_by_edge": [
+          [
+            "rel-api-acceptance-part-of-workflow"
+          ],
+          [
+            "rel-storage-part-of-workflow"
+          ],
+          [
+            "rel-validation-part-of-workflow"
+          ],
+          [
+            "rel-parsing-part-of-workflow"
+          ]
+        ],
+        "hierarchy_relationship_type": "PART_OF",
+        "roots": [
+          "order-processing-workflow"
+        ],
+        "leaves": [
+          "api-acceptance",
+          "confirmed-order-storage",
+          "field-validation",
+          "payload-parsing"
+        ],
+        "contains_cycle": false
+      }
+    },
+    {
+      "id": "structure-process-chain-dc4302e77a8c42df",
+      "structure_type": "PROCESS_CHAIN",
+      "entity_ids": [
+        "api-acceptance",
+        "payload-parsing",
+        "field-validation"
+      ],
+      "relationship_ids": [
+        "rel-acceptance-precedes-parsing",
+        "rel-parsing-precedes-validation"
+      ],
+      "relationship_types": [
+        "PRECEDES",
+        "PRECEDES"
+      ],
+      "metadata": {
+        "supporting_relationship_ids_by_edge": [
+          [
+            "rel-acceptance-precedes-parsing"
+          ],
+          [
+            "rel-parsing-precedes-validation"
+          ]
+        ],
+        "edge_count": 2
+      }
+    },
+    {
+      "id": "structure-process-chain-aa0c61ad8a4f289b",
+      "structure_type": "PROCESS_CHAIN",
+      "entity_ids": [
+        "inventory-check",
+        "payment-authorization"
+      ],
+      "relationship_ids": [
+        "rel-inventory-precedes-payment"
+      ],
+      "relationship_types": [
+        "PRECEDES"
+      ],
+      "metadata": {
+        "supporting_relationship_ids_by_edge": [
+          [
+            "rel-inventory-precedes-payment"
+          ]
+        ],
+        "edge_count": 1
+      }
+    }
+  ],
+  "detector_version": "spec-004-v1",
+  "metadata": {
+    "structure_counts": {
+      "HIERARCHY": 1,
+      "CAUSAL_PATH": 0,
+      "PROCESS_CHAIN": 2,
+      "DEPENDENCY_CHAIN": 0,
+      "FEEDBACK_CANDIDATE": 0
+    },
+    "logical_relationship_count": 12,
+    "input_relationship_count": 12,
+    "maximum_causal_path_edges": 5
+  }
+}

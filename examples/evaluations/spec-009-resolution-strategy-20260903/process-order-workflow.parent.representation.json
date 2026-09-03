@@ -1,0 +1,128 @@
+{
+  "document_id": "text-79c197b799735d88",
+  "title": "Software Architecture Process",
+  "domain": "software_architecture_process",
+  "representations": [
+    {
+      "id": "representation-c68ffce00bf19e99",
+      "representation_type": "HIERARCHY",
+      "source_structure_ids": [
+        "structure-hierarchy-17eac2bc6fe8f02d"
+      ],
+      "title": "Hierarchy",
+      "nodes": [
+        {
+          "entity_id": "order-processing-service",
+          "label": "order-processing service",
+          "description": "A service that handles submitted orders.",
+          "entity_type": "SYSTEM"
+        },
+        {
+          "entity_id": "order-processing-workflow",
+          "label": "order-processing workflow",
+          "description": "The process used by the service to handle one submitted order.",
+          "entity_type": "PROCESS"
+        }
+      ],
+      "edges": [
+        {
+          "source_entity_id": "order-processing-workflow",
+          "target_entity_id": "order-processing-service",
+          "relationship_type": "PART_OF",
+          "relationship_label": "PART OF",
+          "meaning": "The source is a constituent or component of the target.",
+          "direction": "part_to_whole",
+          "relationship_ids": [
+            "parent-rel-workflow-part-of-service"
+          ],
+          "evidence": [
+            {
+              "relationship_id": "parent-rel-workflow-part-of-service",
+              "document_id": "text-79c197b799735d88",
+              "start_char": 0,
+              "end_char": 92,
+              "quote": "The order-processing service contains an order-processing workflow for each submitted order."
+            }
+          ],
+          "origins": [
+            "SOURCE"
+          ],
+          "edge_key": "edge-eb74421b8947df40",
+          "provenance_status": "SOURCE_EVIDENCE"
+        }
+      ],
+      "salience": "SPARSE",
+      "warnings": [
+        "Sparse structure: this view contains only one supported relationship."
+      ],
+      "layout": {
+        "strategy": "layered_hierarchy",
+        "orientation": "TOP_DOWN",
+        "width": 560,
+        "height": 330,
+        "nodes": [
+          {
+            "entity_id": "order-processing-service",
+            "x": 280,
+            "y": 80,
+            "layer": 0,
+            "order": 0
+          },
+          {
+            "entity_id": "order-processing-workflow",
+            "x": 280,
+            "y": 250,
+            "layer": 1,
+            "order": 0
+          }
+        ],
+        "edges": [
+          {
+            "edge_key": "edge-eb74421b8947df40",
+            "path_kind": "CUBIC",
+            "points": [
+              {
+                "x": 280,
+                "y": 220
+              },
+              {
+                "x": 280,
+                "y": 165
+              },
+              {
+                "x": 280,
+                "y": 165
+              },
+              {
+                "x": 280,
+                "y": 110
+              }
+            ],
+            "label_x": 280,
+            "label_y": 156
+          }
+        ],
+        "diagnostics": {
+          "crossing_count": 0,
+          "node_overlap_count": 0,
+          "connector_length": 110.0,
+          "layer_count": 2,
+          "canonical_edges_opposing_layout_flow": 1
+        }
+      }
+    }
+  ],
+  "empty_state": null,
+  "builder_version": "spec-006-v1",
+  "warnings": [],
+  "metadata": {
+    "representation_count": 1,
+    "source_structure_count": 1,
+    "salience_counts": {
+      "PRIMARY": 0,
+      "SECONDARY": 0,
+      "SPARSE": 1
+    },
+    "layout_version": "spec-006-v1"
+  }
+}

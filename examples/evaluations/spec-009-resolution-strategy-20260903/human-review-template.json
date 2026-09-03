@@ -1,0 +1,65 @@
+{
+  "spec": "SPEC-009",
+  "status": "READY_AFTER_INDEPENDENT_REPOSITORY_AND_SEMANTIC_REVIEW",
+  "rating_vocabulary": [
+    "TYPE_AWARE_BETTER",
+    "GENERIC_BETTER",
+    "SAME",
+    "BOTH_WEAK"
+  ],
+  "instructions": "Open each Generic and Type-aware pair in Contextual/Layers mode. Capture spontaneous reaction before answering the focused questions. Do not interpret owner-only review as general learner benefit.",
+  "questions": [
+    "Which child feels more like a genuine semantic zoom?",
+    "Which stays more coherent with the parent focus?",
+    "Does the strategy produce the expected explanatory form?",
+    "Does it omit important source-grounded information the generic child captured?",
+    "Does strategy guidance reduce or increase forced semantics?",
+    "Can the parent plausibly compress the child?",
+    "Would this strategy help while actually learning the topic?"
+  ],
+  "benchmarks": {
+    "variable-market-price": {
+      "focus": "market price",
+      "assigned_strategy": "VARIABLE_CAUSAL_NEIGHBORHOOD",
+      "spontaneous_reaction": "",
+      "semantic_review": "NOT_EVALUATED",
+      "compression_review": {
+        "does_child_explain_parent_at_finer_resolution": "NOT_EVALUATED",
+        "could_parent_compress_child": "NOT_EVALUATED",
+        "information_lost_at_parent_resolution": "",
+        "is_information_loss_appropriate": "NOT_EVALUATED"
+      },
+      "verdict": "NOT_EVALUATED",
+      "observations": ""
+    },
+    "process-order-workflow": {
+      "focus": "order-processing workflow",
+      "assigned_strategy": "PROCESS_STAGES",
+      "spontaneous_reaction": "",
+      "semantic_review": "NOT_EVALUATED",
+      "compression_review": {
+        "does_child_explain_parent_at_finer_resolution": "NOT_EVALUATED",
+        "could_parent_compress_child": "NOT_EVALUATED",
+        "information_lost_at_parent_resolution": "",
+        "is_information_loss_appropriate": "NOT_EVALUATED"
+      },
+      "verdict": "NOT_EVALUATED",
+      "observations": ""
+    },
+    "component-api": {
+      "focus": "API component",
+      "assigned_strategy": "COMPONENT_INTERNALS",
+      "spontaneous_reaction": "",
+      "semantic_review": "NOT_EVALUATED",
+      "compression_review": {
+        "does_child_explain_parent_at_finer_resolution": "NOT_EVALUATED",
+        "could_parent_compress_child": "NOT_EVALUATED",
+        "information_lost_at_parent_resolution": "",
+        "is_information_loss_appropriate": "NOT_EVALUATED"
+      },
+      "verdict": "NOT_EVALUATED",
+      "observations": ""
+    }
+  },
+  "overall_product_decision": "NOT_EVALUATED"
+}

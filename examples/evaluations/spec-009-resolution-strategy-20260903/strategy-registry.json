@@ -1,0 +1,77 @@
+{
+  "spec": "SPEC-009",
+  "strategies": [
+    {
+      "id": "GENERIC_DETAIL",
+      "semantic_role": "GENERIC_CONTROL",
+      "objective": "Produce a local explanatory model centered on the selected concept that exposes lower-level detail not visible in its parent representation.",
+      "seek": [
+        "supported steps, components, variables, interactions, or mechanisms",
+        "meaningful typed relationships that plausibly compress back into the parent concept"
+      ],
+      "avoid": [
+        "merely repeating a subset of the parent graph",
+        "paraphrasing the selected node or importing detail from general knowledge"
+      ]
+    },
+    {
+      "id": "PROCESS_STAGES",
+      "semantic_role": "PROCESS",
+      "objective": "Explain the selected process at finer resolution through its source-supported internal stages and handoffs.",
+      "seek": [
+        "ordered stages and transitions",
+        "prerequisites or dependencies between stages",
+        "outputs and handoffs produced during the process"
+      ],
+      "avoid": [
+        "forcing PRECEDES when chronology is not explicit in the source",
+        "turning surrounding causes or consequences into invented internal stages"
+      ]
+    },
+    {
+      "id": "VARIABLE_CAUSAL_NEIGHBORHOOD",
+      "semantic_role": "VARIABLE",
+      "objective": "Explain the selected variable at finer resolution through its source-supported causal neighborhood.",
+      "seek": [
+        "upstream drivers, constraints, or pressures",
+        "downstream consequences or responses",
+        "mechanisms connecting those influences and effects"
+      ],
+      "avoid": [
+        "closing a causal or feedback loop that the source does not support",
+        "treating correlation, chronology, or interaction as causation"
+      ]
+    },
+    {
+      "id": "COMPONENT_INTERNALS",
+      "semantic_role": "COMPONENT_OR_SYSTEM",
+      "objective": "Explain the selected component or system at finer resolution through its source-supported internals and their interactions.",
+      "seek": [
+        "internal parts or responsibilities",
+        "interactions, interfaces, or handoffs among internals",
+        "dependencies and supported containment relationships"
+      ],
+      "avoid": [
+        "inventing internal parts from general architectural convention",
+        "using PART_OF unless the source supports containment"
+      ]
+    }
+  ],
+  "benchmark_mapping": {
+    "variable-market-price": {
+      "semantic_role": "VARIABLE",
+      "focus": "market price",
+      "strategy_id": "VARIABLE_CAUSAL_NEIGHBORHOOD"
+    },
+    "process-order-workflow": {
+      "semantic_role": "PROCESS",
+      "focus": "order-processing workflow",
+      "strategy_id": "PROCESS_STAGES"
+    },
+    "component-api": {
+      "semantic_role": "COMPONENT_OR_SYSTEM",
+      "focus": "API component",
+      "strategy_id": "COMPONENT_INTERNALS"
+    }
+  }
+}

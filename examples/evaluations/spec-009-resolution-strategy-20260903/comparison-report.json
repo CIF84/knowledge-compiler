@@ -1,0 +1,225 @@
+{
+  "spec": "SPEC-009",
+  "comparisons": [
+    {
+      "benchmark_id": "variable-market-price",
+      "focus_semantic_role": "VARIABLE",
+      "focus": "market price",
+      "generic_run_id": "variable-market-price.generic_detail",
+      "type_aware_run_id": "variable-market-price.variable_causal_neighborhood",
+      "assigned_strategy": "VARIABLE_CAUSAL_NEIGHBORHOOD",
+      "experimental_isolation": {
+        "source_scope_equivalent": true,
+        "parent_context_equivalent_except_strategy_metadata": true,
+        "provider_model_grounding_relationship_grammar_downstream_pipeline_held_constant": true
+      },
+      "machine_comparison": {
+        "generic": {
+          "outcome": "SUCCESS",
+          "counts": {
+            "entity_count": 9,
+            "relationship_count": 9,
+            "claim_count": 4,
+            "source_relationship_count": 9,
+            "inferred_relationship_count": 0,
+            "structure_count": 3,
+            "representation_count": 2
+          },
+          "strategy_pattern_diagnostics": {
+            "run_id": "variable-market-price.generic_detail",
+            "strategy_id": "GENERIC_DETAIL",
+            "semantic_role": "GENERIC_CONTROL",
+            "outcome": "SUCCESS",
+            "pattern_features": {
+              "process_stage_entity_count": 2,
+              "precedence_relationship_count": 0,
+              "dependency_relationship_count": 0,
+              "process_chain_count": 0,
+              "causal_relationship_count": 7,
+              "focus_matching_entity_count": 1,
+              "focus_causal_incoming_count": 2,
+              "focus_causal_outgoing_count": 2,
+              "feedback_candidate_count": 1,
+              "part_of_relationship_count": 0,
+              "interaction_relationship_count": 0,
+              "hierarchy_count": 0
+            },
+            "diagnostic_note": "Pattern features are descriptive diagnostics, not a universal quality score."
+          }
+        },
+        "type_aware": {
+          "outcome": "INSUFFICIENT_SOURCE_DETAIL",
+          "counts": {
+            "entity_count": 0,
+            "relationship_count": 0,
+            "claim_count": 0,
+            "source_relationship_count": 0,
+            "inferred_relationship_count": 0,
+            "structure_count": 0,
+            "representation_count": 0
+          },
+          "strategy_pattern_diagnostics": {
+            "run_id": "variable-market-price.variable_causal_neighborhood",
+            "strategy_id": "VARIABLE_CAUSAL_NEIGHBORHOOD",
+            "semantic_role": "VARIABLE",
+            "outcome": "INSUFFICIENT_SOURCE_DETAIL",
+            "pattern_features": "NOT_AVAILABLE"
+          }
+        }
+      },
+      "qualitative_dimensions": {
+        "grounding_integrity": "REVIEW_RECORDED_OUTCOMES",
+        "focus_relevance": "REQUIRES_SEMANTIC_REVIEW",
+        "resolution_gain": "REQUIRES_SEMANTIC_REVIEW",
+        "strategy_fit": "REQUIRES_SEMANTIC_REVIEW",
+        "structural_usefulness": "REQUIRES_HUMAN_REVIEW",
+        "parent_child_compression_relationship": "REQUIRES_HUMAN_REVIEW",
+        "cognitive_usefulness": "REQUIRES_HUMAN_REVIEW"
+      },
+      "lexical_overlap_score": null,
+      "owner_verdict": "NOT_EVALUATED"
+    },
+    {
+      "benchmark_id": "process-order-workflow",
+      "focus_semantic_role": "PROCESS",
+      "focus": "order-processing workflow",
+      "generic_run_id": "process-order-workflow.generic_detail",
+      "type_aware_run_id": "process-order-workflow.process_stages",
+      "assigned_strategy": "PROCESS_STAGES",
+      "experimental_isolation": {
+        "source_scope_equivalent": true,
+        "parent_context_equivalent_except_strategy_metadata": true,
+        "provider_model_grounding_relationship_grammar_downstream_pipeline_held_constant": true
+      },
+      "machine_comparison": {
+        "generic": {
+          "outcome": "GROUNDING_FAILURE",
+          "counts": {
+            "entity_count": 0,
+            "relationship_count": 0,
+            "claim_count": 0,
+            "source_relationship_count": 0,
+            "inferred_relationship_count": 0,
+            "structure_count": 0,
+            "representation_count": 0
+          },
+          "strategy_pattern_diagnostics": {
+            "run_id": "process-order-workflow.generic_detail",
+            "strategy_id": "GENERIC_DETAIL",
+            "semantic_role": "GENERIC_CONTROL",
+            "outcome": "GROUNDING_FAILURE",
+            "pattern_features": "NOT_AVAILABLE"
+          }
+        },
+        "type_aware": {
+          "outcome": "SUCCESS",
+          "counts": {
+            "entity_count": 11,
+            "relationship_count": 12,
+            "claim_count": 4,
+            "source_relationship_count": 12,
+            "inferred_relationship_count": 0,
+            "structure_count": 3,
+            "representation_count": 3
+          },
+          "strategy_pattern_diagnostics": {
+            "run_id": "process-order-workflow.process_stages",
+            "strategy_id": "PROCESS_STAGES",
+            "semantic_role": "PROCESS",
+            "outcome": "SUCCESS",
+            "pattern_features": {
+              "process_stage_entity_count": 9,
+              "precedence_relationship_count": 3,
+              "dependency_relationship_count": 2,
+              "process_chain_count": 2,
+              "causal_relationship_count": 0,
+              "focus_matching_entity_count": 1,
+              "focus_causal_incoming_count": 0,
+              "focus_causal_outgoing_count": 0,
+              "feedback_candidate_count": 0,
+              "part_of_relationship_count": 4,
+              "interaction_relationship_count": 1,
+              "hierarchy_count": 1
+            },
+            "diagnostic_note": "Pattern features are descriptive diagnostics, not a universal quality score."
+          }
+        }
+      },
+      "qualitative_dimensions": {
+        "grounding_integrity": "REVIEW_RECORDED_OUTCOMES",
+        "focus_relevance": "REQUIRES_SEMANTIC_REVIEW",
+        "resolution_gain": "REQUIRES_SEMANTIC_REVIEW",
+        "strategy_fit": "REQUIRES_SEMANTIC_REVIEW",
+        "structural_usefulness": "REQUIRES_HUMAN_REVIEW",
+        "parent_child_compression_relationship": "REQUIRES_HUMAN_REVIEW",
+        "cognitive_usefulness": "REQUIRES_HUMAN_REVIEW"
+      },
+      "lexical_overlap_score": null,
+      "owner_verdict": "NOT_EVALUATED"
+    },
+    {
+      "benchmark_id": "component-api",
+      "focus_semantic_role": "COMPONENT_OR_SYSTEM",
+      "focus": "API component",
+      "generic_run_id": "component-api.generic_detail",
+      "type_aware_run_id": "component-api.component_internals",
+      "assigned_strategy": "COMPONENT_INTERNALS",
+      "experimental_isolation": {
+        "source_scope_equivalent": true,
+        "parent_context_equivalent_except_strategy_metadata": true,
+        "provider_model_grounding_relationship_grammar_downstream_pipeline_held_constant": true
+      },
+      "machine_comparison": {
+        "generic": {
+          "outcome": "GROUNDING_FAILURE",
+          "counts": {
+            "entity_count": 0,
+            "relationship_count": 0,
+            "claim_count": 0,
+            "source_relationship_count": 0,
+            "inferred_relationship_count": 0,
+            "structure_count": 0,
+            "representation_count": 0
+          },
+          "strategy_pattern_diagnostics": {
+            "run_id": "component-api.generic_detail",
+            "strategy_id": "GENERIC_DETAIL",
+            "semantic_role": "GENERIC_CONTROL",
+            "outcome": "GROUNDING_FAILURE",
+            "pattern_features": "NOT_AVAILABLE"
+          }
+        },
+        "type_aware": {
+          "outcome": "INSUFFICIENT_SOURCE_DETAIL",
+          "counts": {
+            "entity_count": 0,
+            "relationship_count": 0,
+            "claim_count": 0,
+            "source_relationship_count": 0,
+            "inferred_relationship_count": 0,
+            "structure_count": 0,
+            "representation_count": 0
+          },
+          "strategy_pattern_diagnostics": {
+            "run_id": "component-api.component_internals",
+            "strategy_id": "COMPONENT_INTERNALS",
+            "semantic_role": "COMPONENT_OR_SYSTEM",
+            "outcome": "INSUFFICIENT_SOURCE_DETAIL",
+            "pattern_features": "NOT_AVAILABLE"
+          }
+        }
+      },
+      "qualitative_dimensions": {
+        "grounding_integrity": "REVIEW_RECORDED_OUTCOMES",
+        "focus_relevance": "REQUIRES_SEMANTIC_REVIEW",
+        "resolution_gain": "REQUIRES_SEMANTIC_REVIEW",
+        "strategy_fit": "REQUIRES_SEMANTIC_REVIEW",
+        "structural_usefulness": "REQUIRES_HUMAN_REVIEW",
+        "parent_child_compression_relationship": "REQUIRES_HUMAN_REVIEW",
+        "cognitive_usefulness": "REQUIRES_HUMAN_REVIEW"
+      },
+      "lexical_overlap_score": null,
+      "owner_verdict": "NOT_EVALUATED"
+    }
+  ]
+}

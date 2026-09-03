@@ -1,0 +1,131 @@
+{
+  "spec": "SPEC-009",
+  "review_scope": "Independent repository, provenance, semantic, and navigation inspection before owner review",
+  "matrix_integrity": {
+    "authorized_generation_calls": 6,
+    "actual_generation_calls": 6,
+    "automatic_retries": 0,
+    "hidden_retries_or_favorable_run_selection": false,
+    "external_enrichment": false,
+    "source_scope_equivalent_within_all_pairs": true,
+    "parent_context_equivalent_except_strategy_metadata_within_all_pairs": true,
+    "all_parents_immutable": true
+  },
+  "usage": {
+    "input_tokens": 17981,
+    "output_tokens": 8828,
+    "total_tokens": 26809,
+    "monetary_cost": "NOT_AVAILABLE",
+    "cost_note": "The provider returned token usage but no authoritative monetary charge; no unverified estimate was substituted."
+  },
+  "deterministic_trust_boundary": {
+    "accepted_children": 2,
+    "accepted_source_relationships": 21,
+    "accepted_inferred_relationships": 0,
+    "accepted_source_claims": 8,
+    "accepted_inferred_claims": 0,
+    "accepted_relationships_with_valid_exact_evidence": 21,
+    "accepted_claims_with_valid_exact_evidence": 8,
+    "successful_child_structure_representation_layout_validation": "2/2 PASS",
+    "mechanical_canonical_direction_validation": "PASS",
+    "grounding_rejections": 2,
+    "grounding_rejected_proposals_preserved": 2,
+    "gate_rejections": 1,
+    "gate_rejected_proposals_preserved": 0,
+    "gate_preservation_note": "The valid-but-not-finer variable proposal was discarded by the automatic gate before the audit discovered the preservation gap. The code is corrected for future runs, but this proposal cannot be reconstructed without an unauthorized seventh call, so no retry was made."
+  },
+  "run_reviews": {
+    "variable-market-price.generic_detail": {
+      "machine_outcome": "SUCCESS",
+      "grounding_integrity": "PASS",
+      "focus_relevance": "PASS",
+      "resolution_gain": "PASS_WITH_NOTE",
+      "strategy_pattern": "CAUSAL_NEIGHBORHOOD_PRESENT",
+      "semantic_truthfulness": "FAIL_ENDPOINT_MODELING",
+      "findings": [
+        "rel-quantity-demanded-exceeds-supplied-shortage represents the compound condition 'quantity demanded exceeds quantity supplied' as quantity demanded alone CAUSES shortage.",
+        "rel-buyers-create-demand and rel-sellers-create-supply use quantity variables as endpoints for source statements about demand and supply; this is an explicit but lossy concept-to-variable substitution.",
+        "The resulting feedback candidate inherits the shortage endpoint defect and must not be treated as a trustworthy supported loop."
+      ]
+    },
+    "variable-market-price.variable_causal_neighborhood": {
+      "machine_outcome": "INSUFFICIENT_SOURCE_DETAIL",
+      "automatic_gate": {
+        "focus_relevance": true,
+        "mechanistic_detail_gain": false,
+        "explanatory_structure": true,
+        "source_support": true,
+        "parent_coherence": true
+      },
+      "semantic_truthfulness": "NOT_REVIEWABLE_PROPOSAL_NOT_PRESERVED",
+      "finding": "The type-aware proposal was valid and grounded but added fewer than two entities outside the parent model, so the unchanged finer-resolution gate rejected it."
+    },
+    "process-order-workflow.generic_detail": {
+      "machine_outcome": "GROUNDING_FAILURE",
+      "fail_closed_result": "PASS",
+      "rejected_proposal_preserved": true,
+      "finding": "An INFERRED PRECEDES relationship carried source evidence; the complete child was correctly rejected without repair or retry."
+    },
+    "process-order-workflow.process_stages": {
+      "machine_outcome": "SUCCESS",
+      "grounding_integrity": "PASS",
+      "focus_relevance": "PASS",
+      "resolution_gain": "PASS",
+      "strategy_pattern": "PROCESS_STAGES_PRESENT",
+      "semantic_truthfulness": "FAIL_ENDPOINT_MODELING",
+      "findings": [
+        "The child exposes nine process entities, three PRECEDES relationships, two detected process chains, supported stage containment, prerequisites, and outputs.",
+        "rel-command-transferred-to-component uses order-command-transfer as the TRANSFERS_TO target. The canonical contract requires the destination or recipient as target; the source-supported target should be order-component.",
+        "The selected navigation representation is a truthful three-stage chronology and does not include the defective transfer edge, but the complete child semantic artifact still requires correction or rejection before product use."
+      ]
+    },
+    "component-api.generic_detail": {
+      "machine_outcome": "GROUNDING_FAILURE",
+      "fail_closed_result": "PASS",
+      "rejected_proposal_preserved": true,
+      "finding": "INFERRED interaction/enabling relationships carried source evidence; the complete child was correctly rejected without repair or retry."
+    },
+    "component-api.component_internals": {
+      "machine_outcome": "INSUFFICIENT_SOURCE_DETAIL",
+      "source_sufficiency_finding": "PASS_HONEST_INSUFFICIENCY",
+      "finding": "The accepted source describes the API boundary and an external call but does not support two internal parts, responsibilities, or internal handoffs. The type-aware strategy declined to invent them."
+    }
+  },
+  "pair_findings": {
+    "variable-market-price": {
+      "repository_verdict": "BOTH_WEAK",
+      "reason": "Generic produced the desired causal form but contains endpoint loss; type-aware was correctly rejected for insufficient resolution gain."
+    },
+    "process-order-workflow": {
+      "repository_verdict": "TYPE_AWARE_BETTER",
+      "reason": "Type-aware produced the intended stage structure while Generic failed grounding, but the full type-aware child still contains one transfer-endpoint defect."
+    },
+    "component-api": {
+      "repository_verdict": "BOTH_WEAK",
+      "reason": "Neither produced a usable child; the type-aware insufficiency is safer and more source-honest than Generic's rejected proposal."
+    }
+  },
+  "provisional_product_decision": {
+    "outcome": "MIXED_BY_ROLE",
+    "interpretation": "PROCESS_STAGES shows distinct value, COMPONENT_INTERNALS improves source-sufficiency honesty, and VARIABLE_CAUSAL_NEIGHBORHOOD did not outperform the control in this run. Endpoint-role validation remains a hard quality gap before strategy success can be claimed broadly.",
+    "owner_human_review": "PENDING"
+  },
+  "navigation_smoke_test": {
+    "status": "PASS",
+    "successful_children_tested": [
+      "variable-market-price.generic_detail",
+      "process-order-workflow.process_stages"
+    ],
+    "contextual_mode": true,
+    "generated_from_source_label": true,
+    "parent_context": true,
+    "back_navigation": true,
+    "exact_quote_and_character_span_visible": true,
+    "relationship_provenance": "GENERATED_SOURCE_GROUNDED"
+  },
+  "human_review": {
+    "status": "PENDING",
+    "template": "human-review-template.json",
+    "warning": "Do not treat machine SUCCESS as semantic acceptance; review this artifact first."
+  }
+}
