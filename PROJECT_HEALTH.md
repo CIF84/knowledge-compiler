@@ -15,31 +15,33 @@ This document is the lightweight monitoring surface for alignment, drift, uncert
 
 | Dimension | Status | Evidence / interpretation |
 | --- | --- | --- |
-| Product alignment | ALIGNED | SPEC-003 tested the highest-value uncertainty identified by SPEC-002: whether explicit relationship semantics improve cross-domain edge truthfulness. |
-| Scope discipline | ALIGNED | Work stayed limited to relationship semantics, prompting, regression evaluation, and tests. |
-| Architecture alignment | ALIGNED | `KnowledgeModel` and `KnowledgeExtractor` boundaries remain intact; relationship semantics were added as provider-independent core metadata. |
-| Memory alignment | ALIGNED | SPEC-003 now has a paired DEBRIEF and canonical project models reflect its findings. |
-| Process effectiveness | ALIGNED | Third complete repo-centered cycle succeeded; prior debrief evidence became regression input and push-before-review again avoided state ambiguity. |
-| Test confidence | ALIGNED | Reported suite expanded to 32 offline tests; live five-domain evaluation and artifact round-trips also completed. |
-| Complexity discipline | ALIGNED | Vocabulary grew by only three general predicates; no universal ontology, UI, persistence, or structure engine was introduced. |
-| Reproducibility | WATCH | Repository context continues to support concise handoffs, but a deliberately fresh-thread reconstruction test remains outstanding. |
+| Product alignment | ALIGNED | SPEC-004 tested the next architectural assumption directly: whether the semantic IR can yield useful higher-order structures. |
+| Scope discipline | ALIGNED | Work stayed deterministic and downstream; no new LLM behavior, ingestion, persistence, visualization, or ontology expansion was introduced. |
+| Architecture alignment | ALIGNED | `StructureDetector` consumes `KnowledgeModel` directly and produces a separate `DetectedStructureSet` without bypassing the semantic IR. |
+| Memory alignment | ALIGNED | SPEC-004 now has a paired DEBRIEF and canonical project models reflect the new structure layer. |
+| Process effectiveness | ALIGNED | Fourth complete repo-centered cycle succeeded; accepted SPEC-003 artifacts were reused as stable downstream evaluation inputs. |
+| Test confidence | ALIGNED | Reported suite expanded to 60 offline tests; five-domain structure artifacts were reproduced byte-for-byte and 5/5 domains met expectations. |
+| Complexity discipline | ALIGNED | No graph library, new provider, ontology framework, or visualization stack was added; algorithms use the standard library. |
+| Reproducibility | ALIGNED | Structure detection is deterministic and accepted artifacts reproduced byte-for-byte. Fresh-thread reconstruction remains a separate watch item. |
 | Repository state discipline | ALIGNED | Implementation was committed and pushed before review; canonical remote state was explicit. |
-| Semantic generality | ALIGNED | The same grammar and IR operate across five unrelated domains. |
-| Real extraction reliability | WATCH | SPEC-003 completed five domains with no retries, but one successful run is not enough to claim robust probabilistic reliability. |
-| Relationship vocabulary fitness | ALIGNED | Explicit contracts plus three general predicates materially improved vocabulary fit across the benchmark. No immediate further expansion is justified. |
-| Semantic relationship precision | WATCH | Precision improved materially, but endpoint selection, polarity, `MEASURED_BY`, and duplicate-edge issues remain. |
-| Source grounding | ALIGNED | Exact-quote → deterministic-offset grounding remained intact. |
-| Entity/event/state modeling | WATCH | Remaining failures increasingly involve endpoint choice, actor/event distinctions, and state/process representation. |
-| Duplicate relationship control | WATCH | New duplicate edges appeared in electromagnetism and economics. |
-| Prompt complexity | WATCH | Relationship instructions grew substantially (~1.5k → ~9.7k characters); current cost remains low but ontology/prompt growth is no longer free. |
-| Security / secret handling | WATCH | Secret-handling rules exist; confirm exposed SPEC-002 key rotation outside repository evidence. |
-| Cost / effort efficiency | ALIGNED | Five-domain live experiments remain inexpensive and now provide meaningful before/after product evidence. |
+| Semantic generality | ALIGNED | The same detector operates across five unrelated domains and correctly allows domains with no composable structures. |
+| Relationship vocabulary fitness | ALIGNED | SPEC-004 required no vocabulary expansion, strengthening the current freeze. |
+| Semantic relationship precision | WATCH | Upstream endpoint, chronology, state, polarity, and measurement issues still affect downstream structures. |
+| Source grounding | ALIGNED | Structure detection preserves relationship IDs and therefore retains the path back to grounded source evidence. |
+| Structure composition | ALIGNED | Useful hierarchies, causal paths, dependency chains, chronology, and feedback candidates were detected without source re-reading. |
+| Entity/event/state modeling | WATCH | SPEC-004 provides concrete evidence that weak event/state endpoints degrade process and feedback representations in several domains. |
+| Duplicate relationship control | ALIGNED | Exact duplicate triples are safely collapsed for traversal while original relationship IDs remain preserved. |
+| Pedagogical salience | WATCH | Some structurally valid outputs are weak learning artifacts, e.g. a one-edge classification hierarchy. Representation must distinguish existence from usefulness. |
+| Prompt complexity | WATCH | SPEC-003 grammar remains large; SPEC-004 extracted downstream value without increasing it. |
+| Human semantic review burden | WATCH | Offline deterministic structure evaluation reduces variance, but deciding pedagogical usefulness still requires judgment. |
+| Security / secret handling | WATCH | Security rules remain active; exposed SPEC-002 key rotation is not confirmed in repository evidence. |
+| Cost / effort efficiency | ALIGNED | SPEC-004 answered its question with zero model/API cost and reused accepted artifacts as fixtures. |
 
 ## Highest-Value Current Uncertainty
 
-> Can the current grounded semantic graph be composed deterministically into useful higher-order structures — such as hierarchies, causal paths, temporal/process chains, dependencies, and feedback candidates — without re-reading the source text?
+> Can a small set of deterministic visual/interactive representations turn `DetectedStructureSet` plus grounded `KnowledgeModel` context into a learning artifact that is materially easier to think with than the underlying text or JSON?
 
-This should drive SPEC-004.
+This should drive SPEC-005.
 
 ## Active Watch Items
 
@@ -49,33 +51,33 @@ A genuinely fresh-thread reconstruction test remains unperformed.
 
 ### W-002 — Endpoint / event / state semantics
 
-Remaining errors often select a nearby entity rather than the actual policy, regulation, event, state, or process named by the proposition.
+SPEC-004 shows this is no longer merely an extraction-quality concern. Endpoint/state weaknesses can prevent expected paths from composing or make chronology/feedback structures misleading.
 
-**Response:** carry as a known constraint into structure detection; redesign the IR only if the next experiment demonstrates a concrete blocker.
+**Response:** carry as a known constraint into representation; redesign only when a focused experiment demonstrates the minimum needed change.
 
 ### W-003 — Polarity preservation
 
-`AFFECTS` can preserve directional influence while losing prevention/negative polarity.
+Current causal paths and feedback candidates do not reliably preserve positive/negative/prevention polarity.
 
-**Response:** do not add predicates yet; observe whether structure detection requires explicit polarity metadata.
+**Response:** do not expand predicates opportunistically; observe what the first representation experiment actually needs.
 
-### W-004 — Duplicate relationships
+### W-004 — Pedagogical salience
 
-SPEC-003 introduced duplicate semantic edges in two domains.
+The detector can return technically correct but low-value structures.
 
-**Response:** investigate conservative relationship deduplication only when a focused need is demonstrated; do not weaken entity deduplication or merge semantically distinct edges.
+**Response:** representation should select/emphasize useful structures without changing detector truth semantics.
 
 ### W-005 — Prompt complexity
 
-The canonical grammar substantially increased prompt size.
+The canonical grammar remains materially larger after SPEC-003.
 
-**Response:** freeze vocabulary expansion for now and extract more value from the current grammar before growing instructions further.
+**Response:** continue extracting value downstream before adding semantic prompt complexity.
 
 ### W-006 — Human semantic review bottleneck
 
-Direct model cost is tiny; human review is becoming the dominant cognitive cost.
+Direct computation/model cost is tiny; judgment about correctness and learning usefulness is increasingly the expensive step.
 
-**Response:** prefer deterministic regression checks where possible, but do not replace semantic judgment with an unvalidated probabilistic judge.
+**Response:** automate only deterministic checks; keep human product evaluation for representation quality until a reliable measurement method exists.
 
 ### W-007 — Inference provenance model
 
@@ -91,19 +93,23 @@ SPEC-002 exposed an API key in terminal-state output.
 
 ### R-001 — Relationship vocabulary drift
 
-SPEC-003 materially improved vocabulary fit using explicit contracts plus three general predicates. Status moved from DRIFT to ALIGNED.
+Resolved in SPEC-003 and strengthened in SPEC-004: no new predicate was required for structure detection.
 
 ### R-002 — Semantic edge precision drift
 
-The severe predicate/direction failures from SPEC-002 were substantially reduced. Status moved from DRIFT to WATCH because residual semantic errors remain.
+Severe predicate/direction failures remain improved; residual issues remain WATCH rather than DRIFT.
 
-### R-003 — Local vs remote repository state
+### R-003 — Duplicate relationships for downstream traversal
 
-Push-before-review has now worked across SPEC-002 and SPEC-003.
+SPEC-004 safely collapses exact duplicate triples during discovery while retaining provenance IDs.
 
-### R-004 — Installed CLI fixture path
+### R-004 — Structure-detection uncertainty
 
-Fixture extraction uses explicit `--fixture`; installed-wheel ambiguity is resolved.
+Resolved positively: the current IR supports useful deterministic higher-order composition with known upstream limitations.
+
+### R-005 — Local vs remote repository state
+
+Push-before-review remains reliable.
 
 ## Drift Triggers
 
@@ -111,11 +117,12 @@ Mark a dimension `DRIFT` when examples such as these occur:
 
 - implementation bypasses `KnowledgeModel`;
 - provider-specific types leak into the semantic core;
-- UI or structure detection re-reads source independently instead of consuming the IR;
+- representation or structure detection re-reads source independently instead of consuming canonical IR/context;
 - source-derived evidence provenance is lost;
-- semantic contracts diverge between registry and prompt;
+- detector invents missing links or treats generic connectivity as semantics;
+- weak/empty structures are hidden or repaired solely for presentation completeness;
 - relationship vocabulary grows without cross-domain evidence;
-- schema-valid outputs are treated as semantically correct without evaluation;
+- structurally valid output is treated as automatically pedagogically useful;
 - SPEC scope repeatedly expands;
 - project memory becomes stale relative to implementation;
 - documentation overhead materially slows learning.
