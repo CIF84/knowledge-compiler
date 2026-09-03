@@ -25,6 +25,7 @@ from .resolution_strategies import (
 
 PROVIDER = "openai"
 SPEC_009_PROMPT_VERSION = "spec-009-v1"
+SPEC_010_PROMPT_VERSION = "spec-010-v1"
 
 
 def resolution_schema() -> dict[str, Any]:
@@ -40,8 +41,11 @@ def resolution_schema() -> dict[str, Any]:
             "entities": base["properties"]["entities"],
             "claims": base["properties"]["claims"],
             "relationships": base["properties"]["relationships"],
+            "propositions": base["properties"]["propositions"],
         },
-        "required": ["outcome", "reason", "entities", "claims", "relationships"],
+        "required": [
+            "outcome", "reason", "entities", "claims", "relationships", "propositions"
+        ],
         "additionalProperties": False,
     }
 
@@ -58,7 +62,7 @@ Use only the permitted source text supplied in the request. The selected parent 
 central. Produce a finer explanatory resolution, not a summary. The child should plausibly
 compress back into the parent concept. Do not add detail from general knowledge.
 
-Return INSUFFICIENT_SOURCE_DETAIL with empty entities, claims, and relationships whenever the
+Return INSUFFICIENT_SOURCE_DETAIL with empty entities, claims, relationships, and propositions whenever the
 permitted source cannot support at least two meaningful typed relationships at a finer level.
 This is a correct and preferred outcome over fabrication.
 
@@ -67,6 +71,13 @@ Return quotes only; trusted code resolves coordinates. INFERRED items must have 
 and must never be used to smuggle external knowledge into a successful result. Prefer truthful
 claims over forced edges. Do not return offsets, diagrams, navigation metadata, or prose outside
 the schema.
+
+Use ordinary binary relationships only when their two endpoints preserve the complete source
+proposition. For a comparative antecedent, return a COMPARISON_CONDITION proposition with both
+operands, the comparison operator, and outcome. For a transfer, return a TRANSFER_EVENT
+proposition with distinct event, object, and destination roles. Never collapse a compound
+condition to one operand or use the transfer process as its destination. Trusted code assigns
+proposition IDs and rejects detectable endpoint loss.
 
 Entity types: {', '.join(item.value for item in EntityType)}
 Origins: {', '.join(item.value for item in Origin)}
@@ -120,7 +131,7 @@ class OpenAIResolutionExtractor:
         self,
         *,
         model: str = DEFAULT_MODEL,
-        prompt_version: str = RESOLUTION_PROMPT_VERSION,
+        prompt_version: str = SPEC_010_PROMPT_VERSION,
         api_key: str | None = None,
         client: Any | None = None,
     ) -> None:

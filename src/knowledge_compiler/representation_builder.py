@@ -9,6 +9,8 @@ from typing import Any, Iterable, Mapping
 from .models import KnowledgeModel, Relationship
 from .relationships import RELATIONSHIP_DEFINITION_MAP
 from .representations import (
+    PropositionCard,
+    PropositionRoleView,
     Representation,
     RepresentationEdge,
     RepresentationEvidence,
@@ -140,6 +142,7 @@ class RepresentationBuilder:
             title=title,
             domain=domain,
             representations=tuple(representations),
+            builder_version="spec-010-v1" if model.propositions else "spec-005-v1",
             empty_state=None if representations else (
                 "No supported higher-order structure was detected. The source may still contain useful "
                 "entities and relationships, but this viewer will not invent a diagram."
@@ -148,11 +151,33 @@ class RepresentationBuilder:
             metadata={
                 "representation_count": len(representations),
                 "source_structure_count": len(structures.structures),
+                **({"proposition_card_count": len(model.propositions)} if model.propositions else {}),
                 "salience_counts": {
                     salience.value: sum(item.salience is salience for item in representations)
                     for salience in Salience
                 },
             },
+            proposition_cards=tuple(
+                PropositionCard(
+                    proposition_id=proposition.id,
+                    proposition_type=proposition.proposition_type,
+                    statement=proposition.statement,
+                    roles=tuple(
+                        PropositionRoleView(
+                            role=binding.role,
+                            entity_id=binding.entity_id,
+                            label=entities[binding.entity_id].name,
+                            entity_type=entities[binding.entity_id].entity_type,
+                        )
+                        for binding in proposition.role_bindings
+                    ),
+                    relationship_type=proposition.relationship_type,
+                    comparison_operator=proposition.comparison_operator,
+                    evidence=proposition.evidence,
+                    origin=proposition.origin,
+                )
+                for proposition in sorted(model.propositions, key=lambda item: item.id)
+            ),
         )
         result.validate_against(model, structures)
         return result

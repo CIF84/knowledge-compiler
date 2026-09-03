@@ -7,7 +7,17 @@ from enum import StrEnum
 from hashlib import sha256
 from typing import Any, Mapping
 
-from .models import EntityType, KnowledgeModel, Origin, RelationshipType, ValidationError
+from .models import (
+    ComparisonOperator,
+    EntityType,
+    KnowledgeModel,
+    Origin,
+    PropositionRole,
+    PropositionType,
+    RelationshipType,
+    SourceSpan,
+    ValidationError,
+)
 from .relationships import RELATIONSHIP_DEFINITION_MAP
 from .structures import DetectedStructureSet, StructureType
 
@@ -267,6 +277,80 @@ class RepresentationEdge:
 
 
 @dataclass(frozen=True, slots=True)
+class PropositionRoleView:
+    role: PropositionRole
+    entity_id: str
+    label: str
+    entity_type: EntityType
+
+    def __post_init__(self) -> None:
+        try:
+            object.__setattr__(self, "role", PropositionRole(self.role))
+            object.__setattr__(self, "entity_type", EntityType(self.entity_type))
+        except (TypeError, ValueError) as exc:
+            raise ValidationError("proposition role view enum value is invalid") from exc
+        for name in ("entity_id", "label"):
+            if not isinstance(getattr(self, name), str) or not getattr(self, name).strip():
+                raise ValidationError(f"proposition role view {name} must be non-empty")
+
+    @classmethod
+    def from_dict(cls, value: Mapping[str, Any]) -> PropositionRoleView:
+        return cls(
+            role=value.get("role"), entity_id=value.get("entity_id"),
+            label=value.get("label"), entity_type=value.get("entity_type"),
+        )
+
+
+@dataclass(frozen=True, slots=True)
+class PropositionCard:
+    proposition_id: str
+    proposition_type: PropositionType
+    statement: str
+    roles: tuple[PropositionRoleView, ...]
+    relationship_type: RelationshipType
+    comparison_operator: ComparisonOperator | None
+    evidence: tuple[SourceSpan, ...]
+    origin: Origin
+
+    def __post_init__(self) -> None:
+        for name in ("proposition_id", "statement"):
+            if not isinstance(getattr(self, name), str) or not getattr(self, name).strip():
+                raise ValidationError(f"proposition card {name} must be non-empty")
+        try:
+            object.__setattr__(self, "proposition_type", PropositionType(self.proposition_type))
+            object.__setattr__(self, "relationship_type", RelationshipType(self.relationship_type))
+            object.__setattr__(self, "origin", Origin(self.origin))
+            operator = (
+                ComparisonOperator(self.comparison_operator)
+                if self.comparison_operator is not None else None
+            )
+        except (TypeError, ValueError) as exc:
+            raise ValidationError("proposition card enum value is invalid") from exc
+        roles = tuple(self.roles)
+        if not roles or len({item.role for item in roles}) != len(roles):
+            raise ValidationError("proposition card roles must be non-empty and unique")
+        object.__setattr__(self, "roles", roles)
+        object.__setattr__(self, "comparison_operator", operator)
+        object.__setattr__(self, "evidence", tuple(self.evidence))
+
+    @property
+    def provenance_status(self) -> str:
+        return "SOURCE_EVIDENCE" if self.evidence else "INFERRED_NO_SOURCE_EVIDENCE"
+
+    @classmethod
+    def from_dict(cls, value: Mapping[str, Any]) -> PropositionCard:
+        return cls(
+            proposition_id=value.get("proposition_id"),
+            proposition_type=value.get("proposition_type"),
+            statement=value.get("statement"),
+            roles=tuple(PropositionRoleView.from_dict(item) for item in value.get("roles", ())),
+            relationship_type=value.get("relationship_type"),
+            comparison_operator=value.get("comparison_operator"),
+            evidence=tuple(SourceSpan.from_dict(item) for item in value.get("evidence", ())),
+            origin=value.get("origin"),
+        )
+
+@dataclass(frozen=True, slots=True)
 class Representation:
     id: str
     representation_type: StructureType
@@ -334,6 +418,7 @@ class RepresentationModel:
     builder_version: str = "spec-005-v1"
     warnings: tuple[str, ...] = ()
     metadata: Mapping[str, Any] = field(default_factory=dict)
+    proposition_cards: tuple[PropositionCard, ...] = ()
 
     def __post_init__(self) -> None:
         for name in ("document_id", "title", "domain", "builder_version"):
@@ -348,6 +433,9 @@ class RepresentationModel:
         if not representations and (not isinstance(self.empty_state, str) or not self.empty_state.strip()):
             raise ValidationError("empty representation model requires an explanatory empty state")
         warnings = tuple(self.warnings)
+        proposition_cards = tuple(self.proposition_cards)
+        if len({item.proposition_id for item in proposition_cards}) != len(proposition_cards):
+            raise ValidationError("proposition card IDs must be unique")
         if any(not isinstance(warning, str) or not warning.strip() for warning in warnings):
             raise ValidationError("representation model warnings must be non-empty strings")
         if not isinstance(self.metadata, Mapping):
@@ -355,6 +443,7 @@ class RepresentationModel:
         object.__setattr__(self, "representations", representations)
         object.__setattr__(self, "warnings", warnings)
         object.__setattr__(self, "metadata", dict(self.metadata))
+        object.__setattr__(self, "proposition_cards", proposition_cards)
 
     def validate_against(self, model: KnowledgeModel, structures: DetectedStructureSet) -> None:
         if self.document_id != model.document.id or self.document_id != structures.source_document_id:
@@ -362,6 +451,7 @@ class RepresentationModel:
         structure_ids = {item.id for item in structures.structures}
         entities = {item.id: item for item in model.entities}
         relationships = {item.id: item for item in model.relationships}
+        propositions = {item.id: item for item in model.propositions}
         for representation in self.representations:
             if set(representation.source_structure_ids) - structure_ids:
                 raise ValidationError("representation references an unknown detected structure")
@@ -397,6 +487,31 @@ class RepresentationModel:
                         for span in relationship.evidence
                     ):
                         raise ValidationError("representation evidence was not copied from a source span")
+        for card in self.proposition_cards:
+            proposition = propositions.get(card.proposition_id)
+            if proposition is None or (
+                card.proposition_type,
+                card.statement,
+                card.relationship_type,
+                card.comparison_operator,
+                card.origin,
+            ) != (
+                proposition.proposition_type,
+                proposition.statement,
+                proposition.relationship_type,
+                proposition.comparison_operator,
+                proposition.origin,
+            ):
+                raise ValidationError("proposition card does not match KnowledgeModel proposition")
+            expected_roles = {
+                (item.role, item.entity_id, entities[item.entity_id].name, entities[item.entity_id].entity_type)
+                for item in proposition.role_bindings
+            }
+            actual_roles = {
+                (item.role, item.entity_id, item.label, item.entity_type) for item in card.roles
+            }
+            if actual_roles != expected_roles or card.evidence != proposition.evidence:
+                raise ValidationError("proposition card roles or evidence do not preserve canonical semantics")
 
     def to_dict(self) -> dict[str, Any]:
         value = asdict(self)
@@ -407,6 +522,11 @@ class RepresentationModel:
                 if representation.layout is not None:
                     raw_edge["edge_key"] = edge.edge_key
                 raw_edge["provenance_status"] = edge.provenance_status
+        if not self.proposition_cards:
+            value.pop("proposition_cards")
+        else:
+            for card, raw_card in zip(self.proposition_cards, value["proposition_cards"]):
+                raw_card["provenance_status"] = card.provenance_status
         return value
 
     @classmethod
@@ -418,4 +538,7 @@ class RepresentationModel:
             representations=tuple(Representation.from_dict(item) for item in value.get("representations", ())),
             empty_state=value.get("empty_state"), builder_version=value.get("builder_version", "spec-005-v1"),
             warnings=tuple(value.get("warnings", ())), metadata=value.get("metadata", {}),
+            proposition_cards=tuple(
+                PropositionCard.from_dict(item) for item in value.get("proposition_cards", ())
+            ),
         )

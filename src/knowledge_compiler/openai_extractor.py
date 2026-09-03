@@ -12,11 +12,20 @@ from collections.abc import Mapping
 from typing import Any
 
 from .extractor import ExtractionResult
-from .models import EntityType, Origin, RelationshipType, SourceDocument, ValidationError
+from .models import (
+    ComparisonOperator,
+    EntityType,
+    Origin,
+    PropositionRole,
+    PropositionType,
+    RelationshipType,
+    SourceDocument,
+    ValidationError,
+)
 from .relationships import render_relationship_grammar
 
 DEFAULT_MODEL = "gpt-5.6-luna"
-PROMPT_VERSION = "spec-003-v1"
+PROMPT_VERSION = "spec-010-v1"
 PROVIDER = "openai"
 
 
@@ -34,6 +43,14 @@ If no relationship contract represents a meaningful proposition truthfully, pres
 as a claim instead of forcing it into the nearest edge label. Fewer truthful edges are
 better than more misleading edges. Use concise grounded descriptions and conservative
 confidence values.
+
+Use a typed proposition only for either of these binary-edge failure modes:
+- COMPARISON_CONDITION: a comparison is itself the antecedent of an outcome. Bind
+  LEFT_OPERAND, RIGHT_OPERAND, and OUTCOME; use GREATER_THAN and CAUSES.
+- TRANSFER_EVENT: a transfer must distinguish the EVENT, transferred OBJECT, and
+  DESTINATION; use TRANSFERS_TO.
+Do not also emit a lossy binary edge for the same source proposition. Proposition IDs are
+assigned deterministically by trusted code; do not return an id.
 
 SOURCE means the item is explicitly supported by the supplied text. Every SOURCE item
 must cite one or more exact, verbatim, uniquely occurring source substrings in evidence.
@@ -108,14 +125,51 @@ def extraction_schema() -> dict[str, Any]:
         ],
         "additionalProperties": False,
     }
+    role_binding = {
+        "type": "object",
+        "properties": {
+            "role": {"type": "string", "enum": [item.value for item in PropositionRole]},
+            "entity_id": string,
+        },
+        "required": ["role", "entity_id"],
+        "additionalProperties": False,
+    }
+    proposition = {
+        "type": "object",
+        "properties": {
+            "proposition_type": {
+                "type": "string", "enum": [item.value for item in PropositionType]
+            },
+            "statement": string,
+            "role_bindings": {"type": "array", "items": role_binding},
+            "relationship_type": {
+                "type": "string", "enum": [item.value for item in RelationshipType]
+            },
+            "comparison_operator": {
+                "anyOf": [
+                    {"type": "string", "enum": [item.value for item in ComparisonOperator]},
+                    {"type": "null"},
+                ]
+            },
+            "evidence": evidence,
+            "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+            "origin": {"type": "string", "enum": [item.value for item in Origin]},
+        },
+        "required": [
+            "proposition_type", "statement", "role_bindings", "relationship_type",
+            "comparison_operator", "evidence", "confidence", "origin",
+        ],
+        "additionalProperties": False,
+    }
     return {
         "type": "object",
         "properties": {
             "entities": {"type": "array", "items": entity},
             "claims": {"type": "array", "items": claim},
             "relationships": {"type": "array", "items": relationship},
+            "propositions": {"type": "array", "items": proposition},
         },
-        "required": ["entities", "claims", "relationships"],
+        "required": ["entities", "claims", "relationships", "propositions"],
         "additionalProperties": False,
     }
 
@@ -140,7 +194,7 @@ def resolve_output_evidence(raw: Mapping[str, Any], document: SourceDocument) ->
     if not isinstance(raw, Mapping):
         raise ValidationError("provider extraction output must be an object")
     resolved = dict(raw)
-    for collection_name in ("claims", "relationships"):
+    for collection_name in ("claims", "relationships", "propositions"):
         collection = resolved.get(collection_name, [])
         if not isinstance(collection, list):
             raise ValidationError(f"provider output {collection_name} must be an array")

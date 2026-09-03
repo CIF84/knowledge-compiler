@@ -124,3 +124,13 @@ def test_resolution_strategy_cli_preserves_all_missing_provider_attempts(
     assert report["outcome_counts"]["PROVIDER_FAILURE"] == 6
     assert report["provider_call_count"] == 6
     assert "6/6 paired generation attempts preserved, 6 provider failures" in capsys.readouterr().out
+
+
+def test_proposition_evaluation_cli_is_offline_and_complete(tmp_path: Path, capsys) -> None:
+    output = tmp_path / "propositions"
+    assert main(["evaluate-propositions", "--output-dir", str(output)]) == 0
+    report = json.loads((output / "report.json").read_text())
+    assert report["all_machine_invariants_pass"] is True
+    assert report["provider_calls"] == 0
+    assert (output / "index.html").is_file()
+    assert "2/2 regressions, semantic invariants pass" in capsys.readouterr().out

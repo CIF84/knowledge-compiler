@@ -1,0 +1,165 @@
+{
+  "spec": "SPEC-010",
+  "evaluation_kind": "DETERMINISTIC_ACCEPTED_SOURCE_REGRESSION",
+  "provider_calls": 0,
+  "retries": 0,
+  "external_enrichment": false,
+  "comparisons": {
+    "economics": {
+      "source_proposition": "If quantity demanded exceeds quantity supplied, a shortage puts upward pressure on price.",
+      "current_binary_model": {
+        "id": "rel-quantity-demanded-exceeds-supplied-shortage",
+        "source_entity_id": "quantity-demanded",
+        "relationship_type": "CAUSES",
+        "target_entity_id": "shortage",
+        "statement": "Quantity demanded exceeding quantity supplied produces a shortage.",
+        "evidence": [
+          {
+            "document_id": "text-e6c889f45171a12a",
+            "start_char": 275,
+            "end_char": 364,
+            "quote": "If quantity demanded exceeds quantity supplied, a shortage puts upward pressure on price."
+          }
+        ],
+        "confidence": 0.96,
+        "origin": "SOURCE"
+      },
+      "proposition_aware_model": {
+        "proposition_id": "proposition-comparison-condition-3b486cc59d1cb2d9",
+        "proposition_type": "COMPARISON_CONDITION",
+        "roles": {
+          "LEFT_OPERAND": "quantity-demanded",
+          "OUTCOME": "shortage",
+          "RIGHT_OPERAND": "quantity-supplied"
+        },
+        "comparison_operator": "GREATER_THAN",
+        "relationship_type": "CAUSES",
+        "source_evidence": [
+          {
+            "document_id": "text-e6c889f45171a12a",
+            "start_char": 275,
+            "end_char": 364,
+            "quote": "If quantity demanded exceeds quantity supplied, a shortage puts upward pressure on price."
+          }
+        ]
+      },
+      "source_grounding_status": "PASS_EXACT_SOURCE_SPAN",
+      "semantic_truthfulness_verdict": "PASS_MACHINE_INVARIANTS_HUMAN_REVIEW_PENDING",
+      "information_preserved": [
+        "left operand",
+        "right operand",
+        "comparison operator",
+        "causal outcome"
+      ],
+      "information_lost": [],
+      "old_binary_strict_validation": {
+        "outcome": "REJECTED",
+        "reason": "comparative causal antecedent must be a COMPARISON_CONDITION proposition, not a binary relationship from one operand"
+      },
+      "structure_detection_effect": {
+        "old_structure_count": 3,
+        "new_structure_count": 4,
+        "proposition_shapes_ignored_without_flattening": true
+      },
+      "representation_effect": {
+        "proposition_card_count": 1,
+        "existing_graph_projection_retained": true,
+        "lossy_binary_edge_removed": true
+      }
+    },
+    "process": {
+      "source_proposition": "After validation succeeds, the workflow creates an order command and transfers the command to the order component.",
+      "current_binary_model": {
+        "id": "rel-command-transferred-to-component",
+        "source_entity_id": "order-command",
+        "relationship_type": "TRANSFERS_TO",
+        "target_entity_id": "order-command-transfer",
+        "statement": "The order command is transferred in the handoff to the order component.",
+        "evidence": [
+          {
+            "document_id": "text-79c197b799735d88",
+            "start_char": 238,
+            "end_char": 352,
+            "quote": "After validation succeeds, the workflow creates an order command and transfers the command to the order component."
+          }
+        ],
+        "confidence": 1.0,
+        "origin": "SOURCE"
+      },
+      "proposition_aware_model": {
+        "proposition_id": "proposition-transfer-event-0585bfd49a1173f1",
+        "proposition_type": "TRANSFER_EVENT",
+        "roles": {
+          "DESTINATION": "order-component",
+          "EVENT": "order-command-transfer",
+          "OBJECT": "order-command"
+        },
+        "comparison_operator": null,
+        "relationship_type": "TRANSFERS_TO",
+        "source_evidence": [
+          {
+            "document_id": "text-79c197b799735d88",
+            "start_char": 238,
+            "end_char": 352,
+            "quote": "After validation succeeds, the workflow creates an order command and transfers the command to the order component."
+          }
+        ]
+      },
+      "source_grounding_status": "PASS_EXACT_SOURCE_SPAN",
+      "semantic_truthfulness_verdict": "PASS_MACHINE_INVARIANTS_HUMAN_REVIEW_PENDING",
+      "information_preserved": [
+        "transfer event",
+        "transferred object",
+        "destination"
+      ],
+      "information_lost": [],
+      "old_binary_strict_validation": {
+        "outcome": "REJECTED",
+        "reason": "transfer destination must be an explicit domain endpoint, not a PROCESS"
+      },
+      "structure_detection_effect": {
+        "old_structure_count": 3,
+        "new_structure_count": 3,
+        "proposition_shapes_ignored_without_flattening": true
+      },
+      "representation_effect": {
+        "proposition_card_count": 1,
+        "existing_graph_projection_retained": true,
+        "lossy_binary_edge_removed": true
+      }
+    }
+  },
+  "machine_semantic_regressions": {
+    "economics": {
+      "deterministic_round_trip": true,
+      "stable_proposition_id": true,
+      "exact_evidence_valid": true,
+      "role_count": 3,
+      "proposition_card_validated": true,
+      "ordinary_binary_relationships_validate": true,
+      "both_comparison_operands_preserved": true,
+      "comparison_operator_preserved": true,
+      "condition_is_causal_source": true,
+      "operand_only_causal_edge_removed": true
+    },
+    "process": {
+      "deterministic_round_trip": true,
+      "stable_proposition_id": true,
+      "exact_evidence_valid": true,
+      "role_count": 3,
+      "proposition_card_validated": true,
+      "ordinary_binary_relationships_validate": true,
+      "transfer_object_preserved": true,
+      "transfer_destination_preserved": true,
+      "destination_distinct_from_event": true,
+      "chronology_direction_preserved": true
+    }
+  },
+  "all_machine_invariants_pass": true,
+  "canonical_relationship_count": 20,
+  "predicate_vocabulary_unchanged": true,
+  "input_artifacts_byte_preserved": true,
+  "parent_artifacts_immutable": true,
+  "navigation_behavior_changed": false,
+  "human_semantic_verdict": "PENDING"
+}

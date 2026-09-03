@@ -8,6 +8,7 @@ from .deduplicate import deduplicate_entities
 from .extractor import KnowledgeExtractor
 from .models import KnowledgeModel
 from .normalize import normalize_document
+from .proposition_validation import validate_proposition_coverage
 
 
 def compile_knowledge_model(
@@ -18,10 +19,13 @@ def compile_knowledge_model(
 ) -> KnowledgeModel:
     document = normalize_document(text, metadata=source_metadata)
     extraction = deduplicate_entities(extractor.extract(document))
-    return KnowledgeModel(
+    model = KnowledgeModel(
         document=document,
         entities=extraction.entities,
         claims=extraction.claims,
         relationships=extraction.relationships,
         metadata=extraction.metadata,
+        propositions=extraction.propositions,
     )
+    validate_proposition_coverage(model)
+    return model

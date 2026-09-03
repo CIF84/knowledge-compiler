@@ -14,6 +14,7 @@ from .layout_evaluation import default_spec005_representations_directory, prepar
 from .models import KnowledgeModel, ValidationError
 from .openai_extractor import DEFAULT_MODEL, ExtractionError, OpenAILLMExtractor
 from .pipeline import compile_knowledge_model
+from .proposition_evaluation import run_proposition_evaluation
 from .representation_builder import RepresentationBuilder
 from .representation_evaluation import (
     default_presentation_metadata_path,
@@ -112,6 +113,11 @@ def _parser() -> argparse.ArgumentParser:
     )
     strategy_evaluation.add_argument("--model", default=DEFAULT_MODEL)
     strategy_evaluation.add_argument("--output-dir", required=True, type=Path)
+    proposition_evaluation = subcommands.add_parser(
+        "evaluate-propositions",
+        help="build the deterministic SPEC-010 proposition regression review",
+    )
+    proposition_evaluation.add_argument("--output-dir", required=True, type=Path)
     view = subcommands.add_parser("view-representations", help="serve a prepared representation review locally")
     view.add_argument("directory", type=Path)
     view.add_argument("--host", default="127.0.0.1")
@@ -123,6 +129,12 @@ def _parser() -> argparse.ArgumentParser:
 def main(argv: list[str] | None = None) -> int:
     args = _parser().parse_args(argv)
     try:
+        if args.command == "evaluate-propositions":
+            report = run_proposition_evaluation(output_dir=args.output_dir)
+            status = "semantic invariants pass" if report["all_machine_invariants_pass"] else "integrity failure"
+            print(f"Wrote {args.output_dir / 'report.json'} (2/2 regressions, {status})")
+            return 0 if report["all_machine_invariants_pass"] else 1
+
         if args.command == "evaluate-resolution-strategies":
             report = run_resolution_strategy_evaluation(
                 output_dir=args.output_dir,

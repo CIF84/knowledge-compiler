@@ -7,7 +7,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Mapping, Protocol
 
-from .models import Claim, Entity, Relationship, SourceDocument, ValidationError
+from .models import Claim, Entity, Proposition, Relationship, SourceDocument, ValidationError
 
 
 @dataclass(frozen=True, slots=True)
@@ -16,12 +16,13 @@ class ExtractionResult:
     claims: tuple[Claim, ...]
     relationships: tuple[Relationship, ...]
     metadata: Mapping[str, Any]
+    propositions: tuple[Proposition, ...] = ()
 
     @classmethod
     def from_dict(cls, value: Mapping[str, Any], document: SourceDocument) -> ExtractionResult:
         if not isinstance(value, Mapping):
             raise ValidationError("extraction result must be an object")
-        allowed = {"entities", "claims", "relationships", "metadata"}
+        allowed = {"entities", "claims", "relationships", "metadata", "propositions"}
         unknown = set(value) - allowed
         if unknown:
             raise ValidationError(f"unknown extraction fields: {sorted(unknown)}")
@@ -31,6 +32,9 @@ class ExtractionResult:
                 claims=tuple(Claim.from_dict(item, document.id) for item in value.get("claims", ())),
                 relationships=tuple(Relationship.from_dict(item, document.id) for item in value.get("relationships", ())),
                 metadata=dict(value.get("metadata", {})),
+                propositions=tuple(
+                    Proposition.from_dict(item, document.id) for item in value.get("propositions", ())
+                ),
             )
         except (KeyError, TypeError) as exc:
             raise ValidationError(f"malformed extraction result: {exc}") from exc

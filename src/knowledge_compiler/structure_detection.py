@@ -270,6 +270,7 @@ class StructureDetector:
                 "structure_counts": {kind.value: counts.get(kind.value, 0) for kind in StructureType},
                 "logical_relationship_count": len(edges),
                 "input_relationship_count": len(model.relationships),
+                **({"input_proposition_count": len(model.propositions)} if model.propositions else {}),
                 "maximum_causal_path_edges": MAX_CAUSAL_PATH_EDGES,
             },
         )

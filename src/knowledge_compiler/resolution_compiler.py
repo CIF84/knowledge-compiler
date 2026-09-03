@@ -12,6 +12,7 @@ from .extractor import ExtractionResult
 from .layout import with_layouts
 from .models import KnowledgeModel, Origin, ValidationError
 from .openai_extractor import ExtractionError, resolve_output_evidence
+from .proposition_validation import validate_proposition_coverage
 from .representation_builder import RepresentationBuilder
 from .representations import RepresentationModel
 from .resolution_strategies import (
@@ -22,9 +23,10 @@ from .structure_detection import StructureDetector
 from .structures import DetectedStructureSet
 
 
-RESOLUTION_COMPILER_VERSION = "spec-008-v1"
-RESOLUTION_PROMPT_VERSION = "spec-008-v1"
+RESOLUTION_COMPILER_VERSION = "spec-010-v1"
+RESOLUTION_PROMPT_VERSION = "spec-010-v1"
 SPEC_009_COMPILER_VERSION = "spec-009-v1"
+SPEC_010_COMPILER_VERSION = "spec-010-v1"
 
 
 class ResolutionOutcome(StrEnum):
@@ -291,14 +293,23 @@ def _assessment(parent: KnowledgeModel, child: KnowledgeModel, request: Resoluti
         [entity.name for entity in child.entities]
         + [entity.description for entity in child.entities]
         + [relationship.statement for relationship in child.relationships]
+        + [proposition.statement for proposition in child.propositions]
     ).casefold()
-    focus_terms = {request.focus_label.casefold(), *(alias.casefold() for entity in parent.entities if entity.id == request.focus_entity_id for alias in entity.aliases)}
-    source_relationships = [item for item in child.relationships if item.origin is Origin.SOURCE]
+    focus_terms = {
+        request.focus_label.casefold(),
+        *(alias.casefold() for entity in parent.entities if entity.id == request.focus_entity_id for alias in entity.aliases),
+    }
+    source_semantics = [
+        item for item in (*child.relationships, *child.propositions) if item.origin is Origin.SOURCE
+    ]
     return ResolutionAssessment(
         focus_relevance=any(term in child_text for term in focus_terms),
         mechanistic_detail_gain=len({entity.id for entity in child.entities} - parent_ids) >= 2,
-        explanatory_structure=len(child.relationships) >= 2 and bool(structures.structures),
-        source_support=bool(source_relationships) and all(item.evidence for item in source_relationships),
+        explanatory_structure=(
+            len(child.relationships) + len(child.propositions) >= 2
+            and (bool(structures.structures) or bool(child.propositions))
+        ),
+        source_support=bool(source_semantics) and all(item.evidence for item in source_semantics),
         parent_coherence=request.focus_label.casefold() in child_text,
     )
 
@@ -349,8 +360,10 @@ def compile_resolution(
                 "resolution_strategy_id": strategy.id.value,
                 "resolution_strategy_semantic_role": strategy.semantic_role,
             },
+            propositions=extraction.propositions,
         )
-        for item in (*child.claims, *child.relationships):
+        validate_proposition_coverage(child)
+        for item in (*child.claims, *child.relationships, *child.propositions):
             if any(not _scope_contains(scope, span.start_char, span.end_char) for span in item.evidence):
                 raise ValidationError("resolved evidence lies outside permitted source scope")
     except ValidationError as exc:

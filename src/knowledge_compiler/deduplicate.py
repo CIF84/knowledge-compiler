@@ -7,7 +7,7 @@ import unicodedata
 from dataclasses import replace
 
 from .extractor import ExtractionResult
-from .models import Entity, ValidationError
+from .models import Entity, PropositionRoleBinding, ValidationError, deterministic_proposition_id
 
 
 def normalized_entity_name(value: str) -> str:
@@ -51,4 +51,24 @@ def deduplicate_entities(result: ExtractionResult) -> ExtractionResult:
         )
         for relationship in result.relationships
     )
-    return ExtractionResult(tuple(canonical), result.claims, relationships, result.metadata)
+    propositions = []
+    for proposition in result.propositions:
+        bindings = tuple(
+            PropositionRoleBinding(
+                item.role, canonical_by_id.get(item.entity_id, item.entity_id)
+            )
+            for item in proposition.role_bindings
+        )
+        propositions.append(replace(
+            proposition,
+            id=deterministic_proposition_id(
+                proposition.proposition_type,
+                bindings,
+                proposition.relationship_type,
+                proposition.comparison_operator,
+            ),
+            role_bindings=bindings,
+        ))
+    return ExtractionResult(
+        tuple(canonical), result.claims, relationships, result.metadata, tuple(propositions)
+    )

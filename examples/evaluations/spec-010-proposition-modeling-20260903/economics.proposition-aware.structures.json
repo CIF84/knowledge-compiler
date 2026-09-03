@@ -1,0 +1,155 @@
+{
+  "source_document_id": "text-e6c889f45171a12a",
+  "structures": [
+    {
+      "id": "structure-causal-path-ed92cf848fcf2fdd",
+      "structure_type": "CAUSAL_PATH",
+      "entity_ids": [
+        "shortage",
+        "upward-pressure-on-price",
+        "market-price",
+        "quantity-demanded"
+      ],
+      "relationship_ids": [
+        "rel-shortage-upward-pressure",
+        "rel-upward-pressure-market-price",
+        "rel-market-price-decreases-demanded-detail"
+      ],
+      "relationship_types": [
+        "CAUSES",
+        "INCREASES",
+        "DECREASES"
+      ],
+      "metadata": {
+        "supporting_relationship_ids_by_edge": [
+          [
+            "rel-shortage-upward-pressure"
+          ],
+          [
+            "rel-upward-pressure-market-price"
+          ],
+          [
+            "rel-market-price-decreases-demanded-detail"
+          ]
+        ],
+        "edge_count": 3
+      }
+    },
+    {
+      "id": "structure-causal-path-2a735cbfbef57a01",
+      "structure_type": "CAUSAL_PATH",
+      "entity_ids": [
+        "shortage",
+        "upward-pressure-on-price",
+        "market-price",
+        "quantity-supplied"
+      ],
+      "relationship_ids": [
+        "rel-shortage-upward-pressure",
+        "rel-upward-pressure-market-price",
+        "rel-market-price-increases-supplied-detail"
+      ],
+      "relationship_types": [
+        "CAUSES",
+        "INCREASES",
+        "INCREASES"
+      ],
+      "metadata": {
+        "supporting_relationship_ids_by_edge": [
+          [
+            "rel-shortage-upward-pressure"
+          ],
+          [
+            "rel-upward-pressure-market-price"
+          ],
+          [
+            "rel-market-price-increases-supplied-detail"
+          ]
+        ],
+        "edge_count": 3
+      }
+    },
+    {
+      "id": "structure-causal-path-2bdc6e8127d77cf6",
+      "structure_type": "CAUSAL_PATH",
+      "entity_ids": [
+        "surplus",
+        "downward-pressure-on-price",
+        "market-price",
+        "quantity-demanded"
+      ],
+      "relationship_ids": [
+        "rel-surplus-downward-pressure",
+        "rel-downward-pressure-market-price",
+        "rel-market-price-decreases-demanded-detail"
+      ],
+      "relationship_types": [
+        "CAUSES",
+        "DECREASES",
+        "DECREASES"
+      ],
+      "metadata": {
+        "supporting_relationship_ids_by_edge": [
+          [
+            "rel-surplus-downward-pressure"
+          ],
+          [
+            "rel-downward-pressure-market-price"
+          ],
+          [
+            "rel-market-price-decreases-demanded-detail"
+          ]
+        ],
+        "edge_count": 3
+      }
+    },
+    {
+      "id": "structure-causal-path-7e31a9dac2403fe2",
+      "structure_type": "CAUSAL_PATH",
+      "entity_ids": [
+        "surplus",
+        "downward-pressure-on-price",
+        "market-price",
+        "quantity-supplied"
+      ],
+      "relationship_ids": [
+        "rel-surplus-downward-pressure",
+        "rel-downward-pressure-market-price",
+        "rel-market-price-increases-supplied-detail"
+      ],
+      "relationship_types": [
+        "CAUSES",
+        "DECREASES",
+        "INCREASES"
+      ],
+      "metadata": {
+        "supporting_relationship_ids_by_edge": [
+          [
+            "rel-surplus-downward-pressure"
+          ],
+          [
+            "rel-downward-pressure-market-price"
+          ],
+          [
+            "rel-market-price-increases-supplied-detail"
+          ]
+        ],
+        "edge_count": 3
+      }
+    }
+  ],
+  "detector_version": "spec-004-v1",
+  "metadata": {
+    "structure_counts": {
+      "HIERARCHY": 0,
+      "CAUSAL_PATH": 4,
+      "PROCESS_CHAIN": 0,
+      "DEPENDENCY_CHAIN": 0,
+      "FEEDBACK_CANDIDATE": 0
+    },
+    "logical_relationship_count": 8,
+    "input_relationship_count": 8,
+    "input_proposition_count": 1,
+    "maximum_causal_path_edges": 5
+  }
+}

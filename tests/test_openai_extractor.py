@@ -68,7 +68,7 @@ def test_provider_output_crosses_existing_validation_boundary() -> None:
     assert (evidence.start_char, evidence.end_char, evidence.quote) == (0, 18, "Alpha causes beta.")
     assert model.metadata == {
         "extractor": "llm", "provider": "openai", "model": "gpt-test",
-        "prompt_version": "spec-003-v1", "provider_request_id": "resp_test",
+        "prompt_version": "spec-010-v1", "provider_request_id": "resp_test",
         "usage": {"input_tokens": 100, "output_tokens": 50, "total_tokens": 150},
     }
     assert responses.kwargs["text"]["format"]["strict"] is True

@@ -1,0 +1,400 @@
+{
+  "document": {
+    "id": "text-79c197b799735d88",
+    "text": "The order-processing service contains an order-processing workflow for each submitted order. The workflow begins when the API accepts an order request. The API parses the payload before it validates the required customer and item fields. After validation succeeds, the workflow creates an order command and transfers the command to the order component.\n\nThe order component checks inventory before it requests payment authorization. Payment authorization must succeed before the order component stores the confirmed order. Storing the confirmed order completes the workflow and produces an order identifier for the API response.\n\nIf validation fails, the API returns an error instead of creating or transferring an order command. If payment authorization fails, the order component does not store a confirmed order.",
+    "source_type": "text",
+    "metadata": {
+      "domain": "software_architecture_process",
+      "filename": "order_processing_workflow.txt",
+      "fixture_kind": "SPEC_009_EXPERIMENTAL_RICHER_LOCAL_SOURCE"
+    }
+  },
+  "entities": [
+    {
+      "id": "order-processing-workflow",
+      "name": "order-processing workflow",
+      "description": "The process used by the service to handle one submitted order.",
+      "entity_type": "PROCESS",
+      "aliases": [
+        "workflow"
+      ]
+    },
+    {
+      "id": "api-acceptance",
+      "name": "API order-request acceptance",
+      "description": "The stage in which the API accepts an order request and begins the workflow.",
+      "entity_type": "PROCESS",
+      "aliases": []
+    },
+    {
+      "id": "payload-parsing",
+      "name": "payload parsing",
+      "description": "The stage in which the API parses the submitted order payload.",
+      "entity_type": "PROCESS",
+      "aliases": []
+    },
+    {
+      "id": "field-validation",
+      "name": "required-field validation",
+      "description": "The stage in which required customer and item fields are validated.",
+      "entity_type": "PROCESS",
+      "aliases": []
+    },
+    {
+      "id": "order-command-creation",
+      "name": "order command creation",
+      "description": "The stage that creates an order command after validation succeeds.",
+      "entity_type": "PROCESS",
+      "aliases": []
+    },
+    {
+      "id": "order-command",
+      "name": "order command",
+      "description": "The command transferred from the API to the order component.",
+      "entity_type": "OBJECT",
+      "aliases": []
+    },
+    {
+      "id": "order-command-transfer",
+      "name": "order command transfer",
+      "description": "The handoff of the order command to the order component.",
+      "entity_type": "PROCESS",
+      "aliases": []
+    },
+    {
+      "id": "inventory-check",
+      "name": "inventory check",
+      "description": "The order component's inventory-check stage.",
+      "entity_type": "PROCESS",
+      "aliases": []
+    },
+    {
+      "id": "payment-authorization",
+      "name": "payment authorization",
+      "description": "The stage in which payment authorization is requested and must succeed.",
+      "entity_type": "PROCESS",
+      "aliases": []
+    },
+    {
+      "id": "confirmed-order-storage",
+      "name": "confirmed-order storage",
+      "description": "The stage in which the order component stores the confirmed order.",
+      "entity_type": "PROCESS",
+      "aliases": []
+    },
+    {
+      "id": "order-identifier",
+      "name": "order identifier",
+      "description": "The identifier produced for the API response when the workflow completes.",
+      "entity_type": "OBJECT",
+      "aliases": []
+    },
+    {
+      "id": "order-component",
+      "name": "order component",
+      "description": "The component that receives the order command.",
+      "entity_type": "COMPONENT",
+      "aliases": []
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim-workflow-stage-sequence",
+      "statement": "The workflow begins with API acceptance, followed by payload parsing and validation; after successful validation, an order command is created and transferred to the order component.",
+      "evidence": [
+        {
+          "document_id": "text-79c197b799735d88",
+          "start_char": 93,
+          "end_char": 352,
+          "quote": "The workflow begins when the API accepts an order request. The API parses the payload before it validates the required customer and item fields. After validation succeeds, the workflow creates an order command and transfers the command to the order component."
+        }
+      ],
+      "confidence": 1.0,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "claim-component-stage-sequence",
+      "statement": "After the command reaches the order component, inventory is checked before payment authorization is requested, and successful authorization precedes storage of the confirmed order.",
+      "evidence": [
+        {
+          "document_id": "text-79c197b799735d88",
+          "start_char": 354,
+          "end_char": 522,
+          "quote": "The order component checks inventory before it requests payment authorization. Payment authorization must succeed before the order component stores the confirmed order."
+        }
+      ],
+      "confidence": 1.0,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "claim-workflow-output",
+      "statement": "Storing the confirmed order completes the workflow and produces an order identifier for the API response.",
+      "evidence": [
+        {
+          "document_id": "text-79c197b799735d88",
+          "start_char": 523,
+          "end_char": 628,
+          "quote": "Storing the confirmed order completes the workflow and produces an order identifier for the API response."
+        }
+      ],
+      "confidence": 1.0,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "claim-validation-branch",
+      "statement": "When validation fails, the API returns an error instead of creating or transferring an order command.",
+      "evidence": [
+        {
+          "document_id": "text-79c197b799735d88",
+          "start_char": 630,
+          "end_char": 729,
+          "quote": "If validation fails, the API returns an error instead of creating or transferring an order command."
+        }
+      ],
+      "confidence": 1.0,
+      "origin": "SOURCE"
+    }
+  ],
+  "relationships": [
+    {
+      "id": "rel-api-acceptance-part-of-workflow",
+      "source_entity_id": "api-acceptance",
+      "relationship_type": "PART_OF",
+      "target_entity_id": "order-processing-workflow",
+      "statement": "API order-request acceptance is a stage of the order-processing workflow.",
+      "evidence": [
+        {
+          "document_id": "text-79c197b799735d88",
+          "start_char": 93,
+          "end_char": 151,
+          "quote": "The workflow begins when the API accepts an order request."
+        }
+      ],
+      "confidence": 1.0,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "rel-parsing-part-of-workflow",
+      "source_entity_id": "payload-parsing",
+      "relationship_type": "PART_OF",
+      "target_entity_id": "order-processing-workflow",
+      "statement": "Payload parsing is a stage of the order-processing workflow.",
+      "evidence": [
+        {
+          "document_id": "text-79c197b799735d88",
+          "start_char": 152,
+          "end_char": 237,
+          "quote": "The API parses the payload before it validates the required customer and item fields."
+        }
+      ],
+      "confidence": 1.0,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "rel-validation-part-of-workflow",
+      "source_entity_id": "field-validation",
+      "relationship_type": "PART_OF",
+      "target_entity_id": "order-processing-workflow",
+      "statement": "Required-field validation is a stage of the order-processing workflow.",
+      "evidence": [
+        {
+          "document_id": "text-79c197b799735d88",
+          "start_char": 152,
+          "end_char": 237,
+          "quote": "The API parses the payload before it validates the required customer and item fields."
+        }
+      ],
+      "confidence": 1.0,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "rel-acceptance-precedes-parsing",
+      "source_entity_id": "api-acceptance",
+      "relationship_type": "PRECEDES",
+      "target_entity_id": "payload-parsing",
+      "statement": "API acceptance precedes payload parsing.",
+      "evidence": [
+        {
+          "document_id": "text-79c197b799735d88",
+          "start_char": 93,
+          "end_char": 237,
+          "quote": "The workflow begins when the API accepts an order request. The API parses the payload before it validates the required customer and item fields."
+        }
+      ],
+      "confidence": 1.0,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "rel-parsing-precedes-validation",
+      "source_entity_id": "payload-parsing",
+      "relationship_type": "PRECEDES",
+      "target_entity_id": "field-validation",
+      "statement": "Payload parsing precedes required-field validation.",
+      "evidence": [
+        {
+          "document_id": "text-79c197b799735d88",
+          "start_char": 152,
+          "end_char": 237,
+          "quote": "The API parses the payload before it validates the required customer and item fields."
+        }
+      ],
+      "confidence": 1.0,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "rel-validation-enables-command-creation",
+      "source_entity_id": "field-validation",
+      "relationship_type": "ENABLES",
+      "target_entity_id": "order-command-creation",
+      "statement": "Successful validation enables creation of the order command.",
+      "evidence": [
+        {
+          "document_id": "text-79c197b799735d88",
+          "start_char": 238,
+          "end_char": 352,
+          "quote": "After validation succeeds, the workflow creates an order command and transfers the command to the order component."
+        }
+      ],
+      "confidence": 1.0,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "rel-command-creation-creates-command",
+      "source_entity_id": "order-command-creation",
+      "relationship_type": "CREATES",
+      "target_entity_id": "order-command",
+      "statement": "Order command creation produces an order command.",
+      "evidence": [
+        {
+          "document_id": "text-79c197b799735d88",
+          "start_char": 238,
+          "end_char": 352,
+          "quote": "After validation succeeds, the workflow creates an order command and transfers the command to the order component."
+        }
+      ],
+      "confidence": 1.0,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "rel-inventory-precedes-payment",
+      "source_entity_id": "inventory-check",
+      "relationship_type": "PRECEDES",
+      "target_entity_id": "payment-authorization",
+      "statement": "The inventory check precedes the request for payment authorization.",
+      "evidence": [
+        {
+          "document_id": "text-79c197b799735d88",
+          "start_char": 354,
+          "end_char": 432,
+          "quote": "The order component checks inventory before it requests payment authorization."
+        }
+      ],
+      "confidence": 1.0,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "rel-payment-enables-storage",
+      "source_entity_id": "confirmed-order-storage",
+      "relationship_type": "REQUIRES",
+      "target_entity_id": "payment-authorization",
+      "statement": "Confirmed-order storage requires successful payment authorization.",
+      "evidence": [
+        {
+          "document_id": "text-79c197b799735d88",
+          "start_char": 433,
+          "end_char": 522,
+          "quote": "Payment authorization must succeed before the order component stores the confirmed order."
+        }
+      ],
+      "confidence": 1.0,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "rel-storage-part-of-workflow",
+      "source_entity_id": "confirmed-order-storage",
+      "relationship_type": "PART_OF",
+      "target_entity_id": "order-processing-workflow",
+      "statement": "Confirmed-order storage is the completing stage of the order-processing workflow.",
+      "evidence": [
+        {
+          "document_id": "text-79c197b799735d88",
+          "start_char": 523,
+          "end_char": 628,
+          "quote": "Storing the confirmed order completes the workflow and produces an order identifier for the API response."
+        }
+      ],
+      "confidence": 1.0,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "rel-storage-creates-identifier",
+      "source_entity_id": "confirmed-order-storage",
+      "relationship_type": "CREATES",
+      "target_entity_id": "order-identifier",
+      "statement": "Storing the confirmed order produces an order identifier.",
+      "evidence": [
+        {
+          "document_id": "text-79c197b799735d88",
+          "start_char": 523,
+          "end_char": 628,
+          "quote": "Storing the confirmed order completes the workflow and produces an order identifier for the API response."
+        }
+      ],
+      "confidence": 1.0,
+      "origin": "SOURCE"
+    }
+  ],
+  "metadata": {
+    "extractor": "llm-resolution",
+    "provider": "openai",
+    "model": "gpt-5.6-luna",
+    "prompt_version": "spec-009-v1",
+    "resolution_strategy_id": "PROCESS_STAGES",
+    "provider_request_id": "resp_056af13c878b2066016a99db36eb1887d2abf7d6c35b99165c",
+    "usage": {
+      "input_tokens": 2874,
+      "output_tokens": 1706,
+      "total_tokens": 4580
+    },
+    "resolution_compiler_version": "spec-009-v1",
+    "parent_document_id": "text-79c197b799735d88",
+    "parent_representation_id": "representation-c68ffce00bf19e99",
+    "focus_entity_id": "order-processing-workflow",
+    "source_scope_strategy": "FULL_DOCUMENT_SMALL_SOURCE",
+    "resolution_strategy_semantic_role": "PROCESS",
+    "proposition_model_version": "spec-010-v1"
+  },
+  "propositions": [
+    {
+      "id": "proposition-transfer-event-0585bfd49a1173f1",
+      "proposition_type": "TRANSFER_EVENT",
+      "statement": "The order command transfer sends the order command to the order component.",
+      "role_bindings": [
+        {
+          "role": "DESTINATION",
+          "entity_id": "order-component"
+        },
+        {
+          "role": "EVENT",
+          "entity_id": "order-command-transfer"
+        },
+        {
+          "role": "OBJECT",
+          "entity_id": "order-command"
+        }
+      ],
+      "relationship_type": "TRANSFERS_TO",
+      "evidence": [
+        {
+          "document_id": "text-79c197b799735d88",
+          "start_char": 238,
+          "end_char": 352,
+          "quote": "After validation succeeds, the workflow creates an order command and transfers the command to the order component."
+        }
+      ],
+      "confidence": 1.0,
+      "origin": "SOURCE",
+      "comparison_operator": null
+    }
+  ]
+}
