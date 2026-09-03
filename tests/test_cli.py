@@ -61,3 +61,23 @@ def test_detect_structures_cli_rejects_invalid_model(tmp_path: Path, capsys) -> 
     invalid.write_text('{"document": {}}')
     assert main(["detect-structures", str(invalid), "--output", str(tmp_path / "out.json")]) == 1
     assert "knowledge-compiler: error:" in capsys.readouterr().err
+
+
+def test_represent_cli_builds_presentation_json(tmp_path: Path, capsys) -> None:
+    root = Path(__file__).parents[1] / "examples" / "evaluations"
+    model = root / "spec-003-relationship-semantics-20260903" / "economics.knowledge.json"
+    structures = root / "spec-004-structure-detection-20260903" / "economics.structures.json"
+    output = tmp_path / "representation.json"
+    assert main(["represent", str(model), str(structures), "--output", str(output)]) == 0
+    value = json.loads(output.read_text())
+    assert len(value["representations"]) == 1
+    assert value["representations"][0]["representation_type"] == "CAUSAL_PATH"
+    assert "1 representations" in capsys.readouterr().out
+
+
+def test_prepare_representations_cli_builds_viewer(tmp_path: Path, capsys) -> None:
+    output = tmp_path / "review"
+    assert main(["prepare-representations", "--output-dir", str(output)]) == 0
+    assert (output / "index.html").is_file()
+    assert (output / "manifest.json").is_file()
+    assert "5/5 domains, provenance complete" in capsys.readouterr().out

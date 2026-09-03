@@ -13,6 +13,13 @@ from .extractor import FixtureExtractor
 from .models import KnowledgeModel, ValidationError
 from .openai_extractor import DEFAULT_MODEL, ExtractionError, OpenAILLMExtractor
 from .pipeline import compile_knowledge_model
+from .representation_builder import RepresentationBuilder
+from .representation_evaluation import (
+    default_presentation_metadata_path,
+    default_spec004_structures_directory,
+    prepare_representation_evaluation,
+)
+from .structures import DetectedStructureSet
 from .structure_detection import StructureDetector
 from .structure_evaluation import (
     default_spec003_models_directory,
@@ -46,12 +53,67 @@ def _parser() -> argparse.ArgumentParser:
         "--expectations", type=Path, default=default_structure_expectations_path()
     )
     structure_evaluation.add_argument("--output-dir", required=True, type=Path)
+    represent = subcommands.add_parser(
+        "represent", help="build presentation JSON from a KnowledgeModel and detected structures"
+    )
+    represent.add_argument("model", type=Path)
+    represent.add_argument("structures", type=Path)
+    represent.add_argument("--metadata", type=Path)
+    represent.add_argument("--output", "-o", required=True, type=Path)
+    prepare = subcommands.add_parser(
+        "prepare-representations", help="build the offline five-domain representation review"
+    )
+    prepare.add_argument("--models-dir", type=Path, default=default_spec003_models_directory())
+    prepare.add_argument("--structures-dir", type=Path, default=default_spec004_structures_directory())
+    prepare.add_argument("--metadata", type=Path, default=default_presentation_metadata_path())
+    prepare.add_argument("--output-dir", required=True, type=Path)
+    view = subcommands.add_parser("view-representations", help="serve a prepared representation review locally")
+    view.add_argument("directory", type=Path)
+    view.add_argument("--host", default="127.0.0.1")
+    view.add_argument("--port", type=int, default=8000)
+    view.add_argument("--open-browser", action="store_true")
     return parser
 
 
 def main(argv: list[str] | None = None) -> int:
     args = _parser().parse_args(argv)
     try:
+        if args.command == "represent":
+            model = KnowledgeModel.from_dict(json.loads(args.model.read_text(encoding="utf-8")))
+            structures = DetectedStructureSet.from_dict(
+                json.loads(args.structures.read_text(encoding="utf-8"))
+            )
+            metadata = json.loads(args.metadata.read_text(encoding="utf-8")) if args.metadata else None
+            representation = RepresentationBuilder().build(
+                model, structures, presentation_metadata=metadata
+            )
+            args.output.write_text(
+                json.dumps(representation.to_dict(), indent=2, ensure_ascii=False) + "\n",
+                encoding="utf-8",
+            )
+            print(f"Wrote {args.output} ({len(representation.representations)} representations)")
+            return 0
+
+        if args.command == "prepare-representations":
+            report = prepare_representation_evaluation(
+                models_dir=args.models_dir,
+                structures_dir=args.structures_dir,
+                output_dir=args.output_dir,
+                metadata_path=args.metadata,
+            )
+            complete = report["all_references_valid"] and report["all_provenance_complete"]
+            status = "provenance complete" if complete else "integrity failure"
+            print(
+                f"Wrote {args.output_dir / 'report.json'} "
+                f"({len(report['results'])}/5 domains, {status})"
+            )
+            return 0 if complete else 1
+
+        if args.command == "view-representations":
+            from .viewer import serve_viewer
+            serve_viewer(args.directory, args.host, args.port, open_browser=args.open_browser)
+            return 0
+
         if args.command == "detect-structures":
             model = KnowledgeModel.from_dict(json.loads(args.model.read_text(encoding="utf-8")))
             structures = StructureDetector().detect(model)

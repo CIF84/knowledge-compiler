@@ -1,0 +1,73 @@
+{
+  "spec": "SPEC-005",
+  "status": "NOT_EVALUATED",
+  "instructions": "For each domain compare A: source text, B: KnowledgeModel and detected-structure JSON, and C: the local rendered representation. Use BETTER, SAME, or WORSE and add brief observations.",
+  "rating_vocabulary": [
+    "BETTER",
+    "SAME",
+    "WORSE"
+  ],
+  "domains": {
+    "software_architecture": {
+      "comparison_inputs": {
+        "source": "tests/fixtures/domains/software_architecture.txt",
+        "knowledge_model": "examples/evaluations/spec-003-relationship-semantics-20260903/software_architecture.knowledge.json",
+        "detected_structures": "examples/evaluations/spec-004-structure-detection-20260903/software_architecture.structures.json",
+        "rendered_representation": "viewer domain: software_architecture"
+      },
+      "ratings": {
+        "orientation": "NOT_EVALUATED",
+        "relationship_clarity": "NOT_EVALUATED",
+        "causal_or_process_clarity": "NOT_EVALUATED",
+        "important_structure_identification": "NOT_EVALUATED",
+        "edge_explanation": "NOT_EVALUATED",
+        "cognitive_load": "NOT_EVALUATED",
+        "trust_and_provenance": "NOT_EVALUATED",
+        "overall_usefulness": "NOT_EVALUATED"
+      },
+      "would_prefer_representation_available": "NOT_EVALUATED",
+      "observations": ""
+    },
+    "economics": {
+      "comparison_inputs": {
+        "source": "tests/fixtures/domains/economics.txt",
+        "knowledge_model": "examples/evaluations/spec-003-relationship-semantics-20260903/economics.knowledge.json",
+        "detected_structures": "examples/evaluations/spec-004-structure-detection-20260903/economics.structures.json",
+        "rendered_representation": "viewer domain: economics"
+      },
+      "ratings": {
+        "orientation": "NOT_EVALUATED",
+        "relationship_clarity": "NOT_EVALUATED",
+        "causal_or_process_clarity": "NOT_EVALUATED",
+        "important_structure_identification": "NOT_EVALUATED",
+        "edge_explanation": "NOT_EVALUATED",
+        "cognitive_load": "NOT_EVALUATED",
+        "trust_and_provenance": "NOT_EVALUATED",
+        "overall_usefulness": "NOT_EVALUATED"
+      },
+      "would_prefer_representation_available": "NOT_EVALUATED",
+      "observations": ""
+    },
+    "electromagnetism": {
+      "comparison_inputs": {
+        "source": "tests/fixtures/domains/electromagnetism.txt",
+        "knowledge_model": "examples/evaluations/spec-003-relationship-semantics-20260903/electromagnetism.knowledge.json",
+        "detected_structures": "examples/evaluations/spec-004-structure-detection-20260903/electromagnetism.structures.json",
+        "rendered_representation": "viewer domain: electromagnetism"
+      },
+      "ratings": {
+        "orientation": "NOT_EVALUATED",
+        "relationship_clarity": "NOT_EVALUATED",
+        "causal_or_process_clarity": "NOT_EVALUATED",
+        "important_structure_identification": "NOT_EVALUATED",
+        "edge_explanation": "NOT_EVALUATED",
+        "cognitive_load": "NOT_EVALUATED",
+        "trust_and_provenance": "NOT_EVALUATED",
+        "overall_usefulness": "NOT_EVALUATED"
+      },
+      "would_prefer_representation_available": "NOT_EVALUATED",
+      "observations": ""
+    }
+  },
+  "overall_verdict": "NOT_EVALUATED"
+}

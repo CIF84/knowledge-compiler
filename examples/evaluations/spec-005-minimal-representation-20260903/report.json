@@ -1,0 +1,147 @@
+{
+  "spec": "SPEC-005",
+  "builder_version": "spec-005-v1",
+  "source_model_baseline": "SPEC-003",
+  "source_structure_baseline": "SPEC-004",
+  "network_or_llm_calls": false,
+  "results": [
+    {
+      "domain": "electromagnetism",
+      "input_model": "examples/evaluations/spec-003-relationship-semantics-20260903/electromagnetism.knowledge.json",
+      "input_structures": "examples/evaluations/spec-004-structure-detection-20260903/electromagnetism.structures.json",
+      "output": "electromagnetism.representation.json",
+      "representation_count": 2,
+      "representation_types": {
+        "FEEDBACK_CANDIDATE": 1,
+        "HIERARCHY": 1
+      },
+      "node_count": 4,
+      "edge_count": 3,
+      "salience": {
+        "PRIMARY": 1,
+        "SECONDARY": 0,
+        "SPARSE": 1
+      },
+      "empty_state": null,
+      "integrity": {
+        "references_valid": true,
+        "relationship_types_and_labels_preserved": true,
+        "evidence_quotes_copied_from_validated_spans": true,
+        "inferred_relationships_fabricate_no_evidence": true,
+        "expected_evidence_excerpt_count": 3,
+        "actual_evidence_excerpt_count": 3,
+        "provenance_complete": true
+      }
+    },
+    {
+      "domain": "software_architecture",
+      "input_model": "examples/evaluations/spec-003-relationship-semantics-20260903/software_architecture.knowledge.json",
+      "input_structures": "examples/evaluations/spec-004-structure-detection-20260903/software_architecture.structures.json",
+      "output": "software_architecture.representation.json",
+      "representation_count": 2,
+      "representation_types": {
+        "DEPENDENCY_CHAIN": 1,
+        "HIERARCHY": 1
+      },
+      "node_count": 8,
+      "edge_count": 6,
+      "salience": {
+        "PRIMARY": 1,
+        "SECONDARY": 1,
+        "SPARSE": 0
+      },
+      "empty_state": null,
+      "integrity": {
+        "references_valid": true,
+        "relationship_types_and_labels_preserved": true,
+        "evidence_quotes_copied_from_validated_spans": true,
+        "inferred_relationships_fabricate_no_evidence": true,
+        "expected_evidence_excerpt_count": 6,
+        "actual_evidence_excerpt_count": 6,
+        "provenance_complete": true
+      }
+    },
+    {
+      "domain": "economics",
+      "input_model": "examples/evaluations/spec-003-relationship-semantics-20260903/economics.knowledge.json",
+      "input_structures": "examples/evaluations/spec-004-structure-detection-20260903/economics.structures.json",
+      "output": "economics.representation.json",
+      "representation_count": 1,
+      "representation_types": {
+        "CAUSAL_PATH": 1
+      },
+      "node_count": 6,
+      "edge_count": 5,
+      "salience": {
+        "PRIMARY": 1,
+        "SECONDARY": 0,
+        "SPARSE": 0
+      },
+      "empty_state": null,
+      "integrity": {
+        "references_valid": true,
+        "relationship_types_and_labels_preserved": true,
+        "evidence_quotes_copied_from_validated_spans": true,
+        "inferred_relationships_fabricate_no_evidence": true,
+        "expected_evidence_excerpt_count": 7,
+        "actual_evidence_excerpt_count": 7,
+        "provenance_complete": true
+      }
+    },
+    {
+      "domain": "biology",
+      "input_model": "examples/evaluations/spec-003-relationship-semantics-20260903/biology.knowledge.json",
+      "input_structures": "examples/evaluations/spec-004-structure-detection-20260903/biology.structures.json",
+      "output": "biology.representation.json",
+      "representation_count": 0,
+      "representation_types": {},
+      "node_count": 0,
+      "edge_count": 0,
+      "salience": {
+        "PRIMARY": 0,
+        "SECONDARY": 0,
+        "SPARSE": 0
+      },
+      "empty_state": "No supported higher-order structure was detected. The source may still contain useful entities and relationships, but this viewer will not invent a diagram.",
+      "integrity": {
+        "references_valid": true,
+        "relationship_types_and_labels_preserved": true,
+        "evidence_quotes_copied_from_validated_spans": true,
+        "inferred_relationships_fabricate_no_evidence": true,
+        "expected_evidence_excerpt_count": 0,
+        "actual_evidence_excerpt_count": 0,
+        "provenance_complete": true
+      }
+    },
+    {
+      "domain": "history",
+      "input_model": "examples/evaluations/spec-003-relationship-semantics-20260903/history.knowledge.json",
+      "input_structures": "examples/evaluations/spec-004-structure-detection-20260903/history.structures.json",
+      "output": "history.representation.json",
+      "representation_count": 2,
+      "representation_types": {
+        "DEPENDENCY_CHAIN": 1,
+        "PROCESS_CHAIN": 1
+      },
+      "node_count": 6,
+      "edge_count": 4,
+      "salience": {
+        "PRIMARY": 1,
+        "SECONDARY": 0,
+        "SPARSE": 1
+      },
+      "empty_state": null,
+      "integrity": {
+        "references_valid": true,
+        "relationship_types_and_labels_preserved": true,
+        "evidence_quotes_copied_from_validated_spans": true,
+        "inferred_relationships_fabricate_no_evidence": true,
+        "expected_evidence_excerpt_count": 4,
+        "actual_evidence_excerpt_count": 4,
+        "provenance_complete": true
+      }
+    }
+  ],
+  "all_references_valid": true,
+  "all_provenance_complete": true
+}

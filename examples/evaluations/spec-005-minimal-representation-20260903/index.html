@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>Knowledge Compiler — Representation Review</title>
+  <link rel="stylesheet" href="viewer.css">
+</head>
+<body>
+  <header>
+    <div><span class="eyebrow">Knowledge Compiler</span><h1>Representation review</h1></div>
+    <label>Domain <select id="domain"></select></label>
+  </header>
+  <main>
+    <section class="overview" aria-labelledby="model-title">
+      <div><span class="eyebrow">Overview</span><h2 id="model-title">Loading…</h2></div>
+      <div id="global-warnings" class="warnings"></div>
+      <nav id="representations" aria-label="Detected representations"></nav>
+    </section>
+    <section class="workspace">
+      <article class="canvas-card">
+        <div class="structure-heading"><div><span id="salience" class="badge"></span><h2 id="structure-title"></h2></div><p id="structure-meta"></p></div>
+        <div id="structure-warnings" class="warnings"></div>
+        <div id="empty-state" class="empty" hidden></div>
+        <svg id="graph" role="img" aria-label="Directed semantic structure"></svg>
+        <div id="edge-list" class="edge-list" aria-label="Relationships in this representation"></div>
+      </article>
+      <aside id="detail" aria-live="polite">
+        <span class="eyebrow">Detail</span>
+        <h2>Select a node or edge</h2>
+        <p>Inspect what a concept means, or why a relationship exists and which source evidence supports it.</p>
+      </aside>
+    </section>
+  </main>
+  <script src="viewer.js"></script>
+</body>
+</html>

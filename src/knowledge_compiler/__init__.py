@@ -17,6 +17,8 @@ from .pipeline import compile_knowledge_model
 from .relationships import RelationshipDefinition, RelationshipFamily
 from .structure_detection import StructureDetector
 from .structures import DetectedStructure, DetectedStructureSet, StructureType
+from .representation_builder import RepresentationBuilder
+from .representations import Representation, RepresentationEdge, RepresentationModel, RepresentationNode, Salience
 
 __all__ = [
     "Claim",
@@ -31,6 +33,12 @@ __all__ = [
     "DetectedStructure",
     "DetectedStructureSet",
     "StructureType",
+    "RepresentationBuilder",
+    "Representation",
+    "RepresentationEdge",
+    "RepresentationModel",
+    "RepresentationNode",
+    "Salience",
     "RelationshipType",
     "SourceDocument",
     "SourceSpan",

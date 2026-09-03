@@ -1,0 +1,185 @@
+{
+  "document_id": "text-070a252acc409f55",
+  "title": "History of Printing",
+  "domain": "unknown",
+  "representations": [
+    {
+      "id": "representation-f803f1f3830cadf7",
+      "representation_type": "DEPENDENCY_CHAIN",
+      "source_structure_ids": [
+        "structure-dependency-chain-a020f5ab2fc01f35",
+        "structure-dependency-chain-dbc1ba63cc13589b"
+      ],
+      "title": "Dependency model",
+      "nodes": [
+        {
+          "entity_id": "movable-metal-type",
+          "label": "Movable metal type",
+          "description": "Reusable metal type combined with a press for printing in Europe.",
+          "entity_type": "COMPONENT"
+        },
+        {
+          "entity_id": "press",
+          "label": "Press",
+          "description": "A press combined with movable metal type in Gutenberg's printing process.",
+          "entity_type": "COMPONENT"
+        },
+        {
+          "entity_id": "printed-books",
+          "label": "Printed books",
+          "description": "Books produced through printing, including cheaper and more numerous copies.",
+          "entity_type": "OBJECT"
+        },
+        {
+          "entity_id": "printing",
+          "label": "Printing",
+          "description": "The process of producing books and other printed material from prepared type.",
+          "entity_type": "PROCESS"
+        }
+      ],
+      "edges": [
+        {
+          "source_entity_id": "movable-metal-type",
+          "target_entity_id": "printing",
+          "relationship_type": "ENABLES",
+          "relationship_label": "ENABLES",
+          "meaning": "The source makes the target possible without necessarily causing it to occur.",
+          "direction": "enabler_to_enabled",
+          "relationship_ids": [
+            "rel-type-enables-printing"
+          ],
+          "evidence": [
+            {
+              "relationship_id": "rel-type-enables-printing",
+              "document_id": "text-070a252acc409f55",
+              "start_char": 0,
+              "end_char": 103,
+              "quote": "Johannes Gutenberg combined movable metal type with a press in Europe during the mid-fifteenth century."
+            }
+          ],
+          "origins": [
+            "SOURCE"
+          ],
+          "provenance_status": "SOURCE_EVIDENCE"
+        },
+        {
+          "source_entity_id": "press",
+          "target_entity_id": "printing",
+          "relationship_type": "ENABLES",
+          "relationship_label": "ENABLES",
+          "meaning": "The source makes the target possible without necessarily causing it to occur.",
+          "direction": "enabler_to_enabled",
+          "relationship_ids": [
+            "rel-press-enables-printing"
+          ],
+          "evidence": [
+            {
+              "relationship_id": "rel-press-enables-printing",
+              "document_id": "text-070a252acc409f55",
+              "start_char": 0,
+              "end_char": 103,
+              "quote": "Johannes Gutenberg combined movable metal type with a press in Europe during the mid-fifteenth century."
+            }
+          ],
+          "origins": [
+            "SOURCE"
+          ],
+          "provenance_status": "SOURCE_EVIDENCE"
+        },
+        {
+          "source_entity_id": "printing",
+          "target_entity_id": "printed-books",
+          "relationship_type": "ENABLES",
+          "relationship_label": "ENABLES",
+          "meaning": "The source makes the target possible without necessarily causing it to occur.",
+          "direction": "enabler_to_enabled",
+          "relationship_ids": [
+            "rel-printing-enables-copies"
+          ],
+          "evidence": [
+            {
+              "relationship_id": "rel-printing-enables-copies",
+              "document_id": "text-070a252acc409f55",
+              "start_char": 193,
+              "end_char": 266,
+              "quote": "Printing enabled many copies to be produced from one prepared set of type"
+            }
+          ],
+          "origins": [
+            "SOURCE"
+          ],
+          "provenance_status": "SOURCE_EVIDENCE"
+        }
+      ],
+      "salience": "PRIMARY",
+      "warnings": []
+    },
+    {
+      "id": "representation-372c9b3707ffd6cc",
+      "representation_type": "PROCESS_CHAIN",
+      "source_structure_ids": [
+        "structure-process-chain-a48c9577b67579d5"
+      ],
+      "title": "Process chronology",
+      "nodes": [
+        {
+          "entity_id": "authorities",
+          "label": "Authorities",
+          "description": "Governments and churches that responded to expanded printed controversy.",
+          "entity_type": "SYSTEM"
+        },
+        {
+          "entity_id": "printed-controversy",
+          "label": "Printed controversy",
+          "description": "Controversy associated with printed material that expanded before authorities responded.",
+          "entity_type": "CONCEPT"
+        }
+      ],
+      "edges": [
+        {
+          "source_entity_id": "printed-controversy",
+          "target_entity_id": "authorities",
+          "relationship_type": "PRECEDES",
+          "relationship_label": "PRECEDES",
+          "meaning": "The source occurs before the target in time or an explicit process sequence.",
+          "direction": "earlier_to_later",
+          "relationship_ids": [
+            "rel-controversy-precedes-response"
+          ],
+          "evidence": [
+            {
+              "relationship_id": "rel-controversy-precedes-response",
+              "document_id": "text-070a252acc409f55",
+              "start_char": 655,
+              "end_char": 716,
+              "quote": "Authorities responded after printed controversy had expanded."
+            }
+          ],
+          "origins": [
+            "SOURCE"
+          ],
+          "provenance_status": "SOURCE_EVIDENCE"
+        }
+      ],
+      "salience": "SPARSE",
+      "warnings": [
+        "Endpoint limitation: Authorities is an actor, not the response event described by the source.",
+        "Sparse structure: this view contains only one supported relationship."
+      ]
+    }
+  ],
+  "empty_state": null,
+  "builder_version": "spec-005-v1",
+  "warnings": [
+    "The chronology targets the actor Authorities rather than an authority-response event."
+  ],
+  "metadata": {
+    "representation_count": 2,
+    "source_structure_count": 3,
+    "salience_counts": {
+      "PRIMARY": 1,
+      "SECONDARY": 0,
+      "SPARSE": 1
+    }
+  }
+}
