@@ -2,64 +2,43 @@
 
 ## Purpose
 
-This document describes the **current architecture** of Knowledge Compiler and the architectural beliefs currently supported by project evidence.
-
-It is not an aspirational design document. Future architecture belongs in a SPEC until implementation and review provide evidence that it should become part of this baseline.
-
-Architectural decisions should remain traceable to the SPEC/DEBRIEF cycle that established or changed them.
+This document describes the **current architecture** of Knowledge Compiler and the architectural beliefs currently supported by project evidence. It is not an aspirational design document.
 
 ## Current System Boundary
 
 ```text
 plain text
-   │
-   ▼
+   ↓
 SourceDocument normalization
-   │
-   ▼
+   ↓
 KnowledgeExtractor boundary
    ├── FixtureExtractor
    └── OpenAILLMExtractor
-           │
-           ▼
-    provider structured output
-           │
-           ▼
+           ↓
+ canonical relationship grammar
+           ↓
+ provider structured output
+           ↓
  exact-quote evidence resolution
-           │
-           ▼
+           ↓
 ExtractionResult
-   │
-   ▼
+   ↓
 conservative entity deduplication
-   │
-   ▼
+   ↓
 validated KnowledgeModel
-   │
-   ▼
+   ↓
 JSON / CLI / evaluation artifacts
 ```
 
-The implemented system currently transforms normalized explanatory text plus semantic extraction into a validated, source-grounded semantic intermediate representation. It now supports both deterministic fixture extraction and one real LLM provider adapter.
+The system transforms normalized explanatory text into a validated, source-grounded semantic intermediate representation. It supports deterministic fixture extraction and one real LLM provider adapter.
 
 ## Semantic Intermediate Representation
 
-`KnowledgeModel` remains the central architectural boundary.
+`KnowledgeModel` remains the central architectural boundary. It contains source document, entities, claims, typed relationships, evidence spans, confidence, source-vs-inferred provenance, and metadata.
 
-It contains:
+Downstream structure detection, representation, visualization, interaction, and simulation must consume this model rather than reinterpret source text independently.
 
-- source document
-- entities
-- claims
-- typed relationships
-- evidence spans
-- confidence
-- source-vs-inferred provenance
-- metadata
-
-Downstream representation, visualization, structure detection, interaction, and simulation should consume this model rather than parse source material independently.
-
-**Evidence:** DEBRIEF-001, strengthened by DEBRIEF-002.
+**Evidence:** DEBRIEF-001, DEBRIEF-002, DEBRIEF-003.
 
 ## Current Components
 
@@ -69,121 +48,111 @@ Converts plain text into a deterministic `SourceDocument` with stable identity a
 
 ### Extraction Boundary
 
-`KnowledgeExtractor` is vendor-neutral.
+`KnowledgeExtractor` is vendor-neutral. Current implementations are `FixtureExtractor` and `OpenAILLMExtractor`. Provider SDK concerns, prompting, model identifiers, and usage metadata remain isolated behind the extractor boundary.
 
-Current implementations:
+### Relationship Semantics
+
+`relationships.py` is now the canonical provider-independent relationship grammar.
+
+Each active relationship defines:
+
+- semantic family;
+- meaning;
+- direction;
+- source role;
+- target role;
+- appropriate usage;
+- misuse/exclusion guidance;
+- symmetry.
+
+Seven lightweight families currently exist:
 
 ```text
-FixtureExtractor      deterministic/offline
-OpenAILLMExtractor    real structured-output LLM adapter
+STRUCTURAL
+CAUSAL
+DEPENDENCY
+TEMPORAL
+INTERACTION
+TRANSFORMATION
+DESCRIPTIVE
 ```
 
-Provider-specific request objects, SDK concerns, prompting, model identifiers, and usage metadata remain isolated behind the extractor boundary.
+The OpenAI adapter renders its relationship instructions from this registry. Prompt semantics and core relationship semantics therefore have one source of truth.
+
+Current vocabulary contains 20 predicates. SPEC-003 added `AFFECTS`, `BINDS_TO`, and `TRANSFERS_TO`. Further expansion is frozen until new cross-domain evidence justifies it.
 
 ### Evidence Resolution
 
-For real LLM extraction, the model nominates exact source quotes. Trusted deterministic code resolves those quotes to character coordinates and rejects missing or ambiguous matches.
-
-```text
-LLM quote
-   ↓
-unique deterministic lookup
-   ↓
-SourceSpan
-   ↓
-normal domain validation
-```
-
-This is now the preferred architecture for evidence coordinates. Do not trust model-generated character offsets when deterministic resolution is available.
+The LLM nominates exact source quotes; trusted deterministic code resolves those quotes to character coordinates and rejects missing or ambiguous matches.
 
 ### Validation
 
-The semantic model enforces important invariants including valid enum vocabularies, confidence bounds, unique identifiers, valid relationship endpoints, valid source evidence spans, exact evidence quotes, and explicit provenance.
+The semantic model validates enum vocabularies, confidence bounds, identifiers, relationship endpoints, source evidence spans, exact quotes, and provenance. Relationship-registry validation additionally ensures every active predicate has exactly one canonical definition.
 
-SPEC-002 demonstrated that these invariants catch real LLM failures. Validation remains fail-closed; probabilistic extraction problems should not be repaired by silently weakening domain contracts.
+Validation remains fail-closed. Deterministic code should not pretend to prove arbitrary semantic truth from entity names.
 
 ### Deduplication
 
-Entity deduplication remains deliberately conservative. Case-normalized names and explicit aliases may establish equivalence; semantic similarity alone does not.
+Entity deduplication remains deliberately conservative. SPEC-003 exposed duplicate relationships as a separate remaining issue; do not broaden entity deduplication to solve it indirectly.
 
 ### Evaluation
 
-A repeatable five-domain evaluation harness now exists. Machine-run output and human semantic review are stored separately so that raw experimental artifacts remain distinguishable from later interpretation.
-
-### CLI / Serialization
-
-The CLI supports fixture and LLM extraction plus multi-domain evaluation. Successful extraction emits the same provider-independent `KnowledgeModel` JSON format.
+The five-domain evaluation harness records machine output separately from human semantic review. SPEC-003 added regression metadata and direct comparison against the accepted SPEC-002 baseline.
 
 ## Dependency Direction
 
 ```text
 provider SDK
-    │
-    ▼
+    ↓
 provider adapter / KnowledgeExtractor
-    │
-    ▼
-semantic model
-    │
-    ▼
+    ↓
+canonical relationship semantics
+    ↓
+semantic model / KnowledgeModel
+    ↓
 structure detection        future
-    │
-    ▼
+    ↓
 representation engine      future
-    │
-    ▼
+    ↓
 interaction / simulator    future
 ```
 
-Important constraints:
-
-- extractors may depend on semantic contracts;
-- provider SDK types must not leak into the semantic core;
-- the semantic model must not depend on visualization libraries;
-- future visualization must not independently parse source text;
-- evidence provenance must survive downstream transformations;
-- inferred knowledge must remain distinguishable from explicitly source-derived knowledge;
-- schema validity must not be treated as semantic correctness;
-- relationship direction and meaning require explicit semantic discipline.
-
 ## Architectural Principles
 
-1. **Structure before presentation.** Semantic quality is established before visualization.
-2. **Stable IR between source and representation.** `KnowledgeModel` isolates source/extraction concerns from downstream learning representations.
+1. **Structure before presentation.** Establish semantic quality before visualization.
+2. **Stable IR between source and representation.** `KnowledgeModel` remains the semantic boundary.
 3. **Typed boundaries around probabilistic systems.** LLM output must cross validation before becoming project state.
-4. **Evidence survives transformation.** Important semantic objects remain traceable to source material.
-5. **Resolve deterministic facts deterministically.** The LLM may nominate source quotes; code computes exact coordinates.
-6. **Fail closed on grounding ambiguity.** Missing or ambiguous evidence is a failed extraction, not an invitation to loosen validation.
-7. **Conservative semantics over clever inference.** Unsupported equivalence and causality are more damaging than incomplete graphs.
-8. **Vendor neutrality at the extraction boundary.** Provider choice should be replaceable without redesigning the semantic core.
-9. **Semantic validity is distinct from structural validity.** Typed JSON can still encode wrong meaning.
-10. **Architecture follows evidence.** Do not add abstractions for hypothetical future requirements.
+4. **Evidence survives transformation.** Semantic objects remain traceable to source material.
+5. **Resolve deterministic facts deterministically.** Models nominate quotes; code computes coordinates.
+6. **Fail closed on grounding ambiguity.** Do not weaken invariants to make extraction pass.
+7. **Canonical semantics over duplicated prompt prose.** Relationship meanings live in one provider-independent registry.
+8. **Explicit meaning and direction are part of the contract.** Enum names alone are insufficient.
+9. **Prefer truthful claims over forced edges.** Graph density is subordinate to semantic correctness.
+10. **Conservative ontology evolution.** Add predicates only when repeated evidence demonstrates a general gap.
+11. **Vendor neutrality at the extraction boundary.** Provider choice must not redesign the semantic core.
+12. **Architecture follows evidence.** Avoid abstractions for hypothetical future needs.
 
 ## Known Architectural Questions
 
-These remain unresolved and should be answered experimentally rather than assumed:
-
-- What is the smallest relationship grammar that works across mechanistic, software, economic, biological, and historical domains?
-- Should relationship types carry explicit semantic contracts for directionality and valid source/target roles?
-- Should entity, state/condition, process, and event be modeled more distinctly?
-- How should claims and graph edges divide responsibility when a proposition could be represented either way?
-- How should inferred relationships retain supporting evidence without presenting inference as explicit source content?
-- What structures can be reliably detected from combinations of semantic edges?
-- How should progressive disclosure map onto the IR?
-- When does persistence become necessary?
-- What information must survive chunked extraction for long sources?
+- Can the current graph be composed into useful hierarchies, causal paths, temporal/process chains, dependencies, and feedback candidates without re-reading source text?
+- How should endpoint selection preserve policies, regulations, states, events, or intermediate processes instead of substituting nearby entities?
+- How should negative/prevention polarity be represented without predicate proliferation?
+- How should semantically duplicate relationships be suppressed conservatively?
+- Should entity, event, state/condition, and process be modeled more distinctly?
+- Is remaining `MEASURED_BY` misuse a predicate problem or primarily an entity-modeling problem?
+- How should inferred relationships retain supporting evidence if a concrete use case eventually requires it?
+- How should progressive disclosure map onto detected structures?
 
 ## Known Compromises
 
-- Only one real provider adapter exists; provider neutrality is architectural rather than multi-provider-proven.
-- The relationship vocabulary works unevenly across domains and currently encourages some semantic distortion.
-- The current model does not cleanly represent state distinctions such as "changing electric field" versus the base field entity.
-- `INFERRED` evidence remains strict: inferred claims/relationships cannot carry source evidence. A separate supporting-evidence concept remains only a possible future need.
-- Human semantic review is still required to distinguish valid structure from incorrect edge meaning.
+- Only one real provider adapter exists; vendor neutrality is architecturally preserved but not multi-provider-proven.
+- Prompt size grew materially in SPEC-003 because the full relationship grammar is supplied on each extraction.
+- Some endpoint selection, polarity, chronology, and duplicate-edge errors remain.
+- State/event distinctions are still weak in some domains.
+- `INFERRED` evidence remains intentionally strict.
+- Human semantic review remains necessary.
 
 ## Change Protocol
-
-Architecture changes should normally follow:
 
 ```text
 architectural question
@@ -199,9 +168,8 @@ architectural question
 ARCHITECTURE.md update if evidence changed the current model
 ```
 
-Do not update this file merely because a future architecture was discussed.
-
 ## Evidence Index
 
-- **DEBRIEF-001** — established `KnowledgeModel` as semantic IR; validated source grounding, conservative deduplication, vendor-neutral extraction boundary, and deterministic golden-model workflow.
-- **DEBRIEF-002** — validated the IR and extractor boundary with a real LLM across five domains; established deterministic quote-to-span resolution; demonstrated that structural/schema validity is insufficient without semantic relationship evaluation.
+- **DEBRIEF-001** — established `KnowledgeModel` as semantic IR and deterministic semantic validation workflow.
+- **DEBRIEF-002** — validated the IR with a real LLM across five domains; established deterministic quote-to-span resolution and the distinction between schema validity and semantic correctness.
+- **DEBRIEF-003** — established canonical relationship contracts and semantic families; showed material cross-domain precision improvement with only three new general predicates; shifted the main remaining failures toward endpoints, polarity, duplicate edges, and event/state modeling.
