@@ -99,3 +99,15 @@ def test_prepare_semantic_navigation_cli_uses_fixed_spec006_artifacts(tmp_path: 
     assert report["fixed_parent_baseline"].startswith("BASELINE-001")
     assert report["all_provenance_truthful"] is True
     assert "2/2 fixtures, semantic-navigation integrity complete" in capsys.readouterr().out
+
+
+def test_multi_resolution_cli_preserves_missing_provider_as_failed_live_outcome(
+    tmp_path: Path, monkeypatch, capsys
+) -> None:
+    monkeypatch.delenv("OPENAI_API_KEY", raising=False)
+    output = tmp_path / "resolution"
+    assert main(["evaluate-multi-resolution", "--output-dir", str(output)]) == 1
+    report = json.loads((output / "report.json").read_text())
+    assert report["outcome_counts"]["PROVIDER_FAILURE"] == 2
+    assert report["successful_child_count"] == 0
+    assert "0/2 original-source child resolutions succeeded" in capsys.readouterr().out

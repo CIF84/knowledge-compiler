@@ -20,6 +20,12 @@ from .representation_evaluation import (
     default_spec004_structures_directory,
     prepare_representation_evaluation,
 )
+from .resolution_evaluation import (
+    default_parent_models_directory,
+    default_parent_representations_directory,
+    default_reference_directory,
+    run_resolution_evaluation,
+)
 from .semantic_navigation import (
     default_spec006_representations_directory,
     prepare_semantic_navigation_evaluation,
@@ -88,6 +94,17 @@ def _parser() -> argparse.ArgumentParser:
         "--input-dir", type=Path, default=default_spec006_representations_directory()
     )
     navigation.add_argument("--output-dir", required=True, type=Path)
+    resolution = subcommands.add_parser(
+        "evaluate-multi-resolution",
+        help="run the live SPEC-008 child-resolution compilation spike",
+    )
+    resolution.add_argument("--models-dir", type=Path, default=default_parent_models_directory())
+    resolution.add_argument(
+        "--representations-dir", type=Path, default=default_parent_representations_directory()
+    )
+    resolution.add_argument("--reference-dir", type=Path, default=default_reference_directory())
+    resolution.add_argument("--model", default=DEFAULT_MODEL)
+    resolution.add_argument("--output-dir", required=True, type=Path)
     view = subcommands.add_parser("view-representations", help="serve a prepared representation review locally")
     view.add_argument("directory", type=Path)
     view.add_argument("--host", default="127.0.0.1")
@@ -99,6 +116,21 @@ def _parser() -> argparse.ArgumentParser:
 def main(argv: list[str] | None = None) -> int:
     args = _parser().parse_args(argv)
     try:
+        if args.command == "evaluate-multi-resolution":
+            report = run_resolution_evaluation(
+                models_dir=args.models_dir,
+                representations_dir=args.representations_dir,
+                reference_dir=args.reference_dir,
+                output_dir=args.output_dir,
+                model=args.model,
+            )
+            successful = report["successful_child_count"]
+            print(
+                f"Wrote {args.output_dir / 'report.json'} "
+                f"({successful}/2 original-source child resolutions succeeded)"
+            )
+            return 0 if successful == 2 else 1
+
         if args.command == "prepare-semantic-navigation":
             report = prepare_semantic_navigation_evaluation(
                 input_dir=args.input_dir,
