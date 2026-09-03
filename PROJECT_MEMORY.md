@@ -4,8 +4,6 @@ Knowledge Compiler uses paired specification and debrief documents as its intern
 
 The purpose is to preserve not only **what was intended**, but also **what actually happened and what the project learned**.
 
-This is especially important for a project whose architecture and product thesis are expected to evolve through experiments.
-
 ## Memory Unit
 
 Every implementation increment should produce a pair:
@@ -54,7 +52,7 @@ UPDATED PROJECT MODEL
 4. If a previous decision is overturned, record the change in the new debrief and reference the earlier decision.
 5. Keep speculative future architecture out of debrief decisions unless implementation produced evidence for it.
 6. Record deferred issues without automatically expanding the completed milestone to fix them.
-7. Every new SPEC should read relevant prior DEBRIEFs before defining scope.
+7. Every new SPEC should read relevant prior DEBRIEFS before defining scope.
 8. Prefer explicit uncertainty over retrospective certainty.
 
 ## Current Memory Index
@@ -64,6 +62,7 @@ UPDATED PROJECT MODEL
 | 001 — Text to KnowledgeModel | [`SPEC-001`](specs/SPEC-001-text-to-knowledge-model.md) | [`DEBRIEF-001`](debriefs/DEBRIEF-001-text-to-knowledge-model.md) | Accepted |
 | 002 — LLM Semantic Extraction | [`SPEC-002`](specs/SPEC-002-llm-semantic-extraction.md) | [`DEBRIEF-002`](debriefs/DEBRIEF-002-llm-semantic-extraction.md) | Accepted — mixed semantic outcome |
 | 003 — Relationship Semantics | [`SPEC-003`](specs/SPEC-003-relationship-semantics.md) | [`DEBRIEF-003`](debriefs/DEBRIEF-003-relationship-semantics.md) | Accepted — improved semantic precision |
+| 004 — Structure Detection | [`SPEC-004`](specs/SPEC-004-structure-detection.md) | [`DEBRIEF-004`](debriefs/DEBRIEF-004-structure-detection.md) | Accepted — useful deterministic composition with limitations |
 
 ## Current Learning Summary
 
@@ -87,16 +86,27 @@ UPDATED PROJECT MODEL
 - only three new general predicates (`AFFECTS`, `BINDS_TO`, `TRANSFERS_TO`) were needed to fix several cross-domain distortions;
 - relationship families provide useful lightweight semantic organization without requiring a schema migration;
 - truthful claims are preferable to forced graph edges when no predicate fits;
-- remaining semantic errors now concentrate more on endpoint selection, polarity, duplicates, event/state distinctions, and entity modeling than on missing predicates;
-- further vocabulary expansion is not currently justified;
-- the next important architectural question is whether the current graph can support useful higher-order structure detection.
+- remaining semantic errors concentrate on endpoint selection, polarity, duplicates, and event/state distinctions more than missing predicates;
+- further vocabulary expansion is not currently justified.
+
+### After SPEC-004
+
+- `KnowledgeModel` is not merely an interchange format; it can be deterministically composed into useful higher-order structures;
+- hierarchies, causal paths, dependency chains, process chains, and feedback candidates can be detected without source re-reading or LLM calls;
+- composition should remain semantically conservative: connectivity alone is not enough to justify transitivity;
+- empty output can be correct output when the upstream graph lacks composable structure;
+- downstream composition exposes upstream endpoint/state/chronology weaknesses clearly rather than hiding them;
+- event/state modeling is now an evidence-backed concern, but not a blocker for a minimal representation experiment;
+- exact duplicate semantic edges can be collapsed for traversal while preserving original relationship provenance;
+- structurally valid does not necessarily mean pedagogically useful;
+- the next important product question is whether detected structures can become representations that are materially easier to think with than text or JSON.
 
 ## Active Decisions
 
 ```text
 KnowledgeModel is the semantic IR.
 Origin: DEBRIEF-001
-Strengthened: DEBRIEF-002
+Strengthened: DEBRIEF-002, DEBRIEF-004
 Status: active
 
 Provider-specific extraction stays behind KnowledgeExtractor.
@@ -114,7 +124,7 @@ Status: active
 
 Relationship vocabulary evolves through cross-domain evidence, not opportunistic enum growth.
 Origin: DEBRIEF-002
-Strengthened: DEBRIEF-003
+Strengthened: DEBRIEF-003, DEBRIEF-004
 Status: active
 
 Relationship semantics have one canonical provider-independent definition.
@@ -131,6 +141,19 @@ Status: active
 
 Freeze relationship-vocabulary expansion until new cross-domain evidence justifies it.
 Origin: DEBRIEF-003
+Strengthened: DEBRIEF-004
+Status: active
+
+StructureDetector is a deterministic downstream layer consuming KnowledgeModel.
+Origin: DEBRIEF-004
+Status: active
+
+DetectedStructureSet is the provisional boundary between semantic graph and representation.
+Origin: DEBRIEF-004
+Status: provisional-active
+
+Empty or weak detected structures remain explicit; do not manufacture structure merely for presentation.
+Origin: DEBRIEF-004
 Status: active
 ```
 
