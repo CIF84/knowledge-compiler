@@ -44,7 +44,7 @@ Do not accept implementation summaries as verification when repository inspectio
 - inspect the repository and relevant project memory;
 - treat the active SPEC as the implementation contract;
 - implement autonomously within scope;
-- run deterministic tests and required live evaluation;
+- run deterministic tests and only the evaluation needed to answer the active uncertainty;
 - avoid unrelated refactoring;
 - preserve failed experimental attempts when required;
 - commit and push before review handoff;
@@ -66,15 +66,17 @@ Every completed SPEC must have a matching DEBRIEF. Debriefs preserve actual outc
 
 ## Current Practices With Positive Evidence
 
-The following practices have now worked across three implementation cycles:
+The following practices have now worked across four implementation cycles:
 
 - separate product/architecture reasoning from implementation orchestration;
 - convert decisions into a focused repository SPEC;
 - define explicit non-goals to resist scope expansion;
 - use the repository as the context carrier so Codex prompts remain short;
 - use deterministic fixtures around probabilistic boundaries;
-- require real evaluation only when it tests the active uncertainty;
-- keep provider/model constant when a before/after experiment benefits from causal comparability;
+- use accepted outputs from an earlier layer as stable fixtures when testing a downstream layer;
+- require live LLM/network evaluation only when it actually tests the active uncertainty;
+- prefer fully deterministic/offline experiments when they can answer the question;
+- keep provider/model constant when a probabilistic before/after experiment benefits from causal comparability;
 - have Codex implement autonomously rather than micromanaging edits;
 - require tests before acceptance;
 - require completed implementation to be pushed before independent review;
@@ -84,17 +86,35 @@ The following practices have now worked across three implementation cycles:
 - preserve machine-generated evaluation artifacts separately from human interpretation;
 - compare experiments against accepted baselines when possible;
 - turn prior observed failures into regression expectations;
-- accept negative findings instead of hiding them behind repair heuristics;
+- explicitly attribute failures to the layer that caused them instead of repairing them locally by default;
+- accept negative or empty outputs when they truthfully reflect insufficient upstream structure;
 - improve probabilistic behavior at prompt/adapter boundaries before weakening trusted invariants;
 - let evidence, not preference, update project models.
 
-SPEC-003 strengthens confidence that this operating model is converging rather than merely documenting activity.
+SPEC-004 strengthens confidence that the operating model is converging toward lower-probability, lower-cost experiments as layers become validated.
+
+## Experiment Selection Principle
+
+Use the least probabilistic experiment that can answer the current uncertainty.
+
+Examples:
+
+```text
+question about LLM extraction quality
+    → live LLM experiment
+
+question about graph composition
+    → accepted KnowledgeModel fixtures + deterministic algorithms
+
+question about representation usefulness
+    → fixed semantic/structure artifacts + human product evaluation
+```
+
+Do not invoke an LLM merely because one exists in the architecture.
 
 ## Experimental Comparison Practice
 
 When a SPEC tests an improvement to probabilistic behavior, prefer changing one major variable at a time where practical.
-
-SPEC-003 kept the provider, model, and five-domain corpus constant while changing relationship semantics. This made the before/after result materially more interpretable.
 
 Where an accepted prior artifact exists:
 
@@ -110,17 +130,35 @@ comparison artifact
 human review
 ```
 
+SPEC-004 extends this idea: accepted outputs may also become fixed inputs for the next deterministic layer, isolating downstream behavior from upstream variance.
+
 Use this pattern when the comparison itself is decision-relevant. Do not create baseline machinery for every implementation change.
+
+## Failure Attribution Principle
+
+When downstream output is weak, identify whether the weakness comes from:
+
+```text
+upstream semantic model
+current algorithm/layer
+representation/presentation choice
+evaluation expectation
+```
+
+Do not repair an upstream defect inside a downstream layer unless the architecture explicitly assigns that responsibility there.
+
+SPEC-004 showed the value of this discipline: missing chronology, collapsed states, and endpoint substitutions remained visible rather than being silently reconstructed by the detector.
 
 ## Human Review Principle
 
-Live model calls are currently inexpensive; semantic human review is becoming the larger cognitive cost.
+Model calls and deterministic computation are inexpensive; semantic/pedagogical human review is increasingly the larger cognitive cost.
 
 Respond conservatively:
 
 - automate deterministic regression checks when semantics are explicit enough;
 - preserve inspectable artifacts;
-- do not replace human semantic review with a second LLM judge until that judging mechanism is itself validated;
+- use fixed inputs when evaluating downstream product behavior;
+- do not replace human semantic or learning-value review with a second LLM judge until that judging mechanism is validated;
 - reduce review burden through focused experiments rather than larger evaluation suites by default.
 
 ## Security / Secret Handling
@@ -138,6 +176,8 @@ Watch for:
 - SPECs containing multiple unrelated experiments;
 - repeated scope expansion;
 - implementation summaries accepted without inspection;
+- probabilistic calls used where fixed accepted artifacts could answer the question;
+- downstream layers silently repairing upstream semantic defects;
 - multiple major variables changing in an experiment that depends on before/after attribution;
 - aspirational architecture becoming canonical before implementation evidence;
 - decisions living only in chat history;
@@ -147,7 +187,7 @@ Watch for:
 - ontology or prompt growth without demonstrated value;
 - documentation maintenance costing more than the uncertainty it removes;
 - tests validating implementation details rather than product-relevant behavior;
-- schema-valid output being mistaken for product-valid output.
+- structurally valid output being mistaken for pedagogically useful output.
 
 ## Efficiency Principle
 
@@ -163,7 +203,7 @@ reduced uncertainty
 better next experiment
 ```
 
-SPEC-002 and SPEC-003 show that five-domain live semantic experiments can be run at very low direct model cost. The binding constraint is increasingly interpretation quality, not API spend.
+SPEC-004 is a useful efficiency benchmark: it answered a meaningful architectural question with zero model-call cost by reusing accepted upstream artifacts.
 
 ## Reconstruction Test
 
@@ -181,7 +221,7 @@ A fresh collaborator should reconstruct the project approximately in this order:
 
 If this is insufficient to resume safely, project memory is incomplete.
 
-A deliberately fresh-thread reconstruction test remains outstanding, although three increasingly concise implementation handoffs provide indirect positive evidence.
+A deliberately fresh-thread reconstruction test remains outstanding, although four increasingly concise implementation handoffs provide indirect positive evidence.
 
 ## Evolution Rule
 
