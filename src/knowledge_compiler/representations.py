@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from dataclasses import asdict, dataclass, field
 from enum import StrEnum
+from hashlib import sha256
 from typing import Any, Mapping
 
 from .models import EntityType, KnowledgeModel, Origin, RelationshipType, ValidationError
@@ -15,6 +16,143 @@ class Salience(StrEnum):
     PRIMARY = "PRIMARY"
     SECONDARY = "SECONDARY"
     SPARSE = "SPARSE"
+
+
+def edge_key(
+    source_entity_id: str,
+    relationship_type: RelationshipType | str,
+    target_entity_id: str,
+    relationship_ids: tuple[str, ...],
+) -> str:
+    """Return the stable viewer identity for one rendered semantic edge."""
+    relationship_value = RelationshipType(relationship_type).value
+    signature = "|".join(
+        (source_entity_id, relationship_value, target_entity_id, *sorted(relationship_ids))
+    )
+    return f"edge-{sha256(signature.encode()).hexdigest()[:16]}"
+
+
+@dataclass(frozen=True, slots=True)
+class LayoutNode:
+    entity_id: str
+    x: int
+    y: int
+    layer: int
+    order: int
+
+    def __post_init__(self) -> None:
+        if not isinstance(self.entity_id, str) or not self.entity_id.strip():
+            raise ValidationError("layout node entity_id must be non-empty")
+        for name in ("x", "y", "layer", "order"):
+            value = getattr(self, name)
+            if isinstance(value, bool) or not isinstance(value, int) or value < 0:
+                raise ValidationError(f"layout node {name} must be a non-negative integer")
+
+    @classmethod
+    def from_dict(cls, value: Mapping[str, Any]) -> LayoutNode:
+        return cls(
+            entity_id=value.get("entity_id"),
+            x=value.get("x"),
+            y=value.get("y"),
+            layer=value.get("layer"),
+            order=value.get("order"),
+        )
+
+
+@dataclass(frozen=True, slots=True)
+class LayoutPoint:
+    x: int
+    y: int
+
+    def __post_init__(self) -> None:
+        for name in ("x", "y"):
+            value = getattr(self, name)
+            if isinstance(value, bool) or not isinstance(value, int):
+                raise ValidationError(f"layout point {name} must be an integer")
+
+    @classmethod
+    def from_dict(cls, value: Mapping[str, Any]) -> LayoutPoint:
+        return cls(x=value.get("x"), y=value.get("y"))
+
+
+@dataclass(frozen=True, slots=True)
+class LayoutEdge:
+    edge_key: str
+    path_kind: str
+    points: tuple[LayoutPoint, ...]
+    label_x: int
+    label_y: int
+
+    def __post_init__(self) -> None:
+        if not isinstance(self.edge_key, str) or not self.edge_key.strip():
+            raise ValidationError("layout edge edge_key must be non-empty")
+        if self.path_kind not in {"LINE", "QUADRATIC", "CUBIC"}:
+            raise ValidationError("layout edge path_kind is invalid")
+        points = tuple(self.points)
+        expected = {"LINE": 2, "QUADRATIC": 3, "CUBIC": 4}[self.path_kind]
+        if len(points) != expected:
+            raise ValidationError(f"{self.path_kind} layout edge requires {expected} points")
+        if any(
+            isinstance(value, bool) or not isinstance(value, int)
+            for value in (self.label_x, self.label_y)
+        ):
+            raise ValidationError("layout edge label coordinates must be integers")
+        object.__setattr__(self, "points", points)
+
+    @classmethod
+    def from_dict(cls, value: Mapping[str, Any]) -> LayoutEdge:
+        return cls(
+            edge_key=value.get("edge_key"),
+            path_kind=value.get("path_kind"),
+            points=tuple(LayoutPoint.from_dict(item) for item in value.get("points", ())),
+            label_x=value.get("label_x"),
+            label_y=value.get("label_y"),
+        )
+
+
+@dataclass(frozen=True, slots=True)
+class RepresentationLayout:
+    strategy: str
+    orientation: str
+    width: int
+    height: int
+    nodes: tuple[LayoutNode, ...]
+    edges: tuple[LayoutEdge, ...]
+    diagnostics: Mapping[str, int | float]
+
+    def __post_init__(self) -> None:
+        if not isinstance(self.strategy, str) or not self.strategy.strip():
+            raise ValidationError("layout strategy must be non-empty")
+        if self.orientation not in {"LEFT_TO_RIGHT", "TOP_DOWN", "LOOP"}:
+            raise ValidationError("layout orientation is invalid")
+        if any(
+            isinstance(value, bool) or not isinstance(value, int) or value <= 0
+            for value in (self.width, self.height)
+        ):
+            raise ValidationError("layout dimensions must be positive integers")
+        nodes = tuple(self.nodes)
+        edges = tuple(self.edges)
+        if len({item.entity_id for item in nodes}) != len(nodes):
+            raise ValidationError("layout node IDs must be unique")
+        if len({item.edge_key for item in edges}) != len(edges):
+            raise ValidationError("layout edge keys must be unique")
+        if not isinstance(self.diagnostics, Mapping):
+            raise ValidationError("layout diagnostics must be an object")
+        object.__setattr__(self, "nodes", nodes)
+        object.__setattr__(self, "edges", edges)
+        object.__setattr__(self, "diagnostics", dict(self.diagnostics))
+
+    @classmethod
+    def from_dict(cls, value: Mapping[str, Any]) -> RepresentationLayout:
+        return cls(
+            strategy=value.get("strategy"),
+            orientation=value.get("orientation"),
+            width=value.get("width"),
+            height=value.get("height"),
+            nodes=tuple(LayoutNode.from_dict(item) for item in value.get("nodes", ())),
+            edges=tuple(LayoutEdge.from_dict(item) for item in value.get("edges", ())),
+            diagnostics=value.get("diagnostics", {}),
+        )
 
 
 @dataclass(frozen=True, slots=True)
@@ -105,6 +243,15 @@ class RepresentationEdge:
     def provenance_status(self) -> str:
         return "SOURCE_EVIDENCE" if self.evidence else "INFERRED_NO_SOURCE_EVIDENCE"
 
+    @property
+    def edge_key(self) -> str:
+        return edge_key(
+            self.source_entity_id,
+            self.relationship_type,
+            self.target_entity_id,
+            self.relationship_ids,
+        )
+
     @classmethod
     def from_dict(cls, value: Mapping[str, Any]) -> RepresentationEdge:
         return cls(
@@ -129,6 +276,7 @@ class Representation:
     edges: tuple[RepresentationEdge, ...]
     salience: Salience
     warnings: tuple[str, ...] = ()
+    layout: RepresentationLayout | None = None
 
     def __post_init__(self) -> None:
         for name in ("id", "title"):
@@ -154,6 +302,11 @@ class Representation:
             raise ValidationError("representation edge references an unknown displayed node")
         if any(not isinstance(warning, str) or not warning.strip() for warning in warnings):
             raise ValidationError("representation warnings must be non-empty strings")
+        if self.layout is not None:
+            if {item.entity_id for item in self.layout.nodes} != set(node_ids):
+                raise ValidationError("layout nodes must match displayed representation nodes")
+            if {item.edge_key for item in self.layout.edges} != {edge.edge_key for edge in edges}:
+                raise ValidationError("layout edges must match displayed representation edges")
         object.__setattr__(self, "source_structure_ids", source_ids)
         object.__setattr__(self, "nodes", nodes)
         object.__setattr__(self, "edges", edges)
@@ -167,6 +320,7 @@ class Representation:
             nodes=tuple(RepresentationNode.from_dict(item) for item in value.get("nodes", ())),
             edges=tuple(RepresentationEdge.from_dict(item) for item in value.get("edges", ())),
             salience=value.get("salience"), warnings=tuple(value.get("warnings", ())),
+            layout=(RepresentationLayout.from_dict(value["layout"]) if value.get("layout") else None),
         )
 
 
@@ -247,7 +401,11 @@ class RepresentationModel:
     def to_dict(self) -> dict[str, Any]:
         value = asdict(self)
         for representation, raw_representation in zip(self.representations, value["representations"]):
+            if representation.layout is None:
+                raw_representation.pop("layout")
             for edge, raw_edge in zip(representation.edges, raw_representation["edges"]):
+                if representation.layout is not None:
+                    raw_edge["edge_key"] = edge.edge_key
                 raw_edge["provenance_status"] = edge.provenance_status
         return value
 

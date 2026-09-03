@@ -10,6 +10,7 @@ from pathlib import Path
 
 from .evaluation import default_domains_directory, run_live_evaluation
 from .extractor import FixtureExtractor
+from .layout_evaluation import default_spec005_representations_directory, prepare_layout_evaluation
 from .models import KnowledgeModel, ValidationError
 from .openai_extractor import DEFAULT_MODEL, ExtractionError, OpenAILLMExtractor
 from .pipeline import compile_knowledge_model
@@ -67,6 +68,14 @@ def _parser() -> argparse.ArgumentParser:
     prepare.add_argument("--structures-dir", type=Path, default=default_spec004_structures_directory())
     prepare.add_argument("--metadata", type=Path, default=default_presentation_metadata_path())
     prepare.add_argument("--output-dir", required=True, type=Path)
+    layout = subcommands.add_parser(
+        "prepare-layout-interaction",
+        help="build the offline SPEC-006 structure-aware viewer from fixed SPEC-005 artifacts",
+    )
+    layout.add_argument("--input-dir", type=Path, default=default_spec005_representations_directory())
+    layout.add_argument("--models-dir", type=Path, default=default_spec003_models_directory())
+    layout.add_argument("--structures-dir", type=Path, default=default_spec004_structures_directory())
+    layout.add_argument("--output-dir", required=True, type=Path)
     view = subcommands.add_parser("view-representations", help="serve a prepared representation review locally")
     view.add_argument("directory", type=Path)
     view.add_argument("--host", default="127.0.0.1")
@@ -78,6 +87,24 @@ def _parser() -> argparse.ArgumentParser:
 def main(argv: list[str] | None = None) -> int:
     args = _parser().parse_args(argv)
     try:
+        if args.command == "prepare-layout-interaction":
+            report = prepare_layout_evaluation(
+                input_dir=args.input_dir,
+                models_dir=args.models_dir,
+                structures_dir=args.structures_dir,
+                output_dir=args.output_dir,
+            )
+            complete = all((
+                report["all_semantic_content_unchanged"],
+                report["all_selection_identity_complete"],
+                report["all_canonical_directions_preserved"],
+                report["all_provenance_preserved"],
+                report["all_layouts_have_no_node_overlap"],
+            ))
+            status = "layout and interaction integrity complete" if complete else "integrity failure"
+            print(f"Wrote {args.output_dir / 'report.json'} (5/5 domains, {status})")
+            return 0 if complete else 1
+
         if args.command == "represent":
             model = KnowledgeModel.from_dict(json.loads(args.model.read_text(encoding="utf-8")))
             structures = DetectedStructureSet.from_dict(

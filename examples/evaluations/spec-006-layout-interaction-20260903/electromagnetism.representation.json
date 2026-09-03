@@ -1,0 +1,280 @@
+{
+  "document_id": "text-38d7213d9f084e3e",
+  "title": "Electromagnetism",
+  "domain": "unknown",
+  "representations": [
+    {
+      "id": "representation-9058fd6ab1975a17",
+      "representation_type": "FEEDBACK_CANDIDATE",
+      "source_structure_ids": [
+        "structure-feedback-candidate-7813fa728b2f2a1a"
+      ],
+      "title": "Feedback candidate",
+      "nodes": [
+        {
+          "entity_id": "electric-field",
+          "label": "Electric field",
+          "description": "A field created by electric charge that exerts force on another charge; changing electric fields can induce magnetic fields.",
+          "entity_type": "SYSTEM"
+        },
+        {
+          "entity_id": "magnetic-field",
+          "label": "Magnetic field",
+          "description": "A field created by a moving charge or electric current; changing magnetic fields induce electric fields.",
+          "entity_type": "SYSTEM"
+        }
+      ],
+      "edges": [
+        {
+          "source_entity_id": "electric-field",
+          "target_entity_id": "magnetic-field",
+          "relationship_type": "INDUCES",
+          "relationship_label": "INDUCES",
+          "meaning": "The source produces the target through an explicitly described induction mechanism.",
+          "direction": "inducer_to_induced_effect",
+          "relationship_ids": [
+            "changing-electric-field-induces-magnetic-field"
+          ],
+          "evidence": [
+            {
+              "relationship_id": "changing-electric-field-induces-magnetic-field",
+              "document_id": "text-38d7213d9f084e3e",
+              "start_char": 294,
+              "end_char": 345,
+              "quote": "A changing electric field induces a magnetic field."
+            }
+          ],
+          "origins": [
+            "SOURCE"
+          ],
+          "edge_key": "edge-f70467eaddffcc74",
+          "provenance_status": "SOURCE_EVIDENCE"
+        },
+        {
+          "source_entity_id": "magnetic-field",
+          "target_entity_id": "electric-field",
+          "relationship_type": "INDUCES",
+          "relationship_label": "INDUCES",
+          "meaning": "The source produces the target through an explicitly described induction mechanism.",
+          "direction": "inducer_to_induced_effect",
+          "relationship_ids": [
+            "changing-magnetic-field-induces-electric-field"
+          ],
+          "evidence": [
+            {
+              "relationship_id": "changing-magnetic-field-induces-electric-field",
+              "document_id": "text-38d7213d9f084e3e",
+              "start_char": 241,
+              "end_char": 293,
+              "quote": "A changing magnetic field induces an electric field."
+            }
+          ],
+          "origins": [
+            "SOURCE"
+          ],
+          "edge_key": "edge-beee52cbd1187db5",
+          "provenance_status": "SOURCE_EVIDENCE"
+        }
+      ],
+      "salience": "PRIMARY",
+      "warnings": [
+        "Candidate only: collapsed changing-field states weaken the precision of this loop; polarity is not classified."
+      ],
+      "layout": {
+        "strategy": "explicit_feedback_loop",
+        "orientation": "LOOP",
+        "width": 620,
+        "height": 380,
+        "nodes": [
+          {
+            "entity_id": "electric-field",
+            "x": 170,
+            "y": 190,
+            "layer": 0,
+            "order": 0
+          },
+          {
+            "entity_id": "magnetic-field",
+            "x": 450,
+            "y": 190,
+            "layer": 0,
+            "order": 1
+          }
+        ],
+        "edges": [
+          {
+            "edge_key": "edge-beee52cbd1187db5",
+            "path_kind": "QUADRATIC",
+            "points": [
+              {
+                "x": 366,
+                "y": 190
+              },
+              {
+                "x": 310,
+                "y": 55
+              },
+              {
+                "x": 254,
+                "y": 190
+              }
+            ],
+            "label_x": 310,
+            "label_y": 112
+          },
+          {
+            "edge_key": "edge-f70467eaddffcc74",
+            "path_kind": "QUADRATIC",
+            "points": [
+              {
+                "x": 254,
+                "y": 190
+              },
+              {
+                "x": 310,
+                "y": 325
+              },
+              {
+                "x": 366,
+                "y": 190
+              }
+            ],
+            "label_x": 310,
+            "label_y": 274
+          }
+        ],
+        "diagnostics": {
+          "crossing_count": 0,
+          "node_overlap_count": 0,
+          "connector_length": 584.62,
+          "layer_count": 1,
+          "canonical_edges_opposing_layout_flow": 0
+        }
+      }
+    },
+    {
+      "id": "representation-685bf4f0c2881f95",
+      "representation_type": "HIERARCHY",
+      "source_structure_ids": [
+        "structure-hierarchy-06312e96e5b36e07"
+      ],
+      "title": "Hierarchy",
+      "nodes": [
+        {
+          "entity_id": "electromagnetic-wave",
+          "label": "Electromagnetic wave",
+          "description": "A wave formed by changing electric and magnetic fields that can sustain one another.",
+          "entity_type": "SYSTEM"
+        },
+        {
+          "entity_id": "light",
+          "label": "Light",
+          "description": "An electromagnetic wave.",
+          "entity_type": "OBJECT"
+        }
+      ],
+      "edges": [
+        {
+          "source_entity_id": "light",
+          "target_entity_id": "electromagnetic-wave",
+          "relationship_type": "IS_A",
+          "relationship_label": "IS A",
+          "meaning": "The source is a kind, category, or subtype of the target.",
+          "direction": "instance_to_type",
+          "relationship_ids": [
+            "light-is-electromagnetic-wave"
+          ],
+          "evidence": [
+            {
+              "relationship_id": "light-is-electromagnetic-wave",
+              "document_id": "text-38d7213d9f084e3e",
+              "start_char": 443,
+              "end_char": 476,
+              "quote": "Light is an electromagnetic wave."
+            }
+          ],
+          "origins": [
+            "SOURCE"
+          ],
+          "edge_key": "edge-d6412ef055560e48",
+          "provenance_status": "SOURCE_EVIDENCE"
+        }
+      ],
+      "salience": "SPARSE",
+      "warnings": [
+        "Sparse structure: this view contains only one supported relationship."
+      ],
+      "layout": {
+        "strategy": "layered_hierarchy",
+        "orientation": "TOP_DOWN",
+        "width": 560,
+        "height": 330,
+        "nodes": [
+          {
+            "entity_id": "electromagnetic-wave",
+            "x": 280,
+            "y": 80,
+            "layer": 0,
+            "order": 0
+          },
+          {
+            "entity_id": "light",
+            "x": 280,
+            "y": 250,
+            "layer": 1,
+            "order": 0
+          }
+        ],
+        "edges": [
+          {
+            "edge_key": "edge-d6412ef055560e48",
+            "path_kind": "CUBIC",
+            "points": [
+              {
+                "x": 280,
+                "y": 220
+              },
+              {
+                "x": 280,
+                "y": 165
+              },
+              {
+                "x": 280,
+                "y": 165
+              },
+              {
+                "x": 280,
+                "y": 110
+              }
+            ],
+            "label_x": 280,
+            "label_y": 156
+          }
+        ],
+        "diagnostics": {
+          "crossing_count": 0,
+          "node_overlap_count": 0,
+          "connector_length": 110.0,
+          "layer_count": 2,
+          "canonical_edges_opposing_layout_flow": 1
+        }
+      }
+    }
+  ],
+  "empty_state": null,
+  "builder_version": "spec-006-v1",
+  "warnings": [
+    "The field → force → motion mechanism is absent because upstream endpoints do not connect.",
+    "Changing-field states are collapsed into base field entities."
+  ],
+  "metadata": {
+    "representation_count": 2,
+    "source_structure_count": 2,
+    "salience_counts": {
+      "PRIMARY": 1,
+      "SECONDARY": 0,
+      "SPARSE": 1
+    },
+    "layout_version": "spec-006-v1"
+  }
+}

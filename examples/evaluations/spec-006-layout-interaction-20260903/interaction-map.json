@@ -1,0 +1,266 @@
+{
+  "spec": "SPEC-006",
+  "domains": [
+    {
+      "domain": "electromagnetism",
+      "representations": [
+        {
+          "representation_id": "representation-9058fd6ab1975a17",
+          "nodes": [
+            "electric-field",
+            "magnetic-field"
+          ],
+          "relationships": [
+            {
+              "edge_key": "edge-f70467eaddffcc74",
+              "source_entity_id": "electric-field",
+              "target_entity_id": "magnetic-field",
+              "relationship_ids": [
+                "changing-electric-field-induces-magnetic-field"
+              ],
+              "evidence_count": 1
+            },
+            {
+              "edge_key": "edge-beee52cbd1187db5",
+              "source_entity_id": "magnetic-field",
+              "target_entity_id": "electric-field",
+              "relationship_ids": [
+                "changing-magnetic-field-induces-electric-field"
+              ],
+              "evidence_count": 1
+            }
+          ]
+        },
+        {
+          "representation_id": "representation-685bf4f0c2881f95",
+          "nodes": [
+            "electromagnetic-wave",
+            "light"
+          ],
+          "relationships": [
+            {
+              "edge_key": "edge-d6412ef055560e48",
+              "source_entity_id": "light",
+              "target_entity_id": "electromagnetic-wave",
+              "relationship_ids": [
+                "light-is-electromagnetic-wave"
+              ],
+              "evidence_count": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "domain": "software_architecture",
+      "representations": [
+        {
+          "representation_id": "representation-985e777f01fa9ec8",
+          "nodes": [
+            "api-component",
+            "database",
+            "modular-order-processing-service",
+            "order-component",
+            "payment-component"
+          ],
+          "relationships": [
+            {
+              "edge_key": "edge-277f96e2b2274c82",
+              "source_entity_id": "api-component",
+              "target_entity_id": "modular-order-processing-service",
+              "relationship_ids": [
+                "rel-1"
+              ],
+              "evidence_count": 1
+            },
+            {
+              "edge_key": "edge-d3931f90c08a61a6",
+              "source_entity_id": "database",
+              "target_entity_id": "modular-order-processing-service",
+              "relationship_ids": [
+                "rel-4"
+              ],
+              "evidence_count": 1
+            },
+            {
+              "edge_key": "edge-f3c0b1a8ccb461b9",
+              "source_entity_id": "order-component",
+              "target_entity_id": "modular-order-processing-service",
+              "relationship_ids": [
+                "rel-2"
+              ],
+              "evidence_count": 1
+            },
+            {
+              "edge_key": "edge-053a05871f16f112",
+              "source_entity_id": "payment-component",
+              "target_entity_id": "modular-order-processing-service",
+              "relationship_ids": [
+                "rel-3"
+              ],
+              "evidence_count": 1
+            }
+          ]
+        },
+        {
+          "representation_id": "representation-9340322462e99419",
+          "nodes": [
+            "database",
+            "order-component",
+            "payment-component"
+          ],
+          "relationships": [
+            {
+              "edge_key": "edge-ba5f0ccb37663de8",
+              "source_entity_id": "order-component",
+              "target_entity_id": "payment-component",
+              "relationship_ids": [
+                "rel-6"
+              ],
+              "evidence_count": 1
+            },
+            {
+              "edge_key": "edge-b04c2050897fe1b0",
+              "source_entity_id": "payment-component",
+              "target_entity_id": "database",
+              "relationship_ids": [
+                "rel-8"
+              ],
+              "evidence_count": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "domain": "economics",
+      "representations": [
+        {
+          "representation_id": "representation-fe3ba90cb8cfa3d6",
+          "nodes": [
+            "market-price",
+            "quantity-demanded",
+            "quantity-supplied",
+            "shortage",
+            "supply-reduction",
+            "upward-price-pressure"
+          ],
+          "relationships": [
+            {
+              "edge_key": "edge-ab2203590fef2f45",
+              "source_entity_id": "market-price",
+              "target_entity_id": "quantity-demanded",
+              "relationship_ids": [
+                "rel-higher-price-decreases-demanded",
+                "rel-price-decreases-demanded"
+              ],
+              "evidence_count": 2
+            },
+            {
+              "edge_key": "edge-d207db58ebed870c",
+              "source_entity_id": "market-price",
+              "target_entity_id": "quantity-supplied",
+              "relationship_ids": [
+                "rel-higher-price-increases-supplied",
+                "rel-price-increases-supplied"
+              ],
+              "evidence_count": 2
+            },
+            {
+              "edge_key": "edge-5debac009cb6f924",
+              "source_entity_id": "shortage",
+              "target_entity_id": "upward-price-pressure",
+              "relationship_ids": [
+                "rel-shortage-upward-pressure"
+              ],
+              "evidence_count": 1
+            },
+            {
+              "edge_key": "edge-c08e36e3f639f8dd",
+              "source_entity_id": "supply-reduction",
+              "target_entity_id": "market-price",
+              "relationship_ids": [
+                "rel-supply-reduction-price-increase"
+              ],
+              "evidence_count": 1
+            },
+            {
+              "edge_key": "edge-a684bd85c5e770d6",
+              "source_entity_id": "upward-price-pressure",
+              "target_entity_id": "market-price",
+              "relationship_ids": [
+                "rel-upward-pressure-price"
+              ],
+              "evidence_count": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "domain": "biology",
+      "representations": []
+    },
+    {
+      "domain": "history",
+      "representations": [
+        {
+          "representation_id": "representation-f803f1f3830cadf7",
+          "nodes": [
+            "movable-metal-type",
+            "press",
+            "printed-books",
+            "printing"
+          ],
+          "relationships": [
+            {
+              "edge_key": "edge-5273d926629476fb",
+              "source_entity_id": "movable-metal-type",
+              "target_entity_id": "printing",
+              "relationship_ids": [
+                "rel-type-enables-printing"
+              ],
+              "evidence_count": 1
+            },
+            {
+              "edge_key": "edge-f2f6b5915678c033",
+              "source_entity_id": "press",
+              "target_entity_id": "printing",
+              "relationship_ids": [
+                "rel-press-enables-printing"
+              ],
+              "evidence_count": 1
+            },
+            {
+              "edge_key": "edge-64bfd5e2652074f0",
+              "source_entity_id": "printing",
+              "target_entity_id": "printed-books",
+              "relationship_ids": [
+                "rel-printing-enables-copies"
+              ],
+              "evidence_count": 1
+            }
+          ]
+        },
+        {
+          "representation_id": "representation-372c9b3707ffd6cc",
+          "nodes": [
+            "authorities",
+            "printed-controversy"
+          ],
+          "relationships": [
+            {
+              "edge_key": "edge-c9662465f6119422",
+              "source_entity_id": "printed-controversy",
+              "target_entity_id": "authorities",
+              "relationship_ids": [
+                "rel-controversy-precedes-response"
+              ],
+              "evidence_count": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -81,3 +81,12 @@ def test_prepare_representations_cli_builds_viewer(tmp_path: Path, capsys) -> No
     assert (output / "index.html").is_file()
     assert (output / "manifest.json").is_file()
     assert "5/5 domains, provenance complete" in capsys.readouterr().out
+
+
+def test_prepare_layout_interaction_cli_uses_fixed_spec005_artifacts(tmp_path: Path, capsys) -> None:
+    output = tmp_path / "review"
+    assert main(["prepare-layout-interaction", "--output-dir", str(output)]) == 0
+    report = json.loads((output / "report.json").read_text())
+    assert report["fixed_input_baseline"] == "SPEC-005 committed representation artifacts"
+    assert report["all_selection_identity_complete"] is True
+    assert "5/5 domains, layout and interaction integrity complete" in capsys.readouterr().out

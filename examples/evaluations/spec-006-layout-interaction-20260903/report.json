@@ -1,0 +1,226 @@
+{
+  "spec": "SPEC-006",
+  "builder_version": "spec-006-v1",
+  "fixed_input_baseline": "SPEC-005 committed representation artifacts",
+  "network_or_llm_calls": false,
+  "results": [
+    {
+      "domain": "electromagnetism",
+      "input": "examples/evaluations/spec-005-minimal-representation-20260903/electromagnetism.representation.json",
+      "output": "electromagnetism.representation.json",
+      "representations": [
+        {
+          "representation_id": "representation-9058fd6ab1975a17",
+          "representation_type": "FEEDBACK_CANDIDATE",
+          "layout_strategy": "explicit_feedback_loop",
+          "orientation": "LOOP",
+          "node_count": 2,
+          "edge_count": 2,
+          "crossing_count": 0,
+          "node_overlap_count": 0,
+          "connector_length": 584.62,
+          "layer_count": 1,
+          "canonical_edges_opposing_layout_flow": 0,
+          "warnings": [
+            "Candidate only: collapsed changing-field states weaken the precision of this loop; polarity is not classified."
+          ],
+          "selection_identity_coverage": {
+            "rendered_edges": 2,
+            "relationship_controls": 2,
+            "mapped_both_directions": true
+          }
+        },
+        {
+          "representation_id": "representation-685bf4f0c2881f95",
+          "representation_type": "HIERARCHY",
+          "layout_strategy": "layered_hierarchy",
+          "orientation": "TOP_DOWN",
+          "node_count": 2,
+          "edge_count": 1,
+          "crossing_count": 0,
+          "node_overlap_count": 0,
+          "connector_length": 110.0,
+          "layer_count": 2,
+          "canonical_edges_opposing_layout_flow": 1,
+          "warnings": [
+            "Sparse structure: this view contains only one supported relationship."
+          ],
+          "selection_identity_coverage": {
+            "rendered_edges": 1,
+            "relationship_controls": 1,
+            "mapped_both_directions": true
+          }
+        }
+      ],
+      "empty_state": null,
+      "warnings": [
+        "The field → force → motion mechanism is absent because upstream endpoints do not connect.",
+        "Changing-field states are collapsed into base field entities."
+      ],
+      "semantic_content_unchanged": true,
+      "selection_identity_complete": true,
+      "canonical_direction_integrity": true,
+      "provenance_integrity": true
+    },
+    {
+      "domain": "software_architecture",
+      "input": "examples/evaluations/spec-005-minimal-representation-20260903/software_architecture.representation.json",
+      "output": "software_architecture.representation.json",
+      "representations": [
+        {
+          "representation_id": "representation-985e777f01fa9ec8",
+          "representation_type": "HIERARCHY",
+          "layout_strategy": "layered_hierarchy",
+          "orientation": "TOP_DOWN",
+          "node_count": 5,
+          "edge_count": 4,
+          "crossing_count": 0,
+          "node_overlap_count": 0,
+          "connector_length": 1200.0,
+          "layer_count": 2,
+          "canonical_edges_opposing_layout_flow": 4,
+          "warnings": [],
+          "selection_identity_coverage": {
+            "rendered_edges": 4,
+            "relationship_controls": 4,
+            "mapped_both_directions": true
+          }
+        },
+        {
+          "representation_id": "representation-9340322462e99419",
+          "representation_type": "DEPENDENCY_CHAIN",
+          "layout_strategy": "layered_dependency",
+          "orientation": "LEFT_TO_RIGHT",
+          "node_count": 3,
+          "edge_count": 2,
+          "crossing_count": 0,
+          "node_overlap_count": 0,
+          "connector_length": 124.0,
+          "layer_count": 3,
+          "canonical_edges_opposing_layout_flow": 0,
+          "warnings": [],
+          "selection_identity_coverage": {
+            "rendered_edges": 2,
+            "relationship_controls": 2,
+            "mapped_both_directions": true
+          }
+        }
+      ],
+      "empty_state": null,
+      "warnings": [],
+      "semantic_content_unchanged": true,
+      "selection_identity_complete": true,
+      "canonical_direction_integrity": true,
+      "provenance_integrity": true
+    },
+    {
+      "domain": "economics",
+      "input": "examples/evaluations/spec-005-minimal-representation-20260903/economics.representation.json",
+      "output": "economics.representation.json",
+      "representations": [
+        {
+          "representation_id": "representation-fe3ba90cb8cfa3d6",
+          "representation_type": "CAUSAL_PATH",
+          "layout_strategy": "layered_causal",
+          "orientation": "LEFT_TO_RIGHT",
+          "node_count": 6,
+          "edge_count": 5,
+          "crossing_count": 0,
+          "node_overlap_count": 0,
+          "connector_length": 780.0,
+          "layer_count": 4,
+          "canonical_edges_opposing_layout_flow": 0,
+          "warnings": [],
+          "selection_identity_coverage": {
+            "rendered_edges": 5,
+            "relationship_controls": 5,
+            "mapped_both_directions": true
+          }
+        }
+      ],
+      "empty_state": null,
+      "warnings": [
+        "The graph has no relationship closing a market feedback cycle; no loop is displayed."
+      ],
+      "semantic_content_unchanged": true,
+      "selection_identity_complete": true,
+      "canonical_direction_integrity": true,
+      "provenance_integrity": true
+    },
+    {
+      "domain": "biology",
+      "input": "examples/evaluations/spec-005-minimal-representation-20260903/biology.representation.json",
+      "output": "biology.representation.json",
+      "representations": [],
+      "empty_state": "No supported higher-order structure was detected. The source may still contain useful entities and relationships, but this viewer will not invent a diagram.",
+      "warnings": [
+        "The upstream model lacks an explicit Transcription PRECEDES Translation edge."
+      ],
+      "semantic_content_unchanged": true,
+      "selection_identity_complete": true,
+      "canonical_direction_integrity": true,
+      "provenance_integrity": true
+    },
+    {
+      "domain": "history",
+      "input": "examples/evaluations/spec-005-minimal-representation-20260903/history.representation.json",
+      "output": "history.representation.json",
+      "representations": [
+        {
+          "representation_id": "representation-f803f1f3830cadf7",
+          "representation_type": "DEPENDENCY_CHAIN",
+          "layout_strategy": "layered_dependency",
+          "orientation": "LEFT_TO_RIGHT",
+          "node_count": 4,
+          "edge_count": 3,
+          "crossing_count": 0,
+          "node_overlap_count": 0,
+          "connector_length": 306.0,
+          "layer_count": 3,
+          "canonical_edges_opposing_layout_flow": 0,
+          "warnings": [],
+          "selection_identity_coverage": {
+            "rendered_edges": 3,
+            "relationship_controls": 3,
+            "mapped_both_directions": true
+          }
+        },
+        {
+          "representation_id": "representation-372c9b3707ffd6cc",
+          "representation_type": "PROCESS_CHAIN",
+          "layout_strategy": "chronological_axis",
+          "orientation": "LEFT_TO_RIGHT",
+          "node_count": 2,
+          "edge_count": 1,
+          "crossing_count": 0,
+          "node_overlap_count": 0,
+          "connector_length": 62.0,
+          "layer_count": 2,
+          "canonical_edges_opposing_layout_flow": 0,
+          "warnings": [
+            "Endpoint limitation: Authorities is an actor, not the response event described by the source.",
+            "Sparse structure: this view contains only one supported relationship."
+          ],
+          "selection_identity_coverage": {
+            "rendered_edges": 1,
+            "relationship_controls": 1,
+            "mapped_both_directions": true
+          }
+        }
+      ],
+      "empty_state": null,
+      "warnings": [
+        "The chronology targets the actor Authorities rather than an authority-response event."
+      ],
+      "semantic_content_unchanged": true,
+      "selection_identity_complete": true,
+      "canonical_direction_integrity": true,
+      "provenance_integrity": true
+    }
+  ],
+  "all_semantic_content_unchanged": true,
+  "all_selection_identity_complete": true,
+  "all_canonical_directions_preserved": true,
+  "all_provenance_preserved": true,
+  "all_layouts_have_no_node_overlap": true
+}
