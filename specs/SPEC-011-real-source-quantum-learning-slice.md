@@ -586,6 +586,4 @@ Artifact names may differ if existing evaluation conventions provide a cleaner f
 - [ ] The source is normalized through `SourceDocument`.
 - [ ] Real extraction uses the existing provider boundary.
 - [ ] Evidence grounding remains exact/fail-closed.
-- [ ] Existing canonical relationship semantics remain authoritative.
-- [ ] SPEC-010 proposition semantics remain available.
-- [ ] No unsupported source enrichment is
+- [ ] Existing canonical relationship semantics
