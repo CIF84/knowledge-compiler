@@ -1,0 +1,78 @@
+{
+  "spec": "SPEC-004",
+  "review_type": "human_semantic_review",
+  "overall_verdict": "GOOD_WITH_LIMITATIONS",
+  "primary_question_answer": "YES. The current KnowledgeModel yields genuinely useful deterministic structures in software architecture, economics, and history, while faithfully exposing missing or weak upstream semantics in electromagnetism and biology.",
+  "questions": {
+    "which_structure_types_worked_reliably": [
+      "Hierarchy detection reliably grouped same-predicate structural DAGs without mixing IS_A, PART_OF, and EXAMPLE_OF.",
+      "Causal paths reliably preserved the original predicate sequence and exposed branching economics mechanisms.",
+      "Dependency chains reliably composed same-predicate dependency topology while avoiding invalid REQUIRES/ENABLES transitivity.",
+      "Process chains and feedback candidates were algorithmically reliable, but their pedagogical value was limited by upstream endpoint/state quality in this corpus."
+    ],
+    "which_domains_produced_genuinely_useful_structures": [
+      "Software architecture produced a clear component hierarchy and order-to-payment-to-database dependency chain.",
+      "Economics produced four useful causal paths showing how shortage or supply reduction reaches price and then quantity demanded or supplied.",
+      "History produced two useful printing-enablement chains; its single chronology is structurally correct but endpoint-imprecise.",
+      "Electromagnetism produced a useful induction-cycle candidate, but state collapse makes it less precise than the source mechanism.",
+      "Biology produced no higher-order structure; this is a truthful result rather than a detector failure."
+    ],
+    "expected_structures_absent_due_to_upstream_edges": [
+      "Electromagnetism lacks a composable electric-field to force to motion path because its two mechanism edges use disconnected charge/electric-force endpoints.",
+      "Economics lacks a market feedback candidate because quantity changes are not connected back to shortage or surplus.",
+      "Biology lacks the explicit Transcription PRECEDES Translation edge needed for a process chain."
+    ],
+    "technically_correct_but_pedagogically_weak": [
+      "The Light IS_A Electromagnetic wave hierarchy contains only one edge and adds little beyond that edge.",
+      "The Printed controversy PRECEDES Authorities chain faithfully composes the graph, but Authorities is an actor rather than the authority-response event named by the source.",
+      "The electric-field/magnetic-field feedback candidate is a real directed causal-family cycle, but collapsed changing-field states weaken its explanatory precision."
+    ],
+    "endpoint_state_impact": "Material in three domains but not a general blocker. Endpoint imprecision prevents the main electromagnetism mechanism from composing, removes biology chronology, and weakens history chronology. Software architecture and economics still compose usefully.",
+    "need_for_event_state_modeling": "Structure detection exposes a concrete need for better event/state endpoints if cross-domain process and feedback representations are expected to be precise. It does not justify repairing or redesigning the IR inside SPEC-004.",
+    "ir_sufficient_for_representation_experiment": "Yes, for a minimal representation experiment that treats detected structures as candidates, preserves evidence access, and handles empty or weak structures honestly. Event/state modeling remains a focused follow-up concern rather than a prerequisite for all representation work."
+  },
+  "domains": {
+    "electromagnetism": {
+      "verdict": "MIXED",
+      "useful": ["A two-edge directed induction cycle is exposed as a feedback candidate."],
+      "missed": ["Electric field to force to motion causal path."],
+      "misleading": ["The induction cycle uses base field entities because changing-field states were collapsed upstream."],
+      "attribution": "UPSTREAM_MODEL_LIMITATION"
+    },
+    "software_architecture": {
+      "verdict": "GOOD",
+      "useful": ["Four components form a PART_OF hierarchy under the service.", "Order component REQUIRES payment component REQUIRES database forms a useful dependency chain."],
+      "missed": [],
+      "misleading": [],
+      "attribution": "NO_DETECTOR_FAILURE_OBSERVED"
+    },
+    "economics": {
+      "verdict": "GOOD",
+      "useful": ["Four maximal causal paths expose shortage/upward-pressure and supply-reduction effects on price and quantities."],
+      "missed": ["No feedback cycle is supported by the upstream graph."],
+      "misleading": [],
+      "attribution": "UPSTREAM_MODEL_LIMITATION"
+    },
+    "biology": {
+      "verdict": "POOR",
+      "useful": ["Interaction edges are correctly excluded from causal composition."],
+      "missed": ["Transcription-to-translation process chain."],
+      "misleading": [],
+      "attribution": "UPSTREAM_MODEL_LIMITATION"
+    },
+    "history": {
+      "verdict": "MIXED",
+      "useful": ["Movable type and press each form an ENABLES chain through printing to printed books."],
+      "missed": [],
+      "misleading": ["Chronology terminates at Authorities rather than an authority-response event."],
+      "attribution": "FAITHFUL_COMPOSITION_OF_UPSTREAM_ENDPOINT_IMPRECISION"
+    }
+  },
+  "detector_failures": [],
+  "upstream_model_limitations": [
+    "Disconnected or substituted endpoints",
+    "Missing explicit chronology",
+    "Collapsed changing-field states",
+    "Missing feedback-closing edges"
+  ]
+}

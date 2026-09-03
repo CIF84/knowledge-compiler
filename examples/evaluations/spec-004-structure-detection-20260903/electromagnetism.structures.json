@@ -1,0 +1,76 @@
+{
+  "source_document_id": "text-38d7213d9f084e3e",
+  "structures": [
+    {
+      "id": "structure-feedback-candidate-7813fa728b2f2a1a",
+      "structure_type": "FEEDBACK_CANDIDATE",
+      "entity_ids": [
+        "electric-field",
+        "magnetic-field",
+        "electric-field"
+      ],
+      "relationship_ids": [
+        "changing-electric-field-induces-magnetic-field",
+        "changing-magnetic-field-induces-electric-field"
+      ],
+      "relationship_types": [
+        "INDUCES",
+        "INDUCES"
+      ],
+      "metadata": {
+        "supporting_relationship_ids_by_edge": [
+          [
+            "changing-electric-field-induces-magnetic-field"
+          ],
+          [
+            "changing-magnetic-field-induces-electric-field"
+          ]
+        ],
+        "edge_count": 2,
+        "polarity": "UNCLASSIFIED"
+      }
+    },
+    {
+      "id": "structure-hierarchy-06312e96e5b36e07",
+      "structure_type": "HIERARCHY",
+      "entity_ids": [
+        "electromagnetic-wave",
+        "light"
+      ],
+      "relationship_ids": [
+        "light-is-electromagnetic-wave"
+      ],
+      "relationship_types": [
+        "IS_A"
+      ],
+      "metadata": {
+        "supporting_relationship_ids_by_edge": [
+          [
+            "light-is-electromagnetic-wave"
+          ]
+        ],
+        "hierarchy_relationship_type": "IS_A",
+        "roots": [
+          "electromagnetic-wave"
+        ],
+        "leaves": [
+          "light"
+        ],
+        "contains_cycle": false
+      }
+    }
+  ],
+  "detector_version": "spec-004-v1",
+  "metadata": {
+    "structure_counts": {
+      "HIERARCHY": 1,
+      "CAUSAL_PATH": 0,
+      "PROCESS_CHAIN": 0,
+      "DEPENDENCY_CHAIN": 0,
+      "FEEDBACK_CANDIDATE": 1
+    },
+    "logical_relationship_count": 8,
+    "input_relationship_count": 9,
+    "maximum_causal_path_edges": 5
+  }
+}

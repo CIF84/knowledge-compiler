@@ -1,0 +1,62 @@
+{
+  "clean_hierarchy_dag": [
+    ["a", "PART_OF", "root"],
+    ["b", "PART_OF", "root"],
+    ["leaf", "PART_OF", "a"],
+    ["leaf", "PART_OF", "b"]
+  ],
+  "multiple_hierarchy_roots": [
+    ["a", "PART_OF", "root-a"],
+    ["b", "PART_OF", "root-b"]
+  ],
+  "structural_cycle": [
+    ["a", "PART_OF", "b"],
+    ["b", "PART_OF", "a"]
+  ],
+  "simple_causal_chain": [
+    ["a", "CAUSES", "b"],
+    ["b", "AFFECTS", "c"]
+  ],
+  "branching_causal_graph": [
+    ["a", "CAUSES", "b"],
+    ["b", "INCREASES", "c"],
+    ["b", "DECREASES", "d"]
+  ],
+  "temporal_chain": [
+    ["a", "PRECEDES", "b"],
+    ["b", "PRECEDES", "c"]
+  ],
+  "dependency_chain": [
+    ["operation", "REQUIRES", "service"],
+    ["service", "REQUIRES", "database"]
+  ],
+  "mixed_dependency_directions": [
+    ["operation", "REQUIRES", "service"],
+    ["service", "ENABLES", "database"]
+  ],
+  "causal_cycle": [
+    ["a", "CAUSES", "b"],
+    ["b", "INCREASES", "c"],
+    ["c", "DECREASES", "a"]
+  ],
+  "duplicate_edges": [
+    ["a", "CAUSES", "b"],
+    ["a", "CAUSES", "b"],
+    ["b", "AFFECTS", "c"]
+  ],
+  "non_causal_cycle": [
+    ["a", "INTERACTS_WITH", "b"],
+    ["b", "INTERACTS_WITH", "a"]
+  ],
+  "mixed_relationship_families": [
+    ["part", "PART_OF", "whole"],
+    ["cause", "CAUSES", "effect"],
+    ["effect", "PRECEDES", "later"]
+  ],
+  "disconnected_graph": [
+    ["a", "CAUSES", "b"],
+    ["b", "CAUSES", "c"],
+    ["x", "CAUSES", "y"],
+    ["y", "CAUSES", "z"]
+  ]
+}

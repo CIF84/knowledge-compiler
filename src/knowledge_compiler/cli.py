@@ -10,9 +10,15 @@ from pathlib import Path
 
 from .evaluation import default_domains_directory, run_live_evaluation
 from .extractor import FixtureExtractor
-from .models import ValidationError
+from .models import KnowledgeModel, ValidationError
 from .openai_extractor import DEFAULT_MODEL, ExtractionError, OpenAILLMExtractor
 from .pipeline import compile_knowledge_model
+from .structure_detection import StructureDetector
+from .structure_evaluation import (
+    default_spec003_models_directory,
+    default_structure_expectations_path,
+    evaluate_structure_models,
+)
 
 
 def _parser() -> argparse.ArgumentParser:
@@ -29,12 +35,43 @@ def _parser() -> argparse.ArgumentParser:
     evaluate.add_argument("--model", default=DEFAULT_MODEL)
     evaluate.add_argument("--fixtures-dir", type=Path, default=default_domains_directory())
     evaluate.add_argument("--output-dir", required=True, type=Path)
+    detect = subcommands.add_parser("detect-structures", help="detect structures in KnowledgeModel JSON")
+    detect.add_argument("model", type=Path)
+    detect.add_argument("--output", "-o", required=True, type=Path)
+    structure_evaluation = subcommands.add_parser(
+        "evaluate-structures", help="evaluate structure detection from the five SPEC-003 models"
+    )
+    structure_evaluation.add_argument("--models-dir", type=Path, default=default_spec003_models_directory())
+    structure_evaluation.add_argument(
+        "--expectations", type=Path, default=default_structure_expectations_path()
+    )
+    structure_evaluation.add_argument("--output-dir", required=True, type=Path)
     return parser
 
 
 def main(argv: list[str] | None = None) -> int:
     args = _parser().parse_args(argv)
     try:
+        if args.command == "detect-structures":
+            model = KnowledgeModel.from_dict(json.loads(args.model.read_text(encoding="utf-8")))
+            structures = StructureDetector().detect(model)
+            args.output.write_text(
+                json.dumps(structures.to_dict(), indent=2, ensure_ascii=False) + "\n",
+                encoding="utf-8",
+            )
+            print(f"Wrote {args.output} ({len(structures.structures)} structures)")
+            return 0
+
+        if args.command == "evaluate-structures":
+            report = evaluate_structure_models(
+                models_dir=args.models_dir,
+                output_dir=args.output_dir,
+                expectations_path=args.expectations,
+            )
+            met = sum(item["all_golden_expectations_met"] for item in report["results"])
+            print(f"Wrote {args.output_dir / 'report.json'} ({met}/{len(report['results'])} domains met expectations)")
+            return 0 if met == len(report["results"]) else 1
+
         if args.command == "evaluate":
             if not os.environ.get("OPENAI_API_KEY"):
                 raise ExtractionError("OPENAI_API_KEY is required for --extractor llm")

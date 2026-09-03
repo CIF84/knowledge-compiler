@@ -1,0 +1,135 @@
+{
+  "spec": "SPEC-004",
+  "detector_version": "spec-004-v1",
+  "source_baseline": "SPEC-003",
+  "network_or_llm_calls": false,
+  "models_dir": "examples/evaluations/spec-003-relationship-semantics-20260903",
+  "expectations": "/Users/romanchristov/Documents/GitHub/knowledge-compiler/tests/fixtures/domains/structure_expectations.json",
+  "results": [
+    {
+      "domain": "electromagnetism",
+      "input": "examples/evaluations/spec-003-relationship-semantics-20260903/electromagnetism.knowledge.json",
+      "output": "electromagnetism.structures.json",
+      "structure_counts": {
+        "HIERARCHY": 1,
+        "CAUSAL_PATH": 0,
+        "PROCESS_CHAIN": 0,
+        "DEPENDENCY_CHAIN": 0,
+        "FEEDBACK_CANDIDATE": 1
+      },
+      "golden_expectations": [
+        {
+          "name": "light classification hierarchy",
+          "found": true
+        },
+        {
+          "name": "electric/magnetic induction feedback candidate",
+          "found": true
+        }
+      ],
+      "all_golden_expectations_met": true,
+      "known_upstream_limitations": [
+        "The electric-field/force/motion mechanism does not compose because the force-receiving charge and motion-affecting electric-force endpoints are disconnected.",
+        "Changing-field states are collapsed into the base field entities, so the detected induction cycle overstates endpoint precision."
+      ]
+    },
+    {
+      "domain": "software_architecture",
+      "input": "examples/evaluations/spec-003-relationship-semantics-20260903/software_architecture.knowledge.json",
+      "output": "software_architecture.structures.json",
+      "structure_counts": {
+        "HIERARCHY": 1,
+        "CAUSAL_PATH": 0,
+        "PROCESS_CHAIN": 0,
+        "DEPENDENCY_CHAIN": 1,
+        "FEEDBACK_CANDIDATE": 0
+      },
+      "golden_expectations": [
+        {
+          "name": "service component hierarchy",
+          "found": true
+        },
+        {
+          "name": "order/payment/database dependency chain",
+          "found": true
+        }
+      ],
+      "all_golden_expectations_met": true,
+      "known_upstream_limitations": [
+        "Policy and prevention-polarity endpoint errors remain isolated edges and do not form higher-order structures."
+      ]
+    },
+    {
+      "domain": "economics",
+      "input": "examples/evaluations/spec-003-relationship-semantics-20260903/economics.knowledge.json",
+      "output": "economics.structures.json",
+      "structure_counts": {
+        "HIERARCHY": 0,
+        "CAUSAL_PATH": 4,
+        "PROCESS_CHAIN": 0,
+        "DEPENDENCY_CHAIN": 0,
+        "FEEDBACK_CANDIDATE": 0
+      },
+      "golden_expectations": [
+        {
+          "name": "shortage pressure price demand path",
+          "found": true
+        },
+        {
+          "name": "supply reduction price supply path",
+          "found": true
+        }
+      ],
+      "all_golden_expectations_met": true,
+      "known_upstream_limitations": [
+        "The misleading elasticity MEASURED_BY edge is descriptive and is intentionally not composed.",
+        "No causal cycle is present because the model does not connect quantity changes back to shortage or surplus."
+      ]
+    },
+    {
+      "domain": "biology",
+      "input": "examples/evaluations/spec-003-relationship-semantics-20260903/biology.knowledge.json",
+      "output": "biology.structures.json",
+      "structure_counts": {
+        "HIERARCHY": 0,
+        "CAUSAL_PATH": 0,
+        "PROCESS_CHAIN": 0,
+        "DEPENDENCY_CHAIN": 0,
+        "FEEDBACK_CANDIDATE": 0
+      },
+      "golden_expectations": [],
+      "all_golden_expectations_met": true,
+      "known_upstream_limitations": [
+        "No PRECEDES edge connects transcription and translation, so no process chain can be detected.",
+        "Interaction and transformation edges are deliberately not reinterpreted as causal or temporal chains."
+      ]
+    },
+    {
+      "domain": "history",
+      "input": "examples/evaluations/spec-003-relationship-semantics-20260903/history.knowledge.json",
+      "output": "history.structures.json",
+      "structure_counts": {
+        "HIERARCHY": 0,
+        "CAUSAL_PATH": 0,
+        "PROCESS_CHAIN": 1,
+        "DEPENDENCY_CHAIN": 2,
+        "FEEDBACK_CANDIDATE": 0
+      },
+      "golden_expectations": [
+        {
+          "name": "controversy chronology",
+          "found": true
+        },
+        {
+          "name": "movable type printing books dependency chain",
+          "found": true
+        }
+      ],
+      "all_golden_expectations_met": true,
+      "known_upstream_limitations": [
+        "The chronology targets an actor rather than an authority-response event, so it is structurally faithful but pedagogically weak.",
+        "The pamphlet edge targets arguments rather than circulation and does not join a useful dependency chain."
+      ]
+    }
+  ]
+}

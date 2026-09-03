@@ -1,0 +1,96 @@
+{
+  "source_document_id": "text-070a252acc409f55",
+  "structures": [
+    {
+      "id": "structure-dependency-chain-dbc1ba63cc13589b",
+      "structure_type": "DEPENDENCY_CHAIN",
+      "entity_ids": [
+        "movable-metal-type",
+        "printing",
+        "printed-books"
+      ],
+      "relationship_ids": [
+        "rel-type-enables-printing",
+        "rel-printing-enables-copies"
+      ],
+      "relationship_types": [
+        "ENABLES",
+        "ENABLES"
+      ],
+      "metadata": {
+        "supporting_relationship_ids_by_edge": [
+          [
+            "rel-type-enables-printing"
+          ],
+          [
+            "rel-printing-enables-copies"
+          ]
+        ],
+        "edge_count": 2
+      }
+    },
+    {
+      "id": "structure-dependency-chain-a020f5ab2fc01f35",
+      "structure_type": "DEPENDENCY_CHAIN",
+      "entity_ids": [
+        "press",
+        "printing",
+        "printed-books"
+      ],
+      "relationship_ids": [
+        "rel-press-enables-printing",
+        "rel-printing-enables-copies"
+      ],
+      "relationship_types": [
+        "ENABLES",
+        "ENABLES"
+      ],
+      "metadata": {
+        "supporting_relationship_ids_by_edge": [
+          [
+            "rel-press-enables-printing"
+          ],
+          [
+            "rel-printing-enables-copies"
+          ]
+        ],
+        "edge_count": 2
+      }
+    },
+    {
+      "id": "structure-process-chain-a48c9577b67579d5",
+      "structure_type": "PROCESS_CHAIN",
+      "entity_ids": [
+        "printed-controversy",
+        "authorities"
+      ],
+      "relationship_ids": [
+        "rel-controversy-precedes-response"
+      ],
+      "relationship_types": [
+        "PRECEDES"
+      ],
+      "metadata": {
+        "supporting_relationship_ids_by_edge": [
+          [
+            "rel-controversy-precedes-response"
+          ]
+        ],
+        "edge_count": 1
+      }
+    }
+  ],
+  "detector_version": "spec-004-v1",
+  "metadata": {
+    "structure_counts": {
+      "HIERARCHY": 0,
+      "CAUSAL_PATH": 0,
+      "PROCESS_CHAIN": 1,
+      "DEPENDENCY_CHAIN": 2,
+      "FEEDBACK_CANDIDATE": 0
+    },
+    "logical_relationship_count": 12,
+    "input_relationship_count": 12,
+    "maximum_causal_path_edges": 5
+  }
+}

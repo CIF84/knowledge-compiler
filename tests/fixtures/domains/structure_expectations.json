@@ -1,0 +1,82 @@
+{
+  "electromagnetism": {
+    "expected": [
+      {
+        "name": "light classification hierarchy",
+        "structure_type": "HIERARCHY",
+        "entity_ids": ["electromagnetic-wave", "light"],
+        "entity_order_matters": false
+      },
+      {
+        "name": "electric/magnetic induction feedback candidate",
+        "structure_type": "FEEDBACK_CANDIDATE",
+        "entity_ids": ["electric-field", "magnetic-field", "electric-field"]
+      }
+    ],
+    "known_upstream_limitations": [
+      "The electric-field/force/motion mechanism does not compose because the force-receiving charge and motion-affecting electric-force endpoints are disconnected.",
+      "Changing-field states are collapsed into the base field entities, so the detected induction cycle overstates endpoint precision."
+    ]
+  },
+  "software_architecture": {
+    "expected": [
+      {
+        "name": "service component hierarchy",
+        "structure_type": "HIERARCHY",
+        "entity_ids": ["api-component", "database", "modular-order-processing-service", "order-component", "payment-component"],
+        "entity_order_matters": false
+      },
+      {
+        "name": "order/payment/database dependency chain",
+        "structure_type": "DEPENDENCY_CHAIN",
+        "entity_ids": ["order-component", "payment-component", "database"]
+      }
+    ],
+    "known_upstream_limitations": [
+      "Policy and prevention-polarity endpoint errors remain isolated edges and do not form higher-order structures."
+    ]
+  },
+  "economics": {
+    "expected": [
+      {
+        "name": "shortage pressure price demand path",
+        "structure_type": "CAUSAL_PATH",
+        "entity_ids": ["shortage", "upward-price-pressure", "market-price", "quantity-demanded"]
+      },
+      {
+        "name": "supply reduction price supply path",
+        "structure_type": "CAUSAL_PATH",
+        "entity_ids": ["supply-reduction", "market-price", "quantity-supplied"]
+      }
+    ],
+    "known_upstream_limitations": [
+      "The misleading elasticity MEASURED_BY edge is descriptive and is intentionally not composed.",
+      "No causal cycle is present because the model does not connect quantity changes back to shortage or surplus."
+    ]
+  },
+  "biology": {
+    "expected": [],
+    "known_upstream_limitations": [
+      "No PRECEDES edge connects transcription and translation, so no process chain can be detected.",
+      "Interaction and transformation edges are deliberately not reinterpreted as causal or temporal chains."
+    ]
+  },
+  "history": {
+    "expected": [
+      {
+        "name": "controversy chronology",
+        "structure_type": "PROCESS_CHAIN",
+        "entity_ids": ["printed-controversy", "authorities"]
+      },
+      {
+        "name": "movable type printing books dependency chain",
+        "structure_type": "DEPENDENCY_CHAIN",
+        "entity_ids": ["movable-metal-type", "printing", "printed-books"]
+      }
+    ],
+    "known_upstream_limitations": [
+      "The chronology targets an actor rather than an authority-response event, so it is structurally faithful but pedagogically weak.",
+      "The pamphlet edge targets arguments rather than circulation and does not join a useful dependency chain."
+    ]
+  }
+}

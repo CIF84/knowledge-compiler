@@ -1,0 +1,96 @@
+{
+  "source_document_id": "text-49b42a4f08a99742",
+  "structures": [
+    {
+      "id": "structure-dependency-chain-d66b12a6650e88ac",
+      "structure_type": "DEPENDENCY_CHAIN",
+      "entity_ids": [
+        "order-component",
+        "payment-component",
+        "database"
+      ],
+      "relationship_ids": [
+        "rel-6",
+        "rel-8"
+      ],
+      "relationship_types": [
+        "REQUIRES",
+        "REQUIRES"
+      ],
+      "metadata": {
+        "supporting_relationship_ids_by_edge": [
+          [
+            "rel-6"
+          ],
+          [
+            "rel-8"
+          ]
+        ],
+        "edge_count": 2
+      }
+    },
+    {
+      "id": "structure-hierarchy-08003bf75a5a9b5f",
+      "structure_type": "HIERARCHY",
+      "entity_ids": [
+        "api-component",
+        "database",
+        "modular-order-processing-service",
+        "order-component",
+        "payment-component"
+      ],
+      "relationship_ids": [
+        "rel-1",
+        "rel-4",
+        "rel-2",
+        "rel-3"
+      ],
+      "relationship_types": [
+        "PART_OF",
+        "PART_OF",
+        "PART_OF",
+        "PART_OF"
+      ],
+      "metadata": {
+        "supporting_relationship_ids_by_edge": [
+          [
+            "rel-1"
+          ],
+          [
+            "rel-4"
+          ],
+          [
+            "rel-2"
+          ],
+          [
+            "rel-3"
+          ]
+        ],
+        "hierarchy_relationship_type": "PART_OF",
+        "roots": [
+          "modular-order-processing-service"
+        ],
+        "leaves": [
+          "api-component",
+          "database",
+          "order-component",
+          "payment-component"
+        ],
+        "contains_cycle": false
+      }
+    }
+  ],
+  "detector_version": "spec-004-v1",
+  "metadata": {
+    "structure_counts": {
+      "HIERARCHY": 1,
+      "CAUSAL_PATH": 0,
+      "PROCESS_CHAIN": 0,
+      "DEPENDENCY_CHAIN": 1,
+      "FEEDBACK_CANDIDATE": 0
+    },
+    "logical_relationship_count": 15,
+    "input_relationship_count": 15,
+    "maximum_causal_path_edges": 5
+  }
+}
