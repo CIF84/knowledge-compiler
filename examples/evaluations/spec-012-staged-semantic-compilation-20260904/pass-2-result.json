@@ -1,0 +1,405 @@
+{
+  "spec": "SPEC-012",
+  "stage": "SEMANTIC_LINKING",
+  "outcome": "FAILED",
+  "failure": "evidence quote was not found in source: 'demonstrating quantized spin states.'",
+  "raw_proposal": {
+    "claims": [
+      {
+        "id": "c1",
+        "statement": "Quantum mechanics studies matter and its interactions with energy at atomic and subatomic scales.",
+        "evidence": [
+          {
+            "quote": "Quantum mechanics is the study of matter and matter's interactions with energy on the scale of atomic and subatomic particles."
+          }
+        ],
+        "confidence": 1,
+        "origin": "SOURCE"
+      },
+      {
+        "id": "c2",
+        "statement": "Classical physics could not explain some phenomena discovered in the macro and micro worlds, contributing to the development of quantum mechanics.",
+        "evidence": [
+          {
+            "quote": "scientists discovered phenomena in both the large (macro) and the small (micro) worlds that classical physics could not explain."
+          }
+        ],
+        "confidence": 1,
+        "origin": "SOURCE"
+      },
+      {
+        "id": "c3",
+        "statement": "The uncertainty principle states that certain pairs of properties, such as position and speed, cannot be simultaneously measured or defined to arbitrary precision.",
+        "evidence": [
+          {
+            "quote": "Quantum mechanics shows that certain pairs of physical properties, for example, position and speed, cannot be simultaneously measured, nor defined in operational terms, to arbitrary precision"
+          }
+        ],
+        "confidence": 1,
+        "origin": "SOURCE"
+      },
+      {
+        "id": "c4",
+        "statement": "Quantum entanglement is a condition in which the quantum state of each particle cannot be described independently of the others, even when separated by a large distance.",
+        "evidence": [
+          {
+            "quote": "a group of particles can interact or be created together in such a way that the quantum state of each particle of the group cannot be described independently of the state of the others, including when the particles are separated by a large distance."
+          }
+        ],
+        "confidence": 1,
+        "origin": "SOURCE"
+      },
+      {
+        "id": "c5",
+        "statement": "The correspondence principle requires quantum theory to converge to classical limits.",
+        "evidence": [
+          {
+            "quote": "It requires quantum theory to converge to classical limits."
+          }
+        ],
+        "confidence": 1,
+        "origin": "SOURCE"
+      },
+      {
+        "id": "c6",
+        "statement": "Wave-function collapse converts a probabilistic or potential quantum state into a definite measured value.",
+        "evidence": [
+          {
+            "quote": "Wave function collapse means that a measurement has forced or converted a quantum (probabilistic or potential) state into a definite measured value."
+          }
+        ],
+        "confidence": 1,
+        "origin": "SOURCE"
+      },
+      {
+        "id": "c7",
+        "statement": "An object with a definite value for a property possesses an eigenstate.",
+        "evidence": [
+          {
+            "quote": "When an object can definitely be \"pinned-down\" in some respect, it is said to possess an eigenstate."
+          }
+        ],
+        "confidence": 1,
+        "origin": "SOURCE"
+      },
+      {
+        "id": "c8",
+        "statement": "The Pauli exclusion principle states that two electrons within an atom cannot have the same set of quantum numbers.",
+        "evidence": [
+          {
+            "quote": "There cannot exist an atom in such a quantum state that two electrons within [it] have the same set of quantum numbers."
+          }
+        ],
+        "confidence": 1,
+        "origin": "SOURCE"
+      },
+      {
+        "id": "c9",
+        "statement": "Bell inequalities are violated by correlations predicted by quantum physics, making those results incompatible with local hidden-variable theories.",
+        "evidence": [
+          {
+            "quote": "the results of these experiments are incompatible with any local hidden variable theory."
+          }
+        ],
+        "confidence": 1,
+        "origin": "SOURCE"
+      },
+      {
+        "id": "c10",
+        "statement": "The Standard Model is not a complete theory of fundamental interactions because it leaves some physical phenomena unexplained.",
+        "evidence": [
+          {
+            "quote": "it leaves some physical phenomena unexplained and so falls short of being a complete theory of fundamental interactions."
+          }
+        ],
+        "confidence": 1,
+        "origin": "SOURCE"
+      },
+      {
+        "id": "c11",
+        "statement": "The Copenhagen interpretation says that before measurement, statements about a particle's properties are completely meaningless.",
+        "evidence": [
+          {
+            "quote": "the Copenhagen interpretation states that before a measurement, statements about a particle's properties are completely meaningless"
+          }
+        ],
+        "confidence": 1,
+        "origin": "SOURCE"
+      },
+      {
+        "id": "c12",
+        "statement": "The many-worlds interpretation describes a multiverse made up of every possible universe.",
+        "evidence": [
+          {
+            "quote": "the many-worlds interpretation describes the existence of a multiverse made up of every possible universe."
+          }
+        ],
+        "confidence": 1,
+        "origin": "SOURCE"
+      }
+    ],
+    "relationships": [
+      {
+        "id": "r1",
+        "source_entity_id": "quantum-revolution",
+        "relationship_type": "CAUSES",
+        "target_entity_id": "quantum-mechanics",
+        "statement": "The quantum revolution resulted in the development of quantum mechanics.",
+        "evidence": [
+          {
+            "quote": "The desire to resolve inconsistencies between observed phenomena and classical theory led to a revolution in physics, a shift in the original scientific paradigm: the development of quantum mechanics."
+          }
+        ],
+        "confidence": 0.97,
+        "origin": "SOURCE"
+      },
+      {
+        "id": "r2",
+        "source_entity_id": "superfluidity",
+        "relationship_type": "EXAMPLE_OF",
+        "target_entity_id": "quantum-mechanics",
+        "statement": "Superfluidity is presented as a phenomenon explained using quantum mechanics.",
+        "evidence": [
+          {
+            "quote": "Many remarkable phenomena can be explained using quantum mechanics, like superfluidity."
+          }
+        ],
+        "confidence": 0.99,
+        "origin": "SOURCE"
+      },
+      {
+        "id": "r3",
+        "source_entity_id": "double-slit-experiment",
+        "relationship_type": "CAUSES",
+        "target_entity_id": "interference-pattern",
+        "statement": "The double-slit experiment produces an interference pattern.",
+        "evidence": [
+          {
+            "quote": "a beam of light is directed through two narrow, closely spaced slits, producing an interference pattern of light and dark bands on a screen."
+          }
+        ],
+        "confidence": 0.99,
+        "origin": "SOURCE"
+      },
+      {
+        "id": "r4",
+        "source_entity_id": "waveparticle-duality",
+        "relationship_type": "EXAMPLE_OF",
+        "target_entity_id": "principle-of-complementarity",
+        "statement": "Wave–particle duality is an example of the principle of complementarity.",
+        "evidence": [
+          {
+            "quote": "Wave–particle duality is an example of the principle of complementarity in quantum physics."
+          }
+        ],
+        "confidence": 1,
+        "origin": "SOURCE"
+      },
+      {
+        "id": "r5",
+        "source_entity_id": "quantum-mechanics",
+        "relationship_type": "ENABLES",
+        "target_entity_id": "electron-microscope",
+        "statement": "Quantum mechanics enables technological applications including the electron microscope.",
+        "evidence": [
+          {
+            "quote": "Applications of quantum mechanics include the laser, the transistor, the electron microscope, and magnetic resonance imaging."
+          }
+        ],
+        "confidence": 0.98,
+        "origin": "SOURCE"
+      },
+      {
+        "id": "r6",
+        "source_entity_id": "quantum-mechanics",
+        "relationship_type": "ENABLES",
+        "target_entity_id": "laser",
+        "statement": "Quantum mechanics enables the laser as a technological application.",
+        "evidence": [
+          {
+            "quote": "Applications of quantum mechanics include the laser, the transistor, the electron microscope, and magnetic resonance imaging."
+          }
+        ],
+        "confidence": 0.98,
+        "origin": "SOURCE"
+      },
+      {
+        "id": "r7",
+        "source_entity_id": "quantum-mechanics",
+        "relationship_type": "ENABLES",
+        "target_entity_id": "transistor",
+        "statement": "Quantum mechanics enables the transistor as a technological component.",
+        "evidence": [
+          {
+            "quote": "Applications of quantum mechanics include the laser, the transistor, the electron microscope, and magnetic resonance imaging."
+          }
+        ],
+        "confidence": 0.98,
+        "origin": "SOURCE"
+      },
+      {
+        "id": "r8",
+        "source_entity_id": "quantum-mechanics",
+        "relationship_type": "ENABLES",
+        "target_entity_id": "magnetic-resonance-imaging",
+        "statement": "Quantum mechanics enables magnetic resonance imaging as a technological application.",
+        "evidence": [
+          {
+            "quote": "Applications of quantum mechanics include the laser, the transistor, the electron microscope, and magnetic resonance imaging."
+          }
+        ],
+        "confidence": 0.98,
+        "origin": "SOURCE"
+      },
+      {
+        "id": "r9",
+        "source_entity_id": "quantum-tunneling",
+        "relationship_type": "ENABLES",
+        "target_entity_id": "transistor",
+        "statement": "Quantum tunneling is vital to the operation of a simple light switch and is used in flash-memory chips, but the source does not identify the transistor as the direct target of this relation.",
+        "evidence": [
+          {
+            "quote": "In even a simple light switch, quantum tunneling is absolutely vital, as otherwise the electrons in the electric current could not penetrate the potential barrier made up of a layer of oxide."
+          }
+        ],
+        "confidence": 0.9,
+        "origin": "SOURCE"
+      },
+      {
+        "id": "r10",
+        "source_entity_id": "spin",
+        "relationship_type": "MEASURED_BY",
+        "target_entity_id": "sterngerlach-experiment",
+        "statement": "The Stern–Gerlach experiment demonstrates quantized spin states.",
+        "evidence": [
+          {
+            "quote": "demonstrating quantized spin states."
+          }
+        ],
+        "confidence": 0.99,
+        "origin": "SOURCE"
+      },
+      {
+        "id": "r11",
+        "source_entity_id": "wave-function-collapse",
+        "relationship_type": "CAUSES",
+        "target_entity_id": "eigenstate",
+        "statement": "Measurement-induced wave-function collapse places the system into one of the eigenstates of the measurement.",
+        "evidence": [
+          {
+            "quote": "measuring its spin about the horizontal axis collapses its wave function into one of the eigenstates of this measurement"
+          }
+        ],
+        "confidence": 0.98,
+        "origin": "SOURCE"
+      },
+      {
+        "id": "r12",
+        "source_entity_id": "pauli-exclusion-principle",
+        "relationship_type": "CONSTRAINS",
+        "target_entity_id": "electron",
+        "statement": "The Pauli exclusion principle constrains the possible quantum states of electrons in an atom.",
+        "evidence": [
+          {
+            "quote": "There cannot exist an atom in such a quantum state that two electrons within [it] have the same set of quantum numbers."
+          }
+        ],
+        "confidence": 0.94,
+        "origin": "SOURCE"
+      },
+      {
+        "id": "r13",
+        "source_entity_id": "standard-model",
+        "relationship_type": "IS_A",
+        "target_entity_id": "quantum-field-theory",
+        "statement": "The Standard Model is a quantum field theory.",
+        "evidence": [
+          {
+            "quote": "The Standard Model of particle physics is the quantum field theory that describes three of the four known fundamental forces"
+          }
+        ],
+        "confidence": 1,
+        "origin": "SOURCE"
+      },
+      {
+        "id": "r14",
+        "source_entity_id": "quantum-electrodynamics",
+        "relationship_type": "IS_A",
+        "target_entity_id": "quantum-field-theory",
+        "statement": "Quantum electrodynamics is a quantum theory of the electromagnetic force and developed into quantum field theory.",
+        "evidence": [
+          {
+            "quote": "Quantum electrodynamics (QED) is the name of the quantum theory of the electromagnetic force."
+          }
+        ],
+        "confidence": 0.96,
+        "origin": "SOURCE"
+      },
+      {
+        "id": "r15",
+        "source_entity_id": "photon",
+        "relationship_type": "IS_A",
+        "target_entity_id": "energy-quantum",
+        "statement": "A photon is identified as an energy quantum of light.",
+        "evidence": [
+          {
+            "quote": "three years later the \"energy quanta\" got a new name \"photon\"."
+          }
+        ],
+        "confidence": 0.98,
+        "origin": "SOURCE"
+      }
+    ],
+    "propositions": [
+      {
+        "proposition_type": "TRANSFER_EVENT",
+        "statement": "In the photoelectric effect, energy quanta are transferred to an electron.",
+        "role_bindings": [
+          {
+            "role": "EVENT",
+            "entity_id": "photoelectric-effect"
+          },
+          {
+            "role": "OBJECT",
+            "entity_id": "energy-quantum"
+          },
+          {
+            "role": "DESTINATION",
+            "entity_id": "electron"
+          }
+        ],
+        "relationship_type": "TRANSFERS_TO",
+        "comparison_operator": null,
+        "evidence": [
+          {
+            "quote": "Here, the idea is that energy in energy-quanta depends upon the light frequency; the energy transferred to the electron comes in proportion to the light frequency."
+          }
+        ],
+        "confidence": 0.98,
+        "origin": "SOURCE"
+      }
+    ],
+    "missing_symbols": []
+  },
+  "provider_metadata": {
+    "provider": "openai",
+    "requested_model": "gpt-5.6-luna",
+    "model": "gpt-5.6-luna",
+    "prompt_version": "spec-012-linking-v1",
+    "store": false,
+    "sdk_retries": 0,
+    "provider_request_id": "resp_06830b01169103d6016a99ffda705087d29ebf7d2c1676de5a",
+    "usage": {
+      "input_tokens": 13275,
+      "output_tokens": 2976,
+      "total_tokens": 16251
+    },
+    "prompt_character_count": 10021,
+    "input_character_count": 48537,
+    "source_character_count": 39735,
+    "symbol_table_character_count": 8739,
+    "symbol_table_size": 41
+  },
+  "symbol_table_size": 41,
+  "symbol_table_violations": []
+}

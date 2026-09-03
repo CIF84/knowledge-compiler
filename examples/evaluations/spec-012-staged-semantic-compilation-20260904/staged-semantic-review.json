@@ -1,0 +1,199 @@
+{
+  "spec": "SPEC-012",
+  "status": "COMPLETE_INDEPENDENT_REVIEW_OF_REJECTED_PASS_2_PROPOSAL",
+  "review_subject": "REJECTED_PASS_2_RELATIONSHIPS_AND_PROPOSITIONS",
+  "review_categories_fixed_before_live_output": [
+    "SUPPORTED",
+    "IMPRECISE_ENDPOINT",
+    "WRONG_PREDICATE",
+    "REVERSED_DIRECTION",
+    "OVERSTATED_CAUSALITY",
+    "UNSUPPORTED",
+    "LOSSY_BINARY_FORM",
+    "OTHER"
+  ],
+  "review_scope": "ALL_15_PROPOSED_RELATIONSHIPS_AND_1_PROPOSED_PROPOSITION",
+  "independent_from_generation": true,
+  "accepted_semantic_item_count": 0,
+  "accepted_semantic_precision": "NOT_AVAILABLE_PASS_2_REJECTED",
+  "reviewed_rejected_proposal_item_count": 16,
+  "supported_rejected_proposal_item_count": 6,
+  "rejected_proposal_semantic_precision": 0.375,
+  "items": [
+    {
+      "kind": "relationship",
+      "id": "r1",
+      "classification": "OVERSTATED_CAUSALITY",
+      "endpoint_precision": "PRECISE",
+      "predicate_precision": "IMPRECISE",
+      "notes": "The passage equates the paradigm shift with development of quantum mechanics; it does not establish the reified quantum revolution as a cause of quantum mechanics."
+    },
+    {
+      "kind": "relationship",
+      "id": "r2",
+      "classification": "WRONG_PREDICATE",
+      "endpoint_precision": "IMPRECISE",
+      "predicate_precision": "IMPRECISE",
+      "notes": "The source says quantum mechanics explains superfluidity. Superfluidity is not an example or instance of quantum mechanics itself."
+    },
+    {
+      "kind": "relationship",
+      "id": "r3",
+      "classification": "SUPPORTED",
+      "endpoint_precision": "PRECISE",
+      "predicate_precision": "PRECISE",
+      "notes": "Within the experiment, directing light through two slits produces the interference pattern named by the target."
+    },
+    {
+      "kind": "relationship",
+      "id": "r4",
+      "classification": "SUPPORTED",
+      "endpoint_precision": "PRECISE",
+      "predicate_precision": "PRECISE",
+      "notes": "The exact source sentence explicitly states the proposed EXAMPLE_OF relationship."
+    },
+    {
+      "kind": "relationship",
+      "id": "r5",
+      "classification": "WRONG_PREDICATE",
+      "endpoint_precision": "PRECISE",
+      "predicate_precision": "IMPRECISE",
+      "notes": "The source lists the electron microscope as an application of quantum mechanics; it does not explicitly assert the ENABLES dependency contract."
+    },
+    {
+      "kind": "relationship",
+      "id": "r6",
+      "classification": "WRONG_PREDICATE",
+      "endpoint_precision": "PRECISE",
+      "predicate_precision": "IMPRECISE",
+      "notes": "The source lists the laser as an application of quantum mechanics; it does not explicitly assert the ENABLES dependency contract."
+    },
+    {
+      "kind": "relationship",
+      "id": "r7",
+      "classification": "WRONG_PREDICATE",
+      "endpoint_precision": "PRECISE",
+      "predicate_precision": "IMPRECISE",
+      "notes": "The source lists the transistor as an application of quantum mechanics; it does not explicitly assert the ENABLES dependency contract."
+    },
+    {
+      "kind": "relationship",
+      "id": "r8",
+      "classification": "WRONG_PREDICATE",
+      "endpoint_precision": "PRECISE",
+      "predicate_precision": "IMPRECISE",
+      "notes": "The source lists MRI as an application of quantum mechanics; it does not explicitly assert the ENABLES dependency contract."
+    },
+    {
+      "kind": "relationship",
+      "id": "r9",
+      "classification": "IMPRECISE_ENDPOINT",
+      "endpoint_precision": "IMPRECISE",
+      "predicate_precision": "PRECISE",
+      "notes": "The evidence supports tunneling enabling electron penetration through an oxide barrier in a switch, not a relationship to the frozen transistor symbol. The generated statement itself acknowledges the mismatch."
+    },
+    {
+      "kind": "relationship",
+      "id": "r10",
+      "classification": "UNSUPPORTED",
+      "endpoint_precision": "PRECISE",
+      "predicate_precision": "IMPRECISE",
+      "notes": "The proposed evidence text does not occur in the source. This is the exact grounding failure that rejected all Pass-2 output."
+    },
+    {
+      "kind": "relationship",
+      "id": "r11",
+      "classification": "SUPPORTED",
+      "endpoint_precision": "PRECISE",
+      "predicate_precision": "PRECISE",
+      "notes": "The source explicitly says measurement collapses the wave function into an eigenstate; collapse to resulting eigenstate is represented without the control self-loop."
+    },
+    {
+      "kind": "relationship",
+      "id": "r12",
+      "classification": "IMPRECISE_ENDPOINT",
+      "endpoint_precision": "IMPRECISE",
+      "predicate_precision": "PRECISE",
+      "notes": "The exclusion principle constrains allowed joint atomic quantum states or quantum-number assignments, not the electron object itself."
+    },
+    {
+      "kind": "relationship",
+      "id": "r13",
+      "classification": "SUPPORTED",
+      "endpoint_precision": "PRECISE",
+      "predicate_precision": "PRECISE",
+      "notes": "The cited source explicitly identifies the Standard Model as a quantum field theory."
+    },
+    {
+      "kind": "relationship",
+      "id": "r14",
+      "classification": "WRONG_PREDICATE",
+      "endpoint_precision": "PRECISE",
+      "predicate_precision": "IMPRECISE",
+      "notes": "The evidence calls QED a quantum theory of the electromagnetic force but does not establish the proposed QED IS_A quantum-field-theory edge or the added development clause."
+    },
+    {
+      "kind": "relationship",
+      "id": "r15",
+      "classification": "SUPPORTED",
+      "endpoint_precision": "PRECISE",
+      "predicate_precision": "PRECISE",
+      "notes": "The source says the energy quantum received the name photon, supporting the classification used here."
+    },
+    {
+      "kind": "proposition",
+      "id": "proposed-transfer-event-1",
+      "classification": "SUPPORTED",
+      "endpoint_precision": "PRECISE",
+      "predicate_precision": "PRECISE",
+      "notes": "The photoelectric-effect event, energy-quantum object, and electron destination preserve all three source-supported roles. The deterministic proposition ID was not assigned because grounding failed before normalization completed."
+    }
+  ],
+  "control_defect_comparison": [
+    {
+      "control_defect": "quantum mechanics CAUSES molecules",
+      "control_item_ids": ["rel-qm-explains-molecules"],
+      "staged_status": "REPLACED",
+      "notes": "The exact edge disappeared, but r1 still overstates causality by making the quantum revolution cause quantum mechanics."
+    },
+    {
+      "control_defect": "energy quanta CAUSES black-body radiation with mismatched evidence",
+      "control_item_ids": ["rel-energy-explains-blackbody"],
+      "staged_status": "FIXED",
+      "notes": "No corresponding black-body causality edge was proposed."
+    },
+    {
+      "control_defect": "wave-function-collapse self-loop loses measurement/state semantics",
+      "control_item_ids": ["rel-measurement-collapses-state"],
+      "staged_status": "FIXED",
+      "notes": "r11 instead links collapse to eigenstate and the measurement actor remains explicit in the statement and evidence."
+    },
+    {
+      "control_defect": "mismatched IS_A semantics around QFT and QED",
+      "control_item_ids": ["rel-qft-is-quantum-theory", "rel-qed-is-qft"],
+      "staged_status": "RETAINED",
+      "notes": "r14 again asserts QED IS_A quantum field theory from evidence that only calls QED a quantum theory of the electromagnetic force."
+    },
+    {
+      "control_defect": "tunneling targets electron rather than electron penetration",
+      "control_item_ids": ["rel-tunneling-enables-electron-penetration"],
+      "staged_status": "REPLACED",
+      "notes": "r9 avoids electron as target but substitutes transistor, another endpoint unsupported by the evidence."
+    }
+  ],
+  "new_staged_semantic_defects": [
+    "Four application-list statements were converted into unsupported ENABLES edges.",
+    "Superfluidity was made an EXAMPLE_OF quantum mechanics rather than a phenomenon explained by it.",
+    "The Stern–Gerlach edge used a non-verbatim evidence phrase and an imprecise MEASURED_BY attribution.",
+    "The Pauli exclusion principle targeted electron rather than the constrained joint state or quantum-number assignment."
+  ],
+  "verdict": "MIXED",
+  "verdict_rationale": {
+    "structural": "The frozen table eliminated dangling relationship and proposition endpoints in the raw Pass-2 proposal by construction, improving the specific SPEC-011 referential failure class. No accepted KnowledgeModel round-trip exists because grounding failed first.",
+    "grounding": "Twenty-seven of twenty-eight proposed SOURCE items had exact unique quotes, but one fabricated/non-verbatim quote failed the unchanged evidence resolver. Pass 2 therefore failed closed and produced no trusted parent.",
+    "semantic": "The rejected staged proposal improved reviewed proposal precision from the control mapping's 2/11 (18.18%) to 6/16 (37.5%), and fixed some known defects, but most reviewed links remained imprecise or unsupported. QFT/QED and tunneling endpoint defects persisted or changed form.",
+    "cost_complexity": "Staging used two calls and 26,142 tokens versus 13,794 known tokens for the preserved control retry, added a frozen-symbol compiler surface, and still produced no accepted model. The structural gain does not yet justify the additional pass on this benchmark."
+  },
+  "reliability_gain_worth_additional_pass_on_this_benchmark": false,
+  "recall_or_completeness_claimed": false
+}

@@ -1,0 +1,60 @@
+{
+  "spec": "SPEC-012",
+  "attempts": [
+    {
+      "sequence": 1,
+      "stage": "SYMBOL_DISCOVERY",
+      "started_at": "2026-09-03T23:16:30.006048+00:00",
+      "completed_at": "2026-09-03T23:16:42.275085+00:00",
+      "runtime_seconds": 12.269,
+      "outcome": "SUCCESS",
+      "provider_call_attempted": true,
+      "provider": "openai",
+      "requested_model": "gpt-5.6-luna",
+      "actual_model": "gpt-5.6-luna",
+      "provider_request_id": "resp_049947d995d78a1d016a99ffcf902087d2b6f942d1dc0d8eaa",
+      "prompt_version": "spec-012-symbols-v1",
+      "retries": 0,
+      "usage": {
+        "input_tokens": 8464,
+        "output_tokens": 1427,
+        "total_tokens": 9891
+      },
+      "cost": "NOT_AVAILABLE",
+      "rejected_output_preserved": false
+    },
+    {
+      "sequence": 2,
+      "stage": "SEMANTIC_LINKING",
+      "started_at": "2026-09-03T23:16:42.276001+00:00",
+      "completed_at": "2026-09-03T23:17:06.471356+00:00",
+      "runtime_seconds": 24.195,
+      "outcome": "FAILED",
+      "provider_call_attempted": true,
+      "provider": "openai",
+      "requested_model": "gpt-5.6-luna",
+      "actual_model": "gpt-5.6-luna",
+      "provider_request_id": "resp_06830b01169103d6016a99ffda705087d29ebf7d2c1676de5a",
+      "prompt_version": "spec-012-linking-v1",
+      "retries": 0,
+      "usage": {
+        "input_tokens": 13275,
+        "output_tokens": 2976,
+        "total_tokens": 16251
+      },
+      "cost": "NOT_AVAILABLE",
+      "rejected_output_preserved": true,
+      "error_type": "ValidationError",
+      "error": "evidence quote was not found in source: 'demonstrating quantized spin states.'"
+    }
+  ],
+  "primary_live_call_budget": 2,
+  "current_run_live_call_count": 2,
+  "semantic_retry_count": 0,
+  "automatic_retry_count": 0,
+  "hidden_retries_or_favorable_run_selection": false,
+  "prompt_iteration_after_live_output": false,
+  "external_semantic_enrichment": false,
+  "third_semantic_pass": false,
+  "child_resolution_call": false
+}

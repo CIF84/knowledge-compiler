@@ -1,0 +1,144 @@
+{
+  "spec": "SPEC-012",
+  "evaluation_version": "spec-012-v1",
+  "outcome": "PASS_1_SUCCEEDED_PASS_2_GROUNDING_REJECTED",
+  "verdict": "MIXED",
+  "source": {
+    "title": "Introduction to quantum mechanics",
+    "publisher": "Wikimedia Foundation / English Wikipedia",
+    "permanent_url": "https://en.wikipedia.org/w/index.php?title=Introduction_to_quantum_mechanics&oldid=1359567407",
+    "revision_id": 1359567407,
+    "revision_timestamp": "2026-06-16T00:28:38Z",
+    "normalized_sha256": "9e978db999ee67134d347f91fe9f32934c982f4de9b496e4bf664cb00cce23ea",
+    "word_count": 5965,
+    "character_count": 39735,
+    "source_text_unchanged": true,
+    "source_processing_strategy": "FULL_SOURCE_TWO_PASS_STAGED",
+    "segment_count": 1,
+    "external_semantic_enrichment": false,
+    "license": "Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0); GFDL may also apply"
+  },
+  "provider": "openai",
+  "requested_model": "gpt-5.6-luna",
+  "actual_models": {"pass_1": "gpt-5.6-luna", "pass_2": "gpt-5.6-luna"},
+  "prompt_versions": {"pass_1": "spec-012-symbols-v1", "pass_2": "spec-012-linking-v1"},
+  "compiler_version": "spec-012-v1",
+  "provider_controls": {
+    "store": false,
+    "sdk_automatic_retries": 0,
+    "semantic_retries": 0,
+    "hidden_retries": false,
+    "prompt_iteration_after_live_output": false,
+    "third_semantic_pass": false,
+    "child_resolution_call": false
+  },
+  "provider_request_ids": {
+    "pass_1": "resp_049947d995d78a1d016a99ffcf902087d2b6f942d1dc0d8eaa",
+    "pass_2": "resp_06830b01169103d6016a99ffda705087d29ebf7d2c1676de5a"
+  },
+  "prompt_sizes": {
+    "pass_1_instruction_characters": 806,
+    "pass_1_input_characters": 39735,
+    "pass_2_instruction_characters": 10021,
+    "pass_2_input_characters": 48537,
+    "pass_2_source_characters": 39735,
+    "pass_2_symbol_table_characters": 8739
+  },
+  "pass_1": {
+    "outcome": "SUCCESS",
+    "raw_nominations": 41,
+    "accepted_symbols": 41,
+    "rejected_nominations": 0,
+    "duplicate_nominations": 0,
+    "alias_normalization_records": 24,
+    "entity_type_counts": {"CONCEPT": 23, "OBJECT": 7, "PROCESS": 8, "VARIABLE": 1, "SYSTEM": 1, "COMPONENT": 1},
+    "id_strategy": "NORMALIZED_ASCII_KEBAB_NAME_WITH_HASH_SUFFIX_ON_SLUG_COLLISION",
+    "ordering": "LEXICOGRAPHIC_STABLE_ENTITY_ID"
+  },
+  "pass_2": {
+    "outcome": "FAILED_GROUNDING_VALIDATION",
+    "failure": "evidence quote was not found in source: 'demonstrating quantized spin states.'",
+    "rejected_output_preserved": true,
+    "proposed_counts": {"entities": 0, "relationships": 15, "claims": 12, "propositions": 1},
+    "missing_symbol_diagnostics": [],
+    "dangling_relationship_endpoint_count": 0,
+    "dangling_proposition_role_binding_count": 0,
+    "pass_2_entity_creation_field_present": false,
+    "knowledge_model_round_trip": "NOT_RUN_GROUNDING_REJECTED"
+  },
+  "grounding": {
+    "source_item_count": 28,
+    "inferred_item_count": 0,
+    "evidence_span_count": 28,
+    "exact_evidence_span_count": 27,
+    "unique_evidence_span_count": 27,
+    "missing_quote_failures": 1,
+    "ambiguous_quote_failures": 0,
+    "source_inferred_invariant_violations": 0,
+    "exact_evidence_resolution_rate": 0.9642857142857143,
+    "unique_evidence_rate": 0.9642857142857143
+  },
+  "semantic_review": {
+    "scope": "ALL_REJECTED_PROPOSAL_RELATIONSHIPS_AND_PROPOSITIONS",
+    "accepted_semantic_precision": "NOT_AVAILABLE_PASS_2_REJECTED",
+    "reviewed_proposed_items": 16,
+    "supported_proposed_items": 6,
+    "rejected_proposal_semantic_precision": 0.375,
+    "control_reviewed_proposed_items": 11,
+    "control_supported_proposed_items": 2,
+    "control_proposal_semantic_precision": 0.18181818181818182,
+    "artifact": "staged-semantic-review.json"
+  },
+  "control_evidence": {
+    "attempt_1_failure": "dangling relationship endpoint: measurement",
+    "attempt_2_failure": "dangling relationship endpoint: quantum-theory",
+    "observed_dangling_endpoint_failures": 2,
+    "preserved_second_proposal_dangling_endpoint_count": 1,
+    "control_artifacts_modified": false
+  },
+  "usage": {
+    "pass_1": {"input_tokens": 8464, "output_tokens": 1427, "total_tokens": 9891},
+    "pass_2": {"input_tokens": 13275, "output_tokens": 2976, "total_tokens": 16251},
+    "combined": {"input_tokens": 21739, "output_tokens": 4403, "total_tokens": 26142},
+    "control_known_second_attempt": {"input_tokens": 11006, "output_tokens": 2788, "total_tokens": 13794},
+    "control_first_attempt": "NOT_AVAILABLE"
+  },
+  "runtime_seconds": {
+    "pass_1": 12.269,
+    "pass_2": 24.195,
+    "combined": 36.464,
+    "control_attempt_1": 23.695,
+    "control_attempt_2": 20.798,
+    "control_known_total": 44.493
+  },
+  "authoritative_monetary_cost": "NOT_AVAILABLE",
+  "downstream": {
+    "parent_knowledge_model": "NOT_PRODUCED",
+    "structure_detection": "NOT_RUN",
+    "representation_builder": "NOT_RUN",
+    "layout": "NOT_RUN",
+    "local_viewer_command": "NOT_AVAILABLE",
+    "reason": "Pass 2 failed unchanged grounding validation; rejected output was not rendered."
+  },
+  "complexity": {
+    "dependencies_added": [],
+    "dependencies_removed": [],
+    "new_runtime_modules": ["staged_compilation", "openai_staged_extractor", "staged_semantic_evaluation"],
+    "new_provider_calls_vs_single_one_pass_attempt": 1,
+    "canonical_knowledge_model_changed": false,
+    "relationship_vocabulary_changed": false,
+    "proposition_vocabulary_changed": false,
+    "grounding_rules_changed": false,
+    "reliability_gain_worth_additional_pass_on_this_benchmark": false
+  },
+  "verdict_rationale": {
+    "structural": "The frozen symbols removed dangling endpoint failures from the proposal.",
+    "grounding": "One of 28 source evidence quotes was not verbatim, so Pass 2 failed closed.",
+    "semantic": "Proposal precision rose from 18.18% to 37.5%, but 10 of 16 reviewed proposed relationships/propositions remained defective.",
+    "cost_complexity": "The staged path used 26,142 tokens and added another compiler/provider pass without yielding a trusted model."
+  },
+  "live_call_count": 2,
+  "retry_count": 0,
+  "deviations_from_spec": [],
+  "human_learning_verdict": "NOT_APPLICABLE_NO_TRUSTED_PARENT"
+}

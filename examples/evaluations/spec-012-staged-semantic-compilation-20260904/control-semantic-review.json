@@ -1,0 +1,110 @@
+{
+  "spec": "SPEC-012",
+  "review_subject": "SPEC-011_PRESERVED_SECOND_REJECTED_PROPOSAL",
+  "review_categories": [
+    "SUPPORTED",
+    "IMPRECISE_ENDPOINT",
+    "WRONG_PREDICATE",
+    "REVERSED_DIRECTION",
+    "OVERSTATED_CAUSALITY",
+    "UNSUPPORTED",
+    "LOSSY_BINARY_FORM",
+    "OTHER"
+  ],
+  "mapping_basis": "SPEC-011 repository semantic review and accepted DEBRIEF-011",
+  "items": [
+    {
+      "kind": "relationship",
+      "id": "rel-quantum-is-study",
+      "classification": "UNSUPPORTED",
+      "endpoint_precision": "IMPRECISE",
+      "predicate_precision": "IMPRECISE",
+      "notes": "Undefined target; cited QFT history does not support the asserted taxonomy."
+    },
+    {
+      "kind": "relationship",
+      "id": "rel-revolution-develops-qm",
+      "classification": "OTHER",
+      "endpoint_precision": "PRECISE",
+      "predicate_precision": "IMPRECISE",
+      "notes": "CREATES overstates a historical/paradigm-development relation."
+    },
+    {
+      "kind": "relationship",
+      "id": "rel-qm-explains-chemistry",
+      "classification": "IMPRECISE_ENDPOINT",
+      "endpoint_precision": "IMPRECISE",
+      "predicate_precision": "PRECISE",
+      "notes": "The source supports understanding chemistry, not enabling chemistry itself."
+    },
+    {
+      "kind": "relationship",
+      "id": "rel-qm-explains-molecules",
+      "classification": "OVERSTATED_CAUSALITY",
+      "endpoint_precision": "IMPRECISE",
+      "predicate_precision": "IMPRECISE",
+      "notes": "A theory explaining molecular formation is not the physical cause of molecules."
+    },
+    {
+      "kind": "relationship",
+      "id": "rel-energy-explains-blackbody",
+      "classification": "UNSUPPORTED",
+      "endpoint_precision": "PRECISE",
+      "predicate_precision": "IMPRECISE",
+      "notes": "The cited quote concerns a volume/current increase and does not support this edge."
+    },
+    {
+      "kind": "relationship",
+      "id": "rel-frequency-increases-velocity",
+      "classification": "SUPPORTED",
+      "endpoint_precision": "PRECISE",
+      "predicate_precision": "PRECISE",
+      "notes": "The endpoints, direction, and INCREASES predicate match the cited sentence."
+    },
+    {
+      "kind": "relationship",
+      "id": "rel-measurement-collapses-state",
+      "classification": "LOSSY_BINARY_FORM",
+      "endpoint_precision": "IMPRECISE",
+      "predicate_precision": "IMPRECISE",
+      "notes": "A collapse self-loop loses measurement as actor and the affected quantum state."
+    },
+    {
+      "kind": "relationship",
+      "id": "rel-qft-is-quantum-theory",
+      "classification": "WRONG_PREDICATE",
+      "endpoint_precision": "IMPRECISE",
+      "predicate_precision": "IMPRECISE",
+      "notes": "The target and statement disagree, and the excerpt does not establish IS_A."
+    },
+    {
+      "kind": "relationship",
+      "id": "rel-qed-is-qft",
+      "classification": "WRONG_PREDICATE",
+      "endpoint_precision": "PRECISE",
+      "predicate_precision": "IMPRECISE",
+      "notes": "The cited sentence calls QED a quantum theory of electromagnetism, not a QFT."
+    },
+    {
+      "kind": "relationship",
+      "id": "rel-standard-model-is-qft",
+      "classification": "SUPPORTED",
+      "endpoint_precision": "PRECISE",
+      "predicate_precision": "PRECISE",
+      "notes": "The source explicitly identifies the Standard Model as the quantum field theory."
+    },
+    {
+      "kind": "relationship",
+      "id": "rel-tunneling-enables-electron-penetration",
+      "classification": "IMPRECISE_ENDPOINT",
+      "endpoint_precision": "IMPRECISE",
+      "predicate_precision": "PRECISE",
+      "notes": "The target should be electron penetration through a barrier, not electron."
+    }
+  ],
+  "reviewed_accepted_item_count": 11,
+  "supported_item_count": 2,
+  "semantic_precision": 0.18181818181818182,
+  "known_structural_rejection_count": 1,
+  "known_grounding_rejection_count": 0
+}

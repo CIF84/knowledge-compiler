@@ -1,0 +1,95 @@
+{
+  "spec": "SPEC-012",
+  "status": "COMPLETE",
+  "verdict": "MIXED",
+  "structural": {
+    "control_observed_dangling_endpoint_failures": 2,
+    "control_preserved_proposal_dangling_relationship_endpoints": 1,
+    "staged_proposed_dangling_relationship_endpoints": 0,
+    "staged_proposed_dangling_proposition_role_bindings": 0,
+    "staged_unknown_symbol_diagnostics": [],
+    "staged_pass_2_entity_creation_field_present": false,
+    "control_knowledge_model_round_trip": false,
+    "staged_knowledge_model_round_trip": "NOT_RUN_GROUNDING_REJECTED",
+    "structural_rejection_count": 0,
+    "finding": "Freezing the symbol table eliminated the SPEC-011 dangling-endpoint failure class in the Pass-2 proposal, but structural assembly did not complete after the earlier grounding failure."
+  },
+  "grounding": {
+    "control_preserved_second_proposal": {
+      "source_items": 20,
+      "inferred_items": 0,
+      "evidence_spans": 20,
+      "exact_evidence_spans": 20,
+      "unique_evidence_spans": 20,
+      "exact_resolution_rate": 1.0,
+      "unique_evidence_rate": 1.0,
+      "grounding_rejection_count": 0
+    },
+    "staged_rejected_proposal": {
+      "source_items": 28,
+      "inferred_items": 0,
+      "evidence_spans": 28,
+      "exact_evidence_spans": 27,
+      "unique_evidence_spans": 27,
+      "missing_quote_failures": 1,
+      "ambiguous_quote_failures": 0,
+      "exact_resolution_rate": 0.9642857142857143,
+      "unique_evidence_rate": 0.9642857142857143,
+      "grounding_rejection_count": 1,
+      "failure": "evidence quote was not found in source: 'demonstrating quantized spin states.'"
+    },
+    "finding": "Staging did not preserve the control's perfect quote resolution; the unchanged resolver correctly rejected one non-verbatim quote."
+  },
+  "semantic": {
+    "review_categories": [
+      "SUPPORTED",
+      "IMPRECISE_ENDPOINT",
+      "WRONG_PREDICATE",
+      "REVERSED_DIRECTION",
+      "OVERSTATED_CAUSALITY",
+      "UNSUPPORTED",
+      "LOSSY_BINARY_FORM",
+      "OTHER"
+    ],
+    "control_reviewed_proposed_items": 11,
+    "control_supported_proposed_items": 2,
+    "control_proposal_semantic_precision": 0.18181818181818182,
+    "staged_accepted_items": 0,
+    "staged_accepted_semantic_precision": "NOT_AVAILABLE_PASS_2_REJECTED",
+    "staged_reviewed_proposed_items": 16,
+    "staged_supported_proposed_items": 6,
+    "staged_rejected_proposal_semantic_precision": 0.375,
+    "semantic_volume_not_used_as_quality_proxy": true,
+    "recall_or_completeness_claimed": false,
+    "control_defect_comparison": [
+      {"defect": "theory causes molecules", "staged_status": "REPLACED"},
+      {"defect": "energy quanta causes black-body radiation", "staged_status": "FIXED"},
+      {"defect": "wave-function-collapse self-loop", "staged_status": "FIXED"},
+      {"defect": "QFT/QED mismatched IS_A", "staged_status": "RETAINED"},
+      {"defect": "tunneling wrong endpoint", "staged_status": "REPLACED"}
+    ],
+    "finding": "Proposal-level precision improved but remained weak; the staged proposal fixed some control defects while retaining or replacing others."
+  },
+  "cost_complexity": {
+    "pass_1_usage": {"input_tokens": 8464, "output_tokens": 1427, "total_tokens": 9891},
+    "pass_2_usage": {"input_tokens": 13275, "output_tokens": 2976, "total_tokens": 16251},
+    "combined_staged_usage": {"input_tokens": 21739, "output_tokens": 4403, "total_tokens": 26142},
+    "control_known_second_attempt_usage": {"input_tokens": 11006, "output_tokens": 2788, "total_tokens": 13794},
+    "control_first_attempt_usage": "NOT_AVAILABLE",
+    "pass_1_runtime_seconds": 12.269,
+    "pass_2_runtime_seconds": 24.195,
+    "combined_runtime_seconds": 36.464,
+    "control_known_total_runtime_seconds": 44.493,
+    "authoritative_monetary_cost": "NOT_AVAILABLE",
+    "symbol_table_size": 41,
+    "additional_provider_passes_vs_single_control_attempt": 1,
+    "worth_additional_pass_on_this_benchmark": false,
+    "finding": "The extra pass and compiler surface bought referential consistency but no accepted model and therefore is not yet justified by this benchmark."
+  },
+  "verdict_rationale": {
+    "structural": "Better: zero proposed dangling endpoints versus two observed one-pass failures.",
+    "grounding": "Worse: the staged proposal contained one non-verbatim quote and failed closed.",
+    "semantic": "Better at proposal level but still weak: 37.5% supported versus 18.18% in the mapped control, with important defect classes retained or replaced.",
+    "cost_complexity": "More expensive and more complex, without producing a trusted parent."
+  }
+}
