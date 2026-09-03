@@ -64,66 +64,59 @@ UPDATED PROJECT MODEL
 | 003 — Relationship Semantics | [`SPEC-003`](specs/SPEC-003-relationship-semantics.md) | [`DEBRIEF-003`](debriefs/DEBRIEF-003-relationship-semantics.md) | Accepted — improved semantic precision |
 | 004 — Structure Detection | [`SPEC-004`](specs/SPEC-004-structure-detection.md) | [`DEBRIEF-004`](debriefs/DEBRIEF-004-structure-detection.md) | Accepted — useful deterministic composition with limitations |
 | 005 — Minimal Representation | [`SPEC-005`](specs/SPEC-005-minimal-representation.md) | [`DEBRIEF-005`](debriefs/DEBRIEF-005-minimal-representation.md) | Accepted — strong positive human outcome |
+| 006 — Structure-Aware Layout and Synchronized Interaction | [`SPEC-006`](specs/SPEC-006-structure-aware-layout-and-synchronized-interaction.md) | [`DEBRIEF-006`](debriefs/DEBRIEF-006-structure-aware-layout-and-synchronized-interaction.md) | Accepted — very strong positive human outcome; BASELINE-001 captured |
 
 ## Current Learning Summary
 
 ### After SPEC-001
-
 - a source-grounded semantic `KnowledgeModel` is a viable intermediate representation;
 - strict validation, conservative deduplication, and provider-neutral extraction boundaries are useful architectural foundations;
 - deterministic fixtures provide a strong offline test seam around probabilistic extraction.
 
 ### After SPEC-002
-
-- a real LLM can populate the same IR across physics, software architecture, economics, biology, and history without downstream redesign;
-- exact evidence grounding works better when the LLM returns quotes and deterministic code resolves source coordinates;
+- a real LLM can populate the same IR across unrelated domains without downstream redesign;
+- deterministic quote-to-span resolution works;
 - schema validity is not semantic correctness;
-- the initial relationship vocabulary and bare enum labels caused cross-domain semantic distortion;
-- multi-domain live experiments are cheap enough to repeat frequently.
+- relationship vocabulary/precision became the highest uncertainty.
 
 ### After SPEC-003
-
-- explicit relationship contracts materially improve predicate choice and direction across the same five-domain corpus;
-- only three new general predicates (`AFFECTS`, `BINDS_TO`, `TRANSFERS_TO`) were needed to fix several cross-domain distortions;
-- relationship families provide useful lightweight semantic organization without requiring a schema migration;
-- truthful claims are preferable to forced graph edges when no predicate fits;
-- remaining semantic errors concentrate on endpoint selection, polarity, duplicates, and event/state distinctions more than missing predicates;
+- explicit relationship contracts materially improve predicate choice and direction;
+- only three general predicates were added;
+- remaining errors concentrate on endpoint selection, polarity, duplicates, and event/state distinctions;
 - further vocabulary expansion is not currently justified.
 
 ### After SPEC-004
-
-- `KnowledgeModel` is not merely an interchange format; it can be deterministically composed into useful higher-order structures;
-- hierarchies, causal paths, dependency chains, process chains, and feedback candidates can be detected without source re-reading or LLM calls;
-- composition should remain semantically conservative: connectivity alone is not enough to justify transitivity;
-- empty output can be correct output when the upstream graph lacks composable structure;
-- downstream composition exposes upstream endpoint/state/chronology weaknesses clearly rather than hiding them;
-- event/state modeling is now an evidence-backed concern, but not a blocker for a minimal representation experiment;
-- exact duplicate semantic edges can be collapsed for traversal while preserving original relationship provenance;
-- structurally valid does not necessarily mean pedagogically useful.
+- `KnowledgeModel` can be deterministically composed into useful higher-order structures;
+- empty output can be correct output;
+- composition exposes upstream weaknesses rather than hiding them;
+- structural correctness does not guarantee pedagogical usefulness.
 
 ### After SPEC-005
+- interactive spatial representation strongly improved owner cognitive orientation;
+- `RepresentationModel` is a viable thin downstream layer;
+- provenance is useful learner-facing interaction;
+- semantic correctness, spatial legibility, and interaction coherence are distinct representation dimensions;
+- layout and synchronized semantic selection became the next product questions.
 
-- the first direct human evaluation strongly supports the core representation thesis: the interactive spatial model immediately improved the owner's cognitive orientation and was preferred as a learning aid;
-- `RepresentationModel` can remain a thin deterministic downstream layer over `KnowledgeModel` + `DetectedStructureSet`;
-- node and edge inspection turn the artifact from a static diagram into an explorable model;
-- provenance is useful as part of the learner-facing interaction, not merely developer metadata;
-- semantic correctness, spatial legibility, and interaction coherence are distinct dimensions of representation quality;
-- the same semantic relationship may appear as graph edge, relationship control, detail, and evidence, so selection should synchronize those surfaces;
-- layout is part of representation semantics: hierarchy, causal, dependency, process, and feedback structures should not necessarily share one generic placement strategy;
-- rendering makes upstream event/state/endpoint defects more obvious but those defects do not yet block useful representation generally;
-- the next important product question is whether structure-aware layout and synchronized interaction make the current representations behave more like coherent mental models.
+### After SPEC-006
+- structure-aware deterministic layout materially improved cognitive legibility while semantic content was held constant;
+- synchronized selection across connector, label/control, detail, and evidence materially improves the feeling of manipulating one semantic object;
+- hierarchy orientation and canonical semantic arrow direction can remain separate without confusion;
+- simple deterministic custom layouts are sufficient at current benchmark scale; no general graph engine is justified yet;
+- the post-fix interface is preserved as `BASELINE-001`, the first empirically successful cognitive-interaction baseline;
+- future material UI changes should compare against BASELINE-001 rather than assuming more sophisticated UI is better;
+- the next likely product frontier is progressive disclosure / semantic navigation rather than further generic viewer polish.
 
 ## Active Decisions
 
 ```text
 KnowledgeModel is the semantic IR.
 Origin: DEBRIEF-001
-Strengthened: DEBRIEF-002, DEBRIEF-004, DEBRIEF-005
+Strengthened: DEBRIEF-002, DEBRIEF-004, DEBRIEF-005, DEBRIEF-006
 Status: active
 
 Provider-specific extraction stays behind KnowledgeExtractor.
 Origin: DEBRIEF-001
-Strengthened: DEBRIEF-002
 Status: active
 
 Evidence coordinates are resolved deterministically from model-nominated exact quotes.
@@ -136,7 +129,7 @@ Status: active
 
 Relationship vocabulary evolves through cross-domain evidence, not opportunistic enum growth.
 Origin: DEBRIEF-002
-Strengthened: DEBRIEF-003, DEBRIEF-004
+Strengthened: DEBRIEF-003, DEBRIEF-004, DEBRIEF-005, DEBRIEF-006
 Status: active
 
 Relationship semantics have one canonical provider-independent definition.
@@ -153,38 +146,43 @@ Status: active
 
 Freeze relationship-vocabulary expansion until new cross-domain evidence justifies it.
 Origin: DEBRIEF-003
-Strengthened: DEBRIEF-004, DEBRIEF-005
 Status: active
 
 StructureDetector is a deterministic downstream layer consuming KnowledgeModel.
 Origin: DEBRIEF-004
 Status: active
 
-DetectedStructureSet is the boundary between semantic graph and representation detection input.
+DetectedStructureSet is the boundary between semantic graph composition and representation input.
 Origin: DEBRIEF-004
-Strengthened: DEBRIEF-005
 Status: active
 
 Empty or weak detected structures remain explicit; do not manufacture structure merely for presentation.
 Origin: DEBRIEF-004
-Strengthened: DEBRIEF-005
 Status: active
 
 RepresentationModel is a thin presentation-oriented layer downstream of KnowledgeModel + DetectedStructureSet.
 Origin: DEBRIEF-005
+Strengthened: DEBRIEF-006
 Status: active
 
 Learner-facing provenance remains first-class in representation interaction.
 Origin: DEBRIEF-005
+Strengthened: DEBRIEF-006
 Status: active
 
-Viewer selection should represent shared semantic state across graph, controls, details, and evidence.
+Viewer selection represents shared semantic state across graph, controls, details, and evidence.
 Origin: DEBRIEF-005
-Status: provisional-active
+Validated: DEBRIEF-006
+Status: active
 
-Structure-aware spatial layout is a representation concern, not generic cosmetic polish.
+Structure-aware spatial layout is a representation concern and part of semantic legibility.
 Origin: DEBRIEF-005
-Status: provisional-active
+Validated: DEBRIEF-006
+Status: active
+
+BASELINE-001 is the comparison control for future material UI/interaction changes.
+Origin: DEBRIEF-006
+Status: active
 ```
 
 ## Why This Exists
