@@ -65,6 +65,8 @@ UPDATED PROJECT MODEL
 | 004 — Structure Detection | [`SPEC-004`](specs/SPEC-004-structure-detection.md) | [`DEBRIEF-004`](debriefs/DEBRIEF-004-structure-detection.md) | Accepted — useful deterministic composition with limitations |
 | 005 — Minimal Representation | [`SPEC-005`](specs/SPEC-005-minimal-representation.md) | [`DEBRIEF-005`](debriefs/DEBRIEF-005-minimal-representation.md) | Accepted — strong positive human outcome |
 | 006 — Structure-Aware Layout and Synchronized Interaction | [`SPEC-006`](specs/SPEC-006-structure-aware-layout-and-synchronized-interaction.md) | [`DEBRIEF-006`](debriefs/DEBRIEF-006-structure-aware-layout-and-synchronized-interaction.md) | Accepted — very strong positive human outcome; BASELINE-001 captured |
+| 007 — Progressive Disclosure and Semantic Navigation | [`SPEC-007`](specs/SPEC-007-progressive-disclosure-semantic-navigation.md) | [`DEBRIEF-007`](debriefs/DEBRIEF-007-progressive-disclosure-semantic-navigation.md) | Accepted — contextual/layered navigation wins conceptually for owner benchmark |
+| 008 — Automatic Multi-Resolution Compilation | [`SPEC-008`](specs/SPEC-008-automatic-multi-resolution-compilation.md) | [`DEBRIEF-008`](debriefs/DEBRIEF-008-automatic-multi-resolution-compilation.md) | Accepted — one real grounded automatic child success; one correct fail-closed rejection |
 
 ## Current Learning Summary
 
@@ -102,25 +104,44 @@ UPDATED PROJECT MODEL
 - structure-aware deterministic layout materially improved cognitive legibility while semantic content was held constant;
 - synchronized selection across connector, label/control, detail, and evidence materially improves the feeling of manipulating one semantic object;
 - hierarchy orientation and canonical semantic arrow direction can remain separate without confusion;
-- simple deterministic custom layouts are sufficient at current benchmark scale; no general graph engine is justified yet;
-- the post-fix interface is preserved as `BASELINE-001`, the first empirically successful cognitive-interaction baseline;
-- future material UI changes should compare against BASELINE-001 rather than assuming more sophisticated UI is better;
-- the next likely product frontier is progressive disclosure / semantic navigation rather than further generic viewer polish.
+- simple deterministic custom layouts are sufficient at current benchmark scale;
+- `BASELINE-001` preserves the first empirically successful cognitive-interaction baseline.
+
+### After SPEC-007
+- contextual semantic expansion is the clear conceptual winner for the target learner;
+- deeper learning is better framed as **peeling semantic layers** than generic progressive disclosure;
+- selection and exploration are distinct operations;
+- prior successful views may be useful cognitive presets rather than obsolete versions;
+- working preset intents are Overview, Focus, and Contextual/Layers;
+- personalization should vary cognitive projection over stable semantic truth rather than alter factual truth itself.
+
+### After SPEC-008
+- `ResolutionCompiler` can automatically generate a real source-grounded deeper semantic model and feed existing deterministic structure/representation/layout layers;
+- Economics demonstrated one genuine parent → child semantic-resolution success;
+- Software Architecture demonstrated correct fail-closed provenance enforcement;
+- semantic resolution is **explanatory refinement**, not universal decomposition;
+- a system may zoom into subsystems, a process into stages, a variable into causal neighborhood, an event into antecedents/outcomes, and a concept into mechanisms/principles/relationships;
+- abstract knowledge navigation is best modeled as 2D topology + semantic zoom rather than literal 3D;
+- parent context is likely to evolve from passive orientation into an active semantic navigation map;
+- on-demand local resolution compilation is more plausible than eager recursive generation;
+- the next highest-value question is what “zoom in” should mean for different semantic object types.
 
 ## Active Decisions
 
 ```text
 KnowledgeModel is the semantic IR.
 Origin: DEBRIEF-001
-Strengthened: DEBRIEF-002, DEBRIEF-004, DEBRIEF-005, DEBRIEF-006
+Strengthened: DEBRIEF-002, DEBRIEF-004, DEBRIEF-005, DEBRIEF-006, DEBRIEF-008
 Status: active
 
-Provider-specific extraction stays behind KnowledgeExtractor.
+Provider-specific extraction stays behind a narrow provider boundary.
 Origin: DEBRIEF-001
+Strengthened: DEBRIEF-008
 Status: active
 
 Evidence coordinates are resolved deterministically from model-nominated exact quotes.
 Origin: DEBRIEF-002
+Strengthened: DEBRIEF-008
 Status: active
 
 Semantic quality is evaluated separately from schema validity.
@@ -129,14 +150,10 @@ Status: active
 
 Relationship vocabulary evolves through cross-domain evidence, not opportunistic enum growth.
 Origin: DEBRIEF-002
-Strengthened: DEBRIEF-003, DEBRIEF-004, DEBRIEF-005, DEBRIEF-006
+Strengthened: DEBRIEF-003, DEBRIEF-004, DEBRIEF-005, DEBRIEF-006, DEBRIEF-008
 Status: active
 
 Relationship semantics have one canonical provider-independent definition.
-Origin: DEBRIEF-003
-Status: active
-
-Explicit meaning and direction are part of a relationship contract.
 Origin: DEBRIEF-003
 Status: active
 
@@ -148,7 +165,7 @@ Freeze relationship-vocabulary expansion until new cross-domain evidence justifi
 Origin: DEBRIEF-003
 Status: active
 
-StructureDetector is a deterministic downstream layer consuming KnowledgeModel.
+StructureDetector remains deterministic downstream of KnowledgeModel.
 Origin: DEBRIEF-004
 Status: active
 
@@ -160,14 +177,14 @@ Empty or weak detected structures remain explicit; do not manufacture structure 
 Origin: DEBRIEF-004
 Status: active
 
-RepresentationModel is a thin presentation-oriented layer downstream of KnowledgeModel + DetectedStructureSet.
+RepresentationModel remains a thin presentation-oriented layer downstream of semantic truth.
 Origin: DEBRIEF-005
-Strengthened: DEBRIEF-006
+Strengthened: DEBRIEF-006, DEBRIEF-008
 Status: active
 
 Learner-facing provenance remains first-class in representation interaction.
 Origin: DEBRIEF-005
-Strengthened: DEBRIEF-006
+Strengthened: DEBRIEF-006, DEBRIEF-008
 Status: active
 
 Viewer selection represents shared semantic state across graph, controls, details, and evidence.
@@ -182,6 +199,38 @@ Status: active
 
 BASELINE-001 is the comparison control for future material UI/interaction changes.
 Origin: DEBRIEF-006
+Status: active
+
+Selection and Explore are distinct semantic interactions.
+Origin: DEBRIEF-007
+Status: active
+
+Successful cognitive interaction grammars may be preserved as cognitive presets when they serve distinct learner intents.
+Origin: DEBRIEF-007
+Status: active
+
+Cognitive presets must not alter canonical semantic truth or provenance.
+Origin: DEBRIEF-007
+Status: active
+
+ResolutionCompiler is a bounded experimental semantic-depth boundary; parent KnowledgeModel remains immutable and navigation remains outside semantic IR.
+Origin: DEBRIEF-008
+Status: active-experimental
+
+Generated child truth must pass the same strict provenance/evidence boundary; fail closed rather than relax SOURCE/INFERRED invariants.
+Origin: DEBRIEF-008
+Status: active
+
+Semantic zoom means type/context-dependent explanatory refinement, not universal containment/decomposition.
+Origin: DEBRIEF-008
+Status: active-hypothesis
+
+Abstract knowledge navigation should remain 2D + semantic zoom by default; use 3D only when the domain's third spatial dimension itself carries meaning.
+Origin: DEBRIEF-008
+Status: active-hypothesis
+
+Do not introduce arbitrary recursive generation yet; investigate resolution strategy first.
+Origin: DEBRIEF-008
 Status: active
 ```
 
