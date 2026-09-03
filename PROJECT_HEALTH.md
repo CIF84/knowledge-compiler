@@ -31,51 +31,82 @@ Use qualitative states rather than false precision:
 
 | Dimension | Status | Evidence / interpretation |
 | --- | --- | --- |
-| Product alignment | ALIGNED | SPEC-001 tested the foundational product assumption that explanatory prose can be represented as structured semantic IR. |
-| Scope discipline | ALIGNED | SPEC-001 remained intentionally limited to text → KnowledgeModel; real LLM extraction and UI were deferred. |
-| Architecture alignment | ALIGNED | Implementation matches the current normalization → extraction → deduplication → KnowledgeModel architecture. |
-| Memory alignment | ALIGNED | SPEC-001 now has a paired DEBRIEF and canonical memory documents exist. |
-| Process effectiveness | WATCH | First complete ChatGPT → SPEC → Codex → review → DEBRIEF cycle worked well, but one cycle is weak evidence. |
-| Test confidence | ALIGNED | Deterministic semantic pipeline and important invalid states are covered; reported suite passed. |
-| Complexity discipline | ALIGNED | No database, UI, vendor SDK, generalized persistence, or premature structure engine was added. |
-| Reproducibility | WATCH | Repository now contains reconstruction artifacts, but reconstruction has not yet been tested from a genuinely fresh context. |
-| Repository state discipline | WATCH | SPEC-001 initially existed as a local-only commit and required an explicit push before independent verification. |
-| Semantic generality | UNKNOWN | Only electromagnetism has been implemented as a golden semantic extraction fixture. |
-| Real extraction reliability | UNKNOWN | No actual LLM adapter has yet produced the IR from unseen text. |
-| Relationship vocabulary fitness | WATCH | Initial grammar works for electromagnetism but has not been tested across unrelated domains. |
-| Cost / effort efficiency | UNKNOWN | Too few cycles exist to establish a useful implementation-efficiency baseline. |
+| Product alignment | ALIGNED | SPEC-002 tested the intended next uncertainty: real LLM extraction into the existing IR across five unrelated domains. |
+| Scope discipline | ALIGNED | Provider integration, evidence resolution, evaluation, and testing were implemented without adding UI, persistence, multiple providers, or structure detection. |
+| Architecture alignment | ALIGNED | The real provider remained behind `KnowledgeExtractor`; `KnowledgeModel`, pipeline, and deduplication stayed provider-neutral. |
+| Memory alignment | ALIGNED | SPEC-002 now has a paired DEBRIEF and canonical memory/architecture/process/health documents have been updated from evidence. |
+| Process effectiveness | ALIGNED | The second full ChatGPT → SPEC → Codex → push → review → DEBRIEF cycle completed with less repository-state friction and a concise implementation prompt. |
+| Test confidence | ALIGNED | Reported suite expanded to 25 offline tests covering provider, evidence resolution, CLI, evaluation, and prior behavior. Live execution was additionally exercised across five domains. |
+| Complexity discipline | ALIGNED | No generalized AI platform, visualization stack, database, ontology framework, or repair engine was introduced. |
+| Reproducibility | WATCH | Repository context was sufficient for a short implementation prompt, but a deliberately fresh-thread reconstruction test remains unperformed. |
+| Repository state discipline | ALIGNED | SPEC-002 required and reported push to canonical `origin/main` before review; the prior local-only review blocker did not recur. |
+| Semantic generality | ALIGNED | One unchanged IR represented recognizable structure across physics, software architecture, economics, biology, and history. |
+| Real extraction reliability | WATCH | All five domains produced validated outputs, but software architecture required two rejected attempts and a prompt revision. Reliability is promising, not yet robust. |
+| Relationship vocabulary fitness | DRIFT | Cross-domain evaluation exposed systematic vocabulary gaps and semantically distorted edges, especially in biology and history. |
+| Semantic relationship precision | DRIFT | Several schema-valid edges had reversed direction, incorrect predicates, or meaning not supported by the source. |
+| Source grounding | ALIGNED | Exact-quote → deterministic-offset resolution preserved strong evidence invariants and correctly rejected ambiguous/missing evidence. |
+| Security / secret handling | WATCH | No key was reported committed, but the evaluation key appeared in internal terminal-state output and should be rotated. |
+| Cost / effort efficiency | WATCH | SPEC-002 demonstrates extremely low direct model-call cost for a five-domain experiment, but more cycles are needed before broader implementation-efficiency claims. |
 
 ## Highest-Value Current Uncertainty
 
-> Can a real LLM reliably transform previously unseen explanatory text into the existing validated `KnowledgeModel` across deliberately different domains without changing downstream architecture?
+> Can we define and enforce a better semantic relationship grammar so that valid edges preserve meaning and direction across domains rather than forcing concepts into the nearest available relationship label?
 
-This should drive SPEC-002.
+This should drive SPEC-003.
 
-## Active Watch Items
+## Active Watch / Drift Items
 
 ### W-001 — Fresh-context reconstruction
 
-The project is designed to survive loss of conversation context, but this has not yet been experimentally tested.
+The repository memory reduced implementation-prompt size and appears sufficient for context recovery, but a genuinely fresh-thread reconstruction has not yet been tested.
 
 **Desired test:** start a future fresh thread/session using only repository artifacts and assess whether product intent, current architecture, operating process, prior learnings, and next work can be reconstructed correctly.
 
-### W-002 — Local vs remote repository state
+### W-002 — Real extraction retry behavior
 
-SPEC-001 review was briefly blocked because the implementation commit existed locally but had not yet been pushed.
+Software architecture required two rejected attempts before prompt v2 succeeded.
 
-**Current response:** treat GitHub as the canonical review state and include push/remote-state confirmation in implementation handoff.
+**Current response:** keep fail-closed validation and improve probabilistic behavior at the prompt/adapter boundary rather than weakening invariants.
 
-### W-003 — Installed CLI fixture path
+### D-001 — Relationship vocabulary fit
 
-The default fixture path is repository-oriented and may not work in an installed wheel.
+Observed gaps include binding/attachment, transport/delivery, prohibition, generic directional influence, unchanged-state semantics, and actor/event relationships.
 
-**Response:** non-blocking for SPEC-001; correct opportunistically when the CLI is next changed.
+**Response:** use the five-domain failures as regression evidence for a focused semantic-grammar experiment. Do not add an uncontrolled universal ontology.
+
+### D-002 — Semantic edge precision
+
+Examples include reversed `PART_OF`, misused `EXERTS_FORCE_ON`, misleading `ENABLES`, incorrect `INCREASES`, and invalid `TRANSFORMS_INTO` relationships.
+
+**Response:** future semantic validation must inspect meaning and direction, not merely enum/schema validity.
+
+### W-003 — Entity/state/process distinction
+
+Changing electric/magnetic fields were collapsed into base field entities.
+
+**Response:** treat entity vs state/condition vs process as a concrete modeling question for later experimentation; do not redesign the IR yet.
 
 ### W-004 — Inference provenance model
 
-`INFERRED` semantic objects currently cannot retain evidence spans. Future extraction may demonstrate the need to distinguish explicit evidence from supporting evidence.
+The strict `SOURCE` vs `INFERRED` distinction caught a real provider failure. A separate `supporting_evidence` concept remains unproven.
 
-**Response:** do not redesign speculatively; observe real extraction behavior first.
+**Response:** keep current strict behavior until a concrete use case requires more expressive provenance.
+
+### W-005 — Secret rotation
+
+The API key used for SPEC-002 appeared in internal terminal-state output during environment handoff.
+
+**Response:** rotate the key and avoid echoing secrets into visible handoff/logging surfaces in future cycles.
+
+## Resolved Watch Items
+
+### R-001 — Local vs remote repository state
+
+SPEC-002 required push before review and reported matching local/canonical remote state. The SPEC-001 review blocker did not recur.
+
+### R-002 — Installed CLI fixture path
+
+Fixture extraction now requires an explicit `--fixture`, removing dependence on a repository-relative default path during installed use.
 
 ## Drift Triggers
 
@@ -85,6 +116,7 @@ Mark a dimension `DRIFT` when examples such as these occur:
 - vendor-specific LLM types leak into the semantic core
 - UI independently interprets source text
 - source-derived claims lose evidence provenance
+- schema-valid edges repeatedly encode wrong meaning or direction
 - a SPEC repeatedly expands beyond its stated experiment
 - architecture documents describe a system that is no longer implemented
 - important decisions exist only in chat history
