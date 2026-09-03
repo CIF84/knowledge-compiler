@@ -15,39 +15,42 @@ This document is the lightweight monitoring surface for alignment, drift, uncert
 
 | Dimension | Status | Evidence / interpretation |
 | --- | --- | --- |
-| Product alignment | ALIGNED | SPEC-006 produced the strongest owner result so far: materially better than SPEC-005 with a very strong positive learning/cognitive response. |
-| Scope discipline | ALIGNED | SPEC-006 held semantics fixed and changed only layout/interaction; SPEC-006A fixed one focus artifact and captured a baseline without opportunistic polish. |
-| Architecture alignment | ALIGNED | Layout remains presentation-only and viewer interaction does not mutate semantic truth. |
-| Memory alignment | ALIGNED | SPEC-006 has a paired DEBRIEF and canonical models now reflect the validated layout/interaction behavior and BASELINE-001. |
-| Process effectiveness | ALIGNED | Fixed upstream artifacts enabled a clean before/after product experiment and direct human review identified the decisive result. |
-| Test confidence | ALIGNED | SPEC-006 reported 88 passing tests; SPEC-006A reported 91. Deterministic layout/identity/provenance checks remain intact. |
-| Complexity discipline | ALIGNED | No graph library, frontend framework, build pipeline, screenshot framework, or new runtime dependency was added. |
-| Reproducibility | ALIGNED | Layout generation remains deterministic and evaluation artifacts are committed. Fresh-thread reconstruction remains a separate watch item. |
-| Repository state discipline | ALIGNED | Implementation, focus fix, baseline, and project-memory updates were committed to canonical GitHub. |
-| Semantic generality | ALIGNED | The same representation/layout system handles all five domains while preserving Biology's truthful empty state. |
-| Relationship vocabulary fitness | ALIGNED | Layout/interaction work required no ontology expansion. |
-| Semantic relationship precision | WATCH | Upstream endpoint, chronology, state, polarity, and measurement issues still constrain some representations. |
-| Source grounding | ALIGNED | Provenance remains first-class and learner-visible after layout and interaction changes. |
-| Structure composition | ALIGNED | Higher-order structures remain cleanly separated from presentation behavior. |
-| Representation usefulness | ALIGNED | Owner before/after verdict strongly favors SPEC-006. |
-| Representation integrity | ALIGNED | Semantic content, canonical direction, relationship identity, and provenance remained unchanged through SPEC-006/006A. |
-| Interaction coherence | ALIGNED | Persistent selection and temporary preview now synchronize graph/control/detail/evidence as one semantic object. |
-| Spatial layout | ALIGNED | Structure-specific layout materially improved legibility on current benchmark graphs. |
-| Interface baseline | ALIGNED | `BASELINE-001` preserves the first empirically successful cognitive interaction grammar for future comparisons. |
-| Accessibility interaction | ALIGNED | Default SVG focus noise was replaced with an intentional `:focus-visible` treatment while preserving keyboard activation. |
-| Layout scale | WATCH | Current custom deterministic layout is validated only for small benchmark graphs. |
-| Entity/event/state modeling | WATCH | Known upstream state/event endpoint limitations remain visible, especially in electromagnetism, biology, and history. |
-| Pedagogical salience | ALIGNED | Existing simple salience plus truthful sparse/empty states remains adequate at current scale. |
-| Prompt complexity | WATCH | SPEC-003 grammar remains large; subsequent product value has been added without increasing it. |
-| Human review burden | WATCH | Human product review remains decisive for cognitive usefulness; broader-user evidence is still absent. |
-| Security / secret handling | WATCH | Security rules remain active; exposed SPEC-002 key rotation is not confirmed in repository evidence. |
-| Cost / effort efficiency | ALIGNED | SPEC-006/006A used fixed local artifacts and zero model/API cost to produce major product learning. |
+| Product alignment | ALIGNED | SPEC-007/008 moved the product toward the core “peel layers while preserving context” thesis; owner reaction remained strongly positive. |
+| Scope discipline | ALIGNED | SPEC-008 kept automatic resolution to one level, two focuses, no recursion, no retrieval, no personalization, and no frontend rewrite. |
+| Architecture alignment | ALIGNED | Parent `KnowledgeModel` remains immutable; child semantic truth is independent; navigation stays outside semantic IR. |
+| Memory alignment | ALIGNED | SPEC-007 and SPEC-008 now have paired debriefs and canonical project models reflect semantic navigation and multi-resolution compilation. |
+| Process effectiveness | ALIGNED | Handcrafted interaction first, automation second, live validation third produced clear architectural learning with bounded cost. |
+| Test confidence | ALIGNED | SPEC-008 reported 115 passing tests; live artifacts and fail-closed behavior are preserved separately. |
+| Complexity discipline | ALIGNED | No recursive graph architecture, graph DB, frontend framework, new runtime dependency, retrieval system, or personalization machinery was added. |
+| Reproducibility | ALIGNED | Offline fixtures and deterministic downstream artifacts remain reproducible; live provider results are preserved as committed evidence. |
+| Repository state discipline | ALIGNED | Implementation, live evaluation, and debrief/canonical model updates are committed to canonical GitHub. |
+| Semantic generality | WATCH | Automatic depth has one real success and one grounding rejection; cross-domain reliability is not established. |
+| Relationship vocabulary fitness | ALIGNED | SPEC-008 required zero new predicates. |
+| Semantic relationship precision | WATCH | Existing endpoint/state/polarity limitations remain; child generation may amplify them at deeper resolution. |
+| Source grounding | ALIGNED | Economics generated 11/11 source relationships and 4/4 source claims with validated evidence; Software Architecture failed closed rather than weakening provenance. |
+| Structure composition | ALIGNED | Generated child truth can flow through existing `StructureDetector` and `RepresentationBuilder`. |
+| Representation usefulness | ALIGNED | Owner judged the generated Economics layer as genuinely matching expected deeper exploration rather than merely technically impressive. |
+| Interaction coherence | ALIGNED | Existing Contextual mode remains coherent for generated child models. |
+| Spatial layout | ALIGNED | Current 2D structure-aware layout remains suitable for the generated Economics child at benchmark scale. |
+| Cognitive presets | WATCH | Overview / Focus / Contextual are promising distinct cognitive projections, but broader-user value and product naming remain unvalidated. |
+| Semantic navigation | ALIGNED | Contextual/layered navigation is validated conceptually for the owner benchmark. |
+| Multi-resolution compilation | WATCH | Demonstrated in Economics, rejected in Software Architecture; reliability and resolution strategy remain open. |
+| Resolution semantics | WATCH | “Zoom in” is now understood as explanatory refinement, but strategy by semantic object type is not yet operationalized. |
+| Context-map navigation | WATCH | Parent context naturally wants to become an active lateral navigation map; not yet implemented or tested. |
+| Recursive/on-demand compilation | WATCH | On-demand local compilation is a strong hypothesis; eager recursion remains explicitly unjustified. |
+| 2D vs 3D knowledge navigation | ALIGNED | Default abstract knowledge surface should be 2D + semantic zoom; literal 3D reserved for domains where spatial depth itself carries meaning. |
+| Layout scale | WATCH | Custom deterministic layout is still validated only for small benchmark graphs. |
+| Human review burden | WATCH | Human judgment remains decisive for compression relationship and cognitive usefulness. |
+| Broader-user generalization | WATCH | Strong evidence remains owner-based. Hyper-personalization is promising but not yet tested. |
+| Security / secret handling | ALIGNED | Old key was rotated and new key handled via environment variable; source transmission required explicit approval. |
+| Cost / effort efficiency | ALIGNED | Live SPEC-008 used 8,831 tokens total and produced high-value architectural evidence without broadening scope. |
+| Spec integrity | WATCH | SPEC-008 was accidentally truncated at `Report explicitly:`; implementation still succeeded but spec-writing reliability needs attention. |
 
 ## Highest-Value Current Uncertainty
 
-> Can a learner move from a high-level model into progressively deeper explanations, mechanisms, and evidence without losing orientation in the larger system?
+> What should “zoom in” mean for different semantic object types, and can Knowledge Compiler apply the right resolution strategy while preserving source grounding and a coherent parent-child compression relationship?
 
-This is the leading candidate for SPEC-007.
+This should drive SPEC-009.
 
 ## Active Watch Items
 
@@ -55,45 +58,51 @@ This is the leading candidate for SPEC-007.
 A genuinely fresh-thread reconstruction test remains unperformed.
 
 ### W-002 — Endpoint / event / state semantics
-Known endpoint/state weaknesses degrade some process and feedback representations.
+Known endpoint/state weaknesses may become more consequential at deeper semantic resolution.
 
-**Response:** preserve attribution upstream; revisit when progressive disclosure or richer structures are materially blocked.
+**Response:** revisit only when a focused resolution experiment shows they are a hard blocker.
 
 ### W-003 — Polarity preservation
-Current causal paths and feedback candidates do not reliably encode reinforcing/balancing or prevention polarity.
-
-**Response:** do not expand predicates opportunistically.
+Current causal structures do not reliably encode reinforcing/balancing or prevention polarity.
 
 ### W-004 — Layout scale
-The custom deterministic layout is excellent for current benchmark sizes but not proven on materially larger graphs.
+Current custom layout is strong for small graphs but unproven at larger scales.
 
-**Response:** continue until scale produces a concrete failure before adopting a general graph-layout dependency.
+### W-005 — Resolution-strategy generality
+One generic deeper-resolution prompt produced one success and one rejected output.
 
-### W-005 — Progressive disclosure / orientation
-The current interface is strong at one representation level. It is unknown whether deeper explanations/submodels can be exposed without losing the learner's place in the larger system.
+**Response:** test a small set of semantic-role-aware resolution strategies before recursion or active map navigation.
 
-**Response:** candidate SPEC-007 should test semantic navigation against BASELINE-001 rather than broadly expanding UI.
+### W-006 — Context-map navigation
+The parent mini-map currently orients but does not support lateral movement.
 
-### W-006 — Prompt complexity
-The canonical relationship grammar remains materially larger after SPEC-003.
+**Response:** preserve as next navigation hypothesis; do not implement before resolution semantics are better understood.
 
-### W-007 — Human review bottleneck
-Direct interaction provides evidence machine metrics cannot.
+### W-007 — On-demand compilation
+Recursive eager generation risks combinatorial explosion.
 
-**Response:** keep product experiments narrow and compare against fixed baselines.
+**Response:** maintain one-level generation until an explicit on-demand compilation experiment is warranted.
 
-### W-008 — Broader-user generalization
-Strong usefulness evidence is owner-based.
+### W-008 — Cognitive presets / personalization
+Overview, Focus, and Contextual may support different learner/task intents.
 
-**Response:** do not build formal research infrastructure yet; first establish a stronger product surface and repeatable tasks.
+**Response:** preserve successful modes but do not build adaptive personalization yet.
 
-### W-009 — Secret rotation
-SPEC-002 exposed an API key in terminal-state output.
+### W-009 — Human review bottleneck
+Compression relationship and cognitive usefulness still need human judgment.
+
+### W-010 — Broader-user generalization
+Current strong product evidence is owner-based.
+
+### W-011 — Spec truncation
+SPEC-008 ended abruptly because of an authoring/write failure.
+
+**Response:** verify future specs contain a complete acceptance and required-handoff section before implementation handoff.
 
 ## Resolved / Improved Items
 
 ### R-001 — Relationship vocabulary drift
-Resolved; downstream experiments continue without vocabulary growth.
+Resolved; downstream semantic-depth work still requires no vocabulary growth.
 
 ### R-002 — Structure-detection uncertainty
 Resolved positively in SPEC-004.
@@ -102,34 +111,36 @@ Resolved positively in SPEC-004.
 Resolved positively in SPEC-005.
 
 ### R-004 — Interaction coherence
-Resolved positively in SPEC-006: semantic selection is synchronized across surfaces.
+Resolved positively in SPEC-006.
 
 ### R-005 — Spatial-layout uncertainty
 Resolved positively at current graph scale in SPEC-006.
 
-### R-006 — SVG focus artifact
-Resolved in SPEC-006A while preserving keyboard accessibility.
+### R-006 — Semantic navigation usefulness
+Resolved positively for the owner benchmark in SPEC-007: Contextual/Layers is the preferred conceptual mode.
 
-### R-007 — Successful UI reference point
-Resolved by capturing BASELINE-001 rather than relying on memory/screenshots in conversation history.
+### R-007 — Automatic depth possibility
+Resolved positively but narrowly in SPEC-008: one real source-grounded automatic child model was successfully compiled and rendered.
+
+### R-008 — Fail-closed child grounding
+Demonstrated in SPEC-008 Software Architecture run.
 
 ## Drift Triggers
 
 Mark a dimension `DRIFT` when examples such as these occur:
 
 - implementation bypasses `KnowledgeModel`;
-- provider-specific types leak into the semantic core;
-- representation re-reads source independently instead of consuming canonical context;
-- provenance is lost;
-- missing links are invented for presentation completeness;
-- weak/empty structures are hidden;
-- relationship vocabulary grows without evidence;
-- viewer interactions mutate canonical semantic truth;
-- generic visual polish makes cognitive behavior worse than BASELINE-001 without an explicit worthwhile trade-off;
-- progressive disclosure causes the learner to lose orientation without addressing that cost;
-- heavy frontend/graph infrastructure is introduced before current simple architecture demonstrably fails;
+- provider-specific types leak into semantic truth models;
+- generated child content cannot be independently inspected before rendering;
+- provenance is weakened to improve success rate;
+- viewer/navigation state mutates parent or child semantic truth;
+- recursive depth is added before resolution semantics are understood;
+- active context-map navigation invents semantic adjacency unsupported by the model;
+- cognitive presets silently alter canonical facts/provenance;
+- generic 3D visualization is introduced without subject-matter dimensional meaning;
+- eager generation creates complexity before on-demand behavior is justified;
 - project memory becomes stale;
-- documentation overhead materially slows learning.
+- documentation/spec truncation goes unnoticed before implementation.
 
 ## Review Cadence
 
@@ -145,8 +156,10 @@ After each completed SPEC/DEBRIEF pair ask:
 8. Could a fresh context reconstruct the project?
 9. What uncertainty was reduced?
 10. What is now the highest-value uncertainty?
-11. For UI-bearing experiments, did a human actually interact with the artifact?
-12. If BASELINE-001 is relevant, is the change BETTER / SAME / WORSE on the dimensions it claims to improve?
+11. If probabilistic generation was involved, did the trust boundary fail closed correctly?
+12. If a semantic-depth artifact was generated, does the parent plausibly compress/summarize the child?
+13. If BASELINE-001 is relevant, is the change BETTER / SAME / WORSE on the claimed cognitive dimension?
+14. Was the SPEC file itself complete before handoff?
 
 ## Convergence Goal
 
