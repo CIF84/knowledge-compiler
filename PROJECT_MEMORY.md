@@ -63,6 +63,7 @@ UPDATED PROJECT MODEL
 | 002 — LLM Semantic Extraction | [`SPEC-002`](specs/SPEC-002-llm-semantic-extraction.md) | [`DEBRIEF-002`](debriefs/DEBRIEF-002-llm-semantic-extraction.md) | Accepted — mixed semantic outcome |
 | 003 — Relationship Semantics | [`SPEC-003`](specs/SPEC-003-relationship-semantics.md) | [`DEBRIEF-003`](debriefs/DEBRIEF-003-relationship-semantics.md) | Accepted — improved semantic precision |
 | 004 — Structure Detection | [`SPEC-004`](specs/SPEC-004-structure-detection.md) | [`DEBRIEF-004`](debriefs/DEBRIEF-004-structure-detection.md) | Accepted — useful deterministic composition with limitations |
+| 005 — Minimal Representation | [`SPEC-005`](specs/SPEC-005-minimal-representation.md) | [`DEBRIEF-005`](debriefs/DEBRIEF-005-minimal-representation.md) | Accepted — strong positive human outcome |
 
 ## Current Learning Summary
 
@@ -98,15 +99,26 @@ UPDATED PROJECT MODEL
 - downstream composition exposes upstream endpoint/state/chronology weaknesses clearly rather than hiding them;
 - event/state modeling is now an evidence-backed concern, but not a blocker for a minimal representation experiment;
 - exact duplicate semantic edges can be collapsed for traversal while preserving original relationship provenance;
-- structurally valid does not necessarily mean pedagogically useful;
-- the next important product question is whether detected structures can become representations that are materially easier to think with than text or JSON.
+- structurally valid does not necessarily mean pedagogically useful.
+
+### After SPEC-005
+
+- the first direct human evaluation strongly supports the core representation thesis: the interactive spatial model immediately improved the owner's cognitive orientation and was preferred as a learning aid;
+- `RepresentationModel` can remain a thin deterministic downstream layer over `KnowledgeModel` + `DetectedStructureSet`;
+- node and edge inspection turn the artifact from a static diagram into an explorable model;
+- provenance is useful as part of the learner-facing interaction, not merely developer metadata;
+- semantic correctness, spatial legibility, and interaction coherence are distinct dimensions of representation quality;
+- the same semantic relationship may appear as graph edge, relationship control, detail, and evidence, so selection should synchronize those surfaces;
+- layout is part of representation semantics: hierarchy, causal, dependency, process, and feedback structures should not necessarily share one generic placement strategy;
+- rendering makes upstream event/state/endpoint defects more obvious but those defects do not yet block useful representation generally;
+- the next important product question is whether structure-aware layout and synchronized interaction make the current representations behave more like coherent mental models.
 
 ## Active Decisions
 
 ```text
 KnowledgeModel is the semantic IR.
 Origin: DEBRIEF-001
-Strengthened: DEBRIEF-002, DEBRIEF-004
+Strengthened: DEBRIEF-002, DEBRIEF-004, DEBRIEF-005
 Status: active
 
 Provider-specific extraction stays behind KnowledgeExtractor.
@@ -141,20 +153,38 @@ Status: active
 
 Freeze relationship-vocabulary expansion until new cross-domain evidence justifies it.
 Origin: DEBRIEF-003
-Strengthened: DEBRIEF-004
+Strengthened: DEBRIEF-004, DEBRIEF-005
 Status: active
 
 StructureDetector is a deterministic downstream layer consuming KnowledgeModel.
 Origin: DEBRIEF-004
 Status: active
 
-DetectedStructureSet is the provisional boundary between semantic graph and representation.
+DetectedStructureSet is the boundary between semantic graph and representation detection input.
 Origin: DEBRIEF-004
-Status: provisional-active
+Strengthened: DEBRIEF-005
+Status: active
 
 Empty or weak detected structures remain explicit; do not manufacture structure merely for presentation.
 Origin: DEBRIEF-004
+Strengthened: DEBRIEF-005
 Status: active
+
+RepresentationModel is a thin presentation-oriented layer downstream of KnowledgeModel + DetectedStructureSet.
+Origin: DEBRIEF-005
+Status: active
+
+Learner-facing provenance remains first-class in representation interaction.
+Origin: DEBRIEF-005
+Status: active
+
+Viewer selection should represent shared semantic state across graph, controls, details, and evidence.
+Origin: DEBRIEF-005
+Status: provisional-active
+
+Structure-aware spatial layout is a representation concern, not generic cosmetic polish.
+Origin: DEBRIEF-005
+Status: provisional-active
 ```
 
 ## Why This Exists
