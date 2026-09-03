@@ -2,117 +2,80 @@
 
 > Transform information optimized for communication into representations optimized for understanding.
 
-## The Problem
+Knowledge Compiler is an evidence-led research implementation of a representation translator for learning. It compiles explanatory text into a source-grounded semantic model, detects useful structures, and renders navigable representations at more than one level of resolution.
 
-Most educational material is linear: books, articles, documentation, Wikipedia entries, podcasts, lectures, and videos unfold as sequences. Complex concepts are not necessarily best understood that way.
+The project is not yet an end-user learning product. It has a working compiler pipeline, deterministic viewers, live-model evaluation artifacts, and ten completed specification increments. The next question is whether those parts create a trustworthy, useful learning experience on a realistic long-form source.
 
-They are often systems of entities, relationships, causes, dependencies, processes, feedback loops, constraints, and trade-offs. Conventional AI learning tools usually transform text into more text: summaries, notes, flashcards, quizzes, or chat.
+## The problem
 
-Knowledge Compiler explores a different question:
+Most educational material is linear: books, articles, documentation, lectures, and videos unfold as sequences. Human understanding is not necessarily linear.
+
+Complex ideas are often understood as systems of entities, relationships, causes, dependencies, processes, feedback loops, constraints, comparisons, and claims. Conventional AI learning tools usually transform text into more text. Knowledge Compiler asks a different question:
 
 > **What underlying structure is this information describing, and what representation makes that structure easiest to understand?**
 
-The goal is not to visualize sentences. It is to extract the system described by them.
+The goal is not to visualize sentences. It is to recover the system and truth conditions described by them.
 
-## Product Thesis
+## Product thesis
 
 ```text
 Source → Structure → Model → Intuition
 ```
 
-The system accepts source material, extracts a structured knowledge model, detects the kinds of relationships present, and eventually chooses representations suited to those relationships.
+Knowledge Compiler treats learning as a representation problem:
+
+- **Map — What exists?** Concepts, components, boundaries, and organization.
+- **Model — How does it work?** Causality, dependency, sequence, interaction, comparison, and change.
+- **Simulator — What happens if...?** A future counterfactual layer over a sufficiently trustworthy model.
+
+Map and Model have implemented foundations. Simulator remains a product direction, not a current capability. Any future simulator must distinguish qualitative reasoning from quantitative simulation and must not imply precision the source does not support.
+
+## What exists today
+
+The current pipeline is:
 
 ```text
-SOURCE
-  │
-  ▼
-canonical text
-  │
-  ▼
-SEMANTIC EXTRACTION
-  │
-  ▼
-KNOWLEDGE MODEL
-  │
-  ├── entities
-  ├── relationships
-  ├── claims
-  ├── evidence
-  └── uncertainty
-  │
-  ▼
-STRUCTURE DETECTION
-  │
-  ├── hierarchy
-  ├── causality
-  ├── dependency
-  ├── process
-  ├── feedback
-  └── comparison
-  │
-  ▼
-REPRESENTATION ENGINE
-  │
-  ├── concept map
-  ├── causal model
-  ├── process model
-  ├── timeline
-  ├── matrix
-  └── system view
-  │
-  ▼
-MENTAL MODEL
-  │
-  ▼
-SIMULATOR — “What if...?”
+plain text
+   ↓
+normalization and source spans
+   ↓
+LLM or deterministic semantic extraction
+   ↓
+validated KnowledgeModel
+   ├── entities
+   ├── binary relationships
+   ├── structured propositions
+   ├── evidence
+   └── confidence / origin
+   ↓
+deterministic structure detection
+   ↓
+representation, layout, interaction, and semantic navigation
+   ↓
+optional source-grounded child resolution
 ```
 
-## Why Not Just Mind Maps?
+Implemented capabilities include:
 
-Mind maps are one useful representation, not the destination.
+- strict models for source documents, entities, relationships, evidence, and confidence;
+- source-grounded LLM extraction with fail-closed validation;
+- conservative entity deduplication and canonical endpoint handling;
+- deterministic detection of hierarchies, causal paths, dependency chains, process chains, and feedback candidates;
+- deterministic representation building, structure-aware layout, and synchronized graph/detail interaction;
+- contextual progressive disclosure and one-level semantic child resolutions;
+- automatic resolution strategy selection with recorded provenance and run history;
+- proposition modeling for cases whose truth is distorted by a single binary edge;
+- committed machine and human evaluation artifacts across five golden domains and focused live comparisons.
 
-| Information structure | Better representation |
-| --- | --- |
-| X consists of A, B, C | Hierarchy / decomposition tree |
-| A influences B | Causal graph |
-| A happens before B | Process / sequence diagram |
-| A and B interact | System diagram |
-| A trades off against B | Trade-off matrix |
-| A changes over time | Timeline |
-| If X, do Y | Decision tree |
-| A depends on B | Dependency graph |
-| A reinforces B, which reinforces A | Feedback-loop diagram |
+The implementation is currently strongest as a research-grade compiler and artifact viewer. It does not yet provide a polished paste-to-learn application, general long-form ingestion, recursive semantic zoom, or validated counterfactual simulation.
 
-The application should infer the structure first and render it second.
+## Semantic model
 
-## Core Learning Model
+### Entities and binary relationships
 
-Knowledge Compiler is organized around three artifacts:
+Ordinary assertions remain binary relationships when a source concept can truthfully be represented as `source —predicate→ target`.
 
-### Map — What exists?
-
-The domain structure: concepts, components, mechanisms, boundaries, and constraints.
-
-### Model — How does it work?
-
-Relationships and dynamics: causality, dependencies, processes, state changes, interactions, feedback loops, and trade-offs.
-
-### Simulator — What happens if...?
-
-Counterfactual exploration of the model. Change a variable or assumption and trace likely consequences.
-
-```text
-MAP → MODEL → SIMULATOR
-what?   how?     what if?
-```
-
-The simulator must distinguish qualitative reasoning from quantitative simulation and must not imply precision the source does not support.
-
-## Representation Grammar
-
-The core capability is translation into a reusable semantic structure, not drawing arrows.
-
-An initial relationship vocabulary may include:
+The current canonical relationship vocabulary contains 20 predicates:
 
 ```text
 IS_A
@@ -132,186 +95,145 @@ CONTRADICTS
 CREATES
 INDUCES
 EXERTS_FORCE_ON
+AFFECTS
+BINDS_TO
+TRANSFERS_TO
 ```
 
-Higher-order structures can then emerge from combinations of edges:
+These relationships support higher-order structures:
 
 ```text
-PART_OF chains             → hierarchy
-CAUSES chains              → causal model
-CAUSES returning to origin → feedback loop
-PRECEDES chains            → process / timeline
-REQUIRES graph             → dependency model
-alternatives + attributes  → comparison matrix
+PART_OF chains                  → hierarchy
+CAUSES / INCREASES / DECREASES → causal path
+PRECEDES chains                 → process chain
+REQUIRES chains                 → dependency chain
+causal return paths             → feedback candidate
 ```
 
-## Progressive Disclosure
+### Structured propositions
 
-Complex domains are connected at many abstraction levels. Showing everything at once creates graph spaghetti.
+Some claims require more than two endpoints. Knowledge Compiler uses a hybrid model: binary relationships remain the default, while structured propositions are reserved for claims that would otherwise lose essential truth.
 
-Knowledge Compiler should behave more like a map than a document:
+Current proposition types:
+
+- `COMPARISON_CONDITION`
+- `TRANSFER_EVENT`
+
+Current proposition roles and operator:
 
 ```text
-DOMAIN
-  ↓ zoom
-SUBSYSTEM
-  ↓ zoom
-MECHANISM
-  ↓ zoom
-FORMAL MODEL
-  ↓ zoom
-DETAIL / EVIDENCE
+LEFT_OPERAND
+RIGHT_OPERAND
+OUTCOME
+EVENT
+OBJECT
+DESTINATION
+
+GREATER_THAN
 ```
 
-## Nodes, Edges, Paths, and Loops
+Examples include “quantity demanded is greater than quantity supplied, producing a shortage” and “an order command transfers to an order component.” The participants keep their direct parent relationships, and the proposition captures the full claim. Proposition cards are currently rendered alongside graph representations; proposition topology is deliberately not yet part of structure traversal.
 
-- **Nodes** answer: *What is X?*
-- **Edges** answer: *Why does X affect Y?*
-- **Paths** answer: *How does X eventually lead to Z?*
-- **Loops** answer: *How does the system behave over time?*
-- **Counterfactuals** answer: *What happens if X changes?*
+## Why not just generate mind maps?
 
-Systems understanding often lives in the edges rather than isolated definitions.
+Mind maps are useful, but they are only one representation. Structure should determine the view.
 
-## Source Grounding
+| Information structure | Useful representation |
+| --- | --- |
+| X consists of A, B, C | Hierarchy / decomposition tree |
+| A influences B | Causal graph |
+| A happens before B | Process / sequence diagram |
+| A depends on B | Dependency graph |
+| A reinforces B, which reinforces A | Feedback-loop diagram |
+| A differs from B under a condition | Proposition or comparison view |
+| A transfers an object to B | Event-centered proposition view |
 
-Every important node, relationship, and claim should remain traceable to the source material from which it was derived.
+The important capability is the translation grammar, not the arrows.
 
-```text
-changing magnetic field
-          │
-          │ INDUCES
-          ▼
-    electric field
-          │
-          └── Evidence
-                 ├── source section
-                 ├── source paragraph
-                 └── transcript timestamp
+## Progressive disclosure and semantic resolution
+
+The interface is intended to behave more like a map than a document: begin with orientation, then reveal mechanism or detail without losing context.
+
+The implementation currently provides contextual layer preferences and one-level child resolutions. Live evaluation established that:
+
+- process-focused strategy selection can outperform generic detail expansion;
+- component-internals can safely refuse when the source lacks enough detail;
+- variable-focused causal-neighborhood selection remains unvalidated;
+- deeper recursive resolution and an active navigation model remain future work.
+
+These mixed and negative findings are accepted evidence. They are constraints on the next design, not results to hide or tune away.
+
+## Grounding and trust
+
+Every generated entity, relationship, and proposition must remain traceable to source evidence. Generated child artifacts preserve their parent focus, source scope, strategy choice, and run history. Semantic validation is fail-closed: insufficient source detail produces an explicit refusal instead of invented structure.
+
+The AI is therefore intended to act as an interface over the source, not an opaque replacement for it.
+
+## Current evidence boundary
+
+Demonstrated:
+
+- a source-grounded semantic intermediate representation;
+- the 20-predicate relationship vocabulary across the golden domains;
+- deterministic structure detection and structure-aware rendering;
+- synchronized selection and evidence inspection;
+- contextual progressive disclosure;
+- one real automatically generated semantic resolution;
+- safe refusal when the source is insufficient;
+- process-specific resolution value in a controlled comparison;
+- proposition-aware modeling for comparison conditions and transfer events.
+
+Not yet demonstrated:
+
+- reliable generalization to realistic long-form source material;
+- a broadly reliable automatic resolution policy;
+- proposition-aware topology and traversal;
+- recursive or deeply nested semantic zoom;
+- an elegant active-map navigation experience;
+- measurable improvement in learning outcomes;
+- a complete end-user input and product workflow.
+
+The current decision frontier is defined in [REVIEW-001](reviews/REVIEW-001-post-spec-010-product-architecture.md): prove one real-source, end-to-end learning slice before expanding the platform.
+
+## Direction, not current scope
+
+The longer-term product vision still includes richer source adapters, alternative views, recursive semantic zoom, personal learning state, and carefully bounded “what if?” exploration. Those ideas become valuable only after the core transformation is shown to help a learner understand a realistic source better than the source alone.
+
+Three principles guide that progression:
+
+1. **Compile before rendering.** Extract, validate, detect, select, then render.
+2. **Preserve truth before adding richness.** Grounding, provenance, uncertainty, and refusal are product behavior.
+3. **Earn complexity with evidence.** Add a capability only when an evaluation resolves a real product risk.
+
+## Repository guide
+
+- [Architecture](ARCHITECTURE.md) — implemented module and data-flow boundaries.
+- [Roadmap](ROADMAP.md) — completed evidence, open risks, and next decision frontier.
+- [Operating model](OPERATING_MODEL.md) — specification, implementation, evaluation, and handoff workflow.
+- [Project memory](PROJECT_MEMORY.md) — durable project context and accepted decisions.
+- [Project health](PROJECT_HEALTH.md) — repository-level health indicators.
+- [SPEC-010](specs/SPEC-010-proposition-and-endpoint-modeling.md) — proposition and endpoint modeling contract.
+- [DEBRIEF-010](debriefs/DEBRIEF-010-proposition-and-endpoint-modeling.md) — accepted SPEC-010 outcomes.
+- [REVIEW-001](reviews/REVIEW-001-post-spec-010-product-architecture.md) — post-SPEC-010 product and architecture review.
+
+## Local development
+
+Knowledge Compiler requires Python 3.12 or newer.
+
+```bash
+python3 -m venv .venv
+.venv/bin/pip install -e '.[test,llm]'
+.venv/bin/pytest
 ```
 
-The AI should act as an interface over the source, not an opaque replacement for it.
+The `openai` extra and `OPENAI_API_KEY` are needed only for live model-backed extraction or resolution. Deterministic tests do not require network access.
 
-## MVP
+The command-line entry point is:
 
-The first version is deliberately small.
-
-### Input
-
-Paste explanatory text.
-
-### Transformation
-
-1. Normalize the source.
-2. Extract entities and concepts.
-3. Extract claims and typed relationships.
-4. Preserve evidence references.
-5. Validate structured output.
-6. Merge conservative duplicates.
-7. Produce a `KnowledgeModel`.
-
-### Output
-
-For the first milestone, the output is inspectable structured JSON — not a polished UI.
-
-```text
-Text
- ↓
-LLM / extractor
- ↓
-validated schema
- ↓
-KnowledgeModel JSON
+```bash
+.venv/bin/knowledge-compiler --help
 ```
 
-### Explicitly Not in the First MVP
-
-- user accounts
-- podcast or YouTube ingestion
-- PDF ingestion
-- browser extension
-- mobile app
-- giant persistent personal knowledge graph
-- collaboration
-- custom visualization engine
-- arbitrary quantitative simulation
-
-First prove one thing:
+## North star
 
 > **Paste difficult text. Get a model you can think with.**
-
-## Golden Test Case
-
-The first benchmark is **electromagnetism**.
-
-A useful transformation should reveal relationships such as:
-
-```text
-Matter ↔ Electromagnetic Field
-
-Charge → Electric Field → Force → Motion
-
-Moving Charge → Magnetic Effects
-
-Changing E ↔ Changing B → Electromagnetic Wave → Light
-```
-
-The acceptance criterion is experiential:
-
-> Does the generated model make the source substantially easier to understand than reading or summarizing the source alone?
-
-After electromagnetism, test deliberately different domains:
-
-- software architecture
-- economics
-- biology
-- history
-
-If one translation grammar produces useful models across all five, the project has demonstrated something more interesting than a domain-specific prompt.
-
-## Design Principles
-
-- **Structure before presentation.** Extract the knowledge model before deciding how to visualize it.
-- **Relationships over isolated facts.** Preserve mechanisms, dependencies, and causality.
-- **Progressive disclosure.** Start with the smallest useful model and reveal complexity deliberately.
-- **Source over hallucination.** Distinguish source-derived claims from inference.
-- **Intuition before notation.** When appropriate: `SYSTEM → RELATIONSHIP → INTUITION → MATHEMATICS`.
-- **Models over summaries.** Compression is useful only when explanatory structure survives.
-- **Show uncertainty.** Generated causal edges and counterfactuals must communicate uncertainty.
-- **Build the smallest useful thing.** Prove translation quality before solving every ingestion or UI problem.
-
-## Architecture Direction
-
-```text
-INGESTION
-   │
-   ▼
-NORMALIZATION
-   │
-   ▼
-SEMANTIC EXTRACTION
-   │
-   ▼
-KNOWLEDGE MODEL  ← semantic intermediate representation
-   │
-   ▼
-STRUCTURE DETECTION
-   │
-   ▼
-REPRESENTATION
-   │
-   ▼
-INTERACTION
-```
-
-The `KnowledgeModel` is intentionally similar to a compiler intermediate representation: source-specific details are normalized into a stable semantic form that many downstream renderers or interactions can consume.
-
-## Current Builder Focus
-
-See [`specs/SPEC-001-text-to-knowledge-model.md`](specs/SPEC-001-text-to-knowledge-model.md).
-
-The first implementation milestone is not a polished application. It is a JSON representation of electromagnetism that makes us think:
-
-> **Yes. This actually captures the system.**
-
-Once that exists, rendering it becomes primarily an engineering problem. Getting the representation right is the product-discovery problem.
