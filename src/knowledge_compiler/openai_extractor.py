@@ -13,9 +13,10 @@ from typing import Any
 
 from .extractor import ExtractionResult
 from .models import EntityType, Origin, RelationshipType, SourceDocument, ValidationError
+from .relationships import render_relationship_grammar
 
 DEFAULT_MODEL = "gpt-5.6-luna"
-PROMPT_VERSION = "spec-002-v2"
+PROMPT_VERSION = "spec-003-v1"
 PROVIDER = "openai"
 
 
@@ -23,13 +24,16 @@ class ExtractionError(RuntimeError):
     """A provider request or response could not produce an extraction."""
 
 
-INSTRUCTIONS = """You extract a semantic knowledge model from explanatory source text.
+INSTRUCTIONS_BASE = """You extract a semantic knowledge model from explanatory source text.
 
 Identify important concepts, objects, processes, variables, systems, and components.
 Create claims for meaningful propositions that do not naturally form graph edges.
-Create relationships only from the supplied relationship vocabulary. Prefer important
-explanatory structure over exhaustive sentence decomposition. Use concise grounded
-descriptions and conservative confidence values.
+Create relationships only when one supplied semantic contract fits both the meaning and
+direction. Prefer important explanatory structure over exhaustive sentence decomposition.
+If no relationship contract represents a meaningful proposition truthfully, preserve it
+as a claim instead of forcing it into the nearest edge label. Fewer truthful edges are
+better than more misleading edges. Use concise grounded descriptions and conservative
+confidence values.
 
 SOURCE means the item is explicitly supported by the supplied text. Every SOURCE item
 must cite one or more exact, verbatim, uniquely occurring source substrings in evidence.
@@ -45,6 +49,10 @@ for genuine naming equivalence, and keep related but distinct concepts separate.
 Relationship endpoints must use IDs from the entities array. IDs must be unique,
 concise, stable kebab-case strings. Do not generate summaries, visualizations, Mermaid,
 teaching prose, or output outside the requested schema."""
+
+
+def build_instructions() -> str:
+    return f"{INSTRUCTIONS_BASE}\n\n{render_relationship_grammar()}"
 
 
 def extraction_schema() -> dict[str, Any]:
@@ -199,7 +207,7 @@ class OpenAILLMExtractor:
         try:
             response = self._client_or_create().responses.create(
                 model=self.model,
-                instructions=INSTRUCTIONS,
+                instructions=build_instructions(),
                 input=document.text,
                 text={
                     "format": {

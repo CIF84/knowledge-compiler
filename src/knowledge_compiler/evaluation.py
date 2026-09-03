@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+from collections.abc import Mapping
 from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any, Callable
@@ -31,6 +32,37 @@ def _write_json(path: Path, value: Any) -> None:
     path.write_text(json.dumps(value, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
 
+def build_review_comparison(
+    baseline: Mapping[str, Any],
+    current: Mapping[str, Any],
+    *,
+    relationship_changes: Mapping[str, Any],
+) -> dict[str, Any]:
+    """Build a review comparison without inventing numeric semantic scores."""
+    baseline_domains = baseline.get("domains", {})
+    current_domains = current.get("domains", {})
+    if set(baseline_domains) != set(DOMAINS) or set(current_domains) != set(DOMAINS):
+        raise ValueError("baseline and current reviews must cover all evaluation domains")
+    domains = {}
+    for domain in DOMAINS:
+        current_domain = current_domains[domain]
+        domains[domain] = {
+            "spec_002_assessment": baseline_domains[domain]["review"],
+            "spec_003_assessment": current_domain["review"],
+            "known_regressions_fixed": current_domain.get("known_regressions_fixed", []),
+            "known_regressions_remaining": current_domain.get("known_regressions_remaining", []),
+            "new_regressions_introduced": current_domain.get("new_regressions_introduced", []),
+            "verdict": current_domain["verdict"],
+        }
+    return {
+        "baseline": "SPEC-002",
+        "current": "SPEC-003",
+        "relationship_changes": dict(relationship_changes),
+        "domains": domains,
+        "overall_verdict": current["overall_verdict"],
+    }
+
+
 def run_live_evaluation(
     *,
     extractor_factory: Callable[[], Any],
@@ -44,6 +76,8 @@ def run_live_evaluation(
     started = datetime.now(UTC).isoformat()
     expectations_path = fixtures_dir / "expectations.json"
     expectations = json.loads(expectations_path.read_text(encoding="utf-8"))
+    regressions_path = fixtures_dir / "relationship_regressions.json"
+    regressions = json.loads(regressions_path.read_text(encoding="utf-8"))
     results: list[dict[str, Any]] = []
 
     for domain in DOMAINS:
@@ -55,6 +89,7 @@ def run_live_evaluation(
             "requested_model": model,
             "started_at": datetime.now(UTC).isoformat(),
             "expectations": expectations[domain],
+            "relationship_regressions": regressions[domain],
             "review": {dimension: "NOT_EVALUATED" for dimension in REVIEW_DIMENSIONS},
         }
         try:
@@ -95,7 +130,7 @@ def run_live_evaluation(
         results.append(item)
 
     report = {
-        "spec": "SPEC-002",
+        "spec": "SPEC-003",
         "run_started_at": started,
         "run_completed_at": datetime.now(UTC).isoformat(),
         "provider": provider,

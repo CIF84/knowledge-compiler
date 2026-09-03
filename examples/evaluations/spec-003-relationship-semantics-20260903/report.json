@@ -1,0 +1,282 @@
+{
+  "spec": "SPEC-003",
+  "run_started_at": "2026-09-03T12:43:52.380656+00:00",
+  "run_completed_at": "2026-09-03T12:45:01.936005+00:00",
+  "provider": "openai",
+  "requested_model": "gpt-5.6-luna",
+  "fixtures_dir": "tests/fixtures/domains",
+  "results": [
+    {
+      "domain": "electromagnetism",
+      "source_fixture": "tests/fixtures/domains/electromagnetism.txt",
+      "provider": "openai",
+      "requested_model": "gpt-5.6-luna",
+      "started_at": "2026-09-03T12:43:52.381421+00:00",
+      "expectations": {
+        "concepts": [
+          "charge",
+          "electric field",
+          "magnetic field",
+          "electromagnetic wave",
+          "light"
+        ],
+        "relationships": [
+          "charge CREATES electric field",
+          "moving charge or electric current CREATES magnetic field",
+          "changing magnetic field INDUCES electric field",
+          "changing electric field INDUCES magnetic field",
+          "light IS_A electromagnetic wave"
+        ]
+      },
+      "relationship_regressions": [
+        "Retain charge CREATES electric field.",
+        "Retain electric field EXERTS_FORCE_ON charge as literal physical force.",
+        "Retain moving charge or current CREATES magnetic field.",
+        "Retain reciprocal changing-field induction and light IS_A electromagnetic wave."
+      ],
+      "review": {
+        "grounding": "NOT_EVALUATED",
+        "entity_quality": "NOT_EVALUATED",
+        "relationship_quality": "NOT_EVALUATED",
+        "coverage": "NOT_EVALUATED",
+        "precision": "NOT_EVALUATED",
+        "deduplication_quality": "NOT_EVALUATED",
+        "vocabulary_fit": "NOT_EVALUATED",
+        "cross_domain_usefulness": "NOT_EVALUATED"
+      },
+      "validation_success": true,
+      "output": "electromagnetism.knowledge.json",
+      "actual_model": "gpt-5.6-luna",
+      "prompt_version": "spec-003-v1",
+      "provider_request_id": "resp_0e9d23f3b9e28783016a996b8a2d1887d2beac6aa1612b795f",
+      "usage": {
+        "input_tokens": 2497,
+        "output_tokens": 1300,
+        "total_tokens": 3797
+      },
+      "entity_count": 9,
+      "claim_count": 2,
+      "relationship_count": 9,
+      "failure_reason": null,
+      "completed_at": "2026-09-03T12:44:04.747941+00:00"
+    },
+    {
+      "domain": "software_architecture",
+      "source_fixture": "tests/fixtures/domains/software_architecture.txt",
+      "provider": "openai",
+      "requested_model": "gpt-5.6-luna",
+      "started_at": "2026-09-03T12:44:04.747967+00:00",
+      "expectations": {
+        "concepts": [
+          "API component",
+          "order component",
+          "payment component",
+          "database",
+          "published interface",
+          "coupling"
+        ],
+        "relationships": [
+          "order component REQUIRES payment component",
+          "order component REQUIRES database",
+          "payment component REQUIRES database",
+          "dependency direction CONSTRAINS payment component",
+          "published interfaces ENABLE internal component change"
+        ]
+      },
+      "relationship_regressions": [
+        "Never emit service PART_OF component; PART_OF must point component to service.",
+        "Preserve the payment component must-not-call-API prohibition as a claim when no honest predicate applies.",
+        "Retain order and payment dependency relationships without reversing REQUIRES."
+      ],
+      "review": {
+        "grounding": "NOT_EVALUATED",
+        "entity_quality": "NOT_EVALUATED",
+        "relationship_quality": "NOT_EVALUATED",
+        "coverage": "NOT_EVALUATED",
+        "precision": "NOT_EVALUATED",
+        "deduplication_quality": "NOT_EVALUATED",
+        "vocabulary_fit": "NOT_EVALUATED",
+        "cross_domain_usefulness": "NOT_EVALUATED"
+      },
+      "validation_success": true,
+      "output": "software_architecture.knowledge.json",
+      "actual_model": "gpt-5.6-luna",
+      "prompt_version": "spec-003-v1",
+      "provider_request_id": "resp_0bcaa32074c33876016a996b94ea2887d29ae1c08c78f403c0",
+      "usage": {
+        "input_tokens": 2555,
+        "output_tokens": 1970,
+        "total_tokens": 4525
+      },
+      "entity_count": 16,
+      "claim_count": 6,
+      "relationship_count": 15,
+      "failure_reason": null,
+      "completed_at": "2026-09-03T12:44:20.155062+00:00"
+    },
+    {
+      "domain": "economics",
+      "source_fixture": "tests/fixtures/domains/economics.txt",
+      "provider": "openai",
+      "requested_model": "gpt-5.6-luna",
+      "started_at": "2026-09-03T12:44:20.155118+00:00",
+      "expectations": {
+        "concepts": [
+          "price",
+          "quantity demanded",
+          "quantity supplied",
+          "shortage",
+          "surplus",
+          "price elasticity"
+        ],
+        "relationships": [
+          "price INCREASES quantity supplied",
+          "price DECREASES quantity demanded",
+          "shortage INCREASES price",
+          "surplus DECREASES price",
+          "price elasticity MEASURED_BY quantity response"
+        ]
+      },
+      "relationship_regressions": [
+        "Do not use EXERTS_FORCE_ON for quantities contributing to shortage or surplus.",
+        "Do not point MEASURED_BY from elasticity to quantity demanded; the metric or response must be the target.",
+        "Retain price INCREASES quantity supplied and price DECREASES quantity demanded."
+      ],
+      "review": {
+        "grounding": "NOT_EVALUATED",
+        "entity_quality": "NOT_EVALUATED",
+        "relationship_quality": "NOT_EVALUATED",
+        "coverage": "NOT_EVALUATED",
+        "precision": "NOT_EVALUATED",
+        "deduplication_quality": "NOT_EVALUATED",
+        "vocabulary_fit": "NOT_EVALUATED",
+        "cross_domain_usefulness": "NOT_EVALUATED"
+      },
+      "validation_success": true,
+      "output": "economics.knowledge.json",
+      "actual_model": "gpt-5.6-luna",
+      "prompt_version": "spec-003-v1",
+      "provider_request_id": "resp_02e8b599fae706fd016a996ba456a887d2bbbb18ca4343a204",
+      "usage": {
+        "input_tokens": 2542,
+        "output_tokens": 1691,
+        "total_tokens": 4233
+      },
+      "entity_count": 14,
+      "claim_count": 5,
+      "relationship_count": 11,
+      "failure_reason": null,
+      "completed_at": "2026-09-03T12:44:32.638028+00:00"
+    },
+    {
+      "domain": "biology",
+      "source_fixture": "tests/fixtures/domains/biology.txt",
+      "provider": "openai",
+      "requested_model": "gpt-5.6-luna",
+      "started_at": "2026-09-03T12:44:32.638087+00:00",
+      "expectations": {
+        "concepts": [
+          "DNA",
+          "RNA polymerase",
+          "messenger RNA",
+          "ribosome",
+          "polypeptide",
+          "protein"
+        ],
+        "relationships": [
+          "RNA polymerase CREATES messenger RNA",
+          "transcription PRECEDES translation",
+          "ribosome CREATES polypeptide",
+          "polypeptide TRANSFORMS_INTO protein",
+          "regulatory proteins INCREASES or DECREASES transcription"
+        ]
+      },
+      "relationship_regressions": [
+        "Use BINDS_TO, not EXERTS_FORCE_ON, for RNA polymerase binding to DNA.",
+        "Do not represent transfer RNA delivery as transfer RNA ENABLES amino acid.",
+        "Represent transcription PRECEDES translation when the chronology is explicit.",
+        "Do not use CONSTRAINS DNA to mean the DNA sequence remains unchanged."
+      ],
+      "review": {
+        "grounding": "NOT_EVALUATED",
+        "entity_quality": "NOT_EVALUATED",
+        "relationship_quality": "NOT_EVALUATED",
+        "coverage": "NOT_EVALUATED",
+        "precision": "NOT_EVALUATED",
+        "deduplication_quality": "NOT_EVALUATED",
+        "vocabulary_fit": "NOT_EVALUATED",
+        "cross_domain_usefulness": "NOT_EVALUATED"
+      },
+      "validation_success": true,
+      "output": "biology.knowledge.json",
+      "actual_model": "gpt-5.6-luna",
+      "prompt_version": "spec-003-v1",
+      "provider_request_id": "resp_00beeefa85db5838016a996bb0cee087d290b010a63682f14d",
+      "usage": {
+        "input_tokens": 2550,
+        "output_tokens": 1664,
+        "total_tokens": 4214
+      },
+      "entity_count": 17,
+      "claim_count": 2,
+      "relationship_count": 9,
+      "failure_reason": null,
+      "completed_at": "2026-09-03T12:44:45.575749+00:00"
+    },
+    {
+      "domain": "history",
+      "source_fixture": "tests/fixtures/domains/history.txt",
+      "provider": "openai",
+      "requested_model": "gpt-5.6-luna",
+      "started_at": "2026-09-03T12:44:45.575847+00:00",
+      "expectations": {
+        "concepts": [
+          "movable metal type",
+          "printing press",
+          "books",
+          "pamphlets",
+          "authorities",
+          "censorship"
+        ],
+        "relationships": [
+          "printing ENABLES production of many copies",
+          "printing DECREASES reproduction cost",
+          "printed material ENABLES arguments to circulate",
+          "printed controversy PRECEDES licensing or censorship",
+          "licensing CONSTRAINS printers"
+        ]
+      },
+      "relationship_regressions": [
+        "Do not emit hand copying INCREASES speed when the source says reproduction was slow.",
+        "Do not emit printers TRANSFORMS_INTO attempts to control printing.",
+        "Represent printed controversy PRECEDES authority response when chronology is explicit.",
+        "Avoid duplicate edges that restate printing's effect on communication speed."
+      ],
+      "review": {
+        "grounding": "NOT_EVALUATED",
+        "entity_quality": "NOT_EVALUATED",
+        "relationship_quality": "NOT_EVALUATED",
+        "coverage": "NOT_EVALUATED",
+        "precision": "NOT_EVALUATED",
+        "deduplication_quality": "NOT_EVALUATED",
+        "vocabulary_fit": "NOT_EVALUATED",
+        "cross_domain_usefulness": "NOT_EVALUATED"
+      },
+      "validation_success": true,
+      "output": "history.knowledge.json",
+      "actual_model": "gpt-5.6-luna",
+      "prompt_version": "spec-003-v1",
+      "provider_request_id": "resp_0a3abafff76c5ade016a996bbdbfa887d281eb01804b24b4a8",
+      "usage": {
+        "input_tokens": 2571,
+        "output_tokens": 2326,
+        "total_tokens": 4897
+      },
+      "entity_count": 21,
+      "claim_count": 7,
+      "relationship_count": 12,
+      "failure_reason": null,
+      "completed_at": "2026-09-03T12:45:01.935968+00:00"
+    }
+  ]
+}

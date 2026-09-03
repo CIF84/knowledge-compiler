@@ -14,6 +14,7 @@ from .models import (
     ValidationError,
 )
 from .pipeline import compile_knowledge_model
+from .relationships import RelationshipDefinition, RelationshipFamily
 
 __all__ = [
     "Claim",
@@ -22,6 +23,8 @@ __all__ = [
     "KnowledgeModel",
     "Origin",
     "Relationship",
+    "RelationshipDefinition",
+    "RelationshipFamily",
     "RelationshipType",
     "SourceDocument",
     "SourceSpan",

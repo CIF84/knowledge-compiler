@@ -1,0 +1,37 @@
+{
+  "baseline": "SPEC-002",
+  "current": "SPEC-003",
+  "overall_verdict": "IMPROVED",
+  "relationship_changes": {
+    "before_count": 17,
+    "after_count": 20,
+    "added": ["AFFECTS", "BINDS_TO", "TRANSFERS_TO"],
+    "removed": [],
+    "redefined": "All active predicates received explicit meaning, direction, source role, target role, use, and avoidance contracts; existing enum meanings were not intentionally changed.",
+    "families": ["STRUCTURAL", "CAUSAL", "DEPENDENCY", "TEMPORAL", "INTERACTION", "TRANSFORMATION", "DESCRIPTIVE"]
+  },
+  "complexity": {
+    "new_core_module": "relationships.py",
+    "new_core_types": ["RelationshipFamily", "RelationshipDefinition"],
+    "spec_002_prompt_chars": 1526,
+    "spec_003_prompt_chars": 9668,
+    "relationship_grammar_chars": 7900,
+    "approximate_prompt_token_growth": 2035,
+    "schema_migration_required": false,
+    "backward_compatibility": "Existing relationship values and artifacts remain valid; the structured-output enum accepts three additional values."
+  },
+  "domains": {
+    "electromagnetism": {"spec_002_assessment": "GOOD mechanisms with mixed state precision", "spec_003_assessment": "GOOD mechanisms with mixed state precision and one duplicate edge", "known_regressions_fixed": ["No ontology regression to literal force or core mechanisms", "AFFECTS better represents force changing motion"], "known_regressions_remaining": ["Changing-field state collapse"], "new_regressions_introduced": ["Duplicate moving-charge/current CREATES edge"], "verdict": "MIXED"},
+    "software_architecture": {"spec_002_assessment": "MIXED relationship precision with reversed PART_OF", "spec_003_assessment": "Correct structural/dependency direction with some endpoint errors", "known_regressions_fixed": ["Reversed PART_OF", "REQUIRES direction", "prohibition preserved without invented predicate"], "known_regressions_remaining": [], "new_regressions_introduced": ["Database substituted for database-access policy as causal source", "Prevention polarity lost in an AFFECTS edge"], "verdict": "IMPROVED"},
+    "economics": {"spec_002_assessment": "MIXED due metaphorical force and misleading measurement", "spec_003_assessment": "No metaphorical force; measurement issue remains", "known_regressions_fixed": ["EXERTS_FORCE_ON misuse"], "known_regressions_remaining": ["Misleading MEASURED_BY elasticity edge"], "new_regressions_introduced": ["Duplicate price response edges"], "verdict": "IMPROVED"},
+    "biology": {"spec_002_assessment": "MIXED relationships and POOR vocabulary fit", "spec_003_assessment": "Binding and transfer are honest; chronology and one source endpoint remain wrong", "known_regressions_fixed": ["Binding as force", "Delivery as enabling", "Unchanged DNA as constraint"], "known_regressions_remaining": ["Missing transcription PRECEDES translation"], "new_regressions_introduced": ["Transcription substituted for regulation as AFFECTS source"], "verdict": "IMPROVED"},
+    "history": {"spec_002_assessment": "POOR relationship precision and vocabulary fit", "spec_003_assessment": "Direction and chronology materially improved with residual endpoint imprecision", "known_regressions_fixed": ["Reversed speed meaning", "Actor TRANSFORMS_INTO event", "Missing chronology", "Duplicate speed relationship"], "known_regressions_remaining": [], "new_regressions_introduced": ["Authority actor used instead of response event as PRECEDES target", "Pamphlet edge targets arguments instead of circulation"], "verdict": "IMPROVED"}
+  },
+  "cost_comparison": {
+    "spec_002_successful_tokens": 12785,
+    "spec_003_tokens": 21666,
+    "spec_002_estimated_usd": 0.011742,
+    "spec_003_estimated_usd": 0.0132842,
+    "interpretation": "Input tokens rose because every relationship contract is supplied on each call; output tokens fell slightly. Absolute cost remained low."
+  }
+}

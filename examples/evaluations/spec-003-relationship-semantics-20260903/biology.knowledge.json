@@ -1,0 +1,335 @@
+{
+  "document": {
+    "id": "text-e8f26f10caa19160",
+    "text": "Gene expression begins when RNA polymerase binds near a gene in DNA. During transcription, RNA polymerase uses the DNA sequence as a template to create messenger RNA. The messenger RNA then leaves the nucleus and carries the encoded information to a ribosome.\n\nDuring translation, the ribosome reads messenger RNA and joins amino acids into a polypeptide. Transfer RNA brings particular amino acids to the ribosome. The order of codons in messenger RNA determines the order of amino acids in the polypeptide.\n\nThe polypeptide folds into a functional protein. Regulatory proteins can increase or decrease transcription by affecting whether RNA polymerase binds, so regulation of transcription changes how much protein the cell produces without changing the DNA sequence.",
+    "source_type": "text",
+    "metadata": {
+      "filename": "biology.txt",
+      "domain": "biology"
+    }
+  },
+  "entities": [
+    {
+      "id": "gene-expression",
+      "name": "Gene expression",
+      "description": "The overall process by which genetic information is used to produce protein.",
+      "entity_type": "PROCESS",
+      "aliases": []
+    },
+    {
+      "id": "rna-polymerase",
+      "name": "RNA polymerase",
+      "description": "An enzyme that binds near a gene in DNA and uses DNA as a template during transcription.",
+      "entity_type": "COMPONENT",
+      "aliases": []
+    },
+    {
+      "id": "dna",
+      "name": "DNA",
+      "description": "The nucleic acid whose sequence serves as a template during transcription.",
+      "entity_type": "OBJECT",
+      "aliases": []
+    },
+    {
+      "id": "gene",
+      "name": "Gene",
+      "description": "A DNA region near which RNA polymerase binds to begin gene expression.",
+      "entity_type": "CONCEPT",
+      "aliases": []
+    },
+    {
+      "id": "transcription",
+      "name": "Transcription",
+      "description": "The process in which RNA polymerase uses DNA as a template to create messenger RNA.",
+      "entity_type": "PROCESS",
+      "aliases": []
+    },
+    {
+      "id": "messenger-rna",
+      "name": "Messenger RNA",
+      "description": "RNA produced during transcription that carries encoded information to a ribosome.",
+      "entity_type": "OBJECT",
+      "aliases": [
+        "mRNA"
+      ]
+    },
+    {
+      "id": "nucleus",
+      "name": "Nucleus",
+      "description": "The cellular compartment from which messenger RNA exits before carrying information to a ribosome.",
+      "entity_type": "SYSTEM",
+      "aliases": []
+    },
+    {
+      "id": "ribosome",
+      "name": "Ribosome",
+      "description": "The cellular structure that reads messenger RNA during translation and joins amino acids into a polypeptide.",
+      "entity_type": "COMPONENT",
+      "aliases": []
+    },
+    {
+      "id": "translation",
+      "name": "Translation",
+      "description": "The process in which a ribosome reads messenger RNA and joins amino acids into a polypeptide.",
+      "entity_type": "PROCESS",
+      "aliases": []
+    },
+    {
+      "id": "amino-acid",
+      "name": "Amino acid",
+      "description": "A molecular building block joined into a polypeptide during translation.",
+      "entity_type": "OBJECT",
+      "aliases": []
+    },
+    {
+      "id": "polypeptide",
+      "name": "Polypeptide",
+      "description": "A chain of amino acids produced during translation that folds into a functional protein.",
+      "entity_type": "OBJECT",
+      "aliases": []
+    },
+    {
+      "id": "transfer-rna",
+      "name": "Transfer RNA",
+      "description": "RNA that brings particular amino acids to the ribosome.",
+      "entity_type": "COMPONENT",
+      "aliases": [
+        "tRNA"
+      ]
+    },
+    {
+      "id": "codon",
+      "name": "Codon",
+      "description": "A unit in messenger RNA whose ordered sequence determines the order of amino acids in the polypeptide.",
+      "entity_type": "CONCEPT",
+      "aliases": []
+    },
+    {
+      "id": "functional-protein",
+      "name": "Functional protein",
+      "description": "The functional protein resulting when a polypeptide folds.",
+      "entity_type": "OBJECT",
+      "aliases": [
+        "protein"
+      ]
+    },
+    {
+      "id": "regulatory-protein",
+      "name": "Regulatory protein",
+      "description": "A protein that affects whether RNA polymerase binds and can increase or decrease transcription.",
+      "entity_type": "COMPONENT",
+      "aliases": []
+    },
+    {
+      "id": "transcription-rate",
+      "name": "Amount of transcription",
+      "description": "The amount of transcription regulated by regulatory proteins.",
+      "entity_type": "VARIABLE",
+      "aliases": []
+    },
+    {
+      "id": "protein-production",
+      "name": "Protein production by the cell",
+      "description": "The amount of protein produced by the cell as affected by transcriptional regulation.",
+      "entity_type": "PROCESS",
+      "aliases": []
+    }
+  ],
+  "claims": [
+    {
+      "id": "codon-order-determines-amino-acid-order",
+      "statement": "The order of codons in messenger RNA determines the order of amino acids in the polypeptide.",
+      "evidence": [
+        {
+          "document_id": "text-e8f26f10caa19160",
+          "start_char": 416,
+          "end_char": 508,
+          "quote": "The order of codons in messenger RNA determines the order of amino acids in the polypeptide."
+        }
+      ],
+      "confidence": 0.99,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "regulation-preserves-dna-sequence",
+      "statement": "Regulation of transcription changes how much protein the cell produces without changing the DNA sequence.",
+      "evidence": [
+        {
+          "document_id": "text-e8f26f10caa19160",
+          "start_char": 664,
+          "end_char": 769,
+          "quote": "regulation of transcription changes how much protein the cell produces without changing the DNA sequence."
+        }
+      ],
+      "confidence": 0.99,
+      "origin": "SOURCE"
+    }
+  ],
+  "relationships": [
+    {
+      "id": "polymerase-binds-dna",
+      "source_entity_id": "rna-polymerase",
+      "relationship_type": "BINDS_TO",
+      "target_entity_id": "dna",
+      "statement": "RNA polymerase binds near a gene in DNA to begin gene expression.",
+      "evidence": [
+        {
+          "document_id": "text-e8f26f10caa19160",
+          "start_char": 0,
+          "end_char": 68,
+          "quote": "Gene expression begins when RNA polymerase binds near a gene in DNA."
+        }
+      ],
+      "confidence": 0.98,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "transcription-creates-mrna",
+      "source_entity_id": "transcription",
+      "relationship_type": "CREATES",
+      "target_entity_id": "messenger-rna",
+      "statement": "Transcription creates messenger RNA using DNA as a template.",
+      "evidence": [
+        {
+          "document_id": "text-e8f26f10caa19160",
+          "start_char": 69,
+          "end_char": 166,
+          "quote": "During transcription, RNA polymerase uses the DNA sequence as a template to create messenger RNA."
+        }
+      ],
+      "confidence": 0.99,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "mrna-transfers-to-ribosome",
+      "source_entity_id": "messenger-rna",
+      "relationship_type": "TRANSFERS_TO",
+      "target_entity_id": "ribosome",
+      "statement": "Messenger RNA leaves the nucleus and carries encoded information to a ribosome.",
+      "evidence": [
+        {
+          "document_id": "text-e8f26f10caa19160",
+          "start_char": 167,
+          "end_char": 259,
+          "quote": "The messenger RNA then leaves the nucleus and carries the encoded information to a ribosome."
+        }
+      ],
+      "confidence": 0.98,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "translation-creates-polypeptide",
+      "source_entity_id": "translation",
+      "relationship_type": "CREATES",
+      "target_entity_id": "polypeptide",
+      "statement": "Translation joins amino acids into a polypeptide.",
+      "evidence": [
+        {
+          "document_id": "text-e8f26f10caa19160",
+          "start_char": 261,
+          "end_char": 355,
+          "quote": "During translation, the ribosome reads messenger RNA and joins amino acids into a polypeptide."
+        }
+      ],
+      "confidence": 0.99,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "transfer-rna-transfers-amino-acids",
+      "source_entity_id": "amino-acid",
+      "relationship_type": "TRANSFERS_TO",
+      "target_entity_id": "ribosome",
+      "statement": "Particular amino acids are brought to the ribosome by transfer RNA.",
+      "evidence": [
+        {
+          "document_id": "text-e8f26f10caa19160",
+          "start_char": 356,
+          "end_char": 415,
+          "quote": "Transfer RNA brings particular amino acids to the ribosome."
+        }
+      ],
+      "confidence": 0.94,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "polypeptide-transforms-into-protein",
+      "source_entity_id": "polypeptide",
+      "relationship_type": "TRANSFORMS_INTO",
+      "target_entity_id": "functional-protein",
+      "statement": "The polypeptide folds into a functional protein.",
+      "evidence": [
+        {
+          "document_id": "text-e8f26f10caa19160",
+          "start_char": 510,
+          "end_char": 558,
+          "quote": "The polypeptide folds into a functional protein."
+        }
+      ],
+      "confidence": 0.99,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "regulatory-proteins-increase-transcription",
+      "source_entity_id": "regulatory-protein",
+      "relationship_type": "INCREASES",
+      "target_entity_id": "transcription-rate",
+      "statement": "Regulatory proteins can increase transcription by affecting whether RNA polymerase binds.",
+      "evidence": [
+        {
+          "document_id": "text-e8f26f10caa19160",
+          "start_char": 559,
+          "end_char": 659,
+          "quote": "Regulatory proteins can increase or decrease transcription by affecting whether RNA polymerase binds"
+        }
+      ],
+      "confidence": 0.96,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "regulatory-proteins-decrease-transcription",
+      "source_entity_id": "regulatory-protein",
+      "relationship_type": "DECREASES",
+      "target_entity_id": "transcription-rate",
+      "statement": "Regulatory proteins can decrease transcription by affecting whether RNA polymerase binds.",
+      "evidence": [
+        {
+          "document_id": "text-e8f26f10caa19160",
+          "start_char": 559,
+          "end_char": 659,
+          "quote": "Regulatory proteins can increase or decrease transcription by affecting whether RNA polymerase binds"
+        }
+      ],
+      "confidence": 0.96,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "transcription-regulation-affects-protein-production",
+      "source_entity_id": "transcription",
+      "relationship_type": "AFFECTS",
+      "target_entity_id": "protein-production",
+      "statement": "Regulation of transcription changes how much protein the cell produces.",
+      "evidence": [
+        {
+          "document_id": "text-e8f26f10caa19160",
+          "start_char": 664,
+          "end_char": 769,
+          "quote": "regulation of transcription changes how much protein the cell produces without changing the DNA sequence."
+        }
+      ],
+      "confidence": 0.98,
+      "origin": "SOURCE"
+    }
+  ],
+  "metadata": {
+    "extractor": "llm",
+    "provider": "openai",
+    "model": "gpt-5.6-luna",
+    "prompt_version": "spec-003-v1",
+    "provider_request_id": "resp_00beeefa85db5838016a996bb0cee087d290b010a63682f14d",
+    "usage": {
+      "input_tokens": 2550,
+      "output_tokens": 1664,
+      "total_tokens": 4214
+    }
+  }
+}

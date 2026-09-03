@@ -47,6 +47,9 @@ class RelationshipType(StrEnum):
     CREATES = "CREATES"
     INDUCES = "INDUCES"
     EXERTS_FORCE_ON = "EXERTS_FORCE_ON"
+    AFFECTS = "AFFECTS"
+    BINDS_TO = "BINDS_TO"
+    TRANSFERS_TO = "TRANSFERS_TO"
 
 
 def _enum(enum_type: type[StrEnum], value: Any, path: str) -> Any:

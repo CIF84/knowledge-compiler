@@ -1,0 +1,55 @@
+{
+  "spec": "SPEC-003",
+  "reviewed_at": "2026-09-03",
+  "overall_verdict": "IMPROVED",
+  "summary": "Explicit contracts and three general predicates materially improved edge truthfulness and direction across the same corpus, but did not eliminate wrong endpoint selection, duplicate edges, or misuse of MEASURED_BY.",
+  "domains": {
+    "electromagnetism": {
+      "counts": {"entities": 9, "claims": 2, "relationships": 9},
+      "review": {"grounding": "GOOD", "entity_quality": "MIXED", "relationship_quality": "GOOD", "coverage": "GOOD", "precision": "MIXED", "deduplication_quality": "MIXED", "vocabulary_fit": "GOOD", "cross_domain_usefulness": "GOOD", "relationship_regression": "MIXED"},
+      "known_regressions_fixed": ["The literal electric-field force edge and all load-bearing mechanisms were retained.", "Force changing motion is represented by the less overcommitted AFFECTS predicate."],
+      "known_regressions_remaining": ["Changing-field states remain collapsed into base field entities."],
+      "new_regressions_introduced": ["Moving charge/current CREATES magnetic field appears twice as duplicate edges."],
+      "verdict": "MIXED"
+    },
+    "software_architecture": {
+      "counts": {"entities": 16, "claims": 6, "relationships": 15},
+      "review": {"grounding": "GOOD", "entity_quality": "GOOD", "relationship_quality": "MIXED", "coverage": "GOOD", "precision": "MIXED", "deduplication_quality": "GOOD", "vocabulary_fit": "GOOD", "cross_domain_usefulness": "GOOD", "relationship_regression": "GOOD"},
+      "known_regressions_fixed": ["All PART_OF edges now point component to service.", "REQUIRES direction is correct.", "The must-not-call-API proposition is preserved through an explicit dependency constraint rather than a misleading edge."],
+      "known_regressions_remaining": [],
+      "new_regressions_introduced": ["Database is incorrectly used as the source of coupling, implementation-work, and query-performance effects stated about database access behind interfaces.", "Transport details AFFECTS payment logic loses the source's prevention polarity."],
+      "verdict": "IMPROVED"
+    },
+    "economics": {
+      "counts": {"entities": 14, "claims": 5, "relationships": 11},
+      "review": {"grounding": "GOOD", "entity_quality": "GOOD", "relationship_quality": "MIXED", "coverage": "GOOD", "precision": "MIXED", "deduplication_quality": "MIXED", "vocabulary_fit": "MIXED", "cross_domain_usefulness": "GOOD", "relationship_regression": "MIXED"},
+      "known_regressions_fixed": ["EXERTS_FORCE_ON is no longer misused for shortage or surplus formation.", "Core price, supply, demand, shortage, and surplus mechanisms remain visible."],
+      "known_regressions_remaining": ["Price elasticity still points via MEASURED_BY to quantity demanded rather than a response metric."],
+      "new_regressions_introduced": ["Price-to-quantity INCREASES and DECREASES relationships are duplicated."],
+      "verdict": "IMPROVED"
+    },
+    "biology": {
+      "counts": {"entities": 17, "claims": 2, "relationships": 9},
+      "review": {"grounding": "GOOD", "entity_quality": "GOOD", "relationship_quality": "MIXED", "coverage": "MIXED", "precision": "MIXED", "deduplication_quality": "GOOD", "vocabulary_fit": "GOOD", "cross_domain_usefulness": "GOOD", "relationship_regression": "MIXED"},
+      "known_regressions_fixed": ["RNA polymerase BINDS_TO DNA replaces metaphorical physical force.", "Amino acid TRANSFERS_TO ribosome replaces tRNA ENABLES amino acid.", "CONSTRAINS DNA is no longer used to mean unchanged DNA."],
+      "known_regressions_remaining": ["The explicit transcription-before-translation chronology is still missing."],
+      "new_regressions_introduced": ["Transcription AFFECTS protein production uses transcription as source where the cited sentence names regulation of transcription."],
+      "verdict": "IMPROVED"
+    },
+    "history": {
+      "counts": {"entities": 21, "claims": 7, "relationships": 12},
+      "review": {"grounding": "GOOD", "entity_quality": "MIXED", "relationship_quality": "MIXED", "coverage": "GOOD", "precision": "MIXED", "deduplication_quality": "GOOD", "vocabulary_fit": "GOOD", "cross_domain_usefulness": "GOOD", "relationship_regression": "GOOD"},
+      "known_regressions_fixed": ["Scribal copying DECREASES reproduction speed replaces the reversed speed edge.", "The invalid printers TRANSFORMS_INTO control-attempts edge is gone.", "Printed controversy PRECEDES the authority response.", "The duplicate printing-speed edge is gone."],
+      "known_regressions_remaining": [],
+      "new_regressions_introduced": ["PRECEDES targets Authorities rather than a distinct authority-response event.", "Pamphlets ENABLES arguments targets the arguments rather than their circulation."],
+      "verdict": "IMPROVED"
+    }
+  },
+  "remaining_vocabulary_gaps": [
+    "Explicit prohibition still lacks a dedicated predicate, though claims or CONSTRAINS can preserve it.",
+    "Negative or prevention polarity is not represented directly by AFFECTS.",
+    "Measurement remains easy to misuse when the measured response is not modeled as an entity.",
+    "Event/actor distinctions in historical chronology remain an entity-modeling issue rather than a predicate-only gap."
+  ],
+  "usage": {"input_tokens": 12715, "output_tokens": 8951, "total_tokens": 21666, "estimated_usd": 0.0132842, "failed_attempts": 0}
+}

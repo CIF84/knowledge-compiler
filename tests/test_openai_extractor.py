@@ -6,7 +6,12 @@ from types import SimpleNamespace
 import pytest
 
 from knowledge_compiler.models import KnowledgeModel, SourceDocument, ValidationError
-from knowledge_compiler.openai_extractor import ExtractionError, OpenAILLMExtractor, resolve_evidence_quote
+from knowledge_compiler.openai_extractor import (
+    ExtractionError,
+    OpenAILLMExtractor,
+    build_instructions,
+    resolve_evidence_quote,
+)
 from knowledge_compiler.pipeline import compile_knowledge_model
 
 
@@ -63,12 +68,20 @@ def test_provider_output_crosses_existing_validation_boundary() -> None:
     assert (evidence.start_char, evidence.end_char, evidence.quote) == (0, 18, "Alpha causes beta.")
     assert model.metadata == {
         "extractor": "llm", "provider": "openai", "model": "gpt-test",
-        "prompt_version": "spec-002-v2", "provider_request_id": "resp_test",
+        "prompt_version": "spec-003-v1", "provider_request_id": "resp_test",
         "usage": {"input_tokens": 100, "output_tokens": 50, "total_tokens": 150},
     }
     assert responses.kwargs["text"]["format"]["strict"] is True
     assert responses.kwargs["reasoning"] == {"effort": "low"}
     assert responses.kwargs["store"] is False
+
+
+def test_prompt_prefers_claims_and_contains_canonical_direction_contracts() -> None:
+    prompt = build_instructions()
+    assert "claim instead of forcing" in prompt
+    assert "PART_OF [STRUCTURAL; direction=part_to_whole]" in prompt
+    assert "Never use metaphorically for influence" in prompt
+    assert "BINDS_TO [INTERACTION; symmetric]" in prompt
 
 
 def test_quote_resolution_rejects_missing_and_ambiguous_quotes() -> None:

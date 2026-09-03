@@ -1,0 +1,386 @@
+{
+  "document": {
+    "id": "text-e6c889f45171a12a",
+    "text": "In a competitive market, buyers create demand and sellers create supply. The market price coordinates their plans. When the price rises, buyers usually demand a smaller quantity, while sellers usually supply a larger quantity. When the price falls, those responses reverse.\n\nIf quantity demanded exceeds quantity supplied, a shortage puts upward pressure on price. The higher price decreases quantity demanded and increases quantity supplied until the shortage narrows. If quantity supplied exceeds quantity demanded, a surplus puts downward pressure on price.\n\nPrice elasticity measures how strongly quantity responds to a price change. When demand is less elastic, a similar reduction in supply can cause a larger price increase because buyers reduce their quantity demanded by less.",
+    "source_type": "text",
+    "metadata": {
+      "filename": "economics.txt",
+      "domain": "economics"
+    }
+  },
+  "entities": [
+    {
+      "id": "competitive-market",
+      "name": "competitive market",
+      "description": "A market in which buyers create demand and sellers create supply.",
+      "entity_type": "SYSTEM",
+      "aliases": []
+    },
+    {
+      "id": "buyers",
+      "name": "buyers",
+      "description": "Market participants who create demand.",
+      "entity_type": "OBJECT",
+      "aliases": []
+    },
+    {
+      "id": "sellers",
+      "name": "sellers",
+      "description": "Market participants who create supply.",
+      "entity_type": "OBJECT",
+      "aliases": []
+    },
+    {
+      "id": "demand",
+      "name": "demand",
+      "description": "The quantity buyers are willing to purchase in the market.",
+      "entity_type": "CONCEPT",
+      "aliases": []
+    },
+    {
+      "id": "supply",
+      "name": "supply",
+      "description": "The quantity sellers are willing to provide in the market.",
+      "entity_type": "CONCEPT",
+      "aliases": []
+    },
+    {
+      "id": "market-price",
+      "name": "market price",
+      "description": "The price that coordinates buyers' and sellers' plans.",
+      "entity_type": "VARIABLE",
+      "aliases": [
+        "price"
+      ]
+    },
+    {
+      "id": "quantity-demanded",
+      "name": "quantity demanded",
+      "description": "The quantity buyers demand at a given price.",
+      "entity_type": "VARIABLE",
+      "aliases": []
+    },
+    {
+      "id": "quantity-supplied",
+      "name": "quantity supplied",
+      "description": "The quantity sellers supply at a given price.",
+      "entity_type": "VARIABLE",
+      "aliases": []
+    },
+    {
+      "id": "shortage",
+      "name": "shortage",
+      "description": "A market condition in which quantity demanded exceeds quantity supplied.",
+      "entity_type": "CONCEPT",
+      "aliases": []
+    },
+    {
+      "id": "surplus",
+      "name": "surplus",
+      "description": "A market condition in which quantity supplied exceeds quantity demanded.",
+      "entity_type": "CONCEPT",
+      "aliases": []
+    },
+    {
+      "id": "upward-price-pressure",
+      "name": "upward pressure on price",
+      "description": "Pressure that tends to raise the market price.",
+      "entity_type": "CONCEPT",
+      "aliases": []
+    },
+    {
+      "id": "downward-price-pressure",
+      "name": "downward pressure on price",
+      "description": "Pressure that tends to lower the market price.",
+      "entity_type": "CONCEPT",
+      "aliases": []
+    },
+    {
+      "id": "price-elasticity",
+      "name": "price elasticity",
+      "description": "A measure of how strongly quantity responds to a price change.",
+      "entity_type": "VARIABLE",
+      "aliases": []
+    },
+    {
+      "id": "supply-reduction",
+      "name": "reduction in supply",
+      "description": "A decrease in the amount of supply available in the market.",
+      "entity_type": "PROCESS",
+      "aliases": []
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim-market-coordination",
+      "statement": "The market price coordinates the plans of buyers and sellers.",
+      "evidence": [
+        {
+          "document_id": "text-e6c889f45171a12a",
+          "start_char": 73,
+          "end_char": 114,
+          "quote": "The market price coordinates their plans."
+        }
+      ],
+      "confidence": 0.99,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "claim-shortage-definition",
+      "statement": "A shortage occurs when quantity demanded exceeds quantity supplied.",
+      "evidence": [
+        {
+          "document_id": "text-e6c889f45171a12a",
+          "start_char": 275,
+          "end_char": 364,
+          "quote": "If quantity demanded exceeds quantity supplied, a shortage puts upward pressure on price."
+        }
+      ],
+      "confidence": 0.99,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "claim-surplus-definition",
+      "statement": "A surplus occurs when quantity supplied exceeds quantity demanded.",
+      "evidence": [
+        {
+          "document_id": "text-e6c889f45171a12a",
+          "start_char": 470,
+          "end_char": 560,
+          "quote": "If quantity supplied exceeds quantity demanded, a surplus puts downward pressure on price."
+        }
+      ],
+      "confidence": 0.99,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "claim-elasticity-definition",
+      "statement": "Price elasticity measures how strongly quantity responds to a price change.",
+      "evidence": [
+        {
+          "document_id": "text-e6c889f45171a12a",
+          "start_char": 562,
+          "end_char": 637,
+          "quote": "Price elasticity measures how strongly quantity responds to a price change."
+        }
+      ],
+      "confidence": 0.99,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "claim-less-elastic-effect",
+      "statement": "When demand is less elastic, a similar reduction in supply can cause a larger price increase because buyers reduce quantity demanded by less.",
+      "evidence": [
+        {
+          "document_id": "text-e6c889f45171a12a",
+          "start_char": 638,
+          "end_char": 785,
+          "quote": "When demand is less elastic, a similar reduction in supply can cause a larger price increase because buyers reduce their quantity demanded by less."
+        }
+      ],
+      "confidence": 0.99,
+      "origin": "SOURCE"
+    }
+  ],
+  "relationships": [
+    {
+      "id": "rel-buyers-create-demand",
+      "source_entity_id": "buyers",
+      "relationship_type": "CREATES",
+      "target_entity_id": "demand",
+      "statement": "Buyers create demand.",
+      "evidence": [
+        {
+          "document_id": "text-e6c889f45171a12a",
+          "start_char": 25,
+          "end_char": 72,
+          "quote": "buyers create demand and sellers create supply."
+        }
+      ],
+      "confidence": 0.98,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "rel-sellers-create-supply",
+      "source_entity_id": "sellers",
+      "relationship_type": "CREATES",
+      "target_entity_id": "supply",
+      "statement": "Sellers create supply.",
+      "evidence": [
+        {
+          "document_id": "text-e6c889f45171a12a",
+          "start_char": 25,
+          "end_char": 72,
+          "quote": "buyers create demand and sellers create supply."
+        }
+      ],
+      "confidence": 0.98,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "rel-price-decreases-demanded",
+      "source_entity_id": "market-price",
+      "relationship_type": "DECREASES",
+      "target_entity_id": "quantity-demanded",
+      "statement": "A rise in price usually decreases quantity demanded.",
+      "evidence": [
+        {
+          "document_id": "text-e6c889f45171a12a",
+          "start_char": 115,
+          "end_char": 177,
+          "quote": "When the price rises, buyers usually demand a smaller quantity"
+        }
+      ],
+      "confidence": 0.96,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "rel-price-increases-supplied",
+      "source_entity_id": "market-price",
+      "relationship_type": "INCREASES",
+      "target_entity_id": "quantity-supplied",
+      "statement": "A rise in price usually increases quantity supplied.",
+      "evidence": [
+        {
+          "document_id": "text-e6c889f45171a12a",
+          "start_char": 179,
+          "end_char": 226,
+          "quote": "while sellers usually supply a larger quantity."
+        }
+      ],
+      "confidence": 0.96,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "rel-shortage-upward-pressure",
+      "source_entity_id": "shortage",
+      "relationship_type": "CAUSES",
+      "target_entity_id": "upward-price-pressure",
+      "statement": "A shortage puts upward pressure on price.",
+      "evidence": [
+        {
+          "document_id": "text-e6c889f45171a12a",
+          "start_char": 323,
+          "end_char": 364,
+          "quote": "a shortage puts upward pressure on price."
+        }
+      ],
+      "confidence": 0.98,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "rel-upward-pressure-price",
+      "source_entity_id": "upward-price-pressure",
+      "relationship_type": "INCREASES",
+      "target_entity_id": "market-price",
+      "statement": "Upward pressure increases the market price.",
+      "evidence": [
+        {
+          "document_id": "text-e6c889f45171a12a",
+          "start_char": 365,
+          "end_char": 469,
+          "quote": "The higher price decreases quantity demanded and increases quantity supplied until the shortage narrows."
+        }
+      ],
+      "confidence": 0.9,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "rel-higher-price-decreases-demanded",
+      "source_entity_id": "market-price",
+      "relationship_type": "DECREASES",
+      "target_entity_id": "quantity-demanded",
+      "statement": "A higher price decreases quantity demanded.",
+      "evidence": [
+        {
+          "document_id": "text-e6c889f45171a12a",
+          "start_char": 365,
+          "end_char": 469,
+          "quote": "The higher price decreases quantity demanded and increases quantity supplied until the shortage narrows."
+        }
+      ],
+      "confidence": 0.99,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "rel-higher-price-increases-supplied",
+      "source_entity_id": "market-price",
+      "relationship_type": "INCREASES",
+      "target_entity_id": "quantity-supplied",
+      "statement": "A higher price increases quantity supplied.",
+      "evidence": [
+        {
+          "document_id": "text-e6c889f45171a12a",
+          "start_char": 365,
+          "end_char": 469,
+          "quote": "The higher price decreases quantity demanded and increases quantity supplied until the shortage narrows."
+        }
+      ],
+      "confidence": 0.99,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "rel-surplus-downward-pressure",
+      "source_entity_id": "surplus",
+      "relationship_type": "CAUSES",
+      "target_entity_id": "downward-price-pressure",
+      "statement": "A surplus puts downward pressure on price.",
+      "evidence": [
+        {
+          "document_id": "text-e6c889f45171a12a",
+          "start_char": 518,
+          "end_char": 560,
+          "quote": "a surplus puts downward pressure on price."
+        }
+      ],
+      "confidence": 0.98,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "rel-elasticity-quantity-response",
+      "source_entity_id": "price-elasticity",
+      "relationship_type": "MEASURED_BY",
+      "target_entity_id": "quantity-demanded",
+      "statement": "Price elasticity concerns the strength of quantity's response to a price change, including quantity demanded.",
+      "evidence": [
+        {
+          "document_id": "text-e6c889f45171a12a",
+          "start_char": 562,
+          "end_char": 637,
+          "quote": "Price elasticity measures how strongly quantity responds to a price change."
+        }
+      ],
+      "confidence": 0.78,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "rel-supply-reduction-price-increase",
+      "source_entity_id": "supply-reduction",
+      "relationship_type": "CAUSES",
+      "target_entity_id": "market-price",
+      "statement": "A similar reduction in supply can cause a larger price increase when demand is less elastic.",
+      "evidence": [
+        {
+          "document_id": "text-e6c889f45171a12a",
+          "start_char": 638,
+          "end_char": 730,
+          "quote": "When demand is less elastic, a similar reduction in supply can cause a larger price increase"
+        }
+      ],
+      "confidence": 0.96,
+      "origin": "SOURCE"
+    }
+  ],
+  "metadata": {
+    "extractor": "llm",
+    "provider": "openai",
+    "model": "gpt-5.6-luna",
+    "prompt_version": "spec-003-v1",
+    "provider_request_id": "resp_02e8b599fae706fd016a996ba456a887d2bbbb18ca4343a204",
+    "usage": {
+      "input_tokens": 2542,
+      "output_tokens": 1691,
+      "total_tokens": 4233
+    }
+  }
+}
