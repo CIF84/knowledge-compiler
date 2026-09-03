@@ -1,0 +1,282 @@
+{
+  "document": {
+    "id": "text-38d7213d9f084e3e",
+    "text": "Electric charge is a property of matter. A charge creates an electric field, and an electric field exerts a force on another charge. That force can change the charge's motion.\n\nA moving charge, or electric current, creates a magnetic field. A changing magnetic field induces an electric field. A changing electric field induces a magnetic field.\n\nChanging electric and magnetic fields can sustain one another and form an electromagnetic wave. Light is an electromagnetic wave.",
+    "source_type": "text",
+    "metadata": {
+      "filename": "electromagnetism.txt"
+    }
+  },
+  "entities": [
+    {
+      "id": "charge",
+      "name": "Charge",
+      "description": "A property of matter that creates and responds to electric fields.",
+      "entity_type": "CONCEPT",
+      "aliases": [
+        "electric charge"
+      ]
+    },
+    {
+      "id": "matter",
+      "name": "Matter",
+      "description": "Physical substance that can carry charge.",
+      "entity_type": "OBJECT",
+      "aliases": []
+    },
+    {
+      "id": "electric-field",
+      "name": "Electric field",
+      "description": "A field created by charge that can exert force on charge.",
+      "entity_type": "CONCEPT",
+      "aliases": []
+    },
+    {
+      "id": "force",
+      "name": "Force",
+      "description": "An interaction capable of changing motion.",
+      "entity_type": "CONCEPT",
+      "aliases": []
+    },
+    {
+      "id": "motion",
+      "name": "Motion",
+      "description": "Change in position affected by force.",
+      "entity_type": "PROCESS",
+      "aliases": []
+    },
+    {
+      "id": "moving-charge",
+      "name": "Moving charge",
+      "description": "Charge in motion, also expressed as electric current.",
+      "entity_type": "PROCESS",
+      "aliases": [
+        "electric current"
+      ]
+    },
+    {
+      "id": "magnetic-field",
+      "name": "Magnetic field",
+      "description": "A field created by moving charge or a changing electric field.",
+      "entity_type": "CONCEPT",
+      "aliases": []
+    },
+    {
+      "id": "changing-magnetic-field",
+      "name": "Changing magnetic field",
+      "description": "A magnetic field varying over time.",
+      "entity_type": "PROCESS",
+      "aliases": []
+    },
+    {
+      "id": "changing-electric-field",
+      "name": "Changing electric field",
+      "description": "An electric field varying over time.",
+      "entity_type": "PROCESS",
+      "aliases": []
+    },
+    {
+      "id": "electromagnetic-wave",
+      "name": "Electromagnetic wave",
+      "description": "A self-sustaining propagation of changing electric and magnetic fields.",
+      "entity_type": "SYSTEM",
+      "aliases": []
+    },
+    {
+      "id": "light",
+      "name": "Light",
+      "description": "An electromagnetic wave.",
+      "entity_type": "CONCEPT",
+      "aliases": []
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim-charge-property",
+      "statement": "Electric charge is a property of matter.",
+      "evidence": [
+        {
+          "document_id": "text-38d7213d9f084e3e",
+          "start_char": 0,
+          "end_char": 40,
+          "quote": "Electric charge is a property of matter."
+        }
+      ],
+      "confidence": 1.0,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "claim-coupled-fields",
+      "statement": "Changing electric and magnetic fields can sustain one another.",
+      "evidence": [
+        {
+          "document_id": "text-38d7213d9f084e3e",
+          "start_char": 347,
+          "end_char": 442,
+          "quote": "Changing electric and magnetic fields can sustain one another and form an electromagnetic wave."
+        }
+      ],
+      "confidence": 0.99,
+      "origin": "SOURCE"
+    }
+  ],
+  "relationships": [
+    {
+      "id": "rel-charge-creates-electric-field",
+      "source_entity_id": "charge",
+      "relationship_type": "CREATES",
+      "target_entity_id": "electric-field",
+      "statement": "Charge creates an electric field.",
+      "evidence": [
+        {
+          "document_id": "text-38d7213d9f084e3e",
+          "start_char": 41,
+          "end_char": 75,
+          "quote": "A charge creates an electric field"
+        }
+      ],
+      "confidence": 1.0,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "rel-electric-field-force",
+      "source_entity_id": "electric-field",
+      "relationship_type": "EXERTS_FORCE_ON",
+      "target_entity_id": "charge",
+      "statement": "An electric field exerts force on charge.",
+      "evidence": [
+        {
+          "document_id": "text-38d7213d9f084e3e",
+          "start_char": 81,
+          "end_char": 131,
+          "quote": "an electric field exerts a force on another charge"
+        }
+      ],
+      "confidence": 1.0,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "rel-force-motion",
+      "source_entity_id": "force",
+      "relationship_type": "CAUSES",
+      "target_entity_id": "motion",
+      "statement": "Force can change motion.",
+      "evidence": [
+        {
+          "document_id": "text-38d7213d9f084e3e",
+          "start_char": 133,
+          "end_char": 175,
+          "quote": "That force can change the charge's motion."
+        }
+      ],
+      "confidence": 0.98,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "rel-moving-charge-magnetic-field",
+      "source_entity_id": "moving-charge",
+      "relationship_type": "CREATES",
+      "target_entity_id": "magnetic-field",
+      "statement": "Moving charge creates a magnetic field.",
+      "evidence": [
+        {
+          "document_id": "text-38d7213d9f084e3e",
+          "start_char": 177,
+          "end_char": 240,
+          "quote": "A moving charge, or electric current, creates a magnetic field."
+        }
+      ],
+      "confidence": 1.0,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "rel-changing-magnetic-electric",
+      "source_entity_id": "changing-magnetic-field",
+      "relationship_type": "INDUCES",
+      "target_entity_id": "electric-field",
+      "statement": "A changing magnetic field induces an electric field.",
+      "evidence": [
+        {
+          "document_id": "text-38d7213d9f084e3e",
+          "start_char": 241,
+          "end_char": 293,
+          "quote": "A changing magnetic field induces an electric field."
+        }
+      ],
+      "confidence": 1.0,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "rel-changing-electric-magnetic",
+      "source_entity_id": "changing-electric-field",
+      "relationship_type": "INDUCES",
+      "target_entity_id": "magnetic-field",
+      "statement": "A changing electric field induces a magnetic field.",
+      "evidence": [
+        {
+          "document_id": "text-38d7213d9f084e3e",
+          "start_char": 294,
+          "end_char": 345,
+          "quote": "A changing electric field induces a magnetic field."
+        }
+      ],
+      "confidence": 1.0,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "rel-electric-change-wave",
+      "source_entity_id": "changing-electric-field",
+      "relationship_type": "ENABLES",
+      "target_entity_id": "electromagnetic-wave",
+      "statement": "A changing electric field helps form an electromagnetic wave.",
+      "evidence": [
+        {
+          "document_id": "text-38d7213d9f084e3e",
+          "start_char": 347,
+          "end_char": 442,
+          "quote": "Changing electric and magnetic fields can sustain one another and form an electromagnetic wave."
+        }
+      ],
+      "confidence": 0.96,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "rel-magnetic-change-wave",
+      "source_entity_id": "changing-magnetic-field",
+      "relationship_type": "ENABLES",
+      "target_entity_id": "electromagnetic-wave",
+      "statement": "A changing magnetic field helps form an electromagnetic wave.",
+      "evidence": [
+        {
+          "document_id": "text-38d7213d9f084e3e",
+          "start_char": 347,
+          "end_char": 442,
+          "quote": "Changing electric and magnetic fields can sustain one another and form an electromagnetic wave."
+        }
+      ],
+      "confidence": 0.96,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "rel-light-wave",
+      "source_entity_id": "light",
+      "relationship_type": "IS_A",
+      "target_entity_id": "electromagnetic-wave",
+      "statement": "Light is an electromagnetic wave.",
+      "evidence": [
+        {
+          "document_id": "text-38d7213d9f084e3e",
+          "start_char": 443,
+          "end_char": 476,
+          "quote": "Light is an electromagnetic wave."
+        }
+      ],
+      "confidence": 1.0,
+      "origin": "SOURCE"
+    }
+  ],
+  "metadata": {
+    "extractor": "fixture",
+    "fixture": "electromagnetism"
+  }
+}
