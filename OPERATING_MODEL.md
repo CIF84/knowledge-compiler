@@ -20,7 +20,7 @@ ChatGPT — product and architecture reasoning
 SPEC-N — bounded implementation experiment
         │
         ▼
-Codex — implementation + tests + commit
+Codex — implementation + tests + commit + push
         │
         ▼
 GitHub — canonical implementation state
@@ -70,6 +70,7 @@ Primary responsibilities:
 - run tests and relevant packaging/validation checks
 - avoid unrelated refactoring
 - commit completed work
+- push completed work to the canonical remote before review handoff
 - report architecture, changed files, validation results, deviations, and commit SHA
 
 ### GitHub Repository
@@ -150,7 +151,7 @@ This prevents speculative discussion from silently becoming project doctrine.
 
 ## Current Practices With Positive Evidence
 
-The following practices have worked in the initial project cycle and should remain defaults until contradicted by evidence:
+The following practices have now worked across two implementation cycles and should remain defaults until contradicted by evidence:
 
 - separate product/architecture reasoning from implementation orchestration
 - convert decisions into a focused repository SPEC
@@ -160,12 +161,29 @@ The following practices have worked in the initial project cycle and should rema
 - have Codex implement autonomously rather than micromanaging individual edits
 - require tests before accepting an increment
 - independently inspect repository state after Codex reports completion
-- distinguish local commits from pushed GitHub state
+- require completed implementation to be pushed before independent review
 - pair every SPEC with a DEBRIEF
 - preserve current architecture separately from future architecture
 - let evidence update project models
+- preserve machine-generated evaluation artifacts separately from human interpretation
+- accept negative experimental findings instead of hiding them behind repair heuristics
+- improve probabilistic behavior at prompt/adapter boundaries before weakening trusted domain invariants
 
-Current evidence strength is low because only one full implementation cycle has completed. These are working hypotheses, not immutable rules.
+Evidence is still early, but SPEC-002 materially strengthened confidence in this workflow.
+
+## Security / Secret Handling
+
+Secrets must never become repository or handoff content.
+
+Rules:
+
+- keep API keys in environment variables or approved secret stores;
+- never commit `.env` files or literal secrets;
+- do not echo secret values into implementation summaries, screenshots, logs, or handoff artifacts;
+- when a secret may have appeared in visible terminal-state output or another unintended surface, treat it as exposed and rotate it promptly;
+- report only whether a required secret is present, never its value.
+
+This rule was added after SPEC-002 exposed an API key in internal terminal-state output during environment handoff, despite no key being committed to the repository.
 
 ## Process Failure Signals
 
@@ -178,9 +196,11 @@ Watch for:
 - decisions existing only in conversation history
 - repeated rediscovery of previously answered questions
 - local/remote repository divergence causing verification friction
+- secrets appearing in logs or handoff output
 - documentation maintenance costing more than the uncertainty it removes
 - tests validating implementation details rather than product-relevant behavior
 - abstractions introduced before a concrete second use case exists
+- schema-valid outputs being mistaken for product-valid outputs
 
 ## Efficiency Principle
 
@@ -200,6 +220,8 @@ better next experiment
 
 A technically larger increment is not necessarily more productive. Prefer experiments that maximize decision-relevant learning for the least implementation and coordination cost.
 
+SPEC-002 demonstrated that five-domain live semantic experiments can be run at very low direct model cost, making frequent targeted validation economically practical.
+
 ## Reconstruction Test
 
 A new ChatGPT/Codex thread should be able to reconstruct the project by reading, approximately in this order:
@@ -215,6 +237,8 @@ A new ChatGPT/Codex thread should be able to reconstruct the project by reading,
 9. implementation/tests — executable reality
 
 If this is insufficient to resume work safely, project memory is incomplete.
+
+SPEC-002 provided indirect positive evidence for reconstruction: a short implementation prompt was sufficient because the repository carried the relevant context. A fully fresh-thread reconstruction test remains outstanding.
 
 ## Evolution Rule
 
