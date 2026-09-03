@@ -86,3 +86,18 @@ def test_viewer_assets_encode_shared_click_hover_and_reset_state() -> None:
     assert 'id="clear-selection"' in html
     assert "innerHTML" not in script
     assert ".reverse(" not in script
+
+
+def test_svg_relationship_focus_is_keyboard_visible_without_browser_outline() -> None:
+    assets = ROOT / "src" / "knowledge_compiler" / "viewer_assets"
+    script = (assets / "viewer.js").read_text()
+    css = (assets / "viewer.css").read_text()
+    committed_css = (
+        ROOT / "examples" / "evaluations" / "spec-006-layout-interaction-20260903" / "viewer.css"
+    ).read_text()
+    assert 'class: "edge-hit", tabindex: "0", role: "button"' in script
+    assert 'hit.addEventListener("keydown", event => keyboardSelect' in script
+    assert '.edge-hit:focus { outline:none; }' in css
+    assert '.edge-hit:focus-visible {' in css
+    assert 'stroke:var(--preview)' in css
+    assert committed_css == css
