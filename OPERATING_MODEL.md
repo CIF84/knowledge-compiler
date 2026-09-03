@@ -35,6 +35,7 @@ next highest-value uncertainty
 - identify the highest-value uncertainty;
 - define narrow experiments;
 - write implementation SPECs;
+- verify SPEC completeness before handoff;
 - independently inspect completed implementation;
 - guide focused human review when product behavior cannot be established from repository evidence;
 - write DEBRIEFS;
@@ -44,7 +45,7 @@ Do not accept implementation summaries as verification when repository inspectio
 
 ### Codex
 
-- inspect the repository and relevant project memory;
+- inspect repository and relevant project memory;
 - treat the active SPEC as the implementation contract;
 - implement autonomously within scope;
 - run deterministic tests and only the evaluation needed to answer the active uncertainty;
@@ -52,11 +53,12 @@ Do not accept implementation summaries as verification when repository inspectio
 - preserve failed experimental attempts when required;
 - commit and push before review handoff;
 - report architecture, validation, evaluation, deviations, and commit SHA;
-- for human-facing increments, provide the simplest exact command needed for owner review rather than declaring subjective product success itself.
+- for human-facing increments, provide the simplest exact command needed for owner review rather than declaring subjective product success itself;
+- when live provider transmission is not already clearly authorized, request explicit approval before sending source material.
 
 ### GitHub Repository
 
-GitHub is the durable source of truth for implementation, specs, debriefs, project memory, architecture, operating model, health, roadmap, and product thesis. Conversation threads are working context, not durable memory.
+GitHub is the durable source of truth for implementation, specs, debriefs, project memory, architecture, operating model, health, roadmap, baselines, and product thesis. Conversation threads are working context, not durable memory.
 
 ## SPEC Protocol
 
@@ -64,17 +66,19 @@ Every increment should have one primary uncertainty. A good SPEC includes object
 
 Prefer one major uncertainty per SPEC.
 
+Before handoff, verify that the committed SPEC is complete — especially acceptance criteria, live-evaluation rules where applicable, and required handoff. SPEC-008 was accidentally truncated and should remain a process warning.
+
 For human-facing experiments, distinguish deterministic implementation acceptance from the human product verdict.
 
 ## DEBRIEF Protocol
 
 Every completed SPEC must have a matching DEBRIEF. Debriefs preserve actual outcome, evidence, deviations, findings, decisions, unresolved questions, next implications, and whether canonical models changed.
 
-For UI-bearing increments, do not finalize the debrief until the relevant human interaction has occurred when that interaction is part of the primary experiment.
+For UI-bearing or cognitively evaluated increments, do not finalize the debrief until relevant human interaction has occurred.
 
 ## Current Practices With Positive Evidence
 
-The following practices have now worked across five implementation cycles:
+The following practices are strongly supported:
 
 - separate product/architecture reasoning from implementation orchestration;
 - convert decisions into a focused repository SPEC;
@@ -84,7 +88,7 @@ The following practices have now worked across five implementation cycles:
 - use accepted outputs from an earlier layer as stable fixtures when testing a downstream layer;
 - require live LLM/network evaluation only when it actually tests the active uncertainty;
 - prefer fully deterministic/offline experiments when they can answer the question;
-- keep provider/model constant when a probabilistic before/after experiment benefits from causal comparability;
+- keep provider/model stable when a probabilistic before/after experiment benefits from causal comparability;
 - have Codex implement autonomously rather than micromanaging edits;
 - require tests before acceptance;
 - require completed implementation to be pushed before independent review;
@@ -95,13 +99,16 @@ The following practices have now worked across five implementation cycles:
 - compare experiments against accepted baselines when possible;
 - turn prior observed failures into regression expectations;
 - explicitly attribute failures to the layer that caused them instead of repairing them locally by default;
-- accept negative or empty outputs when they truthfully reflect insufficient upstream structure;
+- accept negative, empty, or failed output when it truthfully reflects insufficient or invalid upstream/probabilistic behavior;
 - improve probabilistic behavior at prompt/adapter boundaries before weakening trusted invariants;
 - let evidence, not preference, update project models;
 - for UI-bearing increments, verify repository integrity first and then let the owner interact with the exact fixed artifact before subjective acceptance;
-- use screenshots and natural-language observations as lightweight diagnostic evidence when they reveal spatial/interaction issues, without requiring a design-management process.
-
-SPEC-005 strengthens confidence that the operating model can move from architecture experiments into product experiments without losing separation of roles.
+- use screenshots and natural-language observations as lightweight diagnostic evidence;
+- prove a product interaction manually/fixed-fixture first, then automate generation only after the interaction demonstrates value;
+- keep parent semantic truth immutable when experimenting with child resolution;
+- make generated semantic truth independently inspectable before rendering;
+- fail closed on provenance contradictions rather than auto-repairing them by default;
+- preserve provider failures and rejected runs as experiment evidence rather than hiding them.
 
 ## Experiment Selection Principle
 
@@ -121,9 +128,55 @@ question about representation integrity
 
 question about representation usefulness
     → fixed artifacts + direct human interaction
+
+question about semantic-navigation usefulness
+    → handcrafted child fixtures + human comparison
+
+question about automatic semantic depth
+    → bounded live ResolutionCompiler run + strict grounding + human review
 ```
 
 Do not invoke an LLM merely because one exists in the architecture.
+
+## Manual-First Automation Principle
+
+For expensive/general architecture, first prove the user-facing behavior with a fixed artifact where practical.
+
+SPEC-007 → SPEC-008 established the preferred sequence:
+
+```text
+manual/fixed child model
+        ↓
+prove semantic-navigation value
+        ↓
+automate child generation
+        ↓
+validate grounding + semantic structure
+        ↓
+human review generated result
+```
+
+Do not build generalized generation architecture for an interaction that has not shown value.
+
+## Probabilistic Trust-Boundary Principle
+
+The probabilistic system proposes; deterministic trusted code validates.
+
+```text
+provider proposal
+        ↓
+exact evidence resolution
+        ↓
+semantic/provenance validation
+        ↓
+ACCEPT
+   or
+FAIL CLOSED
+```
+
+Do not silently repair a provider contradiction merely to improve success rate.
+
+A grounding failure can be a successful architecture result when the invalid artifact is correctly rejected.
 
 ## Experimental Comparison Practice
 
@@ -132,29 +185,29 @@ When a SPEC tests an improvement to probabilistic behavior, prefer changing one 
 Where an accepted prior artifact exists:
 
 ```text
-accepted baseline
+accepted baseline/reference
       ↓
 new bounded change
       ↓
-same evaluation corpus
+same source/task
       ↓
 comparison artifact
       ↓
 human review
 ```
 
-Accepted outputs may become fixed inputs for the next deterministic/product layer, isolating downstream behavior from upstream variance.
-
-For interaction/layout experiments, reuse the same representation data where possible so the human comparison isolates presentation behavior rather than semantic changes.
-
-Use this pattern when the comparison itself is decision-relevant. Do not create baseline machinery for every implementation change.
+Do not score probabilistic output by lexical similarity to a handcrafted reference when the real question is semantic usefulness and source fidelity.
 
 ## Failure Attribution Principle
 
-When downstream output is weak, identify whether the weakness comes from:
+When output is weak, identify whether the weakness comes from:
 
 ```text
-upstream semantic model
+source insufficiency
+provider proposal
+semantic grounding/validation
+upstream parent semantic model
+resolution strategy
 structure detection
 representation model
 spatial layout
@@ -162,41 +215,78 @@ interaction behavior
 evaluation expectation
 ```
 
-Do not repair an upstream defect inside a downstream layer unless the architecture explicitly assigns that responsibility there.
-
-SPEC-005 reinforced this discipline: missing chronology, collapsed states, and endpoint substitutions became more obvious when rendered but remained visible rather than being silently reconstructed by presentation code.
+Do not repair an upstream defect inside a downstream layer unless responsibility is explicitly assigned there.
 
 ## Human Review Principle
 
-Model calls and deterministic computation are inexpensive; semantic/pedagogical human review is increasingly the larger cognitive cost.
+Machine checks validate integrity; humans still judge semantic/pedagogical usefulness.
 
-Respond conservatively:
-
-- automate deterministic regression checks when semantics are explicit enough;
-- preserve inspectable artifacts;
-- use fixed inputs when evaluating downstream product behavior;
-- do not replace human semantic or learning-value review with a second LLM judge until that judging mechanism is validated;
-- reduce review burden through focused experiments rather than larger evaluation suites by default;
-- when the primary uncertainty is subjective product usefulness, let the owner use the artifact before acceptance;
-- capture the first natural reaction before turning review into a long questionnaire when that reaction is itself decision-relevant;
-- distinguish visual polish feedback from cognitive/interaction feedback.
-
-SPEC-005 showed that a short owner session can expose product constraints — synchronized semantic selection and structure-aware layout — that code inspection and integrity tests cannot reveal.
-
-## UI Experiment Principle
-
-For current-stage viewer work, optimize for cognitive behavior rather than production polish.
-
-Prefer experiments that ask questions such as:
+For semantic depth specifically, human review should ask:
 
 ```text
-Can I see the structure quickly?
-Does selection behave as one semantic object?
-Does spatial placement expose the relationship pattern?
-Can I inspect why an edge exists?
+Is the child genuinely finer resolution?
+Is it still about the parent focus?
+Does it expose meaningful mechanism/detail?
+Can the parent plausibly be viewed as a compression of the child?
+Is the generated structure useful to think with?
 ```
 
-Avoid premature work on branding, broad responsive design, frontend frameworks, animation systems, account flows, or design systems unless a later product experiment requires them.
+Do not replace these judgments with a second LLM judge until that mechanism is separately validated.
+
+## Cognitive Baseline / Preset Principle
+
+`BASELINE-001` remains the control for material UI/interaction changes.
+
+Successful interaction grammars may be preserved as cognitive presets when they represent distinct learner/task intents rather than successive obsolete versions.
+
+Current working intents:
+
+```text
+Overview
+Focus
+Contextual / Layers
+```
+
+Presets must project the same trusted semantic truth rather than silently changing facts or provenance.
+
+## Semantic-Resolution Principle
+
+Do not equate “deeper” with “more nodes” or universal decomposition.
+
+Current working hypothesis:
+
+```text
+SYSTEM     → subsystems/interactions
+COMPONENT  → internals
+PROCESS    → stages
+VARIABLE   → causes/consequences
+EVENT      → antecedents/outcomes
+CONCEPT    → mechanisms/principles/relationships
+```
+
+This mapping must be tested before recursive compilation or active context-map navigation is generalized.
+
+## Navigation Principle
+
+For abstract knowledge, prefer **2D topology + semantic zoom**.
+
+Treat navigation operations as distinct:
+
+```text
+Back
+→ history
+
+Breadcrumb/path
+→ ancestry
+
+Context map
+→ neighborhood/lateral movement
+
+Explore/zoom
+→ abstraction depth
+```
+
+Do not introduce literal 3D merely because it is visually possible. Use 3D only where domain spatial structure itself carries explanatory meaning.
 
 ## Security / Secret Handling
 
@@ -204,29 +294,31 @@ Avoid premature work on branding, broad responsive design, frontend frameworks, 
 - never commit `.env` files or literal secrets;
 - never echo secret values into handoffs, screenshots, logs, or artifacts;
 - report only whether a secret is present, never its value;
-- rotate immediately when accidental exposure is suspected.
+- rotate immediately when accidental exposure is suspected;
+- request explicit approval before transmitting source material to external providers when authorization is not already clear.
 
 ## Process Failure Signals
 
 Watch for:
 
 - SPECs containing multiple unrelated experiments;
+- incomplete/truncated SPEC files reaching implementation;
 - repeated scope expansion;
 - implementation summaries accepted without inspection;
-- subjective UI/product success declared without relevant human interaction;
+- subjective success declared without relevant human interaction;
 - probabilistic calls used where fixed accepted artifacts could answer the question;
 - downstream layers silently repairing upstream semantic defects;
-- multiple major variables changing in an experiment that depends on before/after attribution;
+- multiple major variables changing in an attribution-sensitive experiment;
 - aspirational architecture becoming canonical before implementation evidence;
 - decisions living only in chat history;
 - repeated rediscovery of prior findings;
 - local/remote divergence;
 - secrets in logs or handoffs;
-- ontology or prompt growth without demonstrated value;
-- documentation maintenance costing more than the uncertainty it removes;
-- tests validating implementation details rather than product-relevant behavior;
-- structurally valid output being mistaken for pedagogically useful output;
-- visual polish being mistaken for cognitive improvement.
+- ontology/prompt growth without demonstrated value;
+- generated child truth that cannot be inspected independently from presentation;
+- recursive architecture introduced before semantic-resolution strategy is understood;
+- cognitive presets altering canonical truth;
+- documentation maintenance costing more than uncertainty it removes.
 
 ## Efficiency Principle
 
@@ -242,7 +334,7 @@ reduced uncertainty
 better next experiment
 ```
 
-SPEC-004 was an efficiency benchmark for deterministic downstream computation. SPEC-005 extends the pattern: fixed upstream artifacts plus a small viewer and short human session produced direct product evidence with zero model/API cost.
+SPEC-008 is a good example: one successful live Economics generation and one fail-closed Software Architecture rejection were enough to identify semantic-resolution strategy — not recursion or navigation polish — as the next important problem.
 
 ## Reconstruction Test
 
@@ -257,10 +349,11 @@ A fresh collaborator should reconstruct the project approximately in this order:
 7. relevant `DEBRIEF-*`
 8. active `SPEC-*`
 9. implementation/tests/evaluation artifacts
+10. relevant interface baseline(s)
 
 If this is insufficient to resume safely, project memory is incomplete.
 
-A deliberately fresh-thread reconstruction test remains outstanding, although five increasingly concise implementation handoffs provide indirect positive evidence.
+A deliberately fresh-thread reconstruction test remains outstanding.
 
 ## Evolution Rule
 
