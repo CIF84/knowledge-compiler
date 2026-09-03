@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import sys
 from types import SimpleNamespace
 
 import pytest
@@ -13,6 +14,7 @@ from knowledge_compiler.openai_extractor import (
     resolve_evidence_quote,
 )
 from knowledge_compiler.pipeline import compile_knowledge_model
+from knowledge_compiler.openai_resolution import OpenAIResolutionExtractor
 
 
 def provider_output(*, quote: str = "Alpha causes beta.", relationship_type: str = "CAUSES") -> dict:
@@ -124,6 +126,23 @@ def test_missing_credentials_fail_before_sdk_import(monkeypatch) -> None:
     monkeypatch.delenv("OPENAI_API_KEY", raising=False)
     with pytest.raises(ExtractionError, match="OPENAI_API_KEY"):
         OpenAILLMExtractor().extract(SourceDocument("doc", "text"))
+
+
+def test_live_clients_disable_sdk_automatic_retries(monkeypatch) -> None:
+    calls = []
+
+    def client_factory(**kwargs):
+        calls.append(kwargs)
+        return SimpleNamespace(responses=SimpleNamespace())
+
+    monkeypatch.setenv("OPENAI_API_KEY", "test-key-not-a-secret")
+    monkeypatch.setitem(sys.modules, "openai", SimpleNamespace(OpenAI=client_factory))
+    OpenAILLMExtractor()._client_or_create()
+    OpenAIResolutionExtractor()._client_or_create()
+    assert calls == [
+        {"api_key": "test-key-not-a-secret", "max_retries": 0},
+        {"api_key": "test-key-not-a-secret", "max_retries": 0},
+    ]
 
 
 def test_core_models_do_not_import_provider_sdk() -> None:

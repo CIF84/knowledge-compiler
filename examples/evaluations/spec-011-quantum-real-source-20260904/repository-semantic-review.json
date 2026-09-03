@@ -1,0 +1,33 @@
+{
+  "spec": "SPEC-011",
+  "status": "COMPLETE_LIMITED_NO_REJECTED_OUTPUT",
+  "machine_outcome": "PARENT_EXTRACTION_FAILED",
+  "validation_failure": "relationship 'measurement-collapses-wave-function' references unknown entities: ['measurement']",
+  "rejected_output_preserved": false,
+  "rejected_proposal_counts": {
+    "entities": 0,
+    "relationships": 0,
+    "claims": 0,
+    "propositions": 0
+  },
+  "semantic_findings": [
+    "The only recoverable semantic fact is the blocking undefined endpoint: measurement-collapses-wave-function referenced missing entity measurement.",
+    "The complete first proposal cannot be reviewed because the initial adapter process exited before rejected-output capture was added."
+  ],
+  "proposition_findings": [
+    "NOT_AVAILABLE_FIRST_REJECTED_OUTPUT_NOT_RECOVERABLE"
+  ],
+  "relationship_vocabulary_findings": [
+    "No vocabulary conclusion can be drawn from the unrecoverable first proposal."
+  ],
+  "overview_and_layout_findings": [
+    "No parent representation or layout was produced because semantic validation failed.",
+    "No hand-authored overview was substituted."
+  ],
+  "validation_behavior": "PASS_FAIL_CLOSED_NO_REPAIR",
+  "failure_attribution": [
+    "EXTRACTION",
+    "SEMANTIC_RELATIONSHIP"
+  ],
+  "owner_review": "BLOCKED_NO_VALID_LEARNER_ARTIFACT"
+}

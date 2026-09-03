@@ -1,0 +1,90 @@
+{
+  "spec": "SPEC-011",
+  "status": "COMPLETE_REJECTED_NO_OWNER_ARTIFACT",
+  "machine_outcome": "PARENT_EXTRACTION_FAILED",
+  "validation_failure": "relationship 'rel-quantum-is-study' references unknown entities: ['quantum-theory']",
+  "rejected_output_preserved": true,
+  "rejected_proposal_counts": {
+    "entities": 27,
+    "relationships": 11,
+    "claims": 9,
+    "propositions": 0
+  },
+  "mechanical_integrity": {
+    "provider_structured_output_available": true,
+    "entity_ids_unique": true,
+    "source_items": 20,
+    "inferred_items": 0,
+    "source_items_with_evidence": 20,
+    "evidence_spans": 20,
+    "exact_source_spans": 20,
+    "uniquely_occurring_quotes": 20,
+    "undefined_relationship_endpoints": [
+      {
+        "relationship_id": "rel-quantum-is-study",
+        "missing_entity_id": "quantum-theory"
+      }
+    ],
+    "knowledge_model_validation": "FAIL_CLOSED",
+    "parent_round_trip": false
+  },
+  "semantic_findings": [
+    {
+      "severity": "BLOCKING",
+      "relationship_id": "rel-quantum-is-study",
+      "finding": "The target quantum-theory is undefined. Independently, the cited quantum-field-theory sentence does not support the statement that quantum mechanics is a quantum theory."
+    },
+    {
+      "severity": "MATERIAL",
+      "relationship_id": "rel-qm-explains-molecules",
+      "finding": "The proposal turns an explanatory claim about how quantum mechanics explains atomic interaction and molecular formation into quantum mechanics CAUSES molecules, conflating a theory with a physical cause."
+    },
+    {
+      "severity": "MATERIAL",
+      "relationship_id": "rel-energy-explains-blackbody",
+      "finding": "The proposal says energy quanta CAUSES black-body radiation, while the source passage is explanatory and the cited quote concerns a volume/current increase rather than black-body radiation."
+    },
+    {
+      "severity": "BLOCKING",
+      "relationship_id": "rel-measurement-collapses-state",
+      "finding": "The proposal encodes wave-function-collapse CAUSES itself. The source sentence names measurement as the acting process and a probabilistic state as the object; both endpoints are lost."
+    },
+    {
+      "severity": "MATERIAL",
+      "relationship_id": "rel-qft-is-quantum-theory",
+      "finding": "The relationship targets quantum-mechanics and asserts an IS_A taxonomy not established by its short cited excerpt; the statement and endpoint do not match each other."
+    },
+    {
+      "severity": "MATERIAL",
+      "relationship_id": "rel-qed-is-qft",
+      "finding": "The evidence states that QED is a quantum theory of electromagnetism but does not by itself establish the proposed QED IS_A quantum-field-theory edge."
+    },
+    {
+      "severity": "MATERIAL",
+      "relationship_id": "rel-tunneling-enables-electron-penetration",
+      "finding": "The target is electron, but the statement and source concern electron penetration through a barrier; the process endpoint is missing."
+    }
+  ],
+  "proposition_findings": [
+    "No propositions were proposed.",
+    "Uncertainty tradeoffs and entanglement correlations were kept as claims rather than forced into unsupported current proposition types; this is truthful but exposes the current proposition boundary.",
+    "The measurement/state-reduction proposition lost its actor and affected state in a self-loop, repeating the endpoint-modeling class of failure without fitting either current proposition type."
+  ],
+  "relationship_vocabulary_findings": [
+    "No new predicate is justified from this rejected run.",
+    "Several defects are endpoint/proposition-shape failures rather than missing predicate labels.",
+    "The existing vocabulary cannot by itself express symmetric entanglement correlation or inverse uncertainty tradeoffs without losing participants or conditions; the provider safely used claims for those cases."
+  ],
+  "overview_and_layout_findings": [
+    "No parent representation, structure count, salience distribution, or layout diagnostic exists because semantic validation failed before downstream compilation.",
+    "No hand-authored overview was substituted and the rejected proposal was not rendered."
+  ],
+  "failure_attribution": [
+    "EXTRACTION",
+    "SEMANTIC_RELATIONSHIP",
+    "PROPOSITION_MODEL"
+  ],
+  "first_meaningful_bottleneck": "EXTRACTION / SEMANTIC_RELATIONSHIP: realistic full-source structured output repeatedly referenced undefined endpoints and the preserved retry also contained semantically misleading but exactly grounded edges.",
+  "validation_behavior": "PASS_FAIL_CLOSED_NO_REPAIR_NO_CHILD_CALL",
+  "owner_review": "BLOCKED_NO_VALID_LEARNER_ARTIFACT"
+}

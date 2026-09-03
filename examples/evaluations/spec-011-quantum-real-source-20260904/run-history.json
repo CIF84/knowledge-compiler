@@ -1,0 +1,24 @@
+{
+  "spec": "SPEC-011",
+  "attempts": [
+    {
+      "sequence": 1,
+      "stage": "PARENT_EXTRACTION",
+      "started_at": "2026-09-03T22:25:27.187921+00:00",
+      "completed_at": "2026-09-03T22:25:50.883281+00:00",
+      "runtime_seconds": 23.695,
+      "outcome": "FAILED",
+      "error_type": "ValidationError",
+      "error": "relationship 'measurement-collapses-wave-function' references unknown entities: ['measurement']",
+      "provider_call_attempted": true,
+      "retries": 0,
+      "usage": {},
+      "cost": "NOT_AVAILABLE",
+      "rejected_output_preserved": false,
+      "preservation_note": "The response passed provider JSON parsing but failed KnowledgeModel endpoint validation. The initial adapter process did not persist the in-memory rejected proposal, provider request ID, or usage before exiting; these values are unrecoverable with store=false. Failure capture was corrected before any authorized retry."
+    }
+  ],
+  "hidden_retries_or_favorable_run_selection": false,
+  "automatic_retry_count": 0,
+  "explicit_semantic_retry_count": 0
+}

@@ -1,0 +1,99 @@
+{
+  "spec": "SPEC-011",
+  "evaluation_version": "spec-011-v1",
+  "outcome": "PARENT_EXTRACTION_FAILED",
+  "failure": "relationship 'rel-quantum-is-study' references unknown entities: ['quantum-theory']",
+  "failure_attribution": [
+    "EXTRACTION",
+    "SEMANTIC_RELATIONSHIP"
+  ],
+  "provider": "openai",
+  "requested_model": "gpt-5.6-luna",
+  "actual_model_on_preserved_retry": "gpt-5.6-luna",
+  "extraction_prompt_version": "spec-010-v1",
+  "evaluation_version_detail": "spec-011-v1",
+  "processing": {
+    "full_source_processing_attempted_first": true,
+    "full_source_processing_succeeded": false,
+    "strategy": "FULL_SOURCE_SINGLE_REQUEST",
+    "segment_count": 1,
+    "segmentation_required": false,
+    "external_semantic_enrichment": false
+  },
+  "live_calls": {
+    "full_source_extraction_attempts": 2,
+    "explicit_semantic_retries": 1,
+    "child_resolution_attempts": 0,
+    "child_not_attempted_reason": "The explicitly approved condition required a valid parent; the retry failed semantic validation.",
+    "automatic_retries": 0,
+    "hidden_retries_or_favorable_run_selection": false
+  },
+  "known_usage": {
+    "input_tokens": 11006,
+    "output_tokens": 2788,
+    "total_tokens": 13794,
+    "coverage": "SECOND_ATTEMPT_ONLY",
+    "first_attempt_usage": "NOT_AVAILABLE_PROCESS_EXITED_BEFORE_CAPTURE_FIX"
+  },
+  "runtime_seconds": {
+    "first_extraction_attempt": 23.695,
+    "second_extraction_attempt": 20.798,
+    "known_total": 44.493
+  },
+  "monetary_cost": "NOT_AVAILABLE",
+  "rejected_retry_proposal": {
+    "entities": 27,
+    "relationships": 11,
+    "claims": 9,
+    "propositions": 0,
+    "source_items": 20,
+    "inferred_items": 0,
+    "evidence_spans": 20,
+    "exact_evidence_spans": 20,
+    "uniquely_occurring_evidence_quotes": 20,
+    "undefined_endpoint_failures": 1,
+    "round_trip": false,
+    "deduplication_status": "NOT_REACHED_PARENT_VALIDATION_FAILED"
+  },
+  "downstream": {
+    "parent_knowledge_model": "NOT_PRODUCED",
+    "structures": "NOT_RUN",
+    "representations": "NOT_RUN",
+    "layout": "NOT_RUN",
+    "semantic_zoom_focus": "NOT_SELECTED",
+    "resolution_strategy": "NOT_SELECTED",
+    "child_resolution": "NOT_ATTEMPTED_INVALID_PARENT",
+    "navigation_artifact": "NOT_PRODUCED",
+    "parent_immutability": "NOT_APPLICABLE_NO_VALID_PARENT"
+  },
+  "proposition_or_vocabulary_gap": "Current propositions cannot encode measurement acting on a quantum state to yield state reduction, uncertainty tradeoffs, or entanglement correlations. The provider appropriately used claims for the latter two, but emitted a self-loop for measurement/state reduction. No ontology expansion was made.",
+  "repository_semantic_review": "repository-semantic-review.json",
+  "human_learning_verdict": "BLOCKED_NO_VALID_LEARNER_ARTIFACT",
+  "source": {
+    "title": "Introduction to quantum mechanics",
+    "publisher": "Wikimedia Foundation / English Wikipedia",
+    "authors": "Wikipedia contributors; complete attribution is available in the fixed revision history",
+    "source_url": "https://en.wikipedia.org/wiki/Introduction_to_quantum_mechanics",
+    "permanent_url": "https://en.wikipedia.org/w/index.php?title=Introduction_to_quantum_mechanics&oldid=1359567407",
+    "revision_history_url": "https://en.wikipedia.org/w/index.php?title=Introduction_to_quantum_mechanics&action=history",
+    "retrieval_api": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts%7Crevisions&explaintext=1&exsectionformat=plain&revids=1359567407&rvprop=ids%7Ctimestamp&format=json&formatversion=2",
+    "revision_id": 1359567407,
+    "revision_timestamp": "2026-06-16T00:28:38Z",
+    "retrieved_at": "2026-09-04",
+    "license": "Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0); GFDL may also apply",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "redistribution_basis": "Wikipedia article text is reusable under CC BY-SA 4.0 with attribution and share-alike. The fixed title, revision URL, contributor history, and license URL provide attribution and license notice.",
+    "committed_source_handling": "The standalone downloaded source file and full article text are not committed. Failed extraction artifacts contain only the exact evidence excerpts needed to inspect provenance. A valid round-trippable KnowledgeModel would necessarily embed its normalized SourceDocument with this attribution metadata, but neither live attempt produced one.",
+    "normalized_sha256": "9e978db999ee67134d347f91fe9f32934c982f4de9b496e4bf664cb00cce23ea",
+    "word_count": 5965,
+    "character_count": 39735,
+    "source_processing_strategy": "FULL_SOURCE_SINGLE_REQUEST",
+    "segment_count": 1,
+    "segmentation_required": false,
+    "external_semantic_enrichment": false
+  },
+  "rejected_output_preserved": true,
+  "prior_run_history_files": [
+    "examples/evaluations/spec-011-quantum-real-source-20260904/run-history.json"
+  ]
+}

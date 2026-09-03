@@ -134,3 +134,20 @@ def test_proposition_evaluation_cli_is_offline_and_complete(tmp_path: Path, caps
     assert report["provider_calls"] == 0
     assert (output / "index.html").is_file()
     assert "2/2 regressions, semantic invariants pass" in capsys.readouterr().out
+
+
+def test_quantum_learning_cli_requires_live_credentials(
+    tmp_path: Path, monkeypatch, capsys
+) -> None:
+    monkeypatch.delenv("OPENAI_API_KEY", raising=False)
+    source = tmp_path / "source.txt"
+    metadata = tmp_path / "metadata.json"
+    source.write_text("Quantum source.")
+    metadata.write_text("{}")
+    result = main([
+        "evaluate-quantum-learning-slice", str(source),
+        "--source-metadata", str(metadata),
+        "--output-dir", str(tmp_path / "evaluation"),
+    ])
+    assert result == 1
+    assert "OPENAI_API_KEY is required for the live SPEC-011 evaluation" in capsys.readouterr().err

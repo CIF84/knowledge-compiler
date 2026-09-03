@@ -1,0 +1,62 @@
+{
+  "spec": "SPEC-011",
+  "attempts": [
+    {
+      "sequence": 1,
+      "stage": "PARENT_EXTRACTION",
+      "started_at": "2026-09-03T22:25:27.187921+00:00",
+      "completed_at": "2026-09-03T22:25:50.883281+00:00",
+      "runtime_seconds": 23.695,
+      "outcome": "FAILED",
+      "error_type": "ValidationError",
+      "error": "relationship 'measurement-collapses-wave-function' references unknown entities: ['measurement']",
+      "provider_call_attempted": true,
+      "retries": 0,
+      "usage": {},
+      "cost": "NOT_AVAILABLE",
+      "rejected_output_preserved": false,
+      "preservation_note": "The response passed provider JSON parsing but failed KnowledgeModel endpoint validation. The initial adapter process did not persist the in-memory rejected proposal, provider request ID, or usage before exiting; these values are unrecoverable with store=false. Failure capture was corrected before any authorized retry.",
+      "preserved_from": "examples/evaluations/spec-011-quantum-real-source-20260904/run-history.json"
+    },
+    {
+      "sequence": 2,
+      "stage": "PARENT_EXTRACTION",
+      "started_at": "2026-09-03T22:28:45.656475+00:00",
+      "completed_at": "2026-09-03T22:29:06.454019+00:00",
+      "runtime_seconds": 20.798,
+      "outcome": "FAILED",
+      "error_type": "ValidationError",
+      "error": "relationship 'rel-quantum-is-study' references unknown entities: ['quantum-theory']",
+      "provider_call_attempted": true,
+      "provider": "openai",
+      "requested_model": "gpt-5.6-luna",
+      "actual_model": "gpt-5.6-luna",
+      "provider_request_id": "resp_03e8e3188410c6cf016a99f49ebcc487d2b0627039c1a06684",
+      "prompt_version": "spec-010-v1",
+      "retries": 0,
+      "usage": {
+        "input_tokens": 11006,
+        "output_tokens": 2788,
+        "total_tokens": 13794
+      },
+      "cost": "NOT_AVAILABLE",
+      "rejected_output_preserved": true
+    }
+  ],
+  "prior_run_history_files": [
+    "examples/evaluations/spec-011-quantum-real-source-20260904/run-history.json"
+  ],
+  "hidden_retries_or_favorable_run_selection": false,
+  "automatic_retry_count": 0,
+  "explicit_semantic_retry_count": 1,
+  "conditional_child_call_attempted": false,
+  "conditional_child_call_not_attempted_reason": "The explicit semantic retry did not produce a valid parent KnowledgeModel.",
+  "known_usage": {
+    "input_tokens": 11006,
+    "output_tokens": 2788,
+    "total_tokens": 13794,
+    "first_attempt": "NOT_AVAILABLE",
+    "second_attempt": "AVAILABLE"
+  },
+  "monetary_cost": "NOT_AVAILABLE"
+}

@@ -152,7 +152,7 @@ class OpenAIResolutionExtractor:
             from openai import OpenAI
         except ImportError as exc:
             raise ExtractionError("OpenAI support is not installed; install knowledge-compiler[llm]") from exc
-        self._client = OpenAI(api_key=api_key)
+        self._client = OpenAI(api_key=api_key, max_retries=0)
         return self._client
 
     def nominate(self, request: ResolutionRequest, parent: Any, scope: SourceScope) -> ResolutionNomination:

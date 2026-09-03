@@ -15,6 +15,7 @@ from .models import KnowledgeModel, ValidationError
 from .openai_extractor import DEFAULT_MODEL, ExtractionError, OpenAILLMExtractor
 from .pipeline import compile_knowledge_model
 from .proposition_evaluation import run_proposition_evaluation
+from .quantum_learning_evaluation import run_quantum_learning_evaluation
 from .representation_builder import RepresentationBuilder
 from .representation_evaluation import (
     default_presentation_metadata_path,
@@ -118,6 +119,18 @@ def _parser() -> argparse.ArgumentParser:
         help="build the deterministic SPEC-010 proposition regression review",
     )
     proposition_evaluation.add_argument("--output-dir", required=True, type=Path)
+    quantum_evaluation = subcommands.add_parser(
+        "evaluate-quantum-learning-slice",
+        help="run the live SPEC-011 real-source quantum learning slice",
+    )
+    quantum_evaluation.add_argument("source", type=Path)
+    quantum_evaluation.add_argument("--source-metadata", required=True, type=Path)
+    quantum_evaluation.add_argument("--model", default=DEFAULT_MODEL)
+    quantum_evaluation.add_argument("--output-dir", required=True, type=Path)
+    quantum_evaluation.add_argument(
+        "--prior-run-history", action="append", default=[], type=Path,
+        help="preserve earlier failed attempts in the aggregate run history",
+    )
     view = subcommands.add_parser("view-representations", help="serve a prepared representation review locally")
     view.add_argument("directory", type=Path)
     view.add_argument("--host", default="127.0.0.1")
@@ -129,6 +142,23 @@ def _parser() -> argparse.ArgumentParser:
 def main(argv: list[str] | None = None) -> int:
     args = _parser().parse_args(argv)
     try:
+        if args.command == "evaluate-quantum-learning-slice":
+            if not os.environ.get("OPENAI_API_KEY"):
+                raise ExtractionError("OPENAI_API_KEY is required for the live SPEC-011 evaluation")
+            report = run_quantum_learning_evaluation(
+                source_path=args.source,
+                source_metadata_path=args.source_metadata,
+                output_dir=args.output_dir,
+                model=args.model,
+                prior_run_histories=tuple(args.prior_run_history),
+            )
+            print(
+                f"Wrote {args.output_dir / 'report.json'} "
+                f"(parent {report['parent']['counts']['entities']} entities, "
+                f"child outcome {report['semantic_zoom']['outcome']})"
+            )
+            return 0
+
         if args.command == "evaluate-propositions":
             report = run_proposition_evaluation(output_dir=args.output_dir)
             status = "semantic invariants pass" if report["all_machine_invariants_pass"] else "integrity failure"
