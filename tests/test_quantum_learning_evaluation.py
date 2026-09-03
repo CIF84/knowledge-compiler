@@ -193,3 +193,6 @@ def test_failed_parent_validation_preserves_rejected_proposal_and_review_files(
     assert (output / "README.md").is_file()
     history = json.loads((output / "run-history.json").read_text())
     assert history["attempts"][0]["rejected_output_preserved"] is True
+    processing = json.loads((output / "processing-report.json").read_text())
+    assert processing["deduplication"]["status"] == "COMPLETED_BEFORE_PARENT_VALIDATION"
+    assert processing["deduplication"]["merged_entity_count"] == 0

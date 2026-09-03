@@ -13,6 +13,7 @@ from pathlib import Path
 from typing import Any
 
 from .extractor import ExtractionResult, KnowledgeExtractor
+from .deduplicate import deduplicate_entities
 from .layout import with_layouts
 from .models import Entity, EntityType, KnowledgeModel, Origin, ValidationError
 from .openai_extractor import DEFAULT_MODEL, PROMPT_VERSION, OpenAILLMExtractor
@@ -365,6 +366,27 @@ def _write_failed_parent_review_artifacts(
         "claims": len(rejected.claims) if rejected else 0,
         "propositions": len(rejected.propositions) if rejected else 0,
     }
+    if rejected:
+        canonical = deduplicate_entities(rejected)
+        deduplication = {
+            "status": "COMPLETED_BEFORE_PARENT_VALIDATION",
+            "proposed_entity_count": len(rejected.entities),
+            "canonical_entity_count": len(canonical.entities),
+            "merged_entity_count": len(rejected.entities) - len(canonical.entities),
+            "relationship_endpoint_rewrite_count": sum(
+                before.source_entity_id != after.source_entity_id
+                or before.target_entity_id != after.target_entity_id
+                for before, after in zip(
+                    rejected.relationships, canonical.relationships, strict=True
+                )
+            ),
+            "strategy": "CONSERVATIVE_NORMALIZED_NAME_OR_ALIAS",
+        }
+    else:
+        deduplication = {
+            "status": "NOT_RECONSTRUCTABLE_REJECTED_OUTPUT_UNAVAILABLE",
+            "proposed_entity_count": 0,
+        }
     _write_json(output_dir / "processing-report.json", {
         "spec": "SPEC-011",
         "source": dict(source_report),
@@ -378,10 +400,7 @@ def _write_failed_parent_review_artifacts(
             "failure": str(error),
         },
         "rejected_proposal_counts": proposed_counts,
-        "deduplication": {
-            "status": "NOT_REACHED_PARENT_VALIDATION_FAILED",
-            "proposed_entity_count": proposed_counts["entities"],
-        },
+        "deduplication": deduplication,
     })
     _write_json(output_dir / "repository-semantic-review.json", {
         "spec": "SPEC-011",
