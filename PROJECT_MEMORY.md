@@ -88,7 +88,7 @@ The debrief closes the learning loop.
 4. If a previous decision is overturned, record the change in the new debrief and reference the earlier decision.
 5. Keep speculative future architecture out of debrief decisions unless implementation produced evidence for it.
 6. Record deferred issues without automatically expanding the completed milestone to fix them.
-7. Every new SPEC should read relevant prior DEBRIEFs before defining scope.
+7. Every new SPEC should read relevant prior DEBRIEFS before defining scope.
 8. Prefer explicit uncertainty over retrospective certainty.
 
 ## Decision Provenance
@@ -118,8 +118,51 @@ This creates an evolutionary trail without requiring a separate heavyweight arch
 | Increment | Spec | Debrief | State |
 | --- | --- | --- | --- |
 | 001 — Text to KnowledgeModel | [`SPEC-001`](specs/SPEC-001-text-to-knowledge-model.md) | [`DEBRIEF-001`](debriefs/DEBRIEF-001-text-to-knowledge-model.md) | Accepted |
+| 002 — LLM Semantic Extraction | [`SPEC-002`](specs/SPEC-002-llm-semantic-extraction.md) | [`DEBRIEF-002`](debriefs/DEBRIEF-002-llm-semantic-extraction.md) | Accepted — mixed semantic outcome |
 
-Update this table when an increment is closed.
+## Current Learning Summary
+
+### After SPEC-001
+
+- a source-grounded semantic `KnowledgeModel` is a viable intermediate representation;
+- strict validation, conservative deduplication, and provider-neutral extraction boundaries are useful architectural foundations;
+- deterministic fixtures provide a strong offline test seam around probabilistic extraction.
+
+### After SPEC-002
+
+- a real LLM can populate the same IR across physics, software architecture, economics, biology, and history without downstream architectural redesign;
+- exact evidence grounding works better when the LLM returns quotes and deterministic code resolves source coordinates;
+- fail-closed validation caught real provenance and ambiguity failures without weakening invariants;
+- cross-domain schema validity is not enough: relationship meaning and direction can still be wrong;
+- the initial relationship vocabulary is too narrow in several domains and can force semantic distortions;
+- multi-domain live experiments are cheap enough to repeat frequently;
+- the next important product problem is relationship semantics, not visualization.
+
+## Active Decisions
+
+```text
+KnowledgeModel is the semantic IR.
+Origin: DEBRIEF-001
+Strengthened: DEBRIEF-002
+Status: active
+
+Provider-specific extraction stays behind KnowledgeExtractor.
+Origin: DEBRIEF-001
+Strengthened: DEBRIEF-002
+Status: active
+
+Evidence coordinates are resolved deterministically from model-nominated exact quotes.
+Origin: DEBRIEF-002
+Status: active
+
+Semantic quality is evaluated separately from schema validity.
+Origin: DEBRIEF-002
+Status: active
+
+Relationship vocabulary evolves through cross-domain evidence, not opportunistic enum growth.
+Origin: DEBRIEF-002
+Status: active
+```
 
 ## Why This Exists
 
