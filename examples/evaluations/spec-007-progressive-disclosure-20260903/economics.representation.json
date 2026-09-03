@@ -1,0 +1,397 @@
+{
+  "document_id": "text-e6c889f45171a12a",
+  "title": "Economics",
+  "domain": "unknown",
+  "representations": [
+    {
+      "id": "representation-fe3ba90cb8cfa3d6",
+      "representation_type": "CAUSAL_PATH",
+      "source_structure_ids": [
+        "structure-causal-path-18c3db4206eb571d",
+        "structure-causal-path-4dac0d5bd5f58c5e",
+        "structure-causal-path-a0c56598f23e7cf6",
+        "structure-causal-path-f106de270650c376"
+      ],
+      "title": "Causal model",
+      "nodes": [
+        {
+          "entity_id": "market-price",
+          "label": "market price",
+          "description": "The price that coordinates buyers' and sellers' plans.",
+          "entity_type": "VARIABLE"
+        },
+        {
+          "entity_id": "quantity-demanded",
+          "label": "quantity demanded",
+          "description": "The quantity buyers demand at a given price.",
+          "entity_type": "VARIABLE"
+        },
+        {
+          "entity_id": "quantity-supplied",
+          "label": "quantity supplied",
+          "description": "The quantity sellers supply at a given price.",
+          "entity_type": "VARIABLE"
+        },
+        {
+          "entity_id": "shortage",
+          "label": "shortage",
+          "description": "A market condition in which quantity demanded exceeds quantity supplied.",
+          "entity_type": "CONCEPT"
+        },
+        {
+          "entity_id": "supply-reduction",
+          "label": "reduction in supply",
+          "description": "A decrease in the amount of supply available in the market.",
+          "entity_type": "PROCESS"
+        },
+        {
+          "entity_id": "upward-price-pressure",
+          "label": "upward pressure on price",
+          "description": "Pressure that tends to raise the market price.",
+          "entity_type": "CONCEPT"
+        }
+      ],
+      "edges": [
+        {
+          "source_entity_id": "market-price",
+          "target_entity_id": "quantity-demanded",
+          "relationship_type": "DECREASES",
+          "relationship_label": "DECREASES",
+          "meaning": "The source causally lowers the amount, rate, value, probability, or intensity of the target.",
+          "direction": "decreaser_to_decreased_variable",
+          "relationship_ids": [
+            "rel-higher-price-decreases-demanded",
+            "rel-price-decreases-demanded"
+          ],
+          "evidence": [
+            {
+              "relationship_id": "rel-higher-price-decreases-demanded",
+              "document_id": "text-e6c889f45171a12a",
+              "start_char": 365,
+              "end_char": 469,
+              "quote": "The higher price decreases quantity demanded and increases quantity supplied until the shortage narrows."
+            },
+            {
+              "relationship_id": "rel-price-decreases-demanded",
+              "document_id": "text-e6c889f45171a12a",
+              "start_char": 115,
+              "end_char": 177,
+              "quote": "When the price rises, buyers usually demand a smaller quantity"
+            }
+          ],
+          "origins": [
+            "SOURCE",
+            "SOURCE"
+          ],
+          "edge_key": "edge-ab2203590fef2f45",
+          "provenance_status": "SOURCE_EVIDENCE"
+        },
+        {
+          "source_entity_id": "market-price",
+          "target_entity_id": "quantity-supplied",
+          "relationship_type": "INCREASES",
+          "relationship_label": "INCREASES",
+          "meaning": "The source causally raises the amount, rate, value, probability, or intensity of the target.",
+          "direction": "increaser_to_increased_variable",
+          "relationship_ids": [
+            "rel-higher-price-increases-supplied",
+            "rel-price-increases-supplied"
+          ],
+          "evidence": [
+            {
+              "relationship_id": "rel-higher-price-increases-supplied",
+              "document_id": "text-e6c889f45171a12a",
+              "start_char": 365,
+              "end_char": 469,
+              "quote": "The higher price decreases quantity demanded and increases quantity supplied until the shortage narrows."
+            },
+            {
+              "relationship_id": "rel-price-increases-supplied",
+              "document_id": "text-e6c889f45171a12a",
+              "start_char": 179,
+              "end_char": 226,
+              "quote": "while sellers usually supply a larger quantity."
+            }
+          ],
+          "origins": [
+            "SOURCE",
+            "SOURCE"
+          ],
+          "edge_key": "edge-d207db58ebed870c",
+          "provenance_status": "SOURCE_EVIDENCE"
+        },
+        {
+          "source_entity_id": "shortage",
+          "target_entity_id": "upward-price-pressure",
+          "relationship_type": "CAUSES",
+          "relationship_label": "CAUSES",
+          "meaning": "The source brings about the target as an effect.",
+          "direction": "cause_to_effect",
+          "relationship_ids": [
+            "rel-shortage-upward-pressure"
+          ],
+          "evidence": [
+            {
+              "relationship_id": "rel-shortage-upward-pressure",
+              "document_id": "text-e6c889f45171a12a",
+              "start_char": 323,
+              "end_char": 364,
+              "quote": "a shortage puts upward pressure on price."
+            }
+          ],
+          "origins": [
+            "SOURCE"
+          ],
+          "edge_key": "edge-5debac009cb6f924",
+          "provenance_status": "SOURCE_EVIDENCE"
+        },
+        {
+          "source_entity_id": "supply-reduction",
+          "target_entity_id": "market-price",
+          "relationship_type": "CAUSES",
+          "relationship_label": "CAUSES",
+          "meaning": "The source brings about the target as an effect.",
+          "direction": "cause_to_effect",
+          "relationship_ids": [
+            "rel-supply-reduction-price-increase"
+          ],
+          "evidence": [
+            {
+              "relationship_id": "rel-supply-reduction-price-increase",
+              "document_id": "text-e6c889f45171a12a",
+              "start_char": 638,
+              "end_char": 730,
+              "quote": "When demand is less elastic, a similar reduction in supply can cause a larger price increase"
+            }
+          ],
+          "origins": [
+            "SOURCE"
+          ],
+          "edge_key": "edge-c08e36e3f639f8dd",
+          "provenance_status": "SOURCE_EVIDENCE"
+        },
+        {
+          "source_entity_id": "upward-price-pressure",
+          "target_entity_id": "market-price",
+          "relationship_type": "INCREASES",
+          "relationship_label": "INCREASES",
+          "meaning": "The source causally raises the amount, rate, value, probability, or intensity of the target.",
+          "direction": "increaser_to_increased_variable",
+          "relationship_ids": [
+            "rel-upward-pressure-price"
+          ],
+          "evidence": [
+            {
+              "relationship_id": "rel-upward-pressure-price",
+              "document_id": "text-e6c889f45171a12a",
+              "start_char": 365,
+              "end_char": 469,
+              "quote": "The higher price decreases quantity demanded and increases quantity supplied until the shortage narrows."
+            }
+          ],
+          "origins": [
+            "SOURCE"
+          ],
+          "edge_key": "edge-a684bd85c5e770d6",
+          "provenance_status": "SOURCE_EVIDENCE"
+        }
+      ],
+      "salience": "PRIMARY",
+      "warnings": [],
+      "layout": {
+        "strategy": "layered_causal",
+        "orientation": "LEFT_TO_RIGHT",
+        "width": 910,
+        "height": 360,
+        "nodes": [
+          {
+            "entity_id": "market-price",
+            "x": 570,
+            "y": 180,
+            "layer": 2,
+            "order": 0
+          },
+          {
+            "entity_id": "quantity-demanded",
+            "x": 800,
+            "y": 120,
+            "layer": 3,
+            "order": 0
+          },
+          {
+            "entity_id": "quantity-supplied",
+            "x": 800,
+            "y": 240,
+            "layer": 3,
+            "order": 1
+          },
+          {
+            "entity_id": "shortage",
+            "x": 110,
+            "y": 120,
+            "layer": 0,
+            "order": 0
+          },
+          {
+            "entity_id": "supply-reduction",
+            "x": 110,
+            "y": 240,
+            "layer": 0,
+            "order": 1
+          },
+          {
+            "entity_id": "upward-price-pressure",
+            "x": 340,
+            "y": 180,
+            "layer": 1,
+            "order": 0
+          }
+        ],
+        "edges": [
+          {
+            "edge_key": "edge-5debac009cb6f924",
+            "path_kind": "CUBIC",
+            "points": [
+              {
+                "x": 194,
+                "y": 120
+              },
+              {
+                "x": 225,
+                "y": 120
+              },
+              {
+                "x": 225,
+                "y": 180
+              },
+              {
+                "x": 256,
+                "y": 180
+              }
+            ],
+            "label_x": 225,
+            "label_y": 141
+          },
+          {
+            "edge_key": "edge-a684bd85c5e770d6",
+            "path_kind": "CUBIC",
+            "points": [
+              {
+                "x": 424,
+                "y": 180
+              },
+              {
+                "x": 455,
+                "y": 180
+              },
+              {
+                "x": 455,
+                "y": 180
+              },
+              {
+                "x": 486,
+                "y": 180
+              }
+            ],
+            "label_x": 455,
+            "label_y": 171
+          },
+          {
+            "edge_key": "edge-ab2203590fef2f45",
+            "path_kind": "CUBIC",
+            "points": [
+              {
+                "x": 654,
+                "y": 180
+              },
+              {
+                "x": 685,
+                "y": 180
+              },
+              {
+                "x": 685,
+                "y": 120
+              },
+              {
+                "x": 716,
+                "y": 120
+              }
+            ],
+            "label_x": 685,
+            "label_y": 141
+          },
+          {
+            "edge_key": "edge-c08e36e3f639f8dd",
+            "path_kind": "CUBIC",
+            "points": [
+              {
+                "x": 194,
+                "y": 240
+              },
+              {
+                "x": 340,
+                "y": 240
+              },
+              {
+                "x": 340,
+                "y": 180
+              },
+              {
+                "x": 486,
+                "y": 180
+              }
+            ],
+            "label_x": 340,
+            "label_y": 201
+          },
+          {
+            "edge_key": "edge-d207db58ebed870c",
+            "path_kind": "CUBIC",
+            "points": [
+              {
+                "x": 654,
+                "y": 180
+              },
+              {
+                "x": 685,
+                "y": 180
+              },
+              {
+                "x": 685,
+                "y": 240
+              },
+              {
+                "x": 716,
+                "y": 240
+              }
+            ],
+            "label_x": 685,
+            "label_y": 201
+          }
+        ],
+        "diagnostics": {
+          "crossing_count": 0,
+          "node_overlap_count": 0,
+          "connector_length": 780.0,
+          "layer_count": 4,
+          "canonical_edges_opposing_layout_flow": 0
+        }
+      }
+    }
+  ],
+  "empty_state": null,
+  "builder_version": "spec-006-v1",
+  "warnings": [
+    "The graph has no relationship closing a market feedback cycle; no loop is displayed."
+  ],
+  "metadata": {
+    "representation_count": 1,
+    "source_structure_count": 4,
+    "salience_counts": {
+      "PRIMARY": 1,
+      "SECONDARY": 0,
+      "SPARSE": 0
+    },
+    "layout_version": "spec-006-v1"
+  }
+}

@@ -1,0 +1,272 @@
+{
+  "spec": "SPEC-007",
+  "id": "exploration-economics-market-price",
+  "domain": "economics",
+  "parent_representation_id": "representation-fe3ba90cb8cfa3d6",
+  "focus_entity_id": "market-price",
+  "focus_label": "market price",
+  "provenance_kind": "EXPERIMENT_FIXTURE_AUTHORED",
+  "provenance_note": "Manually authored for SPEC-007; no SourceSpan coordinates or SOURCE origin are claimed.",
+  "child_representation": {
+    "id": "fixture-market-price-response",
+    "representation_type": "CAUSAL_PATH",
+    "source_structure_ids": [
+      "fixture-structure-market-price-response"
+    ],
+    "title": "Market-price response mechanism",
+    "nodes": [
+      {
+        "entity_id": "fixture-observed-market-price",
+        "label": "observed market price",
+        "description": "The price signal buyers and sellers observe.",
+        "entity_type": "VARIABLE"
+      },
+      {
+        "entity_id": "fixture-buyer-affordability",
+        "label": "buyer affordability",
+        "description": "The purchasing range available to buyers at the observed price.",
+        "entity_type": "CONCEPT"
+      },
+      {
+        "entity_id": "fixture-purchase-plans",
+        "label": "purchase plans",
+        "description": "The quantities buyers plan to purchase under their constraints.",
+        "entity_type": "PROCESS"
+      },
+      {
+        "entity_id": "fixture-seller-incentive",
+        "label": "seller revenue incentive",
+        "description": "The incentive sellers perceive at the observed price.",
+        "entity_type": "CONCEPT"
+      },
+      {
+        "entity_id": "fixture-supply-offers",
+        "label": "supply offers",
+        "description": "The quantities sellers plan to offer to the market.",
+        "entity_type": "PROCESS"
+      }
+    ],
+    "edges": [
+      {
+        "source_entity_id": "fixture-observed-market-price",
+        "target_entity_id": "fixture-buyer-affordability",
+        "relationship_type": "AFFECTS",
+        "relationship_label": "AFFECTS",
+        "meaning": "The source causally influences the target without a specified direction or complete production.",
+        "direction": "influence_to_affected",
+        "relationship_ids": [
+          "fixture-price-rel-1"
+        ],
+        "evidence": [],
+        "origins": [
+          "INFERRED"
+        ],
+        "edge_key": "edge-0d35c3fc9d7c41fe",
+        "provenance_status": "INFERRED_NO_SOURCE_EVIDENCE"
+      },
+      {
+        "source_entity_id": "fixture-buyer-affordability",
+        "target_entity_id": "fixture-purchase-plans",
+        "relationship_type": "CONSTRAINS",
+        "relationship_label": "CONSTRAINS",
+        "meaning": "The source limits the possible behavior, values, or choices of the target.",
+        "direction": "constraint_to_constrained",
+        "relationship_ids": [
+          "fixture-price-rel-2"
+        ],
+        "evidence": [],
+        "origins": [
+          "INFERRED"
+        ],
+        "edge_key": "edge-c5ec04450b9a9aa4",
+        "provenance_status": "INFERRED_NO_SOURCE_EVIDENCE"
+      },
+      {
+        "source_entity_id": "fixture-observed-market-price",
+        "target_entity_id": "fixture-seller-incentive",
+        "relationship_type": "AFFECTS",
+        "relationship_label": "AFFECTS",
+        "meaning": "The source causally influences the target without a specified direction or complete production.",
+        "direction": "influence_to_affected",
+        "relationship_ids": [
+          "fixture-price-rel-3"
+        ],
+        "evidence": [],
+        "origins": [
+          "INFERRED"
+        ],
+        "edge_key": "edge-da0643f96d4789bc",
+        "provenance_status": "INFERRED_NO_SOURCE_EVIDENCE"
+      },
+      {
+        "source_entity_id": "fixture-seller-incentive",
+        "target_entity_id": "fixture-supply-offers",
+        "relationship_type": "AFFECTS",
+        "relationship_label": "AFFECTS",
+        "meaning": "The source causally influences the target without a specified direction or complete production.",
+        "direction": "influence_to_affected",
+        "relationship_ids": [
+          "fixture-price-rel-4"
+        ],
+        "evidence": [],
+        "origins": [
+          "INFERRED"
+        ],
+        "edge_key": "edge-6c51b48944470758",
+        "provenance_status": "INFERRED_NO_SOURCE_EVIDENCE"
+      }
+    ],
+    "salience": "PRIMARY",
+    "warnings": [
+      "Experimental fixed fixture; it explains responses around price without adding the parent model's missing feedback-closing edge."
+    ],
+    "layout": {
+      "strategy": "layered_causal",
+      "orientation": "LEFT_TO_RIGHT",
+      "width": 680,
+      "height": 360,
+      "nodes": [
+        {
+          "entity_id": "fixture-buyer-affordability",
+          "x": 340,
+          "y": 120,
+          "layer": 1,
+          "order": 0
+        },
+        {
+          "entity_id": "fixture-observed-market-price",
+          "x": 110,
+          "y": 180,
+          "layer": 0,
+          "order": 0
+        },
+        {
+          "entity_id": "fixture-purchase-plans",
+          "x": 570,
+          "y": 120,
+          "layer": 2,
+          "order": 0
+        },
+        {
+          "entity_id": "fixture-seller-incentive",
+          "x": 340,
+          "y": 240,
+          "layer": 1,
+          "order": 1
+        },
+        {
+          "entity_id": "fixture-supply-offers",
+          "x": 570,
+          "y": 240,
+          "layer": 2,
+          "order": 1
+        }
+      ],
+      "edges": [
+        {
+          "edge_key": "edge-0d35c3fc9d7c41fe",
+          "path_kind": "CUBIC",
+          "points": [
+            {
+              "x": 194,
+              "y": 180
+            },
+            {
+              "x": 225,
+              "y": 180
+            },
+            {
+              "x": 225,
+              "y": 120
+            },
+            {
+              "x": 256,
+              "y": 120
+            }
+          ],
+          "label_x": 225,
+          "label_y": 141
+        },
+        {
+          "edge_key": "edge-6c51b48944470758",
+          "path_kind": "CUBIC",
+          "points": [
+            {
+              "x": 424,
+              "y": 240
+            },
+            {
+              "x": 455,
+              "y": 240
+            },
+            {
+              "x": 455,
+              "y": 240
+            },
+            {
+              "x": 486,
+              "y": 240
+            }
+          ],
+          "label_x": 455,
+          "label_y": 231
+        },
+        {
+          "edge_key": "edge-c5ec04450b9a9aa4",
+          "path_kind": "CUBIC",
+          "points": [
+            {
+              "x": 424,
+              "y": 120
+            },
+            {
+              "x": 455,
+              "y": 120
+            },
+            {
+              "x": 455,
+              "y": 120
+            },
+            {
+              "x": 486,
+              "y": 120
+            }
+          ],
+          "label_x": 455,
+          "label_y": 111
+        },
+        {
+          "edge_key": "edge-da0643f96d4789bc",
+          "path_kind": "CUBIC",
+          "points": [
+            {
+              "x": 194,
+              "y": 180
+            },
+            {
+              "x": 225,
+              "y": 180
+            },
+            {
+              "x": 225,
+              "y": 240
+            },
+            {
+              "x": 256,
+              "y": 240
+            }
+          ],
+          "label_x": 225,
+          "label_y": 201
+        }
+      ],
+      "diagnostics": {
+        "crossing_count": 0,
+        "node_overlap_count": 0,
+        "connector_length": 368.0,
+        "layer_count": 3,
+        "canonical_edges_opposing_layout_flow": 0
+      }
+    }
+  }
+}

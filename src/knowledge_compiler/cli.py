@@ -20,6 +20,10 @@ from .representation_evaluation import (
     default_spec004_structures_directory,
     prepare_representation_evaluation,
 )
+from .semantic_navigation import (
+    default_spec006_representations_directory,
+    prepare_semantic_navigation_evaluation,
+)
 from .structures import DetectedStructureSet
 from .structure_detection import StructureDetector
 from .structure_evaluation import (
@@ -76,6 +80,14 @@ def _parser() -> argparse.ArgumentParser:
     layout.add_argument("--models-dir", type=Path, default=default_spec003_models_directory())
     layout.add_argument("--structures-dir", type=Path, default=default_spec004_structures_directory())
     layout.add_argument("--output-dir", required=True, type=Path)
+    navigation = subcommands.add_parser(
+        "prepare-semantic-navigation",
+        help="build the offline SPEC-007 progressive-disclosure comparison",
+    )
+    navigation.add_argument(
+        "--input-dir", type=Path, default=default_spec006_representations_directory()
+    )
+    navigation.add_argument("--output-dir", required=True, type=Path)
     view = subcommands.add_parser("view-representations", help="serve a prepared representation review locally")
     view.add_argument("directory", type=Path)
     view.add_argument("--host", default="127.0.0.1")
@@ -87,6 +99,26 @@ def _parser() -> argparse.ArgumentParser:
 def main(argv: list[str] | None = None) -> int:
     args = _parser().parse_args(argv)
     try:
+        if args.command == "prepare-semantic-navigation":
+            report = prepare_semantic_navigation_evaluation(
+                input_dir=args.input_dir,
+                output_dir=args.output_dir,
+            )
+            complete = all((
+                report["all_modes_available"],
+                report["all_return_targets_valid"],
+                report["all_parent_selections_restorable"],
+                report["all_child_selection_identities_complete"],
+                report["all_canonical_directions_preserved"],
+                report["all_provenance_truthful"],
+                report["all_layouts_deterministic"],
+                report["all_contextual_identities_present"],
+                report["baseline_artifacts_byte_preserved"],
+            ))
+            status = "semantic-navigation integrity complete" if complete else "integrity failure"
+            print(f"Wrote {args.output_dir / 'report.json'} (2/2 fixtures, {status})")
+            return 0 if complete else 1
+
         if args.command == "prepare-layout-interaction":
             report = prepare_layout_evaluation(
                 input_dir=args.input_dir,

@@ -90,3 +90,12 @@ def test_prepare_layout_interaction_cli_uses_fixed_spec005_artifacts(tmp_path: P
     assert report["fixed_input_baseline"] == "SPEC-005 committed representation artifacts"
     assert report["all_selection_identity_complete"] is True
     assert "5/5 domains, layout and interaction integrity complete" in capsys.readouterr().out
+
+
+def test_prepare_semantic_navigation_cli_uses_fixed_spec006_artifacts(tmp_path: Path, capsys) -> None:
+    output = tmp_path / "review"
+    assert main(["prepare-semantic-navigation", "--output-dir", str(output)]) == 0
+    report = json.loads((output / "report.json").read_text())
+    assert report["fixed_parent_baseline"].startswith("BASELINE-001")
+    assert report["all_provenance_truthful"] is True
+    assert "2/2 fixtures, semantic-navigation integrity complete" in capsys.readouterr().out

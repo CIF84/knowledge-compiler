@@ -1,0 +1,272 @@
+{
+  "spec": "SPEC-007",
+  "id": "exploration-software-api",
+  "domain": "software_architecture",
+  "parent_representation_id": "representation-985e777f01fa9ec8",
+  "focus_entity_id": "api-component",
+  "focus_label": "API component",
+  "provenance_kind": "EXPERIMENT_FIXTURE_AUTHORED",
+  "provenance_note": "Manually authored for SPEC-007; no SourceSpan coordinates or SOURCE origin are claimed.",
+  "child_representation": {
+    "id": "fixture-api-request-handling",
+    "representation_type": "PROCESS_CHAIN",
+    "source_structure_ids": [
+      "fixture-structure-api-request-handling"
+    ],
+    "title": "API request-handling mechanism",
+    "nodes": [
+      {
+        "entity_id": "fixture-request-arrival",
+        "label": "request arrival",
+        "description": "A client request reaches the API boundary.",
+        "entity_type": "PROCESS"
+      },
+      {
+        "entity_id": "fixture-request-parsing",
+        "label": "request parsing",
+        "description": "The API translates transport input into an internal request shape.",
+        "entity_type": "PROCESS"
+      },
+      {
+        "entity_id": "fixture-request-validation",
+        "label": "request validation",
+        "description": "The request is checked before order handling can proceed.",
+        "entity_type": "PROCESS"
+      },
+      {
+        "entity_id": "fixture-order-command",
+        "label": "order command creation",
+        "description": "Validated input becomes a command for order processing.",
+        "entity_type": "PROCESS"
+      },
+      {
+        "entity_id": "fixture-order-handoff",
+        "label": "order-component handoff",
+        "description": "The API passes the order command to the order component.",
+        "entity_type": "PROCESS"
+      }
+    ],
+    "edges": [
+      {
+        "source_entity_id": "fixture-request-arrival",
+        "target_entity_id": "fixture-request-parsing",
+        "relationship_type": "PRECEDES",
+        "relationship_label": "PRECEDES",
+        "meaning": "The source occurs before the target in time or an explicit process sequence.",
+        "direction": "earlier_to_later",
+        "relationship_ids": [
+          "fixture-api-rel-1"
+        ],
+        "evidence": [],
+        "origins": [
+          "INFERRED"
+        ],
+        "edge_key": "edge-f84c834b67587632",
+        "provenance_status": "INFERRED_NO_SOURCE_EVIDENCE"
+      },
+      {
+        "source_entity_id": "fixture-request-parsing",
+        "target_entity_id": "fixture-request-validation",
+        "relationship_type": "PRECEDES",
+        "relationship_label": "PRECEDES",
+        "meaning": "The source occurs before the target in time or an explicit process sequence.",
+        "direction": "earlier_to_later",
+        "relationship_ids": [
+          "fixture-api-rel-2"
+        ],
+        "evidence": [],
+        "origins": [
+          "INFERRED"
+        ],
+        "edge_key": "edge-a2a7a426faba3915",
+        "provenance_status": "INFERRED_NO_SOURCE_EVIDENCE"
+      },
+      {
+        "source_entity_id": "fixture-request-validation",
+        "target_entity_id": "fixture-order-command",
+        "relationship_type": "PRECEDES",
+        "relationship_label": "PRECEDES",
+        "meaning": "The source occurs before the target in time or an explicit process sequence.",
+        "direction": "earlier_to_later",
+        "relationship_ids": [
+          "fixture-api-rel-3"
+        ],
+        "evidence": [],
+        "origins": [
+          "INFERRED"
+        ],
+        "edge_key": "edge-a08e93be3622035c",
+        "provenance_status": "INFERRED_NO_SOURCE_EVIDENCE"
+      },
+      {
+        "source_entity_id": "fixture-order-command",
+        "target_entity_id": "fixture-order-handoff",
+        "relationship_type": "PRECEDES",
+        "relationship_label": "PRECEDES",
+        "meaning": "The source occurs before the target in time or an explicit process sequence.",
+        "direction": "earlier_to_later",
+        "relationship_ids": [
+          "fixture-api-rel-4"
+        ],
+        "evidence": [],
+        "origins": [
+          "INFERRED"
+        ],
+        "edge_key": "edge-db0579607d232ead",
+        "provenance_status": "INFERRED_NO_SOURCE_EVIDENCE"
+      }
+    ],
+    "salience": "PRIMARY",
+    "warnings": [
+      "Experimental fixed fixture; this mechanism was authored for navigation evaluation, not extracted from source."
+    ],
+    "layout": {
+      "strategy": "chronological_axis",
+      "orientation": "LEFT_TO_RIGHT",
+      "width": 1140,
+      "height": 360,
+      "nodes": [
+        {
+          "entity_id": "fixture-order-command",
+          "x": 800,
+          "y": 180,
+          "layer": 3,
+          "order": 0
+        },
+        {
+          "entity_id": "fixture-order-handoff",
+          "x": 1030,
+          "y": 180,
+          "layer": 4,
+          "order": 0
+        },
+        {
+          "entity_id": "fixture-request-arrival",
+          "x": 110,
+          "y": 180,
+          "layer": 0,
+          "order": 0
+        },
+        {
+          "entity_id": "fixture-request-parsing",
+          "x": 340,
+          "y": 180,
+          "layer": 1,
+          "order": 0
+        },
+        {
+          "entity_id": "fixture-request-validation",
+          "x": 570,
+          "y": 180,
+          "layer": 2,
+          "order": 0
+        }
+      ],
+      "edges": [
+        {
+          "edge_key": "edge-a08e93be3622035c",
+          "path_kind": "CUBIC",
+          "points": [
+            {
+              "x": 654,
+              "y": 180
+            },
+            {
+              "x": 685,
+              "y": 180
+            },
+            {
+              "x": 685,
+              "y": 180
+            },
+            {
+              "x": 716,
+              "y": 180
+            }
+          ],
+          "label_x": 685,
+          "label_y": 171
+        },
+        {
+          "edge_key": "edge-a2a7a426faba3915",
+          "path_kind": "CUBIC",
+          "points": [
+            {
+              "x": 424,
+              "y": 180
+            },
+            {
+              "x": 455,
+              "y": 180
+            },
+            {
+              "x": 455,
+              "y": 180
+            },
+            {
+              "x": 486,
+              "y": 180
+            }
+          ],
+          "label_x": 455,
+          "label_y": 171
+        },
+        {
+          "edge_key": "edge-db0579607d232ead",
+          "path_kind": "CUBIC",
+          "points": [
+            {
+              "x": 884,
+              "y": 180
+            },
+            {
+              "x": 915,
+              "y": 180
+            },
+            {
+              "x": 915,
+              "y": 180
+            },
+            {
+              "x": 946,
+              "y": 180
+            }
+          ],
+          "label_x": 915,
+          "label_y": 171
+        },
+        {
+          "edge_key": "edge-f84c834b67587632",
+          "path_kind": "CUBIC",
+          "points": [
+            {
+              "x": 194,
+              "y": 180
+            },
+            {
+              "x": 225,
+              "y": 180
+            },
+            {
+              "x": 225,
+              "y": 180
+            },
+            {
+              "x": 256,
+              "y": 180
+            }
+          ],
+          "label_x": 225,
+          "label_y": 171
+        }
+      ],
+      "diagnostics": {
+        "crossing_count": 0,
+        "node_overlap_count": 0,
+        "connector_length": 248.0,
+        "layer_count": 5,
+        "canonical_edges_opposing_layout_flow": 0
+      }
+    }
+  }
+}
