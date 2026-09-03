@@ -16,9 +16,15 @@ from .resolution_compiler import (
     ResolutionRequest,
     SourceScope,
 )
+from .resolution_strategies import (
+    ResolutionStrategyId,
+    get_resolution_strategy,
+    render_resolution_strategy,
+)
 
 
 PROVIDER = "openai"
+SPEC_009_PROMPT_VERSION = "spec-009-v1"
 
 
 def resolution_schema() -> dict[str, Any]:
@@ -40,14 +46,17 @@ def resolution_schema() -> dict[str, Any]:
     }
 
 
-def build_resolution_instructions() -> str:
+def build_resolution_instructions(
+    strategy_id: ResolutionStrategyId | str = ResolutionStrategyId.GENERIC_DETAIL,
+) -> str:
+    strategy = get_resolution_strategy(strategy_id)
     return f"""You compile exactly one finer semantic resolution for a selected parent concept.
 
-Use only the permitted source text supplied in the request. Produce a local explanatory model
-centered on the selected concept that exposes lower-level steps, components, variables,
-interactions, or mechanisms not visible in its parent representation. Do not merely repeat a
-subset of the parent graph, paraphrase the selected node, or add detail from general knowledge.
-The child should plausibly compress back into the parent concept.
+{render_resolution_strategy(strategy)}
+
+Use only the permitted source text supplied in the request. The selected parent focus must remain
+central. Produce a finer explanatory resolution, not a summary. The child should plausibly
+compress back into the parent concept. Do not add detail from general knowledge.
 
 Return INSUFFICIENT_SOURCE_DETAIL with empty entities, claims, and relationships whenever the
 permitted source cannot support at least two meaningful typed relationships at a finer level.
@@ -68,6 +77,7 @@ Relationship types: {', '.join(item.value for item in RelationshipType)}
 
 def build_resolution_input(request: ResolutionRequest, parent: Any, scope: SourceScope) -> str:
     focus = next(item for item in parent.entities if item.id == request.focus_entity_id)
+    strategy = get_resolution_strategy(request.strategy_id)
     connected = [
         {
             "id": relationship.id,
@@ -89,6 +99,10 @@ def build_resolution_input(request: ResolutionRequest, parent: Any, scope: Sourc
             "domain": request.domain,
         },
         "direct_parent_relationships": connected,
+        "resolution_strategy": {
+            "id": strategy.id.value,
+            "semantic_role": strategy.semantic_role,
+        },
         "permitted_source": {
             "document_id": scope.document_id,
             "strategy": scope.strategy,
@@ -102,8 +116,18 @@ def build_resolution_input(request: ResolutionRequest, parent: Any, scope: Sourc
 class OpenAIResolutionExtractor:
     """Nominate one source-bounded child model using structured Responses output."""
 
-    def __init__(self, *, model: str = DEFAULT_MODEL, api_key: str | None = None, client: Any | None = None) -> None:
+    def __init__(
+        self,
+        *,
+        model: str = DEFAULT_MODEL,
+        prompt_version: str = RESOLUTION_PROMPT_VERSION,
+        api_key: str | None = None,
+        client: Any | None = None,
+    ) -> None:
         self.model = model
+        if not isinstance(prompt_version, str) or not prompt_version.strip():
+            raise ValueError("resolution prompt version must be non-empty")
+        self.prompt_version = prompt_version
         self.api_key = api_key
         self._client = client
 
@@ -124,7 +148,7 @@ class OpenAIResolutionExtractor:
         try:
             response = self._client_or_create().responses.create(
                 model=self.model,
-                instructions=build_resolution_instructions(),
+                instructions=build_resolution_instructions(request.strategy_id),
                 input=build_resolution_input(request, parent, scope),
                 text={
                     "format": {
@@ -154,7 +178,8 @@ class OpenAIResolutionExtractor:
             "extractor": "llm-resolution",
             "provider": PROVIDER,
             "model": getattr(response, "model", None) or self.model,
-            "prompt_version": RESOLUTION_PROMPT_VERSION,
+            "prompt_version": self.prompt_version,
+            "resolution_strategy_id": request.strategy_id.value,
         }
         request_id = getattr(response, "id", None)
         if request_id:

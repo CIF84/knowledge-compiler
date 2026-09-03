@@ -14,12 +14,17 @@ from .models import KnowledgeModel, Origin, ValidationError
 from .openai_extractor import ExtractionError, resolve_output_evidence
 from .representation_builder import RepresentationBuilder
 from .representations import RepresentationModel
+from .resolution_strategies import (
+    ResolutionStrategyId,
+    get_resolution_strategy,
+)
 from .structure_detection import StructureDetector
 from .structures import DetectedStructureSet
 
 
 RESOLUTION_COMPILER_VERSION = "spec-008-v1"
 RESOLUTION_PROMPT_VERSION = "spec-008-v1"
+SPEC_009_COMPILER_VERSION = "spec-009-v1"
 
 
 class ResolutionOutcome(StrEnum):
@@ -37,6 +42,7 @@ class ResolutionRequest:
     focus_entity_id: str
     focus_label: str
     domain: str
+    strategy_id: ResolutionStrategyId = ResolutionStrategyId.GENERIC_DETAIL
 
     def __post_init__(self) -> None:
         for name in (
@@ -46,6 +52,10 @@ class ResolutionRequest:
             value = getattr(self, name)
             if not isinstance(value, str) or not value.strip():
                 raise ValidationError(f"resolution request {name} must be non-empty")
+        try:
+            object.__setattr__(self, "strategy_id", ResolutionStrategyId(self.strategy_id))
+        except (TypeError, ValueError) as exc:
+            raise ValidationError("resolution request strategy_id is invalid") from exc
 
     def validate_against(
         self, parent: KnowledgeModel, parent_representation: RepresentationModel
@@ -235,6 +245,7 @@ class ResolutionCompilationResult:
     provider_metadata: Mapping[str, Any] = field(default_factory=dict)
     artifact: ChildResolutionArtifact | None = None
     grounding_failures: tuple[str, ...] = ()
+    rejected_extraction: Mapping[str, Any] | None = None
     retries: int = 0
 
     def to_dict(self) -> dict[str, Any]:
@@ -246,6 +257,9 @@ class ResolutionCompilationResult:
             "provider_metadata": dict(self.provider_metadata),
             "artifact": self.artifact.to_dict() if self.artifact else None,
             "grounding_failures": list(self.grounding_failures),
+            "rejected_extraction": (
+                dict(self.rejected_extraction) if self.rejected_extraction is not None else None
+            ),
             "retries": self.retries,
         }
 
@@ -258,10 +272,12 @@ def _failure(
     *,
     metadata: Mapping[str, Any] | None = None,
     grounding_failures: tuple[str, ...] = (),
+    rejected_extraction: Mapping[str, Any] | None = None,
 ) -> ResolutionCompilationResult:
     return ResolutionCompilationResult(
         outcome=outcome, request=request, source_scope=scope, reason=reason,
         provider_metadata=metadata or {}, grounding_failures=grounding_failures,
+        rejected_extraction=rejected_extraction,
     )
 
 
@@ -292,9 +308,14 @@ def compile_resolution(
     parent_representation: RepresentationModel,
     request: ResolutionRequest,
     extractor: ResolutionExtractor,
+    *,
+    compiler_version: str = RESOLUTION_COMPILER_VERSION,
 ) -> ResolutionCompilationResult:
     """Compile one child resolution; failures are explicit and never retried."""
+    if not isinstance(compiler_version, str) or not compiler_version.strip():
+        raise ValidationError("resolution compiler version must be non-empty")
     request.validate_against(parent, parent_representation)
+    strategy = get_resolution_strategy(request.strategy_id)
     scope = build_source_scope(parent, request.focus_entity_id)
     parent_before = json.dumps(parent.to_dict(), sort_keys=True)
     try:
@@ -320,11 +341,13 @@ def compile_resolution(
             relationships=extraction.relationships,
             metadata={
                 **dict(extraction.metadata),
-                "resolution_compiler_version": RESOLUTION_COMPILER_VERSION,
+                "resolution_compiler_version": compiler_version,
                 "parent_document_id": request.parent_document_id,
                 "parent_representation_id": request.parent_representation_id,
                 "focus_entity_id": request.focus_entity_id,
                 "source_scope_strategy": scope.strategy,
+                "resolution_strategy_id": strategy.id.value,
+                "resolution_strategy_semantic_role": strategy.semantic_role,
             },
         )
         for item in (*child.claims, *child.relationships):
@@ -340,6 +363,7 @@ def compile_resolution(
         return _failure(
             outcome, request, scope, message, metadata=nomination.metadata,
             grounding_failures=(message,) if outcome is ResolutionOutcome.GROUNDING_FAILURE else (),
+            rejected_extraction=nomination.extraction,
         )
     structures = StructureDetector().detect(child)
     representation = with_layouts(RepresentationBuilder().build(child, structures))
@@ -359,7 +383,7 @@ def compile_resolution(
         provider=str(metadata.get("provider") or "fixture"),
         model=str(metadata.get("model") or "deterministic-fixture"),
         prompt_version=str(metadata.get("prompt_version") or RESOLUTION_PROMPT_VERSION),
-        compiler_version=RESOLUTION_COMPILER_VERSION,
+        compiler_version=compiler_version,
         child_model=child,
         structures=structures,
         representation=representation,

@@ -111,3 +111,16 @@ def test_multi_resolution_cli_preserves_missing_provider_as_failed_live_outcome(
     assert report["outcome_counts"]["PROVIDER_FAILURE"] == 2
     assert report["successful_child_count"] == 0
     assert "0/2 original-source child resolutions succeeded" in capsys.readouterr().out
+
+
+def test_resolution_strategy_cli_preserves_all_missing_provider_attempts(
+    tmp_path: Path, monkeypatch, capsys
+) -> None:
+    monkeypatch.delenv("OPENAI_API_KEY", raising=False)
+    output = tmp_path / "strategy"
+    assert main(["evaluate-resolution-strategies", "--output-dir", str(output)]) == 1
+    report = json.loads((output / "report.json").read_text())
+    assert report["generation_attempt_count"] == 6
+    assert report["outcome_counts"]["PROVIDER_FAILURE"] == 6
+    assert report["provider_call_count"] == 6
+    assert "6/6 paired generation attempts preserved, 6 provider failures" in capsys.readouterr().out

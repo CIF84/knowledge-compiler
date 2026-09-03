@@ -26,6 +26,7 @@ from .resolution_evaluation import (
     default_reference_directory,
     run_resolution_evaluation,
 )
+from .resolution_strategy_evaluation import run_resolution_strategy_evaluation
 from .semantic_navigation import (
     default_spec006_representations_directory,
     prepare_semantic_navigation_evaluation,
@@ -105,6 +106,12 @@ def _parser() -> argparse.ArgumentParser:
     resolution.add_argument("--reference-dir", type=Path, default=default_reference_directory())
     resolution.add_argument("--model", default=DEFAULT_MODEL)
     resolution.add_argument("--output-dir", required=True, type=Path)
+    strategy_evaluation = subcommands.add_parser(
+        "evaluate-resolution-strategies",
+        help="run the live SPEC-009 Generic versus type-aware resolution matrix",
+    )
+    strategy_evaluation.add_argument("--model", default=DEFAULT_MODEL)
+    strategy_evaluation.add_argument("--output-dir", required=True, type=Path)
     view = subcommands.add_parser("view-representations", help="serve a prepared representation review locally")
     view.add_argument("directory", type=Path)
     view.add_argument("--host", default="127.0.0.1")
@@ -116,6 +123,20 @@ def _parser() -> argparse.ArgumentParser:
 def main(argv: list[str] | None = None) -> int:
     args = _parser().parse_args(argv)
     try:
+        if args.command == "evaluate-resolution-strategies":
+            report = run_resolution_strategy_evaluation(
+                output_dir=args.output_dir,
+                model=args.model,
+            )
+            attempts = report["generation_attempt_count"]
+            provider_failures = report["outcome_counts"]["PROVIDER_FAILURE"]
+            print(
+                f"Wrote {args.output_dir / 'report.json'} "
+                f"({attempts}/6 paired generation attempts preserved, "
+                f"{provider_failures} provider failures)"
+            )
+            return 0 if attempts == 6 and provider_failures == 0 else 1
+
         if args.command == "evaluate-multi-resolution":
             report = run_resolution_evaluation(
                 models_dir=args.models_dir,
