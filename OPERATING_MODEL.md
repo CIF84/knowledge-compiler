@@ -2,44 +2,27 @@
 
 ## Purpose
 
-This document describes the **current experimentally supported way of building Knowledge Compiler**.
-
-The operating model is itself a hypothesis that improves through use. We preserve practices that reduce uncertainty, implementation cost, rework, and coordination overhead; we change practices when evidence shows a better way.
-
-The goal is not process compliance. The goal is faster and more reliable learning.
+This document describes the **current experimentally supported way of building Knowledge Compiler**. The goal is not process compliance; it is faster and more reliable learning.
 
 ## Core Operating Loop
 
 ```text
 QUESTION / UNCERTAINTY
-        │
-        ▼
+        ↓
 ChatGPT — product and architecture reasoning
-        │
-        ▼
+        ↓
 SPEC-N — bounded implementation experiment
-        │
-        ▼
-Codex — implementation + tests + commit + push
-        │
-        ▼
+        ↓
+Codex — implementation + tests + evaluation + commit + push
+        ↓
 GitHub — canonical implementation state
-        │
-        ▼
+        ↓
 ChatGPT — independent review against SPEC
-        │
-        ▼
+        ↓
 DEBRIEF-N — evidence, findings, deviations, learnings
-        │
-        ▼
+        ↓
 update canonical project models when warranted
-        │
-        ├── PROJECT_MEMORY.md
-        ├── ARCHITECTURE.md
-        ├── OPERATING_MODEL.md
-        └── PROJECT_HEALTH.md
-        │
-        ▼
+        ↓
 next highest-value uncertainty
 ```
 
@@ -47,166 +30,128 @@ next highest-value uncertainty
 
 ### ChatGPT
 
-Primary responsibilities:
+- identify the highest-value uncertainty;
+- define narrow experiments;
+- write implementation SPECs;
+- independently inspect completed implementation;
+- write DEBRIEFs;
+- maintain project memory, architecture, operating model, and health.
 
-- product reasoning
-- architecture reasoning
-- identify the highest-value uncertainty
-- define narrow experiments
-- write implementation SPECs
-- independently inspect completed implementation
-- write/review DEBRIEFs
-- maintain canonical project models
-
-ChatGPT should not accept implementation summaries as verification when repository inspection is possible.
+Do not accept implementation summaries as verification when repository inspection is possible.
 
 ### Codex
 
-Primary responsibilities:
-
-- inspect the repository and relevant project memory before implementation
-- treat the active SPEC as the implementation contract
-- implement autonomously within scope
-- run tests and relevant packaging/validation checks
-- avoid unrelated refactoring
-- commit completed work
-- push completed work to the canonical remote before review handoff
-- report architecture, changed files, validation results, deviations, and commit SHA
+- inspect the repository and relevant project memory;
+- treat the active SPEC as the implementation contract;
+- implement autonomously within scope;
+- run deterministic tests and required live evaluation;
+- avoid unrelated refactoring;
+- preserve failed experimental attempts when required;
+- commit and push before review handoff;
+- report architecture, validation, evaluation, deviations, and commit SHA.
 
 ### GitHub Repository
 
-The repository is the durable source of truth for:
-
-- implementation
-- specifications
-- debriefs
-- project memory
-- architecture baseline
-- operating model
-- project health
-- roadmap and product thesis
-
-Conversation threads are working contexts, not durable project memory.
+GitHub is the durable source of truth for implementation, specs, debriefs, project memory, architecture, operating model, health, roadmap, and product thesis. Conversation threads are working context, not durable memory.
 
 ## SPEC Protocol
 
-Every implementation increment should have one primary SPEC.
-
-A good SPEC should contain:
-
-- question or uncertainty being tested
-- objective
-- rationale
-- scope
-- explicit non-goals
-- architectural constraints
-- acceptance criteria
-- tests/validation expectations
-- expected outputs
-- relevant prior debriefs and canonical documents to read
+Every increment should have one primary uncertainty. A good SPEC includes objective, rationale, bounded scope, explicit non-goals, architecture constraints, acceptance criteria, validation, expected artifacts, and relevant prior debriefs.
 
 Prefer one major uncertainty per SPEC.
 
 ## DEBRIEF Protocol
 
-Every completed SPEC must have a matching DEBRIEF.
-
-```text
-specs/SPEC-NNN-name.md
-debriefs/DEBRIEF-NNN-name.md
-```
-
-The debrief records reality rather than intent:
-
-- what was implemented
-- what was verified
-- deviations from the SPEC
-- unexpected findings
-- design decisions
-- what worked
-- what created friction
-- unresolved questions
-- implications for the next experiment
-- whether product, architecture, or operating-model understanding changed
-
-A debrief is not a changelog. It preserves why the project now believes what it believes.
-
-## Canonical-Model Update Rule
-
-At the end of each debrief ask:
-
-```text
-Did this increment change our understanding of:
-
-[ ] Product / project memory
-[ ] Architecture
-[ ] Operating process
-[ ] Project health / risk
-[ ] None
-```
-
-Only update a canonical document when evidence warrants it.
-
-This prevents speculative discussion from silently becoming project doctrine.
+Every completed SPEC must have a matching DEBRIEF. Debriefs preserve actual outcome, evidence, deviations, findings, decisions, unresolved questions, next implications, and whether canonical models changed.
 
 ## Current Practices With Positive Evidence
 
-The following practices have now worked across two implementation cycles and should remain defaults until contradicted by evidence:
+The following practices have now worked across three implementation cycles:
 
-- separate product/architecture reasoning from implementation orchestration
-- convert decisions into a focused repository SPEC
-- define explicit non-goals to resist scope expansion
-- test semantic foundations before investing in UI
-- use deterministic fixtures around probabilistic boundaries where possible
-- have Codex implement autonomously rather than micromanaging individual edits
-- require tests before accepting an increment
-- independently inspect repository state after Codex reports completion
-- require completed implementation to be pushed before independent review
-- pair every SPEC with a DEBRIEF
-- preserve current architecture separately from future architecture
-- let evidence update project models
-- preserve machine-generated evaluation artifacts separately from human interpretation
-- accept negative experimental findings instead of hiding them behind repair heuristics
-- improve probabilistic behavior at prompt/adapter boundaries before weakening trusted domain invariants
+- separate product/architecture reasoning from implementation orchestration;
+- convert decisions into a focused repository SPEC;
+- define explicit non-goals to resist scope expansion;
+- use the repository as the context carrier so Codex prompts remain short;
+- use deterministic fixtures around probabilistic boundaries;
+- require real evaluation only when it tests the active uncertainty;
+- keep provider/model constant when a before/after experiment benefits from causal comparability;
+- have Codex implement autonomously rather than micromanaging edits;
+- require tests before acceptance;
+- require completed implementation to be pushed before independent review;
+- independently inspect repository state rather than trusting summaries;
+- pair every SPEC with a DEBRIEF;
+- preserve current architecture separately from future architecture;
+- preserve machine-generated evaluation artifacts separately from human interpretation;
+- compare experiments against accepted baselines when possible;
+- turn prior observed failures into regression expectations;
+- accept negative findings instead of hiding them behind repair heuristics;
+- improve probabilistic behavior at prompt/adapter boundaries before weakening trusted invariants;
+- let evidence, not preference, update project models.
 
-Evidence is still early, but SPEC-002 materially strengthened confidence in this workflow.
+SPEC-003 strengthens confidence that this operating model is converging rather than merely documenting activity.
+
+## Experimental Comparison Practice
+
+When a SPEC tests an improvement to probabilistic behavior, prefer changing one major variable at a time where practical.
+
+SPEC-003 kept the provider, model, and five-domain corpus constant while changing relationship semantics. This made the before/after result materially more interpretable.
+
+Where an accepted prior artifact exists:
+
+```text
+accepted baseline
+      ↓
+new bounded change
+      ↓
+same evaluation corpus
+      ↓
+comparison artifact
+      ↓
+human review
+```
+
+Use this pattern when the comparison itself is decision-relevant. Do not create baseline machinery for every implementation change.
+
+## Human Review Principle
+
+Live model calls are currently inexpensive; semantic human review is becoming the larger cognitive cost.
+
+Respond conservatively:
+
+- automate deterministic regression checks when semantics are explicit enough;
+- preserve inspectable artifacts;
+- do not replace human semantic review with a second LLM judge until that judging mechanism is itself validated;
+- reduce review burden through focused experiments rather than larger evaluation suites by default.
 
 ## Security / Secret Handling
 
-Secrets must never become repository or handoff content.
-
-Rules:
-
 - keep API keys in environment variables or approved secret stores;
 - never commit `.env` files or literal secrets;
-- do not echo secret values into implementation summaries, screenshots, logs, or handoff artifacts;
-- when a secret may have appeared in visible terminal-state output or another unintended surface, treat it as exposed and rotate it promptly;
-- report only whether a required secret is present, never its value.
-
-This rule was added after SPEC-002 exposed an API key in internal terminal-state output during environment handoff, despite no key being committed to the repository.
+- never echo secret values into handoffs, screenshots, logs, or artifacts;
+- report only whether a secret is present, never its value;
+- rotate immediately when accidental exposure is suspected.
 
 ## Process Failure Signals
 
 Watch for:
 
-- SPECs containing multiple unrelated experiments
-- repeated scope expansion during implementation
-- implementation summaries accepted without inspection
-- architecture documentation describing planned rather than current reality
-- decisions existing only in conversation history
-- repeated rediscovery of previously answered questions
-- local/remote repository divergence causing verification friction
-- secrets appearing in logs or handoff output
-- documentation maintenance costing more than the uncertainty it removes
-- tests validating implementation details rather than product-relevant behavior
-- abstractions introduced before a concrete second use case exists
-- schema-valid outputs being mistaken for product-valid outputs
+- SPECs containing multiple unrelated experiments;
+- repeated scope expansion;
+- implementation summaries accepted without inspection;
+- multiple major variables changing in an experiment that depends on before/after attribution;
+- aspirational architecture becoming canonical before implementation evidence;
+- decisions living only in chat history;
+- repeated rediscovery of prior findings;
+- local/remote divergence;
+- secrets in logs or handoffs;
+- ontology or prompt growth without demonstrated value;
+- documentation maintenance costing more than the uncertainty it removes;
+- tests validating implementation details rather than product-relevant behavior;
+- schema-valid output being mistaken for product-valid output.
 
 ## Efficiency Principle
 
-The operating model should converge toward lower cost per useful learning.
-
-We care about the relationship:
+Optimize for:
 
 ```text
 implementation effort
@@ -218,33 +163,27 @@ reduced uncertainty
 better next experiment
 ```
 
-A technically larger increment is not necessarily more productive. Prefer experiments that maximize decision-relevant learning for the least implementation and coordination cost.
-
-SPEC-002 demonstrated that five-domain live semantic experiments can be run at very low direct model cost, making frequent targeted validation economically practical.
+SPEC-002 and SPEC-003 show that five-domain live semantic experiments can be run at very low direct model cost. The binding constraint is increasingly interpretation quality, not API spend.
 
 ## Reconstruction Test
 
-A new ChatGPT/Codex thread should be able to reconstruct the project by reading, approximately in this order:
+A fresh collaborator should reconstruct the project approximately in this order:
 
-1. `README.md` — what and why
-2. `ROADMAP.md` — direction
-3. `PROJECT_MEMORY.md` — accumulated learning
-4. `ARCHITECTURE.md` — current system
-5. `OPERATING_MODEL.md` — how the project is built
-6. `PROJECT_HEALTH.md` — current alignment, drift, risks, uncertainty
-7. relevant `DEBRIEF-*` files — evidence/history
-8. active `SPEC-*` — current experiment
-9. implementation/tests — executable reality
+1. `README.md`
+2. `ROADMAP.md`
+3. `PROJECT_MEMORY.md`
+4. `ARCHITECTURE.md`
+5. `OPERATING_MODEL.md`
+6. `PROJECT_HEALTH.md`
+7. relevant `DEBRIEF-*`
+8. active `SPEC-*`
+9. implementation/tests/evaluation artifacts
 
-If this is insufficient to resume work safely, project memory is incomplete.
+If this is insufficient to resume safely, project memory is incomplete.
 
-SPEC-002 provided indirect positive evidence for reconstruction: a short implementation prompt was sufficient because the repository carried the relevant context. A fully fresh-thread reconstruction test remains outstanding.
+A deliberately fresh-thread reconstruction test remains outstanding, although three increasingly concise implementation handoffs provide indirect positive evidence.
 
 ## Evolution Rule
-
-The operating model is versioned implicitly through Git history and explicitly through debrief evidence.
-
-When a process change is proposed:
 
 ```text
 process hypothesis
@@ -258,4 +197,4 @@ DEBRIEF
 retain, modify, or reject
 ```
 
-Do not optimize process from preference alone when it can be tested through normal project work.
+Do not optimize process from preference alone when normal project work can test it.
