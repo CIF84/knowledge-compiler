@@ -18,45 +18,13 @@ debriefs/DEBRIEF-NNN-short-name.md
 
 The number and short name must match.
 
-Example:
-
-```text
-specs/SPEC-001-text-to-knowledge-model.md
-debriefs/DEBRIEF-001-text-to-knowledge-model.md
-```
-
 ## Role of a SPEC
 
-A SPEC is prospective.
-
-It records:
-
-- the problem being addressed;
-- the hypothesis or uncertainty being tested;
-- scope;
-- explicit non-goals;
-- architectural constraints;
-- expected interfaces and data contracts;
-- acceptance criteria;
-- implementation guidance.
-
-A SPEC should describe the desired increment without pretending to know what implementation will teach us.
+A SPEC is prospective. It records the problem, uncertainty, scope, non-goals, architectural constraints, acceptance criteria, and implementation guidance.
 
 ## Role of a DEBRIEF
 
-A DEBRIEF is retrospective.
-
-It records:
-
-- what was actually implemented;
-- outcome against the original hypothesis;
-- findings and learnings;
-- material deviations from the spec;
-- architecture or product decisions that should carry forward;
-- engineering follow-ups discovered but deliberately deferred;
-- unresolved questions;
-- implications for the next spec;
-- relevant implementation commit(s).
+A DEBRIEF is retrospective. It records what was actually implemented, what happened, what was learned, material deviations, decisions, unresolved questions, and implications for the next experiment.
 
 A debrief is not a changelog. Its main job is to preserve **why the project now believes what it believes**.
 
@@ -78,40 +46,16 @@ UPDATED PROJECT MODEL
       SPEC-N+1
 ```
 
-The debrief closes the learning loop.
-
 ## Rules
 
 1. No completed SPEC should remain without a matching DEBRIEF.
 2. The DEBRIEF should be written only after implementation and review.
-3. Do not rewrite old debriefs simply because later thinking changes. They are historical records.
+3. Do not rewrite old debriefs simply because later thinking changes.
 4. If a previous decision is overturned, record the change in the new debrief and reference the earlier decision.
 5. Keep speculative future architecture out of debrief decisions unless implementation produced evidence for it.
 6. Record deferred issues without automatically expanding the completed milestone to fix them.
-7. Every new SPEC should read relevant prior DEBRIEFS before defining scope.
+7. Every new SPEC should read relevant prior DEBRIEFs before defining scope.
 8. Prefer explicit uncertainty over retrospective certainty.
-
-## Decision Provenance
-
-When an architectural or product decision matters across increments, record where it came from.
-
-Example:
-
-```text
-Decision: KnowledgeModel is the semantic IR.
-Origin: DEBRIEF-001
-Status: active
-```
-
-If later overturned:
-
-```text
-Decision: Replace single KnowledgeModel with layered semantic IR.
-Origin: DEBRIEF-006
-Supersedes: DEBRIEF-001 decision on single semantic IR
-```
-
-This creates an evolutionary trail without requiring a separate heavyweight architecture-decision process during the early builder phase.
 
 ## Current Memory Index
 
@@ -119,6 +63,7 @@ This creates an evolutionary trail without requiring a separate heavyweight arch
 | --- | --- | --- | --- |
 | 001 — Text to KnowledgeModel | [`SPEC-001`](specs/SPEC-001-text-to-knowledge-model.md) | [`DEBRIEF-001`](debriefs/DEBRIEF-001-text-to-knowledge-model.md) | Accepted |
 | 002 — LLM Semantic Extraction | [`SPEC-002`](specs/SPEC-002-llm-semantic-extraction.md) | [`DEBRIEF-002`](debriefs/DEBRIEF-002-llm-semantic-extraction.md) | Accepted — mixed semantic outcome |
+| 003 — Relationship Semantics | [`SPEC-003`](specs/SPEC-003-relationship-semantics.md) | [`DEBRIEF-003`](debriefs/DEBRIEF-003-relationship-semantics.md) | Accepted — improved semantic precision |
 
 ## Current Learning Summary
 
@@ -130,13 +75,21 @@ This creates an evolutionary trail without requiring a separate heavyweight arch
 
 ### After SPEC-002
 
-- a real LLM can populate the same IR across physics, software architecture, economics, biology, and history without downstream architectural redesign;
+- a real LLM can populate the same IR across physics, software architecture, economics, biology, and history without downstream redesign;
 - exact evidence grounding works better when the LLM returns quotes and deterministic code resolves source coordinates;
-- fail-closed validation caught real provenance and ambiguity failures without weakening invariants;
-- cross-domain schema validity is not enough: relationship meaning and direction can still be wrong;
-- the initial relationship vocabulary is too narrow in several domains and can force semantic distortions;
-- multi-domain live experiments are cheap enough to repeat frequently;
-- the next important product problem is relationship semantics, not visualization.
+- schema validity is not semantic correctness;
+- the initial relationship vocabulary and bare enum labels caused cross-domain semantic distortion;
+- multi-domain live experiments are cheap enough to repeat frequently.
+
+### After SPEC-003
+
+- explicit relationship contracts materially improve predicate choice and direction across the same five-domain corpus;
+- only three new general predicates (`AFFECTS`, `BINDS_TO`, `TRANSFERS_TO`) were needed to fix several cross-domain distortions;
+- relationship families provide useful lightweight semantic organization without requiring a schema migration;
+- truthful claims are preferable to forced graph edges when no predicate fits;
+- remaining semantic errors now concentrate more on endpoint selection, polarity, duplicates, event/state distinctions, and entity modeling than on missing predicates;
+- further vocabulary expansion is not currently justified;
+- the next important architectural question is whether the current graph can support useful higher-order structure detection.
 
 ## Active Decisions
 
@@ -161,6 +114,23 @@ Status: active
 
 Relationship vocabulary evolves through cross-domain evidence, not opportunistic enum growth.
 Origin: DEBRIEF-002
+Strengthened: DEBRIEF-003
+Status: active
+
+Relationship semantics have one canonical provider-independent definition.
+Origin: DEBRIEF-003
+Status: active
+
+Explicit meaning and direction are part of a relationship contract.
+Origin: DEBRIEF-003
+Status: active
+
+Prefer truthful claims over forced edges.
+Origin: DEBRIEF-003
+Status: active
+
+Freeze relationship-vocabulary expansion until new cross-domain evidence justifies it.
+Origin: DEBRIEF-003
 Status: active
 ```
 
