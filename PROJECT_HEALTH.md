@@ -15,33 +15,37 @@ This document is the lightweight monitoring surface for alignment, drift, uncert
 
 | Dimension | Status | Evidence / interpretation |
 | --- | --- | --- |
-| Product alignment | ALIGNED | SPEC-004 tested the next architectural assumption directly: whether the semantic IR can yield useful higher-order structures. |
-| Scope discipline | ALIGNED | Work stayed deterministic and downstream; no new LLM behavior, ingestion, persistence, visualization, or ontology expansion was introduced. |
-| Architecture alignment | ALIGNED | `StructureDetector` consumes `KnowledgeModel` directly and produces a separate `DetectedStructureSet` without bypassing the semantic IR. |
-| Memory alignment | ALIGNED | SPEC-004 now has a paired DEBRIEF and canonical project models reflect the new structure layer. |
-| Process effectiveness | ALIGNED | Fourth complete repo-centered cycle succeeded; accepted SPEC-003 artifacts were reused as stable downstream evaluation inputs. |
-| Test confidence | ALIGNED | Reported suite expanded to 60 offline tests; five-domain structure artifacts were reproduced byte-for-byte and 5/5 domains met expectations. |
-| Complexity discipline | ALIGNED | No graph library, new provider, ontology framework, or visualization stack was added; algorithms use the standard library. |
-| Reproducibility | ALIGNED | Structure detection is deterministic and accepted artifacts reproduced byte-for-byte. Fresh-thread reconstruction remains a separate watch item. |
+| Product alignment | ALIGNED | SPEC-005 tested the original product promise directly; the owner reported immediate cognitive improvement and a clear preference to learn with the representation available. |
+| Scope discipline | ALIGNED | Representation work stayed downstream; no extraction, ontology, structure-repair, persistence, simulation, or product-platform expansion occurred. |
+| Architecture alignment | ALIGNED | `RepresentationBuilder` consumes `KnowledgeModel` + `DetectedStructureSet` and produces a separate deterministic `RepresentationModel`. |
+| Memory alignment | ALIGNED | SPEC-005 has a paired DEBRIEF and canonical project models reflect the representation layer and human findings. |
+| Process effectiveness | ALIGNED | Fifth repo-centered cycle succeeded and added direct owner interaction after repository verification for a UI-bearing increment. |
+| Test confidence | ALIGNED | Reported suite expanded to 75 offline tests; deterministic representation regeneration and provenance integrity passed across all five domains. |
+| Complexity discipline | ALIGNED | Viewer uses zero runtime dependencies beyond standard-library serving; no frontend framework or general graph platform was introduced. |
+| Reproducibility | ALIGNED | Representation artifacts are deterministic and reported byte-for-byte reproducible. Fresh-thread reconstruction remains a separate watch item. |
 | Repository state discipline | ALIGNED | Implementation was committed and pushed before review; canonical remote state was explicit. |
-| Semantic generality | ALIGNED | The same detector operates across five unrelated domains and correctly allows domains with no composable structures. |
-| Relationship vocabulary fitness | ALIGNED | SPEC-004 required no vocabulary expansion, strengthening the current freeze. |
-| Semantic relationship precision | WATCH | Upstream endpoint, chronology, state, polarity, and measurement issues still affect downstream structures. |
-| Source grounding | ALIGNED | Structure detection preserves relationship IDs and therefore retains the path back to grounded source evidence. |
-| Structure composition | ALIGNED | Useful hierarchies, causal paths, dependency chains, chronology, and feedback candidates were detected without source re-reading. |
-| Entity/event/state modeling | WATCH | SPEC-004 provides concrete evidence that weak event/state endpoints degrade process and feedback representations in several domains. |
-| Duplicate relationship control | ALIGNED | Exact duplicate triples are safely collapsed for traversal while original relationship IDs remain preserved. |
-| Pedagogical salience | WATCH | Some structurally valid outputs are weak learning artifacts, e.g. a one-edge classification hierarchy. Representation must distinguish existence from usefulness. |
-| Prompt complexity | WATCH | SPEC-003 grammar remains large; SPEC-004 extracted downstream value without increasing it. |
-| Human semantic review burden | WATCH | Offline deterministic structure evaluation reduces variance, but deciding pedagogical usefulness still requires judgment. |
+| Semantic generality | ALIGNED | The same representation layer handles five unrelated domains and preserves truthful empty output for biology. |
+| Relationship vocabulary fitness | ALIGNED | SPEC-005 required no vocabulary expansion, strengthening the freeze. |
+| Semantic relationship precision | WATCH | Upstream endpoint, chronology, state, polarity, and measurement issues remain visible in rendered output. |
+| Source grounding | ALIGNED | Learner-visible edges retain complete provenance to validated source evidence. |
+| Structure composition | ALIGNED | Existing deterministic structures map cleanly into presentation models without source reinterpretation. |
+| Representation usefulness | ALIGNED | First direct owner evaluation was strongly positive: improved orientation, engagement, and preference to learn with the tool. Evidence remains single-user qualitative. |
+| Representation integrity | ALIGNED | All five committed domain artifacts report valid references, preserved semantics, exact evidence copying, and complete provenance. |
+| Interaction coherence | WATCH | Selecting an edge does not yet persistently synchronize highlighting across graph edge, relationship control, detail, and evidence surfaces. |
+| Spatial layout | WATCH | Current placement is functional but not sufficiently structure-aware; long diagonals/uneven geometry add avoidable interpretation work. |
+| Entity/event/state modeling | WATCH | Rendering makes existing event/state endpoint limitations more obvious, but they do not yet block useful representation generally. |
+| Duplicate relationship control | ALIGNED | Duplicate support relationships remain collapsed for presentation while retaining provenance. |
+| Pedagogical salience | ALIGNED | Simple PRIMARY/SECONDARY/SPARSE handling prevents trivial one-edge structures from dominating and preserves explicit empty states. It remains coarse. |
+| Prompt complexity | WATCH | SPEC-003 grammar remains large; SPEC-005 added downstream value without increasing it. |
+| Human review burden | WATCH | Product usefulness now genuinely requires interaction-based review; focused owner evaluation worked, but broader measurement remains unproven. |
 | Security / secret handling | WATCH | Security rules remain active; exposed SPEC-002 key rotation is not confirmed in repository evidence. |
-| Cost / effort efficiency | ALIGNED | SPEC-004 answered its question with zero model/API cost and reused accepted artifacts as fixtures. |
+| Cost / effort efficiency | ALIGNED | SPEC-005 reused accepted upstream artifacts and required no model/API cost; direct human review quickly exposed the next constraints. |
 
 ## Highest-Value Current Uncertainty
 
-> Can a small set of deterministic visual/interactive representations turn `DetectedStructureSet` plus grounded `KnowledgeModel` context into a learning artifact that is materially easier to think with than the underlying text or JSON?
+> Can structure-aware deterministic layout plus synchronized semantic selection make the existing representations materially easier to parse and manipulate as coherent mental models, without adding semantic inference or general frontend complexity?
 
-This should drive SPEC-005.
+This should drive SPEC-006.
 
 ## Active Watch Items
 
@@ -51,39 +55,45 @@ A genuinely fresh-thread reconstruction test remains unperformed.
 
 ### W-002 — Endpoint / event / state semantics
 
-SPEC-004 shows this is no longer merely an extraction-quality concern. Endpoint/state weaknesses can prevent expected paths from composing or make chronology/feedback structures misleading.
+Rendering strengthens evidence that endpoint/state weaknesses degrade process and feedback representations.
 
-**Response:** carry as a known constraint into representation; redesign only when a focused experiment demonstrates the minimum needed change.
+**Response:** keep defects visible and attributed upstream; do not redesign semantic IR until representation work shows they materially block learning value.
 
 ### W-003 — Polarity preservation
 
 Current causal paths and feedback candidates do not reliably preserve positive/negative/prevention polarity.
 
-**Response:** do not expand predicates opportunistically; observe what the first representation experiment actually needs.
+**Response:** do not expand predicates opportunistically; feedback remains explicitly a candidate.
 
-### W-004 — Pedagogical salience
+### W-004 — Interaction coherence
 
-The detector can return technically correct but low-value structures.
+The same relationship appears as graph edge, relationship control, detail, and evidence, but selection state is not yet synchronized across all surfaces.
 
-**Response:** representation should select/emphasize useful structures without changing detector truth semantics.
+**Response:** test shared semantic selection with click-to-select and hover-to-preview behavior in SPEC-006.
 
-### W-005 — Prompt complexity
+### W-005 — Spatial layout
+
+Current graph geometry is functional but not in sufficient visual harmony with the semantic structures.
+
+**Response:** test structure-specific deterministic layout grammars before broader progressive disclosure or UI polish.
+
+### W-006 — Prompt complexity
 
 The canonical grammar remains materially larger after SPEC-003.
 
 **Response:** continue extracting value downstream before adding semantic prompt complexity.
 
-### W-006 — Human semantic review bottleneck
+### W-007 — Human review bottleneck
 
-Direct computation/model cost is tiny; judgment about correctness and learning usefulness is increasingly the expensive step.
+Direct human interaction now provides product evidence that deterministic tests cannot.
 
-**Response:** automate only deterministic checks; keep human product evaluation for representation quality until a reliable measurement method exists.
+**Response:** keep reviews focused on one product uncertainty and use fixed artifacts to minimize review burden.
 
-### W-007 — Inference provenance model
+### W-008 — Inference provenance model
 
 The strict `SOURCE` vs `INFERRED` distinction remains useful. A separate supporting-evidence concept remains unproven.
 
-### W-008 — Secret rotation
+### W-009 — Secret rotation
 
 SPEC-002 exposed an API key in terminal-state output.
 
@@ -93,21 +103,29 @@ SPEC-002 exposed an API key in terminal-state output.
 
 ### R-001 — Relationship vocabulary drift
 
-Resolved in SPEC-003 and strengthened in SPEC-004: no new predicate was required for structure detection.
+Resolved in SPEC-003 and strengthened through SPEC-005: downstream structure and representation required no new predicates.
 
 ### R-002 — Semantic edge precision drift
 
-Severe predicate/direction failures remain improved; residual issues remain WATCH rather than DRIFT.
+Severe predicate/direction failures remain improved; residual upstream issues remain WATCH rather than DRIFT.
 
-### R-003 — Duplicate relationships for downstream traversal
+### R-003 — Duplicate relationships for downstream traversal/presentation
 
-SPEC-004 safely collapses exact duplicate triples during discovery while retaining provenance IDs.
+Exact duplicate triples can be collapsed while preserving all provenance IDs/evidence.
 
 ### R-004 — Structure-detection uncertainty
 
-Resolved positively: the current IR supports useful deterministic higher-order composition with known upstream limitations.
+Resolved positively in SPEC-004: the current IR supports useful deterministic higher-order composition.
 
-### R-005 — Local vs remote repository state
+### R-005 — Minimal representation uncertainty
+
+Resolved positively for the owner benchmark: deterministic interactive representations can materially improve cognitive orientation and are preferred as a learning aid.
+
+### R-006 — Pedagogical salience baseline
+
+Improved in SPEC-005: coarse deterministic salience plus explicit sparse/empty states is sufficient for the current benchmark.
+
+### R-007 — Local vs remote repository state
 
 Push-before-review remains reliable.
 
@@ -119,10 +137,12 @@ Mark a dimension `DRIFT` when examples such as these occur:
 - provider-specific types leak into the semantic core;
 - representation or structure detection re-reads source independently instead of consuming canonical IR/context;
 - source-derived evidence provenance is lost;
-- detector invents missing links or treats generic connectivity as semantics;
-- weak/empty structures are hidden or repaired solely for presentation completeness;
+- detector or representation invents missing links solely for presentation completeness;
+- weak/empty structures are hidden or repaired;
 - relationship vocabulary grows without cross-domain evidence;
 - structurally valid output is treated as automatically pedagogically useful;
+- viewer interactions silently mutate canonical semantic truth;
+- generic graph aesthetics are prioritized over structure-specific cognitive legibility;
 - SPEC scope repeatedly expands;
 - project memory becomes stale relative to implementation;
 - documentation overhead materially slows learning.
@@ -141,6 +161,11 @@ After each completed SPEC/DEBRIEF pair ask:
 8. Could a fresh context reconstruct the project?
 9. What uncertainty was reduced?
 10. What is now the highest-value uncertainty?
+
+For UI-bearing experiments also ask:
+
+11. Did a human actually interact with the artifact before acceptance?
+12. Did the interaction reveal a semantic, spatial, or behavioral problem that repository inspection could not?
 
 ## Convergence Goal
 
