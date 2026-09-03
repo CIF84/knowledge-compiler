@@ -1,0 +1,341 @@
+{
+  "source_document_id": "text-e6c889f45171a12a",
+  "structures": [
+    {
+      "id": "structure-causal-path-e29d4d41ce903371",
+      "structure_type": "CAUSAL_PATH",
+      "entity_ids": [
+        "demand-elasticity",
+        "market-price",
+        "quantity-demanded"
+      ],
+      "relationship_ids": [
+        "rel-demand-elasticity-affects-price-increase",
+        "rel-higher-price-decreases-quantity-demanded"
+      ],
+      "relationship_types": [
+        "AFFECTS",
+        "DECREASES"
+      ],
+      "metadata": {
+        "supporting_relationship_ids_by_edge": [
+          [
+            "rel-demand-elasticity-affects-price-increase"
+          ],
+          [
+            "rel-higher-price-decreases-quantity-demanded"
+          ]
+        ],
+        "edge_count": 2
+      }
+    },
+    {
+      "id": "structure-causal-path-9a1584b664c4b897",
+      "structure_type": "CAUSAL_PATH",
+      "entity_ids": [
+        "demand-elasticity",
+        "market-price",
+        "quantity-supplied"
+      ],
+      "relationship_ids": [
+        "rel-demand-elasticity-affects-price-increase",
+        "rel-higher-price-increases-quantity-supplied"
+      ],
+      "relationship_types": [
+        "AFFECTS",
+        "INCREASES"
+      ],
+      "metadata": {
+        "supporting_relationship_ids_by_edge": [
+          [
+            "rel-demand-elasticity-affects-price-increase"
+          ],
+          [
+            "rel-higher-price-increases-quantity-supplied"
+          ]
+        ],
+        "edge_count": 2
+      }
+    },
+    {
+      "id": "structure-causal-path-d738d616eca1560b",
+      "structure_type": "CAUSAL_PATH",
+      "entity_ids": [
+        "demand-elasticity",
+        "market-price",
+        "shortage",
+        "upward-pressure-on-price"
+      ],
+      "relationship_ids": [
+        "rel-demand-elasticity-affects-price-increase",
+        "rel-higher-price-narrows-shortage",
+        "rel-shortage-causes-upward-pressure"
+      ],
+      "relationship_types": [
+        "AFFECTS",
+        "DECREASES",
+        "CAUSES"
+      ],
+      "metadata": {
+        "supporting_relationship_ids_by_edge": [
+          [
+            "rel-demand-elasticity-affects-price-increase"
+          ],
+          [
+            "rel-higher-price-narrows-shortage"
+          ],
+          [
+            "rel-shortage-causes-upward-pressure"
+          ]
+        ],
+        "edge_count": 3
+      }
+    },
+    {
+      "id": "structure-causal-path-4dac0d5bd5f58c5e",
+      "structure_type": "CAUSAL_PATH",
+      "entity_ids": [
+        "supply-reduction",
+        "market-price",
+        "quantity-demanded"
+      ],
+      "relationship_ids": [
+        "rel-supply-reduction-causes-price-increase",
+        "rel-higher-price-decreases-quantity-demanded"
+      ],
+      "relationship_types": [
+        "CAUSES",
+        "DECREASES"
+      ],
+      "metadata": {
+        "supporting_relationship_ids_by_edge": [
+          [
+            "rel-supply-reduction-causes-price-increase"
+          ],
+          [
+            "rel-higher-price-decreases-quantity-demanded"
+          ]
+        ],
+        "edge_count": 2
+      }
+    },
+    {
+      "id": "structure-causal-path-18c3db4206eb571d",
+      "structure_type": "CAUSAL_PATH",
+      "entity_ids": [
+        "supply-reduction",
+        "market-price",
+        "quantity-supplied"
+      ],
+      "relationship_ids": [
+        "rel-supply-reduction-causes-price-increase",
+        "rel-higher-price-increases-quantity-supplied"
+      ],
+      "relationship_types": [
+        "CAUSES",
+        "INCREASES"
+      ],
+      "metadata": {
+        "supporting_relationship_ids_by_edge": [
+          [
+            "rel-supply-reduction-causes-price-increase"
+          ],
+          [
+            "rel-higher-price-increases-quantity-supplied"
+          ]
+        ],
+        "edge_count": 2
+      }
+    },
+    {
+      "id": "structure-causal-path-64b82b54c71fc8b6",
+      "structure_type": "CAUSAL_PATH",
+      "entity_ids": [
+        "supply-reduction",
+        "market-price",
+        "shortage",
+        "upward-pressure-on-price"
+      ],
+      "relationship_ids": [
+        "rel-supply-reduction-causes-price-increase",
+        "rel-higher-price-narrows-shortage",
+        "rel-shortage-causes-upward-pressure"
+      ],
+      "relationship_types": [
+        "CAUSES",
+        "DECREASES",
+        "CAUSES"
+      ],
+      "metadata": {
+        "supporting_relationship_ids_by_edge": [
+          [
+            "rel-supply-reduction-causes-price-increase"
+          ],
+          [
+            "rel-higher-price-narrows-shortage"
+          ],
+          [
+            "rel-shortage-causes-upward-pressure"
+          ]
+        ],
+        "edge_count": 3
+      }
+    },
+    {
+      "id": "structure-causal-path-2bdc6e8127d77cf6",
+      "structure_type": "CAUSAL_PATH",
+      "entity_ids": [
+        "surplus",
+        "downward-pressure-on-price",
+        "market-price",
+        "quantity-demanded"
+      ],
+      "relationship_ids": [
+        "rel-surplus-causes-downward-pressure",
+        "rel-downward-pressure-decreases-price",
+        "rel-higher-price-decreases-quantity-demanded"
+      ],
+      "relationship_types": [
+        "CAUSES",
+        "DECREASES",
+        "DECREASES"
+      ],
+      "metadata": {
+        "supporting_relationship_ids_by_edge": [
+          [
+            "rel-surplus-causes-downward-pressure"
+          ],
+          [
+            "rel-downward-pressure-decreases-price"
+          ],
+          [
+            "rel-higher-price-decreases-quantity-demanded"
+          ]
+        ],
+        "edge_count": 3
+      }
+    },
+    {
+      "id": "structure-causal-path-7e31a9dac2403fe2",
+      "structure_type": "CAUSAL_PATH",
+      "entity_ids": [
+        "surplus",
+        "downward-pressure-on-price",
+        "market-price",
+        "quantity-supplied"
+      ],
+      "relationship_ids": [
+        "rel-surplus-causes-downward-pressure",
+        "rel-downward-pressure-decreases-price",
+        "rel-higher-price-increases-quantity-supplied"
+      ],
+      "relationship_types": [
+        "CAUSES",
+        "DECREASES",
+        "INCREASES"
+      ],
+      "metadata": {
+        "supporting_relationship_ids_by_edge": [
+          [
+            "rel-surplus-causes-downward-pressure"
+          ],
+          [
+            "rel-downward-pressure-decreases-price"
+          ],
+          [
+            "rel-higher-price-increases-quantity-supplied"
+          ]
+        ],
+        "edge_count": 3
+      }
+    },
+    {
+      "id": "structure-causal-path-d5311978e592e8c1",
+      "structure_type": "CAUSAL_PATH",
+      "entity_ids": [
+        "surplus",
+        "downward-pressure-on-price",
+        "market-price",
+        "shortage",
+        "upward-pressure-on-price"
+      ],
+      "relationship_ids": [
+        "rel-surplus-causes-downward-pressure",
+        "rel-downward-pressure-decreases-price",
+        "rel-higher-price-narrows-shortage",
+        "rel-shortage-causes-upward-pressure"
+      ],
+      "relationship_types": [
+        "CAUSES",
+        "DECREASES",
+        "DECREASES",
+        "CAUSES"
+      ],
+      "metadata": {
+        "supporting_relationship_ids_by_edge": [
+          [
+            "rel-surplus-causes-downward-pressure"
+          ],
+          [
+            "rel-downward-pressure-decreases-price"
+          ],
+          [
+            "rel-higher-price-narrows-shortage"
+          ],
+          [
+            "rel-shortage-causes-upward-pressure"
+          ]
+        ],
+        "edge_count": 4
+      }
+    },
+    {
+      "id": "structure-feedback-candidate-44fb81f0adf3256e",
+      "structure_type": "FEEDBACK_CANDIDATE",
+      "entity_ids": [
+        "market-price",
+        "shortage",
+        "upward-pressure-on-price",
+        "market-price"
+      ],
+      "relationship_ids": [
+        "rel-higher-price-narrows-shortage",
+        "rel-shortage-causes-upward-pressure",
+        "rel-upward-pressure-increases-price"
+      ],
+      "relationship_types": [
+        "DECREASES",
+        "CAUSES",
+        "INCREASES"
+      ],
+      "metadata": {
+        "supporting_relationship_ids_by_edge": [
+          [
+            "rel-higher-price-narrows-shortage"
+          ],
+          [
+            "rel-shortage-causes-upward-pressure"
+          ],
+          [
+            "rel-upward-pressure-increases-price"
+          ]
+        ],
+        "edge_count": 3,
+        "polarity": "UNCLASSIFIED"
+      }
+    }
+  ],
+  "detector_version": "spec-004-v1",
+  "metadata": {
+    "structure_counts": {
+      "HIERARCHY": 0,
+      "CAUSAL_PATH": 9,
+      "PROCESS_CHAIN": 0,
+      "DEPENDENCY_CHAIN": 0,
+      "FEEDBACK_CANDIDATE": 1
+    },
+    "logical_relationship_count": 11,
+    "input_relationship_count": 11,
+    "maximum_causal_path_edges": 5
+  }
+}

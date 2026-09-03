@@ -1,0 +1,65 @@
+{
+  "spec": "SPEC-008",
+  "experiment": "original accepted sources",
+  "runs": [
+    {
+      "sequence": 1,
+      "artifact_directory": "../spec-008-multi-resolution-20260903",
+      "kind": "environment_preflight_failure",
+      "provider_calls_made": 0,
+      "attempts": [
+        {
+          "domain": "software_architecture",
+          "outcome": "PROVIDER_FAILURE",
+          "reason": "OPENAI_API_KEY is required for live resolution evaluation",
+          "usage": {},
+          "cost": "NOT_AVAILABLE"
+        },
+        {
+          "domain": "economics",
+          "outcome": "PROVIDER_FAILURE",
+          "reason": "OPENAI_API_KEY is required for live resolution evaluation",
+          "usage": {},
+          "cost": "NOT_AVAILABLE"
+        }
+      ]
+    },
+    {
+      "sequence": 2,
+      "artifact_directory": ".",
+      "kind": "authorized_live_original_source_evaluation",
+      "provider_calls_made": 2,
+      "attempts": [
+        {
+          "domain": "software_architecture",
+          "outcome": "GROUNDING_FAILURE",
+          "reason": "INFERRED claims must not present source evidence",
+          "usage": {
+            "input_tokens": 2848,
+            "output_tokens": 1213,
+            "total_tokens": 4061
+          },
+          "cost": "NOT_AVAILABLE"
+        },
+        {
+          "domain": "economics",
+          "outcome": "SUCCESS",
+          "reason": "The source describes finer mechanisms by which shortages and surpluses exert pressure on market price, and how price changes feed back into quantities demanded and supplied.",
+          "usage": {
+            "input_tokens": 3073,
+            "output_tokens": 1697,
+            "total_tokens": 4770
+          },
+          "cost": "NOT_AVAILABLE"
+        }
+      ]
+    }
+  ],
+  "live_retry_count": 0,
+  "hidden_retries_or_cherry_picking": false,
+  "richer_source_procedure": {
+    "triggered": false,
+    "reason": "Neither authorized live original-source result was INSUFFICIENT_SOURCE_DETAIL."
+  },
+  "cost_note": "The provider response reported token usage but no monetary charge; no unverified price estimate was substituted."
+}

@@ -1,0 +1,480 @@
+{
+  "document_id": "text-49b42a4f08a99742",
+  "title": "Software Architecture",
+  "domain": "unknown",
+  "representations": [
+    {
+      "id": "representation-985e777f01fa9ec8",
+      "representation_type": "HIERARCHY",
+      "source_structure_ids": [
+        "structure-hierarchy-08003bf75a5a9b5f"
+      ],
+      "title": "Hierarchy",
+      "nodes": [
+        {
+          "entity_id": "api-component",
+          "label": "API component",
+          "description": "The component through which the order-processing service exposes or receives API calls.",
+          "entity_type": "COMPONENT"
+        },
+        {
+          "entity_id": "database",
+          "label": "database",
+          "description": "Shared infrastructure used to store durable state for the order and payment components.",
+          "entity_type": "COMPONENT"
+        },
+        {
+          "entity_id": "modular-order-processing-service",
+          "label": "modular order-processing service",
+          "description": "A service organized into separate API, order, payment, and database components.",
+          "entity_type": "SYSTEM"
+        },
+        {
+          "entity_id": "order-component",
+          "label": "order component",
+          "description": "A component responsible for order-related processing.",
+          "entity_type": "COMPONENT"
+        },
+        {
+          "entity_id": "payment-component",
+          "label": "payment component",
+          "description": "A component responsible for payment-related processing and purchase authorization.",
+          "entity_type": "COMPONENT"
+        }
+      ],
+      "edges": [
+        {
+          "source_entity_id": "api-component",
+          "target_entity_id": "modular-order-processing-service",
+          "relationship_type": "PART_OF",
+          "relationship_label": "PART OF",
+          "meaning": "The source is a constituent or component of the target.",
+          "direction": "part_to_whole",
+          "relationship_ids": [
+            "rel-1"
+          ],
+          "evidence": [
+            {
+              "relationship_id": "rel-1",
+              "document_id": "text-49b42a4f08a99742",
+              "start_char": 0,
+              "end_char": 113,
+              "quote": "A modular order-processing service separates the API component, order component, payment component, and database."
+            }
+          ],
+          "origins": [
+            "SOURCE"
+          ],
+          "edge_key": "edge-277f96e2b2274c82",
+          "provenance_status": "SOURCE_EVIDENCE"
+        },
+        {
+          "source_entity_id": "database",
+          "target_entity_id": "modular-order-processing-service",
+          "relationship_type": "PART_OF",
+          "relationship_label": "PART OF",
+          "meaning": "The source is a constituent or component of the target.",
+          "direction": "part_to_whole",
+          "relationship_ids": [
+            "rel-4"
+          ],
+          "evidence": [
+            {
+              "relationship_id": "rel-4",
+              "document_id": "text-49b42a4f08a99742",
+              "start_char": 0,
+              "end_char": 113,
+              "quote": "A modular order-processing service separates the API component, order component, payment component, and database."
+            }
+          ],
+          "origins": [
+            "SOURCE"
+          ],
+          "edge_key": "edge-d3931f90c08a61a6",
+          "provenance_status": "SOURCE_EVIDENCE"
+        },
+        {
+          "source_entity_id": "order-component",
+          "target_entity_id": "modular-order-processing-service",
+          "relationship_type": "PART_OF",
+          "relationship_label": "PART OF",
+          "meaning": "The source is a constituent or component of the target.",
+          "direction": "part_to_whole",
+          "relationship_ids": [
+            "rel-2"
+          ],
+          "evidence": [
+            {
+              "relationship_id": "rel-2",
+              "document_id": "text-49b42a4f08a99742",
+              "start_char": 0,
+              "end_char": 113,
+              "quote": "A modular order-processing service separates the API component, order component, payment component, and database."
+            }
+          ],
+          "origins": [
+            "SOURCE"
+          ],
+          "edge_key": "edge-f3c0b1a8ccb461b9",
+          "provenance_status": "SOURCE_EVIDENCE"
+        },
+        {
+          "source_entity_id": "payment-component",
+          "target_entity_id": "modular-order-processing-service",
+          "relationship_type": "PART_OF",
+          "relationship_label": "PART OF",
+          "meaning": "The source is a constituent or component of the target.",
+          "direction": "part_to_whole",
+          "relationship_ids": [
+            "rel-3"
+          ],
+          "evidence": [
+            {
+              "relationship_id": "rel-3",
+              "document_id": "text-49b42a4f08a99742",
+              "start_char": 0,
+              "end_char": 113,
+              "quote": "A modular order-processing service separates the API component, order component, payment component, and database."
+            }
+          ],
+          "origins": [
+            "SOURCE"
+          ],
+          "edge_key": "edge-053a05871f16f112",
+          "provenance_status": "SOURCE_EVIDENCE"
+        }
+      ],
+      "salience": "PRIMARY",
+      "warnings": [],
+      "layout": {
+        "strategy": "layered_hierarchy",
+        "orientation": "TOP_DOWN",
+        "width": 790,
+        "height": 330,
+        "nodes": [
+          {
+            "entity_id": "api-component",
+            "x": 110,
+            "y": 250,
+            "layer": 1,
+            "order": 0
+          },
+          {
+            "entity_id": "database",
+            "x": 300,
+            "y": 250,
+            "layer": 1,
+            "order": 1
+          },
+          {
+            "entity_id": "modular-order-processing-service",
+            "x": 395,
+            "y": 80,
+            "layer": 0,
+            "order": 0
+          },
+          {
+            "entity_id": "order-component",
+            "x": 490,
+            "y": 250,
+            "layer": 1,
+            "order": 2
+          },
+          {
+            "entity_id": "payment-component",
+            "x": 680,
+            "y": 250,
+            "layer": 1,
+            "order": 3
+          }
+        ],
+        "edges": [
+          {
+            "edge_key": "edge-053a05871f16f112",
+            "path_kind": "CUBIC",
+            "points": [
+              {
+                "x": 680,
+                "y": 220
+              },
+              {
+                "x": 680,
+                "y": 165
+              },
+              {
+                "x": 395,
+                "y": 165
+              },
+              {
+                "x": 395,
+                "y": 110
+              }
+            ],
+            "label_x": 538,
+            "label_y": 156
+          },
+          {
+            "edge_key": "edge-277f96e2b2274c82",
+            "path_kind": "CUBIC",
+            "points": [
+              {
+                "x": 110,
+                "y": 220
+              },
+              {
+                "x": 110,
+                "y": 165
+              },
+              {
+                "x": 395,
+                "y": 165
+              },
+              {
+                "x": 395,
+                "y": 110
+              }
+            ],
+            "label_x": 252,
+            "label_y": 156
+          },
+          {
+            "edge_key": "edge-d3931f90c08a61a6",
+            "path_kind": "CUBIC",
+            "points": [
+              {
+                "x": 300,
+                "y": 220
+              },
+              {
+                "x": 300,
+                "y": 165
+              },
+              {
+                "x": 395,
+                "y": 165
+              },
+              {
+                "x": 395,
+                "y": 110
+              }
+            ],
+            "label_x": 348,
+            "label_y": 156
+          },
+          {
+            "edge_key": "edge-f3c0b1a8ccb461b9",
+            "path_kind": "CUBIC",
+            "points": [
+              {
+                "x": 490,
+                "y": 220
+              },
+              {
+                "x": 490,
+                "y": 165
+              },
+              {
+                "x": 395,
+                "y": 165
+              },
+              {
+                "x": 395,
+                "y": 110
+              }
+            ],
+            "label_x": 442,
+            "label_y": 156
+          }
+        ],
+        "diagnostics": {
+          "crossing_count": 0,
+          "node_overlap_count": 0,
+          "connector_length": 1200.0,
+          "layer_count": 2,
+          "canonical_edges_opposing_layout_flow": 4
+        }
+      }
+    },
+    {
+      "id": "representation-9340322462e99419",
+      "representation_type": "DEPENDENCY_CHAIN",
+      "source_structure_ids": [
+        "structure-dependency-chain-d66b12a6650e88ac"
+      ],
+      "title": "Dependency model",
+      "nodes": [
+        {
+          "entity_id": "database",
+          "label": "database",
+          "description": "Shared infrastructure used to store durable state for the order and payment components.",
+          "entity_type": "COMPONENT"
+        },
+        {
+          "entity_id": "order-component",
+          "label": "order component",
+          "description": "A component responsible for order-related processing.",
+          "entity_type": "COMPONENT"
+        },
+        {
+          "entity_id": "payment-component",
+          "label": "payment component",
+          "description": "A component responsible for payment-related processing and purchase authorization.",
+          "entity_type": "COMPONENT"
+        }
+      ],
+      "edges": [
+        {
+          "source_entity_id": "order-component",
+          "target_entity_id": "payment-component",
+          "relationship_type": "REQUIRES",
+          "relationship_label": "REQUIRES",
+          "meaning": "The source depends on the target as a prerequisite or necessary resource.",
+          "direction": "dependent_to_requirement",
+          "relationship_ids": [
+            "rel-6"
+          ],
+          "evidence": [
+            {
+              "relationship_id": "rel-6",
+              "document_id": "text-49b42a4f08a99742",
+              "start_char": 191,
+              "end_char": 265,
+              "quote": "The order component requires the payment component to authorize a purchase"
+            }
+          ],
+          "origins": [
+            "SOURCE"
+          ],
+          "edge_key": "edge-ba5f0ccb37663de8",
+          "provenance_status": "SOURCE_EVIDENCE"
+        },
+        {
+          "source_entity_id": "payment-component",
+          "target_entity_id": "database",
+          "relationship_type": "REQUIRES",
+          "relationship_label": "REQUIRES",
+          "meaning": "The source depends on the target as a prerequisite or necessary resource.",
+          "direction": "dependent_to_requirement",
+          "relationship_ids": [
+            "rel-8"
+          ],
+          "evidence": [
+            {
+              "relationship_id": "rel-8",
+              "document_id": "text-49b42a4f08a99742",
+              "start_char": 271,
+              "end_char": 330,
+              "quote": "both components require the database to store durable state"
+            }
+          ],
+          "origins": [
+            "SOURCE"
+          ],
+          "edge_key": "edge-b04c2050897fe1b0",
+          "provenance_status": "SOURCE_EVIDENCE"
+        }
+      ],
+      "salience": "SECONDARY",
+      "warnings": [],
+      "layout": {
+        "strategy": "layered_dependency",
+        "orientation": "LEFT_TO_RIGHT",
+        "width": 680,
+        "height": 360,
+        "nodes": [
+          {
+            "entity_id": "database",
+            "x": 570,
+            "y": 180,
+            "layer": 2,
+            "order": 0
+          },
+          {
+            "entity_id": "order-component",
+            "x": 110,
+            "y": 180,
+            "layer": 0,
+            "order": 0
+          },
+          {
+            "entity_id": "payment-component",
+            "x": 340,
+            "y": 180,
+            "layer": 1,
+            "order": 0
+          }
+        ],
+        "edges": [
+          {
+            "edge_key": "edge-b04c2050897fe1b0",
+            "path_kind": "CUBIC",
+            "points": [
+              {
+                "x": 424,
+                "y": 180
+              },
+              {
+                "x": 455,
+                "y": 180
+              },
+              {
+                "x": 455,
+                "y": 180
+              },
+              {
+                "x": 486,
+                "y": 180
+              }
+            ],
+            "label_x": 455,
+            "label_y": 171
+          },
+          {
+            "edge_key": "edge-ba5f0ccb37663de8",
+            "path_kind": "CUBIC",
+            "points": [
+              {
+                "x": 194,
+                "y": 180
+              },
+              {
+                "x": 225,
+                "y": 180
+              },
+              {
+                "x": 225,
+                "y": 180
+              },
+              {
+                "x": 256,
+                "y": 180
+              }
+            ],
+            "label_x": 225,
+            "label_y": 171
+          }
+        ],
+        "diagnostics": {
+          "crossing_count": 0,
+          "node_overlap_count": 0,
+          "connector_length": 124.0,
+          "layer_count": 3,
+          "canonical_edges_opposing_layout_flow": 0
+        }
+      }
+    }
+  ],
+  "empty_state": null,
+  "builder_version": "spec-006-v1",
+  "warnings": [],
+  "metadata": {
+    "representation_count": 2,
+    "source_structure_count": 2,
+    "salience_counts": {
+      "PRIMARY": 1,
+      "SECONDARY": 1,
+      "SPARSE": 0
+    },
+    "layout_version": "spec-006-v1"
+  }
+}

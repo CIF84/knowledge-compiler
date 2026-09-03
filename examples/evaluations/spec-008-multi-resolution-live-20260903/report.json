@@ -1,0 +1,113 @@
+{
+  "spec": "SPEC-008",
+  "experiment": "original accepted sources",
+  "provider": "openai",
+  "requested_model": "gpt-5.6-luna",
+  "prompt_version": "spec-008-v1",
+  "source_scope_strategy": "FULL_DOCUMENT_SMALL_SOURCE",
+  "attempts_per_domain": 1,
+  "hidden_retries_or_cherry_picking": false,
+  "web_or_external_source_enrichment": false,
+  "complexity_budget": {
+    "maximum_generated_child_depth": 1,
+    "benchmark_focus_count": 2,
+    "new_semantic_predicates": 0,
+    "new_runtime_dependencies": 0,
+    "automatic_retries": 0,
+    "recursive_semantic_ir": false,
+    "frontend_rewrite": false
+  },
+  "results": [
+    {
+      "domain": "software_architecture",
+      "parent_document_id": "text-49b42a4f08a99742",
+      "parent_representation_id": "representation-985e777f01fa9ec8",
+      "focus_entity_id": "api-component",
+      "outcome": "GROUNDING_FAILURE",
+      "reason": "INFERRED claims must not present source evidence",
+      "source_scope": {
+        "strategy": "FULL_DOCUMENT_SMALL_SOURCE",
+        "document_id": "text-49b42a4f08a99742",
+        "start_char": 0,
+        "end_char": 936,
+        "text": "A modular order-processing service separates the API component, order component, payment component, and database. The API component calls the order component through its published interface. The order component requires the payment component to authorize a purchase, and both components require the database to store durable state.\n\nDependency direction is constrained: the payment component must not call the API component. This separation prevents transport details from becoming part of payment logic. Published interfaces enable components to change internally without forcing callers to change, while direct access to another component's private data increases coupling.\n\nThe database is shared infrastructure, so a schema change can still affect both order and payment components. Keeping database access behind component interfaces decreases that coupling but adds implementation work and may make cross-component queries slower.",
+        "connected_relationship_ids": [
+          "rel-1",
+          "rel-5"
+        ]
+      },
+      "provider": "openai",
+      "requested_model": "gpt-5.6-luna",
+      "actual_model": "gpt-5.6-luna",
+      "prompt_version": "spec-008-v1",
+      "entity_count": 0,
+      "relationship_count": 0,
+      "claim_count": 0,
+      "source_relationship_count": 0,
+      "inferred_relationship_count": 0,
+      "grounding_failures": [
+        "INFERRED claims must not present source evidence"
+      ],
+      "retries": 0,
+      "structure_count": 0,
+      "representation_count": 0,
+      "usage": {
+        "input_tokens": 2848,
+        "output_tokens": 1213,
+        "total_tokens": 4061
+      },
+      "cost": "NOT_AVAILABLE"
+    },
+    {
+      "domain": "economics",
+      "parent_document_id": "text-e6c889f45171a12a",
+      "parent_representation_id": "representation-fe3ba90cb8cfa3d6",
+      "focus_entity_id": "market-price",
+      "outcome": "SUCCESS",
+      "reason": "The source describes finer mechanisms by which shortages and surpluses exert pressure on market price, and how price changes feed back into quantities demanded and supplied.",
+      "source_scope": {
+        "strategy": "FULL_DOCUMENT_SMALL_SOURCE",
+        "document_id": "text-e6c889f45171a12a",
+        "start_char": 0,
+        "end_char": 785,
+        "text": "In a competitive market, buyers create demand and sellers create supply. The market price coordinates their plans. When the price rises, buyers usually demand a smaller quantity, while sellers usually supply a larger quantity. When the price falls, those responses reverse.\n\nIf quantity demanded exceeds quantity supplied, a shortage puts upward pressure on price. The higher price decreases quantity demanded and increases quantity supplied until the shortage narrows. If quantity supplied exceeds quantity demanded, a surplus puts downward pressure on price.\n\nPrice elasticity measures how strongly quantity responds to a price change. When demand is less elastic, a similar reduction in supply can cause a larger price increase because buyers reduce their quantity demanded by less.",
+        "connected_relationship_ids": [
+          "rel-higher-price-decreases-demanded",
+          "rel-higher-price-increases-supplied",
+          "rel-price-decreases-demanded",
+          "rel-price-increases-supplied",
+          "rel-supply-reduction-price-increase",
+          "rel-upward-pressure-price"
+        ]
+      },
+      "provider": "openai",
+      "requested_model": "gpt-5.6-luna",
+      "actual_model": "gpt-5.6-luna",
+      "prompt_version": "spec-008-v1",
+      "entity_count": 11,
+      "relationship_count": 11,
+      "claim_count": 4,
+      "source_relationship_count": 11,
+      "inferred_relationship_count": 0,
+      "grounding_failures": [],
+      "retries": 0,
+      "structure_count": 10,
+      "representation_count": 2,
+      "usage": {
+        "input_tokens": 3073,
+        "output_tokens": 1697,
+        "total_tokens": 4770
+      },
+      "cost": "NOT_AVAILABLE"
+    }
+  ],
+  "outcome_counts": {
+    "SUCCESS": 1,
+    "INSUFFICIENT_SOURCE_DETAIL": 0,
+    "GROUNDING_FAILURE": 1,
+    "SEMANTIC_VALIDATION_FAILURE": 0,
+    "PROVIDER_FAILURE": 0
+  },
+  "successful_child_count": 1,
+  "baseline_parent_artifacts_byte_preserved": true
+}

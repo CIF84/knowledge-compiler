@@ -1,0 +1,60 @@
+{
+  "spec": "SPEC-008",
+  "review_scope": "Independent repository and semantic inspection before owner review",
+  "software_architecture": {
+    "outcome": "GROUNDING_FAILURE",
+    "accepted_child": false,
+    "validation_result": "PASS_FAIL_CLOSED",
+    "finding": "The response marked a claim INFERRED while attaching source evidence, so the compiler rejected the complete proposed child instead of weakening provenance rules.",
+    "retry_performed": false,
+    "richer_source_triggered": false
+  },
+  "economics": {
+    "outcome": "SUCCESS",
+    "accepted_child": true,
+    "source_document_identity_preserved": true,
+    "exact_evidence_validation": {
+      "source_relationships": 11,
+      "source_relationships_with_validated_evidence": 11,
+      "source_claims": 4,
+      "source_claims_with_validated_evidence": 4,
+      "inferred_relationships": 0,
+      "inferred_claims": 0,
+      "grounding_failures": []
+    },
+    "semantic_findings": {
+      "focus_relevance": "PASS",
+      "mechanistic_detail_gain": "PASS",
+      "relationship_truthfulness": "PASS_WITH_NOTE",
+      "source_grounding": "PASS",
+      "parent_coherence": "PASS",
+      "note": "The buyers-to-quantity-demanded and sellers-to-quantity-supplied edges explicitly model source-level demand and supply through quantity variables. They are source-backed but are not included in the selected navigation representation."
+    },
+    "downstream_validation": {
+      "structure_count": 10,
+      "representation_count": 2,
+      "selected_navigation_representation": "representation-95eaf77e8f12a958",
+      "selected_structure_type": "CAUSAL_PATH",
+      "selected_node_count": 9,
+      "selected_edge_count": 8,
+      "selected_source_edge_count": 8,
+      "contextual_navigation_smoke_test": {
+        "status": "PASS",
+        "generated_label_visible": "Deeper resolution · Generated from source",
+        "parent_context_visible": true,
+        "back_navigation_available": true,
+        "relationship_detail_provenance": "GENERATED_SOURCE_GROUNDED",
+        "relationship_detail_exact_quote_visible": true
+      }
+    }
+  },
+  "owner_human_review": {
+    "status": "PENDING",
+    "template": "human-review-template.json",
+    "dimensions_requiring_owner_judgment": [
+      "structure_usefulness",
+      "compression_relationship",
+      "cognitive_usefulness"
+    ]
+  }
+}

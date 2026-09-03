@@ -1,0 +1,773 @@
+{
+  "document_id": "text-e6c889f45171a12a",
+  "title": "Unknown",
+  "domain": "unknown",
+  "representations": [
+    {
+      "id": "representation-95eaf77e8f12a958",
+      "representation_type": "CAUSAL_PATH",
+      "source_structure_ids": [
+        "structure-causal-path-18c3db4206eb571d",
+        "structure-causal-path-2bdc6e8127d77cf6",
+        "structure-causal-path-4dac0d5bd5f58c5e",
+        "structure-causal-path-64b82b54c71fc8b6",
+        "structure-causal-path-7e31a9dac2403fe2",
+        "structure-causal-path-9a1584b664c4b897",
+        "structure-causal-path-d5311978e592e8c1",
+        "structure-causal-path-d738d616eca1560b",
+        "structure-causal-path-e29d4d41ce903371"
+      ],
+      "title": "Causal model",
+      "nodes": [
+        {
+          "entity_id": "demand-elasticity",
+          "label": "demand elasticity",
+          "description": "A measure of how strongly quantity demanded responds to a price change.",
+          "entity_type": "VARIABLE"
+        },
+        {
+          "entity_id": "downward-pressure-on-price",
+          "label": "downward pressure on price",
+          "description": "Pressure produced by a surplus that pushes the market price downward.",
+          "entity_type": "PROCESS"
+        },
+        {
+          "entity_id": "market-price",
+          "label": "market price",
+          "description": "The price that coordinates buyers' and sellers' plans.",
+          "entity_type": "VARIABLE"
+        },
+        {
+          "entity_id": "quantity-demanded",
+          "label": "quantity demanded",
+          "description": "The quantity buyers demand at a given price.",
+          "entity_type": "VARIABLE"
+        },
+        {
+          "entity_id": "quantity-supplied",
+          "label": "quantity supplied",
+          "description": "The quantity sellers supply at a given price.",
+          "entity_type": "VARIABLE"
+        },
+        {
+          "entity_id": "shortage",
+          "label": "shortage",
+          "description": "A market condition in which quantity demanded exceeds quantity supplied.",
+          "entity_type": "CONCEPT"
+        },
+        {
+          "entity_id": "supply-reduction",
+          "label": "reduction in supply",
+          "description": "A decrease in supply that can produce a price increase, with the effect depending on demand elasticity.",
+          "entity_type": "PROCESS"
+        },
+        {
+          "entity_id": "surplus",
+          "label": "surplus",
+          "description": "A market condition in which quantity supplied exceeds quantity demanded.",
+          "entity_type": "CONCEPT"
+        },
+        {
+          "entity_id": "upward-pressure-on-price",
+          "label": "upward pressure on price",
+          "description": "Pressure produced by a shortage that pushes the market price upward.",
+          "entity_type": "PROCESS"
+        }
+      ],
+      "edges": [
+        {
+          "source_entity_id": "demand-elasticity",
+          "target_entity_id": "market-price",
+          "relationship_type": "AFFECTS",
+          "relationship_label": "AFFECTS",
+          "meaning": "The source causally influences the target without a specified direction or complete production.",
+          "direction": "influence_to_affected",
+          "relationship_ids": [
+            "rel-demand-elasticity-affects-price-increase"
+          ],
+          "evidence": [
+            {
+              "relationship_id": "rel-demand-elasticity-affects-price-increase",
+              "document_id": "text-e6c889f45171a12a",
+              "start_char": 638,
+              "end_char": 785,
+              "quote": "When demand is less elastic, a similar reduction in supply can cause a larger price increase because buyers reduce their quantity demanded by less."
+            }
+          ],
+          "origins": [
+            "SOURCE"
+          ],
+          "edge_key": "edge-77eb00557c82127e",
+          "provenance_status": "SOURCE_EVIDENCE"
+        },
+        {
+          "source_entity_id": "downward-pressure-on-price",
+          "target_entity_id": "market-price",
+          "relationship_type": "DECREASES",
+          "relationship_label": "DECREASES",
+          "meaning": "The source causally lowers the amount, rate, value, probability, or intensity of the target.",
+          "direction": "decreaser_to_decreased_variable",
+          "relationship_ids": [
+            "rel-downward-pressure-decreases-price"
+          ],
+          "evidence": [
+            {
+              "relationship_id": "rel-downward-pressure-decreases-price",
+              "document_id": "text-e6c889f45171a12a",
+              "start_char": 470,
+              "end_char": 560,
+              "quote": "If quantity supplied exceeds quantity demanded, a surplus puts downward pressure on price."
+            }
+          ],
+          "origins": [
+            "SOURCE"
+          ],
+          "edge_key": "edge-eb987c376345320a",
+          "provenance_status": "SOURCE_EVIDENCE"
+        },
+        {
+          "source_entity_id": "market-price",
+          "target_entity_id": "quantity-demanded",
+          "relationship_type": "DECREASES",
+          "relationship_label": "DECREASES",
+          "meaning": "The source causally lowers the amount, rate, value, probability, or intensity of the target.",
+          "direction": "decreaser_to_decreased_variable",
+          "relationship_ids": [
+            "rel-higher-price-decreases-quantity-demanded"
+          ],
+          "evidence": [
+            {
+              "relationship_id": "rel-higher-price-decreases-quantity-demanded",
+              "document_id": "text-e6c889f45171a12a",
+              "start_char": 365,
+              "end_char": 469,
+              "quote": "The higher price decreases quantity demanded and increases quantity supplied until the shortage narrows."
+            }
+          ],
+          "origins": [
+            "SOURCE"
+          ],
+          "edge_key": "edge-8b58e78e11e3b4b1",
+          "provenance_status": "SOURCE_EVIDENCE"
+        },
+        {
+          "source_entity_id": "market-price",
+          "target_entity_id": "shortage",
+          "relationship_type": "DECREASES",
+          "relationship_label": "DECREASES",
+          "meaning": "The source causally lowers the amount, rate, value, probability, or intensity of the target.",
+          "direction": "decreaser_to_decreased_variable",
+          "relationship_ids": [
+            "rel-higher-price-narrows-shortage"
+          ],
+          "evidence": [
+            {
+              "relationship_id": "rel-higher-price-narrows-shortage",
+              "document_id": "text-e6c889f45171a12a",
+              "start_char": 365,
+              "end_char": 469,
+              "quote": "The higher price decreases quantity demanded and increases quantity supplied until the shortage narrows."
+            }
+          ],
+          "origins": [
+            "SOURCE"
+          ],
+          "edge_key": "edge-090ff586f6fc4722",
+          "provenance_status": "SOURCE_EVIDENCE"
+        },
+        {
+          "source_entity_id": "market-price",
+          "target_entity_id": "quantity-supplied",
+          "relationship_type": "INCREASES",
+          "relationship_label": "INCREASES",
+          "meaning": "The source causally raises the amount, rate, value, probability, or intensity of the target.",
+          "direction": "increaser_to_increased_variable",
+          "relationship_ids": [
+            "rel-higher-price-increases-quantity-supplied"
+          ],
+          "evidence": [
+            {
+              "relationship_id": "rel-higher-price-increases-quantity-supplied",
+              "document_id": "text-e6c889f45171a12a",
+              "start_char": 365,
+              "end_char": 469,
+              "quote": "The higher price decreases quantity demanded and increases quantity supplied until the shortage narrows."
+            }
+          ],
+          "origins": [
+            "SOURCE"
+          ],
+          "edge_key": "edge-bc4ad82ced2e07df",
+          "provenance_status": "SOURCE_EVIDENCE"
+        },
+        {
+          "source_entity_id": "shortage",
+          "target_entity_id": "upward-pressure-on-price",
+          "relationship_type": "CAUSES",
+          "relationship_label": "CAUSES",
+          "meaning": "The source brings about the target as an effect.",
+          "direction": "cause_to_effect",
+          "relationship_ids": [
+            "rel-shortage-causes-upward-pressure"
+          ],
+          "evidence": [
+            {
+              "relationship_id": "rel-shortage-causes-upward-pressure",
+              "document_id": "text-e6c889f45171a12a",
+              "start_char": 275,
+              "end_char": 364,
+              "quote": "If quantity demanded exceeds quantity supplied, a shortage puts upward pressure on price."
+            }
+          ],
+          "origins": [
+            "SOURCE"
+          ],
+          "edge_key": "edge-f1271b63bb748adc",
+          "provenance_status": "SOURCE_EVIDENCE"
+        },
+        {
+          "source_entity_id": "supply-reduction",
+          "target_entity_id": "market-price",
+          "relationship_type": "CAUSES",
+          "relationship_label": "CAUSES",
+          "meaning": "The source brings about the target as an effect.",
+          "direction": "cause_to_effect",
+          "relationship_ids": [
+            "rel-supply-reduction-causes-price-increase"
+          ],
+          "evidence": [
+            {
+              "relationship_id": "rel-supply-reduction-causes-price-increase",
+              "document_id": "text-e6c889f45171a12a",
+              "start_char": 638,
+              "end_char": 785,
+              "quote": "When demand is less elastic, a similar reduction in supply can cause a larger price increase because buyers reduce their quantity demanded by less."
+            }
+          ],
+          "origins": [
+            "SOURCE"
+          ],
+          "edge_key": "edge-521a08c7a3039392",
+          "provenance_status": "SOURCE_EVIDENCE"
+        },
+        {
+          "source_entity_id": "surplus",
+          "target_entity_id": "downward-pressure-on-price",
+          "relationship_type": "CAUSES",
+          "relationship_label": "CAUSES",
+          "meaning": "The source brings about the target as an effect.",
+          "direction": "cause_to_effect",
+          "relationship_ids": [
+            "rel-surplus-causes-downward-pressure"
+          ],
+          "evidence": [
+            {
+              "relationship_id": "rel-surplus-causes-downward-pressure",
+              "document_id": "text-e6c889f45171a12a",
+              "start_char": 470,
+              "end_char": 560,
+              "quote": "If quantity supplied exceeds quantity demanded, a surplus puts downward pressure on price."
+            }
+          ],
+          "origins": [
+            "SOURCE"
+          ],
+          "edge_key": "edge-2ac95131a7cedcf9",
+          "provenance_status": "SOURCE_EVIDENCE"
+        }
+      ],
+      "salience": "PRIMARY",
+      "warnings": [],
+      "layout": {
+        "strategy": "layered_causal",
+        "orientation": "LEFT_TO_RIGHT",
+        "width": 1140,
+        "height": 400,
+        "nodes": [
+          {
+            "entity_id": "demand-elasticity",
+            "x": 110,
+            "y": 80,
+            "layer": 0,
+            "order": 0
+          },
+          {
+            "entity_id": "downward-pressure-on-price",
+            "x": 340,
+            "y": 200,
+            "layer": 1,
+            "order": 0
+          },
+          {
+            "entity_id": "market-price",
+            "x": 570,
+            "y": 200,
+            "layer": 2,
+            "order": 0
+          },
+          {
+            "entity_id": "quantity-demanded",
+            "x": 800,
+            "y": 80,
+            "layer": 3,
+            "order": 0
+          },
+          {
+            "entity_id": "quantity-supplied",
+            "x": 800,
+            "y": 320,
+            "layer": 3,
+            "order": 2
+          },
+          {
+            "entity_id": "shortage",
+            "x": 800,
+            "y": 200,
+            "layer": 3,
+            "order": 1
+          },
+          {
+            "entity_id": "supply-reduction",
+            "x": 110,
+            "y": 200,
+            "layer": 0,
+            "order": 1
+          },
+          {
+            "entity_id": "surplus",
+            "x": 110,
+            "y": 320,
+            "layer": 0,
+            "order": 2
+          },
+          {
+            "entity_id": "upward-pressure-on-price",
+            "x": 1030,
+            "y": 200,
+            "layer": 4,
+            "order": 0
+          }
+        ],
+        "edges": [
+          {
+            "edge_key": "edge-090ff586f6fc4722",
+            "path_kind": "CUBIC",
+            "points": [
+              {
+                "x": 654,
+                "y": 200
+              },
+              {
+                "x": 685,
+                "y": 200
+              },
+              {
+                "x": 685,
+                "y": 200
+              },
+              {
+                "x": 716,
+                "y": 200
+              }
+            ],
+            "label_x": 685,
+            "label_y": 191
+          },
+          {
+            "edge_key": "edge-2ac95131a7cedcf9",
+            "path_kind": "CUBIC",
+            "points": [
+              {
+                "x": 194,
+                "y": 320
+              },
+              {
+                "x": 225,
+                "y": 320
+              },
+              {
+                "x": 225,
+                "y": 200
+              },
+              {
+                "x": 256,
+                "y": 200
+              }
+            ],
+            "label_x": 225,
+            "label_y": 251
+          },
+          {
+            "edge_key": "edge-521a08c7a3039392",
+            "path_kind": "CUBIC",
+            "points": [
+              {
+                "x": 194,
+                "y": 200
+              },
+              {
+                "x": 340,
+                "y": 200
+              },
+              {
+                "x": 340,
+                "y": 200
+              },
+              {
+                "x": 486,
+                "y": 200
+              }
+            ],
+            "label_x": 340,
+            "label_y": 191
+          },
+          {
+            "edge_key": "edge-77eb00557c82127e",
+            "path_kind": "CUBIC",
+            "points": [
+              {
+                "x": 194,
+                "y": 80
+              },
+              {
+                "x": 340,
+                "y": 80
+              },
+              {
+                "x": 340,
+                "y": 200
+              },
+              {
+                "x": 486,
+                "y": 200
+              }
+            ],
+            "label_x": 340,
+            "label_y": 131
+          },
+          {
+            "edge_key": "edge-8b58e78e11e3b4b1",
+            "path_kind": "CUBIC",
+            "points": [
+              {
+                "x": 654,
+                "y": 200
+              },
+              {
+                "x": 685,
+                "y": 200
+              },
+              {
+                "x": 685,
+                "y": 80
+              },
+              {
+                "x": 716,
+                "y": 80
+              }
+            ],
+            "label_x": 685,
+            "label_y": 131
+          },
+          {
+            "edge_key": "edge-bc4ad82ced2e07df",
+            "path_kind": "CUBIC",
+            "points": [
+              {
+                "x": 654,
+                "y": 200
+              },
+              {
+                "x": 685,
+                "y": 200
+              },
+              {
+                "x": 685,
+                "y": 320
+              },
+              {
+                "x": 716,
+                "y": 320
+              }
+            ],
+            "label_x": 685,
+            "label_y": 251
+          },
+          {
+            "edge_key": "edge-eb987c376345320a",
+            "path_kind": "CUBIC",
+            "points": [
+              {
+                "x": 424,
+                "y": 200
+              },
+              {
+                "x": 455,
+                "y": 200
+              },
+              {
+                "x": 455,
+                "y": 200
+              },
+              {
+                "x": 486,
+                "y": 200
+              }
+            ],
+            "label_x": 455,
+            "label_y": 191
+          },
+          {
+            "edge_key": "edge-f1271b63bb748adc",
+            "path_kind": "CUBIC",
+            "points": [
+              {
+                "x": 884,
+                "y": 200
+              },
+              {
+                "x": 915,
+                "y": 200
+              },
+              {
+                "x": 915,
+                "y": 200
+              },
+              {
+                "x": 946,
+                "y": 200
+              }
+            ],
+            "label_x": 915,
+            "label_y": 191
+          }
+        ],
+        "diagnostics": {
+          "crossing_count": 1,
+          "node_overlap_count": 0,
+          "connector_length": 1436.0,
+          "layer_count": 5,
+          "canonical_edges_opposing_layout_flow": 0
+        }
+      }
+    },
+    {
+      "id": "representation-0202bb3640a46b17",
+      "representation_type": "FEEDBACK_CANDIDATE",
+      "source_structure_ids": [
+        "structure-feedback-candidate-44fb81f0adf3256e"
+      ],
+      "title": "Feedback candidate",
+      "nodes": [
+        {
+          "entity_id": "market-price",
+          "label": "market price",
+          "description": "The price that coordinates buyers' and sellers' plans.",
+          "entity_type": "VARIABLE"
+        },
+        {
+          "entity_id": "shortage",
+          "label": "shortage",
+          "description": "A market condition in which quantity demanded exceeds quantity supplied.",
+          "entity_type": "CONCEPT"
+        },
+        {
+          "entity_id": "upward-pressure-on-price",
+          "label": "upward pressure on price",
+          "description": "Pressure produced by a shortage that pushes the market price upward.",
+          "entity_type": "PROCESS"
+        }
+      ],
+      "edges": [
+        {
+          "source_entity_id": "market-price",
+          "target_entity_id": "shortage",
+          "relationship_type": "DECREASES",
+          "relationship_label": "DECREASES",
+          "meaning": "The source causally lowers the amount, rate, value, probability, or intensity of the target.",
+          "direction": "decreaser_to_decreased_variable",
+          "relationship_ids": [
+            "rel-higher-price-narrows-shortage"
+          ],
+          "evidence": [
+            {
+              "relationship_id": "rel-higher-price-narrows-shortage",
+              "document_id": "text-e6c889f45171a12a",
+              "start_char": 365,
+              "end_char": 469,
+              "quote": "The higher price decreases quantity demanded and increases quantity supplied until the shortage narrows."
+            }
+          ],
+          "origins": [
+            "SOURCE"
+          ],
+          "edge_key": "edge-090ff586f6fc4722",
+          "provenance_status": "SOURCE_EVIDENCE"
+        },
+        {
+          "source_entity_id": "shortage",
+          "target_entity_id": "upward-pressure-on-price",
+          "relationship_type": "CAUSES",
+          "relationship_label": "CAUSES",
+          "meaning": "The source brings about the target as an effect.",
+          "direction": "cause_to_effect",
+          "relationship_ids": [
+            "rel-shortage-causes-upward-pressure"
+          ],
+          "evidence": [
+            {
+              "relationship_id": "rel-shortage-causes-upward-pressure",
+              "document_id": "text-e6c889f45171a12a",
+              "start_char": 275,
+              "end_char": 364,
+              "quote": "If quantity demanded exceeds quantity supplied, a shortage puts upward pressure on price."
+            }
+          ],
+          "origins": [
+            "SOURCE"
+          ],
+          "edge_key": "edge-f1271b63bb748adc",
+          "provenance_status": "SOURCE_EVIDENCE"
+        },
+        {
+          "source_entity_id": "upward-pressure-on-price",
+          "target_entity_id": "market-price",
+          "relationship_type": "INCREASES",
+          "relationship_label": "INCREASES",
+          "meaning": "The source causally raises the amount, rate, value, probability, or intensity of the target.",
+          "direction": "increaser_to_increased_variable",
+          "relationship_ids": [
+            "rel-upward-pressure-increases-price"
+          ],
+          "evidence": [
+            {
+              "relationship_id": "rel-upward-pressure-increases-price",
+              "document_id": "text-e6c889f45171a12a",
+              "start_char": 275,
+              "end_char": 364,
+              "quote": "If quantity demanded exceeds quantity supplied, a shortage puts upward pressure on price."
+            }
+          ],
+          "origins": [
+            "SOURCE"
+          ],
+          "edge_key": "edge-88019b08aa535ad9",
+          "provenance_status": "SOURCE_EVIDENCE"
+        }
+      ],
+      "salience": "PRIMARY",
+      "warnings": [],
+      "layout": {
+        "strategy": "explicit_feedback_loop",
+        "orientation": "LOOP",
+        "width": 620,
+        "height": 380,
+        "nodes": [
+          {
+            "entity_id": "market-price",
+            "x": 310,
+            "y": 64,
+            "layer": 0,
+            "order": 0
+          },
+          {
+            "entity_id": "shortage",
+            "x": 419,
+            "y": 253,
+            "layer": 0,
+            "order": 1
+          },
+          {
+            "entity_id": "upward-pressure-on-price",
+            "x": 201,
+            "y": 253,
+            "layer": 0,
+            "order": 2
+          }
+        ],
+        "edges": [
+          {
+            "edge_key": "edge-090ff586f6fc4722",
+            "path_kind": "QUADRATIC",
+            "points": [
+              {
+                "x": 352,
+                "y": 90
+              },
+              {
+                "x": 401,
+                "y": 137
+              },
+              {
+                "x": 377,
+                "y": 227
+              }
+            ],
+            "label_x": 383,
+            "label_y": 148
+          },
+          {
+            "edge_key": "edge-88019b08aa535ad9",
+            "path_kind": "QUADRATIC",
+            "points": [
+              {
+                "x": 243,
+                "y": 227
+              },
+              {
+                "x": 219,
+                "y": 137
+              },
+              {
+                "x": 268,
+                "y": 90
+              }
+            ],
+            "label_x": 237,
+            "label_y": 148
+          },
+          {
+            "edge_key": "edge-f1271b63bb748adc",
+            "path_kind": "QUADRATIC",
+            "points": [
+              {
+                "x": 335,
+                "y": 253
+              },
+              {
+                "x": 310,
+                "y": 295
+              },
+              {
+                "x": 285,
+                "y": 253
+              }
+            ],
+            "label_x": 310,
+            "label_y": 274
+          }
+        ],
+        "diagnostics": {
+          "crossing_count": 0,
+          "node_overlap_count": 0,
+          "connector_length": 419.84,
+          "layer_count": 1,
+          "canonical_edges_opposing_layout_flow": 0
+        }
+      }
+    }
+  ],
+  "empty_state": null,
+  "builder_version": "spec-006-v1",
+  "warnings": [],
+  "metadata": {
+    "representation_count": 2,
+    "source_structure_count": 10,
+    "salience_counts": {
+      "PRIMARY": 2,
+      "SECONDARY": 0,
+      "SPARSE": 0
+    },
+    "layout_version": "spec-006-v1"
+  }
+}
