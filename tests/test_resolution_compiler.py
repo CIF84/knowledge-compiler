@@ -278,7 +278,6 @@ def test_evaluation_preserves_failures_and_parent_navigation_artifacts(tmp_path:
         assert (output / f"{domain}.representation.json").read_bytes() == (
             default_parent_representations_directory() / f"{domain}.representation.json"
         ).read_bytes()
-    assert not any(path.name.startswith("DEBRIEF-009") for path in (ROOT / "debriefs").iterdir())
 
 
 def test_successful_navigation_artifact_is_labeled_generated_from_source(tmp_path: Path) -> None:

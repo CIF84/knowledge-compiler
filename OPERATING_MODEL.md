@@ -45,7 +45,8 @@ Do not accept implementation summaries as verification when repository inspectio
 
 ### Codex
 
-- inspect repository and relevant project memory;
+- apply root `AGENTS.md` as invariant operating context;
+- inspect the repository and only the experiment-specific history needed by the active contract;
 - treat the active SPEC as the implementation contract;
 - implement autonomously within scope;
 - run deterministic tests and only the evaluation needed to answer the active uncertainty;
@@ -60,9 +61,25 @@ Do not accept implementation summaries as verification when repository inspectio
 
 GitHub is the durable source of truth for implementation, specs, debriefs, project memory, architecture, operating model, health, roadmap, baselines, and product thesis. Conversation threads are working context, not durable memory.
 
+`origin/main` is the canonical implementation and project state. Between Codex runs, ChatGPT may legitimately add or update SPECs, OPS records, DEBRIEFs, and canonical project documents there. Codex should fetch and safely fast-forward these expected changes while preserving unrelated local user work.
+
+## Context Loading
+
+Repository context has three layers:
+
+```text
+invariant context          → AGENTS.md
+active experiment context  → current SPEC or OPS
+historical / deep context  → DEBRIEFs and canonical project-model documents
+```
+
+A normal Codex implementation run reads the first two layers, then loads historical or deep context only when the active contract explicitly requires it or a concrete ambiguity makes it relevant. Memory should be available, not eagerly loaded. Broad rereading of `README.md`, `ROADMAP.md`, `PROJECT_MEMORY.md`, `ARCHITECTURE.md`, `OPERATING_MODEL.md`, and `PROJECT_HEALTH.md` is not a routine startup requirement.
+
 ## SPEC Protocol
 
 Every increment should have one primary uncertainty. A good SPEC includes objective, rationale, bounded scope, explicit non-goals, architecture constraints, acceptance criteria, validation, expected artifacts, and relevant prior debriefs.
+
+New SPECs should assume root `AGENTS.md` supplies invariant Codex role, Git, lifecycle, safety, startup, and finish context. List only experiment-specific prerequisite documents rather than repeating a broad project-document bootstrap checklist.
 
 Prefer one major uncertainty per SPEC.
 
@@ -84,6 +101,7 @@ The following practices are strongly supported:
 - convert decisions into a focused repository SPEC;
 - define explicit non-goals to resist scope expansion;
 - use the repository as the context carrier so Codex prompts remain short;
+- separate invariant `AGENTS.md` context from the active contract and load historical context on demand;
 - use deterministic fixtures around probabilistic boundaries;
 - use accepted outputs from an earlier layer as stable fixtures when testing a downstream layer;
 - require live LLM/network evaluation only when it actually tests the active uncertainty;
@@ -336,7 +354,9 @@ better next experiment
 
 SPEC-008 is a good example: one successful live Economics generation and one fail-closed Software Architecture rejection were enough to identify semantic-resolution strategy — not recursion or navigation polish — as the next important problem.
 
-## Reconstruction Test
+## Deep Reconstruction Test
+
+The following is an onboarding or project-recovery sequence for a deliberately fresh collaborator. It is not the startup checklist for a normal Codex implementation run; those runs use `AGENTS.md`, the active contract, and only materially relevant history.
 
 A fresh collaborator should reconstruct the project approximately in this order:
 

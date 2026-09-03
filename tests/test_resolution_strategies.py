@@ -331,7 +331,6 @@ def test_offline_paired_evaluation_preserves_all_attempts_and_navigation_assets(
     assert (output / "process.experimental-source.txt").read_bytes() == (
         ROOT / "tests" / "fixtures" / "spec009" / "order_processing_workflow.txt"
     ).read_bytes()
-    assert not (ROOT / "debriefs" / "DEBRIEF-009-semantic-resolution-strategy.md").exists()
 
 
 def test_paired_evaluation_writes_successful_process_navigation_artifact(tmp_path: Path) -> None:
