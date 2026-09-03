@@ -1,0 +1,441 @@
+{
+  "document": {
+    "id": "text-e6c889f45171a12a",
+    "text": "In a competitive market, buyers create demand and sellers create supply. The market price coordinates their plans. When the price rises, buyers usually demand a smaller quantity, while sellers usually supply a larger quantity. When the price falls, those responses reverse.\n\nIf quantity demanded exceeds quantity supplied, a shortage puts upward pressure on price. The higher price decreases quantity demanded and increases quantity supplied until the shortage narrows. If quantity supplied exceeds quantity demanded, a surplus puts downward pressure on price.\n\nPrice elasticity measures how strongly quantity responds to a price change. When demand is less elastic, a similar reduction in supply can cause a larger price increase because buyers reduce their quantity demanded by less.",
+    "source_type": "text",
+    "metadata": {
+      "filename": "economics.txt",
+      "domain": "economics"
+    }
+  },
+  "entities": [
+    {
+      "id": "competitive-market",
+      "name": "Competitive market",
+      "description": "A market in which buyers create demand and sellers create supply.",
+      "entity_type": "SYSTEM",
+      "aliases": []
+    },
+    {
+      "id": "buyers",
+      "name": "Buyers",
+      "description": "Market participants that create demand and choose quantities to purchase.",
+      "entity_type": "OBJECT",
+      "aliases": []
+    },
+    {
+      "id": "sellers",
+      "name": "Sellers",
+      "description": "Market participants that create supply and choose quantities to sell.",
+      "entity_type": "OBJECT",
+      "aliases": []
+    },
+    {
+      "id": "demand",
+      "name": "Demand",
+      "description": "The quantity buyers are willing to purchase at a given price.",
+      "entity_type": "CONCEPT",
+      "aliases": []
+    },
+    {
+      "id": "supply",
+      "name": "Supply",
+      "description": "The quantity sellers are willing to provide at a given price.",
+      "entity_type": "CONCEPT",
+      "aliases": []
+    },
+    {
+      "id": "market-price",
+      "name": "Market price",
+      "description": "The price that coordinates the plans of buyers and sellers.",
+      "entity_type": "VARIABLE",
+      "aliases": []
+    },
+    {
+      "id": "quantity-demanded",
+      "name": "Quantity demanded",
+      "description": "The quantity buyers demand at a given price.",
+      "entity_type": "VARIABLE",
+      "aliases": []
+    },
+    {
+      "id": "quantity-supplied",
+      "name": "Quantity supplied",
+      "description": "The quantity sellers supply at a given price.",
+      "entity_type": "VARIABLE",
+      "aliases": []
+    },
+    {
+      "id": "shortage",
+      "name": "Shortage",
+      "description": "A condition in which quantity demanded exceeds quantity supplied.",
+      "entity_type": "CONCEPT",
+      "aliases": []
+    },
+    {
+      "id": "surplus",
+      "name": "Surplus",
+      "description": "A condition in which quantity supplied exceeds quantity demanded.",
+      "entity_type": "CONCEPT",
+      "aliases": []
+    },
+    {
+      "id": "upward-price-pressure",
+      "name": "Upward pressure on price",
+      "description": "A force tending to increase the market price in response to a shortage.",
+      "entity_type": "PROCESS",
+      "aliases": []
+    },
+    {
+      "id": "downward-price-pressure",
+      "name": "Downward pressure on price",
+      "description": "A force tending to decrease the market price in response to a surplus.",
+      "entity_type": "PROCESS",
+      "aliases": []
+    },
+    {
+      "id": "price-elasticity",
+      "name": "Price elasticity",
+      "description": "A measure of how strongly quantity responds to a price change.",
+      "entity_type": "CONCEPT",
+      "aliases": []
+    },
+    {
+      "id": "supply-reduction",
+      "name": "Reduction in supply",
+      "description": "A decrease in supply that can affect market price and quantity demanded.",
+      "entity_type": "PROCESS",
+      "aliases": []
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim-price-rise-responses",
+      "statement": "When price rises, buyers usually demand a smaller quantity and sellers usually supply a larger quantity.",
+      "evidence": [
+        {
+          "document_id": "text-e6c889f45171a12a",
+          "start_char": 115,
+          "end_char": 226,
+          "quote": "When the price rises, buyers usually demand a smaller quantity, while sellers usually supply a larger quantity."
+        }
+      ],
+      "confidence": 0.99,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "claim-price-fall-responses",
+      "statement": "When price falls, the buyer and seller quantity responses reverse: buyers usually demand more and sellers usually supply less.",
+      "evidence": [
+        {
+          "document_id": "text-e6c889f45171a12a",
+          "start_char": 227,
+          "end_char": 273,
+          "quote": "When the price falls, those responses reverse."
+        }
+      ],
+      "confidence": 0.97,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "claim-elasticity-effect",
+      "statement": "When demand is less elastic, a similar reduction in supply can cause a larger price increase because buyers reduce their quantity demanded by less.",
+      "evidence": [
+        {
+          "document_id": "text-e6c889f45171a12a",
+          "start_char": 638,
+          "end_char": 785,
+          "quote": "When demand is less elastic, a similar reduction in supply can cause a larger price increase because buyers reduce their quantity demanded by less."
+        }
+      ],
+      "confidence": 0.99,
+      "origin": "SOURCE"
+    }
+  ],
+  "relationships": [
+    {
+      "id": "rel-buyers-demand",
+      "source_entity_id": "buyers",
+      "relationship_type": "CREATES",
+      "target_entity_id": "demand",
+      "statement": "Buyers create demand.",
+      "evidence": [
+        {
+          "document_id": "text-e6c889f45171a12a",
+          "start_char": 25,
+          "end_char": 45,
+          "quote": "buyers create demand"
+        }
+      ],
+      "confidence": 0.99,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "rel-sellers-supply",
+      "source_entity_id": "sellers",
+      "relationship_type": "CREATES",
+      "target_entity_id": "supply",
+      "statement": "Sellers create supply.",
+      "evidence": [
+        {
+          "document_id": "text-e6c889f45171a12a",
+          "start_char": 50,
+          "end_char": 71,
+          "quote": "sellers create supply"
+        }
+      ],
+      "confidence": 0.99,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "rel-price-coordinates",
+      "source_entity_id": "market-price",
+      "relationship_type": "ENABLES",
+      "target_entity_id": "buyers",
+      "statement": "The market price coordinates buyers' plans.",
+      "evidence": [
+        {
+          "document_id": "text-e6c889f45171a12a",
+          "start_char": 73,
+          "end_char": 114,
+          "quote": "The market price coordinates their plans."
+        }
+      ],
+      "confidence": 0.96,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "rel-price-coordinates-sellers",
+      "source_entity_id": "market-price",
+      "relationship_type": "ENABLES",
+      "target_entity_id": "sellers",
+      "statement": "The market price coordinates sellers' plans.",
+      "evidence": [
+        {
+          "document_id": "text-e6c889f45171a12a",
+          "start_char": 73,
+          "end_char": 114,
+          "quote": "The market price coordinates their plans."
+        }
+      ],
+      "confidence": 0.96,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "rel-shortage-definition-demand",
+      "source_entity_id": "quantity-demanded",
+      "relationship_type": "EXERTS_FORCE_ON",
+      "target_entity_id": "shortage",
+      "statement": "Quantity demanded exceeding quantity supplied contributes to a shortage.",
+      "evidence": [
+        {
+          "document_id": "text-e6c889f45171a12a",
+          "start_char": 275,
+          "end_char": 333,
+          "quote": "If quantity demanded exceeds quantity supplied, a shortage"
+        }
+      ],
+      "confidence": 0.99,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "rel-shortage-definition-supply",
+      "source_entity_id": "quantity-supplied",
+      "relationship_type": "EXERTS_FORCE_ON",
+      "target_entity_id": "shortage",
+      "statement": "Quantity supplied being lower than quantity demanded contributes to a shortage.",
+      "evidence": [
+        {
+          "document_id": "text-e6c889f45171a12a",
+          "start_char": 275,
+          "end_char": 333,
+          "quote": "If quantity demanded exceeds quantity supplied, a shortage"
+        }
+      ],
+      "confidence": 0.97,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "rel-shortage-upward-pressure",
+      "source_entity_id": "shortage",
+      "relationship_type": "CAUSES",
+      "target_entity_id": "upward-price-pressure",
+      "statement": "A shortage puts upward pressure on price.",
+      "evidence": [
+        {
+          "document_id": "text-e6c889f45171a12a",
+          "start_char": 323,
+          "end_char": 363,
+          "quote": "a shortage puts upward pressure on price"
+        }
+      ],
+      "confidence": 0.99,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "rel-upward-pressure-price",
+      "source_entity_id": "upward-price-pressure",
+      "relationship_type": "INCREASES",
+      "target_entity_id": "market-price",
+      "statement": "Upward pressure increases the market price.",
+      "evidence": [
+        {
+          "document_id": "text-e6c889f45171a12a",
+          "start_char": 334,
+          "end_char": 363,
+          "quote": "puts upward pressure on price"
+        }
+      ],
+      "confidence": 0.96,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "rel-higher-price-demand",
+      "source_entity_id": "market-price",
+      "relationship_type": "DECREASES",
+      "target_entity_id": "quantity-demanded",
+      "statement": "A higher price decreases quantity demanded.",
+      "evidence": [
+        {
+          "document_id": "text-e6c889f45171a12a",
+          "start_char": 365,
+          "end_char": 409,
+          "quote": "The higher price decreases quantity demanded"
+        }
+      ],
+      "confidence": 0.99,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "rel-higher-price-supply",
+      "source_entity_id": "market-price",
+      "relationship_type": "INCREASES",
+      "target_entity_id": "quantity-supplied",
+      "statement": "A higher price increases quantity supplied.",
+      "evidence": [
+        {
+          "document_id": "text-e6c889f45171a12a",
+          "start_char": 410,
+          "end_char": 441,
+          "quote": "and increases quantity supplied"
+        }
+      ],
+      "confidence": 0.99,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "rel-surplus-definition",
+      "source_entity_id": "quantity-supplied",
+      "relationship_type": "EXERTS_FORCE_ON",
+      "target_entity_id": "surplus",
+      "statement": "Quantity supplied exceeding quantity demanded constitutes a surplus.",
+      "evidence": [
+        {
+          "document_id": "text-e6c889f45171a12a",
+          "start_char": 470,
+          "end_char": 527,
+          "quote": "If quantity supplied exceeds quantity demanded, a surplus"
+        }
+      ],
+      "confidence": 0.99,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "rel-surplus-downward-pressure",
+      "source_entity_id": "surplus",
+      "relationship_type": "CAUSES",
+      "target_entity_id": "downward-price-pressure",
+      "statement": "A surplus puts downward pressure on price.",
+      "evidence": [
+        {
+          "document_id": "text-e6c889f45171a12a",
+          "start_char": 518,
+          "end_char": 559,
+          "quote": "a surplus puts downward pressure on price"
+        }
+      ],
+      "confidence": 0.99,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "rel-downward-pressure-price",
+      "source_entity_id": "downward-price-pressure",
+      "relationship_type": "DECREASES",
+      "target_entity_id": "market-price",
+      "statement": "Downward pressure decreases the market price.",
+      "evidence": [
+        {
+          "document_id": "text-e6c889f45171a12a",
+          "start_char": 528,
+          "end_char": 559,
+          "quote": "puts downward pressure on price"
+        }
+      ],
+      "confidence": 0.96,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "rel-elasticity-measures-response",
+      "source_entity_id": "price-elasticity",
+      "relationship_type": "MEASURED_BY",
+      "target_entity_id": "quantity-demanded",
+      "statement": "Price elasticity measures how strongly quantity responds to a price change, including quantity demanded.",
+      "evidence": [
+        {
+          "document_id": "text-e6c889f45171a12a",
+          "start_char": 562,
+          "end_char": 637,
+          "quote": "Price elasticity measures how strongly quantity responds to a price change."
+        }
+      ],
+      "confidence": 0.93,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "rel-supply-reduction-price-increase",
+      "source_entity_id": "supply-reduction",
+      "relationship_type": "CAUSES",
+      "target_entity_id": "market-price",
+      "statement": "A similar reduction in supply can cause a larger price increase when demand is less elastic.",
+      "evidence": [
+        {
+          "document_id": "text-e6c889f45171a12a",
+          "start_char": 667,
+          "end_char": 730,
+          "quote": "a similar reduction in supply can cause a larger price increase"
+        }
+      ],
+      "confidence": 0.99,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "rel-less-elastic-demand-response",
+      "source_entity_id": "price-elasticity",
+      "relationship_type": "CONSTRAINS",
+      "target_entity_id": "quantity-demanded",
+      "statement": "Less elastic demand means buyers reduce quantity demanded by less in response to a price increase.",
+      "evidence": [
+        {
+          "document_id": "text-e6c889f45171a12a",
+          "start_char": 739,
+          "end_char": 784,
+          "quote": "buyers reduce their quantity demanded by less"
+        }
+      ],
+      "confidence": 0.96,
+      "origin": "SOURCE"
+    }
+  ],
+  "metadata": {
+    "extractor": "llm",
+    "provider": "openai",
+    "model": "gpt-5.6-luna",
+    "prompt_version": "spec-002-v1",
+    "provider_request_id": "resp_07697f49fda4a5fe016a9963819c3487d2a20b85039e456859",
+    "usage": {
+      "input_tokens": 708,
+      "output_tokens": 1796,
+      "total_tokens": 2504
+    }
+  }
+}

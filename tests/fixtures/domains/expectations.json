@@ -1,0 +1,52 @@
+{
+  "electromagnetism": {
+    "concepts": ["charge", "electric field", "magnetic field", "electromagnetic wave", "light"],
+    "relationships": [
+      "charge CREATES electric field",
+      "moving charge or electric current CREATES magnetic field",
+      "changing magnetic field INDUCES electric field",
+      "changing electric field INDUCES magnetic field",
+      "light IS_A electromagnetic wave"
+    ]
+  },
+  "software_architecture": {
+    "concepts": ["API component", "order component", "payment component", "database", "published interface", "coupling"],
+    "relationships": [
+      "order component REQUIRES payment component",
+      "order component REQUIRES database",
+      "payment component REQUIRES database",
+      "dependency direction CONSTRAINS payment component",
+      "published interfaces ENABLE internal component change"
+    ]
+  },
+  "economics": {
+    "concepts": ["price", "quantity demanded", "quantity supplied", "shortage", "surplus", "price elasticity"],
+    "relationships": [
+      "price INCREASES quantity supplied",
+      "price DECREASES quantity demanded",
+      "shortage INCREASES price",
+      "surplus DECREASES price",
+      "price elasticity MEASURED_BY quantity response"
+    ]
+  },
+  "biology": {
+    "concepts": ["DNA", "RNA polymerase", "messenger RNA", "ribosome", "polypeptide", "protein"],
+    "relationships": [
+      "RNA polymerase CREATES messenger RNA",
+      "transcription PRECEDES translation",
+      "ribosome CREATES polypeptide",
+      "polypeptide TRANSFORMS_INTO protein",
+      "regulatory proteins INCREASES or DECREASES transcription"
+    ]
+  },
+  "history": {
+    "concepts": ["movable metal type", "printing press", "books", "pamphlets", "authorities", "censorship"],
+    "relationships": [
+      "printing ENABLES production of many copies",
+      "printing DECREASES reproduction cost",
+      "printed material ENABLES arguments to circulate",
+      "printed controversy PRECEDES licensing or censorship",
+      "licensing CONSTRAINS printers"
+    ]
+  }
+}

@@ -1,0 +1,147 @@
+{
+  "spec": "SPEC-002",
+  "reviewed_at": "2026-09-03",
+  "provider": "openai",
+  "model": "gpt-5.6-luna",
+  "overall_assessment": "MIXED",
+  "primary_question": "The unchanged IR exposed meaningful structure in all five domains after one prompt-only retry, but relationship precision and vocabulary fit were uneven enough that schema validity must not be treated as semantic success.",
+  "domains": {
+    "electromagnetism": {
+      "artifact": "electromagnetism.knowledge.json",
+      "counts": {"entities": 9, "claims": 2, "relationships": 8},
+      "review": {
+        "grounding": "GOOD",
+        "entity_quality": "MIXED",
+        "relationship_quality": "GOOD",
+        "coverage": "GOOD",
+        "precision": "MIXED",
+        "deduplication_quality": "GOOD",
+        "vocabulary_fit": "MIXED",
+        "cross_domain_usefulness": "GOOD"
+      },
+      "findings": [
+        "All five load-bearing expectations are represented and all evidence coordinates validate.",
+        "Changing electric and magnetic fields were collapsed into the base field entities, losing the changing-state distinction.",
+        "The claim that a moving charge is an electric current is stronger than the source's naming equivalence."
+      ]
+    },
+    "software_architecture": {
+      "artifact": "software_architecture.retry-v2.knowledge.json",
+      "counts": {"entities": 17, "claims": 5, "relationships": 16},
+      "review": {
+        "grounding": "GOOD",
+        "entity_quality": "GOOD",
+        "relationship_quality": "MIXED",
+        "coverage": "MIXED",
+        "precision": "MIXED",
+        "deduplication_quality": "GOOD",
+        "vocabulary_fit": "MIXED",
+        "cross_domain_usefulness": "GOOD"
+      },
+      "findings": [
+        "The dependency edges, coupling trade-off, shared-database effects, and interface mechanism are visible and grounded.",
+        "PART_OF direction is reversed for service and component edges.",
+        "The payment-to-API prohibition is preserved only as a claim because the vocabulary lacks a natural prohibition edge.",
+        "Published interface ENABLES order component is an imprecise target for enabling internal change."
+      ]
+    },
+    "economics": {
+      "artifact": "economics.knowledge.json",
+      "counts": {"entities": 14, "claims": 3, "relationships": 16},
+      "review": {
+        "grounding": "GOOD",
+        "entity_quality": "GOOD",
+        "relationship_quality": "MIXED",
+        "coverage": "GOOD",
+        "precision": "MIXED",
+        "deduplication_quality": "GOOD",
+        "vocabulary_fit": "MIXED",
+        "cross_domain_usefulness": "GOOD"
+      },
+      "findings": [
+        "The price, shortage, surplus, supply, demand, and elasticity mechanisms are visible and grounded.",
+        "EXERTS_FORCE_ON is misused for quantities contributing to shortage or surplus.",
+        "MEASURED_BY points elasticity to quantity demanded rather than to quantity response to price."
+      ]
+    },
+    "biology": {
+      "artifact": "biology.knowledge.json",
+      "counts": {"entities": 16, "claims": 3, "relationships": 14},
+      "review": {
+        "grounding": "GOOD",
+        "entity_quality": "GOOD",
+        "relationship_quality": "MIXED",
+        "coverage": "GOOD",
+        "precision": "MIXED",
+        "deduplication_quality": "GOOD",
+        "vocabulary_fit": "POOR",
+        "cross_domain_usefulness": "GOOD"
+      },
+      "findings": [
+        "Transcription, translation, regulation, and folding are present with exact source grounding.",
+        "RNA polymerase binding is distorted into EXERTS_FORCE_ON DNA.",
+        "Transfer RNA delivery is distorted into ENABLES amino acid.",
+        "The model missed an explicit transcription PRECEDES translation edge and used a claim instead.",
+        "CONSTRAINS DNA incorrectly represents that regulation leaves the DNA sequence unchanged."
+      ]
+    },
+    "history": {
+      "artifact": "history.knowledge.json",
+      "counts": {"entities": 20, "claims": 3, "relationships": 17},
+      "review": {
+        "grounding": "GOOD",
+        "entity_quality": "MIXED",
+        "relationship_quality": "POOR",
+        "coverage": "MIXED",
+        "precision": "POOR",
+        "deduplication_quality": "MIXED",
+        "vocabulary_fit": "POOR",
+        "cross_domain_usefulness": "MIXED"
+      },
+      "findings": [
+        "Printing cost, reach, pamphlet circulation, and authority constraints remain recognizable and grounded.",
+        "Hand copying INCREASES speed reverses the source meaning that reproduction was slow.",
+        "Printers TRANSFORMS_INTO attempts to control printing is semantically invalid.",
+        "The chronology from printed controversy to licensing or censorship remains a claim instead of a PRECEDES edge.",
+        "Duplicate Printing INCREASES speed relationships add noise."
+      ]
+    }
+  },
+  "failures_and_retries": [
+    {
+      "domain": "software_architecture",
+      "prompt_version": "spec-002-v1",
+      "outcome": "REJECTED",
+      "reason": "An INFERRED relationship included source evidence."
+    },
+    {
+      "domain": "software_architecture",
+      "prompt_version": "spec-002-v1",
+      "outcome": "REJECTED",
+      "reason": "The evidence quote 'order component' occurred multiple times and was ambiguous."
+    },
+    {
+      "domain": "software_architecture",
+      "prompt_version": "spec-002-v2",
+      "outcome": "VALIDATED",
+      "reason": "Prompt-only clarification required unique clause-or-sentence evidence and a provenance self-check; no invariant was relaxed."
+    }
+  ],
+  "vocabulary_gaps": [
+    "Binding or attachment has no honest edge type.",
+    "Transport or delivery has no honest edge type.",
+    "A prohibition such as MUST_NOT_CALL has no honest edge type.",
+    "Generic directional effects are sometimes forced into domain-specific EXERTS_FORCE_ON.",
+    "Representation of an unchanged property or absence of causation is weak.",
+    "The existing vocabulary encourages distorted actor/event edges in historical narratives."
+  ],
+  "recorded_usage": {
+    "successful_calls": 5,
+    "input_tokens": 3600,
+    "output_tokens": 9185,
+    "total_tokens": 12785,
+    "estimated_usd": 0.011742,
+    "pricing_basis": "USD 0.20 per million input tokens and USD 1.20 per million output tokens",
+    "limitation": "Usage for the two rejected software calls was unavailable after validation failed, so actual total cost was higher."
+  }
+}

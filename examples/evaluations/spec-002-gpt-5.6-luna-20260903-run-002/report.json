@@ -1,0 +1,246 @@
+{
+  "spec": "SPEC-002",
+  "run_started_at": "2026-09-03T12:09:07.918709+00:00",
+  "run_completed_at": "2026-09-03T12:10:28.186476+00:00",
+  "provider": "openai",
+  "requested_model": "gpt-5.6-luna",
+  "fixtures_dir": "tests/fixtures/domains",
+  "results": [
+    {
+      "domain": "electromagnetism",
+      "source_fixture": "tests/fixtures/domains/electromagnetism.txt",
+      "provider": "openai",
+      "requested_model": "gpt-5.6-luna",
+      "started_at": "2026-09-03T12:09:07.919171+00:00",
+      "expectations": {
+        "concepts": [
+          "charge",
+          "electric field",
+          "magnetic field",
+          "electromagnetic wave",
+          "light"
+        ],
+        "relationships": [
+          "charge CREATES electric field",
+          "moving charge or electric current CREATES magnetic field",
+          "changing magnetic field INDUCES electric field",
+          "changing electric field INDUCES magnetic field",
+          "light IS_A electromagnetic wave"
+        ]
+      },
+      "review": {
+        "grounding": "NOT_EVALUATED",
+        "entity_quality": "NOT_EVALUATED",
+        "relationship_quality": "NOT_EVALUATED",
+        "coverage": "NOT_EVALUATED",
+        "precision": "NOT_EVALUATED",
+        "deduplication_quality": "NOT_EVALUATED",
+        "vocabulary_fit": "NOT_EVALUATED",
+        "cross_domain_usefulness": "NOT_EVALUATED"
+      },
+      "validation_success": true,
+      "output": "electromagnetism.knowledge.json",
+      "actual_model": "gpt-5.6-luna",
+      "prompt_version": "spec-002-v1",
+      "provider_request_id": "resp_030c45307a63bb83016a996364dd5c87d288180ad35c3ae3cc",
+      "usage": {
+        "input_tokens": 663,
+        "output_tokens": 951,
+        "total_tokens": 1614
+      },
+      "entity_count": 9,
+      "claim_count": 2,
+      "relationship_count": 8,
+      "failure_reason": null,
+      "completed_at": "2026-09-03T12:09:16.885319+00:00"
+    },
+    {
+      "domain": "software_architecture",
+      "source_fixture": "tests/fixtures/domains/software_architecture.txt",
+      "provider": "openai",
+      "requested_model": "gpt-5.6-luna",
+      "started_at": "2026-09-03T12:09:16.885349+00:00",
+      "expectations": {
+        "concepts": [
+          "API component",
+          "order component",
+          "payment component",
+          "database",
+          "published interface",
+          "coupling"
+        ],
+        "relationships": [
+          "order component REQUIRES payment component",
+          "order component REQUIRES database",
+          "payment component REQUIRES database",
+          "dependency direction CONSTRAINS payment component",
+          "published interfaces ENABLE internal component change"
+        ]
+      },
+      "review": {
+        "grounding": "NOT_EVALUATED",
+        "entity_quality": "NOT_EVALUATED",
+        "relationship_quality": "NOT_EVALUATED",
+        "coverage": "NOT_EVALUATED",
+        "precision": "NOT_EVALUATED",
+        "deduplication_quality": "NOT_EVALUATED",
+        "vocabulary_fit": "NOT_EVALUATED",
+        "cross_domain_usefulness": "NOT_EVALUATED"
+      },
+      "validation_success": false,
+      "output": null,
+      "entity_count": 0,
+      "claim_count": 0,
+      "relationship_count": 0,
+      "failure_reason": "ValidationError: INFERRED relationships must not present source evidence",
+      "completed_at": "2026-09-03T12:09:37.403294+00:00"
+    },
+    {
+      "domain": "economics",
+      "source_fixture": "tests/fixtures/domains/economics.txt",
+      "provider": "openai",
+      "requested_model": "gpt-5.6-luna",
+      "started_at": "2026-09-03T12:09:37.403414+00:00",
+      "expectations": {
+        "concepts": [
+          "price",
+          "quantity demanded",
+          "quantity supplied",
+          "shortage",
+          "surplus",
+          "price elasticity"
+        ],
+        "relationships": [
+          "price INCREASES quantity supplied",
+          "price DECREASES quantity demanded",
+          "shortage INCREASES price",
+          "surplus DECREASES price",
+          "price elasticity MEASURED_BY quantity response"
+        ]
+      },
+      "review": {
+        "grounding": "NOT_EVALUATED",
+        "entity_quality": "NOT_EVALUATED",
+        "relationship_quality": "NOT_EVALUATED",
+        "coverage": "NOT_EVALUATED",
+        "precision": "NOT_EVALUATED",
+        "deduplication_quality": "NOT_EVALUATED",
+        "vocabulary_fit": "NOT_EVALUATED",
+        "cross_domain_usefulness": "NOT_EVALUATED"
+      },
+      "validation_success": true,
+      "output": "economics.knowledge.json",
+      "actual_model": "gpt-5.6-luna",
+      "prompt_version": "spec-002-v1",
+      "provider_request_id": "resp_07697f49fda4a5fe016a9963819c3487d2a20b85039e456859",
+      "usage": {
+        "input_tokens": 708,
+        "output_tokens": 1796,
+        "total_tokens": 2504
+      },
+      "entity_count": 14,
+      "claim_count": 3,
+      "relationship_count": 16,
+      "failure_reason": null,
+      "completed_at": "2026-09-03T12:09:51.300075+00:00"
+    },
+    {
+      "domain": "biology",
+      "source_fixture": "tests/fixtures/domains/biology.txt",
+      "provider": "openai",
+      "requested_model": "gpt-5.6-luna",
+      "started_at": "2026-09-03T12:09:51.300128+00:00",
+      "expectations": {
+        "concepts": [
+          "DNA",
+          "RNA polymerase",
+          "messenger RNA",
+          "ribosome",
+          "polypeptide",
+          "protein"
+        ],
+        "relationships": [
+          "RNA polymerase CREATES messenger RNA",
+          "transcription PRECEDES translation",
+          "ribosome CREATES polypeptide",
+          "polypeptide TRANSFORMS_INTO protein",
+          "regulatory proteins INCREASES or DECREASES transcription"
+        ]
+      },
+      "review": {
+        "grounding": "NOT_EVALUATED",
+        "entity_quality": "NOT_EVALUATED",
+        "relationship_quality": "NOT_EVALUATED",
+        "coverage": "NOT_EVALUATED",
+        "precision": "NOT_EVALUATED",
+        "deduplication_quality": "NOT_EVALUATED",
+        "vocabulary_fit": "NOT_EVALUATED",
+        "cross_domain_usefulness": "NOT_EVALUATED"
+      },
+      "validation_success": true,
+      "output": "biology.knowledge.json",
+      "actual_model": "gpt-5.6-luna",
+      "prompt_version": "spec-002-v1",
+      "provider_request_id": "resp_00e756b66eb619aa016a99638f891c87d2a82ba122856cb22d",
+      "usage": {
+        "input_tokens": 716,
+        "output_tokens": 1878,
+        "total_tokens": 2594
+      },
+      "entity_count": 16,
+      "claim_count": 3,
+      "relationship_count": 14,
+      "failure_reason": null,
+      "completed_at": "2026-09-03T12:10:06.918346+00:00"
+    },
+    {
+      "domain": "history",
+      "source_fixture": "tests/fixtures/domains/history.txt",
+      "provider": "openai",
+      "requested_model": "gpt-5.6-luna",
+      "started_at": "2026-09-03T12:10:06.918404+00:00",
+      "expectations": {
+        "concepts": [
+          "movable metal type",
+          "printing press",
+          "books",
+          "pamphlets",
+          "authorities",
+          "censorship"
+        ],
+        "relationships": [
+          "printing ENABLES production of many copies",
+          "printing DECREASES reproduction cost",
+          "printed material ENABLES arguments to circulate",
+          "printed controversy PRECEDES licensing or censorship",
+          "licensing CONSTRAINS printers"
+        ]
+      },
+      "review": {
+        "grounding": "NOT_EVALUATED",
+        "entity_quality": "NOT_EVALUATED",
+        "relationship_quality": "NOT_EVALUATED",
+        "coverage": "NOT_EVALUATED",
+        "precision": "NOT_EVALUATED",
+        "deduplication_quality": "NOT_EVALUATED",
+        "vocabulary_fit": "NOT_EVALUATED",
+        "cross_domain_usefulness": "NOT_EVALUATED"
+      },
+      "validation_success": true,
+      "output": "history.knowledge.json",
+      "actual_model": "gpt-5.6-luna",
+      "prompt_version": "spec-002-v1",
+      "provider_request_id": "resp_0a7839933b27bd06016a99639f287087d2a48929ddcef97866",
+      "usage": {
+        "input_tokens": 737,
+        "output_tokens": 2247,
+        "total_tokens": 2984
+      },
+      "entity_count": 20,
+      "claim_count": 3,
+      "relationship_count": 17,
+      "failure_reason": null,
+      "completed_at": "2026-09-03T12:10:28.186428+00:00"
+    }
+  ]
+}

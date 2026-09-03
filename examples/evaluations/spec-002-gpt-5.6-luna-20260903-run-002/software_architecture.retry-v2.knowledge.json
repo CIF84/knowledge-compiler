@@ -1,0 +1,489 @@
+{
+  "document": {
+    "id": "text-49b42a4f08a99742",
+    "text": "A modular order-processing service separates the API component, order component, payment component, and database. The API component calls the order component through its published interface. The order component requires the payment component to authorize a purchase, and both components require the database to store durable state.\n\nDependency direction is constrained: the payment component must not call the API component. This separation prevents transport details from becoming part of payment logic. Published interfaces enable components to change internally without forcing callers to change, while direct access to another component's private data increases coupling.\n\nThe database is shared infrastructure, so a schema change can still affect both order and payment components. Keeping database access behind component interfaces decreases that coupling but adds implementation work and may make cross-component queries slower.",
+    "source_type": "text",
+    "metadata": {
+      "filename": "software_architecture.txt"
+    }
+  },
+  "entities": [
+    {
+      "id": "modular-order-processing-service",
+      "name": "Modular order-processing service",
+      "description": "A service organized into separate API, order, payment, and database components.",
+      "entity_type": "SYSTEM",
+      "aliases": []
+    },
+    {
+      "id": "api-component",
+      "name": "API component",
+      "description": "The component through which the service exposes or receives API-level interactions.",
+      "entity_type": "COMPONENT",
+      "aliases": []
+    },
+    {
+      "id": "order-component",
+      "name": "Order component",
+      "description": "The component responsible for order-processing behavior.",
+      "entity_type": "COMPONENT",
+      "aliases": []
+    },
+    {
+      "id": "payment-component",
+      "name": "Payment component",
+      "description": "The component responsible for authorizing purchases.",
+      "entity_type": "COMPONENT",
+      "aliases": []
+    },
+    {
+      "id": "database",
+      "name": "Database",
+      "description": "Shared infrastructure used to store durable state.",
+      "entity_type": "COMPONENT",
+      "aliases": []
+    },
+    {
+      "id": "published-interface",
+      "name": "Published interface",
+      "description": "An interface through which a component exposes functionality to other components.",
+      "entity_type": "CONCEPT",
+      "aliases": []
+    },
+    {
+      "id": "durable-state",
+      "name": "Durable state",
+      "description": "Persistent state stored in the database.",
+      "entity_type": "VARIABLE",
+      "aliases": []
+    },
+    {
+      "id": "dependency-direction",
+      "name": "Dependency direction",
+      "description": "The constraint governing which components may depend on or call other components.",
+      "entity_type": "CONCEPT",
+      "aliases": []
+    },
+    {
+      "id": "transport-details",
+      "name": "Transport details",
+      "description": "Communication or transport-specific details that can otherwise enter payment logic.",
+      "entity_type": "CONCEPT",
+      "aliases": []
+    },
+    {
+      "id": "payment-logic",
+      "name": "Payment logic",
+      "description": "The internal logic of the payment component.",
+      "entity_type": "CONCEPT",
+      "aliases": []
+    },
+    {
+      "id": "private-data",
+      "name": "Private data",
+      "description": "Data owned internally by another component and not exposed through its interface.",
+      "entity_type": "CONCEPT",
+      "aliases": []
+    },
+    {
+      "id": "coupling",
+      "name": "Coupling",
+      "description": "The degree of dependency between components.",
+      "entity_type": "VARIABLE",
+      "aliases": []
+    },
+    {
+      "id": "schema-change",
+      "name": "Database schema change",
+      "description": "A change to the structure of the shared database schema.",
+      "entity_type": "PROCESS",
+      "aliases": []
+    },
+    {
+      "id": "database-access-behind-interfaces",
+      "name": "Database access behind component interfaces",
+      "description": "An arrangement in which components access the database through component interfaces rather than directly.",
+      "entity_type": "CONCEPT",
+      "aliases": []
+    },
+    {
+      "id": "cross-component-query",
+      "name": "Cross-component query",
+      "description": "A query involving data across component boundaries.",
+      "entity_type": "PROCESS",
+      "aliases": []
+    },
+    {
+      "id": "implementation-work",
+      "name": "Implementation work",
+      "description": "Additional work required to keep database access behind component interfaces.",
+      "entity_type": "VARIABLE",
+      "aliases": []
+    },
+    {
+      "id": "query-latency",
+      "name": "Cross-component query speed",
+      "description": "The speed of queries spanning component boundaries.",
+      "entity_type": "VARIABLE",
+      "aliases": []
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim-payment-api-prohibition",
+      "statement": "The payment component must not call the API component.",
+      "evidence": [
+        {
+          "document_id": "text-49b42a4f08a99742",
+          "start_char": 333,
+          "end_char": 424,
+          "quote": "Dependency direction is constrained: the payment component must not call the API component."
+        }
+      ],
+      "confidence": 1.0,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "claim-separation-purpose",
+      "statement": "Separating the payment component from API calls prevents transport details from becoming part of payment logic.",
+      "evidence": [
+        {
+          "document_id": "text-49b42a4f08a99742",
+          "start_char": 425,
+          "end_char": 504,
+          "quote": "This separation prevents transport details from becoming part of payment logic."
+        }
+      ],
+      "confidence": 1.0,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "claim-interface-change-isolation",
+      "statement": "Published interfaces allow components to change internally without requiring their callers to change.",
+      "evidence": [
+        {
+          "document_id": "text-49b42a4f08a99742",
+          "start_char": 505,
+          "end_char": 598,
+          "quote": "Published interfaces enable components to change internally without forcing callers to change"
+        }
+      ],
+      "confidence": 1.0,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "claim-shared-schema-impact",
+      "statement": "Because the database is shared infrastructure, a schema change can affect both the order and payment components.",
+      "evidence": [
+        {
+          "document_id": "text-49b42a4f08a99742",
+          "start_char": 677,
+          "end_char": 786,
+          "quote": "The database is shared infrastructure, so a schema change can still affect both order and payment components."
+        }
+      ],
+      "confidence": 1.0,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "claim-interface-access-tradeoffs",
+      "statement": "Keeping database access behind component interfaces adds implementation work and may make cross-component queries slower.",
+      "evidence": [
+        {
+          "document_id": "text-49b42a4f08a99742",
+          "start_char": 787,
+          "end_char": 936,
+          "quote": "Keeping database access behind component interfaces decreases that coupling but adds implementation work and may make cross-component queries slower."
+        }
+      ],
+      "confidence": 1.0,
+      "origin": "SOURCE"
+    }
+  ],
+  "relationships": [
+    {
+      "id": "rel-service-has-api",
+      "source_entity_id": "modular-order-processing-service",
+      "relationship_type": "PART_OF",
+      "target_entity_id": "api-component",
+      "statement": "The API component is part of the modular order-processing service.",
+      "evidence": [
+        {
+          "document_id": "text-49b42a4f08a99742",
+          "start_char": 0,
+          "end_char": 113,
+          "quote": "A modular order-processing service separates the API component, order component, payment component, and database."
+        }
+      ],
+      "confidence": 1.0,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "rel-service-has-order",
+      "source_entity_id": "modular-order-processing-service",
+      "relationship_type": "PART_OF",
+      "target_entity_id": "order-component",
+      "statement": "The order component is part of the modular order-processing service.",
+      "evidence": [
+        {
+          "document_id": "text-49b42a4f08a99742",
+          "start_char": 0,
+          "end_char": 113,
+          "quote": "A modular order-processing service separates the API component, order component, payment component, and database."
+        }
+      ],
+      "confidence": 1.0,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "rel-service-has-payment",
+      "source_entity_id": "modular-order-processing-service",
+      "relationship_type": "PART_OF",
+      "target_entity_id": "payment-component",
+      "statement": "The payment component is part of the modular order-processing service.",
+      "evidence": [
+        {
+          "document_id": "text-49b42a4f08a99742",
+          "start_char": 0,
+          "end_char": 113,
+          "quote": "A modular order-processing service separates the API component, order component, payment component, and database."
+        }
+      ],
+      "confidence": 1.0,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "rel-service-has-database",
+      "source_entity_id": "modular-order-processing-service",
+      "relationship_type": "PART_OF",
+      "target_entity_id": "database",
+      "statement": "The database is part of the modular order-processing service.",
+      "evidence": [
+        {
+          "document_id": "text-49b42a4f08a99742",
+          "start_char": 0,
+          "end_char": 113,
+          "quote": "A modular order-processing service separates the API component, order component, payment component, and database."
+        }
+      ],
+      "confidence": 1.0,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "rel-api-calls-order",
+      "source_entity_id": "api-component",
+      "relationship_type": "INTERACTS_WITH",
+      "target_entity_id": "order-component",
+      "statement": "The API component calls the order component through its published interface.",
+      "evidence": [
+        {
+          "document_id": "text-49b42a4f08a99742",
+          "start_char": 114,
+          "end_char": 190,
+          "quote": "The API component calls the order component through its published interface."
+        }
+      ],
+      "confidence": 1.0,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "rel-api-uses-interface",
+      "source_entity_id": "api-component",
+      "relationship_type": "REQUIRES",
+      "target_entity_id": "published-interface",
+      "statement": "The API component uses the order component's published interface.",
+      "evidence": [
+        {
+          "document_id": "text-49b42a4f08a99742",
+          "start_char": 114,
+          "end_char": 190,
+          "quote": "The API component calls the order component through its published interface."
+        }
+      ],
+      "confidence": 0.96,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "rel-order-requires-payment",
+      "source_entity_id": "order-component",
+      "relationship_type": "REQUIRES",
+      "target_entity_id": "payment-component",
+      "statement": "The order component requires the payment component to authorize a purchase.",
+      "evidence": [
+        {
+          "document_id": "text-49b42a4f08a99742",
+          "start_char": 191,
+          "end_char": 265,
+          "quote": "The order component requires the payment component to authorize a purchase"
+        }
+      ],
+      "confidence": 1.0,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "rel-order-requires-database",
+      "source_entity_id": "order-component",
+      "relationship_type": "REQUIRES",
+      "target_entity_id": "database",
+      "statement": "The order component requires the database to store durable state.",
+      "evidence": [
+        {
+          "document_id": "text-49b42a4f08a99742",
+          "start_char": 271,
+          "end_char": 330,
+          "quote": "both components require the database to store durable state"
+        }
+      ],
+      "confidence": 1.0,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "rel-payment-requires-database",
+      "source_entity_id": "payment-component",
+      "relationship_type": "REQUIRES",
+      "target_entity_id": "database",
+      "statement": "The payment component requires the database to store durable state.",
+      "evidence": [
+        {
+          "document_id": "text-49b42a4f08a99742",
+          "start_char": 271,
+          "end_char": 330,
+          "quote": "both components require the database to store durable state"
+        }
+      ],
+      "confidence": 1.0,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "rel-interface-enables-change",
+      "source_entity_id": "published-interface",
+      "relationship_type": "ENABLES",
+      "target_entity_id": "order-component",
+      "statement": "Published interfaces enable internal component changes without forcing callers to change.",
+      "evidence": [
+        {
+          "document_id": "text-49b42a4f08a99742",
+          "start_char": 505,
+          "end_char": 598,
+          "quote": "Published interfaces enable components to change internally without forcing callers to change"
+        }
+      ],
+      "confidence": 1.0,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "rel-private-access-increases-coupling",
+      "source_entity_id": "private-data",
+      "relationship_type": "INCREASES",
+      "target_entity_id": "coupling",
+      "statement": "Direct access to another component's private data increases coupling.",
+      "evidence": [
+        {
+          "document_id": "text-49b42a4f08a99742",
+          "start_char": 606,
+          "end_char": 675,
+          "quote": "direct access to another component's private data increases coupling."
+        }
+      ],
+      "confidence": 1.0,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "rel-schema-change-affects-order",
+      "source_entity_id": "schema-change",
+      "relationship_type": "CAUSES",
+      "target_entity_id": "order-component",
+      "statement": "A database schema change can affect the order component.",
+      "evidence": [
+        {
+          "document_id": "text-49b42a4f08a99742",
+          "start_char": 719,
+          "end_char": 786,
+          "quote": "a schema change can still affect both order and payment components."
+        }
+      ],
+      "confidence": 1.0,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "rel-schema-change-affects-payment",
+      "source_entity_id": "schema-change",
+      "relationship_type": "CAUSES",
+      "target_entity_id": "payment-component",
+      "statement": "A database schema change can affect the payment component.",
+      "evidence": [
+        {
+          "document_id": "text-49b42a4f08a99742",
+          "start_char": 719,
+          "end_char": 786,
+          "quote": "a schema change can still affect both order and payment components."
+        }
+      ],
+      "confidence": 1.0,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "rel-interface-database-access-decreases-coupling",
+      "source_entity_id": "database-access-behind-interfaces",
+      "relationship_type": "DECREASES",
+      "target_entity_id": "coupling",
+      "statement": "Keeping database access behind component interfaces decreases coupling.",
+      "evidence": [
+        {
+          "document_id": "text-49b42a4f08a99742",
+          "start_char": 787,
+          "end_char": 862,
+          "quote": "Keeping database access behind component interfaces decreases that coupling"
+        }
+      ],
+      "confidence": 1.0,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "rel-interface-access-requires-work",
+      "source_entity_id": "database-access-behind-interfaces",
+      "relationship_type": "REQUIRES",
+      "target_entity_id": "implementation-work",
+      "statement": "Keeping database access behind component interfaces requires additional implementation work.",
+      "evidence": [
+        {
+          "document_id": "text-49b42a4f08a99742",
+          "start_char": 787,
+          "end_char": 891,
+          "quote": "Keeping database access behind component interfaces decreases that coupling but adds implementation work"
+        }
+      ],
+      "confidence": 0.96,
+      "origin": "SOURCE"
+    },
+    {
+      "id": "rel-interface-access-slows-queries",
+      "source_entity_id": "database-access-behind-interfaces",
+      "relationship_type": "DECREASES",
+      "target_entity_id": "query-latency",
+      "statement": "Keeping database access behind component interfaces may decrease the speed of cross-component queries.",
+      "evidence": [
+        {
+          "document_id": "text-49b42a4f08a99742",
+          "start_char": 896,
+          "end_char": 935,
+          "quote": "may make cross-component queries slower"
+        }
+      ],
+      "confidence": 0.9,
+      "origin": "SOURCE"
+    }
+  ],
+  "metadata": {
+    "extractor": "llm",
+    "provider": "openai",
+    "model": "gpt-5.6-luna",
+    "prompt_version": "spec-002-v2",
+    "provider_request_id": "resp_0e3782152d284644016a99647f34e087d2affbe521803c95c0",
+    "usage": {
+      "input_tokens": 776,
+      "output_tokens": 2313,
+      "total_tokens": 3089
+    }
+  }
+}
