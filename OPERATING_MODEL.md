@@ -17,7 +17,9 @@ Codex — implementation + tests + evaluation + commit + push
         ↓
 GitHub — canonical implementation state
         ↓
-ChatGPT — independent review against SPEC
+ChatGPT — independent repository review against SPEC
+        ↓
+if human-facing: owner interacts with fixed artifact
         ↓
 DEBRIEF-N — evidence, findings, deviations, learnings
         ↓
@@ -34,7 +36,8 @@ next highest-value uncertainty
 - define narrow experiments;
 - write implementation SPECs;
 - independently inspect completed implementation;
-- write DEBRIEFs;
+- guide focused human review when product behavior cannot be established from repository evidence;
+- write DEBRIEFS;
 - maintain project memory, architecture, operating model, and health.
 
 Do not accept implementation summaries as verification when repository inspection is possible.
@@ -48,7 +51,8 @@ Do not accept implementation summaries as verification when repository inspectio
 - avoid unrelated refactoring;
 - preserve failed experimental attempts when required;
 - commit and push before review handoff;
-- report architecture, validation, evaluation, deviations, and commit SHA.
+- report architecture, validation, evaluation, deviations, and commit SHA;
+- for human-facing increments, provide the simplest exact command needed for owner review rather than declaring subjective product success itself.
 
 ### GitHub Repository
 
@@ -60,13 +64,17 @@ Every increment should have one primary uncertainty. A good SPEC includes object
 
 Prefer one major uncertainty per SPEC.
 
+For human-facing experiments, distinguish deterministic implementation acceptance from the human product verdict.
+
 ## DEBRIEF Protocol
 
 Every completed SPEC must have a matching DEBRIEF. Debriefs preserve actual outcome, evidence, deviations, findings, decisions, unresolved questions, next implications, and whether canonical models changed.
 
+For UI-bearing increments, do not finalize the debrief until the relevant human interaction has occurred when that interaction is part of the primary experiment.
+
 ## Current Practices With Positive Evidence
 
-The following practices have now worked across four implementation cycles:
+The following practices have now worked across five implementation cycles:
 
 - separate product/architecture reasoning from implementation orchestration;
 - convert decisions into a focused repository SPEC;
@@ -89,9 +97,11 @@ The following practices have now worked across four implementation cycles:
 - explicitly attribute failures to the layer that caused them instead of repairing them locally by default;
 - accept negative or empty outputs when they truthfully reflect insufficient upstream structure;
 - improve probabilistic behavior at prompt/adapter boundaries before weakening trusted invariants;
-- let evidence, not preference, update project models.
+- let evidence, not preference, update project models;
+- for UI-bearing increments, verify repository integrity first and then let the owner interact with the exact fixed artifact before subjective acceptance;
+- use screenshots and natural-language observations as lightweight diagnostic evidence when they reveal spatial/interaction issues, without requiring a design-management process.
 
-SPEC-004 strengthens confidence that the operating model is converging toward lower-probability, lower-cost experiments as layers become validated.
+SPEC-005 strengthens confidence that the operating model can move from architecture experiments into product experiments without losing separation of roles.
 
 ## Experiment Selection Principle
 
@@ -106,8 +116,11 @@ question about LLM extraction quality
 question about graph composition
     → accepted KnowledgeModel fixtures + deterministic algorithms
 
+question about representation integrity
+    → fixed semantic/structure artifacts + deterministic checks
+
 question about representation usefulness
-    → fixed semantic/structure artifacts + human product evaluation
+    → fixed artifacts + direct human interaction
 ```
 
 Do not invoke an LLM merely because one exists in the architecture.
@@ -130,7 +143,9 @@ comparison artifact
 human review
 ```
 
-SPEC-004 extends this idea: accepted outputs may also become fixed inputs for the next deterministic layer, isolating downstream behavior from upstream variance.
+Accepted outputs may become fixed inputs for the next deterministic/product layer, isolating downstream behavior from upstream variance.
+
+For interaction/layout experiments, reuse the same representation data where possible so the human comparison isolates presentation behavior rather than semantic changes.
 
 Use this pattern when the comparison itself is decision-relevant. Do not create baseline machinery for every implementation change.
 
@@ -140,14 +155,16 @@ When downstream output is weak, identify whether the weakness comes from:
 
 ```text
 upstream semantic model
-current algorithm/layer
-representation/presentation choice
+structure detection
+representation model
+spatial layout
+interaction behavior
 evaluation expectation
 ```
 
 Do not repair an upstream defect inside a downstream layer unless the architecture explicitly assigns that responsibility there.
 
-SPEC-004 showed the value of this discipline: missing chronology, collapsed states, and endpoint substitutions remained visible rather than being silently reconstructed by the detector.
+SPEC-005 reinforced this discipline: missing chronology, collapsed states, and endpoint substitutions became more obvious when rendered but remained visible rather than being silently reconstructed by presentation code.
 
 ## Human Review Principle
 
@@ -159,7 +176,27 @@ Respond conservatively:
 - preserve inspectable artifacts;
 - use fixed inputs when evaluating downstream product behavior;
 - do not replace human semantic or learning-value review with a second LLM judge until that judging mechanism is validated;
-- reduce review burden through focused experiments rather than larger evaluation suites by default.
+- reduce review burden through focused experiments rather than larger evaluation suites by default;
+- when the primary uncertainty is subjective product usefulness, let the owner use the artifact before acceptance;
+- capture the first natural reaction before turning review into a long questionnaire when that reaction is itself decision-relevant;
+- distinguish visual polish feedback from cognitive/interaction feedback.
+
+SPEC-005 showed that a short owner session can expose product constraints — synchronized semantic selection and structure-aware layout — that code inspection and integrity tests cannot reveal.
+
+## UI Experiment Principle
+
+For current-stage viewer work, optimize for cognitive behavior rather than production polish.
+
+Prefer experiments that ask questions such as:
+
+```text
+Can I see the structure quickly?
+Does selection behave as one semantic object?
+Does spatial placement expose the relationship pattern?
+Can I inspect why an edge exists?
+```
+
+Avoid premature work on branding, broad responsive design, frontend frameworks, animation systems, account flows, or design systems unless a later product experiment requires them.
 
 ## Security / Secret Handling
 
@@ -176,6 +213,7 @@ Watch for:
 - SPECs containing multiple unrelated experiments;
 - repeated scope expansion;
 - implementation summaries accepted without inspection;
+- subjective UI/product success declared without relevant human interaction;
 - probabilistic calls used where fixed accepted artifacts could answer the question;
 - downstream layers silently repairing upstream semantic defects;
 - multiple major variables changing in an experiment that depends on before/after attribution;
@@ -187,7 +225,8 @@ Watch for:
 - ontology or prompt growth without demonstrated value;
 - documentation maintenance costing more than the uncertainty it removes;
 - tests validating implementation details rather than product-relevant behavior;
-- structurally valid output being mistaken for pedagogically useful output.
+- structurally valid output being mistaken for pedagogically useful output;
+- visual polish being mistaken for cognitive improvement.
 
 ## Efficiency Principle
 
@@ -203,7 +242,7 @@ reduced uncertainty
 better next experiment
 ```
 
-SPEC-004 is a useful efficiency benchmark: it answered a meaningful architectural question with zero model-call cost by reusing accepted upstream artifacts.
+SPEC-004 was an efficiency benchmark for deterministic downstream computation. SPEC-005 extends the pattern: fixed upstream artifacts plus a small viewer and short human session produced direct product evidence with zero model/API cost.
 
 ## Reconstruction Test
 
@@ -221,7 +260,7 @@ A fresh collaborator should reconstruct the project approximately in this order:
 
 If this is insufficient to resume safely, project memory is incomplete.
 
-A deliberately fresh-thread reconstruction test remains outstanding, although four increasingly concise implementation handoffs provide indirect positive evidence.
+A deliberately fresh-thread reconstruction test remains outstanding, although five increasingly concise implementation handoffs provide indirect positive evidence.
 
 ## Evolution Rule
 
