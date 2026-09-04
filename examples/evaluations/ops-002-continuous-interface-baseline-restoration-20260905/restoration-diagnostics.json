@@ -1,0 +1,184 @@
+{
+  "attention": {
+    "clear_selection": {
+      "edges": {
+        "NORMAL": 28
+      },
+      "nodes": {
+        "NORMAL": 24
+      }
+    },
+    "hover_preview": {
+      "edges": {
+        "CONNECTED": 4,
+        "SUBDUED": 24
+      },
+      "nodes": {
+        "NEIGHBOR": 4,
+        "PREVIEW": 1,
+        "SUBDUED": 19
+      }
+    },
+    "hover_restoration_exact": true,
+    "selected_node": {
+      "edges": {
+        "CONNECTED": 4,
+        "SUBDUED": 24
+      },
+      "nodes": {
+        "NEIGHBOR": 4,
+        "SELECTED": 1,
+        "SUBDUED": 19
+      }
+    },
+    "selected_relationship": {
+      "edges": {
+        "SELECTED": 1,
+        "SUBDUED": 27
+      },
+      "nodes": {
+        "ENDPOINT": 2,
+        "SUBDUED": 22
+      }
+    }
+  },
+  "browser_verification": "SEE browser-verification.json",
+  "camera": {
+    "initial_scale": 1.0,
+    "max_scale": 2.25,
+    "min_scale": 0.55,
+    "overview_restores_without_rebuild": true,
+    "overview_target": {
+      "scale": 1.0,
+      "x": 0.0,
+      "y": 0.0
+    },
+    "pan_zoom_composition_test": {
+      "scale": 1.75,
+      "x": 837.142857,
+      "y": 371.428571
+    },
+    "pointer_zoom_test": {
+      "camera_after": {
+        "scale": 1.75,
+        "x": 757.142857,
+        "y": 411.428571
+      },
+      "camera_before": {
+        "scale": 1,
+        "x": 500,
+        "y": 240
+      },
+      "logical_screen_anchor": {
+        "x": 600.0,
+        "y": 400.0
+      },
+      "world_anchor_after": {
+        "x": 1100.0,
+        "y": 640.0
+      },
+      "world_anchor_before": {
+        "x": 1100.0,
+        "y": 640.0
+      }
+    }
+  },
+  "hit_targets": {
+    "edge_visible_and_hit_paths_share_identical_route_data": true,
+    "node_and_edge_geometry_share_svg_viewbox_transform": true
+  },
+  "integrity": {
+    "clear_selection_restores_normal_weight": true,
+    "frozen_inputs_unchanged": true,
+    "hover_restores_persistent_attention": true,
+    "no_live_provider_calls": true,
+    "no_personalization_engine": true,
+    "no_relationship_vocabulary_changes": true,
+    "no_semantic_ir_changes": true,
+    "no_semantic_zoom": true,
+    "pointer_anchor_preserved": true,
+    "representation_layouts_camera_compatible": true,
+    "scale_bounds_enforced": true,
+    "selection_persists_under_camera_change": true,
+    "world_coordinates_unchanged_by_camera_operations": true
+  },
+  "representation_layout_compatibility": {
+    "all_camera_transform_compatible": true,
+    "all_required_observed": true,
+    "observed_strategies": [
+      "chronological_axis",
+      "explicit_feedback_loop",
+      "layered_causal",
+      "layered_dependency",
+      "layered_hierarchy"
+    ],
+    "representations": [
+      {
+        "camera_transform_compatible": true,
+        "edge_count": 5,
+        "layout_strategy": "layered_causal",
+        "node_count": 6,
+        "source": "economics.representation.json",
+        "title": "Causal model"
+      },
+      {
+        "camera_transform_compatible": true,
+        "edge_count": 2,
+        "layout_strategy": "explicit_feedback_loop",
+        "node_count": 2,
+        "source": "electromagnetism.representation.json",
+        "title": "Feedback candidate"
+      },
+      {
+        "camera_transform_compatible": true,
+        "edge_count": 1,
+        "layout_strategy": "layered_hierarchy",
+        "node_count": 2,
+        "source": "electromagnetism.representation.json",
+        "title": "Hierarchy"
+      },
+      {
+        "camera_transform_compatible": true,
+        "edge_count": 3,
+        "layout_strategy": "layered_dependency",
+        "node_count": 4,
+        "source": "history.representation.json",
+        "title": "Dependency model"
+      },
+      {
+        "camera_transform_compatible": true,
+        "edge_count": 1,
+        "layout_strategy": "chronological_axis",
+        "node_count": 2,
+        "source": "history.representation.json",
+        "title": "Process chronology"
+      },
+      {
+        "camera_transform_compatible": true,
+        "edge_count": 4,
+        "layout_strategy": "layered_hierarchy",
+        "node_count": 5,
+        "source": "software_architecture.representation.json",
+        "title": "Hierarchy"
+      },
+      {
+        "camera_transform_compatible": true,
+        "edge_count": 2,
+        "layout_strategy": "layered_dependency",
+        "node_count": 3,
+        "source": "software_architecture.representation.json",
+        "title": "Dependency model"
+      }
+    ],
+    "required_strategies": [
+      "chronological_axis",
+      "explicit_feedback_loop",
+      "layered_causal",
+      "layered_dependency",
+      "layered_hierarchy"
+    ]
+  },
+  "version": "ops-002-v1",
+  "world_coordinate_hash_after": "aaba4d3a6877a90a56e0c542634171a0c98e24f4c3ababf1bde41d90677a863a",
+  "world_coordinate_hash_before": "aaba4d3a6877a90a56e0c542634171a0c98e24f4c3ababf1bde41d90677a863a"
+}

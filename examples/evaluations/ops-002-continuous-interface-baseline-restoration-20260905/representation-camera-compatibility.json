@@ -1,0 +1,76 @@
+{
+  "all_camera_transform_compatible": true,
+  "all_required_observed": true,
+  "observed_strategies": [
+    "chronological_axis",
+    "explicit_feedback_loop",
+    "layered_causal",
+    "layered_dependency",
+    "layered_hierarchy"
+  ],
+  "representations": [
+    {
+      "camera_transform_compatible": true,
+      "edge_count": 5,
+      "layout_strategy": "layered_causal",
+      "node_count": 6,
+      "source": "economics.representation.json",
+      "title": "Causal model"
+    },
+    {
+      "camera_transform_compatible": true,
+      "edge_count": 2,
+      "layout_strategy": "explicit_feedback_loop",
+      "node_count": 2,
+      "source": "electromagnetism.representation.json",
+      "title": "Feedback candidate"
+    },
+    {
+      "camera_transform_compatible": true,
+      "edge_count": 1,
+      "layout_strategy": "layered_hierarchy",
+      "node_count": 2,
+      "source": "electromagnetism.representation.json",
+      "title": "Hierarchy"
+    },
+    {
+      "camera_transform_compatible": true,
+      "edge_count": 3,
+      "layout_strategy": "layered_dependency",
+      "node_count": 4,
+      "source": "history.representation.json",
+      "title": "Dependency model"
+    },
+    {
+      "camera_transform_compatible": true,
+      "edge_count": 1,
+      "layout_strategy": "chronological_axis",
+      "node_count": 2,
+      "source": "history.representation.json",
+      "title": "Process chronology"
+    },
+    {
+      "camera_transform_compatible": true,
+      "edge_count": 4,
+      "layout_strategy": "layered_hierarchy",
+      "node_count": 5,
+      "source": "software_architecture.representation.json",
+      "title": "Hierarchy"
+    },
+    {
+      "camera_transform_compatible": true,
+      "edge_count": 2,
+      "layout_strategy": "layered_dependency",
+      "node_count": 3,
+      "source": "software_architecture.representation.json",
+      "title": "Dependency model"
+    }
+  ],
+  "required_strategies": [
+    "chronological_axis",
+    "explicit_feedback_loop",
+    "layered_causal",
+    "layered_dependency",
+    "layered_hierarchy"
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "browser": "Codex in-app browser (Chromium desktop engine)",
+  "console": {
+    "errors": [],
+    "result": "PASS",
+    "warnings": []
+  },
+  "keyboard": {
+    "enter_activates_focused_relationship": "PASS",
+    "node_focus_visible": "intentional amber dashed rectangle stroke; browser outline none",
+    "relationship_focus_visible": "intentional amber dashed path stroke; browser outline none",
+    "space_activates_focused_node": "PASS",
+    "tab_focus_path": "PASS"
+  },
+  "mouse": {
+    "button_zoom": "PASS; 100% to 125% with selection and detail preserved",
+    "drag_pan": "PASS; camera moved from 0,0 to 282.051282,100.113766 at scale 1",
+    "mouse_focused_node_default_outline": "none",
+    "mouse_focused_relationship_default_outline": "none",
+    "pointer_zoom": "PASS; native wheel input changed geometric scale and preserved selection; x anchor remained exact while y reached the documented world-bound clamp at minimum scale",
+    "selected_node_suppression": "PASS; selected node 1, direct neighbors 3, subdued nodes 20, connected relationships 3, subdued relationships 25 for inventory-reservation",
+    "selected_relationship_suppression": "PASS; selected relationship 1, endpoints 2, subdued nodes 22, subdued relationships 27",
+    "selection_survives_pan_and_zoom": "PASS",
+    "transformed_relationship_hit_target": "PASS; navigation-edge-02 selected after pan at viewBox 282.051282 100.113766 1200 800 and again after zoom at viewBox 120 330 960 640",
+    "wheel_scale_bound": "PASS; minimum 55% reached deterministically"
+  },
+  "overview": {
+    "camera_after": {
+      "scale": 1.0,
+      "x": 0.0,
+      "y": 0.0
+    },
+    "camera_before": {
+      "scale": 1.5625,
+      "x": 96.0,
+      "y": 394.0
+    },
+    "graph_after": {
+      "edge_count": 28,
+      "node_count": 24
+    },
+    "result": "PASS",
+    "selection_policy": "persistent selection and synchronized detail are preserved"
+  },
+  "status": "PASS",
+  "verified_at": "2026-09-05",
+  "viewport_note": "Verified in the available narrow Codex browser panel; machine transform checks cover the fixed 1200x800 logical camera viewport. Owner review should use a normal desktop-width browser."
+}
