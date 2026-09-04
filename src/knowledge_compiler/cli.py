@@ -38,6 +38,11 @@ from .semantic_navigation import (
     prepare_semantic_navigation_evaluation,
 )
 from .semantic_gate_evaluation import prepare_gate_evaluation, run_gate_evaluation
+from .semantic_compression_evaluation import (
+    default_compression_benchmark_path,
+    prepare_compression_evaluation,
+    run_compression_evaluation,
+)
 from .staged_semantic_evaluation import (
     finalize_staged_semantic_evaluation,
     run_staged_semantic_evaluation,
@@ -182,6 +187,23 @@ def _parser() -> argparse.ArgumentParser:
     gate_evaluation.add_argument("--packet", required=True, type=Path)
     gate_evaluation.add_argument("--model", default=DEFAULT_MODEL)
     gate_evaluation.add_argument("--output-dir", required=True, type=Path)
+    compression_prepare = subcommands.add_parser(
+        "prepare-semantic-compression",
+        help="validate and blind the frozen offline SPEC-015 historical benchmark",
+    )
+    compression_prepare.add_argument(
+        "--packet", type=Path, default=default_compression_benchmark_path()
+    )
+    compression_prepare.add_argument("--output-dir", required=True, type=Path)
+    compression_evaluation = subcommands.add_parser(
+        "evaluate-semantic-compression",
+        help="run the one-call SPEC-015 semantic-compression adequacy experiment",
+    )
+    compression_evaluation.add_argument(
+        "--packet", type=Path, default=default_compression_benchmark_path()
+    )
+    compression_evaluation.add_argument("--model", default="gpt-5.6-luna")
+    compression_evaluation.add_argument("--output-dir", required=True, type=Path)
     view = subcommands.add_parser("view-representations", help="serve a prepared representation review locally")
     view.add_argument("directory", type=Path)
     view.add_argument("--host", default="127.0.0.1")
@@ -193,6 +215,31 @@ def _parser() -> argparse.ArgumentParser:
 def main(argv: list[str] | None = None) -> int:
     args = _parser().parse_args(argv)
     try:
+        if args.command == "evaluate-semantic-compression":
+            if not os.environ.get("OPENAI_API_KEY"):
+                raise ExtractionError("OPENAI_API_KEY is required for live SPEC-015 evaluation")
+            report = run_compression_evaluation(
+                benchmark_path=args.packet,
+                output_dir=args.output_dir,
+                model=args.model,
+            )
+            print(
+                f"Wrote {args.output_dir / 'report.json'} "
+                f"(10 cases; verdict {report['verdict']})"
+            )
+            return 0
+
+        if args.command == "prepare-semantic-compression":
+            reference = prepare_compression_evaluation(
+                benchmark_path=args.packet,
+                output_dir=args.output_dir,
+            )
+            print(
+                f"Wrote {args.output_dir / 'blinded-packet.json'} "
+                f"({reference['case_count']} frozen cases; live judge pending approval)"
+            )
+            return 0
+
         if args.command == "evaluate-semantic-gate":
             if not os.environ.get("OPENAI_API_KEY"):
                 raise ExtractionError("OPENAI_API_KEY is required for live SPEC-014 evaluation")

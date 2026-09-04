@@ -1,0 +1,104 @@
+{
+  "spec": "SPEC-015",
+  "evaluation_version": "spec-015-evaluator-v1",
+  "status": "FROZEN_FOR_ONE_CALL_EVALUATION",
+  "source_packet_path": "examples/evaluations/review-003-endpoint-role-benchmark-20260904/endpoint-role-packet.json",
+  "source_packet_sha256": "cbbef7b3eca555c4691024f987d6ba04be6cb6091d90d91d2121290782591088",
+  "expected_source_packet_sha256": "cbbef7b3eca555c4691024f987d6ba04be6cb6091d90d91d2121290782591088",
+  "source_packet_byte_identical": true,
+  "source_packet_copied": false,
+  "case_count": 10,
+  "positive_case_count": 5,
+  "negative_case_count": 5,
+  "opaque_case_ids": [
+    "endpoint-role-001",
+    "endpoint-role-002",
+    "endpoint-role-003",
+    "endpoint-role-004",
+    "endpoint-role-005",
+    "endpoint-role-006",
+    "endpoint-role-007",
+    "endpoint-role-008",
+    "endpoint-role-009",
+    "endpoint-role-010"
+  ],
+  "opaque_id_strategy": "rank SHA-256(historical case_id) lexicographically; assign endpoint-role-001..010",
+  "blinded_packet_canonical_sha256": "c74b53f6371cdebb6f96dbdc79ecfe5e6e0820ed6055c5eda69a4ac1da1116c7",
+  "blinded_packet_file_sha256": "76154665c3241382fb8059be983c2750668f2f1b95ad9e86069258afdc7eff9c",
+  "model_facing_fields": [
+    "protocol_version",
+    "case_id",
+    "grounded_assertion.statement",
+    "grounded_assertion.participant_symbol_ids",
+    "grounded_assertion.evidence",
+    "symbols",
+    "candidate_relationship.source_entity_id",
+    "candidate_relationship.relationship_type",
+    "candidate_relationship.target_entity_id",
+    "predicate_contract"
+  ],
+  "withheld_fields": [
+    "historical case_id",
+    "label",
+    "historical_classification",
+    "defect_family",
+    "assertion construction",
+    "historical candidate id/statement/confidence/origin",
+    "candidate endpoint diagnostics",
+    "positive-control rationale",
+    "provenance",
+    "accepted corrections",
+    "expected verdicts"
+  ],
+  "blinding_validation": "PASS",
+  "historical_integrity": {
+    "source_packet_sha256": "cbbef7b3eca555c4691024f987d6ba04be6cb6091d90d91d2121290782591088",
+    "case_count": 10,
+    "positive_case_count": 5,
+    "negative_case_count": 5,
+    "source_artifact_hashes": {
+      "text-9e978db999ee6713": "100e3581ada4e2a4b0c293ce94138592382e5e8233774203a3e3c93683122627",
+      "text-e8f26f10caa19160": "dbd3bef0705d171ba4a320fd0e90a52d2a2f64b56e33fc212a4f7be2e5c3c8f2",
+      "text-49b42a4f08a99742": "91cb150fc875f1d01cd9412c95f8ddbb1e79561c439a866231ab2dedd6294261",
+      "text-79c197b799735d88": "64cf60ca4df8a22b1f73d034c179727a75714f7a942ff3a62c1333c21680ac83",
+      "text-e6c889f45171a12a": "26a0d9cadcc33c065d177ba7c895c0059e5e70a413343cb5705737bc586406da"
+    },
+    "evidence_spans_preserved": true,
+    "historical_candidates_preserved": true,
+    "predicate_contracts_preserved": true,
+    "symbol_identity_integrity": true,
+    "provenance_paths_exist": true
+  },
+  "verdict_vocabulary": [
+    "BINARY_ADEQUATE",
+    "SOURCE_ROLE_INADEQUATE",
+    "TARGET_ROLE_INADEQUATE",
+    "MISSING_ESSENTIAL_PARTICIPANT",
+    "MISSING_IMPLICIT_PARTICIPANT",
+    "REQUIRES_STRUCTURED_PROPOSITION",
+    "INSUFFICIENT_FOR_BINARY_RELATIONSHIP"
+  ],
+  "output_contract_fields": [
+    "case_id",
+    "verdict",
+    "rationale"
+  ],
+  "candidate_rewriting_possible": false,
+  "live_call_budget": 1,
+  "thresholds_frozen_before_live_output": {
+    "COMPRESSION_JUDGE_BETTER": {
+      "overall_agreement_minimum": 0.9,
+      "adequate_admission_recall_minimum": 0.8,
+      "negative_rejection_rate_minimum": 0.8,
+      "adequate_admission_precision_minimum": 0.8,
+      "blanket_rejection": false
+    },
+    "MIXED": {
+      "overall_agreement_minimum": 0.7,
+      "adequate_admission_recall_minimum": 0.6,
+      "negative_rejection_rate_minimum": 0.6
+    },
+    "NO_MEANINGFUL_SIGNAL": "fallback or any blanket rejection",
+    "INCONCLUSIVE": "provider or operational failure"
+  }
+}

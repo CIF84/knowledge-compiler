@@ -1,0 +1,478 @@
+{
+  "protocol_version": "spec-015-v1",
+  "cases": [
+    {
+      "case_id": "endpoint-role-001",
+      "grounded_assertion": {
+        "statement": "quantum tunneling is absolutely vital, as otherwise the electrons in the electric current could not penetrate the potential barrier",
+        "participant_symbol_ids": [
+          "electron",
+          "quantum-tunneling"
+        ],
+        "evidence": {
+          "document_id": "text-9e978db999ee6713",
+          "start_char": 32641,
+          "end_char": 32772,
+          "quote": "quantum tunneling is absolutely vital, as otherwise the electrons in the electric current could not penetrate the potential barrier"
+        }
+      },
+      "symbols": [
+        {
+          "id": "electron",
+          "name": "Electron",
+          "entity_type": "OBJECT"
+        },
+        {
+          "id": "quantum-tunneling",
+          "name": "Quantum tunneling",
+          "entity_type": "PROCESS"
+        }
+      ],
+      "candidate_relationship": {
+        "source_entity_id": "quantum-tunneling",
+        "relationship_type": "ENABLES",
+        "target_entity_id": "electron"
+      },
+      "predicate_contract": {
+        "source_role": "enabling condition or capability",
+        "target_role": "capability or process made possible",
+        "direction": "enabler_to_enabled",
+        "meaning": "The source makes the target possible without necessarily causing it to occur."
+      }
+    },
+    {
+      "case_id": "endpoint-role-002",
+      "grounded_assertion": {
+        "statement": "If quantity demanded exceeds quantity supplied, a shortage puts upward pressure on price.",
+        "participant_symbol_ids": [
+          "market-price",
+          "quantity-demanded",
+          "quantity-supplied",
+          "shortage"
+        ],
+        "evidence": {
+          "document_id": "text-e6c889f45171a12a",
+          "start_char": 275,
+          "end_char": 364,
+          "quote": "If quantity demanded exceeds quantity supplied, a shortage puts upward pressure on price."
+        }
+      },
+      "symbols": [
+        {
+          "id": "market-price",
+          "name": "market price",
+          "entity_type": "VARIABLE"
+        },
+        {
+          "id": "quantity-demanded",
+          "name": "quantity demanded",
+          "entity_type": "VARIABLE"
+        },
+        {
+          "id": "quantity-supplied",
+          "name": "quantity supplied",
+          "entity_type": "VARIABLE"
+        },
+        {
+          "id": "shortage",
+          "name": "shortage",
+          "entity_type": "CONCEPT"
+        }
+      ],
+      "candidate_relationship": {
+        "source_entity_id": "quantity-demanded",
+        "relationship_type": "CAUSES",
+        "target_entity_id": "shortage"
+      },
+      "predicate_contract": {
+        "source_role": "cause",
+        "target_role": "effect",
+        "direction": "cause_to_effect",
+        "meaning": "The source brings about the target as an effect."
+      }
+    },
+    {
+      "case_id": "endpoint-role-003",
+      "grounded_assertion": {
+        "statement": "The correspondence principle requires quantum theory to converge to classical limits.",
+        "participant_symbol_ids": [
+          "classical-physics",
+          "correspondence-principle",
+          "quantum-mechanics"
+        ],
+        "evidence": {
+          "document_id": "text-9e978db999ee6713",
+          "start_char": 7820,
+          "end_char": 7956,
+          "quote": "This concept was formalized by Bohr in 1923 as the correspondence principle. It requires quantum theory to converge to classical limits."
+        }
+      },
+      "symbols": [
+        {
+          "id": "classical-physics",
+          "name": "classical physics",
+          "entity_type": "CONCEPT"
+        },
+        {
+          "id": "correspondence-principle",
+          "name": "correspondence principle",
+          "entity_type": "CONCEPT"
+        },
+        {
+          "id": "quantum-mechanics",
+          "name": "quantum mechanics",
+          "entity_type": "CONCEPT"
+        }
+      ],
+      "candidate_relationship": {
+        "source_entity_id": "correspondence-principle",
+        "relationship_type": "CONSTRAINS",
+        "target_entity_id": "quantum-mechanics"
+      },
+      "predicate_contract": {
+        "source_role": "constraint",
+        "target_role": "constrained entity, process, or variable",
+        "direction": "constraint_to_constrained",
+        "meaning": "The source limits the possible behavior, values, or choices of the target."
+      }
+    },
+    {
+      "case_id": "endpoint-role-004",
+      "grounded_assertion": {
+        "statement": "Gene expression begins when RNA polymerase binds near a gene in DNA.",
+        "participant_symbol_ids": [
+          "dna",
+          "gene",
+          "rna-polymerase"
+        ],
+        "evidence": {
+          "document_id": "text-e8f26f10caa19160",
+          "start_char": 0,
+          "end_char": 68,
+          "quote": "Gene expression begins when RNA polymerase binds near a gene in DNA."
+        }
+      },
+      "symbols": [
+        {
+          "id": "dna",
+          "name": "DNA",
+          "entity_type": "OBJECT"
+        },
+        {
+          "id": "gene",
+          "name": "Gene",
+          "entity_type": "CONCEPT"
+        },
+        {
+          "id": "rna-polymerase",
+          "name": "RNA polymerase",
+          "entity_type": "COMPONENT"
+        }
+      ],
+      "candidate_relationship": {
+        "source_entity_id": "rna-polymerase",
+        "relationship_type": "BINDS_TO",
+        "target_entity_id": "dna"
+      },
+      "predicate_contract": {
+        "source_role": "binding participant",
+        "target_role": "binding participant",
+        "direction": "symmetric",
+        "meaning": "The source physically or chemically binds or attaches to the target."
+      }
+    },
+    {
+      "case_id": "endpoint-role-005",
+      "grounded_assertion": {
+        "statement": "A modular order-processing service separates the API component, order component, payment component, and database.",
+        "participant_symbol_ids": [
+          "api-component",
+          "database",
+          "modular-order-processing-service",
+          "order-component",
+          "payment-component"
+        ],
+        "evidence": {
+          "document_id": "text-49b42a4f08a99742",
+          "start_char": 0,
+          "end_char": 113,
+          "quote": "A modular order-processing service separates the API component, order component, payment component, and database."
+        }
+      },
+      "symbols": [
+        {
+          "id": "api-component",
+          "name": "API component",
+          "entity_type": "COMPONENT"
+        },
+        {
+          "id": "database",
+          "name": "database",
+          "entity_type": "COMPONENT"
+        },
+        {
+          "id": "modular-order-processing-service",
+          "name": "modular order-processing service",
+          "entity_type": "SYSTEM"
+        },
+        {
+          "id": "order-component",
+          "name": "order component",
+          "entity_type": "COMPONENT"
+        },
+        {
+          "id": "payment-component",
+          "name": "payment component",
+          "entity_type": "COMPONENT"
+        }
+      ],
+      "candidate_relationship": {
+        "source_entity_id": "api-component",
+        "relationship_type": "PART_OF",
+        "target_entity_id": "modular-order-processing-service"
+      },
+      "predicate_contract": {
+        "source_role": "part or component",
+        "target_role": "containing whole",
+        "direction": "part_to_whole",
+        "meaning": "The source is a constituent or component of the target."
+      }
+    },
+    {
+      "case_id": "endpoint-role-006",
+      "grounded_assertion": {
+        "statement": "After validation succeeds, the workflow creates an order command and transfers the command to the order component.",
+        "participant_symbol_ids": [
+          "field-validation",
+          "order-command",
+          "order-command-creation",
+          "order-command-transfer",
+          "order-processing-workflow"
+        ],
+        "evidence": {
+          "document_id": "text-79c197b799735d88",
+          "start_char": 238,
+          "end_char": 352,
+          "quote": "After validation succeeds, the workflow creates an order command and transfers the command to the order component."
+        }
+      },
+      "symbols": [
+        {
+          "id": "field-validation",
+          "name": "required-field validation",
+          "entity_type": "PROCESS"
+        },
+        {
+          "id": "order-command",
+          "name": "order command",
+          "entity_type": "OBJECT"
+        },
+        {
+          "id": "order-command-creation",
+          "name": "order command creation",
+          "entity_type": "PROCESS"
+        },
+        {
+          "id": "order-command-transfer",
+          "name": "order command transfer",
+          "entity_type": "PROCESS"
+        },
+        {
+          "id": "order-processing-workflow",
+          "name": "order-processing workflow",
+          "entity_type": "PROCESS"
+        }
+      ],
+      "candidate_relationship": {
+        "source_entity_id": "order-command",
+        "relationship_type": "TRANSFERS_TO",
+        "target_entity_id": "order-command-transfer"
+      },
+      "predicate_contract": {
+        "source_role": "item, material, or information transferred",
+        "target_role": "destination or recipient",
+        "direction": "transferred_item_to_destination",
+        "meaning": "The source item, material, or information moves to the target destination or recipient."
+      }
+    },
+    {
+      "case_id": "endpoint-role-007",
+      "grounded_assertion": {
+        "statement": "Transfer RNA brings particular amino acids to the ribosome.",
+        "participant_symbol_ids": [
+          "amino-acid",
+          "ribosome",
+          "transfer-rna"
+        ],
+        "evidence": {
+          "document_id": "text-e8f26f10caa19160",
+          "start_char": 356,
+          "end_char": 415,
+          "quote": "Transfer RNA brings particular amino acids to the ribosome."
+        }
+      },
+      "symbols": [
+        {
+          "id": "amino-acid",
+          "name": "Amino acid",
+          "entity_type": "OBJECT"
+        },
+        {
+          "id": "ribosome",
+          "name": "Ribosome",
+          "entity_type": "COMPONENT"
+        },
+        {
+          "id": "transfer-rna",
+          "name": "Transfer RNA",
+          "entity_type": "COMPONENT"
+        }
+      ],
+      "candidate_relationship": {
+        "source_entity_id": "amino-acid",
+        "relationship_type": "TRANSFERS_TO",
+        "target_entity_id": "ribosome"
+      },
+      "predicate_contract": {
+        "source_role": "item, material, or information transferred",
+        "target_role": "destination or recipient",
+        "direction": "transferred_item_to_destination",
+        "meaning": "The source item, material, or information moves to the target destination or recipient."
+      }
+    },
+    {
+      "case_id": "endpoint-role-008",
+      "grounded_assertion": {
+        "statement": "In the double-slit experiment, light passing through two slits produces an interference pattern of light and dark bands.",
+        "participant_symbol_ids": [
+          "double-slit-experiment",
+          "interference-pattern",
+          "photon"
+        ],
+        "evidence": {
+          "document_id": "text-9e978db999ee6713",
+          "start_char": 12078,
+          "end_char": 12218,
+          "quote": "a beam of light is directed through two narrow, closely spaced slits, producing an interference pattern of light and dark bands on a screen."
+        }
+      },
+      "symbols": [
+        {
+          "id": "double-slit-experiment",
+          "name": "double-slit experiment",
+          "entity_type": "PROCESS"
+        },
+        {
+          "id": "interference-pattern",
+          "name": "interference pattern",
+          "entity_type": "OBJECT"
+        },
+        {
+          "id": "photon",
+          "name": "photon",
+          "entity_type": "OBJECT"
+        }
+      ],
+      "candidate_relationship": {
+        "source_entity_id": "double-slit-experiment",
+        "relationship_type": "CAUSES",
+        "target_entity_id": "interference-pattern"
+      },
+      "predicate_contract": {
+        "source_role": "cause",
+        "target_role": "effect",
+        "direction": "cause_to_effect",
+        "meaning": "The source brings about the target as an effect."
+      }
+    },
+    {
+      "case_id": "endpoint-role-009",
+      "grounded_assertion": {
+        "statement": "Quantum tunneling is vital to a simple light switch because electrons in the electric current must penetrate an oxide potential barrier.",
+        "participant_symbol_ids": [
+          "electron",
+          "quantum-tunneling"
+        ],
+        "evidence": {
+          "document_id": "text-9e978db999ee6713",
+          "start_char": 32610,
+          "end_char": 32801,
+          "quote": "In even a simple light switch, quantum tunneling is absolutely vital, as otherwise the electrons in the electric current could not penetrate the potential barrier made up of a layer of oxide."
+        }
+      },
+      "symbols": [
+        {
+          "id": "electron",
+          "name": "electron",
+          "entity_type": "OBJECT"
+        },
+        {
+          "id": "quantum-tunneling",
+          "name": "quantum tunneling",
+          "entity_type": "PROCESS"
+        },
+        {
+          "id": "transistor",
+          "name": "transistor",
+          "entity_type": "COMPONENT"
+        }
+      ],
+      "candidate_relationship": {
+        "source_entity_id": "quantum-tunneling",
+        "relationship_type": "ENABLES",
+        "target_entity_id": "transistor"
+      },
+      "predicate_contract": {
+        "source_role": "enabling condition or capability",
+        "target_role": "capability or process made possible",
+        "direction": "enabler_to_enabled",
+        "meaning": "The source makes the target possible without necessarily causing it to occur."
+      }
+    },
+    {
+      "case_id": "endpoint-role-010",
+      "grounded_assertion": {
+        "statement": "The Pauli exclusion principle states that two electrons within an atom cannot have the same set of quantum numbers.",
+        "participant_symbol_ids": [
+          "atom",
+          "electron",
+          "pauli-exclusion-principle"
+        ],
+        "evidence": {
+          "document_id": "text-9e978db999ee6713",
+          "start_char": 19377,
+          "end_char": 19496,
+          "quote": "There cannot exist an atom in such a quantum state that two electrons within [it] have the same set of quantum numbers."
+        }
+      },
+      "symbols": [
+        {
+          "id": "atom",
+          "name": "atom",
+          "entity_type": "OBJECT"
+        },
+        {
+          "id": "electron",
+          "name": "electron",
+          "entity_type": "OBJECT"
+        },
+        {
+          "id": "pauli-exclusion-principle",
+          "name": "Pauli exclusion principle",
+          "entity_type": "CONCEPT"
+        }
+      ],
+      "candidate_relationship": {
+        "source_entity_id": "pauli-exclusion-principle",
+        "relationship_type": "CONSTRAINS",
+        "target_entity_id": "electron"
+      },
+      "predicate_contract": {
+        "source_role": "constraint",
+        "target_role": "constrained entity, process, or variable",
+        "direction": "constraint_to_constrained",
+        "meaning": "The source limits the possible behavior, values, or choices of the target."
+      }
+    }
+  ]
+}
