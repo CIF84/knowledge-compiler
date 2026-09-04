@@ -1,0 +1,34 @@
+{
+  "spec": "SPEC-014",
+  "attempts": [
+    {
+      "sequence": 1,
+      "stage": "SEMANTIC_ADMISSION_GATE",
+      "started_at": "2026-09-04T18:18:19.061583+00:00",
+      "completed_at": "2026-09-04T18:18:31.014262+00:00",
+      "runtime_seconds": 11.951,
+      "outcome": "SUCCESS",
+      "provider_call_attempted": true,
+      "provider": "openai",
+      "requested_model": "gpt-5.6-luna",
+      "actual_model": "gpt-5.6-luna",
+      "provider_request_id": "resp_0ec7e3c26d428fa7016a9b0b6cd71087d28ae57b894916a303",
+      "prompt_version": "spec-014-gate-v1",
+      "usage": {
+        "input_tokens": 5112,
+        "output_tokens": 923,
+        "total_tokens": 6035
+      },
+      "cost": "NOT_AVAILABLE",
+      "raw_rejected_output_preserved": false
+    }
+  ],
+  "live_call_count": 1,
+  "semantic_retry_count": 0,
+  "automatic_retry_count": 0,
+  "hidden_retries": false,
+  "prompt_repair_after_live_output": false,
+  "candidate_rewrites": 0,
+  "external_enrichment": false,
+  "additional_models_or_agents": 0
+}

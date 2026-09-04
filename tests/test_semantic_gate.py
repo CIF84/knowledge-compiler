@@ -196,6 +196,12 @@ def test_evaluation_writes_metrics_history_and_safety_seam(tmp_path: Path) -> No
     assert report["metrics"]["true_rejects_or_demotions"] == 6
     assert report["safety"]["candidate_rewrites"] == 0
     assert report["multi_agent_deliberation"] == "NOT_JUSTIFIED"
+    assert report["incremental_cost_complexity_worth_it_on_this_packet"] is True
+    assert report["production_threshold_claimed"] is False
+    assert set(report["verdict_rationale"]) == {
+        "positive_control_retention", "negative_control_rejection", "failure_modes",
+        "cost_latency", "complexity", "multi_agent_deliberation",
+    }
     history = json.loads((output / "run-history.json").read_text())
     assert history["live_call_count"] == 1
     assert history["automatic_retry_count"] == 0

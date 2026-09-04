@@ -1,0 +1,158 @@
+{
+  "gate_version": "spec-014-v1",
+  "admitted": [
+    {
+      "packet_candidate_id": "negative-r12",
+      "candidate": {
+        "id": "r12",
+        "kind": "RELATIONSHIP",
+        "statement": "The Pauli exclusion principle constrains the possible quantum states of electrons in an atom.",
+        "confidence": 0.94,
+        "origin": "SOURCE",
+        "source_entity_id": "pauli-exclusion-principle",
+        "relationship_type": "CONSTRAINS",
+        "target_entity_id": "electron"
+      }
+    },
+    {
+      "packet_candidate_id": "positive-relationship-05b19ee4b6d50060",
+      "candidate": {
+        "id": "relationship-05b19ee4b6d50060",
+        "kind": "RELATIONSHIP",
+        "statement": "The double-slit experiment produces an interference pattern.",
+        "confidence": 0.93,
+        "origin": "SOURCE",
+        "source_entity_id": "double-slit-experiment",
+        "relationship_type": "CAUSES",
+        "target_entity_id": "interference-pattern"
+      }
+    },
+    {
+      "packet_candidate_id": "positive-relationship-33a269fc6fc2c7e8",
+      "candidate": {
+        "id": "relationship-33a269fc6fc2c7e8",
+        "kind": "RELATIONSHIP",
+        "statement": "The Standard Model is a quantum field theory.",
+        "confidence": 0.99,
+        "origin": "SOURCE",
+        "source_entity_id": "standard-model",
+        "relationship_type": "IS_A",
+        "target_entity_id": "quantum-field-theory"
+      }
+    },
+    {
+      "packet_candidate_id": "positive-relationship-56b4330de6aef867",
+      "candidate": {
+        "id": "relationship-56b4330de6aef867",
+        "kind": "RELATIONSHIP",
+        "statement": "The correspondence principle constrains quantum theory to converge to classical limits.",
+        "confidence": 0.86,
+        "origin": "SOURCE",
+        "source_entity_id": "correspondence-principle",
+        "relationship_type": "CONSTRAINS",
+        "target_entity_id": "quantum-mechanics"
+      }
+    }
+  ],
+  "demoted": [
+    {
+      "packet_candidate_id": "negative-r1",
+      "rejected_candidate": {
+        "id": "r1",
+        "kind": "RELATIONSHIP",
+        "statement": "The quantum revolution resulted in the development of quantum mechanics.",
+        "confidence": 0.97,
+        "origin": "SOURCE",
+        "source_entity_id": "quantum-revolution",
+        "relationship_type": "CAUSES",
+        "target_entity_id": "quantum-mechanics"
+      },
+      "verdict": "TOO_STRONG",
+      "preserved_as": {
+        "kind": "CLAIM",
+        "assertion_id": "assertion-2fcb725a5b198912",
+        "statement": "Classical physics could not explain some phenomena, and this contributed to the development of quantum mechanics through a revolution in physics."
+      }
+    },
+    {
+      "packet_candidate_id": "negative-r14",
+      "rejected_candidate": {
+        "id": "r14",
+        "kind": "RELATIONSHIP",
+        "statement": "Quantum electrodynamics is a quantum theory of the electromagnetic force and developed into quantum field theory.",
+        "confidence": 0.96,
+        "origin": "SOURCE",
+        "source_entity_id": "quantum-electrodynamics",
+        "relationship_type": "IS_A",
+        "target_entity_id": "quantum-field-theory"
+      },
+      "verdict": "TOO_STRONG",
+      "preserved_as": {
+        "kind": "CLAIM",
+        "assertion_id": "assertion-d1cadc9675bc9732",
+        "statement": "Quantum electrodynamics is the quantum theory of the electromagnetic force."
+      }
+    },
+    {
+      "packet_candidate_id": "negative-r2",
+      "rejected_candidate": {
+        "id": "r2",
+        "kind": "RELATIONSHIP",
+        "statement": "Superfluidity is presented as a phenomenon explained using quantum mechanics.",
+        "confidence": 0.99,
+        "origin": "SOURCE",
+        "source_entity_id": "superfluidity",
+        "relationship_type": "EXAMPLE_OF",
+        "target_entity_id": "quantum-mechanics"
+      },
+      "verdict": "WRONG_PREDICATE",
+      "preserved_as": {
+        "kind": "SOURCE_ASSERTION",
+        "assertion_id": "assertion-019029433c947397",
+        "statement": "Quantum mechanics can explain superfluidity."
+      }
+    },
+    {
+      "packet_candidate_id": "negative-r5",
+      "rejected_candidate": {
+        "id": "r5",
+        "kind": "RELATIONSHIP",
+        "statement": "Quantum mechanics enables technological applications including the electron microscope.",
+        "confidence": 0.98,
+        "origin": "SOURCE",
+        "source_entity_id": "quantum-mechanics",
+        "relationship_type": "ENABLES",
+        "target_entity_id": "electron-microscope"
+      },
+      "verdict": "WRONG_PREDICATE",
+      "preserved_as": {
+        "kind": "CLAIM",
+        "assertion_id": "assertion-c2c5a86b98108470",
+        "statement": "Applications of quantum mechanics include lasers, transistors, electron microscopes, and magnetic resonance imaging."
+      }
+    },
+    {
+      "packet_candidate_id": "negative-r9",
+      "rejected_candidate": {
+        "id": "r9",
+        "kind": "RELATIONSHIP",
+        "statement": "Quantum tunneling is vital to the operation of a simple light switch and is used in flash-memory chips, but the source does not identify the transistor as the direct target of this relation.",
+        "confidence": 0.9,
+        "origin": "SOURCE",
+        "source_entity_id": "quantum-tunneling",
+        "relationship_type": "ENABLES",
+        "target_entity_id": "transistor"
+      },
+      "verdict": "WRONG_ENDPOINT",
+      "preserved_as": {
+        "kind": "CLAIM",
+        "assertion_id": "assertion-88adf8f8ab0e82aa",
+        "statement": "Quantum tunneling is vital to a simple light switch because electrons in the electric current must penetrate an oxide potential barrier."
+      }
+    }
+  ],
+  "source_meaning_preserved_for_all_demotions": true,
+  "candidate_rewrites": 0,
+  "entities_minted": 0,
+  "evidence_created_or_changed": 0
+}

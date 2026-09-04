@@ -1,0 +1,235 @@
+{
+  "spec": "SPEC-014",
+  "evaluation_version": "spec-014-v1",
+  "gate_version": "spec-014-v1",
+  "prompt_version": "spec-014-gate-v1",
+  "outcome": "COMPLETE",
+  "verdict": "GATE_BETTER",
+  "packet_id": "spec-014-quantum-semantic-gate-v1",
+  "packet_hash": "1186a75812a32c72430c42b88cc2c9957ae6791433a51b2b310ee645f3a13ba7",
+  "packet_size": 9,
+  "provider": "openai",
+  "requested_model": "gpt-5.6-luna",
+  "actual_model": "gpt-5.6-luna",
+  "provider_request_id": "resp_0ec7e3c26d428fa7016a9b0b6cd71087d28ae57b894916a303",
+  "usage": {
+    "input_tokens": 5112,
+    "output_tokens": 923,
+    "total_tokens": 6035
+  },
+  "runtime_seconds": 11.951,
+  "authoritative_monetary_cost": "NOT_AVAILABLE",
+  "metrics": {
+    "positive_candidate_count": 3,
+    "negative_candidate_count": 6,
+    "true_admits": 3,
+    "false_admits": 1,
+    "true_rejects_or_demotions": 5,
+    "false_rejects": 0,
+    "admit_precision": 0.75,
+    "justified_admission_recall": 1.0,
+    "negative_rejection_rate": 0.8333333333333334,
+    "overall_classification_agreement": 0.8888888888888888,
+    "verdict_distribution_by_expected_category": {
+      "OVERSTATED_CAUSALITY": {
+        "TOO_STRONG": 1
+      },
+      "IMPRECISE_ENDPOINT": {
+        "ADMIT": 1,
+        "WRONG_ENDPOINT": 1
+      },
+      "WRONG_PREDICATE": {
+        "TOO_STRONG": 1,
+        "WRONG_PREDICATE": 2
+      },
+      "SUPPORTED": {
+        "ADMIT": 3
+      }
+    }
+  },
+  "notable_disagreements": [
+    {
+      "packet_candidate_id": "negative-r12",
+      "independent_label": "NEGATIVE",
+      "expected_category": "IMPRECISE_ENDPOINT",
+      "gate_verdict": "ADMIT",
+      "gate_rationale": "The Pauli exclusion principle imposes the stated restriction that electrons in an atom cannot share the same set of quantum numbers, supporting a CONSTRAINS relation to electrons."
+    }
+  ],
+  "verdict_rationale": {
+    "positive_control_retention": "The gate admitted 3 of 3 independently supported SPEC-013 controls (100.00% recall), with no false rejection.",
+    "negative_control_rejection": "The gate rejected or demoted 5 of 6 independently reviewed SPEC-012 defects (83.33%); ADMIT precision was 75.00%.",
+    "failure_modes": "The single disagreement was negative-r12: the gate admitted the Pauli exclusion principle CONSTRAINS electron candidate despite independent review finding that the true constrained endpoint is the joint atomic state or quantum-number assignment.",
+    "cost_latency": "The independent protection cost one call, 6035 tokens, and 11.951 seconds, compared with 22,413 tokens and 30.33 seconds for the accepted two-call SPEC-013 compilation; authoritative monetary cost is unavailable.",
+    "complexity": "The mechanism adds an isolated packet, judge, metrics, and demotion seam without changing KnowledgeModel, relationship/proposition vocabularies, or grounding rules.",
+    "multi_agent_deliberation": "Broad multi-agent deliberation is not justified: one bounded judge caught five of six known negatives while retaining every positive. The Pauli disagreement points first to endpoint-role adequacy, not to adding agents."
+  },
+  "incremental_cost_complexity_worth_it_on_this_packet": true,
+  "production_threshold_claimed": false,
+  "safety": {
+    "gate_version": "spec-014-v1",
+    "admitted": [
+      {
+        "packet_candidate_id": "negative-r12",
+        "candidate": {
+          "id": "r12",
+          "kind": "RELATIONSHIP",
+          "statement": "The Pauli exclusion principle constrains the possible quantum states of electrons in an atom.",
+          "confidence": 0.94,
+          "origin": "SOURCE",
+          "source_entity_id": "pauli-exclusion-principle",
+          "relationship_type": "CONSTRAINS",
+          "target_entity_id": "electron"
+        }
+      },
+      {
+        "packet_candidate_id": "positive-relationship-05b19ee4b6d50060",
+        "candidate": {
+          "id": "relationship-05b19ee4b6d50060",
+          "kind": "RELATIONSHIP",
+          "statement": "The double-slit experiment produces an interference pattern.",
+          "confidence": 0.93,
+          "origin": "SOURCE",
+          "source_entity_id": "double-slit-experiment",
+          "relationship_type": "CAUSES",
+          "target_entity_id": "interference-pattern"
+        }
+      },
+      {
+        "packet_candidate_id": "positive-relationship-33a269fc6fc2c7e8",
+        "candidate": {
+          "id": "relationship-33a269fc6fc2c7e8",
+          "kind": "RELATIONSHIP",
+          "statement": "The Standard Model is a quantum field theory.",
+          "confidence": 0.99,
+          "origin": "SOURCE",
+          "source_entity_id": "standard-model",
+          "relationship_type": "IS_A",
+          "target_entity_id": "quantum-field-theory"
+        }
+      },
+      {
+        "packet_candidate_id": "positive-relationship-56b4330de6aef867",
+        "candidate": {
+          "id": "relationship-56b4330de6aef867",
+          "kind": "RELATIONSHIP",
+          "statement": "The correspondence principle constrains quantum theory to converge to classical limits.",
+          "confidence": 0.86,
+          "origin": "SOURCE",
+          "source_entity_id": "correspondence-principle",
+          "relationship_type": "CONSTRAINS",
+          "target_entity_id": "quantum-mechanics"
+        }
+      }
+    ],
+    "demoted": [
+      {
+        "packet_candidate_id": "negative-r1",
+        "rejected_candidate": {
+          "id": "r1",
+          "kind": "RELATIONSHIP",
+          "statement": "The quantum revolution resulted in the development of quantum mechanics.",
+          "confidence": 0.97,
+          "origin": "SOURCE",
+          "source_entity_id": "quantum-revolution",
+          "relationship_type": "CAUSES",
+          "target_entity_id": "quantum-mechanics"
+        },
+        "verdict": "TOO_STRONG",
+        "preserved_as": {
+          "kind": "CLAIM",
+          "assertion_id": "assertion-2fcb725a5b198912",
+          "statement": "Classical physics could not explain some phenomena, and this contributed to the development of quantum mechanics through a revolution in physics."
+        }
+      },
+      {
+        "packet_candidate_id": "negative-r14",
+        "rejected_candidate": {
+          "id": "r14",
+          "kind": "RELATIONSHIP",
+          "statement": "Quantum electrodynamics is a quantum theory of the electromagnetic force and developed into quantum field theory.",
+          "confidence": 0.96,
+          "origin": "SOURCE",
+          "source_entity_id": "quantum-electrodynamics",
+          "relationship_type": "IS_A",
+          "target_entity_id": "quantum-field-theory"
+        },
+        "verdict": "TOO_STRONG",
+        "preserved_as": {
+          "kind": "CLAIM",
+          "assertion_id": "assertion-d1cadc9675bc9732",
+          "statement": "Quantum electrodynamics is the quantum theory of the electromagnetic force."
+        }
+      },
+      {
+        "packet_candidate_id": "negative-r2",
+        "rejected_candidate": {
+          "id": "r2",
+          "kind": "RELATIONSHIP",
+          "statement": "Superfluidity is presented as a phenomenon explained using quantum mechanics.",
+          "confidence": 0.99,
+          "origin": "SOURCE",
+          "source_entity_id": "superfluidity",
+          "relationship_type": "EXAMPLE_OF",
+          "target_entity_id": "quantum-mechanics"
+        },
+        "verdict": "WRONG_PREDICATE",
+        "preserved_as": {
+          "kind": "SOURCE_ASSERTION",
+          "assertion_id": "assertion-019029433c947397",
+          "statement": "Quantum mechanics can explain superfluidity."
+        }
+      },
+      {
+        "packet_candidate_id": "negative-r5",
+        "rejected_candidate": {
+          "id": "r5",
+          "kind": "RELATIONSHIP",
+          "statement": "Quantum mechanics enables technological applications including the electron microscope.",
+          "confidence": 0.98,
+          "origin": "SOURCE",
+          "source_entity_id": "quantum-mechanics",
+          "relationship_type": "ENABLES",
+          "target_entity_id": "electron-microscope"
+        },
+        "verdict": "WRONG_PREDICATE",
+        "preserved_as": {
+          "kind": "CLAIM",
+          "assertion_id": "assertion-c2c5a86b98108470",
+          "statement": "Applications of quantum mechanics include lasers, transistors, electron microscopes, and magnetic resonance imaging."
+        }
+      },
+      {
+        "packet_candidate_id": "negative-r9",
+        "rejected_candidate": {
+          "id": "r9",
+          "kind": "RELATIONSHIP",
+          "statement": "Quantum tunneling is vital to the operation of a simple light switch and is used in flash-memory chips, but the source does not identify the transistor as the direct target of this relation.",
+          "confidence": 0.9,
+          "origin": "SOURCE",
+          "source_entity_id": "quantum-tunneling",
+          "relationship_type": "ENABLES",
+          "target_entity_id": "transistor"
+        },
+        "verdict": "WRONG_ENDPOINT",
+        "preserved_as": {
+          "kind": "CLAIM",
+          "assertion_id": "assertion-88adf8f8ab0e82aa",
+          "statement": "Quantum tunneling is vital to a simple light switch because electrons in the electric current must penetrate an oxide potential barrier."
+        }
+      }
+    ],
+    "source_meaning_preserved_for_all_demotions": true,
+    "candidate_rewrites": 0,
+    "entities_minted": 0,
+    "evidence_created_or_changed": 0
+  },
+  "knowledge_model_changes": [],
+  "relationship_vocabulary_changes": [],
+  "proposition_vocabulary_changes": [],
+  "grounding_rule_changes": [],
+  "dependencies_added": [],
+  "dependencies_removed": [],
+  "multi_agent_deliberation": "NOT_JUSTIFIED",
+  "recommended_next_discriminator": "Test endpoint-role adequacy on the preserved Pauli compression disagreement, then decide whether to integrate the isolated gate before returning to the assertion-aware representation bottleneck; do not add multi-agent deliberation."
+}

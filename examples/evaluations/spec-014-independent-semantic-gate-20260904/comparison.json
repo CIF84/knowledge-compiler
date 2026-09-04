@@ -1,0 +1,71 @@
+{
+  "spec": "SPEC-014",
+  "control": "SPEC-013 accepted assertion-first result",
+  "control_canonical_precision": 1.0,
+  "control_compilation_calls": 2,
+  "control_compilation_usage": {
+    "input_tokens": 18807,
+    "output_tokens": 3606,
+    "total_tokens": 22413
+  },
+  "control_compilation_runtime_seconds": 30.33,
+  "incremental_gate": {
+    "calls": 1,
+    "usage": {
+      "input_tokens": 5112,
+      "output_tokens": 923,
+      "total_tokens": 6035
+    },
+    "runtime_seconds": 11.951,
+    "authoritative_monetary_cost": "NOT_AVAILABLE"
+  },
+  "metrics": {
+    "positive_candidate_count": 3,
+    "negative_candidate_count": 6,
+    "true_admits": 3,
+    "false_admits": 1,
+    "true_rejects_or_demotions": 5,
+    "false_rejects": 0,
+    "admit_precision": 0.75,
+    "justified_admission_recall": 1.0,
+    "negative_rejection_rate": 0.8333333333333334,
+    "overall_classification_agreement": 0.8888888888888888,
+    "verdict_distribution_by_expected_category": {
+      "OVERSTATED_CAUSALITY": {
+        "TOO_STRONG": 1
+      },
+      "IMPRECISE_ENDPOINT": {
+        "ADMIT": 1,
+        "WRONG_ENDPOINT": 1
+      },
+      "WRONG_PREDICATE": {
+        "TOO_STRONG": 1,
+        "WRONG_PREDICATE": 2
+      },
+      "SUPPORTED": {
+        "ADMIT": 3
+      }
+    }
+  },
+  "notable_disagreements": [
+    {
+      "packet_candidate_id": "negative-r12",
+      "independent_label": "NEGATIVE",
+      "expected_category": "IMPRECISE_ENDPOINT",
+      "gate_verdict": "ADMIT",
+      "gate_rationale": "The Pauli exclusion principle imposes the stated restriction that electrons in an atom cannot share the same set of quantum numbers, supporting a CONSTRAINS relation to electrons."
+    }
+  ],
+  "verdict": "GATE_BETTER",
+  "verdict_rationale": {
+    "positive_control_retention": "The gate admitted 3 of 3 independently supported SPEC-013 controls (100.00% recall), with no false rejection.",
+    "negative_control_rejection": "The gate rejected or demoted 5 of 6 independently reviewed SPEC-012 defects (83.33%); ADMIT precision was 75.00%.",
+    "failure_modes": "The single disagreement was negative-r12: the gate admitted the Pauli exclusion principle CONSTRAINS electron candidate despite independent review finding that the true constrained endpoint is the joint atomic state or quantum-number assignment.",
+    "cost_latency": "The independent protection cost one call, 6035 tokens, and 11.951 seconds, compared with 22,413 tokens and 30.33 seconds for the accepted two-call SPEC-013 compilation; authoritative monetary cost is unavailable.",
+    "complexity": "The mechanism adds an isolated packet, judge, metrics, and demotion seam without changing KnowledgeModel, relationship/proposition vocabularies, or grounding rules.",
+    "multi_agent_deliberation": "Broad multi-agent deliberation is not justified: one bounded judge caught five of six known negatives while retaining every positive. The Pauli disagreement points first to endpoint-role adequacy, not to adding agents."
+  },
+  "incremental_cost_complexity_worth_it_on_this_packet": true,
+  "production_threshold_claimed": false,
+  "multi_agent_deliberation": "NOT_JUSTIFIED"
+}

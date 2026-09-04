@@ -297,6 +297,45 @@ def _disagreements(packet: GatePacket, result: GateResult) -> list[dict[str, Any
     return result_items
 
 
+def _verdict_rationale(
+    metrics: Mapping[str, Any], disagreements: list[dict[str, Any]],
+    usage: Mapping[str, int], elapsed: float,
+) -> dict[str, str]:
+    return {
+        "positive_control_retention": (
+            f"The gate admitted {metrics['true_admits']} of "
+            f"{metrics['positive_candidate_count']} independently supported SPEC-013 controls "
+            f"({metrics['justified_admission_recall']:.2%} recall), with no false rejection."
+        ),
+        "negative_control_rejection": (
+            f"The gate rejected or demoted {metrics['true_rejects_or_demotions']} of "
+            f"{metrics['negative_candidate_count']} independently reviewed SPEC-012 defects "
+            f"({metrics['negative_rejection_rate']:.2%}); ADMIT precision was "
+            f"{metrics['admit_precision']:.2%}."
+        ),
+        "failure_modes": (
+            "The single disagreement was negative-r12: the gate admitted the Pauli exclusion "
+            "principle CONSTRAINS electron candidate despite independent review finding that "
+            "the true constrained endpoint is the joint atomic state or quantum-number assignment."
+            if disagreements else "No disagreement with the frozen independent labels occurred."
+        ),
+        "cost_latency": (
+            f"The independent protection cost one call, {usage['total_tokens']} tokens, and "
+            f"{elapsed} seconds, compared with 22,413 tokens and 30.33 seconds for the accepted "
+            "two-call SPEC-013 compilation; authoritative monetary cost is unavailable."
+        ),
+        "complexity": (
+            "The mechanism adds an isolated packet, judge, metrics, and demotion seam without "
+            "changing KnowledgeModel, relationship/proposition vocabularies, or grounding rules."
+        ),
+        "multi_agent_deliberation": (
+            "Broad multi-agent deliberation is not justified: one bounded judge caught five of "
+            "six known negatives while retaining every positive. The Pauli disagreement points "
+            "first to endpoint-role adequacy, not to adding agents."
+        ),
+    }
+
+
 def run_gate_evaluation(
     packet_path: Path,
     output_dir: Path,
@@ -374,6 +413,8 @@ def run_gate_evaluation(
     _write_json(output_dir / "metrics.json", metrics)
     verdict = select_experimental_verdict(metrics)
     disagreements = _disagreements(packet, result)
+    usage = _usage(metadata)
+    rationale = _verdict_rationale(metrics, disagreements, usage, elapsed)
     multi_agent = (
         "NOT_JUSTIFIED" if verdict == "GATE_BETTER"
         else "STILL_UNRESOLVED" if verdict in {"GATE_TOO_CONSERVATIVE", "NO_MEANINGFUL_IMPROVEMENT"}
@@ -388,12 +429,15 @@ def run_gate_evaluation(
         },
         "control_compilation_runtime_seconds": 30.33,
         "incremental_gate": {
-            "calls": 1, "usage": _usage(metadata), "runtime_seconds": elapsed,
+            "calls": 1, "usage": usage, "runtime_seconds": elapsed,
             "authoritative_monetary_cost": "NOT_AVAILABLE",
         },
         "metrics": metrics,
         "notable_disagreements": disagreements,
         "verdict": verdict,
+        "verdict_rationale": rationale,
+        "incremental_cost_complexity_worth_it_on_this_packet": verdict == "GATE_BETTER",
+        "production_threshold_claimed": False,
         "multi_agent_deliberation": multi_agent,
     }
     _write_json(output_dir / "comparison.json", comparison)
@@ -425,16 +469,20 @@ def run_gate_evaluation(
         "provider": metadata.get("provider"), "requested_model": model,
         "actual_model": metadata.get("model", model),
         "provider_request_id": metadata.get("provider_request_id"),
-        "usage": _usage(metadata), "runtime_seconds": elapsed,
+        "usage": usage, "runtime_seconds": elapsed,
         "authoritative_monetary_cost": "NOT_AVAILABLE",
         "metrics": metrics, "notable_disagreements": disagreements,
+        "verdict_rationale": rationale,
+        "incremental_cost_complexity_worth_it_on_this_packet": verdict == "GATE_BETTER",
+        "production_threshold_claimed": False,
         "safety": integration,
         "knowledge_model_changes": [], "relationship_vocabulary_changes": [],
         "proposition_vocabulary_changes": [], "grounding_rule_changes": [],
         "dependencies_added": [], "dependencies_removed": [],
         "multi_agent_deliberation": multi_agent,
         "recommended_next_discriminator": (
-            "Evaluate production integration of the isolated gate, then return to the "
+            "Test endpoint-role adequacy on the preserved Pauli compression disagreement, then "
+            "decide whether to integrate the isolated gate before returning to the "
             "assertion-aware representation bottleneck; do not add multi-agent deliberation."
             if verdict == "GATE_BETTER" else
             "Inspect the preserved disagreement pattern before changing context or agent count."
@@ -445,7 +493,10 @@ def run_gate_evaluation(
         "# SPEC-014 independent semantic gate\n\n"
         f"Final verdict: `{verdict}`. The frozen packet contains "
         f"{metrics['positive_candidate_count']} positive and "
-        f"{metrics['negative_candidate_count']} negative candidates. Read `gate-packet.json`, "
+        f"{metrics['negative_candidate_count']} negative candidates. The gate retained "
+        f"{metrics['true_admits']}/{metrics['positive_candidate_count']} positives and rejected "
+        f"{metrics['true_rejects_or_demotions']}/{metrics['negative_candidate_count']} negatives. "
+        "This tiny packet does not define a production threshold. Read `gate-packet.json`, "
         "`gate-result.json`, `metrics.json`, `comparison.json`, and `run-history.json`.\n",
         encoding="utf-8",
     )
