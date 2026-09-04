@@ -13,6 +13,15 @@ from .models import (
     SourceType,
     ValidationError,
 )
+from .assertion_compilation import (
+    AssertionCompilationResult,
+    AssertionExtractionProposal,
+    CanonicalizationProposal,
+    GroundedAssertionSet,
+    SourceAssertion,
+    compile_assertion_semantics,
+    ground_assertions,
+)
 from .pipeline import compile_knowledge_model
 from .relationships import RelationshipDefinition, RelationshipFamily
 from .structure_detection import StructureDetector
@@ -31,6 +40,11 @@ from .representations import Representation, RepresentationEdge, RepresentationM
 
 __all__ = [
     "Claim",
+    "AssertionCompilationResult",
+    "AssertionExtractionProposal",
+    "CanonicalizationProposal",
+    "GroundedAssertionSet",
+    "SourceAssertion",
     "Entity",
     "EntityType",
     "KnowledgeModel",
@@ -60,5 +74,7 @@ __all__ = [
     "SourceType",
     "ValidationError",
     "compile_knowledge_model",
+    "compile_assertion_semantics",
     "compile_staged_knowledge_model",
+    "ground_assertions",
 ]

@@ -9,6 +9,10 @@ import sys
 from pathlib import Path
 
 from .evaluation import default_domains_directory, run_live_evaluation
+from .assertion_evaluation import (
+    finalize_assertion_first_evaluation,
+    run_assertion_first_evaluation,
+)
 from .extractor import FixtureExtractor
 from .layout_evaluation import default_spec005_representations_directory, prepare_layout_evaluation
 from .models import KnowledgeModel, ValidationError
@@ -149,6 +153,20 @@ def _parser() -> argparse.ArgumentParser:
         help="validate independent semantic review and finalize SPEC-012 comparison",
     )
     staged_finalize.add_argument("output_dir", type=Path)
+    assertion_evaluation = subcommands.add_parser(
+        "evaluate-assertion-first-compilation",
+        help="run the live SPEC-013 assertion extraction and canonicalization benchmark",
+    )
+    assertion_evaluation.add_argument("source", type=Path)
+    assertion_evaluation.add_argument("--source-metadata", required=True, type=Path)
+    assertion_evaluation.add_argument("--symbol-table", required=True, type=Path)
+    assertion_evaluation.add_argument("--model", default=DEFAULT_MODEL)
+    assertion_evaluation.add_argument("--output-dir", required=True, type=Path)
+    assertion_finalize = subcommands.add_parser(
+        "finalize-assertion-first-compilation",
+        help="validate independent reviews and finalize the SPEC-013 comparison",
+    )
+    assertion_finalize.add_argument("output_dir", type=Path)
     view = subcommands.add_parser("view-representations", help="serve a prepared representation review locally")
     view.add_argument("directory", type=Path)
     view.add_argument("--host", default="127.0.0.1")
@@ -160,6 +178,31 @@ def _parser() -> argparse.ArgumentParser:
 def main(argv: list[str] | None = None) -> int:
     args = _parser().parse_args(argv)
     try:
+        if args.command == "finalize-assertion-first-compilation":
+            report = finalize_assertion_first_evaluation(args.output_dir)
+            print(
+                f"Wrote {args.output_dir / 'report.json'} "
+                f"(verdict {report['verdict']})"
+            )
+            return 0
+
+        if args.command == "evaluate-assertion-first-compilation":
+            if not os.environ.get("OPENAI_API_KEY"):
+                raise ExtractionError("OPENAI_API_KEY is required for the live SPEC-013 evaluation")
+            report = run_assertion_first_evaluation(
+                source_path=args.source,
+                source_metadata_path=args.source_metadata,
+                symbol_table_path=args.symbol_table,
+                output_dir=args.output_dir,
+                model=args.model,
+            )
+            print(
+                f"Wrote {args.output_dir / 'report.json'} "
+                f"({report['assertion_grounding']['assertion_count']} grounded assertions; "
+                "semantic review pending)"
+            )
+            return 0
+
         if args.command == "finalize-staged-semantic-compilation":
             report = finalize_staged_semantic_evaluation(args.output_dir)
             print(

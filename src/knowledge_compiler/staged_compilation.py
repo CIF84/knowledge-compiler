@@ -138,6 +138,25 @@ class SymbolTable:
             "diagnostics": dict(self.diagnostics),
         }
 
+    @classmethod
+    def from_dict(cls, value: Mapping[str, Any]) -> SymbolTable:
+        if not isinstance(value, Mapping):
+            raise ValidationError("symbol table must be an object")
+        allowed = {"compiler_version", "immutable", "entities", "diagnostics"}
+        unknown = set(value) - allowed
+        if unknown:
+            raise ValidationError(f"unknown symbol table fields: {sorted(unknown)}")
+        if value.get("immutable") is not True:
+            raise ValidationError("loaded symbol table must be marked immutable")
+        entities = value.get("entities")
+        if not isinstance(entities, list):
+            raise ValidationError("symbol table entities must be an array")
+        return cls(
+            entities=tuple(Entity.from_dict(item) for item in entities),
+            diagnostics=value.get("diagnostics", {}),
+            compiler_version=value.get("compiler_version", STAGED_COMPILER_VERSION),
+        )
+
 
 def _slug(value: str) -> str:
     ascii_value = unicodedata.normalize("NFKD", value).encode("ascii", "ignore").decode()
