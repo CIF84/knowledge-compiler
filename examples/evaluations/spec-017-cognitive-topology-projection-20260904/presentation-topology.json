@@ -1,0 +1,3142 @@
+{
+  "affinity_policy": {
+    "display": "proximity only at level 0; no affinity connector",
+    "formula": "4*shared_grounded_assertions + 8*canonical_relationship_adjacency + 6*structured_proposition_coparticipation",
+    "ordering": "descending weight, then lexicographic concept IDs",
+    "retention": "retain every pair with positive weight"
+  },
+  "canonical_relationships": [
+    {
+      "evidence": [
+        {
+          "document_id": "text-9e978db999ee6713",
+          "end_char": 12218,
+          "quote": "a beam of light is directed through two narrow, closely spaced slits, producing an interference pattern of light and dark bands on a screen.",
+          "start_char": 12078
+        }
+      ],
+      "id": "relationship-05b19ee4b6d50060",
+      "origin": "SOURCE",
+      "predicate_meaning": "The source brings about the target as an effect.",
+      "relationship_type": "CAUSES",
+      "semantic": true,
+      "source_entity_id": "double-slit-experiment",
+      "statement": "The double-slit experiment produces an interference pattern.",
+      "target_entity_id": "interference-pattern",
+      "visibility": "LEVEL_0_IF_BOTH_ENDPOINTS_VISIBLE"
+    },
+    {
+      "evidence": [
+        {
+          "document_id": "text-9e978db999ee6713",
+          "end_char": 28164,
+          "quote": "The Standard Model of particle physics is the quantum field theory that describes three of the four known fundamental forces in the universe (electromagnetic, weak and strong interactions but not gravity) and classifies all known elementary particles.",
+          "start_char": 27913
+        }
+      ],
+      "id": "relationship-33a269fc6fc2c7e8",
+      "origin": "SOURCE",
+      "predicate_meaning": "The source is a kind, category, or subtype of the target.",
+      "relationship_type": "IS_A",
+      "semantic": true,
+      "source_entity_id": "standard-model",
+      "statement": "The Standard Model is a quantum field theory.",
+      "target_entity_id": "quantum-field-theory",
+      "visibility": "LEVEL_0_IF_BOTH_ENDPOINTS_VISIBLE"
+    },
+    {
+      "evidence": [
+        {
+          "document_id": "text-9e978db999ee6713",
+          "end_char": 7956,
+          "quote": "This concept was formalized by Bohr in 1923 as the correspondence principle. It requires quantum theory to converge to classical limits.",
+          "start_char": 7820
+        }
+      ],
+      "id": "relationship-56b4330de6aef867",
+      "origin": "SOURCE",
+      "predicate_meaning": "The source limits the possible behavior, values, or choices of the target.",
+      "relationship_type": "CONSTRAINS",
+      "semantic": true,
+      "source_entity_id": "correspondence-principle",
+      "statement": "The correspondence principle constrains quantum theory to converge to classical limits.",
+      "target_entity_id": "quantum-mechanics",
+      "visibility": "LEVEL_0_IF_BOTH_ENDPOINTS_VISIBLE"
+    }
+  ],
+  "concepts": [
+    {
+      "aliases": [],
+      "assertion_degree": 6,
+      "canonical_relationship_degree": 0,
+      "description": "Matter structure whose internal electrons, energy levels, and spectra are modeled by quantum mechanics.",
+      "discoverable": true,
+      "entity_type": "OBJECT",
+      "id": "atom",
+      "initially_visible": true,
+      "label": "atom",
+      "position": {
+        "x": 457.369,
+        "y": 334.453
+      },
+      "presentation_salience": 68,
+      "proposition_degree": 0
+    },
+    {
+      "aliases": [
+        "Bell inequalities"
+      ],
+      "assertion_degree": 0,
+      "canonical_relationship_degree": 0,
+      "description": "Mathematical constraint on correlations implied by local hidden-variable theories.",
+      "discoverable": true,
+      "entity_type": "CONCEPT",
+      "id": "bell-inequality",
+      "initially_visible": false,
+      "label": "Bell inequality",
+      "position": {
+        "x": 460.45,
+        "y": 407.686
+      },
+      "presentation_salience": 0,
+      "proposition_degree": 0
+    },
+    {
+      "aliases": [
+        "black-body radiation curve"
+      ],
+      "assertion_degree": 1,
+      "canonical_relationship_degree": 0,
+      "description": "Radiation characterized by a curve of light intensity across frequencies from hot objects.",
+      "discoverable": true,
+      "entity_type": "CONCEPT",
+      "id": "black-body-radiation",
+      "initially_visible": false,
+      "label": "black-body radiation",
+      "position": {
+        "x": 585.455,
+        "y": 260.018
+      },
+      "presentation_salience": 12,
+      "proposition_degree": 0
+    },
+    {
+      "aliases": [
+        "classical mechanics",
+        "classical theory"
+      ],
+      "assertion_degree": 5,
+      "canonical_relationship_degree": 0,
+      "description": "Physics describing matter and energy at scales familiar from human experience.",
+      "discoverable": true,
+      "entity_type": "CONCEPT",
+      "id": "classical-physics",
+      "initially_visible": true,
+      "label": "classical physics",
+      "position": {
+        "x": 770.181,
+        "y": 393.71
+      },
+      "presentation_salience": 60,
+      "proposition_degree": 0
+    },
+    {
+      "aliases": [],
+      "assertion_degree": 0,
+      "canonical_relationship_degree": 0,
+      "description": "Interpretation stating that before measurement, statements about a particle's properties are completely meaningless.",
+      "discoverable": true,
+      "entity_type": "CONCEPT",
+      "id": "copenhagen-interpretation",
+      "initially_visible": false,
+      "label": "Copenhagen interpretation",
+      "position": {
+        "x": 255.701,
+        "y": 256.891
+      },
+      "presentation_salience": 0,
+      "proposition_degree": 0
+    },
+    {
+      "aliases": [],
+      "assertion_degree": 1,
+      "canonical_relationship_degree": 1,
+      "description": "Requirement that quantum theory converge to classical limits at macroscopic scales.",
+      "discoverable": true,
+      "entity_type": "CONCEPT",
+      "id": "correspondence-principle",
+      "initially_visible": true,
+      "label": "correspondence principle",
+      "position": {
+        "x": 610.176,
+        "y": 303.25
+      },
+      "presentation_salience": 28,
+      "proposition_degree": 0
+    },
+    {
+      "aliases": [
+        "relativistic wave equation"
+      ],
+      "assertion_degree": 1,
+      "canonical_relationship_degree": 0,
+      "description": "Relativistic wave equation for electrons that incorporates relativity and predicts antimatter.",
+      "discoverable": true,
+      "entity_type": "CONCEPT",
+      "id": "dirac-wave-equation",
+      "initially_visible": false,
+      "label": "Dirac wave equation",
+      "position": {
+        "x": 563.41,
+        "y": 401.333
+      },
+      "presentation_salience": 12,
+      "proposition_degree": 0
+    },
+    {
+      "aliases": [
+        "double-slit interference"
+      ],
+      "assertion_degree": 2,
+      "canonical_relationship_degree": 1,
+      "description": "Experiment in which particles or waves passing through two slits produce an interference pattern.",
+      "discoverable": true,
+      "entity_type": "PROCESS",
+      "id": "double-slit-experiment",
+      "initially_visible": true,
+      "label": "double-slit experiment",
+      "position": {
+        "x": 639.096,
+        "y": 167.956
+      },
+      "presentation_salience": 44,
+      "proposition_degree": 0
+    },
+    {
+      "aliases": [],
+      "assertion_degree": 1,
+      "canonical_relationship_degree": 0,
+      "description": "State in which an object has a definite value for a specified property or measurement.",
+      "discoverable": true,
+      "entity_type": "CONCEPT",
+      "id": "eigenstate",
+      "initially_visible": false,
+      "label": "eigenstate",
+      "position": {
+        "x": 769.022,
+        "y": 442.373
+      },
+      "presentation_salience": 8,
+      "proposition_degree": 0
+    },
+    {
+      "aliases": [],
+      "assertion_degree": 1,
+      "canonical_relationship_degree": 0,
+      "description": "Definite value associated with an eigenstate of a quantum property.",
+      "discoverable": true,
+      "entity_type": "VARIABLE",
+      "id": "eigenvalue",
+      "initially_visible": false,
+      "label": "eigenvalue",
+      "position": {
+        "x": 291.992,
+        "y": 424.61
+      },
+      "presentation_salience": 8,
+      "proposition_degree": 0
+    },
+    {
+      "aliases": [
+        "electron corpuscle"
+      ],
+      "assertion_degree": 5,
+      "canonical_relationship_degree": 0,
+      "description": "Corpuscular particle whose properties and behavior are central to the quantum phenomena described.",
+      "discoverable": true,
+      "entity_type": "OBJECT",
+      "id": "electron",
+      "initially_visible": true,
+      "label": "electron",
+      "position": {
+        "x": 762.176,
+        "y": 315.71
+      },
+      "presentation_salience": 60,
+      "proposition_degree": 0
+    },
+    {
+      "aliases": [],
+      "assertion_degree": 1,
+      "canonical_relationship_degree": 0,
+      "description": "Technological application of quantum mechanics.",
+      "discoverable": true,
+      "entity_type": "OBJECT",
+      "id": "electron-microscope",
+      "initially_visible": false,
+      "label": "electron microscope",
+      "position": {
+        "x": 680.14,
+        "y": 473.154
+      },
+      "presentation_salience": 20,
+      "proposition_degree": 0
+    },
+    {
+      "aliases": [
+        "energy quanta",
+        "quanta"
+      ],
+      "assertion_degree": 3,
+      "canonical_relationship_degree": 0,
+      "description": "Discrete unit of energy proposed for light and used to explain black-body radiation and the photoelectric effect.",
+      "discoverable": true,
+      "entity_type": "CONCEPT",
+      "id": "energy-quantum",
+      "initially_visible": true,
+      "label": "energy quantum",
+      "position": {
+        "x": 290.373,
+        "y": 329.417
+      },
+      "presentation_salience": 36,
+      "proposition_degree": 0
+    },
+    {
+      "aliases": [
+        "diffraction pattern"
+      ],
+      "assertion_degree": 2,
+      "canonical_relationship_degree": 1,
+      "description": "Pattern of alternating light and dark bands produced by wave interference and reproduced by quantum particles statistically.",
+      "discoverable": true,
+      "entity_type": "OBJECT",
+      "id": "interference-pattern",
+      "initially_visible": true,
+      "label": "interference pattern",
+      "position": {
+        "x": 797.412,
+        "y": 208.545
+      },
+      "presentation_salience": 44,
+      "proposition_degree": 0
+    },
+    {
+      "aliases": [],
+      "assertion_degree": 1,
+      "canonical_relationship_degree": 0,
+      "description": "Technological application of quantum mechanics.",
+      "discoverable": true,
+      "entity_type": "OBJECT",
+      "id": "laser",
+      "initially_visible": false,
+      "label": "laser",
+      "position": {
+        "x": 423.672,
+        "y": 338.287
+      },
+      "presentation_salience": 20,
+      "proposition_degree": 0
+    },
+    {
+      "aliases": [],
+      "assertion_degree": 0,
+      "canonical_relationship_degree": 0,
+      "description": "Theory in which measurement outcomes depend on hidden variables local to each separated particle.",
+      "discoverable": true,
+      "entity_type": "CONCEPT",
+      "id": "local-hidden-variable-theory",
+      "initially_visible": false,
+      "label": "local hidden-variable theory",
+      "position": {
+        "x": 423.715,
+        "y": 74.198
+      },
+      "presentation_salience": 0,
+      "proposition_degree": 0
+    },
+    {
+      "aliases": [
+        "MRI"
+      ],
+      "assertion_degree": 1,
+      "canonical_relationship_degree": 0,
+      "description": "Technological application of quantum mechanics.",
+      "discoverable": true,
+      "entity_type": "PROCESS",
+      "id": "magnetic-resonance-imaging",
+      "initially_visible": false,
+      "label": "magnetic resonance imaging",
+      "position": {
+        "x": 844.481,
+        "y": 360.447
+      },
+      "presentation_salience": 20,
+      "proposition_degree": 0
+    },
+    {
+      "aliases": [],
+      "assertion_degree": 0,
+      "canonical_relationship_degree": 0,
+      "description": "Interpretation describing a multiverse containing every possible universe.",
+      "discoverable": true,
+      "entity_type": "CONCEPT",
+      "id": "many-worlds-interpretation",
+      "initially_visible": false,
+      "label": "many-worlds interpretation",
+      "position": {
+        "x": 90.0,
+        "y": 324.025
+      },
+      "presentation_salience": 0,
+      "proposition_degree": 0
+    },
+    {
+      "aliases": [
+        "exclusion principle"
+      ],
+      "assertion_degree": 1,
+      "canonical_relationship_degree": 0,
+      "description": "Principle that two electrons in an atom cannot have the same set of quantum numbers.",
+      "discoverable": true,
+      "entity_type": "CONCEPT",
+      "id": "pauli-exclusion-principle",
+      "initially_visible": false,
+      "label": "Pauli exclusion principle",
+      "position": {
+        "x": 907.852,
+        "y": 226.724
+      },
+      "presentation_salience": 12,
+      "proposition_degree": 0
+    },
+    {
+      "aliases": [],
+      "assertion_degree": 1,
+      "canonical_relationship_degree": 0,
+      "description": "Ejection of electrons from a metal surface when illuminated, with electron number depending on light intensity and velocity on frequency.",
+      "discoverable": true,
+      "entity_type": "PROCESS",
+      "id": "photoelectric-effect",
+      "initially_visible": false,
+      "label": "photoelectric effect",
+      "position": {
+        "x": 542.679,
+        "y": 516.261
+      },
+      "presentation_salience": 12,
+      "proposition_degree": 0
+    },
+    {
+      "aliases": [
+        "light quantum"
+      ],
+      "assertion_degree": 4,
+      "canonical_relationship_degree": 0,
+      "description": "Quantum or smallest observable particle of the electromagnetic field.",
+      "discoverable": true,
+      "entity_type": "OBJECT",
+      "id": "photon",
+      "initially_visible": true,
+      "label": "photon",
+      "position": {
+        "x": 460.162,
+        "y": 256.453
+      },
+      "presentation_salience": 48,
+      "proposition_degree": 0
+    },
+    {
+      "aliases": [
+        "quantum complementarity"
+      ],
+      "assertion_degree": 0,
+      "canonical_relationship_degree": 0,
+      "description": "Principle that a quantum system displays wave-like or particle-like properties according to the measurement performed.",
+      "discoverable": true,
+      "entity_type": "CONCEPT",
+      "id": "principle-of-complementarity",
+      "initially_visible": false,
+      "label": "principle of complementarity",
+      "position": {
+        "x": 1032.685,
+        "y": 336.03
+      },
+      "presentation_salience": 0,
+      "proposition_degree": 0
+    },
+    {
+      "aliases": [],
+      "assertion_degree": 2,
+      "canonical_relationship_degree": 0,
+      "description": "Restriction of physical quantities or energies to discrete allowable values.",
+      "discoverable": true,
+      "entity_type": "PROCESS",
+      "id": "quantization",
+      "initially_visible": false,
+      "label": "quantization",
+      "position": {
+        "x": 373.685,
+        "y": 406.294
+      },
+      "presentation_salience": 24,
+      "proposition_degree": 0
+    },
+    {
+      "aliases": [
+        "QED",
+        "quantum theory of the electromagnetic force"
+      ],
+      "assertion_degree": 1,
+      "canonical_relationship_degree": 0,
+      "description": "Quantum field theory of the electromagnetic force.",
+      "discoverable": true,
+      "entity_type": "CONCEPT",
+      "id": "quantum-electrodynamics",
+      "initially_visible": false,
+      "label": "quantum electrodynamics",
+      "position": {
+        "x": 569.232,
+        "y": 70.0
+      },
+      "presentation_salience": 12,
+      "proposition_degree": 0
+    },
+    {
+      "aliases": [
+        "entanglement"
+      ],
+      "assertion_degree": 1,
+      "canonical_relationship_degree": 0,
+      "description": "Condition in which the quantum state of particles cannot be described independently, including when they are widely separated.",
+      "discoverable": true,
+      "entity_type": "CONCEPT",
+      "id": "quantum-entanglement",
+      "initially_visible": false,
+      "label": "quantum entanglement",
+      "position": {
+        "x": 762.138,
+        "y": 610.0
+      },
+      "presentation_salience": 4,
+      "proposition_degree": 0
+    },
+    {
+      "aliases": [
+        "electromagnetic field"
+      ],
+      "assertion_degree": 2,
+      "canonical_relationship_degree": 0,
+      "description": "Field treated within quantum theory, including the electromagnetic field whose quantum is the photon.",
+      "discoverable": true,
+      "entity_type": "CONCEPT",
+      "id": "quantum-field",
+      "initially_visible": false,
+      "label": "quantum field",
+      "position": {
+        "x": 372.824,
+        "y": 180.46
+      },
+      "presentation_salience": 24,
+      "proposition_degree": 0
+    },
+    {
+      "aliases": [
+        "QFT"
+      ],
+      "assertion_degree": 2,
+      "canonical_relationship_degree": 1,
+      "description": "Quantum theory of fields that permits particle creation and annihilation.",
+      "discoverable": true,
+      "entity_type": "CONCEPT",
+      "id": "quantum-field-theory",
+      "initially_visible": true,
+      "label": "quantum field theory",
+      "position": {
+        "x": 608.19,
+        "y": 380.001
+      },
+      "presentation_salience": 36,
+      "proposition_degree": 0
+    },
+    {
+      "aliases": [
+        "QM",
+        "quantum physics",
+        "quantum theory"
+      ],
+      "assertion_degree": 6,
+      "canonical_relationship_degree": 1,
+      "description": "Study and theory of matter and its interactions with energy at atomic and subatomic scales.",
+      "discoverable": true,
+      "entity_type": "CONCEPT",
+      "id": "quantum-mechanics",
+      "initially_visible": true,
+      "label": "quantum mechanics",
+      "position": {
+        "x": 543.098,
+        "y": 458.001
+      },
+      "presentation_salience": 84,
+      "proposition_degree": 0
+    },
+    {
+      "aliases": [
+        "revolution in physics"
+      ],
+      "assertion_degree": 1,
+      "canonical_relationship_degree": 0,
+      "description": "The shift from classical physical models to quantum mechanics prompted by phenomena classical physics could not explain.",
+      "discoverable": true,
+      "entity_type": "PROCESS",
+      "id": "quantum-revolution",
+      "initially_visible": false,
+      "label": "quantum revolution",
+      "position": {
+        "x": 556.728,
+        "y": 210.586
+      },
+      "presentation_salience": 12,
+      "proposition_degree": 0
+    },
+    {
+      "aliases": [
+        "tunneling"
+      ],
+      "assertion_degree": 1,
+      "canonical_relationship_degree": 0,
+      "description": "Quantum process allowing electrons to penetrate a potential barrier.",
+      "discoverable": true,
+      "entity_type": "PROCESS",
+      "id": "quantum-tunneling",
+      "initially_visible": false,
+      "label": "quantum tunneling",
+      "position": {
+        "x": 985.457,
+        "y": 420.792
+      },
+      "presentation_salience": 8,
+      "proposition_degree": 0
+    },
+    {
+      "aliases": [],
+      "assertion_degree": 1,
+      "canonical_relationship_degree": 0,
+      "description": "Formula predicting the distinctive absorption-line frequencies of hydrogen gas.",
+      "discoverable": true,
+      "entity_type": "CONCEPT",
+      "id": "rydberg-formula",
+      "initially_visible": false,
+      "label": "Rydberg formula",
+      "position": {
+        "x": 178.528,
+        "y": 436.473
+      },
+      "presentation_salience": 8,
+      "proposition_degree": 0
+    },
+    {
+      "aliases": [],
+      "assertion_degree": 1,
+      "canonical_relationship_degree": 0,
+      "description": "Quantum degree of freedom associated with electrons and discrete magnetic behavior of atoms.",
+      "discoverable": true,
+      "entity_type": "CONCEPT",
+      "id": "spin",
+      "initially_visible": false,
+      "label": "spin",
+      "position": {
+        "x": 677.979,
+        "y": 125.989
+      },
+      "presentation_salience": 16,
+      "proposition_degree": 0
+    },
+    {
+      "aliases": [
+        "Standard Model of particle physics"
+      ],
+      "assertion_degree": 1,
+      "canonical_relationship_degree": 1,
+      "description": "Quantum field theory describing three fundamental forces and classifying known elementary particles.",
+      "discoverable": true,
+      "entity_type": "SYSTEM",
+      "id": "standard-model",
+      "initially_visible": false,
+      "label": "Standard Model",
+      "position": {
+        "x": 748.039,
+        "y": 511.274
+      },
+      "presentation_salience": 24,
+      "proposition_degree": 0
+    },
+    {
+      "aliases": [
+        "Stern-Gerlach experiment"
+      ],
+      "assertion_degree": 2,
+      "canonical_relationship_degree": 0,
+      "description": "Experiment in which a beam of atoms separates into two streams in a magnetic field, demonstrating quantized spin states.",
+      "discoverable": true,
+      "entity_type": "PROCESS",
+      "id": "sterngerlach-experiment",
+      "initially_visible": false,
+      "label": "Stern–Gerlach experiment",
+      "position": {
+        "x": 457.232,
+        "y": 209.879
+      },
+      "presentation_salience": 28,
+      "proposition_degree": 0
+    },
+    {
+      "aliases": [
+        "superconductors"
+      ],
+      "assertion_degree": 0,
+      "canonical_relationship_degree": 0,
+      "description": "Macroscopic quantum phenomenon and technological application of quantum mechanics.",
+      "discoverable": true,
+      "entity_type": "OBJECT",
+      "id": "superconductor",
+      "initially_visible": false,
+      "label": "superconductor",
+      "position": {
+        "x": 1070.0,
+        "y": 245.573
+      },
+      "presentation_salience": 0,
+      "proposition_degree": 0
+    },
+    {
+      "aliases": [],
+      "assertion_degree": 1,
+      "canonical_relationship_degree": 0,
+      "description": "Quantum phenomenon in which liquid helium near absolute zero spontaneously flows up and over its container rim.",
+      "discoverable": true,
+      "entity_type": "CONCEPT",
+      "id": "superfluidity",
+      "initially_visible": false,
+      "label": "superfluidity",
+      "position": {
+        "x": 427.48,
+        "y": 560.021
+      },
+      "presentation_salience": 8,
+      "proposition_degree": 0
+    },
+    {
+      "aliases": [],
+      "assertion_degree": 1,
+      "canonical_relationship_degree": 0,
+      "description": "Quantum-mechanical technological component used in modern electronics.",
+      "discoverable": true,
+      "entity_type": "COMPONENT",
+      "id": "transistor",
+      "initially_visible": false,
+      "label": "transistor",
+      "position": {
+        "x": 699.631,
+        "y": 262.748
+      },
+      "presentation_salience": 20,
+      "proposition_degree": 0
+    },
+    {
+      "aliases": [],
+      "assertion_degree": 1,
+      "canonical_relationship_degree": 0,
+      "description": "Principle that certain properties, such as position and momentum, cannot be simultaneously measured or defined to arbitrary precision.",
+      "discoverable": true,
+      "entity_type": "CONCEPT",
+      "id": "uncertainty-principle",
+      "initially_visible": false,
+      "label": "uncertainty principle",
+      "position": {
+        "x": 885.634,
+        "y": 514.537
+      },
+      "presentation_salience": 8,
+      "proposition_degree": 0
+    },
+    {
+      "aliases": [
+        "quantum wave function"
+      ],
+      "assertion_degree": 1,
+      "canonical_relationship_degree": 0,
+      "description": "Quantum description of a system's probabilistic or potential state.",
+      "discoverable": true,
+      "entity_type": "CONCEPT",
+      "id": "wave-function",
+      "initially_visible": false,
+      "label": "wave function",
+      "position": {
+        "x": 281.536,
+        "y": 173.686
+      },
+      "presentation_salience": 8,
+      "proposition_degree": 0
+    },
+    {
+      "aliases": [],
+      "assertion_degree": 1,
+      "canonical_relationship_degree": 0,
+      "description": "Conversion of a probabilistic quantum state into a definite measured value through measurement.",
+      "discoverable": true,
+      "entity_type": "PROCESS",
+      "id": "wave-function-collapse",
+      "initially_visible": false,
+      "label": "wave function collapse",
+      "position": {
+        "x": 762.838,
+        "y": 138.21
+      },
+      "presentation_salience": 8,
+      "proposition_degree": 0
+    },
+    {
+      "aliases": [
+        "wave-particle duality"
+      ],
+      "assertion_degree": 2,
+      "canonical_relationship_degree": 0,
+      "description": "Principle that photons and matter exhibit both wave-like and particle-like behavior, neither classical description being sufficient alone.",
+      "discoverable": true,
+      "entity_type": "CONCEPT",
+      "id": "waveparticle-duality",
+      "initially_visible": false,
+      "label": "wave–particle duality",
+      "position": {
+        "x": 406.209,
+        "y": 471.206
+      },
+      "presentation_salience": 24,
+      "proposition_degree": 0
+    }
+  ],
+  "disclosure_levels": [
+    {
+      "level": 0,
+      "name": "DOMAIN_SHAPE",
+      "visible": "selected concept labels and canonical edges"
+    },
+    {
+      "level": 1,
+      "name": "LOCAL_TOPOLOGY",
+      "visible": "focused concept and up to seven affinity neighbors"
+    },
+    {
+      "level": 2,
+      "name": "EXPLANATION",
+      "visible": "one requested grounded assertion"
+    },
+    {
+      "level": 3,
+      "name": "EVIDENCE",
+      "visible": "exact evidence for the requested semantic item"
+    }
+  ],
+  "document_id": "text-9e978db999ee6713",
+  "grounded_assertions": [
+    {
+      "evidence": [
+        {
+          "document_id": "text-9e978db999ee6713",
+          "end_char": 12218,
+          "quote": "a beam of light is directed through two narrow, closely spaced slits, producing an interference pattern of light and dark bands on a screen.",
+          "start_char": 12078
+        }
+      ],
+      "evidence_visibility": "LEVEL_3_EXPLICIT_REQUEST",
+      "id": "assertion-05b19ee4b6d50060",
+      "origin": "SOURCE",
+      "participant_entity_ids": [
+        "double-slit-experiment",
+        "interference-pattern",
+        "photon"
+      ],
+      "statement": "In the double-slit experiment, light passing through two slits produces an interference pattern of light and dark bands.",
+      "visibility": "LEVEL_2_EXPLICIT_REQUEST"
+    },
+    {
+      "evidence": [
+        {
+          "document_id": "text-9e978db999ee6713",
+          "end_char": 6181,
+          "quote": "By 1889, the Rydberg formula predicted the lines for hydrogen gas using only a constant number and the integers to index the lines.",
+          "start_char": 6050
+        }
+      ],
+      "evidence_visibility": "LEVEL_3_EXPLICIT_REQUEST",
+      "id": "assertion-074c7c7c1b52ed08",
+      "origin": "SOURCE",
+      "participant_entity_ids": [
+        "rydberg-formula",
+        "atom"
+      ],
+      "statement": "The Rydberg formula predicted the absorption lines of hydrogen gas using a constant and integers indexing the lines.",
+      "visibility": "LEVEL_2_EXPLICIT_REQUEST"
+    },
+    {
+      "evidence": [
+        {
+          "document_id": "text-9e978db999ee6713",
+          "end_char": 11785,
+          "quote": "The concept of wave–particle duality says that neither the classical concept of \"particle\" nor of \"wave\" can fully describe the behavior of quantum-scale objects, either photons or matter.",
+          "start_char": 11597
+        }
+      ],
+      "evidence_visibility": "LEVEL_3_EXPLICIT_REQUEST",
+      "id": "assertion-1599aae1255a3b80",
+      "origin": "SOURCE",
+      "participant_entity_ids": [
+        "waveparticle-duality",
+        "photon",
+        "classical-physics"
+      ],
+      "statement": "Wave–particle duality states that neither the classical concept of a particle nor that of a wave fully describes photons or matter.",
+      "visibility": "LEVEL_2_EXPLICIT_REQUEST"
+    },
+    {
+      "evidence": [
+        {
+          "document_id": "text-9e978db999ee6713",
+          "end_char": 12518,
+          "quote": "Variations of the double-slit experiment have been performed using electrons, atoms, and even large molecules, and the same type of interference pattern is seen.",
+          "start_char": 12357
+        }
+      ],
+      "evidence_visibility": "LEVEL_3_EXPLICIT_REQUEST",
+      "id": "assertion-16ad59600a706049",
+      "origin": "SOURCE",
+      "participant_entity_ids": [
+        "double-slit-experiment",
+        "electron",
+        "atom",
+        "interference-pattern"
+      ],
+      "statement": "Variations of the double-slit experiment using electrons, atoms, and large molecules produce the same type of interference pattern.",
+      "visibility": "LEVEL_2_EXPLICIT_REQUEST"
+    },
+    {
+      "evidence": [
+        {
+          "document_id": "text-9e978db999ee6713",
+          "end_char": 17971,
+          "quote": "When an object can definitely be \"pinned-down\" in some respect, it is said to possess an eigenstate.",
+          "start_char": 17871
+        }
+      ],
+      "evidence_visibility": "LEVEL_3_EXPLICIT_REQUEST",
+      "id": "assertion-1c465c19cfc892d4",
+      "origin": "SOURCE",
+      "participant_entity_ids": [
+        "eigenstate",
+        "eigenvalue"
+      ],
+      "statement": "An object with a definite value for a property is said to possess an eigenstate.",
+      "visibility": "LEVEL_2_EXPLICIT_REQUEST"
+    },
+    {
+      "evidence": [
+        {
+          "document_id": "text-9e978db999ee6713",
+          "end_char": 126,
+          "quote": "Quantum mechanics is the study of matter and matter's interactions with energy on the scale of atomic and subatomic particles.",
+          "start_char": 0
+        }
+      ],
+      "evidence_visibility": "LEVEL_3_EXPLICIT_REQUEST",
+      "id": "assertion-2eb71a2988ee471c",
+      "origin": "SOURCE",
+      "participant_entity_ids": [
+        "quantum-mechanics",
+        "atom"
+      ],
+      "statement": "Quantum mechanics studies matter and its interactions with energy at atomic and subatomic scales.",
+      "visibility": "LEVEL_2_EXPLICIT_REQUEST"
+    },
+    {
+      "evidence": [
+        {
+          "document_id": "text-9e978db999ee6713",
+          "end_char": 744,
+          "quote": "scientists discovered phenomena in both the large (macro) and the small (micro) worlds that classical physics could not explain. The desire to resolve inconsistencies between observed phenomena and classical theory led to a revolution in physics, a shift in the original scientific paradigm: the development of quantum mechanics.",
+          "start_char": 415
+        }
+      ],
+      "evidence_visibility": "LEVEL_3_EXPLICIT_REQUEST",
+      "id": "assertion-2fcb725a5b198912",
+      "origin": "SOURCE",
+      "participant_entity_ids": [
+        "classical-physics",
+        "quantum-mechanics",
+        "quantum-revolution"
+      ],
+      "statement": "Classical physics could not explain some phenomena discovered in the macro and micro worlds, contributing to the development of quantum mechanics.",
+      "visibility": "LEVEL_2_EXPLICIT_REQUEST"
+    },
+    {
+      "evidence": [
+        {
+          "document_id": "text-9e978db999ee6713",
+          "end_char": 28164,
+          "quote": "The Standard Model of particle physics is the quantum field theory that describes three of the four known fundamental forces in the universe (electromagnetic, weak and strong interactions but not gravity) and classifies all known elementary particles.",
+          "start_char": 27913
+        }
+      ],
+      "evidence_visibility": "LEVEL_3_EXPLICIT_REQUEST",
+      "id": "assertion-33a269fc6fc2c7e8",
+      "origin": "SOURCE",
+      "participant_entity_ids": [
+        "standard-model",
+        "quantum-field-theory"
+      ],
+      "statement": "The Standard Model is a quantum field theory that describes three fundamental forces and classifies known elementary particles.",
+      "visibility": "LEVEL_2_EXPLICIT_REQUEST"
+    },
+    {
+      "evidence": [
+        {
+          "document_id": "text-9e978db999ee6713",
+          "end_char": 16720,
+          "quote": "Wave function collapse means that a measurement has forced or converted a quantum (probabilistic or potential) state into a definite measured value.",
+          "start_char": 16572
+        }
+      ],
+      "evidence_visibility": "LEVEL_3_EXPLICIT_REQUEST",
+      "id": "assertion-3eb570168c1a2b9b",
+      "origin": "SOURCE",
+      "participant_entity_ids": [
+        "wave-function-collapse",
+        "wave-function"
+      ],
+      "statement": "Wave function collapse converts a probabilistic or potential quantum state into a definite measured value.",
+      "visibility": "LEVEL_2_EXPLICIT_REQUEST"
+    },
+    {
+      "evidence": [
+        {
+          "document_id": "text-9e978db999ee6713",
+          "end_char": 7956,
+          "quote": "This concept was formalized by Bohr in 1923 as the correspondence principle. It requires quantum theory to converge to classical limits.",
+          "start_char": 7820
+        }
+      ],
+      "evidence_visibility": "LEVEL_3_EXPLICIT_REQUEST",
+      "id": "assertion-56b4330de6aef867",
+      "origin": "SOURCE",
+      "participant_entity_ids": [
+        "correspondence-principle",
+        "quantum-mechanics",
+        "classical-physics"
+      ],
+      "statement": "The correspondence principle requires quantum theory to converge to classical limits.",
+      "visibility": "LEVEL_2_EXPLICIT_REQUEST"
+    },
+    {
+      "evidence": [
+        {
+          "document_id": "text-9e978db999ee6713",
+          "end_char": 1863,
+          "quote": "Quantum mechanics helps people understand chemistry because it explains how atoms interact with each other and form molecules.",
+          "start_char": 1737
+        }
+      ],
+      "evidence_visibility": "LEVEL_3_EXPLICIT_REQUEST",
+      "id": "assertion-56c9dc2b7decefa1",
+      "origin": "SOURCE",
+      "participant_entity_ids": [
+        "quantum-mechanics",
+        "atom"
+      ],
+      "statement": "Quantum mechanics explains how atoms interact with each other and form molecules.",
+      "visibility": "LEVEL_2_EXPLICIT_REQUEST"
+    },
+    {
+      "evidence": [
+        {
+          "document_id": "text-9e978db999ee6713",
+          "end_char": 8581,
+          "quote": "Instead, the beam separated into two, and only two, diverging streams of atoms.",
+          "start_char": 8502
+        }
+      ],
+      "evidence_visibility": "LEVEL_3_EXPLICIT_REQUEST",
+      "id": "assertion-581c7ac6a2588f65",
+      "origin": "SOURCE",
+      "participant_entity_ids": [
+        "sterngerlach-experiment",
+        "atom",
+        "spin",
+        "classical-physics"
+      ],
+      "statement": "The Stern–Gerlach experiment showed that a beam of atoms separates into two streams in a magnetic field rather than a continuous range of directions.",
+      "visibility": "LEVEL_2_EXPLICIT_REQUEST"
+    },
+    {
+      "evidence": [
+        {
+          "document_id": "text-9e978db999ee6713",
+          "end_char": 14160,
+          "quote": "Quantum mechanics shows that certain pairs of physical properties, for example, position and speed, cannot be simultaneously measured, nor defined in operational terms, to arbitrary precision",
+          "start_char": 13969
+        }
+      ],
+      "evidence_visibility": "LEVEL_3_EXPLICIT_REQUEST",
+      "id": "assertion-6091df590afa18b7",
+      "origin": "SOURCE",
+      "participant_entity_ids": [
+        "uncertainty-principle",
+        "quantum-mechanics"
+      ],
+      "statement": "The uncertainty principle states that certain pairs of physical properties, such as position and speed, cannot be simultaneously measured or defined to arbitrary precision.",
+      "visibility": "LEVEL_2_EXPLICIT_REQUEST"
+    },
+    {
+      "evidence": [
+        {
+          "document_id": "text-9e978db999ee6713",
+          "end_char": 2176,
+          "quote": "if liquid helium cooled to a temperature near absolute zero is placed in a container, it spontaneously flows up and over the rim of its container; this is an effect that cannot be explained by classical physics.",
+          "start_char": 1965
+        }
+      ],
+      "evidence_visibility": "LEVEL_3_EXPLICIT_REQUEST",
+      "id": "assertion-6bb1fee4b6754585",
+      "origin": "SOURCE",
+      "participant_entity_ids": [
+        "superfluidity",
+        "classical-physics"
+      ],
+      "statement": "Superfluidity is described as a phenomenon in which liquid helium near absolute zero spontaneously flows up and over the rim of its container, an effect classical physics cannot explain.",
+      "visibility": "LEVEL_2_EXPLICIT_REQUEST"
+    },
+    {
+      "evidence": [
+        {
+          "document_id": "text-9e978db999ee6713",
+          "end_char": 21018,
+          "quote": "a group of particles can interact or be created together in such a way that the quantum state of each particle of the group cannot be described independently of the state of the others, including when the particles are separated by a large distance. This is known as quantum entanglement.",
+          "start_char": 20730
+        }
+      ],
+      "evidence_visibility": "LEVEL_3_EXPLICIT_REQUEST",
+      "id": "assertion-7753560c7d756f5c",
+      "origin": "SOURCE",
+      "participant_entity_ids": [
+        "quantum-entanglement"
+      ],
+      "statement": "Quantum entanglement occurs when the quantum state of each particle in a group cannot be described independently of the states of the other particles, even when they are widely separated.",
+      "visibility": "LEVEL_2_EXPLICIT_REQUEST"
+    },
+    {
+      "evidence": [
+        {
+          "document_id": "text-9e978db999ee6713",
+          "end_char": 2949,
+          "quote": "Max Planck, unconvinced by the atomic theory, discovered that he needed discrete entities like atoms or electrons to explain black-body radiation.",
+          "start_char": 2803
+        },
+        {
+          "document_id": "text-9e978db999ee6713",
+          "end_char": 3594,
+          "quote": "Planck spread the heat energy among individual \"oscillators\" of an undefined character but with discrete energy capacity; this model explained black-body radiation.",
+          "start_char": 3430
+        }
+      ],
+      "evidence_visibility": "LEVEL_3_EXPLICIT_REQUEST",
+      "id": "assertion-86ac50cd7010a75b",
+      "origin": "SOURCE",
+      "participant_entity_ids": [
+        "energy-quantum",
+        "black-body-radiation",
+        "quantization"
+      ],
+      "statement": "Planck used discrete energy entities to explain black-body radiation.",
+      "visibility": "LEVEL_2_EXPLICIT_REQUEST"
+    },
+    {
+      "evidence": [
+        {
+          "document_id": "text-9e978db999ee6713",
+          "end_char": 32801,
+          "quote": "In even a simple light switch, quantum tunneling is absolutely vital, as otherwise the electrons in the electric current could not penetrate the potential barrier made up of a layer of oxide.",
+          "start_char": 32610
+        }
+      ],
+      "evidence_visibility": "LEVEL_3_EXPLICIT_REQUEST",
+      "id": "assertion-88adf8f8ab0e82aa",
+      "origin": "SOURCE",
+      "participant_entity_ids": [
+        "quantum-tunneling",
+        "electron"
+      ],
+      "statement": "Quantum tunneling is vital to a simple light switch because electrons in the electric current must penetrate an oxide potential barrier.",
+      "visibility": "LEVEL_2_EXPLICIT_REQUEST"
+    },
+    {
+      "evidence": [
+        {
+          "document_id": "text-9e978db999ee6713",
+          "end_char": 4638,
+          "quote": "Lenard showed that the amount of current – the number of electrons – depended on the intensity of the light, but that the velocity of these electrons did not depend on intensity. This is the photoelectric effect.",
+          "start_char": 4426
+        }
+      ],
+      "evidence_visibility": "LEVEL_3_EXPLICIT_REQUEST",
+      "id": "assertion-8ea4e7cb167f097b",
+      "origin": "SOURCE",
+      "participant_entity_ids": [
+        "photoelectric-effect",
+        "electron",
+        "energy-quantum"
+      ],
+      "statement": "In the photoelectric effect, the number of electrons emitted depends on light intensity, while their velocity does not depend on intensity.",
+      "visibility": "LEVEL_2_EXPLICIT_REQUEST"
+    },
+    {
+      "evidence": [
+        {
+          "document_id": "text-9e978db999ee6713",
+          "end_char": 10551,
+          "quote": "Paul Dirac published his relativistic wave equation simultaneously incorporating relativity, predicting anti-matter, and providing a complete theory for the Stern–Gerlach result.",
+          "start_char": 10373
+        }
+      ],
+      "evidence_visibility": "LEVEL_3_EXPLICIT_REQUEST",
+      "id": "assertion-97dac19922c1e355",
+      "origin": "SOURCE",
+      "participant_entity_ids": [
+        "dirac-wave-equation",
+        "electron",
+        "sterngerlach-experiment"
+      ],
+      "statement": "The Dirac wave equation incorporated relativity, predicted antimatter, and provided a complete theory for the Stern–Gerlach result.",
+      "visibility": "LEVEL_2_EXPLICIT_REQUEST"
+    },
+    {
+      "evidence": [
+        {
+          "document_id": "text-9e978db999ee6713",
+          "end_char": 25149,
+          "quote": "QFT ... goes a step further and allows for the creation and annihilation of particles",
+          "start_char": 25064
+        }
+      ],
+      "evidence_visibility": "LEVEL_3_EXPLICIT_REQUEST",
+      "id": "assertion-aee7bc302227bd38",
+      "origin": "SOURCE",
+      "participant_entity_ids": [
+        "quantum-field-theory",
+        "quantum-field",
+        "quantization"
+      ],
+      "statement": "Quantum field theory allows the creation and annihilation of particles.",
+      "visibility": "LEVEL_2_EXPLICIT_REQUEST"
+    },
+    {
+      "evidence": [
+        {
+          "document_id": "text-9e978db999ee6713",
+          "end_char": 19496,
+          "quote": "There cannot exist an atom in such a quantum state that two electrons within [it] have the same set of quantum numbers.",
+          "start_char": 19377
+        }
+      ],
+      "evidence_visibility": "LEVEL_3_EXPLICIT_REQUEST",
+      "id": "assertion-bc3d8941f16641ef",
+      "origin": "SOURCE",
+      "participant_entity_ids": [
+        "pauli-exclusion-principle",
+        "electron",
+        "atom"
+      ],
+      "statement": "The Pauli exclusion principle states that two electrons within an atom cannot have the same set of quantum numbers.",
+      "visibility": "LEVEL_2_EXPLICIT_REQUEST"
+    },
+    {
+      "evidence": [
+        {
+          "document_id": "text-9e978db999ee6713",
+          "end_char": 32337,
+          "quote": "Applications of quantum mechanics include the laser, the transistor, the electron microscope, and magnetic resonance imaging.",
+          "start_char": 32212
+        }
+      ],
+      "evidence_visibility": "LEVEL_3_EXPLICIT_REQUEST",
+      "id": "assertion-c2c5a86b98108470",
+      "origin": "SOURCE",
+      "participant_entity_ids": [
+        "quantum-mechanics",
+        "laser",
+        "transistor",
+        "electron-microscope",
+        "magnetic-resonance-imaging"
+      ],
+      "statement": "Applications of quantum mechanics include lasers, transistors, electron microscopes, and magnetic resonance imaging.",
+      "visibility": "LEVEL_2_EXPLICIT_REQUEST"
+    },
+    {
+      "evidence": [
+        {
+          "document_id": "text-9e978db999ee6713",
+          "end_char": 25597,
+          "quote": "Quantum electrodynamics (QED) is the name of the quantum theory of the electromagnetic force.",
+          "start_char": 25504
+        }
+      ],
+      "evidence_visibility": "LEVEL_3_EXPLICIT_REQUEST",
+      "id": "assertion-d1cadc9675bc9732",
+      "origin": "SOURCE",
+      "participant_entity_ids": [
+        "quantum-electrodynamics",
+        "quantum-field",
+        "photon"
+      ],
+      "statement": "Quantum electrodynamics is the quantum theory of the electromagnetic force.",
+      "visibility": "LEVEL_2_EXPLICIT_REQUEST"
+    },
+    {
+      "evidence": [
+        {
+          "document_id": "text-9e978db999ee6713",
+          "end_char": 3877,
+          "quote": "Albert Einstein proposed that light was also corpuscular, consisting of \"energy quanta\", in contradiction to the established science of light as a continuous wave",
+          "start_char": 3715
+        }
+      ],
+      "evidence_visibility": "LEVEL_3_EXPLICIT_REQUEST",
+      "id": "assertion-d3c4ca1bb715646f",
+      "origin": "SOURCE",
+      "participant_entity_ids": [
+        "photon",
+        "energy-quantum",
+        "waveparticle-duality"
+      ],
+      "statement": "Einstein proposed that light consists of energy quanta rather than being only a continuous wave.",
+      "visibility": "LEVEL_2_EXPLICIT_REQUEST"
+    }
+  ],
+  "initial_selection_policy": {
+    "canvas": {
+      "height": 680,
+      "width": 1160
+    },
+    "capacity_formula": "clamp(6, 12, floor(canvas_area / 78000))",
+    "selected_concept_ids": [
+      "quantum-mechanics",
+      "atom",
+      "classical-physics",
+      "electron",
+      "photon",
+      "double-slit-experiment",
+      "interference-pattern",
+      "energy-quantum",
+      "quantum-field-theory",
+      "correspondence-principle"
+    ]
+  },
+  "initial_state": {
+    "visible_assertion_ids": [],
+    "visible_canonical_relationship_ids": [
+      "relationship-05b19ee4b6d50060",
+      "relationship-56b4330de6aef867"
+    ],
+    "visible_concept_ids": [
+      "quantum-mechanics",
+      "atom",
+      "classical-physics",
+      "electron",
+      "photon",
+      "double-slit-experiment",
+      "interference-pattern",
+      "energy-quantum",
+      "quantum-field-theory",
+      "correspondence-principle"
+    ],
+    "visible_evidence_ids": [],
+    "visible_paragraph_or_card_count": 0,
+    "visible_prose": "A source-grounded topology. Select a concept to explore.",
+    "visible_prose_word_count": 8
+  },
+  "layout": {
+    "canvas_height": 680,
+    "canvas_width": 1160,
+    "coordinates_rounded_decimals": 3,
+    "initialization": "lexicographic golden-angle spiral",
+    "iterations": 360,
+    "runtime_simulation": false,
+    "strategy": "DETERMINISTIC_FIXED_ITERATION_WEIGHTED_FORCE_2D"
+  },
+  "neighborhoods": [
+    {
+      "affinity_weights": [
+        12,
+        8,
+        8,
+        4,
+        4,
+        4,
+        4
+      ],
+      "derivation": "FOCUS_PLUS_STRONGEST_PRESENTATION_AFFINITIES",
+      "focus_concept_id": "quantum-mechanics",
+      "invented_semantic_label": false,
+      "label_source": "FOCAL_TRUSTED_CONCEPT_ONLY",
+      "member_concept_ids": [
+        "quantum-mechanics",
+        "correspondence-principle",
+        "atom",
+        "classical-physics",
+        "electron-microscope",
+        "laser",
+        "magnetic-resonance-imaging",
+        "quantum-revolution"
+      ],
+      "presentation_only": true
+    },
+    {
+      "affinity_weights": [
+        8,
+        8,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "derivation": "FOCUS_PLUS_STRONGEST_PRESENTATION_AFFINITIES",
+      "focus_concept_id": "atom",
+      "invented_semantic_label": false,
+      "label_source": "FOCAL_TRUSTED_CONCEPT_ONLY",
+      "member_concept_ids": [
+        "atom",
+        "electron",
+        "quantum-mechanics",
+        "classical-physics",
+        "double-slit-experiment",
+        "interference-pattern",
+        "pauli-exclusion-principle",
+        "rydberg-formula"
+      ],
+      "presentation_only": true
+    },
+    {
+      "affinity_weights": [
+        8,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "derivation": "FOCUS_PLUS_STRONGEST_PRESENTATION_AFFINITIES",
+      "focus_concept_id": "classical-physics",
+      "invented_semantic_label": false,
+      "label_source": "FOCAL_TRUSTED_CONCEPT_ONLY",
+      "member_concept_ids": [
+        "classical-physics",
+        "quantum-mechanics",
+        "atom",
+        "correspondence-principle",
+        "photon",
+        "quantum-revolution",
+        "spin",
+        "sterngerlach-experiment"
+      ],
+      "presentation_only": true
+    },
+    {
+      "affinity_weights": [
+        8,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "derivation": "FOCUS_PLUS_STRONGEST_PRESENTATION_AFFINITIES",
+      "focus_concept_id": "electron",
+      "invented_semantic_label": false,
+      "label_source": "FOCAL_TRUSTED_CONCEPT_ONLY",
+      "member_concept_ids": [
+        "electron",
+        "atom",
+        "dirac-wave-equation",
+        "double-slit-experiment",
+        "energy-quantum",
+        "interference-pattern",
+        "pauli-exclusion-principle",
+        "photoelectric-effect"
+      ],
+      "presentation_only": true
+    },
+    {
+      "affinity_weights": [
+        8,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "derivation": "FOCUS_PLUS_STRONGEST_PRESENTATION_AFFINITIES",
+      "focus_concept_id": "photon",
+      "invented_semantic_label": false,
+      "label_source": "FOCAL_TRUSTED_CONCEPT_ONLY",
+      "member_concept_ids": [
+        "photon",
+        "waveparticle-duality",
+        "classical-physics",
+        "double-slit-experiment",
+        "energy-quantum",
+        "interference-pattern",
+        "quantum-electrodynamics",
+        "quantum-field"
+      ],
+      "presentation_only": true
+    },
+    {
+      "affinity_weights": [
+        16,
+        4,
+        4,
+        4
+      ],
+      "derivation": "FOCUS_PLUS_STRONGEST_PRESENTATION_AFFINITIES",
+      "focus_concept_id": "double-slit-experiment",
+      "invented_semantic_label": false,
+      "label_source": "FOCAL_TRUSTED_CONCEPT_ONLY",
+      "member_concept_ids": [
+        "double-slit-experiment",
+        "interference-pattern",
+        "atom",
+        "electron",
+        "photon"
+      ],
+      "presentation_only": true
+    },
+    {
+      "affinity_weights": [
+        16,
+        4,
+        4,
+        4
+      ],
+      "derivation": "FOCUS_PLUS_STRONGEST_PRESENTATION_AFFINITIES",
+      "focus_concept_id": "interference-pattern",
+      "invented_semantic_label": false,
+      "label_source": "FOCAL_TRUSTED_CONCEPT_ONLY",
+      "member_concept_ids": [
+        "interference-pattern",
+        "double-slit-experiment",
+        "atom",
+        "electron",
+        "photon"
+      ],
+      "presentation_only": true
+    },
+    {
+      "affinity_weights": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "derivation": "FOCUS_PLUS_STRONGEST_PRESENTATION_AFFINITIES",
+      "focus_concept_id": "energy-quantum",
+      "invented_semantic_label": false,
+      "label_source": "FOCAL_TRUSTED_CONCEPT_ONLY",
+      "member_concept_ids": [
+        "energy-quantum",
+        "black-body-radiation",
+        "electron",
+        "photoelectric-effect",
+        "photon",
+        "quantization",
+        "waveparticle-duality"
+      ],
+      "presentation_only": true
+    },
+    {
+      "affinity_weights": [
+        12,
+        4,
+        4
+      ],
+      "derivation": "FOCUS_PLUS_STRONGEST_PRESENTATION_AFFINITIES",
+      "focus_concept_id": "quantum-field-theory",
+      "invented_semantic_label": false,
+      "label_source": "FOCAL_TRUSTED_CONCEPT_ONLY",
+      "member_concept_ids": [
+        "quantum-field-theory",
+        "standard-model",
+        "quantization",
+        "quantum-field"
+      ],
+      "presentation_only": true
+    },
+    {
+      "affinity_weights": [
+        12,
+        4
+      ],
+      "derivation": "FOCUS_PLUS_STRONGEST_PRESENTATION_AFFINITIES",
+      "focus_concept_id": "correspondence-principle",
+      "invented_semantic_label": false,
+      "label_source": "FOCAL_TRUSTED_CONCEPT_ONLY",
+      "member_concept_ids": [
+        "correspondence-principle",
+        "quantum-mechanics",
+        "classical-physics"
+      ],
+      "presentation_only": true
+    },
+    {
+      "affinity_weights": [
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "derivation": "FOCUS_PLUS_STRONGEST_PRESENTATION_AFFINITIES",
+      "focus_concept_id": "sterngerlach-experiment",
+      "invented_semantic_label": false,
+      "label_source": "FOCAL_TRUSTED_CONCEPT_ONLY",
+      "member_concept_ids": [
+        "sterngerlach-experiment",
+        "atom",
+        "classical-physics",
+        "dirac-wave-equation",
+        "electron",
+        "spin"
+      ],
+      "presentation_only": true
+    },
+    {
+      "affinity_weights": [
+        4,
+        4,
+        4,
+        4
+      ],
+      "derivation": "FOCUS_PLUS_STRONGEST_PRESENTATION_AFFINITIES",
+      "focus_concept_id": "quantization",
+      "invented_semantic_label": false,
+      "label_source": "FOCAL_TRUSTED_CONCEPT_ONLY",
+      "member_concept_ids": [
+        "quantization",
+        "black-body-radiation",
+        "energy-quantum",
+        "quantum-field",
+        "quantum-field-theory"
+      ],
+      "presentation_only": true
+    },
+    {
+      "affinity_weights": [
+        4,
+        4,
+        4,
+        4
+      ],
+      "derivation": "FOCUS_PLUS_STRONGEST_PRESENTATION_AFFINITIES",
+      "focus_concept_id": "quantum-field",
+      "invented_semantic_label": false,
+      "label_source": "FOCAL_TRUSTED_CONCEPT_ONLY",
+      "member_concept_ids": [
+        "quantum-field",
+        "photon",
+        "quantization",
+        "quantum-electrodynamics",
+        "quantum-field-theory"
+      ],
+      "presentation_only": true
+    },
+    {
+      "affinity_weights": [
+        12
+      ],
+      "derivation": "FOCUS_PLUS_STRONGEST_PRESENTATION_AFFINITIES",
+      "focus_concept_id": "standard-model",
+      "invented_semantic_label": false,
+      "label_source": "FOCAL_TRUSTED_CONCEPT_ONLY",
+      "member_concept_ids": [
+        "standard-model",
+        "quantum-field-theory"
+      ],
+      "presentation_only": true
+    },
+    {
+      "affinity_weights": [
+        8,
+        4,
+        4
+      ],
+      "derivation": "FOCUS_PLUS_STRONGEST_PRESENTATION_AFFINITIES",
+      "focus_concept_id": "waveparticle-duality",
+      "invented_semantic_label": false,
+      "label_source": "FOCAL_TRUSTED_CONCEPT_ONLY",
+      "member_concept_ids": [
+        "waveparticle-duality",
+        "photon",
+        "classical-physics",
+        "energy-quantum"
+      ],
+      "presentation_only": true
+    },
+    {
+      "affinity_weights": [
+        4,
+        4,
+        4,
+        4
+      ],
+      "derivation": "FOCUS_PLUS_STRONGEST_PRESENTATION_AFFINITIES",
+      "focus_concept_id": "electron-microscope",
+      "invented_semantic_label": false,
+      "label_source": "FOCAL_TRUSTED_CONCEPT_ONLY",
+      "member_concept_ids": [
+        "electron-microscope",
+        "laser",
+        "magnetic-resonance-imaging",
+        "quantum-mechanics",
+        "transistor"
+      ],
+      "presentation_only": true
+    },
+    {
+      "affinity_weights": [
+        4,
+        4,
+        4,
+        4
+      ],
+      "derivation": "FOCUS_PLUS_STRONGEST_PRESENTATION_AFFINITIES",
+      "focus_concept_id": "laser",
+      "invented_semantic_label": false,
+      "label_source": "FOCAL_TRUSTED_CONCEPT_ONLY",
+      "member_concept_ids": [
+        "laser",
+        "electron-microscope",
+        "magnetic-resonance-imaging",
+        "quantum-mechanics",
+        "transistor"
+      ],
+      "presentation_only": true
+    },
+    {
+      "affinity_weights": [
+        4,
+        4,
+        4,
+        4
+      ],
+      "derivation": "FOCUS_PLUS_STRONGEST_PRESENTATION_AFFINITIES",
+      "focus_concept_id": "magnetic-resonance-imaging",
+      "invented_semantic_label": false,
+      "label_source": "FOCAL_TRUSTED_CONCEPT_ONLY",
+      "member_concept_ids": [
+        "magnetic-resonance-imaging",
+        "electron-microscope",
+        "laser",
+        "quantum-mechanics",
+        "transistor"
+      ],
+      "presentation_only": true
+    },
+    {
+      "affinity_weights": [
+        4,
+        4,
+        4,
+        4
+      ],
+      "derivation": "FOCUS_PLUS_STRONGEST_PRESENTATION_AFFINITIES",
+      "focus_concept_id": "transistor",
+      "invented_semantic_label": false,
+      "label_source": "FOCAL_TRUSTED_CONCEPT_ONLY",
+      "member_concept_ids": [
+        "transistor",
+        "electron-microscope",
+        "laser",
+        "magnetic-resonance-imaging",
+        "quantum-mechanics"
+      ],
+      "presentation_only": true
+    },
+    {
+      "affinity_weights": [
+        4,
+        4,
+        4
+      ],
+      "derivation": "FOCUS_PLUS_STRONGEST_PRESENTATION_AFFINITIES",
+      "focus_concept_id": "spin",
+      "invented_semantic_label": false,
+      "label_source": "FOCAL_TRUSTED_CONCEPT_ONLY",
+      "member_concept_ids": [
+        "spin",
+        "atom",
+        "classical-physics",
+        "sterngerlach-experiment"
+      ],
+      "presentation_only": true
+    },
+    {
+      "affinity_weights": [
+        4,
+        4
+      ],
+      "derivation": "FOCUS_PLUS_STRONGEST_PRESENTATION_AFFINITIES",
+      "focus_concept_id": "black-body-radiation",
+      "invented_semantic_label": false,
+      "label_source": "FOCAL_TRUSTED_CONCEPT_ONLY",
+      "member_concept_ids": [
+        "black-body-radiation",
+        "energy-quantum",
+        "quantization"
+      ],
+      "presentation_only": true
+    },
+    {
+      "affinity_weights": [
+        4,
+        4
+      ],
+      "derivation": "FOCUS_PLUS_STRONGEST_PRESENTATION_AFFINITIES",
+      "focus_concept_id": "dirac-wave-equation",
+      "invented_semantic_label": false,
+      "label_source": "FOCAL_TRUSTED_CONCEPT_ONLY",
+      "member_concept_ids": [
+        "dirac-wave-equation",
+        "electron",
+        "sterngerlach-experiment"
+      ],
+      "presentation_only": true
+    },
+    {
+      "affinity_weights": [
+        4,
+        4
+      ],
+      "derivation": "FOCUS_PLUS_STRONGEST_PRESENTATION_AFFINITIES",
+      "focus_concept_id": "pauli-exclusion-principle",
+      "invented_semantic_label": false,
+      "label_source": "FOCAL_TRUSTED_CONCEPT_ONLY",
+      "member_concept_ids": [
+        "pauli-exclusion-principle",
+        "atom",
+        "electron"
+      ],
+      "presentation_only": true
+    },
+    {
+      "affinity_weights": [
+        4,
+        4
+      ],
+      "derivation": "FOCUS_PLUS_STRONGEST_PRESENTATION_AFFINITIES",
+      "focus_concept_id": "photoelectric-effect",
+      "invented_semantic_label": false,
+      "label_source": "FOCAL_TRUSTED_CONCEPT_ONLY",
+      "member_concept_ids": [
+        "photoelectric-effect",
+        "electron",
+        "energy-quantum"
+      ],
+      "presentation_only": true
+    },
+    {
+      "affinity_weights": [
+        4,
+        4
+      ],
+      "derivation": "FOCUS_PLUS_STRONGEST_PRESENTATION_AFFINITIES",
+      "focus_concept_id": "quantum-electrodynamics",
+      "invented_semantic_label": false,
+      "label_source": "FOCAL_TRUSTED_CONCEPT_ONLY",
+      "member_concept_ids": [
+        "quantum-electrodynamics",
+        "photon",
+        "quantum-field"
+      ],
+      "presentation_only": true
+    },
+    {
+      "affinity_weights": [
+        4,
+        4
+      ],
+      "derivation": "FOCUS_PLUS_STRONGEST_PRESENTATION_AFFINITIES",
+      "focus_concept_id": "quantum-revolution",
+      "invented_semantic_label": false,
+      "label_source": "FOCAL_TRUSTED_CONCEPT_ONLY",
+      "member_concept_ids": [
+        "quantum-revolution",
+        "classical-physics",
+        "quantum-mechanics"
+      ],
+      "presentation_only": true
+    },
+    {
+      "affinity_weights": [
+        4
+      ],
+      "derivation": "FOCUS_PLUS_STRONGEST_PRESENTATION_AFFINITIES",
+      "focus_concept_id": "eigenstate",
+      "invented_semantic_label": false,
+      "label_source": "FOCAL_TRUSTED_CONCEPT_ONLY",
+      "member_concept_ids": [
+        "eigenstate",
+        "eigenvalue"
+      ],
+      "presentation_only": true
+    },
+    {
+      "affinity_weights": [
+        4
+      ],
+      "derivation": "FOCUS_PLUS_STRONGEST_PRESENTATION_AFFINITIES",
+      "focus_concept_id": "eigenvalue",
+      "invented_semantic_label": false,
+      "label_source": "FOCAL_TRUSTED_CONCEPT_ONLY",
+      "member_concept_ids": [
+        "eigenvalue",
+        "eigenstate"
+      ],
+      "presentation_only": true
+    },
+    {
+      "affinity_weights": [
+        4
+      ],
+      "derivation": "FOCUS_PLUS_STRONGEST_PRESENTATION_AFFINITIES",
+      "focus_concept_id": "quantum-tunneling",
+      "invented_semantic_label": false,
+      "label_source": "FOCAL_TRUSTED_CONCEPT_ONLY",
+      "member_concept_ids": [
+        "quantum-tunneling",
+        "electron"
+      ],
+      "presentation_only": true
+    },
+    {
+      "affinity_weights": [
+        4
+      ],
+      "derivation": "FOCUS_PLUS_STRONGEST_PRESENTATION_AFFINITIES",
+      "focus_concept_id": "rydberg-formula",
+      "invented_semantic_label": false,
+      "label_source": "FOCAL_TRUSTED_CONCEPT_ONLY",
+      "member_concept_ids": [
+        "rydberg-formula",
+        "atom"
+      ],
+      "presentation_only": true
+    },
+    {
+      "affinity_weights": [
+        4
+      ],
+      "derivation": "FOCUS_PLUS_STRONGEST_PRESENTATION_AFFINITIES",
+      "focus_concept_id": "superfluidity",
+      "invented_semantic_label": false,
+      "label_source": "FOCAL_TRUSTED_CONCEPT_ONLY",
+      "member_concept_ids": [
+        "superfluidity",
+        "classical-physics"
+      ],
+      "presentation_only": true
+    },
+    {
+      "affinity_weights": [
+        4
+      ],
+      "derivation": "FOCUS_PLUS_STRONGEST_PRESENTATION_AFFINITIES",
+      "focus_concept_id": "uncertainty-principle",
+      "invented_semantic_label": false,
+      "label_source": "FOCAL_TRUSTED_CONCEPT_ONLY",
+      "member_concept_ids": [
+        "uncertainty-principle",
+        "quantum-mechanics"
+      ],
+      "presentation_only": true
+    },
+    {
+      "affinity_weights": [
+        4
+      ],
+      "derivation": "FOCUS_PLUS_STRONGEST_PRESENTATION_AFFINITIES",
+      "focus_concept_id": "wave-function",
+      "invented_semantic_label": false,
+      "label_source": "FOCAL_TRUSTED_CONCEPT_ONLY",
+      "member_concept_ids": [
+        "wave-function",
+        "wave-function-collapse"
+      ],
+      "presentation_only": true
+    },
+    {
+      "affinity_weights": [
+        4
+      ],
+      "derivation": "FOCUS_PLUS_STRONGEST_PRESENTATION_AFFINITIES",
+      "focus_concept_id": "wave-function-collapse",
+      "invented_semantic_label": false,
+      "label_source": "FOCAL_TRUSTED_CONCEPT_ONLY",
+      "member_concept_ids": [
+        "wave-function-collapse",
+        "wave-function"
+      ],
+      "presentation_only": true
+    }
+  ],
+  "presentation_affinities": [
+    {
+      "canonical_relationship_adjacency": 1,
+      "concept_ids": [
+        "double-slit-experiment",
+        "interference-pattern"
+      ],
+      "direction": null,
+      "predicate": null,
+      "presentation_only": true,
+      "semantic_relationship_created": false,
+      "shared_grounded_assertions": 2,
+      "structured_proposition_coparticipation": 0,
+      "uses": [
+        "layout_attraction",
+        "proximity",
+        "focus_neighborhood"
+      ],
+      "weight": 16
+    },
+    {
+      "canonical_relationship_adjacency": 1,
+      "concept_ids": [
+        "correspondence-principle",
+        "quantum-mechanics"
+      ],
+      "direction": null,
+      "predicate": null,
+      "presentation_only": true,
+      "semantic_relationship_created": false,
+      "shared_grounded_assertions": 1,
+      "structured_proposition_coparticipation": 0,
+      "uses": [
+        "layout_attraction",
+        "proximity",
+        "focus_neighborhood"
+      ],
+      "weight": 12
+    },
+    {
+      "canonical_relationship_adjacency": 1,
+      "concept_ids": [
+        "quantum-field-theory",
+        "standard-model"
+      ],
+      "direction": null,
+      "predicate": null,
+      "presentation_only": true,
+      "semantic_relationship_created": false,
+      "shared_grounded_assertions": 1,
+      "structured_proposition_coparticipation": 0,
+      "uses": [
+        "layout_attraction",
+        "proximity",
+        "focus_neighborhood"
+      ],
+      "weight": 12
+    },
+    {
+      "canonical_relationship_adjacency": 0,
+      "concept_ids": [
+        "atom",
+        "electron"
+      ],
+      "direction": null,
+      "predicate": null,
+      "presentation_only": true,
+      "semantic_relationship_created": false,
+      "shared_grounded_assertions": 2,
+      "structured_proposition_coparticipation": 0,
+      "uses": [
+        "layout_attraction",
+        "proximity",
+        "focus_neighborhood"
+      ],
+      "weight": 8
+    },
+    {
+      "canonical_relationship_adjacency": 0,
+      "concept_ids": [
+        "atom",
+        "quantum-mechanics"
+      ],
+      "direction": null,
+      "predicate": null,
+      "presentation_only": true,
+      "semantic_relationship_created": false,
+      "shared_grounded_assertions": 2,
+      "structured_proposition_coparticipation": 0,
+      "uses": [
+        "layout_attraction",
+        "proximity",
+        "focus_neighborhood"
+      ],
+      "weight": 8
+    },
+    {
+      "canonical_relationship_adjacency": 0,
+      "concept_ids": [
+        "classical-physics",
+        "quantum-mechanics"
+      ],
+      "direction": null,
+      "predicate": null,
+      "presentation_only": true,
+      "semantic_relationship_created": false,
+      "shared_grounded_assertions": 2,
+      "structured_proposition_coparticipation": 0,
+      "uses": [
+        "layout_attraction",
+        "proximity",
+        "focus_neighborhood"
+      ],
+      "weight": 8
+    },
+    {
+      "canonical_relationship_adjacency": 0,
+      "concept_ids": [
+        "photon",
+        "waveparticle-duality"
+      ],
+      "direction": null,
+      "predicate": null,
+      "presentation_only": true,
+      "semantic_relationship_created": false,
+      "shared_grounded_assertions": 2,
+      "structured_proposition_coparticipation": 0,
+      "uses": [
+        "layout_attraction",
+        "proximity",
+        "focus_neighborhood"
+      ],
+      "weight": 8
+    },
+    {
+      "canonical_relationship_adjacency": 0,
+      "concept_ids": [
+        "atom",
+        "classical-physics"
+      ],
+      "direction": null,
+      "predicate": null,
+      "presentation_only": true,
+      "semantic_relationship_created": false,
+      "shared_grounded_assertions": 1,
+      "structured_proposition_coparticipation": 0,
+      "uses": [
+        "layout_attraction",
+        "proximity",
+        "focus_neighborhood"
+      ],
+      "weight": 4
+    },
+    {
+      "canonical_relationship_adjacency": 0,
+      "concept_ids": [
+        "atom",
+        "double-slit-experiment"
+      ],
+      "direction": null,
+      "predicate": null,
+      "presentation_only": true,
+      "semantic_relationship_created": false,
+      "shared_grounded_assertions": 1,
+      "structured_proposition_coparticipation": 0,
+      "uses": [
+        "layout_attraction",
+        "proximity",
+        "focus_neighborhood"
+      ],
+      "weight": 4
+    },
+    {
+      "canonical_relationship_adjacency": 0,
+      "concept_ids": [
+        "atom",
+        "interference-pattern"
+      ],
+      "direction": null,
+      "predicate": null,
+      "presentation_only": true,
+      "semantic_relationship_created": false,
+      "shared_grounded_assertions": 1,
+      "structured_proposition_coparticipation": 0,
+      "uses": [
+        "layout_attraction",
+        "proximity",
+        "focus_neighborhood"
+      ],
+      "weight": 4
+    },
+    {
+      "canonical_relationship_adjacency": 0,
+      "concept_ids": [
+        "atom",
+        "pauli-exclusion-principle"
+      ],
+      "direction": null,
+      "predicate": null,
+      "presentation_only": true,
+      "semantic_relationship_created": false,
+      "shared_grounded_assertions": 1,
+      "structured_proposition_coparticipation": 0,
+      "uses": [
+        "layout_attraction",
+        "proximity",
+        "focus_neighborhood"
+      ],
+      "weight": 4
+    },
+    {
+      "canonical_relationship_adjacency": 0,
+      "concept_ids": [
+        "atom",
+        "rydberg-formula"
+      ],
+      "direction": null,
+      "predicate": null,
+      "presentation_only": true,
+      "semantic_relationship_created": false,
+      "shared_grounded_assertions": 1,
+      "structured_proposition_coparticipation": 0,
+      "uses": [
+        "layout_attraction",
+        "proximity",
+        "focus_neighborhood"
+      ],
+      "weight": 4
+    },
+    {
+      "canonical_relationship_adjacency": 0,
+      "concept_ids": [
+        "atom",
+        "spin"
+      ],
+      "direction": null,
+      "predicate": null,
+      "presentation_only": true,
+      "semantic_relationship_created": false,
+      "shared_grounded_assertions": 1,
+      "structured_proposition_coparticipation": 0,
+      "uses": [
+        "layout_attraction",
+        "proximity",
+        "focus_neighborhood"
+      ],
+      "weight": 4
+    },
+    {
+      "canonical_relationship_adjacency": 0,
+      "concept_ids": [
+        "atom",
+        "sterngerlach-experiment"
+      ],
+      "direction": null,
+      "predicate": null,
+      "presentation_only": true,
+      "semantic_relationship_created": false,
+      "shared_grounded_assertions": 1,
+      "structured_proposition_coparticipation": 0,
+      "uses": [
+        "layout_attraction",
+        "proximity",
+        "focus_neighborhood"
+      ],
+      "weight": 4
+    },
+    {
+      "canonical_relationship_adjacency": 0,
+      "concept_ids": [
+        "black-body-radiation",
+        "energy-quantum"
+      ],
+      "direction": null,
+      "predicate": null,
+      "presentation_only": true,
+      "semantic_relationship_created": false,
+      "shared_grounded_assertions": 1,
+      "structured_proposition_coparticipation": 0,
+      "uses": [
+        "layout_attraction",
+        "proximity",
+        "focus_neighborhood"
+      ],
+      "weight": 4
+    },
+    {
+      "canonical_relationship_adjacency": 0,
+      "concept_ids": [
+        "black-body-radiation",
+        "quantization"
+      ],
+      "direction": null,
+      "predicate": null,
+      "presentation_only": true,
+      "semantic_relationship_created": false,
+      "shared_grounded_assertions": 1,
+      "structured_proposition_coparticipation": 0,
+      "uses": [
+        "layout_attraction",
+        "proximity",
+        "focus_neighborhood"
+      ],
+      "weight": 4
+    },
+    {
+      "canonical_relationship_adjacency": 0,
+      "concept_ids": [
+        "classical-physics",
+        "correspondence-principle"
+      ],
+      "direction": null,
+      "predicate": null,
+      "presentation_only": true,
+      "semantic_relationship_created": false,
+      "shared_grounded_assertions": 1,
+      "structured_proposition_coparticipation": 0,
+      "uses": [
+        "layout_attraction",
+        "proximity",
+        "focus_neighborhood"
+      ],
+      "weight": 4
+    },
+    {
+      "canonical_relationship_adjacency": 0,
+      "concept_ids": [
+        "classical-physics",
+        "photon"
+      ],
+      "direction": null,
+      "predicate": null,
+      "presentation_only": true,
+      "semantic_relationship_created": false,
+      "shared_grounded_assertions": 1,
+      "structured_proposition_coparticipation": 0,
+      "uses": [
+        "layout_attraction",
+        "proximity",
+        "focus_neighborhood"
+      ],
+      "weight": 4
+    },
+    {
+      "canonical_relationship_adjacency": 0,
+      "concept_ids": [
+        "classical-physics",
+        "quantum-revolution"
+      ],
+      "direction": null,
+      "predicate": null,
+      "presentation_only": true,
+      "semantic_relationship_created": false,
+      "shared_grounded_assertions": 1,
+      "structured_proposition_coparticipation": 0,
+      "uses": [
+        "layout_attraction",
+        "proximity",
+        "focus_neighborhood"
+      ],
+      "weight": 4
+    },
+    {
+      "canonical_relationship_adjacency": 0,
+      "concept_ids": [
+        "classical-physics",
+        "spin"
+      ],
+      "direction": null,
+      "predicate": null,
+      "presentation_only": true,
+      "semantic_relationship_created": false,
+      "shared_grounded_assertions": 1,
+      "structured_proposition_coparticipation": 0,
+      "uses": [
+        "layout_attraction",
+        "proximity",
+        "focus_neighborhood"
+      ],
+      "weight": 4
+    },
+    {
+      "canonical_relationship_adjacency": 0,
+      "concept_ids": [
+        "classical-physics",
+        "sterngerlach-experiment"
+      ],
+      "direction": null,
+      "predicate": null,
+      "presentation_only": true,
+      "semantic_relationship_created": false,
+      "shared_grounded_assertions": 1,
+      "structured_proposition_coparticipation": 0,
+      "uses": [
+        "layout_attraction",
+        "proximity",
+        "focus_neighborhood"
+      ],
+      "weight": 4
+    },
+    {
+      "canonical_relationship_adjacency": 0,
+      "concept_ids": [
+        "classical-physics",
+        "superfluidity"
+      ],
+      "direction": null,
+      "predicate": null,
+      "presentation_only": true,
+      "semantic_relationship_created": false,
+      "shared_grounded_assertions": 1,
+      "structured_proposition_coparticipation": 0,
+      "uses": [
+        "layout_attraction",
+        "proximity",
+        "focus_neighborhood"
+      ],
+      "weight": 4
+    },
+    {
+      "canonical_relationship_adjacency": 0,
+      "concept_ids": [
+        "classical-physics",
+        "waveparticle-duality"
+      ],
+      "direction": null,
+      "predicate": null,
+      "presentation_only": true,
+      "semantic_relationship_created": false,
+      "shared_grounded_assertions": 1,
+      "structured_proposition_coparticipation": 0,
+      "uses": [
+        "layout_attraction",
+        "proximity",
+        "focus_neighborhood"
+      ],
+      "weight": 4
+    },
+    {
+      "canonical_relationship_adjacency": 0,
+      "concept_ids": [
+        "dirac-wave-equation",
+        "electron"
+      ],
+      "direction": null,
+      "predicate": null,
+      "presentation_only": true,
+      "semantic_relationship_created": false,
+      "shared_grounded_assertions": 1,
+      "structured_proposition_coparticipation": 0,
+      "uses": [
+        "layout_attraction",
+        "proximity",
+        "focus_neighborhood"
+      ],
+      "weight": 4
+    },
+    {
+      "canonical_relationship_adjacency": 0,
+      "concept_ids": [
+        "dirac-wave-equation",
+        "sterngerlach-experiment"
+      ],
+      "direction": null,
+      "predicate": null,
+      "presentation_only": true,
+      "semantic_relationship_created": false,
+      "shared_grounded_assertions": 1,
+      "structured_proposition_coparticipation": 0,
+      "uses": [
+        "layout_attraction",
+        "proximity",
+        "focus_neighborhood"
+      ],
+      "weight": 4
+    },
+    {
+      "canonical_relationship_adjacency": 0,
+      "concept_ids": [
+        "double-slit-experiment",
+        "electron"
+      ],
+      "direction": null,
+      "predicate": null,
+      "presentation_only": true,
+      "semantic_relationship_created": false,
+      "shared_grounded_assertions": 1,
+      "structured_proposition_coparticipation": 0,
+      "uses": [
+        "layout_attraction",
+        "proximity",
+        "focus_neighborhood"
+      ],
+      "weight": 4
+    },
+    {
+      "canonical_relationship_adjacency": 0,
+      "concept_ids": [
+        "double-slit-experiment",
+        "photon"
+      ],
+      "direction": null,
+      "predicate": null,
+      "presentation_only": true,
+      "semantic_relationship_created": false,
+      "shared_grounded_assertions": 1,
+      "structured_proposition_coparticipation": 0,
+      "uses": [
+        "layout_attraction",
+        "proximity",
+        "focus_neighborhood"
+      ],
+      "weight": 4
+    },
+    {
+      "canonical_relationship_adjacency": 0,
+      "concept_ids": [
+        "eigenstate",
+        "eigenvalue"
+      ],
+      "direction": null,
+      "predicate": null,
+      "presentation_only": true,
+      "semantic_relationship_created": false,
+      "shared_grounded_assertions": 1,
+      "structured_proposition_coparticipation": 0,
+      "uses": [
+        "layout_attraction",
+        "proximity",
+        "focus_neighborhood"
+      ],
+      "weight": 4
+    },
+    {
+      "canonical_relationship_adjacency": 0,
+      "concept_ids": [
+        "electron",
+        "energy-quantum"
+      ],
+      "direction": null,
+      "predicate": null,
+      "presentation_only": true,
+      "semantic_relationship_created": false,
+      "shared_grounded_assertions": 1,
+      "structured_proposition_coparticipation": 0,
+      "uses": [
+        "layout_attraction",
+        "proximity",
+        "focus_neighborhood"
+      ],
+      "weight": 4
+    },
+    {
+      "canonical_relationship_adjacency": 0,
+      "concept_ids": [
+        "electron",
+        "interference-pattern"
+      ],
+      "direction": null,
+      "predicate": null,
+      "presentation_only": true,
+      "semantic_relationship_created": false,
+      "shared_grounded_assertions": 1,
+      "structured_proposition_coparticipation": 0,
+      "uses": [
+        "layout_attraction",
+        "proximity",
+        "focus_neighborhood"
+      ],
+      "weight": 4
+    },
+    {
+      "canonical_relationship_adjacency": 0,
+      "concept_ids": [
+        "electron",
+        "pauli-exclusion-principle"
+      ],
+      "direction": null,
+      "predicate": null,
+      "presentation_only": true,
+      "semantic_relationship_created": false,
+      "shared_grounded_assertions": 1,
+      "structured_proposition_coparticipation": 0,
+      "uses": [
+        "layout_attraction",
+        "proximity",
+        "focus_neighborhood"
+      ],
+      "weight": 4
+    },
+    {
+      "canonical_relationship_adjacency": 0,
+      "concept_ids": [
+        "electron",
+        "photoelectric-effect"
+      ],
+      "direction": null,
+      "predicate": null,
+      "presentation_only": true,
+      "semantic_relationship_created": false,
+      "shared_grounded_assertions": 1,
+      "structured_proposition_coparticipation": 0,
+      "uses": [
+        "layout_attraction",
+        "proximity",
+        "focus_neighborhood"
+      ],
+      "weight": 4
+    },
+    {
+      "canonical_relationship_adjacency": 0,
+      "concept_ids": [
+        "electron",
+        "quantum-tunneling"
+      ],
+      "direction": null,
+      "predicate": null,
+      "presentation_only": true,
+      "semantic_relationship_created": false,
+      "shared_grounded_assertions": 1,
+      "structured_proposition_coparticipation": 0,
+      "uses": [
+        "layout_attraction",
+        "proximity",
+        "focus_neighborhood"
+      ],
+      "weight": 4
+    },
+    {
+      "canonical_relationship_adjacency": 0,
+      "concept_ids": [
+        "electron",
+        "sterngerlach-experiment"
+      ],
+      "direction": null,
+      "predicate": null,
+      "presentation_only": true,
+      "semantic_relationship_created": false,
+      "shared_grounded_assertions": 1,
+      "structured_proposition_coparticipation": 0,
+      "uses": [
+        "layout_attraction",
+        "proximity",
+        "focus_neighborhood"
+      ],
+      "weight": 4
+    },
+    {
+      "canonical_relationship_adjacency": 0,
+      "concept_ids": [
+        "electron-microscope",
+        "laser"
+      ],
+      "direction": null,
+      "predicate": null,
+      "presentation_only": true,
+      "semantic_relationship_created": false,
+      "shared_grounded_assertions": 1,
+      "structured_proposition_coparticipation": 0,
+      "uses": [
+        "layout_attraction",
+        "proximity",
+        "focus_neighborhood"
+      ],
+      "weight": 4
+    },
+    {
+      "canonical_relationship_adjacency": 0,
+      "concept_ids": [
+        "electron-microscope",
+        "magnetic-resonance-imaging"
+      ],
+      "direction": null,
+      "predicate": null,
+      "presentation_only": true,
+      "semantic_relationship_created": false,
+      "shared_grounded_assertions": 1,
+      "structured_proposition_coparticipation": 0,
+      "uses": [
+        "layout_attraction",
+        "proximity",
+        "focus_neighborhood"
+      ],
+      "weight": 4
+    },
+    {
+      "canonical_relationship_adjacency": 0,
+      "concept_ids": [
+        "electron-microscope",
+        "quantum-mechanics"
+      ],
+      "direction": null,
+      "predicate": null,
+      "presentation_only": true,
+      "semantic_relationship_created": false,
+      "shared_grounded_assertions": 1,
+      "structured_proposition_coparticipation": 0,
+      "uses": [
+        "layout_attraction",
+        "proximity",
+        "focus_neighborhood"
+      ],
+      "weight": 4
+    },
+    {
+      "canonical_relationship_adjacency": 0,
+      "concept_ids": [
+        "electron-microscope",
+        "transistor"
+      ],
+      "direction": null,
+      "predicate": null,
+      "presentation_only": true,
+      "semantic_relationship_created": false,
+      "shared_grounded_assertions": 1,
+      "structured_proposition_coparticipation": 0,
+      "uses": [
+        "layout_attraction",
+        "proximity",
+        "focus_neighborhood"
+      ],
+      "weight": 4
+    },
+    {
+      "canonical_relationship_adjacency": 0,
+      "concept_ids": [
+        "energy-quantum",
+        "photoelectric-effect"
+      ],
+      "direction": null,
+      "predicate": null,
+      "presentation_only": true,
+      "semantic_relationship_created": false,
+      "shared_grounded_assertions": 1,
+      "structured_proposition_coparticipation": 0,
+      "uses": [
+        "layout_attraction",
+        "proximity",
+        "focus_neighborhood"
+      ],
+      "weight": 4
+    },
+    {
+      "canonical_relationship_adjacency": 0,
+      "concept_ids": [
+        "energy-quantum",
+        "photon"
+      ],
+      "direction": null,
+      "predicate": null,
+      "presentation_only": true,
+      "semantic_relationship_created": false,
+      "shared_grounded_assertions": 1,
+      "structured_proposition_coparticipation": 0,
+      "uses": [
+        "layout_attraction",
+        "proximity",
+        "focus_neighborhood"
+      ],
+      "weight": 4
+    },
+    {
+      "canonical_relationship_adjacency": 0,
+      "concept_ids": [
+        "energy-quantum",
+        "quantization"
+      ],
+      "direction": null,
+      "predicate": null,
+      "presentation_only": true,
+      "semantic_relationship_created": false,
+      "shared_grounded_assertions": 1,
+      "structured_proposition_coparticipation": 0,
+      "uses": [
+        "layout_attraction",
+        "proximity",
+        "focus_neighborhood"
+      ],
+      "weight": 4
+    },
+    {
+      "canonical_relationship_adjacency": 0,
+      "concept_ids": [
+        "energy-quantum",
+        "waveparticle-duality"
+      ],
+      "direction": null,
+      "predicate": null,
+      "presentation_only": true,
+      "semantic_relationship_created": false,
+      "shared_grounded_assertions": 1,
+      "structured_proposition_coparticipation": 0,
+      "uses": [
+        "layout_attraction",
+        "proximity",
+        "focus_neighborhood"
+      ],
+      "weight": 4
+    },
+    {
+      "canonical_relationship_adjacency": 0,
+      "concept_ids": [
+        "interference-pattern",
+        "photon"
+      ],
+      "direction": null,
+      "predicate": null,
+      "presentation_only": true,
+      "semantic_relationship_created": false,
+      "shared_grounded_assertions": 1,
+      "structured_proposition_coparticipation": 0,
+      "uses": [
+        "layout_attraction",
+        "proximity",
+        "focus_neighborhood"
+      ],
+      "weight": 4
+    },
+    {
+      "canonical_relationship_adjacency": 0,
+      "concept_ids": [
+        "laser",
+        "magnetic-resonance-imaging"
+      ],
+      "direction": null,
+      "predicate": null,
+      "presentation_only": true,
+      "semantic_relationship_created": false,
+      "shared_grounded_assertions": 1,
+      "structured_proposition_coparticipation": 0,
+      "uses": [
+        "layout_attraction",
+        "proximity",
+        "focus_neighborhood"
+      ],
+      "weight": 4
+    },
+    {
+      "canonical_relationship_adjacency": 0,
+      "concept_ids": [
+        "laser",
+        "quantum-mechanics"
+      ],
+      "direction": null,
+      "predicate": null,
+      "presentation_only": true,
+      "semantic_relationship_created": false,
+      "shared_grounded_assertions": 1,
+      "structured_proposition_coparticipation": 0,
+      "uses": [
+        "layout_attraction",
+        "proximity",
+        "focus_neighborhood"
+      ],
+      "weight": 4
+    },
+    {
+      "canonical_relationship_adjacency": 0,
+      "concept_ids": [
+        "laser",
+        "transistor"
+      ],
+      "direction": null,
+      "predicate": null,
+      "presentation_only": true,
+      "semantic_relationship_created": false,
+      "shared_grounded_assertions": 1,
+      "structured_proposition_coparticipation": 0,
+      "uses": [
+        "layout_attraction",
+        "proximity",
+        "focus_neighborhood"
+      ],
+      "weight": 4
+    },
+    {
+      "canonical_relationship_adjacency": 0,
+      "concept_ids": [
+        "magnetic-resonance-imaging",
+        "quantum-mechanics"
+      ],
+      "direction": null,
+      "predicate": null,
+      "presentation_only": true,
+      "semantic_relationship_created": false,
+      "shared_grounded_assertions": 1,
+      "structured_proposition_coparticipation": 0,
+      "uses": [
+        "layout_attraction",
+        "proximity",
+        "focus_neighborhood"
+      ],
+      "weight": 4
+    },
+    {
+      "canonical_relationship_adjacency": 0,
+      "concept_ids": [
+        "magnetic-resonance-imaging",
+        "transistor"
+      ],
+      "direction": null,
+      "predicate": null,
+      "presentation_only": true,
+      "semantic_relationship_created": false,
+      "shared_grounded_assertions": 1,
+      "structured_proposition_coparticipation": 0,
+      "uses": [
+        "layout_attraction",
+        "proximity",
+        "focus_neighborhood"
+      ],
+      "weight": 4
+    },
+    {
+      "canonical_relationship_adjacency": 0,
+      "concept_ids": [
+        "photon",
+        "quantum-electrodynamics"
+      ],
+      "direction": null,
+      "predicate": null,
+      "presentation_only": true,
+      "semantic_relationship_created": false,
+      "shared_grounded_assertions": 1,
+      "structured_proposition_coparticipation": 0,
+      "uses": [
+        "layout_attraction",
+        "proximity",
+        "focus_neighborhood"
+      ],
+      "weight": 4
+    },
+    {
+      "canonical_relationship_adjacency": 0,
+      "concept_ids": [
+        "photon",
+        "quantum-field"
+      ],
+      "direction": null,
+      "predicate": null,
+      "presentation_only": true,
+      "semantic_relationship_created": false,
+      "shared_grounded_assertions": 1,
+      "structured_proposition_coparticipation": 0,
+      "uses": [
+        "layout_attraction",
+        "proximity",
+        "focus_neighborhood"
+      ],
+      "weight": 4
+    },
+    {
+      "canonical_relationship_adjacency": 0,
+      "concept_ids": [
+        "quantization",
+        "quantum-field"
+      ],
+      "direction": null,
+      "predicate": null,
+      "presentation_only": true,
+      "semantic_relationship_created": false,
+      "shared_grounded_assertions": 1,
+      "structured_proposition_coparticipation": 0,
+      "uses": [
+        "layout_attraction",
+        "proximity",
+        "focus_neighborhood"
+      ],
+      "weight": 4
+    },
+    {
+      "canonical_relationship_adjacency": 0,
+      "concept_ids": [
+        "quantization",
+        "quantum-field-theory"
+      ],
+      "direction": null,
+      "predicate": null,
+      "presentation_only": true,
+      "semantic_relationship_created": false,
+      "shared_grounded_assertions": 1,
+      "structured_proposition_coparticipation": 0,
+      "uses": [
+        "layout_attraction",
+        "proximity",
+        "focus_neighborhood"
+      ],
+      "weight": 4
+    },
+    {
+      "canonical_relationship_adjacency": 0,
+      "concept_ids": [
+        "quantum-electrodynamics",
+        "quantum-field"
+      ],
+      "direction": null,
+      "predicate": null,
+      "presentation_only": true,
+      "semantic_relationship_created": false,
+      "shared_grounded_assertions": 1,
+      "structured_proposition_coparticipation": 0,
+      "uses": [
+        "layout_attraction",
+        "proximity",
+        "focus_neighborhood"
+      ],
+      "weight": 4
+    },
+    {
+      "canonical_relationship_adjacency": 0,
+      "concept_ids": [
+        "quantum-field",
+        "quantum-field-theory"
+      ],
+      "direction": null,
+      "predicate": null,
+      "presentation_only": true,
+      "semantic_relationship_created": false,
+      "shared_grounded_assertions": 1,
+      "structured_proposition_coparticipation": 0,
+      "uses": [
+        "layout_attraction",
+        "proximity",
+        "focus_neighborhood"
+      ],
+      "weight": 4
+    },
+    {
+      "canonical_relationship_adjacency": 0,
+      "concept_ids": [
+        "quantum-mechanics",
+        "quantum-revolution"
+      ],
+      "direction": null,
+      "predicate": null,
+      "presentation_only": true,
+      "semantic_relationship_created": false,
+      "shared_grounded_assertions": 1,
+      "structured_proposition_coparticipation": 0,
+      "uses": [
+        "layout_attraction",
+        "proximity",
+        "focus_neighborhood"
+      ],
+      "weight": 4
+    },
+    {
+      "canonical_relationship_adjacency": 0,
+      "concept_ids": [
+        "quantum-mechanics",
+        "transistor"
+      ],
+      "direction": null,
+      "predicate": null,
+      "presentation_only": true,
+      "semantic_relationship_created": false,
+      "shared_grounded_assertions": 1,
+      "structured_proposition_coparticipation": 0,
+      "uses": [
+        "layout_attraction",
+        "proximity",
+        "focus_neighborhood"
+      ],
+      "weight": 4
+    },
+    {
+      "canonical_relationship_adjacency": 0,
+      "concept_ids": [
+        "quantum-mechanics",
+        "uncertainty-principle"
+      ],
+      "direction": null,
+      "predicate": null,
+      "presentation_only": true,
+      "semantic_relationship_created": false,
+      "shared_grounded_assertions": 1,
+      "structured_proposition_coparticipation": 0,
+      "uses": [
+        "layout_attraction",
+        "proximity",
+        "focus_neighborhood"
+      ],
+      "weight": 4
+    },
+    {
+      "canonical_relationship_adjacency": 0,
+      "concept_ids": [
+        "spin",
+        "sterngerlach-experiment"
+      ],
+      "direction": null,
+      "predicate": null,
+      "presentation_only": true,
+      "semantic_relationship_created": false,
+      "shared_grounded_assertions": 1,
+      "structured_proposition_coparticipation": 0,
+      "uses": [
+        "layout_attraction",
+        "proximity",
+        "focus_neighborhood"
+      ],
+      "weight": 4
+    },
+    {
+      "canonical_relationship_adjacency": 0,
+      "concept_ids": [
+        "wave-function",
+        "wave-function-collapse"
+      ],
+      "direction": null,
+      "predicate": null,
+      "presentation_only": true,
+      "semantic_relationship_created": false,
+      "shared_grounded_assertions": 1,
+      "structured_proposition_coparticipation": 0,
+      "uses": [
+        "layout_attraction",
+        "proximity",
+        "focus_neighborhood"
+      ],
+      "weight": 4
+    }
+  ],
+  "product_principle": "Topology first. Text on demand.",
+  "projector_version": "spec-017-v1",
+  "salience_policy": {
+    "formula": "4*assertion_degree + 8*canonical_degree + 6*proposition_degree + weighted_affinity_degree",
+    "purpose": "presentation visibility and visual weight only",
+    "tie_breaker": "lexicographic concept ID"
+  },
+  "semantic_boundary": {
+    "new_semantic_truth_created": false,
+    "presentation_affinity_creates_relationships": false,
+    "presentation_affinity_is_semantic": false,
+    "semantic_ir_modified": false
+  },
+  "structured_propositions": [],
+  "title": "Quantum mechanics"
+}
