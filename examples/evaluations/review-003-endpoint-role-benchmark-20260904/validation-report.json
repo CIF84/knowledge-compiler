@@ -1,0 +1,114 @@
+{
+  "review": "REVIEW-003",
+  "step": 1,
+  "validated_on": "2026-09-04",
+  "packet": "endpoint-role-packet.json",
+  "packet_sha256": "cbbef7b3eca555c4691024f987d6ba04be6cb6091d90d91d2121290782591088",
+  "result": "PASS",
+  "decision": "SUFFICIENT_FOR_BOUNDED_SPEC_015_EXPERIMENT",
+  "decision_scope": "The packet is sufficient for one frozen, exploratory endpoint-role adequacy experiment. It is not large or diverse enough to establish a production threshold or general endpoint-role accuracy.",
+  "execution": {
+    "live_calls": 0,
+    "endpoint_role_model_implemented": false,
+    "endpoint_role_judge_implemented": false,
+    "external_enrichment": false
+  },
+  "automated_integrity_validation": {
+    "result": "PASS",
+    "checks_total": 125,
+    "checks_passed": 125,
+    "failures": [],
+    "checked": [
+      "packet parses as JSON and is marked offline",
+      "10 unique cases and neutral blind IDs",
+      "blind IDs reproduce the documented SHA-256 ordering",
+      "balanced 5 ROLE_ADEQUATE / 5 ROLE_INADEQUATE labels",
+      "all five source artifacts exist and match their frozen SHA-256 values",
+      "all evidence quotes exactly equal source-text slices at the recorded offsets",
+      "all ten candidate field projections exactly match the cited historical artifacts",
+      "all preserved SPEC-013 assertions exactly match statement, participants, and evidence",
+      "all candidate endpoints and assertion participants resolve against the case symbol table",
+      "every predicate has a frozen role contract",
+      "every positive control contains at least one additional contextual participant",
+      "all provenance artifacts exist",
+      "positive controls span five predicates and four relationship families"
+    ]
+  },
+  "manual_independent_review_validation": [
+    {
+      "case_id": "negative-economics-comparison-to-one-operand",
+      "result": "PASS",
+      "basis": "SPEC-009 repository review explicitly finds that the compound condition quantity-demanded > quantity-supplied was compressed to quantity-demanded alone; SPEC-010 comparison and DEBRIEF-010 preserve the accepted COMPARISON_CONDITION correction."
+    },
+    {
+      "case_id": "negative-pauli-constrains-electron",
+      "result": "PASS",
+      "basis": "SPEC-012 item review classifies r12 IMPRECISE_ENDPOINT with precise predicate and identifies the missing joint atomic state / quantum-number assignment; REVIEW-003 preserves it as Case A."
+    },
+    {
+      "case_id": "negative-transfer-object-to-event-as-destination",
+      "result": "PASS",
+      "basis": "SPEC-009 repository review explicitly identifies order-command-transfer as the wrong TRANSFERS_TO destination and order-component as the source-supported target; SPEC-010 preserves the accepted TRANSFER_EVENT correction."
+    },
+    {
+      "case_id": "negative-tunneling-enables-electron",
+      "result": "PASS",
+      "basis": "SPEC-011 repository review explicitly finds that electron is substituted for the missing electron-penetration process endpoint; REVIEW-003 preserves it as Case B."
+    },
+    {
+      "case_id": "negative-tunneling-enables-transistor",
+      "result": "PASS",
+      "basis": "SPEC-012 item review classifies r9 IMPRECISE_ENDPOINT with precise predicate and identifies transistor as unsupported application context rather than the penetration process; REVIEW-003 preserves it as Case C."
+    },
+    {
+      "case_id": "positive-api-component-part-of-service",
+      "result": "PASS",
+      "basis": "SPEC-003 repository review records that all PART_OF edges correctly point component to service; the evidence also names three sibling components that are not endpoints."
+    },
+    {
+      "case_id": "positive-amino-acid-transfers-to-ribosome",
+      "result": "PASS",
+      "basis": "SPEC-003 repository review records amino-acid TRANSFERS_TO ribosome as the corrected relationship; transfer RNA remains a contextual carrier rather than either predicate endpoint."
+    },
+    {
+      "case_id": "positive-correspondence-constrains-quantum-mechanics",
+      "result": "PASS",
+      "basis": "SPEC-013 item review classifies the relationship SUPPORTED with PRECISE endpoints and predicate; classical physics remains additional limit context."
+    },
+    {
+      "case_id": "positive-double-slit-causes-interference",
+      "result": "PASS",
+      "basis": "SPEC-013 item review classifies the relationship SUPPORTED with PRECISE endpoints and predicate; photon/light remains additional experiment context."
+    },
+    {
+      "case_id": "positive-rna-polymerase-binds-dna",
+      "result": "PASS",
+      "basis": "SPEC-003 repository review records RNA-polymerase BINDS_TO DNA as the corrected relationship; gene remains contextual location rather than a binding endpoint."
+    }
+  ],
+  "fairness_validation": {
+    "historical_labels_only": true,
+    "labels_invented_for_packet": false,
+    "balanced_labels": true,
+    "positive_controls_have_contextual_participants": true,
+    "positive_predicates": ["BINDS_TO", "CAUSES", "CONSTRAINS", "PART_OF", "TRANSFERS_TO"],
+    "positive_relationship_families": ["CAUSAL", "DEPENDENCY", "INTERACTION", "STRUCTURAL"],
+    "negative_defect_families": [
+      "compound condition compressed to one operand",
+      "participant substituted for implicit constrained state",
+      "transfer event substituted for destination",
+      "participant object substituted for process or outcome",
+      "contextual device substituted for process or outcome"
+    ],
+    "future_call_requires_blinding": true,
+    "future_call_projection": "Use only predicate_contracts plus each case's blind_id, grounded assertion statement/participants/evidence, symbols, and candidate source/predicate/target tuple; sort by blind_id. Exclude candidate ID, statement, confidence, and origin as well as all gold, diagnostic, and provenance fields."
+  },
+  "limitations": [
+    "Ten cases support only a bounded exploratory comparison.",
+    "Two negative cases share the same tunneling source passage and are correlated.",
+    "Three negative cases and two positive controls come from the same frozen quantum source.",
+    "The older SPEC-003 positive reviews are explicit domain-level regression findings rather than item-shaped review records.",
+    "Sources and artifact schemas are historically heterogeneous and English-only.",
+    "The packet cannot justify a production admission threshold or broad domain generalization without additional independently reviewed realistic-source evidence."
+  ]
+}

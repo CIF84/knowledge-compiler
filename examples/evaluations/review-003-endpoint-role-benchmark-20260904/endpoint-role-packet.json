@@ -1,0 +1,530 @@
+{
+  "review": "REVIEW-003",
+  "step": 1,
+  "packet_version": "review-003-step-1-v1",
+  "purpose": "Offline historical endpoint-role benchmark proposed for a future SPEC-015 experiment",
+  "status": "FROZEN_OFFLINE_NO_LIVE_CALL",
+  "label_policy": "Binary ROLE_ADEQUATE versus ROLE_INADEQUATE labels come only from preserved independent repository reviews. Fine-grained future judge verdicts are not pre-labeled where historical review did not establish them.",
+  "case_order": "Negative cases followed by positive controls; stable listed order",
+  "future_experiment_blinding": {
+    "required": true,
+    "judge_case_order": "Ascending blind_id. Blind IDs are assigned by ranking SHA-256(case_id) lexicographically.",
+    "judge_visible_top_level_fields": ["predicate_contracts"],
+    "judge_visible_case_fields": ["blind_id", "assertion.statement", "assertion.participant_symbol_ids", "assertion.evidence", "symbols", "candidate.source_entity_id", "candidate.relationship_type", "candidate.target_entity_id"],
+    "must_exclude_from_judge": ["case_id", "label", "historical_classification", "defect_family", "assertion.construction", "candidate.id", "candidate.statement", "candidate.confidence", "candidate.origin", "candidate_endpoint_ids", "dropped_participant_ids", "implicit_or_required_role_not_represented", "positive_control_reason", "provenance"],
+    "rationale": "The repository packet preserves exact historical candidates, gold labels, and provenance, but a future SPEC-015 call must receive only the frozen grounded assertion, symbols, proposed endpoint tuple, predicate contract, and neutral identifier. Candidate IDs and statements are withheld because historical names or self-descriptions can disclose the defect. This also prevents label, defect-description, provenance, and grouped-order leakage."
+  },
+  "source_text_policy": "Only the exact evidence span needed for each case is copied; full source text remains in the cited repository artifact.",
+  "counts": {
+    "total": 10,
+    "positive": 5,
+    "negative": 5
+  },
+  "source_catalog": [
+    {
+      "document_id": "text-9e978db999ee6713",
+      "description": "Frozen Wikipedia Introduction to quantum mechanics revision 1359567407",
+      "source_artifact": "examples/evaluations/spec-013-assertion-first-semantic-compilation-20260904/parent.knowledge.json",
+      "source_artifact_sha256": "100e3581ada4e2a4b0c293ce94138592382e5e8233774203a3e3c93683122627",
+      "normalized_sha256": "9e978db999ee67134d347f91fe9f32934c982f4de9b496e4bf664cb00cce23ea"
+    },
+    {
+      "document_id": "text-e8f26f10caa19160",
+      "description": "SPEC-003 biology relationship-semantics source",
+      "source_artifact": "examples/evaluations/spec-003-relationship-semantics-20260903/biology.knowledge.json",
+      "source_artifact_sha256": "dbd3bef0705d171ba4a320fd0e90a52d2a2f64b56e33fc212a4f7be2e5c3c8f2"
+    },
+    {
+      "document_id": "text-49b42a4f08a99742",
+      "description": "SPEC-003 software-architecture relationship-semantics source",
+      "source_artifact": "examples/evaluations/spec-003-relationship-semantics-20260903/software_architecture.knowledge.json",
+      "source_artifact_sha256": "91cb150fc875f1d01cd9412c95f8ddbb1e79561c439a866231ab2dedd6294261"
+    },
+    {
+      "document_id": "text-79c197b799735d88",
+      "description": "Committed order-processing workflow fixture used by SPEC-009/010",
+      "source_artifact": "examples/evaluations/spec-009-resolution-strategy-20260903/process-order-workflow.process_stages.child.knowledge.json",
+      "source_artifact_sha256": "64cf60ca4df8a22b1f73d034c179727a75714f7a942ff3a62c1333c21680ac83"
+    },
+    {
+      "document_id": "text-e6c889f45171a12a",
+      "description": "Committed economics market-price fixture used by SPEC-009/010",
+      "source_artifact": "examples/evaluations/spec-009-resolution-strategy-20260903/variable-market-price.generic_detail.child.knowledge.json",
+      "source_artifact_sha256": "26a0d9cadcc33c065d177ba7c895c0059e5e70a413343cb5705737bc586406da"
+    }
+  ],
+  "predicate_contracts": {
+    "BINDS_TO": {
+      "source_role": "binding participant",
+      "target_role": "binding participant",
+      "direction": "symmetric",
+      "meaning": "The source physically or chemically binds or attaches to the target."
+    },
+    "CAUSES": {
+      "source_role": "cause",
+      "target_role": "effect",
+      "direction": "cause_to_effect",
+      "meaning": "The source brings about the target as an effect."
+    },
+    "CONSTRAINS": {
+      "source_role": "constraint",
+      "target_role": "constrained entity, process, or variable",
+      "direction": "constraint_to_constrained",
+      "meaning": "The source limits the possible behavior, values, or choices of the target."
+    },
+    "PART_OF": {
+      "source_role": "part or component",
+      "target_role": "containing whole",
+      "direction": "part_to_whole",
+      "meaning": "The source is a constituent or component of the target."
+    },
+    "TRANSFERS_TO": {
+      "source_role": "item, material, or information transferred",
+      "target_role": "destination or recipient",
+      "direction": "transferred_item_to_destination",
+      "meaning": "The source item, material, or information moves to the target destination or recipient."
+    },
+    "ENABLES": {
+      "source_role": "enabling condition or capability",
+      "target_role": "capability or process made possible",
+      "direction": "enabler_to_enabled",
+      "meaning": "The source makes the target possible without necessarily causing it to occur."
+    }
+  },
+  "cases": [
+    {
+      "case_id": "negative-economics-comparison-to-one-operand",
+      "blind_id": "endpoint-role-002",
+      "label": "ROLE_INADEQUATE",
+      "historical_classification": "LOSSY_BINARY_FORM",
+      "defect_family": "compound condition compressed to one operand",
+      "assertion": {
+        "statement": "If quantity demanded exceeds quantity supplied, a shortage puts upward pressure on price.",
+        "construction": "EXACT_SOURCE_QUOTE_WRAPPER",
+        "participant_symbol_ids": ["market-price", "quantity-demanded", "quantity-supplied", "shortage"],
+        "evidence": {
+          "document_id": "text-e6c889f45171a12a",
+          "start_char": 275,
+          "end_char": 364,
+          "quote": "If quantity demanded exceeds quantity supplied, a shortage puts upward pressure on price."
+        }
+      },
+      "symbols": [
+        {"id": "market-price", "name": "market price", "entity_type": "VARIABLE"},
+        {"id": "quantity-demanded", "name": "quantity demanded", "entity_type": "VARIABLE"},
+        {"id": "quantity-supplied", "name": "quantity supplied", "entity_type": "VARIABLE"},
+        {"id": "shortage", "name": "shortage", "entity_type": "CONCEPT"}
+      ],
+      "candidate": {
+        "id": "rel-quantity-demanded-exceeds-supplied-shortage",
+        "source_entity_id": "quantity-demanded",
+        "relationship_type": "CAUSES",
+        "target_entity_id": "shortage",
+        "statement": "Quantity demanded exceeding quantity supplied produces a shortage.",
+        "confidence": 0.96,
+        "origin": "SOURCE"
+      },
+      "candidate_endpoint_ids": ["quantity-demanded", "shortage"],
+      "dropped_participant_ids": ["market-price", "quantity-supplied"],
+      "implicit_or_required_role_not_represented": "RIGHT_OPERAND quantity-supplied is essential to the causal condition; SPEC-010 requires COMPARISON_CONDITION.",
+      "provenance": {
+        "candidate_artifact": "examples/evaluations/spec-009-resolution-strategy-20260903/variable-market-price.generic_detail.child.knowledge.json",
+        "candidate_locator": "relationship rel-quantity-demanded-exceeds-supplied-shortage",
+        "independent_review_artifact": "examples/evaluations/spec-009-resolution-strategy-20260903/repository-semantic-review.json",
+        "review_locator": "run_reviews.variable-market-price.generic_detail.findings[0]",
+        "accepted_correction_artifact": "examples/evaluations/spec-010-proposition-modeling-20260903/comparison.json",
+        "accepted_correction_review": "debriefs/DEBRIEF-010-proposition-and-endpoint-modeling.md"
+      }
+    },
+    {
+      "case_id": "negative-pauli-constrains-electron",
+      "blind_id": "endpoint-role-010",
+      "label": "ROLE_INADEQUATE",
+      "historical_classification": "IMPRECISE_ENDPOINT",
+      "defect_family": "participant substituted for implicit constrained state",
+      "assertion": {
+        "statement": "The Pauli exclusion principle states that two electrons within an atom cannot have the same set of quantum numbers.",
+        "construction": "PRESERVED_SOURCE_ASSERTION",
+        "participant_symbol_ids": ["atom", "electron", "pauli-exclusion-principle"],
+        "evidence": {
+          "document_id": "text-9e978db999ee6713",
+          "start_char": 19377,
+          "end_char": 19496,
+          "quote": "There cannot exist an atom in such a quantum state that two electrons within [it] have the same set of quantum numbers."
+        }
+      },
+      "symbols": [
+        {"id": "atom", "name": "atom", "entity_type": "OBJECT"},
+        {"id": "electron", "name": "electron", "entity_type": "OBJECT"},
+        {"id": "pauli-exclusion-principle", "name": "Pauli exclusion principle", "entity_type": "CONCEPT"}
+      ],
+      "candidate": {
+        "id": "r12",
+        "source_entity_id": "pauli-exclusion-principle",
+        "relationship_type": "CONSTRAINS",
+        "target_entity_id": "electron",
+        "statement": "The Pauli exclusion principle constrains the possible quantum states of electrons in an atom.",
+        "confidence": 0.94,
+        "origin": "SOURCE"
+      },
+      "candidate_endpoint_ids": ["pauli-exclusion-principle", "electron"],
+      "dropped_participant_ids": ["atom"],
+      "implicit_or_required_role_not_represented": "The constrained unit is the allowed joint atomic quantum state or quantum-number assignment, which is absent from the frozen symbols.",
+      "provenance": {
+        "assertion_artifact": "examples/evaluations/spec-013-assertion-first-semantic-compilation-20260904/grounded-assertions.json",
+        "assertion_locator": "assertions[id=assertion-bc3d8941f16641ef]",
+        "candidate_artifact": "examples/evaluations/spec-012-staged-semantic-compilation-20260904/pass-2-result.json",
+        "candidate_locator": "raw_proposal.relationships[id=r12]",
+        "independent_review_artifact": "examples/evaluations/spec-012-staged-semantic-compilation-20260904/staged-semantic-review.json",
+        "review_locator": "items[id=r12]",
+        "confirming_gate_artifact": "examples/evaluations/spec-014-independent-semantic-gate-20260904/gate-result.json",
+        "confirming_review_artifact": "reviews/REVIEW-003-endpoint-role-compression.md",
+        "confirming_review_locator": "Evidence Cases / Case A — Pauli exclusion principle"
+      }
+    },
+    {
+      "case_id": "negative-transfer-object-to-event-as-destination",
+      "blind_id": "endpoint-role-006",
+      "label": "ROLE_INADEQUATE",
+      "historical_classification": "IMPRECISE_ENDPOINT_REQUIRES_STRUCTURED_PROPOSITION",
+      "defect_family": "transfer event substituted for destination",
+      "assertion": {
+        "statement": "After validation succeeds, the workflow creates an order command and transfers the command to the order component.",
+        "construction": "EXACT_SOURCE_QUOTE_WRAPPER",
+        "participant_symbol_ids": ["field-validation", "order-command", "order-command-creation", "order-command-transfer", "order-processing-workflow"],
+        "evidence": {
+          "document_id": "text-79c197b799735d88",
+          "start_char": 238,
+          "end_char": 352,
+          "quote": "After validation succeeds, the workflow creates an order command and transfers the command to the order component."
+        }
+      },
+      "symbols": [
+        {"id": "field-validation", "name": "required-field validation", "entity_type": "PROCESS"},
+        {"id": "order-command", "name": "order command", "entity_type": "OBJECT"},
+        {"id": "order-command-creation", "name": "order command creation", "entity_type": "PROCESS"},
+        {"id": "order-command-transfer", "name": "order command transfer", "entity_type": "PROCESS"},
+        {"id": "order-processing-workflow", "name": "order-processing workflow", "entity_type": "PROCESS"}
+      ],
+      "candidate": {
+        "id": "rel-command-transferred-to-component",
+        "source_entity_id": "order-command",
+        "relationship_type": "TRANSFERS_TO",
+        "target_entity_id": "order-command-transfer",
+        "statement": "The order command is transferred in the handoff to the order component.",
+        "confidence": 1.0,
+        "origin": "SOURCE"
+      },
+      "candidate_endpoint_ids": ["order-command", "order-command-transfer"],
+      "dropped_participant_ids": ["field-validation", "order-command-creation", "order-processing-workflow"],
+      "implicit_or_required_role_not_represented": "The destination order-component is named in evidence but absent from the historical child symbol set; the target instead names the transfer event.",
+      "provenance": {
+        "candidate_artifact": "examples/evaluations/spec-009-resolution-strategy-20260903/process-order-workflow.process_stages.child.knowledge.json",
+        "candidate_locator": "relationship rel-command-transferred-to-component",
+        "independent_review_artifact": "examples/evaluations/spec-009-resolution-strategy-20260903/repository-semantic-review.json",
+        "review_locator": "run_reviews.process-order-workflow.process_stages.findings[1]",
+        "accepted_correction_artifact": "examples/evaluations/spec-010-proposition-modeling-20260903/comparison.json",
+        "accepted_correction_review": "debriefs/DEBRIEF-010-proposition-and-endpoint-modeling.md"
+      }
+    },
+    {
+      "case_id": "negative-tunneling-enables-electron",
+      "blind_id": "endpoint-role-001",
+      "label": "ROLE_INADEQUATE",
+      "historical_classification": "IMPRECISE_ENDPOINT",
+      "defect_family": "participant object substituted for process or outcome",
+      "assertion": {
+        "statement": "quantum tunneling is absolutely vital, as otherwise the electrons in the electric current could not penetrate the potential barrier",
+        "construction": "EXACT_SOURCE_QUOTE_WRAPPER",
+        "participant_symbol_ids": ["electron", "quantum-tunneling"],
+        "evidence": {
+          "document_id": "text-9e978db999ee6713",
+          "start_char": 32641,
+          "end_char": 32772,
+          "quote": "quantum tunneling is absolutely vital, as otherwise the electrons in the electric current could not penetrate the potential barrier"
+        }
+      },
+      "symbols": [
+        {"id": "electron", "name": "Electron", "entity_type": "OBJECT"},
+        {"id": "quantum-tunneling", "name": "Quantum tunneling", "entity_type": "PROCESS"}
+      ],
+      "candidate": {
+        "id": "rel-tunneling-enables-electron-penetration",
+        "source_entity_id": "quantum-tunneling",
+        "relationship_type": "ENABLES",
+        "target_entity_id": "electron",
+        "statement": "Quantum tunneling enables electrons to penetrate a potential barrier.",
+        "confidence": 0.98,
+        "origin": "SOURCE"
+      },
+      "candidate_endpoint_ids": ["quantum-tunneling", "electron"],
+      "dropped_participant_ids": [],
+      "implicit_or_required_role_not_represented": "The enabled semantic unit is electron penetration through a barrier, not the electron object; that process is absent from the symbols.",
+      "provenance": {
+        "candidate_artifact": "examples/evaluations/spec-011-quantum-real-source-20260904-run-002/rejected-parent-extraction.json",
+        "candidate_locator": "relationships[id=rel-tunneling-enables-electron-penetration]",
+        "independent_review_artifact": "examples/evaluations/spec-011-quantum-real-source-20260904-run-002/repository-semantic-review.json",
+        "review_locator": "semantic_findings[relationship_id=rel-tunneling-enables-electron-penetration]",
+        "confirming_review_artifact": "reviews/REVIEW-003-endpoint-role-compression.md",
+        "confirming_review_locator": "Evidence Cases / Case B — quantum tunneling → electron"
+      }
+    },
+    {
+      "case_id": "negative-tunneling-enables-transistor",
+      "blind_id": "endpoint-role-009",
+      "label": "ROLE_INADEQUATE",
+      "historical_classification": "IMPRECISE_ENDPOINT",
+      "defect_family": "contextual device substituted for process or outcome",
+      "assertion": {
+        "statement": "Quantum tunneling is vital to a simple light switch because electrons in the electric current must penetrate an oxide potential barrier.",
+        "construction": "PRESERVED_SOURCE_ASSERTION",
+        "participant_symbol_ids": ["electron", "quantum-tunneling"],
+        "evidence": {
+          "document_id": "text-9e978db999ee6713",
+          "start_char": 32610,
+          "end_char": 32801,
+          "quote": "In even a simple light switch, quantum tunneling is absolutely vital, as otherwise the electrons in the electric current could not penetrate the potential barrier made up of a layer of oxide."
+        }
+      },
+      "symbols": [
+        {"id": "electron", "name": "electron", "entity_type": "OBJECT"},
+        {"id": "quantum-tunneling", "name": "quantum tunneling", "entity_type": "PROCESS"},
+        {"id": "transistor", "name": "transistor", "entity_type": "COMPONENT"}
+      ],
+      "candidate": {
+        "id": "r9",
+        "source_entity_id": "quantum-tunneling",
+        "relationship_type": "ENABLES",
+        "target_entity_id": "transistor",
+        "statement": "Quantum tunneling is vital to the operation of a simple light switch and is used in flash-memory chips, but the source does not identify the transistor as the direct target of this relation.",
+        "confidence": 0.9,
+        "origin": "SOURCE"
+      },
+      "candidate_endpoint_ids": ["quantum-tunneling", "transistor"],
+      "dropped_participant_ids": ["electron"],
+      "implicit_or_required_role_not_represented": "The enabled semantic unit is electron penetration through an oxide barrier; transistor is an unrelated available application/device symbol.",
+      "provenance": {
+        "assertion_artifact": "examples/evaluations/spec-013-assertion-first-semantic-compilation-20260904/grounded-assertions.json",
+        "assertion_locator": "assertions[id=assertion-88adf8f8ab0e82aa]",
+        "candidate_artifact": "examples/evaluations/spec-012-staged-semantic-compilation-20260904/pass-2-result.json",
+        "candidate_locator": "raw_proposal.relationships[id=r9]",
+        "independent_review_artifact": "examples/evaluations/spec-012-staged-semantic-compilation-20260904/staged-semantic-review.json",
+        "review_locator": "items[id=r9]",
+        "confirming_gate_artifact": "examples/evaluations/spec-014-independent-semantic-gate-20260904/gate-result.json",
+        "confirming_review_artifact": "reviews/REVIEW-003-endpoint-role-compression.md",
+        "confirming_review_locator": "Evidence Cases / Case C — quantum tunneling → transistor"
+      }
+    },
+    {
+      "case_id": "positive-api-component-part-of-service",
+      "blind_id": "endpoint-role-005",
+      "label": "ROLE_ADEQUATE",
+      "historical_classification": "SUPPORTED_PRECISE_ENDPOINTS",
+      "defect_family": null,
+      "assertion": {
+        "statement": "A modular order-processing service separates the API component, order component, payment component, and database.",
+        "construction": "EXACT_SOURCE_QUOTE_WRAPPER",
+        "participant_symbol_ids": ["api-component", "database", "modular-order-processing-service", "order-component", "payment-component"],
+        "evidence": {
+          "document_id": "text-49b42a4f08a99742",
+          "start_char": 0,
+          "end_char": 113,
+          "quote": "A modular order-processing service separates the API component, order component, payment component, and database."
+        }
+      },
+      "symbols": [
+        {"id": "api-component", "name": "API component", "entity_type": "COMPONENT"},
+        {"id": "database", "name": "database", "entity_type": "COMPONENT"},
+        {"id": "modular-order-processing-service", "name": "modular order-processing service", "entity_type": "SYSTEM"},
+        {"id": "order-component", "name": "order component", "entity_type": "COMPONENT"},
+        {"id": "payment-component", "name": "payment component", "entity_type": "COMPONENT"}
+      ],
+      "candidate": {
+        "id": "rel-1",
+        "source_entity_id": "api-component",
+        "relationship_type": "PART_OF",
+        "target_entity_id": "modular-order-processing-service",
+        "statement": "The API component is part of the modular order-processing service.",
+        "confidence": 0.99,
+        "origin": "SOURCE"
+      },
+      "candidate_endpoint_ids": ["api-component", "modular-order-processing-service"],
+      "dropped_participant_ids": ["database", "order-component", "payment-component"],
+      "positive_control_reason": "The evidence enumerates several contextual sibling components, but this component-to-service PART_OF compression remains precise.",
+      "provenance": {
+        "candidate_artifact": "examples/evaluations/spec-003-relationship-semantics-20260903/software_architecture.knowledge.json",
+        "candidate_locator": "relationships[id=rel-1]",
+        "independent_review_artifact": "examples/evaluations/spec-003-relationship-semantics-20260903/review.json",
+        "review_locator": "domains.software_architecture.known_regressions_fixed[all PART_OF edges]"
+      }
+    },
+    {
+      "case_id": "positive-amino-acid-transfers-to-ribosome",
+      "blind_id": "endpoint-role-007",
+      "label": "ROLE_ADEQUATE",
+      "historical_classification": "SUPPORTED_PRECISE_ENDPOINTS",
+      "defect_family": null,
+      "assertion": {
+        "statement": "Transfer RNA brings particular amino acids to the ribosome.",
+        "construction": "EXACT_SOURCE_QUOTE_WRAPPER",
+        "participant_symbol_ids": ["amino-acid", "ribosome", "transfer-rna"],
+        "evidence": {
+          "document_id": "text-e8f26f10caa19160",
+          "start_char": 356,
+          "end_char": 415,
+          "quote": "Transfer RNA brings particular amino acids to the ribosome."
+        }
+      },
+      "symbols": [
+        {"id": "amino-acid", "name": "Amino acid", "entity_type": "OBJECT"},
+        {"id": "ribosome", "name": "Ribosome", "entity_type": "COMPONENT"},
+        {"id": "transfer-rna", "name": "Transfer RNA", "entity_type": "COMPONENT"}
+      ],
+      "candidate": {
+        "id": "transfer-rna-transfers-amino-acids",
+        "source_entity_id": "amino-acid",
+        "relationship_type": "TRANSFERS_TO",
+        "target_entity_id": "ribosome",
+        "statement": "Particular amino acids are brought to the ribosome by transfer RNA.",
+        "confidence": 0.94,
+        "origin": "SOURCE"
+      },
+      "candidate_endpoint_ids": ["amino-acid", "ribosome"],
+      "dropped_participant_ids": ["transfer-rna"],
+      "positive_control_reason": "The carrier is contextual; the transferred item and destination correctly fill the TRANSFERS_TO endpoint roles.",
+      "provenance": {
+        "candidate_artifact": "examples/evaluations/spec-003-relationship-semantics-20260903/biology.knowledge.json",
+        "candidate_locator": "relationships[id=transfer-rna-transfers-amino-acids]",
+        "independent_review_artifact": "examples/evaluations/spec-003-relationship-semantics-20260903/review.json",
+        "review_locator": "domains.biology.known_regressions_fixed[amino acid TRANSFERS_TO ribosome]"
+      }
+    },
+    {
+      "case_id": "positive-correspondence-constrains-quantum-mechanics",
+      "blind_id": "endpoint-role-003",
+      "label": "ROLE_ADEQUATE",
+      "historical_classification": "SUPPORTED",
+      "defect_family": null,
+      "assertion": {
+        "statement": "The correspondence principle requires quantum theory to converge to classical limits.",
+        "construction": "PRESERVED_SOURCE_ASSERTION",
+        "participant_symbol_ids": ["classical-physics", "correspondence-principle", "quantum-mechanics"],
+        "evidence": {
+          "document_id": "text-9e978db999ee6713",
+          "start_char": 7820,
+          "end_char": 7956,
+          "quote": "This concept was formalized by Bohr in 1923 as the correspondence principle. It requires quantum theory to converge to classical limits."
+        }
+      },
+      "symbols": [
+        {"id": "classical-physics", "name": "classical physics", "entity_type": "CONCEPT"},
+        {"id": "correspondence-principle", "name": "correspondence principle", "entity_type": "CONCEPT"},
+        {"id": "quantum-mechanics", "name": "quantum mechanics", "entity_type": "CONCEPT"}
+      ],
+      "candidate": {
+        "id": "relationship-56b4330de6aef867",
+        "source_entity_id": "correspondence-principle",
+        "relationship_type": "CONSTRAINS",
+        "target_entity_id": "quantum-mechanics",
+        "statement": "The correspondence principle constrains quantum theory to converge to classical limits.",
+        "confidence": 0.86,
+        "origin": "SOURCE"
+      },
+      "candidate_endpoint_ids": ["correspondence-principle", "quantum-mechanics"],
+      "dropped_participant_ids": ["classical-physics"],
+      "positive_control_reason": "Classical physics supplies the limit context, while principle and quantum theory precisely fill constraint and constrained roles.",
+      "provenance": {
+        "assertion_artifact": "examples/evaluations/spec-013-assertion-first-semantic-compilation-20260904/grounded-assertions.json",
+        "assertion_locator": "assertions[id=assertion-56b4330de6aef867]",
+        "candidate_artifact": "examples/evaluations/spec-013-assertion-first-semantic-compilation-20260904/parent.knowledge.json",
+        "candidate_locator": "relationships[id=relationship-56b4330de6aef867]",
+        "independent_review_artifact": "examples/evaluations/spec-013-assertion-first-semantic-compilation-20260904/canonical-semantic-review.json",
+        "review_locator": "items[id=relationship-56b4330de6aef867]"
+      }
+    },
+    {
+      "case_id": "positive-double-slit-causes-interference",
+      "blind_id": "endpoint-role-008",
+      "label": "ROLE_ADEQUATE",
+      "historical_classification": "SUPPORTED",
+      "defect_family": null,
+      "assertion": {
+        "statement": "In the double-slit experiment, light passing through two slits produces an interference pattern of light and dark bands.",
+        "construction": "PRESERVED_SOURCE_ASSERTION",
+        "participant_symbol_ids": ["double-slit-experiment", "interference-pattern", "photon"],
+        "evidence": {
+          "document_id": "text-9e978db999ee6713",
+          "start_char": 12078,
+          "end_char": 12218,
+          "quote": "a beam of light is directed through two narrow, closely spaced slits, producing an interference pattern of light and dark bands on a screen."
+        }
+      },
+      "symbols": [
+        {"id": "double-slit-experiment", "name": "double-slit experiment", "entity_type": "PROCESS"},
+        {"id": "interference-pattern", "name": "interference pattern", "entity_type": "OBJECT"},
+        {"id": "photon", "name": "photon", "entity_type": "OBJECT"}
+      ],
+      "candidate": {
+        "id": "relationship-05b19ee4b6d50060",
+        "source_entity_id": "double-slit-experiment",
+        "relationship_type": "CAUSES",
+        "target_entity_id": "interference-pattern",
+        "statement": "The double-slit experiment produces an interference pattern.",
+        "confidence": 0.93,
+        "origin": "SOURCE"
+      },
+      "candidate_endpoint_ids": ["double-slit-experiment", "interference-pattern"],
+      "dropped_participant_ids": ["photon"],
+      "positive_control_reason": "Photon/light is contextual to the experiment; experiment and observed pattern still fill cause and effect roles precisely.",
+      "provenance": {
+        "assertion_artifact": "examples/evaluations/spec-013-assertion-first-semantic-compilation-20260904/grounded-assertions.json",
+        "assertion_locator": "assertions[id=assertion-05b19ee4b6d50060]",
+        "candidate_artifact": "examples/evaluations/spec-013-assertion-first-semantic-compilation-20260904/parent.knowledge.json",
+        "candidate_locator": "relationships[id=relationship-05b19ee4b6d50060]",
+        "independent_review_artifact": "examples/evaluations/spec-013-assertion-first-semantic-compilation-20260904/canonical-semantic-review.json",
+        "review_locator": "items[id=relationship-05b19ee4b6d50060]"
+      }
+    },
+    {
+      "case_id": "positive-rna-polymerase-binds-dna",
+      "blind_id": "endpoint-role-004",
+      "label": "ROLE_ADEQUATE",
+      "historical_classification": "SUPPORTED_PRECISE_ENDPOINTS",
+      "defect_family": null,
+      "assertion": {
+        "statement": "Gene expression begins when RNA polymerase binds near a gene in DNA.",
+        "construction": "EXACT_SOURCE_QUOTE_WRAPPER",
+        "participant_symbol_ids": ["dna", "gene", "rna-polymerase"],
+        "evidence": {
+          "document_id": "text-e8f26f10caa19160",
+          "start_char": 0,
+          "end_char": 68,
+          "quote": "Gene expression begins when RNA polymerase binds near a gene in DNA."
+        }
+      },
+      "symbols": [
+        {"id": "dna", "name": "DNA", "entity_type": "OBJECT"},
+        {"id": "gene", "name": "Gene", "entity_type": "CONCEPT"},
+        {"id": "rna-polymerase", "name": "RNA polymerase", "entity_type": "COMPONENT"}
+      ],
+      "candidate": {
+        "id": "polymerase-binds-dna",
+        "source_entity_id": "rna-polymerase",
+        "relationship_type": "BINDS_TO",
+        "target_entity_id": "dna",
+        "statement": "RNA polymerase binds near a gene in DNA to begin gene expression.",
+        "confidence": 0.98,
+        "origin": "SOURCE"
+      },
+      "candidate_endpoint_ids": ["rna-polymerase", "dna"],
+      "dropped_participant_ids": ["gene"],
+      "positive_control_reason": "Gene is contextual location; RNA polymerase and DNA remain the precise binding participants.",
+      "provenance": {
+        "candidate_artifact": "examples/evaluations/spec-003-relationship-semantics-20260903/biology.knowledge.json",
+        "candidate_locator": "relationships[id=polymerase-binds-dna]",
+        "independent_review_artifact": "examples/evaluations/spec-003-relationship-semantics-20260903/review.json",
+        "review_locator": "domains.biology.known_regressions_fixed[RNA polymerase BINDS_TO DNA]"
+      }
+    }
+  ]
+}
