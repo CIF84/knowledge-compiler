@@ -1,0 +1,984 @@
+{
+  "spec": "SPEC-014",
+  "packet_version": "spec-014-v1",
+  "packet_id": "spec-014-quantum-semantic-gate-v1",
+  "source_metadata": {
+    "title": "Introduction to quantum mechanics",
+    "permanent_url": "https://en.wikipedia.org/w/index.php?title=Introduction_to_quantum_mechanics&oldid=1359567407",
+    "revision_id": 1359567407,
+    "revision_timestamp": "2026-06-16T00:28:38Z",
+    "normalized_sha256": "9e978db999ee67134d347f91fe9f32934c982f4de9b496e4bf664cb00cce23ea",
+    "word_count": 5965,
+    "character_count": 39735
+  },
+  "symbol_table_sha256": "07e79ff8e0d59c62ef181fe4ca7cec7aec9fcd32452b3c734c99482d288aaa08",
+  "frozen_symbol_ids": [
+    "atom",
+    "bell-inequality",
+    "black-body-radiation",
+    "classical-physics",
+    "copenhagen-interpretation",
+    "correspondence-principle",
+    "dirac-wave-equation",
+    "double-slit-experiment",
+    "eigenstate",
+    "eigenvalue",
+    "electron",
+    "electron-microscope",
+    "energy-quantum",
+    "interference-pattern",
+    "laser",
+    "local-hidden-variable-theory",
+    "magnetic-resonance-imaging",
+    "many-worlds-interpretation",
+    "pauli-exclusion-principle",
+    "photoelectric-effect",
+    "photon",
+    "principle-of-complementarity",
+    "quantization",
+    "quantum-electrodynamics",
+    "quantum-entanglement",
+    "quantum-field",
+    "quantum-field-theory",
+    "quantum-mechanics",
+    "quantum-revolution",
+    "quantum-tunneling",
+    "rydberg-formula",
+    "spin",
+    "standard-model",
+    "sterngerlach-experiment",
+    "superconductor",
+    "superfluidity",
+    "transistor",
+    "uncertainty-principle",
+    "wave-function",
+    "wave-function-collapse",
+    "waveparticle-duality"
+  ],
+  "items": [
+    {
+      "packet_candidate_id": "negative-r1",
+      "label": "NEGATIVE",
+      "expected_category": "OVERSTATED_CAUSALITY",
+      "assertion": {
+        "id": "assertion-2fcb725a5b198912",
+        "statement": "Classical physics could not explain some phenomena discovered in the macro and micro worlds, contributing to the development of quantum mechanics.",
+        "participant_entity_ids": [
+          "classical-physics",
+          "quantum-mechanics",
+          "quantum-revolution"
+        ],
+        "evidence": [
+          {
+            "document_id": "text-9e978db999ee6713",
+            "start_char": 415,
+            "end_char": 744,
+            "quote": "scientists discovered phenomena in both the large (macro) and the small (micro) worlds that classical physics could not explain. The desire to resolve inconsistencies between observed phenomena and classical theory led to a revolution in physics, a shift in the original scientific paradigm: the development of quantum mechanics."
+          }
+        ],
+        "origin": "SOURCE"
+      },
+      "participant_symbols": [
+        {
+          "id": "classical-physics",
+          "name": "classical physics",
+          "description": "Physics describing matter and energy at scales familiar from human experience.",
+          "entity_type": "CONCEPT",
+          "aliases": [
+            "classical mechanics",
+            "classical theory"
+          ]
+        },
+        {
+          "id": "quantum-mechanics",
+          "name": "quantum mechanics",
+          "description": "Study and theory of matter and its interactions with energy at atomic and subatomic scales.",
+          "entity_type": "CONCEPT",
+          "aliases": [
+            "QM",
+            "quantum physics",
+            "quantum theory"
+          ]
+        },
+        {
+          "id": "quantum-revolution",
+          "name": "quantum revolution",
+          "description": "The shift from classical physical models to quantum mechanics prompted by phenomena classical physics could not explain.",
+          "entity_type": "PROCESS",
+          "aliases": [
+            "revolution in physics"
+          ]
+        }
+      ],
+      "candidate_symbols": [
+        {
+          "id": "quantum-mechanics",
+          "name": "quantum mechanics",
+          "description": "Study and theory of matter and its interactions with energy at atomic and subatomic scales.",
+          "entity_type": "CONCEPT",
+          "aliases": [
+            "QM",
+            "quantum physics",
+            "quantum theory"
+          ]
+        },
+        {
+          "id": "quantum-revolution",
+          "name": "quantum revolution",
+          "description": "The shift from classical physical models to quantum mechanics prompted by phenomena classical physics could not explain.",
+          "entity_type": "PROCESS",
+          "aliases": [
+            "revolution in physics"
+          ]
+        }
+      ],
+      "candidate": {
+        "id": "r1",
+        "kind": "RELATIONSHIP",
+        "statement": "The quantum revolution resulted in the development of quantum mechanics.",
+        "confidence": 0.97,
+        "origin": "SOURCE",
+        "source_entity_id": "quantum-revolution",
+        "relationship_type": "CAUSES",
+        "target_entity_id": "quantum-mechanics"
+      },
+      "canonical_contract": {
+        "type": "CAUSES",
+        "family": "CAUSAL",
+        "meaning": "The source brings about the target as an effect.",
+        "direction": "cause_to_effect",
+        "source_role": "cause",
+        "target_role": "effect",
+        "use_when": "The source is stated to produce the target outcome.",
+        "avoid_when": "Do not use for chronology, association, contribution, or unspecified influence.",
+        "symmetric": false
+      },
+      "independent_review_note": "The passage equates the paradigm shift with development of quantum mechanics; it does not establish the reified quantum revolution as a cause of quantum mechanics.",
+      "control_source": {
+        "artifact": "SPEC-012 pass-2-result.json and staged-semantic-review.json",
+        "item_id": "r1",
+        "candidate_semantics_preserved_without_rewrite": true
+      },
+      "fallback": {
+        "kind": "CLAIM",
+        "assertion_id": "assertion-2fcb725a5b198912",
+        "statement": "Classical physics could not explain some phenomena, and this contributed to the development of quantum mechanics through a revolution in physics."
+      }
+    },
+    {
+      "packet_candidate_id": "negative-r12",
+      "label": "NEGATIVE",
+      "expected_category": "IMPRECISE_ENDPOINT",
+      "assertion": {
+        "id": "assertion-bc3d8941f16641ef",
+        "statement": "The Pauli exclusion principle states that two electrons within an atom cannot have the same set of quantum numbers.",
+        "participant_entity_ids": [
+          "pauli-exclusion-principle",
+          "electron",
+          "atom"
+        ],
+        "evidence": [
+          {
+            "document_id": "text-9e978db999ee6713",
+            "start_char": 19377,
+            "end_char": 19496,
+            "quote": "There cannot exist an atom in such a quantum state that two electrons within [it] have the same set of quantum numbers."
+          }
+        ],
+        "origin": "SOURCE"
+      },
+      "participant_symbols": [
+        {
+          "id": "atom",
+          "name": "atom",
+          "description": "Matter structure whose internal electrons, energy levels, and spectra are modeled by quantum mechanics.",
+          "entity_type": "OBJECT",
+          "aliases": []
+        },
+        {
+          "id": "electron",
+          "name": "electron",
+          "description": "Corpuscular particle whose properties and behavior are central to the quantum phenomena described.",
+          "entity_type": "OBJECT",
+          "aliases": [
+            "electron corpuscle"
+          ]
+        },
+        {
+          "id": "pauli-exclusion-principle",
+          "name": "Pauli exclusion principle",
+          "description": "Principle that two electrons in an atom cannot have the same set of quantum numbers.",
+          "entity_type": "CONCEPT",
+          "aliases": [
+            "exclusion principle"
+          ]
+        }
+      ],
+      "candidate_symbols": [
+        {
+          "id": "electron",
+          "name": "electron",
+          "description": "Corpuscular particle whose properties and behavior are central to the quantum phenomena described.",
+          "entity_type": "OBJECT",
+          "aliases": [
+            "electron corpuscle"
+          ]
+        },
+        {
+          "id": "pauli-exclusion-principle",
+          "name": "Pauli exclusion principle",
+          "description": "Principle that two electrons in an atom cannot have the same set of quantum numbers.",
+          "entity_type": "CONCEPT",
+          "aliases": [
+            "exclusion principle"
+          ]
+        }
+      ],
+      "candidate": {
+        "id": "r12",
+        "kind": "RELATIONSHIP",
+        "statement": "The Pauli exclusion principle constrains the possible quantum states of electrons in an atom.",
+        "confidence": 0.94,
+        "origin": "SOURCE",
+        "source_entity_id": "pauli-exclusion-principle",
+        "relationship_type": "CONSTRAINS",
+        "target_entity_id": "electron"
+      },
+      "canonical_contract": {
+        "type": "CONSTRAINS",
+        "family": "DEPENDENCY",
+        "meaning": "The source limits the possible behavior, values, or choices of the target.",
+        "direction": "constraint_to_constrained",
+        "source_role": "constraint",
+        "target_role": "constrained entity, process, or variable",
+        "use_when": "The source imposes a limit, rule, boundary, or restriction on the target.",
+        "avoid_when": "Do not use to mean unchanged, unrelated, merely different, or causally reduced.",
+        "symmetric": false
+      },
+      "independent_review_note": "The exclusion principle constrains allowed joint atomic quantum states or quantum-number assignments, not the electron object itself.",
+      "control_source": {
+        "artifact": "SPEC-012 pass-2-result.json and staged-semantic-review.json",
+        "item_id": "r12",
+        "candidate_semantics_preserved_without_rewrite": true
+      },
+      "fallback": {
+        "kind": "CLAIM",
+        "assertion_id": "assertion-bc3d8941f16641ef",
+        "statement": "The Pauli exclusion principle states that two electrons within an atom cannot have the same set of quantum numbers."
+      }
+    },
+    {
+      "packet_candidate_id": "negative-r14",
+      "label": "NEGATIVE",
+      "expected_category": "WRONG_PREDICATE",
+      "assertion": {
+        "id": "assertion-d1cadc9675bc9732",
+        "statement": "Quantum electrodynamics is the quantum theory of the electromagnetic force.",
+        "participant_entity_ids": [
+          "quantum-electrodynamics",
+          "quantum-field",
+          "photon"
+        ],
+        "evidence": [
+          {
+            "document_id": "text-9e978db999ee6713",
+            "start_char": 25504,
+            "end_char": 25597,
+            "quote": "Quantum electrodynamics (QED) is the name of the quantum theory of the electromagnetic force."
+          }
+        ],
+        "origin": "SOURCE"
+      },
+      "participant_symbols": [
+        {
+          "id": "photon",
+          "name": "photon",
+          "description": "Quantum or smallest observable particle of the electromagnetic field.",
+          "entity_type": "OBJECT",
+          "aliases": [
+            "light quantum"
+          ]
+        },
+        {
+          "id": "quantum-electrodynamics",
+          "name": "quantum electrodynamics",
+          "description": "Quantum field theory of the electromagnetic force.",
+          "entity_type": "CONCEPT",
+          "aliases": [
+            "QED",
+            "quantum theory of the electromagnetic force"
+          ]
+        },
+        {
+          "id": "quantum-field",
+          "name": "quantum field",
+          "description": "Field treated within quantum theory, including the electromagnetic field whose quantum is the photon.",
+          "entity_type": "CONCEPT",
+          "aliases": [
+            "electromagnetic field"
+          ]
+        }
+      ],
+      "candidate_symbols": [
+        {
+          "id": "quantum-electrodynamics",
+          "name": "quantum electrodynamics",
+          "description": "Quantum field theory of the electromagnetic force.",
+          "entity_type": "CONCEPT",
+          "aliases": [
+            "QED",
+            "quantum theory of the electromagnetic force"
+          ]
+        },
+        {
+          "id": "quantum-field-theory",
+          "name": "quantum field theory",
+          "description": "Quantum theory of fields that permits particle creation and annihilation.",
+          "entity_type": "CONCEPT",
+          "aliases": [
+            "QFT"
+          ]
+        }
+      ],
+      "candidate": {
+        "id": "r14",
+        "kind": "RELATIONSHIP",
+        "statement": "Quantum electrodynamics is a quantum theory of the electromagnetic force and developed into quantum field theory.",
+        "confidence": 0.96,
+        "origin": "SOURCE",
+        "source_entity_id": "quantum-electrodynamics",
+        "relationship_type": "IS_A",
+        "target_entity_id": "quantum-field-theory"
+      },
+      "canonical_contract": {
+        "type": "IS_A",
+        "family": "STRUCTURAL",
+        "meaning": "The source is a kind, category, or subtype of the target.",
+        "direction": "instance_to_type",
+        "source_role": "instance or subtype",
+        "target_role": "broader type or category",
+        "use_when": "The source can truthfully be described as a target.",
+        "avoid_when": "Do not use for parts, examples, similarity, or temporary states.",
+        "symmetric": false
+      },
+      "independent_review_note": "The evidence calls QED a quantum theory of the electromagnetic force but does not establish the proposed QED IS_A quantum-field-theory edge or the added development clause.",
+      "control_source": {
+        "artifact": "SPEC-012 pass-2-result.json and staged-semantic-review.json",
+        "item_id": "r14",
+        "candidate_semantics_preserved_without_rewrite": true
+      },
+      "fallback": {
+        "kind": "CLAIM",
+        "assertion_id": "assertion-d1cadc9675bc9732",
+        "statement": "Quantum electrodynamics is the quantum theory of the electromagnetic force."
+      }
+    },
+    {
+      "packet_candidate_id": "negative-r2",
+      "label": "NEGATIVE",
+      "expected_category": "WRONG_PREDICATE",
+      "assertion": {
+        "id": "assertion-019029433c947397",
+        "statement": "Quantum mechanics can explain superfluidity.",
+        "participant_entity_ids": [
+          "quantum-mechanics",
+          "superfluidity"
+        ],
+        "evidence": [
+          {
+            "document_id": "text-9e978db999ee6713",
+            "start_char": 1864,
+            "end_char": 1951,
+            "quote": "Many remarkable phenomena can be explained using quantum mechanics, like superfluidity."
+          }
+        ],
+        "origin": "SOURCE"
+      },
+      "participant_symbols": [
+        {
+          "id": "quantum-mechanics",
+          "name": "quantum mechanics",
+          "description": "Study and theory of matter and its interactions with energy at atomic and subatomic scales.",
+          "entity_type": "CONCEPT",
+          "aliases": [
+            "QM",
+            "quantum physics",
+            "quantum theory"
+          ]
+        },
+        {
+          "id": "superfluidity",
+          "name": "superfluidity",
+          "description": "Quantum phenomenon in which liquid helium near absolute zero spontaneously flows up and over its container rim.",
+          "entity_type": "CONCEPT",
+          "aliases": []
+        }
+      ],
+      "candidate_symbols": [
+        {
+          "id": "quantum-mechanics",
+          "name": "quantum mechanics",
+          "description": "Study and theory of matter and its interactions with energy at atomic and subatomic scales.",
+          "entity_type": "CONCEPT",
+          "aliases": [
+            "QM",
+            "quantum physics",
+            "quantum theory"
+          ]
+        },
+        {
+          "id": "superfluidity",
+          "name": "superfluidity",
+          "description": "Quantum phenomenon in which liquid helium near absolute zero spontaneously flows up and over its container rim.",
+          "entity_type": "CONCEPT",
+          "aliases": []
+        }
+      ],
+      "candidate": {
+        "id": "r2",
+        "kind": "RELATIONSHIP",
+        "statement": "Superfluidity is presented as a phenomenon explained using quantum mechanics.",
+        "confidence": 0.99,
+        "origin": "SOURCE",
+        "source_entity_id": "superfluidity",
+        "relationship_type": "EXAMPLE_OF",
+        "target_entity_id": "quantum-mechanics"
+      },
+      "canonical_contract": {
+        "type": "EXAMPLE_OF",
+        "family": "STRUCTURAL",
+        "meaning": "The source is an illustrative instance of the target concept.",
+        "direction": "example_to_concept",
+        "source_role": "example",
+        "target_role": "concept illustrated",
+        "use_when": "The source is presented as an example of the target.",
+        "avoid_when": "Do not use merely because the source is a subtype; prefer IS_A for classification.",
+        "symmetric": false
+      },
+      "independent_review_note": "The source says quantum mechanics explains superfluidity. Superfluidity is not an example or instance of quantum mechanics itself.",
+      "control_source": {
+        "artifact": "SPEC-012 pass-2-result.json and staged-semantic-review.json",
+        "item_id": "r2",
+        "candidate_semantics_preserved_without_rewrite": true
+      },
+      "fallback": {
+        "kind": "SOURCE_ASSERTION",
+        "assertion_id": "assertion-019029433c947397",
+        "statement": "Quantum mechanics can explain superfluidity."
+      }
+    },
+    {
+      "packet_candidate_id": "negative-r5",
+      "label": "NEGATIVE",
+      "expected_category": "WRONG_PREDICATE",
+      "assertion": {
+        "id": "assertion-c2c5a86b98108470",
+        "statement": "Applications of quantum mechanics include lasers, transistors, electron microscopes, and magnetic resonance imaging.",
+        "participant_entity_ids": [
+          "quantum-mechanics",
+          "laser",
+          "transistor",
+          "electron-microscope",
+          "magnetic-resonance-imaging"
+        ],
+        "evidence": [
+          {
+            "document_id": "text-9e978db999ee6713",
+            "start_char": 32212,
+            "end_char": 32337,
+            "quote": "Applications of quantum mechanics include the laser, the transistor, the electron microscope, and magnetic resonance imaging."
+          }
+        ],
+        "origin": "SOURCE"
+      },
+      "participant_symbols": [
+        {
+          "id": "electron-microscope",
+          "name": "electron microscope",
+          "description": "Technological application of quantum mechanics.",
+          "entity_type": "OBJECT",
+          "aliases": []
+        },
+        {
+          "id": "laser",
+          "name": "laser",
+          "description": "Technological application of quantum mechanics.",
+          "entity_type": "OBJECT",
+          "aliases": []
+        },
+        {
+          "id": "magnetic-resonance-imaging",
+          "name": "magnetic resonance imaging",
+          "description": "Technological application of quantum mechanics.",
+          "entity_type": "PROCESS",
+          "aliases": [
+            "MRI"
+          ]
+        },
+        {
+          "id": "quantum-mechanics",
+          "name": "quantum mechanics",
+          "description": "Study and theory of matter and its interactions with energy at atomic and subatomic scales.",
+          "entity_type": "CONCEPT",
+          "aliases": [
+            "QM",
+            "quantum physics",
+            "quantum theory"
+          ]
+        },
+        {
+          "id": "transistor",
+          "name": "transistor",
+          "description": "Quantum-mechanical technological component used in modern electronics.",
+          "entity_type": "COMPONENT",
+          "aliases": []
+        }
+      ],
+      "candidate_symbols": [
+        {
+          "id": "electron-microscope",
+          "name": "electron microscope",
+          "description": "Technological application of quantum mechanics.",
+          "entity_type": "OBJECT",
+          "aliases": []
+        },
+        {
+          "id": "quantum-mechanics",
+          "name": "quantum mechanics",
+          "description": "Study and theory of matter and its interactions with energy at atomic and subatomic scales.",
+          "entity_type": "CONCEPT",
+          "aliases": [
+            "QM",
+            "quantum physics",
+            "quantum theory"
+          ]
+        }
+      ],
+      "candidate": {
+        "id": "r5",
+        "kind": "RELATIONSHIP",
+        "statement": "Quantum mechanics enables technological applications including the electron microscope.",
+        "confidence": 0.98,
+        "origin": "SOURCE",
+        "source_entity_id": "quantum-mechanics",
+        "relationship_type": "ENABLES",
+        "target_entity_id": "electron-microscope"
+      },
+      "canonical_contract": {
+        "type": "ENABLES",
+        "family": "DEPENDENCY",
+        "meaning": "The source makes the target possible without necessarily causing it to occur.",
+        "direction": "enabler_to_enabled",
+        "source_role": "enabling condition or capability",
+        "target_role": "capability or process made possible",
+        "use_when": "The target could not occur, or is materially made possible, because of the source.",
+        "avoid_when": "Do not use for delivery, participation, weak assistance, or an effect that actually occurred.",
+        "symmetric": false
+      },
+      "independent_review_note": "The source lists the electron microscope as an application of quantum mechanics; it does not explicitly assert the ENABLES dependency contract.",
+      "control_source": {
+        "artifact": "SPEC-012 pass-2-result.json and staged-semantic-review.json",
+        "item_id": "r5",
+        "candidate_semantics_preserved_without_rewrite": true
+      },
+      "fallback": {
+        "kind": "CLAIM",
+        "assertion_id": "assertion-c2c5a86b98108470",
+        "statement": "Applications of quantum mechanics include lasers, transistors, electron microscopes, and magnetic resonance imaging."
+      }
+    },
+    {
+      "packet_candidate_id": "negative-r9",
+      "label": "NEGATIVE",
+      "expected_category": "IMPRECISE_ENDPOINT",
+      "assertion": {
+        "id": "assertion-88adf8f8ab0e82aa",
+        "statement": "Quantum tunneling is vital to a simple light switch because electrons in the electric current must penetrate an oxide potential barrier.",
+        "participant_entity_ids": [
+          "quantum-tunneling",
+          "electron"
+        ],
+        "evidence": [
+          {
+            "document_id": "text-9e978db999ee6713",
+            "start_char": 32610,
+            "end_char": 32801,
+            "quote": "In even a simple light switch, quantum tunneling is absolutely vital, as otherwise the electrons in the electric current could not penetrate the potential barrier made up of a layer of oxide."
+          }
+        ],
+        "origin": "SOURCE"
+      },
+      "participant_symbols": [
+        {
+          "id": "electron",
+          "name": "electron",
+          "description": "Corpuscular particle whose properties and behavior are central to the quantum phenomena described.",
+          "entity_type": "OBJECT",
+          "aliases": [
+            "electron corpuscle"
+          ]
+        },
+        {
+          "id": "quantum-tunneling",
+          "name": "quantum tunneling",
+          "description": "Quantum process allowing electrons to penetrate a potential barrier.",
+          "entity_type": "PROCESS",
+          "aliases": [
+            "tunneling"
+          ]
+        }
+      ],
+      "candidate_symbols": [
+        {
+          "id": "quantum-tunneling",
+          "name": "quantum tunneling",
+          "description": "Quantum process allowing electrons to penetrate a potential barrier.",
+          "entity_type": "PROCESS",
+          "aliases": [
+            "tunneling"
+          ]
+        },
+        {
+          "id": "transistor",
+          "name": "transistor",
+          "description": "Quantum-mechanical technological component used in modern electronics.",
+          "entity_type": "COMPONENT",
+          "aliases": []
+        }
+      ],
+      "candidate": {
+        "id": "r9",
+        "kind": "RELATIONSHIP",
+        "statement": "Quantum tunneling is vital to the operation of a simple light switch and is used in flash-memory chips, but the source does not identify the transistor as the direct target of this relation.",
+        "confidence": 0.9,
+        "origin": "SOURCE",
+        "source_entity_id": "quantum-tunneling",
+        "relationship_type": "ENABLES",
+        "target_entity_id": "transistor"
+      },
+      "canonical_contract": {
+        "type": "ENABLES",
+        "family": "DEPENDENCY",
+        "meaning": "The source makes the target possible without necessarily causing it to occur.",
+        "direction": "enabler_to_enabled",
+        "source_role": "enabling condition or capability",
+        "target_role": "capability or process made possible",
+        "use_when": "The target could not occur, or is materially made possible, because of the source.",
+        "avoid_when": "Do not use for delivery, participation, weak assistance, or an effect that actually occurred.",
+        "symmetric": false
+      },
+      "independent_review_note": "The evidence supports tunneling enabling electron penetration through an oxide barrier in a switch, not a relationship to the frozen transistor symbol. The generated statement itself acknowledges the mismatch.",
+      "control_source": {
+        "artifact": "SPEC-012 pass-2-result.json and staged-semantic-review.json",
+        "item_id": "r9",
+        "candidate_semantics_preserved_without_rewrite": true
+      },
+      "fallback": {
+        "kind": "CLAIM",
+        "assertion_id": "assertion-88adf8f8ab0e82aa",
+        "statement": "Quantum tunneling is vital to a simple light switch because electrons in the electric current must penetrate an oxide potential barrier."
+      }
+    },
+    {
+      "packet_candidate_id": "positive-relationship-05b19ee4b6d50060",
+      "label": "POSITIVE",
+      "expected_category": "SUPPORTED",
+      "assertion": {
+        "id": "assertion-05b19ee4b6d50060",
+        "statement": "In the double-slit experiment, light passing through two slits produces an interference pattern of light and dark bands.",
+        "participant_entity_ids": [
+          "double-slit-experiment",
+          "interference-pattern",
+          "photon"
+        ],
+        "evidence": [
+          {
+            "document_id": "text-9e978db999ee6713",
+            "start_char": 12078,
+            "end_char": 12218,
+            "quote": "a beam of light is directed through two narrow, closely spaced slits, producing an interference pattern of light and dark bands on a screen."
+          }
+        ],
+        "origin": "SOURCE"
+      },
+      "participant_symbols": [
+        {
+          "id": "double-slit-experiment",
+          "name": "double-slit experiment",
+          "description": "Experiment in which particles or waves passing through two slits produce an interference pattern.",
+          "entity_type": "PROCESS",
+          "aliases": [
+            "double-slit interference"
+          ]
+        },
+        {
+          "id": "interference-pattern",
+          "name": "interference pattern",
+          "description": "Pattern of alternating light and dark bands produced by wave interference and reproduced by quantum particles statistically.",
+          "entity_type": "OBJECT",
+          "aliases": [
+            "diffraction pattern"
+          ]
+        },
+        {
+          "id": "photon",
+          "name": "photon",
+          "description": "Quantum or smallest observable particle of the electromagnetic field.",
+          "entity_type": "OBJECT",
+          "aliases": [
+            "light quantum"
+          ]
+        }
+      ],
+      "candidate_symbols": [
+        {
+          "id": "double-slit-experiment",
+          "name": "double-slit experiment",
+          "description": "Experiment in which particles or waves passing through two slits produce an interference pattern.",
+          "entity_type": "PROCESS",
+          "aliases": [
+            "double-slit interference"
+          ]
+        },
+        {
+          "id": "interference-pattern",
+          "name": "interference pattern",
+          "description": "Pattern of alternating light and dark bands produced by wave interference and reproduced by quantum particles statistically.",
+          "entity_type": "OBJECT",
+          "aliases": [
+            "diffraction pattern"
+          ]
+        }
+      ],
+      "candidate": {
+        "id": "relationship-05b19ee4b6d50060",
+        "kind": "RELATIONSHIP",
+        "statement": "The double-slit experiment produces an interference pattern.",
+        "confidence": 0.93,
+        "origin": "SOURCE",
+        "source_entity_id": "double-slit-experiment",
+        "relationship_type": "CAUSES",
+        "target_entity_id": "interference-pattern"
+      },
+      "canonical_contract": {
+        "type": "CAUSES",
+        "family": "CAUSAL",
+        "meaning": "The source brings about the target as an effect.",
+        "direction": "cause_to_effect",
+        "source_role": "cause",
+        "target_role": "effect",
+        "use_when": "The source is stated to produce the target outcome.",
+        "avoid_when": "Do not use for chronology, association, contribution, or unspecified influence.",
+        "symmetric": false
+      },
+      "independent_review_note": "The source explicitly describes the double-slit setup producing an interference pattern; both endpoints are the direct frozen concepts and CAUSES preserves the stated experimental result.",
+      "control_source": {
+        "artifact": "SPEC-013 canonicalization-result.json and canonical-semantic-review.json",
+        "item_id": "relationship-05b19ee4b6d50060"
+      },
+      "fallback": {
+        "kind": "SOURCE_ASSERTION",
+        "assertion_id": "assertion-05b19ee4b6d50060",
+        "statement": "In the double-slit experiment, light passing through two slits produces an interference pattern of light and dark bands."
+      }
+    },
+    {
+      "packet_candidate_id": "positive-relationship-33a269fc6fc2c7e8",
+      "label": "POSITIVE",
+      "expected_category": "SUPPORTED",
+      "assertion": {
+        "id": "assertion-33a269fc6fc2c7e8",
+        "statement": "The Standard Model is a quantum field theory that describes three fundamental forces and classifies known elementary particles.",
+        "participant_entity_ids": [
+          "standard-model",
+          "quantum-field-theory"
+        ],
+        "evidence": [
+          {
+            "document_id": "text-9e978db999ee6713",
+            "start_char": 27913,
+            "end_char": 28164,
+            "quote": "The Standard Model of particle physics is the quantum field theory that describes three of the four known fundamental forces in the universe (electromagnetic, weak and strong interactions but not gravity) and classifies all known elementary particles."
+          }
+        ],
+        "origin": "SOURCE"
+      },
+      "participant_symbols": [
+        {
+          "id": "quantum-field-theory",
+          "name": "quantum field theory",
+          "description": "Quantum theory of fields that permits particle creation and annihilation.",
+          "entity_type": "CONCEPT",
+          "aliases": [
+            "QFT"
+          ]
+        },
+        {
+          "id": "standard-model",
+          "name": "Standard Model",
+          "description": "Quantum field theory describing three fundamental forces and classifying known elementary particles.",
+          "entity_type": "SYSTEM",
+          "aliases": [
+            "Standard Model of particle physics"
+          ]
+        }
+      ],
+      "candidate_symbols": [
+        {
+          "id": "quantum-field-theory",
+          "name": "quantum field theory",
+          "description": "Quantum theory of fields that permits particle creation and annihilation.",
+          "entity_type": "CONCEPT",
+          "aliases": [
+            "QFT"
+          ]
+        },
+        {
+          "id": "standard-model",
+          "name": "Standard Model",
+          "description": "Quantum field theory describing three fundamental forces and classifying known elementary particles.",
+          "entity_type": "SYSTEM",
+          "aliases": [
+            "Standard Model of particle physics"
+          ]
+        }
+      ],
+      "candidate": {
+        "id": "relationship-33a269fc6fc2c7e8",
+        "kind": "RELATIONSHIP",
+        "statement": "The Standard Model is a quantum field theory.",
+        "confidence": 0.99,
+        "origin": "SOURCE",
+        "source_entity_id": "standard-model",
+        "relationship_type": "IS_A",
+        "target_entity_id": "quantum-field-theory"
+      },
+      "canonical_contract": {
+        "type": "IS_A",
+        "family": "STRUCTURAL",
+        "meaning": "The source is a kind, category, or subtype of the target.",
+        "direction": "instance_to_type",
+        "source_role": "instance or subtype",
+        "target_role": "broader type or category",
+        "use_when": "The source can truthfully be described as a target.",
+        "avoid_when": "Do not use for parts, examples, similarity, or temporary states.",
+        "symmetric": false
+      },
+      "independent_review_note": "The source explicitly states that the Standard Model is the quantum field theory describing three forces; the endpoints and taxonomic predicate are exact.",
+      "control_source": {
+        "artifact": "SPEC-013 canonicalization-result.json and canonical-semantic-review.json",
+        "item_id": "relationship-33a269fc6fc2c7e8"
+      },
+      "fallback": {
+        "kind": "SOURCE_ASSERTION",
+        "assertion_id": "assertion-33a269fc6fc2c7e8",
+        "statement": "The Standard Model is a quantum field theory that describes three fundamental forces and classifies known elementary particles."
+      }
+    },
+    {
+      "packet_candidate_id": "positive-relationship-56b4330de6aef867",
+      "label": "POSITIVE",
+      "expected_category": "SUPPORTED",
+      "assertion": {
+        "id": "assertion-56b4330de6aef867",
+        "statement": "The correspondence principle requires quantum theory to converge to classical limits.",
+        "participant_entity_ids": [
+          "correspondence-principle",
+          "quantum-mechanics",
+          "classical-physics"
+        ],
+        "evidence": [
+          {
+            "document_id": "text-9e978db999ee6713",
+            "start_char": 7820,
+            "end_char": 7956,
+            "quote": "This concept was formalized by Bohr in 1923 as the correspondence principle. It requires quantum theory to converge to classical limits."
+          }
+        ],
+        "origin": "SOURCE"
+      },
+      "participant_symbols": [
+        {
+          "id": "classical-physics",
+          "name": "classical physics",
+          "description": "Physics describing matter and energy at scales familiar from human experience.",
+          "entity_type": "CONCEPT",
+          "aliases": [
+            "classical mechanics",
+            "classical theory"
+          ]
+        },
+        {
+          "id": "correspondence-principle",
+          "name": "correspondence principle",
+          "description": "Requirement that quantum theory converge to classical limits at macroscopic scales.",
+          "entity_type": "CONCEPT",
+          "aliases": []
+        },
+        {
+          "id": "quantum-mechanics",
+          "name": "quantum mechanics",
+          "description": "Study and theory of matter and its interactions with energy at atomic and subatomic scales.",
+          "entity_type": "CONCEPT",
+          "aliases": [
+            "QM",
+            "quantum physics",
+            "quantum theory"
+          ]
+        }
+      ],
+      "candidate_symbols": [
+        {
+          "id": "correspondence-principle",
+          "name": "correspondence principle",
+          "description": "Requirement that quantum theory converge to classical limits at macroscopic scales.",
+          "entity_type": "CONCEPT",
+          "aliases": []
+        },
+        {
+          "id": "quantum-mechanics",
+          "name": "quantum mechanics",
+          "description": "Study and theory of matter and its interactions with energy at atomic and subatomic scales.",
+          "entity_type": "CONCEPT",
+          "aliases": [
+            "QM",
+            "quantum physics",
+            "quantum theory"
+          ]
+        }
+      ],
+      "candidate": {
+        "id": "relationship-56b4330de6aef867",
+        "kind": "RELATIONSHIP",
+        "statement": "The correspondence principle constrains quantum theory to converge to classical limits.",
+        "confidence": 0.86,
+        "origin": "SOURCE",
+        "source_entity_id": "correspondence-principle",
+        "relationship_type": "CONSTRAINS",
+        "target_entity_id": "quantum-mechanics"
+      },
+      "canonical_contract": {
+        "type": "CONSTRAINS",
+        "family": "DEPENDENCY",
+        "meaning": "The source limits the possible behavior, values, or choices of the target.",
+        "direction": "constraint_to_constrained",
+        "source_role": "constraint",
+        "target_role": "constrained entity, process, or variable",
+        "use_when": "The source imposes a limit, rule, boundary, or restriction on the target.",
+        "avoid_when": "Do not use to mean unchanged, unrelated, merely different, or causally reduced.",
+        "symmetric": false
+      },
+      "independent_review_note": "The source says the correspondence principle requires quantum theory to converge to classical limits; principle-to-theory with CONSTRAINS preserves that direction and modality.",
+      "control_source": {
+        "artifact": "SPEC-013 canonicalization-result.json and canonical-semantic-review.json",
+        "item_id": "relationship-56b4330de6aef867"
+      },
+      "fallback": {
+        "kind": "SOURCE_ASSERTION",
+        "assertion_id": "assertion-56b4330de6aef867",
+        "statement": "The correspondence principle requires quantum theory to converge to classical limits."
+      }
+    }
+  ],
+  "packet_hash": "1186a75812a32c72430c42b88cc2c9957ae6791433a51b2b310ee645f3a13ba7"
+}

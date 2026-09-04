@@ -37,6 +37,7 @@ from .semantic_navigation import (
     default_spec006_representations_directory,
     prepare_semantic_navigation_evaluation,
 )
+from .semantic_gate_evaluation import prepare_gate_evaluation, run_gate_evaluation
 from .staged_semantic_evaluation import (
     finalize_staged_semantic_evaluation,
     run_staged_semantic_evaluation,
@@ -167,6 +168,20 @@ def _parser() -> argparse.ArgumentParser:
         help="validate independent reviews and finalize the SPEC-013 comparison",
     )
     assertion_finalize.add_argument("output_dir", type=Path)
+    gate_prepare = subcommands.add_parser(
+        "prepare-semantic-gate",
+        help="freeze the offline SPEC-014 positive/negative semantic gate packet",
+    )
+    gate_prepare.add_argument("--spec-013-dir", required=True, type=Path)
+    gate_prepare.add_argument("--spec-012-dir", required=True, type=Path)
+    gate_prepare.add_argument("--output-dir", required=True, type=Path)
+    gate_evaluation = subcommands.add_parser(
+        "evaluate-semantic-gate",
+        help="run the single live SPEC-014 admission-gate call over a frozen packet",
+    )
+    gate_evaluation.add_argument("--packet", required=True, type=Path)
+    gate_evaluation.add_argument("--model", default=DEFAULT_MODEL)
+    gate_evaluation.add_argument("--output-dir", required=True, type=Path)
     view = subcommands.add_parser("view-representations", help="serve a prepared representation review locally")
     view.add_argument("directory", type=Path)
     view.add_argument("--host", default="127.0.0.1")
@@ -178,6 +193,32 @@ def _parser() -> argparse.ArgumentParser:
 def main(argv: list[str] | None = None) -> int:
     args = _parser().parse_args(argv)
     try:
+        if args.command == "evaluate-semantic-gate":
+            if not os.environ.get("OPENAI_API_KEY"):
+                raise ExtractionError("OPENAI_API_KEY is required for live SPEC-014 evaluation")
+            report = run_gate_evaluation(
+                packet_path=args.packet,
+                output_dir=args.output_dir,
+                model=args.model,
+            )
+            print(
+                f"Wrote {args.output_dir / 'report.json'} "
+                f"({report['packet_size']} candidates; verdict {report['verdict']})"
+            )
+            return 0
+
+        if args.command == "prepare-semantic-gate":
+            summary = prepare_gate_evaluation(
+                spec_013_dir=args.spec_013_dir,
+                spec_012_dir=args.spec_012_dir,
+                output_dir=args.output_dir,
+            )
+            print(
+                f"Wrote {args.output_dir / 'gate-packet.json'} "
+                f"({summary['candidate_count']} frozen candidates; live gate pending)"
+            )
+            return 0
+
         if args.command == "finalize-assertion-first-compilation":
             report = finalize_assertion_first_evaluation(args.output_dir)
             print(

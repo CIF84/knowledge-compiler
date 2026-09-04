@@ -1,0 +1,36 @@
+{
+  "spec": "SPEC-014",
+  "evaluation_version": "spec-014-v1",
+  "status": "FROZEN_AWAITING_LIVE_GATE",
+  "packet_id": "spec-014-quantum-semantic-gate-v1",
+  "packet_hash": "1186a75812a32c72430c42b88cc2c9957ae6791433a51b2b310ee645f3a13ba7",
+  "positive_candidate_count": 3,
+  "negative_candidate_count": 6,
+  "candidate_count": 9,
+  "gate_call_budget": 1,
+  "verdict_vocabulary": [
+    "ADMIT",
+    "TOO_STRONG",
+    "WRONG_PREDICATE",
+    "WRONG_ENDPOINT",
+    "REQUIRES_STRUCTURED_PROPOSITION",
+    "INSUFFICIENT_FOR_CANONICALIZATION"
+  ],
+  "benchmark_labels_excluded_from_live_input": true,
+  "thresholds_frozen_before_live_output": {
+    "GATE_BETTER": {
+      "justified_admission_recall_minimum": 0.6666666666666666,
+      "negative_rejection_rate_minimum": 0.8333333333333334,
+      "admit_precision_minimum": 0.6666666666666666
+    },
+    "GATE_TOO_CONSERVATIVE": {
+      "justified_admission_recall_below": 0.6666666666666666,
+      "negative_rejection_rate_minimum": 0.6666666666666666
+    },
+    "GATE_UNRELIABLE": {
+      "overall_classification_agreement_below": 0.6
+    },
+    "fallback": "NO_MEANINGFUL_IMPROVEMENT",
+    "operational_failure": "INCONCLUSIVE"
+  }
+}

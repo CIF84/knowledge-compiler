@@ -23,6 +23,16 @@ from .assertion_compilation import (
     ground_assertions,
 )
 from .pipeline import compile_knowledge_model
+from .semantic_gate import (
+    CandidateLabel,
+    GateDecision,
+    GatePacket,
+    GateResult,
+    GateVerdict,
+    SemanticCandidate,
+    aggregate_gate_metrics,
+    apply_gate_decisions,
+)
 from .relationships import RelationshipDefinition, RelationshipFamily
 from .structure_detection import StructureDetector
 from .staged_compilation import (
@@ -40,6 +50,7 @@ from .representations import Representation, RepresentationEdge, RepresentationM
 
 __all__ = [
     "Claim",
+    "CandidateLabel",
     "AssertionCompilationResult",
     "AssertionExtractionProposal",
     "CanonicalizationProposal",
@@ -47,6 +58,10 @@ __all__ = [
     "SourceAssertion",
     "Entity",
     "EntityType",
+    "GateDecision",
+    "GatePacket",
+    "GateResult",
+    "GateVerdict",
     "KnowledgeModel",
     "Origin",
     "Relationship",
@@ -68,12 +83,15 @@ __all__ = [
     "RepresentationModel",
     "RepresentationNode",
     "Salience",
+    "SemanticCandidate",
     "RelationshipType",
     "SourceDocument",
     "SourceSpan",
     "SourceType",
     "ValidationError",
     "compile_knowledge_model",
+    "aggregate_gate_metrics",
+    "apply_gate_decisions",
     "compile_assertion_semantics",
     "compile_staged_knowledge_model",
     "ground_assertions",
