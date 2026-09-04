@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quantum mechanics — assertion-aware orientation</title>
+  <link rel="stylesheet" href="assertion-aware.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">KNOWLEDGE COMPILER · ORIENTATION</p>
+      <h1>Why quantum mechanics feels different</h1>
+      <p class="lede">Explore the source through its most connected ideas, then inspect the explanation and evidence behind each one.</p>
+    </div>
+    <button id="overview-button" class="quiet-button" type="button">Return to overview</button>
+  </header>
+
+  <main>
+    <section class="legend" aria-label="Semantic key">
+      <span class="legend-item relationship-key"><i aria-hidden="true">→</i><b>Established relationship</b> typed semantic connection</span>
+      <span class="legend-item proposition-key"><i aria-hidden="true">◇</i><b>Structured condition/event</b> explicit roles</span>
+      <span class="legend-item assertion-key"><i aria-hidden="true">¶</i><b>Source-backed explanation</b> concepts mentioned together, not an inferred edge</span>
+    </section>
+
+    <section class="workspace">
+      <aside class="browser-panel">
+        <label for="concept-search">Find an idea</label>
+        <input id="concept-search" type="search" placeholder="Search all source concepts…" autocomplete="off">
+        <p id="browser-count" class="muted"></p>
+        <div id="concept-list" class="concept-list"></div>
+      </aside>
+
+      <section class="map-panel" aria-live="polite">
+        <div id="view-heading" class="section-heading"></div>
+        <div id="overview-grid" class="overview-grid"></div>
+        <div id="focus-view" class="focus-view" hidden></div>
+      </section>
+
+      <aside id="detail-panel" class="detail-panel">
+        <p class="eyebrow">INSPECT</p>
+        <h2>Select an idea or explanation</h2>
+        <p>Clicking keeps your selection here. Hovering offers a quick preview.</p>
+      </aside>
+    </section>
+  </main>
+  <script src="assertion-aware.js"></script>
+</body>
+</html>
