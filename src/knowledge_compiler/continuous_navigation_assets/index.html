@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>Knowledge Compiler — Continuous navigation</title>
+  <link rel="stylesheet" href="navigation.css">
+</head>
+<body>
+  <header>
+    <div><span class="eyebrow">Knowledge Compiler</span><h1>Continuous graph navigation</h1></div>
+    <span class="fixture-label">Experimental navigation fixture · Software architecture</span>
+  </header>
+  <main>
+    <section class="workspace">
+      <article class="canvas-card">
+        <div class="structure-heading">
+          <div><span class="badge">PROCESS FLOW</span><h2 id="model-title">Order-processing service</h2></div>
+          <div class="map-actions" aria-label="Map navigation">
+            <button id="history-back" aria-label="Previous map focus" disabled>←</button>
+            <button id="history-forward" aria-label="Next map focus" disabled>→</button>
+            <button id="overview" aria-label="Return to initial overview">⌂ Overview</button>
+            <button id="clear-selection" disabled>Clear selection</button>
+          </div>
+        </div>
+        <div id="graph-viewport" class="graph-viewport">
+          <svg id="graph" role="img" aria-label="Directed semantic structure in a continuous pannable world"></svg>
+        </div>
+        <div class="viewport-status"><span id="focus-status">Overview</span><span class="pan-symbol" aria-label="Drag empty space to pan">✥</span></div>
+      </article>
+      <aside id="detail" aria-live="polite">
+        <span class="eyebrow">Detail</span>
+        <h2>Select a node or relationship</h2>
+        <p>Inspect concept context or relationship meaning and source evidence.</p>
+      </aside>
+    </section>
+  </main>
+  <script src="navigation.js"></script>
+</body>
+</html>

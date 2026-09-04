@@ -17,6 +17,7 @@ from .assertion_aware_evaluation import prepare_assertion_aware_evaluation
 from .assertion_aware_representation import default_spec013_assertion_directory
 from .cognitive_topology import default_spec016_directory
 from .cognitive_topology_evaluation import prepare_cognitive_topology_evaluation
+from .continuous_navigation_evaluation import prepare_continuous_navigation_evaluation
 from .extractor import FixtureExtractor
 from .layout_evaluation import default_spec005_representations_directory, prepare_layout_evaluation
 from .models import KnowledgeModel, ValidationError
@@ -227,6 +228,11 @@ def _parser() -> argparse.ArgumentParser:
         "--spec-016-dir", type=Path, default=default_spec016_directory()
     )
     cognitive_topology.add_argument("--output-dir", required=True, type=Path)
+    continuous_navigation = subcommands.add_parser(
+        "prepare-continuous-navigation",
+        help="build the offline SPEC-018 continuous graph-navigation experiment",
+    )
+    continuous_navigation.add_argument("--output-dir", required=True, type=Path)
     view = subcommands.add_parser("view-representations", help="serve a prepared representation review locally")
     view.add_argument("directory", type=Path)
     view.add_argument("--host", default="127.0.0.1")
@@ -238,6 +244,14 @@ def _parser() -> argparse.ArgumentParser:
 def main(argv: list[str] | None = None) -> int:
     args = _parser().parse_args(argv)
     try:
+        if args.command == "prepare-continuous-navigation":
+            report = prepare_continuous_navigation_evaluation(output_dir=args.output_dir)
+            print(
+                f"Wrote {args.output_dir / 'report.json'} "
+                f"(machine integrity {report['machine_integrity_verdict']}; owner review pending)"
+            )
+            return 0
+
         if args.command == "prepare-cognitive-topology":
             report = prepare_cognitive_topology_evaluation(
                 spec_013_dir=args.spec_013_dir,
