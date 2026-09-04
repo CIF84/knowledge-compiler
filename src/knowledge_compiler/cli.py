@@ -13,6 +13,8 @@ from .assertion_evaluation import (
     finalize_assertion_first_evaluation,
     run_assertion_first_evaluation,
 )
+from .assertion_aware_evaluation import prepare_assertion_aware_evaluation
+from .assertion_aware_representation import default_spec013_assertion_directory
 from .extractor import FixtureExtractor
 from .layout_evaluation import default_spec005_representations_directory, prepare_layout_evaluation
 from .models import KnowledgeModel, ValidationError
@@ -204,6 +206,14 @@ def _parser() -> argparse.ArgumentParser:
     )
     compression_evaluation.add_argument("--model", default="gpt-5.6-luna")
     compression_evaluation.add_argument("--output-dir", required=True, type=Path)
+    assertion_aware = subcommands.add_parser(
+        "prepare-assertion-aware-representation",
+        help="build the offline SPEC-016 assertion-aware quantum orientation",
+    )
+    assertion_aware.add_argument(
+        "--spec-013-dir", type=Path, default=default_spec013_assertion_directory()
+    )
+    assertion_aware.add_argument("--output-dir", required=True, type=Path)
     view = subcommands.add_parser("view-representations", help="serve a prepared representation review locally")
     view.add_argument("directory", type=Path)
     view.add_argument("--host", default="127.0.0.1")
@@ -215,6 +225,17 @@ def _parser() -> argparse.ArgumentParser:
 def main(argv: list[str] | None = None) -> int:
     args = _parser().parse_args(argv)
     try:
+        if args.command == "prepare-assertion-aware-representation":
+            report = prepare_assertion_aware_evaluation(
+                spec_013_dir=args.spec_013_dir,
+                output_dir=args.output_dir,
+            )
+            print(
+                f"Wrote {args.output_dir / 'report.json'} "
+                f"(machine integrity {report['machine_integrity_verdict']}; owner review pending)"
+            )
+            return 0
+
         if args.command == "evaluate-semantic-compression":
             if not os.environ.get("OPENAI_API_KEY"):
                 raise ExtractionError("OPENAI_API_KEY is required for live SPEC-015 evaluation")
