@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quantum mechanics — cognitive topology</title>
+  <link rel="stylesheet" href="topology.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="identity"><span class="kicker">KNOWLEDGE COMPILER</span><h1>Quantum mechanics</h1></div>
+    <span class="orientation-copy">A source-grounded topology. Select a concept to explore.</span>
+    <div class="actions">
+      <button id="search-toggle" type="button" aria-expanded="false">⌕ Find</button>
+      <button id="reset" type="button">Overview</button>
+    </div>
+  </header>
+
+  <main id="stage">
+    <svg id="topology" viewBox="0 0 1160 680" role="img" aria-label="Spatial topology of quantum mechanics concepts">
+      <defs>
+        <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z"></path>
+        </marker>
+        <filter id="soft"><feGaussianBlur stdDeviation="18"></feGaussianBlur></filter>
+      </defs>
+      <g id="fields"></g>
+      <g id="affinity-guides"></g>
+      <g id="canonical-edges"></g>
+      <g id="nodes"></g>
+    </svg>
+
+    <div class="map-key" aria-label="Map key">
+      <span><i class="proximity-sample"></i>proximity shapes attention</span>
+      <span><i class="semantic-sample"></i>established relationship</span>
+    </div>
+
+    <section id="search-panel" class="search-panel" hidden>
+      <label for="search">Find a source concept</label>
+      <input id="search" type="search" placeholder="Type a concept…" autocomplete="off">
+      <div id="search-results" class="search-results"></div>
+    </section>
+
+    <aside id="inspector" class="inspector" hidden aria-live="polite"></aside>
+  </main>
+  <script src="topology.js"></script>
+</body>
+</html>
