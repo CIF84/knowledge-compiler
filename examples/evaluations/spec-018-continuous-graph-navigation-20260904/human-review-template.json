@@ -1,0 +1,31 @@
+{
+  "allowed_final_verdicts": [
+    "CONTINUOUS_NAVIGATION_BETTER",
+    "MIXED",
+    "NO_MEANINGFUL_IMPROVEMENT",
+    "INCONCLUSIVE"
+  ],
+  "instruction": "Explore the map naturally. Try moving through it rather than systematically testing it.",
+  "owner_response": null,
+  "primary_question": "Would I rather navigate knowledge this way than with Explore/Back or the SPEC-016/017 alternatives?",
+  "questions": {
+    "frontier_traversal": [
+      "Does clicking near the frontier move where expected?",
+      "Does newly visible topology feel like more of the same map?"
+    ],
+    "graph_quality": [
+      "Does this retain the preferred SPEC-006 visual language?",
+      "Are relationship trajectories and directions understandable?"
+    ],
+    "movement": [
+      "Does dragging the map feel obvious and natural?",
+      "Does the graph feel like one continuous place?"
+    ],
+    "spatial_memory": [
+      "Do concepts remain where expected?",
+      "Does movement preserve orientation?"
+    ]
+  },
+  "spec": "SPEC-018",
+  "status": "PENDING_OWNER_REVIEW"
+}

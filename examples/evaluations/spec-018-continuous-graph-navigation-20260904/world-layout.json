@@ -1,0 +1,919 @@
+{
+  "bounds": {
+    "max_x": 2920.0,
+    "max_y": 1340.0,
+    "min_x": 0.0,
+    "min_y": 0.0
+  },
+  "camera": {
+    "focus_animation_ms": 280,
+    "focus_zone": {
+      "horizontal_margin_ratio": 0.22,
+      "vertical_margin_ratio": 0.2
+    },
+    "initial": {
+      "scale": 1.0,
+      "x": 0.0,
+      "y": 0.0
+    },
+    "reduced_motion_animation_ms": 0,
+    "transform": "SVG_VIEWBOX_WORLD_TO_VIEWPORT",
+    "viewport": {
+      "height": 800.0,
+      "width": 1200.0
+    }
+  },
+  "navigation": {
+    "adjacency": {
+      "api-gateway": [
+        "customer-request"
+      ],
+      "audit-log": [
+        "order-service",
+        "payment-service"
+      ],
+      "authentication-service": [
+        "identity-store",
+        "order-validation"
+      ],
+      "customer-request": [
+        "api-gateway",
+        "order-validation"
+      ],
+      "email-provider": [
+        "notification-service"
+      ],
+      "fraud-service": [
+        "payment-service"
+      ],
+      "identity-store": [
+        "authentication-service"
+      ],
+      "inventory-database": [
+        "inventory-service"
+      ],
+      "inventory-reservation": [
+        "inventory-service",
+        "order-validation",
+        "payment-authorization"
+      ],
+      "inventory-service": [
+        "inventory-database",
+        "inventory-reservation",
+        "message-broker"
+      ],
+      "message-broker": [
+        "inventory-service",
+        "notification-service",
+        "order-service"
+      ],
+      "metrics-store": [
+        "observability-collector"
+      ],
+      "notification-dispatch": [
+        "notification-service",
+        "observability-collector",
+        "order-completion",
+        "shipment-request"
+      ],
+      "notification-service": [
+        "email-provider",
+        "message-broker",
+        "notification-dispatch"
+      ],
+      "observability-collector": [
+        "metrics-store",
+        "notification-dispatch",
+        "payment-authorization",
+        "shipment-request"
+      ],
+      "order-completion": [
+        "notification-dispatch"
+      ],
+      "order-database": [
+        "order-service"
+      ],
+      "order-service": [
+        "audit-log",
+        "message-broker",
+        "order-database",
+        "order-validation"
+      ],
+      "order-validation": [
+        "authentication-service",
+        "customer-request",
+        "inventory-reservation",
+        "order-service"
+      ],
+      "payment-authorization": [
+        "inventory-reservation",
+        "observability-collector",
+        "payment-service",
+        "shipment-request"
+      ],
+      "payment-provider": [
+        "payment-service"
+      ],
+      "payment-service": [
+        "audit-log",
+        "fraud-service",
+        "payment-authorization",
+        "payment-provider"
+      ],
+      "shipment-request": [
+        "notification-dispatch",
+        "observability-collector",
+        "payment-authorization",
+        "shipping-adapter"
+      ],
+      "shipping-adapter": [
+        "shipment-request"
+      ]
+    },
+    "canvas_drag_panning": true,
+    "frontier_definition": "visible node with at least one adjacent node outside current viewport",
+    "frontier_strategy": "FULL_PRECOMPUTED_WORLD_VIEWPORT_CLIPPING",
+    "history": "camera and focused-node snapshots",
+    "initial_frontier_focus_targets": {
+      "inventory-reservation": {
+        "scale": 1.0,
+        "x": 450.0,
+        "y": 250.0
+      },
+      "order-validation": {
+        "scale": 1.0,
+        "x": 50.0,
+        "y": 250.0
+      }
+    },
+    "initial_frontier_node_ids": [
+      "order-validation",
+      "inventory-reservation"
+    ],
+    "initial_visible_edge_keys": [
+      "navigation-edge-01",
+      "navigation-edge-02",
+      "navigation-edge-07",
+      "navigation-edge-08",
+      "navigation-edge-09"
+    ],
+    "initial_visible_node_ids": [
+      "customer-request",
+      "order-validation",
+      "inventory-reservation",
+      "api-gateway",
+      "authentication-service",
+      "identity-store"
+    ],
+    "node_dragging": false
+  },
+  "nodes": [
+    {
+      "entity_id": "customer-request",
+      "x": 250,
+      "y": 650
+    },
+    {
+      "entity_id": "order-validation",
+      "x": 650,
+      "y": 650
+    },
+    {
+      "entity_id": "inventory-reservation",
+      "x": 1050,
+      "y": 650
+    },
+    {
+      "entity_id": "payment-authorization",
+      "x": 1450,
+      "y": 650
+    },
+    {
+      "entity_id": "shipment-request",
+      "x": 1850,
+      "y": 650
+    },
+    {
+      "entity_id": "notification-dispatch",
+      "x": 2250,
+      "y": 650
+    },
+    {
+      "entity_id": "order-completion",
+      "x": 2650,
+      "y": 650
+    },
+    {
+      "entity_id": "api-gateway",
+      "x": 250,
+      "y": 280
+    },
+    {
+      "entity_id": "authentication-service",
+      "x": 650,
+      "y": 220
+    },
+    {
+      "entity_id": "identity-store",
+      "x": 1050,
+      "y": 160
+    },
+    {
+      "entity_id": "fraud-service",
+      "x": 1450,
+      "y": 260
+    },
+    {
+      "entity_id": "payment-provider",
+      "x": 1750,
+      "y": 180
+    },
+    {
+      "entity_id": "shipping-adapter",
+      "x": 2150,
+      "y": 260
+    },
+    {
+      "entity_id": "email-provider",
+      "x": 2550,
+      "y": 180
+    },
+    {
+      "entity_id": "order-service",
+      "x": 650,
+      "y": 1000
+    },
+    {
+      "entity_id": "order-database",
+      "x": 950,
+      "y": 1200
+    },
+    {
+      "entity_id": "inventory-service",
+      "x": 1150,
+      "y": 960
+    },
+    {
+      "entity_id": "inventory-database",
+      "x": 1450,
+      "y": 1200
+    },
+    {
+      "entity_id": "payment-service",
+      "x": 1550,
+      "y": 960
+    },
+    {
+      "entity_id": "message-broker",
+      "x": 1950,
+      "y": 1080
+    },
+    {
+      "entity_id": "notification-service",
+      "x": 2350,
+      "y": 960
+    },
+    {
+      "entity_id": "audit-log",
+      "x": 2750,
+      "y": 1160
+    },
+    {
+      "entity_id": "observability-collector",
+      "x": 2050,
+      "y": 500
+    },
+    {
+      "entity_id": "metrics-store",
+      "x": 2450,
+      "y": 400
+    }
+  ],
+  "routes": [
+    {
+      "edge_key": "navigation-edge-01",
+      "label_x": 450.0,
+      "label_y": 640.0,
+      "path_kind": "LINE",
+      "points": [
+        {
+          "x": 334.0,
+          "y": 650.0
+        },
+        {
+          "x": 566.0,
+          "y": 650.0
+        }
+      ]
+    },
+    {
+      "edge_key": "navigation-edge-02",
+      "label_x": 850.0,
+      "label_y": 640.0,
+      "path_kind": "LINE",
+      "points": [
+        {
+          "x": 734.0,
+          "y": 650.0
+        },
+        {
+          "x": 966.0,
+          "y": 650.0
+        }
+      ]
+    },
+    {
+      "edge_key": "navigation-edge-03",
+      "label_x": 1250.0,
+      "label_y": 640.0,
+      "path_kind": "LINE",
+      "points": [
+        {
+          "x": 1134.0,
+          "y": 650.0
+        },
+        {
+          "x": 1366.0,
+          "y": 650.0
+        }
+      ]
+    },
+    {
+      "edge_key": "navigation-edge-04",
+      "label_x": 1650.0,
+      "label_y": 640.0,
+      "path_kind": "LINE",
+      "points": [
+        {
+          "x": 1534.0,
+          "y": 650.0
+        },
+        {
+          "x": 1766.0,
+          "y": 650.0
+        }
+      ]
+    },
+    {
+      "edge_key": "navigation-edge-05",
+      "label_x": 2050.0,
+      "label_y": 640.0,
+      "path_kind": "LINE",
+      "points": [
+        {
+          "x": 1934.0,
+          "y": 650.0
+        },
+        {
+          "x": 2166.0,
+          "y": 650.0
+        }
+      ]
+    },
+    {
+      "edge_key": "navigation-edge-06",
+      "label_x": 2450.0,
+      "label_y": 640.0,
+      "path_kind": "LINE",
+      "points": [
+        {
+          "x": 2334.0,
+          "y": 650.0
+        },
+        {
+          "x": 2566.0,
+          "y": 650.0
+        }
+      ]
+    },
+    {
+      "edge_key": "navigation-edge-07",
+      "label_x": 250.0,
+      "label_y": 457.0,
+      "path_kind": "CUBIC",
+      "points": [
+        {
+          "x": 250.0,
+          "y": 620.0
+        },
+        {
+          "x": 250.0,
+          "y": 620.0
+        },
+        {
+          "x": 250.0,
+          "y": 310.0
+        },
+        {
+          "x": 250.0,
+          "y": 310.0
+        }
+      ]
+    },
+    {
+      "edge_key": "navigation-edge-08",
+      "label_x": 650.0,
+      "label_y": 427.0,
+      "path_kind": "CUBIC",
+      "points": [
+        {
+          "x": 650.0,
+          "y": 620.0
+        },
+        {
+          "x": 650.0,
+          "y": 620.0
+        },
+        {
+          "x": 650.0,
+          "y": 250.0
+        },
+        {
+          "x": 650.0,
+          "y": 250.0
+        }
+      ]
+    },
+    {
+      "edge_key": "navigation-edge-09",
+      "label_x": 850.0,
+      "label_y": 182.0,
+      "path_kind": "CUBIC",
+      "points": [
+        {
+          "x": 734.0,
+          "y": 207.4
+        },
+        {
+          "x": 850.0,
+          "y": 207.4
+        },
+        {
+          "x": 850.0,
+          "y": 172.6
+        },
+        {
+          "x": 966.0,
+          "y": 172.6
+        }
+      ]
+    },
+    {
+      "edge_key": "navigation-edge-10",
+      "label_x": 650.0,
+      "label_y": 817.0,
+      "path_kind": "CUBIC",
+      "points": [
+        {
+          "x": 650.0,
+          "y": 680.0
+        },
+        {
+          "x": 650.0,
+          "y": 680.0
+        },
+        {
+          "x": 650.0,
+          "y": 970.0
+        },
+        {
+          "x": 650.0,
+          "y": 970.0
+        }
+      ]
+    },
+    {
+      "edge_key": "navigation-edge-11",
+      "label_x": 800.0,
+      "label_y": 1092.0,
+      "path_kind": "CUBIC",
+      "points": [
+        {
+          "x": 695.0,
+          "y": 1030.0
+        },
+        {
+          "x": 800.0,
+          "y": 1030.0
+        },
+        {
+          "x": 800.0,
+          "y": 1170.0
+        },
+        {
+          "x": 905.0,
+          "y": 1170.0
+        }
+      ]
+    },
+    {
+      "edge_key": "navigation-edge-12",
+      "label_x": 1100.0,
+      "label_y": 797.0,
+      "path_kind": "CUBIC",
+      "points": [
+        {
+          "x": 1059.6774193548388,
+          "y": 680.0
+        },
+        {
+          "x": 1100.0,
+          "y": 680.0
+        },
+        {
+          "x": 1100.0,
+          "y": 930.0
+        },
+        {
+          "x": 1140.3225806451612,
+          "y": 930.0
+        }
+      ]
+    },
+    {
+      "edge_key": "navigation-edge-13",
+      "label_x": 1300.0,
+      "label_y": 1072.0,
+      "path_kind": "CUBIC",
+      "points": [
+        {
+          "x": 1187.5,
+          "y": 990.0
+        },
+        {
+          "x": 1300.0,
+          "y": 990.0
+        },
+        {
+          "x": 1300.0,
+          "y": 1170.0
+        },
+        {
+          "x": 1412.5,
+          "y": 1170.0
+        }
+      ]
+    },
+    {
+      "edge_key": "navigation-edge-14",
+      "label_x": 1500.0,
+      "label_y": 797.0,
+      "path_kind": "CUBIC",
+      "points": [
+        {
+          "x": 1459.6774193548388,
+          "y": 680.0
+        },
+        {
+          "x": 1500.0,
+          "y": 680.0
+        },
+        {
+          "x": 1500.0,
+          "y": 930.0
+        },
+        {
+          "x": 1540.3225806451612,
+          "y": 930.0
+        }
+      ]
+    },
+    {
+      "edge_key": "navigation-edge-15",
+      "label_x": 1650.0,
+      "label_y": 562.0,
+      "path_kind": "CUBIC",
+      "points": [
+        {
+          "x": 1557.6923076923076,
+          "y": 930.0
+        },
+        {
+          "x": 1650.0,
+          "y": 930.0
+        },
+        {
+          "x": 1650.0,
+          "y": 210.0
+        },
+        {
+          "x": 1742.3076923076924,
+          "y": 210.0
+        }
+      ]
+    },
+    {
+      "edge_key": "navigation-edge-16",
+      "label_x": 1500.0,
+      "label_y": 602.0,
+      "path_kind": "CUBIC",
+      "points": [
+        {
+          "x": 1545.7142857142858,
+          "y": 930.0
+        },
+        {
+          "x": 1500.0,
+          "y": 930.0
+        },
+        {
+          "x": 1500.0,
+          "y": 290.0
+        },
+        {
+          "x": 1454.2857142857142,
+          "y": 290.0
+        }
+      ]
+    },
+    {
+      "edge_key": "navigation-edge-17",
+      "label_x": 2000.0,
+      "label_y": 447.0,
+      "path_kind": "CUBIC",
+      "points": [
+        {
+          "x": 1873.076923076923,
+          "y": 620.0
+        },
+        {
+          "x": 2000.0,
+          "y": 620.0
+        },
+        {
+          "x": 2000.0,
+          "y": 290.0
+        },
+        {
+          "x": 2126.923076923077,
+          "y": 290.0
+        }
+      ]
+    },
+    {
+      "edge_key": "navigation-edge-18",
+      "label_x": 2300.0,
+      "label_y": 797.0,
+      "path_kind": "CUBIC",
+      "points": [
+        {
+          "x": 2259.6774193548385,
+          "y": 680.0
+        },
+        {
+          "x": 2300.0,
+          "y": 680.0
+        },
+        {
+          "x": 2300.0,
+          "y": 930.0
+        },
+        {
+          "x": 2340.3225806451615,
+          "y": 930.0
+        }
+      ]
+    },
+    {
+      "edge_key": "navigation-edge-19",
+      "label_x": 2450.0,
+      "label_y": 562.0,
+      "path_kind": "CUBIC",
+      "points": [
+        {
+          "x": 2357.6923076923076,
+          "y": 930.0
+        },
+        {
+          "x": 2450.0,
+          "y": 930.0
+        },
+        {
+          "x": 2450.0,
+          "y": 210.0
+        },
+        {
+          "x": 2542.3076923076924,
+          "y": 210.0
+        }
+      ]
+    },
+    {
+      "edge_key": "navigation-edge-20",
+      "label_x": 2150.0,
+      "label_y": 1012.0,
+      "path_kind": "CUBIC",
+      "points": [
+        {
+          "x": 2266.0,
+          "y": 985.2
+        },
+        {
+          "x": 2150.0,
+          "y": 985.2
+        },
+        {
+          "x": 2150.0,
+          "y": 1054.8
+        },
+        {
+          "x": 2034.0,
+          "y": 1054.8
+        }
+      ]
+    },
+    {
+      "edge_key": "navigation-edge-21",
+      "label_x": 1300.0,
+      "label_y": 1032.0,
+      "path_kind": "CUBIC",
+      "points": [
+        {
+          "x": 734.0,
+          "y": 1005.1692307692308
+        },
+        {
+          "x": 1300.0,
+          "y": 1005.1692307692308
+        },
+        {
+          "x": 1300.0,
+          "y": 1074.8307692307692
+        },
+        {
+          "x": 1866.0,
+          "y": 1074.8307692307692
+        }
+      ]
+    },
+    {
+      "edge_key": "navigation-edge-22",
+      "label_x": 1550.0,
+      "label_y": 1012.0,
+      "path_kind": "CUBIC",
+      "points": [
+        {
+          "x": 1234.0,
+          "y": 972.6
+        },
+        {
+          "x": 1550.0,
+          "y": 972.6
+        },
+        {
+          "x": 1550.0,
+          "y": 1067.4
+        },
+        {
+          "x": 1866.0,
+          "y": 1067.4
+        }
+      ]
+    },
+    {
+      "edge_key": "navigation-edge-23",
+      "label_x": 1750.0,
+      "label_y": 567.0,
+      "path_kind": "CUBIC",
+      "points": [
+        {
+          "x": 1534.0,
+          "y": 629.0
+        },
+        {
+          "x": 1750.0,
+          "y": 629.0
+        },
+        {
+          "x": 1750.0,
+          "y": 521.0
+        },
+        {
+          "x": 1966.0,
+          "y": 521.0
+        }
+      ]
+    },
+    {
+      "edge_key": "navigation-edge-24",
+      "label_x": 1950.0,
+      "label_y": 567.0,
+      "path_kind": "CUBIC",
+      "points": [
+        {
+          "x": 1890.0,
+          "y": 620.0
+        },
+        {
+          "x": 1950.0,
+          "y": 620.0
+        },
+        {
+          "x": 1950.0,
+          "y": 530.0
+        },
+        {
+          "x": 2010.0,
+          "y": 530.0
+        }
+      ]
+    },
+    {
+      "edge_key": "navigation-edge-25",
+      "label_x": 2150.0,
+      "label_y": 567.0,
+      "path_kind": "CUBIC",
+      "points": [
+        {
+          "x": 2210.0,
+          "y": 620.0
+        },
+        {
+          "x": 2150.0,
+          "y": 620.0
+        },
+        {
+          "x": 2150.0,
+          "y": 530.0
+        },
+        {
+          "x": 2090.0,
+          "y": 530.0
+        }
+      ]
+    },
+    {
+      "edge_key": "navigation-edge-26",
+      "label_x": 2250.0,
+      "label_y": 442.0,
+      "path_kind": "CUBIC",
+      "points": [
+        {
+          "x": 2134.0,
+          "y": 479.0
+        },
+        {
+          "x": 2250.0,
+          "y": 479.0
+        },
+        {
+          "x": 2250.0,
+          "y": 421.0
+        },
+        {
+          "x": 2366.0,
+          "y": 421.0
+        }
+      ]
+    },
+    {
+      "edge_key": "navigation-edge-27",
+      "label_x": 1700.0,
+      "label_y": 1072.0,
+      "path_kind": "CUBIC",
+      "points": [
+        {
+          "x": 734.0,
+          "y": 1006.4
+        },
+        {
+          "x": 1700.0,
+          "y": 1006.4
+        },
+        {
+          "x": 1700.0,
+          "y": 1153.6
+        },
+        {
+          "x": 2666.0,
+          "y": 1153.6
+        }
+      ]
+    },
+    {
+      "edge_key": "navigation-edge-28",
+      "label_x": 2150.0,
+      "label_y": 1052.0,
+      "path_kind": "CUBIC",
+      "points": [
+        {
+          "x": 1634.0,
+          "y": 974.0
+        },
+        {
+          "x": 2150.0,
+          "y": 974.0
+        },
+        {
+          "x": 2150.0,
+          "y": 1146.0
+        },
+        {
+          "x": 2666.0,
+          "y": 1146.0
+        }
+      ]
+    }
+  ],
+  "version": "spec-018-v1"
+}

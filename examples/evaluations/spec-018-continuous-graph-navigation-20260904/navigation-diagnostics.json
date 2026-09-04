@@ -1,0 +1,169 @@
+{
+  "camera": {
+    "camera_transform_delta": {
+      "x": -450.0,
+      "y": -250.0
+    },
+    "camera_transform_is_uniform_translation_at_constant_scale": true,
+    "edge_world_geometry_stable": true,
+    "focus_path": [
+      {
+        "camera_before": {
+          "scale": 1.0,
+          "x": 0.0,
+          "y": 0.0
+        },
+        "camera_target": {
+          "scale": 1.0,
+          "x": 450.0,
+          "y": 250.0
+        },
+        "focus_node_id": "inventory-reservation",
+        "newly_visible_node_ids": [
+          "inventory-service",
+          "payment-authorization",
+          "payment-service"
+        ],
+        "visible_node_count_after": 5
+      },
+      {
+        "camera_before": {
+          "scale": 1.0,
+          "x": 450.0,
+          "y": 250.0
+        },
+        "camera_target": {
+          "scale": 1.0,
+          "x": 850.0,
+          "y": 250.0
+        },
+        "focus_node_id": "payment-authorization",
+        "newly_visible_node_ids": [
+          "shipment-request"
+        ],
+        "visible_node_count_after": 5
+      },
+      {
+        "camera_before": {
+          "scale": 1.0,
+          "x": 850.0,
+          "y": 250.0
+        },
+        "camera_target": {
+          "scale": 1.0,
+          "x": 1250.0,
+          "y": 250.0
+        },
+        "focus_node_id": "shipment-request",
+        "newly_visible_node_ids": [
+          "notification-dispatch",
+          "notification-service",
+          "observability-collector"
+        ],
+        "visible_node_count_after": 6
+      },
+      {
+        "camera_before": {
+          "scale": 1.0,
+          "x": 1250.0,
+          "y": 250.0
+        },
+        "camera_target": {
+          "scale": 1.0,
+          "x": 1650.0,
+          "y": 250.0
+        },
+        "focus_node_id": "notification-dispatch",
+        "newly_visible_node_ids": [
+          "metrics-store",
+          "order-completion"
+        ],
+        "visible_node_count_after": 6
+      },
+      {
+        "camera_before": {
+          "scale": 1.0,
+          "x": 1650.0,
+          "y": 250.0
+        },
+        "camera_target": {
+          "scale": 1.0,
+          "x": 1720.0,
+          "y": 250.0
+        },
+        "focus_node_id": "order-completion",
+        "newly_visible_node_ids": [],
+        "visible_node_count_after": 6
+      }
+    ],
+    "focus_targets_tested": 5,
+    "interior_node_no_motion": true,
+    "reduced_motion_target_identical": true,
+    "targets_deterministic": true
+  },
+  "fixture": {
+    "experimental_fixture_label_present": true,
+    "node_count": 24,
+    "predicate_vocabulary": [
+      "CREATES",
+      "MEASURED_BY",
+      "PRECEDES",
+      "REQUIRES"
+    ],
+    "relationship_count": 28
+  },
+  "initial_view": {
+    "camera": {
+      "scale": 1.0,
+      "x": 0.0,
+      "y": 0.0
+    },
+    "frontier_node_count": 2,
+    "frontier_node_ids": [
+      "order-validation",
+      "inventory-reservation"
+    ],
+    "viewport": {
+      "height": 800.0,
+      "width": 1200.0
+    },
+    "visible_edge_count": 5,
+    "visible_node_count": 6
+  },
+  "integrity": {
+    "baseline_visual_assets_unchanged": true,
+    "canonical_relationship_directions_preserved": true,
+    "fixture_byte_for_byte_regeneration": true,
+    "no_live_provider_calls": true,
+    "no_relationship_vocabulary_changes": true,
+    "no_semantic_ir_changes": true,
+    "relationship_labels_preserved": true,
+    "world_coordinates_immutable": true
+  },
+  "interaction_contract": {
+    "canvas_drag_pans_camera": true,
+    "click_is_persistent_selection": true,
+    "detail_panel_viewport_anchored": true,
+    "edge_hit_target_inside_camera_transform": true,
+    "geometric_zoom_implemented": false,
+    "history_restores_camera_and_focus": true,
+    "hover_is_temporary_preview": true,
+    "node_dragging": false,
+    "overview_restores_initial_camera_without_rebuild": true,
+    "semantic_zoom_implemented": false
+  },
+  "version": "spec-018-v1",
+  "world": {
+    "bounds": {
+      "max_x": 2920.0,
+      "max_y": 1340.0,
+      "min_x": 0.0,
+      "min_y": 0.0
+    },
+    "layout_recomputations_during_navigation": 0,
+    "node_overlap_count": 0,
+    "positions_stable_after_focus_simulation": true,
+    "relative_spatial_order_stable": true,
+    "route_crossing_count": 5
+  }
+}
