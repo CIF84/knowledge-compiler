@@ -1,0 +1,481 @@
+{
+  "spec": "SPEC-015",
+  "evaluation_version": "spec-015-evaluator-v1",
+  "protocol_version": "spec-015-v1",
+  "prompt_version": "spec-015-compression-judge-v1",
+  "outcome": "SUCCESS",
+  "verdict": "COMPRESSION_JUDGE_BETTER",
+  "source_packet_path": "examples/evaluations/review-003-endpoint-role-benchmark-20260904/endpoint-role-packet.json",
+  "source_packet_sha256": "cbbef7b3eca555c4691024f987d6ba04be6cb6091d90d91d2121290782591088",
+  "source_packet_byte_identical": true,
+  "blinding_validation": "PASS",
+  "case_counts": {
+    "positive": 5,
+    "negative": 5,
+    "total": 10
+  },
+  "provider": "openai",
+  "requested_model": "gpt-5.6-luna",
+  "actual_model": "gpt-5.6-luna",
+  "provider_request_id": "resp_02ccc9e70825bf8c016a9b1dc4a54487d2b3259878a5e09356",
+  "live_call_count": 1,
+  "retry_count": 0,
+  "usage": {
+    "input_tokens": 2878,
+    "output_tokens": 1360,
+    "total_tokens": 4238
+  },
+  "runtime_seconds": 16.754,
+  "authoritative_monetary_cost": "NOT_AVAILABLE",
+  "metrics": {
+    "positive_case_count": 5,
+    "negative_case_count": 5,
+    "true_adequate_admits": 4,
+    "false_adequate_admits": 0,
+    "true_inadequate_rejects": 5,
+    "false_inadequate_rejects": 1,
+    "adequate_admission_precision": 1.0,
+    "adequate_admission_recall": 0.8,
+    "negative_rejection_rate": 1.0,
+    "overall_agreement": 0.9,
+    "verdict_distribution": {
+      "TARGET_ROLE_INADEQUATE": 3,
+      "MISSING_ESSENTIAL_PARTICIPANT": 2,
+      "BINARY_ADEQUATE": 4,
+      "REQUIRES_STRUCTURED_PROPOSITION": 1
+    },
+    "per_predicate": {
+      "ENABLES": {
+        "correct": 2,
+        "incorrect": 0,
+        "total": 2
+      },
+      "CAUSES": {
+        "correct": 2,
+        "incorrect": 0,
+        "total": 2
+      },
+      "CONSTRAINS": {
+        "correct": 1,
+        "incorrect": 1,
+        "total": 2
+      },
+      "BINDS_TO": {
+        "correct": 1,
+        "incorrect": 0,
+        "total": 1
+      },
+      "PART_OF": {
+        "correct": 1,
+        "incorrect": 0,
+        "total": 1
+      },
+      "TRANSFERS_TO": {
+        "correct": 2,
+        "incorrect": 0,
+        "total": 2
+      }
+    },
+    "per_family": {
+      "DEPENDENCY": {
+        "correct": 3,
+        "incorrect": 1,
+        "total": 4
+      },
+      "CAUSAL": {
+        "correct": 2,
+        "incorrect": 0,
+        "total": 2
+      },
+      "INTERACTION": {
+        "correct": 3,
+        "incorrect": 0,
+        "total": 3
+      },
+      "STRUCTURAL": {
+        "correct": 1,
+        "incorrect": 0,
+        "total": 1
+      }
+    },
+    "trivial_strategy_checks": {
+      "all_verdicts_identical": false,
+      "blanket_rejection": false,
+      "all_positive_controls_include_dropped_context": true
+    }
+  },
+  "per_case_verdicts": [
+    {
+      "blind_id": "endpoint-role-001",
+      "historical_case_id": "negative-tunneling-enables-electron",
+      "label": "ROLE_INADEQUATE",
+      "candidate": {
+        "source_entity_id": "quantum-tunneling",
+        "relationship_type": "ENABLES",
+        "target_entity_id": "electron"
+      },
+      "historical_classification": "IMPRECISE_ENDPOINT",
+      "judge_verdict": "TARGET_ROLE_INADEQUATE",
+      "judge_rationale": "The assertion concerns tunneling enabling electron penetration of a potential barrier, not enabling the electron itself as the target capability or process.",
+      "correct": true
+    },
+    {
+      "blind_id": "endpoint-role-002",
+      "historical_case_id": "negative-economics-comparison-to-one-operand",
+      "label": "ROLE_INADEQUATE",
+      "candidate": {
+        "source_entity_id": "quantity-demanded",
+        "relationship_type": "CAUSES",
+        "target_entity_id": "shortage"
+      },
+      "historical_classification": "LOSSY_BINARY_FORM",
+      "judge_verdict": "MISSING_ESSENTIAL_PARTICIPANT",
+      "judge_rationale": "The shortage arises from quantity demanded exceeding quantity supplied; omitting quantity supplied removes an essential condition of the asserted causal relationship.",
+      "correct": true
+    },
+    {
+      "blind_id": "endpoint-role-003",
+      "historical_case_id": "positive-correspondence-constrains-quantum-mechanics",
+      "label": "ROLE_ADEQUATE",
+      "candidate": {
+        "source_entity_id": "correspondence-principle",
+        "relationship_type": "CONSTRAINS",
+        "target_entity_id": "quantum-mechanics"
+      },
+      "historical_classification": "SUPPORTED",
+      "judge_verdict": "MISSING_ESSENTIAL_PARTICIPANT",
+      "judge_rationale": "The requirement concerns quantum theory converging to classical limits, so the classical-limit side of the assertion is essential and is omitted from the edge.",
+      "correct": false
+    },
+    {
+      "blind_id": "endpoint-role-004",
+      "historical_case_id": "positive-rna-polymerase-binds-dna",
+      "label": "ROLE_ADEQUATE",
+      "candidate": {
+        "source_entity_id": "rna-polymerase",
+        "relationship_type": "BINDS_TO",
+        "target_entity_id": "dna"
+      },
+      "historical_classification": "SUPPORTED_PRECISE_ENDPOINTS",
+      "judge_verdict": "BINARY_ADEQUATE",
+      "judge_rationale": "RNA polymerase is a binding participant and DNA is the stated binding substrate; the gene location can remain contextual without changing this binding assertion.",
+      "correct": true
+    },
+    {
+      "blind_id": "endpoint-role-005",
+      "historical_case_id": "positive-api-component-part-of-service",
+      "label": "ROLE_ADEQUATE",
+      "candidate": {
+        "source_entity_id": "api-component",
+        "relationship_type": "PART_OF",
+        "target_entity_id": "modular-order-processing-service"
+      },
+      "historical_classification": "SUPPORTED_PRECISE_ENDPOINTS",
+      "judge_verdict": "BINARY_ADEQUATE",
+      "judge_rationale": "The API component is explicitly one of the components separated by the modular order-processing service, so it is a part of that containing system.",
+      "correct": true
+    },
+    {
+      "blind_id": "endpoint-role-006",
+      "historical_case_id": "negative-transfer-object-to-event-as-destination",
+      "label": "ROLE_INADEQUATE",
+      "candidate": {
+        "source_entity_id": "order-command",
+        "relationship_type": "TRANSFERS_TO",
+        "target_entity_id": "order-command-transfer"
+      },
+      "historical_classification": "IMPRECISE_ENDPOINT_REQUIRES_STRUCTURED_PROPOSITION",
+      "judge_verdict": "TARGET_ROLE_INADEQUATE",
+      "judge_rationale": "The order-command-transfer symbol denotes the transfer event, not the destination or recipient; the asserted destination is the order component.",
+      "correct": true
+    },
+    {
+      "blind_id": "endpoint-role-007",
+      "historical_case_id": "positive-amino-acid-transfers-to-ribosome",
+      "label": "ROLE_ADEQUATE",
+      "candidate": {
+        "source_entity_id": "amino-acid",
+        "relationship_type": "TRANSFERS_TO",
+        "target_entity_id": "ribosome"
+      },
+      "historical_classification": "SUPPORTED_PRECISE_ENDPOINTS",
+      "judge_verdict": "BINARY_ADEQUATE",
+      "judge_rationale": "The amino acid is the item brought and the ribosome is the destination; transfer RNA can remain contextual to the item-to-destination relation.",
+      "correct": true
+    },
+    {
+      "blind_id": "endpoint-role-008",
+      "historical_case_id": "positive-double-slit-causes-interference",
+      "label": "ROLE_ADEQUATE",
+      "candidate": {
+        "source_entity_id": "double-slit-experiment",
+        "relationship_type": "CAUSES",
+        "target_entity_id": "interference-pattern"
+      },
+      "historical_classification": "SUPPORTED",
+      "judge_verdict": "BINARY_ADEQUATE",
+      "judge_rationale": "The double-slit experiment is the stated setup producing the interference pattern, matching the cause-to-effect contract.",
+      "correct": true
+    },
+    {
+      "blind_id": "endpoint-role-009",
+      "historical_case_id": "negative-tunneling-enables-transistor",
+      "label": "ROLE_INADEQUATE",
+      "candidate": {
+        "source_entity_id": "quantum-tunneling",
+        "relationship_type": "ENABLES",
+        "target_entity_id": "transistor"
+      },
+      "historical_classification": "IMPRECISE_ENDPOINT",
+      "judge_verdict": "TARGET_ROLE_INADEQUATE",
+      "judge_rationale": "The assertion concerns tunneling enabling electron penetration in a light-switch context, not enabling a transistor; the proposed target is not the asserted enabled capability or process.",
+      "correct": true
+    },
+    {
+      "blind_id": "endpoint-role-010",
+      "historical_case_id": "negative-pauli-constrains-electron",
+      "label": "ROLE_INADEQUATE",
+      "candidate": {
+        "source_entity_id": "pauli-exclusion-principle",
+        "relationship_type": "CONSTRAINS",
+        "target_entity_id": "electron"
+      },
+      "historical_classification": "IMPRECISE_ENDPOINT",
+      "judge_verdict": "REQUIRES_STRUCTURED_PROPOSITION",
+      "judge_rationale": "The assertion is a quantified prohibition on two electrons within an atom sharing a set of quantum numbers, which cannot be faithfully represented by a simple principle-to-electron edge.",
+      "correct": true
+    }
+  ],
+  "positive_control_results": [
+    {
+      "blind_id": "endpoint-role-003",
+      "historical_case_id": "positive-correspondence-constrains-quantum-mechanics",
+      "label": "ROLE_ADEQUATE",
+      "candidate": {
+        "source_entity_id": "correspondence-principle",
+        "relationship_type": "CONSTRAINS",
+        "target_entity_id": "quantum-mechanics"
+      },
+      "historical_classification": "SUPPORTED",
+      "judge_verdict": "MISSING_ESSENTIAL_PARTICIPANT",
+      "judge_rationale": "The requirement concerns quantum theory converging to classical limits, so the classical-limit side of the assertion is essential and is omitted from the edge.",
+      "correct": false
+    },
+    {
+      "blind_id": "endpoint-role-004",
+      "historical_case_id": "positive-rna-polymerase-binds-dna",
+      "label": "ROLE_ADEQUATE",
+      "candidate": {
+        "source_entity_id": "rna-polymerase",
+        "relationship_type": "BINDS_TO",
+        "target_entity_id": "dna"
+      },
+      "historical_classification": "SUPPORTED_PRECISE_ENDPOINTS",
+      "judge_verdict": "BINARY_ADEQUATE",
+      "judge_rationale": "RNA polymerase is a binding participant and DNA is the stated binding substrate; the gene location can remain contextual without changing this binding assertion.",
+      "correct": true
+    },
+    {
+      "blind_id": "endpoint-role-005",
+      "historical_case_id": "positive-api-component-part-of-service",
+      "label": "ROLE_ADEQUATE",
+      "candidate": {
+        "source_entity_id": "api-component",
+        "relationship_type": "PART_OF",
+        "target_entity_id": "modular-order-processing-service"
+      },
+      "historical_classification": "SUPPORTED_PRECISE_ENDPOINTS",
+      "judge_verdict": "BINARY_ADEQUATE",
+      "judge_rationale": "The API component is explicitly one of the components separated by the modular order-processing service, so it is a part of that containing system.",
+      "correct": true
+    },
+    {
+      "blind_id": "endpoint-role-007",
+      "historical_case_id": "positive-amino-acid-transfers-to-ribosome",
+      "label": "ROLE_ADEQUATE",
+      "candidate": {
+        "source_entity_id": "amino-acid",
+        "relationship_type": "TRANSFERS_TO",
+        "target_entity_id": "ribosome"
+      },
+      "historical_classification": "SUPPORTED_PRECISE_ENDPOINTS",
+      "judge_verdict": "BINARY_ADEQUATE",
+      "judge_rationale": "The amino acid is the item brought and the ribosome is the destination; transfer RNA can remain contextual to the item-to-destination relation.",
+      "correct": true
+    },
+    {
+      "blind_id": "endpoint-role-008",
+      "historical_case_id": "positive-double-slit-causes-interference",
+      "label": "ROLE_ADEQUATE",
+      "candidate": {
+        "source_entity_id": "double-slit-experiment",
+        "relationship_type": "CAUSES",
+        "target_entity_id": "interference-pattern"
+      },
+      "historical_classification": "SUPPORTED",
+      "judge_verdict": "BINARY_ADEQUATE",
+      "judge_rationale": "The double-slit experiment is the stated setup producing the interference pattern, matching the cause-to-effect contract.",
+      "correct": true
+    }
+  ],
+  "negative_control_results": [
+    {
+      "blind_id": "endpoint-role-001",
+      "historical_case_id": "negative-tunneling-enables-electron",
+      "historical_classification": "IMPRECISE_ENDPOINT",
+      "judge_verdict": "TARGET_ROLE_INADEQUATE",
+      "judge_rationale": "The assertion concerns tunneling enabling electron penetration of a potential barrier, not enabling the electron itself as the target capability or process."
+    },
+    {
+      "blind_id": "endpoint-role-002",
+      "historical_case_id": "negative-economics-comparison-to-one-operand",
+      "historical_classification": "LOSSY_BINARY_FORM",
+      "judge_verdict": "MISSING_ESSENTIAL_PARTICIPANT",
+      "judge_rationale": "The shortage arises from quantity demanded exceeding quantity supplied; omitting quantity supplied removes an essential condition of the asserted causal relationship."
+    },
+    {
+      "blind_id": "endpoint-role-006",
+      "historical_case_id": "negative-transfer-object-to-event-as-destination",
+      "historical_classification": "IMPRECISE_ENDPOINT_REQUIRES_STRUCTURED_PROPOSITION",
+      "judge_verdict": "TARGET_ROLE_INADEQUATE",
+      "judge_rationale": "The order-command-transfer symbol denotes the transfer event, not the destination or recipient; the asserted destination is the order component."
+    },
+    {
+      "blind_id": "endpoint-role-009",
+      "historical_case_id": "negative-tunneling-enables-transistor",
+      "historical_classification": "IMPRECISE_ENDPOINT",
+      "judge_verdict": "TARGET_ROLE_INADEQUATE",
+      "judge_rationale": "The assertion concerns tunneling enabling electron penetration in a light-switch context, not enabling a transistor; the proposed target is not the asserted enabled capability or process."
+    },
+    {
+      "blind_id": "endpoint-role-010",
+      "historical_case_id": "negative-pauli-constrains-electron",
+      "historical_classification": "IMPRECISE_ENDPOINT",
+      "judge_verdict": "REQUIRES_STRUCTURED_PROPOSITION",
+      "judge_rationale": "The assertion is a quantified prohibition on two electrons within an atom sharing a set of quantum numbers, which cannot be faithfully represented by a simple principle-to-electron edge."
+    }
+  ],
+  "required_result_questions": {
+    "all_legitimate_binary_relationships_preserved": false,
+    "all_known_lossy_compressions_rejected": true,
+    "spec_014_pauli_false_admit_caught": true,
+    "negative_diagnostic_verdicts": {
+      "negative-tunneling-enables-electron": "TARGET_ROLE_INADEQUATE",
+      "negative-economics-comparison-to-one-operand": "MISSING_ESSENTIAL_PARTICIPANT",
+      "negative-transfer-object-to-event-as-destination": "TARGET_ROLE_INADEQUATE",
+      "negative-tunneling-enables-transistor": "TARGET_ROLE_INADEQUATE",
+      "negative-pauli-constrains-electron": "REQUIRES_STRUCTURED_PROPOSITION"
+    },
+    "positive_missing_essential_due_only_to_context": [
+      "positive-correspondence-constrains-quantum-mechanics"
+    ],
+    "supports_narrow_gates_over_multi_agent_deliberation": true,
+    "residual_error_class": [
+      {
+        "blind_id": "endpoint-role-003",
+        "historical_case_id": "positive-correspondence-constrains-quantum-mechanics",
+        "label": "ROLE_ADEQUATE",
+        "candidate": {
+          "source_entity_id": "correspondence-principle",
+          "relationship_type": "CONSTRAINS",
+          "target_entity_id": "quantum-mechanics"
+        },
+        "historical_classification": "SUPPORTED",
+        "judge_verdict": "MISSING_ESSENTIAL_PARTICIPANT",
+        "judge_rationale": "The requirement concerns quantum theory converging to classical limits, so the classical-limit side of the assertion is essential and is omitted from the edge.",
+        "correct": false
+      }
+    ],
+    "production_integration_ready": false
+  },
+  "blanket_or_trivial_strategy_evidence": {
+    "all_verdicts_identical": false,
+    "blanket_rejection": false,
+    "all_positive_controls_include_dropped_context": true
+  },
+  "diagnostic_category_usefulness": {
+    "secondary_only": true,
+    "assessment": "ALL_NEGATIVE_REJECTIONS_USE_SPECIFIC_DIAGNOSTICS",
+    "specific_negative_count": 5,
+    "generic_negative_count": 0,
+    "distinct_negative_verdicts": [
+      "MISSING_ESSENTIAL_PARTICIPANT",
+      "REQUIRES_STRUCTURED_PROPOSITION",
+      "TARGET_ROLE_INADEQUATE"
+    ],
+    "negative_case_diagnostics": [
+      {
+        "blind_id": "endpoint-role-001",
+        "historical_case_id": "negative-tunneling-enables-electron",
+        "historical_classification": "IMPRECISE_ENDPOINT",
+        "judge_verdict": "TARGET_ROLE_INADEQUATE",
+        "judge_rationale": "The assertion concerns tunneling enabling electron penetration of a potential barrier, not enabling the electron itself as the target capability or process."
+      },
+      {
+        "blind_id": "endpoint-role-002",
+        "historical_case_id": "negative-economics-comparison-to-one-operand",
+        "historical_classification": "LOSSY_BINARY_FORM",
+        "judge_verdict": "MISSING_ESSENTIAL_PARTICIPANT",
+        "judge_rationale": "The shortage arises from quantity demanded exceeding quantity supplied; omitting quantity supplied removes an essential condition of the asserted causal relationship."
+      },
+      {
+        "blind_id": "endpoint-role-006",
+        "historical_case_id": "negative-transfer-object-to-event-as-destination",
+        "historical_classification": "IMPRECISE_ENDPOINT_REQUIRES_STRUCTURED_PROPOSITION",
+        "judge_verdict": "TARGET_ROLE_INADEQUATE",
+        "judge_rationale": "The order-command-transfer symbol denotes the transfer event, not the destination or recipient; the asserted destination is the order component."
+      },
+      {
+        "blind_id": "endpoint-role-009",
+        "historical_case_id": "negative-tunneling-enables-transistor",
+        "historical_classification": "IMPRECISE_ENDPOINT",
+        "judge_verdict": "TARGET_ROLE_INADEQUATE",
+        "judge_rationale": "The assertion concerns tunneling enabling electron penetration in a light-switch context, not enabling a transistor; the proposed target is not the asserted enabled capability or process."
+      },
+      {
+        "blind_id": "endpoint-role-010",
+        "historical_case_id": "negative-pauli-constrains-electron",
+        "historical_classification": "IMPRECISE_ENDPOINT",
+        "judge_verdict": "REQUIRES_STRUCTURED_PROPOSITION",
+        "judge_rationale": "The assertion is a quantified prohibition on two electrons within an atom sharing a set of quantum numbers, which cannot be faithfully represented by a simple principle-to-electron edge."
+      }
+    ]
+  },
+  "comparison_to_spec_014": "This narrower task is not statistically comparable to SPEC-014. It directly tests whether the endpoint-role judge catches the preserved Pauli and related compression cases while retaining legitimate binary relationships.",
+  "multi_agent_deliberation": "NOT_JUSTIFIED",
+  "production_integration_ready": false,
+  "production_threshold_claimed": false,
+  "safety": {
+    "candidate_rewrites": 0,
+    "entities_minted": 0,
+    "predicates_created": 0,
+    "proposition_types_created": 0,
+    "evidence_changed": 0,
+    "production_integration": false
+  },
+  "knowledge_model_changes": [],
+  "relationship_vocabulary_changes": [],
+  "proposition_vocabulary_changes": [],
+  "grounding_rule_changes": [],
+  "dependencies_added": [],
+  "dependencies_removed": [],
+  "complexity_impact": "Adds an isolated experimental benchmark loader/blinder, provider-independent judge protocol, OpenAI adapter, deterministic scorer, and CLI seam; no default pipeline path changes.",
+  "deviations": [],
+  "prior_artifacts_preserved": true,
+  "residual_errors": [
+    {
+      "blind_id": "endpoint-role-003",
+      "historical_case_id": "positive-correspondence-constrains-quantum-mechanics",
+      "label": "ROLE_ADEQUATE",
+      "candidate": {
+        "source_entity_id": "correspondence-principle",
+        "relationship_type": "CONSTRAINS",
+        "target_entity_id": "quantum-mechanics"
+      },
+      "historical_classification": "SUPPORTED",
+      "judge_verdict": "MISSING_ESSENTIAL_PARTICIPANT",
+      "judge_rationale": "The requirement concerns quantum theory converging to classical limits, so the classical-limit side of the assertion is essential and is omitted from the edge.",
+      "correct": false
+    }
+  ]
+}
