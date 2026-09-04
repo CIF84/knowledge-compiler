@@ -1,0 +1,164 @@
+{
+  "spec": "SPEC-013",
+  "status": "COMPLETE",
+  "verdict": "ASSERTION_FIRST_BETTER",
+  "assertion_fidelity": {
+    "FAITHFUL": 17,
+    "PARTIAL": 7,
+    "DISTORTED": 0,
+    "UNSUPPORTED": 0,
+    "total": 24,
+    "faithful_rate": 0.7083333333333334,
+    "appropriate_abstentions": 0,
+    "unnecessary_abstentions": 0,
+    "obvious_safe_relationships_unnecessarily_abstained": 0
+  },
+  "canonical_semantics": {
+    "spec_012_rejected_proposal_precision": 0.375,
+    "assertion_first_precision": 1.0,
+    "reviewed_compiled_items": 3,
+    "supported_compiled_items": 3,
+    "recall_or_completeness_claimed": false,
+    "known_control_defects": [
+      {
+        "control_item": "quantum revolution CAUSES quantum mechanics",
+        "experiment_status": "REPLACED",
+        "notes": "The assertion-first result preserves the qualified historical statement as a claim that classical explanatory failures contributed to quantum mechanics, avoiding the rejected direct causal edge."
+      },
+      {
+        "control_item": "superfluidity EXAMPLE_OF quantum mechanics",
+        "experiment_status": "REPLACED",
+        "notes": "The result keeps the source's description and classical-explanation limit as a claim instead of forcing the unsupported EXAMPLE_OF endpoint."
+      },
+      {
+        "control_item": "quantum mechanics ENABLES four listed applications",
+        "experiment_status": "REPLACED",
+        "notes": "The source-bounded application list is preserved as one claim rather than four over-generalized ENABLES edges."
+      },
+      {
+        "control_item": "tunneling ENABLES transistor",
+        "experiment_status": "REPLACED",
+        "notes": "The result preserves the source's light-switch and oxide-barrier statement as a claim and does not invent the transistor endpoint used by the rejected control proposal."
+      },
+      {
+        "control_item": "Pauli exclusion principle CONSTRAINS electron",
+        "experiment_status": "REPLACED",
+        "notes": "The many-participant rule is retained as a claim, avoiding a lossy binary edge that drops the atom, two-electron, and shared-quantum-number conditions."
+      },
+      {
+        "control_item": "QED IS_A quantum field theory",
+        "experiment_status": "REPLACED",
+        "notes": "Because the nominated source sentence defines QED as the quantum theory of the electromagnetic force without explicitly saying quantum field theory, the result conservatively preserves it as a claim."
+      }
+    ],
+    "new_assertion_first_defects": [
+      {
+        "stage": "ASSERTION_EXTRACTION",
+        "assertion_ids": [
+          "assertion-1c465c19cfc892d4",
+          "assertion-8ea4e7cb167f097b",
+          "assertion-aee7bc302227bd38",
+          "assertion-d1cadc9675bc9732",
+          "assertion-d3c4ca1bb715646f"
+        ],
+        "defect": "Participant over-attribution added one or more frozen symbols not named by the assertion statement or its nominated evidence.",
+        "canonical_impact": "None of these participant additions became a reviewed binary relationship or proposition; the statements were retained as claims."
+      },
+      {
+        "stage": "ASSERTION_EXTRACTION",
+        "assertion_ids": [
+          "assertion-3eb570168c1a2b9b"
+        ],
+        "defect": "The assertion omitted measurement as the trigger for wave-function collapse.",
+        "canonical_impact": "The item remained a claim and did not create a misleading graph edge."
+      },
+      {
+        "stage": "ASSERTION_EXTRACTION",
+        "assertion_ids": [
+          "assertion-581c7ac6a2588f65"
+        ],
+        "defect": "The statement included magnetic-field and continuous-range context not contained in its single nominated evidence span.",
+        "canonical_impact": "The item remained a claim and did not create a compiled relationship."
+      }
+    ]
+  },
+  "abstention": {
+    "uncompiled_assertion_count": 0,
+    "abstention_rate": 0.0,
+    "appropriate": 0,
+    "unnecessary": 0,
+    "obvious_safe_relationships_unnecessarily_abstained": 0
+  },
+  "structural": {
+    "unknown_assertion_participants": 0,
+    "dangling_relationship_endpoints": 0,
+    "dangling_proposition_roles": 0,
+    "silent_entity_minting": false,
+    "knowledge_model_round_trip": true
+  },
+  "grounding": {
+    "assertion_count": 24,
+    "source_assertion_count": 24,
+    "inferred_assertion_count": 0,
+    "evidence_span_count": 25,
+    "exact_evidence_span_count": 25,
+    "unique_evidence_span_count": 25,
+    "exact_evidence_resolution_rate": 1.0,
+    "unique_evidence_resolution_rate": 1.0,
+    "missing_evidence_failures": 0,
+    "ambiguous_evidence_failures": 0,
+    "unknown_participant_symbol_count": 0
+  },
+  "cost_complexity": {
+    "usage": {
+      "assertion_extraction": {
+        "input_tokens": 10416,
+        "output_tokens": 2090,
+        "total_tokens": 12506
+      },
+      "canonicalization": {
+        "input_tokens": 8391,
+        "output_tokens": 1516,
+        "total_tokens": 9907
+      },
+      "combined": {
+        "input_tokens": 18807,
+        "output_tokens": 3606,
+        "total_tokens": 22413
+      },
+      "spec_012_control": {
+        "pass_1": {
+          "input_tokens": 8464,
+          "output_tokens": 1427,
+          "total_tokens": 9891
+        },
+        "pass_2": {
+          "input_tokens": 13275,
+          "output_tokens": 2976,
+          "total_tokens": 16251
+        },
+        "combined": {
+          "input_tokens": 21739,
+          "output_tokens": 4403,
+          "total_tokens": 26142
+        }
+      }
+    },
+    "runtime_seconds": {
+      "assertion_extraction": 17.53,
+      "canonicalization": 12.8,
+      "combined": 30.33,
+      "spec_012_control_combined": 36.464
+    },
+    "authoritative_monetary_cost": "NOT_AVAILABLE",
+    "worth_assertion_boundary": true
+  },
+  "verdict_rationale": {
+    "assertion_fidelity": "Independent review classified 17 of 24 assertions as FAITHFUL and 7 as PARTIAL, with no DISTORTED or UNSUPPORTED assertions. The partial findings are traceable participant, trigger, or evidence-scope defects rather than fabricated source claims.",
+    "structural_integrity": "The trusted parent reuses all 41 frozen symbols byte-for-byte, contains 3 relationships and 21 claims, round-trips through the canonical model, has no dangling references, and mints no entities.",
+    "grounding_integrity": "All 24 assertions are SOURCE assertions; all 25 evidence spans resolve exactly and uniquely, with zero missing, ambiguous, or unknown-participant failures.",
+    "canonical_semantic_precision": "All 3 compiled graph relationships are independently SUPPORTED with precise endpoints and predicates, improving reviewed precision from the rejected SPEC-012 proposal's 6 of 16 (37.5%) to 3 of 3 (100%). No recall or completeness claim is made: 21 other assertions are deliberately preserved as claims.",
+    "abstention_behavior": "There are zero uncompiled assertions and therefore a 0% explicit abstention rate. The precision gain is not produced by uncompiled-output suppression, although graph admission is conservative: only 3 of 24 assertions become relationships and the remaining 21 are claims.",
+    "cost_complexity": "The experiment used exactly two calls, the same count as the SPEC-012 control, while adding a deterministic assertion-grounding gate. It consumed 22,413 tokens versus 26,142 for the control and took 30.33 seconds versus 36.464 seconds; authoritative monetary cost was unavailable. On this benchmark, the semantic precision gain and defect isolation justify the added assertion boundary."
+  }
+}

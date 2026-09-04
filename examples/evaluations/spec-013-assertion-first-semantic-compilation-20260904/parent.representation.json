@@ -1,0 +1,128 @@
+{
+  "document_id": "text-9e978db999ee6713",
+  "title": "Introduction to quantum mechanics — assertion-first",
+  "domain": "quantum_mechanics",
+  "representations": [
+    {
+      "id": "representation-cf7c9098bbc7ea8e",
+      "representation_type": "HIERARCHY",
+      "source_structure_ids": [
+        "structure-hierarchy-61fb67c0639957cb"
+      ],
+      "title": "Hierarchy",
+      "nodes": [
+        {
+          "entity_id": "quantum-field-theory",
+          "label": "quantum field theory",
+          "description": "Quantum theory of fields that permits particle creation and annihilation.",
+          "entity_type": "CONCEPT"
+        },
+        {
+          "entity_id": "standard-model",
+          "label": "Standard Model",
+          "description": "Quantum field theory describing three fundamental forces and classifying known elementary particles.",
+          "entity_type": "SYSTEM"
+        }
+      ],
+      "edges": [
+        {
+          "source_entity_id": "standard-model",
+          "target_entity_id": "quantum-field-theory",
+          "relationship_type": "IS_A",
+          "relationship_label": "IS A",
+          "meaning": "The source is a kind, category, or subtype of the target.",
+          "direction": "instance_to_type",
+          "relationship_ids": [
+            "relationship-33a269fc6fc2c7e8"
+          ],
+          "evidence": [
+            {
+              "relationship_id": "relationship-33a269fc6fc2c7e8",
+              "document_id": "text-9e978db999ee6713",
+              "start_char": 27913,
+              "end_char": 28164,
+              "quote": "The Standard Model of particle physics is the quantum field theory that describes three of the four known fundamental forces in the universe (electromagnetic, weak and strong interactions but not gravity) and classifies all known elementary particles."
+            }
+          ],
+          "origins": [
+            "SOURCE"
+          ],
+          "edge_key": "edge-30389de7bdb3d7ff",
+          "provenance_status": "SOURCE_EVIDENCE"
+        }
+      ],
+      "salience": "SPARSE",
+      "warnings": [
+        "Sparse structure: this view contains only one supported relationship."
+      ],
+      "layout": {
+        "strategy": "layered_hierarchy",
+        "orientation": "TOP_DOWN",
+        "width": 560,
+        "height": 330,
+        "nodes": [
+          {
+            "entity_id": "quantum-field-theory",
+            "x": 280,
+            "y": 80,
+            "layer": 0,
+            "order": 0
+          },
+          {
+            "entity_id": "standard-model",
+            "x": 280,
+            "y": 250,
+            "layer": 1,
+            "order": 0
+          }
+        ],
+        "edges": [
+          {
+            "edge_key": "edge-30389de7bdb3d7ff",
+            "path_kind": "CUBIC",
+            "points": [
+              {
+                "x": 280,
+                "y": 220
+              },
+              {
+                "x": 280,
+                "y": 165
+              },
+              {
+                "x": 280,
+                "y": 165
+              },
+              {
+                "x": 280,
+                "y": 110
+              }
+            ],
+            "label_x": 280,
+            "label_y": 156
+          }
+        ],
+        "diagnostics": {
+          "crossing_count": 0,
+          "node_overlap_count": 0,
+          "connector_length": 110.0,
+          "layer_count": 2,
+          "canonical_edges_opposing_layout_flow": 1
+        }
+      }
+    }
+  ],
+  "empty_state": null,
+  "builder_version": "spec-006-v1",
+  "warnings": [],
+  "metadata": {
+    "representation_count": 1,
+    "source_structure_count": 1,
+    "salience_counts": {
+      "PRIMARY": 0,
+      "SECONDARY": 0,
+      "SPARSE": 1
+    },
+    "layout_version": "spec-006-v1"
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "spec": "SPEC-013",
+  "status": "COMPLETE",
+  "review_categories_fixed_before_live_output": [
+    "SUPPORTED",
+    "IMPRECISE_ENDPOINT",
+    "WRONG_PREDICATE",
+    "REVERSED_DIRECTION",
+    "OVERSTATED_CAUSALITY",
+    "UNSUPPORTED",
+    "LOSSY_BINARY_FORM",
+    "OTHER"
+  ],
+  "review_scope": "ALL_COMPILED_RELATIONSHIPS_AND_PROPOSITIONS",
+  "items": [
+    {
+      "kind": "relationship",
+      "id": "relationship-05b19ee4b6d50060",
+      "statement": "The double-slit experiment produces an interference pattern.",
+      "source_entity_id": "double-slit-experiment",
+      "predicate": "CAUSES",
+      "target_entity_id": "interference-pattern",
+      "classification": "SUPPORTED",
+      "endpoint_precision": "PRECISE",
+      "predicate_precision": "PRECISE",
+      "notes": "The source explicitly describes the double-slit setup producing an interference pattern; both endpoints are the direct frozen concepts and CAUSES preserves the stated experimental result."
+    },
+    {
+      "kind": "relationship",
+      "id": "relationship-33a269fc6fc2c7e8",
+      "statement": "The Standard Model is a quantum field theory.",
+      "source_entity_id": "standard-model",
+      "predicate": "IS_A",
+      "target_entity_id": "quantum-field-theory",
+      "classification": "SUPPORTED",
+      "endpoint_precision": "PRECISE",
+      "predicate_precision": "PRECISE",
+      "notes": "The source explicitly states that the Standard Model is the quantum field theory describing three forces; the endpoints and taxonomic predicate are exact."
+    },
+    {
+      "kind": "relationship",
+      "id": "relationship-56b4330de6aef867",
+      "statement": "The correspondence principle constrains quantum theory to converge to classical limits.",
+      "source_entity_id": "correspondence-principle",
+      "predicate": "CONSTRAINS",
+      "target_entity_id": "quantum-mechanics",
+      "classification": "SUPPORTED",
+      "endpoint_precision": "PRECISE",
+      "predicate_precision": "PRECISE",
+      "notes": "The source says the correspondence principle requires quantum theory to converge to classical limits; principle-to-theory with CONSTRAINS preserves that direction and modality."
+    }
+  ],
+  "known_control_defects": [
+    {
+      "control_item": "quantum revolution CAUSES quantum mechanics",
+      "experiment_status": "REPLACED",
+      "notes": "The assertion-first result preserves the qualified historical statement as a claim that classical explanatory failures contributed to quantum mechanics, avoiding the rejected direct causal edge."
+    },
+    {
+      "control_item": "superfluidity EXAMPLE_OF quantum mechanics",
+      "experiment_status": "REPLACED",
+      "notes": "The result keeps the source's description and classical-explanation limit as a claim instead of forcing the unsupported EXAMPLE_OF endpoint."
+    },
+    {
+      "control_item": "quantum mechanics ENABLES four listed applications",
+      "experiment_status": "REPLACED",
+      "notes": "The source-bounded application list is preserved as one claim rather than four over-generalized ENABLES edges."
+    },
+    {
+      "control_item": "tunneling ENABLES transistor",
+      "experiment_status": "REPLACED",
+      "notes": "The result preserves the source's light-switch and oxide-barrier statement as a claim and does not invent the transistor endpoint used by the rejected control proposal."
+    },
+    {
+      "control_item": "Pauli exclusion principle CONSTRAINS electron",
+      "experiment_status": "REPLACED",
+      "notes": "The many-participant rule is retained as a claim, avoiding a lossy binary edge that drops the atom, two-electron, and shared-quantum-number conditions."
+    },
+    {
+      "control_item": "QED IS_A quantum field theory",
+      "experiment_status": "REPLACED",
+      "notes": "Because the nominated source sentence defines QED as the quantum theory of the electromagnetic force without explicitly saying quantum field theory, the result conservatively preserves it as a claim."
+    }
+  ],
+  "new_assertion_first_defects": [
+    {
+      "stage": "ASSERTION_EXTRACTION",
+      "assertion_ids": [
+        "assertion-1c465c19cfc892d4",
+        "assertion-8ea4e7cb167f097b",
+        "assertion-aee7bc302227bd38",
+        "assertion-d1cadc9675bc9732",
+        "assertion-d3c4ca1bb715646f"
+      ],
+      "defect": "Participant over-attribution added one or more frozen symbols not named by the assertion statement or its nominated evidence.",
+      "canonical_impact": "None of these participant additions became a reviewed binary relationship or proposition; the statements were retained as claims."
+    },
+    {
+      "stage": "ASSERTION_EXTRACTION",
+      "assertion_ids": [
+        "assertion-3eb570168c1a2b9b"
+      ],
+      "defect": "The assertion omitted measurement as the trigger for wave-function collapse.",
+      "canonical_impact": "The item remained a claim and did not create a misleading graph edge."
+    },
+    {
+      "stage": "ASSERTION_EXTRACTION",
+      "assertion_ids": [
+        "assertion-581c7ac6a2588f65"
+      ],
+      "defect": "The statement included magnetic-field and continuous-range context not contained in its single nominated evidence span.",
+      "canonical_impact": "The item remained a claim and did not create a compiled relationship."
+    }
+  ],
+  "verdict": "ASSERTION_FIRST_BETTER",
+  "verdict_rationale": {
+    "assertion_fidelity": "Independent review classified 17 of 24 assertions as FAITHFUL and 7 as PARTIAL, with no DISTORTED or UNSUPPORTED assertions. The partial findings are traceable participant, trigger, or evidence-scope defects rather than fabricated source claims.",
+    "structural_integrity": "The trusted parent reuses all 41 frozen symbols byte-for-byte, contains 3 relationships and 21 claims, round-trips through the canonical model, has no dangling references, and mints no entities.",
+    "grounding_integrity": "All 24 assertions are SOURCE assertions; all 25 evidence spans resolve exactly and uniquely, with zero missing, ambiguous, or unknown-participant failures.",
+    "canonical_semantic_precision": "All 3 compiled graph relationships are independently SUPPORTED with precise endpoints and predicates, improving reviewed precision from the rejected SPEC-012 proposal's 6 of 16 (37.5%) to 3 of 3 (100%). No recall or completeness claim is made: 21 other assertions are deliberately preserved as claims.",
+    "abstention_behavior": "There are zero uncompiled assertions and therefore a 0% explicit abstention rate. The precision gain is not produced by uncompiled-output suppression, although graph admission is conservative: only 3 of 24 assertions become relationships and the remaining 21 are claims.",
+    "cost_complexity": "The experiment used exactly two calls, the same count as the SPEC-012 control, while adding a deterministic assertion-grounding gate. It consumed 22,413 tokens versus 26,142 for the control and took 30.33 seconds versus 36.464 seconds; authoritative monetary cost was unavailable. On this benchmark, the semantic precision gain and defect isolation justify the added assertion boundary."
+  },
+  "semantic_gain_worth_assertion_boundary_on_this_benchmark": true,
+  "reviewed_compiled_semantic_items": 3,
+  "supported_compiled_semantic_items": 3,
+  "canonical_semantic_precision": 1.0
+}

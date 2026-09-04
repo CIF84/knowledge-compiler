@@ -1,0 +1,58 @@
+{
+  "spec": "SPEC-013",
+  "attempts": [
+    {
+      "sequence": 1,
+      "stage": "ASSERTION_EXTRACTION_AND_GROUNDING",
+      "started_at": "2026-09-04T11:39:32.973512+00:00",
+      "completed_at": "2026-09-04T11:39:50.503334+00:00",
+      "runtime_seconds": 17.53,
+      "outcome": "SUCCESS",
+      "provider_call_attempted": true,
+      "provider": "openai",
+      "requested_model": "gpt-5.6-luna",
+      "actual_model": "gpt-5.6-luna",
+      "provider_request_id": "resp_05aa8e07788e9a32016a9aadf716e887d2818365d6f31ca6dc",
+      "prompt_version": "spec-013-assertions-v1",
+      "retries": 0,
+      "usage": {
+        "input_tokens": 10416,
+        "output_tokens": 2090,
+        "total_tokens": 12506
+      },
+      "cost": "NOT_AVAILABLE",
+      "rejected_output_preserved": false
+    },
+    {
+      "sequence": 2,
+      "stage": "CANONICALIZATION",
+      "started_at": "2026-09-04T11:39:50.505354+00:00",
+      "completed_at": "2026-09-04T11:40:03.304375+00:00",
+      "runtime_seconds": 12.8,
+      "outcome": "SUCCESS",
+      "provider_call_attempted": true,
+      "provider": "openai",
+      "requested_model": "gpt-5.6-luna",
+      "actual_model": "gpt-5.6-luna",
+      "provider_request_id": "resp_0750bfaf1f645bd2016a9aae06adb087d294ea52d4f78755a1",
+      "prompt_version": "spec-013-canonicalization-v1",
+      "retries": 0,
+      "usage": {
+        "input_tokens": 8391,
+        "output_tokens": 1516,
+        "total_tokens": 9907
+      },
+      "cost": "NOT_AVAILABLE",
+      "rejected_output_preserved": false
+    }
+  ],
+  "symbol_discovery_call_count": 0,
+  "primary_live_call_budget": 2,
+  "current_run_live_call_count": 2,
+  "semantic_retry_count": 0,
+  "automatic_retry_count": 0,
+  "hidden_retries_or_favorable_run_selection": false,
+  "prompt_iteration_after_live_output": false,
+  "external_semantic_enrichment": false,
+  "child_resolution_call": false
+}
