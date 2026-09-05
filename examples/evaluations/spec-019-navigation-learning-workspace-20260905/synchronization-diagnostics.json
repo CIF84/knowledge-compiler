@@ -1,0 +1,307 @@
+{
+  "browser_verification": "SEE browser-verification.json",
+  "integrity": {
+    "all_learning_to_navigation_cases_highlight_stable_id": true,
+    "all_navigation_to_learning_cases_resolved": true,
+    "embedded_learning_representations_unchanged": true,
+    "fixture_provenance_explicit": true,
+    "frozen_baselines_unchanged": true,
+    "learning_representation_change_preserves_camera": true,
+    "navigation_and_learning_entity_ids_match": true,
+    "navigation_and_learning_relationship_ids_match": true,
+    "no_live_provider_calls": true,
+    "no_personalization_engine": true,
+    "no_relationship_vocabulary_changes": true,
+    "no_representation_algorithm_changes": true,
+    "no_semantic_ir_changes": true,
+    "no_semantic_zoom": true,
+    "parent_context_path_present": true,
+    "pure_camera_change_preserves_learning_state": true,
+    "relationship_sync_uses_stable_ids": true,
+    "unnecessary_recenter_avoided": true
+  },
+  "learning": {
+    "embedded_payloads_unchanged": true,
+    "parent_context_example": [
+      "Software Architecture",
+      "Hierarchy",
+      "modular-order-processing-service"
+    ],
+    "representation_count": 7,
+    "representation_layout_strategies": [
+      "chronological_axis",
+      "explicit_feedback_loop",
+      "layered_causal",
+      "layered_dependency",
+      "layered_hierarchy"
+    ]
+  },
+  "navigation_fixture": {
+    "concept_count": 21,
+    "domain_count": 4,
+    "relationship_edge_count": 18,
+    "relationship_id_count": 20
+  },
+  "shared_ids": {
+    "entity_count": 21,
+    "entity_ids": [
+      "api-component",
+      "authorities",
+      "database",
+      "electric-field",
+      "electromagnetic-wave",
+      "light",
+      "magnetic-field",
+      "market-price",
+      "modular-order-processing-service",
+      "movable-metal-type",
+      "order-component",
+      "payment-component",
+      "press",
+      "printed-books",
+      "printed-controversy",
+      "printing",
+      "quantity-demanded",
+      "quantity-supplied",
+      "shortage",
+      "supply-reduction",
+      "upward-price-pressure"
+    ],
+    "relationship_id_count": 20,
+    "relationship_ids": [
+      "changing-electric-field-induces-magnetic-field",
+      "changing-magnetic-field-induces-electric-field",
+      "light-is-electromagnetic-wave",
+      "rel-1",
+      "rel-2",
+      "rel-3",
+      "rel-4",
+      "rel-6",
+      "rel-8",
+      "rel-controversy-precedes-response",
+      "rel-higher-price-decreases-demanded",
+      "rel-higher-price-increases-supplied",
+      "rel-press-enables-printing",
+      "rel-price-decreases-demanded",
+      "rel-price-increases-supplied",
+      "rel-printing-enables-copies",
+      "rel-shortage-upward-pressure",
+      "rel-supply-reduction-price-increase",
+      "rel-type-enables-printing",
+      "rel-upward-pressure-price"
+    ]
+  },
+  "spec": "SPEC-019",
+  "state_separation": {
+    "camera_after_pan_zoom": {
+      "scale": 1.4,
+      "x": 471.428571,
+      "y": 334.285714
+    },
+    "camera_preserved_across_learning_representation_change": true,
+    "overview_target": {
+      "scale": 1.0,
+      "x": 0.0,
+      "y": 0.0
+    },
+    "pure_pan_zoom_learning_state_after": {
+      "domain_id": "software_architecture",
+      "focused_entity_id": "modular-order-processing-service",
+      "focused_relationship_id": null,
+      "representation_index": 0
+    },
+    "pure_pan_zoom_learning_state_before": {
+      "domain_id": "software_architecture",
+      "focused_entity_id": "modular-order-processing-service",
+      "focused_relationship_id": null,
+      "representation_index": 0
+    }
+  },
+  "suppression": {
+    "learning": {
+      "hover_preview": {
+        "edges": {
+          "CONNECTED": 1,
+          "SUBDUED": 3
+        },
+        "nodes": {
+          "NEIGHBOR": 1,
+          "PREVIEW": 1,
+          "SUBDUED": 3
+        }
+      },
+      "hover_restoration_exact": true,
+      "selected_node": {
+        "edges": {
+          "CONNECTED": 4
+        },
+        "nodes": {
+          "NEIGHBOR": 4,
+          "SELECTED": 1
+        }
+      },
+      "selected_relationship": {
+        "edges": {
+          "SELECTED": 1,
+          "SUBDUED": 3
+        },
+        "nodes": {
+          "ENDPOINT": 2,
+          "SUBDUED": 3
+        }
+      }
+    },
+    "navigation": {
+      "edges": {
+        "CONNECTED": 4,
+        "SUBDUED": 14
+      },
+      "nodes": {
+        "NEIGHBOR": 4,
+        "SELECTED": 1,
+        "SUBDUED": 16
+      }
+    }
+  },
+  "synchronization": {
+    "learning_to_navigation": [
+      {
+        "camera_after": {
+          "scale": 1.0,
+          "x": 0.0,
+          "y": 0.0
+        },
+        "camera_before": {
+          "scale": 1.0,
+          "x": 0.0,
+          "y": 0.0
+        },
+        "camera_moved": false,
+        "entity_id": "order-component",
+        "navigation_highlight_id": "order-component"
+      },
+      {
+        "camera_after": {
+          "scale": 1.0,
+          "x": 1020.0,
+          "y": 0.0
+        },
+        "camera_before": {
+          "scale": 1.0,
+          "x": 0.0,
+          "y": 0.0
+        },
+        "camera_moved": true,
+        "entity_id": "market-price",
+        "navigation_highlight_id": "market-price"
+      },
+      {
+        "camera_after": {
+          "scale": 1.0,
+          "x": 0.0,
+          "y": 540.0
+        },
+        "camera_before": {
+          "scale": 1.0,
+          "x": 0.0,
+          "y": 0.0
+        },
+        "camera_moved": true,
+        "entity_id": "authorities",
+        "navigation_highlight_id": "authorities"
+      }
+    ],
+    "navigation_to_learning": [
+      {
+        "camera": {
+          "scale": 1.0,
+          "x": 0.0,
+          "y": 0.0
+        },
+        "context_path": [
+          "Software Architecture",
+          "Hierarchy",
+          "modular-order-processing-service"
+        ],
+        "entity_id": "modular-order-processing-service",
+        "result_domain_id": "software_architecture",
+        "result_representation_index": 0
+      },
+      {
+        "camera": {
+          "scale": 1.0,
+          "x": 1020.0,
+          "y": 0.0
+        },
+        "context_path": [
+          "Economics",
+          "Causal model",
+          "market-price"
+        ],
+        "entity_id": "market-price",
+        "result_domain_id": "economics",
+        "result_representation_index": 0
+      },
+      {
+        "camera": {
+          "scale": 1.0,
+          "x": 0.0,
+          "y": 540.0
+        },
+        "context_path": [
+          "History of Printing",
+          "Process chronology",
+          "printed-controversy"
+        ],
+        "entity_id": "printed-controversy",
+        "result_domain_id": "history",
+        "result_representation_index": 1
+      },
+      {
+        "camera": {
+          "scale": 1.0,
+          "x": 730.0,
+          "y": 590.0
+        },
+        "context_path": [
+          "Electromagnetism",
+          "Feedback candidate",
+          "electric-field"
+        ],
+        "entity_id": "electric-field",
+        "result_domain_id": "electromagnetism",
+        "result_representation_index": 0
+      }
+    ],
+    "relationships": [
+      {
+        "camera_preserved": true,
+        "navigation_edge_keys": [
+          "edge-277f96e2b2274c82"
+        ],
+        "relationship_id": "rel-1",
+        "result_domain_id": "software_architecture",
+        "result_representation_index": 0
+      },
+      {
+        "camera_preserved": true,
+        "navigation_edge_keys": [
+          "edge-ba5f0ccb37663de8"
+        ],
+        "relationship_id": "rel-6",
+        "result_domain_id": "software_architecture",
+        "result_representation_index": 1
+      },
+      {
+        "camera_preserved": true,
+        "navigation_edge_keys": [
+          "edge-5debac009cb6f924"
+        ],
+        "relationship_id": "rel-shortage-upward-pressure",
+        "result_domain_id": "economics",
+        "result_representation_index": 0
+      }
+    ],
+    "unnecessary_recenter_count": 0
+  }
+}
