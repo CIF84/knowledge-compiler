@@ -1,9 +1,17 @@
 # SPEC-023 — Realistic Semantic Depth Through Explanatory Projection
 
-Status: `IMPLEMENTED_AWAITING_REVIEW`
+Status: `COMPLETED`
 Authority: `OFFLINE_ONLY`
 Human gate: `OWNER_REVIEW`
 Promotion: `NOT_AUTHORIZED`
+
+## Final verdict
+
+`MIXED`
+
+Owner review is complete. The repaired artifact is mechanically sound and the contextual depth interaction works, but the nested replacement-view grammar does not scale naturally to recursive depth because it separates the learner's active chain of thought from the continuous navigation map.
+
+See `debriefs/DEBRIEF-023-realistic-semantic-depth-through-explanatory-projection.md` for the durable outcome and next implication.
 
 ## Primary uncertainty
 
@@ -276,25 +284,25 @@ Store detailed machine evidence there. Keep the visible handoff concise.
 
 ## Acceptance criteria
 
-- [ ] Exact BASELINE-004 executable shell reused.
-- [ ] BASELINE-001 through BASELINE-004 preserved byte-for-byte.
-- [ ] Exact frozen SPEC-020 semantic packet reused.
-- [ ] Exact SPEC-021 explanatory semantic projection reused without semantic redesign.
-- [ ] No live/model/external calls.
-- [ ] `double-slit-experiment` remains focus.
-- [ ] Known overstated causal item remains excluded/demoted.
-- [ ] No fabricated canonical pairwise edges.
-- [ ] Depth affordance is contextual, not global.
-- [ ] Deeper view is interactive.
-- [ ] Canonical vs source-backed explanatory status remains distinguishable.
-- [ ] Full prose/evidence hidden until requested.
-- [ ] Left-map camera remains stable across depth transition.
-- [ ] Return restores parent learning state.
-- [ ] BASELINE-004 pan/zoom/region/concept/relationship behavior remains intact.
-- [ ] Browser console clean.
-- [ ] Full offline suite passes.
-- [ ] Codex provides low-attention owner-review handoff only after machine gate passes.
-- [ ] Final subjective verdict remains pending owner review.
+- [x] Exact BASELINE-004 executable shell reused.
+- [x] BASELINE-001 through BASELINE-004 preserved byte-for-byte.
+- [x] Exact frozen SPEC-020 semantic packet reused.
+- [x] Exact SPEC-021 explanatory semantic projection reused without semantic redesign.
+- [x] No live/model/external calls.
+- [x] `double-slit-experiment` remains focus.
+- [x] Known overstated causal item remains excluded/demoted.
+- [x] No fabricated canonical pairwise edges.
+- [x] Depth affordance is contextual, not global.
+- [x] Deeper view is interactive.
+- [x] Canonical vs source-backed explanatory status remains distinguishable.
+- [x] Full prose/evidence hidden until requested.
+- [x] Left-map camera remains stable across depth transition.
+- [x] Return restores parent learning state.
+- [x] BASELINE-004 pan/zoom/region/concept/relationship behavior remains intact.
+- [x] Browser console clean.
+- [x] Full offline suite passes.
+- [x] Codex provides low-attention owner-review handoff only after machine gate passes.
+- [x] Final subjective verdict supplied after owner review.
 
 ## Required durable machine report
 
@@ -319,6 +327,6 @@ Record at least:
 
 Do not improve the semantic packet and do not improve the UI.
 
-This experiment exists to answer one question with the strongest already-earned artifacts:
+This experiment existed to answer one question with the strongest already-earned artifacts:
 
 > **When trustworthy deeper meaning is placed inside the accepted learner workspace, does it actually help the learner understand?**
