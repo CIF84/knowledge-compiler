@@ -10,33 +10,29 @@ BASELINE-001, BASELINE-002, BASELINE-003, and BASELINE-004 remain preserved hist
 
 ## Last completed work packet
 
-`SPEC-024 — depth as continuous map expansion`
+`SPEC-025 — depth-invariant interaction grammar`
 
 Implementation status: `IMPLEMENTED_AWAITING_REVIEW`
 
-Owner verdict: `DEPTH_NAVIGATION_BETTER`
-
-Result: continuous spatial depth expansion is validated as a better navigation model than nested replacement depth. Deeper material remains connected to its origin in the knowledge map, parent context stays recoverable, and map pan/zoom provides a scalable surface. Owner review identified a remaining interaction gap: deeper selections do not yet inherit the same map ↔ representation ↔ explanation/evidence synchronization grammar as ordinary selections.
-
-SPEC-024 remains preserved unchanged as a functional historical experiment. It is not promoted to an accepted baseline by this verdict.
+Result: the isolated offline candidate composes the preserved SPEC-024 continuous-map expansion with one item-type-driven synchronization seam. The complete machine gate passes; the cognitive product verdict remains pending owner review.
 
 ## Current approved work packet
 
 ```text
-specs/SPEC-025-depth-invariant-interaction-grammar.md
+NONE
 ```
 
-Status: `APPROVED_FOR_IMPLEMENTATION`
+Status: `NONE`
 
-Authority: `OFFLINE_ONLY`
+Authority: `NONE`
 
-Human gate: `OWNER_REVIEW`
+Human gate: `NONE`
 
 Promotion: `NOT_AUTHORIZED`
 
 ## Current gate
 
-SPEC-025 implementation is authorized offline. Codex may execute the canonical active packet without additional owner interpretation. No live/model/external calls, semantic changes, baseline mutation, or promotion are authorized. If the machine gate passes, owner cognitive review is required before a product verdict.
+Owner cognitive review of the fixed SPEC-025 viewer is required. No further implementation, semantic change, UI change, baseline promotion, or product verdict is authorized.
 
 ## Frozen / protected state
 
@@ -46,12 +42,13 @@ SPEC-025 implementation is authorized offline. Codex may execute the canonical a
 - frozen SPEC-021 explanatory projection semantics;
 - completed SPEC-023/FIX-023 functional depth artifact as historical evidence;
 - completed SPEC-024 continuous-map depth artifact, preserved unchanged after owner verdict `DEPTH_NAVIGATION_BETTER`;
+- isolated SPEC-025 depth-invariant interaction artifact awaiting owner verdict;
 - trusted semantic vocabulary, grounding, provenance, and fail-closed behavior;
 - unrelated user work.
 
 ## Next intended action
 
-Codex executes the current approved packet. The experiment tests whether every revealed knowledge item can use one depth-invariant map ↔ learning synchronization grammar while preserving SPEC-024 spatial depth continuity and semantic trust.
+The owner uses the fixed SPEC-025 viewer and supplies spontaneous feedback on whether parent and deeper knowledge share one intuitive map ↔ learning synchronization grammar while semantic-strength distinctions and spatial continuity remain clear.
 
 ## Coordination rule
 

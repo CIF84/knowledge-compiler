@@ -1,0 +1,67 @@
+{
+  "browser_checks": {
+    "clear_selection_is_coherent_at_depth": true,
+    "deep_canonical_relationship_updates_surface_and_evidence": true,
+    "deep_concept_updates_full_learning_surface": true,
+    "deep_noncanonical_explanation_updates_surface_and_evidence": true,
+    "map_and_learning_focus_mirror": true,
+    "no_blue_selection_artifact": true,
+    "ordinary_navigation_intact": true,
+    "pan_zoom_and_collapse_intact": true,
+    "parent_selection_restores_ordinary_interaction": true,
+    "spec024_spatial_expansion_intact": true,
+    "switching_deep_items_has_no_stale_focus": true
+  },
+  "browser_console_clean": true,
+  "recursive_synchronization_regression": {
+    "cases": [
+      {
+        "kind": "concept",
+        "nested_expansion_id": "synthetic-second-expansion",
+        "parent_expansion_id": "depth-double-slit-v1",
+        "same_contract": true
+      },
+      {
+        "kind": "canonical",
+        "nested_expansion_id": "synthetic-second-expansion",
+        "parent_expansion_id": "depth-double-slit-v1",
+        "same_contract": true
+      },
+      {
+        "kind": "explanation",
+        "nested_expansion_id": "synthetic-second-expansion",
+        "parent_expansion_id": "depth-double-slit-v1",
+        "same_contract": true
+      }
+    ],
+    "depth_specific_branch_count": 0,
+    "status": "PASS"
+  },
+  "runtime_checks": {
+    "baseline001_through_004_unchanged": true,
+    "clear_selection_renders_depth_orientation": true,
+    "concept_uses_ordinary_selected_label": true,
+    "current_focus_resolved_by_item_type_not_depth_number": true,
+    "map_attention_and_right_focus_share_identity": true,
+    "parent_selection_restores_ordinary_learning_surface": true,
+    "recursive_contract_passes": true,
+    "right_learning_graph_tracks_selected_identity": true,
+    "spatial_depth_and_camera_seams_preserved": true,
+    "spec023_historical_artifact_unchanged": true,
+    "spec024_depth_engine_reused_with_only_sync_hooks": true,
+    "spec024_historical_artifact_unchanged": true,
+    "spec024_other_runtime_files_byte_identical": true,
+    "spec024_shell_composed_not_reimplemented": true
+  },
+  "semantic_checks": {
+    "candidate_projection_json_byte_identical": true,
+    "canonical_relationship_remains_canonical": true,
+    "concept_identity_not_promoted_to_relationship": true,
+    "known_rejected_causal_item_remains_noncanonical": true,
+    "pairwise_edge_fabrication_count_zero": true,
+    "semantic_vocabulary_unchanged": true,
+    "spec020_frozen_inputs_unchanged": true,
+    "spec021_projection_payload_unchanged": true
+  },
+  "status": "PASS"
+}

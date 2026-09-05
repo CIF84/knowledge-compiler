@@ -18,6 +18,7 @@ from .assertion_aware_representation import default_spec013_assertion_directory
 from .cognitive_topology import default_spec016_directory
 from .cognitive_topology_evaluation import prepare_cognitive_topology_evaluation
 from .continuous_navigation_evaluation import prepare_continuous_navigation_evaluation
+from .depth_interaction_evaluation import prepare_depth_interaction_evaluation
 from .depth_navigation_evaluation import prepare_depth_navigation_evaluation
 from .explanatory_projection_evaluation import prepare_explanatory_projection_evaluation
 from .interface_restoration_evaluation import prepare_interface_restoration_evaluation
@@ -293,6 +294,11 @@ def _parser() -> argparse.ArgumentParser:
         help="build the offline SPEC-024 continuous-map depth expansion",
     )
     depth_navigation.add_argument("--output-dir", required=True, type=Path)
+    depth_interaction = subcommands.add_parser(
+        "prepare-depth-interaction",
+        help="build the offline SPEC-025 depth-invariant interaction experiment",
+    )
+    depth_interaction.add_argument("--output-dir", required=True, type=Path)
     view = subcommands.add_parser("view-representations", help="serve a prepared representation review locally")
     view.add_argument("directory", type=Path)
     view.add_argument("--host", default="127.0.0.1")
@@ -304,6 +310,15 @@ def _parser() -> argparse.ArgumentParser:
 def main(argv: list[str] | None = None) -> int:
     args = _parser().parse_args(argv)
     try:
+        if args.command == "prepare-depth-interaction":
+            report = prepare_depth_interaction_evaluation(output_dir=args.output_dir)
+            print(
+                f"Wrote {args.output_dir / 'report.json'} "
+                f"(machine integrity {report['machine_integrity_verdict']}; "
+                "browser verification pending)"
+            )
+            return 0
+
         if args.command == "prepare-depth-navigation":
             report = prepare_depth_navigation_evaluation(output_dir=args.output_dir)
             print(

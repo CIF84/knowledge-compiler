@@ -1,0 +1,39 @@
+{
+  "browser": "Codex in-app Chromium",
+  "checks": {
+    "clear_selection_is_coherent_at_depth": true,
+    "deep_canonical_relationship_updates_surface_and_evidence": true,
+    "deep_concept_updates_full_learning_surface": true,
+    "deep_noncanonical_explanation_updates_surface_and_evidence": true,
+    "map_and_learning_focus_mirror": true,
+    "no_blue_selection_artifact": true,
+    "ordinary_navigation_intact": true,
+    "pan_zoom_and_collapse_intact": true,
+    "parent_selection_restores_ordinary_interaction": true,
+    "spec024_spatial_expansion_intact": true,
+    "switching_deep_items_has_no_stale_focus": true
+  },
+  "console": {
+    "errors": [],
+    "result": "PASS",
+    "warnings": []
+  },
+  "interaction_observations": {
+    "canonical_relationship": "relationship-7d1b3317e1e4c682 selected in both surfaces with one exact-evidence block",
+    "concept_sequence": [
+      "waveparticle-duality",
+      "photon"
+    ],
+    "depth_map_counts": {
+      "canonical_relationships": 2,
+      "concepts": 7,
+      "explanatory_items": 6,
+      "origin_paths": 1
+    },
+    "noncanonical_explanation": "explanation-ae10fa8748fdac1f remained source-backed non-canonical and revealed its exact evidence on request",
+    "parent_return": "Selecting Light restored the ordinary Electromagnetism learning surface while the expanded map remained available",
+    "stale_focus": "No prior deep item remained current after switching items or returning to parent context"
+  },
+  "status": "PASS",
+  "verified_at": "2026-09-05"
+}
