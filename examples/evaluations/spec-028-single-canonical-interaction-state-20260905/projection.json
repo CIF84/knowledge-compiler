@@ -1,0 +1,505 @@
+{
+  "canonical_items": [
+    {
+      "assertion_id": "assertion-3fadf1ab890d9bde",
+      "evidence": [
+        {
+          "document_id": "scope-eb184226638e5cbb",
+          "end_char": 644,
+          "quote": "a beam of light is directed through two narrow, closely spaced slits, producing an interference pattern of light and dark bands on a screen.",
+          "start_char": 504
+        }
+      ],
+      "id": "relationship-3fadf1ab890d9bde",
+      "predicate_meaning": "The source brings about the target as an effect.",
+      "relationship_type": "CAUSES",
+      "semantic_tier": "TRUSTED_CANONICAL",
+      "source_entity_id": "double-slit-experiment",
+      "statement": "The double-slit experiment produces an interference pattern.",
+      "target_entity_id": "interference-pattern"
+    },
+    {
+      "assertion_id": "assertion-7d1b3317e1e4c682",
+      "evidence": [
+        {
+          "document_id": "scope-eb184226638e5cbb",
+          "end_char": 304,
+          "quote": "Wave–particle duality is an example of the principle of complementarity in quantum physics.",
+          "start_char": 213
+        }
+      ],
+      "id": "relationship-7d1b3317e1e4c682",
+      "predicate_meaning": "The source is an illustrative instance of the target concept.",
+      "relationship_type": "EXAMPLE_OF",
+      "semantic_tier": "TRUSTED_CANONICAL",
+      "source_entity_id": "waveparticle-duality",
+      "statement": "Wave–particle duality is an example of the principle of complementarity.",
+      "target_entity_id": "principle-of-complementarity"
+    }
+  ],
+  "concepts": [
+    {
+      "description": "Matter structure whose internal electrons, energy levels, and spectra are modeled by quantum mechanics.",
+      "entity_id": "atom",
+      "entity_type": "OBJECT",
+      "is_focus": false,
+      "label": "atom"
+    },
+    {
+      "description": "Experiment in which particles or waves passing through two slits produce an interference pattern.",
+      "entity_id": "double-slit-experiment",
+      "entity_type": "PROCESS",
+      "is_focus": true,
+      "label": "double-slit experiment"
+    },
+    {
+      "description": "Corpuscular particle whose properties and behavior are central to the quantum phenomena described.",
+      "entity_id": "electron",
+      "entity_type": "OBJECT",
+      "is_focus": false,
+      "label": "electron"
+    },
+    {
+      "description": "Pattern of alternating light and dark bands produced by wave interference and reproduced by quantum particles statistically.",
+      "entity_id": "interference-pattern",
+      "entity_type": "OBJECT",
+      "is_focus": false,
+      "label": "interference pattern"
+    },
+    {
+      "description": "Quantum or smallest observable particle of the electromagnetic field.",
+      "entity_id": "photon",
+      "entity_type": "OBJECT",
+      "is_focus": false,
+      "label": "photon"
+    },
+    {
+      "description": "Principle that a quantum system displays wave-like or particle-like properties according to the measurement performed.",
+      "entity_id": "principle-of-complementarity",
+      "entity_type": "CONCEPT",
+      "is_focus": false,
+      "label": "principle of complementarity"
+    },
+    {
+      "description": "Principle that photons and matter exhibit both wave-like and particle-like behavior, neither classical description being sufficient alone.",
+      "entity_id": "waveparticle-duality",
+      "entity_type": "CONCEPT",
+      "is_focus": false,
+      "label": "wave–particle duality"
+    }
+  ],
+  "explanatory_items": [
+    {
+      "assertion_id": "assertion-6a9db96dcce9c27d",
+      "directional": false,
+      "evidence": [
+        {
+          "document_id": "scope-eb184226638e5cbb",
+          "end_char": 211,
+          "quote": "The concept of wave–particle duality says that neither the classical concept of \"particle\" nor of \"wave\" can fully describe the behavior of quantum-scale objects, either photons or matter.",
+          "start_char": 23
+        }
+      ],
+      "id": "explanation-6a9db96dcce9c27d",
+      "participant_entity_ids": [
+        "waveparticle-duality",
+        "photon"
+      ],
+      "presentation_role": "SOURCE_BACKED_EXPLANATION",
+      "semantic_tier": "SOURCE_BACKED_NON_CANONICAL",
+      "short_label": "Source explanation 1",
+      "statement": "Wave–particle duality says that neither the classical concept of a particle nor the classical concept of a wave can fully describe quantum-scale objects, including photons and matter."
+    },
+    {
+      "assertion_id": "assertion-29893ca25e0fd462",
+      "directional": false,
+      "evidence": [
+        {
+          "document_id": "scope-eb184226638e5cbb",
+          "end_char": 782,
+          "quote": "the double-slit experiment was seen as a demonstration of the wave nature of light.",
+          "start_char": 699
+        }
+      ],
+      "id": "explanation-29893ca25e0fd462",
+      "participant_entity_ids": [
+        "double-slit-experiment"
+      ],
+      "presentation_role": "SOURCE_BACKED_EXPLANATION",
+      "semantic_tier": "SOURCE_BACKED_NON_CANONICAL",
+      "short_label": "Source explanation 2",
+      "statement": "The double-slit experiment was seen as a demonstration of the wave nature of light."
+    },
+    {
+      "assertion_id": "assertion-ae10fa8748fdac1f",
+      "directional": false,
+      "evidence": [
+        {
+          "document_id": "scope-eb184226638e5cbb",
+          "end_char": 944,
+          "quote": "Variations of the double-slit experiment have been performed using electrons, atoms, and even large molecules, and the same type of interference pattern is seen.",
+          "start_char": 783
+        }
+      ],
+      "id": "explanation-ae10fa8748fdac1f",
+      "participant_entity_ids": [
+        "double-slit-experiment",
+        "electron",
+        "atom",
+        "interference-pattern"
+      ],
+      "presentation_role": "SOURCE_BACKED_EXPLANATION",
+      "semantic_tier": "SOURCE_BACKED_NON_CANONICAL",
+      "short_label": "Source explanation 3",
+      "statement": "Variations of the double-slit experiment using electrons and atoms produce the same type of interference pattern."
+    },
+    {
+      "assertion_id": "assertion-49c2a9a32b078712",
+      "directional": false,
+      "evidence": [
+        {
+          "document_id": "scope-eb184226638e5cbb",
+          "end_char": 1175,
+          "quote": "If the source intensity is turned down, the same interference pattern will slowly build up, one \"count\" or particle (e.g. photon or electron) at a time.",
+          "start_char": 1023
+        }
+      ],
+      "id": "explanation-49c2a9a32b078712",
+      "participant_entity_ids": [
+        "interference-pattern",
+        "photon",
+        "electron"
+      ],
+      "presentation_role": "SOURCE_BACKED_EXPLANATION",
+      "semantic_tier": "SOURCE_BACKED_NON_CANONICAL",
+      "short_label": "Source explanation 4",
+      "statement": "When the source intensity is reduced, the interference pattern builds up one particle at a time, including photons or electrons."
+    },
+    {
+      "assertion_id": "assertion-a4ca636403e86833",
+      "directional": false,
+      "evidence": [
+        {
+          "document_id": "scope-eb184226638e5cbb",
+          "end_char": 1287,
+          "quote": "The quantum system acts as a wave when passing through the double slits, but as a particle when it is detected.",
+          "start_char": 1176
+        }
+      ],
+      "id": "explanation-a4ca636403e86833",
+      "participant_entity_ids": [
+        "double-slit-experiment",
+        "principle-of-complementarity"
+      ],
+      "presentation_role": "SOURCE_BACKED_EXPLANATION",
+      "semantic_tier": "SOURCE_BACKED_NON_CANONICAL",
+      "short_label": "Source explanation 5",
+      "statement": "In the double-slit experiment, the quantum system acts as a wave when passing through the double slits and as a particle when detected."
+    },
+    {
+      "assertion_id": "assertion-0aab5775b0ce1164",
+      "directional": false,
+      "evidence": [
+        {
+          "document_id": "scope-eb184226638e5cbb",
+          "end_char": 1725,
+          "quote": "However, the distribution pattern of many individual particles mimics the diffraction pattern produced by waves.",
+          "start_char": 1613
+        }
+      ],
+      "id": "explanation-0aab5775b0ce1164",
+      "participant_entity_ids": [
+        "interference-pattern"
+      ],
+      "presentation_role": "SOURCE_BACKED_EXPLANATION",
+      "semantic_tier": "SOURCE_BACKED_NON_CANONICAL",
+      "short_label": "Source explanation 6",
+      "statement": "The distribution pattern of many individual particles mimics the diffraction pattern produced by waves."
+    }
+  ],
+  "focus_entity_id": "double-slit-experiment",
+  "id": "projection-spec021-double-slit-experiment",
+  "layout": {
+    "canonical_edges": [
+      {
+        "canonical_item_id": "relationship-3fadf1ab890d9bde",
+        "directed": true,
+        "from": {
+          "x": 500,
+          "y": 350
+        },
+        "to": {
+          "x": 691,
+          "y": 452
+        }
+      },
+      {
+        "canonical_item_id": "relationship-7d1b3317e1e4c682",
+        "directed": true,
+        "from": {
+          "x": 309,
+          "y": 247
+        },
+        "to": {
+          "x": 309,
+          "y": 453
+        }
+      }
+    ],
+    "concept_positions": {
+      "atom": {
+        "x": 500,
+        "y": 145
+      },
+      "double-slit-experiment": {
+        "x": 500,
+        "y": 350
+      },
+      "electron": {
+        "x": 691,
+        "y": 248
+      },
+      "interference-pattern": {
+        "x": 691,
+        "y": 452
+      },
+      "photon": {
+        "x": 500,
+        "y": 555
+      },
+      "principle-of-complementarity": {
+        "x": 309,
+        "y": 453
+      },
+      "waveparticle-duality": {
+        "x": 309,
+        "y": 247
+      }
+    },
+    "explanatory_anchors": [
+      {
+        "explanatory_item_id": "explanation-6a9db96dcce9c27d",
+        "x": 500,
+        "y": 60
+      },
+      {
+        "explanatory_item_id": "explanation-29893ca25e0fd462",
+        "x": 851,
+        "y": 205
+      },
+      {
+        "explanatory_item_id": "explanation-ae10fa8748fdac1f",
+        "x": 851,
+        "y": 495
+      },
+      {
+        "explanatory_item_id": "explanation-49c2a9a32b078712",
+        "x": 500,
+        "y": 640
+      },
+      {
+        "explanatory_item_id": "explanation-a4ca636403e86833",
+        "x": 149,
+        "y": 495
+      },
+      {
+        "explanatory_item_id": "explanation-0aab5775b0ce1164",
+        "x": 149,
+        "y": 205
+      }
+    ],
+    "explanatory_attachments": [
+      {
+        "explanatory_item_id": "explanation-6a9db96dcce9c27d",
+        "from": {
+          "x": 500,
+          "y": 60
+        },
+        "kind": "NON_DIRECTIONAL_PRESENTATION_ATTACHMENT",
+        "participant_entity_id": "waveparticle-duality",
+        "to": {
+          "x": 309,
+          "y": 247
+        }
+      },
+      {
+        "explanatory_item_id": "explanation-6a9db96dcce9c27d",
+        "from": {
+          "x": 500,
+          "y": 60
+        },
+        "kind": "NON_DIRECTIONAL_PRESENTATION_ATTACHMENT",
+        "participant_entity_id": "photon",
+        "to": {
+          "x": 500,
+          "y": 555
+        }
+      },
+      {
+        "explanatory_item_id": "explanation-29893ca25e0fd462",
+        "from": {
+          "x": 851,
+          "y": 205
+        },
+        "kind": "NON_DIRECTIONAL_PRESENTATION_ATTACHMENT",
+        "participant_entity_id": "double-slit-experiment",
+        "to": {
+          "x": 500,
+          "y": 350
+        }
+      },
+      {
+        "explanatory_item_id": "explanation-ae10fa8748fdac1f",
+        "from": {
+          "x": 851,
+          "y": 495
+        },
+        "kind": "NON_DIRECTIONAL_PRESENTATION_ATTACHMENT",
+        "participant_entity_id": "double-slit-experiment",
+        "to": {
+          "x": 500,
+          "y": 350
+        }
+      },
+      {
+        "explanatory_item_id": "explanation-ae10fa8748fdac1f",
+        "from": {
+          "x": 851,
+          "y": 495
+        },
+        "kind": "NON_DIRECTIONAL_PRESENTATION_ATTACHMENT",
+        "participant_entity_id": "electron",
+        "to": {
+          "x": 691,
+          "y": 248
+        }
+      },
+      {
+        "explanatory_item_id": "explanation-ae10fa8748fdac1f",
+        "from": {
+          "x": 851,
+          "y": 495
+        },
+        "kind": "NON_DIRECTIONAL_PRESENTATION_ATTACHMENT",
+        "participant_entity_id": "atom",
+        "to": {
+          "x": 500,
+          "y": 145
+        }
+      },
+      {
+        "explanatory_item_id": "explanation-ae10fa8748fdac1f",
+        "from": {
+          "x": 851,
+          "y": 495
+        },
+        "kind": "NON_DIRECTIONAL_PRESENTATION_ATTACHMENT",
+        "participant_entity_id": "interference-pattern",
+        "to": {
+          "x": 691,
+          "y": 452
+        }
+      },
+      {
+        "explanatory_item_id": "explanation-49c2a9a32b078712",
+        "from": {
+          "x": 500,
+          "y": 640
+        },
+        "kind": "NON_DIRECTIONAL_PRESENTATION_ATTACHMENT",
+        "participant_entity_id": "interference-pattern",
+        "to": {
+          "x": 691,
+          "y": 452
+        }
+      },
+      {
+        "explanatory_item_id": "explanation-49c2a9a32b078712",
+        "from": {
+          "x": 500,
+          "y": 640
+        },
+        "kind": "NON_DIRECTIONAL_PRESENTATION_ATTACHMENT",
+        "participant_entity_id": "photon",
+        "to": {
+          "x": 500,
+          "y": 555
+        }
+      },
+      {
+        "explanatory_item_id": "explanation-49c2a9a32b078712",
+        "from": {
+          "x": 500,
+          "y": 640
+        },
+        "kind": "NON_DIRECTIONAL_PRESENTATION_ATTACHMENT",
+        "participant_entity_id": "electron",
+        "to": {
+          "x": 691,
+          "y": 248
+        }
+      },
+      {
+        "explanatory_item_id": "explanation-a4ca636403e86833",
+        "from": {
+          "x": 149,
+          "y": 495
+        },
+        "kind": "NON_DIRECTIONAL_PRESENTATION_ATTACHMENT",
+        "participant_entity_id": "double-slit-experiment",
+        "to": {
+          "x": 500,
+          "y": 350
+        }
+      },
+      {
+        "explanatory_item_id": "explanation-a4ca636403e86833",
+        "from": {
+          "x": 149,
+          "y": 495
+        },
+        "kind": "NON_DIRECTIONAL_PRESENTATION_ATTACHMENT",
+        "participant_entity_id": "principle-of-complementarity",
+        "to": {
+          "x": 309,
+          "y": 453
+        }
+      },
+      {
+        "explanatory_item_id": "explanation-0aab5775b0ce1164",
+        "from": {
+          "x": 149,
+          "y": 205
+        },
+        "kind": "NON_DIRECTIONAL_PRESENTATION_ATTACHMENT",
+        "participant_entity_id": "interference-pattern",
+        "to": {
+          "x": 691,
+          "y": 452
+        }
+      }
+    ],
+    "height": 700,
+    "strategy": "FOCUS_CENTERED_RADIAL_WITH_EXPLANATORY_ANCHORS",
+    "width": 1000
+  },
+  "metadata": {
+    "canonical_knowledge_model_changed": false,
+    "global_structure_detector_changed": false,
+    "presentation_role_vocabulary": [
+      "SOURCE_BACKED_EXPLANATION"
+    ],
+    "presentation_roles_are_canonical_predicates": false,
+    "projection_version": "spec-021-v1"
+  },
+  "projection_type": "FOCUS_EXPLANATORY_PROJECTION",
+  "selection_rule": {
+    "assertion_fidelity_required": "FAITHFUL",
+    "direct_rule": "Select focus-participant assertions not already represented by a trusted canonical item.",
+    "domain_knowledge_ranking": false,
+    "maximum_explanatory_items": 6,
+    "ordering": "evidence_start_char_then_assertion_id",
+    "surrounding_rule": "Then select assertions sharing a participant with the focus, trusted canonical endpoints, or direct explanatory items.",
+    "version": "spec-021-focus-selection-v1"
+  }
+}

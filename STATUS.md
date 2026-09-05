@@ -10,31 +10,29 @@ BASELINE-001, BASELINE-002, BASELINE-003, and BASELINE-004 remain preserved hist
 
 ## Last completed work packet
 
-`SPEC-027 — recursive bidirectional interaction grammar`
+`SPEC-028 — single canonical interaction state`
 
 Implementation status: `IMPLEMENTED_AWAITING_REVIEW`
 
-Owner verdict: `MIXED`
-
-Result: the fixed viewer materially improved revealed-depth interaction, but owner review found that map and right-pane semantic states can still diverge. Event origin can produce mismatched preview/selection meaning, stale highlights, or active/inactive disagreement across projections. Preserve SPEC-027 unchanged as historical evidence; do not promote it.
+Result: the isolated offline candidate replaces surface-owned semantic synchronization with one canonical reducer and one-way map, representation, and explanation projections. The preservation, ten-level recursion, state-equality, stale-state, browser interaction, and console gates pass; the cognitive product verdict remains pending owner review.
 
 ## Current approved work packet
 
 ```text
-specs/SPEC-028-single-canonical-interaction-state.md
+NONE
 ```
 
-Status: `APPROVED_FOR_IMPLEMENTATION`
+Status: `NONE`
 
-Authority: `OFFLINE_ONLY`
+Authority: `NONE`
 
-Human gate: `OWNER_REVIEW`
+Human gate: `NONE`
 
 Promotion: `NOT_AUTHORIZED`
 
 ## Current gate
 
-SPEC-028 is authorized for implementation. No owner decision is required before Codex executes the active packet. No baseline promotion or subjective product verdict is authorized.
+Owner cognitive review of the fixed SPEC-028 viewer is required. No further implementation, semantic change, UI change, baseline promotion, or product verdict is authorized.
 
 ## Frozen / protected state
 
@@ -47,12 +45,13 @@ SPEC-028 is authorized for implementation. No owner decision is required before 
 - completed SPEC-025 depth-invariant-selection artifact, preserved unchanged after owner verdict `MIXED`;
 - completed SPEC-026 semantic-interaction artifact, preserved unchanged after owner verdict `MIXED`;
 - completed SPEC-027 recursive-interaction artifact, preserved unchanged after owner verdict `MIXED`;
+- isolated SPEC-028 canonical-interaction-state artifact awaiting owner verdict;
 - trusted semantic vocabulary, grounding, provenance, and fail-closed behavior;
 - unrelated user work.
 
 ## Next intended action
 
-Codex executes the active SPEC-028 packet. The experiment replaces surface-to-surface semantic-state synchronization with one canonical semantic interaction state projected into map, representation, and explanation surfaces, then proves parity with deterministic recursion through at least ten depth levels before requesting owner review.
+The owner uses the fixed SPEC-028 viewer and supplies spontaneous feedback on whether map and right-pane projections remain coherent across interaction origins, rapid switching, clearing, and revealed depth.
 
 ## Coordination rule
 
