@@ -14,25 +14,29 @@ BASELINE-001, BASELINE-002, BASELINE-003, and BASELINE-004 remain preserved hist
 
 Implementation status: `IMPLEMENTED_AWAITING_REVIEW`
 
-Result: the exact BASELINE-004 workspace engine and frozen SPEC-020 / SPEC-021 semantic payload are composed in an isolated continuous-map depth expansion. The full machine gate passes; the cognitive product verdict remains pending owner review.
+Owner verdict: `DEPTH_NAVIGATION_BETTER`
+
+Result: continuous spatial depth expansion is validated as a better navigation model than nested replacement depth. Deeper material remains connected to its origin in the knowledge map, parent context stays recoverable, and map pan/zoom provides a scalable surface. Owner review identified a remaining interaction gap: deeper selections do not yet inherit the same map ↔ representation ↔ explanation/evidence synchronization grammar as ordinary selections.
+
+SPEC-024 remains preserved unchanged as a functional historical experiment. It is not promoted to an accepted baseline by this verdict.
 
 ## Current approved work packet
 
 ```text
-NONE
+specs/SPEC-025-depth-invariant-interaction-grammar.md
 ```
 
-Status: `NONE`
+Status: `APPROVED`
 
-Authority: `NONE`
+Authority: `OFFLINE_ONLY`
 
-Human gate: `NONE`
+Human gate: `OWNER_REVIEW`
 
 Promotion: `NOT_AUTHORIZED`
 
 ## Current gate
 
-Owner cognitive review of the fixed SPEC-024 viewer is required. No further implementation, semantic change, UI change, baseline promotion, or product verdict is authorized.
+SPEC-025 implementation is authorized offline. Codex may execute the canonical active packet without additional owner interpretation. No live/model/external calls, semantic changes, baseline mutation, or promotion are authorized. If the machine gate passes, owner cognitive review is required before a product verdict.
 
 ## Frozen / protected state
 
@@ -41,13 +45,13 @@ Owner cognitive review of the fixed SPEC-024 viewer is required. No further impl
 - frozen SPEC-020 realistic quantum semantic packet and its reviewed defects;
 - frozen SPEC-021 explanatory projection semantics;
 - completed SPEC-023/FIX-023 functional depth artifact as historical evidence;
-- isolated SPEC-024 continuous-map depth artifact awaiting owner verdict;
+- completed SPEC-024 continuous-map depth artifact, preserved unchanged after owner verdict `DEPTH_NAVIGATION_BETTER`;
 - trusted semantic vocabulary, grounding, provenance, and fail-closed behavior;
 - unrelated user work.
 
 ## Next intended action
 
-The owner uses the fixed SPEC-024 viewer and supplies spontaneous feedback on whether deeper material feels like continuing through the same knowledge world while retaining orientation and trust. ChatGPT may then record one allowed verdict; any promotion or further implementation requires separate authority.
+Codex executes the current approved packet. The experiment tests whether every revealed knowledge item can use one depth-invariant map ↔ learning synchronization grammar while preserving SPEC-024 spatial depth continuity and semantic trust.
 
 ## Coordination rule
 
