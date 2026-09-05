@@ -10,29 +10,29 @@ BASELINE-001, BASELINE-002, BASELINE-003, and BASELINE-004 remain preserved hist
 
 ## Last completed work packet
 
-`OPS-003 — repository control plane and low-attention handoff`
+`SPEC-023 — realistic semantic depth through explanatory projection`
 
-Review status: `ACCEPTED_FOR_PROSPECTIVE_VALIDATION`
+Implementation status: `IMPLEMENTED_AWAITING_REVIEW`
 
-Result: repository control plane, explicit authority boundaries, deterministic active-work validation, and low-attention handoff protocol are implemented. The next normal product experiment is the prospective operational test.
+Result: the exact BASELINE-004 executable and frozen SPEC-020 / SPEC-021 double-slit semantic payload are composed in an isolated owner-review artifact. The full machine gate passes; the cognitive product verdict remains pending owner review.
 
 ## Current approved work packet
 
 ```text
-specs/SPEC-023-realistic-semantic-depth-through-explanatory-projection.md
+NONE
 ```
 
-Status: `APPROVED_FOR_IMPLEMENTATION`
+Status: `NONE`
 
-Authority: `OFFLINE_ONLY`
+Authority: `NONE`
 
-Human gate: `OWNER_REVIEW`
+Human gate: `NONE`
 
 Promotion: `NOT_AUTHORIZED`
 
 ## Current gate
 
-Prepare the existing frozen double-slit explanatory projection for owner cognitive review inside the exact BASELINE-004 learner-navigation workspace. No semantic regeneration, model calls, UI redesign, or baseline modification is authorized.
+Owner cognitive review of the fixed SPEC-023 viewer is required. No further implementation, semantic change, UI change, baseline promotion, or product verdict is authorized.
 
 ## Frozen / protected state
 
@@ -40,12 +40,13 @@ Prepare the existing frozen double-slit explanatory projection for owner cogniti
 - BASELINE-004 learner-navigation behavior accepted after SPEC-022;
 - frozen SPEC-020 realistic quantum semantic packet and its reviewed defects;
 - frozen SPEC-021 explanatory projection semantics;
+- isolated SPEC-023 review artifact awaiting owner verdict;
 - trusted semantic vocabulary, grounding, provenance, and fail-closed behavior;
 - unrelated user work.
 
 ## Next intended action
 
-Codex executes the current approved work packet using `AGENTS.md`, this `STATUS.md`, and SPEC-023. It should operate autonomously below the declared decision boundary, stop only on a genuine authority/integrity blocker, and—if the machine gate passes—return a concise owner-review handoff with the exact viewer command.
+The owner uses the fixed SPEC-023 viewer and supplies spontaneous feedback on whether the deeper double-slit representation helps understanding. ChatGPT may then record one allowed verdict; any promotion or further implementation requires separate authority.
 
 ## Coordination rule
 
