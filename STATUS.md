@@ -10,29 +10,29 @@ BASELINE-001, BASELINE-002, BASELINE-003, and BASELINE-004 remain preserved hist
 
 ## Last completed work packet
 
-`SPEC-022 — learner navigation grammar`
+`OPS-003 — repository control plane and low-attention handoff`
 
-Verdict: `NAVIGATION_GRAMMAR_BETTER`
+Implementation status: `IMPLEMENTED_AWAITING_REVIEW`
 
-Promotion: promoted unchanged to `BASELINE-004`.
+Result: operational hypothesis implemented for prospective validation.
 
 ## Current approved work packet
 
 ```text
-ops/OPS-003-repository-control-plane-and-low-attention-handoff.md
+NONE
 ```
 
-Status: `APPROVED_FOR_IMPLEMENTATION`
+Status: `NONE`
 
-Authority: `OFFLINE_ONLY`
+Authority: `NONE`
 
-Human gate: `CHATGPT_REVIEW`
+Human gate: `NONE`
 
 Promotion: `NOT_AUTHORIZED`
 
 ## Current gate
 
-Implement OPS-003 without changing learner-facing behavior, semantic/provenance behavior, or any frozen baseline asset. Establish explicit active-work coordination, authority boundaries, and concise handoff semantics.
+Independent ChatGPT repository review of OPS-003 implementation is required. No owner cognitive UI review is required.
 
 ## Frozen / protected state
 
@@ -43,7 +43,7 @@ Implement OPS-003 without changing learner-facing behavior, semantic/provenance 
 
 ## Next intended action
 
-Codex executes the current approved work packet using root `AGENTS.md`, this `STATUS.md`, and the active OPS contract. After completion and push, ChatGPT independently reviews the repository implementation against OPS-003.
+ChatGPT independently reviews the repository implementation against OPS-003. A later explicitly approved work packet should prospectively test whether this control plane reduces owner intervention at non-decision boundaries.
 
 ## Coordination rule
 

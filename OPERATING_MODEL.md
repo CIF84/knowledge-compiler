@@ -13,6 +13,8 @@ ChatGPT — product and architecture reasoning
         ↓
 SPEC-N — bounded implementation experiment
         ↓
+STATUS.md — explicit approved-work pointer and authority
+        ↓
 Codex — implementation + tests + evaluation + commit + push
         ↓
 GitHub — canonical implementation state
@@ -36,6 +38,7 @@ next highest-value uncertainty
 - define narrow experiments;
 - write implementation SPECs;
 - verify SPEC completeness before handoff;
+- record the approved work packet and its bounded authority in `STATUS.md`;
 - independently inspect completed implementation;
 - guide focused human review when product behavior cannot be established from repository evidence;
 - write DEBRIEFS;
@@ -46,6 +49,7 @@ Do not accept implementation summaries as verification when repository inspectio
 ### Codex
 
 - apply root `AGENTS.md` as invariant operating context;
+- resolve the active approved contract through root `STATUS.md` rather than filename recency;
 - inspect the repository and only the experiment-specific history needed by the active contract;
 - treat the active SPEC as the implementation contract;
 - implement autonomously within scope;
@@ -53,7 +57,7 @@ Do not accept implementation summaries as verification when repository inspectio
 - avoid unrelated refactoring;
 - preserve failed experimental attempts when required;
 - commit and push before review handoff;
-- report architecture, validation, evaluation, deviations, and commit SHA;
+- update the active-work state at completion and provide a concise, decision-oriented handoff;
 - for human-facing increments, provide the simplest exact command needed for owner review rather than declaring subjective product success itself;
 - when live provider transmission is not already clearly authorized, request explicit approval before sending source material.
 
@@ -65,15 +69,41 @@ GitHub is the durable source of truth for implementation, specs, debriefs, proje
 
 ## Context Loading
 
-Repository context has three layers:
+Repository context has four layers:
 
 ```text
 invariant context          → AGENTS.md
+current coordination       → STATUS.md
 active experiment context  → current SPEC or OPS
 historical / deep context  → DEBRIEFs and canonical project-model documents
 ```
 
-A normal Codex implementation run reads the first two layers, then loads historical or deep context only when the active contract explicitly requires it or a concrete ambiguity makes it relevant. Memory should be available, not eagerly loaded. Broad rereading of `README.md`, `ROADMAP.md`, `PROJECT_MEMORY.md`, `ARCHITECTURE.md`, `OPERATING_MODEL.md`, and `PROJECT_HEALTH.md` is not a routine startup requirement.
+A normal Codex implementation run reads `AGENTS.md`, then `STATUS.md`, then the active contract named there. It loads historical or deep context only when the active contract explicitly requires it or a concrete ambiguity makes it relevant. Memory should be available, not eagerly loaded. Broad rereading of `README.md`, `ROADMAP.md`, `PROJECT_MEMORY.md`, `ARCHITECTURE.md`, `OPERATING_MODEL.md`, and `PROJECT_HEALTH.md` is not a routine startup requirement.
+
+## Repository Control Plane
+
+Root `STATUS.md` is the authoritative current-work pointer. It records the accepted baseline relevant to current work, the last completed packet, the active approved packet or explicit `NONE`, the active packet's control metadata, the current gate, protected state, and the next intended action.
+
+Do not infer active work from filename numbers or recency. A non-`NONE` pointer must resolve to an existing `SPEC-*` or `OPS-*`, its compact control metadata must match the contract when that future-style header is present, and its recorded status must permit implementation. Historical contracts without the new header remain usable through explicit `STATUS.md` metadata. Stale, malformed, contradictory, or non-approved states fail visibly rather than being guessed through.
+
+`STATUS.md` is coordination state. It must not become a duplicate experiment registry, manually maintained source for runtime counts, or replacement for SPECs, DEBRIEFs, reports, and baselines.
+
+The narrow offline validator is `knowledge_compiler.control_plane.validate_control_plane`; its regression suite is `tests/test_control_plane.py`.
+
+## Execution Authority
+
+Once `STATUS.md` names an `APPROVED_FOR_IMPLEMENTATION` contract, approval covers the mechanical lifecycle already bounded by that contract: repository inspection/reconciliation, implementation, authorized offline testing/evaluation, deterministic artifact generation, in-scope defect repair, commit, required canonical push, and handoff.
+
+Codex must stop for a genuine authority boundary:
+
+- an external/live/paid/provider call not explicitly bounded by the contract;
+- a semantic vocabulary, grounding, provenance, or fail-closed change outside scope;
+- frozen-baseline modification;
+- experiment promotion or a subjective verdict reserved for owner/ChatGPT review;
+- materially ambiguous product/architecture choice or scope expansion;
+- destructive action or alteration of unrelated user work.
+
+Available credentials do not extend contract authority. Git fetch/push in the normal repository lifecycle is operational plumbing, not an experimental provider call.
 
 ## SPEC Protocol
 
@@ -86,6 +116,27 @@ Prefer one major uncertainty per SPEC.
 Before handoff, verify that the committed SPEC is complete — especially acceptance criteria, live-evaluation rules where applicable, and required handoff. SPEC-008 was accidentally truncated and should remain a process warning.
 
 For human-facing experiments, distinguish deterministic implementation acceptance from the human product verdict.
+
+## Contract Control Header
+
+Future SPECs and OPS records should expose this compact control information near the top:
+
+```text
+Status: DRAFT | APPROVED_FOR_IMPLEMENTATION | IMPLEMENTED_AWAITING_REVIEW | COMPLETED | REJECTED
+Authority: OFFLINE_ONLY | LIVE_CALLS_EXPLICITLY_BOUNDED | BOUNDED_<explicitly defined authority>
+Human gate: NONE | OWNER_REVIEW | CHATGPT_REVIEW | OWNER_AND_CHATGPT_REVIEW
+Promotion: NOT_AUTHORIZED | AUTHORIZED_IF_<explicit condition>
+```
+
+Historical contracts remain valid without retrofitting. Unknown or unbounded values in an active contract must not be interpreted optimistically.
+
+## Low-Attention Handoff
+
+Chat handoff is a decision interface; durable repository artifacts carry detailed machine evidence.
+
+A normal successful Codex handoff should contain only the work packet and completion/result state, validation summary, material deviations or dependency changes, repository/commit/push state, whether a human decision is required, an exact review command only when human interaction is required, and a path to the durable report when one exists.
+
+Long machine-generated inventories should remain in repository artifacts unless needed to explain a failure, deviation, safety issue, or decision.
 
 ## DEBRIEF Protocol
 

@@ -1,6 +1,9 @@
 # OPS-003 — Repository Control Plane and Low-Attention Handoff
 
-Status: `APPROVED_FOR_IMPLEMENTATION`
+Status: `IMPLEMENTED_AWAITING_REVIEW`
+Authority: `OFFLINE_ONLY`
+Human gate: `CHATGPT_REVIEW`
+Promotion: `NOT_AUTHORIZED`
 
 ## Primary uncertainty
 
