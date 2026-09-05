@@ -18,6 +18,7 @@ from .assertion_aware_representation import default_spec013_assertion_directory
 from .cognitive_topology import default_spec016_directory
 from .cognitive_topology_evaluation import prepare_cognitive_topology_evaluation
 from .continuous_navigation_evaluation import prepare_continuous_navigation_evaluation
+from .explanatory_projection_evaluation import prepare_explanatory_projection_evaluation
 from .interface_restoration_evaluation import prepare_interface_restoration_evaluation
 from .navigation_learning_evaluation import prepare_navigation_learning_evaluation
 from .semantic_depth_evaluation import (
@@ -267,6 +268,11 @@ def _parser() -> argparse.ArgumentParser:
         help="admit a repository-reviewed SPEC-020 child into the frozen workspace shell",
     )
     semantic_depth_finalize.add_argument("output_dir", type=Path)
+    explanatory_projection = subcommands.add_parser(
+        "prepare-explanatory-projection",
+        help="build the offline SPEC-021 focus-preserving explanatory projection",
+    )
+    explanatory_projection.add_argument("--output-dir", required=True, type=Path)
     view = subcommands.add_parser("view-representations", help="serve a prepared representation review locally")
     view.add_argument("directory", type=Path)
     view.add_argument("--host", default="127.0.0.1")
@@ -278,6 +284,14 @@ def _parser() -> argparse.ArgumentParser:
 def main(argv: list[str] | None = None) -> int:
     args = _parser().parse_args(argv)
     try:
+        if args.command == "prepare-explanatory-projection":
+            report = prepare_explanatory_projection_evaluation(output_dir=args.output_dir)
+            print(
+                f"Wrote {args.output_dir / 'report.json'} "
+                f"(machine integrity {report['machine_integrity_verdict']}; owner review pending)"
+            )
+            return 0 if report["machine_integrity_verdict"] == "PASS" else 1
+
         if args.command == "finalize-semantic-depth":
             report = finalize_semantic_depth_evaluation(args.output_dir)
             print(
