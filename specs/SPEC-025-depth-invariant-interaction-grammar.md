@@ -1,6 +1,6 @@
 # SPEC-025 — Depth-Invariant Interaction Grammar
 
-Status: `APPROVED`
+Status: `APPROVED_FOR_IMPLEMENTATION`
 Authority: `OFFLINE_ONLY`
 Human gate: `OWNER_REVIEW`
 Promotion: `NOT_AUTHORIZED`
