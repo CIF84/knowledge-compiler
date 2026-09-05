@@ -1,0 +1,47 @@
+{
+  "admission": "FAIL_FOCUS_ABSENT",
+  "compiled_counts": {
+    "claims": 6,
+    "entities": 7,
+    "propositions": 0,
+    "relationships": 3
+  },
+  "detector_configuration_changed": false,
+  "detector_version": "spec-004-v1",
+  "expected_preserved_result": "2-node hierarchy; focus absent; admission fail",
+  "focus_present": false,
+  "focus_structure_ids": [],
+  "path": "EXISTING_CANONICAL_STRUCTURE_DETECTOR",
+  "structure_count": 1,
+  "structures": [
+    {
+      "entity_ids": [
+        "principle-of-complementarity",
+        "waveparticle-duality"
+      ],
+      "id": "structure-hierarchy-a279398ac2dd01a1",
+      "metadata": {
+        "contains_cycle": false,
+        "hierarchy_relationship_type": "EXAMPLE_OF",
+        "leaves": [
+          "waveparticle-duality"
+        ],
+        "roots": [
+          "principle-of-complementarity"
+        ],
+        "supporting_relationship_ids_by_edge": [
+          [
+            "relationship-7d1b3317e1e4c682"
+          ]
+        ]
+      },
+      "relationship_ids": [
+        "relationship-7d1b3317e1e4c682"
+      ],
+      "relationship_types": [
+        "EXAMPLE_OF"
+      ],
+      "structure_type": "HIERARCHY"
+    }
+  ]
+}
