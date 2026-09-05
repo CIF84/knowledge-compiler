@@ -1,0 +1,77 @@
+{
+  "baseline_aggregate_hashes_after": {
+    "BASELINE-001": "9288d1fba5895cd374db1e6e9cc7bec67c79cc3a31263af2b7874ef8d7c1338f",
+    "BASELINE-002": "c392a194ae0ba2a75fad343a78923d3b42db59fa8faebfa11f2db3c43102e9a1",
+    "BASELINE-003": "99331883832864d3bae8c336c0d5837ab2b3748303efefccae0f034c0f06fde2",
+    "BASELINE-004": "d34a569e80c5b57d9228b1000c2f74648522725123ba26bea738090f2a7760ce"
+  },
+  "baseline_aggregate_hashes_before": {
+    "BASELINE-001": "9288d1fba5895cd374db1e6e9cc7bec67c79cc3a31263af2b7874ef8d7c1338f",
+    "BASELINE-002": "c392a194ae0ba2a75fad343a78923d3b42db59fa8faebfa11f2db3c43102e9a1",
+    "BASELINE-003": "99331883832864d3bae8c336c0d5837ab2b3748303efefccae0f034c0f06fde2",
+    "BASELINE-004": "d34a569e80c5b57d9228b1000c2f74648522725123ba26bea738090f2a7760ce"
+  },
+  "browser_verification": "browser-verification.json",
+  "dependencies_added": [],
+  "dependencies_removed": [],
+  "deviations": [],
+  "execution_mode": "OFFLINE_DETERMINISTIC",
+  "execution_stage": "IMPLEMENTED_AWAITING_OWNER_REVIEW",
+  "files_changed": {
+    "control_plane": [
+      "STATUS.md",
+      "ops/FIX-023-contextual-depth-entry.md"
+    ],
+    "corrective_evidence": "examples/evaluations/fix-023-contextual-depth-entry-20260905/",
+    "implementation": [
+      "src/knowledge_compiler/semantic_depth_review_evaluation.py",
+      "tests/test_semantic_depth_review_evaluation.py"
+    ],
+    "repaired_viewer": [
+      "examples/evaluations/spec-023-realistic-semantic-depth-20260905/README.md",
+      "examples/evaluations/spec-023-realistic-semantic-depth-20260905/browser-verification.json",
+      "examples/evaluations/spec-023-realistic-semantic-depth-20260905/human-review-template.json",
+      "examples/evaluations/spec-023-realistic-semantic-depth-20260905/learner-grammar.js",
+      "examples/evaluations/spec-023-realistic-semantic-depth-20260905/machine-gate.json",
+      "examples/evaluations/spec-023-realistic-semantic-depth-20260905/report.json"
+    ]
+  },
+  "frozen_treatment_hashes_after": {
+    "projection-diagnostics.json": "324a70df4cb3c05ba13bd2c8bdac7ed08e4d76d09546c10aeb3c5924bb2f2dc0",
+    "projection-extension.js": "05ea171074c69f85c64a817ae75741fb6396be3ea2554322df5baa09fed9cc42",
+    "projection.css": "ecf9e962889be2e5d2b096118cb9f10f4669fffd3ee6197575c0f20c7029597d",
+    "projection.json": "8f1d3beb0e9954040f59862c904a6d9d17574f048bdfcb1cc9059d5df3761232",
+    "semantic-tier-audit.json": "592b286bde05bf56cd6cd818b9ccb1de3716c7445018765dbc7a2534710935c9",
+    "workspace-fixture.json": "c214158c546fcbed1184b22ab6ac52371c49e7801b1ffb548ed453984fa1fb69"
+  },
+  "frozen_treatment_hashes_before": {
+    "projection-diagnostics.json": "324a70df4cb3c05ba13bd2c8bdac7ed08e4d76d09546c10aeb3c5924bb2f2dc0",
+    "projection-extension.js": "05ea171074c69f85c64a817ae75741fb6396be3ea2554322df5baa09fed9cc42",
+    "projection.css": "ecf9e962889be2e5d2b096118cb9f10f4669fffd3ee6197575c0f20c7029597d",
+    "projection.json": "8f1d3beb0e9954040f59862c904a6d9d17574f048bdfcb1cc9059d5df3761232",
+    "semantic-tier-audit.json": "592b286bde05bf56cd6cd818b9ccb1de3716c7445018765dbc7a2534710935c9",
+    "workspace-fixture.json": "c214158c546fcbed1184b22ab6ac52371c49e7801b1ffb548ed453984fa1fb69"
+  },
+  "full_baseline_hash_manifest": "../spec-023-realistic-semantic-depth-20260905/report.json",
+  "live_model_or_external_calls": 0,
+  "machine_integrity_verdict": "PASS",
+  "offline_test_result": {
+    "focused": "46 passed",
+    "full_suite": "300 passed"
+  },
+  "owner_review_instruction": "Navigate normally to the double-slit experiment. Select its relationship to the interference pattern. Read what the normal view tells you, then click Explore deeper. Spend a little time exploring only what the deeper view gives you. Tell me what you understand after opening it that you did not understand before, and whether anything became more confusing.",
+  "packet": "FIX-023",
+  "post_fix_learner_grammar_sha256": "38f5a34aa60b9a61fb98f77319a17b7771ea9c1cc7c46d21f6caacca0b5d58dd",
+  "pre_fix_learner_grammar_sha256": "bab6defc170c4e00cfafda4e8afee4d66690d33e3447d38b608543c616f8793b",
+  "product_verdict": "PENDING_OWNER_REVIEW",
+  "repair_seam": "One stable canonical relationship ID is admitted by the existing contextual depth affordance and entry guard in the isolated learner grammar; all other executable and semantic assets remain byte-identical.",
+  "repository_state": {
+    "commit": "PENDING_THIS_INCREMENT_COMMIT",
+    "push_target": "origin/main",
+    "state_at_report_write": "UNCOMMITTED"
+  },
+  "representation_algorithm_changes": [],
+  "semantic_changes": [],
+  "verified_root_cause": "Both pre-fix checks required selectedEntityId = double-slit-experiment and therefore excluded the naturally selected canonical relationship ID.",
+  "viewer_command": ".venv/bin/knowledge-compiler view-representations examples/evaluations/spec-023-realistic-semantic-depth-20260905 --port 8023"
+}

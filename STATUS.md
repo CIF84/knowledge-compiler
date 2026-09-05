@@ -10,29 +10,29 @@ BASELINE-001, BASELINE-002, BASELINE-003, and BASELINE-004 remain preserved hist
 
 ## Last completed work packet
 
-`SPEC-023 — realistic semantic depth through explanatory projection`
+`FIX-023 — contextual depth entry`
 
 Implementation status: `IMPLEMENTED_AWAITING_REVIEW`
 
-Result: machine integration passed, but owner review discovered that the deeper double-slit treatment is not reachable from the naturally selected canonical double-slit relationship. The owner has not evaluated semantic depth; no cognitive verdict is recorded.
+Result: the isolated SPEC-023 viewer now admits the stable canonical double-slit relationship ID through the existing contextual depth seam. The corrective machine gate passes; the SPEC-023 cognitive verdict remains pending owner review.
 
 ## Current approved work packet
 
 ```text
-ops/FIX-023-contextual-depth-entry.md
+NONE
 ```
 
-Status: `APPROVED_FOR_IMPLEMENTATION`
+Status: `NONE`
 
-Authority: `OFFLINE_ONLY`
+Authority: `NONE`
 
-Human gate: `OWNER_REVIEW`
+Human gate: `NONE`
 
 Promotion: `NOT_AUTHORIZED`
 
 ## Current gate
 
-Repair only the missing contextual entry from the selected `double-slit-experiment → CAUSES → interference-pattern` relationship into the already-existing SPEC-023 deeper treatment. Preserve BASELINE-004 and all frozen semantic/representation content.
+Owner cognitive review of the repaired SPEC-023 viewer is required. No further implementation, semantic change, UI change, baseline promotion, or product verdict is authorized.
 
 ## Frozen / protected state
 
@@ -40,13 +40,13 @@ Repair only the missing contextual entry from the selected `double-slit-experime
 - BASELINE-004 learner-navigation behavior accepted after SPEC-022;
 - frozen SPEC-020 realistic quantum semantic packet and its reviewed defects;
 - frozen SPEC-021 explanatory projection semantics;
-- SPEC-023 deeper treatment semantics/representation content;
+- repaired SPEC-023 viewer and unchanged deeper treatment semantics/representation content;
 - trusted semantic vocabulary, grounding, provenance, and fail-closed behavior;
 - unrelated user work.
 
 ## Next intended action
 
-Codex executes the current approved corrective packet autonomously below the declared decision boundary. If the machine gate passes, it returns only the concise owner-review handoff and viewer command. The owner then evaluates the previously unreachable deeper treatment; Codex must not assign the cognitive verdict.
+The owner follows the fixed relationship-entry review path in the repaired SPEC-023 viewer and supplies spontaneous cognitive feedback. ChatGPT may then record one allowed SPEC-023 verdict; any promotion or further implementation requires separate authority.
 
 ## Coordination rule
 

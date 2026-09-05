@@ -11,6 +11,18 @@
     "workspace.css": "53a6c5593da5c5da7935698d6c8682b4f1f542f6d082d96e77c634cb0432d211",
     "workspace.js": "d9eff687be246fc0ac42506b71d55944bb26a10046be4f8ca38270cd4ee94d33"
   },
+  "candidate_runtime_hashes": {
+    "grammar.css": "7158525143670c4dbfa6294eca9ffc8d55587af00a478744616d87e90050484e",
+    "index.html": "2023e876c965f723e796f135460798b1c7538d05b693b979db3128934ec210e6",
+    "learner-grammar.js": "38f5a34aa60b9a61fb98f77319a17b7771ea9c1cc7c46d21f6caacca0b5d58dd",
+    "projection-extension.js": "05ea171074c69f85c64a817ae75741fb6396be3ea2554322df5baa09fed9cc42",
+    "projection.css": "ecf9e962889be2e5d2b096118cb9f10f4669fffd3ee6197575c0f20c7029597d",
+    "projection.json": "8f1d3beb0e9954040f59862c904a6d9d17574f048bdfcb1cc9059d5df3761232",
+    "workspace-fixture.json": "c214158c546fcbed1184b22ab6ac52371c49e7801b1ffb548ed453984fa1fb69",
+    "workspace-manifest.json": "e1ed270a97bf182120f3dd74fda76d2c961516f013b686c110f5fd7ebc976344",
+    "workspace.css": "53a6c5593da5c5da7935698d6c8682b4f1f542f6d082d96e77c634cb0432d211",
+    "workspace.js": "d9eff687be246fc0ac42506b71d55944bb26a10046be4f8ca38270cd4ee94d33"
+  },
   "baseline_hashes_after": {
     "BASELINE-001": {
       "aggregate_sha256": "9288d1fba5895cd374db1e6e9cc7bec67c79cc3a31263af2b7874ef8d7c1338f",
@@ -177,6 +189,7 @@
   },
   "camera_and_return_state_result": "PASS",
   "contextual_depth_eligibility_result": "PASS",
+  "corrective_packet": "FIX-023",
   "deeper_interaction_and_evidence_result": "PASS",
   "dependencies_added": [],
   "dependencies_removed": [],
@@ -187,11 +200,18 @@
   "files_changed": {
     "control_plane": [
       "STATUS.md",
-      "specs/SPEC-023-realistic-semantic-depth-through-explanatory-projection.md"
+      "ops/FIX-023-contextual-depth-entry.md"
     ],
-    "evaluation_artifacts": "examples/evaluations/spec-023-realistic-semantic-depth-20260905/",
+    "corrective_evidence": "examples/evaluations/fix-023-contextual-depth-entry-20260905/",
+    "evaluation_artifacts": [
+      "examples/evaluations/spec-023-realistic-semantic-depth-20260905/README.md",
+      "examples/evaluations/spec-023-realistic-semantic-depth-20260905/browser-verification.json",
+      "examples/evaluations/spec-023-realistic-semantic-depth-20260905/human-review-template.json",
+      "examples/evaluations/spec-023-realistic-semantic-depth-20260905/learner-grammar.js",
+      "examples/evaluations/spec-023-realistic-semantic-depth-20260905/machine-gate.json",
+      "examples/evaluations/spec-023-realistic-semantic-depth-20260905/report.json"
+    ],
     "implementation": [
-      "src/knowledge_compiler/cli.py",
       "src/knowledge_compiler/semantic_depth_review_evaluation.py"
     ],
     "tests": [
@@ -200,30 +220,37 @@
   },
   "focus_entity_id": "double-slit-experiment",
   "human_review_status": "PENDING_OWNER_REVIEW",
-  "integration_seam": "exact BASELINE-004 executable plus isolated evidence records",
+  "integration_seam": "exact BASELINE-004 executable with two allowlisted stable-ID depth-entry conditions in the isolated learner grammar",
   "live_model_or_external_calls": 0,
   "machine_gate": {
     "browser_checks": {
       "baseline_navigation_interactions_pass": true,
       "camera_unchanged_across_depth_transition": true,
+      "canonical_relationship_depth_entry_pass": true,
       "console_clean": true,
       "deeper_items_and_evidence_interactive": true,
-      "return_restores_parent_learning_state": true
+      "return_restores_parent_learning_state": true,
+      "unrelated_relationship_has_no_depth_entry": true
     },
     "browser_console_clean": true,
     "offline_test_suite_passed": true,
     "runtime_checks": {
       "baseline001_through_004_unchanged": true,
-      "baseline004_executable_byte_identical": true,
+      "baseline004_learner_engine_reused_with_only_fix023_seam": true,
+      "baseline004_unmodified_assets_byte_identical": true,
       "camera_state_not_mutated_by_projection": true,
-      "contextual_depth_only_for_double_slit": true,
+      "canonical_double_slit_relationship_is_depth_eligible": true,
+      "contextual_depth_limited_to_double_slit_treatment": true,
       "deeper_items_selectable": true,
       "evidence_hidden_until_requested_for_explanations": true,
+      "fix023_candidate_learner_grammar_hash_matches": true,
       "global_depth_control_absent": true,
       "local_depth_affordance_present": true,
       "parent_state_snapshot_and_return_present": true,
       "return_control_present": true,
-      "semantic_strength_distinction_present": true
+      "semantic_strength_distinction_present": true,
+      "spec023_treatment_hashes_unchanged": true,
+      "unrelated_relationship_is_not_depth_eligible": true
     },
     "semantic_checks": {
       "canonical_item_count_is_two": true,
@@ -242,10 +269,10 @@
   },
   "machine_integrity_verdict": "PASS",
   "offline_test_result": {
-    "focused": "43 passed",
-    "full_suite": "297 passed"
+    "focused": "46 passed",
+    "full_suite": "300 passed"
   },
-  "owner_review_instruction": "Use the map naturally. Find the double-slit experiment, explore it more deeply when the interface offers that option, and tell me whether the deeper view actually helps you understand it.",
+  "owner_review_instruction": "Navigate normally to the double-slit experiment. Select its relationship to the interference pattern. Read what the normal view tells you, then click Explore deeper. Spend a little time exploring only what the deeper view gives you. Tell me what you understand after opening it that you did not understand before, and whether anything became more confusing.",
   "product_verdict": "PENDING_OWNER_REVIEW",
   "repository_state": {
     "commit": "PENDING_THIS_INCREMENT_COMMIT",
@@ -271,6 +298,9 @@
     "projection.json": "8f1d3beb0e9954040f59862c904a6d9d17574f048bdfcb1cc9059d5df3761232",
     "semantic-tier-audit.json": "592b286bde05bf56cd6cd818b9ccb1de3716c7445018765dbc7a2534710935c9"
   },
-  "ui_behavior_changes": [],
+  "ui_behavior_changes": [
+    "Explore deeper is also eligible for the frozen canonical double-slit relationship"
+  ],
+  "verified_root_cause": "BASELINE-004 depth eligibility and entry guard recognized only the selected double-slit concept, not its canonical relationship ID",
   "viewer_command": ".venv/bin/knowledge-compiler view-representations examples/evaluations/spec-023-realistic-semantic-depth-20260905 --port 8023"
 }

@@ -1,6 +1,6 @@
 # FIX-023 — Contextual Depth Entry
 
-Status: `APPROVED_FOR_IMPLEMENTATION`
+Status: `IMPLEMENTED_AWAITING_REVIEW`
 Authority: `OFFLINE_ONLY`
 Human gate: `OWNER_REVIEW`
 Promotion: `NOT_AUTHORIZED`

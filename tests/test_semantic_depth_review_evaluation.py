@@ -13,10 +13,16 @@ from knowledge_compiler.cli import main
 from knowledge_compiler.learner_navigation import DEPTH_ENTITY_ID
 from knowledge_compiler.models import ValidationError
 from knowledge_compiler.semantic_depth_review_evaluation import (
-    OWNER_REVIEW_INSTRUCTION,
+    FIX023_DEPTH_RELATIONSHIP_ID,
+    FIX023_LEARNER_GRAMMAR_HASH,
+    FIX023_OWNER_REVIEW_INSTRUCTION,
+    FROZEN_SPEC023_TREATMENT_HASHES,
+    apply_fix023_depth_entry,
     default_spec021_directory,
+    fix023_depth_eligible,
     prepare_semantic_depth_review_evaluation,
     protected_baseline_hashes,
+    remove_fix023_depth_entry,
 )
 
 
@@ -32,15 +38,28 @@ def _hashes(directory: Path) -> dict[str, str]:
     }
 
 
-def test_spec023_reuses_exact_baseline004_executable(tmp_path: Path) -> None:
+def test_spec023_reuses_baseline004_with_only_fix023_entry_seam(
+    tmp_path: Path,
+) -> None:
     output = tmp_path / "review"
     prepare_semantic_depth_review_evaluation(output_dir=output)
 
     for name, expected_hash in BASELINE004_EXECUTABLE_HASHES.items():
-        assert (output / name).read_bytes() == (
-            baseline004_directory() / name
-        ).read_bytes()
-        assert hashlib.sha256((output / name).read_bytes()).hexdigest() == expected_hash
+        if name == "learner-grammar.js":
+            candidate = (output / name).read_text(encoding="utf-8")
+            baseline = (baseline004_directory() / name).read_text(encoding="utf-8")
+            assert candidate == apply_fix023_depth_entry(baseline)
+            assert remove_fix023_depth_entry(candidate) == baseline
+            assert hashlib.sha256(candidate.encode()).hexdigest() == (
+                FIX023_LEARNER_GRAMMAR_HASH
+            )
+        else:
+            assert (output / name).read_bytes() == (
+                baseline004_directory() / name
+            ).read_bytes()
+            assert hashlib.sha256((output / name).read_bytes()).hexdigest() == (
+                expected_hash
+            )
 
 
 def test_spec023_machine_gate_preserves_semantics_and_rejected_item(
@@ -54,7 +73,9 @@ def test_spec023_machine_gate_preserves_semantics_and_rejected_item(
     assert report["live_model_or_external_calls"] == 0
     assert report["semantic_changes"] == []
     assert report["representation_algorithm_changes"] == []
-    assert report["ui_behavior_changes"] == []
+    assert report["ui_behavior_changes"] == [
+        "Explore deeper is also eligible for the frozen canonical double-slit relationship"
+    ]
     assert gate["semantic_checks"]["known_rejected_causal_item_not_canonical"]
     assert gate["semantic_checks"]["known_rejected_causal_item_remains_explanatory"]
     assert gate["semantic_checks"]["pairwise_edge_fabrication_count_zero"]
@@ -81,6 +102,25 @@ def test_spec023_contextual_depth_camera_return_and_interaction_contracts(
     assert runtime["semantic_strength_distinction_present"]
 
 
+def test_fix023_depth_eligibility_is_limited_to_registered_semantic_ids() -> None:
+    assert fix023_depth_eligible(
+        selected_entity_id=None,
+        selected_relationship_id=FIX023_DEPTH_RELATIONSHIP_ID,
+    )
+    assert fix023_depth_eligible(
+        selected_entity_id=DEPTH_ENTITY_ID,
+        selected_relationship_id=None,
+    )
+    assert not fix023_depth_eligible(
+        selected_entity_id="light",
+        selected_relationship_id=None,
+    )
+    assert not fix023_depth_eligible(
+        selected_entity_id=None,
+        selected_relationship_id="relationship-unrelated",
+    )
+
+
 def test_spec023_preserves_all_frozen_baselines(tmp_path: Path) -> None:
     before = protected_baseline_hashes()
     prepare_semantic_depth_review_evaluation(output_dir=tmp_path / "review")
@@ -94,6 +134,15 @@ def test_spec023_generation_is_byte_deterministic(tmp_path: Path) -> None:
     prepare_semantic_depth_review_evaluation(output_dir=first)
     prepare_semantic_depth_review_evaluation(output_dir=second)
     assert _hashes(first) == _hashes(second)
+
+
+def test_fix023_preserves_frozen_spec023_treatment_hashes(tmp_path: Path) -> None:
+    output = tmp_path / "review"
+    prepare_semantic_depth_review_evaluation(output_dir=output)
+    assert {
+        name: hashlib.sha256((output / name).read_bytes()).hexdigest()
+        for name in FROZEN_SPEC023_TREATMENT_HASHES
+    } == FROZEN_SPEC023_TREATMENT_HASHES
 
 
 def test_spec023_rejects_baseline004_substitution(tmp_path: Path) -> None:
@@ -143,7 +192,7 @@ def test_spec023_cli_prepares_pending_browser_review(
         "BLOCKED_PENDING_MACHINE_GATE"
     )
     assert _json(output / "human-review-template.json")["instruction"] == (
-        OWNER_REVIEW_INSTRUCTION
+        FIX023_OWNER_REVIEW_INSTRUCTION
     )
 
 
@@ -165,3 +214,29 @@ def test_committed_spec023_review_passes_machine_gate_for_owner_review() -> None
     assert browser["console"] == {"errors": [], "result": "PASS", "warnings": []}
     assert review["status"] == "PENDING_OWNER_REVIEW"
     assert review["verdict"] == "PENDING"
+    assert review["instruction"] == FIX023_OWNER_REVIEW_INSTRUCTION
+    assert browser["corrective_relationship_entry"]["result"] == "PASS"
+    assert browser["corrective_relationship_entry"][
+        "unrelated_relationship_depth_action_count"
+    ] == 0
+
+
+def test_committed_fix023_corrective_evidence_is_complete() -> None:
+    evidence = (
+        Path(__file__).parents[1]
+        / "examples/evaluations/fix-023-contextual-depth-entry-20260905"
+    )
+    root_cause = _json(evidence / "root-cause.json")
+    browser = _json(evidence / "browser-verification.json")
+    gate = _json(evidence / "machine-gate.json")
+    report = _json(evidence / "report.json")
+
+    assert root_cause["status"] == "VERIFIED"
+    assert root_cause["canonical_relationship_id"] == FIX023_DEPTH_RELATIONSHIP_ID
+    assert browser["status"] == "PASS"
+    assert browser["entry"]["unrelated_relationship_depth_action_count"] == 0
+    assert browser["parent_state"]["relationship_selection_restored"] is True
+    assert report["post_fix_learner_grammar_sha256"] == FIX023_LEARNER_GRAMMAR_HASH
+    assert report["frozen_treatment_hashes_before"] == FROZEN_SPEC023_TREATMENT_HASHES
+    assert report["frozen_treatment_hashes_after"] == FROZEN_SPEC023_TREATMENT_HASHES
+    assert gate["status"] == "PASS"

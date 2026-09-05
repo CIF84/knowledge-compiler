@@ -27,10 +27,54 @@ from .models import ValidationError
 EVALUATION_NAME = "spec-023-realistic-semantic-depth-20260905"
 EVALUATION_RELATIVE_PATH = f"examples/evaluations/{EVALUATION_NAME}"
 REJECTED_CAUSAL_ASSERTION_ID = "assertion-ae10fa8748fdac1f"
-OWNER_REVIEW_INSTRUCTION = (
-    "Use the map naturally. Find the double-slit experiment, explore it more "
-    "deeply when the interface offers that option, and tell me whether the deeper "
-    "view actually helps you understand it."
+FIX023_DEPTH_RELATIONSHIP_ID = "relationship-05b19ee4b6d50060"
+FIX023_LEARNER_GRAMMAR_HASH = (
+    "38f5a34aa60b9a61fb98f77319a17b7771ea9c1cc7c46d21f6caacca0b5d58dd"
+)
+FROZEN_SPEC023_TREATMENT_HASHES = {
+    "projection-diagnostics.json": "324a70df4cb3c05ba13bd2c8bdac7ed08e4d76d09546c10aeb3c5924bb2f2dc0",
+    "projection-extension.js": "05ea171074c69f85c64a817ae75741fb6396be3ea2554322df5baa09fed9cc42",
+    "projection.css": "ecf9e962889be2e5d2b096118cb9f10f4669fffd3ee6197575c0f20c7029597d",
+    "projection.json": "8f1d3beb0e9954040f59862c904a6d9d17574f048bdfcb1cc9059d5df3761232",
+    "semantic-tier-audit.json": "592b286bde05bf56cd6cd818b9ccb1de3716c7445018765dbc7a2534710935c9",
+    "workspace-fixture.json": "c214158c546fcbed1184b22ab6ac52371c49e7801b1ffb548ed453984fa1fb69",
+}
+FIX023_OWNER_REVIEW_INSTRUCTION = (
+    "Navigate normally to the double-slit experiment. Select its relationship to "
+    "the interference pattern. Read what the normal view tells you, then click "
+    "Explore deeper. Spend a little time exploring only what the deeper view gives "
+    "you. Tell me what you understand after opening it that you did not understand "
+    "before, and whether anything became more confusing."
+)
+
+_LEARNER_REGISTRY_ANCHOR = (
+    "const learnerSalience={PRIMARY:0,SECONDARY:1,SPARSE:2,HIGH:3};\n"
+)
+_FIX023_DEPTH_REGISTRY = (
+    _LEARNER_REGISTRY_ANCHOR
+    + 'const learnerDepthRelationshipIds=new Set(["'
+    + FIX023_DEPTH_RELATIONSHIP_ID
+    + '"]);\n'
+    + "function learnerDepthEligible(state){return "
+    + "learnerState.fixture.learner_navigation.admitted_depth_entity_ids.includes("
+    + "state.selectedEntityId)||learnerDepthRelationshipIds.has("
+    + "state.selectedRelationshipId);}\n"
+)
+_ENTRY_GUARD_BEFORE = (
+    'if(api.state.selectedEntityId!=="double-slit-experiment")'
+    'throw new Error("Depth is not admitted for this concept")'
+)
+_ENTRY_GUARD_AFTER = (
+    "if(!learnerDepthEligible(api.state))"
+    'throw new Error("Depth is not admitted for this selection")'
+)
+_AFFORDANCE_GUARD_BEFORE = (
+    "eligible=!window.__SPEC021_PROJECTION__?.isActive()&&"
+    "window.__BASELINE003_SEAM__.state.selectedEntityId===\"double-slit-experiment\""
+)
+_AFFORDANCE_GUARD_AFTER = (
+    "eligible=!window.__SPEC021_PROJECTION__?.isActive()&&learnerDepthEligible("
+    "window.__BASELINE003_SEAM__.state)"
 )
 
 
@@ -65,6 +109,43 @@ def _source_location(path: Path) -> str:
         return str(path.resolve().relative_to(repository_root()))
     except ValueError:
         return str(path.resolve())
+
+
+def fix023_depth_eligible(
+    *, selected_entity_id: str | None, selected_relationship_id: str | None
+) -> bool:
+    return (
+        selected_entity_id == DEPTH_ENTITY_ID
+        or selected_relationship_id == FIX023_DEPTH_RELATIONSHIP_ID
+    )
+
+
+def apply_fix023_depth_entry(script: str) -> str:
+    replacements = (
+        (_LEARNER_REGISTRY_ANCHOR, _FIX023_DEPTH_REGISTRY),
+        (_ENTRY_GUARD_BEFORE, _ENTRY_GUARD_AFTER),
+        (_AFFORDANCE_GUARD_BEFORE, _AFFORDANCE_GUARD_AFTER),
+    )
+    result = script
+    for before, after in replacements:
+        if result.count(before) != 1:
+            raise ValidationError("FIX-023 learner depth seam changed or was already applied")
+        result = result.replace(before, after)
+    return result
+
+
+def remove_fix023_depth_entry(script: str) -> str:
+    replacements = (
+        (_FIX023_DEPTH_REGISTRY, _LEARNER_REGISTRY_ANCHOR),
+        (_ENTRY_GUARD_AFTER, _ENTRY_GUARD_BEFORE),
+        (_AFFORDANCE_GUARD_AFTER, _AFFORDANCE_GUARD_BEFORE),
+    )
+    result = script
+    for fixed, original in replacements:
+        if result.count(fixed) != 1:
+            raise ValidationError("FIX-023 learner depth seam identity mismatch")
+        result = result.replace(fixed, original)
+    return result
 
 
 def _paths(files: Iterable[Path], directories: Iterable[Path]) -> list[Path]:
@@ -228,19 +309,51 @@ def prepare_semantic_depth_review_evaluation(
 
     for name in BASELINE004_EXECUTABLE_HASHES:
         shutil.copyfile(baseline_dir / name, output_dir / name)
+    baseline_learner_script = (baseline_dir / "learner-grammar.js").read_text(
+        encoding="utf-8"
+    )
+    fixed_learner_script = apply_fix023_depth_entry(baseline_learner_script)
+    (output_dir / "learner-grammar.js").write_text(
+        fixed_learner_script,
+        encoding="utf-8",
+    )
     for name in ("projection-diagnostics.json", "semantic-tier-audit.json"):
         shutil.copyfile(spec021_dir / name, output_dir / name)
 
     fixture = json.loads((output_dir / "workspace-fixture.json").read_text(encoding="utf-8"))
     depth_ids = fixture["learner_navigation"]["admitted_depth_entity_ids"]
     runtime_hashes = {name: _hash(output_dir / name) for name in baseline_hashes}
+    treatment_hashes = {
+        name: _hash(output_dir / name) for name in FROZEN_SPEC023_TREATMENT_HASHES
+    }
     learner_script = (output_dir / "learner-grammar.js").read_text(encoding="utf-8")
     projection_script = (output_dir / "projection-extension.js").read_text(
         encoding="utf-8"
     )
     runtime_checks = {
-        "baseline004_executable_byte_identical": runtime_hashes == baseline_hashes,
-        "contextual_depth_only_for_double_slit": depth_ids == [DEPTH_ENTITY_ID],
+        "baseline004_unmodified_assets_byte_identical": all(
+            runtime_hashes[name] == expected
+            for name, expected in baseline_hashes.items()
+            if name != "learner-grammar.js"
+        ),
+        "baseline004_learner_engine_reused_with_only_fix023_seam": (
+            remove_fix023_depth_entry(learner_script) == baseline_learner_script
+        ),
+        "fix023_candidate_learner_grammar_hash_matches": (
+            runtime_hashes["learner-grammar.js"] == FIX023_LEARNER_GRAMMAR_HASH
+        ),
+        "spec023_treatment_hashes_unchanged": treatment_hashes
+        == FROZEN_SPEC023_TREATMENT_HASHES,
+        "contextual_depth_limited_to_double_slit_treatment": depth_ids
+        == [DEPTH_ENTITY_ID],
+        "canonical_double_slit_relationship_is_depth_eligible": fix023_depth_eligible(
+            selected_entity_id=None,
+            selected_relationship_id=FIX023_DEPTH_RELATIONSHIP_ID,
+        ),
+        "unrelated_relationship_is_not_depth_eligible": not fix023_depth_eligible(
+            selected_entity_id=None,
+            selected_relationship_id="unrelated-relationship",
+        ),
         "global_depth_control_absent": "Double-slit depth"
         not in learner_script,
         "local_depth_affordance_present": "Explore deeper" in learner_script,
@@ -289,21 +402,30 @@ def prepare_semantic_depth_review_evaluation(
     }
     report = {
         "spec": "SPEC-023",
+        "corrective_packet": "FIX-023",
         "execution_mode": "OFFLINE_DETERMINISTIC",
         "execution_stage": "PENDING_BROWSER_VERIFICATION",
         "machine_integrity_verdict": "PASS_PENDING_BROWSER",
         "human_review_status": "NOT_YET_AVAILABLE",
         "product_verdict": "PENDING_OWNER_REVIEW",
-        "owner_review_instruction": OWNER_REVIEW_INSTRUCTION,
+        "owner_review_instruction": FIX023_OWNER_REVIEW_INSTRUCTION,
         "focus_entity_id": FOCUS_ENTITY_ID,
-        "integration_seam": "exact BASELINE-004 executable plus isolated evidence records",
+        "integration_seam": (
+            "exact BASELINE-004 executable with two allowlisted stable-ID depth-entry "
+            "conditions in the isolated learner grammar"
+        ),
         "baseline_hashes_before": baseline_before,
         "baseline_hashes_after": baseline_after,
         "baseline004_executable_hashes": baseline_hashes,
+        "candidate_runtime_hashes": runtime_hashes,
         "spec020_input_hashes": semantic["spec020_file_hashes"],
         "spec021_projection_hashes": projection_hashes,
         "machine_gate": machine_gate,
         "contextual_depth_eligibility_result": "PASS",
+        "verified_root_cause": (
+            "BASELINE-004 depth eligibility and entry guard recognized only the "
+            "selected double-slit concept, not its canonical relationship ID"
+        ),
         "camera_and_return_state_result": "PASS_PENDING_BROWSER",
         "deeper_interaction_and_evidence_result": "PASS_PENDING_BROWSER",
         "deterministic_regeneration_result": "PENDING_OFFLINE_VERIFICATION",
@@ -315,7 +437,9 @@ def prepare_semantic_depth_review_evaluation(
         "live_model_or_external_calls": 0,
         "semantic_changes": [],
         "representation_algorithm_changes": [],
-        "ui_behavior_changes": [],
+        "ui_behavior_changes": [
+            "Explore deeper is also eligible for the frozen canonical double-slit relationship"
+        ],
         "deviations": [],
         "viewer_command": (
             ".venv/bin/knowledge-compiler view-representations "
@@ -357,7 +481,7 @@ def prepare_semantic_depth_review_evaluation(
         "interaction": {},
     })
     _write_json(output_dir / "human-review-template.json", {
-        "instruction": OWNER_REVIEW_INSTRUCTION,
+        "instruction": FIX023_OWNER_REVIEW_INSTRUCTION,
         "status": "BLOCKED_PENDING_MACHINE_GATE",
         "owner_response": None,
         "verdict": "PENDING",
@@ -370,8 +494,10 @@ def prepare_semantic_depth_review_evaluation(
     })
     (output_dir / "README.md").write_text(
         "# SPEC-023 realistic semantic depth review\n\n"
-        "This offline artifact reuses the exact BASELINE-004 executable and the frozen "
-        "SPEC-020/021 double-slit semantic projection.\n\n"
+        "This offline artifact reuses the BASELINE-004 executable and the frozen "
+        "SPEC-020/021 double-slit semantic projection. FIX-023 adds only the bounded "
+        "stable-ID relationship entry seam recorded in the corrective evidence "
+        "directory.\n\n"
         "```sh\n"
         f"{report['viewer_command']}\n"
         "```\n",
