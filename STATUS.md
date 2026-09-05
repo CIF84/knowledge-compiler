@@ -23,7 +23,7 @@ Durable outcome: `debriefs/DEBRIEF-023-realistic-semantic-depth-through-explanat
 ## Current approved work packet
 
 ```text
-SPEC-024 — depth as continuous map expansion
+specs/SPEC-024-depth-as-continuous-map-expansion.md
 ```
 
 Path: `specs/SPEC-024-depth-as-continuous-map-expansion.md`
