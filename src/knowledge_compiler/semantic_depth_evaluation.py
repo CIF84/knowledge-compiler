@@ -314,9 +314,54 @@ def _fail_live(
     error: Exception,
 ) -> dict[str, Any]:
     _write_json(output_dir / "run-history.json", _history(attempts))
+    usage_by_stage = {item["stage"]: item["usage"] for item in attempts}
+    combined_usage = {
+        key: sum(item["usage"][key] for item in attempts)
+        for key in ("input_tokens", "output_tokens", "total_tokens")
+    }
+    grounded_path = output_dir / "child-grounded-assertions.json"
+    grounded = _read_json(grounded_path) if grounded_path.exists() else None
+    canonical_path = output_dir / "child-canonicalization-result.json"
+    canonical = _read_json(canonical_path) if canonical_path.exists() else None
+    raw_canonical = canonical.get("raw_proposal") if canonical else None
+    canonical_counts = None
+    if isinstance(raw_canonical, Mapping):
+        canonical_counts = {
+            key: len(raw_canonical.get(key, []))
+            for key in ("relationships", "propositions", "claims", "uncompiled_assertions")
+        }
+    retry_justified: bool | str = "REQUIRES_OWNER_DECISION"
+    retry_rationale = "Any additional live call requires explicit owner approval."
+    if str(error) == "trusted child representations do not retain the parent focus":
+        retry_justified = False
+        retry_rationale = (
+            "An identical retry would select among probabilistic outputs after observing an "
+            "unfavorable but valid result. The failure is useful evidence about semantic coverage "
+            "and the existing structure-detection boundary, not a transient provider failure."
+        )
+    failure_assessment = {
+        "spec": "SPEC-020",
+        "outcome": "FAILED_CLOSED",
+        "failure_stage": stage,
+        "failure": str(error),
+        "trusted_child_available": False,
+        "rejected_child_rendered": False,
+        "grounded_assertion_count": len(grounded["assertions"]) if grounded else 0,
+        "canonical_proposal_counts": canonical_counts,
+        "additional_semantic_retry_scientifically_justified": retry_justified,
+        "retry_rationale": retry_rationale,
+        "dependent_stages_not_run": [
+            "INDEPENDENT_TRUSTED_CHILD_SEMANTIC_REVIEW",
+            "WORKSPACE_RENDERING",
+            "BROWSER_VERIFICATION",
+            "OWNER_COGNITIVE_REVIEW",
+        ],
+    }
+    _write_json(output_dir / "failure-assessment.json", failure_assessment)
     report = _read_json(output_dir / "report.json")
     report.update({
-        "execution_stage": f"{stage}_FAILED_CLOSED",
+        "execution_stage": "COMPLETE_FAILED_CLOSED",
+        "failure_stage": stage,
         "machine_integrity_verdict": "FAIL_CLOSED",
         "live_call_count": sum(item["provider_call_attempted"] for item in attempts),
         "failure": str(error),
@@ -324,6 +369,29 @@ def _fail_live(
         "rejected_child_rendered": False,
         "human_review_status": "NOT_AVAILABLE_NO_TRUSTED_CHILD",
         "additional_retry_requires_owner_approval": True,
+        "additional_semantic_retry_scientifically_justified": retry_justified,
+        "owner_live_approval": "APPROVED",
+        "product_verdict": "INCONCLUSIVE",
+        "request_ids": {
+            item["stage"]: item["provider_request_id"] for item in attempts
+        },
+        "usage": {"per_stage": usage_by_stage, "combined": combined_usage},
+        "runtime_seconds": {
+            "per_stage": {item["stage"]: item["runtime_seconds"] for item in attempts},
+            "combined": round(sum(item["runtime_seconds"] for item in attempts), 3),
+        },
+        "authoritative_monetary_cost": "NOT_AVAILABLE",
+        "grounding": {
+            "assertion_count": len(grounded["assertions"]) if grounded else 0,
+            "evidence_span_count": (
+                sum(len(item["evidence"]) for item in grounded["assertions"])
+                if grounded else 0
+            ),
+            "failures": 0 if grounded else "STAGE_DID_NOT_COMPLETE",
+        },
+        "canonical_proposal_counts": canonical_counts,
+        "repository_semantic_review": "NOT_RUN_NO_TRUSTED_CHILD",
+        "viewer_command": "NOT_AVAILABLE_NO_TRUSTED_CHILD",
     })
     _write_json(output_dir / "report.json", report)
     return report

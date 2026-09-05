@@ -1,0 +1,88 @@
+{
+  "failure": "trusted child representations do not retain the parent focus",
+  "outcome": "FAILED",
+  "provider_metadata": {
+    "assertion_count": 9,
+    "grounded_assertion_character_count": 3723,
+    "input_character_count": 5383,
+    "model": "gpt-5.6-luna",
+    "prompt_character_count": 9290,
+    "prompt_version": "spec-013-canonicalization-v1",
+    "provider": "openai",
+    "provider_request_id": "resp_02d26d775401e824016a9bc484c7ac87d2a5335eebe1e5848f",
+    "requested_model": "gpt-5.6-luna",
+    "sdk_retries": 0,
+    "store": false,
+    "symbol_table_character_count": 1609,
+    "symbol_table_size": 7,
+    "usage": {
+      "input_tokens": 4173,
+      "output_tokens": 763,
+      "total_tokens": 4936
+    }
+  },
+  "raw_proposal": {
+    "claims": [
+      {
+        "assertion_id": "assertion-0aab5775b0ce1164",
+        "confidence": 0.96,
+        "statement": "The distribution pattern of many individual particles mimics the diffraction pattern produced by waves."
+      },
+      {
+        "assertion_id": "assertion-29893ca25e0fd462",
+        "confidence": 0.96,
+        "statement": "The double-slit experiment was seen as a demonstration of the wave nature of light."
+      },
+      {
+        "assertion_id": "assertion-34df8905cd0bc7db",
+        "confidence": 0.95,
+        "statement": "The source says that the observation of the same type of interference pattern in experiments using matter demonstrates that all matter possesses wave characteristics."
+      },
+      {
+        "assertion_id": "assertion-49c2a9a32b078712",
+        "confidence": 0.98,
+        "statement": "When the source intensity is reduced, the interference pattern builds up one particle at a time, including photons or electrons."
+      },
+      {
+        "assertion_id": "assertion-6a9db96dcce9c27d",
+        "confidence": 0.99,
+        "statement": "Wave–particle duality says that neither the classical concept of a particle nor the classical concept of a wave can fully describe quantum-scale objects, including photons and matter."
+      },
+      {
+        "assertion_id": "assertion-a4ca636403e86833",
+        "confidence": 0.98,
+        "statement": "In the double-slit experiment, the quantum system acts as a wave when passing through the double slits and as a particle when detected."
+      }
+    ],
+    "propositions": [],
+    "relationships": [
+      {
+        "assertion_id": "assertion-3fadf1ab890d9bde",
+        "confidence": 0.98,
+        "relationship_type": "CAUSES",
+        "source_entity_id": "double-slit-experiment",
+        "statement": "The double-slit experiment produces an interference pattern.",
+        "target_entity_id": "interference-pattern"
+      },
+      {
+        "assertion_id": "assertion-7d1b3317e1e4c682",
+        "confidence": 0.99,
+        "relationship_type": "EXAMPLE_OF",
+        "source_entity_id": "waveparticle-duality",
+        "statement": "Wave–particle duality is an example of the principle of complementarity.",
+        "target_entity_id": "principle-of-complementarity"
+      },
+      {
+        "assertion_id": "assertion-ae10fa8748fdac1f",
+        "confidence": 0.91,
+        "relationship_type": "CAUSES",
+        "source_entity_id": "double-slit-experiment",
+        "statement": "Variations of the double-slit experiment using electrons and atoms produce the same type of interference pattern.",
+        "target_entity_id": "interference-pattern"
+      }
+    ],
+    "uncompiled_assertions": []
+  },
+  "rejected_output_preserved": true,
+  "stage": "CHILD_CANONICALIZATION_AND_ADMISSION"
+}

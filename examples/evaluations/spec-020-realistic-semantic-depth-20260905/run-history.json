@@ -1,8 +1,55 @@
 {
   "additional_model_or_agent_calls": 0,
-  "attempts": [],
+  "attempts": [
+    {
+      "actual_model": "gpt-5.6-luna",
+      "completed_at": "2026-09-05T07:28:04.625878+00:00",
+      "cost": "NOT_AVAILABLE",
+      "outcome": "SUCCESS",
+      "prompt_version": "spec-013-assertions-v1",
+      "provider": "openai",
+      "provider_call_attempted": true,
+      "provider_request_id": "resp_06f0fa922e471ce8016a9bc47f7afc87d28ec37a63d6390418",
+      "rejected_output_preserved": false,
+      "requested_model": "gpt-5.6-luna",
+      "retries": 0,
+      "runtime_seconds": 7.452,
+      "sequence": 1,
+      "stage": "CHILD_ASSERTION_EXTRACTION_AND_GROUNDING",
+      "started_at": "2026-09-05T07:27:57.173650+00:00",
+      "usage": {
+        "input_tokens": 971,
+        "output_tokens": 756,
+        "total_tokens": 1727
+      }
+    },
+    {
+      "actual_model": "gpt-5.6-luna",
+      "completed_at": "2026-09-05T07:28:10.844721+00:00",
+      "cost": "NOT_AVAILABLE",
+      "error": "trusted child representations do not retain the parent focus",
+      "error_type": "ValidationError",
+      "outcome": "FAILED",
+      "prompt_version": "spec-013-canonicalization-v1",
+      "provider": "openai",
+      "provider_call_attempted": true,
+      "provider_request_id": "resp_02d26d775401e824016a9bc484c7ac87d2a5335eebe1e5848f",
+      "rejected_output_preserved": true,
+      "requested_model": "gpt-5.6-luna",
+      "retries": 0,
+      "runtime_seconds": 6.218,
+      "sequence": 2,
+      "stage": "CHILD_CANONICALIZATION_AND_ADMISSION",
+      "started_at": "2026-09-05T07:28:04.626771+00:00",
+      "usage": {
+        "input_tokens": 4173,
+        "output_tokens": 763,
+        "total_tokens": 4936
+      }
+    }
+  ],
   "automatic_retry_count": 0,
-  "current_run_live_call_count": 0,
+  "current_run_live_call_count": 2,
   "dependent_call_rule": "Call B runs only if Call A assertion extraction and grounding succeeds.",
   "external_enrichment": false,
   "hidden_retries": false,

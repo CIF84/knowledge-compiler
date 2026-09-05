@@ -1,0 +1,145 @@
+{
+  "assertion_count": 9,
+  "outcome": "SUCCESS",
+  "provider_metadata": {
+    "input_character_count": 3410,
+    "model": "gpt-5.6-luna",
+    "prompt_character_count": 950,
+    "prompt_version": "spec-013-assertions-v1",
+    "provider": "openai",
+    "provider_request_id": "resp_06f0fa922e471ce8016a9bc47f7afc87d28ec37a63d6390418",
+    "requested_model": "gpt-5.6-luna",
+    "sdk_retries": 0,
+    "source_character_count": 1726,
+    "store": false,
+    "symbol_table_character_count": 1609,
+    "symbol_table_size": 7,
+    "usage": {
+      "input_tokens": 971,
+      "output_tokens": 756,
+      "total_tokens": 1727
+    }
+  },
+  "raw_proposal": {
+    "assertions": [
+      {
+        "evidence": [
+          {
+            "quote": "The concept of wave–particle duality says that neither the classical concept of \"particle\" nor of \"wave\" can fully describe the behavior of quantum-scale objects, either photons or matter."
+          }
+        ],
+        "origin": "SOURCE",
+        "participant_entity_ids": [
+          "waveparticle-duality",
+          "photon"
+        ],
+        "statement": "Wave–particle duality says that neither the classical concept of a particle nor the classical concept of a wave can fully describe quantum-scale objects, including photons and matter."
+      },
+      {
+        "evidence": [
+          {
+            "quote": "Wave–particle duality is an example of the principle of complementarity in quantum physics."
+          }
+        ],
+        "origin": "SOURCE",
+        "participant_entity_ids": [
+          "waveparticle-duality",
+          "principle-of-complementarity"
+        ],
+        "statement": "Wave–particle duality is an example of the principle of complementarity in quantum physics."
+      },
+      {
+        "evidence": [
+          {
+            "quote": "a beam of light is directed through two narrow, closely spaced slits, producing an interference pattern of light and dark bands on a screen."
+          }
+        ],
+        "origin": "SOURCE",
+        "participant_entity_ids": [
+          "double-slit-experiment",
+          "interference-pattern"
+        ],
+        "statement": "The double-slit experiment produces an interference pattern of light and dark bands when a beam of light is directed through two narrow, closely spaced slits."
+      },
+      {
+        "evidence": [
+          {
+            "quote": "the double-slit experiment was seen as a demonstration of the wave nature of light."
+          }
+        ],
+        "origin": "SOURCE",
+        "participant_entity_ids": [
+          "double-slit-experiment"
+        ],
+        "statement": "The double-slit experiment was seen as a demonstration of the wave nature of light."
+      },
+      {
+        "evidence": [
+          {
+            "quote": "Variations of the double-slit experiment have been performed using electrons, atoms, and even large molecules, and the same type of interference pattern is seen."
+          }
+        ],
+        "origin": "SOURCE",
+        "participant_entity_ids": [
+          "double-slit-experiment",
+          "electron",
+          "atom",
+          "interference-pattern"
+        ],
+        "statement": "Variations of the double-slit experiment using electrons and atoms produce the same type of interference pattern."
+      },
+      {
+        "evidence": [
+          {
+            "quote": "Thus it has been demonstrated that all matter possesses wave characteristics."
+          }
+        ],
+        "origin": "SOURCE",
+        "participant_entity_ids": [
+          "interference-pattern"
+        ],
+        "statement": "The source says that the observation of the same type of interference pattern in experiments using matter demonstrates that all matter possesses wave characteristics."
+      },
+      {
+        "evidence": [
+          {
+            "quote": "If the source intensity is turned down, the same interference pattern will slowly build up, one \"count\" or particle (e.g. photon or electron) at a time."
+          }
+        ],
+        "origin": "SOURCE",
+        "participant_entity_ids": [
+          "interference-pattern",
+          "photon",
+          "electron"
+        ],
+        "statement": "When the source intensity is reduced, the interference pattern builds up one particle at a time, including photons or electrons."
+      },
+      {
+        "evidence": [
+          {
+            "quote": "The quantum system acts as a wave when passing through the double slits, but as a particle when it is detected."
+          }
+        ],
+        "origin": "SOURCE",
+        "participant_entity_ids": [
+          "double-slit-experiment",
+          "principle-of-complementarity"
+        ],
+        "statement": "In the double-slit experiment, the quantum system acts as a wave when passing through the double slits and as a particle when detected."
+      },
+      {
+        "evidence": [
+          {
+            "quote": "However, the distribution pattern of many individual particles mimics the diffraction pattern produced by waves."
+          }
+        ],
+        "origin": "SOURCE",
+        "participant_entity_ids": [
+          "interference-pattern"
+        ],
+        "statement": "The distribution pattern of many individual particles mimics the diffraction pattern produced by waves."
+      }
+    ]
+  },
+  "stage": "CHILD_ASSERTION_EXTRACTION_AND_GROUNDING"
+}

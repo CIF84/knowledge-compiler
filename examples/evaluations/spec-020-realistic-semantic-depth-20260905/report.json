@@ -1,20 +1,64 @@
 {
+  "additional_retry_requires_owner_approval": true,
+  "additional_semantic_retry_scientifically_justified": false,
+  "authoritative_monetary_cost": "NOT_AVAILABLE",
   "baselines_immutable": true,
+  "canonical_proposal_counts": {
+    "claims": 6,
+    "propositions": 0,
+    "relationships": 3,
+    "uncompiled_assertions": 0
+  },
   "child_symbol_count": 7,
   "deviations": [],
   "evaluation_version": "spec-020-v1",
-  "execution_stage": "PRE_LIVE_READY",
+  "execution_stage": "COMPLETE_FAILED_CLOSED",
+  "failure": "trusted child representations do not retain the parent focus",
+  "failure_stage": "CANONICALIZATION_STAGE",
+  "failure_type": "ValidationError",
   "focus_entity_id": "double-slit-experiment",
-  "human_review_status": "NOT_AVAILABLE_BEFORE_TRUSTED_CHILD",
-  "live_call_count": 0,
-  "machine_integrity_verdict": "PASS",
+  "grounding": {
+    "assertion_count": 9,
+    "evidence_span_count": 9,
+    "failures": 0
+  },
+  "human_review_status": "NOT_AVAILABLE_NO_TRUSTED_CHILD",
+  "live_call_count": 2,
+  "machine_integrity_verdict": "FAIL_CLOSED",
   "model": "gpt-5.6-luna",
-  "owner_live_approval": "REQUIRED",
+  "owner_live_approval": "APPROVED",
   "parent_immutable": true,
   "planned_live_call_count": 2,
-  "product_verdict": "PENDING",
+  "product_verdict": "INCONCLUSIVE",
   "provider": "openai",
+  "rejected_child_rendered": false,
+  "repository_semantic_review": {
+    "artifact": "rejected-semantic-review.json",
+    "assertion_fidelity": {
+      "DISTORTED": 0,
+      "FAITHFUL": 8,
+      "PARTIAL": 1,
+      "UNSUPPORTED": 0
+    },
+    "canonical_semantics": {
+      "OVERSTATED_CAUSALITY": 1,
+      "SUPPORTED": 2
+    },
+    "status": "COMPLETE_REJECTED_PROPOSAL_DIAGNOSTIC_ONLY",
+    "trusted_child": false
+  },
+  "request_ids": {
+    "CHILD_ASSERTION_EXTRACTION_AND_GROUNDING": "resp_06f0fa922e471ce8016a9bc47f7afc87d28ec37a63d6390418",
+    "CHILD_CANONICALIZATION_AND_ADMISSION": "resp_02d26d775401e824016a9bc484c7ac87d2a5335eebe1e5848f"
+  },
   "resolution_strategy": "GENERIC_DETAIL",
+  "runtime_seconds": {
+    "combined": 13.67,
+    "per_stage": {
+      "CHILD_ASSERTION_EXTRACTION_AND_GROUNDING": 7.452,
+      "CHILD_CANONICALIZATION_AND_ADMISSION": 6.218
+    }
+  },
   "source": {
     "normalized_sha256": "9e978db999ee67134d347f91fe9f32934c982f4de9b496e4bf664cb00cce23ea",
     "revision_id": 1359567407,
@@ -22,5 +66,25 @@
   },
   "source_scope_character_count": 1726,
   "source_scope_sha256": "eb184226638e5cbb331865f87ed613c22aaf68f3188b9ee3dcd4c743b94997a1",
-  "spec": "SPEC-020"
+  "spec": "SPEC-020",
+  "usage": {
+    "combined": {
+      "input_tokens": 5144,
+      "output_tokens": 1519,
+      "total_tokens": 6663
+    },
+    "per_stage": {
+      "CHILD_ASSERTION_EXTRACTION_AND_GROUNDING": {
+        "input_tokens": 971,
+        "output_tokens": 756,
+        "total_tokens": 1727
+      },
+      "CHILD_CANONICALIZATION_AND_ADMISSION": {
+        "input_tokens": 4173,
+        "output_tokens": 763,
+        "total_tokens": 4936
+      }
+    }
+  },
+  "viewer_command": "NOT_AVAILABLE_NO_TRUSTED_CHILD"
 }

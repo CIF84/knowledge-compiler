@@ -1,0 +1,52 @@
+{
+  "spec": "SPEC-020",
+  "status": "COMPLETE_REJECTED_PROPOSAL_DIAGNOSTIC_ONLY",
+  "admission_effect": "NONE_ALREADY_FAILED_CLOSED",
+  "assertion_fidelity": {
+    "counts": {
+      "FAITHFUL": 8,
+      "PARTIAL": 1,
+      "DISTORTED": 0,
+      "UNSUPPORTED": 0
+    },
+    "items": [
+      {"id": "assertion-0aab5775b0ce1164", "classification": "FAITHFUL", "notes": "The statement closely preserves the cited distribution-pattern sentence."},
+      {"id": "assertion-29893ca25e0fd462", "classification": "FAITHFUL", "notes": "The statement is a direct, bounded restatement of the cited sentence."},
+      {"id": "assertion-34df8905cd0bc7db", "classification": "PARTIAL", "notes": "The statement imports the preceding experiment/interference context, while its sole cited span says only that all matter possesses wave characteristics."},
+      {"id": "assertion-3fadf1ab890d9bde", "classification": "FAITHFUL", "notes": "The cited sentence explicitly says the beam through two slits produces an interference pattern."},
+      {"id": "assertion-49c2a9a32b078712", "classification": "FAITHFUL", "notes": "The statement preserves the low-intensity one-particle-at-a-time observation."},
+      {"id": "assertion-6a9db96dcce9c27d", "classification": "FAITHFUL", "notes": "The statement preserves the source's limitation of either classical description."},
+      {"id": "assertion-7d1b3317e1e4c682", "classification": "FAITHFUL", "notes": "The source explicitly describes wave–particle duality as an example of complementarity."},
+      {"id": "assertion-a4ca636403e86833", "classification": "FAITHFUL", "notes": "The statement preserves the wave-through-slits and particle-at-detection contrast."},
+      {"id": "assertion-ae10fa8748fdac1f", "classification": "FAITHFUL", "notes": "The statement conservatively omits large molecules but preserves the electron/atom result."}
+    ]
+  },
+  "canonical_semantics": {
+    "counts": {
+      "SUPPORTED": 2,
+      "IMPRECISE_ENDPOINT": 0,
+      "WRONG_PREDICATE": 0,
+      "REVERSED_DIRECTION": 0,
+      "OVERSTATED_CAUSALITY": 1,
+      "UNSUPPORTED": 0,
+      "LOSSY_BINARY_FORM": 0,
+      "OTHER": 0
+    },
+    "items": [
+      {"assertion_id": "assertion-3fadf1ab890d9bde", "source_entity_id": "double-slit-experiment", "predicate": "CAUSES", "target_entity_id": "interference-pattern", "classification": "SUPPORTED", "notes": "The exact evidence says the beam through the slits produces the pattern."},
+      {"assertion_id": "assertion-7d1b3317e1e4c682", "source_entity_id": "waveparticle-duality", "predicate": "EXAMPLE_OF", "target_entity_id": "principle-of-complementarity", "classification": "SUPPORTED", "notes": "The exact evidence explicitly uses example-of language with precise endpoints."},
+      {"assertion_id": "assertion-ae10fa8748fdac1f", "source_entity_id": "double-slit-experiment", "predicate": "CAUSES", "target_entity_id": "interference-pattern", "classification": "OVERSTATED_CAUSALITY", "notes": "This assertion's nominated evidence says the same pattern is seen; it does not itself say that these variations produce or cause the pattern. The stronger nearby evidence belongs to a different assertion."}
+    ]
+  },
+  "representation_failure": {
+    "classification": "FOCUS_COVERAGE_FAILURE",
+    "notes": "Structure detection admitted only the wave–particle-duality EXAMPLE_OF complementarity hierarchy. The two double-slit CAUSES proposals collapse to one logical causal edge, below the existing two-edge causal-path threshold, so no compiled child representation contains the frozen double-slit focus."
+  },
+  "trusted_child": false,
+  "known_defects": [],
+  "new_defects": [
+    "One assertion's evidence span omits context included in its statement.",
+    "One canonical relationship overstates causality relative to its own nominated evidence.",
+    "No detected child representation retains the frozen focus."
+  ]
+}

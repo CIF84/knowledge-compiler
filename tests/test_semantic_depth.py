@@ -222,7 +222,9 @@ def test_child_pipeline_reuses_assertion_grounding_and_fails_closed_before_call_
         compiler_factory=lambda: compiler,
     )
 
-    assert report["execution_stage"] == "ASSERTION_STAGE_FAILED_CLOSED"
+    assert report["execution_stage"] == "COMPLETE_FAILED_CLOSED"
+    assert report["failure_stage"] == "ASSERTION_STAGE"
+    assert report["product_verdict"] == "INCONCLUSIVE"
     assert report["rejected_child_rendered"] is False
     assert compiler.canonicalization_called is False
     assert not (output / "workspace-fixture.json").exists()
@@ -240,7 +242,8 @@ def test_canonicalization_failure_preserves_rejected_boundary_and_never_renders(
         compiler_factory=lambda: FixtureCompiler(fail_canonical=True),
     )
 
-    assert report["execution_stage"] == "CANONICALIZATION_STAGE_FAILED_CLOSED"
+    assert report["execution_stage"] == "COMPLETE_FAILED_CLOSED"
+    assert report["failure_stage"] == "CANONICALIZATION_STAGE"
     assert report["rejected_child_rendered"] is False
     assert (output / "child-grounded-assertions.json").exists()
     assert not (output / "child.knowledge.json").exists()

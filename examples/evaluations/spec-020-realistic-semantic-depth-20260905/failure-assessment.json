@@ -1,0 +1,30 @@
+{
+  "additional_semantic_retry_scientifically_justified": false,
+  "canonical_proposal_counts": {
+    "claims": 6,
+    "propositions": 0,
+    "relationships": 3,
+    "uncompiled_assertions": 0
+  },
+  "comparison": {
+    "parent_only_baseline_003": "PRESERVED_BUT_NO_TRUSTED_CHILD_AVAILABLE_FOR_COMPARISON",
+    "trusted_child_active": "NOT_AVAILABLE_FAILED_ADMISSION",
+    "original_source_passage": "source-scope.json",
+    "owner_cognitive_comparison": "NOT_RUN_NO_TRUSTED_CHILD"
+  },
+  "dependent_stages_not_run": [
+    "INDEPENDENT_TRUSTED_CHILD_SEMANTIC_REVIEW",
+    "WORKSPACE_RENDERING",
+    "BROWSER_VERIFICATION",
+    "OWNER_COGNITIVE_REVIEW"
+  ],
+  "failure": "trusted child representations do not retain the parent focus",
+  "failure_stage": "CANONICALIZATION_STAGE",
+  "grounded_assertion_count": 9,
+  "outcome": "FAILED_CLOSED",
+  "rejected_child_rendered": false,
+  "rejected_semantic_review": "rejected-semantic-review.json",
+  "retry_rationale": "An identical retry would select among probabilistic outputs after observing an unfavorable but valid result. The failure is useful evidence about semantic coverage and the existing structure-detection boundary, not a transient provider failure.",
+  "spec": "SPEC-020",
+  "trusted_child_available": false
+}
