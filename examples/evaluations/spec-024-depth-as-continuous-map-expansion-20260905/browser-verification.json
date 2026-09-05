@@ -1,0 +1,67 @@
+{
+  "browser": "Codex in-app browser (Chromium desktop engine)",
+  "checks": {
+    "canonical_relationship_evidence_syncs_right": true,
+    "collapse_restores_parent_state": true,
+    "contextual_explore_deeper": true,
+    "deep_concept_selection_syncs_right": true,
+    "left_map_expands": true,
+    "no_blue_selection_artifact": true,
+    "noncanonical_explanation_labeled_and_evidence_reveals": true,
+    "ordinary_navigation_intact": true,
+    "origin_path_visible": true,
+    "pan_zoom_with_expansion": true,
+    "parent_world_remains_navigable": true
+  },
+  "console": {
+    "errors": [],
+    "result": "PASS",
+    "warnings": []
+  },
+  "interaction": {
+    "canonical_relationship": {
+      "evidence_count": 1,
+      "label": "TRUSTED CANONICAL RELATIONSHIP",
+      "selected_id": "relationship-7d1b3317e1e4c682"
+    },
+    "collapse": {
+      "depth_layer_count_after": 0,
+      "parent_detail_restored": "double-slit experiment",
+      "parent_path_restored": "Electromagnetism / double-slit experiment"
+    },
+    "deep_concept": {
+      "right_detail": "wave–particle duality",
+      "selected_id": "waveparticle-duality"
+    },
+    "entry": {
+      "action": "Explore deeper",
+      "canonical_relationship_entry_preserved_by_static_regression": true,
+      "contextual_action_count": 1,
+      "deep_concept_count": 7,
+      "deep_explanation_count": 6,
+      "deep_relationship_count": 2,
+      "depth_layer_count": 1,
+      "origin_path_count": 1
+    },
+    "noncanonical_explanation": {
+      "evidence_hidden_before_request": true,
+      "evidence_revealed_after_request": true,
+      "label": "SOURCE-BACKED EXPLANATION · NON-CANONICAL",
+      "selected_id": "explanation-ae10fa8748fdac1f"
+    },
+    "parent_navigation_during_expansion": {
+      "depth_layer_remained_open": true,
+      "parent_selection": "light",
+      "right_detail_synchronized": true
+    },
+    "zoom": {
+      "after_viewbox": "960 730 960 640",
+      "after_zoom": "125%",
+      "before_viewbox": "840 650 1200 800",
+      "existing_pan_handlers_verified_by_frozen_engine_hash": true
+    }
+  },
+  "status": "PASS",
+  "verified_at": "2026-09-05",
+  "viewport": "1280x720"
+}

@@ -10,37 +10,29 @@ BASELINE-001, BASELINE-002, BASELINE-003, and BASELINE-004 remain preserved hist
 
 ## Last completed work packet
 
-`SPEC-023 — realistic semantic depth through explanatory projection`
+`SPEC-024 — depth as continuous map expansion`
 
-Status: `COMPLETED`
+Implementation status: `IMPLEMENTED_AWAITING_REVIEW`
 
-Verdict: `MIXED`
-
-Result: FIX-023 restored the intended contextual depth path and owner review confirmed the deeper view and return interaction work. The nested replacement-view grammar is nevertheless not preferred for scalable recursive depth because the learner's chain of thought can diverge from the continuous navigation map.
-
-Durable outcome: `debriefs/DEBRIEF-023-realistic-semantic-depth-through-explanatory-projection.md`
+Result: the exact BASELINE-004 workspace engine and frozen SPEC-020 / SPEC-021 semantic payload are composed in an isolated continuous-map depth expansion. The full machine gate passes; the cognitive product verdict remains pending owner review.
 
 ## Current approved work packet
 
 ```text
-specs/SPEC-024-depth-as-continuous-map-expansion.md
+NONE
 ```
 
-Path: `specs/SPEC-024-depth-as-continuous-map-expansion.md`
+Status: `NONE`
 
-Status: `APPROVED_FOR_IMPLEMENTATION`
+Authority: `NONE`
 
-Authority: `OFFLINE_ONLY`
-
-Human gate: `OWNER_REVIEW`
+Human gate: `NONE`
 
 Promotion: `NOT_AUTHORIZED`
 
 ## Current gate
 
-Codex may execute SPEC-024 autonomously within its offline authority. No owner decision is required during implementation unless a genuine authority boundary in the contract is reached.
-
-After the machine gate passes and the implementation is committed/pushed, owner interaction with the fixed artifact is required before ChatGPT assigns the subjective SPEC-024 verdict.
+Owner cognitive review of the fixed SPEC-024 viewer is required. No further implementation, semantic change, UI change, baseline promotion, or product verdict is authorized.
 
 ## Frozen / protected state
 
@@ -49,12 +41,13 @@ After the machine gate passes and the implementation is committed/pushed, owner 
 - frozen SPEC-020 realistic quantum semantic packet and its reviewed defects;
 - frozen SPEC-021 explanatory projection semantics;
 - completed SPEC-023/FIX-023 functional depth artifact as historical evidence;
+- isolated SPEC-024 continuous-map depth artifact awaiting owner verdict;
 - trusted semantic vocabulary, grounding, provenance, and fail-closed behavior;
 - unrelated user work.
 
 ## Next intended action
 
-Codex executes SPEC-024 from this pointer, using the accepted learner workspace and existing frozen double-slit depth artifacts to test depth as a spatial expansion of the continuous map. It must not perform live/model/external calls or promote a baseline.
+The owner uses the fixed SPEC-024 viewer and supplies spontaneous feedback on whether deeper material feels like continuing through the same knowledge world while retaining orientation and trust. ChatGPT may then record one allowed verdict; any promotion or further implementation requires separate authority.
 
 ## Coordination rule
 
