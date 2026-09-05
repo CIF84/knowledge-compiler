@@ -12,38 +12,40 @@ BASELINE-001, BASELINE-002, BASELINE-003, and BASELINE-004 remain preserved hist
 
 `OPS-003 — repository control plane and low-attention handoff`
 
-Implementation status: `IMPLEMENTED_AWAITING_REVIEW`
+Review status: `ACCEPTED_FOR_PROSPECTIVE_VALIDATION`
 
-Result: operational hypothesis implemented for prospective validation.
+Result: repository control plane, explicit authority boundaries, deterministic active-work validation, and low-attention handoff protocol are implemented. The next normal product experiment is the prospective operational test.
 
 ## Current approved work packet
 
 ```text
-NONE
+specs/SPEC-023-realistic-semantic-depth-through-explanatory-projection.md
 ```
 
-Status: `NONE`
+Status: `APPROVED_FOR_IMPLEMENTATION`
 
-Authority: `NONE`
+Authority: `OFFLINE_ONLY`
 
-Human gate: `NONE`
+Human gate: `OWNER_REVIEW`
 
 Promotion: `NOT_AUTHORIZED`
 
 ## Current gate
 
-Independent ChatGPT repository review of OPS-003 implementation is required. No owner cognitive UI review is required.
+Prepare the existing frozen double-slit explanatory projection for owner cognitive review inside the exact BASELINE-004 learner-navigation workspace. No semantic regeneration, model calls, UI redesign, or baseline modification is authorized.
 
 ## Frozen / protected state
 
 - executable and frozen assets for BASELINE-001 through BASELINE-004;
 - BASELINE-004 learner-navigation behavior accepted after SPEC-022;
+- frozen SPEC-020 realistic quantum semantic packet and its reviewed defects;
+- frozen SPEC-021 explanatory projection semantics;
 - trusted semantic vocabulary, grounding, provenance, and fail-closed behavior;
 - unrelated user work.
 
 ## Next intended action
 
-ChatGPT independently reviews the repository implementation against OPS-003. A later explicitly approved work packet should prospectively test whether this control plane reduces owner intervention at non-decision boundaries.
+Codex executes the current approved work packet using `AGENTS.md`, this `STATUS.md`, and SPEC-023. It should operate autonomously below the declared decision boundary, stop only on a genuine authority/integrity blocker, and—if the machine gate passes—return a concise owner-review handoff with the exact viewer command.
 
 ## Coordination rule
 
