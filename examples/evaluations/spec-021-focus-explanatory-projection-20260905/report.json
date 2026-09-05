@@ -1,5 +1,32 @@
 {
   "baseline_assets_immutable": true,
+  "baseline_restoration": {
+    "allowlisted_shell_seam": [
+      "projection.css link",
+      "projection-extension.js script"
+    ],
+    "baseline_source": "examples/evaluations/spec-019-navigation-learning-workspace-20260905",
+    "camera_configuration_identical": true,
+    "direct_byte_reuse": {
+      "workspace-fixture.json": true,
+      "workspace.css": true,
+      "workspace.js": true
+    },
+    "frozen_styling_identical": true,
+    "interaction_handlers_identical": true,
+    "navigation_topology_identical": true,
+    "projection_seam": {
+      "baseline_navigation_state_access": false,
+      "camera_state_access": false,
+      "exits_before_baseline_navigation_click": true,
+      "location": "right learning pane only",
+      "page_navigation": false
+    },
+    "shell_structure_preserved": true,
+    "status": "PASS",
+    "workspace_focus_configuration_identical": true,
+    "world_coordinates_and_routes_identical": true
+  },
   "canonical_control": {
     "admission": "FAIL_FOCUS_ABSENT",
     "focus_present": false,
@@ -9,10 +36,12 @@
   "dependencies_removed": [],
   "deviations": [],
   "evaluation_version": "spec-021-v1",
-  "execution_stage": "PENDING_OWNER_COGNITIVE_REVIEW",
+  "execution_stage": "PENDING_BASELINE_RESTORATION_OWNER_REVIEW",
+  "experimental_evidence_valid": false,
+  "feature_evaluation_status": "STOPPED_PENDING_BASELINE_RESTORATION_CONFIRMATION",
   "focus_entity_id": "double-slit-experiment",
   "global_structure_detector_changed": false,
-  "human_review_status": "PENDING_OWNER_REVIEW",
+  "human_review_status": "PENDING_BASELINE_RESTORATION_CONFIRMATION",
   "knowledge_model_changed": false,
   "known_weaknesses": [
     "Six neutral anchors still require learner selection to expose meaning.",
@@ -57,5 +86,7 @@
   "semantic_ir_changes": [],
   "spec": "SPEC-021",
   "viewer_command": ".venv/bin/knowledge-compiler view-representations examples/evaluations/spec-021-focus-explanatory-projection-20260905 --port 8021",
-  "workspace_shell_changes": []
+  "workspace_shell_changes": [
+    "Allowlisted projection stylesheet and right-pane extension script only"
+  ]
 }

@@ -16,6 +16,7 @@ from knowledge_compiler.explanatory_projection import (
     projection_diagnostics,
 )
 from knowledge_compiler.explanatory_projection_evaluation import (
+    default_baseline003_assets,
     default_spec020_directory,
     prepare_explanatory_projection_evaluation,
 )
@@ -116,7 +117,6 @@ def test_workspace_evaluation_preserves_control_baselines_and_camera(tmp_path):
     report = prepare_explanatory_projection_evaluation(output_dir=output)
     control = json.loads((output / "canonical-control.json").read_text())
     manifest = json.loads((output / "input-manifest.json").read_text())
-    fixture = json.loads((output / "workspace-fixture.json").read_text())
     diagnostics = json.loads((output / "workspace-diagnostics.json").read_text())
     assert report["machine_integrity_verdict"] == "PASS"
     assert report["live_model_calls"] == 0
@@ -125,12 +125,19 @@ def test_workspace_evaluation_preserves_control_baselines_and_camera(tmp_path):
     assert control["admission"] == "FAIL_FOCUS_ABSENT"
     assert manifest["identity_verified"] is True
     assert manifest["baseline_immutable"] is True
-    assert fixture["semantic_depth"]["navigation_world_replaced"] is False
-    assert diagnostics["parent_navigation"]["stable"] is True
-    assert all(diagnostics["semantic_depth"][key] for key in (
-        "parent_to_projection_camera_unchanged", "projection_to_parent_camera_unchanged",
-        "return_to_parent_preserves_focus",
-    ))
+    baseline = default_baseline003_assets()
+    assert (output / "workspace-fixture.json").read_bytes() == (baseline / "workspace-fixture.json").read_bytes()
+    assert (output / "workspace.css").read_bytes() == (baseline / "workspace.css").read_bytes()
+    assert (output / "workspace.js").read_bytes() == (baseline / "workspace.js").read_bytes()
+    assert diagnostics["status"] == "PASS"
+    assert diagnostics["navigation_topology_identical"] is True
+    assert diagnostics["world_coordinates_and_routes_identical"] is True
+    assert diagnostics["workspace_focus_configuration_identical"] is True
+    assert diagnostics["camera_configuration_identical"] is True
+    assert diagnostics["interaction_handlers_identical"] is True
+    assert diagnostics["frozen_styling_identical"] is True
+    assert diagnostics["projection_seam"]["camera_state_access"] is False
+    assert report["experimental_evidence_valid"] is False
 
 
 def test_parent_projection_state_transition_preserves_camera_and_focus():
@@ -152,10 +159,47 @@ def test_evaluation_regenerates_byte_for_byte(tmp_path):
 def test_viewer_uses_distinct_visual_grammar_and_on_demand_evidence(tmp_path):
     output = tmp_path / "viewer"
     prepare_explanatory_projection_evaluation(output_dir=output)
-    script = (output / "workspace.js").read_text()
+    script = (output / "projection-extension.js").read_text()
     css = (output / "projection.css").read_text()
     assert "Source-backed explanation · non-canonical" in script
     assert "Show exact source evidence" in script
     assert "projection-attachment" in css and "stroke-dasharray" in css
     assert "projection-canonical" in css and "marker-end" in css
     assert "focus-caption" in css
+
+
+def test_restored_shell_diff_is_only_the_allowlisted_depth_seam(tmp_path):
+    output = tmp_path / "viewer"
+    prepare_explanatory_projection_evaluation(output_dir=output)
+    baseline = default_baseline003_assets()
+    restored = (output / "index.html").read_text()
+    normalized = restored.replace('\n  <link rel="stylesheet" href="projection.css">', "").replace(
+        '\n  <script src="projection-extension.js"></script>', ""
+    )
+    assert normalized == (baseline / "index.html").read_text()
+    assert restored.count('href="projection.css"') == 1
+    assert restored.count('src="projection-extension.js"') == 1
+
+
+def test_baseline_substitution_fails_closed(tmp_path):
+    baseline = tmp_path / "changed-baseline"
+    shutil.copytree(default_baseline003_assets(), baseline)
+    fixture = json.loads((baseline / "workspace-fixture.json").read_text())
+    fixture["navigation"]["nodes"][0]["world"]["x"] += 1
+    (baseline / "workspace-fixture.json").write_text(json.dumps(fixture))
+    with pytest.raises(ValidationError, match="changed or were substituted"):
+        prepare_explanatory_projection_evaluation(
+            output_dir=tmp_path / "rejected", baseline_dir=baseline
+        )
+
+
+def test_projection_extension_cannot_replace_navigation_or_camera(tmp_path):
+    output = tmp_path / "viewer"
+    prepare_explanatory_projection_evaluation(output_dir=output)
+    extension = (output / "projection-extension.js").read_text()
+    assert "state.camera" not in extension
+    assert "navigation-pane" not in extension
+    assert "renderNavigation" not in extension
+    assert "installPanning" not in extension
+    assert "installZoom" not in extension
+    assert 'projectionById("nav-graph").addEventListener' in extension

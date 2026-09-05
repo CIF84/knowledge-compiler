@@ -10,7 +10,6 @@ from pathlib import Path
 from typing import Any
 
 from .assertion_compilation import CanonicalizationProposal, compile_assertion_semantics
-from .continuous_navigation import CameraState, VIEWPORT
 from .explanatory_projection import (
     FOCUS_ENTITY_ID,
     FROZEN_SPEC020_HASHES,
@@ -20,15 +19,7 @@ from .explanatory_projection import (
     load_frozen_spec020_inputs,
     projection_diagnostics,
 )
-from .models import KnowledgeModel, SourceDocument, ValidationError
-from .navigation_learning_workspace import _route
-from .semantic_depth import (
-    INITIAL_CAMERA,
-    WORLD_BOUNDS,
-    DepthWorkspaceState,
-    depth_camera_invariant,
-    switch_semantic_depth,
-)
+from .models import SourceDocument, ValidationError
 from .structure_detection import StructureDetector
 
 
@@ -47,6 +38,10 @@ def default_spec020_directory() -> Path:
 
 def default_spec013_directory() -> Path:
     return repository_root() / "examples" / "evaluations" / "spec-013-assertion-first-semantic-compilation-20260904"
+
+
+def default_baseline003_assets() -> Path:
+    return repository_root() / "examples" / "evaluations" / "spec-019-navigation-learning-workspace-20260905"
 
 
 def _hash(path: Path) -> str:
@@ -103,77 +98,85 @@ def _canonical_control(inputs: FrozenProjectionInputs) -> dict[str, Any]:
     }
 
 
-def _parent_navigation(parent: KnowledgeModel) -> dict[str, Any]:
-    positions = {}
-    for index, entity in enumerate(sorted(parent.entities, key=lambda item: item.id)):
-        column, row = index % 6, index // 6
-        positions[entity.id] = {"x": 200.0 + column * 360.0, "y": 180.0 + row * 190.0}
-    nodes = [{
-        "entity_id": entity.id, "label": entity.name, "description": entity.description,
-        "entity_type": entity.entity_type.value, "domain_id": "quantum_mechanics",
-        "world": positions[entity.id], "has_deeper_resolution": entity.id == FOCUS_ENTITY_ID,
-    } for entity in sorted(parent.entities, key=lambda item: item.id)]
-    edges, routes = [], []
-    adjacency = {item["entity_id"]: [] for item in nodes}
-    for relationship in sorted(parent.relationships, key=lambda item: item.id):
-        key = f"parent-{relationship.id}"
-        edges.append({
-            "edge_key": key, "source_entity_id": relationship.source_entity_id,
-            "target_entity_id": relationship.target_entity_id,
-            "relationship_type": relationship.relationship_type.value,
-            "relationship_label": relationship.relationship_type.value.replace("_", " "),
-            "relationship_ids": [relationship.id], "domain_id": "quantum_mechanics",
-        })
-        routes.append({"edge_key": key, **_route(
-            positions[relationship.source_entity_id], positions[relationship.target_entity_id]
-        )})
-        adjacency[relationship.source_entity_id].append(relationship.target_entity_id)
-        adjacency[relationship.target_entity_id].append(relationship.source_entity_id)
-    for neighbors in adjacency.values():
-        neighbors.sort()
-    return {
-        "nodes": nodes, "edges": edges, "adjacency": adjacency,
-        "world": {"bounds": WORLD_BOUNDS, "layout_strategy": "DETERMINISTIC_PARENT_SYMBOL_GRID",
-                  "node_positions_stable": True, "routes": routes},
-        "camera": {"initial": INITIAL_CAMERA, "viewport": VIEWPORT,
-                   "transform": "SVG_VIEWBOX_WORLD_TO_VIEWPORT",
-                   "zoom": {"kind": "GEOMETRIC_ONLY", "min_scale": .55, "max_scale": 2.25,
-                            "initial_scale": 1.0, "pointer_centered": True,
-                            "wheel_sensitivity": .0015}, "focus_animation_ms": 280},
-    }
-
-
-def _workspace(parent: KnowledgeModel, inputs: FrozenProjectionInputs, projection: dict[str, Any]) -> dict[str, Any]:
-    navigation = _parent_navigation(parent)
-    return {
-        "version": EVALUATION_VERSION,
-        "fixture_status": "FROZEN_SPEC020_PACKET_WITH_OFFLINE_EXPLANATORY_PROJECTION",
-        "domains": [{"domain_id": "quantum_mechanics", "label": "Quantum mechanics",
-                     "world_region": {"x": 70.0, "y": 70.0, "width": 2200.0, "height": 1340.0},
-                     "learning_model": inputs.parent_representation}],
-        "navigation": navigation,
-        "workspace": {"default_domain_id": "quantum_mechanics", "default_focused_entity_id": FOCUS_ENTITY_ID,
-                      "shared_focus": "STABLE_PARENT_ENTITY_ID", "camera_independent_from_semantic_focus": True},
-        "semantic_depth": {"focus_entity_id": FOCUS_ENTITY_ID, "focus_label": "double-slit experiment",
-                           "levels": ["PARENT", "EXPLANATORY_PROJECTION"], "default_level": "PARENT",
-                           "maximum_child_depth": 1, "projection": projection,
-                           "navigation_world_replaced": False, "geometric_zoom_independent": True},
-    }
-
-
-def _copy_assets(output_dir: Path) -> None:
-    base = files("knowledge_compiler").joinpath("navigation_learning_assets", "workspace.css")
-    with base.open("rb") as source, (output_dir / "workspace.css").open("wb") as target:
-        shutil.copyfileobj(source, target)
+def _copy_assets(output_dir: Path, baseline_dir: Path) -> None:
+    for name in ("workspace.css", "workspace.js", "workspace-fixture.json"):
+        shutil.copyfile(baseline_dir / name, output_dir / name)
+    baseline_index = (baseline_dir / "index.html").read_text(encoding="utf-8")
+    if baseline_index.count('<link rel="stylesheet" href="workspace.css">') != 1:
+        raise ValidationError("BASELINE-003 index stylesheet seam changed")
+    if baseline_index.count('<script src="workspace.js"></script>') != 1:
+        raise ValidationError("BASELINE-003 index script seam changed")
+    extended_index = baseline_index.replace(
+        '<link rel="stylesheet" href="workspace.css">',
+        '<link rel="stylesheet" href="workspace.css">\n  <link rel="stylesheet" href="projection.css">',
+    ).replace(
+        '<script src="workspace.js"></script>',
+        '<script src="workspace.js"></script>\n  <script src="projection-extension.js"></script>',
+    )
+    (output_dir / "index.html").write_text(extended_index, encoding="utf-8")
     assets = files("knowledge_compiler").joinpath("explanatory_projection_assets")
-    for name in ("index.html", "projection.css", "workspace.js"):
+    for name in ("projection.css", "projection-extension.js"):
         with assets.joinpath(name).open("rb") as source, (output_dir / name).open("wb") as target:
             shutil.copyfileobj(source, target)
+
+
+def _restoration_diagnostics(output_dir: Path, baseline_dir: Path) -> dict[str, Any]:
+    baseline_index = (baseline_dir / "index.html").read_text(encoding="utf-8")
+    restored_index = (output_dir / "index.html").read_text(encoding="utf-8")
+    normalized_index = restored_index.replace(
+        '\n  <link rel="stylesheet" href="projection.css">', ""
+    ).replace('\n  <script src="projection-extension.js"></script>', "")
+    exact = {
+        name: _hash(output_dir / name) == _hash(baseline_dir / name)
+        for name in ("workspace.css", "workspace.js", "workspace-fixture.json")
+    }
+    baseline_fixture = json.loads((baseline_dir / "workspace-fixture.json").read_text(encoding="utf-8"))
+    restored_fixture = json.loads((output_dir / "workspace-fixture.json").read_text(encoding="utf-8"))
+    topology = lambda fixture: {
+        "nodes": [(item["entity_id"], item["domain_id"]) for item in fixture["navigation"]["nodes"]],
+        "edges": [(item["edge_key"], item["source_entity_id"], item["target_entity_id"], tuple(item["relationship_ids"])) for item in fixture["navigation"]["edges"]],
+        "adjacency": fixture["navigation"]["adjacency"],
+    }
+    coordinates = lambda fixture: {
+        "regions": [(item["domain_id"], item["world_region"]) for item in fixture["domains"]],
+        "nodes": [(item["entity_id"], item["world"]) for item in fixture["navigation"]["nodes"]],
+        "world": fixture["navigation"]["world"],
+    }
+    result = {
+        "status": "PASS" if all(exact.values()) and normalized_index == baseline_index else "FAIL_CLOSED",
+        "baseline_source": str(baseline_dir.relative_to(repository_root())),
+        "direct_byte_reuse": exact,
+        "shell_structure_preserved": normalized_index == baseline_index,
+        "allowlisted_shell_seam": ["projection.css link", "projection-extension.js script"],
+        "navigation_topology_identical": topology(restored_fixture) == topology(baseline_fixture),
+        "world_coordinates_and_routes_identical": coordinates(restored_fixture) == coordinates(baseline_fixture),
+        "workspace_focus_configuration_identical": restored_fixture["workspace"] == baseline_fixture["workspace"],
+        "camera_configuration_identical": restored_fixture["navigation"]["camera"] == baseline_fixture["navigation"]["camera"],
+        "interaction_handlers_identical": exact["workspace.js"],
+        "frozen_styling_identical": exact["workspace.css"],
+        "projection_seam": {
+            "location": "right learning pane only",
+            "baseline_navigation_state_access": False,
+            "camera_state_access": False,
+            "exits_before_baseline_navigation_click": True,
+            "page_navigation": False,
+        },
+    }
+    if result["status"] != "PASS" or not all(
+        result[key] for key in (
+            "navigation_topology_identical", "world_coordinates_and_routes_identical",
+            "workspace_focus_configuration_identical", "camera_configuration_identical",
+            "interaction_handlers_identical", "frozen_styling_identical",
+        )
+    ):
+        raise ValidationError("restored viewer differs from actual BASELINE-003 controls")
+    return result
 
 
 def prepare_explanatory_projection_evaluation(
     *, output_dir: Path, spec020_dir: Path = default_spec020_directory(),
     spec013_dir: Path = default_spec013_directory(),
+    baseline_dir: Path = default_baseline003_assets(),
 ) -> dict[str, Any]:
     """Generate the complete offline packet and viewer with no semantic mutation."""
     output_dir.mkdir(parents=True, exist_ok=False)
@@ -182,10 +185,15 @@ def prepare_explanatory_projection_evaluation(
     expected_parent_hash = inputs.parent_hashes["before"]["parent_knowledge"]
     if _hash(parent_path) != expected_parent_hash:
         raise ValidationError("trusted SPEC-013 parent bytes differ from frozen SPEC-020 parent hash")
-    parent = KnowledgeModel.from_dict(json.loads(parent_path.read_text(encoding="utf-8")))
     baseline_before = _baseline_hashes()
     if baseline_before != inputs.baseline_manifest["before"]:
         raise ValidationError("BASELINE-001/002/003 bytes differ from frozen SPEC-020 manifest")
+    expected_baseline_assets = inputs.baseline_manifest["before"]["baseline_003_assets"]
+    controlled_baseline_files = ("index.html", "workspace.css", "workspace.js", "workspace-fixture.json")
+    baseline_source_hashes = {name: _hash(baseline_dir / name) for name in controlled_baseline_files}
+    expected_control_hashes = {name: expected_baseline_assets[name] for name in controlled_baseline_files}
+    if baseline_source_hashes != expected_control_hashes:
+        raise ValidationError("actual BASELINE-003 implementation/assets changed or were substituted")
     projection = build_explanatory_projection(inputs)
     projection_value = projection.to_dict()
     diagnostics = projection_diagnostics(projection)
@@ -205,22 +213,6 @@ def prepare_explanatory_projection_evaluation(
         ),
         "baseline_003_asset_immutability": baseline_before == _baseline_hashes(),
     })
-    workspace = _workspace(parent, inputs, projection_value)
-    nav_hash = hashlib.sha256(canonical_bytes(workspace["navigation"])).hexdigest()
-    initial = DepthWorkspaceState(camera=CameraState(**INITIAL_CAMERA))
-    deeper = switch_semantic_depth(initial, "CHILD")
-    returned = switch_semantic_depth(deeper, "PARENT")
-    workspace_diagnostics = {
-        "parent_navigation": {"entity_count": len(workspace["navigation"]["nodes"]),
-                              "relationship_count": len(workspace["navigation"]["edges"]),
-                              "world_hash_before_transition": nav_hash,
-                              "world_hash_after_transition": nav_hash, "stable": True},
-        "semantic_depth": {"focus_entity_id": FOCUS_ENTITY_ID,
-                           "parent_to_projection_camera_unchanged": depth_camera_invariant(initial, deeper),
-                           "projection_to_parent_camera_unchanged": depth_camera_invariant(deeper, returned),
-                           "return_to_parent_preserves_focus": returned.focused_entity_id == FOCUS_ENTITY_ID,
-                           "geometric_zoom_triggers_semantic_depth": False},
-    }
     raw_history = repository_root() / "debriefs" / "DEBRIEF-016-assertion-aware-representation.md"
     comparison = {
         "canonical_control": canonical,
@@ -253,9 +245,9 @@ def prepare_explanatory_projection_evaluation(
     ))
     report = {
         "spec": "SPEC-021", "evaluation_version": EVALUATION_VERSION,
-        "execution_stage": "PENDING_OWNER_COGNITIVE_REVIEW" if machine_pass else "FAILED_CLOSED",
+        "execution_stage": "PENDING_BASELINE_RESTORATION_OWNER_REVIEW" if machine_pass else "FAILED_CLOSED",
         "machine_integrity_verdict": "PASS" if machine_pass else "FAIL_CLOSED",
-        "product_verdict": "PENDING", "human_review_status": "PENDING_OWNER_REVIEW" if machine_pass else "NOT_AVAILABLE",
+        "product_verdict": "PENDING", "human_review_status": "PENDING_BASELINE_RESTORATION_CONFIRMATION" if machine_pass else "NOT_AVAILABLE",
         "focus_entity_id": FOCUS_ENTITY_ID, "live_model_calls": 0,
         "metrics": diagnostics, "canonical_control": {"structure_count": canonical["structure_count"],
                                                         "focus_present": canonical["focus_present"],
@@ -263,7 +255,9 @@ def prepare_explanatory_projection_evaluation(
         "knowledge_model_changed": False, "global_structure_detector_changed": False,
         "baseline_assets_immutable": baseline_before == baseline_after,
         "dependencies_added": [], "dependencies_removed": [], "semantic_ir_changes": [],
-        "workspace_shell_changes": [], "deviations": [],
+        "workspace_shell_changes": ["Allowlisted projection stylesheet and right-pane extension script only"], "deviations": [],
+        "experimental_evidence_valid": False,
+        "feature_evaluation_status": "STOPPED_PENDING_BASELINE_RESTORATION_CONFIRMATION",
         "known_weaknesses": ["Six neutral anchors still require learner selection to expose meaning.",
                              "Dense dashed attachments may compete for attention on a small viewport."],
         "viewer_command": f".venv/bin/knowledge-compiler view-representations {EVALUATION_RELATIVE_PATH} --port 8021",
@@ -275,18 +269,18 @@ def prepare_explanatory_projection_evaluation(
         "parent_knowledge_sha256": expected_parent_hash,
         "baseline_before": baseline_before, "baseline_after": baseline_after,
         "baseline_immutable": baseline_before == baseline_after,
+        "restored_baseline_control_hashes": baseline_source_hashes,
     }
     for name, value in {
         "input-manifest.json": input_manifest, "projection.json": projection_value,
         "projection-diagnostics.json": diagnostics, "canonical-control.json": canonical,
         "semantic-tier-audit.json": tier_audit, "machine-comparison.json": comparison,
-        "workspace-fixture.json": workspace, "workspace-diagnostics.json": workspace_diagnostics,
         "report.json": report,
-        "human-review-template.json": {"status": "PENDING_OWNER_REVIEW", "owner_response": None,
+        "human-review-template.json": {"status": "BLOCKED_PENDING_BASELINE_RESTORATION_CONFIRMATION", "owner_response": None,
                                        "verdict": "PENDING", "allowed_verdicts": [
                                            "EXPLANATORY_PROJECTION_BETTER", "MIXED",
                                            "NO_MEANINGFUL_IMPROVEMENT", "INCONCLUSIVE"]},
-        "browser-verification.json": {"status": "PENDING_MANUAL_BROWSER_VERIFICATION",
+        "browser-verification.json": {"status": "NOT_RUN_FEATURE_EVALUATION_STOPPED",
                                       "mouse": {}, "keyboard": {}, "console": {}},
     }.items():
         _write_json(output_dir / name, value)
@@ -306,5 +300,10 @@ def prepare_explanatory_projection_evaluation(
         "```\n\nReview:\n\n```sh\n"
         f".venv/bin/knowledge-compiler view-representations {EVALUATION_RELATIVE_PATH} --port 8021\n"
         "```\n", encoding="utf-8")
-    _copy_assets(output_dir)
+    _copy_assets(output_dir, baseline_dir)
+    restoration = _restoration_diagnostics(output_dir, baseline_dir)
+    _write_json(output_dir / "workspace-diagnostics.json", restoration)
+    report["baseline_restoration"] = restoration
+    report["machine_integrity_verdict"] = restoration["status"]
+    _write_json(output_dir / "report.json", report)
     return report
