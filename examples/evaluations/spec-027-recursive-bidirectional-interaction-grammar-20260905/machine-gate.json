@@ -1,0 +1,197 @@
+{
+  "bidirectional_parity_matrix": {
+    "depth_specific_branch_count": 0,
+    "parent_exceptions": [
+      {
+        "reason": "The frozen BASELINE-004 parent map contains concepts and canonical relationships but no source-backed explanatory object; absence is preserved rather than inventing ground-level content.",
+        "semantic_kind": "explanation"
+      }
+    ],
+    "rows": [
+      {
+        "depth_1": "PASS",
+        "depth_2": "PASS",
+        "interaction": "map_concept_hover_to_right_preview",
+        "parent": "PASS",
+        "semantic_kind": "concept"
+      },
+      {
+        "depth_1": "PASS",
+        "depth_2": "PASS",
+        "interaction": "map_concept_click_to_right_selection",
+        "parent": "PASS",
+        "semantic_kind": "concept"
+      },
+      {
+        "depth_1": "PASS",
+        "depth_2": "PASS",
+        "interaction": "right_concept_hover_to_map_preview",
+        "parent": "PASS",
+        "semantic_kind": "concept"
+      },
+      {
+        "depth_1": "PASS",
+        "depth_2": "PASS",
+        "interaction": "right_concept_click_to_map_selection",
+        "parent": "PASS",
+        "semantic_kind": "concept"
+      },
+      {
+        "depth_1": "PASS",
+        "depth_2": "PASS",
+        "interaction": "map_relationship_hover_preview",
+        "parent": "PASS",
+        "semantic_kind": "canonical"
+      },
+      {
+        "depth_1": "PASS",
+        "depth_2": "PASS",
+        "interaction": "map_relationship_click_select",
+        "parent": "PASS",
+        "semantic_kind": "canonical"
+      },
+      {
+        "depth_1": "PASS",
+        "depth_2": "PASS",
+        "interaction": "right_relationship_focus_to_map",
+        "parent": "PASS",
+        "semantic_kind": "canonical"
+      },
+      {
+        "depth_1": "PASS",
+        "depth_2": "PASS",
+        "interaction": "explanation_focus_to_map",
+        "parent": "PRESERVED_NOT_APPLICABLE",
+        "semantic_kind": "explanation"
+      },
+      {
+        "depth_1": "PASS",
+        "depth_2": "PASS",
+        "interaction": "evidence_synchronization",
+        "parent": "PASS",
+        "semantic_kind": "canonical"
+      },
+      {
+        "depth_1": "PASS",
+        "depth_2": "PASS",
+        "interaction": "clear_selection",
+        "parent": "PASS",
+        "semantic_kind": "concept"
+      },
+      {
+        "depth_1": "PASS",
+        "depth_2": "PASS",
+        "interaction": "stale_focus_suppression",
+        "parent": "PASS",
+        "semantic_kind": "canonical"
+      }
+    ],
+    "shared_transition_function": "transition",
+    "state_schema": {
+      "preview": null,
+      "selected": null
+    },
+    "status": "PASS",
+    "tested_locations": [
+      "parent",
+      "depth-1",
+      "depth-2"
+    ],
+    "tested_surfaces": [
+      "map",
+      "representation"
+    ]
+  },
+  "browser_checks": {
+    "clear_selection_parity": true,
+    "depth1_explanation_bidirectional": true,
+    "depth1_map_concept_click_to_right_selection": true,
+    "depth1_map_concept_hover_to_right_preview": true,
+    "depth1_map_relationship_hover_and_click_bidirectional": true,
+    "depth1_right_concept_click_to_map_selection": true,
+    "depth1_right_concept_hover_to_map_preview": true,
+    "depth1_right_relationship_hover_and_click_bidirectional": true,
+    "depth2_shared_contract_fixture_passes": true,
+    "evidence_synchronization_intact": true,
+    "no_blue_selection_artifact": true,
+    "ordinary_parent_navigation_intact": true,
+    "pan_zoom_and_collapse_intact": true,
+    "parent_concept_hover_and_click_bidirectional": true,
+    "parent_depth_switching_intact": true,
+    "parent_relationship_hover_and_click_bidirectional": true,
+    "spec024_spatial_expansion_intact": true,
+    "spec026_connection_legibility_intact": true,
+    "switching_leaves_no_stale_focus": true
+  },
+  "browser_console_clean": true,
+  "runtime_checks": {
+    "baseline001_through_004_unchanged": true,
+    "bidirectional_parity_matrix_passes": true,
+    "hover_and_click_share_dispatch": true,
+    "map_and_representation_use_same_object_resolver": true,
+    "no_depth_number_specific_dispatch_branch": true,
+    "one_shared_state_transition": true,
+    "preview_and_selection_are_distinct_state": true,
+    "right_depth_objects_are_interaction_targets": true,
+    "semantic_legibility_adapter_unchanged": true,
+    "spatial_depth_engine_unchanged": true,
+    "spec023_historical_artifact_unchanged": true,
+    "spec024_historical_artifact_unchanged": true,
+    "spec025_historical_artifact_unchanged": true,
+    "spec026_historical_artifact_unchanged": true,
+    "spec026_runtime_files_byte_identical": true,
+    "spec026_shell_composed_not_reimplemented": true,
+    "synthetic_depth_2_uses_shared_dispatch": true
+  },
+  "semantic_checks": {
+    "candidate_depth_map_byte_identical": true,
+    "canonical_predicates_unchanged": true,
+    "known_rejected_causal_item_remains_noncanonical": true,
+    "pairwise_edge_fabrication_count_zero": true,
+    "semantic_vocabulary_unchanged": true,
+    "spec020_frozen_inputs_unchanged": true,
+    "spec021_projection_payload_unchanged": true,
+    "synthetic_fixture_adds_no_product_semantics": true
+  },
+  "status": "PASS",
+  "synthetic_recursive_fixture": {
+    "fixture_only": true,
+    "new_product_semantics": [],
+    "parent_expansion_id": "depth-double-slit-v1",
+    "sample_semantic_objects": [
+      {
+        "identity": "atom",
+        "kind": "concept",
+        "locations": [
+          "parent",
+          "depth-1",
+          "depth-2"
+        ],
+        "shared_dispatch": "recursiveDispatch"
+      },
+      {
+        "identity": "relationship-3fadf1ab890d9bde",
+        "kind": "canonical",
+        "locations": [
+          "parent",
+          "depth-1",
+          "depth-2"
+        ],
+        "shared_dispatch": "recursiveDispatch"
+      },
+      {
+        "identity": "explanation-6a9db96dcce9c27d",
+        "kind": "explanation",
+        "locations": [
+          "parent",
+          "depth-1",
+          "depth-2"
+        ],
+        "shared_dispatch": "recursiveDispatch"
+      }
+    ],
+    "semantic_payload_sha256": "656872bf08855184f1f687fdc95b26328489f2d73d6f35699aa0013c4b0f8235",
+    "source_expansion_id": "depth-double-slit-v1",
+    "synthetic_expansion_id": "synthetic-depth-2"
+  }
+}

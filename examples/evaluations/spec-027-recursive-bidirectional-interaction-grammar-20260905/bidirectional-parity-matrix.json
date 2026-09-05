@@ -1,0 +1,103 @@
+{
+  "depth_specific_branch_count": 0,
+  "parent_exceptions": [
+    {
+      "reason": "The frozen BASELINE-004 parent map contains concepts and canonical relationships but no source-backed explanatory object; absence is preserved rather than inventing ground-level content.",
+      "semantic_kind": "explanation"
+    }
+  ],
+  "rows": [
+    {
+      "depth_1": "PASS",
+      "depth_2": "PASS",
+      "interaction": "map_concept_hover_to_right_preview",
+      "parent": "PASS",
+      "semantic_kind": "concept"
+    },
+    {
+      "depth_1": "PASS",
+      "depth_2": "PASS",
+      "interaction": "map_concept_click_to_right_selection",
+      "parent": "PASS",
+      "semantic_kind": "concept"
+    },
+    {
+      "depth_1": "PASS",
+      "depth_2": "PASS",
+      "interaction": "right_concept_hover_to_map_preview",
+      "parent": "PASS",
+      "semantic_kind": "concept"
+    },
+    {
+      "depth_1": "PASS",
+      "depth_2": "PASS",
+      "interaction": "right_concept_click_to_map_selection",
+      "parent": "PASS",
+      "semantic_kind": "concept"
+    },
+    {
+      "depth_1": "PASS",
+      "depth_2": "PASS",
+      "interaction": "map_relationship_hover_preview",
+      "parent": "PASS",
+      "semantic_kind": "canonical"
+    },
+    {
+      "depth_1": "PASS",
+      "depth_2": "PASS",
+      "interaction": "map_relationship_click_select",
+      "parent": "PASS",
+      "semantic_kind": "canonical"
+    },
+    {
+      "depth_1": "PASS",
+      "depth_2": "PASS",
+      "interaction": "right_relationship_focus_to_map",
+      "parent": "PASS",
+      "semantic_kind": "canonical"
+    },
+    {
+      "depth_1": "PASS",
+      "depth_2": "PASS",
+      "interaction": "explanation_focus_to_map",
+      "parent": "PRESERVED_NOT_APPLICABLE",
+      "semantic_kind": "explanation"
+    },
+    {
+      "depth_1": "PASS",
+      "depth_2": "PASS",
+      "interaction": "evidence_synchronization",
+      "parent": "PASS",
+      "semantic_kind": "canonical"
+    },
+    {
+      "depth_1": "PASS",
+      "depth_2": "PASS",
+      "interaction": "clear_selection",
+      "parent": "PASS",
+      "semantic_kind": "concept"
+    },
+    {
+      "depth_1": "PASS",
+      "depth_2": "PASS",
+      "interaction": "stale_focus_suppression",
+      "parent": "PASS",
+      "semantic_kind": "canonical"
+    }
+  ],
+  "shared_transition_function": "transition",
+  "state_schema": {
+    "preview": null,
+    "selected": null
+  },
+  "status": "PASS",
+  "tested_locations": [
+    "parent",
+    "depth-1",
+    "depth-2"
+  ],
+  "tested_surfaces": [
+    "map",
+    "representation"
+  ]
+}

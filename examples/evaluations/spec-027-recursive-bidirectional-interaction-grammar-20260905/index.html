@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>Knowledge Compiler — Navigation + Learning Workspace</title>
+  <link rel="stylesheet" href="workspace.css">
+  <link rel="stylesheet" href="projection.css">
+  <link rel="stylesheet" href="grammar.css">
+  <link rel="stylesheet" href="depth-expansion.css">
+  <link rel="stylesheet" href="depth-interaction.css">
+  <link rel="stylesheet" href="semantic-interaction.css">
+  <link rel="stylesheet" href="recursive-interaction.css">
+</head>
+<body>
+  <header>
+    <div><span class="eyebrow">Knowledge Compiler</span><h1>Navigation + learning workspace</h1></div>
+    <span class="fixture-label">Composed deterministic SPEC-006 representations · no cross-domain semantic edges</span>
+  </header>
+  <main class="workspace">
+    <section id="navigation-pane" class="surface navigation-pane" aria-label="Continuous navigation context">
+      <div class="surface-heading">
+        <div><span class="role-label">WHERE AM I?</span><h2>Knowledge map</h2></div>
+        <div class="map-actions" aria-label="Map navigation">
+          <button id="history-back" aria-label="Previous map focus" disabled>←</button>
+          <button id="history-forward" aria-label="Next map focus" disabled>→</button>
+          <button id="zoom-out" aria-label="Zoom out">−</button>
+          <button id="zoom-in" aria-label="Zoom in">+</button>
+          <button id="overview" aria-label="Return to initial overview">⌂</button>
+        </div>
+      </div>
+      <div id="nav-viewport" class="nav-viewport">
+        <svg id="nav-graph" role="img" aria-label="Continuous map of the composed knowledge workspace"></svg>
+      </div>
+      <div class="map-status"><span id="nav-status">Software Architecture</span><span id="scale-status">100%</span></div>
+      <p id="nav-summary" class="nav-summary">The map locates the current learning focus in its larger context.</p>
+    </section>
+
+    <section id="learning-pane" class="surface learning-pane" aria-label="Focused learning representation">
+      <nav id="context-path" class="context-path" aria-label="Parent context"></nav>
+      <div class="surface-heading learning-heading">
+        <div><span class="role-label learning-role">WHAT DOES THIS MEAN?</span><h2 id="learning-title">Software Architecture</h2></div>
+        <button id="clear-selection" disabled>Clear selection</button>
+      </div>
+      <div id="representation-presets" class="representation-presets" aria-label="Available representations"></div>
+      <div class="learning-meta"><span id="representation-badge" class="badge"></span><span id="representation-meta"></span></div>
+      <div class="learning-workspace">
+        <div class="learning-canvas">
+          <svg id="learning-graph" role="img" aria-label="Structure-appropriate focused learning representation"></svg>
+        </div>
+        <aside id="learning-detail" aria-live="polite">
+          <span class="eyebrow">Explanation &amp; evidence</span>
+          <h3>Select a concept or relationship</h3>
+          <p>The learning surface keeps meaning, structure, and source evidence together.</p>
+        </aside>
+      </div>
+    </section>
+  </main>
+  <script src="workspace.js"></script>
+  <script>window.__CONTEXTUAL_DEPTH_ONLY__=true;</script>
+  <script src="projection-extension.js"></script>
+  <script src="learner-grammar.js"></script>
+  <script src="depth-expansion.js"></script>
+  <script src="depth-interaction.js"></script>
+  <script src="semantic-interaction.js"></script>
+  <script src="recursive-interaction.js"></script>
+</body>
+</html>

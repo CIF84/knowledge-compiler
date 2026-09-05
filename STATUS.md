@@ -10,31 +10,29 @@ BASELINE-001, BASELINE-002, BASELINE-003, and BASELINE-004 remain preserved hist
 
 ## Last completed work packet
 
-`SPEC-026 — semantic interaction invariance`
+`SPEC-027 — recursive bidirectional interaction grammar`
 
-Implementation status: `COMPLETED`
+Implementation status: `IMPLEMENTED_AWAITING_REVIEW`
 
-Owner verdict: `MIXED`
-
-Result: semantic legibility and map → right-pane synchronization improved materially, but owner review showed that hover and reverse right-pane → map synchronization still differ at depth. SPEC-026 is preserved unchanged as historical evidence and is not promoted.
+Result: the isolated offline candidate routes parent and revealed-depth concepts, canonical relationships, and source-backed explanations through one semantic-object interaction state and dispatcher. The deterministic parity, preservation, browser interaction, and console gates pass; the cognitive product verdict remains pending owner review.
 
 ## Current approved work packet
 
 ```text
-specs/SPEC-027-recursive-bidirectional-interaction-grammar.md
+NONE
 ```
 
-Status: `APPROVED_FOR_IMPLEMENTATION`
+Status: `NONE`
 
-Authority: `OFFLINE_ONLY`
+Authority: `NONE`
 
-Human gate: `OWNER_REVIEW`
+Human gate: `NONE`
 
 Promotion: `NOT_AUTHORIZED`
 
 ## Current gate
 
-SPEC-027 is approved for autonomous offline implementation. Codex may perform the bounded mechanical lifecycle defined by the active contract, including implementation, deterministic testing/evaluation, in-scope defect repair, commit, push, and low-attention handoff. Subjective product verdict and baseline promotion remain unauthorized pending owner review.
+Owner cognitive review of the fixed SPEC-027 viewer is required. No further implementation, semantic change, UI change, baseline promotion, or product verdict is authorized.
 
 ## Frozen / protected state
 
@@ -46,12 +44,13 @@ SPEC-027 is approved for autonomous offline implementation. Codex may perform th
 - completed SPEC-024 continuous-map depth artifact, preserved unchanged after owner verdict `DEPTH_NAVIGATION_BETTER`;
 - completed SPEC-025 depth-invariant-selection artifact, preserved unchanged after owner verdict `MIXED`;
 - completed SPEC-026 semantic-interaction artifact, preserved unchanged after owner verdict `MIXED`;
+- isolated SPEC-027 recursive-interaction artifact awaiting owner verdict;
 - trusted semantic vocabulary, grounding, provenance, and fail-closed behavior;
 - unrelated user work.
 
 ## Next intended action
 
-Codex executes SPEC-027 to test one shared recursive, bidirectional semantic-object interaction grammar across parent, first expansion, and synthetic second expansion without changing semantics or accepted baselines.
+The owner uses the fixed SPEC-027 viewer and supplies spontaneous feedback on whether parent and revealed-depth knowledge behave as one continuous bidirectional interaction system.
 
 ## Coordination rule
 

@@ -40,6 +40,7 @@ from .openai_extractor import DEFAULT_MODEL, ExtractionError, OpenAILLMExtractor
 from .pipeline import compile_knowledge_model
 from .proposition_evaluation import run_proposition_evaluation
 from .quantum_learning_evaluation import run_quantum_learning_evaluation
+from .recursive_interaction_evaluation import prepare_recursive_interaction_evaluation
 from .representation_builder import RepresentationBuilder
 from .representation_evaluation import (
     default_presentation_metadata_path,
@@ -305,6 +306,11 @@ def _parser() -> argparse.ArgumentParser:
         help="build the offline SPEC-026 semantic-interaction experiment",
     )
     semantic_interaction.add_argument("--output-dir", required=True, type=Path)
+    recursive_interaction = subcommands.add_parser(
+        "prepare-recursive-interaction",
+        help="build the offline SPEC-027 recursive bidirectional interaction experiment",
+    )
+    recursive_interaction.add_argument("--output-dir", required=True, type=Path)
     view = subcommands.add_parser("view-representations", help="serve a prepared representation review locally")
     view.add_argument("directory", type=Path)
     view.add_argument("--host", default="127.0.0.1")
@@ -316,6 +322,15 @@ def _parser() -> argparse.ArgumentParser:
 def main(argv: list[str] | None = None) -> int:
     args = _parser().parse_args(argv)
     try:
+        if args.command == "prepare-recursive-interaction":
+            report = prepare_recursive_interaction_evaluation(output_dir=args.output_dir)
+            print(
+                f"Wrote {args.output_dir / 'report.json'} "
+                f"(machine integrity {report['machine_integrity_verdict']}; "
+                "browser verification pending)"
+            )
+            return 0
+
         if args.command == "prepare-semantic-interaction":
             report = prepare_semantic_interaction_evaluation(output_dir=args.output_dir)
             print(

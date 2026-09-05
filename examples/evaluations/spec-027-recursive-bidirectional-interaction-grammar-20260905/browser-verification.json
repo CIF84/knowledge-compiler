@@ -1,0 +1,68 @@
+{
+  "checks": {
+    "clear_selection_parity": true,
+    "depth1_explanation_bidirectional": true,
+    "depth1_map_concept_click_to_right_selection": true,
+    "depth1_map_concept_hover_to_right_preview": true,
+    "depth1_map_relationship_hover_and_click_bidirectional": true,
+    "depth1_right_concept_click_to_map_selection": true,
+    "depth1_right_concept_hover_to_map_preview": true,
+    "depth1_right_relationship_hover_and_click_bidirectional": true,
+    "depth2_shared_contract_fixture_passes": true,
+    "evidence_synchronization_intact": true,
+    "no_blue_selection_artifact": true,
+    "ordinary_parent_navigation_intact": true,
+    "pan_zoom_and_collapse_intact": true,
+    "parent_concept_hover_and_click_bidirectional": true,
+    "parent_depth_switching_intact": true,
+    "parent_relationship_hover_and_click_bidirectional": true,
+    "spec024_spatial_expansion_intact": true,
+    "spec026_connection_legibility_intact": true,
+    "switching_leaves_no_stale_focus": true
+  },
+  "console": {
+    "errors": [],
+    "result": "PASS",
+    "warnings": []
+  },
+  "evidence": {
+    "browser": "Codex in-app Chromium browser",
+    "canonical_relationship_counts": {
+      "map_groups": 2,
+      "map_labels": 2,
+      "right_pane_interaction_targets": 2
+    },
+    "depth_1_right_concept_probe": {
+      "identity": "photon",
+      "map_selected_count": 1,
+      "preview_events": 1,
+      "right_selected_count": 1,
+      "selection_events": 1,
+      "stale_electron_selection_count": 0
+    },
+    "explanation_probe": {
+      "evidence_reveal": "PASS",
+      "identity": "explanation-ae10fa8748fdac1f",
+      "map_anchor_selected_count": 1,
+      "map_attachment_count": 4,
+      "right_selected_count": 1
+    },
+    "parent_reverse_probe": {
+      "concept_identity": "electromagnetic-wave",
+      "map_and_right_selected": true,
+      "relationship_edge_key": "edge-277f96e2b2274c82",
+      "relationship_map_and_right_selected": true
+    },
+    "parent_with_depth_open_probe": {
+      "clear_released_depth_suppression": true,
+      "depth_objects_suppressed_while_parent_selected": 34,
+      "parent_focus_survived_hover_exit": true
+    },
+    "spatial_probe": {
+      "collapse_restored_parent_camera": "640 700 1200 800",
+      "expanded_overview_view_box": "0 0 1200 800",
+      "expanded_zoom_view_box": "120 80 960 640"
+    }
+  },
+  "status": "PASS"
+}

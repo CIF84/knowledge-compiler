@@ -1,0 +1,32 @@
+/* SPEC-026 makes every learner-visible depth connection semantically legible. */
+.depth-explanatory-group { cursor:pointer; }
+.depth-explanatory-group .depth-explanation-line { pointer-events:none; }
+.depth-explanation-label {
+  fill:#59645e;
+  font-size:8px;
+  font-weight:850;
+  letter-spacing:.06em;
+  paint-order:stroke;
+  stroke:#faf9f4;
+  stroke-width:6px;
+  pointer-events:none;
+}
+.depth-explanatory-group.is-selected .depth-explanation-line { stroke:var(--accent);stroke-width:3; }
+.depth-explanatory-group.is-selected .depth-explanation-label { fill:var(--accent); }
+.depth-explanatory-group:focus-visible .depth-explanation-line { stroke:var(--preview);stroke-width:3; }
+.depth-explanatory-group:focus-visible .depth-explanation-label { fill:var(--preview); }
+.depth-connection-legend text { fill:#4d5952;font-size:9px;font-weight:800;letter-spacing:.035em;pointer-events:none; }
+.depth-connection-legend .noncanonical { fill:#69736d;font-weight:700; }
+.depth-sync-attachment-group .depth-sync-attachment { pointer-events:none; }
+.depth-sync-attachment-label {
+  fill:#59645e;
+  font-size:8px;
+  font-weight:850;
+  letter-spacing:.06em;
+  paint-order:stroke;
+  stroke:#fffefa;
+  stroke-width:6px;
+}
+.depth-sync-attachment-group.is-current .depth-sync-attachment { stroke:var(--accent);stroke-width:3; }
+.depth-sync-attachment-group.is-current .depth-sync-attachment-label { fill:var(--accent); }
+.depth-sync-attachment-group.depth-sync-muted { opacity:.14; }
