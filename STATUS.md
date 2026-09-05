@@ -10,29 +10,29 @@ BASELINE-001, BASELINE-002, BASELINE-003, and BASELINE-004 remain preserved hist
 
 ## Last completed work packet
 
-`SPEC-028 — single canonical interaction state`
+`SPEC-029 — atomic context transition and semantic coverage`
 
-Owner verdict: `MIXED`
+Implementation status: `IMPLEMENTED_AWAITING_REVIEW`
 
-Result: the isolated offline candidate materially improved recursive map/right-pane interaction coherence and supports the one-canonical-interaction-state architecture, but owner review found incomplete ground-level relationship coverage and stale prior-context projection when leaving a deep context. See `debriefs/DEBRIEF-028-single-canonical-interaction-state.md`.
+Result: the isolated offline candidate routes existing concept, ground/deep relationship, and source-explanation interactions through one canonical learner-state reducer. Its deterministic and browser gates pass for atomic cross-context replacement, ground-level relationship coverage, zero stale prior-context activity, and depth-invariant transitions. The cognitive product verdict remains pending owner review.
 
 ## Current approved work packet
 
 ```text
-specs/SPEC-029-atomic-context-transition-and-semantic-coverage.md
+NONE
 ```
 
-Status: `APPROVED_FOR_IMPLEMENTATION`
+Status: `NONE`
 
-Authority: `OFFLINE_ONLY`
+Authority: `NONE`
 
-Human gate: `OWNER_REVIEW`
+Human gate: `NONE`
 
 Promotion: `NOT_AUTHORIZED`
 
 ## Current gate
 
-Codex is authorized to execute SPEC-029 autonomously within the bounded offline contract, including deterministic implementation, tests/evaluation, in-scope repair, commit, and push. If the machine gate passes, owner cognitive review is required before any subjective verdict or promotion.
+Owner cognitive review of the fixed SPEC-029 viewer is required. No further implementation, semantic change, UI change, baseline promotion, or product verdict is authorized.
 
 ## Frozen / protected state
 
@@ -46,12 +46,13 @@ Codex is authorized to execute SPEC-029 autonomously within the bounded offline 
 - completed SPEC-026 semantic-interaction artifact, preserved unchanged after owner verdict `MIXED`;
 - completed SPEC-027 recursive-interaction artifact, preserved unchanged after owner verdict `MIXED`;
 - completed SPEC-028 canonical-interaction-state artifact, preserved as evidence after owner verdict `MIXED`;
+- isolated SPEC-029 atomic-context artifact awaiting owner verdict;
 - trusted semantic vocabulary, grounding, provenance, and fail-closed behavior;
 - unrelated user work.
 
 ## Next intended action
 
-Codex executes SPEC-029. The experiment tests whether context changes atomically replace canonical learner state and whether all existing learner-visible semantic object classes, including ordinary ground-level relationships, route through the same canonical interaction path.
+The owner uses the fixed SPEC-029 viewer and reports whether ordinary and recursive relationships share one interaction grammar and whether any stale map/right-pane context remains after changing domains.
 
 ## Coordination rule
 

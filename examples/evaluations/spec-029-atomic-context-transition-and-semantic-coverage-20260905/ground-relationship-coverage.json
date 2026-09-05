@@ -1,0 +1,436 @@
+{
+  "covered_domains": [
+    "economics",
+    "electromagnetism",
+    "history",
+    "software_architecture"
+  ],
+  "ground_level_relationship_projection_agreement": "PASS",
+  "required_regression_domains": [
+    "history",
+    "software_architecture"
+  ],
+  "rows": [
+    {
+      "canonical_interaction_identity": "rel-3",
+      "domain_id": "software_architecture",
+      "domain_label": "Software Architecture",
+      "edge_key": "edge-053a05871f16f112",
+      "event_origins_tested": [
+        "map",
+        "representation"
+      ],
+      "hover_preview_projection_agreement": true,
+      "map_and_right_pane_agree": true,
+      "matching_representation_ids": [
+        "representation-985e777f01fa9ec8"
+      ],
+      "relationship_label": "PART OF",
+      "represented_relationship_ids": [
+        "rel-3"
+      ],
+      "selection_projection_agreement": true,
+      "source_label": "payment component",
+      "target_label": "modular order-processing service"
+    },
+    {
+      "canonical_interaction_identity": "rel-1",
+      "domain_id": "software_architecture",
+      "domain_label": "Software Architecture",
+      "edge_key": "edge-277f96e2b2274c82",
+      "event_origins_tested": [
+        "map",
+        "representation"
+      ],
+      "hover_preview_projection_agreement": true,
+      "map_and_right_pane_agree": true,
+      "matching_representation_ids": [
+        "representation-985e777f01fa9ec8"
+      ],
+      "relationship_label": "PART OF",
+      "represented_relationship_ids": [
+        "rel-1"
+      ],
+      "selection_projection_agreement": true,
+      "source_label": "API component",
+      "target_label": "modular order-processing service"
+    },
+    {
+      "canonical_interaction_identity": "rel-8",
+      "domain_id": "software_architecture",
+      "domain_label": "Software Architecture",
+      "edge_key": "edge-b04c2050897fe1b0",
+      "event_origins_tested": [
+        "map",
+        "representation"
+      ],
+      "hover_preview_projection_agreement": true,
+      "map_and_right_pane_agree": true,
+      "matching_representation_ids": [
+        "representation-9340322462e99419"
+      ],
+      "relationship_label": "REQUIRES",
+      "represented_relationship_ids": [
+        "rel-8"
+      ],
+      "selection_projection_agreement": true,
+      "source_label": "payment component",
+      "target_label": "database"
+    },
+    {
+      "canonical_interaction_identity": "rel-6",
+      "domain_id": "software_architecture",
+      "domain_label": "Software Architecture",
+      "edge_key": "edge-ba5f0ccb37663de8",
+      "event_origins_tested": [
+        "map",
+        "representation"
+      ],
+      "hover_preview_projection_agreement": true,
+      "map_and_right_pane_agree": true,
+      "matching_representation_ids": [
+        "representation-9340322462e99419"
+      ],
+      "relationship_label": "REQUIRES",
+      "represented_relationship_ids": [
+        "rel-6"
+      ],
+      "selection_projection_agreement": true,
+      "source_label": "order component",
+      "target_label": "payment component"
+    },
+    {
+      "canonical_interaction_identity": "rel-4",
+      "domain_id": "software_architecture",
+      "domain_label": "Software Architecture",
+      "edge_key": "edge-d3931f90c08a61a6",
+      "event_origins_tested": [
+        "map",
+        "representation"
+      ],
+      "hover_preview_projection_agreement": true,
+      "map_and_right_pane_agree": true,
+      "matching_representation_ids": [
+        "representation-985e777f01fa9ec8"
+      ],
+      "relationship_label": "PART OF",
+      "represented_relationship_ids": [
+        "rel-4"
+      ],
+      "selection_projection_agreement": true,
+      "source_label": "database",
+      "target_label": "modular order-processing service"
+    },
+    {
+      "canonical_interaction_identity": "rel-2",
+      "domain_id": "software_architecture",
+      "domain_label": "Software Architecture",
+      "edge_key": "edge-f3c0b1a8ccb461b9",
+      "event_origins_tested": [
+        "map",
+        "representation"
+      ],
+      "hover_preview_projection_agreement": true,
+      "map_and_right_pane_agree": true,
+      "matching_representation_ids": [
+        "representation-985e777f01fa9ec8"
+      ],
+      "relationship_label": "PART OF",
+      "represented_relationship_ids": [
+        "rel-2"
+      ],
+      "selection_projection_agreement": true,
+      "source_label": "order component",
+      "target_label": "modular order-processing service"
+    },
+    {
+      "canonical_interaction_identity": "rel-shortage-upward-pressure",
+      "domain_id": "economics",
+      "domain_label": "Economics",
+      "edge_key": "edge-5debac009cb6f924",
+      "event_origins_tested": [
+        "map",
+        "representation"
+      ],
+      "hover_preview_projection_agreement": true,
+      "map_and_right_pane_agree": true,
+      "matching_representation_ids": [
+        "representation-fe3ba90cb8cfa3d6"
+      ],
+      "relationship_label": "CAUSES",
+      "represented_relationship_ids": [
+        "rel-shortage-upward-pressure"
+      ],
+      "selection_projection_agreement": true,
+      "source_label": "shortage",
+      "target_label": "upward pressure on price"
+    },
+    {
+      "canonical_interaction_identity": "rel-upward-pressure-price",
+      "domain_id": "economics",
+      "domain_label": "Economics",
+      "edge_key": "edge-a684bd85c5e770d6",
+      "event_origins_tested": [
+        "map",
+        "representation"
+      ],
+      "hover_preview_projection_agreement": true,
+      "map_and_right_pane_agree": true,
+      "matching_representation_ids": [
+        "representation-fe3ba90cb8cfa3d6"
+      ],
+      "relationship_label": "INCREASES",
+      "represented_relationship_ids": [
+        "rel-upward-pressure-price"
+      ],
+      "selection_projection_agreement": true,
+      "source_label": "upward pressure on price",
+      "target_label": "market price"
+    },
+    {
+      "canonical_interaction_identity": "rel-higher-price-decreases-demanded",
+      "domain_id": "economics",
+      "domain_label": "Economics",
+      "edge_key": "edge-ab2203590fef2f45",
+      "event_origins_tested": [
+        "map",
+        "representation"
+      ],
+      "hover_preview_projection_agreement": true,
+      "map_and_right_pane_agree": true,
+      "matching_representation_ids": [
+        "representation-fe3ba90cb8cfa3d6"
+      ],
+      "relationship_label": "DECREASES",
+      "represented_relationship_ids": [
+        "rel-higher-price-decreases-demanded",
+        "rel-price-decreases-demanded"
+      ],
+      "selection_projection_agreement": true,
+      "source_label": "market price",
+      "target_label": "quantity demanded"
+    },
+    {
+      "canonical_interaction_identity": "rel-supply-reduction-price-increase",
+      "domain_id": "economics",
+      "domain_label": "Economics",
+      "edge_key": "edge-c08e36e3f639f8dd",
+      "event_origins_tested": [
+        "map",
+        "representation"
+      ],
+      "hover_preview_projection_agreement": true,
+      "map_and_right_pane_agree": true,
+      "matching_representation_ids": [
+        "representation-fe3ba90cb8cfa3d6"
+      ],
+      "relationship_label": "CAUSES",
+      "represented_relationship_ids": [
+        "rel-supply-reduction-price-increase"
+      ],
+      "selection_projection_agreement": true,
+      "source_label": "reduction in supply",
+      "target_label": "market price"
+    },
+    {
+      "canonical_interaction_identity": "rel-higher-price-increases-supplied",
+      "domain_id": "economics",
+      "domain_label": "Economics",
+      "edge_key": "edge-d207db58ebed870c",
+      "event_origins_tested": [
+        "map",
+        "representation"
+      ],
+      "hover_preview_projection_agreement": true,
+      "map_and_right_pane_agree": true,
+      "matching_representation_ids": [
+        "representation-fe3ba90cb8cfa3d6"
+      ],
+      "relationship_label": "INCREASES",
+      "represented_relationship_ids": [
+        "rel-higher-price-increases-supplied",
+        "rel-price-increases-supplied"
+      ],
+      "selection_projection_agreement": true,
+      "source_label": "market price",
+      "target_label": "quantity supplied"
+    },
+    {
+      "canonical_interaction_identity": "rel-type-enables-printing",
+      "domain_id": "history",
+      "domain_label": "History of Printing",
+      "edge_key": "edge-5273d926629476fb",
+      "event_origins_tested": [
+        "map",
+        "representation"
+      ],
+      "hover_preview_projection_agreement": true,
+      "map_and_right_pane_agree": true,
+      "matching_representation_ids": [
+        "representation-f803f1f3830cadf7"
+      ],
+      "relationship_label": "ENABLES",
+      "represented_relationship_ids": [
+        "rel-type-enables-printing"
+      ],
+      "selection_projection_agreement": true,
+      "source_label": "Movable metal type",
+      "target_label": "Printing"
+    },
+    {
+      "canonical_interaction_identity": "rel-printing-enables-copies",
+      "domain_id": "history",
+      "domain_label": "History of Printing",
+      "edge_key": "edge-64bfd5e2652074f0",
+      "event_origins_tested": [
+        "map",
+        "representation"
+      ],
+      "hover_preview_projection_agreement": true,
+      "map_and_right_pane_agree": true,
+      "matching_representation_ids": [
+        "representation-f803f1f3830cadf7"
+      ],
+      "relationship_label": "ENABLES",
+      "represented_relationship_ids": [
+        "rel-printing-enables-copies"
+      ],
+      "selection_projection_agreement": true,
+      "source_label": "Printing",
+      "target_label": "Printed books"
+    },
+    {
+      "canonical_interaction_identity": "rel-controversy-precedes-response",
+      "domain_id": "history",
+      "domain_label": "History of Printing",
+      "edge_key": "edge-c9662465f6119422",
+      "event_origins_tested": [
+        "map",
+        "representation"
+      ],
+      "hover_preview_projection_agreement": true,
+      "map_and_right_pane_agree": true,
+      "matching_representation_ids": [
+        "representation-372c9b3707ffd6cc"
+      ],
+      "relationship_label": "PRECEDES",
+      "represented_relationship_ids": [
+        "rel-controversy-precedes-response"
+      ],
+      "selection_projection_agreement": true,
+      "source_label": "Printed controversy",
+      "target_label": "Authorities"
+    },
+    {
+      "canonical_interaction_identity": "rel-press-enables-printing",
+      "domain_id": "history",
+      "domain_label": "History of Printing",
+      "edge_key": "edge-f2f6b5915678c033",
+      "event_origins_tested": [
+        "map",
+        "representation"
+      ],
+      "hover_preview_projection_agreement": true,
+      "map_and_right_pane_agree": true,
+      "matching_representation_ids": [
+        "representation-f803f1f3830cadf7"
+      ],
+      "relationship_label": "ENABLES",
+      "represented_relationship_ids": [
+        "rel-press-enables-printing"
+      ],
+      "selection_projection_agreement": true,
+      "source_label": "Press",
+      "target_label": "Printing"
+    },
+    {
+      "canonical_interaction_identity": "changing-magnetic-field-induces-electric-field",
+      "domain_id": "electromagnetism",
+      "domain_label": "Electromagnetism",
+      "edge_key": "edge-beee52cbd1187db5",
+      "event_origins_tested": [
+        "map",
+        "representation"
+      ],
+      "hover_preview_projection_agreement": true,
+      "map_and_right_pane_agree": true,
+      "matching_representation_ids": [
+        "representation-9058fd6ab1975a17"
+      ],
+      "relationship_label": "INDUCES",
+      "represented_relationship_ids": [
+        "changing-magnetic-field-induces-electric-field"
+      ],
+      "selection_projection_agreement": true,
+      "source_label": "Magnetic field",
+      "target_label": "Electric field"
+    },
+    {
+      "canonical_interaction_identity": "light-is-electromagnetic-wave",
+      "domain_id": "electromagnetism",
+      "domain_label": "Electromagnetism",
+      "edge_key": "edge-d6412ef055560e48",
+      "event_origins_tested": [
+        "map",
+        "representation"
+      ],
+      "hover_preview_projection_agreement": true,
+      "map_and_right_pane_agree": true,
+      "matching_representation_ids": [
+        "representation-685bf4f0c2881f95"
+      ],
+      "relationship_label": "IS A",
+      "represented_relationship_ids": [
+        "light-is-electromagnetic-wave"
+      ],
+      "selection_projection_agreement": true,
+      "source_label": "Light",
+      "target_label": "Electromagnetic wave"
+    },
+    {
+      "canonical_interaction_identity": "changing-electric-field-induces-magnetic-field",
+      "domain_id": "electromagnetism",
+      "domain_label": "Electromagnetism",
+      "edge_key": "edge-f70467eaddffcc74",
+      "event_origins_tested": [
+        "map",
+        "representation"
+      ],
+      "hover_preview_projection_agreement": true,
+      "map_and_right_pane_agree": true,
+      "matching_representation_ids": [
+        "representation-9058fd6ab1975a17"
+      ],
+      "relationship_label": "INDUCES",
+      "represented_relationship_ids": [
+        "changing-electric-field-induces-magnetic-field"
+      ],
+      "selection_projection_agreement": true,
+      "source_label": "Electric field",
+      "target_label": "Magnetic field"
+    },
+    {
+      "canonical_interaction_identity": "relationship-05b19ee4b6d50060",
+      "domain_id": "electromagnetism",
+      "domain_label": "Electromagnetism",
+      "edge_key": "depth-edge-248ad677321584fa",
+      "event_origins_tested": [
+        "map",
+        "representation"
+      ],
+      "hover_preview_projection_agreement": true,
+      "map_and_right_pane_agree": true,
+      "matching_representation_ids": [
+        "representation-1da8ae41cb52f95a"
+      ],
+      "relationship_label": "CAUSES",
+      "represented_relationship_ids": [
+        "relationship-05b19ee4b6d50060"
+      ],
+      "selection_projection_agreement": true,
+      "source_label": "double-slit experiment",
+      "target_label": "interference pattern"
+    }
+  ],
+  "status": "PASS"
+}
