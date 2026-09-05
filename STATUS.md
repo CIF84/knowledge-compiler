@@ -26,7 +26,7 @@ SPEC-024 remains preserved unchanged as a functional historical experiment. It i
 specs/SPEC-025-depth-invariant-interaction-grammar.md
 ```
 
-Status: `APPROVED`
+Status: `APPROVED_FOR_IMPLEMENTATION`
 
 Authority: `OFFLINE_ONLY`
 
