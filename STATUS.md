@@ -14,25 +14,27 @@ BASELINE-001, BASELINE-002, BASELINE-003, and BASELINE-004 remain preserved hist
 
 Implementation status: `IMPLEMENTED_AWAITING_REVIEW`
 
-Result: the isolated offline candidate composes the preserved SPEC-024 continuous-map expansion with one item-type-driven synchronization seam. The complete machine gate passes; the cognitive product verdict remains pending owner review.
+Owner verdict: `MIXED`
+
+Result: depth-level map ↔ learning-pane synchronization now works, but deeper topology still violates the stronger interaction invariant. Canonical and explanatory connections inside the deeper map do not consistently expose the same learner-readable direction, predicate, interaction, and explanation grammar as the parent map. Preserve SPEC-025 unchanged as a functional historical experiment; no baseline promotion is authorized.
 
 ## Current approved work packet
 
 ```text
-NONE
+specs/SPEC-026-semantic-interaction-invariance.md
 ```
 
-Status: `NONE`
+Status: `APPROVED_FOR_IMPLEMENTATION`
 
-Authority: `NONE`
+Authority: `OFFLINE_ONLY`
 
-Human gate: `NONE`
+Human gate: `OWNER_REVIEW`
 
 Promotion: `NOT_AUTHORIZED`
 
 ## Current gate
 
-Owner cognitive review of the fixed SPEC-025 viewer is required. No further implementation, semantic change, UI change, baseline promotion, or product verdict is authorized.
+SPEC-026 is approved for autonomous offline implementation under the repository operating model. No live/model/external calls, semantic regeneration, trusted vocabulary/admission changes, baseline mutation, or baseline promotion are authorized. After the machine gate passes, owner cognitive review is required.
 
 ## Frozen / protected state
 
@@ -42,13 +44,13 @@ Owner cognitive review of the fixed SPEC-025 viewer is required. No further impl
 - frozen SPEC-021 explanatory projection semantics;
 - completed SPEC-023/FIX-023 functional depth artifact as historical evidence;
 - completed SPEC-024 continuous-map depth artifact, preserved unchanged after owner verdict `DEPTH_NAVIGATION_BETTER`;
-- isolated SPEC-025 depth-invariant interaction artifact awaiting owner verdict;
+- completed SPEC-025 depth-invariant-selection artifact, preserved unchanged after owner verdict `MIXED`;
 - trusted semantic vocabulary, grounding, provenance, and fail-closed behavior;
 - unrelated user work.
 
 ## Next intended action
 
-The owner uses the fixed SPEC-025 viewer and supplies spontaneous feedback on whether parent and deeper knowledge share one intuitive map ↔ learning synchronization grammar while semantic-strength distinctions and spatial continuity remain clear.
+Codex executes the current approved packet. SPEC-026 tests whether the deeper map can expose semantic connections using the same learner-facing visual, interaction, and explanatory grammar as the parent map without fabricating canonical relationships or weakening semantic-strength distinctions.
 
 ## Coordination rule
 
