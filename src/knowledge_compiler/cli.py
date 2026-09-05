@@ -20,6 +20,11 @@ from .cognitive_topology_evaluation import prepare_cognitive_topology_evaluation
 from .continuous_navigation_evaluation import prepare_continuous_navigation_evaluation
 from .interface_restoration_evaluation import prepare_interface_restoration_evaluation
 from .navigation_learning_evaluation import prepare_navigation_learning_evaluation
+from .semantic_depth_evaluation import (
+    finalize_semantic_depth_evaluation,
+    prepare_semantic_depth_evaluation,
+    run_semantic_depth_evaluation,
+)
 from .extractor import FixtureExtractor
 from .layout_evaluation import default_spec005_representations_directory, prepare_layout_evaluation
 from .models import KnowledgeModel, ValidationError
@@ -245,6 +250,23 @@ def _parser() -> argparse.ArgumentParser:
         help="build the offline SPEC-019 synchronized navigation and learning workspace",
     )
     navigation_learning.add_argument("--output-dir", required=True, type=Path)
+    semantic_depth_prepare = subcommands.add_parser(
+        "prepare-semantic-depth",
+        help="freeze the offline SPEC-020 parent, focus, scope, and provider controls",
+    )
+    semantic_depth_prepare.add_argument("--output-dir", required=True, type=Path)
+    semantic_depth_prepare.add_argument("--model", default=DEFAULT_MODEL)
+    semantic_depth_live = subcommands.add_parser(
+        "evaluate-semantic-depth",
+        help="run the approved two-stage SPEC-020 child semantic compilation",
+    )
+    semantic_depth_live.add_argument("--output-dir", required=True, type=Path)
+    semantic_depth_live.add_argument("--model", default=DEFAULT_MODEL)
+    semantic_depth_finalize = subcommands.add_parser(
+        "finalize-semantic-depth",
+        help="admit a repository-reviewed SPEC-020 child into the frozen workspace shell",
+    )
+    semantic_depth_finalize.add_argument("output_dir", type=Path)
     view = subcommands.add_parser("view-representations", help="serve a prepared representation review locally")
     view.add_argument("directory", type=Path)
     view.add_argument("--host", default="127.0.0.1")
@@ -256,6 +278,38 @@ def _parser() -> argparse.ArgumentParser:
 def main(argv: list[str] | None = None) -> int:
     args = _parser().parse_args(argv)
     try:
+        if args.command == "finalize-semantic-depth":
+            report = finalize_semantic_depth_evaluation(args.output_dir)
+            print(
+                f"Wrote {args.output_dir / 'report.json'} "
+                f"({report['execution_stage']}; verdict {report['product_verdict']})"
+            )
+            return 0
+
+        if args.command == "evaluate-semantic-depth":
+            if not os.environ.get("OPENAI_API_KEY"):
+                raise ExtractionError("OPENAI_API_KEY is required for the live SPEC-020 evaluation")
+            report = run_semantic_depth_evaluation(
+                output_dir=args.output_dir,
+                model=args.model,
+            )
+            print(
+                f"Wrote {args.output_dir / 'report.json'} "
+                f"({report['execution_stage']}; {report['live_call_count']} live calls)"
+            )
+            return 0 if report["machine_integrity_verdict"] == "PASS" else 1
+
+        if args.command == "prepare-semantic-depth":
+            report = prepare_semantic_depth_evaluation(
+                output_dir=args.output_dir,
+                model=args.model,
+            )
+            print(
+                f"Wrote {args.output_dir / 'report.json'} "
+                f"({report['machine_integrity_verdict']}; live approval required)"
+            )
+            return 0
+
         if args.command == "prepare-navigation-learning-workspace":
             report = prepare_navigation_learning_evaluation(output_dir=args.output_dir)
             print(

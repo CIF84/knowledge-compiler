@@ -1,0 +1,7 @@
+.depth-path-row { display:flex; align-items:start; justify-content:space-between; gap:12px; min-height:28px; }
+.depth-control { flex:0 0 auto; padding:4px 10px; border:1px solid var(--accent); border-radius:999px; background:white; color:var(--accent); cursor:pointer; font-size:11px; }
+.depth-control[aria-pressed="true"] { background:var(--accent-soft); font-weight:750; }
+.nav-node.has-depth rect { stroke:var(--accent); stroke-width:2.5; }
+.nav-node.has-depth::after { content:""; }
+.depth-indicator { fill:var(--accent); font-size:16px; font-weight:900; pointer-events:none; }
+.learning-pane.is-child .learning-role::after { content:" · DEEPER"; }

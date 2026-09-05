@@ -1,0 +1,31 @@
+{
+  "alternatives_not_selected": [
+    {
+      "entity_id": "waveparticle-duality",
+      "reason": "Broader and less concrete; selecting the experiment makes added mechanism easier to judge."
+    },
+    {
+      "entity_id": "uncertainty-principle",
+      "reason": "Its adjacent section is separate and it has no accepted direct parent relationship."
+    },
+    {
+      "entity_id": "quantum-mechanics",
+      "reason": "Too broad for one bounded child and likely to restate the full parent."
+    }
+  ],
+  "entity_id": "double-slit-experiment",
+  "entity_type": "PROCESS",
+  "expected_depth": "A source-supported local model connecting the experiment, interference, quantum objects, wave–particle duality, and complementarity.",
+  "expected_resolution_strategy": "GENERIC_DETAIL",
+  "name": "double-slit experiment",
+  "parent_relationship": {
+    "relationship_type": "CAUSES",
+    "source_entity_id": "double-slit-experiment",
+    "statement": "The double-slit experiment produces an interference pattern.",
+    "target_entity_id": "interference-pattern"
+  },
+  "parent_relationship_id": "relationship-05b19ee4b6d50060",
+  "rationale": "The double-slit experiment is a concrete, pedagogically meaningful process already admitted in the trusted parent, and its fixed source section explains how wave-like interference and particle-like detections coexist without external enrichment.",
+  "selection_status": "FROZEN_BEFORE_LIVE_OUTPUT",
+  "spec": "SPEC-020"
+}

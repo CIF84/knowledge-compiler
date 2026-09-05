@@ -1,0 +1,128 @@
+{
+  "builder_version": "spec-006-v1",
+  "document_id": "text-9e978db999ee6713",
+  "domain": "quantum_mechanics",
+  "empty_state": null,
+  "metadata": {
+    "layout_version": "spec-006-v1",
+    "representation_count": 1,
+    "salience_counts": {
+      "PRIMARY": 0,
+      "SECONDARY": 0,
+      "SPARSE": 1
+    },
+    "source_structure_count": 1
+  },
+  "representations": [
+    {
+      "edges": [
+        {
+          "direction": "cause_to_effect",
+          "edge_key": "edge-248ad677321584fa",
+          "evidence": [
+            {
+              "document_id": "text-9e978db999ee6713",
+              "end_char": 12218,
+              "quote": "a beam of light is directed through two narrow, closely spaced slits, producing an interference pattern of light and dark bands on a screen.",
+              "relationship_id": "relationship-05b19ee4b6d50060",
+              "start_char": 12078
+            }
+          ],
+          "meaning": "The source brings about the target as an effect.",
+          "origins": [
+            "SOURCE"
+          ],
+          "provenance_status": "SOURCE_EVIDENCE",
+          "relationship_ids": [
+            "relationship-05b19ee4b6d50060"
+          ],
+          "relationship_label": "CAUSES",
+          "relationship_type": "CAUSES",
+          "source_entity_id": "double-slit-experiment",
+          "target_entity_id": "interference-pattern"
+        }
+      ],
+      "id": "representation-1da8ae41cb52f95a",
+      "layout": {
+        "diagnostics": {
+          "canonical_edges_opposing_layout_flow": 0,
+          "connector_length": 62.0,
+          "crossing_count": 0,
+          "layer_count": 2,
+          "node_overlap_count": 0
+        },
+        "edges": [
+          {
+            "edge_key": "edge-248ad677321584fa",
+            "label_x": 225,
+            "label_y": 171,
+            "path_kind": "CUBIC",
+            "points": [
+              {
+                "x": 194,
+                "y": 180
+              },
+              {
+                "x": 225,
+                "y": 180
+              },
+              {
+                "x": 225,
+                "y": 180
+              },
+              {
+                "x": 256,
+                "y": 180
+              }
+            ]
+          }
+        ],
+        "height": 360,
+        "nodes": [
+          {
+            "entity_id": "double-slit-experiment",
+            "layer": 0,
+            "order": 0,
+            "x": 110,
+            "y": 180
+          },
+          {
+            "entity_id": "interference-pattern",
+            "layer": 1,
+            "order": 0,
+            "x": 340,
+            "y": 180
+          }
+        ],
+        "orientation": "LEFT_TO_RIGHT",
+        "strategy": "layered_causal",
+        "width": 450
+      },
+      "nodes": [
+        {
+          "description": "Experiment in which particles or waves passing through two slits produce an interference pattern.",
+          "entity_id": "double-slit-experiment",
+          "entity_type": "PROCESS",
+          "label": "double-slit experiment"
+        },
+        {
+          "description": "Pattern of alternating light and dark bands produced by wave interference and reproduced by quantum particles statistically.",
+          "entity_id": "interference-pattern",
+          "entity_type": "OBJECT",
+          "label": "interference pattern"
+        }
+      ],
+      "representation_type": "CAUSAL_PATH",
+      "salience": "SPARSE",
+      "source_structure_ids": [
+        "structure-causal-path-spec020-parent-focus"
+      ],
+      "title": "Causal model",
+      "warnings": [
+        "Sparse structure: this view contains only one supported relationship."
+      ]
+    }
+  ],
+  "title": "Double-slit experiment — parent context",
+  "warnings": []
+}
