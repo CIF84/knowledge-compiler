@@ -14,25 +14,25 @@ BASELINE-001, BASELINE-002, BASELINE-003, and BASELINE-004 remain preserved hist
 
 Implementation status: `IMPLEMENTED_AWAITING_REVIEW`
 
-Result: the exact BASELINE-004 executable and frozen SPEC-020 / SPEC-021 double-slit semantic payload are composed in an isolated owner-review artifact. The full machine gate passes; the cognitive product verdict remains pending owner review.
+Result: machine integration passed, but owner review discovered that the deeper double-slit treatment is not reachable from the naturally selected canonical double-slit relationship. The owner has not evaluated semantic depth; no cognitive verdict is recorded.
 
 ## Current approved work packet
 
 ```text
-NONE
+ops/FIX-023-contextual-depth-entry.md
 ```
 
-Status: `NONE`
+Status: `APPROVED_FOR_IMPLEMENTATION`
 
-Authority: `NONE`
+Authority: `OFFLINE_ONLY`
 
-Human gate: `NONE`
+Human gate: `OWNER_REVIEW`
 
 Promotion: `NOT_AUTHORIZED`
 
 ## Current gate
 
-Owner cognitive review of the fixed SPEC-023 viewer is required. No further implementation, semantic change, UI change, baseline promotion, or product verdict is authorized.
+Repair only the missing contextual entry from the selected `double-slit-experiment → CAUSES → interference-pattern` relationship into the already-existing SPEC-023 deeper treatment. Preserve BASELINE-004 and all frozen semantic/representation content.
 
 ## Frozen / protected state
 
@@ -40,13 +40,13 @@ Owner cognitive review of the fixed SPEC-023 viewer is required. No further impl
 - BASELINE-004 learner-navigation behavior accepted after SPEC-022;
 - frozen SPEC-020 realistic quantum semantic packet and its reviewed defects;
 - frozen SPEC-021 explanatory projection semantics;
-- isolated SPEC-023 review artifact awaiting owner verdict;
+- SPEC-023 deeper treatment semantics/representation content;
 - trusted semantic vocabulary, grounding, provenance, and fail-closed behavior;
 - unrelated user work.
 
 ## Next intended action
 
-The owner uses the fixed SPEC-023 viewer and supplies spontaneous feedback on whether the deeper double-slit representation helps understanding. ChatGPT may then record one allowed verdict; any promotion or further implementation requires separate authority.
+Codex executes the current approved corrective packet autonomously below the declared decision boundary. If the machine gate passes, it returns only the concise owner-review handoff and viewer command. The owner then evaluates the previously unreachable deeper treatment; Codex must not assign the cognitive verdict.
 
 ## Coordination rule
 
