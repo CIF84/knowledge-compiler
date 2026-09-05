@@ -32,6 +32,7 @@ from .semantic_depth_evaluation import (
 from .semantic_depth_review_evaluation import (
     prepare_semantic_depth_review_evaluation,
 )
+from .semantic_interaction_evaluation import prepare_semantic_interaction_evaluation
 from .extractor import FixtureExtractor
 from .layout_evaluation import default_spec005_representations_directory, prepare_layout_evaluation
 from .models import KnowledgeModel, ValidationError
@@ -299,6 +300,11 @@ def _parser() -> argparse.ArgumentParser:
         help="build the offline SPEC-025 depth-invariant interaction experiment",
     )
     depth_interaction.add_argument("--output-dir", required=True, type=Path)
+    semantic_interaction = subcommands.add_parser(
+        "prepare-semantic-interaction",
+        help="build the offline SPEC-026 semantic-interaction experiment",
+    )
+    semantic_interaction.add_argument("--output-dir", required=True, type=Path)
     view = subcommands.add_parser("view-representations", help="serve a prepared representation review locally")
     view.add_argument("directory", type=Path)
     view.add_argument("--host", default="127.0.0.1")
@@ -310,6 +316,15 @@ def _parser() -> argparse.ArgumentParser:
 def main(argv: list[str] | None = None) -> int:
     args = _parser().parse_args(argv)
     try:
+        if args.command == "prepare-semantic-interaction":
+            report = prepare_semantic_interaction_evaluation(output_dir=args.output_dir)
+            print(
+                f"Wrote {args.output_dir / 'report.json'} "
+                f"(machine integrity {report['machine_integrity_verdict']}; "
+                "browser verification pending)"
+            )
+            return 0
+
         if args.command == "prepare-depth-interaction":
             report = prepare_depth_interaction_evaluation(output_dir=args.output_dir)
             print(
