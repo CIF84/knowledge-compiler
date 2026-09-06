@@ -10,11 +10,11 @@ BASELINE-001, BASELINE-002, BASELINE-003, and BASELINE-004 remain preserved hist
 
 ## Best-known UI baseline candidate
 
-`SPEC-029 — atomic context transition and semantic coverage`
+`SPEC-030 — distinct learning surface representation`
 
-Owner verdict: `MIXED`
+Owner verdict: `ROLE_SEPARATION_CONFIRMED`
 
-Result: major breakthrough in recursive interaction and context-state coherence. The SPEC-029 implementation is the strongest UI version so far and should be preserved as the best-known working candidate, but it is not promoted to a formal baseline. Apparent ground-level propagation gaps in Software Architecture and History of Printing remain explicitly unresolved.
+Result: strongest UI version so far. Map/navigation and learning/understanding responsibilities are now materially distinct while retaining shared canonical semantic state and recursive interaction behavior. Preserve this state as the best-known working candidate; it is not promoted to a formal baseline.
 
 ## Last completed work packet
 
@@ -22,27 +22,27 @@ Result: major breakthrough in recursive interaction and context-state coherence.
 
 Implementation status: `IMPLEMENTED_AWAITING_REVIEW`
 
-Owner review status: `PENDING`
+Owner review status: `ROLE_SEPARATION_CONFIRMED`
 
-See `examples/evaluations/spec-030-distinct-learning-surface-representation-20260906/report.json`.
+See `debriefs/DEBRIEF-030-distinct-learning-surface-representation.md` and `examples/evaluations/spec-030-distinct-learning-surface-representation-20260906/report.json`.
 
 ## Current approved work packet
 
 ```text
-NONE
+specs/SPEC-031-reciprocal-and-multi-edge-relationship-semantics.md
 ```
 
-Status: `NONE`
+Status: `APPROVED_FOR_IMPLEMENTATION`
 
-Authority: `NONE`
+Authority: `OFFLINE_ONLY`
 
-Human gate: `NONE`
+Human gate: `OWNER_REVIEW`
 
 Promotion: `NOT_AUTHORIZED`
 
 ## Current gate
 
-SPEC-030 passed its deterministic and browser machine gate. Owner review is required before any product verdict or promotion decision. No baseline promotion, follow-up implementation, or live/model call is authorized.
+SPEC-031 is authorized for offline implementation. The experiment is narrowly scoped to canonical relationship multiplicity under shared visual geometry, beginning with the reciprocal Electromagnetism `INDUCES` pair. No baseline promotion, live/model call, semantic enrichment, or broad UI redesign is authorized.
 
 ## Frozen / protected state
 
@@ -56,14 +56,14 @@ SPEC-030 passed its deterministic and browser machine gate. Owner review is requ
 - completed SPEC-026 semantic-interaction artifact, preserved unchanged after owner verdict `MIXED`;
 - completed SPEC-027 recursive-interaction artifact, preserved unchanged after owner verdict `MIXED`;
 - completed SPEC-028 canonical-interaction-state artifact, preserved as evidence after owner verdict `MIXED`;
-- completed SPEC-029 atomic-context artifact, preserved as best-known UI baseline candidate after owner verdict `MIXED`;
-- completed SPEC-030 distinct-learning-surface candidate, awaiting owner review and not promoted;
+- completed SPEC-029 atomic-context artifact, preserved as historical evidence after owner verdict `MIXED`;
+- completed SPEC-030 distinct-learning-surface candidate, preserved as best-known UI candidate after owner verdict `ROLE_SEPARATION_CONFIRMED`;
 - trusted semantic vocabulary, grounding, provenance, and fail-closed behavior;
 - unrelated user work.
 
 ## Next intended action
 
-Owner reviews the fixed SPEC-030 viewer and assigns one allowed verdict. No further implementation is active.
+Codex executes `specs/SPEC-031-reciprocal-and-multi-edge-relationship-semantics.md` exactly under the declared offline authority, then stops for owner review.
 
 ## Coordination rule
 
