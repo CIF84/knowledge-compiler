@@ -1,0 +1,284 @@
+{
+  "duplicate_navigation_maps": 0,
+  "fabricated_semantic_items": 0,
+  "forms_implemented": [
+    "CONCISE_CONCEPT_EXPLANATION",
+    "FOCUSED_CAUSAL_RELATIONSHIP",
+    "FOCUSED_RELATIONSHIP",
+    "FOCUSED_SEQUENCE_RELATIONSHIP",
+    "ORIENTATION_SUMMARY",
+    "SOURCE_BACKED_EXPLANATION"
+  ],
+  "payloads": {
+    "depth_concept": {
+      "context_label": "Double-slit experiment · deeper map",
+      "description": "Principle that photons and matter exhibit both wave-like and particle-like behavior, neither classical description being sufficient alone.",
+      "entity_type": "CONCEPT",
+      "form": "CONCISE_CONCEPT_EXPLANATION",
+      "full_navigation_map": false,
+      "interactive_semantic_elements": [
+        "waveparticle-duality"
+      ],
+      "semantic_class": "concept",
+      "semantic_identity": "waveparticle-duality",
+      "semantic_inputs": [
+        "depth-map concepts selected item"
+      ],
+      "title": "wave–particle duality"
+    },
+    "depth_explanation": {
+      "context_label": "Double-slit experiment · deeper map",
+      "evidence": [
+        {
+          "document_id": "scope-eb184226638e5cbb",
+          "end_char": 944,
+          "quote": "Variations of the double-slit experiment have been performed using electrons, atoms, and even large molecules, and the same type of interference pattern is seen.",
+          "start_char": 783
+        }
+      ],
+      "form": "SOURCE_BACKED_EXPLANATION",
+      "full_navigation_map": false,
+      "interactive_semantic_elements": [
+        "explanation-ae10fa8748fdac1f",
+        "double-slit-experiment",
+        "electron",
+        "atom",
+        "interference-pattern"
+      ],
+      "participant_entity_ids": [
+        "double-slit-experiment",
+        "electron",
+        "atom",
+        "interference-pattern"
+      ],
+      "presentation_role": "SOURCE_BACKED_EXPLANATION",
+      "semantic_class": "explanation",
+      "semantic_identity": "explanation-ae10fa8748fdac1f",
+      "semantic_inputs": [
+        "depth-map explanatory_items selected item"
+      ],
+      "semantic_tier": "SOURCE_BACKED_NON_CANONICAL",
+      "statement": "Variations of the double-slit experiment using electrons and atoms produce the same type of interference pattern.",
+      "title": "Source explanation 3"
+    },
+    "depth_orientation": {
+      "facts": [
+        {
+          "label": "Concepts",
+          "value": 7
+        },
+        {
+          "label": "Canonical relationships",
+          "value": 2
+        },
+        {
+          "label": "Source explanations",
+          "value": 6
+        }
+      ],
+      "form": "ORIENTATION_SUMMARY",
+      "full_navigation_map": false,
+      "interactive_semantic_elements": [],
+      "semantic_class": "orientation",
+      "semantic_identity": null,
+      "semantic_inputs": [
+        "canonical revealed ancestry",
+        "depth-map concept/canonical/explanation counts"
+      ],
+      "summary": "Focus-centered deeper explanatory context",
+      "title": "Double-slit experiment · deeper map"
+    },
+    "depth_relationship": {
+      "context_label": "Double-slit experiment · deeper map",
+      "direction": "DIRECTED",
+      "evidence": [
+        {
+          "document_id": "scope-eb184226638e5cbb",
+          "end_char": 644,
+          "quote": "a beam of light is directed through two narrow, closely spaced slits, producing an interference pattern of light and dark bands on a screen.",
+          "start_char": 504
+        }
+      ],
+      "form": "FOCUSED_CAUSAL_RELATIONSHIP",
+      "full_navigation_map": false,
+      "interactive_semantic_elements": [
+        "double-slit-experiment",
+        "relationship-3fadf1ab890d9bde",
+        "interference-pattern"
+      ],
+      "meaning": "The source brings about the target as an effect.",
+      "predicate": "CAUSES",
+      "provenance_status": "EXACT_SOURCE_EVIDENCE",
+      "semantic_class": "canonical",
+      "semantic_identity": "relationship-3fadf1ab890d9bde",
+      "semantic_inputs": [
+        "depth-map canonical_items selected item and endpoints"
+      ],
+      "source": {
+        "entity_id": "double-slit-experiment",
+        "label": "double-slit experiment"
+      },
+      "statement": "The double-slit experiment produces an interference pattern.",
+      "target": {
+        "entity_id": "interference-pattern",
+        "label": "interference pattern"
+      },
+      "title": "double-slit experiment → interference pattern"
+    },
+    "history_concept": {
+      "context_label": "History of Printing",
+      "description": "The process of producing books and other printed material from prepared type.",
+      "entity_type": "PROCESS",
+      "form": "CONCISE_CONCEPT_EXPLANATION",
+      "full_navigation_map": false,
+      "interactive_semantic_elements": [
+        "printing"
+      ],
+      "representation_title": "Dependency model",
+      "semantic_class": "concept",
+      "semantic_identity": "printing",
+      "semantic_inputs": [
+        "representation.nodes[].entity_id",
+        "representation.nodes[].label",
+        "representation.nodes[].description",
+        "representation.nodes[].entity_type"
+      ],
+      "title": "Printing"
+    },
+    "history_relationship": {
+      "context_label": "History of Printing",
+      "direction": "enabler_to_enabled",
+      "evidence": [
+        {
+          "document_id": "text-070a252acc409f55",
+          "end_char": 266,
+          "quote": "Printing enabled many copies to be produced from one prepared set of type",
+          "relationship_id": "rel-printing-enables-copies",
+          "start_char": 193
+        }
+      ],
+      "form": "FOCUSED_SEQUENCE_RELATIONSHIP",
+      "full_navigation_map": false,
+      "interactive_semantic_elements": [
+        "printing",
+        "rel-printing-enables-copies",
+        "printed-books"
+      ],
+      "meaning": "The source makes the target possible without necessarily causing it to occur.",
+      "predicate": "ENABLES",
+      "provenance_status": "SOURCE_EVIDENCE",
+      "relationship_ids": [
+        "rel-printing-enables-copies"
+      ],
+      "semantic_class": "canonical",
+      "semantic_identity": "rel-printing-enables-copies",
+      "semantic_inputs": [
+        "representation.edges selected canonical edge",
+        "representation.nodes selected endpoints",
+        "edge evidence/provenance"
+      ],
+      "source": {
+        "entity_id": "printing",
+        "label": "Printing"
+      },
+      "target": {
+        "entity_id": "printed-books",
+        "label": "Printed books"
+      },
+      "title": "Printing → Printed books"
+    },
+    "orientation": {
+      "facts": [
+        {
+          "label": "Concepts",
+          "value": 4
+        },
+        {
+          "label": "Relationships",
+          "value": 3
+        },
+        {
+          "label": "Structure",
+          "value": "layered_dependency"
+        }
+      ],
+      "form": "ORIENTATION_SUMMARY",
+      "full_navigation_map": false,
+      "interactive_semantic_elements": [],
+      "semantic_class": "orientation",
+      "semantic_identity": null,
+      "semantic_inputs": [
+        "domain.label",
+        "representation.title",
+        "representation.layout.strategy",
+        "representation node/edge counts"
+      ],
+      "summary": "Dependency model",
+      "title": "History of Printing"
+    },
+    "software_concept": {
+      "context_label": "Software Architecture",
+      "description": "A component responsible for payment-related processing and purchase authorization.",
+      "entity_type": "COMPONENT",
+      "form": "CONCISE_CONCEPT_EXPLANATION",
+      "full_navigation_map": false,
+      "interactive_semantic_elements": [
+        "payment-component"
+      ],
+      "representation_title": "Dependency model",
+      "semantic_class": "concept",
+      "semantic_identity": "payment-component",
+      "semantic_inputs": [
+        "representation.nodes[].entity_id",
+        "representation.nodes[].label",
+        "representation.nodes[].description",
+        "representation.nodes[].entity_type"
+      ],
+      "title": "payment component"
+    },
+    "software_relationship": {
+      "context_label": "Software Architecture",
+      "direction": "dependent_to_requirement",
+      "evidence": [
+        {
+          "document_id": "text-49b42a4f08a99742",
+          "end_char": 330,
+          "quote": "both components require the database to store durable state",
+          "relationship_id": "rel-8",
+          "start_char": 271
+        }
+      ],
+      "form": "FOCUSED_RELATIONSHIP",
+      "full_navigation_map": false,
+      "interactive_semantic_elements": [
+        "payment-component",
+        "rel-8",
+        "database"
+      ],
+      "meaning": "The source depends on the target as a prerequisite or necessary resource.",
+      "predicate": "REQUIRES",
+      "provenance_status": "SOURCE_EVIDENCE",
+      "relationship_ids": [
+        "rel-8"
+      ],
+      "semantic_class": "canonical",
+      "semantic_identity": "rel-8",
+      "semantic_inputs": [
+        "representation.edges selected canonical edge",
+        "representation.nodes selected endpoints",
+        "edge evidence/provenance"
+      ],
+      "source": {
+        "entity_id": "payment-component",
+        "label": "payment component"
+      },
+      "target": {
+        "entity_id": "database",
+        "label": "database"
+      },
+      "title": "payment component → database"
+    }
+  },
+  "selection_rule": "semantic class and trusted canonical predicate choose the form; depth is context only and is never a resolver input",
+  "status": "PASS"
+}

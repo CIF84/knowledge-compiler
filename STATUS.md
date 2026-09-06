@@ -18,31 +18,31 @@ Result: major breakthrough in recursive interaction and context-state coherence.
 
 ## Last completed work packet
 
-`SPEC-029 — atomic context transition and semantic coverage`
+`SPEC-030 — distinct learning surface representation`
 
 Implementation status: `IMPLEMENTED_AWAITING_REVIEW`
 
-Owner review status: `MIXED`
+Owner review status: `PENDING`
 
-See `debriefs/DEBRIEF-029-atomic-context-transition-and-semantic-coverage.md`.
+See `examples/evaluations/spec-030-distinct-learning-surface-representation-20260906/report.json`.
 
 ## Current approved work packet
 
 ```text
-specs/SPEC-030-distinct-learning-surface-representation.md
+NONE
 ```
 
-Status: `APPROVED_FOR_IMPLEMENTATION`
+Status: `NONE`
 
-Authority: `OFFLINE_ONLY`
+Authority: `NONE`
 
-Human gate: `OWNER_REVIEW`
+Human gate: `NONE`
 
 Promotion: `NOT_AUTHORIZED`
 
 ## Current gate
 
-SPEC-030 may be implemented under its packet constraints. No baseline promotion, live/model calls, semantic enrichment, broad UI redesign, or unrelated work is authorized.
+SPEC-030 passed its deterministic and browser machine gate. Owner review is required before any product verdict or promotion decision. No baseline promotion, follow-up implementation, or live/model call is authorized.
 
 ## Frozen / protected state
 
@@ -57,12 +57,13 @@ SPEC-030 may be implemented under its packet constraints. No baseline promotion,
 - completed SPEC-027 recursive-interaction artifact, preserved unchanged after owner verdict `MIXED`;
 - completed SPEC-028 canonical-interaction-state artifact, preserved as evidence after owner verdict `MIXED`;
 - completed SPEC-029 atomic-context artifact, preserved as best-known UI baseline candidate after owner verdict `MIXED`;
+- completed SPEC-030 distinct-learning-surface candidate, awaiting owner review and not promoted;
 - trusted semantic vocabulary, grounding, provenance, and fail-closed behavior;
 - unrelated user work.
 
 ## Next intended action
 
-Codex executes SPEC-030 to test whether the map and learning surface can preserve one canonical semantic state while serving distinct responsibilities: navigation/orientation on the map and learner-appropriate explanation on the learning surface.
+Owner reviews the fixed SPEC-030 viewer and assigns one allowed verdict. No further implementation is active.
 
 ## Coordination rule
 

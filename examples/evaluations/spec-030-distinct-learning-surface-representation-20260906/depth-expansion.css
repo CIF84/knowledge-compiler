@@ -1,0 +1,115 @@
+/* SPEC-024 composes a spatial depth layer with the frozen BASELINE-004 map. */
+.depth-expansion-region {
+  fill: rgba(220, 235, 228, .28);
+  stroke: var(--accent);
+  stroke-width: 2;
+  stroke-dasharray: 10 8;
+  pointer-events: none;
+}
+.depth-expansion-label,.depth-origin-label {
+  fill: var(--accent);
+  font-size: 11px;
+  font-weight: 850;
+  letter-spacing: .09em;
+  pointer-events: none;
+}
+.depth-origin-path {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 4;
+  stroke-dasharray: 10 7;
+  marker-end: url(#spec024-depth-arrow);
+  pointer-events: none;
+}
+.depth-map-node,.depth-explanation-anchor,.depth-collapse { cursor: pointer; }
+.depth-map-node rect {
+  fill: white;
+  stroke: #819087;
+  stroke-width: 1.5;
+}
+.depth-map-node text,.depth-explanation-anchor text,.depth-collapse text {
+  fill: var(--ink);
+  font-size: 13px;
+  font-weight: 650;
+  pointer-events: none;
+}
+.depth-map-node.depth-entry rect {
+  fill: var(--accent-soft);
+  stroke: var(--accent);
+  stroke-width: 4;
+}
+.depth-entry-caption {
+  fill: var(--accent)!important;
+  font-size: 9px!important;
+  font-weight: 900!important;
+  letter-spacing: .08em;
+}
+.depth-canonical-line {
+  fill: none;
+  stroke: #263a31;
+  stroke-width: 3;
+  marker-end: url(#spec024-canonical-arrow);
+}
+.depth-canonical-hit,.depth-explanation-hit {
+  fill: none;
+  stroke: transparent;
+  stroke-width: 18;
+  cursor: pointer;
+}
+.depth-canonical-label {
+  fill: #263a31;
+  font-size: 11px;
+  font-weight: 850;
+  paint-order: stroke;
+  stroke: #faf9f4;
+  stroke-width: 5px;
+  pointer-events: none;
+}
+.depth-explanation-line {
+  fill: none;
+  stroke: #8b958f;
+  stroke-width: 1.5;
+  stroke-dasharray: 7 6;
+  pointer-events: none;
+}
+.depth-explanation-anchor rect {
+  fill: #f7f4ec;
+  stroke: #717b75;
+  stroke-width: 1.5;
+  stroke-dasharray: 5 3;
+}
+.depth-explanation-anchor text { font-size: 10px; }
+.depth-map-node.is-selected rect,.depth-explanation-anchor.is-selected rect {
+  fill: var(--accent-soft);
+  stroke: var(--accent);
+  stroke-width: 3;
+}
+.depth-canonical-line.is-selected {
+  stroke: var(--accent);
+  stroke-width: 5;
+  marker-end: url(#spec024-canonical-arrow-selected);
+}
+.depth-map-node:focus-visible rect,.depth-explanation-anchor:focus-visible rect,
+.depth-canonical-group:focus-visible .depth-canonical-line,.depth-collapse:focus-visible rect {
+  fill: var(--preview-soft);
+  stroke: var(--preview);
+  stroke-width: 3;
+  stroke-dasharray: 7 4;
+  outline: none;
+}
+.depth-muted { opacity: .14; }
+.depth-collapse rect {
+  fill: white;
+  stroke: var(--accent);
+  stroke-width: 1.5;
+}
+.depth-collapse text { fill: var(--accent); font-size: 11px; font-weight: 800; }
+.depth-map-note {
+  margin-top: 9px;
+  padding: 7px 9px;
+  border: 1px dashed #87948d;
+  border-radius: 5px;
+  background: #f7f4ec;
+  font-size: 12px;
+  font-weight: 750;
+}

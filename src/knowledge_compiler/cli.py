@@ -25,6 +25,7 @@ from .depth_navigation_evaluation import prepare_depth_navigation_evaluation
 from .explanatory_projection_evaluation import prepare_explanatory_projection_evaluation
 from .interface_restoration_evaluation import prepare_interface_restoration_evaluation
 from .learner_navigation_evaluation import prepare_learner_navigation_evaluation
+from .learning_surface_evaluation import prepare_learning_surface_evaluation
 from .navigation_learning_evaluation import prepare_navigation_learning_evaluation
 from .semantic_depth_evaluation import (
     finalize_semantic_depth_evaluation,
@@ -323,6 +324,11 @@ def _parser() -> argparse.ArgumentParser:
         help="build the offline SPEC-029 atomic context-transition experiment",
     )
     atomic_context.add_argument("--output-dir", required=True, type=Path)
+    learning_surface = subcommands.add_parser(
+        "prepare-learning-surface",
+        help="build the offline SPEC-030 distinct learning-surface experiment",
+    )
+    learning_surface.add_argument("--output-dir", required=True, type=Path)
     view = subcommands.add_parser("view-representations", help="serve a prepared representation review locally")
     view.add_argument("directory", type=Path)
     view.add_argument("--host", default="127.0.0.1")
@@ -334,6 +340,15 @@ def _parser() -> argparse.ArgumentParser:
 def main(argv: list[str] | None = None) -> int:
     args = _parser().parse_args(argv)
     try:
+        if args.command == "prepare-learning-surface":
+            report = prepare_learning_surface_evaluation(output_dir=args.output_dir)
+            print(
+                f"Wrote {args.output_dir / 'report.json'} "
+                f"(machine integrity {report['machine_integrity_verdict']}; "
+                "browser verification pending)"
+            )
+            return 0
+
         if args.command == "prepare-atomic-context":
             report = prepare_atomic_context_evaluation(output_dir=args.output_dir)
             print(
