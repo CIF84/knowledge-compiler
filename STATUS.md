@@ -8,31 +8,41 @@ This is the authoritative repository handoff for current work coordination. It p
 
 BASELINE-001, BASELINE-002, BASELINE-003, and BASELINE-004 remain preserved historical/accepted states and must not be modified by ordinary implementation work.
 
+## Best-known UI baseline candidate
+
+`SPEC-029 — atomic context transition and semantic coverage`
+
+Owner verdict: `MIXED`
+
+Result: major breakthrough in recursive interaction and context-state coherence. The SPEC-029 implementation is the strongest UI version so far and should be preserved as the best-known working candidate, but it is not promoted to a formal baseline. Apparent ground-level propagation gaps in Software Architecture and History of Printing remain explicitly unresolved.
+
 ## Last completed work packet
 
 `SPEC-029 — atomic context transition and semantic coverage`
 
 Implementation status: `IMPLEMENTED_AWAITING_REVIEW`
 
-Result: the isolated offline candidate routes existing concept, ground/deep relationship, and source-explanation interactions through one canonical learner-state reducer. Its deterministic and browser gates pass for atomic cross-context replacement, ground-level relationship coverage, zero stale prior-context activity, and depth-invariant transitions. The cognitive product verdict remains pending owner review.
+Owner review status: `MIXED`
+
+See `debriefs/DEBRIEF-029-atomic-context-transition-and-semantic-coverage.md`.
 
 ## Current approved work packet
 
 ```text
-NONE
+specs/SPEC-030-distinct-learning-surface-representation.md
 ```
 
-Status: `NONE`
+Status: `APPROVED_FOR_IMPLEMENTATION`
 
-Authority: `NONE`
+Authority: `OFFLINE_ONLY`
 
-Human gate: `NONE`
+Human gate: `OWNER_REVIEW`
 
 Promotion: `NOT_AUTHORIZED`
 
 ## Current gate
 
-Owner cognitive review of the fixed SPEC-029 viewer is required. No further implementation, semantic change, UI change, baseline promotion, or product verdict is authorized.
+SPEC-030 may be implemented under its packet constraints. No baseline promotion, live/model calls, semantic enrichment, broad UI redesign, or unrelated work is authorized.
 
 ## Frozen / protected state
 
@@ -46,13 +56,13 @@ Owner cognitive review of the fixed SPEC-029 viewer is required. No further impl
 - completed SPEC-026 semantic-interaction artifact, preserved unchanged after owner verdict `MIXED`;
 - completed SPEC-027 recursive-interaction artifact, preserved unchanged after owner verdict `MIXED`;
 - completed SPEC-028 canonical-interaction-state artifact, preserved as evidence after owner verdict `MIXED`;
-- isolated SPEC-029 atomic-context artifact awaiting owner verdict;
+- completed SPEC-029 atomic-context artifact, preserved as best-known UI baseline candidate after owner verdict `MIXED`;
 - trusted semantic vocabulary, grounding, provenance, and fail-closed behavior;
 - unrelated user work.
 
 ## Next intended action
 
-The owner uses the fixed SPEC-029 viewer and reports whether ordinary and recursive relationships share one interaction grammar and whether any stale map/right-pane context remains after changing domains.
+Codex executes SPEC-030 to test whether the map and learning surface can preserve one canonical semantic state while serving distinct responsibilities: navigation/orientation on the map and learner-appropriate explanation on the learning surface.
 
 ## Coordination rule
 
