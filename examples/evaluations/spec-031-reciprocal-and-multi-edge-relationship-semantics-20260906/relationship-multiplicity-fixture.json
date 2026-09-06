@@ -1,0 +1,433 @@
+{
+  "all_multiplicity_groups": [
+    {
+      "canonical_relationship_count": 2,
+      "canonical_relationship_identities": [
+        "rel-higher-price-decreases-demanded",
+        "rel-price-decreases-demanded"
+      ],
+      "corridor_key": "economics::market-price::quantity-demanded",
+      "directed_pairs": [
+        [
+          "market-price",
+          "quantity-demanded"
+        ]
+      ],
+      "domain_id": "economics",
+      "kind": "SAME_DIRECTION_MULTI_ASSERTION",
+      "predicates": [
+        "DECREASES"
+      ],
+      "relationships": [
+        {
+          "corridor_key": "economics::market-price::quantity-demanded",
+          "direction": "decreaser_to_decreased_variable",
+          "domain_id": "economics",
+          "evidence": [
+            {
+              "document_id": "text-e6c889f45171a12a",
+              "end_char": 469,
+              "quote": "The higher price decreases quantity demanded and increases quantity supplied until the shortage narrows.",
+              "relationship_id": "rel-higher-price-decreases-demanded",
+              "start_char": 365
+            }
+          ],
+          "identity": "rel-higher-price-decreases-demanded",
+          "meaning": "The source causally lowers the amount, rate, value, probability, or intensity of the target.",
+          "predicate": "DECREASES",
+          "provenance_status": "SOURCE_EVIDENCE",
+          "source_entity_id": "market-price",
+          "target_entity_id": "quantity-demanded",
+          "visual_edge_key": "edge-ab2203590fef2f45"
+        },
+        {
+          "corridor_key": "economics::market-price::quantity-demanded",
+          "direction": "decreaser_to_decreased_variable",
+          "domain_id": "economics",
+          "evidence": [
+            {
+              "document_id": "text-e6c889f45171a12a",
+              "end_char": 177,
+              "quote": "When the price rises, buyers usually demand a smaller quantity",
+              "relationship_id": "rel-price-decreases-demanded",
+              "start_char": 115
+            }
+          ],
+          "identity": "rel-price-decreases-demanded",
+          "meaning": "The source causally lowers the amount, rate, value, probability, or intensity of the target.",
+          "predicate": "DECREASES",
+          "provenance_status": "SOURCE_EVIDENCE",
+          "source_entity_id": "market-price",
+          "target_entity_id": "quantity-demanded",
+          "visual_edge_key": "edge-ab2203590fef2f45"
+        }
+      ],
+      "synthetic_relationship_identity": null,
+      "visual_edge_keys": [
+        "edge-ab2203590fef2f45"
+      ]
+    },
+    {
+      "canonical_relationship_count": 2,
+      "canonical_relationship_identities": [
+        "rel-higher-price-increases-supplied",
+        "rel-price-increases-supplied"
+      ],
+      "corridor_key": "economics::market-price::quantity-supplied",
+      "directed_pairs": [
+        [
+          "market-price",
+          "quantity-supplied"
+        ]
+      ],
+      "domain_id": "economics",
+      "kind": "SAME_DIRECTION_MULTI_ASSERTION",
+      "predicates": [
+        "INCREASES"
+      ],
+      "relationships": [
+        {
+          "corridor_key": "economics::market-price::quantity-supplied",
+          "direction": "increaser_to_increased_variable",
+          "domain_id": "economics",
+          "evidence": [
+            {
+              "document_id": "text-e6c889f45171a12a",
+              "end_char": 469,
+              "quote": "The higher price decreases quantity demanded and increases quantity supplied until the shortage narrows.",
+              "relationship_id": "rel-higher-price-increases-supplied",
+              "start_char": 365
+            }
+          ],
+          "identity": "rel-higher-price-increases-supplied",
+          "meaning": "The source causally raises the amount, rate, value, probability, or intensity of the target.",
+          "predicate": "INCREASES",
+          "provenance_status": "SOURCE_EVIDENCE",
+          "source_entity_id": "market-price",
+          "target_entity_id": "quantity-supplied",
+          "visual_edge_key": "edge-d207db58ebed870c"
+        },
+        {
+          "corridor_key": "economics::market-price::quantity-supplied",
+          "direction": "increaser_to_increased_variable",
+          "domain_id": "economics",
+          "evidence": [
+            {
+              "document_id": "text-e6c889f45171a12a",
+              "end_char": 226,
+              "quote": "while sellers usually supply a larger quantity.",
+              "relationship_id": "rel-price-increases-supplied",
+              "start_char": 179
+            }
+          ],
+          "identity": "rel-price-increases-supplied",
+          "meaning": "The source causally raises the amount, rate, value, probability, or intensity of the target.",
+          "predicate": "INCREASES",
+          "provenance_status": "SOURCE_EVIDENCE",
+          "source_entity_id": "market-price",
+          "target_entity_id": "quantity-supplied",
+          "visual_edge_key": "edge-d207db58ebed870c"
+        }
+      ],
+      "synthetic_relationship_identity": null,
+      "visual_edge_keys": [
+        "edge-d207db58ebed870c"
+      ]
+    },
+    {
+      "canonical_relationship_count": 2,
+      "canonical_relationship_identities": [
+        "changing-electric-field-induces-magnetic-field",
+        "changing-magnetic-field-induces-electric-field"
+      ],
+      "corridor_key": "electromagnetism::electric-field::magnetic-field",
+      "directed_pairs": [
+        [
+          "electric-field",
+          "magnetic-field"
+        ],
+        [
+          "magnetic-field",
+          "electric-field"
+        ]
+      ],
+      "domain_id": "electromagnetism",
+      "kind": "RECIPROCAL",
+      "predicates": [
+        "INDUCES"
+      ],
+      "relationships": [
+        {
+          "corridor_key": "electromagnetism::electric-field::magnetic-field",
+          "direction": "inducer_to_induced_effect",
+          "domain_id": "electromagnetism",
+          "evidence": [
+            {
+              "document_id": "text-38d7213d9f084e3e",
+              "end_char": 345,
+              "quote": "A changing electric field induces a magnetic field.",
+              "relationship_id": "changing-electric-field-induces-magnetic-field",
+              "start_char": 294
+            }
+          ],
+          "identity": "changing-electric-field-induces-magnetic-field",
+          "meaning": "The source produces the target through an explicitly described induction mechanism.",
+          "predicate": "INDUCES",
+          "provenance_status": "SOURCE_EVIDENCE",
+          "source_entity_id": "electric-field",
+          "target_entity_id": "magnetic-field",
+          "visual_edge_key": "edge-f70467eaddffcc74"
+        },
+        {
+          "corridor_key": "electromagnetism::electric-field::magnetic-field",
+          "direction": "inducer_to_induced_effect",
+          "domain_id": "electromagnetism",
+          "evidence": [
+            {
+              "document_id": "text-38d7213d9f084e3e",
+              "end_char": 293,
+              "quote": "A changing magnetic field induces an electric field.",
+              "relationship_id": "changing-magnetic-field-induces-electric-field",
+              "start_char": 241
+            }
+          ],
+          "identity": "changing-magnetic-field-induces-electric-field",
+          "meaning": "The source produces the target through an explicitly described induction mechanism.",
+          "predicate": "INDUCES",
+          "provenance_status": "SOURCE_EVIDENCE",
+          "source_entity_id": "magnetic-field",
+          "target_entity_id": "electric-field",
+          "visual_edge_key": "edge-beee52cbd1187db5"
+        }
+      ],
+      "synthetic_relationship_identity": null,
+      "visual_edge_keys": [
+        "edge-beee52cbd1187db5",
+        "edge-f70467eaddffcc74"
+      ]
+    }
+  ],
+  "case_a_reciprocal_electromagnetism": {
+    "canonical_relationship_count": 2,
+    "canonical_relationship_identities": [
+      "changing-electric-field-induces-magnetic-field",
+      "changing-magnetic-field-induces-electric-field"
+    ],
+    "forward": {
+      "corridor_key": "electromagnetism::electric-field::magnetic-field",
+      "direction": "inducer_to_induced_effect",
+      "domain_id": "electromagnetism",
+      "evidence": [
+        {
+          "document_id": "text-38d7213d9f084e3e",
+          "end_char": 345,
+          "quote": "A changing electric field induces a magnetic field.",
+          "relationship_id": "changing-electric-field-induces-magnetic-field",
+          "start_char": 294
+        }
+      ],
+      "identity": "changing-electric-field-induces-magnetic-field",
+      "meaning": "The source produces the target through an explicitly described induction mechanism.",
+      "predicate": "INDUCES",
+      "provenance_status": "SOURCE_EVIDENCE",
+      "source_entity_id": "electric-field",
+      "target_entity_id": "magnetic-field",
+      "visual_edge_key": "edge-f70467eaddffcc74"
+    },
+    "forward_reverse_forward_sequence": [
+      "changing-electric-field-induces-magnetic-field",
+      "changing-magnetic-field-induces-electric-field",
+      "changing-electric-field-induces-magnetic-field"
+    ],
+    "reverse": {
+      "corridor_key": "electromagnetism::electric-field::magnetic-field",
+      "direction": "inducer_to_induced_effect",
+      "domain_id": "electromagnetism",
+      "evidence": [
+        {
+          "document_id": "text-38d7213d9f084e3e",
+          "end_char": 293,
+          "quote": "A changing magnetic field induces an electric field.",
+          "relationship_id": "changing-magnetic-field-induces-electric-field",
+          "start_char": 241
+        }
+      ],
+      "identity": "changing-magnetic-field-induces-electric-field",
+      "meaning": "The source produces the target through an explicitly described induction mechanism.",
+      "predicate": "INDUCES",
+      "provenance_status": "SOURCE_EVIDENCE",
+      "source_entity_id": "magnetic-field",
+      "target_entity_id": "electric-field",
+      "visual_edge_key": "edge-beee52cbd1187db5"
+    },
+    "synthetic_reciprocal_relationship": null,
+    "visual_geometry": "electromagnetism::electric-field::magnetic-field"
+  },
+  "case_b_ordinary_single_edge": {
+    "interaction_grammar": "UNCHANGED_DIRECT_PREVIEW_AND_SELECTION",
+    "multiplicity_control_required": false,
+    "relationship": {
+      "corridor_key": "electromagnetism::double-slit-experiment::interference-pattern",
+      "direction": "cause_to_effect",
+      "domain_id": "electromagnetism",
+      "evidence": [
+        {
+          "document_id": "text-9e978db999ee6713",
+          "end_char": 12218,
+          "quote": "a beam of light is directed through two narrow, closely spaced slits, producing an interference pattern of light and dark bands on a screen.",
+          "relationship_id": "relationship-05b19ee4b6d50060",
+          "start_char": 12078
+        }
+      ],
+      "identity": "relationship-05b19ee4b6d50060",
+      "meaning": "The source brings about the target as an effect.",
+      "predicate": "CAUSES",
+      "provenance_status": "SOURCE_EVIDENCE",
+      "source_entity_id": "double-slit-experiment",
+      "target_entity_id": "interference-pattern",
+      "visual_edge_key": "depth-edge-248ad677321584fa"
+    }
+  },
+  "case_c_existing_same_direction_multi_assertion": {
+    "available": true,
+    "domain_id": "economics",
+    "groups": [
+      {
+        "canonical_relationship_count": 2,
+        "canonical_relationship_identities": [
+          "rel-higher-price-decreases-demanded",
+          "rel-price-decreases-demanded"
+        ],
+        "corridor_key": "economics::market-price::quantity-demanded",
+        "directed_pairs": [
+          [
+            "market-price",
+            "quantity-demanded"
+          ]
+        ],
+        "domain_id": "economics",
+        "kind": "SAME_DIRECTION_MULTI_ASSERTION",
+        "predicates": [
+          "DECREASES"
+        ],
+        "relationships": [
+          {
+            "corridor_key": "economics::market-price::quantity-demanded",
+            "direction": "decreaser_to_decreased_variable",
+            "domain_id": "economics",
+            "evidence": [
+              {
+                "document_id": "text-e6c889f45171a12a",
+                "end_char": 469,
+                "quote": "The higher price decreases quantity demanded and increases quantity supplied until the shortage narrows.",
+                "relationship_id": "rel-higher-price-decreases-demanded",
+                "start_char": 365
+              }
+            ],
+            "identity": "rel-higher-price-decreases-demanded",
+            "meaning": "The source causally lowers the amount, rate, value, probability, or intensity of the target.",
+            "predicate": "DECREASES",
+            "provenance_status": "SOURCE_EVIDENCE",
+            "source_entity_id": "market-price",
+            "target_entity_id": "quantity-demanded",
+            "visual_edge_key": "edge-ab2203590fef2f45"
+          },
+          {
+            "corridor_key": "economics::market-price::quantity-demanded",
+            "direction": "decreaser_to_decreased_variable",
+            "domain_id": "economics",
+            "evidence": [
+              {
+                "document_id": "text-e6c889f45171a12a",
+                "end_char": 177,
+                "quote": "When the price rises, buyers usually demand a smaller quantity",
+                "relationship_id": "rel-price-decreases-demanded",
+                "start_char": 115
+              }
+            ],
+            "identity": "rel-price-decreases-demanded",
+            "meaning": "The source causally lowers the amount, rate, value, probability, or intensity of the target.",
+            "predicate": "DECREASES",
+            "provenance_status": "SOURCE_EVIDENCE",
+            "source_entity_id": "market-price",
+            "target_entity_id": "quantity-demanded",
+            "visual_edge_key": "edge-ab2203590fef2f45"
+          }
+        ],
+        "synthetic_relationship_identity": null,
+        "visual_edge_keys": [
+          "edge-ab2203590fef2f45"
+        ]
+      },
+      {
+        "canonical_relationship_count": 2,
+        "canonical_relationship_identities": [
+          "rel-higher-price-increases-supplied",
+          "rel-price-increases-supplied"
+        ],
+        "corridor_key": "economics::market-price::quantity-supplied",
+        "directed_pairs": [
+          [
+            "market-price",
+            "quantity-supplied"
+          ]
+        ],
+        "domain_id": "economics",
+        "kind": "SAME_DIRECTION_MULTI_ASSERTION",
+        "predicates": [
+          "INCREASES"
+        ],
+        "relationships": [
+          {
+            "corridor_key": "economics::market-price::quantity-supplied",
+            "direction": "increaser_to_increased_variable",
+            "domain_id": "economics",
+            "evidence": [
+              {
+                "document_id": "text-e6c889f45171a12a",
+                "end_char": 469,
+                "quote": "The higher price decreases quantity demanded and increases quantity supplied until the shortage narrows.",
+                "relationship_id": "rel-higher-price-increases-supplied",
+                "start_char": 365
+              }
+            ],
+            "identity": "rel-higher-price-increases-supplied",
+            "meaning": "The source causally raises the amount, rate, value, probability, or intensity of the target.",
+            "predicate": "INCREASES",
+            "provenance_status": "SOURCE_EVIDENCE",
+            "source_entity_id": "market-price",
+            "target_entity_id": "quantity-supplied",
+            "visual_edge_key": "edge-d207db58ebed870c"
+          },
+          {
+            "corridor_key": "economics::market-price::quantity-supplied",
+            "direction": "increaser_to_increased_variable",
+            "domain_id": "economics",
+            "evidence": [
+              {
+                "document_id": "text-e6c889f45171a12a",
+                "end_char": 226,
+                "quote": "while sellers usually supply a larger quantity.",
+                "relationship_id": "rel-price-increases-supplied",
+                "start_char": 179
+              }
+            ],
+            "identity": "rel-price-increases-supplied",
+            "meaning": "The source causally raises the amount, rate, value, probability, or intensity of the target.",
+            "predicate": "INCREASES",
+            "provenance_status": "SOURCE_EVIDENCE",
+            "source_entity_id": "market-price",
+            "target_entity_id": "quantity-supplied",
+            "visual_edge_key": "edge-d207db58ebed870c"
+          }
+        ],
+        "synthetic_relationship_identity": null,
+        "visual_edge_keys": [
+          "edge-d207db58ebed870c"
+        ]
+      }
+    ],
+    "synthetic_domain_fact_added": false
+  },
+  "status": "PASS"
+}

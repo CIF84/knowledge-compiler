@@ -18,31 +18,31 @@ Result: strongest UI version so far. Map/navigation and learning/understanding r
 
 ## Last completed work packet
 
-`SPEC-030 — distinct learning surface representation`
+`SPEC-031 — reciprocal and multi-edge relationship semantics`
 
 Implementation status: `IMPLEMENTED_AWAITING_REVIEW`
 
-Owner review status: `ROLE_SEPARATION_CONFIRMED`
+Owner review status: `PENDING`
 
-See `debriefs/DEBRIEF-030-distinct-learning-surface-representation.md` and `examples/evaluations/spec-030-distinct-learning-surface-representation-20260906/report.json`.
+See `examples/evaluations/spec-031-reciprocal-and-multi-edge-relationship-semantics-20260906/report.json`.
 
 ## Current approved work packet
 
 ```text
-specs/SPEC-031-reciprocal-and-multi-edge-relationship-semantics.md
+NONE
 ```
 
-Status: `APPROVED_FOR_IMPLEMENTATION`
+Status: `NONE`
 
-Authority: `OFFLINE_ONLY`
+Authority: `NONE`
 
-Human gate: `OWNER_REVIEW`
+Human gate: `NONE`
 
 Promotion: `NOT_AUTHORIZED`
 
 ## Current gate
 
-SPEC-031 is authorized for offline implementation. The experiment is narrowly scoped to canonical relationship multiplicity under shared visual geometry, beginning with the reciprocal Electromagnetism `INDUCES` pair. No baseline promotion, live/model call, semantic enrichment, or broad UI redesign is authorized.
+SPEC-031 passed its deterministic and browser machine gate. Owner review is required before any product verdict or promotion decision. No baseline promotion, follow-up implementation, or live/model call is authorized.
 
 ## Frozen / protected state
 
@@ -58,12 +58,13 @@ SPEC-031 is authorized for offline implementation. The experiment is narrowly sc
 - completed SPEC-028 canonical-interaction-state artifact, preserved as evidence after owner verdict `MIXED`;
 - completed SPEC-029 atomic-context artifact, preserved as historical evidence after owner verdict `MIXED`;
 - completed SPEC-030 distinct-learning-surface candidate, preserved as best-known UI candidate after owner verdict `ROLE_SEPARATION_CONFIRMED`;
+- completed SPEC-031 reciprocal/multi-edge candidate, awaiting owner review and not promoted;
 - trusted semantic vocabulary, grounding, provenance, and fail-closed behavior;
 - unrelated user work.
 
 ## Next intended action
 
-Codex executes `specs/SPEC-031-reciprocal-and-multi-edge-relationship-semantics.md` exactly under the declared offline authority, then stops for owner review.
+Owner reviews the fixed SPEC-031 viewer and assigns one allowed verdict. No further implementation is active.
 
 ## Coordination rule
 

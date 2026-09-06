@@ -44,6 +44,9 @@ from .pipeline import compile_knowledge_model
 from .proposition_evaluation import run_proposition_evaluation
 from .quantum_learning_evaluation import run_quantum_learning_evaluation
 from .recursive_interaction_evaluation import prepare_recursive_interaction_evaluation
+from .relationship_multiplicity_evaluation import (
+    prepare_relationship_multiplicity_evaluation,
+)
 from .representation_builder import RepresentationBuilder
 from .representation_evaluation import (
     default_presentation_metadata_path,
@@ -329,6 +332,11 @@ def _parser() -> argparse.ArgumentParser:
         help="build the offline SPEC-030 distinct learning-surface experiment",
     )
     learning_surface.add_argument("--output-dir", required=True, type=Path)
+    relationship_multiplicity = subcommands.add_parser(
+        "prepare-relationship-multiplicity",
+        help="build the offline SPEC-031 relationship-multiplicity experiment",
+    )
+    relationship_multiplicity.add_argument("--output-dir", required=True, type=Path)
     view = subcommands.add_parser("view-representations", help="serve a prepared representation review locally")
     view.add_argument("directory", type=Path)
     view.add_argument("--host", default="127.0.0.1")
@@ -340,6 +348,17 @@ def _parser() -> argparse.ArgumentParser:
 def main(argv: list[str] | None = None) -> int:
     args = _parser().parse_args(argv)
     try:
+        if args.command == "prepare-relationship-multiplicity":
+            report = prepare_relationship_multiplicity_evaluation(
+                output_dir=args.output_dir
+            )
+            print(
+                f"Wrote {args.output_dir / 'report.json'} "
+                f"(machine integrity {report['machine_integrity_verdict']}; "
+                "browser verification pending)"
+            )
+            return 0
+
         if args.command == "prepare-learning-surface":
             report = prepare_learning_surface_evaluation(output_dir=args.output_dir)
             print(
