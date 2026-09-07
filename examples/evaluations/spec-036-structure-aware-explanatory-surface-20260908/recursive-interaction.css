@@ -1,0 +1,32 @@
+/* SPEC-027 applies the accepted preview grammar to every revealed semantic object. */
+.depth-map-node.is-preview rect,.depth-explanation-anchor.is-preview rect {
+  fill:var(--preview-soft);
+  stroke:var(--preview);
+  stroke-width:2.5;
+  stroke-dasharray:6 3;
+}
+.depth-canonical-line.is-preview {
+  stroke:var(--preview);
+  stroke-width:3;
+  stroke-dasharray:7 4;
+  marker-end:url(#nav-arrow-preview);
+}
+.depth-canonical-label.is-preview,.depth-explanation-label.is-preview { fill:var(--preview); }
+.depth-explanatory-group.is-preview .depth-explanation-line {
+  stroke:var(--preview);
+  stroke-width:3;
+}
+.depth-explanatory-group.is-preview .depth-explanation-label { fill:var(--preview); }
+.depth-sync-node.is-preview rect,.depth-sync-explanation.is-preview rect {
+  fill:var(--preview-soft);
+  stroke:var(--preview);
+  stroke-width:3;
+  stroke-dasharray:6 3;
+}
+.depth-sync-canonical.is-preview { stroke:var(--preview);stroke-width:3;stroke-dasharray:7 4;marker-end:url(#spec027-sync-arrow-preview); }
+.depth-sync-attachment-group.is-preview .depth-sync-attachment { stroke:var(--preview);stroke-width:3; }
+.depth-sync-attachment-group.is-preview .depth-sync-attachment-label { fill:var(--preview); }
+.recursive-sync-hit { fill:none;stroke:transparent;stroke-width:18;cursor:pointer; }
+.recursive-sync-hit:focus { outline:none; }
+.recursive-sync-hit:focus-visible { stroke:var(--preview);stroke-width:6;stroke-dasharray:7 4; }
+[data-recursive-object][role="button"] { cursor:pointer; }
