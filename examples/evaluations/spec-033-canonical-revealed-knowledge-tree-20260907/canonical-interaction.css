@@ -1,0 +1,18 @@
+/* SPEC-028 renders preview and selection from one canonical state. */
+.canonical-sync-hit {
+  fill:none;
+  stroke:transparent;
+  stroke-width:18;
+  cursor:pointer;
+}
+.canonical-sync-hit:focus { outline:none; }
+.canonical-sync-hit:focus-visible {
+  stroke:var(--preview);
+  stroke-width:6;
+  stroke-dasharray:7 4;
+}
+[data-canonical-object][role="button"] {
+  cursor:pointer;
+  -webkit-user-select:none;
+  user-select:none;
+}

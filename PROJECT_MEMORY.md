@@ -128,6 +128,22 @@ UPDATED PROJECT MODEL
 
 ## Active Decisions
 
+### Navigation decision after SPEC-032
+
+Owner review rejected visit-history nesting as visible navigation: repeated visits duplicated canonical objects, consumed horizontal space, damaged label legibility, and eventually coincided with a deeper-interaction freeze. Preserve SPEC-032 as negative evidence; do not incrementally repair its history tree as the primary product architecture.
+
+The accepted direction under SPEC-033 is:
+
+```text
+MY MAP = canonical knowledge territory revealed so far
+WHAT DOES THIS MEAN? = focused explanation of current canonical object
+EXPLORE NEXT = trusted unrevealed frontier
+```
+
+History remains useful as telemetry (`revealed_at`, first/last visit, visit count, and reveal origin), but traversal order must not structurally define the visible map. Revealed state and learner-understanding state are distinct. Future pathways recommend traversal through topology/frontier; they do not reshape canonical revealed territory.
+
+SPEC-033 implements this direction as a deterministic candidate awaiting owner review. No acceptance or baseline promotion is recorded yet.
+
 ```text
 KnowledgeModel is the semantic IR.
 Origin: DEBRIEF-001
@@ -231,6 +247,18 @@ Status: active-hypothesis
 
 Do not introduce arbitrary recursive generation yet; investigate resolution strategy first.
 Origin: DEBRIEF-008
+Status: active
+
+Navigation shows canonical revealed territory, not traversal history.
+Origin: SPEC-032 owner verdict / SPEC-033 product decision
+Status: active direction; implementation awaiting owner review
+
+Revealed knowledge must remain separate from evidence of understanding or mastery.
+Origin: SPEC-033
+Status: active
+
+Frontier, history, pathway, and revealed topology are separate objects.
+Origin: SPEC-033
 Status: active
 ```
 

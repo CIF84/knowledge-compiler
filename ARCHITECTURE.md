@@ -232,40 +232,38 @@ CONCEPT
 This mapping is not yet a finalized ontology or algorithm. It is the next experimental frontier.
 
 ### Knowledge-Space Navigation
-The emerging default model for abstract knowledge is:
+The accepted workspace separates canonical semantics from several kinds of learner-facing state:
 
 ```text
-vertical dimension
-→ abstraction / semantic resolution
+CANONICAL KNOWLEDGE TOPOLOGY
+→ trusted concepts, claims, evidence, and admitted depth
 
-horizontal dimension
-→ conceptual neighborhood / topology
+REVEALED NAVIGATION STATE
+→ canonical subset the learner has explicitly uncovered
+
+LEARNER STATE
+→ future, separate evidence about understanding or calibration
+
+HISTORY
+→ traversal telemetry; never the visible topology
+
+FRONTIER
+→ trusted objects available to reveal next
+
+PATHWAY
+→ future recommended traversal through topology/frontier
 ```
 
-Default representation should remain **2D + semantic zoom**. Literal 3D should be reserved for subjects where physical/spatial third-dimensional structure itself carries explanatory information.
+SPEC-033 implements revealed navigation as an in-memory set keyed by trusted canonical object identity. A deterministic tree projection gives each revealed object one stable navigation parent without asserting that projection edges are semantic predicates. Domain roots group parent-resolution objects; admitted child-resolution objects group under their canonical depth entrance. Collapse/expand state is local UI state. Selection auto-expands its ancestor chain but does not change tree identity.
 
-Navigation concepts remain distinct:
+The executable candidate composes the frozen SPEC-031 runtime and the established SPEC-029/030 state boundaries. `Explore next` is filtered against the revealed set. The existing explicit depth-expansion event reveals admitted child structure once; visit-history wrappers and the rejected SPEC-032 runtime are absent.
 
-```text
-Back
-→ history
-
-Breadcrumb / ancestry path
-→ lineage across abstraction
-
-Context map
-→ neighborhood / lateral movement
-
-Explore / semantic zoom
-→ deeper resolution
-```
-
-Active context-map navigation is not yet implemented.
+The implementation is awaiting owner review and is not a promoted baseline.
 
 ### Baseline Interface
-`baselines/BASELINE-001-interface.md` preserves the first empirically successful cognitive interaction baseline.
+BASELINE-001 through BASELINE-004 preserve successive accepted interaction controls. BASELINE-004 is the current frozen learner-navigation workspace grammar.
 
-Future material UI/interaction changes should compare against this baseline rather than assume novelty is improvement.
+Future material UI/interaction changes must compose with the applicable frozen baseline rather than approximately recreate it.
 
 ## Dependency Direction
 
@@ -326,6 +324,9 @@ Contextual / Layers navigation
 21. **Do not recurse before resolution semantics are understood.** Maximum generated depth remains bounded for now.
 22. **Successful cognitive behavior deserves a baseline.** Future UI sophistication must demonstrate value against BASELINE-001.
 23. **Architecture follows evidence.** Avoid abstractions for hypothetical future needs.
+24. **Revelation is not mastery.** Navigation visibility must not imply learner understanding.
+25. **History is telemetry, not topology.** Traversal order must not define the canonical visible map.
+26. **Frontier is not territory.** Trusted suggestions enter the map only through explicit reveal.
 
 ## Known Architectural Questions
 
@@ -333,7 +334,8 @@ Contextual / Layers navigation
 - Can a small set of resolution strategies generalize across domains without a large brittle ontology?
 - How should a child model prove a compression/coherence relationship with its parent focus?
 - When should source insufficiency stop generation rather than trigger retrieval?
-- How should active context-map navigation move laterally across concepts while preserving abstraction level?
+- Does the SPEC-033 canonical revealed-tree projection earn owner acceptance as the next navigation baseline?
+- How should non-tree canonical topology project into a stable navigation tree at larger real scale?
 - Should deeper resolutions be compiled on demand and cached rather than eagerly precomputed?
 - At what graph scale does the current custom layout stop being sufficient?
 - How should endpoint/state/polarity limitations be improved when they become hard blockers?
@@ -344,8 +346,8 @@ Contextual / Layers navigation
 - Automatic multi-resolution generation has one real success and one grounding rejection; cross-domain reliability is unproven.
 - Resolution strategy is still generic rather than explicitly semantic-role aware.
 - Maximum generated depth is one.
-- No active context-map navigation exists yet.
-- Current layout targets small benchmark graphs.
+- Canonical revealed navigation is implemented only as a SPEC-033 owner-review candidate.
+- The revealed-tree scaling check is synthetic; real large-source usability remains unvalidated.
 - Human learning-value evidence is still primarily owner-based.
 - Endpoint selection, polarity, chronology, and state/event errors remain upstream.
 

@@ -2,9 +2,9 @@
 
 > Transform information optimized for communication into representations optimized for understanding.
 
-Knowledge Compiler is an evidence-led research implementation of a representation translator for learning. It compiles explanatory text into a source-grounded semantic model, detects useful structures, and renders navigable representations at more than one level of resolution.
+Knowledge Compiler is an evidence-led research implementation of a representation translator for learning. It compiles explanatory text into a source-grounded semantic model, detects useful structures, and renders progressively revealed, navigable representations at more than one level of resolution.
 
-The project is not yet an end-user learning product. It has a working compiler pipeline, deterministic viewers, live-model evaluation artifacts, and ten completed specification increments. The next question is whether those parts create a trustworthy, useful learning experience on a realistic long-form source.
+The project is not yet an end-user learning product. It has a working compiler pipeline, deterministic viewers, preserved live-model evaluations, four frozen interface baselines, and a continuing sequence of bounded experiments.
 
 ## The problem
 
@@ -65,9 +65,30 @@ Implemented capabilities include:
 - contextual progressive disclosure and one-level semantic child resolutions;
 - automatic resolution strategy selection with recorded provenance and run history;
 - proposition modeling for cases whose truth is distorted by a single binary edge;
+- an accepted two-pane navigation/learning grammar with continuous movement, synchronized canonical focus, evidence, and contextual depth;
+- an implemented, pending-owner-review candidate whose left `MY MAP` surface is a canonical, deduplicated, collapsible projection of revealed knowledge;
 - committed machine and human evaluation artifacts across five golden domains and focused live comparisons.
 
-The implementation is currently strongest as a research-grade compiler and artifact viewer. It does not yet provide a polished paste-to-learn application, general long-form ingestion, recursive semantic zoom, or validated counterfactual simulation.
+The implementation is currently strongest as a research-grade compiler and artifact viewer. It does not yet provide a polished paste-to-learn application, general long-form ingestion, a learner-understanding model, guided pathways, or validated counterfactual simulation.
+
+## Current learning workspace
+
+The current product model separates three responsibilities:
+
+```text
+MY MAP
+→ canonical knowledge territory the learner has revealed
+
+WHAT DOES THIS MEAN?
+→ focused explanation of the selected canonical concept or relationship
+
+EXPLORE NEXT
+→ trusted, still-unrevealed frontier
+```
+
+The accepted BASELINE-004 interaction grammar keeps navigation and explanation synchronized while preserving semantic identity, source evidence, camera context, and contextual deeper resolution. SPEC-033 implements the revealed-territory tree as a candidate awaiting owner review; it is not yet a promoted baseline.
+
+Revealed knowledge is not a mastery claim. Understanding, confidence, calibration, traversal history, and future recommended pathways are separate state or evidence domains.
 
 ## Semantic model
 
@@ -152,14 +173,15 @@ The important capability is the translation grammar, not the arrows.
 
 ## Progressive disclosure and semantic resolution
 
-The interface is intended to behave more like a map than a document: begin with orientation, then reveal mechanism or detail without losing context.
+The interface behaves like a progressively disclosed knowledge environment: begin with orientation, explicitly reveal trusted territory, then inspect meaning or source-bounded depth without losing canonical identity.
 
 The implementation currently provides contextual layer preferences and one-level child resolutions. Live evaluation established that:
 
 - process-focused strategy selection can outperform generic detail expansion;
 - component-internals can safely refuse when the source lacks enough detail;
 - variable-focused causal-neighborhood selection remains unvalidated;
-- deeper recursive resolution and an active navigation model remain future work.
+- a canonical revealed-state projection is implemented for SPEC-033 owner review;
+- learner understanding and recommended pathways remain future work.
 
 These mixed and negative findings are accepted evidence. They are constraints on the next design, not results to hide or tune away.
 
@@ -188,12 +210,13 @@ Not yet demonstrated:
 - reliable generalization to realistic long-form source material;
 - a broadly reliable automatic resolution policy;
 - proposition-aware topology and traversal;
-- recursive or deeply nested semantic zoom;
-- an elegant active-map navigation experience;
+- broadly validated recursive semantic compilation;
+- an owner-accepted canonical revealed-tree navigation baseline;
+- a learner-understanding model or guided pathway system;
 - measurable improvement in learning outcomes;
 - a complete end-user input and product workflow.
 
-The current decision frontier is defined in [REVIEW-001](reviews/REVIEW-001-post-spec-010-product-architecture.md): prove one real-source, end-to-end learning slice before expanding the platform.
+The current decision gate is owner review of [SPEC-033](specs/SPEC-033-canonical-revealed-knowledge-tree.md): determine whether canonical revealed territory resolves the duplication, scaling, and interaction failures of history-driven navigation.
 
 ## Direction, not current scope
 
@@ -212,9 +235,9 @@ Three principles guide that progression:
 - [Operating model](OPERATING_MODEL.md) — specification, implementation, evaluation, and handoff workflow.
 - [Project memory](PROJECT_MEMORY.md) — durable project context and accepted decisions.
 - [Project health](PROJECT_HEALTH.md) — repository-level health indicators.
-- [SPEC-010](specs/SPEC-010-proposition-and-endpoint-modeling.md) — proposition and endpoint modeling contract.
-- [DEBRIEF-010](debriefs/DEBRIEF-010-proposition-and-endpoint-modeling.md) — accepted SPEC-010 outcomes.
-- [REVIEW-001](reviews/REVIEW-001-post-spec-010-product-architecture.md) — post-SPEC-010 product and architecture review.
+- [BASELINE-004](baselines/BASELINE-004-learner-navigation-workspace.md) — frozen accepted learner interaction grammar.
+- [SPEC-032](specs/SPEC-032-learning-path-navigation-separation.md) — preserved rejected history-navigation experiment.
+- [SPEC-033](specs/SPEC-033-canonical-revealed-knowledge-tree.md) — active canonical revealed-territory experiment.
 
 ## Local development
 

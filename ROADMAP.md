@@ -97,6 +97,16 @@ The important semantic lesson is now stable: realistic-source reliability benefi
 | OPS-002 | Restore SPEC-006 clarity around continuous navigation | Navigation quality became strong enough to freeze independently as BASELINE-002. |
 | SPEC-019 | Can navigation and focused learning coexist? | `HYBRID_WORKSPACE_BETTER`; owner considered the result essentially complete at the foundational UI level. |
 
+Subsequent increments preserved the accepted workspace while testing realistic depth and interaction semantics:
+
+| Increment | Capability / finding | Outcome |
+| --- | --- | --- |
+| SPEC-020–021 | Realistic semantic depth and focus-preserving explanation | Useful semantic payload work; one attempted viewer failed the BASELINE-003 preservation gate and was restored before further evaluation. |
+| SPEC-022 | Learner navigation grammar | `NAVIGATION_GRAMMAR_BETTER`; exact executable promoted to BASELINE-004. |
+| SPEC-023–031 | Depth, recursive interaction, atomic context, focused learning, reciprocal/multi-edge identity | Deterministic interaction seams established while preserving trusted semantics and frozen baselines. |
+| SPEC-032 | Visible learning-history navigation | Rejected: duplicated territory, exhausted horizontal space, broke label legibility, and eventually froze after deeper exploration. |
+| SPEC-033 | Canonical revealed-knowledge tree | Implemented candidate awaiting owner review; not promoted. |
+
 ## Current semantic boundary
 
 ### Binary relationship vocabulary
@@ -153,70 +163,41 @@ operator:  GREATER_THAN
 4. Automatic semantic resolution remains only partly validated and has not yet been reintegrated into BASELINE-003.
 5. Representation selection exists structurally but has not been evaluated as a personalized learner-facing decision system.
 6. Personalization is architectural direction only; no learner model exists.
-7. Guided learning paths / course journeys have not been implemented.
+7. Guided learning paths / course journeys have not been implemented; traversal history is explicitly not visible navigation topology.
 8. The end-to-end user workflow from arbitrary source ingestion to the BASELINE-003 workspace is not yet a polished product.
 9. Learning impact—retention, transfer, explanation quality, calibration—remains unevaluated.
 
-## Next decision frontier
+## Current decision frontier
 
-Foundational UI invention should stop. The next work should use BASELINE-003 as a frozen shell and attack the highest remaining product uncertainty.
+The immediate gate is owner review of SPEC-033:
 
-### Recommended frontier: realistic semantic depth inside the accepted workspace
+> Does a canonical, deduplicated, collapsible map of revealed knowledge feel like territory rather than click history, remain legible at materially larger scale, and stay interactive through repeated depth changes?
 
-Primary question:
+Hold constant canonical semantic truth, provenance, fail-closed behavior, BASELINE-004, focused-learning role separation, reciprocal/multi-edge identity, and admitted source-bounded depth.
 
-> Can one realistic source produce a trustworthy multi-resolution learning experience inside BASELINE-003, where navigation remains stable while the focused learning representation gains useful source-supported depth?
-
-This reconnects the strongest successful branches of the project:
+If accepted, later experiments may attach learner understanding state or recommend pathways through the same topology. Neither may redefine the revealed map:
 
 ```text
-assertion-first realistic semantics
-        +
-strict semantic admission
-        +
-structure-aware representation
-        +
-continuous navigation
-        +
-focused learning workspace
+knowledge topology ≠ revealed subset ≠ learner understanding
+revealed subset ≠ traversal history ≠ recommended pathway
 ```
-
-The next contract should avoid another UI redesign. It should test whether the semantic compiler can populate the accepted interaction architecture with genuinely useful realistic knowledge.
-
-### Hold constant
-
-- BASELINE-003 workspace shell;
-- BASELINE-002 navigation behavior;
-- BASELINE-001 focused representation grammar;
-- canonical semantic IR and predicate vocabulary unless a concrete truth-preservation failure requires a bounded change;
-- source grounding / fail-closed discipline.
-
-### Candidate experimental variables
-
-Choose the narrowest one that resolves the next uncertainty:
-
-1. **Semantic depth integration** — reconnect source-bounded child resolution to the synchronized workspace without Explore/Back navigation.
-2. **Representation selection** — determine which truthful representation should be primary for a realistic focus.
-3. **Personalized representation priority** — only after representation alternatives are independently useful.
-4. **Guided learning path** — generate coordinates through existing topology rather than a separate linear course UI.
-
-Prefer semantic depth integration first because it connects previously validated compiler work to the now-validated workspace.
 
 ## Later candidates, contingent on evidence
 
 1. **Representation-personalization evaluation** — compare system/causal, hierarchy, process, dependency, and other truthful projections across learner preferences/tasks.
-2. **Guided Journey mode** — a learning path should act as coordinates through the same knowledge world, with the map visibly moving as the explanation unfolds rather than replacing exploration.
+2. **Guided pathway mode** — a recommendation should act as coordinates through the same knowledge world and must not replace or restructure the revealed map.
 3. **Learning evaluation** — compare source, conventional summary, and Knowledge Compiler on orientation, explanation, transfer, recall, and confidence calibration.
 4. **Qualitative simulator** — counterfactual exploration only where direction, assumptions, and source/inference boundaries remain explicit.
 5. **Additional source adapters** — web/PDF/transcript ingestion only after the plain-text semantic pipeline is sufficiently reliable.
-6. **Personal learning state** — track known/unknown concepts and preferred representations only after the system reliably knows what should be learned.
-7. **Productization** — input shell, persistence, history, export/share, and other workflow infrastructure after the core transformation earns expansion.
+6. **Personal learning state** — attach understanding/calibration evidence to canonical concepts and relationships without equating visibility with mastery.
+7. **Productization** — input shell, persistence, history telemetry, export/share, and other workflow infrastructure after the core transformation earns expansion.
 
 ## Current non-goals
 
 - redesigning BASELINE-003 without observed evidence;
 - building a generic knowledge-graph platform;
 - treating the continuous map as the universal representation;
+- using visit history as visible knowledge topology;
 - ingesting every content format prematurely;
 - inventing unsupported detail to satisfy requested depth;
 - broad multi-agent semantic deliberation where narrow discriminators suffice;

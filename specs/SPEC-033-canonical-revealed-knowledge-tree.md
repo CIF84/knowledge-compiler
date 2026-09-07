@@ -2,7 +2,7 @@
 
 ## Status
 
-`APPROVED_FOR_IMPLEMENTATION`
+`IMPLEMENTED_AWAITING_REVIEW`
 
 ## Owner verdict on SPEC-032
 
