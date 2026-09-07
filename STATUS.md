@@ -48,7 +48,7 @@ The deterministic representation seam works and representation diversity should 
 ## Current approved work packet
 
 ```text
-SPEC-035 — Explanatory Surface Purification
+specs/SPEC-035-explanatory-surface-purification.md
 ```
 
 Status: `APPROVED_FOR_IMPLEMENTATION`
