@@ -43,45 +43,52 @@ Implementation status: `IMPLEMENTED_REVIEWED`
 
 Owner verdict: `CAPABILITY_CONFIRMED_SURFACE_NEEDS_PURIFICATION`
 
-The deterministic representation seam works and representation diversity should be preserved. Owner review found the right learning pane behaviorally incoherent because legacy navigation semantics remained mixed into explanatory representations: representation components could act as navigation, and `Explore deeper` duplicated the explicit `Explore Next` frontier. SPEC-035 is the approved narrow follow-up to remove those navigation semantics without discarding SPEC-034 representation capability.
+The deterministic representation seam works and representation diversity should be preserved. Owner review found the right learning pane behaviorally incoherent because legacy navigation semantics remained mixed into explanatory representations: representation components could act as navigation, and `Explore deeper` duplicated the explicit `Explore Next` frontier.
 
-## Explanatory-surface candidate
+## Explanatory-surface purification
 
 `SPEC-035 — explanatory surface purification`
 
-Implementation status: `IMPLEMENTED_AWAITING_REVIEW`
+Implementation status: `IMPLEMENTED_REVIEWED`
 
-Machine and browser gates: `PASS`
+Owner observation: the separation of navigation, explanation, and recommendation is now materially clearer. My Map works as revealed territory; Explore Next works as the explicit future-learning frontier; legacy implicit navigation from the explanatory surface is no longer the main bottleneck. The remaining product gap is explanatory power: the right pane is cleaner but often too thin and less useful than the strongest earlier explanation experiments.
 
-The candidate composes the exact SPEC-034 runtime with a narrow interaction layer. Representation components now own only local highlight state, the old explanatory-pane depth control is inactive, the existing Explore Next surface admits the committed deeper model, and My Map remains the authority for returning to revealed knowledge. The product verdict remains pending owner review.
+Accepted invariant:
+
+> Clicking or manipulating a component inside an explanation must not silently change the learner’s location in the knowledge model.
 
 ## Current approved work packet
 
 ```text
-NONE
+specs/SPEC-036-structure-aware-explanatory-surface.md
 ```
 
-Status: `NONE`
+Status: `APPROVED_FOR_IMPLEMENTATION`
 
-Authority: `NONE`
+Authority: `OFFLINE_ONLY`
 
-Human gate: `NONE`
+Human gate: `OWNER_REVIEW`
 
 Promotion: `NOT_AUTHORIZED`
 
 ## Current product direction
 
-The project returns to a strict separation of learning responsibilities:
+The project keeps the cleaner responsibility model established by SPEC-033 through SPEC-035 while restoring the explanatory strength of earlier learning-surface experiments.
 
 ```text
 MY MAP
 → revealed territory / deliberate navigation
 
 WHAT DOES THIS MEAN?
-→ representation of the current knowledge object for understanding
+→ dominant representation of the current knowledge object
+→ local inspectable semantic components
+→ grounded text for the inspected component/relationship
 
 EXPLORE NEXT
 → explicit trusted frontier / forward learning
+
+LEARNING HISTORY / BACK
+→ traversal memory (deferred)
 ```
 
 The focused learning surface must not equate explanation with either prose or diagrams. It should choose a representation because the representation fits the trusted semantic structure currently in focus.
@@ -93,12 +100,14 @@ trusted local semantic structure
         ↓
 representation strategy resolver
         ↓
-learner-facing representation
+learner-facing dominant representation
+        ↓
+representation-local inspection
+        ↓
+grounded explanatory detail
 ```
 
-Candidate forms include causal/mechanism, process/sequence, hierarchy/composition, compare/contrast, worked example, focused relationship, and concise prose fallback.
-
-The active interaction invariant is:
+The active interaction invariant remains:
 
 > Clicking or manipulating a component inside an explanation must not silently change the learner’s location in the knowledge model.
 
@@ -106,9 +115,15 @@ The active representation principle remains:
 
 > The compiler should choose the representation that minimizes the cognitive work required to understand the trusted structure currently in focus.
 
+The current SPEC-036 experiment adds one further requirement:
+
+> The explanatory surface needs a dominant representation with inspectable semantic components.
+
+Representation strategy remains heterogeneous: causal/mechanism, process/sequence, hierarchy/composition, compare/contrast, worked example, focused relationship, concise prose, or another truthfully supported form.
+
 ## Current gate
 
-No implementation packet is active. SPEC-035 is implemented with offline machine and browser gates passing and awaits owner review. Baseline promotion, live/model/external calls, and unrelated follow-up implementation remain unauthorized.
+SPEC-036 is approved for offline implementation. Codex may implement only the active packet under its stated authority. Owner review is required after implementation. Baseline promotion, live/model/external calls, and unrelated follow-up implementation remain unauthorized.
 
 ## Frozen / protected state
 
@@ -118,6 +133,7 @@ No implementation packet is active. SPEC-035 is implemented with offline machine
 - SPEC-031 reciprocal/multi-edge semantic identity;
 - current SPEC-033 canonical revealed-knowledge navigation implementation/candidate;
 - SPEC-034 deterministic representation-strategy capability;
+- SPEC-035 explanatory/navigation interaction isolation;
 - trusted semantic vocabulary, grounding, provenance, and fail-closed behavior;
 - source-bounded depth behavior;
 - unrelated user work.
@@ -126,6 +142,7 @@ No implementation packet is active. SPEC-035 is implemented with offline machine
 
 Do not yet implement:
 
+- My Map visual redesign / folder-tree styling;
 - Back / learner traversal history;
 - traversal persistence or history UI;
 - breadcrumbs as a substitute for traversal history;
@@ -137,7 +154,7 @@ Do not yet implement:
 - broad navigation redesign;
 - universal final renderer.
 
-A later packet may test learning-history semantics and, separately, model-assisted explanatory generation only after the deterministic representation seam and purified learning-surface interaction demonstrate value.
+A later packet may separately test traversal-memory semantics and My Map visual grammar after explanatory power has been restored on the clean architecture.
 
 ## Coordination rule
 
