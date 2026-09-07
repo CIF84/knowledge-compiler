@@ -14,113 +14,93 @@ BASELINE-001 through BASELINE-004 remain preserved historical/accepted states an
 
 Owner verdict: `ROLE_SEPARATION_CONFIRMED`
 
-The separation remains accepted:
+Accepted invariant:
 
 ```text
-navigation / map
-→ where am I / what territory have I revealed?
+MY MAP
+→ navigate revealed knowledge
 
-focused learning surface
-→ what does this selected object mean?
+WHAT DOES THIS MEAN?
+→ translate selected knowledge for understanding
+
+EXPLORE NEXT
+→ reveal trusted frontier
 ```
 
-## Last completed work packet
+## Owner review of current revealed-navigation candidate
 
-`SPEC-032 — learning-path navigation separation`
+`SPEC-033 — canonical revealed-knowledge tree`
 
-Implementation status: `IMPLEMENTED_REVIEWED`
+Owner observation: implementation behaves as intended in the reviewed navigation flows and is the strongest navigation architecture so far. The revealed, deduplicated, collapsible tree is sufficient to stop treating navigation as the primary product bottleneck.
 
-Owner verdict: `HISTORY_NAVIGATION_REJECTED__REVEALED_KNOWLEDGE_TREE_PREFERRED`
-
-Owner testing produced useful evidence but rejected visit-history nesting as the visible navigation architecture. Repeated history branches duplicated concepts/orientations, exhausted horizontal space, produced unreadable vertical labels, and deeper exploration eventually triggered an interaction freeze. Preserve SPEC-032 as historical evidence; do not patch its history tree as the primary solution.
+Formal debrief/promotion remains separate; SPEC-034 must preserve the current SPEC-033 implementation/candidate state and must not redesign navigation.
 
 ## Current approved work packet
 
 ```text
-specs/SPEC-033-canonical-revealed-knowledge-tree.md
+specs/SPEC-034-representation-strategy-grammar.md
 ```
 
 Status: `APPROVED_FOR_IMPLEMENTATION`
 
-Authority: implement/test/document SPEC-033 only
+Authority: `OFFLINE_ONLY`
 
-Human gate: owner review after implementation
+Human gate: `OWNER_REVIEW`
 
 Promotion: `NOT_AUTHORIZED`
 
 ## Current product direction
 
-The left navigation surface is now defined as **canonical revealed knowledge**, not learning history.
+The project returns to the core learning thesis.
+
+The focused learning surface must not equate explanation with either prose or diagrams. It should choose a representation because the representation fits the trusted semantic structure currently in focus.
 
 ```text
-MY MAP
-→ knowledge territory the learner has uncovered
-
-WHAT DOES THIS MEAN?
-→ focused explanation of the selected canonical object
-
-EXPLORE NEXT
-→ trusted frontier that could be revealed next
+selected canonical object
+        ↓
+trusted local semantic structure
+        ↓
+representation strategy resolver
+        ↓
+learner-facing representation
 ```
 
-Only revealed knowledge belongs in the visible map. Revisiting an existing canonical concept/relationship must not duplicate it.
+Candidate forms include causal/mechanism, process/sequence, hierarchy/composition, compare/contrast, worked example, focused relationship, and concise prose fallback. The grammar is intentionally small and deterministic in SPEC-034.
 
-History may still be captured internally as telemetry/evidence, but it must not structurally define navigation.
+The active principle is:
 
-Critical distinction:
-
-```text
-revealed knowledge ≠ understood/mastered knowledge
-```
-
-A future learner-state model may represent understanding separately. It is not part of SPEC-033.
+> The compiler should choose the representation that minimizes the cognitive work required to understand the trusted structure currently in focus.
 
 ## Current gate
 
-Implement a canonical, deduplicated, collapsible revealed-knowledge tree that scales materially better than SPEC-032, preserves the successful focused-learning surface, and remains interactive after repeated deep exploration.
+Implement and evaluate an explicit deterministic representation-strategy grammar using committed trusted material only.
 
-SPEC-033 must specifically address the two owner-observed failures:
-
-1. history nesting exhausted horizontal space and broke label legibility;
-2. `Explore deeper` under the double-slit experiment eventually left the web app non-interactive.
+Success requires materially different representation forms for different semantic structures, structure-driven rather than domain-driven selection, truthful fallback when richer forms are unsupported, preserved provenance, depth independence, and no regression to the revealed-navigation architecture.
 
 ## Frozen / protected state
 
-- executable/frozen assets for BASELINE-001 through BASELINE-004;
-- trusted semantic vocabulary, grounding, provenance, and fail-closed behavior;
+- BASELINE-001 through BASELINE-004;
+- prior SPEC evaluation artifacts;
 - SPEC-030 role separation;
 - SPEC-031 reciprocal/multi-edge semantic identity;
-- prior completed SPEC artifacts as historical evidence;
-- source-bounded depth behavior already validated;
+- current SPEC-033 canonical revealed-knowledge navigation implementation/candidate;
+- trusted semantic vocabulary, grounding, provenance, and fail-closed behavior;
+- source-bounded depth behavior;
 - unrelated user work.
 
-## Direction after SPEC-033
+## Explicitly deferred
 
-Do not implement these yet, but preserve the distinctions:
+Do not yet implement:
 
-```text
-KNOWLEDGE TOPOLOGY
-canonical semantic structure
+- live/model-generated pedagogy;
+- personalization or learner-state modeling;
+- quizzes/mastery;
+- guided pathways/courses;
+- automatic analogy generation;
+- broad navigation redesign;
+- universal final renderer.
 
-REVEALED MAP
-subset/projection the learner has uncovered
-
-LEARNER STATE
-separate evidence about understanding
-
-HISTORY
-observed traversal / telemetry
-
-PATHWAY
-recommended traversal through knowledge
-```
-
-Possible later sequence, contingent on evidence:
-
-1. learner-state model attached to canonical concepts/relationships;
-2. guided/recommended pathways as coordinates through the same knowledge world;
-3. learning-outcome evaluation;
-4. personalization based on explicit/validated learner evidence.
+A later packet may test model-assisted explanatory generation only after the deterministic representation seam demonstrates value.
 
 ## Coordination rule
 
