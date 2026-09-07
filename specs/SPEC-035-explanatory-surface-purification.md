@@ -1,6 +1,9 @@
 # SPEC-035 — Explanatory Surface Purification
 
-Status: READY_FOR_IMPLEMENTATION
+Status: `APPROVED_FOR_IMPLEMENTATION`
+Authority: `OFFLINE_ONLY`
+Human gate: `OWNER_REVIEW`
+Promotion: `NOT_AUTHORIZED`
 
 ## Purpose
 
