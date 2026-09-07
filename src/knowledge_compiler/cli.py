@@ -27,6 +27,9 @@ from .interface_restoration_evaluation import prepare_interface_restoration_eval
 from .learner_navigation_evaluation import prepare_learner_navigation_evaluation
 from .learning_path_evaluation import prepare_learning_path_evaluation
 from .revealed_knowledge_evaluation import prepare_revealed_knowledge_evaluation
+from .representation_strategy_evaluation import (
+    prepare_representation_strategy_evaluation,
+)
 from .learning_surface_evaluation import prepare_learning_surface_evaluation
 from .navigation_learning_evaluation import prepare_navigation_learning_evaluation
 from .semantic_depth_evaluation import (
@@ -349,6 +352,11 @@ def _parser() -> argparse.ArgumentParser:
         help="build the offline SPEC-033 revealed-knowledge navigation experiment",
     )
     revealed_knowledge.add_argument("--output-dir", required=True, type=Path)
+    representation_strategy = subcommands.add_parser(
+        "prepare-representation-strategy",
+        help="build the offline SPEC-034 structure-driven learning representations",
+    )
+    representation_strategy.add_argument("--output-dir", required=True, type=Path)
     view = subcommands.add_parser("view-representations", help="serve a prepared representation review locally")
     view.add_argument("directory", type=Path)
     view.add_argument("--host", default="127.0.0.1")
@@ -360,6 +368,17 @@ def _parser() -> argparse.ArgumentParser:
 def main(argv: list[str] | None = None) -> int:
     args = _parser().parse_args(argv)
     try:
+        if args.command == "prepare-representation-strategy":
+            report = prepare_representation_strategy_evaluation(
+                output_dir=args.output_dir
+            )
+            print(
+                f"Wrote {args.output_dir / 'report.json'} "
+                f"(machine integrity {report['machine_integrity_verdict']}; "
+                "browser verification pending)"
+            )
+            return 0
+
         if args.command == "prepare-revealed-knowledge":
             report = prepare_revealed_knowledge_evaluation(output_dir=args.output_dir)
             print(

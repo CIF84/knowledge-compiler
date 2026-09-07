@@ -35,17 +35,27 @@ Owner observation: implementation behaves as intended in the reviewed navigation
 
 Formal debrief/promotion remains separate; SPEC-034 must preserve the current SPEC-033 implementation/candidate state and must not redesign navigation.
 
+## Current representation-strategy candidate
+
+`SPEC-034 — representation strategy grammar`
+
+Implementation status: `IMPLEMENTED_AWAITING_REVIEW`
+
+Owner verdict: `PENDING`
+
+The offline machine and browser gates pass. The isolated candidate composes the exact SPEC-033 revealed-navigation runtime with explicit deterministic representation plans for causal, reciprocal-mechanism, hierarchy/composition, dependency/enablement, true process sequence, focused relationship, and truthful prose fallback forms. It is not an accepted product result or baseline until owner review.
+
 ## Current approved work packet
 
 ```text
-specs/SPEC-034-representation-strategy-grammar.md
+NONE
 ```
 
-Status: `APPROVED_FOR_IMPLEMENTATION`
+Status: `NONE`
 
-Authority: `OFFLINE_ONLY`
+Authority: `NONE`
 
-Human gate: `OWNER_REVIEW`
+Human gate: `NONE`
 
 Promotion: `NOT_AUTHORIZED`
 
@@ -73,9 +83,7 @@ The active principle is:
 
 ## Current gate
 
-Implement and evaluate an explicit deterministic representation-strategy grammar using committed trusted material only.
-
-Success requires materially different representation forms for different semantic structures, structure-driven rather than domain-driven selection, truthful fallback when richer forms are unsupported, preserved provenance, depth independence, and no regression to the revealed-navigation architecture.
+Owner review is required for the fixed SPEC-034 candidate. No baseline promotion, model-generated pedagogy, follow-up implementation, or live/model/external call is authorized.
 
 ## Frozen / protected state
 
