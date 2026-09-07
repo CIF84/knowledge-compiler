@@ -1,0 +1,14 @@
+/* SPEC-025 synchronizes the existing learning surface with any selected depth item. */
+body.depth-sync-active #representation-presets { display:none!important; }
+.depth-sync-attachment { fill:none;stroke:#8b958f;stroke-width:1.5;stroke-dasharray:7 6; }
+.depth-sync-canonical { fill:none;stroke:#263a31;stroke-width:3;marker-end:url(#spec025-sync-arrow); }
+.depth-sync-canonical-label { fill:#263a31;font-size:11px;font-weight:850;paint-order:stroke;stroke:#fffefa;stroke-width:5px; }
+.depth-sync-node rect { fill:white;stroke:#819087;stroke-width:1.5; }
+.depth-sync-node text { fill:var(--ink);font-size:13px;font-weight:650; }
+.depth-sync-explanation rect { fill:#f7f4ec;stroke:#717b75;stroke-width:1.5;stroke-dasharray:5 3; }
+.depth-sync-explanation text { fill:#3f4944;font-size:10px;font-weight:700; }
+.depth-sync-node,.depth-sync-explanation,.depth-sync-canonical,.depth-sync-canonical-label,.depth-sync-attachment { transition:opacity .12s,stroke-width .12s; }
+.depth-sync-muted { opacity:.14; }
+.depth-sync-node.is-current rect,.depth-sync-explanation.is-current rect { fill:var(--accent-soft);stroke:var(--accent);stroke-width:4; }
+.depth-sync-canonical.is-current { stroke:var(--accent);stroke-width:5;marker-end:url(#spec025-sync-arrow-selected); }
+#learning-graph[data-focus-kind="explanation"] .depth-sync-explanation.is-current rect { stroke-dasharray:5 3; }

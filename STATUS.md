@@ -45,17 +45,27 @@ Owner verdict: `CAPABILITY_CONFIRMED_SURFACE_NEEDS_PURIFICATION`
 
 The deterministic representation seam works and representation diversity should be preserved. Owner review found the right learning pane behaviorally incoherent because legacy navigation semantics remained mixed into explanatory representations: representation components could act as navigation, and `Explore deeper` duplicated the explicit `Explore Next` frontier. SPEC-035 is the approved narrow follow-up to remove those navigation semantics without discarding SPEC-034 representation capability.
 
+## Explanatory-surface candidate
+
+`SPEC-035 — explanatory surface purification`
+
+Implementation status: `IMPLEMENTED_AWAITING_REVIEW`
+
+Machine and browser gates: `PASS`
+
+The candidate composes the exact SPEC-034 runtime with a narrow interaction layer. Representation components now own only local highlight state, the old explanatory-pane depth control is inactive, the existing Explore Next surface admits the committed deeper model, and My Map remains the authority for returning to revealed knowledge. The product verdict remains pending owner review.
+
 ## Current approved work packet
 
 ```text
-specs/SPEC-035-explanatory-surface-purification.md
+NONE
 ```
 
-Status: `APPROVED_FOR_IMPLEMENTATION`
+Status: `NONE`
 
-Authority: `OFFLINE_ONLY`
+Authority: `NONE`
 
-Human gate: `OWNER_REVIEW`
+Human gate: `NONE`
 
 Promotion: `NOT_AUTHORIZED`
 
@@ -98,11 +108,7 @@ The active representation principle remains:
 
 ## Current gate
 
-SPEC-035 implementation is authorized under `OFFLINE_ONLY` authority.
-
-Implementation must remain within the approved packet. It may modify tests/evaluation fixtures where necessary to replace obsolete explanatory-pane navigation assumptions, but must preserve My Map, Explore Next, trusted semantic identity, evidence/provenance discipline, source-boundedness, and SPEC-034 representation diversity.
-
-After implementation, owner review is required. Baseline promotion, live/model/external calls, and unrelated follow-up implementation remain unauthorized.
+No implementation packet is active. SPEC-035 is implemented with offline machine and browser gates passing and awaits owner review. Baseline promotion, live/model/external calls, and unrelated follow-up implementation remain unauthorized.
 
 ## Frozen / protected state
 

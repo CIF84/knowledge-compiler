@@ -1,0 +1,461 @@
+{
+  "browser_console_result": "PASS",
+  "browser_verification": "browser-verification.json",
+  "dependencies_added": [],
+  "dependencies_removed": [],
+  "deterministic_regeneration_result": {
+    "compared_file_count": 39,
+    "result": "PASS_BYTE_IDENTICAL",
+    "scope": "independently generated non-lifecycle candidate artifacts"
+  },
+  "deviations": [],
+  "execution_mode": "OFFLINE_DETERMINISTIC",
+  "execution_stage": "IMPLEMENTED_AWAITING_OWNER_REVIEW",
+  "explore_deeper_active": false,
+  "explore_next_operational": true,
+  "files_changed": [
+    "STATUS.md",
+    "pyproject.toml",
+    "specs/SPEC-035-explanatory-surface-purification.md",
+    "src/knowledge_compiler/cli.py",
+    "src/knowledge_compiler/explanatory_surface.py",
+    "src/knowledge_compiler/explanatory_surface_assets/",
+    "src/knowledge_compiler/explanatory_surface_evaluation.py",
+    "tests/test_explanatory_surface.py",
+    "examples/evaluations/spec-035-explanatory-surface-purification-20260907/"
+  ],
+  "focus_isolation_cases": [
+    {
+      "case": "double_slit_causal_component",
+      "focus_after": {
+        "context_key": "depth:depth-double-slit-v1:concept:double-slit-experiment",
+        "identity": "double-slit-experiment",
+        "kind": "concept"
+      },
+      "focus_before": {
+        "context_key": "depth:depth-double-slit-v1:concept:double-slit-experiment",
+        "identity": "double-slit-experiment",
+        "kind": "concept"
+      },
+      "highlighted_key": "concept:interference-pattern",
+      "interaction_count": 1,
+      "local_key": "concept:interference-pattern",
+      "navigation_mutation": false,
+      "representation_strategy": "CAUSAL_MECHANISM",
+      "status": "PASS"
+    },
+    {
+      "case": "focused_relationship_source_endpoint",
+      "focus_after": {
+        "context_key": "ground:electromagnetism:representation-9058fd6ab1975a17:canonical:changing-electric-field-induces-magnetic-field",
+        "identity": "changing-electric-field-induces-magnetic-field",
+        "kind": "canonical"
+      },
+      "focus_before": {
+        "context_key": "ground:electromagnetism:representation-9058fd6ab1975a17:canonical:changing-electric-field-induces-magnetic-field",
+        "identity": "changing-electric-field-induces-magnetic-field",
+        "kind": "canonical"
+      },
+      "highlighted_key": "concept:electric-field",
+      "interaction_count": 1,
+      "local_key": "concept:electric-field",
+      "navigation_mutation": false,
+      "representation_strategy": "FOCUSED_RELATIONSHIP",
+      "status": "PASS"
+    },
+    {
+      "case": "focused_relationship_target_endpoint",
+      "focus_after": {
+        "context_key": "ground:electromagnetism:representation-9058fd6ab1975a17:canonical:changing-electric-field-induces-magnetic-field",
+        "identity": "changing-electric-field-induces-magnetic-field",
+        "kind": "canonical"
+      },
+      "focus_before": {
+        "context_key": "ground:electromagnetism:representation-9058fd6ab1975a17:canonical:changing-electric-field-induces-magnetic-field",
+        "identity": "changing-electric-field-induces-magnetic-field",
+        "kind": "canonical"
+      },
+      "highlighted_key": "concept:magnetic-field",
+      "interaction_count": 1,
+      "local_key": "concept:magnetic-field",
+      "navigation_mutation": false,
+      "representation_strategy": "FOCUSED_RELATIONSHIP",
+      "status": "PASS"
+    },
+    {
+      "case": "hierarchy_member",
+      "focus_after": {
+        "context_key": "ground:electromagnetism:representation-685bf4f0c2881f95:concept:light",
+        "identity": "light",
+        "kind": "concept"
+      },
+      "focus_before": {
+        "context_key": "ground:electromagnetism:representation-685bf4f0c2881f95:concept:light",
+        "identity": "light",
+        "kind": "concept"
+      },
+      "highlighted_key": "concept:electromagnetic-wave",
+      "interaction_count": 1,
+      "local_key": "concept:electromagnetic-wave",
+      "navigation_mutation": false,
+      "representation_strategy": "HIERARCHY_COMPOSITION",
+      "status": "PASS"
+    },
+    {
+      "case": "concise_prose",
+      "focus_after": {
+        "context_key": "depth:depth-double-slit-v1:concept:atom",
+        "identity": "atom",
+        "kind": "concept"
+      },
+      "focus_before": {
+        "context_key": "depth:depth-double-slit-v1:concept:atom",
+        "identity": "atom",
+        "kind": "concept"
+      },
+      "highlighted_key": "concept:atom",
+      "interaction_count": 1,
+      "local_key": "concept:atom",
+      "navigation_mutation": false,
+      "representation_strategy": "CONCISE_PROSE",
+      "status": "PASS"
+    }
+  ],
+  "frozen_baselines_after": {
+    "BASELINE-001": {
+      "aggregate_sha256": "9288d1fba5895cd374db1e6e9cc7bec67c79cc3a31263af2b7874ef8d7c1338f",
+      "file_count": 6,
+      "files": {
+        "baselines/BASELINE-001-interface.md": "5c036e4cb85a058bac11a3949a7581907f219ecd36e797ecc74714148768eeeb",
+        "baselines/BASELINE-001-interface/biology-truthful-empty-state.jpg": "448c1f598e7391e2a32b9e39d32bfa92c54120385a6aeff340933328325b5efc",
+        "baselines/BASELINE-001-interface/economics-causal-overview.jpg": "6c09d3d682c9155f7e40a8281b3a0f32193371224b6f8797f7be703e19aaadef",
+        "baselines/BASELINE-001-interface/economics-selected-shortage-causes-pressure.jpg": "342c82e11565a537504e0c59c70d4c28a377578042ec0d0fde94292661520dcd",
+        "baselines/BASELINE-001-interface/electromagnetism-feedback-candidate.jpg": "f03e5faaa9b9d3d95120e47098dccbc092ff7c62c9977a947268a48a20c9b9e0",
+        "baselines/BASELINE-001-interface/software-architecture-hierarchy-selected-part-of.jpg": "bf11afeed49f563e1f4ed15ef375653b497eef93f7f4902290bad38c8602f304"
+      }
+    },
+    "BASELINE-002": {
+      "aggregate_sha256": "c392a194ae0ba2a75fad343a78923d3b42db59fa8faebfa11f2db3c43102e9a1",
+      "file_count": 13,
+      "files": {
+        "baselines/BASELINE-002-continuous-navigation-reference.md": "3a975045cf7e9f56cfe574081b25dee079ed85c63ddc6e227800862a7a2b7730",
+        "examples/evaluations/ops-002-continuous-interface-baseline-restoration-20260905/README.md": "9a3636eb838e83e14d08ceaa7477c189c4f1fa21898bff68ba545c63ae3c207f",
+        "examples/evaluations/ops-002-continuous-interface-baseline-restoration-20260905/baseline-manifest.json": "074101e8d3d0a274a7402868114fe42e1f0140c21c1b4e35ec182af3f15a049e",
+        "examples/evaluations/ops-002-continuous-interface-baseline-restoration-20260905/browser-verification.json": "64c01cb362e1081678e92fd859979f1598c8a5b68a5c00bb4f3f482a38a0f9df",
+        "examples/evaluations/ops-002-continuous-interface-baseline-restoration-20260905/human-review-template.json": "b19da8ec130ee62f6e95d5a356fb7123d558eff84ccd89eeea9d3fb924acef7f",
+        "examples/evaluations/ops-002-continuous-interface-baseline-restoration-20260905/index.html": "1fa0c592186b626c98514e3e7c491f63a43ea3a9a2b53abb7fe5be9e8f1b151f",
+        "examples/evaluations/ops-002-continuous-interface-baseline-restoration-20260905/manifest.json": "39d553414a396fb2e684884c36140de32c1f8485beb11d7192e78c0f9fd74709",
+        "examples/evaluations/ops-002-continuous-interface-baseline-restoration-20260905/report.json": "904f5eeaf7e629f5e3a52d2c650e99eea6bd70c2b6b091b0de971411a8fc33a2",
+        "examples/evaluations/ops-002-continuous-interface-baseline-restoration-20260905/representation-camera-compatibility.json": "59ebd37a4efeab0d0167139c6497424577cd893ba816c70eedb09b1937ebe0c0",
+        "examples/evaluations/ops-002-continuous-interface-baseline-restoration-20260905/restoration-diagnostics.json": "ca7066ddac2785be24fd08e51ed58b74198ccaf55f73724d2ff16f74a13ba2d8",
+        "examples/evaluations/ops-002-continuous-interface-baseline-restoration-20260905/restoration-fixture.json": "f6f077d9f11b011c290015328a2d1fd3765c6a8e3744eec0c1203e4138d6cb6b",
+        "examples/evaluations/ops-002-continuous-interface-baseline-restoration-20260905/restoration.css": "8effeba7e20230d15c10c5d5c30958925383fa0a7cc9c417da97ff4f88bfb894",
+        "examples/evaluations/ops-002-continuous-interface-baseline-restoration-20260905/restoration.js": "ecac297e2106d6338cd6c86b46a1f3466916665e78e4ac8c4e121fe0fa3e56fe"
+      }
+    },
+    "BASELINE-003": {
+      "aggregate_sha256": "99331883832864d3bae8c336c0d5837ab2b3748303efefccae0f034c0f06fde2",
+      "file_count": 14,
+      "files": {
+        "baselines/BASELINE-003-hybrid-learning-workspace.md": "ec2603debaf880ecb762cb2836c26998948456406d2f7be1a428c47048db1340",
+        "examples/evaluations/spec-019-navigation-learning-workspace-20260905/README.md": "5ab06f867bcf7d43ab6518026d9c0d0976fda6421eb0c203a884f28523a73532",
+        "examples/evaluations/spec-019-navigation-learning-workspace-20260905/baseline-comparison.json": "0322f48f09842c7a07436f4aa49480963af9a766fb7eabbc0765b406c1b5c885",
+        "examples/evaluations/spec-019-navigation-learning-workspace-20260905/baseline-manifest.json": "f09b824856b44793f8f86401f903444d47c00c8ff2cf743892a19801c26175fc",
+        "examples/evaluations/spec-019-navigation-learning-workspace-20260905/browser-verification.json": "4be61b309e9bf0809f7117365098b6415298147f3417bb45dc47b05705c3c661",
+        "examples/evaluations/spec-019-navigation-learning-workspace-20260905/human-review-template.json": "7ec683dec1c3e776845b4de82eef207d0442fdbe14e6ee59fc3ea25df8b293ca",
+        "examples/evaluations/spec-019-navigation-learning-workspace-20260905/index.html": "471257a95c9fd31483e69b436daeed2397f8e052bddc94ddbcf847c19dab2335",
+        "examples/evaluations/spec-019-navigation-learning-workspace-20260905/manifest.json": "59713e3fb69c19499089d82432d68b0f3e5ad81408f025d5e9fe7318cbf86ce2",
+        "examples/evaluations/spec-019-navigation-learning-workspace-20260905/report.json": "24cca5098ca2d403bcac03e26d87e655817a3807eca7d65c085cf7023953bc1a",
+        "examples/evaluations/spec-019-navigation-learning-workspace-20260905/synchronization-diagnostics.json": "64671aeca53131543df61d6658dafa6b6971c622c920639f8f9ae81ed583bd7b",
+        "examples/evaluations/spec-019-navigation-learning-workspace-20260905/workspace-fixture.json": "a2c8c24bbd58e28f9a41598e22868916c1808133798c738bbf27712124c1b4e9",
+        "examples/evaluations/spec-019-navigation-learning-workspace-20260905/workspace-manifest.json": "59713e3fb69c19499089d82432d68b0f3e5ad81408f025d5e9fe7318cbf86ce2",
+        "examples/evaluations/spec-019-navigation-learning-workspace-20260905/workspace.css": "53a6c5593da5c5da7935698d6c8682b4f1f542f6d082d96e77c634cb0432d211",
+        "examples/evaluations/spec-019-navigation-learning-workspace-20260905/workspace.js": "a6bb507a4bff2eea0f968ea2d3e3dad736b2db865bc10f50124776aad79ca8de"
+      }
+    },
+    "BASELINE-004": {
+      "aggregate_sha256": "d34a569e80c5b57d9228b1000c2f74648522725123ba26bea738090f2a7760ce",
+      "file_count": 23,
+      "files": {
+        "baselines/BASELINE-004-learner-navigation-workspace.md": "94c8e63a97cf1a7af9c7549447c30d3deb7a2fefd5a1c4c0f792cca76c0f7ca6",
+        "baselines/BASELINE-004-learner-navigation-workspace/README.md": "1b10e6ee8a3db46c94749337031d1a72a28f3f411a16152e611d6044f758f396",
+        "baselines/BASELINE-004-learner-navigation-workspace/baseline-manifest.json": "e2e7763302aeacdcad2fc1a55ce7abdfd6be752ca4d6aac5fd6aa4f42f9e9d1c",
+        "baselines/BASELINE-004-learner-navigation-workspace/browser-verification.json": "b951ed6244ae1f41d4fa72eac8160f67950c5940b46a0cfe40acd0257c441918",
+        "baselines/BASELINE-004-learner-navigation-workspace/debug-metadata.json": "d997a153ed577bc88bb341647ff8d06038cf9beab51fb97e9aa14fd7f96482d5",
+        "baselines/BASELINE-004-learner-navigation-workspace/grammar.css": "7158525143670c4dbfa6294eca9ffc8d55587af00a478744616d87e90050484e",
+        "baselines/BASELINE-004-learner-navigation-workspace/human-review-template.json": "38b0a45a3f8cae189dcc600059ba7c045052382a065734c076f4ef089b592a73",
+        "baselines/BASELINE-004-learner-navigation-workspace/index.html": "2023e876c965f723e796f135460798b1c7538d05b693b979db3128934ec210e6",
+        "baselines/BASELINE-004-learner-navigation-workspace/input-manifest.json": "a75b397a6155bb009f424b14ce96d52f76492781a5cadec6c92d147c1b2371c6",
+        "baselines/BASELINE-004-learner-navigation-workspace/interaction-regressions.json": "9640e683a38a1d0a431d60181a3a48367e9a68d3fb2b13015baf970d8f878419",
+        "baselines/BASELINE-004-learner-navigation-workspace/learner-grammar.js": "bab6defc170c4e00cfafda4e8afee4d66690d33e3447d38b608543c616f8793b",
+        "baselines/BASELINE-004-learner-navigation-workspace/manifest.json": "e1ed270a97bf182120f3dd74fda76d2c961516f013b686c110f5fd7ebc976344",
+        "baselines/BASELINE-004-learner-navigation-workspace/projection-diagnostics.json": "324a70df4cb3c05ba13bd2c8bdac7ed08e4d76d09546c10aeb3c5924bb2f2dc0",
+        "baselines/BASELINE-004-learner-navigation-workspace/projection-extension.js": "05ea171074c69f85c64a817ae75741fb6396be3ea2554322df5baa09fed9cc42",
+        "baselines/BASELINE-004-learner-navigation-workspace/projection.css": "ecf9e962889be2e5d2b096118cb9f10f4669fffd3ee6197575c0f20c7029597d",
+        "baselines/BASELINE-004-learner-navigation-workspace/projection.json": "8f1d3beb0e9954040f59862c904a6d9d17574f048bdfcb1cc9059d5df3761232",
+        "baselines/BASELINE-004-learner-navigation-workspace/report.json": "55d032798e49491ff713aa6df49f18aaeff06528061d77d1c8f97cc8ca4f2067",
+        "baselines/BASELINE-004-learner-navigation-workspace/semantic-tier-audit.json": "592b286bde05bf56cd6cd818b9ccb1de3716c7445018765dbc7a2534710935c9",
+        "baselines/BASELINE-004-learner-navigation-workspace/workspace-diagnostics.json": "33048368b0c06d4c35588ec1f3a98259a9950f6f0f7df10a551effd2d15a604a",
+        "baselines/BASELINE-004-learner-navigation-workspace/workspace-fixture.json": "c214158c546fcbed1184b22ab6ac52371c49e7801b1ffb548ed453984fa1fb69",
+        "baselines/BASELINE-004-learner-navigation-workspace/workspace-manifest.json": "e1ed270a97bf182120f3dd74fda76d2c961516f013b686c110f5fd7ebc976344",
+        "baselines/BASELINE-004-learner-navigation-workspace/workspace.css": "53a6c5593da5c5da7935698d6c8682b4f1f542f6d082d96e77c634cb0432d211",
+        "baselines/BASELINE-004-learner-navigation-workspace/workspace.js": "d9eff687be246fc0ac42506b71d55944bb26a10046be4f8ca38270cd4ee94d33"
+      }
+    }
+  },
+  "frozen_baselines_before": {
+    "BASELINE-001": {
+      "aggregate_sha256": "9288d1fba5895cd374db1e6e9cc7bec67c79cc3a31263af2b7874ef8d7c1338f",
+      "file_count": 6,
+      "files": {
+        "baselines/BASELINE-001-interface.md": "5c036e4cb85a058bac11a3949a7581907f219ecd36e797ecc74714148768eeeb",
+        "baselines/BASELINE-001-interface/biology-truthful-empty-state.jpg": "448c1f598e7391e2a32b9e39d32bfa92c54120385a6aeff340933328325b5efc",
+        "baselines/BASELINE-001-interface/economics-causal-overview.jpg": "6c09d3d682c9155f7e40a8281b3a0f32193371224b6f8797f7be703e19aaadef",
+        "baselines/BASELINE-001-interface/economics-selected-shortage-causes-pressure.jpg": "342c82e11565a537504e0c59c70d4c28a377578042ec0d0fde94292661520dcd",
+        "baselines/BASELINE-001-interface/electromagnetism-feedback-candidate.jpg": "f03e5faaa9b9d3d95120e47098dccbc092ff7c62c9977a947268a48a20c9b9e0",
+        "baselines/BASELINE-001-interface/software-architecture-hierarchy-selected-part-of.jpg": "bf11afeed49f563e1f4ed15ef375653b497eef93f7f4902290bad38c8602f304"
+      }
+    },
+    "BASELINE-002": {
+      "aggregate_sha256": "c392a194ae0ba2a75fad343a78923d3b42db59fa8faebfa11f2db3c43102e9a1",
+      "file_count": 13,
+      "files": {
+        "baselines/BASELINE-002-continuous-navigation-reference.md": "3a975045cf7e9f56cfe574081b25dee079ed85c63ddc6e227800862a7a2b7730",
+        "examples/evaluations/ops-002-continuous-interface-baseline-restoration-20260905/README.md": "9a3636eb838e83e14d08ceaa7477c189c4f1fa21898bff68ba545c63ae3c207f",
+        "examples/evaluations/ops-002-continuous-interface-baseline-restoration-20260905/baseline-manifest.json": "074101e8d3d0a274a7402868114fe42e1f0140c21c1b4e35ec182af3f15a049e",
+        "examples/evaluations/ops-002-continuous-interface-baseline-restoration-20260905/browser-verification.json": "64c01cb362e1081678e92fd859979f1598c8a5b68a5c00bb4f3f482a38a0f9df",
+        "examples/evaluations/ops-002-continuous-interface-baseline-restoration-20260905/human-review-template.json": "b19da8ec130ee62f6e95d5a356fb7123d558eff84ccd89eeea9d3fb924acef7f",
+        "examples/evaluations/ops-002-continuous-interface-baseline-restoration-20260905/index.html": "1fa0c592186b626c98514e3e7c491f63a43ea3a9a2b53abb7fe5be9e8f1b151f",
+        "examples/evaluations/ops-002-continuous-interface-baseline-restoration-20260905/manifest.json": "39d553414a396fb2e684884c36140de32c1f8485beb11d7192e78c0f9fd74709",
+        "examples/evaluations/ops-002-continuous-interface-baseline-restoration-20260905/report.json": "904f5eeaf7e629f5e3a52d2c650e99eea6bd70c2b6b091b0de971411a8fc33a2",
+        "examples/evaluations/ops-002-continuous-interface-baseline-restoration-20260905/representation-camera-compatibility.json": "59ebd37a4efeab0d0167139c6497424577cd893ba816c70eedb09b1937ebe0c0",
+        "examples/evaluations/ops-002-continuous-interface-baseline-restoration-20260905/restoration-diagnostics.json": "ca7066ddac2785be24fd08e51ed58b74198ccaf55f73724d2ff16f74a13ba2d8",
+        "examples/evaluations/ops-002-continuous-interface-baseline-restoration-20260905/restoration-fixture.json": "f6f077d9f11b011c290015328a2d1fd3765c6a8e3744eec0c1203e4138d6cb6b",
+        "examples/evaluations/ops-002-continuous-interface-baseline-restoration-20260905/restoration.css": "8effeba7e20230d15c10c5d5c30958925383fa0a7cc9c417da97ff4f88bfb894",
+        "examples/evaluations/ops-002-continuous-interface-baseline-restoration-20260905/restoration.js": "ecac297e2106d6338cd6c86b46a1f3466916665e78e4ac8c4e121fe0fa3e56fe"
+      }
+    },
+    "BASELINE-003": {
+      "aggregate_sha256": "99331883832864d3bae8c336c0d5837ab2b3748303efefccae0f034c0f06fde2",
+      "file_count": 14,
+      "files": {
+        "baselines/BASELINE-003-hybrid-learning-workspace.md": "ec2603debaf880ecb762cb2836c26998948456406d2f7be1a428c47048db1340",
+        "examples/evaluations/spec-019-navigation-learning-workspace-20260905/README.md": "5ab06f867bcf7d43ab6518026d9c0d0976fda6421eb0c203a884f28523a73532",
+        "examples/evaluations/spec-019-navigation-learning-workspace-20260905/baseline-comparison.json": "0322f48f09842c7a07436f4aa49480963af9a766fb7eabbc0765b406c1b5c885",
+        "examples/evaluations/spec-019-navigation-learning-workspace-20260905/baseline-manifest.json": "f09b824856b44793f8f86401f903444d47c00c8ff2cf743892a19801c26175fc",
+        "examples/evaluations/spec-019-navigation-learning-workspace-20260905/browser-verification.json": "4be61b309e9bf0809f7117365098b6415298147f3417bb45dc47b05705c3c661",
+        "examples/evaluations/spec-019-navigation-learning-workspace-20260905/human-review-template.json": "7ec683dec1c3e776845b4de82eef207d0442fdbe14e6ee59fc3ea25df8b293ca",
+        "examples/evaluations/spec-019-navigation-learning-workspace-20260905/index.html": "471257a95c9fd31483e69b436daeed2397f8e052bddc94ddbcf847c19dab2335",
+        "examples/evaluations/spec-019-navigation-learning-workspace-20260905/manifest.json": "59713e3fb69c19499089d82432d68b0f3e5ad81408f025d5e9fe7318cbf86ce2",
+        "examples/evaluations/spec-019-navigation-learning-workspace-20260905/report.json": "24cca5098ca2d403bcac03e26d87e655817a3807eca7d65c085cf7023953bc1a",
+        "examples/evaluations/spec-019-navigation-learning-workspace-20260905/synchronization-diagnostics.json": "64671aeca53131543df61d6658dafa6b6971c622c920639f8f9ae81ed583bd7b",
+        "examples/evaluations/spec-019-navigation-learning-workspace-20260905/workspace-fixture.json": "a2c8c24bbd58e28f9a41598e22868916c1808133798c738bbf27712124c1b4e9",
+        "examples/evaluations/spec-019-navigation-learning-workspace-20260905/workspace-manifest.json": "59713e3fb69c19499089d82432d68b0f3e5ad81408f025d5e9fe7318cbf86ce2",
+        "examples/evaluations/spec-019-navigation-learning-workspace-20260905/workspace.css": "53a6c5593da5c5da7935698d6c8682b4f1f542f6d082d96e77c634cb0432d211",
+        "examples/evaluations/spec-019-navigation-learning-workspace-20260905/workspace.js": "a6bb507a4bff2eea0f968ea2d3e3dad736b2db865bc10f50124776aad79ca8de"
+      }
+    },
+    "BASELINE-004": {
+      "aggregate_sha256": "d34a569e80c5b57d9228b1000c2f74648522725123ba26bea738090f2a7760ce",
+      "file_count": 23,
+      "files": {
+        "baselines/BASELINE-004-learner-navigation-workspace.md": "94c8e63a97cf1a7af9c7549447c30d3deb7a2fefd5a1c4c0f792cca76c0f7ca6",
+        "baselines/BASELINE-004-learner-navigation-workspace/README.md": "1b10e6ee8a3db46c94749337031d1a72a28f3f411a16152e611d6044f758f396",
+        "baselines/BASELINE-004-learner-navigation-workspace/baseline-manifest.json": "e2e7763302aeacdcad2fc1a55ce7abdfd6be752ca4d6aac5fd6aa4f42f9e9d1c",
+        "baselines/BASELINE-004-learner-navigation-workspace/browser-verification.json": "b951ed6244ae1f41d4fa72eac8160f67950c5940b46a0cfe40acd0257c441918",
+        "baselines/BASELINE-004-learner-navigation-workspace/debug-metadata.json": "d997a153ed577bc88bb341647ff8d06038cf9beab51fb97e9aa14fd7f96482d5",
+        "baselines/BASELINE-004-learner-navigation-workspace/grammar.css": "7158525143670c4dbfa6294eca9ffc8d55587af00a478744616d87e90050484e",
+        "baselines/BASELINE-004-learner-navigation-workspace/human-review-template.json": "38b0a45a3f8cae189dcc600059ba7c045052382a065734c076f4ef089b592a73",
+        "baselines/BASELINE-004-learner-navigation-workspace/index.html": "2023e876c965f723e796f135460798b1c7538d05b693b979db3128934ec210e6",
+        "baselines/BASELINE-004-learner-navigation-workspace/input-manifest.json": "a75b397a6155bb009f424b14ce96d52f76492781a5cadec6c92d147c1b2371c6",
+        "baselines/BASELINE-004-learner-navigation-workspace/interaction-regressions.json": "9640e683a38a1d0a431d60181a3a48367e9a68d3fb2b13015baf970d8f878419",
+        "baselines/BASELINE-004-learner-navigation-workspace/learner-grammar.js": "bab6defc170c4e00cfafda4e8afee4d66690d33e3447d38b608543c616f8793b",
+        "baselines/BASELINE-004-learner-navigation-workspace/manifest.json": "e1ed270a97bf182120f3dd74fda76d2c961516f013b686c110f5fd7ebc976344",
+        "baselines/BASELINE-004-learner-navigation-workspace/projection-diagnostics.json": "324a70df4cb3c05ba13bd2c8bdac7ed08e4d76d09546c10aeb3c5924bb2f2dc0",
+        "baselines/BASELINE-004-learner-navigation-workspace/projection-extension.js": "05ea171074c69f85c64a817ae75741fb6396be3ea2554322df5baa09fed9cc42",
+        "baselines/BASELINE-004-learner-navigation-workspace/projection.css": "ecf9e962889be2e5d2b096118cb9f10f4669fffd3ee6197575c0f20c7029597d",
+        "baselines/BASELINE-004-learner-navigation-workspace/projection.json": "8f1d3beb0e9954040f59862c904a6d9d17574f048bdfcb1cc9059d5df3761232",
+        "baselines/BASELINE-004-learner-navigation-workspace/report.json": "55d032798e49491ff713aa6df49f18aaeff06528061d77d1c8f97cc8ca4f2067",
+        "baselines/BASELINE-004-learner-navigation-workspace/semantic-tier-audit.json": "592b286bde05bf56cd6cd818b9ccb1de3716c7445018765dbc7a2534710935c9",
+        "baselines/BASELINE-004-learner-navigation-workspace/workspace-diagnostics.json": "33048368b0c06d4c35588ec1f3a98259a9950f6f0f7df10a551effd2d15a604a",
+        "baselines/BASELINE-004-learner-navigation-workspace/workspace-fixture.json": "c214158c546fcbed1184b22ab6ac52371c49e7801b1ffb548ed453984fa1fb69",
+        "baselines/BASELINE-004-learner-navigation-workspace/workspace-manifest.json": "e1ed270a97bf182120f3dd74fda76d2c961516f013b686c110f5fd7ebc976344",
+        "baselines/BASELINE-004-learner-navigation-workspace/workspace.css": "53a6c5593da5c5da7935698d6c8682b4f1f542f6d082d96e77c634cb0432d211",
+        "baselines/BASELINE-004-learner-navigation-workspace/workspace.js": "d9eff687be246fc0ac42506b71d55944bb26a10046be4f8ca38270cd4ee94d33"
+      }
+    }
+  },
+  "interaction_contract": {
+    "authoritative_focus_owner": "SPEC-029 atomicLearnerState",
+    "forward_learning_authority": "EXPLORE_NEXT_ONLY",
+    "learning_history": "DEFERRED",
+    "navigation_authorities": [
+      "MY_MAP",
+      "EXPLORE_NEXT"
+    ],
+    "representation_local_state_owner": "purificationState",
+    "revealed_territory_owner": "SPEC-033 revealedState"
+  },
+  "live_model_or_external_calls": 0,
+  "machine_gate": {
+    "browser_checks": {
+      "browser_console_clean": true,
+      "concise_prose_remains_non_navigational": true,
+      "double_slit_component_keeps_authoritative_focus": true,
+      "evidence_and_provenance_remain_visible": true,
+      "explore_deeper_is_inactive_everywhere": true,
+      "explore_next_admits_grounded_depth": true,
+      "explore_next_is_sole_forward_affordance": true,
+      "focused_relationship_endpoints_keep_relationship_focus": true,
+      "hierarchy_members_keep_hierarchy_focus": true,
+      "local_interaction_state_is_separate": true,
+      "my_map_navigation_changes_focus": true,
+      "no_stale_selection_state": true,
+      "previously_revealed_depth_returns_through_my_map": true,
+      "representation_diversity_preserved": true
+    },
+    "browser_console_clean": true,
+    "runtime_checks": {
+      "baseline001_through_004_unchanged": true,
+      "explore_next_runtime_byte_identical": true,
+      "grounded_depth_uses_existing_explore_next_and_depth_api": true,
+      "legacy_depth_is_disabled_not_repurposed": true,
+      "my_map_runtime_byte_identical": true,
+      "purification_uses_existing_state_owners": true,
+      "representation_navigation_attributes_removed": true,
+      "spec034_candidate_unchanged": true,
+      "spec034_index_composed_not_reimplemented": true,
+      "spec034_runtime_files_byte_identical": true,
+      "strategy_resolver_renderer_and_plans_byte_identical": true
+    },
+    "semantic_checks": {
+      "all_fixed_focus_isolation_cases_pass": true,
+      "focus_before_equals_focus_after": true,
+      "grounding_provenance_source_bounds_unchanged": true,
+      "learning_history_not_implemented": true,
+      "local_state_has_no_navigation_mutation": true,
+      "no_live_model_or_external_calls": true,
+      "representation_diversity_preserved": true,
+      "trusted_semantic_vocabulary_unchanged": true
+    },
+    "status": "PASS"
+  },
+  "machine_integrity_verdict": "PASS",
+  "my_map_navigation_operational": true,
+  "offline_test_result": {
+    "focused": "17 passed",
+    "full": "462 passed",
+    "navigation_regression": "29 passed",
+    "result": "PASS",
+    "spec034_regression": "16 passed"
+  },
+  "owner_review_instruction": "In My Map, navigate to the double-slit experiment and use Explore next to enter its grounded deeper model. Return to the double-slit focus and click the interference-pattern component in its causal explanation; confirm the focus does not move. Open the Electric field → Magnetic field relationship and click both explanatory endpoints; then open the Light hierarchy and click its represented members. Confirm each click only highlights locally. Exercise a concise-prose case, multiple representation forms, My Map navigation, and Explore next. Confirm no active Explore deeper control exists and that the right pane now feels explanatory rather than navigational.",
+  "product_verdict": "PENDING_OWNER_REVIEW",
+  "repository_state": "IMPLEMENTED_AWAITING_OWNER_REVIEW; commit and push recorded in handoff",
+  "representation_strategies_preserved": [
+    "CAUSAL_MECHANISM",
+    "CONCISE_PROSE",
+    "DEPENDENCY_STRUCTURE",
+    "FOCUSED_RELATIONSHIP",
+    "HIERARCHY_COMPOSITION",
+    "PROCESS_SEQUENCE",
+    "RECIPROCAL_MECHANISM"
+  ],
+  "semantic_changes": [],
+  "spec": "SPEC-035",
+  "spec034_identity_after": {
+    "aggregate_sha256": "28effb58b0bb999677215e7d3ac5a42ec1d86d2b6df058a65db0a7fd0dc6c8fb",
+    "directory": "examples/evaluations/spec-034-representation-strategy-grammar-20260907",
+    "file_count": 40,
+    "files": {
+      "README.md": "976971996b81cb23d8172645ab9ea2c43e6b505b5e16a194488ca5ecfa51245c",
+      "atomic-context.js": "dc6e3511dd781d4853a342e61fcec169ddb3f33013bc206a188ea81364bb8199",
+      "browser-verification.json": "c4f018707c07f17b89960edce248c558a020b6e5913b022ceadfebd3bb53038c",
+      "canonical-interaction.css": "f72049368375eb350adc95625e6c0f349e42ecc77474d0211cfdcc784a74e156",
+      "canonical-interaction.js": "d4405f8d347e8384dc10fbeb5bb9e98b4c1bedffafc9a53427015ac4cf1b2b00",
+      "depth-expansion.css": "bba41c418555d865e0847fbd99a2b0e058c86a39aaae2cdc05a07c10e85be231",
+      "depth-expansion.js": "91d0e0653f0b1d3af1e261ad46d540fd7feb407e3e254c0dd04b3a97ba6bb223",
+      "depth-interaction.css": "baf3eb11827006507f48e18094258abebd6b794694fe8ebc1ab5e653518f5877",
+      "depth-interaction.js": "0704d464054e4bfdfbdd1b511c885cebbaf265e9f789adf0b3609f97911fce39",
+      "depth-map.json": "9275eb4c669399491f6f195a7b8fbcbacdcf4356d96780b5b8bda8e305a1350d",
+      "grammar.css": "7158525143670c4dbfa6294eca9ffc8d55587af00a478744616d87e90050484e",
+      "human-review-template.json": "93ef0964902d943b60d40b66e51300cb4aaa819ef8581b76931b8d76312b1322",
+      "index.html": "a02b92efc974d095202f7859de1d5cbf308161dbf1d8fd67a1a21fd766772058",
+      "learner-grammar.js": "8d48f9401536fe4f941f8076a94f5abbeee6dbfafce778a0f539096589808f44",
+      "learning-surface.css": "11253154f0036a1180181fdf057a93366934690e68d56fb5c679dd767c24c456",
+      "learning-surface.js": "b85f93d7d9618ddce1f5fd1093cfe68d5f1a6f25dbeec57533f3008b8cd6792a",
+      "machine-gate.json": "80bfe03ed6fc4ed4b80730a4a2ca23005fb001428e848b438f925a798079754c",
+      "manifest.json": "5cca23446e71b01b5cf73129c8ffa72246de8465f2b2c3d75d11e1da9b6d5bcb",
+      "projection-diagnostics.json": "324a70df4cb3c05ba13bd2c8bdac7ed08e4d76d09546c10aeb3c5924bb2f2dc0",
+      "projection-extension.js": "05ea171074c69f85c64a817ae75741fb6396be3ea2554322df5baa09fed9cc42",
+      "projection.css": "ecf9e962889be2e5d2b096118cb9f10f4669fffd3ee6197575c0f20c7029597d",
+      "projection.json": "8f1d3beb0e9954040f59862c904a6d9d17574f048bdfcb1cc9059d5df3761232",
+      "recursive-interaction.css": "41dd146caeca444615ef900c56f4b2958bf8f91797e0a28c16561a3c21153b9a",
+      "recursive-interaction.js": "0912d9bec47036fea429af1523e46018b6c57a6125a5b78c344814918276453a",
+      "relationship-multiplicity.css": "1dc012a275198723204c6899791c7ee26e93d02d3c508cea945cc6ba2fb102d9",
+      "relationship-multiplicity.js": "7802afeb3997d60786181894ab74fe32729c65261e05c74ed597d7e69f141379",
+      "report.json": "3a005a06019e0f70aaa73d1998f30cdad2f8c5f3de5253aede6b1142ada954c2",
+      "representation-plans.json": "f0ce10eb39807e5247f266bc0539a304fd9347ec1a26dd16fdcab04d4c2b277c",
+      "representation-strategy.css": "200789628e7b7ec9ead9fb3e81f89da8eab3d923bc0e8629a8f64835d892dafb",
+      "representation-strategy.js": "55e5a425dddade88d545bbba6edc97017228f833ba4e069a843fcc872cb5a6f7",
+      "revealed-knowledge-fixture.json": "691629babeab166cc195955b8b7fd18f8d1ce23afa1f81a902a693d4f0a4fe4c",
+      "revealed-knowledge.css": "f22fb913446d2d2d94f687558803d5b4575a08f1c99e7853d7bfc4fea71a9247",
+      "revealed-knowledge.js": "f9b09dd0001c0eb4ed390909645f015b43f5374b7cd5c240e4a656a406652d16",
+      "semantic-interaction.css": "5c263b88251bdcf184b00ec2d9104a2e57acd9e0185b6e3c8d0fff10a0304e9e",
+      "semantic-interaction.js": "ffc37c02c68d5eddd58500208a545b53ef3107c60507452f66155bad426dda36",
+      "semantic-tier-audit.json": "592b286bde05bf56cd6cd818b9ccb1de3716c7445018765dbc7a2534710935c9",
+      "workspace-fixture.json": "c214158c546fcbed1184b22ab6ac52371c49e7801b1ffb548ed453984fa1fb69",
+      "workspace-manifest.json": "e1ed270a97bf182120f3dd74fda76d2c961516f013b686c110f5fd7ebc976344",
+      "workspace.css": "53a6c5593da5c5da7935698d6c8682b4f1f542f6d082d96e77c634cb0432d211",
+      "workspace.js": "d9eff687be246fc0ac42506b71d55944bb26a10046be4f8ca38270cd4ee94d33"
+    }
+  },
+  "spec034_identity_before": {
+    "aggregate_sha256": "28effb58b0bb999677215e7d3ac5a42ec1d86d2b6df058a65db0a7fd0dc6c8fb",
+    "directory": "examples/evaluations/spec-034-representation-strategy-grammar-20260907",
+    "file_count": 40,
+    "files": {
+      "README.md": "976971996b81cb23d8172645ab9ea2c43e6b505b5e16a194488ca5ecfa51245c",
+      "atomic-context.js": "dc6e3511dd781d4853a342e61fcec169ddb3f33013bc206a188ea81364bb8199",
+      "browser-verification.json": "c4f018707c07f17b89960edce248c558a020b6e5913b022ceadfebd3bb53038c",
+      "canonical-interaction.css": "f72049368375eb350adc95625e6c0f349e42ecc77474d0211cfdcc784a74e156",
+      "canonical-interaction.js": "d4405f8d347e8384dc10fbeb5bb9e98b4c1bedffafc9a53427015ac4cf1b2b00",
+      "depth-expansion.css": "bba41c418555d865e0847fbd99a2b0e058c86a39aaae2cdc05a07c10e85be231",
+      "depth-expansion.js": "91d0e0653f0b1d3af1e261ad46d540fd7feb407e3e254c0dd04b3a97ba6bb223",
+      "depth-interaction.css": "baf3eb11827006507f48e18094258abebd6b794694fe8ebc1ab5e653518f5877",
+      "depth-interaction.js": "0704d464054e4bfdfbdd1b511c885cebbaf265e9f789adf0b3609f97911fce39",
+      "depth-map.json": "9275eb4c669399491f6f195a7b8fbcbacdcf4356d96780b5b8bda8e305a1350d",
+      "grammar.css": "7158525143670c4dbfa6294eca9ffc8d55587af00a478744616d87e90050484e",
+      "human-review-template.json": "93ef0964902d943b60d40b66e51300cb4aaa819ef8581b76931b8d76312b1322",
+      "index.html": "a02b92efc974d095202f7859de1d5cbf308161dbf1d8fd67a1a21fd766772058",
+      "learner-grammar.js": "8d48f9401536fe4f941f8076a94f5abbeee6dbfafce778a0f539096589808f44",
+      "learning-surface.css": "11253154f0036a1180181fdf057a93366934690e68d56fb5c679dd767c24c456",
+      "learning-surface.js": "b85f93d7d9618ddce1f5fd1093cfe68d5f1a6f25dbeec57533f3008b8cd6792a",
+      "machine-gate.json": "80bfe03ed6fc4ed4b80730a4a2ca23005fb001428e848b438f925a798079754c",
+      "manifest.json": "5cca23446e71b01b5cf73129c8ffa72246de8465f2b2c3d75d11e1da9b6d5bcb",
+      "projection-diagnostics.json": "324a70df4cb3c05ba13bd2c8bdac7ed08e4d76d09546c10aeb3c5924bb2f2dc0",
+      "projection-extension.js": "05ea171074c69f85c64a817ae75741fb6396be3ea2554322df5baa09fed9cc42",
+      "projection.css": "ecf9e962889be2e5d2b096118cb9f10f4669fffd3ee6197575c0f20c7029597d",
+      "projection.json": "8f1d3beb0e9954040f59862c904a6d9d17574f048bdfcb1cc9059d5df3761232",
+      "recursive-interaction.css": "41dd146caeca444615ef900c56f4b2958bf8f91797e0a28c16561a3c21153b9a",
+      "recursive-interaction.js": "0912d9bec47036fea429af1523e46018b6c57a6125a5b78c344814918276453a",
+      "relationship-multiplicity.css": "1dc012a275198723204c6899791c7ee26e93d02d3c508cea945cc6ba2fb102d9",
+      "relationship-multiplicity.js": "7802afeb3997d60786181894ab74fe32729c65261e05c74ed597d7e69f141379",
+      "report.json": "3a005a06019e0f70aaa73d1998f30cdad2f8c5f3de5253aede6b1142ada954c2",
+      "representation-plans.json": "f0ce10eb39807e5247f266bc0539a304fd9347ec1a26dd16fdcab04d4c2b277c",
+      "representation-strategy.css": "200789628e7b7ec9ead9fb3e81f89da8eab3d923bc0e8629a8f64835d892dafb",
+      "representation-strategy.js": "55e5a425dddade88d545bbba6edc97017228f833ba4e069a843fcc872cb5a6f7",
+      "revealed-knowledge-fixture.json": "691629babeab166cc195955b8b7fd18f8d1ce23afa1f81a902a693d4f0a4fe4c",
+      "revealed-knowledge.css": "f22fb913446d2d2d94f687558803d5b4575a08f1c99e7853d7bfc4fea71a9247",
+      "revealed-knowledge.js": "f9b09dd0001c0eb4ed390909645f015b43f5374b7cd5c240e4a656a406652d16",
+      "semantic-interaction.css": "5c263b88251bdcf184b00ec2d9104a2e57acd9e0185b6e3c8d0fff10a0304e9e",
+      "semantic-interaction.js": "ffc37c02c68d5eddd58500208a545b53ef3107c60507452f66155bad426dda36",
+      "semantic-tier-audit.json": "592b286bde05bf56cd6cd818b9ccb1de3716c7445018765dbc7a2534710935c9",
+      "workspace-fixture.json": "c214158c546fcbed1184b22ab6ac52371c49e7801b1ffb548ed453984fa1fb69",
+      "workspace-manifest.json": "e1ed270a97bf182120f3dd74fda76d2c961516f013b686c110f5fd7ebc976344",
+      "workspace.css": "53a6c5593da5c5da7935698d6c8682b4f1f542f6d082d96e77c634cb0432d211",
+      "workspace.js": "d9eff687be246fc0ac42506b71d55944bb26a10046be4f8ca38270cd4ee94d33"
+    }
+  },
+  "viewer_command": ".venv/bin/knowledge-compiler view-representations examples/evaluations/spec-035-explanatory-surface-purification-20260907 --port 8035"
+}

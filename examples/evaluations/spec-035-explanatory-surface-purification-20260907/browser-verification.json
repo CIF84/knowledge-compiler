@@ -1,0 +1,97 @@
+{
+  "browser": "Codex in-app browser",
+  "checks": {
+    "browser_console_clean": true,
+    "concise_prose_remains_non_navigational": true,
+    "double_slit_component_keeps_authoritative_focus": true,
+    "evidence_and_provenance_remain_visible": true,
+    "explore_deeper_is_inactive_everywhere": true,
+    "explore_next_admits_grounded_depth": true,
+    "explore_next_is_sole_forward_affordance": true,
+    "focused_relationship_endpoints_keep_relationship_focus": true,
+    "hierarchy_members_keep_hierarchy_focus": true,
+    "local_interaction_state_is_separate": true,
+    "my_map_navigation_changes_focus": true,
+    "no_stale_selection_state": true,
+    "previously_revealed_depth_returns_through_my_map": true,
+    "representation_diversity_preserved": true
+  },
+  "console": {
+    "errors": [],
+    "result": "PASS",
+    "warnings": []
+  },
+  "date": "2026-09-07",
+  "final_contract": {
+    "active_explore_deeper_count": 0,
+    "current_object_agreement": "PASS",
+    "explore_next_section_count": 1,
+    "representation_navigation_target_count": 0,
+    "stale_authoritative_projection_count": 0,
+    "stale_semantic_identity_count": 0
+  },
+  "focus_isolation_observations": [
+    {
+      "case": "double_slit_component",
+      "focus_after": "concept:double-slit-experiment",
+      "focus_before": "concept:double-slit-experiment",
+      "interaction": "concept:interference-pattern",
+      "navigation_mutation": false,
+      "representation_strategy": "CAUSAL_MECHANISM"
+    },
+    {
+      "case": "focused_relationship_source",
+      "focus_after": "canonical:changing-electric-field-induces-magnetic-field",
+      "focus_before": "canonical:changing-electric-field-induces-magnetic-field",
+      "interaction": "concept:electric-field",
+      "navigation_mutation": false,
+      "representation_strategy": "FOCUSED_RELATIONSHIP"
+    },
+    {
+      "case": "focused_relationship_target",
+      "focus_after": "canonical:changing-electric-field-induces-magnetic-field",
+      "focus_before": "canonical:changing-electric-field-induces-magnetic-field",
+      "interaction": "concept:magnetic-field",
+      "navigation_mutation": false,
+      "representation_strategy": "FOCUSED_RELATIONSHIP"
+    },
+    {
+      "case": "hierarchy_member",
+      "focus_after": "concept:light",
+      "focus_before": "concept:light",
+      "interaction": "concept:electromagnetic-wave",
+      "navigation_mutation": false,
+      "representation_strategy": "HIERARCHY_COMPOSITION"
+    }
+  ],
+  "navigation_observations": {
+    "concise_prose": {
+      "local_target_count": 0,
+      "result": "PASS",
+      "target": "concept:atom"
+    },
+    "explore_next_depth_admission": {
+      "active_explore_deeper_count": 0,
+      "depth_admitted": true,
+      "duplicate_depth_frontier_count_after_admission": 0,
+      "result": "PASS",
+      "revealed_object_count_after": 15
+    },
+    "my_map_deeper_return": {
+      "depth_path": "depth-double-slit-v1",
+      "result": "PASS",
+      "target": "concept:waveparticle-duality"
+    },
+    "my_map_region_navigation": {
+      "result": "PASS",
+      "target": "orientation:domain:electromagnetism"
+    },
+    "strategies_exercised": [
+      "CAUSAL_MECHANISM",
+      "FOCUSED_RELATIONSHIP",
+      "HIERARCHY_COMPOSITION",
+      "CONCISE_PROSE"
+    ]
+  },
+  "status": "PASS"
+}
