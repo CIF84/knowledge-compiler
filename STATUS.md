@@ -14,7 +14,7 @@ BASELINE-001, BASELINE-002, BASELINE-003, and BASELINE-004 remain preserved hist
 
 Owner verdict: `ROLE_SEPARATION_CONFIRMED`
 
-Result: strongest UI version so far. Map/navigation and learning/understanding responsibilities are now materially distinct while retaining shared canonical semantic state and recursive interaction behavior. Preserve this state as the best-known working candidate; it is not promoted to a formal baseline.
+Result: strongest UI version so far. Map/navigation and learning/understanding responsibilities became materially distinct while retaining shared canonical semantic state and recursive interaction behavior. Preserve this state as the best-known working candidate; it is not promoted to a formal baseline.
 
 ## Last completed work packet
 
@@ -22,27 +22,27 @@ Result: strongest UI version so far. Map/navigation and learning/understanding r
 
 Implementation status: `IMPLEMENTED_AWAITING_REVIEW`
 
-Owner review status: `PENDING`
+Owner review status: `RELATIONSHIP_MULTIPLICITY_CONFIRMED`
 
-See `examples/evaluations/spec-031-reciprocal-and-multi-edge-relationship-semantics-20260906/report.json`.
+Result: reciprocal canonical directions sharing visual geometry are independently recoverable and truthfully represented. See `debriefs/DEBRIEF-031-reciprocal-and-multi-edge-relationship-semantics.md`.
 
 ## Current approved work packet
 
 ```text
-NONE
+specs/SPEC-032-learning-path-navigation-separation.md
 ```
 
-Status: `NONE`
+Status: `APPROVED_FOR_IMPLEMENTATION`
 
-Authority: `NONE`
+Authority: `OFFLINE_ONLY`
 
-Human gate: `NONE`
+Human gate: `OWNER_REVIEW`
 
 Promotion: `NOT_AUTHORIZED`
 
 ## Current gate
 
-SPEC-031 passed its deterministic and browser machine gate. Owner review is required before any product verdict or promotion decision. No baseline promotion, follow-up implementation, or live/model call is authorized.
+SPEC-032 is approved for offline implementation. The experiment separates learner-visible traversal history from the internal domain knowledge graph, restores the right learning surface as the primary explanatory surface, and moves next-step discovery into deterministic exploration suggestions. No live/model/external calls or baseline promotion are authorized.
 
 ## Frozen / protected state
 
@@ -58,13 +58,13 @@ SPEC-031 passed its deterministic and browser machine gate. Owner review is requ
 - completed SPEC-028 canonical-interaction-state artifact, preserved as evidence after owner verdict `MIXED`;
 - completed SPEC-029 atomic-context artifact, preserved as historical evidence after owner verdict `MIXED`;
 - completed SPEC-030 distinct-learning-surface candidate, preserved as best-known UI candidate after owner verdict `ROLE_SEPARATION_CONFIRMED`;
-- completed SPEC-031 reciprocal/multi-edge candidate, awaiting owner review and not promoted;
+- completed SPEC-031 reciprocal/multi-edge candidate, preserved after owner verdict `RELATIONSHIP_MULTIPLICITY_CONFIRMED`;
 - trusted semantic vocabulary, grounding, provenance, and fail-closed behavior;
 - unrelated user work.
 
 ## Next intended action
 
-Owner reviews the fixed SPEC-031 viewer and assigns one allowed verdict. No further implementation is active.
+Codex executes `specs/SPEC-032-learning-path-navigation-separation.md` exactly as the active approved packet, then returns the required owner-review artifact and handoff.
 
 ## Coordination rule
 
