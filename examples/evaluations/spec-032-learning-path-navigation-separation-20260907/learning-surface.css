@@ -1,0 +1,22 @@
+/* SPEC-030 changes only the presentation inside the preserved right pane. */
+.learning-pane{overflow-y:auto}
+.learning-workspace[data-learning-form]{align-items:start}
+.learning-workspace.learning-surface-text{grid-template-columns:1fr}
+.learning-workspace.learning-surface-text .learning-canvas{display:none}
+.learning-workspace.learning-surface-text #learning-detail{min-height:330px}
+.learning-surface-relation{fill:none;stroke:#263a31;stroke-width:3;marker-end:url(#spec030-arrow)}
+#spec030-arrow path{fill:#263a31}
+.learning-surface-endpoint,.learning-surface-predicate{cursor:pointer;outline:none}
+.learning-surface-endpoint rect{fill:#fff;stroke:#7d8f85;stroke-width:2}
+.learning-surface-endpoint text{fill:#1d2d25;font:600 15px system-ui,sans-serif}
+.learning-surface-predicate rect{fill:#edf4ef;stroke:#176b50;stroke-width:2}
+.learning-surface-predicate text{fill:#176b50;font:700 12px system-ui,sans-serif;letter-spacing:.04em}
+.learning-surface-endpoint.is-current rect,.learning-surface-endpoint.is-selected rect,.learning-surface-endpoint.is-preview rect,.learning-surface-predicate.is-current rect,.learning-surface-predicate.is-selected rect,.learning-surface-predicate.is-preview rect{stroke:#d0643b;stroke-width:4}
+.learning-surface-evidence{margin-top:1.25rem;border-top:1px solid #d8dfda;padding-top:.9rem}
+.learning-surface-evidence h4{margin:0 0 .65rem;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase}
+.learning-surface-evidence blockquote{margin:.5rem 0;padding:.7rem .9rem;border-left:3px solid #aebdb4;background:#f7f9f7;line-height:1.45}
+.learning-surface-source,.learning-surface-muted{color:#66736c;font-size:.78rem}
+.learning-surface-statement{font-weight:600}
+.learning-surface-participants{display:flex;flex-wrap:wrap;gap:.45rem;margin:.9rem 0}
+.learning-surface-participant{border:1px solid #aebdb4;border-radius:999px;background:#fff;color:#263a31;padding:.4rem .7rem;cursor:pointer}
+.learning-surface-participant:hover,.learning-surface-participant:focus{border-color:#176b50;background:#edf4ef}

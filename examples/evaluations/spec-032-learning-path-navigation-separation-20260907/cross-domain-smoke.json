@@ -1,0 +1,245 @@
+{
+  "cases": {
+    "electromagnetism": {
+      "journey": [
+        "orientation:domain:electromagnetism",
+        "concept:double-slit-experiment",
+        "concept:interference-pattern"
+      ],
+      "path_model": {
+        "current_path_node_id": "path-0003",
+        "edges": [
+          {
+            "canonical_predicate": null,
+            "semantics": "TRAVELLED",
+            "source_path_node_id": "path-0001",
+            "target_path_node_id": "path-0002"
+          },
+          {
+            "canonical_predicate": null,
+            "semantics": "TRAVELLED",
+            "source_path_node_id": "path-0002",
+            "target_path_node_id": "path-0003"
+          }
+        ],
+        "nodes": [
+          {
+            "created_index": 0,
+            "current": false,
+            "domain_id": "electromagnetism",
+            "kind": "orientation",
+            "label": "Electromagnetism",
+            "object_key": "orientation:domain:electromagnetism",
+            "parent_path_node_id": null,
+            "path_node_id": "path-0001",
+            "semantic_identity": null
+          },
+          {
+            "created_index": 1,
+            "current": false,
+            "domain_id": "electromagnetism",
+            "kind": "concept",
+            "label": "double-slit experiment",
+            "object_key": "concept:double-slit-experiment",
+            "parent_path_node_id": "path-0001",
+            "path_node_id": "path-0002",
+            "semantic_identity": "double-slit-experiment"
+          },
+          {
+            "created_index": 2,
+            "current": true,
+            "domain_id": "electromagnetism",
+            "kind": "concept",
+            "label": "interference pattern",
+            "object_key": "concept:interference-pattern",
+            "parent_path_node_id": "path-0002",
+            "path_node_id": "path-0003",
+            "semantic_identity": "interference-pattern"
+          }
+        ]
+      },
+      "resolved_suggestions": [
+        {
+          "basis": "DOMAIN_ENTRY",
+          "basis_identity": "domain:electromagnetism",
+          "priority": 30,
+          "target_kind": "concept",
+          "target_label": "double-slit experiment",
+          "target_object_key": "concept:double-slit-experiment",
+          "target_semantic_identity": "double-slit-experiment"
+        },
+        {
+          "basis": "CANONICAL_RELATIONSHIP",
+          "basis_identity": "relationship-05b19ee4b6d50060",
+          "priority": 10,
+          "target_kind": "concept",
+          "target_label": "interference pattern",
+          "target_object_key": "concept:interference-pattern",
+          "target_semantic_identity": "interference-pattern"
+        }
+      ],
+      "status": "PASS"
+    },
+    "history": {
+      "journey": [
+        "orientation:domain:history",
+        "concept:printing",
+        "concept:printed-books"
+      ],
+      "path_model": {
+        "current_path_node_id": "path-0003",
+        "edges": [
+          {
+            "canonical_predicate": null,
+            "semantics": "TRAVELLED",
+            "source_path_node_id": "path-0001",
+            "target_path_node_id": "path-0002"
+          },
+          {
+            "canonical_predicate": null,
+            "semantics": "TRAVELLED",
+            "source_path_node_id": "path-0002",
+            "target_path_node_id": "path-0003"
+          }
+        ],
+        "nodes": [
+          {
+            "created_index": 0,
+            "current": false,
+            "domain_id": "history",
+            "kind": "orientation",
+            "label": "History of Printing",
+            "object_key": "orientation:domain:history",
+            "parent_path_node_id": null,
+            "path_node_id": "path-0001",
+            "semantic_identity": null
+          },
+          {
+            "created_index": 1,
+            "current": false,
+            "domain_id": "history",
+            "kind": "concept",
+            "label": "Printing",
+            "object_key": "concept:printing",
+            "parent_path_node_id": "path-0001",
+            "path_node_id": "path-0002",
+            "semantic_identity": "printing"
+          },
+          {
+            "created_index": 2,
+            "current": true,
+            "domain_id": "history",
+            "kind": "concept",
+            "label": "Printed books",
+            "object_key": "concept:printed-books",
+            "parent_path_node_id": "path-0002",
+            "path_node_id": "path-0003",
+            "semantic_identity": "printed-books"
+          }
+        ]
+      },
+      "resolved_suggestions": [
+        {
+          "basis": "DOMAIN_ENTRY",
+          "basis_identity": "domain:history",
+          "priority": 30,
+          "target_kind": "concept",
+          "target_label": "Printing",
+          "target_object_key": "concept:printing",
+          "target_semantic_identity": "printing"
+        },
+        {
+          "basis": "CANONICAL_RELATIONSHIP",
+          "basis_identity": "rel-printing-enables-copies",
+          "priority": 10,
+          "target_kind": "concept",
+          "target_label": "Printed books",
+          "target_object_key": "concept:printed-books",
+          "target_semantic_identity": "printed-books"
+        }
+      ],
+      "status": "PASS"
+    },
+    "software_architecture": {
+      "journey": [
+        "orientation:domain:software_architecture",
+        "concept:payment-component",
+        "concept:database"
+      ],
+      "path_model": {
+        "current_path_node_id": "path-0003",
+        "edges": [
+          {
+            "canonical_predicate": null,
+            "semantics": "TRAVELLED",
+            "source_path_node_id": "path-0001",
+            "target_path_node_id": "path-0002"
+          },
+          {
+            "canonical_predicate": null,
+            "semantics": "TRAVELLED",
+            "source_path_node_id": "path-0002",
+            "target_path_node_id": "path-0003"
+          }
+        ],
+        "nodes": [
+          {
+            "created_index": 0,
+            "current": false,
+            "domain_id": "software_architecture",
+            "kind": "orientation",
+            "label": "Software Architecture",
+            "object_key": "orientation:domain:software_architecture",
+            "parent_path_node_id": null,
+            "path_node_id": "path-0001",
+            "semantic_identity": null
+          },
+          {
+            "created_index": 1,
+            "current": false,
+            "domain_id": "software_architecture",
+            "kind": "concept",
+            "label": "payment component",
+            "object_key": "concept:payment-component",
+            "parent_path_node_id": "path-0001",
+            "path_node_id": "path-0002",
+            "semantic_identity": "payment-component"
+          },
+          {
+            "created_index": 2,
+            "current": true,
+            "domain_id": "software_architecture",
+            "kind": "concept",
+            "label": "database",
+            "object_key": "concept:database",
+            "parent_path_node_id": "path-0002",
+            "path_node_id": "path-0003",
+            "semantic_identity": "database"
+          }
+        ]
+      },
+      "resolved_suggestions": [
+        {
+          "basis": "DOMAIN_ENTRY",
+          "basis_identity": "domain:software_architecture",
+          "priority": 30,
+          "target_kind": "concept",
+          "target_label": "payment component",
+          "target_object_key": "concept:payment-component",
+          "target_semantic_identity": "payment-component"
+        },
+        {
+          "basis": "CANONICAL_RELATIONSHIP",
+          "basis_identity": "rel-8",
+          "priority": 10,
+          "target_kind": "concept",
+          "target_label": "database",
+          "target_object_key": "concept:database",
+          "target_semantic_identity": "database"
+        }
+      ],
+      "status": "PASS"
+    }
+  },
+  "status": "PASS"
+}

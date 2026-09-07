@@ -1,0 +1,924 @@
+{
+  "catalog": [
+    {
+      "ancestry": [],
+      "domain_id": "electromagnetism",
+      "kind": "canonical",
+      "label": "Electric field → Magnetic field",
+      "object_key": "canonical:changing-electric-field-induces-magnetic-field",
+      "predicate": "INDUCES",
+      "representation_index": 0,
+      "semantic_identity": "changing-electric-field-induces-magnetic-field",
+      "trusted_source": "workspace-fixture.json canonical relationship"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "electromagnetism",
+      "kind": "canonical",
+      "label": "Magnetic field → Electric field",
+      "object_key": "canonical:changing-magnetic-field-induces-electric-field",
+      "predicate": "INDUCES",
+      "representation_index": 0,
+      "semantic_identity": "changing-magnetic-field-induces-electric-field",
+      "trusted_source": "workspace-fixture.json canonical relationship"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "electromagnetism",
+      "kind": "canonical",
+      "label": "Light → Electromagnetic wave",
+      "object_key": "canonical:light-is-electromagnetic-wave",
+      "predicate": "IS_A",
+      "representation_index": 1,
+      "semantic_identity": "light-is-electromagnetic-wave",
+      "trusted_source": "workspace-fixture.json canonical relationship"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "software_architecture",
+      "kind": "canonical",
+      "label": "API component → modular order-processing service",
+      "object_key": "canonical:rel-1",
+      "predicate": "PART_OF",
+      "representation_index": 0,
+      "semantic_identity": "rel-1",
+      "trusted_source": "workspace-fixture.json canonical relationship"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "software_architecture",
+      "kind": "canonical",
+      "label": "order component → modular order-processing service",
+      "object_key": "canonical:rel-2",
+      "predicate": "PART_OF",
+      "representation_index": 0,
+      "semantic_identity": "rel-2",
+      "trusted_source": "workspace-fixture.json canonical relationship"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "software_architecture",
+      "kind": "canonical",
+      "label": "payment component → modular order-processing service",
+      "object_key": "canonical:rel-3",
+      "predicate": "PART_OF",
+      "representation_index": 0,
+      "semantic_identity": "rel-3",
+      "trusted_source": "workspace-fixture.json canonical relationship"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "software_architecture",
+      "kind": "canonical",
+      "label": "database → modular order-processing service",
+      "object_key": "canonical:rel-4",
+      "predicate": "PART_OF",
+      "representation_index": 0,
+      "semantic_identity": "rel-4",
+      "trusted_source": "workspace-fixture.json canonical relationship"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "software_architecture",
+      "kind": "canonical",
+      "label": "order component → payment component",
+      "object_key": "canonical:rel-6",
+      "predicate": "REQUIRES",
+      "representation_index": 1,
+      "semantic_identity": "rel-6",
+      "trusted_source": "workspace-fixture.json canonical relationship"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "software_architecture",
+      "kind": "canonical",
+      "label": "payment component → database",
+      "object_key": "canonical:rel-8",
+      "predicate": "REQUIRES",
+      "representation_index": 1,
+      "semantic_identity": "rel-8",
+      "trusted_source": "workspace-fixture.json canonical relationship"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "history",
+      "kind": "canonical",
+      "label": "Printed controversy → Authorities",
+      "object_key": "canonical:rel-controversy-precedes-response",
+      "predicate": "PRECEDES",
+      "representation_index": 1,
+      "semantic_identity": "rel-controversy-precedes-response",
+      "trusted_source": "workspace-fixture.json canonical relationship"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "economics",
+      "kind": "canonical",
+      "label": "market price → quantity demanded",
+      "object_key": "canonical:rel-higher-price-decreases-demanded",
+      "predicate": "DECREASES",
+      "representation_index": 0,
+      "semantic_identity": "rel-higher-price-decreases-demanded",
+      "trusted_source": "workspace-fixture.json canonical relationship"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "economics",
+      "kind": "canonical",
+      "label": "market price → quantity supplied",
+      "object_key": "canonical:rel-higher-price-increases-supplied",
+      "predicate": "INCREASES",
+      "representation_index": 0,
+      "semantic_identity": "rel-higher-price-increases-supplied",
+      "trusted_source": "workspace-fixture.json canonical relationship"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "history",
+      "kind": "canonical",
+      "label": "Press → Printing",
+      "object_key": "canonical:rel-press-enables-printing",
+      "predicate": "ENABLES",
+      "representation_index": 0,
+      "semantic_identity": "rel-press-enables-printing",
+      "trusted_source": "workspace-fixture.json canonical relationship"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "economics",
+      "kind": "canonical",
+      "label": "market price → quantity demanded",
+      "object_key": "canonical:rel-price-decreases-demanded",
+      "predicate": "DECREASES",
+      "representation_index": 0,
+      "semantic_identity": "rel-price-decreases-demanded",
+      "trusted_source": "workspace-fixture.json canonical relationship"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "economics",
+      "kind": "canonical",
+      "label": "market price → quantity supplied",
+      "object_key": "canonical:rel-price-increases-supplied",
+      "predicate": "INCREASES",
+      "representation_index": 0,
+      "semantic_identity": "rel-price-increases-supplied",
+      "trusted_source": "workspace-fixture.json canonical relationship"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "history",
+      "kind": "canonical",
+      "label": "Printing → Printed books",
+      "object_key": "canonical:rel-printing-enables-copies",
+      "predicate": "ENABLES",
+      "representation_index": 0,
+      "semantic_identity": "rel-printing-enables-copies",
+      "trusted_source": "workspace-fixture.json canonical relationship"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "economics",
+      "kind": "canonical",
+      "label": "shortage → upward pressure on price",
+      "object_key": "canonical:rel-shortage-upward-pressure",
+      "predicate": "CAUSES",
+      "representation_index": 0,
+      "semantic_identity": "rel-shortage-upward-pressure",
+      "trusted_source": "workspace-fixture.json canonical relationship"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "economics",
+      "kind": "canonical",
+      "label": "reduction in supply → market price",
+      "object_key": "canonical:rel-supply-reduction-price-increase",
+      "predicate": "CAUSES",
+      "representation_index": 0,
+      "semantic_identity": "rel-supply-reduction-price-increase",
+      "trusted_source": "workspace-fixture.json canonical relationship"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "history",
+      "kind": "canonical",
+      "label": "Movable metal type → Printing",
+      "object_key": "canonical:rel-type-enables-printing",
+      "predicate": "ENABLES",
+      "representation_index": 0,
+      "semantic_identity": "rel-type-enables-printing",
+      "trusted_source": "workspace-fixture.json canonical relationship"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "economics",
+      "kind": "canonical",
+      "label": "upward pressure on price → market price",
+      "object_key": "canonical:rel-upward-pressure-price",
+      "predicate": "INCREASES",
+      "representation_index": 0,
+      "semantic_identity": "rel-upward-pressure-price",
+      "trusted_source": "workspace-fixture.json canonical relationship"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "electromagnetism",
+      "kind": "canonical",
+      "label": "double-slit experiment → interference pattern",
+      "object_key": "canonical:relationship-05b19ee4b6d50060",
+      "predicate": "CAUSES",
+      "representation_index": 2,
+      "semantic_identity": "relationship-05b19ee4b6d50060",
+      "trusted_source": "workspace-fixture.json canonical relationship"
+    },
+    {
+      "ancestry": [
+        "depth-double-slit-v1"
+      ],
+      "domain_id": "electromagnetism",
+      "kind": "canonical",
+      "label": "double-slit experiment → interference pattern",
+      "object_key": "canonical:relationship-3fadf1ab890d9bde",
+      "predicate": "CAUSES",
+      "representation_index": 2,
+      "semantic_identity": "relationship-3fadf1ab890d9bde",
+      "trusted_source": "depth-map.json admitted canonical relationship"
+    },
+    {
+      "ancestry": [
+        "depth-double-slit-v1"
+      ],
+      "domain_id": "electromagnetism",
+      "kind": "canonical",
+      "label": "wave–particle duality → principle of complementarity",
+      "object_key": "canonical:relationship-7d1b3317e1e4c682",
+      "predicate": "EXAMPLE_OF",
+      "representation_index": 2,
+      "semantic_identity": "relationship-7d1b3317e1e4c682",
+      "trusted_source": "depth-map.json admitted canonical relationship"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "software_architecture",
+      "kind": "concept",
+      "label": "API component",
+      "object_key": "concept:api-component",
+      "representation_index": 0,
+      "semantic_identity": "api-component",
+      "trusted_source": "workspace-fixture.json trusted representation node"
+    },
+    {
+      "ancestry": [
+        "depth-double-slit-v1"
+      ],
+      "domain_id": "electromagnetism",
+      "kind": "concept",
+      "label": "atom",
+      "object_key": "concept:atom",
+      "representation_index": 2,
+      "semantic_identity": "atom",
+      "trusted_source": "depth-map.json trusted concept"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "history",
+      "kind": "concept",
+      "label": "Authorities",
+      "object_key": "concept:authorities",
+      "representation_index": 1,
+      "semantic_identity": "authorities",
+      "trusted_source": "workspace-fixture.json trusted representation node"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "software_architecture",
+      "kind": "concept",
+      "label": "database",
+      "object_key": "concept:database",
+      "representation_index": 0,
+      "semantic_identity": "database",
+      "trusted_source": "workspace-fixture.json trusted representation node"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "electromagnetism",
+      "kind": "concept",
+      "label": "double-slit experiment",
+      "object_key": "concept:double-slit-experiment",
+      "representation_index": 2,
+      "semantic_identity": "double-slit-experiment",
+      "trusted_source": "workspace-fixture.json trusted representation node"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "electromagnetism",
+      "kind": "concept",
+      "label": "Electric field",
+      "object_key": "concept:electric-field",
+      "representation_index": 0,
+      "semantic_identity": "electric-field",
+      "trusted_source": "workspace-fixture.json trusted representation node"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "electromagnetism",
+      "kind": "concept",
+      "label": "Electromagnetic wave",
+      "object_key": "concept:electromagnetic-wave",
+      "representation_index": 1,
+      "semantic_identity": "electromagnetic-wave",
+      "trusted_source": "workspace-fixture.json trusted representation node"
+    },
+    {
+      "ancestry": [
+        "depth-double-slit-v1"
+      ],
+      "domain_id": "electromagnetism",
+      "kind": "concept",
+      "label": "electron",
+      "object_key": "concept:electron",
+      "representation_index": 2,
+      "semantic_identity": "electron",
+      "trusted_source": "depth-map.json trusted concept"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "electromagnetism",
+      "kind": "concept",
+      "label": "interference pattern",
+      "object_key": "concept:interference-pattern",
+      "representation_index": 2,
+      "semantic_identity": "interference-pattern",
+      "trusted_source": "workspace-fixture.json trusted representation node"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "electromagnetism",
+      "kind": "concept",
+      "label": "Light",
+      "object_key": "concept:light",
+      "representation_index": 1,
+      "semantic_identity": "light",
+      "trusted_source": "workspace-fixture.json trusted representation node"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "electromagnetism",
+      "kind": "concept",
+      "label": "Magnetic field",
+      "object_key": "concept:magnetic-field",
+      "representation_index": 0,
+      "semantic_identity": "magnetic-field",
+      "trusted_source": "workspace-fixture.json trusted representation node"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "economics",
+      "kind": "concept",
+      "label": "market price",
+      "object_key": "concept:market-price",
+      "representation_index": 0,
+      "semantic_identity": "market-price",
+      "trusted_source": "workspace-fixture.json trusted representation node"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "software_architecture",
+      "kind": "concept",
+      "label": "modular order-processing service",
+      "object_key": "concept:modular-order-processing-service",
+      "representation_index": 0,
+      "semantic_identity": "modular-order-processing-service",
+      "trusted_source": "workspace-fixture.json trusted representation node"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "history",
+      "kind": "concept",
+      "label": "Movable metal type",
+      "object_key": "concept:movable-metal-type",
+      "representation_index": 0,
+      "semantic_identity": "movable-metal-type",
+      "trusted_source": "workspace-fixture.json trusted representation node"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "software_architecture",
+      "kind": "concept",
+      "label": "order component",
+      "object_key": "concept:order-component",
+      "representation_index": 0,
+      "semantic_identity": "order-component",
+      "trusted_source": "workspace-fixture.json trusted representation node"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "software_architecture",
+      "kind": "concept",
+      "label": "payment component",
+      "object_key": "concept:payment-component",
+      "representation_index": 0,
+      "semantic_identity": "payment-component",
+      "trusted_source": "workspace-fixture.json trusted representation node"
+    },
+    {
+      "ancestry": [
+        "depth-double-slit-v1"
+      ],
+      "domain_id": "electromagnetism",
+      "kind": "concept",
+      "label": "photon",
+      "object_key": "concept:photon",
+      "representation_index": 2,
+      "semantic_identity": "photon",
+      "trusted_source": "depth-map.json trusted concept"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "history",
+      "kind": "concept",
+      "label": "Press",
+      "object_key": "concept:press",
+      "representation_index": 0,
+      "semantic_identity": "press",
+      "trusted_source": "workspace-fixture.json trusted representation node"
+    },
+    {
+      "ancestry": [
+        "depth-double-slit-v1"
+      ],
+      "domain_id": "electromagnetism",
+      "kind": "concept",
+      "label": "principle of complementarity",
+      "object_key": "concept:principle-of-complementarity",
+      "representation_index": 2,
+      "semantic_identity": "principle-of-complementarity",
+      "trusted_source": "depth-map.json trusted concept"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "history",
+      "kind": "concept",
+      "label": "Printed books",
+      "object_key": "concept:printed-books",
+      "representation_index": 0,
+      "semantic_identity": "printed-books",
+      "trusted_source": "workspace-fixture.json trusted representation node"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "history",
+      "kind": "concept",
+      "label": "Printed controversy",
+      "object_key": "concept:printed-controversy",
+      "representation_index": 1,
+      "semantic_identity": "printed-controversy",
+      "trusted_source": "workspace-fixture.json trusted representation node"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "history",
+      "kind": "concept",
+      "label": "Printing",
+      "object_key": "concept:printing",
+      "representation_index": 0,
+      "semantic_identity": "printing",
+      "trusted_source": "workspace-fixture.json trusted representation node"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "economics",
+      "kind": "concept",
+      "label": "quantity demanded",
+      "object_key": "concept:quantity-demanded",
+      "representation_index": 0,
+      "semantic_identity": "quantity-demanded",
+      "trusted_source": "workspace-fixture.json trusted representation node"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "economics",
+      "kind": "concept",
+      "label": "quantity supplied",
+      "object_key": "concept:quantity-supplied",
+      "representation_index": 0,
+      "semantic_identity": "quantity-supplied",
+      "trusted_source": "workspace-fixture.json trusted representation node"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "economics",
+      "kind": "concept",
+      "label": "shortage",
+      "object_key": "concept:shortage",
+      "representation_index": 0,
+      "semantic_identity": "shortage",
+      "trusted_source": "workspace-fixture.json trusted representation node"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "economics",
+      "kind": "concept",
+      "label": "reduction in supply",
+      "object_key": "concept:supply-reduction",
+      "representation_index": 0,
+      "semantic_identity": "supply-reduction",
+      "trusted_source": "workspace-fixture.json trusted representation node"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "economics",
+      "kind": "concept",
+      "label": "upward pressure on price",
+      "object_key": "concept:upward-price-pressure",
+      "representation_index": 0,
+      "semantic_identity": "upward-price-pressure",
+      "trusted_source": "workspace-fixture.json trusted representation node"
+    },
+    {
+      "ancestry": [
+        "depth-double-slit-v1"
+      ],
+      "domain_id": "electromagnetism",
+      "kind": "concept",
+      "label": "wave–particle duality",
+      "object_key": "concept:waveparticle-duality",
+      "representation_index": 2,
+      "semantic_identity": "waveparticle-duality",
+      "trusted_source": "depth-map.json trusted concept"
+    },
+    {
+      "ancestry": [
+        "depth-double-slit-v1"
+      ],
+      "domain_id": "electromagnetism",
+      "kind": "explanation",
+      "label": "Source explanation 6",
+      "object_key": "explanation:explanation-0aab5775b0ce1164",
+      "representation_index": 2,
+      "semantic_identity": "explanation-0aab5775b0ce1164",
+      "trusted_source": "depth-map.json source-backed explanation"
+    },
+    {
+      "ancestry": [
+        "depth-double-slit-v1"
+      ],
+      "domain_id": "electromagnetism",
+      "kind": "explanation",
+      "label": "Source explanation 2",
+      "object_key": "explanation:explanation-29893ca25e0fd462",
+      "representation_index": 2,
+      "semantic_identity": "explanation-29893ca25e0fd462",
+      "trusted_source": "depth-map.json source-backed explanation"
+    },
+    {
+      "ancestry": [
+        "depth-double-slit-v1"
+      ],
+      "domain_id": "electromagnetism",
+      "kind": "explanation",
+      "label": "Source explanation 4",
+      "object_key": "explanation:explanation-49c2a9a32b078712",
+      "representation_index": 2,
+      "semantic_identity": "explanation-49c2a9a32b078712",
+      "trusted_source": "depth-map.json source-backed explanation"
+    },
+    {
+      "ancestry": [
+        "depth-double-slit-v1"
+      ],
+      "domain_id": "electromagnetism",
+      "kind": "explanation",
+      "label": "Source explanation 1",
+      "object_key": "explanation:explanation-6a9db96dcce9c27d",
+      "representation_index": 2,
+      "semantic_identity": "explanation-6a9db96dcce9c27d",
+      "trusted_source": "depth-map.json source-backed explanation"
+    },
+    {
+      "ancestry": [
+        "depth-double-slit-v1"
+      ],
+      "domain_id": "electromagnetism",
+      "kind": "explanation",
+      "label": "Source explanation 5",
+      "object_key": "explanation:explanation-a4ca636403e86833",
+      "representation_index": 2,
+      "semantic_identity": "explanation-a4ca636403e86833",
+      "trusted_source": "depth-map.json source-backed explanation"
+    },
+    {
+      "ancestry": [
+        "depth-double-slit-v1"
+      ],
+      "domain_id": "electromagnetism",
+      "kind": "explanation",
+      "label": "Source explanation 3",
+      "object_key": "explanation:explanation-ae10fa8748fdac1f",
+      "representation_index": 2,
+      "semantic_identity": "explanation-ae10fa8748fdac1f",
+      "trusted_source": "depth-map.json source-backed explanation"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "economics",
+      "kind": "orientation",
+      "label": "Economics",
+      "object_key": "orientation:domain:economics",
+      "orientation_identity": "domain:economics",
+      "representation_index": 0,
+      "semantic_identity": null,
+      "trusted_source": "workspace-fixture.json domains[]"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "electromagnetism",
+      "kind": "orientation",
+      "label": "Electromagnetism",
+      "object_key": "orientation:domain:electromagnetism",
+      "orientation_identity": "domain:electromagnetism",
+      "representation_index": 0,
+      "semantic_identity": null,
+      "trusted_source": "workspace-fixture.json domains[]"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "history",
+      "kind": "orientation",
+      "label": "History of Printing",
+      "object_key": "orientation:domain:history",
+      "orientation_identity": "domain:history",
+      "representation_index": 0,
+      "semantic_identity": null,
+      "trusted_source": "workspace-fixture.json domains[]"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "software_architecture",
+      "kind": "orientation",
+      "label": "Software Architecture",
+      "object_key": "orientation:domain:software_architecture",
+      "orientation_identity": "domain:software_architecture",
+      "representation_index": 0,
+      "semantic_identity": null,
+      "trusted_source": "workspace-fixture.json domains[]"
+    }
+  ],
+  "continuations": [
+    {
+      "basis": "CANONICAL_RELATIONSHIP",
+      "basis_identity": "changing-electric-field-induces-magnetic-field",
+      "relationship_object_key": "canonical:changing-electric-field-induces-magnetic-field",
+      "source_object_key": "concept:electric-field",
+      "target_object_key": "concept:magnetic-field"
+    },
+    {
+      "basis": "CANONICAL_RELATIONSHIP",
+      "basis_identity": "changing-magnetic-field-induces-electric-field",
+      "relationship_object_key": "canonical:changing-magnetic-field-induces-electric-field",
+      "source_object_key": "concept:magnetic-field",
+      "target_object_key": "concept:electric-field"
+    },
+    {
+      "basis": "CANONICAL_RELATIONSHIP",
+      "basis_identity": "light-is-electromagnetic-wave",
+      "relationship_object_key": "canonical:light-is-electromagnetic-wave",
+      "source_object_key": "concept:light",
+      "target_object_key": "concept:electromagnetic-wave"
+    },
+    {
+      "basis": "CANONICAL_RELATIONSHIP",
+      "basis_identity": "rel-1",
+      "relationship_object_key": "canonical:rel-1",
+      "source_object_key": "concept:api-component",
+      "target_object_key": "concept:modular-order-processing-service"
+    },
+    {
+      "basis": "CANONICAL_RELATIONSHIP",
+      "basis_identity": "rel-2",
+      "relationship_object_key": "canonical:rel-2",
+      "source_object_key": "concept:order-component",
+      "target_object_key": "concept:modular-order-processing-service"
+    },
+    {
+      "basis": "CANONICAL_RELATIONSHIP",
+      "basis_identity": "rel-3",
+      "relationship_object_key": "canonical:rel-3",
+      "source_object_key": "concept:payment-component",
+      "target_object_key": "concept:modular-order-processing-service"
+    },
+    {
+      "basis": "CANONICAL_RELATIONSHIP",
+      "basis_identity": "rel-4",
+      "relationship_object_key": "canonical:rel-4",
+      "source_object_key": "concept:database",
+      "target_object_key": "concept:modular-order-processing-service"
+    },
+    {
+      "basis": "CANONICAL_RELATIONSHIP",
+      "basis_identity": "rel-6",
+      "relationship_object_key": "canonical:rel-6",
+      "source_object_key": "concept:order-component",
+      "target_object_key": "concept:payment-component"
+    },
+    {
+      "basis": "CANONICAL_RELATIONSHIP",
+      "basis_identity": "rel-8",
+      "relationship_object_key": "canonical:rel-8",
+      "source_object_key": "concept:payment-component",
+      "target_object_key": "concept:database"
+    },
+    {
+      "basis": "CANONICAL_RELATIONSHIP",
+      "basis_identity": "rel-controversy-precedes-response",
+      "relationship_object_key": "canonical:rel-controversy-precedes-response",
+      "source_object_key": "concept:printed-controversy",
+      "target_object_key": "concept:authorities"
+    },
+    {
+      "basis": "CANONICAL_RELATIONSHIP",
+      "basis_identity": "rel-higher-price-decreases-demanded",
+      "relationship_object_key": "canonical:rel-higher-price-decreases-demanded",
+      "source_object_key": "concept:market-price",
+      "target_object_key": "concept:quantity-demanded"
+    },
+    {
+      "basis": "CANONICAL_RELATIONSHIP",
+      "basis_identity": "rel-higher-price-increases-supplied",
+      "relationship_object_key": "canonical:rel-higher-price-increases-supplied",
+      "source_object_key": "concept:market-price",
+      "target_object_key": "concept:quantity-supplied"
+    },
+    {
+      "basis": "CANONICAL_RELATIONSHIP",
+      "basis_identity": "rel-press-enables-printing",
+      "relationship_object_key": "canonical:rel-press-enables-printing",
+      "source_object_key": "concept:press",
+      "target_object_key": "concept:printing"
+    },
+    {
+      "basis": "CANONICAL_RELATIONSHIP",
+      "basis_identity": "rel-price-decreases-demanded",
+      "relationship_object_key": "canonical:rel-price-decreases-demanded",
+      "source_object_key": "concept:market-price",
+      "target_object_key": "concept:quantity-demanded"
+    },
+    {
+      "basis": "CANONICAL_RELATIONSHIP",
+      "basis_identity": "rel-price-increases-supplied",
+      "relationship_object_key": "canonical:rel-price-increases-supplied",
+      "source_object_key": "concept:market-price",
+      "target_object_key": "concept:quantity-supplied"
+    },
+    {
+      "basis": "CANONICAL_RELATIONSHIP",
+      "basis_identity": "rel-printing-enables-copies",
+      "relationship_object_key": "canonical:rel-printing-enables-copies",
+      "source_object_key": "concept:printing",
+      "target_object_key": "concept:printed-books"
+    },
+    {
+      "basis": "CANONICAL_RELATIONSHIP",
+      "basis_identity": "rel-shortage-upward-pressure",
+      "relationship_object_key": "canonical:rel-shortage-upward-pressure",
+      "source_object_key": "concept:shortage",
+      "target_object_key": "concept:upward-price-pressure"
+    },
+    {
+      "basis": "CANONICAL_RELATIONSHIP",
+      "basis_identity": "rel-supply-reduction-price-increase",
+      "relationship_object_key": "canonical:rel-supply-reduction-price-increase",
+      "source_object_key": "concept:supply-reduction",
+      "target_object_key": "concept:market-price"
+    },
+    {
+      "basis": "CANONICAL_RELATIONSHIP",
+      "basis_identity": "rel-type-enables-printing",
+      "relationship_object_key": "canonical:rel-type-enables-printing",
+      "source_object_key": "concept:movable-metal-type",
+      "target_object_key": "concept:printing"
+    },
+    {
+      "basis": "CANONICAL_RELATIONSHIP",
+      "basis_identity": "rel-upward-pressure-price",
+      "relationship_object_key": "canonical:rel-upward-pressure-price",
+      "source_object_key": "concept:upward-price-pressure",
+      "target_object_key": "concept:market-price"
+    },
+    {
+      "basis": "CANONICAL_RELATIONSHIP",
+      "basis_identity": "relationship-05b19ee4b6d50060",
+      "relationship_object_key": "canonical:relationship-05b19ee4b6d50060",
+      "source_object_key": "concept:double-slit-experiment",
+      "target_object_key": "concept:interference-pattern"
+    },
+    {
+      "basis": "CANONICAL_RELATIONSHIP",
+      "basis_identity": "relationship-3fadf1ab890d9bde",
+      "relationship_object_key": "canonical:relationship-3fadf1ab890d9bde",
+      "source_object_key": "concept:double-slit-experiment",
+      "target_object_key": "concept:interference-pattern"
+    },
+    {
+      "basis": "CANONICAL_RELATIONSHIP",
+      "basis_identity": "relationship-7d1b3317e1e4c682",
+      "relationship_object_key": "canonical:relationship-7d1b3317e1e4c682",
+      "source_object_key": "concept:waveparticle-duality",
+      "target_object_key": "concept:principle-of-complementarity"
+    },
+    {
+      "basis": "SHARED_SOURCE_EXPLANATION",
+      "basis_identity": "explanation-49c2a9a32b078712",
+      "relationship_object_key": null,
+      "source_object_key": "concept:electron",
+      "target_object_key": "concept:interference-pattern"
+    },
+    {
+      "basis": "SHARED_SOURCE_EXPLANATION",
+      "basis_identity": "explanation-49c2a9a32b078712",
+      "relationship_object_key": null,
+      "source_object_key": "concept:electron",
+      "target_object_key": "concept:photon"
+    },
+    {
+      "basis": "SHARED_SOURCE_EXPLANATION",
+      "basis_identity": "explanation-49c2a9a32b078712",
+      "relationship_object_key": null,
+      "source_object_key": "concept:interference-pattern",
+      "target_object_key": "concept:photon"
+    },
+    {
+      "basis": "SHARED_SOURCE_EXPLANATION",
+      "basis_identity": "explanation-6a9db96dcce9c27d",
+      "relationship_object_key": null,
+      "source_object_key": "concept:photon",
+      "target_object_key": "concept:waveparticle-duality"
+    },
+    {
+      "basis": "SHARED_SOURCE_EXPLANATION",
+      "basis_identity": "explanation-a4ca636403e86833",
+      "relationship_object_key": null,
+      "source_object_key": "concept:double-slit-experiment",
+      "target_object_key": "concept:principle-of-complementarity"
+    },
+    {
+      "basis": "SHARED_SOURCE_EXPLANATION",
+      "basis_identity": "explanation-ae10fa8748fdac1f",
+      "relationship_object_key": null,
+      "source_object_key": "concept:atom",
+      "target_object_key": "concept:double-slit-experiment"
+    },
+    {
+      "basis": "SHARED_SOURCE_EXPLANATION",
+      "basis_identity": "explanation-ae10fa8748fdac1f",
+      "relationship_object_key": null,
+      "source_object_key": "concept:atom",
+      "target_object_key": "concept:electron"
+    },
+    {
+      "basis": "SHARED_SOURCE_EXPLANATION",
+      "basis_identity": "explanation-ae10fa8748fdac1f",
+      "relationship_object_key": null,
+      "source_object_key": "concept:atom",
+      "target_object_key": "concept:interference-pattern"
+    },
+    {
+      "basis": "SHARED_SOURCE_EXPLANATION",
+      "basis_identity": "explanation-ae10fa8748fdac1f",
+      "relationship_object_key": null,
+      "source_object_key": "concept:double-slit-experiment",
+      "target_object_key": "concept:electron"
+    },
+    {
+      "basis": "SHARED_SOURCE_EXPLANATION",
+      "basis_identity": "explanation-ae10fa8748fdac1f",
+      "relationship_object_key": null,
+      "source_object_key": "concept:double-slit-experiment",
+      "target_object_key": "concept:interference-pattern"
+    },
+    {
+      "basis": "SHARED_SOURCE_EXPLANATION",
+      "basis_identity": "explanation-ae10fa8748fdac1f",
+      "relationship_object_key": null,
+      "source_object_key": "concept:electron",
+      "target_object_key": "concept:interference-pattern"
+    }
+  ],
+  "initial_object_key": "orientation:domain:electromagnetism",
+  "suggestion_rule": {
+    "generated_recommendations": false,
+    "rank": [
+      "unvisited before visited",
+      "canonical concept neighbor",
+      "shared-source participant",
+      "canonical relationship object or domain entry",
+      "learner-facing label",
+      "stable object identity"
+    ],
+    "sources": [
+      "trusted domain concepts",
+      "canonical adjacency",
+      "participants sharing one committed source-backed explanation"
+    ]
+  }
+}

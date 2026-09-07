@@ -18,31 +18,31 @@ Result: strongest UI version so far. Map/navigation and learning/understanding r
 
 ## Last completed work packet
 
-`SPEC-031 — reciprocal and multi-edge relationship semantics`
+`SPEC-032 — learning-path navigation separation`
 
 Implementation status: `IMPLEMENTED_AWAITING_REVIEW`
 
-Owner review status: `RELATIONSHIP_MULTIPLICITY_CONFIRMED`
+Owner review status: `PENDING`
 
-Result: reciprocal canonical directions sharing visual geometry are independently recoverable and truthfully represented. See `debriefs/DEBRIEF-031-reciprocal-and-multi-edge-relationship-semantics.md`.
+See `examples/evaluations/spec-032-learning-path-navigation-separation-20260907/report.json`.
 
 ## Current approved work packet
 
 ```text
-specs/SPEC-032-learning-path-navigation-separation.md
+NONE
 ```
 
-Status: `APPROVED_FOR_IMPLEMENTATION`
+Status: `NONE`
 
-Authority: `OFFLINE_ONLY`
+Authority: `NONE`
 
-Human gate: `OWNER_REVIEW`
+Human gate: `NONE`
 
 Promotion: `NOT_AUTHORIZED`
 
 ## Current gate
 
-SPEC-032 is approved for offline implementation. The experiment separates learner-visible traversal history from the internal domain knowledge graph, restores the right learning surface as the primary explanatory surface, and moves next-step discovery into deterministic exploration suggestions. No live/model/external calls or baseline promotion are authorized.
+SPEC-032 passed its deterministic and browser machine gate. Owner review is required before any product verdict or promotion decision. No baseline promotion, follow-up implementation, or live/model/external call is authorized.
 
 ## Frozen / protected state
 
@@ -59,12 +59,13 @@ SPEC-032 is approved for offline implementation. The experiment separates learne
 - completed SPEC-029 atomic-context artifact, preserved as historical evidence after owner verdict `MIXED`;
 - completed SPEC-030 distinct-learning-surface candidate, preserved as best-known UI candidate after owner verdict `ROLE_SEPARATION_CONFIRMED`;
 - completed SPEC-031 reciprocal/multi-edge candidate, preserved after owner verdict `RELATIONSHIP_MULTIPLICITY_CONFIRMED`;
+- completed SPEC-032 learning-path navigation candidate, awaiting owner review and not promoted;
 - trusted semantic vocabulary, grounding, provenance, and fail-closed behavior;
 - unrelated user work.
 
 ## Next intended action
 
-Codex executes `specs/SPEC-032-learning-path-navigation-separation.md` exactly as the active approved packet, then returns the required owner-review artifact and handoff.
+Owner reviews the fixed SPEC-032 viewer and assigns one allowed verdict. No further implementation is active.
 
 ## Coordination rule
 
