@@ -6,66 +6,121 @@ This is the authoritative repository handoff for current work coordination. It p
 
 `BASELINE-004 — learner navigation workspace`
 
-BASELINE-001, BASELINE-002, BASELINE-003, and BASELINE-004 remain preserved historical/accepted states and must not be modified by ordinary implementation work.
+BASELINE-001 through BASELINE-004 remain preserved historical/accepted states and must not be modified by ordinary implementation work.
 
-## Best-known UI baseline candidate
+## Best-known focused-learning candidate
 
 `SPEC-030 — distinct learning surface representation`
 
 Owner verdict: `ROLE_SEPARATION_CONFIRMED`
 
-Result: strongest UI version so far. Map/navigation and learning/understanding responsibilities became materially distinct while retaining shared canonical semantic state and recursive interaction behavior. Preserve this state as the best-known working candidate; it is not promoted to a formal baseline.
+The separation remains accepted:
+
+```text
+navigation / map
+→ where am I / what territory have I revealed?
+
+focused learning surface
+→ what does this selected object mean?
+```
 
 ## Last completed work packet
 
 `SPEC-032 — learning-path navigation separation`
 
-Implementation status: `IMPLEMENTED_AWAITING_REVIEW`
+Implementation status: `IMPLEMENTED_REVIEWED`
 
-Owner review status: `PENDING`
+Owner verdict: `HISTORY_NAVIGATION_REJECTED__REVEALED_KNOWLEDGE_TREE_PREFERRED`
 
-See `examples/evaluations/spec-032-learning-path-navigation-separation-20260907/report.json`.
+Owner testing produced useful evidence but rejected visit-history nesting as the visible navigation architecture. Repeated history branches duplicated concepts/orientations, exhausted horizontal space, produced unreadable vertical labels, and deeper exploration eventually triggered an interaction freeze. Preserve SPEC-032 as historical evidence; do not patch its history tree as the primary solution.
 
 ## Current approved work packet
 
 ```text
-NONE
+specs/SPEC-033-canonical-revealed-knowledge-tree.md
 ```
 
-Status: `NONE`
+Status: `APPROVED_FOR_IMPLEMENTATION`
 
-Authority: `NONE`
+Authority: implement/test/document SPEC-033 only
 
-Human gate: `NONE`
+Human gate: owner review after implementation
 
 Promotion: `NOT_AUTHORIZED`
 
+## Current product direction
+
+The left navigation surface is now defined as **canonical revealed knowledge**, not learning history.
+
+```text
+MY MAP
+→ knowledge territory the learner has uncovered
+
+WHAT DOES THIS MEAN?
+→ focused explanation of the selected canonical object
+
+EXPLORE NEXT
+→ trusted frontier that could be revealed next
+```
+
+Only revealed knowledge belongs in the visible map. Revisiting an existing canonical concept/relationship must not duplicate it.
+
+History may still be captured internally as telemetry/evidence, but it must not structurally define navigation.
+
+Critical distinction:
+
+```text
+revealed knowledge ≠ understood/mastered knowledge
+```
+
+A future learner-state model may represent understanding separately. It is not part of SPEC-033.
+
 ## Current gate
 
-SPEC-032 passed its deterministic and browser machine gate. Owner review is required before any product verdict or promotion decision. No baseline promotion, follow-up implementation, or live/model/external call is authorized.
+Implement a canonical, deduplicated, collapsible revealed-knowledge tree that scales materially better than SPEC-032, preserves the successful focused-learning surface, and remains interactive after repeated deep exploration.
+
+SPEC-033 must specifically address the two owner-observed failures:
+
+1. history nesting exhausted horizontal space and broke label legibility;
+2. `Explore deeper` under the double-slit experiment eventually left the web app non-interactive.
 
 ## Frozen / protected state
 
-- executable and frozen assets for BASELINE-001 through BASELINE-004;
-- BASELINE-004 learner-navigation behavior accepted after SPEC-022;
-- frozen SPEC-020 realistic quantum semantic packet and its reviewed defects;
-- frozen SPEC-021 explanatory projection semantics;
-- completed SPEC-023/FIX-023 functional depth artifact as historical evidence;
-- completed SPEC-024 continuous-map depth artifact, preserved unchanged after owner verdict `DEPTH_NAVIGATION_BETTER`;
-- completed SPEC-025 depth-invariant-selection artifact, preserved unchanged after owner verdict `MIXED`;
-- completed SPEC-026 semantic-interaction artifact, preserved unchanged after owner verdict `MIXED`;
-- completed SPEC-027 recursive-interaction artifact, preserved unchanged after owner verdict `MIXED`;
-- completed SPEC-028 canonical-interaction-state artifact, preserved as evidence after owner verdict `MIXED`;
-- completed SPEC-029 atomic-context artifact, preserved as historical evidence after owner verdict `MIXED`;
-- completed SPEC-030 distinct-learning-surface candidate, preserved as best-known UI candidate after owner verdict `ROLE_SEPARATION_CONFIRMED`;
-- completed SPEC-031 reciprocal/multi-edge candidate, preserved after owner verdict `RELATIONSHIP_MULTIPLICITY_CONFIRMED`;
-- completed SPEC-032 learning-path navigation candidate, awaiting owner review and not promoted;
+- executable/frozen assets for BASELINE-001 through BASELINE-004;
 - trusted semantic vocabulary, grounding, provenance, and fail-closed behavior;
+- SPEC-030 role separation;
+- SPEC-031 reciprocal/multi-edge semantic identity;
+- prior completed SPEC artifacts as historical evidence;
+- source-bounded depth behavior already validated;
 - unrelated user work.
 
-## Next intended action
+## Direction after SPEC-033
 
-Owner reviews the fixed SPEC-032 viewer and assigns one allowed verdict. No further implementation is active.
+Do not implement these yet, but preserve the distinctions:
+
+```text
+KNOWLEDGE TOPOLOGY
+canonical semantic structure
+
+REVEALED MAP
+subset/projection the learner has uncovered
+
+LEARNER STATE
+separate evidence about understanding
+
+HISTORY
+observed traversal / telemetry
+
+PATHWAY
+recommended traversal through knowledge
+```
+
+Possible later sequence, contingent on evidence:
+
+1. learner-state model attached to canonical concepts/relationships;
+2. guided/recommended pathways as coordinates through the same knowledge world;
+3. learning-outcome evaluation;
+4. personalization based on explicit/validated learner evidence.
 
 ## Coordination rule
 
