@@ -43,15 +43,13 @@ Implementation status: `IMPLEMENTED_REVIEWED`
 
 Owner verdict: `CAPABILITY_CONFIRMED_SURFACE_NEEDS_PURIFICATION`
 
-The deterministic representation seam works and representation diversity should be preserved. Owner review found the right learning pane behaviorally incoherent because legacy navigation semantics remained mixed into explanatory representations: representation components could act as navigation, and `Explore deeper` duplicated the explicit `Explore Next` frontier.
+The deterministic representation seam works and representation diversity should be preserved.
 
 ## Explanatory-surface purification
 
 `SPEC-035 — explanatory surface purification`
 
 Implementation status: `IMPLEMENTED_REVIEWED`
-
-Owner observation: the separation of navigation, explanation, and recommendation is materially clearer. My Map works as revealed territory; Explore Next works as the explicit future-learning frontier; legacy implicit navigation from the explanatory surface is no longer the main bottleneck.
 
 Accepted invariant:
 
@@ -65,44 +63,52 @@ Implementation status: `IMPLEMENTED_REVIEWED`
 
 Owner verdict: `EXPLANATORY_INTERACTION_RESTORED_VISUAL_GRAMMAR_NEXT`
 
-Owner review confirms that SPEC-036 restored important explanatory capability on the cleaner architecture:
+Owner review confirms that SPEC-036 restored representation-local hover/click inspection and that this capability must be preserved.
 
-- concepts and relationships in the explanatory pane are locally inspectable again;
-- hover/click interaction feels materially better and should be preserved;
-- explanatory interaction remains separate from learner navigation;
-- representation diversity remains the correct architectural direction.
+## Visual semantic grammar
 
-The remaining dominant issue is visual-semantic ambiguity rather than interaction mechanics. Too many learner-facing objects still use the same bordered-card / pill / button-like grammar across My Map and the explanatory surface. This makes territory, semantic objects, relationships, recommendations, and actual controls look too similar and makes the interface visually repetitive.
+`SPEC-037 — visual semantic grammar`
 
-Owner also flagged learner-facing remnants such as `Trusted relationships` that may duplicate the dominant representation without providing active explanatory value.
+Implementation status: `IMPLEMENTED_REVIEWED`
+
+Owner verdict: `TERRITORY_GRAMMAR_CONFIRMED_EXPLANATORY_SPATIAL_ENCODING_REGRESSED`
+
+Owner review confirms:
+
+- My Map is materially improved by the quiet tree/territory grammar and should be preserved;
+- the explanatory surface overcorrected away from generic cards and flattened structural representations toward typography;
+- structural explanations are now less visually distinctive and less immediately legible than the earlier diagram-rich candidates;
+- representation-local hover/click inspection remains useful;
+- representation diversity remains authoritative;
+- the next packet should restore true spatial/diagrammatic explanatory composition without restoring navigation coupling.
 
 ## Current approved work packet
 
 ```text
-NONE
+specs/SPEC-038-dominant-explanatory-diagram-canvas.md
 ```
 
-Status: `NONE`
+Status: `APPROVED_FOR_IMPLEMENTATION`
 
-Authority: `NONE`
+Authority: `OFFLINE_ONLY`
 
-Human gate: `NONE`
+Human gate: `OWNER_REVIEW`
 
 Promotion: `NOT_AUTHORIZED`
 
 ## Current product direction
 
-The project keeps the clean responsibility model established by SPEC-033 through SPEC-036 while making visual form communicate semantic role.
+The project keeps the clean responsibility model established by SPEC-033 through SPEC-037 while restoring spatial explanatory power where trusted semantics warrant it.
 
 ```text
 MY MAP
 → revealed territory / deliberate navigation
-→ quiet tree / territory grammar
+→ quiet tree / territory grammar from SPEC-037
 
 WHAT DOES THIS MEAN?
 → dominant representation of the current knowledge object
-→ representation-specific visual grammar
-→ local inspectable semantic components
+→ true spatial/diagrammatic composition for structural strategies
+→ representation-local inspection only
 
 INSPECT / SELECTED / PREVIEW
 → grounded text for the inspected component/relationship
@@ -139,17 +145,19 @@ The active representation principle remains:
 
 > The compiler should choose the representation that minimizes the cognitive work required to understand the trusted structure currently in focus.
 
-SPEC-037 adds the visual principle:
+SPEC-038 adds the current visual interpretation:
 
-> Visual form should communicate semantic role.
+> Explanation should not look like navigation, but semantic structure must still look like structure.
 
-A concept, relationship, region, recommendation, inspection state, and actual control should not all look like variants of the same button.
+And:
+
+> Removing boxes is not the same thing as creating a diagram.
 
 Representation strategy remains heterogeneous: causal/mechanism, process/sequence, hierarchy/composition, compare/contrast, worked example, focused relationship, concise prose, or another truthfully supported form.
 
 ## Current gate
 
-SPEC-037 is implemented and awaiting owner review. There is no active approved implementation packet. Baseline promotion, live/model/external calls, and unrelated follow-up implementation remain unauthorized.
+SPEC-038 is the only active approved implementation packet. Implementation is authorized offline only. Owner review is required after implementation. Baseline promotion, live/model/external calls, and unrelated follow-up implementation remain unauthorized.
 
 ## Frozen / protected state
 
@@ -161,6 +169,7 @@ SPEC-037 is implemented and awaiting owner review. There is no active approved i
 - SPEC-034 deterministic representation-strategy capability;
 - SPEC-035 explanatory/navigation interaction isolation;
 - SPEC-036 representation-local hover/click inspection semantics;
+- SPEC-037 My Map quiet tree/territory visual grammar;
 - trusted semantic vocabulary, grounding, provenance, and fail-closed behavior;
 - source-bounded depth behavior;
 - unrelated user work.
@@ -178,12 +187,10 @@ Do not yet implement:
 - guided pathways/courses;
 - automatic analogy generation;
 - broad navigation architecture redesign;
-- universal final renderer;
+- universal graph viewer;
 - decorative animation as a product goal.
 
-My Map visual grammar is no longer deferred: SPEC-037 explicitly authorizes visual tree/territory restyling while freezing its revealed-knowledge data model and navigation behavior.
-
-A later packet may separately test traversal-memory semantics after the learner-facing semantic grammar is stable.
+A later packet may separately test traversal-memory semantics after the learner-facing explanatory grammar is stable.
 
 ## Coordination rule
 
