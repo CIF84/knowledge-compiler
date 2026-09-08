@@ -79,14 +79,14 @@ Owner also flagged learner-facing remnants such as `Trusted relationships` that 
 ## Current approved work packet
 
 ```text
-specs/SPEC-037-visual-semantic-grammar.md
+NONE
 ```
 
-Status: `APPROVED_FOR_IMPLEMENTATION`
+Status: `NONE`
 
-Authority: `OFFLINE_ONLY`
+Authority: `NONE`
 
-Human gate: `OWNER_REVIEW`
+Human gate: `NONE`
 
 Promotion: `NOT_AUTHORIZED`
 
@@ -149,7 +149,7 @@ Representation strategy remains heterogeneous: causal/mechanism, process/sequenc
 
 ## Current gate
 
-SPEC-037 is approved for offline implementation. Codex may implement only the active packet under its stated authority. Owner review is required after implementation. Baseline promotion, live/model/external calls, and unrelated follow-up implementation remain unauthorized.
+SPEC-037 is implemented and awaiting owner review. There is no active approved implementation packet. Baseline promotion, live/model/external calls, and unrelated follow-up implementation remain unauthorized.
 
 ## Frozen / protected state
 

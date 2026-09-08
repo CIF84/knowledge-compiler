@@ -27,6 +27,9 @@ from .explanatory_surface_evaluation import prepare_explanatory_surface_evaluati
 from .structure_aware_surface_evaluation import (
     prepare_structure_aware_surface_evaluation,
 )
+from .visual_semantic_grammar_evaluation import (
+    prepare_visual_semantic_grammar_evaluation,
+)
 from .interface_restoration_evaluation import prepare_interface_restoration_evaluation
 from .learner_navigation_evaluation import prepare_learner_navigation_evaluation
 from .learning_path_evaluation import prepare_learning_path_evaluation
@@ -371,6 +374,11 @@ def _parser() -> argparse.ArgumentParser:
         help="build the offline SPEC-036 inspectable explanatory surface",
     )
     structure_aware_surface.add_argument("--output-dir", required=True, type=Path)
+    visual_semantic_grammar = subcommands.add_parser(
+        "prepare-visual-semantic-grammar",
+        help="build the offline SPEC-037 visual-semantic grammar",
+    )
+    visual_semantic_grammar.add_argument("--output-dir", required=True, type=Path)
     view = subcommands.add_parser("view-representations", help="serve a prepared representation review locally")
     view.add_argument("directory", type=Path)
     view.add_argument("--host", default="127.0.0.1")
@@ -382,6 +390,17 @@ def _parser() -> argparse.ArgumentParser:
 def main(argv: list[str] | None = None) -> int:
     args = _parser().parse_args(argv)
     try:
+        if args.command == "prepare-visual-semantic-grammar":
+            report = prepare_visual_semantic_grammar_evaluation(
+                output_dir=args.output_dir
+            )
+            print(
+                f"Wrote {args.output_dir / 'report.json'} "
+                f"(machine integrity {report['machine_integrity_verdict']}; "
+                "browser verification pending)"
+            )
+            return 0
+
         if args.command == "prepare-structure-aware-surface":
             report = prepare_structure_aware_surface_evaluation(
                 output_dir=args.output_dir

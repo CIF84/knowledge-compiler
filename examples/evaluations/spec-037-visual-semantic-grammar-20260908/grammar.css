@@ -1,0 +1,10 @@
+/* SPEC-022 changes learner controls, not the frozen BASELINE-003 shell. */
+body:not(.evaluator-mode) #representation-presets,body:not(.evaluator-mode) .learning-pane>.learning-meta,body:not(.evaluator-mode) .fixture-label,body:not(.evaluator-mode) #learning-detail .detail-grid{display:none}
+.domain-region.region-entry,.domain-region-label.region-entry{pointer-events:auto;cursor:pointer}
+.domain-region.region-entry:focus,.domain-region-label.region-entry:focus{outline:none}
+.domain-region.region-entry:focus-visible{stroke:var(--preview);stroke-width:4;stroke-dasharray:7 4}
+.domain-region.current-region{stroke:var(--accent);stroke-width:3}.domain-region-label.current-region{fill:var(--accent)}
+.contextual-depth{margin-top:10px;padding:7px 11px;border:1px solid var(--accent);border-radius:999px;background:white;color:var(--accent);cursor:pointer;font-size:12px;font-weight:750}
+.projection-shell{display:grid;grid-template-rows:auto minmax(0,1fr);gap:9px;min-height:0}.projection-shell .learning-meta{display:flex!important}.projection-shell .learning-workspace{height:100%}.projection-return{margin-left:auto;padding:4px 10px;border:1px solid var(--accent);border-radius:999px;background:white;color:var(--accent);cursor:pointer;font-size:11px;font-weight:750}
+.learning-pane>.learning-meta[hidden],.learning-pane>.learning-workspace[hidden]{display:none!important}
+.learner-orientation{color:var(--muted);font-size:11px}.learner-mode-label{padding:3px 7px;border-radius:4px;background:var(--accent-soft);color:var(--accent);font-size:10px;font-weight:800;letter-spacing:.08em}

@@ -1,0 +1,229 @@
+{
+  "additional_observations": {
+    "forward_learning": {
+      "active_explore_deeper_count": 0,
+      "sole_forward_control": "Explore Next"
+    },
+    "obsolete_learner_artifacts": {
+      "canonical_relationship_buttons_and_plan_data_preserved": true,
+      "trusted_relationships_heading_visible": false
+    },
+    "reciprocal_relationship": {
+      "directions": [
+        "Electric field · INDUCES → Magnetic field",
+        "Magnetic field · INDUCES → Electric field"
+      ],
+      "result": "PASS",
+      "strategy": "RECIPROCAL_MECHANISM"
+    },
+    "runtime_ownership": {
+      "local_inspection_handlers_added_by_spec037": 0,
+      "navigation_handlers_added_by_spec037": 0
+    }
+  },
+  "browser": "Codex in-app browser (Chromium), http://127.0.0.1:8037/?gate=final",
+  "checked_at": "2026-09-08T09:50:00+02:00",
+  "checks": {
+    "browser_console_clean": true,
+    "canonical_relationship_data_is_preserved": true,
+    "clear_inspection_restores_focus_summary": true,
+    "concise_prose_remains_predominantly_prose": true,
+    "current_focus_remains_visible_in_my_map": true,
+    "double_slit_reads_as_directional_causal_flow": true,
+    "evidence_and_provenance_remain_available": true,
+    "explore_next_remains_visibly_actionable_and_sole_forward_control": true,
+    "focused_relationship_reads_as_connection": true,
+    "history_dependency_visual_grammar_is_distinct": true,
+    "history_sequence_visual_grammar_is_distinct": true,
+    "light_hierarchy_is_compact_and_recognizable": true,
+    "local_click_pins_inspection_only": true,
+    "local_hover_updates_inspection_only": true,
+    "mixed_my_map_reads_as_quiet_territory_tree": true,
+    "my_map_collapse_expand_is_unchanged": true,
+    "my_map_navigation_is_unchanged": true,
+    "no_active_explore_deeper_affordance": true,
+    "reciprocal_relationship_directions_remain_distinct": true,
+    "semantic_objects_are_visually_distinct_from_actions": true,
+    "software_composition_visual_grammar_is_distinct": true,
+    "trusted_relationships_heading_is_absent": true
+  },
+  "console": {
+    "errors": [],
+    "result": "PASS",
+    "warnings": []
+  },
+  "deterministic_captures": [
+    {
+      "behavior": "region/concept/relationship selection and collapse/expand use the byte-identical SPEC-033 runtime",
+      "case": "mixed_my_map",
+      "deterministic_observation": {
+        "current_focus_agreement": "PASS",
+        "duplicate_visible_object_count": 0,
+        "focus_and_revealed_state_unchanged_by_collapse_expand": true,
+        "regions": [
+          "Economics",
+          "Electromagnetism",
+          "History of Printing",
+          "Software Architecture"
+        ],
+        "revealed_object_count": 18,
+        "unique_visible_object_count": 18,
+        "visible_object_count_after_electromagnetism_collapse": 4,
+        "visible_object_count_after_expand": 18,
+        "visible_object_count_before_collapse": 18
+      },
+      "representation_strategy": "MULTI_REGION_MY_MAP",
+      "result": "PASS",
+      "semantic_focus_identity": "mixed revealed territory",
+      "visual_grammar_roles": [
+        "territory-region",
+        "territory-concept",
+        "territory-relationship",
+        "territory-explanation",
+        "tree-disclosure"
+      ]
+    },
+    {
+      "case": "double_slit",
+      "directional_flow_visible": true,
+      "evidence_and_provenance_available": true,
+      "focus_before_after_local_interaction": [
+        "concept:double-slit-experiment",
+        "concept:double-slit-experiment"
+      ],
+      "inspectable_component_count": 3,
+      "local_interaction": "pointer hover preview, click pin, and Clear inspection",
+      "representation_strategy": "CAUSAL_MECHANISM",
+      "result": "PASS",
+      "revealed_knowledge_before_after_local_interaction": [
+        2,
+        2
+      ],
+      "semantic_focus_identity": "double-slit-experiment",
+      "visual_grammar_roles": [
+        "semantic-concept",
+        "directional-connector"
+      ]
+    },
+    {
+      "case": "focused_relationship",
+      "evidence_and_provenance_available": true,
+      "focus_before_after_local_interaction": [
+        "canonical:changing-electric-field-induces-magnetic-field",
+        "canonical:changing-electric-field-induces-magnetic-field"
+      ],
+      "inspectable_component_count": 3,
+      "navigation_mutation": false,
+      "representation_strategy": "FOCUSED_RELATIONSHIP",
+      "result": "PASS",
+      "revealed_knowledge_before_after_local_interaction": [
+        25,
+        25
+      ],
+      "selected_component": "canonical:changing-electric-field-induces-magnetic-field",
+      "semantic_focus_identity": "changing-electric-field-induces-magnetic-field",
+      "state_separation": "PASS",
+      "visual_grammar_roles": [
+        "semantic-endpoint",
+        "connective-predicate",
+        "semantic-endpoint"
+      ]
+    },
+    {
+      "case": "light_hierarchy",
+      "evidence_and_provenance_available": true,
+      "inspectable_component_count": 3,
+      "rendered_connector_count": 1,
+      "rendered_semantic_object_count": 2,
+      "representation_strategy": "HIERARCHY_COMPOSITION",
+      "result": "PASS",
+      "semantic_focus_identity": "light",
+      "sparse_structure_copy_visible": true,
+      "visual_grammar_roles": [
+        "semantic-root",
+        "hierarchy-branch",
+        "semantic-member"
+      ]
+    },
+    {
+      "case": "history_dependency",
+      "evidence_and_provenance_available": true,
+      "focus_before_after_local_interaction": [
+        "concept:printing",
+        "concept:printing"
+      ],
+      "inspectable_component_count": 7,
+      "navigation_mutation": false,
+      "representation_strategy": "DEPENDENCY_STRUCTURE",
+      "result": "PASS",
+      "revealed_knowledge_before_after_local_interaction": [
+        21,
+        21
+      ],
+      "selected_component": "concept:movable-metal-type",
+      "semantic_focus_identity": "printing",
+      "visual_grammar_roles": [
+        "dependency-source",
+        "enablement-connector",
+        "dependency-target"
+      ]
+    },
+    {
+      "canonical_relationship": "canonical:rel-controversy-precedes-response",
+      "case": "history_sequence",
+      "evidence_and_provenance_available": true,
+      "inspectable_component_count": 3,
+      "ordered_stage_track_visible": true,
+      "representation_strategy": "PROCESS_SEQUENCE",
+      "result": "PASS",
+      "semantic_focus_identity": "authorities",
+      "visual_grammar_roles": [
+        "ordered-stage",
+        "sequence-track",
+        "ordered-stage"
+      ]
+    },
+    {
+      "case": "software_composition",
+      "evidence_and_provenance_available": true,
+      "focus_before_after_local_interaction": [
+        "concept:modular-order-processing-service",
+        "concept:modular-order-processing-service"
+      ],
+      "inspectable_component_count": 9,
+      "navigation_mutation": false,
+      "rendered_connector_count": 5,
+      "rendered_semantic_object_count": 5,
+      "representation_contained_without_zone_overlap": true,
+      "representation_strategy": "HIERARCHY_COMPOSITION",
+      "result": "PASS",
+      "revealed_knowledge_before_after_local_interaction": [
+        19,
+        19
+      ],
+      "selected_component": "concept:api-component",
+      "semantic_focus_identity": "modular-order-processing-service",
+      "visual_grammar_roles": [
+        "architecture-root",
+        "composition-branch",
+        "architecture-components"
+      ]
+    },
+    {
+      "artificial_structure_added": false,
+      "case": "prose_fallback",
+      "evidence_and_provenance_section_available": true,
+      "inspectable_component_count": 0,
+      "predominantly_prose": true,
+      "rendered_connector_count": 0,
+      "rendered_semantic_object_count": 0,
+      "representation_strategy": "CONCISE_PROSE",
+      "result": "PASS",
+      "semantic_focus_identity": "atom",
+      "visual_grammar_roles": [
+        "reading-prose"
+      ]
+    }
+  ],
+  "status": "PASS"
+}

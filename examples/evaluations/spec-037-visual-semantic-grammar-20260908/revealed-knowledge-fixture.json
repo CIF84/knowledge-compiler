@@ -1,0 +1,4003 @@
+{
+  "continuations": [
+    {
+      "basis": "CANONICAL_RELATIONSHIP",
+      "basis_identity": "changing-electric-field-induces-magnetic-field",
+      "relationship_object_key": "canonical:changing-electric-field-induces-magnetic-field",
+      "source_object_key": "concept:electric-field",
+      "target_object_key": "concept:magnetic-field"
+    },
+    {
+      "basis": "CANONICAL_RELATIONSHIP",
+      "basis_identity": "changing-magnetic-field-induces-electric-field",
+      "relationship_object_key": "canonical:changing-magnetic-field-induces-electric-field",
+      "source_object_key": "concept:magnetic-field",
+      "target_object_key": "concept:electric-field"
+    },
+    {
+      "basis": "CANONICAL_RELATIONSHIP",
+      "basis_identity": "light-is-electromagnetic-wave",
+      "relationship_object_key": "canonical:light-is-electromagnetic-wave",
+      "source_object_key": "concept:light",
+      "target_object_key": "concept:electromagnetic-wave"
+    },
+    {
+      "basis": "CANONICAL_RELATIONSHIP",
+      "basis_identity": "rel-1",
+      "relationship_object_key": "canonical:rel-1",
+      "source_object_key": "concept:api-component",
+      "target_object_key": "concept:modular-order-processing-service"
+    },
+    {
+      "basis": "CANONICAL_RELATIONSHIP",
+      "basis_identity": "rel-2",
+      "relationship_object_key": "canonical:rel-2",
+      "source_object_key": "concept:order-component",
+      "target_object_key": "concept:modular-order-processing-service"
+    },
+    {
+      "basis": "CANONICAL_RELATIONSHIP",
+      "basis_identity": "rel-3",
+      "relationship_object_key": "canonical:rel-3",
+      "source_object_key": "concept:payment-component",
+      "target_object_key": "concept:modular-order-processing-service"
+    },
+    {
+      "basis": "CANONICAL_RELATIONSHIP",
+      "basis_identity": "rel-4",
+      "relationship_object_key": "canonical:rel-4",
+      "source_object_key": "concept:database",
+      "target_object_key": "concept:modular-order-processing-service"
+    },
+    {
+      "basis": "CANONICAL_RELATIONSHIP",
+      "basis_identity": "rel-6",
+      "relationship_object_key": "canonical:rel-6",
+      "source_object_key": "concept:order-component",
+      "target_object_key": "concept:payment-component"
+    },
+    {
+      "basis": "CANONICAL_RELATIONSHIP",
+      "basis_identity": "rel-8",
+      "relationship_object_key": "canonical:rel-8",
+      "source_object_key": "concept:payment-component",
+      "target_object_key": "concept:database"
+    },
+    {
+      "basis": "CANONICAL_RELATIONSHIP",
+      "basis_identity": "rel-controversy-precedes-response",
+      "relationship_object_key": "canonical:rel-controversy-precedes-response",
+      "source_object_key": "concept:printed-controversy",
+      "target_object_key": "concept:authorities"
+    },
+    {
+      "basis": "CANONICAL_RELATIONSHIP",
+      "basis_identity": "rel-higher-price-decreases-demanded",
+      "relationship_object_key": "canonical:rel-higher-price-decreases-demanded",
+      "source_object_key": "concept:market-price",
+      "target_object_key": "concept:quantity-demanded"
+    },
+    {
+      "basis": "CANONICAL_RELATIONSHIP",
+      "basis_identity": "rel-higher-price-increases-supplied",
+      "relationship_object_key": "canonical:rel-higher-price-increases-supplied",
+      "source_object_key": "concept:market-price",
+      "target_object_key": "concept:quantity-supplied"
+    },
+    {
+      "basis": "CANONICAL_RELATIONSHIP",
+      "basis_identity": "rel-press-enables-printing",
+      "relationship_object_key": "canonical:rel-press-enables-printing",
+      "source_object_key": "concept:press",
+      "target_object_key": "concept:printing"
+    },
+    {
+      "basis": "CANONICAL_RELATIONSHIP",
+      "basis_identity": "rel-price-decreases-demanded",
+      "relationship_object_key": "canonical:rel-price-decreases-demanded",
+      "source_object_key": "concept:market-price",
+      "target_object_key": "concept:quantity-demanded"
+    },
+    {
+      "basis": "CANONICAL_RELATIONSHIP",
+      "basis_identity": "rel-price-increases-supplied",
+      "relationship_object_key": "canonical:rel-price-increases-supplied",
+      "source_object_key": "concept:market-price",
+      "target_object_key": "concept:quantity-supplied"
+    },
+    {
+      "basis": "CANONICAL_RELATIONSHIP",
+      "basis_identity": "rel-printing-enables-copies",
+      "relationship_object_key": "canonical:rel-printing-enables-copies",
+      "source_object_key": "concept:printing",
+      "target_object_key": "concept:printed-books"
+    },
+    {
+      "basis": "CANONICAL_RELATIONSHIP",
+      "basis_identity": "rel-shortage-upward-pressure",
+      "relationship_object_key": "canonical:rel-shortage-upward-pressure",
+      "source_object_key": "concept:shortage",
+      "target_object_key": "concept:upward-price-pressure"
+    },
+    {
+      "basis": "CANONICAL_RELATIONSHIP",
+      "basis_identity": "rel-supply-reduction-price-increase",
+      "relationship_object_key": "canonical:rel-supply-reduction-price-increase",
+      "source_object_key": "concept:supply-reduction",
+      "target_object_key": "concept:market-price"
+    },
+    {
+      "basis": "CANONICAL_RELATIONSHIP",
+      "basis_identity": "rel-type-enables-printing",
+      "relationship_object_key": "canonical:rel-type-enables-printing",
+      "source_object_key": "concept:movable-metal-type",
+      "target_object_key": "concept:printing"
+    },
+    {
+      "basis": "CANONICAL_RELATIONSHIP",
+      "basis_identity": "rel-upward-pressure-price",
+      "relationship_object_key": "canonical:rel-upward-pressure-price",
+      "source_object_key": "concept:upward-price-pressure",
+      "target_object_key": "concept:market-price"
+    },
+    {
+      "basis": "CANONICAL_RELATIONSHIP",
+      "basis_identity": "relationship-05b19ee4b6d50060",
+      "relationship_object_key": "canonical:relationship-05b19ee4b6d50060",
+      "source_object_key": "concept:double-slit-experiment",
+      "target_object_key": "concept:interference-pattern"
+    },
+    {
+      "basis": "CANONICAL_RELATIONSHIP",
+      "basis_identity": "relationship-3fadf1ab890d9bde",
+      "relationship_object_key": "canonical:relationship-3fadf1ab890d9bde",
+      "source_object_key": "concept:double-slit-experiment",
+      "target_object_key": "concept:interference-pattern"
+    },
+    {
+      "basis": "CANONICAL_RELATIONSHIP",
+      "basis_identity": "relationship-7d1b3317e1e4c682",
+      "relationship_object_key": "canonical:relationship-7d1b3317e1e4c682",
+      "source_object_key": "concept:waveparticle-duality",
+      "target_object_key": "concept:principle-of-complementarity"
+    },
+    {
+      "basis": "SHARED_SOURCE_EXPLANATION",
+      "basis_identity": "explanation-49c2a9a32b078712",
+      "relationship_object_key": null,
+      "source_object_key": "concept:electron",
+      "target_object_key": "concept:interference-pattern"
+    },
+    {
+      "basis": "SHARED_SOURCE_EXPLANATION",
+      "basis_identity": "explanation-49c2a9a32b078712",
+      "relationship_object_key": null,
+      "source_object_key": "concept:electron",
+      "target_object_key": "concept:photon"
+    },
+    {
+      "basis": "SHARED_SOURCE_EXPLANATION",
+      "basis_identity": "explanation-49c2a9a32b078712",
+      "relationship_object_key": null,
+      "source_object_key": "concept:interference-pattern",
+      "target_object_key": "concept:photon"
+    },
+    {
+      "basis": "SHARED_SOURCE_EXPLANATION",
+      "basis_identity": "explanation-6a9db96dcce9c27d",
+      "relationship_object_key": null,
+      "source_object_key": "concept:photon",
+      "target_object_key": "concept:waveparticle-duality"
+    },
+    {
+      "basis": "SHARED_SOURCE_EXPLANATION",
+      "basis_identity": "explanation-a4ca636403e86833",
+      "relationship_object_key": null,
+      "source_object_key": "concept:double-slit-experiment",
+      "target_object_key": "concept:principle-of-complementarity"
+    },
+    {
+      "basis": "SHARED_SOURCE_EXPLANATION",
+      "basis_identity": "explanation-ae10fa8748fdac1f",
+      "relationship_object_key": null,
+      "source_object_key": "concept:atom",
+      "target_object_key": "concept:double-slit-experiment"
+    },
+    {
+      "basis": "SHARED_SOURCE_EXPLANATION",
+      "basis_identity": "explanation-ae10fa8748fdac1f",
+      "relationship_object_key": null,
+      "source_object_key": "concept:atom",
+      "target_object_key": "concept:electron"
+    },
+    {
+      "basis": "SHARED_SOURCE_EXPLANATION",
+      "basis_identity": "explanation-ae10fa8748fdac1f",
+      "relationship_object_key": null,
+      "source_object_key": "concept:atom",
+      "target_object_key": "concept:interference-pattern"
+    },
+    {
+      "basis": "SHARED_SOURCE_EXPLANATION",
+      "basis_identity": "explanation-ae10fa8748fdac1f",
+      "relationship_object_key": null,
+      "source_object_key": "concept:double-slit-experiment",
+      "target_object_key": "concept:electron"
+    },
+    {
+      "basis": "SHARED_SOURCE_EXPLANATION",
+      "basis_identity": "explanation-ae10fa8748fdac1f",
+      "relationship_object_key": null,
+      "source_object_key": "concept:double-slit-experiment",
+      "target_object_key": "concept:interference-pattern"
+    },
+    {
+      "basis": "SHARED_SOURCE_EXPLANATION",
+      "basis_identity": "explanation-ae10fa8748fdac1f",
+      "relationship_object_key": null,
+      "source_object_key": "concept:electron",
+      "target_object_key": "concept:interference-pattern"
+    }
+  ],
+  "initial_object_key": "orientation:domain:electromagnetism",
+  "large_tree": {
+    "collapsed_snapshot": {
+      "history_structurally_defines_navigation": false,
+      "navigation_edge_semantics": "PROJECTION_GROUPING_ONLY",
+      "nodes": [
+        {
+          "domain_id": "synthetic-1",
+          "expanded": false,
+          "kind": "orientation",
+          "label": "Synthetic region 1",
+          "object_key": "orientation:synthetic-root-1",
+          "parent_object_key": null,
+          "projection_basis": "SYNTHETIC_LAYOUT_ROOT",
+          "selected": false,
+          "semantic_identity": null,
+          "telemetry": {
+            "first_revealed_index": 1,
+            "last_visited_index": 2,
+            "object_key": "orientation:synthetic-root-1",
+            "revealed_from": null,
+            "visit_count": 1
+          }
+        },
+        {
+          "domain_id": "synthetic-1",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 1.1.1 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-1-1-1",
+          "parent_object_key": "orientation:synthetic-root-1",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-1-1-1",
+          "telemetry": {
+            "first_revealed_index": 3,
+            "object_key": "concept:synthetic-1-1-1",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-1",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 1.1.2 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-1-1-2",
+          "parent_object_key": "concept:synthetic-1-1-1",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-1-1-2",
+          "telemetry": {
+            "first_revealed_index": 4,
+            "object_key": "concept:synthetic-1-1-2",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-1",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 1.1.3 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-1-1-3",
+          "parent_object_key": "concept:synthetic-1-1-2",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-1-1-3",
+          "telemetry": {
+            "first_revealed_index": 5,
+            "object_key": "concept:synthetic-1-1-3",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-1",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 1.1.4 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-1-1-4",
+          "parent_object_key": "concept:synthetic-1-1-3",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-1-1-4",
+          "telemetry": {
+            "first_revealed_index": 6,
+            "object_key": "concept:synthetic-1-1-4",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-1",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 1.1.5 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-1-1-5",
+          "parent_object_key": "concept:synthetic-1-1-4",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-1-1-5",
+          "telemetry": {
+            "first_revealed_index": 7,
+            "object_key": "concept:synthetic-1-1-5",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-1",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 1.1.6 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-1-1-6",
+          "parent_object_key": "concept:synthetic-1-1-5",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-1-1-6",
+          "telemetry": {
+            "first_revealed_index": 8,
+            "object_key": "concept:synthetic-1-1-6",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-1",
+          "expanded": false,
+          "kind": "concept",
+          "label": "Readable synthetic concept 1.1.7 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-1-1-7",
+          "parent_object_key": "concept:synthetic-1-1-6",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-1-1-7",
+          "telemetry": {
+            "first_revealed_index": 9,
+            "object_key": "concept:synthetic-1-1-7",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-1",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 1.2.1 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-1-2-1",
+          "parent_object_key": "orientation:synthetic-root-1",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-1-2-1",
+          "telemetry": {
+            "first_revealed_index": 10,
+            "object_key": "concept:synthetic-1-2-1",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-1",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 1.2.2 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-1-2-2",
+          "parent_object_key": "concept:synthetic-1-2-1",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-1-2-2",
+          "telemetry": {
+            "first_revealed_index": 11,
+            "object_key": "concept:synthetic-1-2-2",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-1",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 1.2.3 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-1-2-3",
+          "parent_object_key": "concept:synthetic-1-2-2",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-1-2-3",
+          "telemetry": {
+            "first_revealed_index": 12,
+            "object_key": "concept:synthetic-1-2-3",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-1",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 1.2.4 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-1-2-4",
+          "parent_object_key": "concept:synthetic-1-2-3",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-1-2-4",
+          "telemetry": {
+            "first_revealed_index": 13,
+            "object_key": "concept:synthetic-1-2-4",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-1",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 1.2.5 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-1-2-5",
+          "parent_object_key": "concept:synthetic-1-2-4",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-1-2-5",
+          "telemetry": {
+            "first_revealed_index": 14,
+            "object_key": "concept:synthetic-1-2-5",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-1",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 1.2.6 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-1-2-6",
+          "parent_object_key": "concept:synthetic-1-2-5",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-1-2-6",
+          "telemetry": {
+            "first_revealed_index": 15,
+            "object_key": "concept:synthetic-1-2-6",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-1",
+          "expanded": false,
+          "kind": "concept",
+          "label": "Readable synthetic concept 1.2.7 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-1-2-7",
+          "parent_object_key": "concept:synthetic-1-2-6",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-1-2-7",
+          "telemetry": {
+            "first_revealed_index": 16,
+            "object_key": "concept:synthetic-1-2-7",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-2",
+          "expanded": true,
+          "kind": "orientation",
+          "label": "Synthetic region 2",
+          "object_key": "orientation:synthetic-root-2",
+          "parent_object_key": null,
+          "projection_basis": "SYNTHETIC_LAYOUT_ROOT",
+          "selected": false,
+          "semantic_identity": null,
+          "telemetry": {
+            "first_revealed_index": 17,
+            "object_key": "orientation:synthetic-root-2",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-2",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 2.1.1 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-2-1-1",
+          "parent_object_key": "orientation:synthetic-root-2",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-2-1-1",
+          "telemetry": {
+            "first_revealed_index": 18,
+            "object_key": "concept:synthetic-2-1-1",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-2",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 2.1.2 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-2-1-2",
+          "parent_object_key": "concept:synthetic-2-1-1",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-2-1-2",
+          "telemetry": {
+            "first_revealed_index": 19,
+            "object_key": "concept:synthetic-2-1-2",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-2",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 2.1.3 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-2-1-3",
+          "parent_object_key": "concept:synthetic-2-1-2",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-2-1-3",
+          "telemetry": {
+            "first_revealed_index": 20,
+            "object_key": "concept:synthetic-2-1-3",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-2",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 2.1.4 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-2-1-4",
+          "parent_object_key": "concept:synthetic-2-1-3",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-2-1-4",
+          "telemetry": {
+            "first_revealed_index": 21,
+            "object_key": "concept:synthetic-2-1-4",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-2",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 2.1.5 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-2-1-5",
+          "parent_object_key": "concept:synthetic-2-1-4",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-2-1-5",
+          "telemetry": {
+            "first_revealed_index": 22,
+            "object_key": "concept:synthetic-2-1-5",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-2",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 2.1.6 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-2-1-6",
+          "parent_object_key": "concept:synthetic-2-1-5",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-2-1-6",
+          "telemetry": {
+            "first_revealed_index": 23,
+            "object_key": "concept:synthetic-2-1-6",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-2",
+          "expanded": false,
+          "kind": "concept",
+          "label": "Readable synthetic concept 2.1.7 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-2-1-7",
+          "parent_object_key": "concept:synthetic-2-1-6",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-2-1-7",
+          "telemetry": {
+            "first_revealed_index": 24,
+            "object_key": "concept:synthetic-2-1-7",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-2",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 2.2.1 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-2-2-1",
+          "parent_object_key": "orientation:synthetic-root-2",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-2-2-1",
+          "telemetry": {
+            "first_revealed_index": 25,
+            "object_key": "concept:synthetic-2-2-1",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-2",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 2.2.2 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-2-2-2",
+          "parent_object_key": "concept:synthetic-2-2-1",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-2-2-2",
+          "telemetry": {
+            "first_revealed_index": 26,
+            "object_key": "concept:synthetic-2-2-2",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-2",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 2.2.3 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-2-2-3",
+          "parent_object_key": "concept:synthetic-2-2-2",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-2-2-3",
+          "telemetry": {
+            "first_revealed_index": 27,
+            "object_key": "concept:synthetic-2-2-3",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-2",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 2.2.4 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-2-2-4",
+          "parent_object_key": "concept:synthetic-2-2-3",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-2-2-4",
+          "telemetry": {
+            "first_revealed_index": 28,
+            "object_key": "concept:synthetic-2-2-4",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-2",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 2.2.5 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-2-2-5",
+          "parent_object_key": "concept:synthetic-2-2-4",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-2-2-5",
+          "telemetry": {
+            "first_revealed_index": 29,
+            "object_key": "concept:synthetic-2-2-5",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-2",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 2.2.6 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-2-2-6",
+          "parent_object_key": "concept:synthetic-2-2-5",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-2-2-6",
+          "telemetry": {
+            "first_revealed_index": 30,
+            "object_key": "concept:synthetic-2-2-6",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-2",
+          "expanded": false,
+          "kind": "concept",
+          "label": "Readable synthetic concept 2.2.7 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-2-2-7",
+          "parent_object_key": "concept:synthetic-2-2-6",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-2-2-7",
+          "telemetry": {
+            "first_revealed_index": 31,
+            "object_key": "concept:synthetic-2-2-7",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-3",
+          "expanded": true,
+          "kind": "orientation",
+          "label": "Synthetic region 3",
+          "object_key": "orientation:synthetic-root-3",
+          "parent_object_key": null,
+          "projection_basis": "SYNTHETIC_LAYOUT_ROOT",
+          "selected": false,
+          "semantic_identity": null,
+          "telemetry": {
+            "first_revealed_index": 32,
+            "object_key": "orientation:synthetic-root-3",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-3",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 3.1.1 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-3-1-1",
+          "parent_object_key": "orientation:synthetic-root-3",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-3-1-1",
+          "telemetry": {
+            "first_revealed_index": 33,
+            "object_key": "concept:synthetic-3-1-1",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-3",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 3.1.2 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-3-1-2",
+          "parent_object_key": "concept:synthetic-3-1-1",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-3-1-2",
+          "telemetry": {
+            "first_revealed_index": 34,
+            "object_key": "concept:synthetic-3-1-2",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-3",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 3.1.3 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-3-1-3",
+          "parent_object_key": "concept:synthetic-3-1-2",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-3-1-3",
+          "telemetry": {
+            "first_revealed_index": 35,
+            "object_key": "concept:synthetic-3-1-3",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-3",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 3.1.4 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-3-1-4",
+          "parent_object_key": "concept:synthetic-3-1-3",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-3-1-4",
+          "telemetry": {
+            "first_revealed_index": 36,
+            "object_key": "concept:synthetic-3-1-4",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-3",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 3.1.5 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-3-1-5",
+          "parent_object_key": "concept:synthetic-3-1-4",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-3-1-5",
+          "telemetry": {
+            "first_revealed_index": 37,
+            "object_key": "concept:synthetic-3-1-5",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-3",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 3.1.6 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-3-1-6",
+          "parent_object_key": "concept:synthetic-3-1-5",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-3-1-6",
+          "telemetry": {
+            "first_revealed_index": 38,
+            "object_key": "concept:synthetic-3-1-6",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-3",
+          "expanded": false,
+          "kind": "concept",
+          "label": "Readable synthetic concept 3.1.7 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-3-1-7",
+          "parent_object_key": "concept:synthetic-3-1-6",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-3-1-7",
+          "telemetry": {
+            "first_revealed_index": 39,
+            "object_key": "concept:synthetic-3-1-7",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-3",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 3.2.1 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-3-2-1",
+          "parent_object_key": "orientation:synthetic-root-3",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-3-2-1",
+          "telemetry": {
+            "first_revealed_index": 40,
+            "object_key": "concept:synthetic-3-2-1",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-3",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 3.2.2 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-3-2-2",
+          "parent_object_key": "concept:synthetic-3-2-1",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-3-2-2",
+          "telemetry": {
+            "first_revealed_index": 41,
+            "object_key": "concept:synthetic-3-2-2",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-3",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 3.2.3 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-3-2-3",
+          "parent_object_key": "concept:synthetic-3-2-2",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-3-2-3",
+          "telemetry": {
+            "first_revealed_index": 42,
+            "object_key": "concept:synthetic-3-2-3",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-3",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 3.2.4 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-3-2-4",
+          "parent_object_key": "concept:synthetic-3-2-3",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-3-2-4",
+          "telemetry": {
+            "first_revealed_index": 43,
+            "object_key": "concept:synthetic-3-2-4",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-3",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 3.2.5 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-3-2-5",
+          "parent_object_key": "concept:synthetic-3-2-4",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-3-2-5",
+          "telemetry": {
+            "first_revealed_index": 44,
+            "object_key": "concept:synthetic-3-2-5",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-3",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 3.2.6 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-3-2-6",
+          "parent_object_key": "concept:synthetic-3-2-5",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-3-2-6",
+          "telemetry": {
+            "first_revealed_index": 45,
+            "object_key": "concept:synthetic-3-2-6",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-3",
+          "expanded": false,
+          "kind": "concept",
+          "label": "Readable synthetic concept 3.2.7 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-3-2-7",
+          "parent_object_key": "concept:synthetic-3-2-6",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-3-2-7",
+          "telemetry": {
+            "first_revealed_index": 46,
+            "object_key": "concept:synthetic-3-2-7",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-4",
+          "expanded": true,
+          "kind": "orientation",
+          "label": "Synthetic region 4",
+          "object_key": "orientation:synthetic-root-4",
+          "parent_object_key": null,
+          "projection_basis": "SYNTHETIC_LAYOUT_ROOT",
+          "selected": false,
+          "semantic_identity": null,
+          "telemetry": {
+            "first_revealed_index": 47,
+            "object_key": "orientation:synthetic-root-4",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-4",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 4.1.1 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-4-1-1",
+          "parent_object_key": "orientation:synthetic-root-4",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-4-1-1",
+          "telemetry": {
+            "first_revealed_index": 48,
+            "object_key": "concept:synthetic-4-1-1",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-4",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 4.1.2 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-4-1-2",
+          "parent_object_key": "concept:synthetic-4-1-1",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-4-1-2",
+          "telemetry": {
+            "first_revealed_index": 49,
+            "object_key": "concept:synthetic-4-1-2",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-4",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 4.1.3 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-4-1-3",
+          "parent_object_key": "concept:synthetic-4-1-2",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-4-1-3",
+          "telemetry": {
+            "first_revealed_index": 50,
+            "object_key": "concept:synthetic-4-1-3",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-4",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 4.1.4 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-4-1-4",
+          "parent_object_key": "concept:synthetic-4-1-3",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-4-1-4",
+          "telemetry": {
+            "first_revealed_index": 51,
+            "object_key": "concept:synthetic-4-1-4",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-4",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 4.1.5 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-4-1-5",
+          "parent_object_key": "concept:synthetic-4-1-4",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-4-1-5",
+          "telemetry": {
+            "first_revealed_index": 52,
+            "object_key": "concept:synthetic-4-1-5",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-4",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 4.1.6 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-4-1-6",
+          "parent_object_key": "concept:synthetic-4-1-5",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-4-1-6",
+          "telemetry": {
+            "first_revealed_index": 53,
+            "object_key": "concept:synthetic-4-1-6",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-4",
+          "expanded": false,
+          "kind": "concept",
+          "label": "Readable synthetic concept 4.1.7 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-4-1-7",
+          "parent_object_key": "concept:synthetic-4-1-6",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-4-1-7",
+          "telemetry": {
+            "first_revealed_index": 54,
+            "object_key": "concept:synthetic-4-1-7",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-4",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 4.2.1 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-4-2-1",
+          "parent_object_key": "orientation:synthetic-root-4",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-4-2-1",
+          "telemetry": {
+            "first_revealed_index": 55,
+            "object_key": "concept:synthetic-4-2-1",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-4",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 4.2.2 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-4-2-2",
+          "parent_object_key": "concept:synthetic-4-2-1",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-4-2-2",
+          "telemetry": {
+            "first_revealed_index": 56,
+            "object_key": "concept:synthetic-4-2-2",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-4",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 4.2.3 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-4-2-3",
+          "parent_object_key": "concept:synthetic-4-2-2",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-4-2-3",
+          "telemetry": {
+            "first_revealed_index": 57,
+            "object_key": "concept:synthetic-4-2-3",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-4",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 4.2.4 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-4-2-4",
+          "parent_object_key": "concept:synthetic-4-2-3",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-4-2-4",
+          "telemetry": {
+            "first_revealed_index": 58,
+            "object_key": "concept:synthetic-4-2-4",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-4",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 4.2.5 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-4-2-5",
+          "parent_object_key": "concept:synthetic-4-2-4",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-4-2-5",
+          "telemetry": {
+            "first_revealed_index": 59,
+            "object_key": "concept:synthetic-4-2-5",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-4",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 4.2.6 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-4-2-6",
+          "parent_object_key": "concept:synthetic-4-2-5",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-4-2-6",
+          "telemetry": {
+            "first_revealed_index": 60,
+            "object_key": "concept:synthetic-4-2-6",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-4",
+          "expanded": false,
+          "kind": "concept",
+          "label": "Readable synthetic concept 4.2.7 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-4-2-7",
+          "parent_object_key": "concept:synthetic-4-2-6",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": true,
+          "semantic_identity": "synthetic-4-2-7",
+          "telemetry": {
+            "first_revealed_index": 61,
+            "last_visited_index": 62,
+            "object_key": "concept:synthetic-4-2-7",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 1
+          }
+        }
+      ],
+      "revealed_object_count": 60,
+      "revealed_object_keys": [
+        "orientation:synthetic-root-1",
+        "concept:synthetic-1-1-1",
+        "concept:synthetic-1-1-2",
+        "concept:synthetic-1-1-3",
+        "concept:synthetic-1-1-4",
+        "concept:synthetic-1-1-5",
+        "concept:synthetic-1-1-6",
+        "concept:synthetic-1-1-7",
+        "concept:synthetic-1-2-1",
+        "concept:synthetic-1-2-2",
+        "concept:synthetic-1-2-3",
+        "concept:synthetic-1-2-4",
+        "concept:synthetic-1-2-5",
+        "concept:synthetic-1-2-6",
+        "concept:synthetic-1-2-7",
+        "orientation:synthetic-root-2",
+        "concept:synthetic-2-1-1",
+        "concept:synthetic-2-1-2",
+        "concept:synthetic-2-1-3",
+        "concept:synthetic-2-1-4",
+        "concept:synthetic-2-1-5",
+        "concept:synthetic-2-1-6",
+        "concept:synthetic-2-1-7",
+        "concept:synthetic-2-2-1",
+        "concept:synthetic-2-2-2",
+        "concept:synthetic-2-2-3",
+        "concept:synthetic-2-2-4",
+        "concept:synthetic-2-2-5",
+        "concept:synthetic-2-2-6",
+        "concept:synthetic-2-2-7",
+        "orientation:synthetic-root-3",
+        "concept:synthetic-3-1-1",
+        "concept:synthetic-3-1-2",
+        "concept:synthetic-3-1-3",
+        "concept:synthetic-3-1-4",
+        "concept:synthetic-3-1-5",
+        "concept:synthetic-3-1-6",
+        "concept:synthetic-3-1-7",
+        "concept:synthetic-3-2-1",
+        "concept:synthetic-3-2-2",
+        "concept:synthetic-3-2-3",
+        "concept:synthetic-3-2-4",
+        "concept:synthetic-3-2-5",
+        "concept:synthetic-3-2-6",
+        "concept:synthetic-3-2-7",
+        "orientation:synthetic-root-4",
+        "concept:synthetic-4-1-1",
+        "concept:synthetic-4-1-2",
+        "concept:synthetic-4-1-3",
+        "concept:synthetic-4-1-4",
+        "concept:synthetic-4-1-5",
+        "concept:synthetic-4-1-6",
+        "concept:synthetic-4-1-7",
+        "concept:synthetic-4-2-1",
+        "concept:synthetic-4-2-2",
+        "concept:synthetic-4-2-3",
+        "concept:synthetic-4-2-4",
+        "concept:synthetic-4-2-5",
+        "concept:synthetic-4-2-6",
+        "concept:synthetic-4-2-7"
+      ],
+      "selected_object_key": "concept:synthetic-4-2-7",
+      "visible_object_keys": [
+        "orientation:synthetic-root-1",
+        "orientation:synthetic-root-2",
+        "concept:synthetic-2-1-1",
+        "concept:synthetic-2-1-2",
+        "concept:synthetic-2-1-3",
+        "concept:synthetic-2-1-4",
+        "concept:synthetic-2-1-5",
+        "concept:synthetic-2-1-6",
+        "concept:synthetic-2-1-7",
+        "concept:synthetic-2-2-1",
+        "concept:synthetic-2-2-2",
+        "concept:synthetic-2-2-3",
+        "concept:synthetic-2-2-4",
+        "concept:synthetic-2-2-5",
+        "concept:synthetic-2-2-6",
+        "concept:synthetic-2-2-7",
+        "orientation:synthetic-root-3",
+        "concept:synthetic-3-1-1",
+        "concept:synthetic-3-1-2",
+        "concept:synthetic-3-1-3",
+        "concept:synthetic-3-1-4",
+        "concept:synthetic-3-1-5",
+        "concept:synthetic-3-1-6",
+        "concept:synthetic-3-1-7",
+        "concept:synthetic-3-2-1",
+        "concept:synthetic-3-2-2",
+        "concept:synthetic-3-2-3",
+        "concept:synthetic-3-2-4",
+        "concept:synthetic-3-2-5",
+        "concept:synthetic-3-2-6",
+        "concept:synthetic-3-2-7",
+        "orientation:synthetic-root-4",
+        "concept:synthetic-4-1-1",
+        "concept:synthetic-4-1-2",
+        "concept:synthetic-4-1-3",
+        "concept:synthetic-4-1-4",
+        "concept:synthetic-4-1-5",
+        "concept:synthetic-4-1-6",
+        "concept:synthetic-4-1-7",
+        "concept:synthetic-4-2-1",
+        "concept:synthetic-4-2-2",
+        "concept:synthetic-4-2-3",
+        "concept:synthetic-4-2-4",
+        "concept:synthetic-4-2-5",
+        "concept:synthetic-4-2-6",
+        "concept:synthetic-4-2-7"
+      ]
+    },
+    "expanded_snapshot": {
+      "history_structurally_defines_navigation": false,
+      "navigation_edge_semantics": "PROJECTION_GROUPING_ONLY",
+      "nodes": [
+        {
+          "domain_id": "synthetic-1",
+          "expanded": true,
+          "kind": "orientation",
+          "label": "Synthetic region 1",
+          "object_key": "orientation:synthetic-root-1",
+          "parent_object_key": null,
+          "projection_basis": "SYNTHETIC_LAYOUT_ROOT",
+          "selected": false,
+          "semantic_identity": null,
+          "telemetry": {
+            "first_revealed_index": 1,
+            "last_visited_index": 2,
+            "object_key": "orientation:synthetic-root-1",
+            "revealed_from": null,
+            "visit_count": 1
+          }
+        },
+        {
+          "domain_id": "synthetic-1",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 1.1.1 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-1-1-1",
+          "parent_object_key": "orientation:synthetic-root-1",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-1-1-1",
+          "telemetry": {
+            "first_revealed_index": 3,
+            "object_key": "concept:synthetic-1-1-1",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-1",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 1.1.2 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-1-1-2",
+          "parent_object_key": "concept:synthetic-1-1-1",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-1-1-2",
+          "telemetry": {
+            "first_revealed_index": 4,
+            "object_key": "concept:synthetic-1-1-2",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-1",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 1.1.3 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-1-1-3",
+          "parent_object_key": "concept:synthetic-1-1-2",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-1-1-3",
+          "telemetry": {
+            "first_revealed_index": 5,
+            "object_key": "concept:synthetic-1-1-3",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-1",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 1.1.4 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-1-1-4",
+          "parent_object_key": "concept:synthetic-1-1-3",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-1-1-4",
+          "telemetry": {
+            "first_revealed_index": 6,
+            "object_key": "concept:synthetic-1-1-4",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-1",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 1.1.5 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-1-1-5",
+          "parent_object_key": "concept:synthetic-1-1-4",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-1-1-5",
+          "telemetry": {
+            "first_revealed_index": 7,
+            "object_key": "concept:synthetic-1-1-5",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-1",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 1.1.6 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-1-1-6",
+          "parent_object_key": "concept:synthetic-1-1-5",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-1-1-6",
+          "telemetry": {
+            "first_revealed_index": 8,
+            "object_key": "concept:synthetic-1-1-6",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-1",
+          "expanded": false,
+          "kind": "concept",
+          "label": "Readable synthetic concept 1.1.7 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-1-1-7",
+          "parent_object_key": "concept:synthetic-1-1-6",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-1-1-7",
+          "telemetry": {
+            "first_revealed_index": 9,
+            "object_key": "concept:synthetic-1-1-7",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-1",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 1.2.1 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-1-2-1",
+          "parent_object_key": "orientation:synthetic-root-1",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-1-2-1",
+          "telemetry": {
+            "first_revealed_index": 10,
+            "object_key": "concept:synthetic-1-2-1",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-1",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 1.2.2 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-1-2-2",
+          "parent_object_key": "concept:synthetic-1-2-1",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-1-2-2",
+          "telemetry": {
+            "first_revealed_index": 11,
+            "object_key": "concept:synthetic-1-2-2",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-1",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 1.2.3 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-1-2-3",
+          "parent_object_key": "concept:synthetic-1-2-2",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-1-2-3",
+          "telemetry": {
+            "first_revealed_index": 12,
+            "object_key": "concept:synthetic-1-2-3",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-1",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 1.2.4 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-1-2-4",
+          "parent_object_key": "concept:synthetic-1-2-3",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-1-2-4",
+          "telemetry": {
+            "first_revealed_index": 13,
+            "object_key": "concept:synthetic-1-2-4",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-1",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 1.2.5 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-1-2-5",
+          "parent_object_key": "concept:synthetic-1-2-4",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-1-2-5",
+          "telemetry": {
+            "first_revealed_index": 14,
+            "object_key": "concept:synthetic-1-2-5",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-1",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 1.2.6 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-1-2-6",
+          "parent_object_key": "concept:synthetic-1-2-5",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-1-2-6",
+          "telemetry": {
+            "first_revealed_index": 15,
+            "object_key": "concept:synthetic-1-2-6",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-1",
+          "expanded": false,
+          "kind": "concept",
+          "label": "Readable synthetic concept 1.2.7 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-1-2-7",
+          "parent_object_key": "concept:synthetic-1-2-6",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-1-2-7",
+          "telemetry": {
+            "first_revealed_index": 16,
+            "object_key": "concept:synthetic-1-2-7",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-2",
+          "expanded": true,
+          "kind": "orientation",
+          "label": "Synthetic region 2",
+          "object_key": "orientation:synthetic-root-2",
+          "parent_object_key": null,
+          "projection_basis": "SYNTHETIC_LAYOUT_ROOT",
+          "selected": false,
+          "semantic_identity": null,
+          "telemetry": {
+            "first_revealed_index": 17,
+            "object_key": "orientation:synthetic-root-2",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-2",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 2.1.1 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-2-1-1",
+          "parent_object_key": "orientation:synthetic-root-2",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-2-1-1",
+          "telemetry": {
+            "first_revealed_index": 18,
+            "object_key": "concept:synthetic-2-1-1",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-2",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 2.1.2 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-2-1-2",
+          "parent_object_key": "concept:synthetic-2-1-1",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-2-1-2",
+          "telemetry": {
+            "first_revealed_index": 19,
+            "object_key": "concept:synthetic-2-1-2",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-2",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 2.1.3 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-2-1-3",
+          "parent_object_key": "concept:synthetic-2-1-2",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-2-1-3",
+          "telemetry": {
+            "first_revealed_index": 20,
+            "object_key": "concept:synthetic-2-1-3",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-2",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 2.1.4 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-2-1-4",
+          "parent_object_key": "concept:synthetic-2-1-3",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-2-1-4",
+          "telemetry": {
+            "first_revealed_index": 21,
+            "object_key": "concept:synthetic-2-1-4",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-2",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 2.1.5 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-2-1-5",
+          "parent_object_key": "concept:synthetic-2-1-4",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-2-1-5",
+          "telemetry": {
+            "first_revealed_index": 22,
+            "object_key": "concept:synthetic-2-1-5",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-2",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 2.1.6 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-2-1-6",
+          "parent_object_key": "concept:synthetic-2-1-5",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-2-1-6",
+          "telemetry": {
+            "first_revealed_index": 23,
+            "object_key": "concept:synthetic-2-1-6",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-2",
+          "expanded": false,
+          "kind": "concept",
+          "label": "Readable synthetic concept 2.1.7 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-2-1-7",
+          "parent_object_key": "concept:synthetic-2-1-6",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-2-1-7",
+          "telemetry": {
+            "first_revealed_index": 24,
+            "object_key": "concept:synthetic-2-1-7",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-2",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 2.2.1 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-2-2-1",
+          "parent_object_key": "orientation:synthetic-root-2",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-2-2-1",
+          "telemetry": {
+            "first_revealed_index": 25,
+            "object_key": "concept:synthetic-2-2-1",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-2",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 2.2.2 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-2-2-2",
+          "parent_object_key": "concept:synthetic-2-2-1",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-2-2-2",
+          "telemetry": {
+            "first_revealed_index": 26,
+            "object_key": "concept:synthetic-2-2-2",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-2",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 2.2.3 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-2-2-3",
+          "parent_object_key": "concept:synthetic-2-2-2",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-2-2-3",
+          "telemetry": {
+            "first_revealed_index": 27,
+            "object_key": "concept:synthetic-2-2-3",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-2",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 2.2.4 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-2-2-4",
+          "parent_object_key": "concept:synthetic-2-2-3",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-2-2-4",
+          "telemetry": {
+            "first_revealed_index": 28,
+            "object_key": "concept:synthetic-2-2-4",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-2",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 2.2.5 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-2-2-5",
+          "parent_object_key": "concept:synthetic-2-2-4",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-2-2-5",
+          "telemetry": {
+            "first_revealed_index": 29,
+            "object_key": "concept:synthetic-2-2-5",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-2",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 2.2.6 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-2-2-6",
+          "parent_object_key": "concept:synthetic-2-2-5",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-2-2-6",
+          "telemetry": {
+            "first_revealed_index": 30,
+            "object_key": "concept:synthetic-2-2-6",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-2",
+          "expanded": false,
+          "kind": "concept",
+          "label": "Readable synthetic concept 2.2.7 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-2-2-7",
+          "parent_object_key": "concept:synthetic-2-2-6",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-2-2-7",
+          "telemetry": {
+            "first_revealed_index": 31,
+            "object_key": "concept:synthetic-2-2-7",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-3",
+          "expanded": true,
+          "kind": "orientation",
+          "label": "Synthetic region 3",
+          "object_key": "orientation:synthetic-root-3",
+          "parent_object_key": null,
+          "projection_basis": "SYNTHETIC_LAYOUT_ROOT",
+          "selected": false,
+          "semantic_identity": null,
+          "telemetry": {
+            "first_revealed_index": 32,
+            "object_key": "orientation:synthetic-root-3",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-3",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 3.1.1 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-3-1-1",
+          "parent_object_key": "orientation:synthetic-root-3",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-3-1-1",
+          "telemetry": {
+            "first_revealed_index": 33,
+            "object_key": "concept:synthetic-3-1-1",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-3",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 3.1.2 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-3-1-2",
+          "parent_object_key": "concept:synthetic-3-1-1",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-3-1-2",
+          "telemetry": {
+            "first_revealed_index": 34,
+            "object_key": "concept:synthetic-3-1-2",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-3",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 3.1.3 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-3-1-3",
+          "parent_object_key": "concept:synthetic-3-1-2",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-3-1-3",
+          "telemetry": {
+            "first_revealed_index": 35,
+            "object_key": "concept:synthetic-3-1-3",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-3",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 3.1.4 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-3-1-4",
+          "parent_object_key": "concept:synthetic-3-1-3",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-3-1-4",
+          "telemetry": {
+            "first_revealed_index": 36,
+            "object_key": "concept:synthetic-3-1-4",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-3",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 3.1.5 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-3-1-5",
+          "parent_object_key": "concept:synthetic-3-1-4",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-3-1-5",
+          "telemetry": {
+            "first_revealed_index": 37,
+            "object_key": "concept:synthetic-3-1-5",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-3",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 3.1.6 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-3-1-6",
+          "parent_object_key": "concept:synthetic-3-1-5",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-3-1-6",
+          "telemetry": {
+            "first_revealed_index": 38,
+            "object_key": "concept:synthetic-3-1-6",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-3",
+          "expanded": false,
+          "kind": "concept",
+          "label": "Readable synthetic concept 3.1.7 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-3-1-7",
+          "parent_object_key": "concept:synthetic-3-1-6",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-3-1-7",
+          "telemetry": {
+            "first_revealed_index": 39,
+            "object_key": "concept:synthetic-3-1-7",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-3",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 3.2.1 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-3-2-1",
+          "parent_object_key": "orientation:synthetic-root-3",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-3-2-1",
+          "telemetry": {
+            "first_revealed_index": 40,
+            "object_key": "concept:synthetic-3-2-1",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-3",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 3.2.2 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-3-2-2",
+          "parent_object_key": "concept:synthetic-3-2-1",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-3-2-2",
+          "telemetry": {
+            "first_revealed_index": 41,
+            "object_key": "concept:synthetic-3-2-2",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-3",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 3.2.3 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-3-2-3",
+          "parent_object_key": "concept:synthetic-3-2-2",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-3-2-3",
+          "telemetry": {
+            "first_revealed_index": 42,
+            "object_key": "concept:synthetic-3-2-3",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-3",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 3.2.4 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-3-2-4",
+          "parent_object_key": "concept:synthetic-3-2-3",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-3-2-4",
+          "telemetry": {
+            "first_revealed_index": 43,
+            "object_key": "concept:synthetic-3-2-4",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-3",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 3.2.5 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-3-2-5",
+          "parent_object_key": "concept:synthetic-3-2-4",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-3-2-5",
+          "telemetry": {
+            "first_revealed_index": 44,
+            "object_key": "concept:synthetic-3-2-5",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-3",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 3.2.6 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-3-2-6",
+          "parent_object_key": "concept:synthetic-3-2-5",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-3-2-6",
+          "telemetry": {
+            "first_revealed_index": 45,
+            "object_key": "concept:synthetic-3-2-6",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-3",
+          "expanded": false,
+          "kind": "concept",
+          "label": "Readable synthetic concept 3.2.7 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-3-2-7",
+          "parent_object_key": "concept:synthetic-3-2-6",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-3-2-7",
+          "telemetry": {
+            "first_revealed_index": 46,
+            "object_key": "concept:synthetic-3-2-7",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-4",
+          "expanded": true,
+          "kind": "orientation",
+          "label": "Synthetic region 4",
+          "object_key": "orientation:synthetic-root-4",
+          "parent_object_key": null,
+          "projection_basis": "SYNTHETIC_LAYOUT_ROOT",
+          "selected": false,
+          "semantic_identity": null,
+          "telemetry": {
+            "first_revealed_index": 47,
+            "object_key": "orientation:synthetic-root-4",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-4",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 4.1.1 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-4-1-1",
+          "parent_object_key": "orientation:synthetic-root-4",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-4-1-1",
+          "telemetry": {
+            "first_revealed_index": 48,
+            "object_key": "concept:synthetic-4-1-1",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-4",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 4.1.2 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-4-1-2",
+          "parent_object_key": "concept:synthetic-4-1-1",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-4-1-2",
+          "telemetry": {
+            "first_revealed_index": 49,
+            "object_key": "concept:synthetic-4-1-2",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-4",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 4.1.3 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-4-1-3",
+          "parent_object_key": "concept:synthetic-4-1-2",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-4-1-3",
+          "telemetry": {
+            "first_revealed_index": 50,
+            "object_key": "concept:synthetic-4-1-3",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-4",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 4.1.4 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-4-1-4",
+          "parent_object_key": "concept:synthetic-4-1-3",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-4-1-4",
+          "telemetry": {
+            "first_revealed_index": 51,
+            "object_key": "concept:synthetic-4-1-4",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-4",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 4.1.5 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-4-1-5",
+          "parent_object_key": "concept:synthetic-4-1-4",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-4-1-5",
+          "telemetry": {
+            "first_revealed_index": 52,
+            "object_key": "concept:synthetic-4-1-5",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-4",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 4.1.6 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-4-1-6",
+          "parent_object_key": "concept:synthetic-4-1-5",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-4-1-6",
+          "telemetry": {
+            "first_revealed_index": 53,
+            "object_key": "concept:synthetic-4-1-6",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-4",
+          "expanded": false,
+          "kind": "concept",
+          "label": "Readable synthetic concept 4.1.7 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-4-1-7",
+          "parent_object_key": "concept:synthetic-4-1-6",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-4-1-7",
+          "telemetry": {
+            "first_revealed_index": 54,
+            "object_key": "concept:synthetic-4-1-7",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-4",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 4.2.1 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-4-2-1",
+          "parent_object_key": "orientation:synthetic-root-4",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-4-2-1",
+          "telemetry": {
+            "first_revealed_index": 55,
+            "object_key": "concept:synthetic-4-2-1",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-4",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 4.2.2 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-4-2-2",
+          "parent_object_key": "concept:synthetic-4-2-1",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-4-2-2",
+          "telemetry": {
+            "first_revealed_index": 56,
+            "object_key": "concept:synthetic-4-2-2",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-4",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 4.2.3 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-4-2-3",
+          "parent_object_key": "concept:synthetic-4-2-2",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-4-2-3",
+          "telemetry": {
+            "first_revealed_index": 57,
+            "object_key": "concept:synthetic-4-2-3",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-4",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 4.2.4 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-4-2-4",
+          "parent_object_key": "concept:synthetic-4-2-3",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-4-2-4",
+          "telemetry": {
+            "first_revealed_index": 58,
+            "object_key": "concept:synthetic-4-2-4",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-4",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 4.2.5 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-4-2-5",
+          "parent_object_key": "concept:synthetic-4-2-4",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-4-2-5",
+          "telemetry": {
+            "first_revealed_index": 59,
+            "object_key": "concept:synthetic-4-2-5",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-4",
+          "expanded": true,
+          "kind": "concept",
+          "label": "Readable synthetic concept 4.2.6 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-4-2-6",
+          "parent_object_key": "concept:synthetic-4-2-5",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": false,
+          "semantic_identity": "synthetic-4-2-6",
+          "telemetry": {
+            "first_revealed_index": 60,
+            "object_key": "concept:synthetic-4-2-6",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 0
+          }
+        },
+        {
+          "domain_id": "synthetic-4",
+          "expanded": false,
+          "kind": "concept",
+          "label": "Readable synthetic concept 4.2.7 with a deliberately descriptive label",
+          "object_key": "concept:synthetic-4-2-7",
+          "parent_object_key": "concept:synthetic-4-2-6",
+          "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+          "selected": true,
+          "semantic_identity": "synthetic-4-2-7",
+          "telemetry": {
+            "first_revealed_index": 61,
+            "last_visited_index": 62,
+            "object_key": "concept:synthetic-4-2-7",
+            "revealed_from": "SYNTHETIC_FIXTURE",
+            "visit_count": 1
+          }
+        }
+      ],
+      "revealed_object_count": 60,
+      "revealed_object_keys": [
+        "orientation:synthetic-root-1",
+        "concept:synthetic-1-1-1",
+        "concept:synthetic-1-1-2",
+        "concept:synthetic-1-1-3",
+        "concept:synthetic-1-1-4",
+        "concept:synthetic-1-1-5",
+        "concept:synthetic-1-1-6",
+        "concept:synthetic-1-1-7",
+        "concept:synthetic-1-2-1",
+        "concept:synthetic-1-2-2",
+        "concept:synthetic-1-2-3",
+        "concept:synthetic-1-2-4",
+        "concept:synthetic-1-2-5",
+        "concept:synthetic-1-2-6",
+        "concept:synthetic-1-2-7",
+        "orientation:synthetic-root-2",
+        "concept:synthetic-2-1-1",
+        "concept:synthetic-2-1-2",
+        "concept:synthetic-2-1-3",
+        "concept:synthetic-2-1-4",
+        "concept:synthetic-2-1-5",
+        "concept:synthetic-2-1-6",
+        "concept:synthetic-2-1-7",
+        "concept:synthetic-2-2-1",
+        "concept:synthetic-2-2-2",
+        "concept:synthetic-2-2-3",
+        "concept:synthetic-2-2-4",
+        "concept:synthetic-2-2-5",
+        "concept:synthetic-2-2-6",
+        "concept:synthetic-2-2-7",
+        "orientation:synthetic-root-3",
+        "concept:synthetic-3-1-1",
+        "concept:synthetic-3-1-2",
+        "concept:synthetic-3-1-3",
+        "concept:synthetic-3-1-4",
+        "concept:synthetic-3-1-5",
+        "concept:synthetic-3-1-6",
+        "concept:synthetic-3-1-7",
+        "concept:synthetic-3-2-1",
+        "concept:synthetic-3-2-2",
+        "concept:synthetic-3-2-3",
+        "concept:synthetic-3-2-4",
+        "concept:synthetic-3-2-5",
+        "concept:synthetic-3-2-6",
+        "concept:synthetic-3-2-7",
+        "orientation:synthetic-root-4",
+        "concept:synthetic-4-1-1",
+        "concept:synthetic-4-1-2",
+        "concept:synthetic-4-1-3",
+        "concept:synthetic-4-1-4",
+        "concept:synthetic-4-1-5",
+        "concept:synthetic-4-1-6",
+        "concept:synthetic-4-1-7",
+        "concept:synthetic-4-2-1",
+        "concept:synthetic-4-2-2",
+        "concept:synthetic-4-2-3",
+        "concept:synthetic-4-2-4",
+        "concept:synthetic-4-2-5",
+        "concept:synthetic-4-2-6",
+        "concept:synthetic-4-2-7"
+      ],
+      "selected_object_key": "concept:synthetic-4-2-7",
+      "visible_object_keys": [
+        "orientation:synthetic-root-1",
+        "concept:synthetic-1-1-1",
+        "concept:synthetic-1-1-2",
+        "concept:synthetic-1-1-3",
+        "concept:synthetic-1-1-4",
+        "concept:synthetic-1-1-5",
+        "concept:synthetic-1-1-6",
+        "concept:synthetic-1-1-7",
+        "concept:synthetic-1-2-1",
+        "concept:synthetic-1-2-2",
+        "concept:synthetic-1-2-3",
+        "concept:synthetic-1-2-4",
+        "concept:synthetic-1-2-5",
+        "concept:synthetic-1-2-6",
+        "concept:synthetic-1-2-7",
+        "orientation:synthetic-root-2",
+        "concept:synthetic-2-1-1",
+        "concept:synthetic-2-1-2",
+        "concept:synthetic-2-1-3",
+        "concept:synthetic-2-1-4",
+        "concept:synthetic-2-1-5",
+        "concept:synthetic-2-1-6",
+        "concept:synthetic-2-1-7",
+        "concept:synthetic-2-2-1",
+        "concept:synthetic-2-2-2",
+        "concept:synthetic-2-2-3",
+        "concept:synthetic-2-2-4",
+        "concept:synthetic-2-2-5",
+        "concept:synthetic-2-2-6",
+        "concept:synthetic-2-2-7",
+        "orientation:synthetic-root-3",
+        "concept:synthetic-3-1-1",
+        "concept:synthetic-3-1-2",
+        "concept:synthetic-3-1-3",
+        "concept:synthetic-3-1-4",
+        "concept:synthetic-3-1-5",
+        "concept:synthetic-3-1-6",
+        "concept:synthetic-3-1-7",
+        "concept:synthetic-3-2-1",
+        "concept:synthetic-3-2-2",
+        "concept:synthetic-3-2-3",
+        "concept:synthetic-3-2-4",
+        "concept:synthetic-3-2-5",
+        "concept:synthetic-3-2-6",
+        "concept:synthetic-3-2-7",
+        "orientation:synthetic-root-4",
+        "concept:synthetic-4-1-1",
+        "concept:synthetic-4-1-2",
+        "concept:synthetic-4-1-3",
+        "concept:synthetic-4-1-4",
+        "concept:synthetic-4-1-5",
+        "concept:synthetic-4-1-6",
+        "concept:synthetic-4-1-7",
+        "concept:synthetic-4-2-1",
+        "concept:synthetic-4-2-2",
+        "concept:synthetic-4-2-3",
+        "concept:synthetic-4-2-4",
+        "concept:synthetic-4-2-5",
+        "concept:synthetic-4-2-6",
+        "concept:synthetic-4-2-7"
+      ]
+    },
+    "fixture_only": true,
+    "max_depth": 7,
+    "object_count": 60,
+    "projection": [
+      {
+        "domain_id": "synthetic-1",
+        "kind": "orientation",
+        "label": "Synthetic region 1",
+        "object_key": "orientation:synthetic-root-1",
+        "parent_object_key": null,
+        "projection_basis": "SYNTHETIC_LAYOUT_ROOT",
+        "projection_order": 0,
+        "semantic_identity": null
+      },
+      {
+        "domain_id": "synthetic-1",
+        "kind": "concept",
+        "label": "Readable synthetic concept 1.1.1 with a deliberately descriptive label",
+        "object_key": "concept:synthetic-1-1-1",
+        "parent_object_key": "orientation:synthetic-root-1",
+        "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+        "projection_order": 1,
+        "semantic_identity": "synthetic-1-1-1"
+      },
+      {
+        "domain_id": "synthetic-1",
+        "kind": "concept",
+        "label": "Readable synthetic concept 1.1.2 with a deliberately descriptive label",
+        "object_key": "concept:synthetic-1-1-2",
+        "parent_object_key": "concept:synthetic-1-1-1",
+        "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+        "projection_order": 2,
+        "semantic_identity": "synthetic-1-1-2"
+      },
+      {
+        "domain_id": "synthetic-1",
+        "kind": "concept",
+        "label": "Readable synthetic concept 1.1.3 with a deliberately descriptive label",
+        "object_key": "concept:synthetic-1-1-3",
+        "parent_object_key": "concept:synthetic-1-1-2",
+        "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+        "projection_order": 3,
+        "semantic_identity": "synthetic-1-1-3"
+      },
+      {
+        "domain_id": "synthetic-1",
+        "kind": "concept",
+        "label": "Readable synthetic concept 1.1.4 with a deliberately descriptive label",
+        "object_key": "concept:synthetic-1-1-4",
+        "parent_object_key": "concept:synthetic-1-1-3",
+        "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+        "projection_order": 4,
+        "semantic_identity": "synthetic-1-1-4"
+      },
+      {
+        "domain_id": "synthetic-1",
+        "kind": "concept",
+        "label": "Readable synthetic concept 1.1.5 with a deliberately descriptive label",
+        "object_key": "concept:synthetic-1-1-5",
+        "parent_object_key": "concept:synthetic-1-1-4",
+        "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+        "projection_order": 5,
+        "semantic_identity": "synthetic-1-1-5"
+      },
+      {
+        "domain_id": "synthetic-1",
+        "kind": "concept",
+        "label": "Readable synthetic concept 1.1.6 with a deliberately descriptive label",
+        "object_key": "concept:synthetic-1-1-6",
+        "parent_object_key": "concept:synthetic-1-1-5",
+        "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+        "projection_order": 6,
+        "semantic_identity": "synthetic-1-1-6"
+      },
+      {
+        "domain_id": "synthetic-1",
+        "kind": "concept",
+        "label": "Readable synthetic concept 1.1.7 with a deliberately descriptive label",
+        "object_key": "concept:synthetic-1-1-7",
+        "parent_object_key": "concept:synthetic-1-1-6",
+        "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+        "projection_order": 7,
+        "semantic_identity": "synthetic-1-1-7"
+      },
+      {
+        "domain_id": "synthetic-1",
+        "kind": "concept",
+        "label": "Readable synthetic concept 1.2.1 with a deliberately descriptive label",
+        "object_key": "concept:synthetic-1-2-1",
+        "parent_object_key": "orientation:synthetic-root-1",
+        "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+        "projection_order": 8,
+        "semantic_identity": "synthetic-1-2-1"
+      },
+      {
+        "domain_id": "synthetic-1",
+        "kind": "concept",
+        "label": "Readable synthetic concept 1.2.2 with a deliberately descriptive label",
+        "object_key": "concept:synthetic-1-2-2",
+        "parent_object_key": "concept:synthetic-1-2-1",
+        "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+        "projection_order": 9,
+        "semantic_identity": "synthetic-1-2-2"
+      },
+      {
+        "domain_id": "synthetic-1",
+        "kind": "concept",
+        "label": "Readable synthetic concept 1.2.3 with a deliberately descriptive label",
+        "object_key": "concept:synthetic-1-2-3",
+        "parent_object_key": "concept:synthetic-1-2-2",
+        "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+        "projection_order": 10,
+        "semantic_identity": "synthetic-1-2-3"
+      },
+      {
+        "domain_id": "synthetic-1",
+        "kind": "concept",
+        "label": "Readable synthetic concept 1.2.4 with a deliberately descriptive label",
+        "object_key": "concept:synthetic-1-2-4",
+        "parent_object_key": "concept:synthetic-1-2-3",
+        "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+        "projection_order": 11,
+        "semantic_identity": "synthetic-1-2-4"
+      },
+      {
+        "domain_id": "synthetic-1",
+        "kind": "concept",
+        "label": "Readable synthetic concept 1.2.5 with a deliberately descriptive label",
+        "object_key": "concept:synthetic-1-2-5",
+        "parent_object_key": "concept:synthetic-1-2-4",
+        "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+        "projection_order": 12,
+        "semantic_identity": "synthetic-1-2-5"
+      },
+      {
+        "domain_id": "synthetic-1",
+        "kind": "concept",
+        "label": "Readable synthetic concept 1.2.6 with a deliberately descriptive label",
+        "object_key": "concept:synthetic-1-2-6",
+        "parent_object_key": "concept:synthetic-1-2-5",
+        "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+        "projection_order": 13,
+        "semantic_identity": "synthetic-1-2-6"
+      },
+      {
+        "domain_id": "synthetic-1",
+        "kind": "concept",
+        "label": "Readable synthetic concept 1.2.7 with a deliberately descriptive label",
+        "object_key": "concept:synthetic-1-2-7",
+        "parent_object_key": "concept:synthetic-1-2-6",
+        "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+        "projection_order": 14,
+        "semantic_identity": "synthetic-1-2-7"
+      },
+      {
+        "domain_id": "synthetic-2",
+        "kind": "orientation",
+        "label": "Synthetic region 2",
+        "object_key": "orientation:synthetic-root-2",
+        "parent_object_key": null,
+        "projection_basis": "SYNTHETIC_LAYOUT_ROOT",
+        "projection_order": 15,
+        "semantic_identity": null
+      },
+      {
+        "domain_id": "synthetic-2",
+        "kind": "concept",
+        "label": "Readable synthetic concept 2.1.1 with a deliberately descriptive label",
+        "object_key": "concept:synthetic-2-1-1",
+        "parent_object_key": "orientation:synthetic-root-2",
+        "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+        "projection_order": 16,
+        "semantic_identity": "synthetic-2-1-1"
+      },
+      {
+        "domain_id": "synthetic-2",
+        "kind": "concept",
+        "label": "Readable synthetic concept 2.1.2 with a deliberately descriptive label",
+        "object_key": "concept:synthetic-2-1-2",
+        "parent_object_key": "concept:synthetic-2-1-1",
+        "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+        "projection_order": 17,
+        "semantic_identity": "synthetic-2-1-2"
+      },
+      {
+        "domain_id": "synthetic-2",
+        "kind": "concept",
+        "label": "Readable synthetic concept 2.1.3 with a deliberately descriptive label",
+        "object_key": "concept:synthetic-2-1-3",
+        "parent_object_key": "concept:synthetic-2-1-2",
+        "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+        "projection_order": 18,
+        "semantic_identity": "synthetic-2-1-3"
+      },
+      {
+        "domain_id": "synthetic-2",
+        "kind": "concept",
+        "label": "Readable synthetic concept 2.1.4 with a deliberately descriptive label",
+        "object_key": "concept:synthetic-2-1-4",
+        "parent_object_key": "concept:synthetic-2-1-3",
+        "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+        "projection_order": 19,
+        "semantic_identity": "synthetic-2-1-4"
+      },
+      {
+        "domain_id": "synthetic-2",
+        "kind": "concept",
+        "label": "Readable synthetic concept 2.1.5 with a deliberately descriptive label",
+        "object_key": "concept:synthetic-2-1-5",
+        "parent_object_key": "concept:synthetic-2-1-4",
+        "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+        "projection_order": 20,
+        "semantic_identity": "synthetic-2-1-5"
+      },
+      {
+        "domain_id": "synthetic-2",
+        "kind": "concept",
+        "label": "Readable synthetic concept 2.1.6 with a deliberately descriptive label",
+        "object_key": "concept:synthetic-2-1-6",
+        "parent_object_key": "concept:synthetic-2-1-5",
+        "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+        "projection_order": 21,
+        "semantic_identity": "synthetic-2-1-6"
+      },
+      {
+        "domain_id": "synthetic-2",
+        "kind": "concept",
+        "label": "Readable synthetic concept 2.1.7 with a deliberately descriptive label",
+        "object_key": "concept:synthetic-2-1-7",
+        "parent_object_key": "concept:synthetic-2-1-6",
+        "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+        "projection_order": 22,
+        "semantic_identity": "synthetic-2-1-7"
+      },
+      {
+        "domain_id": "synthetic-2",
+        "kind": "concept",
+        "label": "Readable synthetic concept 2.2.1 with a deliberately descriptive label",
+        "object_key": "concept:synthetic-2-2-1",
+        "parent_object_key": "orientation:synthetic-root-2",
+        "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+        "projection_order": 23,
+        "semantic_identity": "synthetic-2-2-1"
+      },
+      {
+        "domain_id": "synthetic-2",
+        "kind": "concept",
+        "label": "Readable synthetic concept 2.2.2 with a deliberately descriptive label",
+        "object_key": "concept:synthetic-2-2-2",
+        "parent_object_key": "concept:synthetic-2-2-1",
+        "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+        "projection_order": 24,
+        "semantic_identity": "synthetic-2-2-2"
+      },
+      {
+        "domain_id": "synthetic-2",
+        "kind": "concept",
+        "label": "Readable synthetic concept 2.2.3 with a deliberately descriptive label",
+        "object_key": "concept:synthetic-2-2-3",
+        "parent_object_key": "concept:synthetic-2-2-2",
+        "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+        "projection_order": 25,
+        "semantic_identity": "synthetic-2-2-3"
+      },
+      {
+        "domain_id": "synthetic-2",
+        "kind": "concept",
+        "label": "Readable synthetic concept 2.2.4 with a deliberately descriptive label",
+        "object_key": "concept:synthetic-2-2-4",
+        "parent_object_key": "concept:synthetic-2-2-3",
+        "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+        "projection_order": 26,
+        "semantic_identity": "synthetic-2-2-4"
+      },
+      {
+        "domain_id": "synthetic-2",
+        "kind": "concept",
+        "label": "Readable synthetic concept 2.2.5 with a deliberately descriptive label",
+        "object_key": "concept:synthetic-2-2-5",
+        "parent_object_key": "concept:synthetic-2-2-4",
+        "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+        "projection_order": 27,
+        "semantic_identity": "synthetic-2-2-5"
+      },
+      {
+        "domain_id": "synthetic-2",
+        "kind": "concept",
+        "label": "Readable synthetic concept 2.2.6 with a deliberately descriptive label",
+        "object_key": "concept:synthetic-2-2-6",
+        "parent_object_key": "concept:synthetic-2-2-5",
+        "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+        "projection_order": 28,
+        "semantic_identity": "synthetic-2-2-6"
+      },
+      {
+        "domain_id": "synthetic-2",
+        "kind": "concept",
+        "label": "Readable synthetic concept 2.2.7 with a deliberately descriptive label",
+        "object_key": "concept:synthetic-2-2-7",
+        "parent_object_key": "concept:synthetic-2-2-6",
+        "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+        "projection_order": 29,
+        "semantic_identity": "synthetic-2-2-7"
+      },
+      {
+        "domain_id": "synthetic-3",
+        "kind": "orientation",
+        "label": "Synthetic region 3",
+        "object_key": "orientation:synthetic-root-3",
+        "parent_object_key": null,
+        "projection_basis": "SYNTHETIC_LAYOUT_ROOT",
+        "projection_order": 30,
+        "semantic_identity": null
+      },
+      {
+        "domain_id": "synthetic-3",
+        "kind": "concept",
+        "label": "Readable synthetic concept 3.1.1 with a deliberately descriptive label",
+        "object_key": "concept:synthetic-3-1-1",
+        "parent_object_key": "orientation:synthetic-root-3",
+        "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+        "projection_order": 31,
+        "semantic_identity": "synthetic-3-1-1"
+      },
+      {
+        "domain_id": "synthetic-3",
+        "kind": "concept",
+        "label": "Readable synthetic concept 3.1.2 with a deliberately descriptive label",
+        "object_key": "concept:synthetic-3-1-2",
+        "parent_object_key": "concept:synthetic-3-1-1",
+        "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+        "projection_order": 32,
+        "semantic_identity": "synthetic-3-1-2"
+      },
+      {
+        "domain_id": "synthetic-3",
+        "kind": "concept",
+        "label": "Readable synthetic concept 3.1.3 with a deliberately descriptive label",
+        "object_key": "concept:synthetic-3-1-3",
+        "parent_object_key": "concept:synthetic-3-1-2",
+        "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+        "projection_order": 33,
+        "semantic_identity": "synthetic-3-1-3"
+      },
+      {
+        "domain_id": "synthetic-3",
+        "kind": "concept",
+        "label": "Readable synthetic concept 3.1.4 with a deliberately descriptive label",
+        "object_key": "concept:synthetic-3-1-4",
+        "parent_object_key": "concept:synthetic-3-1-3",
+        "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+        "projection_order": 34,
+        "semantic_identity": "synthetic-3-1-4"
+      },
+      {
+        "domain_id": "synthetic-3",
+        "kind": "concept",
+        "label": "Readable synthetic concept 3.1.5 with a deliberately descriptive label",
+        "object_key": "concept:synthetic-3-1-5",
+        "parent_object_key": "concept:synthetic-3-1-4",
+        "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+        "projection_order": 35,
+        "semantic_identity": "synthetic-3-1-5"
+      },
+      {
+        "domain_id": "synthetic-3",
+        "kind": "concept",
+        "label": "Readable synthetic concept 3.1.6 with a deliberately descriptive label",
+        "object_key": "concept:synthetic-3-1-6",
+        "parent_object_key": "concept:synthetic-3-1-5",
+        "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+        "projection_order": 36,
+        "semantic_identity": "synthetic-3-1-6"
+      },
+      {
+        "domain_id": "synthetic-3",
+        "kind": "concept",
+        "label": "Readable synthetic concept 3.1.7 with a deliberately descriptive label",
+        "object_key": "concept:synthetic-3-1-7",
+        "parent_object_key": "concept:synthetic-3-1-6",
+        "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+        "projection_order": 37,
+        "semantic_identity": "synthetic-3-1-7"
+      },
+      {
+        "domain_id": "synthetic-3",
+        "kind": "concept",
+        "label": "Readable synthetic concept 3.2.1 with a deliberately descriptive label",
+        "object_key": "concept:synthetic-3-2-1",
+        "parent_object_key": "orientation:synthetic-root-3",
+        "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+        "projection_order": 38,
+        "semantic_identity": "synthetic-3-2-1"
+      },
+      {
+        "domain_id": "synthetic-3",
+        "kind": "concept",
+        "label": "Readable synthetic concept 3.2.2 with a deliberately descriptive label",
+        "object_key": "concept:synthetic-3-2-2",
+        "parent_object_key": "concept:synthetic-3-2-1",
+        "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+        "projection_order": 39,
+        "semantic_identity": "synthetic-3-2-2"
+      },
+      {
+        "domain_id": "synthetic-3",
+        "kind": "concept",
+        "label": "Readable synthetic concept 3.2.3 with a deliberately descriptive label",
+        "object_key": "concept:synthetic-3-2-3",
+        "parent_object_key": "concept:synthetic-3-2-2",
+        "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+        "projection_order": 40,
+        "semantic_identity": "synthetic-3-2-3"
+      },
+      {
+        "domain_id": "synthetic-3",
+        "kind": "concept",
+        "label": "Readable synthetic concept 3.2.4 with a deliberately descriptive label",
+        "object_key": "concept:synthetic-3-2-4",
+        "parent_object_key": "concept:synthetic-3-2-3",
+        "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+        "projection_order": 41,
+        "semantic_identity": "synthetic-3-2-4"
+      },
+      {
+        "domain_id": "synthetic-3",
+        "kind": "concept",
+        "label": "Readable synthetic concept 3.2.5 with a deliberately descriptive label",
+        "object_key": "concept:synthetic-3-2-5",
+        "parent_object_key": "concept:synthetic-3-2-4",
+        "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+        "projection_order": 42,
+        "semantic_identity": "synthetic-3-2-5"
+      },
+      {
+        "domain_id": "synthetic-3",
+        "kind": "concept",
+        "label": "Readable synthetic concept 3.2.6 with a deliberately descriptive label",
+        "object_key": "concept:synthetic-3-2-6",
+        "parent_object_key": "concept:synthetic-3-2-5",
+        "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+        "projection_order": 43,
+        "semantic_identity": "synthetic-3-2-6"
+      },
+      {
+        "domain_id": "synthetic-3",
+        "kind": "concept",
+        "label": "Readable synthetic concept 3.2.7 with a deliberately descriptive label",
+        "object_key": "concept:synthetic-3-2-7",
+        "parent_object_key": "concept:synthetic-3-2-6",
+        "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+        "projection_order": 44,
+        "semantic_identity": "synthetic-3-2-7"
+      },
+      {
+        "domain_id": "synthetic-4",
+        "kind": "orientation",
+        "label": "Synthetic region 4",
+        "object_key": "orientation:synthetic-root-4",
+        "parent_object_key": null,
+        "projection_basis": "SYNTHETIC_LAYOUT_ROOT",
+        "projection_order": 45,
+        "semantic_identity": null
+      },
+      {
+        "domain_id": "synthetic-4",
+        "kind": "concept",
+        "label": "Readable synthetic concept 4.1.1 with a deliberately descriptive label",
+        "object_key": "concept:synthetic-4-1-1",
+        "parent_object_key": "orientation:synthetic-root-4",
+        "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+        "projection_order": 46,
+        "semantic_identity": "synthetic-4-1-1"
+      },
+      {
+        "domain_id": "synthetic-4",
+        "kind": "concept",
+        "label": "Readable synthetic concept 4.1.2 with a deliberately descriptive label",
+        "object_key": "concept:synthetic-4-1-2",
+        "parent_object_key": "concept:synthetic-4-1-1",
+        "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+        "projection_order": 47,
+        "semantic_identity": "synthetic-4-1-2"
+      },
+      {
+        "domain_id": "synthetic-4",
+        "kind": "concept",
+        "label": "Readable synthetic concept 4.1.3 with a deliberately descriptive label",
+        "object_key": "concept:synthetic-4-1-3",
+        "parent_object_key": "concept:synthetic-4-1-2",
+        "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+        "projection_order": 48,
+        "semantic_identity": "synthetic-4-1-3"
+      },
+      {
+        "domain_id": "synthetic-4",
+        "kind": "concept",
+        "label": "Readable synthetic concept 4.1.4 with a deliberately descriptive label",
+        "object_key": "concept:synthetic-4-1-4",
+        "parent_object_key": "concept:synthetic-4-1-3",
+        "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+        "projection_order": 49,
+        "semantic_identity": "synthetic-4-1-4"
+      },
+      {
+        "domain_id": "synthetic-4",
+        "kind": "concept",
+        "label": "Readable synthetic concept 4.1.5 with a deliberately descriptive label",
+        "object_key": "concept:synthetic-4-1-5",
+        "parent_object_key": "concept:synthetic-4-1-4",
+        "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+        "projection_order": 50,
+        "semantic_identity": "synthetic-4-1-5"
+      },
+      {
+        "domain_id": "synthetic-4",
+        "kind": "concept",
+        "label": "Readable synthetic concept 4.1.6 with a deliberately descriptive label",
+        "object_key": "concept:synthetic-4-1-6",
+        "parent_object_key": "concept:synthetic-4-1-5",
+        "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+        "projection_order": 51,
+        "semantic_identity": "synthetic-4-1-6"
+      },
+      {
+        "domain_id": "synthetic-4",
+        "kind": "concept",
+        "label": "Readable synthetic concept 4.1.7 with a deliberately descriptive label",
+        "object_key": "concept:synthetic-4-1-7",
+        "parent_object_key": "concept:synthetic-4-1-6",
+        "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+        "projection_order": 52,
+        "semantic_identity": "synthetic-4-1-7"
+      },
+      {
+        "domain_id": "synthetic-4",
+        "kind": "concept",
+        "label": "Readable synthetic concept 4.2.1 with a deliberately descriptive label",
+        "object_key": "concept:synthetic-4-2-1",
+        "parent_object_key": "orientation:synthetic-root-4",
+        "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+        "projection_order": 53,
+        "semantic_identity": "synthetic-4-2-1"
+      },
+      {
+        "domain_id": "synthetic-4",
+        "kind": "concept",
+        "label": "Readable synthetic concept 4.2.2 with a deliberately descriptive label",
+        "object_key": "concept:synthetic-4-2-2",
+        "parent_object_key": "concept:synthetic-4-2-1",
+        "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+        "projection_order": 54,
+        "semantic_identity": "synthetic-4-2-2"
+      },
+      {
+        "domain_id": "synthetic-4",
+        "kind": "concept",
+        "label": "Readable synthetic concept 4.2.3 with a deliberately descriptive label",
+        "object_key": "concept:synthetic-4-2-3",
+        "parent_object_key": "concept:synthetic-4-2-2",
+        "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+        "projection_order": 55,
+        "semantic_identity": "synthetic-4-2-3"
+      },
+      {
+        "domain_id": "synthetic-4",
+        "kind": "concept",
+        "label": "Readable synthetic concept 4.2.4 with a deliberately descriptive label",
+        "object_key": "concept:synthetic-4-2-4",
+        "parent_object_key": "concept:synthetic-4-2-3",
+        "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+        "projection_order": 56,
+        "semantic_identity": "synthetic-4-2-4"
+      },
+      {
+        "domain_id": "synthetic-4",
+        "kind": "concept",
+        "label": "Readable synthetic concept 4.2.5 with a deliberately descriptive label",
+        "object_key": "concept:synthetic-4-2-5",
+        "parent_object_key": "concept:synthetic-4-2-4",
+        "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+        "projection_order": 57,
+        "semantic_identity": "synthetic-4-2-5"
+      },
+      {
+        "domain_id": "synthetic-4",
+        "kind": "concept",
+        "label": "Readable synthetic concept 4.2.6 with a deliberately descriptive label",
+        "object_key": "concept:synthetic-4-2-6",
+        "parent_object_key": "concept:synthetic-4-2-5",
+        "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+        "projection_order": 58,
+        "semantic_identity": "synthetic-4-2-6"
+      },
+      {
+        "domain_id": "synthetic-4",
+        "kind": "concept",
+        "label": "Readable synthetic concept 4.2.7 with a deliberately descriptive label",
+        "object_key": "concept:synthetic-4-2-7",
+        "parent_object_key": "concept:synthetic-4-2-6",
+        "projection_basis": "SYNTHETIC_LAYOUT_BRANCH",
+        "projection_order": 59,
+        "semantic_identity": "synthetic-4-2-7"
+      }
+    ],
+    "root_count": 4,
+    "status": "PASS"
+  },
+  "projection": [
+    {
+      "ancestry": [],
+      "domain_id": "electromagnetism",
+      "kind": "canonical",
+      "label": "Electric field → Magnetic field",
+      "object_key": "canonical:changing-electric-field-induces-magnetic-field",
+      "parent_object_key": "orientation:domain:electromagnetism",
+      "predicate": "INDUCES",
+      "projection_basis": "DOMAIN_MEMBERSHIP_GROUP",
+      "projection_order": 0,
+      "representation_index": 0,
+      "semantic_identity": "changing-electric-field-induces-magnetic-field",
+      "trusted_source": "workspace-fixture.json canonical relationship"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "electromagnetism",
+      "kind": "canonical",
+      "label": "Magnetic field → Electric field",
+      "object_key": "canonical:changing-magnetic-field-induces-electric-field",
+      "parent_object_key": "orientation:domain:electromagnetism",
+      "predicate": "INDUCES",
+      "projection_basis": "DOMAIN_MEMBERSHIP_GROUP",
+      "projection_order": 1,
+      "representation_index": 0,
+      "semantic_identity": "changing-magnetic-field-induces-electric-field",
+      "trusted_source": "workspace-fixture.json canonical relationship"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "electromagnetism",
+      "kind": "canonical",
+      "label": "Light → Electromagnetic wave",
+      "object_key": "canonical:light-is-electromagnetic-wave",
+      "parent_object_key": "orientation:domain:electromagnetism",
+      "predicate": "IS_A",
+      "projection_basis": "DOMAIN_MEMBERSHIP_GROUP",
+      "projection_order": 2,
+      "representation_index": 1,
+      "semantic_identity": "light-is-electromagnetic-wave",
+      "trusted_source": "workspace-fixture.json canonical relationship"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "software_architecture",
+      "kind": "canonical",
+      "label": "API component → modular order-processing service",
+      "object_key": "canonical:rel-1",
+      "parent_object_key": "orientation:domain:software_architecture",
+      "predicate": "PART_OF",
+      "projection_basis": "DOMAIN_MEMBERSHIP_GROUP",
+      "projection_order": 3,
+      "representation_index": 0,
+      "semantic_identity": "rel-1",
+      "trusted_source": "workspace-fixture.json canonical relationship"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "software_architecture",
+      "kind": "canonical",
+      "label": "order component → modular order-processing service",
+      "object_key": "canonical:rel-2",
+      "parent_object_key": "orientation:domain:software_architecture",
+      "predicate": "PART_OF",
+      "projection_basis": "DOMAIN_MEMBERSHIP_GROUP",
+      "projection_order": 4,
+      "representation_index": 0,
+      "semantic_identity": "rel-2",
+      "trusted_source": "workspace-fixture.json canonical relationship"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "software_architecture",
+      "kind": "canonical",
+      "label": "payment component → modular order-processing service",
+      "object_key": "canonical:rel-3",
+      "parent_object_key": "orientation:domain:software_architecture",
+      "predicate": "PART_OF",
+      "projection_basis": "DOMAIN_MEMBERSHIP_GROUP",
+      "projection_order": 5,
+      "representation_index": 0,
+      "semantic_identity": "rel-3",
+      "trusted_source": "workspace-fixture.json canonical relationship"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "software_architecture",
+      "kind": "canonical",
+      "label": "database → modular order-processing service",
+      "object_key": "canonical:rel-4",
+      "parent_object_key": "orientation:domain:software_architecture",
+      "predicate": "PART_OF",
+      "projection_basis": "DOMAIN_MEMBERSHIP_GROUP",
+      "projection_order": 6,
+      "representation_index": 0,
+      "semantic_identity": "rel-4",
+      "trusted_source": "workspace-fixture.json canonical relationship"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "software_architecture",
+      "kind": "canonical",
+      "label": "order component → payment component",
+      "object_key": "canonical:rel-6",
+      "parent_object_key": "orientation:domain:software_architecture",
+      "predicate": "REQUIRES",
+      "projection_basis": "DOMAIN_MEMBERSHIP_GROUP",
+      "projection_order": 7,
+      "representation_index": 1,
+      "semantic_identity": "rel-6",
+      "trusted_source": "workspace-fixture.json canonical relationship"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "software_architecture",
+      "kind": "canonical",
+      "label": "payment component → database",
+      "object_key": "canonical:rel-8",
+      "parent_object_key": "orientation:domain:software_architecture",
+      "predicate": "REQUIRES",
+      "projection_basis": "DOMAIN_MEMBERSHIP_GROUP",
+      "projection_order": 8,
+      "representation_index": 1,
+      "semantic_identity": "rel-8",
+      "trusted_source": "workspace-fixture.json canonical relationship"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "history",
+      "kind": "canonical",
+      "label": "Printed controversy → Authorities",
+      "object_key": "canonical:rel-controversy-precedes-response",
+      "parent_object_key": "orientation:domain:history",
+      "predicate": "PRECEDES",
+      "projection_basis": "DOMAIN_MEMBERSHIP_GROUP",
+      "projection_order": 9,
+      "representation_index": 1,
+      "semantic_identity": "rel-controversy-precedes-response",
+      "trusted_source": "workspace-fixture.json canonical relationship"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "economics",
+      "kind": "canonical",
+      "label": "market price → quantity demanded",
+      "object_key": "canonical:rel-higher-price-decreases-demanded",
+      "parent_object_key": "orientation:domain:economics",
+      "predicate": "DECREASES",
+      "projection_basis": "DOMAIN_MEMBERSHIP_GROUP",
+      "projection_order": 10,
+      "representation_index": 0,
+      "semantic_identity": "rel-higher-price-decreases-demanded",
+      "trusted_source": "workspace-fixture.json canonical relationship"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "economics",
+      "kind": "canonical",
+      "label": "market price → quantity supplied",
+      "object_key": "canonical:rel-higher-price-increases-supplied",
+      "parent_object_key": "orientation:domain:economics",
+      "predicate": "INCREASES",
+      "projection_basis": "DOMAIN_MEMBERSHIP_GROUP",
+      "projection_order": 11,
+      "representation_index": 0,
+      "semantic_identity": "rel-higher-price-increases-supplied",
+      "trusted_source": "workspace-fixture.json canonical relationship"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "history",
+      "kind": "canonical",
+      "label": "Press → Printing",
+      "object_key": "canonical:rel-press-enables-printing",
+      "parent_object_key": "orientation:domain:history",
+      "predicate": "ENABLES",
+      "projection_basis": "DOMAIN_MEMBERSHIP_GROUP",
+      "projection_order": 12,
+      "representation_index": 0,
+      "semantic_identity": "rel-press-enables-printing",
+      "trusted_source": "workspace-fixture.json canonical relationship"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "economics",
+      "kind": "canonical",
+      "label": "market price → quantity demanded",
+      "object_key": "canonical:rel-price-decreases-demanded",
+      "parent_object_key": "orientation:domain:economics",
+      "predicate": "DECREASES",
+      "projection_basis": "DOMAIN_MEMBERSHIP_GROUP",
+      "projection_order": 13,
+      "representation_index": 0,
+      "semantic_identity": "rel-price-decreases-demanded",
+      "trusted_source": "workspace-fixture.json canonical relationship"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "economics",
+      "kind": "canonical",
+      "label": "market price → quantity supplied",
+      "object_key": "canonical:rel-price-increases-supplied",
+      "parent_object_key": "orientation:domain:economics",
+      "predicate": "INCREASES",
+      "projection_basis": "DOMAIN_MEMBERSHIP_GROUP",
+      "projection_order": 14,
+      "representation_index": 0,
+      "semantic_identity": "rel-price-increases-supplied",
+      "trusted_source": "workspace-fixture.json canonical relationship"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "history",
+      "kind": "canonical",
+      "label": "Printing → Printed books",
+      "object_key": "canonical:rel-printing-enables-copies",
+      "parent_object_key": "orientation:domain:history",
+      "predicate": "ENABLES",
+      "projection_basis": "DOMAIN_MEMBERSHIP_GROUP",
+      "projection_order": 15,
+      "representation_index": 0,
+      "semantic_identity": "rel-printing-enables-copies",
+      "trusted_source": "workspace-fixture.json canonical relationship"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "economics",
+      "kind": "canonical",
+      "label": "shortage → upward pressure on price",
+      "object_key": "canonical:rel-shortage-upward-pressure",
+      "parent_object_key": "orientation:domain:economics",
+      "predicate": "CAUSES",
+      "projection_basis": "DOMAIN_MEMBERSHIP_GROUP",
+      "projection_order": 16,
+      "representation_index": 0,
+      "semantic_identity": "rel-shortage-upward-pressure",
+      "trusted_source": "workspace-fixture.json canonical relationship"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "economics",
+      "kind": "canonical",
+      "label": "reduction in supply → market price",
+      "object_key": "canonical:rel-supply-reduction-price-increase",
+      "parent_object_key": "orientation:domain:economics",
+      "predicate": "CAUSES",
+      "projection_basis": "DOMAIN_MEMBERSHIP_GROUP",
+      "projection_order": 17,
+      "representation_index": 0,
+      "semantic_identity": "rel-supply-reduction-price-increase",
+      "trusted_source": "workspace-fixture.json canonical relationship"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "history",
+      "kind": "canonical",
+      "label": "Movable metal type → Printing",
+      "object_key": "canonical:rel-type-enables-printing",
+      "parent_object_key": "orientation:domain:history",
+      "predicate": "ENABLES",
+      "projection_basis": "DOMAIN_MEMBERSHIP_GROUP",
+      "projection_order": 18,
+      "representation_index": 0,
+      "semantic_identity": "rel-type-enables-printing",
+      "trusted_source": "workspace-fixture.json canonical relationship"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "economics",
+      "kind": "canonical",
+      "label": "upward pressure on price → market price",
+      "object_key": "canonical:rel-upward-pressure-price",
+      "parent_object_key": "orientation:domain:economics",
+      "predicate": "INCREASES",
+      "projection_basis": "DOMAIN_MEMBERSHIP_GROUP",
+      "projection_order": 19,
+      "representation_index": 0,
+      "semantic_identity": "rel-upward-pressure-price",
+      "trusted_source": "workspace-fixture.json canonical relationship"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "electromagnetism",
+      "kind": "canonical",
+      "label": "double-slit experiment → interference pattern",
+      "object_key": "canonical:relationship-05b19ee4b6d50060",
+      "parent_object_key": "orientation:domain:electromagnetism",
+      "predicate": "CAUSES",
+      "projection_basis": "DOMAIN_MEMBERSHIP_GROUP",
+      "projection_order": 20,
+      "representation_index": 2,
+      "semantic_identity": "relationship-05b19ee4b6d50060",
+      "trusted_source": "workspace-fixture.json canonical relationship"
+    },
+    {
+      "ancestry": [
+        "depth-double-slit-v1"
+      ],
+      "domain_id": "electromagnetism",
+      "kind": "canonical",
+      "label": "double-slit experiment → interference pattern",
+      "object_key": "canonical:relationship-3fadf1ab890d9bde",
+      "parent_object_key": "concept:double-slit-experiment",
+      "predicate": "CAUSES",
+      "projection_basis": "ADMITTED_DEPTH_GROUP:depth-double-slit-v1",
+      "projection_order": 21,
+      "representation_index": 2,
+      "semantic_identity": "relationship-3fadf1ab890d9bde",
+      "trusted_source": "depth-map.json admitted canonical relationship"
+    },
+    {
+      "ancestry": [
+        "depth-double-slit-v1"
+      ],
+      "domain_id": "electromagnetism",
+      "kind": "canonical",
+      "label": "wave–particle duality → principle of complementarity",
+      "object_key": "canonical:relationship-7d1b3317e1e4c682",
+      "parent_object_key": "concept:double-slit-experiment",
+      "predicate": "EXAMPLE_OF",
+      "projection_basis": "ADMITTED_DEPTH_GROUP:depth-double-slit-v1",
+      "projection_order": 22,
+      "representation_index": 2,
+      "semantic_identity": "relationship-7d1b3317e1e4c682",
+      "trusted_source": "depth-map.json admitted canonical relationship"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "software_architecture",
+      "kind": "concept",
+      "label": "API component",
+      "object_key": "concept:api-component",
+      "parent_object_key": "orientation:domain:software_architecture",
+      "projection_basis": "DOMAIN_MEMBERSHIP_GROUP",
+      "projection_order": 23,
+      "representation_index": 0,
+      "semantic_identity": "api-component",
+      "trusted_source": "workspace-fixture.json trusted representation node"
+    },
+    {
+      "ancestry": [
+        "depth-double-slit-v1"
+      ],
+      "domain_id": "electromagnetism",
+      "kind": "concept",
+      "label": "atom",
+      "object_key": "concept:atom",
+      "parent_object_key": "concept:double-slit-experiment",
+      "projection_basis": "ADMITTED_DEPTH_GROUP:depth-double-slit-v1",
+      "projection_order": 24,
+      "representation_index": 2,
+      "semantic_identity": "atom",
+      "trusted_source": "depth-map.json trusted concept"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "history",
+      "kind": "concept",
+      "label": "Authorities",
+      "object_key": "concept:authorities",
+      "parent_object_key": "orientation:domain:history",
+      "projection_basis": "DOMAIN_MEMBERSHIP_GROUP",
+      "projection_order": 25,
+      "representation_index": 1,
+      "semantic_identity": "authorities",
+      "trusted_source": "workspace-fixture.json trusted representation node"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "software_architecture",
+      "kind": "concept",
+      "label": "database",
+      "object_key": "concept:database",
+      "parent_object_key": "orientation:domain:software_architecture",
+      "projection_basis": "DOMAIN_MEMBERSHIP_GROUP",
+      "projection_order": 26,
+      "representation_index": 0,
+      "semantic_identity": "database",
+      "trusted_source": "workspace-fixture.json trusted representation node"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "electromagnetism",
+      "kind": "concept",
+      "label": "double-slit experiment",
+      "object_key": "concept:double-slit-experiment",
+      "parent_object_key": "orientation:domain:electromagnetism",
+      "projection_basis": "DOMAIN_MEMBERSHIP_GROUP",
+      "projection_order": 27,
+      "representation_index": 2,
+      "semantic_identity": "double-slit-experiment",
+      "trusted_source": "workspace-fixture.json trusted representation node"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "electromagnetism",
+      "kind": "concept",
+      "label": "Electric field",
+      "object_key": "concept:electric-field",
+      "parent_object_key": "orientation:domain:electromagnetism",
+      "projection_basis": "DOMAIN_MEMBERSHIP_GROUP",
+      "projection_order": 28,
+      "representation_index": 0,
+      "semantic_identity": "electric-field",
+      "trusted_source": "workspace-fixture.json trusted representation node"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "electromagnetism",
+      "kind": "concept",
+      "label": "Electromagnetic wave",
+      "object_key": "concept:electromagnetic-wave",
+      "parent_object_key": "orientation:domain:electromagnetism",
+      "projection_basis": "DOMAIN_MEMBERSHIP_GROUP",
+      "projection_order": 29,
+      "representation_index": 1,
+      "semantic_identity": "electromagnetic-wave",
+      "trusted_source": "workspace-fixture.json trusted representation node"
+    },
+    {
+      "ancestry": [
+        "depth-double-slit-v1"
+      ],
+      "domain_id": "electromagnetism",
+      "kind": "concept",
+      "label": "electron",
+      "object_key": "concept:electron",
+      "parent_object_key": "concept:double-slit-experiment",
+      "projection_basis": "ADMITTED_DEPTH_GROUP:depth-double-slit-v1",
+      "projection_order": 30,
+      "representation_index": 2,
+      "semantic_identity": "electron",
+      "trusted_source": "depth-map.json trusted concept"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "electromagnetism",
+      "kind": "concept",
+      "label": "interference pattern",
+      "object_key": "concept:interference-pattern",
+      "parent_object_key": "orientation:domain:electromagnetism",
+      "projection_basis": "DOMAIN_MEMBERSHIP_GROUP",
+      "projection_order": 31,
+      "representation_index": 2,
+      "semantic_identity": "interference-pattern",
+      "trusted_source": "workspace-fixture.json trusted representation node"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "electromagnetism",
+      "kind": "concept",
+      "label": "Light",
+      "object_key": "concept:light",
+      "parent_object_key": "orientation:domain:electromagnetism",
+      "projection_basis": "DOMAIN_MEMBERSHIP_GROUP",
+      "projection_order": 32,
+      "representation_index": 1,
+      "semantic_identity": "light",
+      "trusted_source": "workspace-fixture.json trusted representation node"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "electromagnetism",
+      "kind": "concept",
+      "label": "Magnetic field",
+      "object_key": "concept:magnetic-field",
+      "parent_object_key": "orientation:domain:electromagnetism",
+      "projection_basis": "DOMAIN_MEMBERSHIP_GROUP",
+      "projection_order": 33,
+      "representation_index": 0,
+      "semantic_identity": "magnetic-field",
+      "trusted_source": "workspace-fixture.json trusted representation node"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "economics",
+      "kind": "concept",
+      "label": "market price",
+      "object_key": "concept:market-price",
+      "parent_object_key": "orientation:domain:economics",
+      "projection_basis": "DOMAIN_MEMBERSHIP_GROUP",
+      "projection_order": 34,
+      "representation_index": 0,
+      "semantic_identity": "market-price",
+      "trusted_source": "workspace-fixture.json trusted representation node"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "software_architecture",
+      "kind": "concept",
+      "label": "modular order-processing service",
+      "object_key": "concept:modular-order-processing-service",
+      "parent_object_key": "orientation:domain:software_architecture",
+      "projection_basis": "DOMAIN_MEMBERSHIP_GROUP",
+      "projection_order": 35,
+      "representation_index": 0,
+      "semantic_identity": "modular-order-processing-service",
+      "trusted_source": "workspace-fixture.json trusted representation node"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "history",
+      "kind": "concept",
+      "label": "Movable metal type",
+      "object_key": "concept:movable-metal-type",
+      "parent_object_key": "orientation:domain:history",
+      "projection_basis": "DOMAIN_MEMBERSHIP_GROUP",
+      "projection_order": 36,
+      "representation_index": 0,
+      "semantic_identity": "movable-metal-type",
+      "trusted_source": "workspace-fixture.json trusted representation node"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "software_architecture",
+      "kind": "concept",
+      "label": "order component",
+      "object_key": "concept:order-component",
+      "parent_object_key": "orientation:domain:software_architecture",
+      "projection_basis": "DOMAIN_MEMBERSHIP_GROUP",
+      "projection_order": 37,
+      "representation_index": 0,
+      "semantic_identity": "order-component",
+      "trusted_source": "workspace-fixture.json trusted representation node"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "software_architecture",
+      "kind": "concept",
+      "label": "payment component",
+      "object_key": "concept:payment-component",
+      "parent_object_key": "orientation:domain:software_architecture",
+      "projection_basis": "DOMAIN_MEMBERSHIP_GROUP",
+      "projection_order": 38,
+      "representation_index": 0,
+      "semantic_identity": "payment-component",
+      "trusted_source": "workspace-fixture.json trusted representation node"
+    },
+    {
+      "ancestry": [
+        "depth-double-slit-v1"
+      ],
+      "domain_id": "electromagnetism",
+      "kind": "concept",
+      "label": "photon",
+      "object_key": "concept:photon",
+      "parent_object_key": "concept:double-slit-experiment",
+      "projection_basis": "ADMITTED_DEPTH_GROUP:depth-double-slit-v1",
+      "projection_order": 39,
+      "representation_index": 2,
+      "semantic_identity": "photon",
+      "trusted_source": "depth-map.json trusted concept"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "history",
+      "kind": "concept",
+      "label": "Press",
+      "object_key": "concept:press",
+      "parent_object_key": "orientation:domain:history",
+      "projection_basis": "DOMAIN_MEMBERSHIP_GROUP",
+      "projection_order": 40,
+      "representation_index": 0,
+      "semantic_identity": "press",
+      "trusted_source": "workspace-fixture.json trusted representation node"
+    },
+    {
+      "ancestry": [
+        "depth-double-slit-v1"
+      ],
+      "domain_id": "electromagnetism",
+      "kind": "concept",
+      "label": "principle of complementarity",
+      "object_key": "concept:principle-of-complementarity",
+      "parent_object_key": "concept:double-slit-experiment",
+      "projection_basis": "ADMITTED_DEPTH_GROUP:depth-double-slit-v1",
+      "projection_order": 41,
+      "representation_index": 2,
+      "semantic_identity": "principle-of-complementarity",
+      "trusted_source": "depth-map.json trusted concept"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "history",
+      "kind": "concept",
+      "label": "Printed books",
+      "object_key": "concept:printed-books",
+      "parent_object_key": "orientation:domain:history",
+      "projection_basis": "DOMAIN_MEMBERSHIP_GROUP",
+      "projection_order": 42,
+      "representation_index": 0,
+      "semantic_identity": "printed-books",
+      "trusted_source": "workspace-fixture.json trusted representation node"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "history",
+      "kind": "concept",
+      "label": "Printed controversy",
+      "object_key": "concept:printed-controversy",
+      "parent_object_key": "orientation:domain:history",
+      "projection_basis": "DOMAIN_MEMBERSHIP_GROUP",
+      "projection_order": 43,
+      "representation_index": 1,
+      "semantic_identity": "printed-controversy",
+      "trusted_source": "workspace-fixture.json trusted representation node"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "history",
+      "kind": "concept",
+      "label": "Printing",
+      "object_key": "concept:printing",
+      "parent_object_key": "orientation:domain:history",
+      "projection_basis": "DOMAIN_MEMBERSHIP_GROUP",
+      "projection_order": 44,
+      "representation_index": 0,
+      "semantic_identity": "printing",
+      "trusted_source": "workspace-fixture.json trusted representation node"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "economics",
+      "kind": "concept",
+      "label": "quantity demanded",
+      "object_key": "concept:quantity-demanded",
+      "parent_object_key": "orientation:domain:economics",
+      "projection_basis": "DOMAIN_MEMBERSHIP_GROUP",
+      "projection_order": 45,
+      "representation_index": 0,
+      "semantic_identity": "quantity-demanded",
+      "trusted_source": "workspace-fixture.json trusted representation node"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "economics",
+      "kind": "concept",
+      "label": "quantity supplied",
+      "object_key": "concept:quantity-supplied",
+      "parent_object_key": "orientation:domain:economics",
+      "projection_basis": "DOMAIN_MEMBERSHIP_GROUP",
+      "projection_order": 46,
+      "representation_index": 0,
+      "semantic_identity": "quantity-supplied",
+      "trusted_source": "workspace-fixture.json trusted representation node"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "economics",
+      "kind": "concept",
+      "label": "shortage",
+      "object_key": "concept:shortage",
+      "parent_object_key": "orientation:domain:economics",
+      "projection_basis": "DOMAIN_MEMBERSHIP_GROUP",
+      "projection_order": 47,
+      "representation_index": 0,
+      "semantic_identity": "shortage",
+      "trusted_source": "workspace-fixture.json trusted representation node"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "economics",
+      "kind": "concept",
+      "label": "reduction in supply",
+      "object_key": "concept:supply-reduction",
+      "parent_object_key": "orientation:domain:economics",
+      "projection_basis": "DOMAIN_MEMBERSHIP_GROUP",
+      "projection_order": 48,
+      "representation_index": 0,
+      "semantic_identity": "supply-reduction",
+      "trusted_source": "workspace-fixture.json trusted representation node"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "economics",
+      "kind": "concept",
+      "label": "upward pressure on price",
+      "object_key": "concept:upward-price-pressure",
+      "parent_object_key": "orientation:domain:economics",
+      "projection_basis": "DOMAIN_MEMBERSHIP_GROUP",
+      "projection_order": 49,
+      "representation_index": 0,
+      "semantic_identity": "upward-price-pressure",
+      "trusted_source": "workspace-fixture.json trusted representation node"
+    },
+    {
+      "ancestry": [
+        "depth-double-slit-v1"
+      ],
+      "domain_id": "electromagnetism",
+      "kind": "concept",
+      "label": "wave–particle duality",
+      "object_key": "concept:waveparticle-duality",
+      "parent_object_key": "concept:double-slit-experiment",
+      "projection_basis": "ADMITTED_DEPTH_GROUP:depth-double-slit-v1",
+      "projection_order": 50,
+      "representation_index": 2,
+      "semantic_identity": "waveparticle-duality",
+      "trusted_source": "depth-map.json trusted concept"
+    },
+    {
+      "ancestry": [
+        "depth-double-slit-v1"
+      ],
+      "domain_id": "electromagnetism",
+      "kind": "explanation",
+      "label": "Source explanation 6",
+      "object_key": "explanation:explanation-0aab5775b0ce1164",
+      "parent_object_key": "concept:double-slit-experiment",
+      "projection_basis": "ADMITTED_DEPTH_GROUP:depth-double-slit-v1",
+      "projection_order": 51,
+      "representation_index": 2,
+      "semantic_identity": "explanation-0aab5775b0ce1164",
+      "trusted_source": "depth-map.json source-backed explanation"
+    },
+    {
+      "ancestry": [
+        "depth-double-slit-v1"
+      ],
+      "domain_id": "electromagnetism",
+      "kind": "explanation",
+      "label": "Source explanation 2",
+      "object_key": "explanation:explanation-29893ca25e0fd462",
+      "parent_object_key": "concept:double-slit-experiment",
+      "projection_basis": "ADMITTED_DEPTH_GROUP:depth-double-slit-v1",
+      "projection_order": 52,
+      "representation_index": 2,
+      "semantic_identity": "explanation-29893ca25e0fd462",
+      "trusted_source": "depth-map.json source-backed explanation"
+    },
+    {
+      "ancestry": [
+        "depth-double-slit-v1"
+      ],
+      "domain_id": "electromagnetism",
+      "kind": "explanation",
+      "label": "Source explanation 4",
+      "object_key": "explanation:explanation-49c2a9a32b078712",
+      "parent_object_key": "concept:double-slit-experiment",
+      "projection_basis": "ADMITTED_DEPTH_GROUP:depth-double-slit-v1",
+      "projection_order": 53,
+      "representation_index": 2,
+      "semantic_identity": "explanation-49c2a9a32b078712",
+      "trusted_source": "depth-map.json source-backed explanation"
+    },
+    {
+      "ancestry": [
+        "depth-double-slit-v1"
+      ],
+      "domain_id": "electromagnetism",
+      "kind": "explanation",
+      "label": "Source explanation 1",
+      "object_key": "explanation:explanation-6a9db96dcce9c27d",
+      "parent_object_key": "concept:double-slit-experiment",
+      "projection_basis": "ADMITTED_DEPTH_GROUP:depth-double-slit-v1",
+      "projection_order": 54,
+      "representation_index": 2,
+      "semantic_identity": "explanation-6a9db96dcce9c27d",
+      "trusted_source": "depth-map.json source-backed explanation"
+    },
+    {
+      "ancestry": [
+        "depth-double-slit-v1"
+      ],
+      "domain_id": "electromagnetism",
+      "kind": "explanation",
+      "label": "Source explanation 5",
+      "object_key": "explanation:explanation-a4ca636403e86833",
+      "parent_object_key": "concept:double-slit-experiment",
+      "projection_basis": "ADMITTED_DEPTH_GROUP:depth-double-slit-v1",
+      "projection_order": 55,
+      "representation_index": 2,
+      "semantic_identity": "explanation-a4ca636403e86833",
+      "trusted_source": "depth-map.json source-backed explanation"
+    },
+    {
+      "ancestry": [
+        "depth-double-slit-v1"
+      ],
+      "domain_id": "electromagnetism",
+      "kind": "explanation",
+      "label": "Source explanation 3",
+      "object_key": "explanation:explanation-ae10fa8748fdac1f",
+      "parent_object_key": "concept:double-slit-experiment",
+      "projection_basis": "ADMITTED_DEPTH_GROUP:depth-double-slit-v1",
+      "projection_order": 56,
+      "representation_index": 2,
+      "semantic_identity": "explanation-ae10fa8748fdac1f",
+      "trusted_source": "depth-map.json source-backed explanation"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "economics",
+      "kind": "orientation",
+      "label": "Economics",
+      "object_key": "orientation:domain:economics",
+      "orientation_identity": "domain:economics",
+      "parent_object_key": null,
+      "projection_basis": "CANONICAL_DOMAIN_ROOT",
+      "projection_order": 57,
+      "representation_index": 0,
+      "semantic_identity": null,
+      "trusted_source": "workspace-fixture.json domains[]"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "electromagnetism",
+      "kind": "orientation",
+      "label": "Electromagnetism",
+      "object_key": "orientation:domain:electromagnetism",
+      "orientation_identity": "domain:electromagnetism",
+      "parent_object_key": null,
+      "projection_basis": "CANONICAL_DOMAIN_ROOT",
+      "projection_order": 58,
+      "representation_index": 0,
+      "semantic_identity": null,
+      "trusted_source": "workspace-fixture.json domains[]"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "history",
+      "kind": "orientation",
+      "label": "History of Printing",
+      "object_key": "orientation:domain:history",
+      "orientation_identity": "domain:history",
+      "parent_object_key": null,
+      "projection_basis": "CANONICAL_DOMAIN_ROOT",
+      "projection_order": 59,
+      "representation_index": 0,
+      "semantic_identity": null,
+      "trusted_source": "workspace-fixture.json domains[]"
+    },
+    {
+      "ancestry": [],
+      "domain_id": "software_architecture",
+      "kind": "orientation",
+      "label": "Software Architecture",
+      "object_key": "orientation:domain:software_architecture",
+      "orientation_identity": "domain:software_architecture",
+      "parent_object_key": null,
+      "projection_basis": "CANONICAL_DOMAIN_ROOT",
+      "projection_order": 60,
+      "representation_index": 0,
+      "semantic_identity": null,
+      "trusted_source": "workspace-fixture.json domains[]"
+    }
+  ],
+  "projection_contract": {
+    "admitted_depth_rule": "group under canonical depth entrance",
+    "history_structurally_defines_navigation": false,
+    "identity": "trusted object_key",
+    "parent_resolution_rule": "direct domain grouping",
+    "projection_edges_are_semantic_claims": false,
+    "revealed_equals_understood": false,
+    "root_rule": "one stable root per trusted domain"
+  }
+}
