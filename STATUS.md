@@ -33,7 +33,7 @@ EXPLORE NEXT
 
 Owner observation: implementation behaves as intended in the reviewed navigation flows and is the strongest navigation architecture so far. The revealed, deduplicated, collapsible tree is sufficient to stop treating navigation as the primary product bottleneck.
 
-Formal debrief/promotion remains separate. Follow-up work must preserve the current SPEC-033 implementation/candidate state and must not redesign navigation.
+Formal debrief/promotion remains separate. Follow-up work must preserve the current SPEC-033 implementation/candidate state and must not redesign navigation semantics.
 
 ## Representation-strategy candidate
 
@@ -51,47 +51,71 @@ The deterministic representation seam works and representation diversity should 
 
 Implementation status: `IMPLEMENTED_REVIEWED`
 
-Owner observation: the separation of navigation, explanation, and recommendation is now materially clearer. My Map works as revealed territory; Explore Next works as the explicit future-learning frontier; legacy implicit navigation from the explanatory surface is no longer the main bottleneck. The remaining product gap is explanatory power: the right pane is cleaner but often too thin and less useful than the strongest earlier explanation experiments.
+Owner observation: the separation of navigation, explanation, and recommendation is materially clearer. My Map works as revealed territory; Explore Next works as the explicit future-learning frontier; legacy implicit navigation from the explanatory surface is no longer the main bottleneck.
 
 Accepted invariant:
 
 > Clicking or manipulating a component inside an explanation must not silently change the learner’s location in the knowledge model.
 
+## Structure-aware explanatory surface
+
+`SPEC-036 — structure-aware explanatory surface`
+
+Implementation status: `IMPLEMENTED_REVIEWED`
+
+Owner verdict: `EXPLANATORY_INTERACTION_RESTORED_VISUAL_GRAMMAR_NEXT`
+
+Owner review confirms that SPEC-036 restored important explanatory capability on the cleaner architecture:
+
+- concepts and relationships in the explanatory pane are locally inspectable again;
+- hover/click interaction feels materially better and should be preserved;
+- explanatory interaction remains separate from learner navigation;
+- representation diversity remains the correct architectural direction.
+
+The remaining dominant issue is visual-semantic ambiguity rather than interaction mechanics. Too many learner-facing objects still use the same bordered-card / pill / button-like grammar across My Map and the explanatory surface. This makes territory, semantic objects, relationships, recommendations, and actual controls look too similar and makes the interface visually repetitive.
+
+Owner also flagged learner-facing remnants such as `Trusted relationships` that may duplicate the dominant representation without providing active explanatory value.
+
 ## Current approved work packet
 
 ```text
-NONE
+specs/SPEC-037-visual-semantic-grammar.md
 ```
 
-Status: `NONE`
+Status: `APPROVED_FOR_IMPLEMENTATION`
 
-Authority: `NONE`
+Authority: `OFFLINE_ONLY`
 
-Human gate: `NONE`
+Human gate: `OWNER_REVIEW`
 
 Promotion: `NOT_AUTHORIZED`
 
 ## Current product direction
 
-The project keeps the cleaner responsibility model established by SPEC-033 through SPEC-035 while restoring the explanatory strength of earlier learning-surface experiments.
+The project keeps the clean responsibility model established by SPEC-033 through SPEC-036 while making visual form communicate semantic role.
 
 ```text
 MY MAP
 → revealed territory / deliberate navigation
+→ quiet tree / territory grammar
 
 WHAT DOES THIS MEAN?
 → dominant representation of the current knowledge object
+→ representation-specific visual grammar
 → local inspectable semantic components
+
+INSPECT / SELECTED / PREVIEW
 → grounded text for the inspected component/relationship
 
 EXPLORE NEXT
 → explicit trusted frontier / forward learning
+→ intentionally actionable recommendation grammar
 
 LEARNING HISTORY / BACK
 → traversal memory (deferred)
 ```
 
-The focused learning surface must not equate explanation with either prose or diagrams. It should choose a representation because the representation fits the trusted semantic structure currently in focus.
+The explanatory surface must not equate explanation with either prose or diagrams. It should choose a representation because the representation fits the trusted semantic structure currently in focus.
 
 ```text
 selected canonical object
@@ -115,15 +139,17 @@ The active representation principle remains:
 
 > The compiler should choose the representation that minimizes the cognitive work required to understand the trusted structure currently in focus.
 
-The current SPEC-036 experiment adds one further requirement:
+SPEC-037 adds the visual principle:
 
-> The explanatory surface needs a dominant representation with inspectable semantic components.
+> Visual form should communicate semantic role.
+
+A concept, relationship, region, recommendation, inspection state, and actual control should not all look like variants of the same button.
 
 Representation strategy remains heterogeneous: causal/mechanism, process/sequence, hierarchy/composition, compare/contrast, worked example, focused relationship, concise prose, or another truthfully supported form.
 
 ## Current gate
 
-SPEC-036 is implemented and awaiting owner review. No work packet is currently approved. The owner must review the fixed SPEC-036 browser artifact before any subjective verdict or follow-up implementation. Baseline promotion, live/model/external calls, and unrelated follow-up implementation remain unauthorized.
+SPEC-037 is approved for offline implementation. Codex may implement only the active packet under its stated authority. Owner review is required after implementation. Baseline promotion, live/model/external calls, and unrelated follow-up implementation remain unauthorized.
 
 ## Frozen / protected state
 
@@ -131,9 +157,10 @@ SPEC-036 is implemented and awaiting owner review. No work packet is currently a
 - prior SPEC evaluation artifacts;
 - SPEC-030 role separation;
 - SPEC-031 reciprocal/multi-edge semantic identity;
-- current SPEC-033 canonical revealed-knowledge navigation implementation/candidate;
+- SPEC-033 canonical revealed-knowledge navigation behavior and data semantics;
 - SPEC-034 deterministic representation-strategy capability;
 - SPEC-035 explanatory/navigation interaction isolation;
+- SPEC-036 representation-local hover/click inspection semantics;
 - trusted semantic vocabulary, grounding, provenance, and fail-closed behavior;
 - source-bounded depth behavior;
 - unrelated user work.
@@ -142,7 +169,6 @@ SPEC-036 is implemented and awaiting owner review. No work packet is currently a
 
 Do not yet implement:
 
-- My Map visual redesign / folder-tree styling;
 - Back / learner traversal history;
 - traversal persistence or history UI;
 - breadcrumbs as a substitute for traversal history;
@@ -151,10 +177,13 @@ Do not yet implement:
 - quizzes/mastery;
 - guided pathways/courses;
 - automatic analogy generation;
-- broad navigation redesign;
-- universal final renderer.
+- broad navigation architecture redesign;
+- universal final renderer;
+- decorative animation as a product goal.
 
-A later packet may separately test traversal-memory semantics and My Map visual grammar after explanatory power has been restored on the clean architecture.
+My Map visual grammar is no longer deferred: SPEC-037 explicitly authorizes visual tree/territory restyling while freezing its revealed-knowledge data model and navigation behavior.
+
+A later packet may separately test traversal-memory semantics after the learner-facing semantic grammar is stable.
 
 ## Coordination rule
 
