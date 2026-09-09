@@ -511,4 +511,33 @@ After implementation the owner should be able to answer:
 4. Are causal, hierarchy/composition, process/sequence, focused relationship, and prose visually different because their semantics differ?
 5. Do semantic nodes have enough visual objecthood without looking like navigation buttons?
 6. Do relationships look like actual connections?
-7. Is the dominant representation now the first thing
+7. Is the dominant representation now the first thing my attention goes to in structural cases?
+8. Does hover/click inspection feel integrated with the diagram rather than merely changing text styling?
+9. Are Explore Next recommendations still clearly distinct as actions, and are they still the only forward-traversal mechanism in the explanatory pane?
+10. Did we preserve grounding, canonical direction, fail-closed behavior, and the cleaner navigation architecture?
+11. Does sparse knowledge remain honestly sparse rather than being padded for visual effect?
+12. Overall, is this a stronger learning surface than SPEC-037 while retaining the architectural gains made since the earlier diagram-rich UI?
+
+## Owner decision after review
+
+After browser review choose one:
+
+```text
+DIAGRAM_CANVAS_CONFIRMED
+DIAGRAM_CANVAS_DIRECTIONALLY_CORRECT
+DIAGRAM_CANVAS_NEEDS_REVISION
+REJECT_AND_RETURN_TO_SPEC_037
+```
+
+Do not promote a baseline automatically. Owner review is the required human gate.
+
+## Completion contract
+
+Implementation is complete only when:
+
+- the required offline implementation and regression tests pass;
+- the browser/machine gate passes with a clean console;
+- the isolated SPEC-038 evaluation artifact and report exist;
+- exact test counts, changed files, commits, push state, and working-tree state are reported;
+- `STATUS.md` is updated to record SPEC-038 as implemented and awaiting owner review;
+- no baseline promotion is performed without explicit owner authorization.
