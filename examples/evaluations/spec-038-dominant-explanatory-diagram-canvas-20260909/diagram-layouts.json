@@ -1,0 +1,3690 @@
+{
+  "layouts": {
+    "depth:depth-double-slit-v1:canonical:relationship-3fadf1ab890d9bde": {
+      "context_key": "depth:depth-double-slit-v1:canonical:relationship-3fadf1ab890d9bde",
+      "height": 380,
+      "nodes": [
+        {
+          "description": "Experiment in which particles or waves passing through two slits produce an interference pattern.",
+          "entity_id": "double-slit-experiment",
+          "label": "double-slit experiment",
+          "role": "relationship-source",
+          "role_label": "source",
+          "x": 210,
+          "y": 190
+        },
+        {
+          "description": "Pattern of alternating light and dark bands produced by wave interference and reproduced by quantum particles statistically.",
+          "entity_id": "interference-pattern",
+          "label": "interference pattern",
+          "role": "relationship-target",
+          "role_label": "target",
+          "x": 790,
+          "y": 190
+        }
+      ],
+      "relationships": [
+        {
+          "direction": "DIRECTED",
+          "label_x": 500,
+          "label_y": 190,
+          "meaning": "The source brings about the target as an effect.",
+          "path": "M 288 190 L 712 190",
+          "relationship_ids": [
+            "relationship-3fadf1ab890d9bde"
+          ],
+          "relationship_type": "CAUSES",
+          "source_entity_id": "double-slit-experiment",
+          "source_label": "double-slit experiment",
+          "target_entity_id": "interference-pattern",
+          "target_label": "interference pattern"
+        }
+      ],
+      "source": "deterministic projection of exact committed SPEC-034 plan",
+      "sparse": true,
+      "spatial_grammar": "focused-connection",
+      "strategy_type": "FOCUSED_RELATIONSHIP",
+      "width": 1000
+    },
+    "depth:depth-double-slit-v1:canonical:relationship-7d1b3317e1e4c682": {
+      "context_key": "depth:depth-double-slit-v1:canonical:relationship-7d1b3317e1e4c682",
+      "height": 380,
+      "nodes": [
+        {
+          "description": "Principle that a quantum system displays wave-like or particle-like properties according to the measurement performed.",
+          "entity_id": "principle-of-complementarity",
+          "label": "principle of complementarity",
+          "role": "relationship-target",
+          "role_label": "target",
+          "x": 790,
+          "y": 190
+        },
+        {
+          "description": "Principle that photons and matter exhibit both wave-like and particle-like behavior, neither classical description being sufficient alone.",
+          "entity_id": "waveparticle-duality",
+          "label": "wave–particle duality",
+          "role": "relationship-source",
+          "role_label": "source",
+          "x": 210,
+          "y": 190
+        }
+      ],
+      "relationships": [
+        {
+          "direction": "DIRECTED",
+          "label_x": 500,
+          "label_y": 190,
+          "meaning": "The source is an illustrative instance of the target concept.",
+          "path": "M 288 190 L 712 190",
+          "relationship_ids": [
+            "relationship-7d1b3317e1e4c682"
+          ],
+          "relationship_type": "EXAMPLE_OF",
+          "source_entity_id": "waveparticle-duality",
+          "source_label": "wave–particle duality",
+          "target_entity_id": "principle-of-complementarity",
+          "target_label": "principle of complementarity"
+        }
+      ],
+      "source": "deterministic projection of exact committed SPEC-034 plan",
+      "sparse": true,
+      "spatial_grammar": "focused-connection",
+      "strategy_type": "FOCUSED_RELATIONSHIP",
+      "width": 1000
+    },
+    "depth:depth-double-slit-v1:concept:double-slit-experiment": {
+      "context_key": "depth:depth-double-slit-v1:concept:double-slit-experiment",
+      "height": 460,
+      "nodes": [
+        {
+          "description": "Experiment in which particles or waves passing through two slits produce an interference pattern.",
+          "entity_id": "double-slit-experiment",
+          "label": "double-slit experiment",
+          "role": "causal-state",
+          "role_label": "system state",
+          "x": 500,
+          "y": 105
+        },
+        {
+          "description": "Pattern of alternating light and dark bands produced by wave interference and reproduced by quantum particles statistically.",
+          "entity_id": "interference-pattern",
+          "label": "interference pattern",
+          "role": "causal-state",
+          "role_label": "system state",
+          "x": 500,
+          "y": 355
+        }
+      ],
+      "relationships": [
+        {
+          "direction": "DIRECTED",
+          "label_x": 500,
+          "label_y": 230,
+          "meaning": "The source brings about the target as an effect.",
+          "path": "M 500 183 L 500 277",
+          "relationship_ids": [
+            "relationship-3fadf1ab890d9bde"
+          ],
+          "relationship_type": "CAUSES",
+          "source_entity_id": "double-slit-experiment",
+          "source_label": "double-slit experiment",
+          "target_entity_id": "interference-pattern",
+          "target_label": "interference pattern"
+        }
+      ],
+      "source": "deterministic projection of exact committed SPEC-034 plan",
+      "sparse": true,
+      "spatial_grammar": "causal-system",
+      "strategy_type": "CAUSAL_MECHANISM",
+      "width": 1000
+    },
+    "depth:depth-double-slit-v1:concept:interference-pattern": {
+      "context_key": "depth:depth-double-slit-v1:concept:interference-pattern",
+      "height": 460,
+      "nodes": [
+        {
+          "description": "Experiment in which particles or waves passing through two slits produce an interference pattern.",
+          "entity_id": "double-slit-experiment",
+          "label": "double-slit experiment",
+          "role": "causal-state",
+          "role_label": "system state",
+          "x": 500,
+          "y": 105
+        },
+        {
+          "description": "Pattern of alternating light and dark bands produced by wave interference and reproduced by quantum particles statistically.",
+          "entity_id": "interference-pattern",
+          "label": "interference pattern",
+          "role": "causal-state",
+          "role_label": "system state",
+          "x": 500,
+          "y": 355
+        }
+      ],
+      "relationships": [
+        {
+          "direction": "DIRECTED",
+          "label_x": 500,
+          "label_y": 230,
+          "meaning": "The source brings about the target as an effect.",
+          "path": "M 500 183 L 500 277",
+          "relationship_ids": [
+            "relationship-3fadf1ab890d9bde"
+          ],
+          "relationship_type": "CAUSES",
+          "source_entity_id": "double-slit-experiment",
+          "source_label": "double-slit experiment",
+          "target_entity_id": "interference-pattern",
+          "target_label": "interference pattern"
+        }
+      ],
+      "source": "deterministic projection of exact committed SPEC-034 plan",
+      "sparse": true,
+      "spatial_grammar": "causal-system",
+      "strategy_type": "CAUSAL_MECHANISM",
+      "width": 1000
+    },
+    "depth:depth-double-slit-v1:concept:principle-of-complementarity": {
+      "context_key": "depth:depth-double-slit-v1:concept:principle-of-complementarity",
+      "height": 470,
+      "nodes": [
+        {
+          "description": "Principle that a quantum system displays wave-like or particle-like properties according to the measurement performed.",
+          "entity_id": "principle-of-complementarity",
+          "label": "principle of complementarity",
+          "role": "hierarchy-root",
+          "role_label": "whole / kind",
+          "x": 500,
+          "y": 105
+        },
+        {
+          "description": "Principle that photons and matter exhibit both wave-like and particle-like behavior, neither classical description being sufficient alone.",
+          "entity_id": "waveparticle-duality",
+          "label": "wave–particle duality",
+          "role": "hierarchy-member",
+          "role_label": "part / member",
+          "x": 500,
+          "y": 355
+        }
+      ],
+      "relationships": [
+        {
+          "direction": "DIRECTED",
+          "label_x": 500,
+          "label_y": 230,
+          "meaning": "The source is an illustrative instance of the target concept.",
+          "path": "M 500 277 L 500 183",
+          "relationship_ids": [
+            "relationship-7d1b3317e1e4c682"
+          ],
+          "relationship_type": "EXAMPLE_OF",
+          "source_entity_id": "waveparticle-duality",
+          "source_label": "wave–particle duality",
+          "target_entity_id": "principle-of-complementarity",
+          "target_label": "principle of complementarity"
+        }
+      ],
+      "source": "deterministic projection of exact committed SPEC-034 plan",
+      "sparse": true,
+      "spatial_grammar": "hierarchy-composition",
+      "strategy_type": "HIERARCHY_COMPOSITION",
+      "width": 1000
+    },
+    "depth:depth-double-slit-v1:concept:waveparticle-duality": {
+      "context_key": "depth:depth-double-slit-v1:concept:waveparticle-duality",
+      "height": 470,
+      "nodes": [
+        {
+          "description": "Principle that a quantum system displays wave-like or particle-like properties according to the measurement performed.",
+          "entity_id": "principle-of-complementarity",
+          "label": "principle of complementarity",
+          "role": "hierarchy-root",
+          "role_label": "whole / kind",
+          "x": 500,
+          "y": 105
+        },
+        {
+          "description": "Principle that photons and matter exhibit both wave-like and particle-like behavior, neither classical description being sufficient alone.",
+          "entity_id": "waveparticle-duality",
+          "label": "wave–particle duality",
+          "role": "hierarchy-member",
+          "role_label": "part / member",
+          "x": 500,
+          "y": 355
+        }
+      ],
+      "relationships": [
+        {
+          "direction": "DIRECTED",
+          "label_x": 500,
+          "label_y": 230,
+          "meaning": "The source is an illustrative instance of the target concept.",
+          "path": "M 500 277 L 500 183",
+          "relationship_ids": [
+            "relationship-7d1b3317e1e4c682"
+          ],
+          "relationship_type": "EXAMPLE_OF",
+          "source_entity_id": "waveparticle-duality",
+          "source_label": "wave–particle duality",
+          "target_entity_id": "principle-of-complementarity",
+          "target_label": "principle of complementarity"
+        }
+      ],
+      "source": "deterministic projection of exact committed SPEC-034 plan",
+      "sparse": true,
+      "spatial_grammar": "hierarchy-composition",
+      "strategy_type": "HIERARCHY_COMPOSITION",
+      "width": 1000
+    },
+    "ground:economics:representation-fe3ba90cb8cfa3d6:canonical:rel-higher-price-decreases-demanded": {
+      "context_key": "ground:economics:representation-fe3ba90cb8cfa3d6:canonical:rel-higher-price-decreases-demanded",
+      "height": 380,
+      "nodes": [
+        {
+          "description": "The price that coordinates buyers' and sellers' plans.",
+          "entity_id": "market-price",
+          "label": "market price",
+          "role": "relationship-source",
+          "role_label": "source",
+          "x": 210,
+          "y": 190
+        },
+        {
+          "description": "The quantity buyers demand at a given price.",
+          "entity_id": "quantity-demanded",
+          "label": "quantity demanded",
+          "role": "relationship-target",
+          "role_label": "target",
+          "x": 790,
+          "y": 190
+        }
+      ],
+      "relationships": [
+        {
+          "direction": "decreaser_to_decreased_variable",
+          "label_x": 535,
+          "label_y": 448,
+          "meaning": "The source causally lowers the amount, rate, value, probability, or intensity of the target.",
+          "path": "M 288 190 L 712 190",
+          "relationship_ids": [
+            "rel-higher-price-decreases-demanded",
+            "rel-price-decreases-demanded"
+          ],
+          "relationship_type": "DECREASES",
+          "source_entity_id": "market-price",
+          "source_label": "market price",
+          "target_entity_id": "quantity-demanded",
+          "target_label": "quantity demanded"
+        }
+      ],
+      "source": "deterministic projection of exact committed SPEC-034 plan",
+      "sparse": true,
+      "spatial_grammar": "focused-connection",
+      "strategy_type": "FOCUSED_RELATIONSHIP",
+      "width": 1000
+    },
+    "ground:economics:representation-fe3ba90cb8cfa3d6:canonical:rel-higher-price-increases-supplied": {
+      "context_key": "ground:economics:representation-fe3ba90cb8cfa3d6:canonical:rel-higher-price-increases-supplied",
+      "height": 380,
+      "nodes": [
+        {
+          "description": "The price that coordinates buyers' and sellers' plans.",
+          "entity_id": "market-price",
+          "label": "market price",
+          "role": "relationship-source",
+          "role_label": "source",
+          "x": 210,
+          "y": 190
+        },
+        {
+          "description": "The quantity sellers supply at a given price.",
+          "entity_id": "quantity-supplied",
+          "label": "quantity supplied",
+          "role": "relationship-target",
+          "role_label": "target",
+          "x": 790,
+          "y": 190
+        }
+      ],
+      "relationships": [
+        {
+          "direction": "increaser_to_increased_variable",
+          "label_x": 760,
+          "label_y": 448,
+          "meaning": "The source causally raises the amount, rate, value, probability, or intensity of the target.",
+          "path": "M 288 190 L 712 190",
+          "relationship_ids": [
+            "rel-higher-price-increases-supplied",
+            "rel-price-increases-supplied"
+          ],
+          "relationship_type": "INCREASES",
+          "source_entity_id": "market-price",
+          "source_label": "market price",
+          "target_entity_id": "quantity-supplied",
+          "target_label": "quantity supplied"
+        }
+      ],
+      "source": "deterministic projection of exact committed SPEC-034 plan",
+      "sparse": true,
+      "spatial_grammar": "focused-connection",
+      "strategy_type": "FOCUSED_RELATIONSHIP",
+      "width": 1000
+    },
+    "ground:economics:representation-fe3ba90cb8cfa3d6:canonical:rel-price-decreases-demanded": {
+      "context_key": "ground:economics:representation-fe3ba90cb8cfa3d6:canonical:rel-price-decreases-demanded",
+      "height": 380,
+      "nodes": [
+        {
+          "description": "The price that coordinates buyers' and sellers' plans.",
+          "entity_id": "market-price",
+          "label": "market price",
+          "role": "relationship-source",
+          "role_label": "source",
+          "x": 210,
+          "y": 190
+        },
+        {
+          "description": "The quantity buyers demand at a given price.",
+          "entity_id": "quantity-demanded",
+          "label": "quantity demanded",
+          "role": "relationship-target",
+          "role_label": "target",
+          "x": 790,
+          "y": 190
+        }
+      ],
+      "relationships": [
+        {
+          "direction": "decreaser_to_decreased_variable",
+          "label_x": 535,
+          "label_y": 448,
+          "meaning": "The source causally lowers the amount, rate, value, probability, or intensity of the target.",
+          "path": "M 288 190 L 712 190",
+          "relationship_ids": [
+            "rel-higher-price-decreases-demanded",
+            "rel-price-decreases-demanded"
+          ],
+          "relationship_type": "DECREASES",
+          "source_entity_id": "market-price",
+          "source_label": "market price",
+          "target_entity_id": "quantity-demanded",
+          "target_label": "quantity demanded"
+        }
+      ],
+      "source": "deterministic projection of exact committed SPEC-034 plan",
+      "sparse": true,
+      "spatial_grammar": "focused-connection",
+      "strategy_type": "FOCUSED_RELATIONSHIP",
+      "width": 1000
+    },
+    "ground:economics:representation-fe3ba90cb8cfa3d6:canonical:rel-price-increases-supplied": {
+      "context_key": "ground:economics:representation-fe3ba90cb8cfa3d6:canonical:rel-price-increases-supplied",
+      "height": 380,
+      "nodes": [
+        {
+          "description": "The price that coordinates buyers' and sellers' plans.",
+          "entity_id": "market-price",
+          "label": "market price",
+          "role": "relationship-source",
+          "role_label": "source",
+          "x": 210,
+          "y": 190
+        },
+        {
+          "description": "The quantity sellers supply at a given price.",
+          "entity_id": "quantity-supplied",
+          "label": "quantity supplied",
+          "role": "relationship-target",
+          "role_label": "target",
+          "x": 790,
+          "y": 190
+        }
+      ],
+      "relationships": [
+        {
+          "direction": "increaser_to_increased_variable",
+          "label_x": 760,
+          "label_y": 448,
+          "meaning": "The source causally raises the amount, rate, value, probability, or intensity of the target.",
+          "path": "M 288 190 L 712 190",
+          "relationship_ids": [
+            "rel-higher-price-increases-supplied",
+            "rel-price-increases-supplied"
+          ],
+          "relationship_type": "INCREASES",
+          "source_entity_id": "market-price",
+          "source_label": "market price",
+          "target_entity_id": "quantity-supplied",
+          "target_label": "quantity supplied"
+        }
+      ],
+      "source": "deterministic projection of exact committed SPEC-034 plan",
+      "sparse": true,
+      "spatial_grammar": "focused-connection",
+      "strategy_type": "FOCUSED_RELATIONSHIP",
+      "width": 1000
+    },
+    "ground:economics:representation-fe3ba90cb8cfa3d6:canonical:rel-shortage-upward-pressure": {
+      "context_key": "ground:economics:representation-fe3ba90cb8cfa3d6:canonical:rel-shortage-upward-pressure",
+      "height": 380,
+      "nodes": [
+        {
+          "description": "A market condition in which quantity demanded exceeds quantity supplied.",
+          "entity_id": "shortage",
+          "label": "shortage",
+          "role": "relationship-source",
+          "role_label": "source",
+          "x": 210,
+          "y": 190
+        },
+        {
+          "description": "Pressure that tends to raise the market price.",
+          "entity_id": "upward-price-pressure",
+          "label": "upward pressure on price",
+          "role": "relationship-target",
+          "role_label": "target",
+          "x": 790,
+          "y": 190
+        }
+      ],
+      "relationships": [
+        {
+          "direction": "cause_to_effect",
+          "label_x": 225,
+          "label_y": 205,
+          "meaning": "The source brings about the target as an effect.",
+          "path": "M 288 190 L 712 190",
+          "relationship_ids": [
+            "rel-shortage-upward-pressure"
+          ],
+          "relationship_type": "CAUSES",
+          "source_entity_id": "shortage",
+          "source_label": "shortage",
+          "target_entity_id": "upward-price-pressure",
+          "target_label": "upward pressure on price"
+        }
+      ],
+      "source": "deterministic projection of exact committed SPEC-034 plan",
+      "sparse": true,
+      "spatial_grammar": "focused-connection",
+      "strategy_type": "FOCUSED_RELATIONSHIP",
+      "width": 1000
+    },
+    "ground:economics:representation-fe3ba90cb8cfa3d6:canonical:rel-supply-reduction-price-increase": {
+      "context_key": "ground:economics:representation-fe3ba90cb8cfa3d6:canonical:rel-supply-reduction-price-increase",
+      "height": 380,
+      "nodes": [
+        {
+          "description": "The price that coordinates buyers' and sellers' plans.",
+          "entity_id": "market-price",
+          "label": "market price",
+          "role": "relationship-target",
+          "role_label": "target",
+          "x": 790,
+          "y": 190
+        },
+        {
+          "description": "A decrease in the amount of supply available in the market.",
+          "entity_id": "supply-reduction",
+          "label": "reduction in supply",
+          "role": "relationship-source",
+          "role_label": "source",
+          "x": 210,
+          "y": 190
+        }
+      ],
+      "relationships": [
+        {
+          "direction": "cause_to_effect",
+          "label_x": 760,
+          "label_y": 225,
+          "meaning": "The source brings about the target as an effect.",
+          "path": "M 288 190 L 712 190",
+          "relationship_ids": [
+            "rel-supply-reduction-price-increase"
+          ],
+          "relationship_type": "CAUSES",
+          "source_entity_id": "supply-reduction",
+          "source_label": "reduction in supply",
+          "target_entity_id": "market-price",
+          "target_label": "market price"
+        }
+      ],
+      "source": "deterministic projection of exact committed SPEC-034 plan",
+      "sparse": true,
+      "spatial_grammar": "focused-connection",
+      "strategy_type": "FOCUSED_RELATIONSHIP",
+      "width": 1000
+    },
+    "ground:economics:representation-fe3ba90cb8cfa3d6:canonical:rel-upward-pressure-price": {
+      "context_key": "ground:economics:representation-fe3ba90cb8cfa3d6:canonical:rel-upward-pressure-price",
+      "height": 380,
+      "nodes": [
+        {
+          "description": "The price that coordinates buyers' and sellers' plans.",
+          "entity_id": "market-price",
+          "label": "market price",
+          "role": "relationship-target",
+          "role_label": "target",
+          "x": 790,
+          "y": 190
+        },
+        {
+          "description": "Pressure that tends to raise the market price.",
+          "entity_id": "upward-price-pressure",
+          "label": "upward pressure on price",
+          "role": "relationship-source",
+          "role_label": "source",
+          "x": 210,
+          "y": 190
+        }
+      ],
+      "relationships": [
+        {
+          "direction": "increaser_to_increased_variable",
+          "label_x": 455,
+          "label_y": 330,
+          "meaning": "The source causally raises the amount, rate, value, probability, or intensity of the target.",
+          "path": "M 288 190 L 712 190",
+          "relationship_ids": [
+            "rel-upward-pressure-price"
+          ],
+          "relationship_type": "INCREASES",
+          "source_entity_id": "upward-price-pressure",
+          "source_label": "upward pressure on price",
+          "target_entity_id": "market-price",
+          "target_label": "market price"
+        }
+      ],
+      "source": "deterministic projection of exact committed SPEC-034 plan",
+      "sparse": true,
+      "spatial_grammar": "focused-connection",
+      "strategy_type": "FOCUSED_RELATIONSHIP",
+      "width": 1000
+    },
+    "ground:economics:representation-fe3ba90cb8cfa3d6:concept:market-price": {
+      "context_key": "ground:economics:representation-fe3ba90cb8cfa3d6:concept:market-price",
+      "height": 640,
+      "nodes": [
+        {
+          "description": "The price that coordinates buyers' and sellers' plans.",
+          "entity_id": "market-price",
+          "label": "market price",
+          "role": "causal-state",
+          "role_label": "system state",
+          "x": 650,
+          "y": 350
+        },
+        {
+          "description": "The quantity buyers demand at a given price.",
+          "entity_id": "quantity-demanded",
+          "label": "quantity demanded",
+          "role": "causal-state",
+          "role_label": "system state",
+          "x": 500,
+          "y": 545
+        },
+        {
+          "description": "The quantity sellers supply at a given price.",
+          "entity_id": "quantity-supplied",
+          "label": "quantity supplied",
+          "role": "causal-state",
+          "role_label": "system state",
+          "x": 800,
+          "y": 545
+        },
+        {
+          "description": "A market condition in which quantity demanded exceeds quantity supplied.",
+          "entity_id": "shortage",
+          "label": "shortage",
+          "role": "causal-state",
+          "role_label": "system state",
+          "x": 220,
+          "y": 105
+        },
+        {
+          "description": "A decrease in the amount of supply available in the market.",
+          "entity_id": "supply-reduction",
+          "label": "reduction in supply",
+          "role": "causal-state",
+          "role_label": "system state",
+          "x": 760,
+          "y": 105
+        },
+        {
+          "description": "Pressure that tends to raise the market price.",
+          "entity_id": "upward-price-pressure",
+          "label": "upward pressure on price",
+          "role": "causal-state",
+          "role_label": "system state",
+          "x": 260,
+          "y": 315
+        }
+      ],
+      "relationships": [
+        {
+          "direction": "decreaser_to_decreased_variable",
+          "label_x": 535,
+          "label_y": 448,
+          "meaning": "The source causally lowers the amount, rate, value, probability, or intensity of the target.",
+          "path": "M 602 412 L 548 483",
+          "relationship_ids": [
+            "rel-higher-price-decreases-demanded",
+            "rel-price-decreases-demanded"
+          ],
+          "relationship_type": "DECREASES",
+          "source_entity_id": "market-price",
+          "source_label": "market price",
+          "target_entity_id": "quantity-demanded",
+          "target_label": "quantity demanded"
+        },
+        {
+          "direction": "increaser_to_increased_variable",
+          "label_x": 760,
+          "label_y": 448,
+          "meaning": "The source causally raises the amount, rate, value, probability, or intensity of the target.",
+          "path": "M 698 412 L 752 483",
+          "relationship_ids": [
+            "rel-higher-price-increases-supplied",
+            "rel-price-increases-supplied"
+          ],
+          "relationship_type": "INCREASES",
+          "source_entity_id": "market-price",
+          "source_label": "market price",
+          "target_entity_id": "quantity-supplied",
+          "target_label": "quantity supplied"
+        },
+        {
+          "direction": "cause_to_effect",
+          "label_x": 225,
+          "label_y": 205,
+          "meaning": "The source brings about the target as an effect.",
+          "path": "M 235 182 L 245 238",
+          "relationship_ids": [
+            "rel-shortage-upward-pressure"
+          ],
+          "relationship_type": "CAUSES",
+          "source_entity_id": "shortage",
+          "source_label": "shortage",
+          "target_entity_id": "upward-price-pressure",
+          "target_label": "upward pressure on price"
+        },
+        {
+          "direction": "cause_to_effect",
+          "label_x": 760,
+          "label_y": 225,
+          "meaning": "The source brings about the target as an effect.",
+          "path": "M 728 176 L 682 279",
+          "relationship_ids": [
+            "rel-supply-reduction-price-increase"
+          ],
+          "relationship_type": "CAUSES",
+          "source_entity_id": "supply-reduction",
+          "source_label": "reduction in supply",
+          "target_entity_id": "market-price",
+          "target_label": "market price"
+        },
+        {
+          "direction": "increaser_to_increased_variable",
+          "label_x": 455,
+          "label_y": 330,
+          "meaning": "The source causally raises the amount, rate, value, probability, or intensity of the target.",
+          "path": "M 338 322 L 572 343",
+          "relationship_ids": [
+            "rel-upward-pressure-price"
+          ],
+          "relationship_type": "INCREASES",
+          "source_entity_id": "upward-price-pressure",
+          "source_label": "upward pressure on price",
+          "target_entity_id": "market-price",
+          "target_label": "market price"
+        }
+      ],
+      "source": "deterministic projection of exact committed SPEC-034 plan",
+      "sparse": false,
+      "spatial_grammar": "causal-system",
+      "strategy_type": "CAUSAL_MECHANISM",
+      "width": 1000
+    },
+    "ground:economics:representation-fe3ba90cb8cfa3d6:concept:quantity-demanded": {
+      "context_key": "ground:economics:representation-fe3ba90cb8cfa3d6:concept:quantity-demanded",
+      "height": 640,
+      "nodes": [
+        {
+          "description": "The price that coordinates buyers' and sellers' plans.",
+          "entity_id": "market-price",
+          "label": "market price",
+          "role": "causal-state",
+          "role_label": "system state",
+          "x": 650,
+          "y": 350
+        },
+        {
+          "description": "The quantity buyers demand at a given price.",
+          "entity_id": "quantity-demanded",
+          "label": "quantity demanded",
+          "role": "causal-state",
+          "role_label": "system state",
+          "x": 500,
+          "y": 545
+        },
+        {
+          "description": "The quantity sellers supply at a given price.",
+          "entity_id": "quantity-supplied",
+          "label": "quantity supplied",
+          "role": "causal-state",
+          "role_label": "system state",
+          "x": 800,
+          "y": 545
+        },
+        {
+          "description": "A market condition in which quantity demanded exceeds quantity supplied.",
+          "entity_id": "shortage",
+          "label": "shortage",
+          "role": "causal-state",
+          "role_label": "system state",
+          "x": 220,
+          "y": 105
+        },
+        {
+          "description": "A decrease in the amount of supply available in the market.",
+          "entity_id": "supply-reduction",
+          "label": "reduction in supply",
+          "role": "causal-state",
+          "role_label": "system state",
+          "x": 760,
+          "y": 105
+        },
+        {
+          "description": "Pressure that tends to raise the market price.",
+          "entity_id": "upward-price-pressure",
+          "label": "upward pressure on price",
+          "role": "causal-state",
+          "role_label": "system state",
+          "x": 260,
+          "y": 315
+        }
+      ],
+      "relationships": [
+        {
+          "direction": "decreaser_to_decreased_variable",
+          "label_x": 535,
+          "label_y": 448,
+          "meaning": "The source causally lowers the amount, rate, value, probability, or intensity of the target.",
+          "path": "M 602 412 L 548 483",
+          "relationship_ids": [
+            "rel-higher-price-decreases-demanded",
+            "rel-price-decreases-demanded"
+          ],
+          "relationship_type": "DECREASES",
+          "source_entity_id": "market-price",
+          "source_label": "market price",
+          "target_entity_id": "quantity-demanded",
+          "target_label": "quantity demanded"
+        },
+        {
+          "direction": "increaser_to_increased_variable",
+          "label_x": 760,
+          "label_y": 448,
+          "meaning": "The source causally raises the amount, rate, value, probability, or intensity of the target.",
+          "path": "M 698 412 L 752 483",
+          "relationship_ids": [
+            "rel-higher-price-increases-supplied",
+            "rel-price-increases-supplied"
+          ],
+          "relationship_type": "INCREASES",
+          "source_entity_id": "market-price",
+          "source_label": "market price",
+          "target_entity_id": "quantity-supplied",
+          "target_label": "quantity supplied"
+        },
+        {
+          "direction": "cause_to_effect",
+          "label_x": 225,
+          "label_y": 205,
+          "meaning": "The source brings about the target as an effect.",
+          "path": "M 235 182 L 245 238",
+          "relationship_ids": [
+            "rel-shortage-upward-pressure"
+          ],
+          "relationship_type": "CAUSES",
+          "source_entity_id": "shortage",
+          "source_label": "shortage",
+          "target_entity_id": "upward-price-pressure",
+          "target_label": "upward pressure on price"
+        },
+        {
+          "direction": "cause_to_effect",
+          "label_x": 760,
+          "label_y": 225,
+          "meaning": "The source brings about the target as an effect.",
+          "path": "M 728 176 L 682 279",
+          "relationship_ids": [
+            "rel-supply-reduction-price-increase"
+          ],
+          "relationship_type": "CAUSES",
+          "source_entity_id": "supply-reduction",
+          "source_label": "reduction in supply",
+          "target_entity_id": "market-price",
+          "target_label": "market price"
+        },
+        {
+          "direction": "increaser_to_increased_variable",
+          "label_x": 455,
+          "label_y": 330,
+          "meaning": "The source causally raises the amount, rate, value, probability, or intensity of the target.",
+          "path": "M 338 322 L 572 343",
+          "relationship_ids": [
+            "rel-upward-pressure-price"
+          ],
+          "relationship_type": "INCREASES",
+          "source_entity_id": "upward-price-pressure",
+          "source_label": "upward pressure on price",
+          "target_entity_id": "market-price",
+          "target_label": "market price"
+        }
+      ],
+      "source": "deterministic projection of exact committed SPEC-034 plan",
+      "sparse": false,
+      "spatial_grammar": "causal-system",
+      "strategy_type": "CAUSAL_MECHANISM",
+      "width": 1000
+    },
+    "ground:economics:representation-fe3ba90cb8cfa3d6:concept:quantity-supplied": {
+      "context_key": "ground:economics:representation-fe3ba90cb8cfa3d6:concept:quantity-supplied",
+      "height": 640,
+      "nodes": [
+        {
+          "description": "The price that coordinates buyers' and sellers' plans.",
+          "entity_id": "market-price",
+          "label": "market price",
+          "role": "causal-state",
+          "role_label": "system state",
+          "x": 650,
+          "y": 350
+        },
+        {
+          "description": "The quantity buyers demand at a given price.",
+          "entity_id": "quantity-demanded",
+          "label": "quantity demanded",
+          "role": "causal-state",
+          "role_label": "system state",
+          "x": 500,
+          "y": 545
+        },
+        {
+          "description": "The quantity sellers supply at a given price.",
+          "entity_id": "quantity-supplied",
+          "label": "quantity supplied",
+          "role": "causal-state",
+          "role_label": "system state",
+          "x": 800,
+          "y": 545
+        },
+        {
+          "description": "A market condition in which quantity demanded exceeds quantity supplied.",
+          "entity_id": "shortage",
+          "label": "shortage",
+          "role": "causal-state",
+          "role_label": "system state",
+          "x": 220,
+          "y": 105
+        },
+        {
+          "description": "A decrease in the amount of supply available in the market.",
+          "entity_id": "supply-reduction",
+          "label": "reduction in supply",
+          "role": "causal-state",
+          "role_label": "system state",
+          "x": 760,
+          "y": 105
+        },
+        {
+          "description": "Pressure that tends to raise the market price.",
+          "entity_id": "upward-price-pressure",
+          "label": "upward pressure on price",
+          "role": "causal-state",
+          "role_label": "system state",
+          "x": 260,
+          "y": 315
+        }
+      ],
+      "relationships": [
+        {
+          "direction": "decreaser_to_decreased_variable",
+          "label_x": 535,
+          "label_y": 448,
+          "meaning": "The source causally lowers the amount, rate, value, probability, or intensity of the target.",
+          "path": "M 602 412 L 548 483",
+          "relationship_ids": [
+            "rel-higher-price-decreases-demanded",
+            "rel-price-decreases-demanded"
+          ],
+          "relationship_type": "DECREASES",
+          "source_entity_id": "market-price",
+          "source_label": "market price",
+          "target_entity_id": "quantity-demanded",
+          "target_label": "quantity demanded"
+        },
+        {
+          "direction": "increaser_to_increased_variable",
+          "label_x": 760,
+          "label_y": 448,
+          "meaning": "The source causally raises the amount, rate, value, probability, or intensity of the target.",
+          "path": "M 698 412 L 752 483",
+          "relationship_ids": [
+            "rel-higher-price-increases-supplied",
+            "rel-price-increases-supplied"
+          ],
+          "relationship_type": "INCREASES",
+          "source_entity_id": "market-price",
+          "source_label": "market price",
+          "target_entity_id": "quantity-supplied",
+          "target_label": "quantity supplied"
+        },
+        {
+          "direction": "cause_to_effect",
+          "label_x": 225,
+          "label_y": 205,
+          "meaning": "The source brings about the target as an effect.",
+          "path": "M 235 182 L 245 238",
+          "relationship_ids": [
+            "rel-shortage-upward-pressure"
+          ],
+          "relationship_type": "CAUSES",
+          "source_entity_id": "shortage",
+          "source_label": "shortage",
+          "target_entity_id": "upward-price-pressure",
+          "target_label": "upward pressure on price"
+        },
+        {
+          "direction": "cause_to_effect",
+          "label_x": 760,
+          "label_y": 225,
+          "meaning": "The source brings about the target as an effect.",
+          "path": "M 728 176 L 682 279",
+          "relationship_ids": [
+            "rel-supply-reduction-price-increase"
+          ],
+          "relationship_type": "CAUSES",
+          "source_entity_id": "supply-reduction",
+          "source_label": "reduction in supply",
+          "target_entity_id": "market-price",
+          "target_label": "market price"
+        },
+        {
+          "direction": "increaser_to_increased_variable",
+          "label_x": 455,
+          "label_y": 330,
+          "meaning": "The source causally raises the amount, rate, value, probability, or intensity of the target.",
+          "path": "M 338 322 L 572 343",
+          "relationship_ids": [
+            "rel-upward-pressure-price"
+          ],
+          "relationship_type": "INCREASES",
+          "source_entity_id": "upward-price-pressure",
+          "source_label": "upward pressure on price",
+          "target_entity_id": "market-price",
+          "target_label": "market price"
+        }
+      ],
+      "source": "deterministic projection of exact committed SPEC-034 plan",
+      "sparse": false,
+      "spatial_grammar": "causal-system",
+      "strategy_type": "CAUSAL_MECHANISM",
+      "width": 1000
+    },
+    "ground:economics:representation-fe3ba90cb8cfa3d6:concept:shortage": {
+      "context_key": "ground:economics:representation-fe3ba90cb8cfa3d6:concept:shortage",
+      "height": 640,
+      "nodes": [
+        {
+          "description": "The price that coordinates buyers' and sellers' plans.",
+          "entity_id": "market-price",
+          "label": "market price",
+          "role": "causal-state",
+          "role_label": "system state",
+          "x": 650,
+          "y": 350
+        },
+        {
+          "description": "The quantity buyers demand at a given price.",
+          "entity_id": "quantity-demanded",
+          "label": "quantity demanded",
+          "role": "causal-state",
+          "role_label": "system state",
+          "x": 500,
+          "y": 545
+        },
+        {
+          "description": "The quantity sellers supply at a given price.",
+          "entity_id": "quantity-supplied",
+          "label": "quantity supplied",
+          "role": "causal-state",
+          "role_label": "system state",
+          "x": 800,
+          "y": 545
+        },
+        {
+          "description": "A market condition in which quantity demanded exceeds quantity supplied.",
+          "entity_id": "shortage",
+          "label": "shortage",
+          "role": "causal-state",
+          "role_label": "system state",
+          "x": 220,
+          "y": 105
+        },
+        {
+          "description": "A decrease in the amount of supply available in the market.",
+          "entity_id": "supply-reduction",
+          "label": "reduction in supply",
+          "role": "causal-state",
+          "role_label": "system state",
+          "x": 760,
+          "y": 105
+        },
+        {
+          "description": "Pressure that tends to raise the market price.",
+          "entity_id": "upward-price-pressure",
+          "label": "upward pressure on price",
+          "role": "causal-state",
+          "role_label": "system state",
+          "x": 260,
+          "y": 315
+        }
+      ],
+      "relationships": [
+        {
+          "direction": "decreaser_to_decreased_variable",
+          "label_x": 535,
+          "label_y": 448,
+          "meaning": "The source causally lowers the amount, rate, value, probability, or intensity of the target.",
+          "path": "M 602 412 L 548 483",
+          "relationship_ids": [
+            "rel-higher-price-decreases-demanded",
+            "rel-price-decreases-demanded"
+          ],
+          "relationship_type": "DECREASES",
+          "source_entity_id": "market-price",
+          "source_label": "market price",
+          "target_entity_id": "quantity-demanded",
+          "target_label": "quantity demanded"
+        },
+        {
+          "direction": "increaser_to_increased_variable",
+          "label_x": 760,
+          "label_y": 448,
+          "meaning": "The source causally raises the amount, rate, value, probability, or intensity of the target.",
+          "path": "M 698 412 L 752 483",
+          "relationship_ids": [
+            "rel-higher-price-increases-supplied",
+            "rel-price-increases-supplied"
+          ],
+          "relationship_type": "INCREASES",
+          "source_entity_id": "market-price",
+          "source_label": "market price",
+          "target_entity_id": "quantity-supplied",
+          "target_label": "quantity supplied"
+        },
+        {
+          "direction": "cause_to_effect",
+          "label_x": 225,
+          "label_y": 205,
+          "meaning": "The source brings about the target as an effect.",
+          "path": "M 235 182 L 245 238",
+          "relationship_ids": [
+            "rel-shortage-upward-pressure"
+          ],
+          "relationship_type": "CAUSES",
+          "source_entity_id": "shortage",
+          "source_label": "shortage",
+          "target_entity_id": "upward-price-pressure",
+          "target_label": "upward pressure on price"
+        },
+        {
+          "direction": "cause_to_effect",
+          "label_x": 760,
+          "label_y": 225,
+          "meaning": "The source brings about the target as an effect.",
+          "path": "M 728 176 L 682 279",
+          "relationship_ids": [
+            "rel-supply-reduction-price-increase"
+          ],
+          "relationship_type": "CAUSES",
+          "source_entity_id": "supply-reduction",
+          "source_label": "reduction in supply",
+          "target_entity_id": "market-price",
+          "target_label": "market price"
+        },
+        {
+          "direction": "increaser_to_increased_variable",
+          "label_x": 455,
+          "label_y": 330,
+          "meaning": "The source causally raises the amount, rate, value, probability, or intensity of the target.",
+          "path": "M 338 322 L 572 343",
+          "relationship_ids": [
+            "rel-upward-pressure-price"
+          ],
+          "relationship_type": "INCREASES",
+          "source_entity_id": "upward-price-pressure",
+          "source_label": "upward pressure on price",
+          "target_entity_id": "market-price",
+          "target_label": "market price"
+        }
+      ],
+      "source": "deterministic projection of exact committed SPEC-034 plan",
+      "sparse": false,
+      "spatial_grammar": "causal-system",
+      "strategy_type": "CAUSAL_MECHANISM",
+      "width": 1000
+    },
+    "ground:economics:representation-fe3ba90cb8cfa3d6:concept:supply-reduction": {
+      "context_key": "ground:economics:representation-fe3ba90cb8cfa3d6:concept:supply-reduction",
+      "height": 640,
+      "nodes": [
+        {
+          "description": "The price that coordinates buyers' and sellers' plans.",
+          "entity_id": "market-price",
+          "label": "market price",
+          "role": "causal-state",
+          "role_label": "system state",
+          "x": 650,
+          "y": 350
+        },
+        {
+          "description": "The quantity buyers demand at a given price.",
+          "entity_id": "quantity-demanded",
+          "label": "quantity demanded",
+          "role": "causal-state",
+          "role_label": "system state",
+          "x": 500,
+          "y": 545
+        },
+        {
+          "description": "The quantity sellers supply at a given price.",
+          "entity_id": "quantity-supplied",
+          "label": "quantity supplied",
+          "role": "causal-state",
+          "role_label": "system state",
+          "x": 800,
+          "y": 545
+        },
+        {
+          "description": "A market condition in which quantity demanded exceeds quantity supplied.",
+          "entity_id": "shortage",
+          "label": "shortage",
+          "role": "causal-state",
+          "role_label": "system state",
+          "x": 220,
+          "y": 105
+        },
+        {
+          "description": "A decrease in the amount of supply available in the market.",
+          "entity_id": "supply-reduction",
+          "label": "reduction in supply",
+          "role": "causal-state",
+          "role_label": "system state",
+          "x": 760,
+          "y": 105
+        },
+        {
+          "description": "Pressure that tends to raise the market price.",
+          "entity_id": "upward-price-pressure",
+          "label": "upward pressure on price",
+          "role": "causal-state",
+          "role_label": "system state",
+          "x": 260,
+          "y": 315
+        }
+      ],
+      "relationships": [
+        {
+          "direction": "decreaser_to_decreased_variable",
+          "label_x": 535,
+          "label_y": 448,
+          "meaning": "The source causally lowers the amount, rate, value, probability, or intensity of the target.",
+          "path": "M 602 412 L 548 483",
+          "relationship_ids": [
+            "rel-higher-price-decreases-demanded",
+            "rel-price-decreases-demanded"
+          ],
+          "relationship_type": "DECREASES",
+          "source_entity_id": "market-price",
+          "source_label": "market price",
+          "target_entity_id": "quantity-demanded",
+          "target_label": "quantity demanded"
+        },
+        {
+          "direction": "increaser_to_increased_variable",
+          "label_x": 760,
+          "label_y": 448,
+          "meaning": "The source causally raises the amount, rate, value, probability, or intensity of the target.",
+          "path": "M 698 412 L 752 483",
+          "relationship_ids": [
+            "rel-higher-price-increases-supplied",
+            "rel-price-increases-supplied"
+          ],
+          "relationship_type": "INCREASES",
+          "source_entity_id": "market-price",
+          "source_label": "market price",
+          "target_entity_id": "quantity-supplied",
+          "target_label": "quantity supplied"
+        },
+        {
+          "direction": "cause_to_effect",
+          "label_x": 225,
+          "label_y": 205,
+          "meaning": "The source brings about the target as an effect.",
+          "path": "M 235 182 L 245 238",
+          "relationship_ids": [
+            "rel-shortage-upward-pressure"
+          ],
+          "relationship_type": "CAUSES",
+          "source_entity_id": "shortage",
+          "source_label": "shortage",
+          "target_entity_id": "upward-price-pressure",
+          "target_label": "upward pressure on price"
+        },
+        {
+          "direction": "cause_to_effect",
+          "label_x": 760,
+          "label_y": 225,
+          "meaning": "The source brings about the target as an effect.",
+          "path": "M 728 176 L 682 279",
+          "relationship_ids": [
+            "rel-supply-reduction-price-increase"
+          ],
+          "relationship_type": "CAUSES",
+          "source_entity_id": "supply-reduction",
+          "source_label": "reduction in supply",
+          "target_entity_id": "market-price",
+          "target_label": "market price"
+        },
+        {
+          "direction": "increaser_to_increased_variable",
+          "label_x": 455,
+          "label_y": 330,
+          "meaning": "The source causally raises the amount, rate, value, probability, or intensity of the target.",
+          "path": "M 338 322 L 572 343",
+          "relationship_ids": [
+            "rel-upward-pressure-price"
+          ],
+          "relationship_type": "INCREASES",
+          "source_entity_id": "upward-price-pressure",
+          "source_label": "upward pressure on price",
+          "target_entity_id": "market-price",
+          "target_label": "market price"
+        }
+      ],
+      "source": "deterministic projection of exact committed SPEC-034 plan",
+      "sparse": false,
+      "spatial_grammar": "causal-system",
+      "strategy_type": "CAUSAL_MECHANISM",
+      "width": 1000
+    },
+    "ground:economics:representation-fe3ba90cb8cfa3d6:concept:upward-price-pressure": {
+      "context_key": "ground:economics:representation-fe3ba90cb8cfa3d6:concept:upward-price-pressure",
+      "height": 640,
+      "nodes": [
+        {
+          "description": "The price that coordinates buyers' and sellers' plans.",
+          "entity_id": "market-price",
+          "label": "market price",
+          "role": "causal-state",
+          "role_label": "system state",
+          "x": 650,
+          "y": 350
+        },
+        {
+          "description": "The quantity buyers demand at a given price.",
+          "entity_id": "quantity-demanded",
+          "label": "quantity demanded",
+          "role": "causal-state",
+          "role_label": "system state",
+          "x": 500,
+          "y": 545
+        },
+        {
+          "description": "The quantity sellers supply at a given price.",
+          "entity_id": "quantity-supplied",
+          "label": "quantity supplied",
+          "role": "causal-state",
+          "role_label": "system state",
+          "x": 800,
+          "y": 545
+        },
+        {
+          "description": "A market condition in which quantity demanded exceeds quantity supplied.",
+          "entity_id": "shortage",
+          "label": "shortage",
+          "role": "causal-state",
+          "role_label": "system state",
+          "x": 220,
+          "y": 105
+        },
+        {
+          "description": "A decrease in the amount of supply available in the market.",
+          "entity_id": "supply-reduction",
+          "label": "reduction in supply",
+          "role": "causal-state",
+          "role_label": "system state",
+          "x": 760,
+          "y": 105
+        },
+        {
+          "description": "Pressure that tends to raise the market price.",
+          "entity_id": "upward-price-pressure",
+          "label": "upward pressure on price",
+          "role": "causal-state",
+          "role_label": "system state",
+          "x": 260,
+          "y": 315
+        }
+      ],
+      "relationships": [
+        {
+          "direction": "decreaser_to_decreased_variable",
+          "label_x": 535,
+          "label_y": 448,
+          "meaning": "The source causally lowers the amount, rate, value, probability, or intensity of the target.",
+          "path": "M 602 412 L 548 483",
+          "relationship_ids": [
+            "rel-higher-price-decreases-demanded",
+            "rel-price-decreases-demanded"
+          ],
+          "relationship_type": "DECREASES",
+          "source_entity_id": "market-price",
+          "source_label": "market price",
+          "target_entity_id": "quantity-demanded",
+          "target_label": "quantity demanded"
+        },
+        {
+          "direction": "increaser_to_increased_variable",
+          "label_x": 760,
+          "label_y": 448,
+          "meaning": "The source causally raises the amount, rate, value, probability, or intensity of the target.",
+          "path": "M 698 412 L 752 483",
+          "relationship_ids": [
+            "rel-higher-price-increases-supplied",
+            "rel-price-increases-supplied"
+          ],
+          "relationship_type": "INCREASES",
+          "source_entity_id": "market-price",
+          "source_label": "market price",
+          "target_entity_id": "quantity-supplied",
+          "target_label": "quantity supplied"
+        },
+        {
+          "direction": "cause_to_effect",
+          "label_x": 225,
+          "label_y": 205,
+          "meaning": "The source brings about the target as an effect.",
+          "path": "M 235 182 L 245 238",
+          "relationship_ids": [
+            "rel-shortage-upward-pressure"
+          ],
+          "relationship_type": "CAUSES",
+          "source_entity_id": "shortage",
+          "source_label": "shortage",
+          "target_entity_id": "upward-price-pressure",
+          "target_label": "upward pressure on price"
+        },
+        {
+          "direction": "cause_to_effect",
+          "label_x": 760,
+          "label_y": 225,
+          "meaning": "The source brings about the target as an effect.",
+          "path": "M 728 176 L 682 279",
+          "relationship_ids": [
+            "rel-supply-reduction-price-increase"
+          ],
+          "relationship_type": "CAUSES",
+          "source_entity_id": "supply-reduction",
+          "source_label": "reduction in supply",
+          "target_entity_id": "market-price",
+          "target_label": "market price"
+        },
+        {
+          "direction": "increaser_to_increased_variable",
+          "label_x": 455,
+          "label_y": 330,
+          "meaning": "The source causally raises the amount, rate, value, probability, or intensity of the target.",
+          "path": "M 338 322 L 572 343",
+          "relationship_ids": [
+            "rel-upward-pressure-price"
+          ],
+          "relationship_type": "INCREASES",
+          "source_entity_id": "upward-price-pressure",
+          "source_label": "upward pressure on price",
+          "target_entity_id": "market-price",
+          "target_label": "market price"
+        }
+      ],
+      "source": "deterministic projection of exact committed SPEC-034 plan",
+      "sparse": false,
+      "spatial_grammar": "causal-system",
+      "strategy_type": "CAUSAL_MECHANISM",
+      "width": 1000
+    },
+    "ground:electromagnetism:representation-1da8ae41cb52f95a:canonical:relationship-05b19ee4b6d50060": {
+      "context_key": "ground:electromagnetism:representation-1da8ae41cb52f95a:canonical:relationship-05b19ee4b6d50060",
+      "height": 380,
+      "nodes": [
+        {
+          "description": "Experiment in which particles or waves passing through two slits produce an interference pattern.",
+          "entity_id": "double-slit-experiment",
+          "label": "double-slit experiment",
+          "role": "relationship-source",
+          "role_label": "source",
+          "x": 210,
+          "y": 190
+        },
+        {
+          "description": "Pattern of alternating light and dark bands produced by wave interference and reproduced by quantum particles statistically.",
+          "entity_id": "interference-pattern",
+          "label": "interference pattern",
+          "role": "relationship-target",
+          "role_label": "target",
+          "x": 790,
+          "y": 190
+        }
+      ],
+      "relationships": [
+        {
+          "direction": "cause_to_effect",
+          "label_x": 500,
+          "label_y": 190,
+          "meaning": "The source brings about the target as an effect.",
+          "path": "M 288 190 L 712 190",
+          "relationship_ids": [
+            "relationship-05b19ee4b6d50060"
+          ],
+          "relationship_type": "CAUSES",
+          "source_entity_id": "double-slit-experiment",
+          "source_label": "double-slit experiment",
+          "target_entity_id": "interference-pattern",
+          "target_label": "interference pattern"
+        }
+      ],
+      "source": "deterministic projection of exact committed SPEC-034 plan",
+      "sparse": true,
+      "spatial_grammar": "focused-connection",
+      "strategy_type": "FOCUSED_RELATIONSHIP",
+      "width": 1000
+    },
+    "ground:electromagnetism:representation-1da8ae41cb52f95a:concept:double-slit-experiment": {
+      "context_key": "ground:electromagnetism:representation-1da8ae41cb52f95a:concept:double-slit-experiment",
+      "height": 460,
+      "nodes": [
+        {
+          "description": "Experiment in which particles or waves passing through two slits produce an interference pattern.",
+          "entity_id": "double-slit-experiment",
+          "label": "double-slit experiment",
+          "role": "causal-state",
+          "role_label": "system state",
+          "x": 500,
+          "y": 105
+        },
+        {
+          "description": "Pattern of alternating light and dark bands produced by wave interference and reproduced by quantum particles statistically.",
+          "entity_id": "interference-pattern",
+          "label": "interference pattern",
+          "role": "causal-state",
+          "role_label": "system state",
+          "x": 500,
+          "y": 355
+        }
+      ],
+      "relationships": [
+        {
+          "direction": "cause_to_effect",
+          "label_x": 500,
+          "label_y": 230,
+          "meaning": "The source brings about the target as an effect.",
+          "path": "M 500 183 L 500 277",
+          "relationship_ids": [
+            "relationship-05b19ee4b6d50060"
+          ],
+          "relationship_type": "CAUSES",
+          "source_entity_id": "double-slit-experiment",
+          "source_label": "double-slit experiment",
+          "target_entity_id": "interference-pattern",
+          "target_label": "interference pattern"
+        }
+      ],
+      "source": "deterministic projection of exact committed SPEC-034 plan",
+      "sparse": true,
+      "spatial_grammar": "causal-system",
+      "strategy_type": "CAUSAL_MECHANISM",
+      "width": 1000
+    },
+    "ground:electromagnetism:representation-1da8ae41cb52f95a:concept:interference-pattern": {
+      "context_key": "ground:electromagnetism:representation-1da8ae41cb52f95a:concept:interference-pattern",
+      "height": 460,
+      "nodes": [
+        {
+          "description": "Experiment in which particles or waves passing through two slits produce an interference pattern.",
+          "entity_id": "double-slit-experiment",
+          "label": "double-slit experiment",
+          "role": "causal-state",
+          "role_label": "system state",
+          "x": 500,
+          "y": 105
+        },
+        {
+          "description": "Pattern of alternating light and dark bands produced by wave interference and reproduced by quantum particles statistically.",
+          "entity_id": "interference-pattern",
+          "label": "interference pattern",
+          "role": "causal-state",
+          "role_label": "system state",
+          "x": 500,
+          "y": 355
+        }
+      ],
+      "relationships": [
+        {
+          "direction": "cause_to_effect",
+          "label_x": 500,
+          "label_y": 230,
+          "meaning": "The source brings about the target as an effect.",
+          "path": "M 500 183 L 500 277",
+          "relationship_ids": [
+            "relationship-05b19ee4b6d50060"
+          ],
+          "relationship_type": "CAUSES",
+          "source_entity_id": "double-slit-experiment",
+          "source_label": "double-slit experiment",
+          "target_entity_id": "interference-pattern",
+          "target_label": "interference pattern"
+        }
+      ],
+      "source": "deterministic projection of exact committed SPEC-034 plan",
+      "sparse": true,
+      "spatial_grammar": "causal-system",
+      "strategy_type": "CAUSAL_MECHANISM",
+      "width": 1000
+    },
+    "ground:electromagnetism:representation-685bf4f0c2881f95:canonical:light-is-electromagnetic-wave": {
+      "context_key": "ground:electromagnetism:representation-685bf4f0c2881f95:canonical:light-is-electromagnetic-wave",
+      "height": 380,
+      "nodes": [
+        {
+          "description": "A wave formed by changing electric and magnetic fields that can sustain one another.",
+          "entity_id": "electromagnetic-wave",
+          "label": "Electromagnetic wave",
+          "role": "relationship-target",
+          "role_label": "target",
+          "x": 790,
+          "y": 190
+        },
+        {
+          "description": "An electromagnetic wave.",
+          "entity_id": "light",
+          "label": "Light",
+          "role": "relationship-source",
+          "role_label": "source",
+          "x": 210,
+          "y": 190
+        }
+      ],
+      "relationships": [
+        {
+          "direction": "instance_to_type",
+          "label_x": 500,
+          "label_y": 190,
+          "meaning": "The source is a kind, category, or subtype of the target.",
+          "path": "M 288 190 L 712 190",
+          "relationship_ids": [
+            "light-is-electromagnetic-wave"
+          ],
+          "relationship_type": "IS_A",
+          "source_entity_id": "light",
+          "source_label": "Light",
+          "target_entity_id": "electromagnetic-wave",
+          "target_label": "Electromagnetic wave"
+        }
+      ],
+      "source": "deterministic projection of exact committed SPEC-034 plan",
+      "sparse": true,
+      "spatial_grammar": "focused-connection",
+      "strategy_type": "FOCUSED_RELATIONSHIP",
+      "width": 1000
+    },
+    "ground:electromagnetism:representation-685bf4f0c2881f95:concept:electromagnetic-wave": {
+      "context_key": "ground:electromagnetism:representation-685bf4f0c2881f95:concept:electromagnetic-wave",
+      "height": 470,
+      "nodes": [
+        {
+          "description": "A wave formed by changing electric and magnetic fields that can sustain one another.",
+          "entity_id": "electromagnetic-wave",
+          "label": "Electromagnetic wave",
+          "role": "hierarchy-root",
+          "role_label": "whole / kind",
+          "x": 500,
+          "y": 105
+        },
+        {
+          "description": "An electromagnetic wave.",
+          "entity_id": "light",
+          "label": "Light",
+          "role": "hierarchy-member",
+          "role_label": "part / member",
+          "x": 500,
+          "y": 355
+        }
+      ],
+      "relationships": [
+        {
+          "direction": "instance_to_type",
+          "label_x": 500,
+          "label_y": 230,
+          "meaning": "The source is a kind, category, or subtype of the target.",
+          "path": "M 500 277 L 500 183",
+          "relationship_ids": [
+            "light-is-electromagnetic-wave"
+          ],
+          "relationship_type": "IS_A",
+          "source_entity_id": "light",
+          "source_label": "Light",
+          "target_entity_id": "electromagnetic-wave",
+          "target_label": "Electromagnetic wave"
+        }
+      ],
+      "source": "deterministic projection of exact committed SPEC-034 plan",
+      "sparse": true,
+      "spatial_grammar": "hierarchy-composition",
+      "strategy_type": "HIERARCHY_COMPOSITION",
+      "width": 1000
+    },
+    "ground:electromagnetism:representation-685bf4f0c2881f95:concept:light": {
+      "context_key": "ground:electromagnetism:representation-685bf4f0c2881f95:concept:light",
+      "height": 470,
+      "nodes": [
+        {
+          "description": "A wave formed by changing electric and magnetic fields that can sustain one another.",
+          "entity_id": "electromagnetic-wave",
+          "label": "Electromagnetic wave",
+          "role": "hierarchy-root",
+          "role_label": "whole / kind",
+          "x": 500,
+          "y": 105
+        },
+        {
+          "description": "An electromagnetic wave.",
+          "entity_id": "light",
+          "label": "Light",
+          "role": "hierarchy-member",
+          "role_label": "part / member",
+          "x": 500,
+          "y": 355
+        }
+      ],
+      "relationships": [
+        {
+          "direction": "instance_to_type",
+          "label_x": 500,
+          "label_y": 230,
+          "meaning": "The source is a kind, category, or subtype of the target.",
+          "path": "M 500 277 L 500 183",
+          "relationship_ids": [
+            "light-is-electromagnetic-wave"
+          ],
+          "relationship_type": "IS_A",
+          "source_entity_id": "light",
+          "source_label": "Light",
+          "target_entity_id": "electromagnetic-wave",
+          "target_label": "Electromagnetic wave"
+        }
+      ],
+      "source": "deterministic projection of exact committed SPEC-034 plan",
+      "sparse": true,
+      "spatial_grammar": "hierarchy-composition",
+      "strategy_type": "HIERARCHY_COMPOSITION",
+      "width": 1000
+    },
+    "ground:electromagnetism:representation-9058fd6ab1975a17:canonical:changing-electric-field-induces-magnetic-field": {
+      "context_key": "ground:electromagnetism:representation-9058fd6ab1975a17:canonical:changing-electric-field-induces-magnetic-field",
+      "height": 380,
+      "nodes": [
+        {
+          "description": "A field created by electric charge that exerts force on another charge; changing electric fields can induce magnetic fields.",
+          "entity_id": "electric-field",
+          "label": "Electric field",
+          "role": "relationship-source",
+          "role_label": "source",
+          "x": 210,
+          "y": 190
+        },
+        {
+          "description": "A field created by a moving charge or electric current; changing magnetic fields induce electric fields.",
+          "entity_id": "magnetic-field",
+          "label": "Magnetic field",
+          "role": "relationship-target",
+          "role_label": "target",
+          "x": 790,
+          "y": 190
+        }
+      ],
+      "relationships": [
+        {
+          "direction": "inducer_to_induced_effect",
+          "label_x": 500,
+          "label_y": 190,
+          "meaning": "The source produces the target through an explicitly described induction mechanism.",
+          "path": "M 288 190 L 712 190",
+          "relationship_ids": [
+            "changing-electric-field-induces-magnetic-field"
+          ],
+          "relationship_type": "INDUCES",
+          "source_entity_id": "electric-field",
+          "source_label": "Electric field",
+          "target_entity_id": "magnetic-field",
+          "target_label": "Magnetic field"
+        }
+      ],
+      "source": "deterministic projection of exact committed SPEC-034 plan",
+      "sparse": true,
+      "spatial_grammar": "focused-connection",
+      "strategy_type": "FOCUSED_RELATIONSHIP",
+      "width": 1000
+    },
+    "ground:electromagnetism:representation-9058fd6ab1975a17:canonical:changing-magnetic-field-induces-electric-field": {
+      "context_key": "ground:electromagnetism:representation-9058fd6ab1975a17:canonical:changing-magnetic-field-induces-electric-field",
+      "height": 380,
+      "nodes": [
+        {
+          "description": "A field created by electric charge that exerts force on another charge; changing electric fields can induce magnetic fields.",
+          "entity_id": "electric-field",
+          "label": "Electric field",
+          "role": "relationship-target",
+          "role_label": "target",
+          "x": 790,
+          "y": 190
+        },
+        {
+          "description": "A field created by a moving charge or electric current; changing magnetic fields induce electric fields.",
+          "entity_id": "magnetic-field",
+          "label": "Magnetic field",
+          "role": "relationship-source",
+          "role_label": "source",
+          "x": 210,
+          "y": 190
+        }
+      ],
+      "relationships": [
+        {
+          "direction": "inducer_to_induced_effect",
+          "label_x": 500,
+          "label_y": 190,
+          "meaning": "The source produces the target through an explicitly described induction mechanism.",
+          "path": "M 288 190 L 712 190",
+          "relationship_ids": [
+            "changing-magnetic-field-induces-electric-field"
+          ],
+          "relationship_type": "INDUCES",
+          "source_entity_id": "magnetic-field",
+          "source_label": "Magnetic field",
+          "target_entity_id": "electric-field",
+          "target_label": "Electric field"
+        }
+      ],
+      "source": "deterministic projection of exact committed SPEC-034 plan",
+      "sparse": true,
+      "spatial_grammar": "focused-connection",
+      "strategy_type": "FOCUSED_RELATIONSHIP",
+      "width": 1000
+    },
+    "ground:electromagnetism:representation-9058fd6ab1975a17:concept:electric-field": {
+      "context_key": "ground:electromagnetism:representation-9058fd6ab1975a17:concept:electric-field",
+      "height": 420,
+      "nodes": [
+        {
+          "description": "A field created by electric charge that exerts force on another charge; changing electric fields can induce magnetic fields.",
+          "entity_id": "electric-field",
+          "label": "Electric field",
+          "role": "cycle-endpoint",
+          "role_label": "coupled field",
+          "x": 230,
+          "y": 210
+        },
+        {
+          "description": "A field created by a moving charge or electric current; changing magnetic fields induce electric fields.",
+          "entity_id": "magnetic-field",
+          "label": "Magnetic field",
+          "role": "cycle-endpoint",
+          "role_label": "coupled field",
+          "x": 770,
+          "y": 210
+        }
+      ],
+      "relationships": [
+        {
+          "direction": "inducer_to_induced_effect",
+          "label_x": 500,
+          "label_y": 100,
+          "meaning": "The source produces the target through an explicitly described induction mechanism.",
+          "path": "M 335 210 Q 500 65 665 210",
+          "relationship_ids": [
+            "changing-electric-field-induces-magnetic-field"
+          ],
+          "relationship_type": "INDUCES",
+          "source_entity_id": "electric-field",
+          "source_label": "Electric field",
+          "target_entity_id": "magnetic-field",
+          "target_label": "Magnetic field"
+        },
+        {
+          "direction": "inducer_to_induced_effect",
+          "label_x": 500,
+          "label_y": 320,
+          "meaning": "The source produces the target through an explicitly described induction mechanism.",
+          "path": "M 665 210 Q 500 355 335 210",
+          "relationship_ids": [
+            "changing-magnetic-field-induces-electric-field"
+          ],
+          "relationship_type": "INDUCES",
+          "source_entity_id": "magnetic-field",
+          "source_label": "Magnetic field",
+          "target_entity_id": "electric-field",
+          "target_label": "Electric field"
+        }
+      ],
+      "source": "deterministic projection of exact committed SPEC-034 plan",
+      "sparse": false,
+      "spatial_grammar": "reciprocal-cycle",
+      "strategy_type": "RECIPROCAL_MECHANISM",
+      "width": 1000
+    },
+    "ground:electromagnetism:representation-9058fd6ab1975a17:concept:magnetic-field": {
+      "context_key": "ground:electromagnetism:representation-9058fd6ab1975a17:concept:magnetic-field",
+      "height": 420,
+      "nodes": [
+        {
+          "description": "A field created by electric charge that exerts force on another charge; changing electric fields can induce magnetic fields.",
+          "entity_id": "electric-field",
+          "label": "Electric field",
+          "role": "cycle-endpoint",
+          "role_label": "coupled field",
+          "x": 230,
+          "y": 210
+        },
+        {
+          "description": "A field created by a moving charge or electric current; changing magnetic fields induce electric fields.",
+          "entity_id": "magnetic-field",
+          "label": "Magnetic field",
+          "role": "cycle-endpoint",
+          "role_label": "coupled field",
+          "x": 770,
+          "y": 210
+        }
+      ],
+      "relationships": [
+        {
+          "direction": "inducer_to_induced_effect",
+          "label_x": 500,
+          "label_y": 100,
+          "meaning": "The source produces the target through an explicitly described induction mechanism.",
+          "path": "M 335 210 Q 500 65 665 210",
+          "relationship_ids": [
+            "changing-electric-field-induces-magnetic-field"
+          ],
+          "relationship_type": "INDUCES",
+          "source_entity_id": "electric-field",
+          "source_label": "Electric field",
+          "target_entity_id": "magnetic-field",
+          "target_label": "Magnetic field"
+        },
+        {
+          "direction": "inducer_to_induced_effect",
+          "label_x": 500,
+          "label_y": 320,
+          "meaning": "The source produces the target through an explicitly described induction mechanism.",
+          "path": "M 665 210 Q 500 355 335 210",
+          "relationship_ids": [
+            "changing-magnetic-field-induces-electric-field"
+          ],
+          "relationship_type": "INDUCES",
+          "source_entity_id": "magnetic-field",
+          "source_label": "Magnetic field",
+          "target_entity_id": "electric-field",
+          "target_label": "Electric field"
+        }
+      ],
+      "source": "deterministic projection of exact committed SPEC-034 plan",
+      "sparse": false,
+      "spatial_grammar": "reciprocal-cycle",
+      "strategy_type": "RECIPROCAL_MECHANISM",
+      "width": 1000
+    },
+    "ground:history:representation-372c9b3707ffd6cc:canonical:rel-controversy-precedes-response": {
+      "context_key": "ground:history:representation-372c9b3707ffd6cc:canonical:rel-controversy-precedes-response",
+      "height": 380,
+      "nodes": [
+        {
+          "description": "Governments and churches that responded to expanded printed controversy.",
+          "entity_id": "authorities",
+          "label": "Authorities",
+          "role": "relationship-target",
+          "role_label": "target",
+          "x": 790,
+          "y": 190
+        },
+        {
+          "description": "Controversy associated with printed material that expanded before authorities responded.",
+          "entity_id": "printed-controversy",
+          "label": "Printed controversy",
+          "role": "relationship-source",
+          "role_label": "source",
+          "x": 210,
+          "y": 190
+        }
+      ],
+      "relationships": [
+        {
+          "direction": "earlier_to_later",
+          "label_x": 500,
+          "label_y": 190,
+          "meaning": "The source occurs before the target in time or an explicit process sequence.",
+          "path": "M 288 190 L 712 190",
+          "relationship_ids": [
+            "rel-controversy-precedes-response"
+          ],
+          "relationship_type": "PRECEDES",
+          "source_entity_id": "printed-controversy",
+          "source_label": "Printed controversy",
+          "target_entity_id": "authorities",
+          "target_label": "Authorities"
+        }
+      ],
+      "source": "deterministic projection of exact committed SPEC-034 plan",
+      "sparse": true,
+      "spatial_grammar": "focused-connection",
+      "strategy_type": "FOCUSED_RELATIONSHIP",
+      "width": 1000
+    },
+    "ground:history:representation-372c9b3707ffd6cc:concept:authorities": {
+      "context_key": "ground:history:representation-372c9b3707ffd6cc:concept:authorities",
+      "height": 400,
+      "nodes": [
+        {
+          "description": "Governments and churches that responded to expanded printed controversy.",
+          "entity_id": "authorities",
+          "label": "Authorities",
+          "role": "ordered-stage",
+          "role_label": "stage 2",
+          "x": 627,
+          "y": 205
+        },
+        {
+          "description": "Controversy associated with printed material that expanded before authorities responded.",
+          "entity_id": "printed-controversy",
+          "label": "Printed controversy",
+          "role": "ordered-stage",
+          "role_label": "stage 1",
+          "x": 373,
+          "y": 205
+        }
+      ],
+      "relationships": [
+        {
+          "direction": "earlier_to_later",
+          "label_x": 500,
+          "label_y": 205,
+          "meaning": "The source occurs before the target in time or an explicit process sequence.",
+          "path": "M 451 205 L 549 205",
+          "relationship_ids": [
+            "rel-controversy-precedes-response"
+          ],
+          "relationship_type": "PRECEDES",
+          "source_entity_id": "printed-controversy",
+          "source_label": "Printed controversy",
+          "target_entity_id": "authorities",
+          "target_label": "Authorities"
+        }
+      ],
+      "source": "deterministic projection of exact committed SPEC-034 plan",
+      "sparse": true,
+      "spatial_grammar": "ordered-sequence",
+      "strategy_type": "PROCESS_SEQUENCE",
+      "width": 1000
+    },
+    "ground:history:representation-372c9b3707ffd6cc:concept:printed-controversy": {
+      "context_key": "ground:history:representation-372c9b3707ffd6cc:concept:printed-controversy",
+      "height": 400,
+      "nodes": [
+        {
+          "description": "Governments and churches that responded to expanded printed controversy.",
+          "entity_id": "authorities",
+          "label": "Authorities",
+          "role": "ordered-stage",
+          "role_label": "stage 2",
+          "x": 627,
+          "y": 205
+        },
+        {
+          "description": "Controversy associated with printed material that expanded before authorities responded.",
+          "entity_id": "printed-controversy",
+          "label": "Printed controversy",
+          "role": "ordered-stage",
+          "role_label": "stage 1",
+          "x": 373,
+          "y": 205
+        }
+      ],
+      "relationships": [
+        {
+          "direction": "earlier_to_later",
+          "label_x": 500,
+          "label_y": 205,
+          "meaning": "The source occurs before the target in time or an explicit process sequence.",
+          "path": "M 451 205 L 549 205",
+          "relationship_ids": [
+            "rel-controversy-precedes-response"
+          ],
+          "relationship_type": "PRECEDES",
+          "source_entity_id": "printed-controversy",
+          "source_label": "Printed controversy",
+          "target_entity_id": "authorities",
+          "target_label": "Authorities"
+        }
+      ],
+      "source": "deterministic projection of exact committed SPEC-034 plan",
+      "sparse": true,
+      "spatial_grammar": "ordered-sequence",
+      "strategy_type": "PROCESS_SEQUENCE",
+      "width": 1000
+    },
+    "ground:history:representation-f803f1f3830cadf7:canonical:rel-press-enables-printing": {
+      "context_key": "ground:history:representation-f803f1f3830cadf7:canonical:rel-press-enables-printing",
+      "height": 380,
+      "nodes": [
+        {
+          "description": "A press combined with movable metal type in Gutenberg's printing process.",
+          "entity_id": "press",
+          "label": "Press",
+          "role": "relationship-source",
+          "role_label": "source",
+          "x": 210,
+          "y": 190
+        },
+        {
+          "description": "The process of producing books and other printed material from prepared type.",
+          "entity_id": "printing",
+          "label": "Printing",
+          "role": "relationship-target",
+          "role_label": "target",
+          "x": 790,
+          "y": 190
+        }
+      ],
+      "relationships": [
+        {
+          "direction": "enabler_to_enabled",
+          "label_x": 500,
+          "label_y": 190,
+          "meaning": "The source makes the target possible without necessarily causing it to occur.",
+          "path": "M 288 190 L 712 190",
+          "relationship_ids": [
+            "rel-press-enables-printing"
+          ],
+          "relationship_type": "ENABLES",
+          "source_entity_id": "press",
+          "source_label": "Press",
+          "target_entity_id": "printing",
+          "target_label": "Printing"
+        }
+      ],
+      "source": "deterministic projection of exact committed SPEC-034 plan",
+      "sparse": true,
+      "spatial_grammar": "focused-connection",
+      "strategy_type": "FOCUSED_RELATIONSHIP",
+      "width": 1000
+    },
+    "ground:history:representation-f803f1f3830cadf7:canonical:rel-printing-enables-copies": {
+      "context_key": "ground:history:representation-f803f1f3830cadf7:canonical:rel-printing-enables-copies",
+      "height": 380,
+      "nodes": [
+        {
+          "description": "Books produced through printing, including cheaper and more numerous copies.",
+          "entity_id": "printed-books",
+          "label": "Printed books",
+          "role": "relationship-target",
+          "role_label": "target",
+          "x": 790,
+          "y": 190
+        },
+        {
+          "description": "The process of producing books and other printed material from prepared type.",
+          "entity_id": "printing",
+          "label": "Printing",
+          "role": "relationship-source",
+          "role_label": "source",
+          "x": 210,
+          "y": 190
+        }
+      ],
+      "relationships": [
+        {
+          "direction": "enabler_to_enabled",
+          "label_x": 500,
+          "label_y": 190,
+          "meaning": "The source makes the target possible without necessarily causing it to occur.",
+          "path": "M 288 190 L 712 190",
+          "relationship_ids": [
+            "rel-printing-enables-copies"
+          ],
+          "relationship_type": "ENABLES",
+          "source_entity_id": "printing",
+          "source_label": "Printing",
+          "target_entity_id": "printed-books",
+          "target_label": "Printed books"
+        }
+      ],
+      "source": "deterministic projection of exact committed SPEC-034 plan",
+      "sparse": true,
+      "spatial_grammar": "focused-connection",
+      "strategy_type": "FOCUSED_RELATIONSHIP",
+      "width": 1000
+    },
+    "ground:history:representation-f803f1f3830cadf7:canonical:rel-type-enables-printing": {
+      "context_key": "ground:history:representation-f803f1f3830cadf7:canonical:rel-type-enables-printing",
+      "height": 380,
+      "nodes": [
+        {
+          "description": "Reusable metal type combined with a press for printing in Europe.",
+          "entity_id": "movable-metal-type",
+          "label": "Movable metal type",
+          "role": "relationship-source",
+          "role_label": "source",
+          "x": 210,
+          "y": 190
+        },
+        {
+          "description": "The process of producing books and other printed material from prepared type.",
+          "entity_id": "printing",
+          "label": "Printing",
+          "role": "relationship-target",
+          "role_label": "target",
+          "x": 790,
+          "y": 190
+        }
+      ],
+      "relationships": [
+        {
+          "direction": "enabler_to_enabled",
+          "label_x": 500,
+          "label_y": 190,
+          "meaning": "The source makes the target possible without necessarily causing it to occur.",
+          "path": "M 288 190 L 712 190",
+          "relationship_ids": [
+            "rel-type-enables-printing"
+          ],
+          "relationship_type": "ENABLES",
+          "source_entity_id": "movable-metal-type",
+          "source_label": "Movable metal type",
+          "target_entity_id": "printing",
+          "target_label": "Printing"
+        }
+      ],
+      "source": "deterministic projection of exact committed SPEC-034 plan",
+      "sparse": true,
+      "spatial_grammar": "focused-connection",
+      "strategy_type": "FOCUSED_RELATIONSHIP",
+      "width": 1000
+    },
+    "ground:history:representation-f803f1f3830cadf7:concept:movable-metal-type": {
+      "context_key": "ground:history:representation-f803f1f3830cadf7:concept:movable-metal-type",
+      "height": 640,
+      "nodes": [
+        {
+          "description": "Reusable metal type combined with a press for printing in Europe.",
+          "entity_id": "movable-metal-type",
+          "label": "Movable metal type",
+          "role": "dependency-stage",
+          "role_label": "dependency",
+          "x": 383,
+          "y": 105
+        },
+        {
+          "description": "A press combined with movable metal type in Gutenberg's printing process.",
+          "entity_id": "press",
+          "label": "Press",
+          "role": "dependency-stage",
+          "role_label": "dependency",
+          "x": 617,
+          "y": 105
+        },
+        {
+          "description": "Books produced through printing, including cheaper and more numerous copies.",
+          "entity_id": "printed-books",
+          "label": "Printed books",
+          "role": "dependency-stage",
+          "role_label": "dependency",
+          "x": 500,
+          "y": 535
+        },
+        {
+          "description": "The process of producing books and other printed material from prepared type.",
+          "entity_id": "printing",
+          "label": "Printing",
+          "role": "dependency-stage",
+          "role_label": "dependency",
+          "x": 500,
+          "y": 320
+        }
+      ],
+      "relationships": [
+        {
+          "direction": "enabler_to_enabled",
+          "label_x": 442,
+          "label_y": 212,
+          "meaning": "The source makes the target possible without necessarily causing it to occur.",
+          "path": "M 420 174 L 463 251",
+          "relationship_ids": [
+            "rel-type-enables-printing"
+          ],
+          "relationship_type": "ENABLES",
+          "source_entity_id": "movable-metal-type",
+          "source_label": "Movable metal type",
+          "target_entity_id": "printing",
+          "target_label": "Printing"
+        },
+        {
+          "direction": "enabler_to_enabled",
+          "label_x": 558,
+          "label_y": 212,
+          "meaning": "The source makes the target possible without necessarily causing it to occur.",
+          "path": "M 580 174 L 537 251",
+          "relationship_ids": [
+            "rel-press-enables-printing"
+          ],
+          "relationship_type": "ENABLES",
+          "source_entity_id": "press",
+          "source_label": "Press",
+          "target_entity_id": "printing",
+          "target_label": "Printing"
+        },
+        {
+          "direction": "enabler_to_enabled",
+          "label_x": 500,
+          "label_y": 428,
+          "meaning": "The source makes the target possible without necessarily causing it to occur.",
+          "path": "M 500 398 L 500 457",
+          "relationship_ids": [
+            "rel-printing-enables-copies"
+          ],
+          "relationship_type": "ENABLES",
+          "source_entity_id": "printing",
+          "source_label": "Printing",
+          "target_entity_id": "printed-books",
+          "target_label": "Printed books"
+        }
+      ],
+      "source": "deterministic projection of exact committed SPEC-034 plan",
+      "sparse": false,
+      "spatial_grammar": "dependency-flow",
+      "strategy_type": "DEPENDENCY_STRUCTURE",
+      "width": 1000
+    },
+    "ground:history:representation-f803f1f3830cadf7:concept:press": {
+      "context_key": "ground:history:representation-f803f1f3830cadf7:concept:press",
+      "height": 640,
+      "nodes": [
+        {
+          "description": "Reusable metal type combined with a press for printing in Europe.",
+          "entity_id": "movable-metal-type",
+          "label": "Movable metal type",
+          "role": "dependency-stage",
+          "role_label": "dependency",
+          "x": 383,
+          "y": 105
+        },
+        {
+          "description": "A press combined with movable metal type in Gutenberg's printing process.",
+          "entity_id": "press",
+          "label": "Press",
+          "role": "dependency-stage",
+          "role_label": "dependency",
+          "x": 617,
+          "y": 105
+        },
+        {
+          "description": "Books produced through printing, including cheaper and more numerous copies.",
+          "entity_id": "printed-books",
+          "label": "Printed books",
+          "role": "dependency-stage",
+          "role_label": "dependency",
+          "x": 500,
+          "y": 535
+        },
+        {
+          "description": "The process of producing books and other printed material from prepared type.",
+          "entity_id": "printing",
+          "label": "Printing",
+          "role": "dependency-stage",
+          "role_label": "dependency",
+          "x": 500,
+          "y": 320
+        }
+      ],
+      "relationships": [
+        {
+          "direction": "enabler_to_enabled",
+          "label_x": 442,
+          "label_y": 212,
+          "meaning": "The source makes the target possible without necessarily causing it to occur.",
+          "path": "M 420 174 L 463 251",
+          "relationship_ids": [
+            "rel-type-enables-printing"
+          ],
+          "relationship_type": "ENABLES",
+          "source_entity_id": "movable-metal-type",
+          "source_label": "Movable metal type",
+          "target_entity_id": "printing",
+          "target_label": "Printing"
+        },
+        {
+          "direction": "enabler_to_enabled",
+          "label_x": 558,
+          "label_y": 212,
+          "meaning": "The source makes the target possible without necessarily causing it to occur.",
+          "path": "M 580 174 L 537 251",
+          "relationship_ids": [
+            "rel-press-enables-printing"
+          ],
+          "relationship_type": "ENABLES",
+          "source_entity_id": "press",
+          "source_label": "Press",
+          "target_entity_id": "printing",
+          "target_label": "Printing"
+        },
+        {
+          "direction": "enabler_to_enabled",
+          "label_x": 500,
+          "label_y": 428,
+          "meaning": "The source makes the target possible without necessarily causing it to occur.",
+          "path": "M 500 398 L 500 457",
+          "relationship_ids": [
+            "rel-printing-enables-copies"
+          ],
+          "relationship_type": "ENABLES",
+          "source_entity_id": "printing",
+          "source_label": "Printing",
+          "target_entity_id": "printed-books",
+          "target_label": "Printed books"
+        }
+      ],
+      "source": "deterministic projection of exact committed SPEC-034 plan",
+      "sparse": false,
+      "spatial_grammar": "dependency-flow",
+      "strategy_type": "DEPENDENCY_STRUCTURE",
+      "width": 1000
+    },
+    "ground:history:representation-f803f1f3830cadf7:concept:printed-books": {
+      "context_key": "ground:history:representation-f803f1f3830cadf7:concept:printed-books",
+      "height": 640,
+      "nodes": [
+        {
+          "description": "Reusable metal type combined with a press for printing in Europe.",
+          "entity_id": "movable-metal-type",
+          "label": "Movable metal type",
+          "role": "dependency-stage",
+          "role_label": "dependency",
+          "x": 383,
+          "y": 105
+        },
+        {
+          "description": "A press combined with movable metal type in Gutenberg's printing process.",
+          "entity_id": "press",
+          "label": "Press",
+          "role": "dependency-stage",
+          "role_label": "dependency",
+          "x": 617,
+          "y": 105
+        },
+        {
+          "description": "Books produced through printing, including cheaper and more numerous copies.",
+          "entity_id": "printed-books",
+          "label": "Printed books",
+          "role": "dependency-stage",
+          "role_label": "dependency",
+          "x": 500,
+          "y": 535
+        },
+        {
+          "description": "The process of producing books and other printed material from prepared type.",
+          "entity_id": "printing",
+          "label": "Printing",
+          "role": "dependency-stage",
+          "role_label": "dependency",
+          "x": 500,
+          "y": 320
+        }
+      ],
+      "relationships": [
+        {
+          "direction": "enabler_to_enabled",
+          "label_x": 442,
+          "label_y": 212,
+          "meaning": "The source makes the target possible without necessarily causing it to occur.",
+          "path": "M 420 174 L 463 251",
+          "relationship_ids": [
+            "rel-type-enables-printing"
+          ],
+          "relationship_type": "ENABLES",
+          "source_entity_id": "movable-metal-type",
+          "source_label": "Movable metal type",
+          "target_entity_id": "printing",
+          "target_label": "Printing"
+        },
+        {
+          "direction": "enabler_to_enabled",
+          "label_x": 558,
+          "label_y": 212,
+          "meaning": "The source makes the target possible without necessarily causing it to occur.",
+          "path": "M 580 174 L 537 251",
+          "relationship_ids": [
+            "rel-press-enables-printing"
+          ],
+          "relationship_type": "ENABLES",
+          "source_entity_id": "press",
+          "source_label": "Press",
+          "target_entity_id": "printing",
+          "target_label": "Printing"
+        },
+        {
+          "direction": "enabler_to_enabled",
+          "label_x": 500,
+          "label_y": 428,
+          "meaning": "The source makes the target possible without necessarily causing it to occur.",
+          "path": "M 500 398 L 500 457",
+          "relationship_ids": [
+            "rel-printing-enables-copies"
+          ],
+          "relationship_type": "ENABLES",
+          "source_entity_id": "printing",
+          "source_label": "Printing",
+          "target_entity_id": "printed-books",
+          "target_label": "Printed books"
+        }
+      ],
+      "source": "deterministic projection of exact committed SPEC-034 plan",
+      "sparse": false,
+      "spatial_grammar": "dependency-flow",
+      "strategy_type": "DEPENDENCY_STRUCTURE",
+      "width": 1000
+    },
+    "ground:history:representation-f803f1f3830cadf7:concept:printing": {
+      "context_key": "ground:history:representation-f803f1f3830cadf7:concept:printing",
+      "height": 640,
+      "nodes": [
+        {
+          "description": "Reusable metal type combined with a press for printing in Europe.",
+          "entity_id": "movable-metal-type",
+          "label": "Movable metal type",
+          "role": "dependency-stage",
+          "role_label": "dependency",
+          "x": 383,
+          "y": 105
+        },
+        {
+          "description": "A press combined with movable metal type in Gutenberg's printing process.",
+          "entity_id": "press",
+          "label": "Press",
+          "role": "dependency-stage",
+          "role_label": "dependency",
+          "x": 617,
+          "y": 105
+        },
+        {
+          "description": "Books produced through printing, including cheaper and more numerous copies.",
+          "entity_id": "printed-books",
+          "label": "Printed books",
+          "role": "dependency-stage",
+          "role_label": "dependency",
+          "x": 500,
+          "y": 535
+        },
+        {
+          "description": "The process of producing books and other printed material from prepared type.",
+          "entity_id": "printing",
+          "label": "Printing",
+          "role": "dependency-stage",
+          "role_label": "dependency",
+          "x": 500,
+          "y": 320
+        }
+      ],
+      "relationships": [
+        {
+          "direction": "enabler_to_enabled",
+          "label_x": 442,
+          "label_y": 212,
+          "meaning": "The source makes the target possible without necessarily causing it to occur.",
+          "path": "M 420 174 L 463 251",
+          "relationship_ids": [
+            "rel-type-enables-printing"
+          ],
+          "relationship_type": "ENABLES",
+          "source_entity_id": "movable-metal-type",
+          "source_label": "Movable metal type",
+          "target_entity_id": "printing",
+          "target_label": "Printing"
+        },
+        {
+          "direction": "enabler_to_enabled",
+          "label_x": 558,
+          "label_y": 212,
+          "meaning": "The source makes the target possible without necessarily causing it to occur.",
+          "path": "M 580 174 L 537 251",
+          "relationship_ids": [
+            "rel-press-enables-printing"
+          ],
+          "relationship_type": "ENABLES",
+          "source_entity_id": "press",
+          "source_label": "Press",
+          "target_entity_id": "printing",
+          "target_label": "Printing"
+        },
+        {
+          "direction": "enabler_to_enabled",
+          "label_x": 500,
+          "label_y": 428,
+          "meaning": "The source makes the target possible without necessarily causing it to occur.",
+          "path": "M 500 398 L 500 457",
+          "relationship_ids": [
+            "rel-printing-enables-copies"
+          ],
+          "relationship_type": "ENABLES",
+          "source_entity_id": "printing",
+          "source_label": "Printing",
+          "target_entity_id": "printed-books",
+          "target_label": "Printed books"
+        }
+      ],
+      "source": "deterministic projection of exact committed SPEC-034 plan",
+      "sparse": false,
+      "spatial_grammar": "dependency-flow",
+      "strategy_type": "DEPENDENCY_STRUCTURE",
+      "width": 1000
+    },
+    "ground:software_architecture:representation-9340322462e99419:canonical:rel-6": {
+      "context_key": "ground:software_architecture:representation-9340322462e99419:canonical:rel-6",
+      "height": 380,
+      "nodes": [
+        {
+          "description": "A component responsible for order-related processing.",
+          "entity_id": "order-component",
+          "label": "order component",
+          "role": "relationship-source",
+          "role_label": "source",
+          "x": 210,
+          "y": 190
+        },
+        {
+          "description": "A component responsible for payment-related processing and purchase authorization.",
+          "entity_id": "payment-component",
+          "label": "payment component",
+          "role": "relationship-target",
+          "role_label": "target",
+          "x": 790,
+          "y": 190
+        }
+      ],
+      "relationships": [
+        {
+          "direction": "dependent_to_requirement",
+          "label_x": 500,
+          "label_y": 190,
+          "meaning": "The source depends on the target as a prerequisite or necessary resource.",
+          "path": "M 288 190 L 712 190",
+          "relationship_ids": [
+            "rel-6"
+          ],
+          "relationship_type": "REQUIRES",
+          "source_entity_id": "order-component",
+          "source_label": "order component",
+          "target_entity_id": "payment-component",
+          "target_label": "payment component"
+        }
+      ],
+      "source": "deterministic projection of exact committed SPEC-034 plan",
+      "sparse": true,
+      "spatial_grammar": "focused-connection",
+      "strategy_type": "FOCUSED_RELATIONSHIP",
+      "width": 1000
+    },
+    "ground:software_architecture:representation-9340322462e99419:canonical:rel-8": {
+      "context_key": "ground:software_architecture:representation-9340322462e99419:canonical:rel-8",
+      "height": 380,
+      "nodes": [
+        {
+          "description": "Shared infrastructure used to store durable state for the order and payment components.",
+          "entity_id": "database",
+          "label": "database",
+          "role": "relationship-target",
+          "role_label": "target",
+          "x": 790,
+          "y": 190
+        },
+        {
+          "description": "A component responsible for payment-related processing and purchase authorization.",
+          "entity_id": "payment-component",
+          "label": "payment component",
+          "role": "relationship-source",
+          "role_label": "source",
+          "x": 210,
+          "y": 190
+        }
+      ],
+      "relationships": [
+        {
+          "direction": "dependent_to_requirement",
+          "label_x": 500,
+          "label_y": 190,
+          "meaning": "The source depends on the target as a prerequisite or necessary resource.",
+          "path": "M 288 190 L 712 190",
+          "relationship_ids": [
+            "rel-8"
+          ],
+          "relationship_type": "REQUIRES",
+          "source_entity_id": "payment-component",
+          "source_label": "payment component",
+          "target_entity_id": "database",
+          "target_label": "database"
+        }
+      ],
+      "source": "deterministic projection of exact committed SPEC-034 plan",
+      "sparse": true,
+      "spatial_grammar": "focused-connection",
+      "strategy_type": "FOCUSED_RELATIONSHIP",
+      "width": 1000
+    },
+    "ground:software_architecture:representation-9340322462e99419:concept:database": {
+      "context_key": "ground:software_architecture:representation-9340322462e99419:concept:database",
+      "height": 640,
+      "nodes": [
+        {
+          "description": "Shared infrastructure used to store durable state for the order and payment components.",
+          "entity_id": "database",
+          "label": "database",
+          "role": "dependency-stage",
+          "role_label": "dependency",
+          "x": 500,
+          "y": 535
+        },
+        {
+          "description": "A component responsible for order-related processing.",
+          "entity_id": "order-component",
+          "label": "order component",
+          "role": "dependency-stage",
+          "role_label": "dependency",
+          "x": 500,
+          "y": 105
+        },
+        {
+          "description": "A component responsible for payment-related processing and purchase authorization.",
+          "entity_id": "payment-component",
+          "label": "payment component",
+          "role": "dependency-stage",
+          "role_label": "dependency",
+          "x": 500,
+          "y": 320
+        }
+      ],
+      "relationships": [
+        {
+          "direction": "dependent_to_requirement",
+          "label_x": 500,
+          "label_y": 212,
+          "meaning": "The source depends on the target as a prerequisite or necessary resource.",
+          "path": "M 500 183 L 500 242",
+          "relationship_ids": [
+            "rel-6"
+          ],
+          "relationship_type": "REQUIRES",
+          "source_entity_id": "order-component",
+          "source_label": "order component",
+          "target_entity_id": "payment-component",
+          "target_label": "payment component"
+        },
+        {
+          "direction": "dependent_to_requirement",
+          "label_x": 500,
+          "label_y": 428,
+          "meaning": "The source depends on the target as a prerequisite or necessary resource.",
+          "path": "M 500 398 L 500 457",
+          "relationship_ids": [
+            "rel-8"
+          ],
+          "relationship_type": "REQUIRES",
+          "source_entity_id": "payment-component",
+          "source_label": "payment component",
+          "target_entity_id": "database",
+          "target_label": "database"
+        }
+      ],
+      "source": "deterministic projection of exact committed SPEC-034 plan",
+      "sparse": false,
+      "spatial_grammar": "dependency-flow",
+      "strategy_type": "DEPENDENCY_STRUCTURE",
+      "width": 1000
+    },
+    "ground:software_architecture:representation-9340322462e99419:concept:order-component": {
+      "context_key": "ground:software_architecture:representation-9340322462e99419:concept:order-component",
+      "height": 640,
+      "nodes": [
+        {
+          "description": "Shared infrastructure used to store durable state for the order and payment components.",
+          "entity_id": "database",
+          "label": "database",
+          "role": "dependency-stage",
+          "role_label": "dependency",
+          "x": 500,
+          "y": 535
+        },
+        {
+          "description": "A component responsible for order-related processing.",
+          "entity_id": "order-component",
+          "label": "order component",
+          "role": "dependency-stage",
+          "role_label": "dependency",
+          "x": 500,
+          "y": 105
+        },
+        {
+          "description": "A component responsible for payment-related processing and purchase authorization.",
+          "entity_id": "payment-component",
+          "label": "payment component",
+          "role": "dependency-stage",
+          "role_label": "dependency",
+          "x": 500,
+          "y": 320
+        }
+      ],
+      "relationships": [
+        {
+          "direction": "dependent_to_requirement",
+          "label_x": 500,
+          "label_y": 212,
+          "meaning": "The source depends on the target as a prerequisite or necessary resource.",
+          "path": "M 500 183 L 500 242",
+          "relationship_ids": [
+            "rel-6"
+          ],
+          "relationship_type": "REQUIRES",
+          "source_entity_id": "order-component",
+          "source_label": "order component",
+          "target_entity_id": "payment-component",
+          "target_label": "payment component"
+        },
+        {
+          "direction": "dependent_to_requirement",
+          "label_x": 500,
+          "label_y": 428,
+          "meaning": "The source depends on the target as a prerequisite or necessary resource.",
+          "path": "M 500 398 L 500 457",
+          "relationship_ids": [
+            "rel-8"
+          ],
+          "relationship_type": "REQUIRES",
+          "source_entity_id": "payment-component",
+          "source_label": "payment component",
+          "target_entity_id": "database",
+          "target_label": "database"
+        }
+      ],
+      "source": "deterministic projection of exact committed SPEC-034 plan",
+      "sparse": false,
+      "spatial_grammar": "dependency-flow",
+      "strategy_type": "DEPENDENCY_STRUCTURE",
+      "width": 1000
+    },
+    "ground:software_architecture:representation-9340322462e99419:concept:payment-component": {
+      "context_key": "ground:software_architecture:representation-9340322462e99419:concept:payment-component",
+      "height": 640,
+      "nodes": [
+        {
+          "description": "Shared infrastructure used to store durable state for the order and payment components.",
+          "entity_id": "database",
+          "label": "database",
+          "role": "dependency-stage",
+          "role_label": "dependency",
+          "x": 500,
+          "y": 535
+        },
+        {
+          "description": "A component responsible for order-related processing.",
+          "entity_id": "order-component",
+          "label": "order component",
+          "role": "dependency-stage",
+          "role_label": "dependency",
+          "x": 500,
+          "y": 105
+        },
+        {
+          "description": "A component responsible for payment-related processing and purchase authorization.",
+          "entity_id": "payment-component",
+          "label": "payment component",
+          "role": "dependency-stage",
+          "role_label": "dependency",
+          "x": 500,
+          "y": 320
+        }
+      ],
+      "relationships": [
+        {
+          "direction": "dependent_to_requirement",
+          "label_x": 500,
+          "label_y": 212,
+          "meaning": "The source depends on the target as a prerequisite or necessary resource.",
+          "path": "M 500 183 L 500 242",
+          "relationship_ids": [
+            "rel-6"
+          ],
+          "relationship_type": "REQUIRES",
+          "source_entity_id": "order-component",
+          "source_label": "order component",
+          "target_entity_id": "payment-component",
+          "target_label": "payment component"
+        },
+        {
+          "direction": "dependent_to_requirement",
+          "label_x": 500,
+          "label_y": 428,
+          "meaning": "The source depends on the target as a prerequisite or necessary resource.",
+          "path": "M 500 398 L 500 457",
+          "relationship_ids": [
+            "rel-8"
+          ],
+          "relationship_type": "REQUIRES",
+          "source_entity_id": "payment-component",
+          "source_label": "payment component",
+          "target_entity_id": "database",
+          "target_label": "database"
+        }
+      ],
+      "source": "deterministic projection of exact committed SPEC-034 plan",
+      "sparse": false,
+      "spatial_grammar": "dependency-flow",
+      "strategy_type": "DEPENDENCY_STRUCTURE",
+      "width": 1000
+    },
+    "ground:software_architecture:representation-985e777f01fa9ec8:canonical:rel-1": {
+      "context_key": "ground:software_architecture:representation-985e777f01fa9ec8:canonical:rel-1",
+      "height": 380,
+      "nodes": [
+        {
+          "description": "The component through which the order-processing service exposes or receives API calls.",
+          "entity_id": "api-component",
+          "label": "API component",
+          "role": "relationship-source",
+          "role_label": "source",
+          "x": 210,
+          "y": 190
+        },
+        {
+          "description": "A service organized into separate API, order, payment, and database components.",
+          "entity_id": "modular-order-processing-service",
+          "label": "modular order-processing service",
+          "role": "relationship-target",
+          "role_label": "target",
+          "x": 790,
+          "y": 190
+        }
+      ],
+      "relationships": [
+        {
+          "direction": "part_to_whole",
+          "label_x": 500,
+          "label_y": 190,
+          "meaning": "The source is a constituent or component of the target.",
+          "path": "M 288 190 L 712 190",
+          "relationship_ids": [
+            "rel-1"
+          ],
+          "relationship_type": "PART_OF",
+          "source_entity_id": "api-component",
+          "source_label": "API component",
+          "target_entity_id": "modular-order-processing-service",
+          "target_label": "modular order-processing service"
+        }
+      ],
+      "source": "deterministic projection of exact committed SPEC-034 plan",
+      "sparse": true,
+      "spatial_grammar": "focused-connection",
+      "strategy_type": "FOCUSED_RELATIONSHIP",
+      "width": 1000
+    },
+    "ground:software_architecture:representation-985e777f01fa9ec8:canonical:rel-2": {
+      "context_key": "ground:software_architecture:representation-985e777f01fa9ec8:canonical:rel-2",
+      "height": 380,
+      "nodes": [
+        {
+          "description": "A service organized into separate API, order, payment, and database components.",
+          "entity_id": "modular-order-processing-service",
+          "label": "modular order-processing service",
+          "role": "relationship-target",
+          "role_label": "target",
+          "x": 790,
+          "y": 190
+        },
+        {
+          "description": "A component responsible for order-related processing.",
+          "entity_id": "order-component",
+          "label": "order component",
+          "role": "relationship-source",
+          "role_label": "source",
+          "x": 210,
+          "y": 190
+        }
+      ],
+      "relationships": [
+        {
+          "direction": "part_to_whole",
+          "label_x": 500,
+          "label_y": 190,
+          "meaning": "The source is a constituent or component of the target.",
+          "path": "M 288 190 L 712 190",
+          "relationship_ids": [
+            "rel-2"
+          ],
+          "relationship_type": "PART_OF",
+          "source_entity_id": "order-component",
+          "source_label": "order component",
+          "target_entity_id": "modular-order-processing-service",
+          "target_label": "modular order-processing service"
+        }
+      ],
+      "source": "deterministic projection of exact committed SPEC-034 plan",
+      "sparse": true,
+      "spatial_grammar": "focused-connection",
+      "strategy_type": "FOCUSED_RELATIONSHIP",
+      "width": 1000
+    },
+    "ground:software_architecture:representation-985e777f01fa9ec8:canonical:rel-3": {
+      "context_key": "ground:software_architecture:representation-985e777f01fa9ec8:canonical:rel-3",
+      "height": 380,
+      "nodes": [
+        {
+          "description": "A service organized into separate API, order, payment, and database components.",
+          "entity_id": "modular-order-processing-service",
+          "label": "modular order-processing service",
+          "role": "relationship-target",
+          "role_label": "target",
+          "x": 790,
+          "y": 190
+        },
+        {
+          "description": "A component responsible for payment-related processing and purchase authorization.",
+          "entity_id": "payment-component",
+          "label": "payment component",
+          "role": "relationship-source",
+          "role_label": "source",
+          "x": 210,
+          "y": 190
+        }
+      ],
+      "relationships": [
+        {
+          "direction": "part_to_whole",
+          "label_x": 500,
+          "label_y": 190,
+          "meaning": "The source is a constituent or component of the target.",
+          "path": "M 288 190 L 712 190",
+          "relationship_ids": [
+            "rel-3"
+          ],
+          "relationship_type": "PART_OF",
+          "source_entity_id": "payment-component",
+          "source_label": "payment component",
+          "target_entity_id": "modular-order-processing-service",
+          "target_label": "modular order-processing service"
+        }
+      ],
+      "source": "deterministic projection of exact committed SPEC-034 plan",
+      "sparse": true,
+      "spatial_grammar": "focused-connection",
+      "strategy_type": "FOCUSED_RELATIONSHIP",
+      "width": 1000
+    },
+    "ground:software_architecture:representation-985e777f01fa9ec8:canonical:rel-4": {
+      "context_key": "ground:software_architecture:representation-985e777f01fa9ec8:canonical:rel-4",
+      "height": 380,
+      "nodes": [
+        {
+          "description": "Shared infrastructure used to store durable state for the order and payment components.",
+          "entity_id": "database",
+          "label": "database",
+          "role": "relationship-source",
+          "role_label": "source",
+          "x": 210,
+          "y": 190
+        },
+        {
+          "description": "A service organized into separate API, order, payment, and database components.",
+          "entity_id": "modular-order-processing-service",
+          "label": "modular order-processing service",
+          "role": "relationship-target",
+          "role_label": "target",
+          "x": 790,
+          "y": 190
+        }
+      ],
+      "relationships": [
+        {
+          "direction": "part_to_whole",
+          "label_x": 500,
+          "label_y": 190,
+          "meaning": "The source is a constituent or component of the target.",
+          "path": "M 288 190 L 712 190",
+          "relationship_ids": [
+            "rel-4"
+          ],
+          "relationship_type": "PART_OF",
+          "source_entity_id": "database",
+          "source_label": "database",
+          "target_entity_id": "modular-order-processing-service",
+          "target_label": "modular order-processing service"
+        }
+      ],
+      "source": "deterministic projection of exact committed SPEC-034 plan",
+      "sparse": true,
+      "spatial_grammar": "focused-connection",
+      "strategy_type": "FOCUSED_RELATIONSHIP",
+      "width": 1000
+    },
+    "ground:software_architecture:representation-985e777f01fa9ec8:concept:api-component": {
+      "context_key": "ground:software_architecture:representation-985e777f01fa9ec8:concept:api-component",
+      "height": 600,
+      "nodes": [
+        {
+          "description": "The component through which the order-processing service exposes or receives API calls.",
+          "entity_id": "api-component",
+          "label": "API component",
+          "role": "hierarchy-member",
+          "role_label": "part / member",
+          "x": 125,
+          "y": 485
+        },
+        {
+          "description": "Shared infrastructure used to store durable state for the order and payment components.",
+          "entity_id": "database",
+          "label": "database",
+          "role": "hierarchy-member",
+          "role_label": "part / member",
+          "x": 375,
+          "y": 485
+        },
+        {
+          "description": "A service organized into separate API, order, payment, and database components.",
+          "entity_id": "modular-order-processing-service",
+          "label": "modular order-processing service",
+          "role": "hierarchy-root",
+          "role_label": "whole / kind",
+          "x": 500,
+          "y": 105
+        },
+        {
+          "description": "A component responsible for order-related processing.",
+          "entity_id": "order-component",
+          "label": "order component",
+          "role": "hierarchy-member",
+          "role_label": "part / member",
+          "x": 625,
+          "y": 485
+        },
+        {
+          "description": "A component responsible for payment-related processing and purchase authorization.",
+          "entity_id": "payment-component",
+          "label": "payment component",
+          "role": "hierarchy-member",
+          "role_label": "part / member",
+          "x": 875,
+          "y": 485
+        }
+      ],
+      "relationships": [
+        {
+          "direction": "part_to_whole",
+          "label_x": 312,
+          "label_y": 319,
+          "meaning": "The source is a constituent or component of the target.",
+          "path": "M 180 429 L 445 161",
+          "relationship_ids": [
+            "rel-1"
+          ],
+          "relationship_type": "PART_OF",
+          "source_entity_id": "api-component",
+          "source_label": "API component",
+          "target_entity_id": "modular-order-processing-service",
+          "target_label": "modular order-processing service"
+        },
+        {
+          "direction": "part_to_whole",
+          "label_x": 438,
+          "label_y": 271,
+          "meaning": "The source is a constituent or component of the target.",
+          "path": "M 399 411 L 476 179",
+          "relationship_ids": [
+            "rel-4"
+          ],
+          "relationship_type": "PART_OF",
+          "source_entity_id": "database",
+          "source_label": "database",
+          "target_entity_id": "modular-order-processing-service",
+          "target_label": "modular order-processing service"
+        },
+        {
+          "direction": "part_to_whole",
+          "label_x": 562,
+          "label_y": 319,
+          "meaning": "The source is a constituent or component of the target.",
+          "path": "M 601 411 L 524 179",
+          "relationship_ids": [
+            "rel-2"
+          ],
+          "relationship_type": "PART_OF",
+          "source_entity_id": "order-component",
+          "source_label": "order component",
+          "target_entity_id": "modular-order-processing-service",
+          "target_label": "modular order-processing service"
+        },
+        {
+          "direction": "part_to_whole",
+          "label_x": 688,
+          "label_y": 271,
+          "meaning": "The source is a constituent or component of the target.",
+          "path": "M 820 429 L 555 161",
+          "relationship_ids": [
+            "rel-3"
+          ],
+          "relationship_type": "PART_OF",
+          "source_entity_id": "payment-component",
+          "source_label": "payment component",
+          "target_entity_id": "modular-order-processing-service",
+          "target_label": "modular order-processing service"
+        }
+      ],
+      "source": "deterministic projection of exact committed SPEC-034 plan",
+      "sparse": false,
+      "spatial_grammar": "hierarchy-composition",
+      "strategy_type": "HIERARCHY_COMPOSITION",
+      "width": 1000
+    },
+    "ground:software_architecture:representation-985e777f01fa9ec8:concept:database": {
+      "context_key": "ground:software_architecture:representation-985e777f01fa9ec8:concept:database",
+      "height": 600,
+      "nodes": [
+        {
+          "description": "The component through which the order-processing service exposes or receives API calls.",
+          "entity_id": "api-component",
+          "label": "API component",
+          "role": "hierarchy-member",
+          "role_label": "part / member",
+          "x": 125,
+          "y": 485
+        },
+        {
+          "description": "Shared infrastructure used to store durable state for the order and payment components.",
+          "entity_id": "database",
+          "label": "database",
+          "role": "hierarchy-member",
+          "role_label": "part / member",
+          "x": 375,
+          "y": 485
+        },
+        {
+          "description": "A service organized into separate API, order, payment, and database components.",
+          "entity_id": "modular-order-processing-service",
+          "label": "modular order-processing service",
+          "role": "hierarchy-root",
+          "role_label": "whole / kind",
+          "x": 500,
+          "y": 105
+        },
+        {
+          "description": "A component responsible for order-related processing.",
+          "entity_id": "order-component",
+          "label": "order component",
+          "role": "hierarchy-member",
+          "role_label": "part / member",
+          "x": 625,
+          "y": 485
+        },
+        {
+          "description": "A component responsible for payment-related processing and purchase authorization.",
+          "entity_id": "payment-component",
+          "label": "payment component",
+          "role": "hierarchy-member",
+          "role_label": "part / member",
+          "x": 875,
+          "y": 485
+        }
+      ],
+      "relationships": [
+        {
+          "direction": "part_to_whole",
+          "label_x": 312,
+          "label_y": 319,
+          "meaning": "The source is a constituent or component of the target.",
+          "path": "M 180 429 L 445 161",
+          "relationship_ids": [
+            "rel-1"
+          ],
+          "relationship_type": "PART_OF",
+          "source_entity_id": "api-component",
+          "source_label": "API component",
+          "target_entity_id": "modular-order-processing-service",
+          "target_label": "modular order-processing service"
+        },
+        {
+          "direction": "part_to_whole",
+          "label_x": 438,
+          "label_y": 271,
+          "meaning": "The source is a constituent or component of the target.",
+          "path": "M 399 411 L 476 179",
+          "relationship_ids": [
+            "rel-4"
+          ],
+          "relationship_type": "PART_OF",
+          "source_entity_id": "database",
+          "source_label": "database",
+          "target_entity_id": "modular-order-processing-service",
+          "target_label": "modular order-processing service"
+        },
+        {
+          "direction": "part_to_whole",
+          "label_x": 562,
+          "label_y": 319,
+          "meaning": "The source is a constituent or component of the target.",
+          "path": "M 601 411 L 524 179",
+          "relationship_ids": [
+            "rel-2"
+          ],
+          "relationship_type": "PART_OF",
+          "source_entity_id": "order-component",
+          "source_label": "order component",
+          "target_entity_id": "modular-order-processing-service",
+          "target_label": "modular order-processing service"
+        },
+        {
+          "direction": "part_to_whole",
+          "label_x": 688,
+          "label_y": 271,
+          "meaning": "The source is a constituent or component of the target.",
+          "path": "M 820 429 L 555 161",
+          "relationship_ids": [
+            "rel-3"
+          ],
+          "relationship_type": "PART_OF",
+          "source_entity_id": "payment-component",
+          "source_label": "payment component",
+          "target_entity_id": "modular-order-processing-service",
+          "target_label": "modular order-processing service"
+        }
+      ],
+      "source": "deterministic projection of exact committed SPEC-034 plan",
+      "sparse": false,
+      "spatial_grammar": "hierarchy-composition",
+      "strategy_type": "HIERARCHY_COMPOSITION",
+      "width": 1000
+    },
+    "ground:software_architecture:representation-985e777f01fa9ec8:concept:modular-order-processing-service": {
+      "context_key": "ground:software_architecture:representation-985e777f01fa9ec8:concept:modular-order-processing-service",
+      "height": 600,
+      "nodes": [
+        {
+          "description": "The component through which the order-processing service exposes or receives API calls.",
+          "entity_id": "api-component",
+          "label": "API component",
+          "role": "hierarchy-member",
+          "role_label": "part / member",
+          "x": 125,
+          "y": 485
+        },
+        {
+          "description": "Shared infrastructure used to store durable state for the order and payment components.",
+          "entity_id": "database",
+          "label": "database",
+          "role": "hierarchy-member",
+          "role_label": "part / member",
+          "x": 375,
+          "y": 485
+        },
+        {
+          "description": "A service organized into separate API, order, payment, and database components.",
+          "entity_id": "modular-order-processing-service",
+          "label": "modular order-processing service",
+          "role": "hierarchy-root",
+          "role_label": "whole / kind",
+          "x": 500,
+          "y": 105
+        },
+        {
+          "description": "A component responsible for order-related processing.",
+          "entity_id": "order-component",
+          "label": "order component",
+          "role": "hierarchy-member",
+          "role_label": "part / member",
+          "x": 625,
+          "y": 485
+        },
+        {
+          "description": "A component responsible for payment-related processing and purchase authorization.",
+          "entity_id": "payment-component",
+          "label": "payment component",
+          "role": "hierarchy-member",
+          "role_label": "part / member",
+          "x": 875,
+          "y": 485
+        }
+      ],
+      "relationships": [
+        {
+          "direction": "part_to_whole",
+          "label_x": 312,
+          "label_y": 319,
+          "meaning": "The source is a constituent or component of the target.",
+          "path": "M 180 429 L 445 161",
+          "relationship_ids": [
+            "rel-1"
+          ],
+          "relationship_type": "PART_OF",
+          "source_entity_id": "api-component",
+          "source_label": "API component",
+          "target_entity_id": "modular-order-processing-service",
+          "target_label": "modular order-processing service"
+        },
+        {
+          "direction": "part_to_whole",
+          "label_x": 438,
+          "label_y": 271,
+          "meaning": "The source is a constituent or component of the target.",
+          "path": "M 399 411 L 476 179",
+          "relationship_ids": [
+            "rel-4"
+          ],
+          "relationship_type": "PART_OF",
+          "source_entity_id": "database",
+          "source_label": "database",
+          "target_entity_id": "modular-order-processing-service",
+          "target_label": "modular order-processing service"
+        },
+        {
+          "direction": "part_to_whole",
+          "label_x": 562,
+          "label_y": 319,
+          "meaning": "The source is a constituent or component of the target.",
+          "path": "M 601 411 L 524 179",
+          "relationship_ids": [
+            "rel-2"
+          ],
+          "relationship_type": "PART_OF",
+          "source_entity_id": "order-component",
+          "source_label": "order component",
+          "target_entity_id": "modular-order-processing-service",
+          "target_label": "modular order-processing service"
+        },
+        {
+          "direction": "part_to_whole",
+          "label_x": 688,
+          "label_y": 271,
+          "meaning": "The source is a constituent or component of the target.",
+          "path": "M 820 429 L 555 161",
+          "relationship_ids": [
+            "rel-3"
+          ],
+          "relationship_type": "PART_OF",
+          "source_entity_id": "payment-component",
+          "source_label": "payment component",
+          "target_entity_id": "modular-order-processing-service",
+          "target_label": "modular order-processing service"
+        }
+      ],
+      "source": "deterministic projection of exact committed SPEC-034 plan",
+      "sparse": false,
+      "spatial_grammar": "hierarchy-composition",
+      "strategy_type": "HIERARCHY_COMPOSITION",
+      "width": 1000
+    },
+    "ground:software_architecture:representation-985e777f01fa9ec8:concept:order-component": {
+      "context_key": "ground:software_architecture:representation-985e777f01fa9ec8:concept:order-component",
+      "height": 600,
+      "nodes": [
+        {
+          "description": "The component through which the order-processing service exposes or receives API calls.",
+          "entity_id": "api-component",
+          "label": "API component",
+          "role": "hierarchy-member",
+          "role_label": "part / member",
+          "x": 125,
+          "y": 485
+        },
+        {
+          "description": "Shared infrastructure used to store durable state for the order and payment components.",
+          "entity_id": "database",
+          "label": "database",
+          "role": "hierarchy-member",
+          "role_label": "part / member",
+          "x": 375,
+          "y": 485
+        },
+        {
+          "description": "A service organized into separate API, order, payment, and database components.",
+          "entity_id": "modular-order-processing-service",
+          "label": "modular order-processing service",
+          "role": "hierarchy-root",
+          "role_label": "whole / kind",
+          "x": 500,
+          "y": 105
+        },
+        {
+          "description": "A component responsible for order-related processing.",
+          "entity_id": "order-component",
+          "label": "order component",
+          "role": "hierarchy-member",
+          "role_label": "part / member",
+          "x": 625,
+          "y": 485
+        },
+        {
+          "description": "A component responsible for payment-related processing and purchase authorization.",
+          "entity_id": "payment-component",
+          "label": "payment component",
+          "role": "hierarchy-member",
+          "role_label": "part / member",
+          "x": 875,
+          "y": 485
+        }
+      ],
+      "relationships": [
+        {
+          "direction": "part_to_whole",
+          "label_x": 312,
+          "label_y": 319,
+          "meaning": "The source is a constituent or component of the target.",
+          "path": "M 180 429 L 445 161",
+          "relationship_ids": [
+            "rel-1"
+          ],
+          "relationship_type": "PART_OF",
+          "source_entity_id": "api-component",
+          "source_label": "API component",
+          "target_entity_id": "modular-order-processing-service",
+          "target_label": "modular order-processing service"
+        },
+        {
+          "direction": "part_to_whole",
+          "label_x": 438,
+          "label_y": 271,
+          "meaning": "The source is a constituent or component of the target.",
+          "path": "M 399 411 L 476 179",
+          "relationship_ids": [
+            "rel-4"
+          ],
+          "relationship_type": "PART_OF",
+          "source_entity_id": "database",
+          "source_label": "database",
+          "target_entity_id": "modular-order-processing-service",
+          "target_label": "modular order-processing service"
+        },
+        {
+          "direction": "part_to_whole",
+          "label_x": 562,
+          "label_y": 319,
+          "meaning": "The source is a constituent or component of the target.",
+          "path": "M 601 411 L 524 179",
+          "relationship_ids": [
+            "rel-2"
+          ],
+          "relationship_type": "PART_OF",
+          "source_entity_id": "order-component",
+          "source_label": "order component",
+          "target_entity_id": "modular-order-processing-service",
+          "target_label": "modular order-processing service"
+        },
+        {
+          "direction": "part_to_whole",
+          "label_x": 688,
+          "label_y": 271,
+          "meaning": "The source is a constituent or component of the target.",
+          "path": "M 820 429 L 555 161",
+          "relationship_ids": [
+            "rel-3"
+          ],
+          "relationship_type": "PART_OF",
+          "source_entity_id": "payment-component",
+          "source_label": "payment component",
+          "target_entity_id": "modular-order-processing-service",
+          "target_label": "modular order-processing service"
+        }
+      ],
+      "source": "deterministic projection of exact committed SPEC-034 plan",
+      "sparse": false,
+      "spatial_grammar": "hierarchy-composition",
+      "strategy_type": "HIERARCHY_COMPOSITION",
+      "width": 1000
+    },
+    "ground:software_architecture:representation-985e777f01fa9ec8:concept:payment-component": {
+      "context_key": "ground:software_architecture:representation-985e777f01fa9ec8:concept:payment-component",
+      "height": 600,
+      "nodes": [
+        {
+          "description": "The component through which the order-processing service exposes or receives API calls.",
+          "entity_id": "api-component",
+          "label": "API component",
+          "role": "hierarchy-member",
+          "role_label": "part / member",
+          "x": 125,
+          "y": 485
+        },
+        {
+          "description": "Shared infrastructure used to store durable state for the order and payment components.",
+          "entity_id": "database",
+          "label": "database",
+          "role": "hierarchy-member",
+          "role_label": "part / member",
+          "x": 375,
+          "y": 485
+        },
+        {
+          "description": "A service organized into separate API, order, payment, and database components.",
+          "entity_id": "modular-order-processing-service",
+          "label": "modular order-processing service",
+          "role": "hierarchy-root",
+          "role_label": "whole / kind",
+          "x": 500,
+          "y": 105
+        },
+        {
+          "description": "A component responsible for order-related processing.",
+          "entity_id": "order-component",
+          "label": "order component",
+          "role": "hierarchy-member",
+          "role_label": "part / member",
+          "x": 625,
+          "y": 485
+        },
+        {
+          "description": "A component responsible for payment-related processing and purchase authorization.",
+          "entity_id": "payment-component",
+          "label": "payment component",
+          "role": "hierarchy-member",
+          "role_label": "part / member",
+          "x": 875,
+          "y": 485
+        }
+      ],
+      "relationships": [
+        {
+          "direction": "part_to_whole",
+          "label_x": 312,
+          "label_y": 319,
+          "meaning": "The source is a constituent or component of the target.",
+          "path": "M 180 429 L 445 161",
+          "relationship_ids": [
+            "rel-1"
+          ],
+          "relationship_type": "PART_OF",
+          "source_entity_id": "api-component",
+          "source_label": "API component",
+          "target_entity_id": "modular-order-processing-service",
+          "target_label": "modular order-processing service"
+        },
+        {
+          "direction": "part_to_whole",
+          "label_x": 438,
+          "label_y": 271,
+          "meaning": "The source is a constituent or component of the target.",
+          "path": "M 399 411 L 476 179",
+          "relationship_ids": [
+            "rel-4"
+          ],
+          "relationship_type": "PART_OF",
+          "source_entity_id": "database",
+          "source_label": "database",
+          "target_entity_id": "modular-order-processing-service",
+          "target_label": "modular order-processing service"
+        },
+        {
+          "direction": "part_to_whole",
+          "label_x": 562,
+          "label_y": 319,
+          "meaning": "The source is a constituent or component of the target.",
+          "path": "M 601 411 L 524 179",
+          "relationship_ids": [
+            "rel-2"
+          ],
+          "relationship_type": "PART_OF",
+          "source_entity_id": "order-component",
+          "source_label": "order component",
+          "target_entity_id": "modular-order-processing-service",
+          "target_label": "modular order-processing service"
+        },
+        {
+          "direction": "part_to_whole",
+          "label_x": 688,
+          "label_y": 271,
+          "meaning": "The source is a constituent or component of the target.",
+          "path": "M 820 429 L 555 161",
+          "relationship_ids": [
+            "rel-3"
+          ],
+          "relationship_type": "PART_OF",
+          "source_entity_id": "payment-component",
+          "source_label": "payment component",
+          "target_entity_id": "modular-order-processing-service",
+          "target_label": "modular order-processing service"
+        }
+      ],
+      "source": "deterministic projection of exact committed SPEC-034 plan",
+      "sparse": false,
+      "spatial_grammar": "hierarchy-composition",
+      "strategy_type": "HIERARCHY_COMPOSITION",
+      "width": 1000
+    }
+  },
+  "schema_version": 1,
+  "source": "exact committed representation-plans.json"
+}

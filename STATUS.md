@@ -82,17 +82,25 @@ Owner review confirms:
 - representation diversity remains authoritative;
 - the next packet should restore true spatial/diagrammatic explanatory composition without restoring navigation coupling.
 
+## Dominant explanatory diagram canvas
+
+`SPEC-038 — dominant explanatory diagram canvas`
+
+Implementation status: `IMPLEMENTED_AWAITING_OWNER_REVIEW`
+
+The offline implementation, deterministic regeneration, inherited regressions, and browser gate pass. The exact candidate is awaiting the required owner review; no product verdict or baseline promotion has been assigned.
+
 ## Current approved work packet
 
 ```text
-specs/SPEC-038-dominant-explanatory-diagram-canvas.md
+NONE
 ```
 
-Status: `APPROVED_FOR_IMPLEMENTATION`
+Status: `NONE`
 
-Authority: `OFFLINE_ONLY`
+Authority: `NONE`
 
-Human gate: `OWNER_REVIEW`
+Human gate: `NONE`
 
 Promotion: `NOT_AUTHORIZED`
 
@@ -157,7 +165,7 @@ Representation strategy remains heterogeneous: causal/mechanism, process/sequenc
 
 ## Current gate
 
-SPEC-038 is the only active approved implementation packet. Implementation is authorized offline only. Owner review is required after implementation. Baseline promotion, live/model/external calls, and unrelated follow-up implementation remain unauthorized.
+SPEC-038 is implemented and awaiting owner review. There is no active approved implementation packet. Baseline promotion, live/model/external calls, and unrelated follow-up implementation remain unauthorized.
 
 ## Frozen / protected state
 

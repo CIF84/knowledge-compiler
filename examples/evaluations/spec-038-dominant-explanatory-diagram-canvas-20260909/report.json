@@ -1,0 +1,3617 @@
+{
+  "browser_console_result": "PASS",
+  "browser_verification": "browser-verification.json",
+  "dependencies_added": [],
+  "dependencies_removed": [],
+  "deterministic_browser_captures": [
+    {
+      "case": "mixed_my_map",
+      "deterministic_observation": {
+        "background": "transparent",
+        "border": "none",
+        "current_focus_agreement": "PASS",
+        "duplicate_visible_object_count": 0,
+        "focus_and_revealed_state_unchanged_by_collapse_expand": true,
+        "regions": [
+          "Economics",
+          "Electromagnetism",
+          "History of Printing",
+          "Software Architecture"
+        ],
+        "revealed_object_count": 19,
+        "unique_visible_object_count": 19,
+        "visible_object_count_after_electromagnetism_collapse": 4,
+        "visible_object_count_after_expand": 19,
+        "visible_object_count_before_collapse": 19
+      },
+      "representation_strategy": "MULTI_REGION_MY_MAP",
+      "result": "PASS",
+      "semantic_focus_identity": "mixed revealed territory",
+      "visual_grammar_roles": [
+        "territory-region",
+        "tree-disclosure",
+        "territory-relationship",
+        "territory-concept",
+        "territory-explanation"
+      ]
+    },
+    {
+      "canonical_direction": {
+        "predicate": "CAUSES",
+        "source": "double-slit-experiment",
+        "target": "interference-pattern"
+      },
+      "case": "double_slit_causal",
+      "clear_observation": {
+        "mode": "INSPECT",
+        "selected": "NONE"
+      },
+      "click_observation": {
+        "mode": "SELECTED",
+        "related_wire_count": 1,
+        "selected": "canonical:relationship-05b19ee4b6d50060",
+        "selected_edge_count": 1,
+        "source_evidence_present": true
+      },
+      "focus_before_after_local_interaction": [
+        "concept:double-slit-experiment",
+        "concept:double-slit-experiment"
+      ],
+      "hover_observation": {
+        "mode": "PREVIEW",
+        "preview_node_count": 1,
+        "previewed": "concept:interference-pattern",
+        "related_wire_count": 1
+      },
+      "navigation_mutation": false,
+      "rendered_connector_count": 1,
+      "rendered_semantic_object_count": 2,
+      "representation_contained_without_zone_overlap": true,
+      "representation_strategy": "CAUSAL_MECHANISM",
+      "result": "PASS",
+      "revealed_knowledge_before_after_local_interaction": [
+        2,
+        2
+      ],
+      "semantic_focus_identity": "double-slit-experiment",
+      "spatial_grammar": "causal-system",
+      "state_separation": "PASS"
+    },
+    {
+      "canonical_direction": {
+        "predicate": "CAUSES",
+        "source": "double-slit-experiment",
+        "target": "interference-pattern"
+      },
+      "case": "double_slit_focused_relationship",
+      "node_roles": [
+        "relationship-source",
+        "relationship-target"
+      ],
+      "rendered_connector_count": 1,
+      "rendered_semantic_object_count": 2,
+      "representation_contained_without_zone_overlap": true,
+      "representation_strategy": "FOCUSED_RELATIONSHIP",
+      "result": "PASS",
+      "semantic_focus_identity": "relationship-05b19ee4b6d50060",
+      "spatial_grammar": "focused-connection"
+    },
+    {
+      "canonical_direction": {
+        "predicate": "IS_A",
+        "source": "light",
+        "target": "electromagnetic-wave"
+      },
+      "case": "light_hierarchy",
+      "node_roles": [
+        "hierarchy-root",
+        "hierarchy-member"
+      ],
+      "rendered_connector_count": 1,
+      "rendered_semantic_object_count": 2,
+      "representation_contained_without_zone_overlap": true,
+      "representation_strategy": "HIERARCHY_COMPOSITION",
+      "result": "PASS",
+      "semantic_focus_identity": "light",
+      "sparse_structure_copy_is_visually_secondary": true,
+      "spatial_grammar": "hierarchy-composition"
+    },
+    {
+      "canonical_direction": "each component PART_OF modular-order-processing-service",
+      "case": "software_composition",
+      "node_overlap_count": 0,
+      "relationship_labels_staggered": true,
+      "rendered_connector_count": 4,
+      "rendered_semantic_object_count": 5,
+      "representation_contained_without_zone_overlap": true,
+      "representation_strategy": "HIERARCHY_COMPOSITION",
+      "result": "PASS",
+      "semantic_focus_identity": "modular-order-processing-service",
+      "spatial_grammar": "hierarchy-composition"
+    },
+    {
+      "canonical_relationship_type": "ENABLES",
+      "case": "history_dependency",
+      "rendered_connector_count": 3,
+      "rendered_semantic_object_count": 4,
+      "representation_contained_without_zone_overlap": true,
+      "representation_strategy": "DEPENDENCY_STRUCTURE",
+      "result": "PASS",
+      "semantic_focus_identity": "printing",
+      "spatial_grammar": "dependency-flow"
+    },
+    {
+      "canonical_direction": {
+        "predicate": "PRECEDES",
+        "source": "printed-controversy",
+        "target": "authorities"
+      },
+      "case": "history_sequence",
+      "rendered_connector_count": 1,
+      "rendered_semantic_object_count": 2,
+      "representation_contained_without_zone_overlap": true,
+      "representation_strategy": "PROCESS_SEQUENCE",
+      "result": "PASS",
+      "semantic_focus_identity": "authorities",
+      "spatial_grammar": "ordered-sequence"
+    },
+    {
+      "case": "economics_system",
+      "invented_quantity_demanded_to_shortage_closure": false,
+      "node_overlap_count": 0,
+      "relationship_label_overlap_count": 0,
+      "rendered_connector_count": 5,
+      "rendered_semantic_object_count": 6,
+      "representation_contained_without_zone_overlap": true,
+      "representation_strategy": "CAUSAL_MECHANISM",
+      "result": "PASS",
+      "semantic_focus_identity": "market-price",
+      "spatial_grammar": "causal-system"
+    },
+    {
+      "artificial_structure_added": false,
+      "case": "prose_fallback",
+      "diagram_canvas_count": 0,
+      "evidence_and_provenance_available": true,
+      "rendered_connector_count": 0,
+      "rendered_semantic_object_count": 0,
+      "representation_strategy": "CONCISE_PROSE",
+      "result": "PASS",
+      "semantic_focus_identity": "atom",
+      "spatial_grammar": "prose-first"
+    }
+  ],
+  "deterministic_regeneration_result": {
+    "compared_file_count": 46,
+    "result": "PASS_BYTE_IDENTICAL",
+    "scope": "independently generated non-lifecycle candidate artifacts"
+  },
+  "deviations": [],
+  "diagram_contract": {
+    "interaction": "SPEC-036 representation-local inspection only",
+    "navigation": "SPEC-033 My Map or Explore Next only",
+    "prose": "no canvas when strategy is concise prose",
+    "source": "exact frozen SPEC-034 plan payload",
+    "topology": "deterministic content-sensitive 2D projection"
+  },
+  "execution_mode": "OFFLINE_DETERMINISTIC",
+  "execution_stage": "IMPLEMENTED_AWAITING_OWNER_REVIEW",
+  "explore_next_isolation": {
+    "active_explore_deeper_allowed": false,
+    "authority": "EXPLORE_NEXT_ONLY",
+    "diagram_navigation_handlers_added": 0
+  },
+  "files_changed": [
+    "STATUS.md",
+    "pyproject.toml",
+    "specs/SPEC-038-dominant-explanatory-diagram-canvas.md",
+    "src/knowledge_compiler/cli.py",
+    "src/knowledge_compiler/diagram_canvas_assets/",
+    "src/knowledge_compiler/diagram_canvas_evaluation.py",
+    "tests/test_diagram_canvas.py",
+    "examples/evaluations/spec-038-dominant-explanatory-diagram-canvas-20260909/"
+  ],
+  "fixed_evaluation_cases": [
+    {
+      "canonical_directions_represented": [
+        {
+          "direction": "cause_to_effect",
+          "relationship_ids": [
+            "relationship-05b19ee4b6d50060"
+          ],
+          "source_entity_id": "double-slit-experiment",
+          "target_entity_id": "interference-pattern"
+        }
+      ],
+      "case": "double_slit_causal",
+      "context_key": "ground:electromagnetism:representation-1da8ae41cb52f95a:concept:double-slit-experiment",
+      "evidence_provenance_sources": [
+        "text-9e978db999ee6713"
+      ],
+      "expected_strategy": "CAUSAL_MECHANISM",
+      "focus_before_after_local_interaction": [
+        {
+          "after": {
+            "context_key": "ground:electromagnetism:representation-1da8ae41cb52f95a:concept:double-slit-experiment",
+            "identity": "double-slit-experiment",
+            "kind": "concept"
+          },
+          "before": {
+            "context_key": "ground:electromagnetism:representation-1da8ae41cb52f95a:concept:double-slit-experiment",
+            "identity": "double-slit-experiment",
+            "kind": "concept"
+          }
+        },
+        {
+          "after": {
+            "context_key": "ground:electromagnetism:representation-1da8ae41cb52f95a:concept:double-slit-experiment",
+            "identity": "double-slit-experiment",
+            "kind": "concept"
+          },
+          "before": {
+            "context_key": "ground:electromagnetism:representation-1da8ae41cb52f95a:concept:double-slit-experiment",
+            "identity": "double-slit-experiment",
+            "kind": "concept"
+          }
+        },
+        {
+          "after": {
+            "context_key": "ground:electromagnetism:representation-1da8ae41cb52f95a:concept:double-slit-experiment",
+            "identity": "double-slit-experiment",
+            "kind": "concept"
+          },
+          "before": {
+            "context_key": "ground:electromagnetism:representation-1da8ae41cb52f95a:concept:double-slit-experiment",
+            "identity": "double-slit-experiment",
+            "kind": "concept"
+          }
+        },
+        {
+          "after": {
+            "context_key": "ground:electromagnetism:representation-1da8ae41cb52f95a:concept:double-slit-experiment",
+            "identity": "double-slit-experiment",
+            "kind": "concept"
+          },
+          "before": {
+            "context_key": "ground:electromagnetism:representation-1da8ae41cb52f95a:concept:double-slit-experiment",
+            "identity": "double-slit-experiment",
+            "kind": "concept"
+          }
+        }
+      ],
+      "hover_click_behavior_tested": [
+        {
+          "action": "hover",
+          "component_id": "concept:interference-pattern",
+          "effective_component_id": "concept:interference-pattern",
+          "focus_after": {
+            "context_key": "ground:electromagnetism:representation-1da8ae41cb52f95a:concept:double-slit-experiment",
+            "identity": "double-slit-experiment",
+            "kind": "concept"
+          },
+          "focus_before": {
+            "context_key": "ground:electromagnetism:representation-1da8ae41cb52f95a:concept:double-slit-experiment",
+            "identity": "double-slit-experiment",
+            "kind": "concept"
+          },
+          "hovered_component_id": "concept:interference-pattern",
+          "navigation_mutation": false,
+          "revealed_after": [
+            "orientation:domain:electromagnetism",
+            "concept:double-slit-experiment"
+          ],
+          "revealed_before": [
+            "orientation:domain:electromagnetism",
+            "concept:double-slit-experiment"
+          ],
+          "revealed_knowledge_mutation": false,
+          "selected_component_id": null
+        },
+        {
+          "action": "hover_exit",
+          "component_id": null,
+          "effective_component_id": null,
+          "focus_after": {
+            "context_key": "ground:electromagnetism:representation-1da8ae41cb52f95a:concept:double-slit-experiment",
+            "identity": "double-slit-experiment",
+            "kind": "concept"
+          },
+          "focus_before": {
+            "context_key": "ground:electromagnetism:representation-1da8ae41cb52f95a:concept:double-slit-experiment",
+            "identity": "double-slit-experiment",
+            "kind": "concept"
+          },
+          "hovered_component_id": null,
+          "navigation_mutation": false,
+          "revealed_after": [
+            "orientation:domain:electromagnetism",
+            "concept:double-slit-experiment"
+          ],
+          "revealed_before": [
+            "orientation:domain:electromagnetism",
+            "concept:double-slit-experiment"
+          ],
+          "revealed_knowledge_mutation": false,
+          "selected_component_id": null
+        },
+        {
+          "action": "select",
+          "component_id": "concept:interference-pattern",
+          "effective_component_id": "concept:interference-pattern",
+          "focus_after": {
+            "context_key": "ground:electromagnetism:representation-1da8ae41cb52f95a:concept:double-slit-experiment",
+            "identity": "double-slit-experiment",
+            "kind": "concept"
+          },
+          "focus_before": {
+            "context_key": "ground:electromagnetism:representation-1da8ae41cb52f95a:concept:double-slit-experiment",
+            "identity": "double-slit-experiment",
+            "kind": "concept"
+          },
+          "hovered_component_id": null,
+          "navigation_mutation": false,
+          "revealed_after": [
+            "orientation:domain:electromagnetism",
+            "concept:double-slit-experiment"
+          ],
+          "revealed_before": [
+            "orientation:domain:electromagnetism",
+            "concept:double-slit-experiment"
+          ],
+          "revealed_knowledge_mutation": false,
+          "selected_component_id": "concept:interference-pattern"
+        },
+        {
+          "action": "clear",
+          "component_id": null,
+          "effective_component_id": null,
+          "focus_after": {
+            "context_key": "ground:electromagnetism:representation-1da8ae41cb52f95a:concept:double-slit-experiment",
+            "identity": "double-slit-experiment",
+            "kind": "concept"
+          },
+          "focus_before": {
+            "context_key": "ground:electromagnetism:representation-1da8ae41cb52f95a:concept:double-slit-experiment",
+            "identity": "double-slit-experiment",
+            "kind": "concept"
+          },
+          "hovered_component_id": null,
+          "navigation_mutation": false,
+          "revealed_after": [
+            "orientation:domain:electromagnetism",
+            "concept:double-slit-experiment"
+          ],
+          "revealed_before": [
+            "orientation:domain:electromagnetism",
+            "concept:double-slit-experiment"
+          ],
+          "revealed_knowledge_mutation": false,
+          "selected_component_id": null
+        }
+      ],
+      "inspectable_components": [
+        {
+          "direction": "cause_to_effect",
+          "evidence": [
+            {
+              "document_id": "text-9e978db999ee6713",
+              "end_char": 12218,
+              "quote": "a beam of light is directed through two narrow, closely spaced slits, producing an interference pattern of light and dark bands on a screen.",
+              "relationship_id": "relationship-05b19ee4b6d50060",
+              "start_char": 12078
+            }
+          ],
+          "explanation": "The source brings about the target as an effect.",
+          "identity": "relationship-05b19ee4b6d50060",
+          "kind": "canonical",
+          "label": "double-slit experiment → interference pattern",
+          "local_key": "canonical:relationship-05b19ee4b6d50060",
+          "predicate": "CAUSES"
+        },
+        {
+          "direction": null,
+          "evidence": [],
+          "explanation": "Experiment in which particles or waves passing through two slits produce an interference pattern.",
+          "identity": "double-slit-experiment",
+          "kind": "concept",
+          "label": "double-slit experiment",
+          "local_key": "concept:double-slit-experiment",
+          "predicate": null
+        },
+        {
+          "direction": null,
+          "evidence": [],
+          "explanation": "Pattern of alternating light and dark bands produced by wave interference and reproduced by quantum particles statistically.",
+          "identity": "interference-pattern",
+          "kind": "concept",
+          "label": "interference pattern",
+          "local_key": "concept:interference-pattern",
+          "predicate": null
+        }
+      ],
+      "nodes_rendered": [
+        {
+          "description": "Experiment in which particles or waves passing through two slits produce an interference pattern.",
+          "entity_id": "double-slit-experiment",
+          "label": "double-slit experiment",
+          "role": "causal-state",
+          "role_label": "system state",
+          "x": 500,
+          "y": 105
+        },
+        {
+          "description": "Pattern of alternating light and dark bands produced by wave interference and reproduced by quantum particles statistically.",
+          "entity_id": "interference-pattern",
+          "label": "interference pattern",
+          "role": "causal-state",
+          "role_label": "system state",
+          "x": 500,
+          "y": 355
+        }
+      ],
+      "relationships_rendered": [
+        {
+          "direction": "cause_to_effect",
+          "label_x": 500,
+          "label_y": 230,
+          "meaning": "The source brings about the target as an effect.",
+          "path": "M 500 183 L 500 277",
+          "relationship_ids": [
+            "relationship-05b19ee4b6d50060"
+          ],
+          "relationship_type": "CAUSES",
+          "source_entity_id": "double-slit-experiment",
+          "source_label": "double-slit experiment",
+          "target_entity_id": "interference-pattern",
+          "target_label": "interference pattern"
+        }
+      ],
+      "representation_strategy": "CAUSAL_MECHANISM",
+      "revealed_before_after_local_interaction": [
+        {
+          "after": [
+            "orientation:domain:electromagnetism",
+            "concept:double-slit-experiment"
+          ],
+          "before": [
+            "orientation:domain:electromagnetism",
+            "concept:double-slit-experiment"
+          ]
+        },
+        {
+          "after": [
+            "orientation:domain:electromagnetism",
+            "concept:double-slit-experiment"
+          ],
+          "before": [
+            "orientation:domain:electromagnetism",
+            "concept:double-slit-experiment"
+          ]
+        },
+        {
+          "after": [
+            "orientation:domain:electromagnetism",
+            "concept:double-slit-experiment"
+          ],
+          "before": [
+            "orientation:domain:electromagnetism",
+            "concept:double-slit-experiment"
+          ]
+        },
+        {
+          "after": [
+            "orientation:domain:electromagnetism",
+            "concept:double-slit-experiment"
+          ],
+          "before": [
+            "orientation:domain:electromagnetism",
+            "concept:double-slit-experiment"
+          ]
+        }
+      ],
+      "semantic_focus_identity": "double-slit-experiment",
+      "sparse_truth_preserved": true,
+      "spatial_grammar": "causal-system",
+      "status": "PASS"
+    },
+    {
+      "canonical_directions_represented": [
+        {
+          "direction": "cause_to_effect",
+          "relationship_ids": [
+            "relationship-05b19ee4b6d50060"
+          ],
+          "source_entity_id": "double-slit-experiment",
+          "target_entity_id": "interference-pattern"
+        }
+      ],
+      "case": "double_slit_focused_relationship",
+      "context_key": "ground:electromagnetism:representation-1da8ae41cb52f95a:canonical:relationship-05b19ee4b6d50060",
+      "evidence_provenance_sources": [
+        "text-9e978db999ee6713"
+      ],
+      "expected_strategy": "FOCUSED_RELATIONSHIP",
+      "focus_before_after_local_interaction": [
+        {
+          "after": {
+            "context_key": "ground:electromagnetism:representation-1da8ae41cb52f95a:canonical:relationship-05b19ee4b6d50060",
+            "identity": "relationship-05b19ee4b6d50060",
+            "kind": "canonical"
+          },
+          "before": {
+            "context_key": "ground:electromagnetism:representation-1da8ae41cb52f95a:canonical:relationship-05b19ee4b6d50060",
+            "identity": "relationship-05b19ee4b6d50060",
+            "kind": "canonical"
+          }
+        },
+        {
+          "after": {
+            "context_key": "ground:electromagnetism:representation-1da8ae41cb52f95a:canonical:relationship-05b19ee4b6d50060",
+            "identity": "relationship-05b19ee4b6d50060",
+            "kind": "canonical"
+          },
+          "before": {
+            "context_key": "ground:electromagnetism:representation-1da8ae41cb52f95a:canonical:relationship-05b19ee4b6d50060",
+            "identity": "relationship-05b19ee4b6d50060",
+            "kind": "canonical"
+          }
+        },
+        {
+          "after": {
+            "context_key": "ground:electromagnetism:representation-1da8ae41cb52f95a:canonical:relationship-05b19ee4b6d50060",
+            "identity": "relationship-05b19ee4b6d50060",
+            "kind": "canonical"
+          },
+          "before": {
+            "context_key": "ground:electromagnetism:representation-1da8ae41cb52f95a:canonical:relationship-05b19ee4b6d50060",
+            "identity": "relationship-05b19ee4b6d50060",
+            "kind": "canonical"
+          }
+        },
+        {
+          "after": {
+            "context_key": "ground:electromagnetism:representation-1da8ae41cb52f95a:canonical:relationship-05b19ee4b6d50060",
+            "identity": "relationship-05b19ee4b6d50060",
+            "kind": "canonical"
+          },
+          "before": {
+            "context_key": "ground:electromagnetism:representation-1da8ae41cb52f95a:canonical:relationship-05b19ee4b6d50060",
+            "identity": "relationship-05b19ee4b6d50060",
+            "kind": "canonical"
+          }
+        }
+      ],
+      "hover_click_behavior_tested": [
+        {
+          "action": "hover",
+          "component_id": "canonical:relationship-05b19ee4b6d50060",
+          "effective_component_id": "canonical:relationship-05b19ee4b6d50060",
+          "focus_after": {
+            "context_key": "ground:electromagnetism:representation-1da8ae41cb52f95a:canonical:relationship-05b19ee4b6d50060",
+            "identity": "relationship-05b19ee4b6d50060",
+            "kind": "canonical"
+          },
+          "focus_before": {
+            "context_key": "ground:electromagnetism:representation-1da8ae41cb52f95a:canonical:relationship-05b19ee4b6d50060",
+            "identity": "relationship-05b19ee4b6d50060",
+            "kind": "canonical"
+          },
+          "hovered_component_id": "canonical:relationship-05b19ee4b6d50060",
+          "navigation_mutation": false,
+          "revealed_after": [
+            "orientation:domain:electromagnetism",
+            "canonical:relationship-05b19ee4b6d50060"
+          ],
+          "revealed_before": [
+            "orientation:domain:electromagnetism",
+            "canonical:relationship-05b19ee4b6d50060"
+          ],
+          "revealed_knowledge_mutation": false,
+          "selected_component_id": null
+        },
+        {
+          "action": "hover_exit",
+          "component_id": null,
+          "effective_component_id": null,
+          "focus_after": {
+            "context_key": "ground:electromagnetism:representation-1da8ae41cb52f95a:canonical:relationship-05b19ee4b6d50060",
+            "identity": "relationship-05b19ee4b6d50060",
+            "kind": "canonical"
+          },
+          "focus_before": {
+            "context_key": "ground:electromagnetism:representation-1da8ae41cb52f95a:canonical:relationship-05b19ee4b6d50060",
+            "identity": "relationship-05b19ee4b6d50060",
+            "kind": "canonical"
+          },
+          "hovered_component_id": null,
+          "navigation_mutation": false,
+          "revealed_after": [
+            "orientation:domain:electromagnetism",
+            "canonical:relationship-05b19ee4b6d50060"
+          ],
+          "revealed_before": [
+            "orientation:domain:electromagnetism",
+            "canonical:relationship-05b19ee4b6d50060"
+          ],
+          "revealed_knowledge_mutation": false,
+          "selected_component_id": null
+        },
+        {
+          "action": "select",
+          "component_id": "canonical:relationship-05b19ee4b6d50060",
+          "effective_component_id": "canonical:relationship-05b19ee4b6d50060",
+          "focus_after": {
+            "context_key": "ground:electromagnetism:representation-1da8ae41cb52f95a:canonical:relationship-05b19ee4b6d50060",
+            "identity": "relationship-05b19ee4b6d50060",
+            "kind": "canonical"
+          },
+          "focus_before": {
+            "context_key": "ground:electromagnetism:representation-1da8ae41cb52f95a:canonical:relationship-05b19ee4b6d50060",
+            "identity": "relationship-05b19ee4b6d50060",
+            "kind": "canonical"
+          },
+          "hovered_component_id": null,
+          "navigation_mutation": false,
+          "revealed_after": [
+            "orientation:domain:electromagnetism",
+            "canonical:relationship-05b19ee4b6d50060"
+          ],
+          "revealed_before": [
+            "orientation:domain:electromagnetism",
+            "canonical:relationship-05b19ee4b6d50060"
+          ],
+          "revealed_knowledge_mutation": false,
+          "selected_component_id": "canonical:relationship-05b19ee4b6d50060"
+        },
+        {
+          "action": "clear",
+          "component_id": null,
+          "effective_component_id": null,
+          "focus_after": {
+            "context_key": "ground:electromagnetism:representation-1da8ae41cb52f95a:canonical:relationship-05b19ee4b6d50060",
+            "identity": "relationship-05b19ee4b6d50060",
+            "kind": "canonical"
+          },
+          "focus_before": {
+            "context_key": "ground:electromagnetism:representation-1da8ae41cb52f95a:canonical:relationship-05b19ee4b6d50060",
+            "identity": "relationship-05b19ee4b6d50060",
+            "kind": "canonical"
+          },
+          "hovered_component_id": null,
+          "navigation_mutation": false,
+          "revealed_after": [
+            "orientation:domain:electromagnetism",
+            "canonical:relationship-05b19ee4b6d50060"
+          ],
+          "revealed_before": [
+            "orientation:domain:electromagnetism",
+            "canonical:relationship-05b19ee4b6d50060"
+          ],
+          "revealed_knowledge_mutation": false,
+          "selected_component_id": null
+        }
+      ],
+      "inspectable_components": [
+        {
+          "direction": "cause_to_effect",
+          "evidence": [
+            {
+              "document_id": "text-9e978db999ee6713",
+              "end_char": 12218,
+              "quote": "a beam of light is directed through two narrow, closely spaced slits, producing an interference pattern of light and dark bands on a screen.",
+              "relationship_id": "relationship-05b19ee4b6d50060",
+              "start_char": 12078
+            }
+          ],
+          "explanation": "The source brings about the target as an effect.",
+          "identity": "relationship-05b19ee4b6d50060",
+          "kind": "canonical",
+          "label": "double-slit experiment → interference pattern",
+          "local_key": "canonical:relationship-05b19ee4b6d50060",
+          "predicate": "CAUSES"
+        },
+        {
+          "direction": null,
+          "evidence": [],
+          "explanation": "Experiment in which particles or waves passing through two slits produce an interference pattern.",
+          "identity": "double-slit-experiment",
+          "kind": "concept",
+          "label": "double-slit experiment",
+          "local_key": "concept:double-slit-experiment",
+          "predicate": null
+        },
+        {
+          "direction": null,
+          "evidence": [],
+          "explanation": "Pattern of alternating light and dark bands produced by wave interference and reproduced by quantum particles statistically.",
+          "identity": "interference-pattern",
+          "kind": "concept",
+          "label": "interference pattern",
+          "local_key": "concept:interference-pattern",
+          "predicate": null
+        }
+      ],
+      "nodes_rendered": [
+        {
+          "description": "Experiment in which particles or waves passing through two slits produce an interference pattern.",
+          "entity_id": "double-slit-experiment",
+          "label": "double-slit experiment",
+          "role": "relationship-source",
+          "role_label": "source",
+          "x": 210,
+          "y": 190
+        },
+        {
+          "description": "Pattern of alternating light and dark bands produced by wave interference and reproduced by quantum particles statistically.",
+          "entity_id": "interference-pattern",
+          "label": "interference pattern",
+          "role": "relationship-target",
+          "role_label": "target",
+          "x": 790,
+          "y": 190
+        }
+      ],
+      "relationships_rendered": [
+        {
+          "direction": "cause_to_effect",
+          "label_x": 500,
+          "label_y": 190,
+          "meaning": "The source brings about the target as an effect.",
+          "path": "M 288 190 L 712 190",
+          "relationship_ids": [
+            "relationship-05b19ee4b6d50060"
+          ],
+          "relationship_type": "CAUSES",
+          "source_entity_id": "double-slit-experiment",
+          "source_label": "double-slit experiment",
+          "target_entity_id": "interference-pattern",
+          "target_label": "interference pattern"
+        }
+      ],
+      "representation_strategy": "FOCUSED_RELATIONSHIP",
+      "revealed_before_after_local_interaction": [
+        {
+          "after": [
+            "orientation:domain:electromagnetism",
+            "canonical:relationship-05b19ee4b6d50060"
+          ],
+          "before": [
+            "orientation:domain:electromagnetism",
+            "canonical:relationship-05b19ee4b6d50060"
+          ]
+        },
+        {
+          "after": [
+            "orientation:domain:electromagnetism",
+            "canonical:relationship-05b19ee4b6d50060"
+          ],
+          "before": [
+            "orientation:domain:electromagnetism",
+            "canonical:relationship-05b19ee4b6d50060"
+          ]
+        },
+        {
+          "after": [
+            "orientation:domain:electromagnetism",
+            "canonical:relationship-05b19ee4b6d50060"
+          ],
+          "before": [
+            "orientation:domain:electromagnetism",
+            "canonical:relationship-05b19ee4b6d50060"
+          ]
+        },
+        {
+          "after": [
+            "orientation:domain:electromagnetism",
+            "canonical:relationship-05b19ee4b6d50060"
+          ],
+          "before": [
+            "orientation:domain:electromagnetism",
+            "canonical:relationship-05b19ee4b6d50060"
+          ]
+        }
+      ],
+      "semantic_focus_identity": "relationship-05b19ee4b6d50060",
+      "sparse_truth_preserved": true,
+      "spatial_grammar": "focused-connection",
+      "status": "PASS"
+    },
+    {
+      "canonical_directions_represented": [
+        {
+          "direction": "instance_to_type",
+          "relationship_ids": [
+            "light-is-electromagnetic-wave"
+          ],
+          "source_entity_id": "light",
+          "target_entity_id": "electromagnetic-wave"
+        }
+      ],
+      "case": "light_hierarchy",
+      "context_key": "ground:electromagnetism:representation-685bf4f0c2881f95:concept:light",
+      "evidence_provenance_sources": [
+        "text-38d7213d9f084e3e"
+      ],
+      "expected_strategy": "HIERARCHY_COMPOSITION",
+      "focus_before_after_local_interaction": [
+        {
+          "after": {
+            "context_key": "ground:electromagnetism:representation-685bf4f0c2881f95:concept:light",
+            "identity": "light",
+            "kind": "concept"
+          },
+          "before": {
+            "context_key": "ground:electromagnetism:representation-685bf4f0c2881f95:concept:light",
+            "identity": "light",
+            "kind": "concept"
+          }
+        },
+        {
+          "after": {
+            "context_key": "ground:electromagnetism:representation-685bf4f0c2881f95:concept:light",
+            "identity": "light",
+            "kind": "concept"
+          },
+          "before": {
+            "context_key": "ground:electromagnetism:representation-685bf4f0c2881f95:concept:light",
+            "identity": "light",
+            "kind": "concept"
+          }
+        },
+        {
+          "after": {
+            "context_key": "ground:electromagnetism:representation-685bf4f0c2881f95:concept:light",
+            "identity": "light",
+            "kind": "concept"
+          },
+          "before": {
+            "context_key": "ground:electromagnetism:representation-685bf4f0c2881f95:concept:light",
+            "identity": "light",
+            "kind": "concept"
+          }
+        },
+        {
+          "after": {
+            "context_key": "ground:electromagnetism:representation-685bf4f0c2881f95:concept:light",
+            "identity": "light",
+            "kind": "concept"
+          },
+          "before": {
+            "context_key": "ground:electromagnetism:representation-685bf4f0c2881f95:concept:light",
+            "identity": "light",
+            "kind": "concept"
+          }
+        }
+      ],
+      "hover_click_behavior_tested": [
+        {
+          "action": "hover",
+          "component_id": "canonical:light-is-electromagnetic-wave",
+          "effective_component_id": "canonical:light-is-electromagnetic-wave",
+          "focus_after": {
+            "context_key": "ground:electromagnetism:representation-685bf4f0c2881f95:concept:light",
+            "identity": "light",
+            "kind": "concept"
+          },
+          "focus_before": {
+            "context_key": "ground:electromagnetism:representation-685bf4f0c2881f95:concept:light",
+            "identity": "light",
+            "kind": "concept"
+          },
+          "hovered_component_id": "canonical:light-is-electromagnetic-wave",
+          "navigation_mutation": false,
+          "revealed_after": [
+            "orientation:domain:electromagnetism",
+            "concept:light"
+          ],
+          "revealed_before": [
+            "orientation:domain:electromagnetism",
+            "concept:light"
+          ],
+          "revealed_knowledge_mutation": false,
+          "selected_component_id": null
+        },
+        {
+          "action": "hover_exit",
+          "component_id": null,
+          "effective_component_id": null,
+          "focus_after": {
+            "context_key": "ground:electromagnetism:representation-685bf4f0c2881f95:concept:light",
+            "identity": "light",
+            "kind": "concept"
+          },
+          "focus_before": {
+            "context_key": "ground:electromagnetism:representation-685bf4f0c2881f95:concept:light",
+            "identity": "light",
+            "kind": "concept"
+          },
+          "hovered_component_id": null,
+          "navigation_mutation": false,
+          "revealed_after": [
+            "orientation:domain:electromagnetism",
+            "concept:light"
+          ],
+          "revealed_before": [
+            "orientation:domain:electromagnetism",
+            "concept:light"
+          ],
+          "revealed_knowledge_mutation": false,
+          "selected_component_id": null
+        },
+        {
+          "action": "select",
+          "component_id": "canonical:light-is-electromagnetic-wave",
+          "effective_component_id": "canonical:light-is-electromagnetic-wave",
+          "focus_after": {
+            "context_key": "ground:electromagnetism:representation-685bf4f0c2881f95:concept:light",
+            "identity": "light",
+            "kind": "concept"
+          },
+          "focus_before": {
+            "context_key": "ground:electromagnetism:representation-685bf4f0c2881f95:concept:light",
+            "identity": "light",
+            "kind": "concept"
+          },
+          "hovered_component_id": null,
+          "navigation_mutation": false,
+          "revealed_after": [
+            "orientation:domain:electromagnetism",
+            "concept:light"
+          ],
+          "revealed_before": [
+            "orientation:domain:electromagnetism",
+            "concept:light"
+          ],
+          "revealed_knowledge_mutation": false,
+          "selected_component_id": "canonical:light-is-electromagnetic-wave"
+        },
+        {
+          "action": "clear",
+          "component_id": null,
+          "effective_component_id": null,
+          "focus_after": {
+            "context_key": "ground:electromagnetism:representation-685bf4f0c2881f95:concept:light",
+            "identity": "light",
+            "kind": "concept"
+          },
+          "focus_before": {
+            "context_key": "ground:electromagnetism:representation-685bf4f0c2881f95:concept:light",
+            "identity": "light",
+            "kind": "concept"
+          },
+          "hovered_component_id": null,
+          "navigation_mutation": false,
+          "revealed_after": [
+            "orientation:domain:electromagnetism",
+            "concept:light"
+          ],
+          "revealed_before": [
+            "orientation:domain:electromagnetism",
+            "concept:light"
+          ],
+          "revealed_knowledge_mutation": false,
+          "selected_component_id": null
+        }
+      ],
+      "inspectable_components": [
+        {
+          "direction": "instance_to_type",
+          "evidence": [
+            {
+              "document_id": "text-38d7213d9f084e3e",
+              "end_char": 476,
+              "quote": "Light is an electromagnetic wave.",
+              "relationship_id": "light-is-electromagnetic-wave",
+              "start_char": 443
+            }
+          ],
+          "explanation": "The source is a kind, category, or subtype of the target.",
+          "identity": "light-is-electromagnetic-wave",
+          "kind": "canonical",
+          "label": "Light → Electromagnetic wave",
+          "local_key": "canonical:light-is-electromagnetic-wave",
+          "predicate": "IS_A"
+        },
+        {
+          "direction": null,
+          "evidence": [],
+          "explanation": "A wave formed by changing electric and magnetic fields that can sustain one another.",
+          "identity": "electromagnetic-wave",
+          "kind": "concept",
+          "label": "Electromagnetic wave",
+          "local_key": "concept:electromagnetic-wave",
+          "predicate": null
+        },
+        {
+          "direction": null,
+          "evidence": [],
+          "explanation": "An electromagnetic wave.",
+          "identity": "light",
+          "kind": "concept",
+          "label": "Light",
+          "local_key": "concept:light",
+          "predicate": null
+        }
+      ],
+      "nodes_rendered": [
+        {
+          "description": "A wave formed by changing electric and magnetic fields that can sustain one another.",
+          "entity_id": "electromagnetic-wave",
+          "label": "Electromagnetic wave",
+          "role": "hierarchy-root",
+          "role_label": "whole / kind",
+          "x": 500,
+          "y": 105
+        },
+        {
+          "description": "An electromagnetic wave.",
+          "entity_id": "light",
+          "label": "Light",
+          "role": "hierarchy-member",
+          "role_label": "part / member",
+          "x": 500,
+          "y": 355
+        }
+      ],
+      "relationships_rendered": [
+        {
+          "direction": "instance_to_type",
+          "label_x": 500,
+          "label_y": 230,
+          "meaning": "The source is a kind, category, or subtype of the target.",
+          "path": "M 500 277 L 500 183",
+          "relationship_ids": [
+            "light-is-electromagnetic-wave"
+          ],
+          "relationship_type": "IS_A",
+          "source_entity_id": "light",
+          "source_label": "Light",
+          "target_entity_id": "electromagnetic-wave",
+          "target_label": "Electromagnetic wave"
+        }
+      ],
+      "representation_strategy": "HIERARCHY_COMPOSITION",
+      "revealed_before_after_local_interaction": [
+        {
+          "after": [
+            "orientation:domain:electromagnetism",
+            "concept:light"
+          ],
+          "before": [
+            "orientation:domain:electromagnetism",
+            "concept:light"
+          ]
+        },
+        {
+          "after": [
+            "orientation:domain:electromagnetism",
+            "concept:light"
+          ],
+          "before": [
+            "orientation:domain:electromagnetism",
+            "concept:light"
+          ]
+        },
+        {
+          "after": [
+            "orientation:domain:electromagnetism",
+            "concept:light"
+          ],
+          "before": [
+            "orientation:domain:electromagnetism",
+            "concept:light"
+          ]
+        },
+        {
+          "after": [
+            "orientation:domain:electromagnetism",
+            "concept:light"
+          ],
+          "before": [
+            "orientation:domain:electromagnetism",
+            "concept:light"
+          ]
+        }
+      ],
+      "semantic_focus_identity": "light",
+      "sparse_truth_preserved": true,
+      "spatial_grammar": "hierarchy-composition",
+      "status": "PASS"
+    },
+    {
+      "canonical_directions_represented": [
+        {
+          "direction": "part_to_whole",
+          "relationship_ids": [
+            "rel-1"
+          ],
+          "source_entity_id": "api-component",
+          "target_entity_id": "modular-order-processing-service"
+        },
+        {
+          "direction": "part_to_whole",
+          "relationship_ids": [
+            "rel-4"
+          ],
+          "source_entity_id": "database",
+          "target_entity_id": "modular-order-processing-service"
+        },
+        {
+          "direction": "part_to_whole",
+          "relationship_ids": [
+            "rel-2"
+          ],
+          "source_entity_id": "order-component",
+          "target_entity_id": "modular-order-processing-service"
+        },
+        {
+          "direction": "part_to_whole",
+          "relationship_ids": [
+            "rel-3"
+          ],
+          "source_entity_id": "payment-component",
+          "target_entity_id": "modular-order-processing-service"
+        }
+      ],
+      "case": "software_composition",
+      "context_key": "ground:software_architecture:representation-985e777f01fa9ec8:concept:modular-order-processing-service",
+      "evidence_provenance_sources": [
+        "text-49b42a4f08a99742"
+      ],
+      "expected_strategy": "HIERARCHY_COMPOSITION",
+      "focus_before_after_local_interaction": [
+        {
+          "after": {
+            "context_key": "ground:software_architecture:representation-985e777f01fa9ec8:concept:modular-order-processing-service",
+            "identity": "modular-order-processing-service",
+            "kind": "concept"
+          },
+          "before": {
+            "context_key": "ground:software_architecture:representation-985e777f01fa9ec8:concept:modular-order-processing-service",
+            "identity": "modular-order-processing-service",
+            "kind": "concept"
+          }
+        },
+        {
+          "after": {
+            "context_key": "ground:software_architecture:representation-985e777f01fa9ec8:concept:modular-order-processing-service",
+            "identity": "modular-order-processing-service",
+            "kind": "concept"
+          },
+          "before": {
+            "context_key": "ground:software_architecture:representation-985e777f01fa9ec8:concept:modular-order-processing-service",
+            "identity": "modular-order-processing-service",
+            "kind": "concept"
+          }
+        },
+        {
+          "after": {
+            "context_key": "ground:software_architecture:representation-985e777f01fa9ec8:concept:modular-order-processing-service",
+            "identity": "modular-order-processing-service",
+            "kind": "concept"
+          },
+          "before": {
+            "context_key": "ground:software_architecture:representation-985e777f01fa9ec8:concept:modular-order-processing-service",
+            "identity": "modular-order-processing-service",
+            "kind": "concept"
+          }
+        },
+        {
+          "after": {
+            "context_key": "ground:software_architecture:representation-985e777f01fa9ec8:concept:modular-order-processing-service",
+            "identity": "modular-order-processing-service",
+            "kind": "concept"
+          },
+          "before": {
+            "context_key": "ground:software_architecture:representation-985e777f01fa9ec8:concept:modular-order-processing-service",
+            "identity": "modular-order-processing-service",
+            "kind": "concept"
+          }
+        }
+      ],
+      "hover_click_behavior_tested": [
+        {
+          "action": "hover",
+          "component_id": "concept:api-component",
+          "effective_component_id": "concept:api-component",
+          "focus_after": {
+            "context_key": "ground:software_architecture:representation-985e777f01fa9ec8:concept:modular-order-processing-service",
+            "identity": "modular-order-processing-service",
+            "kind": "concept"
+          },
+          "focus_before": {
+            "context_key": "ground:software_architecture:representation-985e777f01fa9ec8:concept:modular-order-processing-service",
+            "identity": "modular-order-processing-service",
+            "kind": "concept"
+          },
+          "hovered_component_id": "concept:api-component",
+          "navigation_mutation": false,
+          "revealed_after": [
+            "orientation:domain:electromagnetism",
+            "concept:modular-order-processing-service"
+          ],
+          "revealed_before": [
+            "orientation:domain:electromagnetism",
+            "concept:modular-order-processing-service"
+          ],
+          "revealed_knowledge_mutation": false,
+          "selected_component_id": null
+        },
+        {
+          "action": "hover_exit",
+          "component_id": null,
+          "effective_component_id": null,
+          "focus_after": {
+            "context_key": "ground:software_architecture:representation-985e777f01fa9ec8:concept:modular-order-processing-service",
+            "identity": "modular-order-processing-service",
+            "kind": "concept"
+          },
+          "focus_before": {
+            "context_key": "ground:software_architecture:representation-985e777f01fa9ec8:concept:modular-order-processing-service",
+            "identity": "modular-order-processing-service",
+            "kind": "concept"
+          },
+          "hovered_component_id": null,
+          "navigation_mutation": false,
+          "revealed_after": [
+            "orientation:domain:electromagnetism",
+            "concept:modular-order-processing-service"
+          ],
+          "revealed_before": [
+            "orientation:domain:electromagnetism",
+            "concept:modular-order-processing-service"
+          ],
+          "revealed_knowledge_mutation": false,
+          "selected_component_id": null
+        },
+        {
+          "action": "select",
+          "component_id": "concept:api-component",
+          "effective_component_id": "concept:api-component",
+          "focus_after": {
+            "context_key": "ground:software_architecture:representation-985e777f01fa9ec8:concept:modular-order-processing-service",
+            "identity": "modular-order-processing-service",
+            "kind": "concept"
+          },
+          "focus_before": {
+            "context_key": "ground:software_architecture:representation-985e777f01fa9ec8:concept:modular-order-processing-service",
+            "identity": "modular-order-processing-service",
+            "kind": "concept"
+          },
+          "hovered_component_id": null,
+          "navigation_mutation": false,
+          "revealed_after": [
+            "orientation:domain:electromagnetism",
+            "concept:modular-order-processing-service"
+          ],
+          "revealed_before": [
+            "orientation:domain:electromagnetism",
+            "concept:modular-order-processing-service"
+          ],
+          "revealed_knowledge_mutation": false,
+          "selected_component_id": "concept:api-component"
+        },
+        {
+          "action": "clear",
+          "component_id": null,
+          "effective_component_id": null,
+          "focus_after": {
+            "context_key": "ground:software_architecture:representation-985e777f01fa9ec8:concept:modular-order-processing-service",
+            "identity": "modular-order-processing-service",
+            "kind": "concept"
+          },
+          "focus_before": {
+            "context_key": "ground:software_architecture:representation-985e777f01fa9ec8:concept:modular-order-processing-service",
+            "identity": "modular-order-processing-service",
+            "kind": "concept"
+          },
+          "hovered_component_id": null,
+          "navigation_mutation": false,
+          "revealed_after": [
+            "orientation:domain:electromagnetism",
+            "concept:modular-order-processing-service"
+          ],
+          "revealed_before": [
+            "orientation:domain:electromagnetism",
+            "concept:modular-order-processing-service"
+          ],
+          "revealed_knowledge_mutation": false,
+          "selected_component_id": null
+        }
+      ],
+      "inspectable_components": [
+        {
+          "direction": "part_to_whole",
+          "evidence": [
+            {
+              "document_id": "text-49b42a4f08a99742",
+              "end_char": 113,
+              "quote": "A modular order-processing service separates the API component, order component, payment component, and database.",
+              "relationship_id": "rel-1",
+              "start_char": 0
+            }
+          ],
+          "explanation": "The source is a constituent or component of the target.",
+          "identity": "rel-1",
+          "kind": "canonical",
+          "label": "API component → modular order-processing service",
+          "local_key": "canonical:rel-1",
+          "predicate": "PART_OF"
+        },
+        {
+          "direction": "part_to_whole",
+          "evidence": [
+            {
+              "document_id": "text-49b42a4f08a99742",
+              "end_char": 113,
+              "quote": "A modular order-processing service separates the API component, order component, payment component, and database.",
+              "relationship_id": "rel-2",
+              "start_char": 0
+            }
+          ],
+          "explanation": "The source is a constituent or component of the target.",
+          "identity": "rel-2",
+          "kind": "canonical",
+          "label": "order component → modular order-processing service",
+          "local_key": "canonical:rel-2",
+          "predicate": "PART_OF"
+        },
+        {
+          "direction": "part_to_whole",
+          "evidence": [
+            {
+              "document_id": "text-49b42a4f08a99742",
+              "end_char": 113,
+              "quote": "A modular order-processing service separates the API component, order component, payment component, and database.",
+              "relationship_id": "rel-3",
+              "start_char": 0
+            }
+          ],
+          "explanation": "The source is a constituent or component of the target.",
+          "identity": "rel-3",
+          "kind": "canonical",
+          "label": "payment component → modular order-processing service",
+          "local_key": "canonical:rel-3",
+          "predicate": "PART_OF"
+        },
+        {
+          "direction": "part_to_whole",
+          "evidence": [
+            {
+              "document_id": "text-49b42a4f08a99742",
+              "end_char": 113,
+              "quote": "A modular order-processing service separates the API component, order component, payment component, and database.",
+              "relationship_id": "rel-4",
+              "start_char": 0
+            }
+          ],
+          "explanation": "The source is a constituent or component of the target.",
+          "identity": "rel-4",
+          "kind": "canonical",
+          "label": "database → modular order-processing service",
+          "local_key": "canonical:rel-4",
+          "predicate": "PART_OF"
+        },
+        {
+          "direction": null,
+          "evidence": [],
+          "explanation": "The component through which the order-processing service exposes or receives API calls.",
+          "identity": "api-component",
+          "kind": "concept",
+          "label": "API component",
+          "local_key": "concept:api-component",
+          "predicate": null
+        },
+        {
+          "direction": null,
+          "evidence": [],
+          "explanation": "Shared infrastructure used to store durable state for the order and payment components.",
+          "identity": "database",
+          "kind": "concept",
+          "label": "database",
+          "local_key": "concept:database",
+          "predicate": null
+        },
+        {
+          "direction": null,
+          "evidence": [],
+          "explanation": "A service organized into separate API, order, payment, and database components.",
+          "identity": "modular-order-processing-service",
+          "kind": "concept",
+          "label": "modular order-processing service",
+          "local_key": "concept:modular-order-processing-service",
+          "predicate": null
+        },
+        {
+          "direction": null,
+          "evidence": [],
+          "explanation": "A component responsible for order-related processing.",
+          "identity": "order-component",
+          "kind": "concept",
+          "label": "order component",
+          "local_key": "concept:order-component",
+          "predicate": null
+        },
+        {
+          "direction": null,
+          "evidence": [],
+          "explanation": "A component responsible for payment-related processing and purchase authorization.",
+          "identity": "payment-component",
+          "kind": "concept",
+          "label": "payment component",
+          "local_key": "concept:payment-component",
+          "predicate": null
+        }
+      ],
+      "nodes_rendered": [
+        {
+          "description": "The component through which the order-processing service exposes or receives API calls.",
+          "entity_id": "api-component",
+          "label": "API component",
+          "role": "hierarchy-member",
+          "role_label": "part / member",
+          "x": 125,
+          "y": 485
+        },
+        {
+          "description": "Shared infrastructure used to store durable state for the order and payment components.",
+          "entity_id": "database",
+          "label": "database",
+          "role": "hierarchy-member",
+          "role_label": "part / member",
+          "x": 375,
+          "y": 485
+        },
+        {
+          "description": "A service organized into separate API, order, payment, and database components.",
+          "entity_id": "modular-order-processing-service",
+          "label": "modular order-processing service",
+          "role": "hierarchy-root",
+          "role_label": "whole / kind",
+          "x": 500,
+          "y": 105
+        },
+        {
+          "description": "A component responsible for order-related processing.",
+          "entity_id": "order-component",
+          "label": "order component",
+          "role": "hierarchy-member",
+          "role_label": "part / member",
+          "x": 625,
+          "y": 485
+        },
+        {
+          "description": "A component responsible for payment-related processing and purchase authorization.",
+          "entity_id": "payment-component",
+          "label": "payment component",
+          "role": "hierarchy-member",
+          "role_label": "part / member",
+          "x": 875,
+          "y": 485
+        }
+      ],
+      "relationships_rendered": [
+        {
+          "direction": "part_to_whole",
+          "label_x": 312,
+          "label_y": 319,
+          "meaning": "The source is a constituent or component of the target.",
+          "path": "M 180 429 L 445 161",
+          "relationship_ids": [
+            "rel-1"
+          ],
+          "relationship_type": "PART_OF",
+          "source_entity_id": "api-component",
+          "source_label": "API component",
+          "target_entity_id": "modular-order-processing-service",
+          "target_label": "modular order-processing service"
+        },
+        {
+          "direction": "part_to_whole",
+          "label_x": 438,
+          "label_y": 271,
+          "meaning": "The source is a constituent or component of the target.",
+          "path": "M 399 411 L 476 179",
+          "relationship_ids": [
+            "rel-4"
+          ],
+          "relationship_type": "PART_OF",
+          "source_entity_id": "database",
+          "source_label": "database",
+          "target_entity_id": "modular-order-processing-service",
+          "target_label": "modular order-processing service"
+        },
+        {
+          "direction": "part_to_whole",
+          "label_x": 562,
+          "label_y": 319,
+          "meaning": "The source is a constituent or component of the target.",
+          "path": "M 601 411 L 524 179",
+          "relationship_ids": [
+            "rel-2"
+          ],
+          "relationship_type": "PART_OF",
+          "source_entity_id": "order-component",
+          "source_label": "order component",
+          "target_entity_id": "modular-order-processing-service",
+          "target_label": "modular order-processing service"
+        },
+        {
+          "direction": "part_to_whole",
+          "label_x": 688,
+          "label_y": 271,
+          "meaning": "The source is a constituent or component of the target.",
+          "path": "M 820 429 L 555 161",
+          "relationship_ids": [
+            "rel-3"
+          ],
+          "relationship_type": "PART_OF",
+          "source_entity_id": "payment-component",
+          "source_label": "payment component",
+          "target_entity_id": "modular-order-processing-service",
+          "target_label": "modular order-processing service"
+        }
+      ],
+      "representation_strategy": "HIERARCHY_COMPOSITION",
+      "revealed_before_after_local_interaction": [
+        {
+          "after": [
+            "orientation:domain:electromagnetism",
+            "concept:modular-order-processing-service"
+          ],
+          "before": [
+            "orientation:domain:electromagnetism",
+            "concept:modular-order-processing-service"
+          ]
+        },
+        {
+          "after": [
+            "orientation:domain:electromagnetism",
+            "concept:modular-order-processing-service"
+          ],
+          "before": [
+            "orientation:domain:electromagnetism",
+            "concept:modular-order-processing-service"
+          ]
+        },
+        {
+          "after": [
+            "orientation:domain:electromagnetism",
+            "concept:modular-order-processing-service"
+          ],
+          "before": [
+            "orientation:domain:electromagnetism",
+            "concept:modular-order-processing-service"
+          ]
+        },
+        {
+          "after": [
+            "orientation:domain:electromagnetism",
+            "concept:modular-order-processing-service"
+          ],
+          "before": [
+            "orientation:domain:electromagnetism",
+            "concept:modular-order-processing-service"
+          ]
+        }
+      ],
+      "semantic_focus_identity": "modular-order-processing-service",
+      "sparse_truth_preserved": false,
+      "spatial_grammar": "hierarchy-composition",
+      "status": "PASS"
+    },
+    {
+      "canonical_directions_represented": [
+        {
+          "direction": "enabler_to_enabled",
+          "relationship_ids": [
+            "rel-type-enables-printing"
+          ],
+          "source_entity_id": "movable-metal-type",
+          "target_entity_id": "printing"
+        },
+        {
+          "direction": "enabler_to_enabled",
+          "relationship_ids": [
+            "rel-press-enables-printing"
+          ],
+          "source_entity_id": "press",
+          "target_entity_id": "printing"
+        },
+        {
+          "direction": "enabler_to_enabled",
+          "relationship_ids": [
+            "rel-printing-enables-copies"
+          ],
+          "source_entity_id": "printing",
+          "target_entity_id": "printed-books"
+        }
+      ],
+      "case": "history_printing_dependency",
+      "context_key": "ground:history:representation-f803f1f3830cadf7:concept:printing",
+      "evidence_provenance_sources": [
+        "text-070a252acc409f55"
+      ],
+      "expected_strategy": "DEPENDENCY_STRUCTURE",
+      "focus_before_after_local_interaction": [
+        {
+          "after": {
+            "context_key": "ground:history:representation-f803f1f3830cadf7:concept:printing",
+            "identity": "printing",
+            "kind": "concept"
+          },
+          "before": {
+            "context_key": "ground:history:representation-f803f1f3830cadf7:concept:printing",
+            "identity": "printing",
+            "kind": "concept"
+          }
+        },
+        {
+          "after": {
+            "context_key": "ground:history:representation-f803f1f3830cadf7:concept:printing",
+            "identity": "printing",
+            "kind": "concept"
+          },
+          "before": {
+            "context_key": "ground:history:representation-f803f1f3830cadf7:concept:printing",
+            "identity": "printing",
+            "kind": "concept"
+          }
+        },
+        {
+          "after": {
+            "context_key": "ground:history:representation-f803f1f3830cadf7:concept:printing",
+            "identity": "printing",
+            "kind": "concept"
+          },
+          "before": {
+            "context_key": "ground:history:representation-f803f1f3830cadf7:concept:printing",
+            "identity": "printing",
+            "kind": "concept"
+          }
+        },
+        {
+          "after": {
+            "context_key": "ground:history:representation-f803f1f3830cadf7:concept:printing",
+            "identity": "printing",
+            "kind": "concept"
+          },
+          "before": {
+            "context_key": "ground:history:representation-f803f1f3830cadf7:concept:printing",
+            "identity": "printing",
+            "kind": "concept"
+          }
+        }
+      ],
+      "hover_click_behavior_tested": [
+        {
+          "action": "hover",
+          "component_id": "concept:movable-metal-type",
+          "effective_component_id": "concept:movable-metal-type",
+          "focus_after": {
+            "context_key": "ground:history:representation-f803f1f3830cadf7:concept:printing",
+            "identity": "printing",
+            "kind": "concept"
+          },
+          "focus_before": {
+            "context_key": "ground:history:representation-f803f1f3830cadf7:concept:printing",
+            "identity": "printing",
+            "kind": "concept"
+          },
+          "hovered_component_id": "concept:movable-metal-type",
+          "navigation_mutation": false,
+          "revealed_after": [
+            "orientation:domain:electromagnetism",
+            "concept:printing"
+          ],
+          "revealed_before": [
+            "orientation:domain:electromagnetism",
+            "concept:printing"
+          ],
+          "revealed_knowledge_mutation": false,
+          "selected_component_id": null
+        },
+        {
+          "action": "hover_exit",
+          "component_id": null,
+          "effective_component_id": null,
+          "focus_after": {
+            "context_key": "ground:history:representation-f803f1f3830cadf7:concept:printing",
+            "identity": "printing",
+            "kind": "concept"
+          },
+          "focus_before": {
+            "context_key": "ground:history:representation-f803f1f3830cadf7:concept:printing",
+            "identity": "printing",
+            "kind": "concept"
+          },
+          "hovered_component_id": null,
+          "navigation_mutation": false,
+          "revealed_after": [
+            "orientation:domain:electromagnetism",
+            "concept:printing"
+          ],
+          "revealed_before": [
+            "orientation:domain:electromagnetism",
+            "concept:printing"
+          ],
+          "revealed_knowledge_mutation": false,
+          "selected_component_id": null
+        },
+        {
+          "action": "select",
+          "component_id": "concept:movable-metal-type",
+          "effective_component_id": "concept:movable-metal-type",
+          "focus_after": {
+            "context_key": "ground:history:representation-f803f1f3830cadf7:concept:printing",
+            "identity": "printing",
+            "kind": "concept"
+          },
+          "focus_before": {
+            "context_key": "ground:history:representation-f803f1f3830cadf7:concept:printing",
+            "identity": "printing",
+            "kind": "concept"
+          },
+          "hovered_component_id": null,
+          "navigation_mutation": false,
+          "revealed_after": [
+            "orientation:domain:electromagnetism",
+            "concept:printing"
+          ],
+          "revealed_before": [
+            "orientation:domain:electromagnetism",
+            "concept:printing"
+          ],
+          "revealed_knowledge_mutation": false,
+          "selected_component_id": "concept:movable-metal-type"
+        },
+        {
+          "action": "clear",
+          "component_id": null,
+          "effective_component_id": null,
+          "focus_after": {
+            "context_key": "ground:history:representation-f803f1f3830cadf7:concept:printing",
+            "identity": "printing",
+            "kind": "concept"
+          },
+          "focus_before": {
+            "context_key": "ground:history:representation-f803f1f3830cadf7:concept:printing",
+            "identity": "printing",
+            "kind": "concept"
+          },
+          "hovered_component_id": null,
+          "navigation_mutation": false,
+          "revealed_after": [
+            "orientation:domain:electromagnetism",
+            "concept:printing"
+          ],
+          "revealed_before": [
+            "orientation:domain:electromagnetism",
+            "concept:printing"
+          ],
+          "revealed_knowledge_mutation": false,
+          "selected_component_id": null
+        }
+      ],
+      "inspectable_components": [
+        {
+          "direction": "enabler_to_enabled",
+          "evidence": [
+            {
+              "document_id": "text-070a252acc409f55",
+              "end_char": 103,
+              "quote": "Johannes Gutenberg combined movable metal type with a press in Europe during the mid-fifteenth century.",
+              "relationship_id": "rel-press-enables-printing",
+              "start_char": 0
+            }
+          ],
+          "explanation": "The source makes the target possible without necessarily causing it to occur.",
+          "identity": "rel-press-enables-printing",
+          "kind": "canonical",
+          "label": "Press → Printing",
+          "local_key": "canonical:rel-press-enables-printing",
+          "predicate": "ENABLES"
+        },
+        {
+          "direction": "enabler_to_enabled",
+          "evidence": [
+            {
+              "document_id": "text-070a252acc409f55",
+              "end_char": 266,
+              "quote": "Printing enabled many copies to be produced from one prepared set of type",
+              "relationship_id": "rel-printing-enables-copies",
+              "start_char": 193
+            }
+          ],
+          "explanation": "The source makes the target possible without necessarily causing it to occur.",
+          "identity": "rel-printing-enables-copies",
+          "kind": "canonical",
+          "label": "Printing → Printed books",
+          "local_key": "canonical:rel-printing-enables-copies",
+          "predicate": "ENABLES"
+        },
+        {
+          "direction": "enabler_to_enabled",
+          "evidence": [
+            {
+              "document_id": "text-070a252acc409f55",
+              "end_char": 103,
+              "quote": "Johannes Gutenberg combined movable metal type with a press in Europe during the mid-fifteenth century.",
+              "relationship_id": "rel-type-enables-printing",
+              "start_char": 0
+            }
+          ],
+          "explanation": "The source makes the target possible without necessarily causing it to occur.",
+          "identity": "rel-type-enables-printing",
+          "kind": "canonical",
+          "label": "Movable metal type → Printing",
+          "local_key": "canonical:rel-type-enables-printing",
+          "predicate": "ENABLES"
+        },
+        {
+          "direction": null,
+          "evidence": [],
+          "explanation": "Reusable metal type combined with a press for printing in Europe.",
+          "identity": "movable-metal-type",
+          "kind": "concept",
+          "label": "Movable metal type",
+          "local_key": "concept:movable-metal-type",
+          "predicate": null
+        },
+        {
+          "direction": null,
+          "evidence": [],
+          "explanation": "A press combined with movable metal type in Gutenberg's printing process.",
+          "identity": "press",
+          "kind": "concept",
+          "label": "Press",
+          "local_key": "concept:press",
+          "predicate": null
+        },
+        {
+          "direction": null,
+          "evidence": [],
+          "explanation": "Books produced through printing, including cheaper and more numerous copies.",
+          "identity": "printed-books",
+          "kind": "concept",
+          "label": "Printed books",
+          "local_key": "concept:printed-books",
+          "predicate": null
+        },
+        {
+          "direction": null,
+          "evidence": [],
+          "explanation": "The process of producing books and other printed material from prepared type.",
+          "identity": "printing",
+          "kind": "concept",
+          "label": "Printing",
+          "local_key": "concept:printing",
+          "predicate": null
+        }
+      ],
+      "nodes_rendered": [
+        {
+          "description": "Reusable metal type combined with a press for printing in Europe.",
+          "entity_id": "movable-metal-type",
+          "label": "Movable metal type",
+          "role": "dependency-stage",
+          "role_label": "dependency",
+          "x": 383,
+          "y": 105
+        },
+        {
+          "description": "A press combined with movable metal type in Gutenberg's printing process.",
+          "entity_id": "press",
+          "label": "Press",
+          "role": "dependency-stage",
+          "role_label": "dependency",
+          "x": 617,
+          "y": 105
+        },
+        {
+          "description": "Books produced through printing, including cheaper and more numerous copies.",
+          "entity_id": "printed-books",
+          "label": "Printed books",
+          "role": "dependency-stage",
+          "role_label": "dependency",
+          "x": 500,
+          "y": 535
+        },
+        {
+          "description": "The process of producing books and other printed material from prepared type.",
+          "entity_id": "printing",
+          "label": "Printing",
+          "role": "dependency-stage",
+          "role_label": "dependency",
+          "x": 500,
+          "y": 320
+        }
+      ],
+      "relationships_rendered": [
+        {
+          "direction": "enabler_to_enabled",
+          "label_x": 442,
+          "label_y": 212,
+          "meaning": "The source makes the target possible without necessarily causing it to occur.",
+          "path": "M 420 174 L 463 251",
+          "relationship_ids": [
+            "rel-type-enables-printing"
+          ],
+          "relationship_type": "ENABLES",
+          "source_entity_id": "movable-metal-type",
+          "source_label": "Movable metal type",
+          "target_entity_id": "printing",
+          "target_label": "Printing"
+        },
+        {
+          "direction": "enabler_to_enabled",
+          "label_x": 558,
+          "label_y": 212,
+          "meaning": "The source makes the target possible without necessarily causing it to occur.",
+          "path": "M 580 174 L 537 251",
+          "relationship_ids": [
+            "rel-press-enables-printing"
+          ],
+          "relationship_type": "ENABLES",
+          "source_entity_id": "press",
+          "source_label": "Press",
+          "target_entity_id": "printing",
+          "target_label": "Printing"
+        },
+        {
+          "direction": "enabler_to_enabled",
+          "label_x": 500,
+          "label_y": 428,
+          "meaning": "The source makes the target possible without necessarily causing it to occur.",
+          "path": "M 500 398 L 500 457",
+          "relationship_ids": [
+            "rel-printing-enables-copies"
+          ],
+          "relationship_type": "ENABLES",
+          "source_entity_id": "printing",
+          "source_label": "Printing",
+          "target_entity_id": "printed-books",
+          "target_label": "Printed books"
+        }
+      ],
+      "representation_strategy": "DEPENDENCY_STRUCTURE",
+      "revealed_before_after_local_interaction": [
+        {
+          "after": [
+            "orientation:domain:electromagnetism",
+            "concept:printing"
+          ],
+          "before": [
+            "orientation:domain:electromagnetism",
+            "concept:printing"
+          ]
+        },
+        {
+          "after": [
+            "orientation:domain:electromagnetism",
+            "concept:printing"
+          ],
+          "before": [
+            "orientation:domain:electromagnetism",
+            "concept:printing"
+          ]
+        },
+        {
+          "after": [
+            "orientation:domain:electromagnetism",
+            "concept:printing"
+          ],
+          "before": [
+            "orientation:domain:electromagnetism",
+            "concept:printing"
+          ]
+        },
+        {
+          "after": [
+            "orientation:domain:electromagnetism",
+            "concept:printing"
+          ],
+          "before": [
+            "orientation:domain:electromagnetism",
+            "concept:printing"
+          ]
+        }
+      ],
+      "semantic_focus_identity": "printing",
+      "sparse_truth_preserved": false,
+      "spatial_grammar": "dependency-flow",
+      "status": "PASS"
+    },
+    {
+      "canonical_directions_represented": [
+        {
+          "direction": "earlier_to_later",
+          "relationship_ids": [
+            "rel-controversy-precedes-response"
+          ],
+          "source_entity_id": "printed-controversy",
+          "target_entity_id": "authorities"
+        }
+      ],
+      "case": "history_authorities_sequence",
+      "context_key": "ground:history:representation-372c9b3707ffd6cc:concept:authorities",
+      "evidence_provenance_sources": [
+        "text-070a252acc409f55"
+      ],
+      "expected_strategy": "PROCESS_SEQUENCE",
+      "focus_before_after_local_interaction": [
+        {
+          "after": {
+            "context_key": "ground:history:representation-372c9b3707ffd6cc:concept:authorities",
+            "identity": "authorities",
+            "kind": "concept"
+          },
+          "before": {
+            "context_key": "ground:history:representation-372c9b3707ffd6cc:concept:authorities",
+            "identity": "authorities",
+            "kind": "concept"
+          }
+        },
+        {
+          "after": {
+            "context_key": "ground:history:representation-372c9b3707ffd6cc:concept:authorities",
+            "identity": "authorities",
+            "kind": "concept"
+          },
+          "before": {
+            "context_key": "ground:history:representation-372c9b3707ffd6cc:concept:authorities",
+            "identity": "authorities",
+            "kind": "concept"
+          }
+        },
+        {
+          "after": {
+            "context_key": "ground:history:representation-372c9b3707ffd6cc:concept:authorities",
+            "identity": "authorities",
+            "kind": "concept"
+          },
+          "before": {
+            "context_key": "ground:history:representation-372c9b3707ffd6cc:concept:authorities",
+            "identity": "authorities",
+            "kind": "concept"
+          }
+        },
+        {
+          "after": {
+            "context_key": "ground:history:representation-372c9b3707ffd6cc:concept:authorities",
+            "identity": "authorities",
+            "kind": "concept"
+          },
+          "before": {
+            "context_key": "ground:history:representation-372c9b3707ffd6cc:concept:authorities",
+            "identity": "authorities",
+            "kind": "concept"
+          }
+        }
+      ],
+      "hover_click_behavior_tested": [
+        {
+          "action": "hover",
+          "component_id": "canonical:rel-controversy-precedes-response",
+          "effective_component_id": "canonical:rel-controversy-precedes-response",
+          "focus_after": {
+            "context_key": "ground:history:representation-372c9b3707ffd6cc:concept:authorities",
+            "identity": "authorities",
+            "kind": "concept"
+          },
+          "focus_before": {
+            "context_key": "ground:history:representation-372c9b3707ffd6cc:concept:authorities",
+            "identity": "authorities",
+            "kind": "concept"
+          },
+          "hovered_component_id": "canonical:rel-controversy-precedes-response",
+          "navigation_mutation": false,
+          "revealed_after": [
+            "orientation:domain:electromagnetism",
+            "concept:authorities"
+          ],
+          "revealed_before": [
+            "orientation:domain:electromagnetism",
+            "concept:authorities"
+          ],
+          "revealed_knowledge_mutation": false,
+          "selected_component_id": null
+        },
+        {
+          "action": "hover_exit",
+          "component_id": null,
+          "effective_component_id": null,
+          "focus_after": {
+            "context_key": "ground:history:representation-372c9b3707ffd6cc:concept:authorities",
+            "identity": "authorities",
+            "kind": "concept"
+          },
+          "focus_before": {
+            "context_key": "ground:history:representation-372c9b3707ffd6cc:concept:authorities",
+            "identity": "authorities",
+            "kind": "concept"
+          },
+          "hovered_component_id": null,
+          "navigation_mutation": false,
+          "revealed_after": [
+            "orientation:domain:electromagnetism",
+            "concept:authorities"
+          ],
+          "revealed_before": [
+            "orientation:domain:electromagnetism",
+            "concept:authorities"
+          ],
+          "revealed_knowledge_mutation": false,
+          "selected_component_id": null
+        },
+        {
+          "action": "select",
+          "component_id": "canonical:rel-controversy-precedes-response",
+          "effective_component_id": "canonical:rel-controversy-precedes-response",
+          "focus_after": {
+            "context_key": "ground:history:representation-372c9b3707ffd6cc:concept:authorities",
+            "identity": "authorities",
+            "kind": "concept"
+          },
+          "focus_before": {
+            "context_key": "ground:history:representation-372c9b3707ffd6cc:concept:authorities",
+            "identity": "authorities",
+            "kind": "concept"
+          },
+          "hovered_component_id": null,
+          "navigation_mutation": false,
+          "revealed_after": [
+            "orientation:domain:electromagnetism",
+            "concept:authorities"
+          ],
+          "revealed_before": [
+            "orientation:domain:electromagnetism",
+            "concept:authorities"
+          ],
+          "revealed_knowledge_mutation": false,
+          "selected_component_id": "canonical:rel-controversy-precedes-response"
+        },
+        {
+          "action": "clear",
+          "component_id": null,
+          "effective_component_id": null,
+          "focus_after": {
+            "context_key": "ground:history:representation-372c9b3707ffd6cc:concept:authorities",
+            "identity": "authorities",
+            "kind": "concept"
+          },
+          "focus_before": {
+            "context_key": "ground:history:representation-372c9b3707ffd6cc:concept:authorities",
+            "identity": "authorities",
+            "kind": "concept"
+          },
+          "hovered_component_id": null,
+          "navigation_mutation": false,
+          "revealed_after": [
+            "orientation:domain:electromagnetism",
+            "concept:authorities"
+          ],
+          "revealed_before": [
+            "orientation:domain:electromagnetism",
+            "concept:authorities"
+          ],
+          "revealed_knowledge_mutation": false,
+          "selected_component_id": null
+        }
+      ],
+      "inspectable_components": [
+        {
+          "direction": "earlier_to_later",
+          "evidence": [
+            {
+              "document_id": "text-070a252acc409f55",
+              "end_char": 716,
+              "quote": "Authorities responded after printed controversy had expanded.",
+              "relationship_id": "rel-controversy-precedes-response",
+              "start_char": 655
+            }
+          ],
+          "explanation": "The source occurs before the target in time or an explicit process sequence.",
+          "identity": "rel-controversy-precedes-response",
+          "kind": "canonical",
+          "label": "Printed controversy → Authorities",
+          "local_key": "canonical:rel-controversy-precedes-response",
+          "predicate": "PRECEDES"
+        },
+        {
+          "direction": null,
+          "evidence": [],
+          "explanation": "Governments and churches that responded to expanded printed controversy.",
+          "identity": "authorities",
+          "kind": "concept",
+          "label": "Authorities",
+          "local_key": "concept:authorities",
+          "predicate": null
+        },
+        {
+          "direction": null,
+          "evidence": [],
+          "explanation": "Controversy associated with printed material that expanded before authorities responded.",
+          "identity": "printed-controversy",
+          "kind": "concept",
+          "label": "Printed controversy",
+          "local_key": "concept:printed-controversy",
+          "predicate": null
+        }
+      ],
+      "nodes_rendered": [
+        {
+          "description": "Governments and churches that responded to expanded printed controversy.",
+          "entity_id": "authorities",
+          "label": "Authorities",
+          "role": "ordered-stage",
+          "role_label": "stage 2",
+          "x": 627,
+          "y": 205
+        },
+        {
+          "description": "Controversy associated with printed material that expanded before authorities responded.",
+          "entity_id": "printed-controversy",
+          "label": "Printed controversy",
+          "role": "ordered-stage",
+          "role_label": "stage 1",
+          "x": 373,
+          "y": 205
+        }
+      ],
+      "relationships_rendered": [
+        {
+          "direction": "earlier_to_later",
+          "label_x": 500,
+          "label_y": 205,
+          "meaning": "The source occurs before the target in time or an explicit process sequence.",
+          "path": "M 451 205 L 549 205",
+          "relationship_ids": [
+            "rel-controversy-precedes-response"
+          ],
+          "relationship_type": "PRECEDES",
+          "source_entity_id": "printed-controversy",
+          "source_label": "Printed controversy",
+          "target_entity_id": "authorities",
+          "target_label": "Authorities"
+        }
+      ],
+      "representation_strategy": "PROCESS_SEQUENCE",
+      "revealed_before_after_local_interaction": [
+        {
+          "after": [
+            "orientation:domain:electromagnetism",
+            "concept:authorities"
+          ],
+          "before": [
+            "orientation:domain:electromagnetism",
+            "concept:authorities"
+          ]
+        },
+        {
+          "after": [
+            "orientation:domain:electromagnetism",
+            "concept:authorities"
+          ],
+          "before": [
+            "orientation:domain:electromagnetism",
+            "concept:authorities"
+          ]
+        },
+        {
+          "after": [
+            "orientation:domain:electromagnetism",
+            "concept:authorities"
+          ],
+          "before": [
+            "orientation:domain:electromagnetism",
+            "concept:authorities"
+          ]
+        },
+        {
+          "after": [
+            "orientation:domain:electromagnetism",
+            "concept:authorities"
+          ],
+          "before": [
+            "orientation:domain:electromagnetism",
+            "concept:authorities"
+          ]
+        }
+      ],
+      "semantic_focus_identity": "authorities",
+      "sparse_truth_preserved": true,
+      "spatial_grammar": "ordered-sequence",
+      "status": "PASS"
+    },
+    {
+      "canonical_directions_represented": [
+        {
+          "direction": "decreaser_to_decreased_variable",
+          "relationship_ids": [
+            "rel-higher-price-decreases-demanded",
+            "rel-price-decreases-demanded"
+          ],
+          "source_entity_id": "market-price",
+          "target_entity_id": "quantity-demanded"
+        },
+        {
+          "direction": "increaser_to_increased_variable",
+          "relationship_ids": [
+            "rel-higher-price-increases-supplied",
+            "rel-price-increases-supplied"
+          ],
+          "source_entity_id": "market-price",
+          "target_entity_id": "quantity-supplied"
+        },
+        {
+          "direction": "cause_to_effect",
+          "relationship_ids": [
+            "rel-shortage-upward-pressure"
+          ],
+          "source_entity_id": "shortage",
+          "target_entity_id": "upward-price-pressure"
+        },
+        {
+          "direction": "cause_to_effect",
+          "relationship_ids": [
+            "rel-supply-reduction-price-increase"
+          ],
+          "source_entity_id": "supply-reduction",
+          "target_entity_id": "market-price"
+        },
+        {
+          "direction": "increaser_to_increased_variable",
+          "relationship_ids": [
+            "rel-upward-pressure-price"
+          ],
+          "source_entity_id": "upward-price-pressure",
+          "target_entity_id": "market-price"
+        }
+      ],
+      "case": "economics_market_system",
+      "context_key": "ground:economics:representation-fe3ba90cb8cfa3d6:concept:market-price",
+      "evidence_provenance_sources": [
+        "text-e6c889f45171a12a"
+      ],
+      "expected_strategy": "CAUSAL_MECHANISM",
+      "focus_before_after_local_interaction": [
+        {
+          "after": {
+            "context_key": "ground:economics:representation-fe3ba90cb8cfa3d6:concept:market-price",
+            "identity": "market-price",
+            "kind": "concept"
+          },
+          "before": {
+            "context_key": "ground:economics:representation-fe3ba90cb8cfa3d6:concept:market-price",
+            "identity": "market-price",
+            "kind": "concept"
+          }
+        },
+        {
+          "after": {
+            "context_key": "ground:economics:representation-fe3ba90cb8cfa3d6:concept:market-price",
+            "identity": "market-price",
+            "kind": "concept"
+          },
+          "before": {
+            "context_key": "ground:economics:representation-fe3ba90cb8cfa3d6:concept:market-price",
+            "identity": "market-price",
+            "kind": "concept"
+          }
+        },
+        {
+          "after": {
+            "context_key": "ground:economics:representation-fe3ba90cb8cfa3d6:concept:market-price",
+            "identity": "market-price",
+            "kind": "concept"
+          },
+          "before": {
+            "context_key": "ground:economics:representation-fe3ba90cb8cfa3d6:concept:market-price",
+            "identity": "market-price",
+            "kind": "concept"
+          }
+        },
+        {
+          "after": {
+            "context_key": "ground:economics:representation-fe3ba90cb8cfa3d6:concept:market-price",
+            "identity": "market-price",
+            "kind": "concept"
+          },
+          "before": {
+            "context_key": "ground:economics:representation-fe3ba90cb8cfa3d6:concept:market-price",
+            "identity": "market-price",
+            "kind": "concept"
+          }
+        }
+      ],
+      "hover_click_behavior_tested": [
+        {
+          "action": "hover",
+          "component_id": "canonical:rel-supply-reduction-price-increase",
+          "effective_component_id": "canonical:rel-supply-reduction-price-increase",
+          "focus_after": {
+            "context_key": "ground:economics:representation-fe3ba90cb8cfa3d6:concept:market-price",
+            "identity": "market-price",
+            "kind": "concept"
+          },
+          "focus_before": {
+            "context_key": "ground:economics:representation-fe3ba90cb8cfa3d6:concept:market-price",
+            "identity": "market-price",
+            "kind": "concept"
+          },
+          "hovered_component_id": "canonical:rel-supply-reduction-price-increase",
+          "navigation_mutation": false,
+          "revealed_after": [
+            "orientation:domain:electromagnetism",
+            "concept:market-price"
+          ],
+          "revealed_before": [
+            "orientation:domain:electromagnetism",
+            "concept:market-price"
+          ],
+          "revealed_knowledge_mutation": false,
+          "selected_component_id": null
+        },
+        {
+          "action": "hover_exit",
+          "component_id": null,
+          "effective_component_id": null,
+          "focus_after": {
+            "context_key": "ground:economics:representation-fe3ba90cb8cfa3d6:concept:market-price",
+            "identity": "market-price",
+            "kind": "concept"
+          },
+          "focus_before": {
+            "context_key": "ground:economics:representation-fe3ba90cb8cfa3d6:concept:market-price",
+            "identity": "market-price",
+            "kind": "concept"
+          },
+          "hovered_component_id": null,
+          "navigation_mutation": false,
+          "revealed_after": [
+            "orientation:domain:electromagnetism",
+            "concept:market-price"
+          ],
+          "revealed_before": [
+            "orientation:domain:electromagnetism",
+            "concept:market-price"
+          ],
+          "revealed_knowledge_mutation": false,
+          "selected_component_id": null
+        },
+        {
+          "action": "select",
+          "component_id": "canonical:rel-supply-reduction-price-increase",
+          "effective_component_id": "canonical:rel-supply-reduction-price-increase",
+          "focus_after": {
+            "context_key": "ground:economics:representation-fe3ba90cb8cfa3d6:concept:market-price",
+            "identity": "market-price",
+            "kind": "concept"
+          },
+          "focus_before": {
+            "context_key": "ground:economics:representation-fe3ba90cb8cfa3d6:concept:market-price",
+            "identity": "market-price",
+            "kind": "concept"
+          },
+          "hovered_component_id": null,
+          "navigation_mutation": false,
+          "revealed_after": [
+            "orientation:domain:electromagnetism",
+            "concept:market-price"
+          ],
+          "revealed_before": [
+            "orientation:domain:electromagnetism",
+            "concept:market-price"
+          ],
+          "revealed_knowledge_mutation": false,
+          "selected_component_id": "canonical:rel-supply-reduction-price-increase"
+        },
+        {
+          "action": "clear",
+          "component_id": null,
+          "effective_component_id": null,
+          "focus_after": {
+            "context_key": "ground:economics:representation-fe3ba90cb8cfa3d6:concept:market-price",
+            "identity": "market-price",
+            "kind": "concept"
+          },
+          "focus_before": {
+            "context_key": "ground:economics:representation-fe3ba90cb8cfa3d6:concept:market-price",
+            "identity": "market-price",
+            "kind": "concept"
+          },
+          "hovered_component_id": null,
+          "navigation_mutation": false,
+          "revealed_after": [
+            "orientation:domain:electromagnetism",
+            "concept:market-price"
+          ],
+          "revealed_before": [
+            "orientation:domain:electromagnetism",
+            "concept:market-price"
+          ],
+          "revealed_knowledge_mutation": false,
+          "selected_component_id": null
+        }
+      ],
+      "inspectable_components": [
+        {
+          "direction": "decreaser_to_decreased_variable",
+          "evidence": [
+            {
+              "document_id": "text-e6c889f45171a12a",
+              "end_char": 469,
+              "quote": "The higher price decreases quantity demanded and increases quantity supplied until the shortage narrows.",
+              "relationship_id": "rel-higher-price-decreases-demanded",
+              "start_char": 365
+            },
+            {
+              "document_id": "text-e6c889f45171a12a",
+              "end_char": 177,
+              "quote": "When the price rises, buyers usually demand a smaller quantity",
+              "relationship_id": "rel-price-decreases-demanded",
+              "start_char": 115
+            }
+          ],
+          "explanation": "The source causally lowers the amount, rate, value, probability, or intensity of the target.",
+          "identity": "rel-higher-price-decreases-demanded",
+          "kind": "canonical",
+          "label": "market price → quantity demanded",
+          "local_key": "canonical:rel-higher-price-decreases-demanded",
+          "predicate": "DECREASES"
+        },
+        {
+          "direction": "increaser_to_increased_variable",
+          "evidence": [
+            {
+              "document_id": "text-e6c889f45171a12a",
+              "end_char": 469,
+              "quote": "The higher price decreases quantity demanded and increases quantity supplied until the shortage narrows.",
+              "relationship_id": "rel-higher-price-increases-supplied",
+              "start_char": 365
+            },
+            {
+              "document_id": "text-e6c889f45171a12a",
+              "end_char": 226,
+              "quote": "while sellers usually supply a larger quantity.",
+              "relationship_id": "rel-price-increases-supplied",
+              "start_char": 179
+            }
+          ],
+          "explanation": "The source causally raises the amount, rate, value, probability, or intensity of the target.",
+          "identity": "rel-higher-price-increases-supplied",
+          "kind": "canonical",
+          "label": "market price → quantity supplied",
+          "local_key": "canonical:rel-higher-price-increases-supplied",
+          "predicate": "INCREASES"
+        },
+        {
+          "direction": "cause_to_effect",
+          "evidence": [
+            {
+              "document_id": "text-e6c889f45171a12a",
+              "end_char": 364,
+              "quote": "a shortage puts upward pressure on price.",
+              "relationship_id": "rel-shortage-upward-pressure",
+              "start_char": 323
+            }
+          ],
+          "explanation": "The source brings about the target as an effect.",
+          "identity": "rel-shortage-upward-pressure",
+          "kind": "canonical",
+          "label": "shortage → upward pressure on price",
+          "local_key": "canonical:rel-shortage-upward-pressure",
+          "predicate": "CAUSES"
+        },
+        {
+          "direction": "cause_to_effect",
+          "evidence": [
+            {
+              "document_id": "text-e6c889f45171a12a",
+              "end_char": 730,
+              "quote": "When demand is less elastic, a similar reduction in supply can cause a larger price increase",
+              "relationship_id": "rel-supply-reduction-price-increase",
+              "start_char": 638
+            }
+          ],
+          "explanation": "The source brings about the target as an effect.",
+          "identity": "rel-supply-reduction-price-increase",
+          "kind": "canonical",
+          "label": "reduction in supply → market price",
+          "local_key": "canonical:rel-supply-reduction-price-increase",
+          "predicate": "CAUSES"
+        },
+        {
+          "direction": "increaser_to_increased_variable",
+          "evidence": [
+            {
+              "document_id": "text-e6c889f45171a12a",
+              "end_char": 469,
+              "quote": "The higher price decreases quantity demanded and increases quantity supplied until the shortage narrows.",
+              "relationship_id": "rel-upward-pressure-price",
+              "start_char": 365
+            }
+          ],
+          "explanation": "The source causally raises the amount, rate, value, probability, or intensity of the target.",
+          "identity": "rel-upward-pressure-price",
+          "kind": "canonical",
+          "label": "upward pressure on price → market price",
+          "local_key": "canonical:rel-upward-pressure-price",
+          "predicate": "INCREASES"
+        },
+        {
+          "direction": null,
+          "evidence": [],
+          "explanation": "The price that coordinates buyers' and sellers' plans.",
+          "identity": "market-price",
+          "kind": "concept",
+          "label": "market price",
+          "local_key": "concept:market-price",
+          "predicate": null
+        },
+        {
+          "direction": null,
+          "evidence": [],
+          "explanation": "The quantity buyers demand at a given price.",
+          "identity": "quantity-demanded",
+          "kind": "concept",
+          "label": "quantity demanded",
+          "local_key": "concept:quantity-demanded",
+          "predicate": null
+        },
+        {
+          "direction": null,
+          "evidence": [],
+          "explanation": "The quantity sellers supply at a given price.",
+          "identity": "quantity-supplied",
+          "kind": "concept",
+          "label": "quantity supplied",
+          "local_key": "concept:quantity-supplied",
+          "predicate": null
+        },
+        {
+          "direction": null,
+          "evidence": [],
+          "explanation": "A market condition in which quantity demanded exceeds quantity supplied.",
+          "identity": "shortage",
+          "kind": "concept",
+          "label": "shortage",
+          "local_key": "concept:shortage",
+          "predicate": null
+        },
+        {
+          "direction": null,
+          "evidence": [],
+          "explanation": "A decrease in the amount of supply available in the market.",
+          "identity": "supply-reduction",
+          "kind": "concept",
+          "label": "reduction in supply",
+          "local_key": "concept:supply-reduction",
+          "predicate": null
+        },
+        {
+          "direction": null,
+          "evidence": [],
+          "explanation": "Pressure that tends to raise the market price.",
+          "identity": "upward-price-pressure",
+          "kind": "concept",
+          "label": "upward pressure on price",
+          "local_key": "concept:upward-price-pressure",
+          "predicate": null
+        }
+      ],
+      "nodes_rendered": [
+        {
+          "description": "The price that coordinates buyers' and sellers' plans.",
+          "entity_id": "market-price",
+          "label": "market price",
+          "role": "causal-state",
+          "role_label": "system state",
+          "x": 650,
+          "y": 350
+        },
+        {
+          "description": "The quantity buyers demand at a given price.",
+          "entity_id": "quantity-demanded",
+          "label": "quantity demanded",
+          "role": "causal-state",
+          "role_label": "system state",
+          "x": 500,
+          "y": 545
+        },
+        {
+          "description": "The quantity sellers supply at a given price.",
+          "entity_id": "quantity-supplied",
+          "label": "quantity supplied",
+          "role": "causal-state",
+          "role_label": "system state",
+          "x": 800,
+          "y": 545
+        },
+        {
+          "description": "A market condition in which quantity demanded exceeds quantity supplied.",
+          "entity_id": "shortage",
+          "label": "shortage",
+          "role": "causal-state",
+          "role_label": "system state",
+          "x": 220,
+          "y": 105
+        },
+        {
+          "description": "A decrease in the amount of supply available in the market.",
+          "entity_id": "supply-reduction",
+          "label": "reduction in supply",
+          "role": "causal-state",
+          "role_label": "system state",
+          "x": 760,
+          "y": 105
+        },
+        {
+          "description": "Pressure that tends to raise the market price.",
+          "entity_id": "upward-price-pressure",
+          "label": "upward pressure on price",
+          "role": "causal-state",
+          "role_label": "system state",
+          "x": 260,
+          "y": 315
+        }
+      ],
+      "relationships_rendered": [
+        {
+          "direction": "decreaser_to_decreased_variable",
+          "label_x": 535,
+          "label_y": 448,
+          "meaning": "The source causally lowers the amount, rate, value, probability, or intensity of the target.",
+          "path": "M 602 412 L 548 483",
+          "relationship_ids": [
+            "rel-higher-price-decreases-demanded",
+            "rel-price-decreases-demanded"
+          ],
+          "relationship_type": "DECREASES",
+          "source_entity_id": "market-price",
+          "source_label": "market price",
+          "target_entity_id": "quantity-demanded",
+          "target_label": "quantity demanded"
+        },
+        {
+          "direction": "increaser_to_increased_variable",
+          "label_x": 760,
+          "label_y": 448,
+          "meaning": "The source causally raises the amount, rate, value, probability, or intensity of the target.",
+          "path": "M 698 412 L 752 483",
+          "relationship_ids": [
+            "rel-higher-price-increases-supplied",
+            "rel-price-increases-supplied"
+          ],
+          "relationship_type": "INCREASES",
+          "source_entity_id": "market-price",
+          "source_label": "market price",
+          "target_entity_id": "quantity-supplied",
+          "target_label": "quantity supplied"
+        },
+        {
+          "direction": "cause_to_effect",
+          "label_x": 225,
+          "label_y": 205,
+          "meaning": "The source brings about the target as an effect.",
+          "path": "M 235 182 L 245 238",
+          "relationship_ids": [
+            "rel-shortage-upward-pressure"
+          ],
+          "relationship_type": "CAUSES",
+          "source_entity_id": "shortage",
+          "source_label": "shortage",
+          "target_entity_id": "upward-price-pressure",
+          "target_label": "upward pressure on price"
+        },
+        {
+          "direction": "cause_to_effect",
+          "label_x": 760,
+          "label_y": 225,
+          "meaning": "The source brings about the target as an effect.",
+          "path": "M 728 176 L 682 279",
+          "relationship_ids": [
+            "rel-supply-reduction-price-increase"
+          ],
+          "relationship_type": "CAUSES",
+          "source_entity_id": "supply-reduction",
+          "source_label": "reduction in supply",
+          "target_entity_id": "market-price",
+          "target_label": "market price"
+        },
+        {
+          "direction": "increaser_to_increased_variable",
+          "label_x": 455,
+          "label_y": 330,
+          "meaning": "The source causally raises the amount, rate, value, probability, or intensity of the target.",
+          "path": "M 338 322 L 572 343",
+          "relationship_ids": [
+            "rel-upward-pressure-price"
+          ],
+          "relationship_type": "INCREASES",
+          "source_entity_id": "upward-price-pressure",
+          "source_label": "upward pressure on price",
+          "target_entity_id": "market-price",
+          "target_label": "market price"
+        }
+      ],
+      "representation_strategy": "CAUSAL_MECHANISM",
+      "revealed_before_after_local_interaction": [
+        {
+          "after": [
+            "orientation:domain:electromagnetism",
+            "concept:market-price"
+          ],
+          "before": [
+            "orientation:domain:electromagnetism",
+            "concept:market-price"
+          ]
+        },
+        {
+          "after": [
+            "orientation:domain:electromagnetism",
+            "concept:market-price"
+          ],
+          "before": [
+            "orientation:domain:electromagnetism",
+            "concept:market-price"
+          ]
+        },
+        {
+          "after": [
+            "orientation:domain:electromagnetism",
+            "concept:market-price"
+          ],
+          "before": [
+            "orientation:domain:electromagnetism",
+            "concept:market-price"
+          ]
+        },
+        {
+          "after": [
+            "orientation:domain:electromagnetism",
+            "concept:market-price"
+          ],
+          "before": [
+            "orientation:domain:electromagnetism",
+            "concept:market-price"
+          ]
+        }
+      ],
+      "semantic_focus_identity": "market-price",
+      "sparse_truth_preserved": false,
+      "spatial_grammar": "causal-system",
+      "status": "PASS"
+    },
+    {
+      "canonical_directions_represented": [
+        {
+          "direction": "inducer_to_induced_effect",
+          "relationship_ids": [
+            "changing-electric-field-induces-magnetic-field"
+          ],
+          "source_entity_id": "electric-field",
+          "target_entity_id": "magnetic-field"
+        },
+        {
+          "direction": "inducer_to_induced_effect",
+          "relationship_ids": [
+            "changing-magnetic-field-induces-electric-field"
+          ],
+          "source_entity_id": "magnetic-field",
+          "target_entity_id": "electric-field"
+        }
+      ],
+      "case": "field_reciprocal_mechanism",
+      "context_key": "ground:electromagnetism:representation-9058fd6ab1975a17:concept:electric-field",
+      "evidence_provenance_sources": [
+        "text-38d7213d9f084e3e"
+      ],
+      "expected_strategy": "RECIPROCAL_MECHANISM",
+      "focus_before_after_local_interaction": [
+        {
+          "after": {
+            "context_key": "ground:electromagnetism:representation-9058fd6ab1975a17:concept:electric-field",
+            "identity": "electric-field",
+            "kind": "concept"
+          },
+          "before": {
+            "context_key": "ground:electromagnetism:representation-9058fd6ab1975a17:concept:electric-field",
+            "identity": "electric-field",
+            "kind": "concept"
+          }
+        },
+        {
+          "after": {
+            "context_key": "ground:electromagnetism:representation-9058fd6ab1975a17:concept:electric-field",
+            "identity": "electric-field",
+            "kind": "concept"
+          },
+          "before": {
+            "context_key": "ground:electromagnetism:representation-9058fd6ab1975a17:concept:electric-field",
+            "identity": "electric-field",
+            "kind": "concept"
+          }
+        },
+        {
+          "after": {
+            "context_key": "ground:electromagnetism:representation-9058fd6ab1975a17:concept:electric-field",
+            "identity": "electric-field",
+            "kind": "concept"
+          },
+          "before": {
+            "context_key": "ground:electromagnetism:representation-9058fd6ab1975a17:concept:electric-field",
+            "identity": "electric-field",
+            "kind": "concept"
+          }
+        },
+        {
+          "after": {
+            "context_key": "ground:electromagnetism:representation-9058fd6ab1975a17:concept:electric-field",
+            "identity": "electric-field",
+            "kind": "concept"
+          },
+          "before": {
+            "context_key": "ground:electromagnetism:representation-9058fd6ab1975a17:concept:electric-field",
+            "identity": "electric-field",
+            "kind": "concept"
+          }
+        }
+      ],
+      "hover_click_behavior_tested": [
+        {
+          "action": "hover",
+          "component_id": "canonical:changing-electric-field-induces-magnetic-field",
+          "effective_component_id": "canonical:changing-electric-field-induces-magnetic-field",
+          "focus_after": {
+            "context_key": "ground:electromagnetism:representation-9058fd6ab1975a17:concept:electric-field",
+            "identity": "electric-field",
+            "kind": "concept"
+          },
+          "focus_before": {
+            "context_key": "ground:electromagnetism:representation-9058fd6ab1975a17:concept:electric-field",
+            "identity": "electric-field",
+            "kind": "concept"
+          },
+          "hovered_component_id": "canonical:changing-electric-field-induces-magnetic-field",
+          "navigation_mutation": false,
+          "revealed_after": [
+            "orientation:domain:electromagnetism",
+            "concept:electric-field"
+          ],
+          "revealed_before": [
+            "orientation:domain:electromagnetism",
+            "concept:electric-field"
+          ],
+          "revealed_knowledge_mutation": false,
+          "selected_component_id": null
+        },
+        {
+          "action": "hover_exit",
+          "component_id": null,
+          "effective_component_id": null,
+          "focus_after": {
+            "context_key": "ground:electromagnetism:representation-9058fd6ab1975a17:concept:electric-field",
+            "identity": "electric-field",
+            "kind": "concept"
+          },
+          "focus_before": {
+            "context_key": "ground:electromagnetism:representation-9058fd6ab1975a17:concept:electric-field",
+            "identity": "electric-field",
+            "kind": "concept"
+          },
+          "hovered_component_id": null,
+          "navigation_mutation": false,
+          "revealed_after": [
+            "orientation:domain:electromagnetism",
+            "concept:electric-field"
+          ],
+          "revealed_before": [
+            "orientation:domain:electromagnetism",
+            "concept:electric-field"
+          ],
+          "revealed_knowledge_mutation": false,
+          "selected_component_id": null
+        },
+        {
+          "action": "select",
+          "component_id": "canonical:changing-electric-field-induces-magnetic-field",
+          "effective_component_id": "canonical:changing-electric-field-induces-magnetic-field",
+          "focus_after": {
+            "context_key": "ground:electromagnetism:representation-9058fd6ab1975a17:concept:electric-field",
+            "identity": "electric-field",
+            "kind": "concept"
+          },
+          "focus_before": {
+            "context_key": "ground:electromagnetism:representation-9058fd6ab1975a17:concept:electric-field",
+            "identity": "electric-field",
+            "kind": "concept"
+          },
+          "hovered_component_id": null,
+          "navigation_mutation": false,
+          "revealed_after": [
+            "orientation:domain:electromagnetism",
+            "concept:electric-field"
+          ],
+          "revealed_before": [
+            "orientation:domain:electromagnetism",
+            "concept:electric-field"
+          ],
+          "revealed_knowledge_mutation": false,
+          "selected_component_id": "canonical:changing-electric-field-induces-magnetic-field"
+        },
+        {
+          "action": "clear",
+          "component_id": null,
+          "effective_component_id": null,
+          "focus_after": {
+            "context_key": "ground:electromagnetism:representation-9058fd6ab1975a17:concept:electric-field",
+            "identity": "electric-field",
+            "kind": "concept"
+          },
+          "focus_before": {
+            "context_key": "ground:electromagnetism:representation-9058fd6ab1975a17:concept:electric-field",
+            "identity": "electric-field",
+            "kind": "concept"
+          },
+          "hovered_component_id": null,
+          "navigation_mutation": false,
+          "revealed_after": [
+            "orientation:domain:electromagnetism",
+            "concept:electric-field"
+          ],
+          "revealed_before": [
+            "orientation:domain:electromagnetism",
+            "concept:electric-field"
+          ],
+          "revealed_knowledge_mutation": false,
+          "selected_component_id": null
+        }
+      ],
+      "inspectable_components": [
+        {
+          "direction": "inducer_to_induced_effect",
+          "evidence": [
+            {
+              "document_id": "text-38d7213d9f084e3e",
+              "end_char": 345,
+              "quote": "A changing electric field induces a magnetic field.",
+              "relationship_id": "changing-electric-field-induces-magnetic-field",
+              "start_char": 294
+            }
+          ],
+          "explanation": "The source produces the target through an explicitly described induction mechanism.",
+          "identity": "changing-electric-field-induces-magnetic-field",
+          "kind": "canonical",
+          "label": "Electric field → Magnetic field",
+          "local_key": "canonical:changing-electric-field-induces-magnetic-field",
+          "predicate": "INDUCES"
+        },
+        {
+          "direction": "inducer_to_induced_effect",
+          "evidence": [
+            {
+              "document_id": "text-38d7213d9f084e3e",
+              "end_char": 293,
+              "quote": "A changing magnetic field induces an electric field.",
+              "relationship_id": "changing-magnetic-field-induces-electric-field",
+              "start_char": 241
+            }
+          ],
+          "explanation": "The source produces the target through an explicitly described induction mechanism.",
+          "identity": "changing-magnetic-field-induces-electric-field",
+          "kind": "canonical",
+          "label": "Magnetic field → Electric field",
+          "local_key": "canonical:changing-magnetic-field-induces-electric-field",
+          "predicate": "INDUCES"
+        },
+        {
+          "direction": null,
+          "evidence": [],
+          "explanation": "A field created by electric charge that exerts force on another charge; changing electric fields can induce magnetic fields.",
+          "identity": "electric-field",
+          "kind": "concept",
+          "label": "Electric field",
+          "local_key": "concept:electric-field",
+          "predicate": null
+        },
+        {
+          "direction": null,
+          "evidence": [],
+          "explanation": "A field created by a moving charge or electric current; changing magnetic fields induce electric fields.",
+          "identity": "magnetic-field",
+          "kind": "concept",
+          "label": "Magnetic field",
+          "local_key": "concept:magnetic-field",
+          "predicate": null
+        }
+      ],
+      "nodes_rendered": [
+        {
+          "description": "A field created by electric charge that exerts force on another charge; changing electric fields can induce magnetic fields.",
+          "entity_id": "electric-field",
+          "label": "Electric field",
+          "role": "cycle-endpoint",
+          "role_label": "coupled field",
+          "x": 230,
+          "y": 210
+        },
+        {
+          "description": "A field created by a moving charge or electric current; changing magnetic fields induce electric fields.",
+          "entity_id": "magnetic-field",
+          "label": "Magnetic field",
+          "role": "cycle-endpoint",
+          "role_label": "coupled field",
+          "x": 770,
+          "y": 210
+        }
+      ],
+      "relationships_rendered": [
+        {
+          "direction": "inducer_to_induced_effect",
+          "label_x": 500,
+          "label_y": 100,
+          "meaning": "The source produces the target through an explicitly described induction mechanism.",
+          "path": "M 335 210 Q 500 65 665 210",
+          "relationship_ids": [
+            "changing-electric-field-induces-magnetic-field"
+          ],
+          "relationship_type": "INDUCES",
+          "source_entity_id": "electric-field",
+          "source_label": "Electric field",
+          "target_entity_id": "magnetic-field",
+          "target_label": "Magnetic field"
+        },
+        {
+          "direction": "inducer_to_induced_effect",
+          "label_x": 500,
+          "label_y": 320,
+          "meaning": "The source produces the target through an explicitly described induction mechanism.",
+          "path": "M 665 210 Q 500 355 335 210",
+          "relationship_ids": [
+            "changing-magnetic-field-induces-electric-field"
+          ],
+          "relationship_type": "INDUCES",
+          "source_entity_id": "magnetic-field",
+          "source_label": "Magnetic field",
+          "target_entity_id": "electric-field",
+          "target_label": "Electric field"
+        }
+      ],
+      "representation_strategy": "RECIPROCAL_MECHANISM",
+      "revealed_before_after_local_interaction": [
+        {
+          "after": [
+            "orientation:domain:electromagnetism",
+            "concept:electric-field"
+          ],
+          "before": [
+            "orientation:domain:electromagnetism",
+            "concept:electric-field"
+          ]
+        },
+        {
+          "after": [
+            "orientation:domain:electromagnetism",
+            "concept:electric-field"
+          ],
+          "before": [
+            "orientation:domain:electromagnetism",
+            "concept:electric-field"
+          ]
+        },
+        {
+          "after": [
+            "orientation:domain:electromagnetism",
+            "concept:electric-field"
+          ],
+          "before": [
+            "orientation:domain:electromagnetism",
+            "concept:electric-field"
+          ]
+        },
+        {
+          "after": [
+            "orientation:domain:electromagnetism",
+            "concept:electric-field"
+          ],
+          "before": [
+            "orientation:domain:electromagnetism",
+            "concept:electric-field"
+          ]
+        }
+      ],
+      "semantic_focus_identity": "electric-field",
+      "sparse_truth_preserved": false,
+      "spatial_grammar": "reciprocal-cycle",
+      "status": "PASS"
+    },
+    {
+      "canonical_directions_represented": [],
+      "case": "truthful_prose_fallback",
+      "context_key": "depth:depth-double-slit-v1:concept:atom",
+      "evidence_provenance_sources": [],
+      "expected_strategy": "CONCISE_PROSE",
+      "focus_before_after_local_interaction": [],
+      "hover_click_behavior_tested": [],
+      "inspectable_components": [],
+      "nodes_rendered": [],
+      "relationships_rendered": [],
+      "representation_strategy": "CONCISE_PROSE",
+      "revealed_before_after_local_interaction": [],
+      "semantic_focus_identity": "atom",
+      "sparse_truth_preserved": true,
+      "spatial_grammar": "prose-first",
+      "status": "PASS"
+    }
+  ],
+  "frozen_baselines_after": {
+    "BASELINE-001": {
+      "aggregate_sha256": "9288d1fba5895cd374db1e6e9cc7bec67c79cc3a31263af2b7874ef8d7c1338f",
+      "file_count": 6,
+      "files": {
+        "baselines/BASELINE-001-interface.md": "5c036e4cb85a058bac11a3949a7581907f219ecd36e797ecc74714148768eeeb",
+        "baselines/BASELINE-001-interface/biology-truthful-empty-state.jpg": "448c1f598e7391e2a32b9e39d32bfa92c54120385a6aeff340933328325b5efc",
+        "baselines/BASELINE-001-interface/economics-causal-overview.jpg": "6c09d3d682c9155f7e40a8281b3a0f32193371224b6f8797f7be703e19aaadef",
+        "baselines/BASELINE-001-interface/economics-selected-shortage-causes-pressure.jpg": "342c82e11565a537504e0c59c70d4c28a377578042ec0d0fde94292661520dcd",
+        "baselines/BASELINE-001-interface/electromagnetism-feedback-candidate.jpg": "f03e5faaa9b9d3d95120e47098dccbc092ff7c62c9977a947268a48a20c9b9e0",
+        "baselines/BASELINE-001-interface/software-architecture-hierarchy-selected-part-of.jpg": "bf11afeed49f563e1f4ed15ef375653b497eef93f7f4902290bad38c8602f304"
+      }
+    },
+    "BASELINE-002": {
+      "aggregate_sha256": "c392a194ae0ba2a75fad343a78923d3b42db59fa8faebfa11f2db3c43102e9a1",
+      "file_count": 13,
+      "files": {
+        "baselines/BASELINE-002-continuous-navigation-reference.md": "3a975045cf7e9f56cfe574081b25dee079ed85c63ddc6e227800862a7a2b7730",
+        "examples/evaluations/ops-002-continuous-interface-baseline-restoration-20260905/README.md": "9a3636eb838e83e14d08ceaa7477c189c4f1fa21898bff68ba545c63ae3c207f",
+        "examples/evaluations/ops-002-continuous-interface-baseline-restoration-20260905/baseline-manifest.json": "074101e8d3d0a274a7402868114fe42e1f0140c21c1b4e35ec182af3f15a049e",
+        "examples/evaluations/ops-002-continuous-interface-baseline-restoration-20260905/browser-verification.json": "64c01cb362e1081678e92fd859979f1598c8a5b68a5c00bb4f3f482a38a0f9df",
+        "examples/evaluations/ops-002-continuous-interface-baseline-restoration-20260905/human-review-template.json": "b19da8ec130ee62f6e95d5a356fb7123d558eff84ccd89eeea9d3fb924acef7f",
+        "examples/evaluations/ops-002-continuous-interface-baseline-restoration-20260905/index.html": "1fa0c592186b626c98514e3e7c491f63a43ea3a9a2b53abb7fe5be9e8f1b151f",
+        "examples/evaluations/ops-002-continuous-interface-baseline-restoration-20260905/manifest.json": "39d553414a396fb2e684884c36140de32c1f8485beb11d7192e78c0f9fd74709",
+        "examples/evaluations/ops-002-continuous-interface-baseline-restoration-20260905/report.json": "904f5eeaf7e629f5e3a52d2c650e99eea6bd70c2b6b091b0de971411a8fc33a2",
+        "examples/evaluations/ops-002-continuous-interface-baseline-restoration-20260905/representation-camera-compatibility.json": "59ebd37a4efeab0d0167139c6497424577cd893ba816c70eedb09b1937ebe0c0",
+        "examples/evaluations/ops-002-continuous-interface-baseline-restoration-20260905/restoration-diagnostics.json": "ca7066ddac2785be24fd08e51ed58b74198ccaf55f73724d2ff16f74a13ba2d8",
+        "examples/evaluations/ops-002-continuous-interface-baseline-restoration-20260905/restoration-fixture.json": "f6f077d9f11b011c290015328a2d1fd3765c6a8e3744eec0c1203e4138d6cb6b",
+        "examples/evaluations/ops-002-continuous-interface-baseline-restoration-20260905/restoration.css": "8effeba7e20230d15c10c5d5c30958925383fa0a7cc9c417da97ff4f88bfb894",
+        "examples/evaluations/ops-002-continuous-interface-baseline-restoration-20260905/restoration.js": "ecac297e2106d6338cd6c86b46a1f3466916665e78e4ac8c4e121fe0fa3e56fe"
+      }
+    },
+    "BASELINE-003": {
+      "aggregate_sha256": "99331883832864d3bae8c336c0d5837ab2b3748303efefccae0f034c0f06fde2",
+      "file_count": 14,
+      "files": {
+        "baselines/BASELINE-003-hybrid-learning-workspace.md": "ec2603debaf880ecb762cb2836c26998948456406d2f7be1a428c47048db1340",
+        "examples/evaluations/spec-019-navigation-learning-workspace-20260905/README.md": "5ab06f867bcf7d43ab6518026d9c0d0976fda6421eb0c203a884f28523a73532",
+        "examples/evaluations/spec-019-navigation-learning-workspace-20260905/baseline-comparison.json": "0322f48f09842c7a07436f4aa49480963af9a766fb7eabbc0765b406c1b5c885",
+        "examples/evaluations/spec-019-navigation-learning-workspace-20260905/baseline-manifest.json": "f09b824856b44793f8f86401f903444d47c00c8ff2cf743892a19801c26175fc",
+        "examples/evaluations/spec-019-navigation-learning-workspace-20260905/browser-verification.json": "4be61b309e9bf0809f7117365098b6415298147f3417bb45dc47b05705c3c661",
+        "examples/evaluations/spec-019-navigation-learning-workspace-20260905/human-review-template.json": "7ec683dec1c3e776845b4de82eef207d0442fdbe14e6ee59fc3ea25df8b293ca",
+        "examples/evaluations/spec-019-navigation-learning-workspace-20260905/index.html": "471257a95c9fd31483e69b436daeed2397f8e052bddc94ddbcf847c19dab2335",
+        "examples/evaluations/spec-019-navigation-learning-workspace-20260905/manifest.json": "59713e3fb69c19499089d82432d68b0f3e5ad81408f025d5e9fe7318cbf86ce2",
+        "examples/evaluations/spec-019-navigation-learning-workspace-20260905/report.json": "24cca5098ca2d403bcac03e26d87e655817a3807eca7d65c085cf7023953bc1a",
+        "examples/evaluations/spec-019-navigation-learning-workspace-20260905/synchronization-diagnostics.json": "64671aeca53131543df61d6658dafa6b6971c622c920639f8f9ae81ed583bd7b",
+        "examples/evaluations/spec-019-navigation-learning-workspace-20260905/workspace-fixture.json": "a2c8c24bbd58e28f9a41598e22868916c1808133798c738bbf27712124c1b4e9",
+        "examples/evaluations/spec-019-navigation-learning-workspace-20260905/workspace-manifest.json": "59713e3fb69c19499089d82432d68b0f3e5ad81408f025d5e9fe7318cbf86ce2",
+        "examples/evaluations/spec-019-navigation-learning-workspace-20260905/workspace.css": "53a6c5593da5c5da7935698d6c8682b4f1f542f6d082d96e77c634cb0432d211",
+        "examples/evaluations/spec-019-navigation-learning-workspace-20260905/workspace.js": "a6bb507a4bff2eea0f968ea2d3e3dad736b2db865bc10f50124776aad79ca8de"
+      }
+    },
+    "BASELINE-004": {
+      "aggregate_sha256": "d34a569e80c5b57d9228b1000c2f74648522725123ba26bea738090f2a7760ce",
+      "file_count": 23,
+      "files": {
+        "baselines/BASELINE-004-learner-navigation-workspace.md": "94c8e63a97cf1a7af9c7549447c30d3deb7a2fefd5a1c4c0f792cca76c0f7ca6",
+        "baselines/BASELINE-004-learner-navigation-workspace/README.md": "1b10e6ee8a3db46c94749337031d1a72a28f3f411a16152e611d6044f758f396",
+        "baselines/BASELINE-004-learner-navigation-workspace/baseline-manifest.json": "e2e7763302aeacdcad2fc1a55ce7abdfd6be752ca4d6aac5fd6aa4f42f9e9d1c",
+        "baselines/BASELINE-004-learner-navigation-workspace/browser-verification.json": "b951ed6244ae1f41d4fa72eac8160f67950c5940b46a0cfe40acd0257c441918",
+        "baselines/BASELINE-004-learner-navigation-workspace/debug-metadata.json": "d997a153ed577bc88bb341647ff8d06038cf9beab51fb97e9aa14fd7f96482d5",
+        "baselines/BASELINE-004-learner-navigation-workspace/grammar.css": "7158525143670c4dbfa6294eca9ffc8d55587af00a478744616d87e90050484e",
+        "baselines/BASELINE-004-learner-navigation-workspace/human-review-template.json": "38b0a45a3f8cae189dcc600059ba7c045052382a065734c076f4ef089b592a73",
+        "baselines/BASELINE-004-learner-navigation-workspace/index.html": "2023e876c965f723e796f135460798b1c7538d05b693b979db3128934ec210e6",
+        "baselines/BASELINE-004-learner-navigation-workspace/input-manifest.json": "a75b397a6155bb009f424b14ce96d52f76492781a5cadec6c92d147c1b2371c6",
+        "baselines/BASELINE-004-learner-navigation-workspace/interaction-regressions.json": "9640e683a38a1d0a431d60181a3a48367e9a68d3fb2b13015baf970d8f878419",
+        "baselines/BASELINE-004-learner-navigation-workspace/learner-grammar.js": "bab6defc170c4e00cfafda4e8afee4d66690d33e3447d38b608543c616f8793b",
+        "baselines/BASELINE-004-learner-navigation-workspace/manifest.json": "e1ed270a97bf182120f3dd74fda76d2c961516f013b686c110f5fd7ebc976344",
+        "baselines/BASELINE-004-learner-navigation-workspace/projection-diagnostics.json": "324a70df4cb3c05ba13bd2c8bdac7ed08e4d76d09546c10aeb3c5924bb2f2dc0",
+        "baselines/BASELINE-004-learner-navigation-workspace/projection-extension.js": "05ea171074c69f85c64a817ae75741fb6396be3ea2554322df5baa09fed9cc42",
+        "baselines/BASELINE-004-learner-navigation-workspace/projection.css": "ecf9e962889be2e5d2b096118cb9f10f4669fffd3ee6197575c0f20c7029597d",
+        "baselines/BASELINE-004-learner-navigation-workspace/projection.json": "8f1d3beb0e9954040f59862c904a6d9d17574f048bdfcb1cc9059d5df3761232",
+        "baselines/BASELINE-004-learner-navigation-workspace/report.json": "55d032798e49491ff713aa6df49f18aaeff06528061d77d1c8f97cc8ca4f2067",
+        "baselines/BASELINE-004-learner-navigation-workspace/semantic-tier-audit.json": "592b286bde05bf56cd6cd818b9ccb1de3716c7445018765dbc7a2534710935c9",
+        "baselines/BASELINE-004-learner-navigation-workspace/workspace-diagnostics.json": "33048368b0c06d4c35588ec1f3a98259a9950f6f0f7df10a551effd2d15a604a",
+        "baselines/BASELINE-004-learner-navigation-workspace/workspace-fixture.json": "c214158c546fcbed1184b22ab6ac52371c49e7801b1ffb548ed453984fa1fb69",
+        "baselines/BASELINE-004-learner-navigation-workspace/workspace-manifest.json": "e1ed270a97bf182120f3dd74fda76d2c961516f013b686c110f5fd7ebc976344",
+        "baselines/BASELINE-004-learner-navigation-workspace/workspace.css": "53a6c5593da5c5da7935698d6c8682b4f1f542f6d082d96e77c634cb0432d211",
+        "baselines/BASELINE-004-learner-navigation-workspace/workspace.js": "d9eff687be246fc0ac42506b71d55944bb26a10046be4f8ca38270cd4ee94d33"
+      }
+    }
+  },
+  "frozen_baselines_before": {
+    "BASELINE-001": {
+      "aggregate_sha256": "9288d1fba5895cd374db1e6e9cc7bec67c79cc3a31263af2b7874ef8d7c1338f",
+      "file_count": 6,
+      "files": {
+        "baselines/BASELINE-001-interface.md": "5c036e4cb85a058bac11a3949a7581907f219ecd36e797ecc74714148768eeeb",
+        "baselines/BASELINE-001-interface/biology-truthful-empty-state.jpg": "448c1f598e7391e2a32b9e39d32bfa92c54120385a6aeff340933328325b5efc",
+        "baselines/BASELINE-001-interface/economics-causal-overview.jpg": "6c09d3d682c9155f7e40a8281b3a0f32193371224b6f8797f7be703e19aaadef",
+        "baselines/BASELINE-001-interface/economics-selected-shortage-causes-pressure.jpg": "342c82e11565a537504e0c59c70d4c28a377578042ec0d0fde94292661520dcd",
+        "baselines/BASELINE-001-interface/electromagnetism-feedback-candidate.jpg": "f03e5faaa9b9d3d95120e47098dccbc092ff7c62c9977a947268a48a20c9b9e0",
+        "baselines/BASELINE-001-interface/software-architecture-hierarchy-selected-part-of.jpg": "bf11afeed49f563e1f4ed15ef375653b497eef93f7f4902290bad38c8602f304"
+      }
+    },
+    "BASELINE-002": {
+      "aggregate_sha256": "c392a194ae0ba2a75fad343a78923d3b42db59fa8faebfa11f2db3c43102e9a1",
+      "file_count": 13,
+      "files": {
+        "baselines/BASELINE-002-continuous-navigation-reference.md": "3a975045cf7e9f56cfe574081b25dee079ed85c63ddc6e227800862a7a2b7730",
+        "examples/evaluations/ops-002-continuous-interface-baseline-restoration-20260905/README.md": "9a3636eb838e83e14d08ceaa7477c189c4f1fa21898bff68ba545c63ae3c207f",
+        "examples/evaluations/ops-002-continuous-interface-baseline-restoration-20260905/baseline-manifest.json": "074101e8d3d0a274a7402868114fe42e1f0140c21c1b4e35ec182af3f15a049e",
+        "examples/evaluations/ops-002-continuous-interface-baseline-restoration-20260905/browser-verification.json": "64c01cb362e1081678e92fd859979f1598c8a5b68a5c00bb4f3f482a38a0f9df",
+        "examples/evaluations/ops-002-continuous-interface-baseline-restoration-20260905/human-review-template.json": "b19da8ec130ee62f6e95d5a356fb7123d558eff84ccd89eeea9d3fb924acef7f",
+        "examples/evaluations/ops-002-continuous-interface-baseline-restoration-20260905/index.html": "1fa0c592186b626c98514e3e7c491f63a43ea3a9a2b53abb7fe5be9e8f1b151f",
+        "examples/evaluations/ops-002-continuous-interface-baseline-restoration-20260905/manifest.json": "39d553414a396fb2e684884c36140de32c1f8485beb11d7192e78c0f9fd74709",
+        "examples/evaluations/ops-002-continuous-interface-baseline-restoration-20260905/report.json": "904f5eeaf7e629f5e3a52d2c650e99eea6bd70c2b6b091b0de971411a8fc33a2",
+        "examples/evaluations/ops-002-continuous-interface-baseline-restoration-20260905/representation-camera-compatibility.json": "59ebd37a4efeab0d0167139c6497424577cd893ba816c70eedb09b1937ebe0c0",
+        "examples/evaluations/ops-002-continuous-interface-baseline-restoration-20260905/restoration-diagnostics.json": "ca7066ddac2785be24fd08e51ed58b74198ccaf55f73724d2ff16f74a13ba2d8",
+        "examples/evaluations/ops-002-continuous-interface-baseline-restoration-20260905/restoration-fixture.json": "f6f077d9f11b011c290015328a2d1fd3765c6a8e3744eec0c1203e4138d6cb6b",
+        "examples/evaluations/ops-002-continuous-interface-baseline-restoration-20260905/restoration.css": "8effeba7e20230d15c10c5d5c30958925383fa0a7cc9c417da97ff4f88bfb894",
+        "examples/evaluations/ops-002-continuous-interface-baseline-restoration-20260905/restoration.js": "ecac297e2106d6338cd6c86b46a1f3466916665e78e4ac8c4e121fe0fa3e56fe"
+      }
+    },
+    "BASELINE-003": {
+      "aggregate_sha256": "99331883832864d3bae8c336c0d5837ab2b3748303efefccae0f034c0f06fde2",
+      "file_count": 14,
+      "files": {
+        "baselines/BASELINE-003-hybrid-learning-workspace.md": "ec2603debaf880ecb762cb2836c26998948456406d2f7be1a428c47048db1340",
+        "examples/evaluations/spec-019-navigation-learning-workspace-20260905/README.md": "5ab06f867bcf7d43ab6518026d9c0d0976fda6421eb0c203a884f28523a73532",
+        "examples/evaluations/spec-019-navigation-learning-workspace-20260905/baseline-comparison.json": "0322f48f09842c7a07436f4aa49480963af9a766fb7eabbc0765b406c1b5c885",
+        "examples/evaluations/spec-019-navigation-learning-workspace-20260905/baseline-manifest.json": "f09b824856b44793f8f86401f903444d47c00c8ff2cf743892a19801c26175fc",
+        "examples/evaluations/spec-019-navigation-learning-workspace-20260905/browser-verification.json": "4be61b309e9bf0809f7117365098b6415298147f3417bb45dc47b05705c3c661",
+        "examples/evaluations/spec-019-navigation-learning-workspace-20260905/human-review-template.json": "7ec683dec1c3e776845b4de82eef207d0442fdbe14e6ee59fc3ea25df8b293ca",
+        "examples/evaluations/spec-019-navigation-learning-workspace-20260905/index.html": "471257a95c9fd31483e69b436daeed2397f8e052bddc94ddbcf847c19dab2335",
+        "examples/evaluations/spec-019-navigation-learning-workspace-20260905/manifest.json": "59713e3fb69c19499089d82432d68b0f3e5ad81408f025d5e9fe7318cbf86ce2",
+        "examples/evaluations/spec-019-navigation-learning-workspace-20260905/report.json": "24cca5098ca2d403bcac03e26d87e655817a3807eca7d65c085cf7023953bc1a",
+        "examples/evaluations/spec-019-navigation-learning-workspace-20260905/synchronization-diagnostics.json": "64671aeca53131543df61d6658dafa6b6971c622c920639f8f9ae81ed583bd7b",
+        "examples/evaluations/spec-019-navigation-learning-workspace-20260905/workspace-fixture.json": "a2c8c24bbd58e28f9a41598e22868916c1808133798c738bbf27712124c1b4e9",
+        "examples/evaluations/spec-019-navigation-learning-workspace-20260905/workspace-manifest.json": "59713e3fb69c19499089d82432d68b0f3e5ad81408f025d5e9fe7318cbf86ce2",
+        "examples/evaluations/spec-019-navigation-learning-workspace-20260905/workspace.css": "53a6c5593da5c5da7935698d6c8682b4f1f542f6d082d96e77c634cb0432d211",
+        "examples/evaluations/spec-019-navigation-learning-workspace-20260905/workspace.js": "a6bb507a4bff2eea0f968ea2d3e3dad736b2db865bc10f50124776aad79ca8de"
+      }
+    },
+    "BASELINE-004": {
+      "aggregate_sha256": "d34a569e80c5b57d9228b1000c2f74648522725123ba26bea738090f2a7760ce",
+      "file_count": 23,
+      "files": {
+        "baselines/BASELINE-004-learner-navigation-workspace.md": "94c8e63a97cf1a7af9c7549447c30d3deb7a2fefd5a1c4c0f792cca76c0f7ca6",
+        "baselines/BASELINE-004-learner-navigation-workspace/README.md": "1b10e6ee8a3db46c94749337031d1a72a28f3f411a16152e611d6044f758f396",
+        "baselines/BASELINE-004-learner-navigation-workspace/baseline-manifest.json": "e2e7763302aeacdcad2fc1a55ce7abdfd6be752ca4d6aac5fd6aa4f42f9e9d1c",
+        "baselines/BASELINE-004-learner-navigation-workspace/browser-verification.json": "b951ed6244ae1f41d4fa72eac8160f67950c5940b46a0cfe40acd0257c441918",
+        "baselines/BASELINE-004-learner-navigation-workspace/debug-metadata.json": "d997a153ed577bc88bb341647ff8d06038cf9beab51fb97e9aa14fd7f96482d5",
+        "baselines/BASELINE-004-learner-navigation-workspace/grammar.css": "7158525143670c4dbfa6294eca9ffc8d55587af00a478744616d87e90050484e",
+        "baselines/BASELINE-004-learner-navigation-workspace/human-review-template.json": "38b0a45a3f8cae189dcc600059ba7c045052382a065734c076f4ef089b592a73",
+        "baselines/BASELINE-004-learner-navigation-workspace/index.html": "2023e876c965f723e796f135460798b1c7538d05b693b979db3128934ec210e6",
+        "baselines/BASELINE-004-learner-navigation-workspace/input-manifest.json": "a75b397a6155bb009f424b14ce96d52f76492781a5cadec6c92d147c1b2371c6",
+        "baselines/BASELINE-004-learner-navigation-workspace/interaction-regressions.json": "9640e683a38a1d0a431d60181a3a48367e9a68d3fb2b13015baf970d8f878419",
+        "baselines/BASELINE-004-learner-navigation-workspace/learner-grammar.js": "bab6defc170c4e00cfafda4e8afee4d66690d33e3447d38b608543c616f8793b",
+        "baselines/BASELINE-004-learner-navigation-workspace/manifest.json": "e1ed270a97bf182120f3dd74fda76d2c961516f013b686c110f5fd7ebc976344",
+        "baselines/BASELINE-004-learner-navigation-workspace/projection-diagnostics.json": "324a70df4cb3c05ba13bd2c8bdac7ed08e4d76d09546c10aeb3c5924bb2f2dc0",
+        "baselines/BASELINE-004-learner-navigation-workspace/projection-extension.js": "05ea171074c69f85c64a817ae75741fb6396be3ea2554322df5baa09fed9cc42",
+        "baselines/BASELINE-004-learner-navigation-workspace/projection.css": "ecf9e962889be2e5d2b096118cb9f10f4669fffd3ee6197575c0f20c7029597d",
+        "baselines/BASELINE-004-learner-navigation-workspace/projection.json": "8f1d3beb0e9954040f59862c904a6d9d17574f048bdfcb1cc9059d5df3761232",
+        "baselines/BASELINE-004-learner-navigation-workspace/report.json": "55d032798e49491ff713aa6df49f18aaeff06528061d77d1c8f97cc8ca4f2067",
+        "baselines/BASELINE-004-learner-navigation-workspace/semantic-tier-audit.json": "592b286bde05bf56cd6cd818b9ccb1de3716c7445018765dbc7a2534710935c9",
+        "baselines/BASELINE-004-learner-navigation-workspace/workspace-diagnostics.json": "33048368b0c06d4c35588ec1f3a98259a9950f6f0f7df10a551effd2d15a604a",
+        "baselines/BASELINE-004-learner-navigation-workspace/workspace-fixture.json": "c214158c546fcbed1184b22ab6ac52371c49e7801b1ffb548ed453984fa1fb69",
+        "baselines/BASELINE-004-learner-navigation-workspace/workspace-manifest.json": "e1ed270a97bf182120f3dd74fda76d2c961516f013b686c110f5fd7ebc976344",
+        "baselines/BASELINE-004-learner-navigation-workspace/workspace.css": "53a6c5593da5c5da7935698d6c8682b4f1f542f6d082d96e77c634cb0432d211",
+        "baselines/BASELINE-004-learner-navigation-workspace/workspace.js": "d9eff687be246fc0ac42506b71d55944bb26a10046be4f8ca38270cd4ee94d33"
+      }
+    }
+  },
+  "live_model_or_external_calls": 0,
+  "machine_gate": {
+    "browser_checks": {
+      "all_canonical_relationship_directions_are_preserved": true,
+      "browser_console_clean": true,
+      "clear_inspection_restores_focus_summary": true,
+      "click_pins_selection_and_emphasizes_only_local_structure": true,
+      "concise_prose_has_no_diagram_canvas": true,
+      "diagram_nodes_are_distinct_from_navigation_actions": true,
+      "double_slit_is_a_directional_causal_diagram": true,
+      "economics_relationships_form_a_coherent_non_closed_system": true,
+      "evidence_and_provenance_remain_available": true,
+      "explore_next_is_the_sole_forward_learning_control": true,
+      "focused_relationship_is_one_spatial_connection": true,
+      "history_dependency_and_sequence_have_distinct_spatial_grammars": true,
+      "hover_previews_and_emphasizes_only_local_structure": true,
+      "light_membership_is_a_compact_truthful_hierarchy": true,
+      "local_interaction_does_not_mutate_current_learning_focus": true,
+      "local_interaction_does_not_mutate_revealed_knowledge": true,
+      "local_interaction_does_not_reveal_new_knowledge": true,
+      "mixed_my_map_preserves_spec037_quiet_tree": true,
+      "my_map_navigation_collapse_expand_and_deduplication_unchanged": true,
+      "no_active_explore_deeper_affordance": true,
+      "no_nodes_or_relationships_are_invented": true,
+      "reciprocal_directions_remain_distinct": true,
+      "software_composition_has_parent_and_four_spatial_members": true,
+      "sparse_structure_notice_is_visually_secondary": true
+    },
+    "browser_console_clean": true,
+    "runtime_checks": {
+      "all_structural_spatial_grammars_present": true,
+      "baseline001_through_004_unchanged": true,
+      "diagram_css_does_not_target_my_map": true,
+      "diagram_layer_adds_no_interaction_or_navigation_handlers": true,
+      "diagram_relationships_have_direction_markers": true,
+      "no_new_explore_deeper_or_history_control": true,
+      "prose_strategy_explicitly_has_no_diagram": true,
+      "spec033_navigation_runtime_byte_identical": true,
+      "spec034_resolver_and_plans_byte_identical": true,
+      "spec035_isolation_runtime_byte_identical": true,
+      "spec036_local_interaction_runtime_byte_identical": true,
+      "spec037_candidate_unchanged": true,
+      "spec037_index_composed_not_reimplemented": true,
+      "spec037_my_map_visual_runtime_byte_identical": true,
+      "spec037_runtime_files_byte_identical": true
+    },
+    "semantic_checks": {
+      "all_fixed_cases_pass": true,
+      "economics_is_not_falsely_closed": true,
+      "every_layout_exactly_matches_its_trusted_plan": true,
+      "every_structural_plan_has_one_layout": true,
+      "grounding_provenance_fail_closed_unchanged": true,
+      "local_focus_never_mutates": true,
+      "local_revealed_knowledge_never_mutates": true,
+      "no_live_model_or_external_calls": true,
+      "trusted_semantic_vocabulary_unchanged": true
+    },
+    "status": "PASS"
+  },
+  "machine_integrity_verdict": "PASS",
+  "my_map_behavior_and_visual_regression": {
+    "spec033_data_and_runtime": "byte-identical",
+    "spec037_quiet_tree_css_and_annotations": "byte-identical",
+    "spec038_my_map_selectors_added": 0
+  },
+  "offline_test_result": {
+    "focused": "18 passed",
+    "full": "518 passed",
+    "reciprocal_semantic_identity": "12 passed",
+    "result": "PASS",
+    "spec033_regression": "15 passed",
+    "spec034_regression": "16 passed",
+    "spec035_regression": "17 passed",
+    "spec036_regression": "19 passed",
+    "spec037_regression": "19 passed"
+  },
+  "owner_review_instruction": "Build mixed revealed territory and compare the fixed causal, focused relation, Light hierarchy, Software Architecture composition, History dependency and sequence, Economics system, reciprocal mechanism, and atom prose cases. Confirm My Map retains the SPEC-037 quiet tree, structural views read as diagrams before their labels are read, local hover/click emphasizes trusted paths without navigation, Explore Next remains the only forward action, sparse cases stay honestly sparse, and evidence remains available.",
+  "product_verdict": "PENDING_OWNER_REVIEW",
+  "repository_state": "IMPLEMENTED_AWAITING_OWNER_REVIEW; commit and push recorded in handoff",
+  "semantic_changes": [],
+  "sparse_and_fail_closed_behavior": {
+    "invented_nodes": 0,
+    "invented_relationships": 0,
+    "sparse_warning_treatment": "secondary metadata styling only"
+  },
+  "spec": "SPEC-038",
+  "spec037_identity_after": {
+    "aggregate_sha256": "dbb423999f7eac156c0290e9ce60e08f831c55bd3d608b5f303a772441b8fe51",
+    "directory": "examples/evaluations/spec-037-visual-semantic-grammar-20260908",
+    "file_count": 47,
+    "files": {
+      "README.md": "ee4042288036078f93cb29e65ebdedeb0bd2e4fc0a546cfb451f50e4e9df07d9",
+      "atomic-context.js": "dc6e3511dd781d4853a342e61fcec169ddb3f33013bc206a188ea81364bb8199",
+      "browser-verification.json": "9d166cfdd635faba5f398b2196e75567949dab17e546b3b7b75fe7e44bdd3858",
+      "canonical-interaction.css": "f72049368375eb350adc95625e6c0f349e42ecc77474d0211cfdcc784a74e156",
+      "canonical-interaction.js": "d4405f8d347e8384dc10fbeb5bb9e98b4c1bedffafc9a53427015ac4cf1b2b00",
+      "depth-expansion.css": "bba41c418555d865e0847fbd99a2b0e058c86a39aaae2cdc05a07c10e85be231",
+      "depth-expansion.js": "91d0e0653f0b1d3af1e261ad46d540fd7feb407e3e254c0dd04b3a97ba6bb223",
+      "depth-interaction.css": "baf3eb11827006507f48e18094258abebd6b794694fe8ebc1ab5e653518f5877",
+      "depth-interaction.js": "0704d464054e4bfdfbdd1b511c885cebbaf265e9f789adf0b3609f97911fce39",
+      "depth-map.json": "9275eb4c669399491f6f195a7b8fbcbacdcf4356d96780b5b8bda8e305a1350d",
+      "explanatory-surface.css": "423c95a9a920d79eed0ced52e53514c2e740f92c2a7712721fcfc7f35d01100d",
+      "explanatory-surface.js": "1acdd066b62221072004c53313a959ca803e8d151a818801fd163534873f1a58",
+      "grammar.css": "7158525143670c4dbfa6294eca9ffc8d55587af00a478744616d87e90050484e",
+      "human-review-template.json": "dba18297cfa24ad3139a7543e951559e0f2e9a0a63ac636cf08c1179b9237e7d",
+      "index.html": "b61c37e289b4f9a069cf1314d7a2d1e273a4ed99bf67c4e7fd543237f4d7770a",
+      "learner-grammar.js": "8d48f9401536fe4f941f8076a94f5abbeee6dbfafce778a0f539096589808f44",
+      "learning-surface.css": "11253154f0036a1180181fdf057a93366934690e68d56fb5c679dd767c24c456",
+      "learning-surface.js": "b85f93d7d9618ddce1f5fd1093cfe68d5f1a6f25dbeec57533f3008b8cd6792a",
+      "machine-gate.json": "ff46a3c262e81c74416b2d76253f390b49f879e62b76a9677e7f751dbbf5acbd",
+      "manifest.json": "172d9efaefcdff4c6b88734ca3c377d602081e0be4ea0f04114c32b397e9989e",
+      "projection-diagnostics.json": "324a70df4cb3c05ba13bd2c8bdac7ed08e4d76d09546c10aeb3c5924bb2f2dc0",
+      "projection-extension.js": "05ea171074c69f85c64a817ae75741fb6396be3ea2554322df5baa09fed9cc42",
+      "projection.css": "ecf9e962889be2e5d2b096118cb9f10f4669fffd3ee6197575c0f20c7029597d",
+      "projection.json": "8f1d3beb0e9954040f59862c904a6d9d17574f048bdfcb1cc9059d5df3761232",
+      "recursive-interaction.css": "41dd146caeca444615ef900c56f4b2958bf8f91797e0a28c16561a3c21153b9a",
+      "recursive-interaction.js": "0912d9bec47036fea429af1523e46018b6c57a6125a5b78c344814918276453a",
+      "relationship-multiplicity.css": "1dc012a275198723204c6899791c7ee26e93d02d3c508cea945cc6ba2fb102d9",
+      "relationship-multiplicity.js": "7802afeb3997d60786181894ab74fe32729c65261e05c74ed597d7e69f141379",
+      "report.json": "def56ab9b175f92d645266ee1fef0de4281be27c0f7d11e74f74d19692ff76bb",
+      "representation-plans.json": "f0ce10eb39807e5247f266bc0539a304fd9347ec1a26dd16fdcab04d4c2b277c",
+      "representation-strategy.css": "200789628e7b7ec9ead9fb3e81f89da8eab3d923bc0e8629a8f64835d892dafb",
+      "representation-strategy.js": "55e5a425dddade88d545bbba6edc97017228f833ba4e069a843fcc872cb5a6f7",
+      "revealed-knowledge-fixture.json": "691629babeab166cc195955b8b7fd18f8d1ce23afa1f81a902a693d4f0a4fe4c",
+      "revealed-knowledge.css": "f22fb913446d2d2d94f687558803d5b4575a08f1c99e7853d7bfc4fea71a9247",
+      "revealed-knowledge.js": "f9b09dd0001c0eb4ed390909645f015b43f5374b7cd5c240e4a656a406652d16",
+      "semantic-interaction.css": "5c263b88251bdcf184b00ec2d9104a2e57acd9e0185b6e3c8d0fff10a0304e9e",
+      "semantic-interaction.js": "ffc37c02c68d5eddd58500208a545b53ef3107c60507452f66155bad426dda36",
+      "semantic-tier-audit.json": "592b286bde05bf56cd6cd818b9ccb1de3716c7445018765dbc7a2534710935c9",
+      "structure-aware-surface.css": "c7b1dd2c04e42470d6a87551b333707c1fe861ebb6ad70d15875128cfa5e5275",
+      "structure-aware-surface.js": "7b42a5accc11f4f7e296672cabff87c74a4b2640fda8ee2ea4825ad5691580b1",
+      "visual-grammar-cases.json": "a0f9ac5c1e462645aa72a51697049a225a098b66bfbf787348e59ec544d46fe6",
+      "visual-semantic-grammar.css": "db2a2856e3a85df714b8fe76bcf5d6122552baf140f963c4207b49659f7d4ee5",
+      "visual-semantic-grammar.js": "5968797d7c750c425b755abc8fb4ac3e5be8be4031b88bf3b8a9c46646408e61",
+      "workspace-fixture.json": "c214158c546fcbed1184b22ab6ac52371c49e7801b1ffb548ed453984fa1fb69",
+      "workspace-manifest.json": "e1ed270a97bf182120f3dd74fda76d2c961516f013b686c110f5fd7ebc976344",
+      "workspace.css": "53a6c5593da5c5da7935698d6c8682b4f1f542f6d082d96e77c634cb0432d211",
+      "workspace.js": "d9eff687be246fc0ac42506b71d55944bb26a10046be4f8ca38270cd4ee94d33"
+    }
+  },
+  "spec037_identity_before": {
+    "aggregate_sha256": "dbb423999f7eac156c0290e9ce60e08f831c55bd3d608b5f303a772441b8fe51",
+    "directory": "examples/evaluations/spec-037-visual-semantic-grammar-20260908",
+    "file_count": 47,
+    "files": {
+      "README.md": "ee4042288036078f93cb29e65ebdedeb0bd2e4fc0a546cfb451f50e4e9df07d9",
+      "atomic-context.js": "dc6e3511dd781d4853a342e61fcec169ddb3f33013bc206a188ea81364bb8199",
+      "browser-verification.json": "9d166cfdd635faba5f398b2196e75567949dab17e546b3b7b75fe7e44bdd3858",
+      "canonical-interaction.css": "f72049368375eb350adc95625e6c0f349e42ecc77474d0211cfdcc784a74e156",
+      "canonical-interaction.js": "d4405f8d347e8384dc10fbeb5bb9e98b4c1bedffafc9a53427015ac4cf1b2b00",
+      "depth-expansion.css": "bba41c418555d865e0847fbd99a2b0e058c86a39aaae2cdc05a07c10e85be231",
+      "depth-expansion.js": "91d0e0653f0b1d3af1e261ad46d540fd7feb407e3e254c0dd04b3a97ba6bb223",
+      "depth-interaction.css": "baf3eb11827006507f48e18094258abebd6b794694fe8ebc1ab5e653518f5877",
+      "depth-interaction.js": "0704d464054e4bfdfbdd1b511c885cebbaf265e9f789adf0b3609f97911fce39",
+      "depth-map.json": "9275eb4c669399491f6f195a7b8fbcbacdcf4356d96780b5b8bda8e305a1350d",
+      "explanatory-surface.css": "423c95a9a920d79eed0ced52e53514c2e740f92c2a7712721fcfc7f35d01100d",
+      "explanatory-surface.js": "1acdd066b62221072004c53313a959ca803e8d151a818801fd163534873f1a58",
+      "grammar.css": "7158525143670c4dbfa6294eca9ffc8d55587af00a478744616d87e90050484e",
+      "human-review-template.json": "dba18297cfa24ad3139a7543e951559e0f2e9a0a63ac636cf08c1179b9237e7d",
+      "index.html": "b61c37e289b4f9a069cf1314d7a2d1e273a4ed99bf67c4e7fd543237f4d7770a",
+      "learner-grammar.js": "8d48f9401536fe4f941f8076a94f5abbeee6dbfafce778a0f539096589808f44",
+      "learning-surface.css": "11253154f0036a1180181fdf057a93366934690e68d56fb5c679dd767c24c456",
+      "learning-surface.js": "b85f93d7d9618ddce1f5fd1093cfe68d5f1a6f25dbeec57533f3008b8cd6792a",
+      "machine-gate.json": "ff46a3c262e81c74416b2d76253f390b49f879e62b76a9677e7f751dbbf5acbd",
+      "manifest.json": "172d9efaefcdff4c6b88734ca3c377d602081e0be4ea0f04114c32b397e9989e",
+      "projection-diagnostics.json": "324a70df4cb3c05ba13bd2c8bdac7ed08e4d76d09546c10aeb3c5924bb2f2dc0",
+      "projection-extension.js": "05ea171074c69f85c64a817ae75741fb6396be3ea2554322df5baa09fed9cc42",
+      "projection.css": "ecf9e962889be2e5d2b096118cb9f10f4669fffd3ee6197575c0f20c7029597d",
+      "projection.json": "8f1d3beb0e9954040f59862c904a6d9d17574f048bdfcb1cc9059d5df3761232",
+      "recursive-interaction.css": "41dd146caeca444615ef900c56f4b2958bf8f91797e0a28c16561a3c21153b9a",
+      "recursive-interaction.js": "0912d9bec47036fea429af1523e46018b6c57a6125a5b78c344814918276453a",
+      "relationship-multiplicity.css": "1dc012a275198723204c6899791c7ee26e93d02d3c508cea945cc6ba2fb102d9",
+      "relationship-multiplicity.js": "7802afeb3997d60786181894ab74fe32729c65261e05c74ed597d7e69f141379",
+      "report.json": "def56ab9b175f92d645266ee1fef0de4281be27c0f7d11e74f74d19692ff76bb",
+      "representation-plans.json": "f0ce10eb39807e5247f266bc0539a304fd9347ec1a26dd16fdcab04d4c2b277c",
+      "representation-strategy.css": "200789628e7b7ec9ead9fb3e81f89da8eab3d923bc0e8629a8f64835d892dafb",
+      "representation-strategy.js": "55e5a425dddade88d545bbba6edc97017228f833ba4e069a843fcc872cb5a6f7",
+      "revealed-knowledge-fixture.json": "691629babeab166cc195955b8b7fd18f8d1ce23afa1f81a902a693d4f0a4fe4c",
+      "revealed-knowledge.css": "f22fb913446d2d2d94f687558803d5b4575a08f1c99e7853d7bfc4fea71a9247",
+      "revealed-knowledge.js": "f9b09dd0001c0eb4ed390909645f015b43f5374b7cd5c240e4a656a406652d16",
+      "semantic-interaction.css": "5c263b88251bdcf184b00ec2d9104a2e57acd9e0185b6e3c8d0fff10a0304e9e",
+      "semantic-interaction.js": "ffc37c02c68d5eddd58500208a545b53ef3107c60507452f66155bad426dda36",
+      "semantic-tier-audit.json": "592b286bde05bf56cd6cd818b9ccb1de3716c7445018765dbc7a2534710935c9",
+      "structure-aware-surface.css": "c7b1dd2c04e42470d6a87551b333707c1fe861ebb6ad70d15875128cfa5e5275",
+      "structure-aware-surface.js": "7b42a5accc11f4f7e296672cabff87c74a4b2640fda8ee2ea4825ad5691580b1",
+      "visual-grammar-cases.json": "a0f9ac5c1e462645aa72a51697049a225a098b66bfbf787348e59ec544d46fe6",
+      "visual-semantic-grammar.css": "db2a2856e3a85df714b8fe76bcf5d6122552baf140f963c4207b49659f7d4ee5",
+      "visual-semantic-grammar.js": "5968797d7c750c425b755abc8fb4ac3e5be8be4031b88bf3b8a9c46646408e61",
+      "workspace-fixture.json": "c214158c546fcbed1184b22ab6ac52371c49e7801b1ffb548ed453984fa1fb69",
+      "workspace-manifest.json": "e1ed270a97bf182120f3dd74fda76d2c961516f013b686c110f5fd7ebc976344",
+      "workspace.css": "53a6c5593da5c5da7935698d6c8682b4f1f542f6d082d96e77c634cb0432d211",
+      "workspace.js": "d9eff687be246fc0ac42506b71d55944bb26a10046be4f8ca38270cd4ee94d33"
+    }
+  },
+  "structural_layout_count": 53,
+  "structural_strategies_exercised": [
+    "CAUSAL_MECHANISM",
+    "DEPENDENCY_STRUCTURE",
+    "FOCUSED_RELATIONSHIP",
+    "HIERARCHY_COMPOSITION",
+    "PROCESS_SEQUENCE",
+    "RECIPROCAL_MECHANISM"
+  ],
+  "viewer_command": ".venv/bin/knowledge-compiler view-representations examples/evaluations/spec-038-dominant-explanatory-diagram-canvas-20260909 --port 8038"
+}

@@ -1,0 +1,13 @@
+/* SPEC-035 changes interaction responsibility, not the SPEC-034 visual grammar. */
+#representation-strategy-host .strategy-card{cursor:pointer}
+#representation-strategy-host .strategy-card.is-local-highlight{
+  border-color:#176b50;
+  background:#edf4ef;
+  box-shadow:0 0 0 2px rgba(23,107,80,.12);
+}
+#representation-strategy-host .strategy-card:focus-visible{
+  outline:2px solid #176b50;
+  outline-offset:2px;
+}
+#learning-pane .contextual-depth,
+#representation-strategy-host .contextual-depth{display:none!important}

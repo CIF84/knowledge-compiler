@@ -1,0 +1,249 @@
+{
+  "additional_observations": {
+    "content_sensitive_height": {
+      "economics_rich_height": 640,
+      "light_sparse_height": 470,
+      "software_rich_height": 600
+    },
+    "forward_learning": {
+      "active_explore_deeper_count": 0,
+      "sole_forward_control": "Explore Next"
+    },
+    "fresh_tab_console": {
+      "errors": [],
+      "result": "PASS",
+      "url": "http://127.0.0.1:8038/?gate=spec038-final",
+      "warnings": []
+    },
+    "reciprocal_mechanism": {
+      "directional_paths_are_distinct": true,
+      "directions": [
+        "electric-field INDUCES magnetic-field",
+        "magnetic-field INDUCES electric-field"
+      ],
+      "rendered_connector_count": 2,
+      "rendered_semantic_object_count": 2,
+      "representation_strategy": "RECIPROCAL_MECHANISM",
+      "result": "PASS",
+      "spatial_grammar": "reciprocal-cycle"
+    },
+    "runtime_ownership": {
+      "local_interaction_handlers_added_by_spec038": 0,
+      "navigation_handlers_added_by_spec038": 0,
+      "representation_navigation_dispatches": 0,
+      "revealed_knowledge_dispatches": 0
+    }
+  },
+  "browser": "Codex in-app browser (Chromium), desktop 1440x1000, http://127.0.0.1:8038/?gate=spec038",
+  "checked_at": "2026-09-09T21:51:53+02:00",
+  "checks": {
+    "all_canonical_relationship_directions_are_preserved": true,
+    "browser_console_clean": true,
+    "clear_inspection_restores_focus_summary": true,
+    "click_pins_selection_and_emphasizes_only_local_structure": true,
+    "concise_prose_has_no_diagram_canvas": true,
+    "diagram_nodes_are_distinct_from_navigation_actions": true,
+    "double_slit_is_a_directional_causal_diagram": true,
+    "economics_relationships_form_a_coherent_non_closed_system": true,
+    "evidence_and_provenance_remain_available": true,
+    "explore_next_is_the_sole_forward_learning_control": true,
+    "focused_relationship_is_one_spatial_connection": true,
+    "history_dependency_and_sequence_have_distinct_spatial_grammars": true,
+    "hover_previews_and_emphasizes_only_local_structure": true,
+    "light_membership_is_a_compact_truthful_hierarchy": true,
+    "local_interaction_does_not_mutate_current_learning_focus": true,
+    "local_interaction_does_not_mutate_revealed_knowledge": true,
+    "local_interaction_does_not_reveal_new_knowledge": true,
+    "mixed_my_map_preserves_spec037_quiet_tree": true,
+    "my_map_navigation_collapse_expand_and_deduplication_unchanged": true,
+    "no_active_explore_deeper_affordance": true,
+    "no_nodes_or_relationships_are_invented": true,
+    "reciprocal_directions_remain_distinct": true,
+    "software_composition_has_parent_and_four_spatial_members": true,
+    "sparse_structure_notice_is_visually_secondary": true
+  },
+  "console": {
+    "errors": [],
+    "result": "PASS",
+    "warnings": []
+  },
+  "deterministic_captures": [
+    {
+      "case": "mixed_my_map",
+      "deterministic_observation": {
+        "background": "transparent",
+        "border": "none",
+        "current_focus_agreement": "PASS",
+        "duplicate_visible_object_count": 0,
+        "focus_and_revealed_state_unchanged_by_collapse_expand": true,
+        "regions": [
+          "Economics",
+          "Electromagnetism",
+          "History of Printing",
+          "Software Architecture"
+        ],
+        "revealed_object_count": 19,
+        "unique_visible_object_count": 19,
+        "visible_object_count_after_electromagnetism_collapse": 4,
+        "visible_object_count_after_expand": 19,
+        "visible_object_count_before_collapse": 19
+      },
+      "representation_strategy": "MULTI_REGION_MY_MAP",
+      "result": "PASS",
+      "semantic_focus_identity": "mixed revealed territory",
+      "visual_grammar_roles": [
+        "territory-region",
+        "tree-disclosure",
+        "territory-relationship",
+        "territory-concept",
+        "territory-explanation"
+      ]
+    },
+    {
+      "canonical_direction": {
+        "predicate": "CAUSES",
+        "source": "double-slit-experiment",
+        "target": "interference-pattern"
+      },
+      "case": "double_slit_causal",
+      "clear_observation": {
+        "mode": "INSPECT",
+        "selected": "NONE"
+      },
+      "click_observation": {
+        "mode": "SELECTED",
+        "related_wire_count": 1,
+        "selected": "canonical:relationship-05b19ee4b6d50060",
+        "selected_edge_count": 1,
+        "source_evidence_present": true
+      },
+      "focus_before_after_local_interaction": [
+        "concept:double-slit-experiment",
+        "concept:double-slit-experiment"
+      ],
+      "hover_observation": {
+        "mode": "PREVIEW",
+        "preview_node_count": 1,
+        "previewed": "concept:interference-pattern",
+        "related_wire_count": 1
+      },
+      "navigation_mutation": false,
+      "rendered_connector_count": 1,
+      "rendered_semantic_object_count": 2,
+      "representation_contained_without_zone_overlap": true,
+      "representation_strategy": "CAUSAL_MECHANISM",
+      "result": "PASS",
+      "revealed_knowledge_before_after_local_interaction": [
+        2,
+        2
+      ],
+      "semantic_focus_identity": "double-slit-experiment",
+      "spatial_grammar": "causal-system",
+      "state_separation": "PASS"
+    },
+    {
+      "canonical_direction": {
+        "predicate": "CAUSES",
+        "source": "double-slit-experiment",
+        "target": "interference-pattern"
+      },
+      "case": "double_slit_focused_relationship",
+      "node_roles": [
+        "relationship-source",
+        "relationship-target"
+      ],
+      "rendered_connector_count": 1,
+      "rendered_semantic_object_count": 2,
+      "representation_contained_without_zone_overlap": true,
+      "representation_strategy": "FOCUSED_RELATIONSHIP",
+      "result": "PASS",
+      "semantic_focus_identity": "relationship-05b19ee4b6d50060",
+      "spatial_grammar": "focused-connection"
+    },
+    {
+      "canonical_direction": {
+        "predicate": "IS_A",
+        "source": "light",
+        "target": "electromagnetic-wave"
+      },
+      "case": "light_hierarchy",
+      "node_roles": [
+        "hierarchy-root",
+        "hierarchy-member"
+      ],
+      "rendered_connector_count": 1,
+      "rendered_semantic_object_count": 2,
+      "representation_contained_without_zone_overlap": true,
+      "representation_strategy": "HIERARCHY_COMPOSITION",
+      "result": "PASS",
+      "semantic_focus_identity": "light",
+      "sparse_structure_copy_is_visually_secondary": true,
+      "spatial_grammar": "hierarchy-composition"
+    },
+    {
+      "canonical_direction": "each component PART_OF modular-order-processing-service",
+      "case": "software_composition",
+      "node_overlap_count": 0,
+      "relationship_labels_staggered": true,
+      "rendered_connector_count": 4,
+      "rendered_semantic_object_count": 5,
+      "representation_contained_without_zone_overlap": true,
+      "representation_strategy": "HIERARCHY_COMPOSITION",
+      "result": "PASS",
+      "semantic_focus_identity": "modular-order-processing-service",
+      "spatial_grammar": "hierarchy-composition"
+    },
+    {
+      "canonical_relationship_type": "ENABLES",
+      "case": "history_dependency",
+      "rendered_connector_count": 3,
+      "rendered_semantic_object_count": 4,
+      "representation_contained_without_zone_overlap": true,
+      "representation_strategy": "DEPENDENCY_STRUCTURE",
+      "result": "PASS",
+      "semantic_focus_identity": "printing",
+      "spatial_grammar": "dependency-flow"
+    },
+    {
+      "canonical_direction": {
+        "predicate": "PRECEDES",
+        "source": "printed-controversy",
+        "target": "authorities"
+      },
+      "case": "history_sequence",
+      "rendered_connector_count": 1,
+      "rendered_semantic_object_count": 2,
+      "representation_contained_without_zone_overlap": true,
+      "representation_strategy": "PROCESS_SEQUENCE",
+      "result": "PASS",
+      "semantic_focus_identity": "authorities",
+      "spatial_grammar": "ordered-sequence"
+    },
+    {
+      "case": "economics_system",
+      "invented_quantity_demanded_to_shortage_closure": false,
+      "node_overlap_count": 0,
+      "relationship_label_overlap_count": 0,
+      "rendered_connector_count": 5,
+      "rendered_semantic_object_count": 6,
+      "representation_contained_without_zone_overlap": true,
+      "representation_strategy": "CAUSAL_MECHANISM",
+      "result": "PASS",
+      "semantic_focus_identity": "market-price",
+      "spatial_grammar": "causal-system"
+    },
+    {
+      "artificial_structure_added": false,
+      "case": "prose_fallback",
+      "diagram_canvas_count": 0,
+      "evidence_and_provenance_available": true,
+      "rendered_connector_count": 0,
+      "rendered_semantic_object_count": 0,
+      "representation_strategy": "CONCISE_PROSE",
+      "result": "PASS",
+      "semantic_focus_identity": "atom",
+      "spatial_grammar": "prose-first"
+    }
+  ],
+  "status": "PASS"
+}

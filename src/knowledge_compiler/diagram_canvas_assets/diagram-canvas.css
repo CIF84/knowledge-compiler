@@ -1,0 +1,36 @@
+/* SPEC-038 restores spatial explanatory composition without changing navigation. */
+body.spec038-diagram-canvas .learning-pane{grid-template-rows:repeat(6,max-content)!important;align-content:start;overflow-y:auto}
+body.spec038-diagram-canvas #representation-strategy-host.spec038-structural{min-height:0;padding:18px 20px 20px;overflow:visible;background:#fffefa}
+body.spec038-diagram-canvas #representation-strategy-host.spec038-structural .strategy-surface{min-height:0;display:grid;grid-template-rows:auto auto auto auto;gap:.75rem}
+body.spec038-diagram-canvas #representation-strategy-host.spec038-prose{min-height:0}
+body.spec038-diagram-canvas .spec038-diagram{--canvas-ink:#173d31;--canvas-line:#267259;--canvas-soft:#eef5f0;position:relative;width:100%;height:calc(var(--diagram-height)*1px);max-height:68vh;min-height:0;overflow:hidden;border:1px solid #cbd8d0;border-radius:18px;background:radial-gradient(circle at 50% 48%,#fff 0,#fbfdfb 55%,#edf4ef 100%);box-shadow:inset 0 0 0 6px rgba(255,255,255,.62),0 12px 35px rgba(27,61,48,.08);isolation:isolate}
+body.spec038-diagram-canvas .spec038-diagram[data-spatial-grammar="causal-system"]{--canvas-line:#176b50;--canvas-soft:#e8f3ed;background:radial-gradient(circle at 50% 45%,#fff 0,#f6fbf8 58%,#e7f2ec 100%)}
+body.spec038-diagram-canvas .spec038-diagram[data-spatial-grammar="dependency-flow"]{--canvas-line:#8b642b;--canvas-soft:#f6efe2;background:linear-gradient(145deg,#fffdf8,#f5efe4)}
+body.spec038-diagram-canvas .spec038-diagram[data-spatial-grammar="hierarchy-composition"]{--canvas-line:#416b7a;--canvas-soft:#eaf2f5;background:linear-gradient(180deg,#eef5f7 0,#fff 48%,#f7fafb 100%)}
+body.spec038-diagram-canvas .spec038-diagram[data-spatial-grammar="ordered-sequence"]{--canvas-line:#845c19;--canvas-soft:#fff0cf;background:linear-gradient(90deg,#fffaf0,#fff,#fffaf0)}
+body.spec038-diagram-canvas .spec038-diagram[data-spatial-grammar="focused-connection"]{--canvas-line:#176b50;--canvas-soft:#e9f3ed;background:linear-gradient(90deg,#edf5f0,#fff 38%,#fff 62%,#edf5f0)}
+body.spec038-diagram-canvas .spec038-diagram[data-spatial-grammar="reciprocal-cycle"]{--canvas-line:#466d83;--canvas-soft:#eaf2f6;background:radial-gradient(ellipse,#fff 28%,#edf4f7 100%)}
+body.spec038-diagram-canvas .diagram-wires{position:absolute;inset:0;width:100%;height:100%;overflow:visible;z-index:0}
+body.spec038-diagram-canvas .diagram-wire{fill:none;stroke:var(--canvas-line);stroke-width:2.5;vector-effect:non-scaling-stroke;opacity:.82;transition:opacity .14s ease,stroke-width .14s ease}
+body.spec038-diagram-canvas [data-spatial-grammar="dependency-flow"] .diagram-wire{stroke-dasharray:9 6}
+body.spec038-diagram-canvas [data-spatial-grammar="hierarchy-composition"] .diagram-wire{stroke-width:2}
+body.spec038-diagram-canvas .diagram-arrowhead{fill:var(--canvas-line)}
+body.spec038-diagram-canvas .diagram-node{position:absolute;z-index:2;width:clamp(135px,21%,220px);min-height:88px;transform:translate(-50%,-50%);display:grid;align-content:center;gap:.25rem;padding:.7rem .8rem!important;border:1px solid color-mix(in srgb,var(--canvas-line) 60%,white)!important;border-radius:12px!important;background:#fff!important;color:var(--canvas-ink);box-shadow:0 8px 18px rgba(28,61,49,.11)!important;text-align:left}
+body.spec038-diagram-canvas .diagram-node::before{content:"";position:absolute;left:11px;top:11px;width:6px;height:6px;border-radius:50%;background:var(--canvas-line)}
+body.spec038-diagram-canvas .diagram-node-role{padding-left:13px;color:var(--canvas-line);font-size:.56rem;font-weight:850;letter-spacing:.11em;text-transform:uppercase}
+body.spec038-diagram-canvas .diagram-node strong{font:700 clamp(.76rem,1.6vw,.98rem)/1.15 ui-serif,Georgia,serif}
+body.spec038-diagram-canvas .diagram-node small{display:block;overflow:hidden;color:#56675e;font-size:.64rem;line-height:1.28;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+body.spec038-diagram-canvas .diagram-node:hover,body.spec038-diagram-canvas .diagram-node.is-local-preview{border-color:#9a5f10!important;background:#fff8e9!important;box-shadow:0 0 0 4px rgba(154,95,16,.13),0 10px 25px rgba(31,55,44,.14)!important}
+body.spec038-diagram-canvas .diagram-node.is-local-highlight{border-color:var(--canvas-line)!important;background:var(--canvas-soft)!important;box-shadow:0 0 0 4px color-mix(in srgb,var(--canvas-line) 18%,transparent),0 10px 25px rgba(31,55,44,.15)!important}
+body.spec038-diagram-canvas .diagram-node.is-connected{opacity:.82!important}
+body.spec038-diagram-canvas .diagram-edge-label{position:absolute;z-index:3;transform:translate(-50%,-50%);display:flex;align-items:center;gap:.3rem;max-width:145px;padding:.28rem .46rem!important;border:0!important;border-radius:5px!important;background:#fffefa!important;color:var(--canvas-line)!important;box-shadow:0 0 0 4px rgba(255,254,250,.88)!important;font-size:.61rem!important;letter-spacing:.05em;white-space:nowrap}
+body.spec038-diagram-canvas .diagram-edge-label:hover,body.spec038-diagram-canvas .diagram-edge-label.is-local-preview{background:#fff3d9!important;color:#82500e!important;box-shadow:0 0 0 4px #fff3d9!important}
+body.spec038-diagram-canvas .diagram-edge-label.is-local-highlight{background:var(--canvas-soft)!important;color:var(--canvas-line)!important;box-shadow:0 0 0 4px var(--canvas-soft)!important}
+body.spec038-diagram-canvas .diagram-direction{font-size:.82rem}
+body.spec038-diagram-canvas #representation-strategy-host.spec036-has-local .diagram-wire{opacity:.12}
+body.spec038-diagram-canvas #representation-strategy-host.spec036-has-local .diagram-wire.is-related{opacity:1;stroke-width:4}
+body.spec038-diagram-canvas #representation-strategy-host.spec036-has-local .diagram-node:not(.is-local-preview):not(.is-local-highlight):not(.is-connected){opacity:.26}
+body.spec038-diagram-canvas .diagram-secondary-notice{justify-self:end;max-width:62ch;margin:.1rem 0!important;padding:0!important;border:0!important;background:transparent!important;color:#7a817d!important;font-size:.61rem!important;font-style:italic}
+body.spec038-diagram-canvas #representation-inspection{min-height:132px;background:#fbfcfa}
+body.spec038-diagram-canvas #exploration-suggestions{position:relative;z-index:1}
+@media(max-width:760px){body.spec038-diagram-canvas .spec038-diagram{height:calc(var(--diagram-height)*.78px);max-height:none;border-radius:12px}body.spec038-diagram-canvas .diagram-node{width:30%;min-height:72px;padding:.5rem!important}body.spec038-diagram-canvas .diagram-node small{display:none}body.spec038-diagram-canvas .diagram-edge-label{font-size:.54rem!important;max-width:100px}.diagram-predicate{overflow:hidden;text-overflow:ellipsis}}
