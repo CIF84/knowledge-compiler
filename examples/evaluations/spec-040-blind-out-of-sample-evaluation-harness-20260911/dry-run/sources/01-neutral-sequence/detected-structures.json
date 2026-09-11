@@ -1,0 +1,46 @@
+{
+  "detector_version": "spec-004-v1",
+  "metadata": {
+    "input_relationship_count": 2,
+    "logical_relationship_count": 2,
+    "maximum_causal_path_edges": 5,
+    "structure_counts": {
+      "CAUSAL_PATH": 0,
+      "DEPENDENCY_CHAIN": 0,
+      "FEEDBACK_CANDIDATE": 0,
+      "HIERARCHY": 0,
+      "PROCESS_CHAIN": 1
+    }
+  },
+  "source_document_id": "text-7a095bc4a96c8511",
+  "structures": [
+    {
+      "entity_ids": [
+        "phase-a",
+        "phase-b",
+        "phase-c"
+      ],
+      "id": "structure-process-chain-35ed05d85ef38517",
+      "metadata": {
+        "edge_count": 2,
+        "supporting_relationship_ids_by_edge": [
+          [
+            "phase-a-precedes-phase-b"
+          ],
+          [
+            "phase-b-precedes-phase-c"
+          ]
+        ]
+      },
+      "relationship_ids": [
+        "phase-a-precedes-phase-b",
+        "phase-b-precedes-phase-c"
+      ],
+      "relationship_types": [
+        "PRECEDES",
+        "PRECEDES"
+      ],
+      "structure_type": "PROCESS_CHAIN"
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "$id": "https://knowledge-compiler.local/schema/spec-040-blind-source-packet-v1.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "forbidden_evaluator_fields": [
+    "expected_concepts",
+    "expected_diagram_topology",
+    "expected_relationships",
+    "expected_representation_strategy",
+    "expected_structure_type"
+  ],
+  "properties": {
+    "evaluation_contract": {
+      "additionalProperties": false,
+      "properties": {
+        "expected_representation_strategy_supplied": {
+          "const": false
+        }
+      },
+      "required": [
+        "expected_representation_strategy_supplied"
+      ],
+      "type": "object"
+    },
+    "schema_version": {
+      "const": "spec-040-blind-source-packet-v1"
+    },
+    "sources": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "provenance": {
+            "minProperties": 1,
+            "type": "object"
+          },
+          "source_id": {
+            "pattern": "^[a-z0-9][a-z0-9-]{1,127}$",
+            "type": "string"
+          },
+          "source_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "type": "string"
+          },
+          "text": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "title": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "required": [
+          "source_id",
+          "title",
+          "text",
+          "source_sha256",
+          "provenance"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    }
+  },
+  "required": [
+    "schema_version",
+    "evaluation_contract",
+    "sources"
+  ],
+  "title": "Knowledge Compiler blind source packet",
+  "type": "object"
+}

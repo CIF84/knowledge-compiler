@@ -1,0 +1,44 @@
+{
+  "execution_policy": {
+    "adapter_invocations_per_source": 1,
+    "allow_live": false,
+    "hidden_retries": 0,
+    "semantic_retries": 0,
+    "source_order_changes_semantic_decisions": false
+  },
+  "failed_closed_source_count": 0,
+  "learner_usefulness_verdict": "PENDING_OWNER_REVIEW",
+  "live_model_or_external_calls": 0,
+  "outcomes": [
+    {
+      "detected_structure_count": 1,
+      "entity_count": 3,
+      "proposition_count": 0,
+      "relationship_count": 2,
+      "representation_decision_count": 5,
+      "selected_strategies": [
+        "FOCUSED_RELATIONSHIP",
+        "PROCESS_SEQUENCE"
+      ],
+      "source_id": "neutral-sequence",
+      "source_sha256": "7a095bc4a96c851138000ab38a14d67f3ac5ff98a9af9ed4d17dabed6f40804b",
+      "status": "PASS"
+    },
+    {
+      "detected_structure_count": 0,
+      "entity_count": 1,
+      "proposition_count": 0,
+      "relationship_count": 0,
+      "representation_decision_count": 1,
+      "selected_strategies": [
+        "CONCISE_PROSE"
+      ],
+      "source_id": "neutral-thin",
+      "source_sha256": "29a0d740bea4bac5813e902933a9f619bc4a9339ea7d74dbe93f36a0002f9b71",
+      "status": "PASS"
+    }
+  ],
+  "passed_source_count": 2,
+  "schema": "spec-040-blind-evaluation-report-v1",
+  "source_count": 2
+}

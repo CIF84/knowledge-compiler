@@ -1,0 +1,42 @@
+{
+  "browser": "Codex in-app browser (Chromium)",
+  "checks": {
+    "browser_console_clean": true,
+    "explore_next_remains_forward_authority": true,
+    "local_inspection_remains_non_navigational": true,
+    "my_map_remains_quiet_territory_tree": true,
+    "spec038_four_surface_model_present": true,
+    "structural_diagram_remains_dominant": true
+  },
+  "console": {
+    "errors": [],
+    "result": "PASS",
+    "warnings": []
+  },
+  "observations": {
+    "forward_authority": "EXPLORE_NEXT_ONLY",
+    "four_surfaces": [
+      "MY MAP",
+      "WHAT DOES THIS MEAN?",
+      "INSPECT / SELECTED / PREVIEW",
+      "EXPLORE NEXT"
+    ],
+    "local_inspection": {
+      "learner_location_before_equals_after": true,
+      "relationship_type": "INDUCES",
+      "revealed_map_before_equals_after": true,
+      "selected": "Electric field → Magnetic field"
+    },
+    "my_map": "quiet revealed-territory tree",
+    "protected_runtime": "examples/evaluations/spec-038-dominant-explanatory-diagram-canvas-20260909",
+    "spec040_ui_assets_added_or_changed": false,
+    "structural_case": {
+      "dominant_diagram_present": true,
+      "focus": "Electric field",
+      "grounded_directional_relationships": 2,
+      "strategy": "RECIPROCAL MECHANISM"
+    }
+  },
+  "status": "PASS",
+  "url": "http://127.0.0.1:8040/?gate=spec040-clean"
+}

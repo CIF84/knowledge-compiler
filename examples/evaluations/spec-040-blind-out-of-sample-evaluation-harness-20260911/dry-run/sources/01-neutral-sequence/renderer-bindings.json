@@ -1,0 +1,658 @@
+{
+  "bindings": [
+    {
+      "decision_id": "decision-44c53adca2c79067",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": null,
+          "predicates": [
+            "PRECEDES"
+          ],
+          "relationship_count": 1,
+          "rule_id": "CANONICAL_EDGE_FOCUS",
+          "semantic_class": "canonical",
+          "structure_type": null
+        },
+        "evidence_refs": [
+          {
+            "document_id": "text-7a095bc4a96c8511",
+            "end_char": 25,
+            "quote": "Phase A precedes Phase B.",
+            "relationship_id": "phase-a-precedes-phase-b",
+            "relationship_ids": [
+              "phase-a-precedes-phase-b"
+            ],
+            "start_char": 0
+          }
+        ],
+        "payload": {
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "The source occurs before the target in time or an explicit process sequence.",
+            "identity": "phase-a-precedes-phase-b",
+            "label": "phase-a-precedes-phase-b"
+          },
+          "nodes": [
+            {
+              "description": "The first phase in the bounded source.",
+              "entity_id": "phase-a",
+              "entity_type": "PROCESS",
+              "label": "Phase A"
+            },
+            {
+              "description": "The middle phase in the bounded source.",
+              "entity_id": "phase-b",
+              "entity_type": "PROCESS",
+              "label": "Phase B"
+            }
+          ],
+          "relationship": {
+            "direction": "earlier_to_later",
+            "evidence": [
+              {
+                "document_id": "text-7a095bc4a96c8511",
+                "end_char": 25,
+                "quote": "Phase A precedes Phase B.",
+                "relationship_id": "phase-a-precedes-phase-b",
+                "start_char": 0
+              }
+            ],
+            "meaning": "The source occurs before the target in time or an explicit process sequence.",
+            "provenance_status": "SOURCE_EVIDENCE",
+            "relationship_ids": [
+              "phase-a-precedes-phase-b"
+            ],
+            "relationship_type": "PRECEDES",
+            "source_entity_id": "phase-a",
+            "source_label": "Phase A",
+            "target_entity_id": "phase-b",
+            "target_label": "Phase B"
+          },
+          "relationships": [
+            {
+              "direction": "earlier_to_later",
+              "evidence": [
+                {
+                  "document_id": "text-7a095bc4a96c8511",
+                  "end_char": 25,
+                  "quote": "Phase A precedes Phase B.",
+                  "relationship_id": "phase-a-precedes-phase-b",
+                  "start_char": 0
+                }
+              ],
+              "meaning": "The source occurs before the target in time or an explicit process sequence.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "phase-a-precedes-phase-b"
+              ],
+              "relationship_type": "PRECEDES",
+              "source_entity_id": "phase-a",
+              "source_label": "Phase A",
+              "target_entity_id": "phase-b",
+              "target_label": "Phase B"
+            }
+          ]
+        },
+        "semantic_class": "canonical",
+        "semantic_focus_identity": "phase-a-precedes-phase-b",
+        "strategy_type": "FOCUSED_RELATIONSHIP",
+        "title": "Phase A → Phase B",
+        "trusted_input_refs": [
+          "workspace-fixture.json selected canonical edge",
+          "workspace-fixture.json selected edge endpoints and evidence"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "FOCUSED_RELATIONSHIP",
+      "semantic_focus_identity": "phase-a-precedes-phase-b",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-38c4df6a566c6509",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": null,
+          "predicates": [
+            "PRECEDES"
+          ],
+          "relationship_count": 1,
+          "rule_id": "CANONICAL_EDGE_FOCUS",
+          "semantic_class": "canonical",
+          "structure_type": null
+        },
+        "evidence_refs": [
+          {
+            "document_id": "text-7a095bc4a96c8511",
+            "end_char": 51,
+            "quote": "Phase B precedes Phase C.",
+            "relationship_id": "phase-b-precedes-phase-c",
+            "relationship_ids": [
+              "phase-b-precedes-phase-c"
+            ],
+            "start_char": 26
+          }
+        ],
+        "payload": {
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "The source occurs before the target in time or an explicit process sequence.",
+            "identity": "phase-b-precedes-phase-c",
+            "label": "phase-b-precedes-phase-c"
+          },
+          "nodes": [
+            {
+              "description": "The middle phase in the bounded source.",
+              "entity_id": "phase-b",
+              "entity_type": "PROCESS",
+              "label": "Phase B"
+            },
+            {
+              "description": "The final phase in the bounded source.",
+              "entity_id": "phase-c",
+              "entity_type": "PROCESS",
+              "label": "Phase C"
+            }
+          ],
+          "relationship": {
+            "direction": "earlier_to_later",
+            "evidence": [
+              {
+                "document_id": "text-7a095bc4a96c8511",
+                "end_char": 51,
+                "quote": "Phase B precedes Phase C.",
+                "relationship_id": "phase-b-precedes-phase-c",
+                "start_char": 26
+              }
+            ],
+            "meaning": "The source occurs before the target in time or an explicit process sequence.",
+            "provenance_status": "SOURCE_EVIDENCE",
+            "relationship_ids": [
+              "phase-b-precedes-phase-c"
+            ],
+            "relationship_type": "PRECEDES",
+            "source_entity_id": "phase-b",
+            "source_label": "Phase B",
+            "target_entity_id": "phase-c",
+            "target_label": "Phase C"
+          },
+          "relationships": [
+            {
+              "direction": "earlier_to_later",
+              "evidence": [
+                {
+                  "document_id": "text-7a095bc4a96c8511",
+                  "end_char": 51,
+                  "quote": "Phase B precedes Phase C.",
+                  "relationship_id": "phase-b-precedes-phase-c",
+                  "start_char": 26
+                }
+              ],
+              "meaning": "The source occurs before the target in time or an explicit process sequence.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "phase-b-precedes-phase-c"
+              ],
+              "relationship_type": "PRECEDES",
+              "source_entity_id": "phase-b",
+              "source_label": "Phase B",
+              "target_entity_id": "phase-c",
+              "target_label": "Phase C"
+            }
+          ]
+        },
+        "semantic_class": "canonical",
+        "semantic_focus_identity": "phase-b-precedes-phase-c",
+        "strategy_type": "FOCUSED_RELATIONSHIP",
+        "title": "Phase B → Phase C",
+        "trusted_input_refs": [
+          "workspace-fixture.json selected canonical edge",
+          "workspace-fixture.json selected edge endpoints and evidence"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "FOCUSED_RELATIONSHIP",
+      "semantic_focus_identity": "phase-b-precedes-phase-c",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-5e2ebd8e30bba1c6",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": null,
+          "predicates": [
+            "PRECEDES"
+          ],
+          "relationship_count": 2,
+          "rule_id": "EXPLICIT_PRECEDES_CHAIN",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [
+          {
+            "document_id": "text-7a095bc4a96c8511",
+            "end_char": 25,
+            "quote": "Phase A precedes Phase B.",
+            "relationship_id": "phase-a-precedes-phase-b",
+            "relationship_ids": [
+              "phase-a-precedes-phase-b"
+            ],
+            "start_char": 0
+          },
+          {
+            "document_id": "text-7a095bc4a96c8511",
+            "end_char": 51,
+            "quote": "Phase B precedes Phase C.",
+            "relationship_id": "phase-b-precedes-phase-c",
+            "relationship_ids": [
+              "phase-b-precedes-phase-c"
+            ],
+            "start_char": 26
+          }
+        ],
+        "payload": {
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "The first phase in the bounded source.",
+            "identity": "phase-a",
+            "label": "Phase A"
+          },
+          "nodes": [
+            {
+              "description": "The first phase in the bounded source.",
+              "entity_id": "phase-a",
+              "entity_type": "PROCESS",
+              "label": "Phase A"
+            },
+            {
+              "description": "The middle phase in the bounded source.",
+              "entity_id": "phase-b",
+              "entity_type": "PROCESS",
+              "label": "Phase B"
+            },
+            {
+              "description": "The final phase in the bounded source.",
+              "entity_id": "phase-c",
+              "entity_type": "PROCESS",
+              "label": "Phase C"
+            }
+          ],
+          "ordered_nodes": [
+            {
+              "description": "The first phase in the bounded source.",
+              "entity_id": "phase-a",
+              "entity_type": "PROCESS",
+              "label": "Phase A"
+            },
+            {
+              "description": "The middle phase in the bounded source.",
+              "entity_id": "phase-b",
+              "entity_type": "PROCESS",
+              "label": "Phase B"
+            },
+            {
+              "description": "The final phase in the bounded source.",
+              "entity_id": "phase-c",
+              "entity_type": "PROCESS",
+              "label": "Phase C"
+            }
+          ],
+          "relationships": [
+            {
+              "direction": "earlier_to_later",
+              "evidence": [
+                {
+                  "document_id": "text-7a095bc4a96c8511",
+                  "end_char": 25,
+                  "quote": "Phase A precedes Phase B.",
+                  "relationship_id": "phase-a-precedes-phase-b",
+                  "start_char": 0
+                }
+              ],
+              "meaning": "The source occurs before the target in time or an explicit process sequence.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "phase-a-precedes-phase-b"
+              ],
+              "relationship_type": "PRECEDES",
+              "source_entity_id": "phase-a",
+              "source_label": "Phase A",
+              "target_entity_id": "phase-b",
+              "target_label": "Phase B"
+            },
+            {
+              "direction": "earlier_to_later",
+              "evidence": [
+                {
+                  "document_id": "text-7a095bc4a96c8511",
+                  "end_char": 51,
+                  "quote": "Phase B precedes Phase C.",
+                  "relationship_id": "phase-b-precedes-phase-c",
+                  "start_char": 26
+                }
+              ],
+              "meaning": "The source occurs before the target in time or an explicit process sequence.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "phase-b-precedes-phase-c"
+              ],
+              "relationship_type": "PRECEDES",
+              "source_entity_id": "phase-b",
+              "source_label": "Phase B",
+              "target_entity_id": "phase-c",
+              "target_label": "Phase C"
+            }
+          ]
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "phase-a",
+        "strategy_type": "PROCESS_SEQUENCE",
+        "title": "Phase A",
+        "trusted_input_refs": [
+          "workspace-fixture.json representation.nodes selected concept",
+          "workspace-fixture.json connected representation edges"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "PROCESS_SEQUENCE",
+      "semantic_focus_identity": "phase-a",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-df43ec2bd72f74c7",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": null,
+          "predicates": [
+            "PRECEDES"
+          ],
+          "relationship_count": 2,
+          "rule_id": "EXPLICIT_PRECEDES_CHAIN",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [
+          {
+            "document_id": "text-7a095bc4a96c8511",
+            "end_char": 25,
+            "quote": "Phase A precedes Phase B.",
+            "relationship_id": "phase-a-precedes-phase-b",
+            "relationship_ids": [
+              "phase-a-precedes-phase-b"
+            ],
+            "start_char": 0
+          },
+          {
+            "document_id": "text-7a095bc4a96c8511",
+            "end_char": 51,
+            "quote": "Phase B precedes Phase C.",
+            "relationship_id": "phase-b-precedes-phase-c",
+            "relationship_ids": [
+              "phase-b-precedes-phase-c"
+            ],
+            "start_char": 26
+          }
+        ],
+        "payload": {
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "The middle phase in the bounded source.",
+            "identity": "phase-b",
+            "label": "Phase B"
+          },
+          "nodes": [
+            {
+              "description": "The first phase in the bounded source.",
+              "entity_id": "phase-a",
+              "entity_type": "PROCESS",
+              "label": "Phase A"
+            },
+            {
+              "description": "The middle phase in the bounded source.",
+              "entity_id": "phase-b",
+              "entity_type": "PROCESS",
+              "label": "Phase B"
+            },
+            {
+              "description": "The final phase in the bounded source.",
+              "entity_id": "phase-c",
+              "entity_type": "PROCESS",
+              "label": "Phase C"
+            }
+          ],
+          "ordered_nodes": [
+            {
+              "description": "The first phase in the bounded source.",
+              "entity_id": "phase-a",
+              "entity_type": "PROCESS",
+              "label": "Phase A"
+            },
+            {
+              "description": "The middle phase in the bounded source.",
+              "entity_id": "phase-b",
+              "entity_type": "PROCESS",
+              "label": "Phase B"
+            },
+            {
+              "description": "The final phase in the bounded source.",
+              "entity_id": "phase-c",
+              "entity_type": "PROCESS",
+              "label": "Phase C"
+            }
+          ],
+          "relationships": [
+            {
+              "direction": "earlier_to_later",
+              "evidence": [
+                {
+                  "document_id": "text-7a095bc4a96c8511",
+                  "end_char": 25,
+                  "quote": "Phase A precedes Phase B.",
+                  "relationship_id": "phase-a-precedes-phase-b",
+                  "start_char": 0
+                }
+              ],
+              "meaning": "The source occurs before the target in time or an explicit process sequence.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "phase-a-precedes-phase-b"
+              ],
+              "relationship_type": "PRECEDES",
+              "source_entity_id": "phase-a",
+              "source_label": "Phase A",
+              "target_entity_id": "phase-b",
+              "target_label": "Phase B"
+            },
+            {
+              "direction": "earlier_to_later",
+              "evidence": [
+                {
+                  "document_id": "text-7a095bc4a96c8511",
+                  "end_char": 51,
+                  "quote": "Phase B precedes Phase C.",
+                  "relationship_id": "phase-b-precedes-phase-c",
+                  "start_char": 26
+                }
+              ],
+              "meaning": "The source occurs before the target in time or an explicit process sequence.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "phase-b-precedes-phase-c"
+              ],
+              "relationship_type": "PRECEDES",
+              "source_entity_id": "phase-b",
+              "source_label": "Phase B",
+              "target_entity_id": "phase-c",
+              "target_label": "Phase C"
+            }
+          ]
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "phase-b",
+        "strategy_type": "PROCESS_SEQUENCE",
+        "title": "Phase B",
+        "trusted_input_refs": [
+          "workspace-fixture.json representation.nodes selected concept",
+          "workspace-fixture.json connected representation edges"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "PROCESS_SEQUENCE",
+      "semantic_focus_identity": "phase-b",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-1b4acc2a702d6a45",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": null,
+          "predicates": [
+            "PRECEDES"
+          ],
+          "relationship_count": 2,
+          "rule_id": "EXPLICIT_PRECEDES_CHAIN",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [
+          {
+            "document_id": "text-7a095bc4a96c8511",
+            "end_char": 25,
+            "quote": "Phase A precedes Phase B.",
+            "relationship_id": "phase-a-precedes-phase-b",
+            "relationship_ids": [
+              "phase-a-precedes-phase-b"
+            ],
+            "start_char": 0
+          },
+          {
+            "document_id": "text-7a095bc4a96c8511",
+            "end_char": 51,
+            "quote": "Phase B precedes Phase C.",
+            "relationship_id": "phase-b-precedes-phase-c",
+            "relationship_ids": [
+              "phase-b-precedes-phase-c"
+            ],
+            "start_char": 26
+          }
+        ],
+        "payload": {
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "The final phase in the bounded source.",
+            "identity": "phase-c",
+            "label": "Phase C"
+          },
+          "nodes": [
+            {
+              "description": "The first phase in the bounded source.",
+              "entity_id": "phase-a",
+              "entity_type": "PROCESS",
+              "label": "Phase A"
+            },
+            {
+              "description": "The middle phase in the bounded source.",
+              "entity_id": "phase-b",
+              "entity_type": "PROCESS",
+              "label": "Phase B"
+            },
+            {
+              "description": "The final phase in the bounded source.",
+              "entity_id": "phase-c",
+              "entity_type": "PROCESS",
+              "label": "Phase C"
+            }
+          ],
+          "ordered_nodes": [
+            {
+              "description": "The first phase in the bounded source.",
+              "entity_id": "phase-a",
+              "entity_type": "PROCESS",
+              "label": "Phase A"
+            },
+            {
+              "description": "The middle phase in the bounded source.",
+              "entity_id": "phase-b",
+              "entity_type": "PROCESS",
+              "label": "Phase B"
+            },
+            {
+              "description": "The final phase in the bounded source.",
+              "entity_id": "phase-c",
+              "entity_type": "PROCESS",
+              "label": "Phase C"
+            }
+          ],
+          "relationships": [
+            {
+              "direction": "earlier_to_later",
+              "evidence": [
+                {
+                  "document_id": "text-7a095bc4a96c8511",
+                  "end_char": 25,
+                  "quote": "Phase A precedes Phase B.",
+                  "relationship_id": "phase-a-precedes-phase-b",
+                  "start_char": 0
+                }
+              ],
+              "meaning": "The source occurs before the target in time or an explicit process sequence.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "phase-a-precedes-phase-b"
+              ],
+              "relationship_type": "PRECEDES",
+              "source_entity_id": "phase-a",
+              "source_label": "Phase A",
+              "target_entity_id": "phase-b",
+              "target_label": "Phase B"
+            },
+            {
+              "direction": "earlier_to_later",
+              "evidence": [
+                {
+                  "document_id": "text-7a095bc4a96c8511",
+                  "end_char": 51,
+                  "quote": "Phase B precedes Phase C.",
+                  "relationship_id": "phase-b-precedes-phase-c",
+                  "start_char": 26
+                }
+              ],
+              "meaning": "The source occurs before the target in time or an explicit process sequence.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "phase-b-precedes-phase-c"
+              ],
+              "relationship_type": "PRECEDES",
+              "source_entity_id": "phase-b",
+              "source_label": "Phase B",
+              "target_entity_id": "phase-c",
+              "target_label": "Phase C"
+            }
+          ]
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "phase-c",
+        "strategy_type": "PROCESS_SEQUENCE",
+        "title": "Phase C",
+        "trusted_input_refs": [
+          "workspace-fixture.json representation.nodes selected concept",
+          "workspace-fixture.json connected representation edges"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "PROCESS_SEQUENCE",
+      "semantic_focus_identity": "phase-c",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    }
+  ],
+  "protected_surface_contract": "SPEC038_REPRESENTATION_PLAN"
+}

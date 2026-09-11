@@ -1,0 +1,59 @@
+{
+  "approval_required": "Explicit owner approval is required after the blind sources and exact bounded scopes are frozen and before any source text is transmitted.",
+  "artifacts_per_source": [
+    "source identity and exact hash",
+    "provider request metadata and bounded scope",
+    "extraction proposal",
+    "grounding resolution",
+    "rejected assertions",
+    "admitted KnowledgeModel or failure",
+    "detected structures",
+    "representation decisions",
+    "renderer bindings or explicit missing renderer",
+    "learner review artifact",
+    "complete run history and usage"
+  ],
+  "call_purpose": "semantic extraction with deterministic local grounding and canonical validation",
+  "calls_per_source": 1,
+  "canonicalization_calls": 0,
+  "execution_order": "frozen packet order",
+  "failure_policy": {
+    "frozen_commit_mismatch": "stop before any provider call",
+    "implementation_change_after_source_submission": "invalidate the run and require a newly designated frozen experiment",
+    "malformed_packet": "stop before any provider call",
+    "provider_or_validation_failure": "preserve the complete failed attempt, perform no retry, and continue to the next already-approved source"
+  },
+  "frozen_harness_commit": "5622df131dc71346d5890f42ce16fe1e3e55f33a",
+  "maximum_total_calls": 3,
+  "model": "gpt-5.6-luna",
+  "prompt": {
+    "prompt_version": "spec-010-v1",
+    "relationship_grammar": "current frozen trusted relationship vocabulary",
+    "repair_after_results": false,
+    "schema": "knowledge_extraction"
+  },
+  "provider": "OpenAI Responses API",
+  "retry_policy": {
+    "additional_calls_without_new_approval": 0,
+    "hidden_retries": 0,
+    "sdk_retries": 0,
+    "semantic_retries": 0
+  },
+  "source_count": 3,
+  "source_set": "UNDISCLOSED_AND_NOT_SELECTED_DURING_SPEC040",
+  "status": "PROPOSED_NOT_AUTHORIZED",
+  "storage": {
+    "store": false
+  },
+  "token_accounting": {
+    "pre_execution_numeric_estimate": "UNAVAILABLE_UNTIL_SOURCE_SET_IS_FROZEN",
+    "reason": "the source texts and lengths are deliberately undisclosed in SPEC-040",
+    "required_after_freeze": "record UTF-8 characters per source before execution and preserve exact provider input/output/total token usage per response"
+  },
+  "transmission": {
+    "external_enrichment": false,
+    "retrieval": false,
+    "scope": "exact text or bounded excerpt frozen in the later approved packet",
+    "source_text_transmitted": true
+  }
+}

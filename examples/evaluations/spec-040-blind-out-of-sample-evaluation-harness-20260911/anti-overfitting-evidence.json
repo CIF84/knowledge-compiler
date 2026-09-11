@@ -1,0 +1,146 @@
+{
+  "metadata_and_ordinal_invariance": {
+    "changed_decision_signatures": {
+      "29a0d740bea4bac5813e902933a9f619bc4a9339ea7d74dbe93f36a0002f9b71": [
+        {
+          "fallback_reason": "NO_DETECTED_TRUSTED_STRUCTURE_CONTAINS_FOCUS",
+          "rule": "TRUTHFUL_PROSE_FALLBACK",
+          "semantic_class": "concept",
+          "semantic_focus_identity": "reference-marker",
+          "strategy": "CONCISE_PROSE",
+          "sufficiency": "INSUFFICIENT_SUPPORTED_STRUCTURE"
+        }
+      ],
+      "7a095bc4a96c851138000ab38a14d67f3ac5ff98a9af9ed4d17dabed6f40804b": [
+        {
+          "fallback_reason": null,
+          "rule": "CANONICAL_EDGE_FOCUS",
+          "semantic_class": "canonical",
+          "semantic_focus_identity": "phase-a-precedes-phase-b",
+          "strategy": "FOCUSED_RELATIONSHIP",
+          "sufficiency": "SUFFICIENT_TRUSTED_STRUCTURE"
+        },
+        {
+          "fallback_reason": null,
+          "rule": "CANONICAL_EDGE_FOCUS",
+          "semantic_class": "canonical",
+          "semantic_focus_identity": "phase-b-precedes-phase-c",
+          "strategy": "FOCUSED_RELATIONSHIP",
+          "sufficiency": "SUFFICIENT_TRUSTED_STRUCTURE"
+        },
+        {
+          "fallback_reason": null,
+          "rule": "EXPLICIT_PRECEDES_CHAIN",
+          "semantic_class": "concept",
+          "semantic_focus_identity": "phase-a",
+          "strategy": "PROCESS_SEQUENCE",
+          "sufficiency": "SUFFICIENT_TRUSTED_STRUCTURE"
+        },
+        {
+          "fallback_reason": null,
+          "rule": "EXPLICIT_PRECEDES_CHAIN",
+          "semantic_class": "concept",
+          "semantic_focus_identity": "phase-b",
+          "strategy": "PROCESS_SEQUENCE",
+          "sufficiency": "SUFFICIENT_TRUSTED_STRUCTURE"
+        },
+        {
+          "fallback_reason": null,
+          "rule": "EXPLICIT_PRECEDES_CHAIN",
+          "semantic_class": "concept",
+          "semantic_focus_identity": "phase-c",
+          "strategy": "PROCESS_SEQUENCE",
+          "sufficiency": "SUFFICIENT_TRUSTED_STRUCTURE"
+        }
+      ]
+    },
+    "changed_only": [
+      "source title",
+      "source ID string",
+      "source filename/locator",
+      "domain display label",
+      "source packet ordinal"
+    ],
+    "comparison_key": "immutable exact source SHA-256",
+    "original_decision_signatures": {
+      "29a0d740bea4bac5813e902933a9f619bc4a9339ea7d74dbe93f36a0002f9b71": [
+        {
+          "fallback_reason": "NO_DETECTED_TRUSTED_STRUCTURE_CONTAINS_FOCUS",
+          "rule": "TRUTHFUL_PROSE_FALLBACK",
+          "semantic_class": "concept",
+          "semantic_focus_identity": "reference-marker",
+          "strategy": "CONCISE_PROSE",
+          "sufficiency": "INSUFFICIENT_SUPPORTED_STRUCTURE"
+        }
+      ],
+      "7a095bc4a96c851138000ab38a14d67f3ac5ff98a9af9ed4d17dabed6f40804b": [
+        {
+          "fallback_reason": null,
+          "rule": "CANONICAL_EDGE_FOCUS",
+          "semantic_class": "canonical",
+          "semantic_focus_identity": "phase-a-precedes-phase-b",
+          "strategy": "FOCUSED_RELATIONSHIP",
+          "sufficiency": "SUFFICIENT_TRUSTED_STRUCTURE"
+        },
+        {
+          "fallback_reason": null,
+          "rule": "CANONICAL_EDGE_FOCUS",
+          "semantic_class": "canonical",
+          "semantic_focus_identity": "phase-b-precedes-phase-c",
+          "strategy": "FOCUSED_RELATIONSHIP",
+          "sufficiency": "SUFFICIENT_TRUSTED_STRUCTURE"
+        },
+        {
+          "fallback_reason": null,
+          "rule": "EXPLICIT_PRECEDES_CHAIN",
+          "semantic_class": "concept",
+          "semantic_focus_identity": "phase-a",
+          "strategy": "PROCESS_SEQUENCE",
+          "sufficiency": "SUFFICIENT_TRUSTED_STRUCTURE"
+        },
+        {
+          "fallback_reason": null,
+          "rule": "EXPLICIT_PRECEDES_CHAIN",
+          "semantic_class": "concept",
+          "semantic_focus_identity": "phase-b",
+          "strategy": "PROCESS_SEQUENCE",
+          "sufficiency": "SUFFICIENT_TRUSTED_STRUCTURE"
+        },
+        {
+          "fallback_reason": null,
+          "rule": "EXPLICIT_PRECEDES_CHAIN",
+          "semantic_class": "concept",
+          "semantic_focus_identity": "phase-c",
+          "strategy": "PROCESS_SEQUENCE",
+          "sufficiency": "SUFFICIENT_TRUSTED_STRUCTURE"
+        }
+      ]
+    },
+    "status": "PASS"
+  },
+  "source_code_guard": {
+    "representation_expectations_read_by_runner": false,
+    "scanned_modules": [
+      "knowledge_compiler.blind_evaluation",
+      "knowledge_compiler.semantic_representation_compiler"
+    ],
+    "source_identity_conditional_findings": {
+      "domain ==": false,
+      "expected_representation_strategy": false,
+      "index ==": false,
+      "source_id ==": false,
+      "title ==": false
+    },
+    "source_or_fixture_literal_findings": {
+      "economics": false,
+      "electromagnetism": false,
+      "history of printing": false,
+      "market-price": false,
+      "neutral-sequence": false,
+      "neutral-thin": false,
+      "software_architecture": false
+    },
+    "status": "PASS"
+  },
+  "status": "PASS"
+}

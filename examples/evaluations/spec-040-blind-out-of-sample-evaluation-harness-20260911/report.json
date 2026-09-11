@@ -1,0 +1,104 @@
+{
+  "anti_overfitting_result": "PASS",
+  "blind_source_set": "ABSENT_UNDISCLOSED_NOT_SELECTED",
+  "browser_gate": "PASS",
+  "dependencies_added": [],
+  "dependencies_removed": [],
+  "deterministic_regeneration": {
+    "compared_file_count": 34,
+    "result": "PASS_BYTE_IDENTICAL",
+    "scope": "independent complete pre-finalization harness artifacts"
+  },
+  "dry_run_result": {
+    "execution_policy": {
+      "adapter_invocations_per_source": 1,
+      "allow_live": false,
+      "hidden_retries": 0,
+      "semantic_retries": 0,
+      "source_order_changes_semantic_decisions": false
+    },
+    "failed_closed_source_count": 0,
+    "learner_usefulness_verdict": "PENDING_OWNER_REVIEW",
+    "live_model_or_external_calls": 0,
+    "outcomes": [
+      {
+        "detected_structure_count": 1,
+        "entity_count": 3,
+        "proposition_count": 0,
+        "relationship_count": 2,
+        "representation_decision_count": 5,
+        "selected_strategies": [
+          "FOCUSED_RELATIONSHIP",
+          "PROCESS_SEQUENCE"
+        ],
+        "source_id": "neutral-sequence",
+        "source_sha256": "7a095bc4a96c851138000ab38a14d67f3ac5ff98a9af9ed4d17dabed6f40804b",
+        "status": "PASS"
+      },
+      {
+        "detected_structure_count": 0,
+        "entity_count": 1,
+        "proposition_count": 0,
+        "relationship_count": 0,
+        "representation_decision_count": 1,
+        "selected_strategies": [
+          "CONCISE_PROSE"
+        ],
+        "source_id": "neutral-thin",
+        "source_sha256": "29a0d740bea4bac5813e902933a9f619bc4a9339ea7d74dbe93f36a0002f9b71",
+        "status": "PASS"
+      }
+    ],
+    "passed_source_count": 2,
+    "schema": "spec-040-blind-evaluation-report-v1",
+    "source_count": 2
+  },
+  "execution_mode": "OFFLINE_ONLY",
+  "frozen_harness_commit": "5622df131dc71346d5890f42ce16fe1e3e55f33a",
+  "known_coverage_gaps_preserved": [
+    "comparison renderer unavailable",
+    "worked-example rule-to-instance capability unproven"
+  ],
+  "live_model_or_external_calls": 0,
+  "machine_gate": {
+    "browser_checks": {
+      "browser_console_clean": true,
+      "explore_next_remains_forward_authority": true,
+      "local_inspection_remains_non_navigational": true,
+      "my_map_remains_quiet_territory_tree": true,
+      "spec038_four_surface_model_present": true,
+      "structural_diagram_remains_dominant": true
+    },
+    "checks": {
+      "all_intermediate_audit_artifacts_preserved": true,
+      "baseline001_through_004_unchanged": true,
+      "blind_source_set_absent": true,
+      "complete_run_history_has_no_retries": true,
+      "known_comparison_and_worked_example_gaps_not_closed": true,
+      "offline_only_live_calls_zero": true,
+      "runner_and_compiler_have_no_source_identity_rules": true,
+      "semantically_thin_case_fails_closed_to_prose": true,
+      "source_packet_valid_and_contains_no_expected_answers": true,
+      "spec038_candidate_unchanged": true,
+      "spec039_compiler_included_in_frozen_identity": true,
+      "structural_dry_run_reaches_spec038_plan_seam": true,
+      "title_id_domain_filename_and_ordinal_invariance": true
+    },
+    "status": "PASS"
+  },
+  "offline_tests": {
+    "focused": "20 passed",
+    "full": "560 passed",
+    "result": "PASS",
+    "spec038_and_spec039_regression": "40 passed"
+  },
+  "owner_review_question": "Is the evaluation harness genuinely generic and frozen before the blind source set is selected, such that a later out-of-sample run cannot reasonably benefit from source-specific implementation adaptation?",
+  "owner_verdict": "PENDING",
+  "promotion": "NOT_AUTHORIZED",
+  "proposed_live_execution_plan": "proposed-live-execution-plan.json",
+  "semantic_vocabulary_changes": [],
+  "spec": "SPEC-040",
+  "status": "IMPLEMENTED_AWAITING_OWNER_REVIEW",
+  "ui_behavior_changes": [],
+  "viewer_command": ".venv/bin/knowledge-compiler view-representations examples/evaluations/spec-038-dominant-explanatory-diagram-canvas-20260909 --port 8040"
+}

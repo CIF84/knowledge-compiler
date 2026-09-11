@@ -1,6 +1,6 @@
 # SPEC-040 — Blind Out-of-Sample Evaluation Harness
 
-Status: `APPROVED_FOR_IMPLEMENTATION`
+Status: `IMPLEMENTED_AWAITING_REVIEW`
 Authority: `OFFLINE_ONLY`
 Human gate: `OWNER_REVIEW`
 Promotion: `NOT_AUTHORIZED`
@@ -300,3 +300,15 @@ The owner/ChatGPT review at this stage is procedural/scientific rather than peda
 > Is the evaluation harness genuinely generic and frozen before the blind source set is selected, such that a later out-of-sample run cannot reasonably benefit from source-specific implementation adaptation?
 
 If yes, the next packet should freeze the source set and explicitly bound the live calls without changing the compiler/harness implementation.
+
+## Implementation record
+
+The generic harness implementation is frozen at commit
+`5622df131dc71346d5890f42ce16fe1e3e55f33a`, before selection or disclosure of
+any blind source. The committed preparation artifact contains only neutral synthetic
+dry-run text. It records source-packet validation, complete intermediate audit output,
+fail-closed behavior, source-identity invariance, a protected SPEC-038 renderer-seam
+and browser regression, and the exact separately gated live-execution proposal.
+
+No live/model/external calls were made. No real blind source set is present. The owner
+verdict, source selection, execution authority, and promotion all remain pending.

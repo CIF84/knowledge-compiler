@@ -1,0 +1,82 @@
+{
+  "decisions": [
+    {
+      "available_trusted_concepts": [
+        {
+          "entity_id": "reference-marker",
+          "entity_type": "CONCEPT",
+          "label": "Reference marker"
+        }
+      ],
+      "available_trusted_relationships": [],
+      "confidence": "DETERMINISTIC_FAIL_CLOSED",
+      "decision_id": "decision-88a69245d0d81625",
+      "decision_inputs": {
+        "concept_label_used": false,
+        "domain_name_used": false,
+        "fixture_filename_used": false,
+        "renderer_used_as_strategy_authority": false,
+        "source_id_used_as_strategy_rule": false,
+        "trusted_semantics_only": true
+      },
+      "detected_structural_signals": [],
+      "fallback_reason": "NO_DETECTED_TRUSTED_STRUCTURE_CONTAINS_FOCUS",
+      "grounding_provenance_refs": [],
+      "rejected_richer_candidates": [
+        {
+          "candidate": "RICH_STRUCTURAL_REPRESENTATION",
+          "reason": "NO_DETECTED_TRUSTED_STRUCTURE_CONTAINS_FOCUS"
+        }
+      ],
+      "renderer_contract": "SPEC038_REPRESENTATION_PLAN",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": "NO_TRUSTED_SUPPORTING_RELATIONSHIP",
+          "predicates": [],
+          "relationship_count": 0,
+          "rule_id": "TRUTHFUL_PROSE_FALLBACK",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [],
+        "payload": {
+          "body": "A marker defined for later use.",
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "A marker defined for later use.",
+            "identity": "reference-marker",
+            "label": "Reference marker"
+          },
+          "nodes": [
+            {
+              "description": "A marker defined for later use.",
+              "entity_id": "reference-marker",
+              "entity_type": "CONCEPT",
+              "label": "Reference marker"
+            }
+          ],
+          "relationships": []
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "reference-marker",
+        "strategy_type": "CONCISE_PROSE",
+        "title": "Reference marker",
+        "trusted_input_refs": [
+          "validated KnowledgeModel entity"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "CONCISE_PROSE",
+      "selected_rule_id": "TRUTHFUL_PROSE_FALLBACK",
+      "selected_structure_ids": [],
+      "semantic_class": "concept",
+      "semantic_focus_identity": "reference-marker",
+      "semantic_payload": {},
+      "source_document_id": "text-29a0d740bea4bac5",
+      "sufficiency": "INSUFFICIENT_SUPPORTED_STRUCTURE"
+    }
+  ],
+  "schema": "semantic-representation-decision-v1"
+}

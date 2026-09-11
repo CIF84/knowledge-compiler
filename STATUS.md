@@ -46,24 +46,27 @@ Accepted findings:
 ## Current approved work packet
 
 ```text
-specs/SPEC-040-blind-out-of-sample-evaluation-harness.md
+NONE
 ```
 
-Status: `APPROVED_FOR_IMPLEMENTATION`
+Status: `NONE`
 
-Authority: `OFFLINE_ONLY`
+Authority: `NONE`
 
-Human gate: `OWNER_REVIEW`
+Human gate: `NONE`
 
 Promotion: `NOT_AUTHORIZED`
 
 ## Current gate
 
-SPEC-040 is authorized to build and freeze the generic blind out-of-sample evaluation harness only.
+SPEC-040 is implemented and awaiting owner review. The generic harness/compiler is
+frozen at commit `5622df131dc71346d5890f42ce16fe1e3e55f33a`; its deterministic dry-run,
+anti-overfitting checks, and protected SPEC-038 browser regression pass.
 
-The final blind source set must remain undisclosed during implementation. No live/model/external calls are authorized. SPEC-040 must stop after producing the frozen harness/compiler commit, dry-run evidence, and exact proposed live-execution plan.
-
-The next gate, if owner/ChatGPT review confirms the harness is generic, will freeze a genuinely out-of-sample source set and separately authorize bounded live execution without modifying the frozen compiler/harness.
+No blind source set has been selected or disclosed, and no live/model/external call
+was made. No packet is active. A later gate may freeze the source set and separately
+authorize bounded live execution only after owner/ChatGPT review confirms that the
+harness is generic; it must not modify the frozen compiler/harness.
 
 ## Current product direction
 

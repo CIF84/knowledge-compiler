@@ -1,0 +1,81 @@
+{
+  "claims": [],
+  "document": {
+    "id": "text-7a095bc4a96c8511",
+    "metadata": {
+      "provenance": {
+        "external_source": false,
+        "kind": "SYNTHETIC_NEUTRAL_DRY_RUN",
+        "locator": "committed SPEC-040 harness generator"
+      },
+      "source_id": "neutral-sequence",
+      "source_sha256": "7a095bc4a96c851138000ab38a14d67f3ac5ff98a9af9ed4d17dabed6f40804b",
+      "title": "Neutral source one"
+    },
+    "source_type": "text",
+    "text": "Phase A precedes Phase B. Phase B precedes Phase C."
+  },
+  "entities": [
+    {
+      "aliases": [],
+      "description": "The first phase in the bounded source.",
+      "entity_type": "PROCESS",
+      "id": "phase-a",
+      "name": "Phase A"
+    },
+    {
+      "aliases": [],
+      "description": "The middle phase in the bounded source.",
+      "entity_type": "PROCESS",
+      "id": "phase-b",
+      "name": "Phase B"
+    },
+    {
+      "aliases": [],
+      "description": "The final phase in the bounded source.",
+      "entity_type": "PROCESS",
+      "id": "phase-c",
+      "name": "Phase C"
+    }
+  ],
+  "metadata": {
+    "extractor": "deterministic-synthetic-dry-run",
+    "prompt_version": "spec-040-dry-run-v1"
+  },
+  "relationships": [
+    {
+      "confidence": 1.0,
+      "evidence": [
+        {
+          "document_id": "text-7a095bc4a96c8511",
+          "end_char": 25,
+          "quote": "Phase A precedes Phase B.",
+          "start_char": 0
+        }
+      ],
+      "id": "phase-a-precedes-phase-b",
+      "origin": "SOURCE",
+      "relationship_type": "PRECEDES",
+      "source_entity_id": "phase-a",
+      "statement": "Phase A precedes Phase B.",
+      "target_entity_id": "phase-b"
+    },
+    {
+      "confidence": 1.0,
+      "evidence": [
+        {
+          "document_id": "text-7a095bc4a96c8511",
+          "end_char": 51,
+          "quote": "Phase B precedes Phase C.",
+          "start_char": 26
+        }
+      ],
+      "id": "phase-b-precedes-phase-c",
+      "origin": "SOURCE",
+      "relationship_type": "PRECEDES",
+      "source_entity_id": "phase-b",
+      "statement": "Phase B precedes Phase C.",
+      "target_entity_id": "phase-c"
+    }
+  ]
+}

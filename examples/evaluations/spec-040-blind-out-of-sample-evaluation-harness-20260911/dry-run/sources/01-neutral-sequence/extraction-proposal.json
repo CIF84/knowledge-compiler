@@ -1,0 +1,67 @@
+{
+  "claims": [],
+  "entities": [
+    {
+      "aliases": [],
+      "description": "The first phase in the bounded source.",
+      "entity_type": "PROCESS",
+      "id": "phase-a",
+      "name": "Phase A"
+    },
+    {
+      "aliases": [],
+      "description": "The middle phase in the bounded source.",
+      "entity_type": "PROCESS",
+      "id": "phase-b",
+      "name": "Phase B"
+    },
+    {
+      "aliases": [],
+      "description": "The final phase in the bounded source.",
+      "entity_type": "PROCESS",
+      "id": "phase-c",
+      "name": "Phase C"
+    }
+  ],
+  "metadata": {
+    "extractor": "deterministic-synthetic-dry-run",
+    "prompt_version": "spec-040-dry-run-v1"
+  },
+  "propositions": [],
+  "relationships": [
+    {
+      "confidence": 1.0,
+      "evidence": [
+        {
+          "document_id": "text-7a095bc4a96c8511",
+          "end_char": 25,
+          "quote": "Phase A precedes Phase B.",
+          "start_char": 0
+        }
+      ],
+      "id": "phase-a-precedes-phase-b",
+      "origin": "SOURCE",
+      "relationship_type": "PRECEDES",
+      "source_entity_id": "phase-a",
+      "statement": "Phase A precedes Phase B.",
+      "target_entity_id": "phase-b"
+    },
+    {
+      "confidence": 1.0,
+      "evidence": [
+        {
+          "document_id": "text-7a095bc4a96c8511",
+          "end_char": 51,
+          "quote": "Phase B precedes Phase C.",
+          "start_char": 26
+        }
+      ],
+      "id": "phase-b-precedes-phase-c",
+      "origin": "SOURCE",
+      "relationship_type": "PRECEDES",
+      "source_entity_id": "phase-b",
+      "statement": "Phase B precedes Phase C.",
+      "target_entity_id": "phase-c"
+    }
+  ]
+}
