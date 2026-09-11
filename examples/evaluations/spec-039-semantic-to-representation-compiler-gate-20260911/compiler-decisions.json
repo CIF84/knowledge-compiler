@@ -1,0 +1,2948 @@
+{
+  "aggregate_by_source_domain": {
+    "biology": 1,
+    "comparison": 1,
+    "economics": 2,
+    "electromagnetism": 1,
+    "history": 2,
+    "software_architecture": 1,
+    "transfer": 1
+  },
+  "aggregate_by_strategy": {
+    "CAUSAL_MECHANISM": 1,
+    "COMPARE_CONTRAST": 1,
+    "CONCISE_PROSE": 2,
+    "DEPENDENCY_STRUCTURE": 1,
+    "FOCUSED_RELATIONSHIP": 1,
+    "HIERARCHY_COMPOSITION": 1,
+    "PROCESS_SEQUENCE": 1,
+    "RECIPROCAL_MECHANISM": 1
+  },
+  "cases": [
+    {
+      "available_trusted_concepts": [
+        {
+          "entity_id": "market-price",
+          "entity_type": "VARIABLE",
+          "label": "market price"
+        },
+        {
+          "entity_id": "quantity-demanded",
+          "entity_type": "VARIABLE",
+          "label": "quantity demanded"
+        },
+        {
+          "entity_id": "quantity-supplied",
+          "entity_type": "VARIABLE",
+          "label": "quantity supplied"
+        },
+        {
+          "entity_id": "shortage",
+          "entity_type": "CONCEPT",
+          "label": "shortage"
+        },
+        {
+          "entity_id": "supply-reduction",
+          "entity_type": "PROCESS",
+          "label": "reduction in supply"
+        },
+        {
+          "entity_id": "upward-price-pressure",
+          "entity_type": "CONCEPT",
+          "label": "upward pressure on price"
+        }
+      ],
+      "available_trusted_relationships": [
+        {
+          "direction": "decreaser_to_decreased_variable",
+          "evidence": [
+            {
+              "document_id": "text-e6c889f45171a12a",
+              "end_char": 469,
+              "quote": "The higher price decreases quantity demanded and increases quantity supplied until the shortage narrows.",
+              "relationship_id": "rel-higher-price-decreases-demanded",
+              "start_char": 365
+            },
+            {
+              "document_id": "text-e6c889f45171a12a",
+              "end_char": 177,
+              "quote": "When the price rises, buyers usually demand a smaller quantity",
+              "relationship_id": "rel-price-decreases-demanded",
+              "start_char": 115
+            }
+          ],
+          "relationship_ids": [
+            "rel-higher-price-decreases-demanded",
+            "rel-price-decreases-demanded"
+          ],
+          "relationship_type": "DECREASES",
+          "source_entity_id": "market-price",
+          "target_entity_id": "quantity-demanded"
+        },
+        {
+          "direction": "increaser_to_increased_variable",
+          "evidence": [
+            {
+              "document_id": "text-e6c889f45171a12a",
+              "end_char": 469,
+              "quote": "The higher price decreases quantity demanded and increases quantity supplied until the shortage narrows.",
+              "relationship_id": "rel-higher-price-increases-supplied",
+              "start_char": 365
+            },
+            {
+              "document_id": "text-e6c889f45171a12a",
+              "end_char": 226,
+              "quote": "while sellers usually supply a larger quantity.",
+              "relationship_id": "rel-price-increases-supplied",
+              "start_char": 179
+            }
+          ],
+          "relationship_ids": [
+            "rel-higher-price-increases-supplied",
+            "rel-price-increases-supplied"
+          ],
+          "relationship_type": "INCREASES",
+          "source_entity_id": "market-price",
+          "target_entity_id": "quantity-supplied"
+        },
+        {
+          "direction": "cause_to_effect",
+          "evidence": [
+            {
+              "document_id": "text-e6c889f45171a12a",
+              "end_char": 364,
+              "quote": "a shortage puts upward pressure on price.",
+              "relationship_id": "rel-shortage-upward-pressure",
+              "start_char": 323
+            }
+          ],
+          "relationship_ids": [
+            "rel-shortage-upward-pressure"
+          ],
+          "relationship_type": "CAUSES",
+          "source_entity_id": "shortage",
+          "target_entity_id": "upward-price-pressure"
+        },
+        {
+          "direction": "cause_to_effect",
+          "evidence": [
+            {
+              "document_id": "text-e6c889f45171a12a",
+              "end_char": 730,
+              "quote": "When demand is less elastic, a similar reduction in supply can cause a larger price increase",
+              "relationship_id": "rel-supply-reduction-price-increase",
+              "start_char": 638
+            }
+          ],
+          "relationship_ids": [
+            "rel-supply-reduction-price-increase"
+          ],
+          "relationship_type": "CAUSES",
+          "source_entity_id": "supply-reduction",
+          "target_entity_id": "market-price"
+        },
+        {
+          "direction": "increaser_to_increased_variable",
+          "evidence": [
+            {
+              "document_id": "text-e6c889f45171a12a",
+              "end_char": 469,
+              "quote": "The higher price decreases quantity demanded and increases quantity supplied until the shortage narrows.",
+              "relationship_id": "rel-upward-pressure-price",
+              "start_char": 365
+            }
+          ],
+          "relationship_ids": [
+            "rel-upward-pressure-price"
+          ],
+          "relationship_type": "INCREASES",
+          "source_entity_id": "upward-price-pressure",
+          "target_entity_id": "market-price"
+        }
+      ],
+      "case": "causal_mechanism",
+      "confidence": "DETERMINISTIC_GROUNDED",
+      "decision_id": "decision-6abe2ba086d0bc4c",
+      "decision_inputs": {
+        "concept_label_used": false,
+        "domain_name_used": false,
+        "fixture_filename_used": false,
+        "renderer_used_as_strategy_authority": false,
+        "source_id_used_as_strategy_rule": false,
+        "trusted_semantics_only": true
+      },
+      "detected_structural_signals": [
+        {
+          "detected_from_normalized_relationships": true,
+          "entity_ids": [
+            "market-price",
+            "quantity-demanded",
+            "quantity-supplied",
+            "shortage",
+            "supply-reduction",
+            "upward-price-pressure"
+          ],
+          "reciprocal": false,
+          "relationship_count": 5,
+          "relationship_ids": [
+            "rel-higher-price-decreases-demanded",
+            "rel-higher-price-increases-supplied",
+            "rel-price-decreases-demanded",
+            "rel-price-increases-supplied",
+            "rel-shortage-upward-pressure",
+            "rel-supply-reduction-price-increase",
+            "rel-upward-pressure-price"
+          ],
+          "relationship_types": [
+            "CAUSES",
+            "DECREASES",
+            "INCREASES"
+          ],
+          "structure_ids": [
+            "structure-causal-path-18c3db4206eb571d",
+            "structure-causal-path-4dac0d5bd5f58c5e",
+            "structure-causal-path-a0c56598f23e7cf6",
+            "structure-causal-path-f106de270650c376"
+          ],
+          "structure_type": "CAUSAL_PATH"
+        }
+      ],
+      "expected_strategy": "CAUSAL_MECHANISM",
+      "fallback_reason": null,
+      "grounding_provenance_refs": [
+        {
+          "document_id": "text-e6c889f45171a12a",
+          "end_char": 177,
+          "quote": "When the price rises, buyers usually demand a smaller quantity",
+          "relationship_id": "rel-price-decreases-demanded",
+          "relationship_ids": [
+            "rel-higher-price-decreases-demanded",
+            "rel-price-decreases-demanded"
+          ],
+          "start_char": 115
+        },
+        {
+          "document_id": "text-e6c889f45171a12a",
+          "end_char": 226,
+          "quote": "while sellers usually supply a larger quantity.",
+          "relationship_id": "rel-price-increases-supplied",
+          "relationship_ids": [
+            "rel-higher-price-increases-supplied",
+            "rel-price-increases-supplied"
+          ],
+          "start_char": 179
+        },
+        {
+          "document_id": "text-e6c889f45171a12a",
+          "end_char": 364,
+          "quote": "a shortage puts upward pressure on price.",
+          "relationship_id": "rel-shortage-upward-pressure",
+          "relationship_ids": [
+            "rel-shortage-upward-pressure"
+          ],
+          "start_char": 323
+        },
+        {
+          "document_id": "text-e6c889f45171a12a",
+          "end_char": 469,
+          "quote": "The higher price decreases quantity demanded and increases quantity supplied until the shortage narrows.",
+          "relationship_id": "rel-higher-price-decreases-demanded",
+          "relationship_ids": [
+            "rel-higher-price-decreases-demanded",
+            "rel-price-decreases-demanded"
+          ],
+          "start_char": 365
+        },
+        {
+          "document_id": "text-e6c889f45171a12a",
+          "end_char": 469,
+          "quote": "The higher price decreases quantity demanded and increases quantity supplied until the shortage narrows.",
+          "relationship_id": "rel-higher-price-increases-supplied",
+          "relationship_ids": [
+            "rel-higher-price-increases-supplied",
+            "rel-price-increases-supplied"
+          ],
+          "start_char": 365
+        },
+        {
+          "document_id": "text-e6c889f45171a12a",
+          "end_char": 469,
+          "quote": "The higher price decreases quantity demanded and increases quantity supplied until the shortage narrows.",
+          "relationship_id": "rel-upward-pressure-price",
+          "relationship_ids": [
+            "rel-upward-pressure-price"
+          ],
+          "start_char": 365
+        },
+        {
+          "document_id": "text-e6c889f45171a12a",
+          "end_char": 730,
+          "quote": "When demand is less elastic, a similar reduction in supply can cause a larger price increase",
+          "relationship_id": "rel-supply-reduction-price-increase",
+          "relationship_ids": [
+            "rel-supply-reduction-price-increase"
+          ],
+          "start_char": 638
+        }
+      ],
+      "label_and_domain_invariance": {
+        "changed_only": [
+          "domain label",
+          "fixture filename",
+          "entity labels",
+          "entity descriptions"
+        ],
+        "original_signature": {
+          "fallback_reason": null,
+          "selected_rule_id": "DIRECTIONAL_CAUSAL_NETWORK",
+          "selected_strategy": "CAUSAL_MECHANISM",
+          "selected_structure_ids": [
+            "structure-causal-path-18c3db4206eb571d",
+            "structure-causal-path-4dac0d5bd5f58c5e",
+            "structure-causal-path-a0c56598f23e7cf6",
+            "structure-causal-path-f106de270650c376"
+          ],
+          "signals": [
+            {
+              "reciprocal": false,
+              "relationship_count": 5,
+              "relationship_types": [
+                "CAUSES",
+                "DECREASES",
+                "INCREASES"
+              ],
+              "structure_type": "CAUSAL_PATH"
+            }
+          ],
+          "sufficiency": "SUFFICIENT_TRUSTED_STRUCTURE"
+        },
+        "renamed_signature": {
+          "fallback_reason": null,
+          "selected_rule_id": "DIRECTIONAL_CAUSAL_NETWORK",
+          "selected_strategy": "CAUSAL_MECHANISM",
+          "selected_structure_ids": [
+            "structure-causal-path-18c3db4206eb571d",
+            "structure-causal-path-4dac0d5bd5f58c5e",
+            "structure-causal-path-a0c56598f23e7cf6",
+            "structure-causal-path-f106de270650c376"
+          ],
+          "signals": [
+            {
+              "reciprocal": false,
+              "relationship_count": 5,
+              "relationship_types": [
+                "CAUSES",
+                "DECREASES",
+                "INCREASES"
+              ],
+              "structure_type": "CAUSAL_PATH"
+            }
+          ],
+          "sufficiency": "SUFFICIENT_TRUSTED_STRUCTURE"
+        },
+        "status": "PASS"
+      },
+      "rejected_richer_candidates": [],
+      "renderer_binding": {
+        "compiled_renderer_payload_sha256": "38796702e5c62b6f575fb74b07d31772d978ef0d82a3e21bbaa41c0fbbe7c1a3",
+        "fixture_representation_type_used_by_compiler_rule": false,
+        "matching_context_keys": [
+          "ground:economics:representation-fe3ba90cb8cfa3d6:concept:market-price"
+        ],
+        "status": "PASS"
+      },
+      "renderer_contract": "SPEC038_REPRESENTATION_PLAN",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": null,
+          "predicates": [
+            "CAUSES",
+            "DECREASES",
+            "INCREASES"
+          ],
+          "relationship_count": 5,
+          "rule_id": "DIRECTIONAL_CAUSAL_NETWORK",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [
+          {
+            "document_id": "text-e6c889f45171a12a",
+            "end_char": 177,
+            "quote": "When the price rises, buyers usually demand a smaller quantity",
+            "relationship_id": "rel-price-decreases-demanded",
+            "relationship_ids": [
+              "rel-higher-price-decreases-demanded",
+              "rel-price-decreases-demanded"
+            ],
+            "start_char": 115
+          },
+          {
+            "document_id": "text-e6c889f45171a12a",
+            "end_char": 226,
+            "quote": "while sellers usually supply a larger quantity.",
+            "relationship_id": "rel-price-increases-supplied",
+            "relationship_ids": [
+              "rel-higher-price-increases-supplied",
+              "rel-price-increases-supplied"
+            ],
+            "start_char": 179
+          },
+          {
+            "document_id": "text-e6c889f45171a12a",
+            "end_char": 364,
+            "quote": "a shortage puts upward pressure on price.",
+            "relationship_id": "rel-shortage-upward-pressure",
+            "relationship_ids": [
+              "rel-shortage-upward-pressure"
+            ],
+            "start_char": 323
+          },
+          {
+            "document_id": "text-e6c889f45171a12a",
+            "end_char": 469,
+            "quote": "The higher price decreases quantity demanded and increases quantity supplied until the shortage narrows.",
+            "relationship_id": "rel-higher-price-decreases-demanded",
+            "relationship_ids": [
+              "rel-higher-price-decreases-demanded",
+              "rel-price-decreases-demanded"
+            ],
+            "start_char": 365
+          },
+          {
+            "document_id": "text-e6c889f45171a12a",
+            "end_char": 469,
+            "quote": "The higher price decreases quantity demanded and increases quantity supplied until the shortage narrows.",
+            "relationship_id": "rel-higher-price-increases-supplied",
+            "relationship_ids": [
+              "rel-higher-price-increases-supplied",
+              "rel-price-increases-supplied"
+            ],
+            "start_char": 365
+          },
+          {
+            "document_id": "text-e6c889f45171a12a",
+            "end_char": 469,
+            "quote": "The higher price decreases quantity demanded and increases quantity supplied until the shortage narrows.",
+            "relationship_id": "rel-upward-pressure-price",
+            "relationship_ids": [
+              "rel-upward-pressure-price"
+            ],
+            "start_char": 365
+          },
+          {
+            "document_id": "text-e6c889f45171a12a",
+            "end_char": 730,
+            "quote": "When demand is less elastic, a similar reduction in supply can cause a larger price increase",
+            "relationship_id": "rel-supply-reduction-price-increase",
+            "relationship_ids": [
+              "rel-supply-reduction-price-increase"
+            ],
+            "start_char": 638
+          }
+        ],
+        "payload": {
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "The price that coordinates buyers' and sellers' plans.",
+            "identity": "market-price",
+            "label": "market price"
+          },
+          "nodes": [
+            {
+              "description": "The price that coordinates buyers' and sellers' plans.",
+              "entity_id": "market-price",
+              "entity_type": "VARIABLE",
+              "label": "market price"
+            },
+            {
+              "description": "The quantity buyers demand at a given price.",
+              "entity_id": "quantity-demanded",
+              "entity_type": "VARIABLE",
+              "label": "quantity demanded"
+            },
+            {
+              "description": "The quantity sellers supply at a given price.",
+              "entity_id": "quantity-supplied",
+              "entity_type": "VARIABLE",
+              "label": "quantity supplied"
+            },
+            {
+              "description": "A market condition in which quantity demanded exceeds quantity supplied.",
+              "entity_id": "shortage",
+              "entity_type": "CONCEPT",
+              "label": "shortage"
+            },
+            {
+              "description": "A decrease in the amount of supply available in the market.",
+              "entity_id": "supply-reduction",
+              "entity_type": "PROCESS",
+              "label": "reduction in supply"
+            },
+            {
+              "description": "Pressure that tends to raise the market price.",
+              "entity_id": "upward-price-pressure",
+              "entity_type": "CONCEPT",
+              "label": "upward pressure on price"
+            }
+          ],
+          "ordered_nodes": [
+            {
+              "description": "A market condition in which quantity demanded exceeds quantity supplied.",
+              "entity_id": "shortage",
+              "entity_type": "CONCEPT",
+              "label": "shortage"
+            },
+            {
+              "description": "A decrease in the amount of supply available in the market.",
+              "entity_id": "supply-reduction",
+              "entity_type": "PROCESS",
+              "label": "reduction in supply"
+            },
+            {
+              "description": "Pressure that tends to raise the market price.",
+              "entity_id": "upward-price-pressure",
+              "entity_type": "CONCEPT",
+              "label": "upward pressure on price"
+            },
+            {
+              "description": "The price that coordinates buyers' and sellers' plans.",
+              "entity_id": "market-price",
+              "entity_type": "VARIABLE",
+              "label": "market price"
+            },
+            {
+              "description": "The quantity buyers demand at a given price.",
+              "entity_id": "quantity-demanded",
+              "entity_type": "VARIABLE",
+              "label": "quantity demanded"
+            },
+            {
+              "description": "The quantity sellers supply at a given price.",
+              "entity_id": "quantity-supplied",
+              "entity_type": "VARIABLE",
+              "label": "quantity supplied"
+            }
+          ],
+          "relationships": [
+            {
+              "direction": "decreaser_to_decreased_variable",
+              "evidence": [
+                {
+                  "document_id": "text-e6c889f45171a12a",
+                  "end_char": 469,
+                  "quote": "The higher price decreases quantity demanded and increases quantity supplied until the shortage narrows.",
+                  "relationship_id": "rel-higher-price-decreases-demanded",
+                  "start_char": 365
+                },
+                {
+                  "document_id": "text-e6c889f45171a12a",
+                  "end_char": 177,
+                  "quote": "When the price rises, buyers usually demand a smaller quantity",
+                  "relationship_id": "rel-price-decreases-demanded",
+                  "start_char": 115
+                }
+              ],
+              "meaning": "The source causally lowers the amount, rate, value, probability, or intensity of the target.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-higher-price-decreases-demanded",
+                "rel-price-decreases-demanded"
+              ],
+              "relationship_type": "DECREASES",
+              "source_entity_id": "market-price",
+              "source_label": "market price",
+              "target_entity_id": "quantity-demanded",
+              "target_label": "quantity demanded"
+            },
+            {
+              "direction": "increaser_to_increased_variable",
+              "evidence": [
+                {
+                  "document_id": "text-e6c889f45171a12a",
+                  "end_char": 469,
+                  "quote": "The higher price decreases quantity demanded and increases quantity supplied until the shortage narrows.",
+                  "relationship_id": "rel-higher-price-increases-supplied",
+                  "start_char": 365
+                },
+                {
+                  "document_id": "text-e6c889f45171a12a",
+                  "end_char": 226,
+                  "quote": "while sellers usually supply a larger quantity.",
+                  "relationship_id": "rel-price-increases-supplied",
+                  "start_char": 179
+                }
+              ],
+              "meaning": "The source causally raises the amount, rate, value, probability, or intensity of the target.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-higher-price-increases-supplied",
+                "rel-price-increases-supplied"
+              ],
+              "relationship_type": "INCREASES",
+              "source_entity_id": "market-price",
+              "source_label": "market price",
+              "target_entity_id": "quantity-supplied",
+              "target_label": "quantity supplied"
+            },
+            {
+              "direction": "cause_to_effect",
+              "evidence": [
+                {
+                  "document_id": "text-e6c889f45171a12a",
+                  "end_char": 364,
+                  "quote": "a shortage puts upward pressure on price.",
+                  "relationship_id": "rel-shortage-upward-pressure",
+                  "start_char": 323
+                }
+              ],
+              "meaning": "The source brings about the target as an effect.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-shortage-upward-pressure"
+              ],
+              "relationship_type": "CAUSES",
+              "source_entity_id": "shortage",
+              "source_label": "shortage",
+              "target_entity_id": "upward-price-pressure",
+              "target_label": "upward pressure on price"
+            },
+            {
+              "direction": "cause_to_effect",
+              "evidence": [
+                {
+                  "document_id": "text-e6c889f45171a12a",
+                  "end_char": 730,
+                  "quote": "When demand is less elastic, a similar reduction in supply can cause a larger price increase",
+                  "relationship_id": "rel-supply-reduction-price-increase",
+                  "start_char": 638
+                }
+              ],
+              "meaning": "The source brings about the target as an effect.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-supply-reduction-price-increase"
+              ],
+              "relationship_type": "CAUSES",
+              "source_entity_id": "supply-reduction",
+              "source_label": "reduction in supply",
+              "target_entity_id": "market-price",
+              "target_label": "market price"
+            },
+            {
+              "direction": "increaser_to_increased_variable",
+              "evidence": [
+                {
+                  "document_id": "text-e6c889f45171a12a",
+                  "end_char": 469,
+                  "quote": "The higher price decreases quantity demanded and increases quantity supplied until the shortage narrows.",
+                  "relationship_id": "rel-upward-pressure-price",
+                  "start_char": 365
+                }
+              ],
+              "meaning": "The source causally raises the amount, rate, value, probability, or intensity of the target.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-upward-pressure-price"
+              ],
+              "relationship_type": "INCREASES",
+              "source_entity_id": "upward-price-pressure",
+              "source_label": "upward pressure on price",
+              "target_entity_id": "market-price",
+              "target_label": "market price"
+            }
+          ]
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "market-price",
+        "strategy_type": "CAUSAL_MECHANISM",
+        "title": "market price",
+        "trusted_input_refs": [
+          "workspace-fixture.json representation.nodes selected concept",
+          "workspace-fixture.json connected representation edges"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "CAUSAL_MECHANISM",
+      "selected_rule_id": "DIRECTIONAL_CAUSAL_NETWORK",
+      "selected_structure_ids": [
+        "structure-causal-path-18c3db4206eb571d",
+        "structure-causal-path-4dac0d5bd5f58c5e",
+        "structure-causal-path-a0c56598f23e7cf6",
+        "structure-causal-path-f106de270650c376"
+      ],
+      "semantic_class": "concept",
+      "semantic_focus_identity": "market-price",
+      "semantic_payload": {},
+      "source": "economics",
+      "source_document_id": "text-e6c889f45171a12a",
+      "source_provenance": {
+        "document_id": "text-e6c889f45171a12a",
+        "grounding_validation": "PASS",
+        "path": "examples/evaluations/spec-003-relationship-semantics-20260903/economics.knowledge.json",
+        "sha256": "952a88689537d8f3e3110f9de0b8903f9d69a797e250954a8bb9908a5a5bfe00",
+        "source_type": "text"
+      },
+      "status": "PASS",
+      "sufficiency": "SUFFICIENT_TRUSTED_STRUCTURE"
+    },
+    {
+      "available_trusted_concepts": [
+        {
+          "entity_id": "api-component",
+          "entity_type": "COMPONENT",
+          "label": "API component"
+        },
+        {
+          "entity_id": "database",
+          "entity_type": "COMPONENT",
+          "label": "database"
+        },
+        {
+          "entity_id": "modular-order-processing-service",
+          "entity_type": "SYSTEM",
+          "label": "modular order-processing service"
+        },
+        {
+          "entity_id": "order-component",
+          "entity_type": "COMPONENT",
+          "label": "order component"
+        },
+        {
+          "entity_id": "payment-component",
+          "entity_type": "COMPONENT",
+          "label": "payment component"
+        }
+      ],
+      "available_trusted_relationships": [
+        {
+          "direction": "part_to_whole",
+          "evidence": [
+            {
+              "document_id": "text-49b42a4f08a99742",
+              "end_char": 113,
+              "quote": "A modular order-processing service separates the API component, order component, payment component, and database.",
+              "relationship_id": "rel-1",
+              "start_char": 0
+            }
+          ],
+          "relationship_ids": [
+            "rel-1"
+          ],
+          "relationship_type": "PART_OF",
+          "source_entity_id": "api-component",
+          "target_entity_id": "modular-order-processing-service"
+        },
+        {
+          "direction": "part_to_whole",
+          "evidence": [
+            {
+              "document_id": "text-49b42a4f08a99742",
+              "end_char": 113,
+              "quote": "A modular order-processing service separates the API component, order component, payment component, and database.",
+              "relationship_id": "rel-4",
+              "start_char": 0
+            }
+          ],
+          "relationship_ids": [
+            "rel-4"
+          ],
+          "relationship_type": "PART_OF",
+          "source_entity_id": "database",
+          "target_entity_id": "modular-order-processing-service"
+        },
+        {
+          "direction": "part_to_whole",
+          "evidence": [
+            {
+              "document_id": "text-49b42a4f08a99742",
+              "end_char": 113,
+              "quote": "A modular order-processing service separates the API component, order component, payment component, and database.",
+              "relationship_id": "rel-2",
+              "start_char": 0
+            }
+          ],
+          "relationship_ids": [
+            "rel-2"
+          ],
+          "relationship_type": "PART_OF",
+          "source_entity_id": "order-component",
+          "target_entity_id": "modular-order-processing-service"
+        },
+        {
+          "direction": "part_to_whole",
+          "evidence": [
+            {
+              "document_id": "text-49b42a4f08a99742",
+              "end_char": 113,
+              "quote": "A modular order-processing service separates the API component, order component, payment component, and database.",
+              "relationship_id": "rel-3",
+              "start_char": 0
+            }
+          ],
+          "relationship_ids": [
+            "rel-3"
+          ],
+          "relationship_type": "PART_OF",
+          "source_entity_id": "payment-component",
+          "target_entity_id": "modular-order-processing-service"
+        }
+      ],
+      "case": "hierarchy_composition",
+      "confidence": "DETERMINISTIC_GROUNDED",
+      "decision_id": "decision-47d5c1601473b1d1",
+      "decision_inputs": {
+        "concept_label_used": false,
+        "domain_name_used": false,
+        "fixture_filename_used": false,
+        "renderer_used_as_strategy_authority": false,
+        "source_id_used_as_strategy_rule": false,
+        "trusted_semantics_only": true
+      },
+      "detected_structural_signals": [
+        {
+          "detected_from_normalized_relationships": true,
+          "entity_ids": [
+            "api-component",
+            "database",
+            "modular-order-processing-service",
+            "order-component",
+            "payment-component"
+          ],
+          "reciprocal": false,
+          "relationship_count": 4,
+          "relationship_ids": [
+            "rel-1",
+            "rel-2",
+            "rel-3",
+            "rel-4"
+          ],
+          "relationship_types": [
+            "PART_OF"
+          ],
+          "structure_ids": [
+            "structure-hierarchy-08003bf75a5a9b5f"
+          ],
+          "structure_type": "HIERARCHY"
+        }
+      ],
+      "expected_strategy": "HIERARCHY_COMPOSITION",
+      "fallback_reason": null,
+      "grounding_provenance_refs": [
+        {
+          "document_id": "text-49b42a4f08a99742",
+          "end_char": 113,
+          "quote": "A modular order-processing service separates the API component, order component, payment component, and database.",
+          "relationship_id": "rel-1",
+          "relationship_ids": [
+            "rel-1"
+          ],
+          "start_char": 0
+        },
+        {
+          "document_id": "text-49b42a4f08a99742",
+          "end_char": 113,
+          "quote": "A modular order-processing service separates the API component, order component, payment component, and database.",
+          "relationship_id": "rel-2",
+          "relationship_ids": [
+            "rel-2"
+          ],
+          "start_char": 0
+        },
+        {
+          "document_id": "text-49b42a4f08a99742",
+          "end_char": 113,
+          "quote": "A modular order-processing service separates the API component, order component, payment component, and database.",
+          "relationship_id": "rel-3",
+          "relationship_ids": [
+            "rel-3"
+          ],
+          "start_char": 0
+        },
+        {
+          "document_id": "text-49b42a4f08a99742",
+          "end_char": 113,
+          "quote": "A modular order-processing service separates the API component, order component, payment component, and database.",
+          "relationship_id": "rel-4",
+          "relationship_ids": [
+            "rel-4"
+          ],
+          "start_char": 0
+        }
+      ],
+      "label_and_domain_invariance": {
+        "changed_only": [
+          "domain label",
+          "fixture filename",
+          "entity labels",
+          "entity descriptions"
+        ],
+        "original_signature": {
+          "fallback_reason": null,
+          "selected_rule_id": "TYPED_HIERARCHY_EDGES",
+          "selected_strategy": "HIERARCHY_COMPOSITION",
+          "selected_structure_ids": [
+            "structure-hierarchy-08003bf75a5a9b5f"
+          ],
+          "signals": [
+            {
+              "reciprocal": false,
+              "relationship_count": 4,
+              "relationship_types": [
+                "PART_OF"
+              ],
+              "structure_type": "HIERARCHY"
+            }
+          ],
+          "sufficiency": "SUFFICIENT_TRUSTED_STRUCTURE"
+        },
+        "renamed_signature": {
+          "fallback_reason": null,
+          "selected_rule_id": "TYPED_HIERARCHY_EDGES",
+          "selected_strategy": "HIERARCHY_COMPOSITION",
+          "selected_structure_ids": [
+            "structure-hierarchy-08003bf75a5a9b5f"
+          ],
+          "signals": [
+            {
+              "reciprocal": false,
+              "relationship_count": 4,
+              "relationship_types": [
+                "PART_OF"
+              ],
+              "structure_type": "HIERARCHY"
+            }
+          ],
+          "sufficiency": "SUFFICIENT_TRUSTED_STRUCTURE"
+        },
+        "status": "PASS"
+      },
+      "rejected_richer_candidates": [],
+      "renderer_binding": {
+        "compiled_renderer_payload_sha256": "5c0bc9fe51844a3477bcd664396198651db9d0605a38346c89cd33b76554a554",
+        "fixture_representation_type_used_by_compiler_rule": false,
+        "matching_context_keys": [
+          "ground:software_architecture:representation-985e777f01fa9ec8:concept:modular-order-processing-service"
+        ],
+        "status": "PASS"
+      },
+      "renderer_contract": "SPEC038_REPRESENTATION_PLAN",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": null,
+          "predicates": [
+            "PART_OF"
+          ],
+          "relationship_count": 4,
+          "rule_id": "TYPED_HIERARCHY_EDGES",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [
+          {
+            "document_id": "text-49b42a4f08a99742",
+            "end_char": 113,
+            "quote": "A modular order-processing service separates the API component, order component, payment component, and database.",
+            "relationship_id": "rel-1",
+            "relationship_ids": [
+              "rel-1"
+            ],
+            "start_char": 0
+          },
+          {
+            "document_id": "text-49b42a4f08a99742",
+            "end_char": 113,
+            "quote": "A modular order-processing service separates the API component, order component, payment component, and database.",
+            "relationship_id": "rel-2",
+            "relationship_ids": [
+              "rel-2"
+            ],
+            "start_char": 0
+          },
+          {
+            "document_id": "text-49b42a4f08a99742",
+            "end_char": 113,
+            "quote": "A modular order-processing service separates the API component, order component, payment component, and database.",
+            "relationship_id": "rel-3",
+            "relationship_ids": [
+              "rel-3"
+            ],
+            "start_char": 0
+          },
+          {
+            "document_id": "text-49b42a4f08a99742",
+            "end_char": 113,
+            "quote": "A modular order-processing service separates the API component, order component, payment component, and database.",
+            "relationship_id": "rel-4",
+            "relationship_ids": [
+              "rel-4"
+            ],
+            "start_char": 0
+          }
+        ],
+        "payload": {
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "A service organized into separate API, order, payment, and database components.",
+            "identity": "modular-order-processing-service",
+            "label": "modular order-processing service"
+          },
+          "members": [
+            {
+              "description": "The component through which the order-processing service exposes or receives API calls.",
+              "entity_id": "api-component",
+              "entity_type": "COMPONENT",
+              "label": "API component"
+            },
+            {
+              "description": "Shared infrastructure used to store durable state for the order and payment components.",
+              "entity_id": "database",
+              "entity_type": "COMPONENT",
+              "label": "database"
+            },
+            {
+              "description": "A component responsible for order-related processing.",
+              "entity_id": "order-component",
+              "entity_type": "COMPONENT",
+              "label": "order component"
+            },
+            {
+              "description": "A component responsible for payment-related processing and purchase authorization.",
+              "entity_id": "payment-component",
+              "entity_type": "COMPONENT",
+              "label": "payment component"
+            }
+          ],
+          "nodes": [
+            {
+              "description": "The component through which the order-processing service exposes or receives API calls.",
+              "entity_id": "api-component",
+              "entity_type": "COMPONENT",
+              "label": "API component"
+            },
+            {
+              "description": "Shared infrastructure used to store durable state for the order and payment components.",
+              "entity_id": "database",
+              "entity_type": "COMPONENT",
+              "label": "database"
+            },
+            {
+              "description": "A service organized into separate API, order, payment, and database components.",
+              "entity_id": "modular-order-processing-service",
+              "entity_type": "SYSTEM",
+              "label": "modular order-processing service"
+            },
+            {
+              "description": "A component responsible for order-related processing.",
+              "entity_id": "order-component",
+              "entity_type": "COMPONENT",
+              "label": "order component"
+            },
+            {
+              "description": "A component responsible for payment-related processing and purchase authorization.",
+              "entity_id": "payment-component",
+              "entity_type": "COMPONENT",
+              "label": "payment component"
+            }
+          ],
+          "relationships": [
+            {
+              "direction": "part_to_whole",
+              "evidence": [
+                {
+                  "document_id": "text-49b42a4f08a99742",
+                  "end_char": 113,
+                  "quote": "A modular order-processing service separates the API component, order component, payment component, and database.",
+                  "relationship_id": "rel-1",
+                  "start_char": 0
+                }
+              ],
+              "meaning": "The source is a constituent or component of the target.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-1"
+              ],
+              "relationship_type": "PART_OF",
+              "source_entity_id": "api-component",
+              "source_label": "API component",
+              "target_entity_id": "modular-order-processing-service",
+              "target_label": "modular order-processing service"
+            },
+            {
+              "direction": "part_to_whole",
+              "evidence": [
+                {
+                  "document_id": "text-49b42a4f08a99742",
+                  "end_char": 113,
+                  "quote": "A modular order-processing service separates the API component, order component, payment component, and database.",
+                  "relationship_id": "rel-4",
+                  "start_char": 0
+                }
+              ],
+              "meaning": "The source is a constituent or component of the target.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-4"
+              ],
+              "relationship_type": "PART_OF",
+              "source_entity_id": "database",
+              "source_label": "database",
+              "target_entity_id": "modular-order-processing-service",
+              "target_label": "modular order-processing service"
+            },
+            {
+              "direction": "part_to_whole",
+              "evidence": [
+                {
+                  "document_id": "text-49b42a4f08a99742",
+                  "end_char": 113,
+                  "quote": "A modular order-processing service separates the API component, order component, payment component, and database.",
+                  "relationship_id": "rel-2",
+                  "start_char": 0
+                }
+              ],
+              "meaning": "The source is a constituent or component of the target.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-2"
+              ],
+              "relationship_type": "PART_OF",
+              "source_entity_id": "order-component",
+              "source_label": "order component",
+              "target_entity_id": "modular-order-processing-service",
+              "target_label": "modular order-processing service"
+            },
+            {
+              "direction": "part_to_whole",
+              "evidence": [
+                {
+                  "document_id": "text-49b42a4f08a99742",
+                  "end_char": 113,
+                  "quote": "A modular order-processing service separates the API component, order component, payment component, and database.",
+                  "relationship_id": "rel-3",
+                  "start_char": 0
+                }
+              ],
+              "meaning": "The source is a constituent or component of the target.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-3"
+              ],
+              "relationship_type": "PART_OF",
+              "source_entity_id": "payment-component",
+              "source_label": "payment component",
+              "target_entity_id": "modular-order-processing-service",
+              "target_label": "modular order-processing service"
+            }
+          ],
+          "roots": [
+            {
+              "description": "A service organized into separate API, order, payment, and database components.",
+              "entity_id": "modular-order-processing-service",
+              "entity_type": "SYSTEM",
+              "label": "modular order-processing service"
+            }
+          ]
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "modular-order-processing-service",
+        "strategy_type": "HIERARCHY_COMPOSITION",
+        "title": "modular order-processing service",
+        "trusted_input_refs": [
+          "workspace-fixture.json representation.nodes selected concept",
+          "workspace-fixture.json connected representation edges"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "HIERARCHY_COMPOSITION",
+      "selected_rule_id": "TYPED_HIERARCHY_EDGES",
+      "selected_structure_ids": [
+        "structure-hierarchy-08003bf75a5a9b5f"
+      ],
+      "semantic_class": "concept",
+      "semantic_focus_identity": "modular-order-processing-service",
+      "semantic_payload": {},
+      "source": "software_architecture",
+      "source_document_id": "text-49b42a4f08a99742",
+      "source_provenance": {
+        "document_id": "text-49b42a4f08a99742",
+        "grounding_validation": "PASS",
+        "path": "examples/evaluations/spec-003-relationship-semantics-20260903/software_architecture.knowledge.json",
+        "sha256": "91cb150fc875f1d01cd9412c95f8ddbb1e79561c439a866231ab2dedd6294261",
+        "source_type": "text"
+      },
+      "status": "PASS",
+      "sufficiency": "SUFFICIENT_TRUSTED_STRUCTURE"
+    },
+    {
+      "available_trusted_concepts": [
+        {
+          "entity_id": "movable-metal-type",
+          "entity_type": "COMPONENT",
+          "label": "Movable metal type"
+        },
+        {
+          "entity_id": "press",
+          "entity_type": "COMPONENT",
+          "label": "Press"
+        },
+        {
+          "entity_id": "printed-books",
+          "entity_type": "OBJECT",
+          "label": "Printed books"
+        },
+        {
+          "entity_id": "printing",
+          "entity_type": "PROCESS",
+          "label": "Printing"
+        }
+      ],
+      "available_trusted_relationships": [
+        {
+          "direction": "enabler_to_enabled",
+          "evidence": [
+            {
+              "document_id": "text-070a252acc409f55",
+              "end_char": 103,
+              "quote": "Johannes Gutenberg combined movable metal type with a press in Europe during the mid-fifteenth century.",
+              "relationship_id": "rel-type-enables-printing",
+              "start_char": 0
+            }
+          ],
+          "relationship_ids": [
+            "rel-type-enables-printing"
+          ],
+          "relationship_type": "ENABLES",
+          "source_entity_id": "movable-metal-type",
+          "target_entity_id": "printing"
+        },
+        {
+          "direction": "enabler_to_enabled",
+          "evidence": [
+            {
+              "document_id": "text-070a252acc409f55",
+              "end_char": 103,
+              "quote": "Johannes Gutenberg combined movable metal type with a press in Europe during the mid-fifteenth century.",
+              "relationship_id": "rel-press-enables-printing",
+              "start_char": 0
+            }
+          ],
+          "relationship_ids": [
+            "rel-press-enables-printing"
+          ],
+          "relationship_type": "ENABLES",
+          "source_entity_id": "press",
+          "target_entity_id": "printing"
+        },
+        {
+          "direction": "enabler_to_enabled",
+          "evidence": [
+            {
+              "document_id": "text-070a252acc409f55",
+              "end_char": 266,
+              "quote": "Printing enabled many copies to be produced from one prepared set of type",
+              "relationship_id": "rel-printing-enables-copies",
+              "start_char": 193
+            }
+          ],
+          "relationship_ids": [
+            "rel-printing-enables-copies"
+          ],
+          "relationship_type": "ENABLES",
+          "source_entity_id": "printing",
+          "target_entity_id": "printed-books"
+        }
+      ],
+      "case": "dependency_structure",
+      "confidence": "DETERMINISTIC_GROUNDED",
+      "decision_id": "decision-44ba907f9190307c",
+      "decision_inputs": {
+        "concept_label_used": false,
+        "domain_name_used": false,
+        "fixture_filename_used": false,
+        "renderer_used_as_strategy_authority": false,
+        "source_id_used_as_strategy_rule": false,
+        "trusted_semantics_only": true
+      },
+      "detected_structural_signals": [
+        {
+          "detected_from_normalized_relationships": true,
+          "entity_ids": [
+            "movable-metal-type",
+            "press",
+            "printed-books",
+            "printing"
+          ],
+          "reciprocal": false,
+          "relationship_count": 3,
+          "relationship_ids": [
+            "rel-press-enables-printing",
+            "rel-printing-enables-copies",
+            "rel-type-enables-printing"
+          ],
+          "relationship_types": [
+            "ENABLES"
+          ],
+          "structure_ids": [
+            "structure-dependency-chain-a020f5ab2fc01f35",
+            "structure-dependency-chain-dbc1ba63cc13589b"
+          ],
+          "structure_type": "DEPENDENCY_CHAIN"
+        }
+      ],
+      "expected_strategy": "DEPENDENCY_STRUCTURE",
+      "fallback_reason": null,
+      "grounding_provenance_refs": [
+        {
+          "document_id": "text-070a252acc409f55",
+          "end_char": 103,
+          "quote": "Johannes Gutenberg combined movable metal type with a press in Europe during the mid-fifteenth century.",
+          "relationship_id": "rel-press-enables-printing",
+          "relationship_ids": [
+            "rel-press-enables-printing"
+          ],
+          "start_char": 0
+        },
+        {
+          "document_id": "text-070a252acc409f55",
+          "end_char": 103,
+          "quote": "Johannes Gutenberg combined movable metal type with a press in Europe during the mid-fifteenth century.",
+          "relationship_id": "rel-type-enables-printing",
+          "relationship_ids": [
+            "rel-type-enables-printing"
+          ],
+          "start_char": 0
+        },
+        {
+          "document_id": "text-070a252acc409f55",
+          "end_char": 266,
+          "quote": "Printing enabled many copies to be produced from one prepared set of type",
+          "relationship_id": "rel-printing-enables-copies",
+          "relationship_ids": [
+            "rel-printing-enables-copies"
+          ],
+          "start_char": 193
+        }
+      ],
+      "label_and_domain_invariance": {
+        "changed_only": [
+          "domain label",
+          "fixture filename",
+          "entity labels",
+          "entity descriptions"
+        ],
+        "original_signature": {
+          "fallback_reason": null,
+          "selected_rule_id": "TYPED_DEPENDENCY_EDGES",
+          "selected_strategy": "DEPENDENCY_STRUCTURE",
+          "selected_structure_ids": [
+            "structure-dependency-chain-a020f5ab2fc01f35",
+            "structure-dependency-chain-dbc1ba63cc13589b"
+          ],
+          "signals": [
+            {
+              "reciprocal": false,
+              "relationship_count": 3,
+              "relationship_types": [
+                "ENABLES"
+              ],
+              "structure_type": "DEPENDENCY_CHAIN"
+            }
+          ],
+          "sufficiency": "SUFFICIENT_TRUSTED_STRUCTURE"
+        },
+        "renamed_signature": {
+          "fallback_reason": null,
+          "selected_rule_id": "TYPED_DEPENDENCY_EDGES",
+          "selected_strategy": "DEPENDENCY_STRUCTURE",
+          "selected_structure_ids": [
+            "structure-dependency-chain-a020f5ab2fc01f35",
+            "structure-dependency-chain-dbc1ba63cc13589b"
+          ],
+          "signals": [
+            {
+              "reciprocal": false,
+              "relationship_count": 3,
+              "relationship_types": [
+                "ENABLES"
+              ],
+              "structure_type": "DEPENDENCY_CHAIN"
+            }
+          ],
+          "sufficiency": "SUFFICIENT_TRUSTED_STRUCTURE"
+        },
+        "status": "PASS"
+      },
+      "rejected_richer_candidates": [],
+      "renderer_binding": {
+        "compiled_renderer_payload_sha256": "05df692c7bf95818e6c4e838e73f44502a841ad904a5cf00aeccd11455d553bc",
+        "fixture_representation_type_used_by_compiler_rule": false,
+        "matching_context_keys": [
+          "ground:history:representation-f803f1f3830cadf7:concept:printing"
+        ],
+        "status": "PASS"
+      },
+      "renderer_contract": "SPEC038_REPRESENTATION_PLAN",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": null,
+          "predicates": [
+            "ENABLES"
+          ],
+          "relationship_count": 3,
+          "rule_id": "TYPED_DEPENDENCY_EDGES",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [
+          {
+            "document_id": "text-070a252acc409f55",
+            "end_char": 103,
+            "quote": "Johannes Gutenberg combined movable metal type with a press in Europe during the mid-fifteenth century.",
+            "relationship_id": "rel-press-enables-printing",
+            "relationship_ids": [
+              "rel-press-enables-printing"
+            ],
+            "start_char": 0
+          },
+          {
+            "document_id": "text-070a252acc409f55",
+            "end_char": 103,
+            "quote": "Johannes Gutenberg combined movable metal type with a press in Europe during the mid-fifteenth century.",
+            "relationship_id": "rel-type-enables-printing",
+            "relationship_ids": [
+              "rel-type-enables-printing"
+            ],
+            "start_char": 0
+          },
+          {
+            "document_id": "text-070a252acc409f55",
+            "end_char": 266,
+            "quote": "Printing enabled many copies to be produced from one prepared set of type",
+            "relationship_id": "rel-printing-enables-copies",
+            "relationship_ids": [
+              "rel-printing-enables-copies"
+            ],
+            "start_char": 193
+          }
+        ],
+        "payload": {
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "The process of producing books and other printed material from prepared type.",
+            "identity": "printing",
+            "label": "Printing"
+          },
+          "nodes": [
+            {
+              "description": "Reusable metal type combined with a press for printing in Europe.",
+              "entity_id": "movable-metal-type",
+              "entity_type": "COMPONENT",
+              "label": "Movable metal type"
+            },
+            {
+              "description": "A press combined with movable metal type in Gutenberg's printing process.",
+              "entity_id": "press",
+              "entity_type": "COMPONENT",
+              "label": "Press"
+            },
+            {
+              "description": "Books produced through printing, including cheaper and more numerous copies.",
+              "entity_id": "printed-books",
+              "entity_type": "OBJECT",
+              "label": "Printed books"
+            },
+            {
+              "description": "The process of producing books and other printed material from prepared type.",
+              "entity_id": "printing",
+              "entity_type": "PROCESS",
+              "label": "Printing"
+            }
+          ],
+          "ordered_nodes": [
+            {
+              "description": "Reusable metal type combined with a press for printing in Europe.",
+              "entity_id": "movable-metal-type",
+              "entity_type": "COMPONENT",
+              "label": "Movable metal type"
+            },
+            {
+              "description": "A press combined with movable metal type in Gutenberg's printing process.",
+              "entity_id": "press",
+              "entity_type": "COMPONENT",
+              "label": "Press"
+            },
+            {
+              "description": "The process of producing books and other printed material from prepared type.",
+              "entity_id": "printing",
+              "entity_type": "PROCESS",
+              "label": "Printing"
+            },
+            {
+              "description": "Books produced through printing, including cheaper and more numerous copies.",
+              "entity_id": "printed-books",
+              "entity_type": "OBJECT",
+              "label": "Printed books"
+            }
+          ],
+          "relationships": [
+            {
+              "direction": "enabler_to_enabled",
+              "evidence": [
+                {
+                  "document_id": "text-070a252acc409f55",
+                  "end_char": 103,
+                  "quote": "Johannes Gutenberg combined movable metal type with a press in Europe during the mid-fifteenth century.",
+                  "relationship_id": "rel-type-enables-printing",
+                  "start_char": 0
+                }
+              ],
+              "meaning": "The source makes the target possible without necessarily causing it to occur.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-type-enables-printing"
+              ],
+              "relationship_type": "ENABLES",
+              "source_entity_id": "movable-metal-type",
+              "source_label": "Movable metal type",
+              "target_entity_id": "printing",
+              "target_label": "Printing"
+            },
+            {
+              "direction": "enabler_to_enabled",
+              "evidence": [
+                {
+                  "document_id": "text-070a252acc409f55",
+                  "end_char": 103,
+                  "quote": "Johannes Gutenberg combined movable metal type with a press in Europe during the mid-fifteenth century.",
+                  "relationship_id": "rel-press-enables-printing",
+                  "start_char": 0
+                }
+              ],
+              "meaning": "The source makes the target possible without necessarily causing it to occur.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-press-enables-printing"
+              ],
+              "relationship_type": "ENABLES",
+              "source_entity_id": "press",
+              "source_label": "Press",
+              "target_entity_id": "printing",
+              "target_label": "Printing"
+            },
+            {
+              "direction": "enabler_to_enabled",
+              "evidence": [
+                {
+                  "document_id": "text-070a252acc409f55",
+                  "end_char": 266,
+                  "quote": "Printing enabled many copies to be produced from one prepared set of type",
+                  "relationship_id": "rel-printing-enables-copies",
+                  "start_char": 193
+                }
+              ],
+              "meaning": "The source makes the target possible without necessarily causing it to occur.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-printing-enables-copies"
+              ],
+              "relationship_type": "ENABLES",
+              "source_entity_id": "printing",
+              "source_label": "Printing",
+              "target_entity_id": "printed-books",
+              "target_label": "Printed books"
+            }
+          ]
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "printing",
+        "strategy_type": "DEPENDENCY_STRUCTURE",
+        "title": "Printing",
+        "trusted_input_refs": [
+          "workspace-fixture.json representation.nodes selected concept",
+          "workspace-fixture.json connected representation edges"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "DEPENDENCY_STRUCTURE",
+      "selected_rule_id": "TYPED_DEPENDENCY_EDGES",
+      "selected_structure_ids": [
+        "structure-dependency-chain-a020f5ab2fc01f35",
+        "structure-dependency-chain-dbc1ba63cc13589b"
+      ],
+      "semantic_class": "concept",
+      "semantic_focus_identity": "printing",
+      "semantic_payload": {},
+      "source": "history",
+      "source_document_id": "text-070a252acc409f55",
+      "source_provenance": {
+        "document_id": "text-070a252acc409f55",
+        "grounding_validation": "PASS",
+        "path": "examples/evaluations/spec-003-relationship-semantics-20260903/history.knowledge.json",
+        "sha256": "21d3ea173df0fc4e98bcb272ef26118c8aa0596c22d51ca2175bbead438c6c21",
+        "source_type": "text"
+      },
+      "status": "PASS",
+      "sufficiency": "SUFFICIENT_TRUSTED_STRUCTURE"
+    },
+    {
+      "available_trusted_concepts": [
+        {
+          "entity_id": "authorities",
+          "entity_type": "SYSTEM",
+          "label": "Authorities"
+        },
+        {
+          "entity_id": "printed-controversy",
+          "entity_type": "CONCEPT",
+          "label": "Printed controversy"
+        }
+      ],
+      "available_trusted_relationships": [
+        {
+          "direction": "earlier_to_later",
+          "evidence": [
+            {
+              "document_id": "text-070a252acc409f55",
+              "end_char": 716,
+              "quote": "Authorities responded after printed controversy had expanded.",
+              "relationship_id": "rel-controversy-precedes-response",
+              "start_char": 655
+            }
+          ],
+          "relationship_ids": [
+            "rel-controversy-precedes-response"
+          ],
+          "relationship_type": "PRECEDES",
+          "source_entity_id": "printed-controversy",
+          "target_entity_id": "authorities"
+        }
+      ],
+      "case": "process_sequence",
+      "confidence": "DETERMINISTIC_GROUNDED",
+      "decision_id": "decision-a593b7c2f5a6dfff",
+      "decision_inputs": {
+        "concept_label_used": false,
+        "domain_name_used": false,
+        "fixture_filename_used": false,
+        "renderer_used_as_strategy_authority": false,
+        "source_id_used_as_strategy_rule": false,
+        "trusted_semantics_only": true
+      },
+      "detected_structural_signals": [
+        {
+          "detected_from_normalized_relationships": true,
+          "entity_ids": [
+            "authorities",
+            "printed-controversy"
+          ],
+          "reciprocal": false,
+          "relationship_count": 1,
+          "relationship_ids": [
+            "rel-controversy-precedes-response"
+          ],
+          "relationship_types": [
+            "PRECEDES"
+          ],
+          "structure_ids": [
+            "structure-process-chain-a48c9577b67579d5"
+          ],
+          "structure_type": "PROCESS_CHAIN"
+        }
+      ],
+      "expected_strategy": "PROCESS_SEQUENCE",
+      "fallback_reason": null,
+      "grounding_provenance_refs": [
+        {
+          "document_id": "text-070a252acc409f55",
+          "end_char": 716,
+          "quote": "Authorities responded after printed controversy had expanded.",
+          "relationship_id": "rel-controversy-precedes-response",
+          "relationship_ids": [
+            "rel-controversy-precedes-response"
+          ],
+          "start_char": 655
+        }
+      ],
+      "label_and_domain_invariance": {
+        "changed_only": [
+          "domain label",
+          "fixture filename",
+          "entity labels",
+          "entity descriptions"
+        ],
+        "original_signature": {
+          "fallback_reason": null,
+          "selected_rule_id": "EXPLICIT_PRECEDES_CHAIN",
+          "selected_strategy": "PROCESS_SEQUENCE",
+          "selected_structure_ids": [
+            "structure-process-chain-a48c9577b67579d5"
+          ],
+          "signals": [
+            {
+              "reciprocal": false,
+              "relationship_count": 1,
+              "relationship_types": [
+                "PRECEDES"
+              ],
+              "structure_type": "PROCESS_CHAIN"
+            }
+          ],
+          "sufficiency": "SUFFICIENT_TRUSTED_STRUCTURE"
+        },
+        "renamed_signature": {
+          "fallback_reason": null,
+          "selected_rule_id": "EXPLICIT_PRECEDES_CHAIN",
+          "selected_strategy": "PROCESS_SEQUENCE",
+          "selected_structure_ids": [
+            "structure-process-chain-a48c9577b67579d5"
+          ],
+          "signals": [
+            {
+              "reciprocal": false,
+              "relationship_count": 1,
+              "relationship_types": [
+                "PRECEDES"
+              ],
+              "structure_type": "PROCESS_CHAIN"
+            }
+          ],
+          "sufficiency": "SUFFICIENT_TRUSTED_STRUCTURE"
+        },
+        "status": "PASS"
+      },
+      "rejected_richer_candidates": [],
+      "renderer_binding": {
+        "compiled_renderer_payload_sha256": "309cb3123494c5f1cdd8805a38d04c5801e270dd5229555b571ebcb5acbd57d5",
+        "fixture_representation_type_used_by_compiler_rule": false,
+        "matching_context_keys": [
+          "ground:history:representation-372c9b3707ffd6cc:concept:authorities"
+        ],
+        "status": "PASS"
+      },
+      "renderer_contract": "SPEC038_REPRESENTATION_PLAN",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": null,
+          "predicates": [
+            "PRECEDES"
+          ],
+          "relationship_count": 1,
+          "rule_id": "EXPLICIT_PRECEDES_CHAIN",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [
+          {
+            "document_id": "text-070a252acc409f55",
+            "end_char": 716,
+            "quote": "Authorities responded after printed controversy had expanded.",
+            "relationship_id": "rel-controversy-precedes-response",
+            "relationship_ids": [
+              "rel-controversy-precedes-response"
+            ],
+            "start_char": 655
+          }
+        ],
+        "payload": {
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "Governments and churches that responded to expanded printed controversy.",
+            "identity": "authorities",
+            "label": "Authorities"
+          },
+          "nodes": [
+            {
+              "description": "Governments and churches that responded to expanded printed controversy.",
+              "entity_id": "authorities",
+              "entity_type": "SYSTEM",
+              "label": "Authorities"
+            },
+            {
+              "description": "Controversy associated with printed material that expanded before authorities responded.",
+              "entity_id": "printed-controversy",
+              "entity_type": "CONCEPT",
+              "label": "Printed controversy"
+            }
+          ],
+          "ordered_nodes": [
+            {
+              "description": "Controversy associated with printed material that expanded before authorities responded.",
+              "entity_id": "printed-controversy",
+              "entity_type": "CONCEPT",
+              "label": "Printed controversy"
+            },
+            {
+              "description": "Governments and churches that responded to expanded printed controversy.",
+              "entity_id": "authorities",
+              "entity_type": "SYSTEM",
+              "label": "Authorities"
+            }
+          ],
+          "relationships": [
+            {
+              "direction": "earlier_to_later",
+              "evidence": [
+                {
+                  "document_id": "text-070a252acc409f55",
+                  "end_char": 716,
+                  "quote": "Authorities responded after printed controversy had expanded.",
+                  "relationship_id": "rel-controversy-precedes-response",
+                  "start_char": 655
+                }
+              ],
+              "meaning": "The source occurs before the target in time or an explicit process sequence.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-controversy-precedes-response"
+              ],
+              "relationship_type": "PRECEDES",
+              "source_entity_id": "printed-controversy",
+              "source_label": "Printed controversy",
+              "target_entity_id": "authorities",
+              "target_label": "Authorities"
+            }
+          ]
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "authorities",
+        "strategy_type": "PROCESS_SEQUENCE",
+        "title": "Authorities",
+        "trusted_input_refs": [
+          "workspace-fixture.json representation.nodes selected concept",
+          "workspace-fixture.json connected representation edges"
+        ],
+        "warnings": [
+          "Sparse structure: this view contains only one supported relationship."
+        ]
+      },
+      "selected_representation_strategy": "PROCESS_SEQUENCE",
+      "selected_rule_id": "EXPLICIT_PRECEDES_CHAIN",
+      "selected_structure_ids": [
+        "structure-process-chain-a48c9577b67579d5"
+      ],
+      "semantic_class": "concept",
+      "semantic_focus_identity": "authorities",
+      "semantic_payload": {},
+      "source": "history",
+      "source_document_id": "text-070a252acc409f55",
+      "source_provenance": {
+        "document_id": "text-070a252acc409f55",
+        "grounding_validation": "PASS",
+        "path": "examples/evaluations/spec-003-relationship-semantics-20260903/history.knowledge.json",
+        "sha256": "21d3ea173df0fc4e98bcb272ef26118c8aa0596c22d51ca2175bbead438c6c21",
+        "source_type": "text"
+      },
+      "status": "PASS",
+      "sufficiency": "SUFFICIENT_TRUSTED_STRUCTURE"
+    },
+    {
+      "available_trusted_concepts": [
+        {
+          "entity_id": "electric-field",
+          "entity_type": "SYSTEM",
+          "label": "Electric field"
+        },
+        {
+          "entity_id": "magnetic-field",
+          "entity_type": "SYSTEM",
+          "label": "Magnetic field"
+        }
+      ],
+      "available_trusted_relationships": [
+        {
+          "direction": "inducer_to_induced_effect",
+          "evidence": [
+            {
+              "document_id": "text-38d7213d9f084e3e",
+              "end_char": 345,
+              "quote": "A changing electric field induces a magnetic field.",
+              "relationship_id": "changing-electric-field-induces-magnetic-field",
+              "start_char": 294
+            }
+          ],
+          "relationship_ids": [
+            "changing-electric-field-induces-magnetic-field"
+          ],
+          "relationship_type": "INDUCES",
+          "source_entity_id": "electric-field",
+          "target_entity_id": "magnetic-field"
+        },
+        {
+          "direction": "inducer_to_induced_effect",
+          "evidence": [
+            {
+              "document_id": "text-38d7213d9f084e3e",
+              "end_char": 293,
+              "quote": "A changing magnetic field induces an electric field.",
+              "relationship_id": "changing-magnetic-field-induces-electric-field",
+              "start_char": 241
+            }
+          ],
+          "relationship_ids": [
+            "changing-magnetic-field-induces-electric-field"
+          ],
+          "relationship_type": "INDUCES",
+          "source_entity_id": "magnetic-field",
+          "target_entity_id": "electric-field"
+        }
+      ],
+      "case": "reciprocal_mechanism",
+      "confidence": "DETERMINISTIC_GROUNDED",
+      "decision_id": "decision-5f9767000d47794a",
+      "decision_inputs": {
+        "concept_label_used": false,
+        "domain_name_used": false,
+        "fixture_filename_used": false,
+        "renderer_used_as_strategy_authority": false,
+        "source_id_used_as_strategy_rule": false,
+        "trusted_semantics_only": true
+      },
+      "detected_structural_signals": [
+        {
+          "detected_from_normalized_relationships": true,
+          "entity_ids": [
+            "electric-field",
+            "magnetic-field"
+          ],
+          "reciprocal": true,
+          "relationship_count": 2,
+          "relationship_ids": [
+            "changing-electric-field-induces-magnetic-field",
+            "changing-magnetic-field-induces-electric-field"
+          ],
+          "relationship_types": [
+            "INDUCES"
+          ],
+          "structure_ids": [
+            "structure-feedback-candidate-7813fa728b2f2a1a"
+          ],
+          "structure_type": "FEEDBACK_CANDIDATE"
+        }
+      ],
+      "expected_strategy": "RECIPROCAL_MECHANISM",
+      "fallback_reason": null,
+      "grounding_provenance_refs": [
+        {
+          "document_id": "text-38d7213d9f084e3e",
+          "end_char": 293,
+          "quote": "A changing magnetic field induces an electric field.",
+          "relationship_id": "changing-magnetic-field-induces-electric-field",
+          "relationship_ids": [
+            "changing-magnetic-field-induces-electric-field"
+          ],
+          "start_char": 241
+        },
+        {
+          "document_id": "text-38d7213d9f084e3e",
+          "end_char": 345,
+          "quote": "A changing electric field induces a magnetic field.",
+          "relationship_id": "changing-electric-field-induces-magnetic-field",
+          "relationship_ids": [
+            "changing-electric-field-induces-magnetic-field"
+          ],
+          "start_char": 294
+        }
+      ],
+      "label_and_domain_invariance": {
+        "changed_only": [
+          "domain label",
+          "fixture filename",
+          "entity labels",
+          "entity descriptions"
+        ],
+        "original_signature": {
+          "fallback_reason": null,
+          "selected_rule_id": "RECIPROCAL_DIRECTIONAL_PAIR",
+          "selected_strategy": "RECIPROCAL_MECHANISM",
+          "selected_structure_ids": [
+            "structure-feedback-candidate-7813fa728b2f2a1a"
+          ],
+          "signals": [
+            {
+              "reciprocal": true,
+              "relationship_count": 2,
+              "relationship_types": [
+                "INDUCES"
+              ],
+              "structure_type": "FEEDBACK_CANDIDATE"
+            }
+          ],
+          "sufficiency": "SUFFICIENT_TRUSTED_STRUCTURE"
+        },
+        "renamed_signature": {
+          "fallback_reason": null,
+          "selected_rule_id": "RECIPROCAL_DIRECTIONAL_PAIR",
+          "selected_strategy": "RECIPROCAL_MECHANISM",
+          "selected_structure_ids": [
+            "structure-feedback-candidate-7813fa728b2f2a1a"
+          ],
+          "signals": [
+            {
+              "reciprocal": true,
+              "relationship_count": 2,
+              "relationship_types": [
+                "INDUCES"
+              ],
+              "structure_type": "FEEDBACK_CANDIDATE"
+            }
+          ],
+          "sufficiency": "SUFFICIENT_TRUSTED_STRUCTURE"
+        },
+        "status": "PASS"
+      },
+      "rejected_richer_candidates": [],
+      "renderer_binding": {
+        "compiled_renderer_payload_sha256": "d7a410728749b7c927b54a92d19f2de348a00d3e77ec932accd934f29f385cfa",
+        "fixture_representation_type_used_by_compiler_rule": false,
+        "matching_context_keys": [
+          "ground:electromagnetism:representation-9058fd6ab1975a17:concept:electric-field"
+        ],
+        "status": "PASS"
+      },
+      "renderer_contract": "SPEC038_REPRESENTATION_PLAN",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": null,
+          "predicates": [
+            "INDUCES"
+          ],
+          "relationship_count": 2,
+          "rule_id": "RECIPROCAL_DIRECTIONAL_PAIR",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [
+          {
+            "document_id": "text-38d7213d9f084e3e",
+            "end_char": 293,
+            "quote": "A changing magnetic field induces an electric field.",
+            "relationship_id": "changing-magnetic-field-induces-electric-field",
+            "relationship_ids": [
+              "changing-magnetic-field-induces-electric-field"
+            ],
+            "start_char": 241
+          },
+          {
+            "document_id": "text-38d7213d9f084e3e",
+            "end_char": 345,
+            "quote": "A changing electric field induces a magnetic field.",
+            "relationship_id": "changing-electric-field-induces-magnetic-field",
+            "relationship_ids": [
+              "changing-electric-field-induces-magnetic-field"
+            ],
+            "start_char": 294
+          }
+        ],
+        "payload": {
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "cycle_nodes": [
+            {
+              "description": "A field created by electric charge that exerts force on another charge; changing electric fields can induce magnetic fields.",
+              "entity_id": "electric-field",
+              "entity_type": "SYSTEM",
+              "label": "Electric field"
+            },
+            {
+              "description": "A field created by a moving charge or electric current; changing magnetic fields induce electric fields.",
+              "entity_id": "magnetic-field",
+              "entity_type": "SYSTEM",
+              "label": "Magnetic field"
+            }
+          ],
+          "focus": {
+            "description": "A field created by electric charge that exerts force on another charge; changing electric fields can induce magnetic fields.",
+            "identity": "electric-field",
+            "label": "Electric field"
+          },
+          "nodes": [
+            {
+              "description": "A field created by electric charge that exerts force on another charge; changing electric fields can induce magnetic fields.",
+              "entity_id": "electric-field",
+              "entity_type": "SYSTEM",
+              "label": "Electric field"
+            },
+            {
+              "description": "A field created by a moving charge or electric current; changing magnetic fields induce electric fields.",
+              "entity_id": "magnetic-field",
+              "entity_type": "SYSTEM",
+              "label": "Magnetic field"
+            }
+          ],
+          "relationships": [
+            {
+              "direction": "inducer_to_induced_effect",
+              "evidence": [
+                {
+                  "document_id": "text-38d7213d9f084e3e",
+                  "end_char": 345,
+                  "quote": "A changing electric field induces a magnetic field.",
+                  "relationship_id": "changing-electric-field-induces-magnetic-field",
+                  "start_char": 294
+                }
+              ],
+              "meaning": "The source produces the target through an explicitly described induction mechanism.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "changing-electric-field-induces-magnetic-field"
+              ],
+              "relationship_type": "INDUCES",
+              "source_entity_id": "electric-field",
+              "source_label": "Electric field",
+              "target_entity_id": "magnetic-field",
+              "target_label": "Magnetic field"
+            },
+            {
+              "direction": "inducer_to_induced_effect",
+              "evidence": [
+                {
+                  "document_id": "text-38d7213d9f084e3e",
+                  "end_char": 293,
+                  "quote": "A changing magnetic field induces an electric field.",
+                  "relationship_id": "changing-magnetic-field-induces-electric-field",
+                  "start_char": 241
+                }
+              ],
+              "meaning": "The source produces the target through an explicitly described induction mechanism.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "changing-magnetic-field-induces-electric-field"
+              ],
+              "relationship_type": "INDUCES",
+              "source_entity_id": "magnetic-field",
+              "source_label": "Magnetic field",
+              "target_entity_id": "electric-field",
+              "target_label": "Electric field"
+            }
+          ]
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "electric-field",
+        "strategy_type": "RECIPROCAL_MECHANISM",
+        "title": "Electric field",
+        "trusted_input_refs": [
+          "workspace-fixture.json representation.nodes selected concept",
+          "workspace-fixture.json connected representation edges"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "RECIPROCAL_MECHANISM",
+      "selected_rule_id": "RECIPROCAL_DIRECTIONAL_PAIR",
+      "selected_structure_ids": [
+        "structure-feedback-candidate-7813fa728b2f2a1a"
+      ],
+      "semantic_class": "concept",
+      "semantic_focus_identity": "electric-field",
+      "semantic_payload": {},
+      "source": "electromagnetism",
+      "source_document_id": "text-38d7213d9f084e3e",
+      "source_provenance": {
+        "document_id": "text-38d7213d9f084e3e",
+        "grounding_validation": "PASS",
+        "path": "examples/evaluations/spec-003-relationship-semantics-20260903/electromagnetism.knowledge.json",
+        "sha256": "0e1d9fb1eae4575f609fe9c1816d394e8085433c1d2fb97f5db2cc93a588b7f3",
+        "source_type": "text"
+      },
+      "status": "PASS",
+      "sufficiency": "SUFFICIENT_TRUSTED_STRUCTURE"
+    },
+    {
+      "available_trusted_concepts": [
+        {
+          "entity_id": "shortage",
+          "entity_type": "CONCEPT",
+          "label": "shortage"
+        },
+        {
+          "entity_id": "upward-price-pressure",
+          "entity_type": "CONCEPT",
+          "label": "upward pressure on price"
+        }
+      ],
+      "available_trusted_relationships": [
+        {
+          "direction": "cause_to_effect",
+          "evidence": [
+            {
+              "document_id": "text-e6c889f45171a12a",
+              "end_char": 364,
+              "quote": "a shortage puts upward pressure on price.",
+              "relationship_id": "rel-shortage-upward-pressure",
+              "start_char": 323
+            }
+          ],
+          "relationship_ids": [
+            "rel-shortage-upward-pressure"
+          ],
+          "relationship_type": "CAUSES",
+          "source_entity_id": "shortage",
+          "target_entity_id": "upward-price-pressure"
+        }
+      ],
+      "case": "focused_relationship",
+      "confidence": "DETERMINISTIC_GROUNDED",
+      "decision_id": "decision-4e3e781d97aa92bb",
+      "decision_inputs": {
+        "concept_label_used": false,
+        "domain_name_used": false,
+        "fixture_filename_used": false,
+        "renderer_used_as_strategy_authority": false,
+        "source_id_used_as_strategy_rule": false,
+        "trusted_semantics_only": true
+      },
+      "detected_structural_signals": [
+        {
+          "detected_from_normalized_relationships": true,
+          "entity_ids": [
+            "market-price",
+            "quantity-demanded",
+            "quantity-supplied",
+            "shortage",
+            "supply-reduction",
+            "upward-price-pressure"
+          ],
+          "reciprocal": false,
+          "relationship_count": 5,
+          "relationship_ids": [
+            "rel-higher-price-decreases-demanded",
+            "rel-higher-price-increases-supplied",
+            "rel-price-decreases-demanded",
+            "rel-price-increases-supplied",
+            "rel-shortage-upward-pressure",
+            "rel-supply-reduction-price-increase",
+            "rel-upward-pressure-price"
+          ],
+          "relationship_types": [
+            "CAUSES",
+            "DECREASES",
+            "INCREASES"
+          ],
+          "structure_ids": [
+            "structure-causal-path-18c3db4206eb571d",
+            "structure-causal-path-4dac0d5bd5f58c5e",
+            "structure-causal-path-a0c56598f23e7cf6",
+            "structure-causal-path-f106de270650c376"
+          ],
+          "structure_type": "CAUSAL_PATH"
+        }
+      ],
+      "expected_strategy": "FOCUSED_RELATIONSHIP",
+      "fallback_reason": null,
+      "grounding_provenance_refs": [
+        {
+          "document_id": "text-e6c889f45171a12a",
+          "end_char": 364,
+          "quote": "a shortage puts upward pressure on price.",
+          "relationship_id": "rel-shortage-upward-pressure",
+          "relationship_ids": [
+            "rel-shortage-upward-pressure"
+          ],
+          "start_char": 323
+        }
+      ],
+      "label_and_domain_invariance": {
+        "changed_only": [
+          "domain label",
+          "fixture filename",
+          "entity labels",
+          "entity descriptions"
+        ],
+        "original_signature": {
+          "fallback_reason": null,
+          "selected_rule_id": "CANONICAL_EDGE_FOCUS",
+          "selected_strategy": "FOCUSED_RELATIONSHIP",
+          "selected_structure_ids": [
+            "structure-causal-path-18c3db4206eb571d",
+            "structure-causal-path-4dac0d5bd5f58c5e",
+            "structure-causal-path-a0c56598f23e7cf6",
+            "structure-causal-path-f106de270650c376"
+          ],
+          "signals": [
+            {
+              "reciprocal": false,
+              "relationship_count": 5,
+              "relationship_types": [
+                "CAUSES",
+                "DECREASES",
+                "INCREASES"
+              ],
+              "structure_type": "CAUSAL_PATH"
+            }
+          ],
+          "sufficiency": "SUFFICIENT_TRUSTED_STRUCTURE"
+        },
+        "renamed_signature": {
+          "fallback_reason": null,
+          "selected_rule_id": "CANONICAL_EDGE_FOCUS",
+          "selected_strategy": "FOCUSED_RELATIONSHIP",
+          "selected_structure_ids": [
+            "structure-causal-path-18c3db4206eb571d",
+            "structure-causal-path-4dac0d5bd5f58c5e",
+            "structure-causal-path-a0c56598f23e7cf6",
+            "structure-causal-path-f106de270650c376"
+          ],
+          "signals": [
+            {
+              "reciprocal": false,
+              "relationship_count": 5,
+              "relationship_types": [
+                "CAUSES",
+                "DECREASES",
+                "INCREASES"
+              ],
+              "structure_type": "CAUSAL_PATH"
+            }
+          ],
+          "sufficiency": "SUFFICIENT_TRUSTED_STRUCTURE"
+        },
+        "status": "PASS"
+      },
+      "rejected_richer_candidates": [],
+      "renderer_binding": {
+        "compiled_renderer_payload_sha256": "e4a43a7661b3d39b855f728699ef78df407dadd225f486c98e3b26de7a7b5ae7",
+        "fixture_representation_type_used_by_compiler_rule": false,
+        "matching_context_keys": [
+          "ground:economics:representation-fe3ba90cb8cfa3d6:canonical:rel-shortage-upward-pressure"
+        ],
+        "status": "PASS"
+      },
+      "renderer_contract": "SPEC038_REPRESENTATION_PLAN",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": null,
+          "predicates": [
+            "CAUSES"
+          ],
+          "relationship_count": 1,
+          "rule_id": "CANONICAL_EDGE_FOCUS",
+          "semantic_class": "canonical",
+          "structure_type": null
+        },
+        "evidence_refs": [
+          {
+            "document_id": "text-e6c889f45171a12a",
+            "end_char": 364,
+            "quote": "a shortage puts upward pressure on price.",
+            "relationship_id": "rel-shortage-upward-pressure",
+            "relationship_ids": [
+              "rel-shortage-upward-pressure"
+            ],
+            "start_char": 323
+          }
+        ],
+        "payload": {
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "The source brings about the target as an effect.",
+            "identity": "rel-shortage-upward-pressure",
+            "label": "rel-shortage-upward-pressure"
+          },
+          "nodes": [
+            {
+              "description": "A market condition in which quantity demanded exceeds quantity supplied.",
+              "entity_id": "shortage",
+              "entity_type": "CONCEPT",
+              "label": "shortage"
+            },
+            {
+              "description": "Pressure that tends to raise the market price.",
+              "entity_id": "upward-price-pressure",
+              "entity_type": "CONCEPT",
+              "label": "upward pressure on price"
+            }
+          ],
+          "relationship": {
+            "direction": "cause_to_effect",
+            "evidence": [
+              {
+                "document_id": "text-e6c889f45171a12a",
+                "end_char": 364,
+                "quote": "a shortage puts upward pressure on price.",
+                "relationship_id": "rel-shortage-upward-pressure",
+                "start_char": 323
+              }
+            ],
+            "meaning": "The source brings about the target as an effect.",
+            "provenance_status": "SOURCE_EVIDENCE",
+            "relationship_ids": [
+              "rel-shortage-upward-pressure"
+            ],
+            "relationship_type": "CAUSES",
+            "source_entity_id": "shortage",
+            "source_label": "shortage",
+            "target_entity_id": "upward-price-pressure",
+            "target_label": "upward pressure on price"
+          },
+          "relationships": [
+            {
+              "direction": "cause_to_effect",
+              "evidence": [
+                {
+                  "document_id": "text-e6c889f45171a12a",
+                  "end_char": 364,
+                  "quote": "a shortage puts upward pressure on price.",
+                  "relationship_id": "rel-shortage-upward-pressure",
+                  "start_char": 323
+                }
+              ],
+              "meaning": "The source brings about the target as an effect.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-shortage-upward-pressure"
+              ],
+              "relationship_type": "CAUSES",
+              "source_entity_id": "shortage",
+              "source_label": "shortage",
+              "target_entity_id": "upward-price-pressure",
+              "target_label": "upward pressure on price"
+            }
+          ]
+        },
+        "semantic_class": "canonical",
+        "semantic_focus_identity": "rel-shortage-upward-pressure",
+        "strategy_type": "FOCUSED_RELATIONSHIP",
+        "title": "shortage → upward pressure on price",
+        "trusted_input_refs": [
+          "workspace-fixture.json selected canonical edge",
+          "workspace-fixture.json selected edge endpoints and evidence"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "FOCUSED_RELATIONSHIP",
+      "selected_rule_id": "CANONICAL_EDGE_FOCUS",
+      "selected_structure_ids": [
+        "structure-causal-path-18c3db4206eb571d",
+        "structure-causal-path-4dac0d5bd5f58c5e",
+        "structure-causal-path-a0c56598f23e7cf6",
+        "structure-causal-path-f106de270650c376"
+      ],
+      "semantic_class": "canonical",
+      "semantic_focus_identity": "rel-shortage-upward-pressure",
+      "semantic_payload": {},
+      "source": "economics",
+      "source_document_id": "text-e6c889f45171a12a",
+      "source_provenance": {
+        "document_id": "text-e6c889f45171a12a",
+        "grounding_validation": "PASS",
+        "path": "examples/evaluations/spec-003-relationship-semantics-20260903/economics.knowledge.json",
+        "sha256": "952a88689537d8f3e3110f9de0b8903f9d69a797e250954a8bb9908a5a5bfe00",
+        "source_type": "text"
+      },
+      "status": "PASS",
+      "sufficiency": "SUFFICIENT_TRUSTED_STRUCTURE"
+    },
+    {
+      "available_trusted_concepts": [
+        {
+          "entity_id": "gene",
+          "entity_type": "CONCEPT",
+          "label": "Gene"
+        }
+      ],
+      "available_trusted_relationships": [],
+      "case": "prose_fallback",
+      "confidence": "DETERMINISTIC_FAIL_CLOSED",
+      "decision_id": "decision-b4ebb923193003b4",
+      "decision_inputs": {
+        "concept_label_used": false,
+        "domain_name_used": false,
+        "fixture_filename_used": false,
+        "renderer_used_as_strategy_authority": false,
+        "source_id_used_as_strategy_rule": false,
+        "trusted_semantics_only": true
+      },
+      "detected_structural_signals": [],
+      "expected_strategy": "CONCISE_PROSE",
+      "fallback_reason": "NO_DETECTED_TRUSTED_STRUCTURE_CONTAINS_FOCUS",
+      "grounding_provenance_refs": [],
+      "label_and_domain_invariance": {
+        "changed_only": [
+          "domain label",
+          "fixture filename",
+          "entity labels",
+          "entity descriptions"
+        ],
+        "original_signature": {
+          "fallback_reason": "NO_DETECTED_TRUSTED_STRUCTURE_CONTAINS_FOCUS",
+          "selected_rule_id": "TRUTHFUL_PROSE_FALLBACK",
+          "selected_strategy": "CONCISE_PROSE",
+          "selected_structure_ids": [],
+          "signals": [],
+          "sufficiency": "INSUFFICIENT_SUPPORTED_STRUCTURE"
+        },
+        "renamed_signature": {
+          "fallback_reason": "NO_DETECTED_TRUSTED_STRUCTURE_CONTAINS_FOCUS",
+          "selected_rule_id": "TRUTHFUL_PROSE_FALLBACK",
+          "selected_strategy": "CONCISE_PROSE",
+          "selected_structure_ids": [],
+          "signals": [],
+          "sufficiency": "INSUFFICIENT_SUPPORTED_STRUCTURE"
+        },
+        "status": "PASS"
+      },
+      "rejected_richer_candidates": [
+        {
+          "candidate": "RICH_STRUCTURAL_REPRESENTATION",
+          "reason": "NO_DETECTED_TRUSTED_STRUCTURE_CONTAINS_FOCUS"
+        }
+      ],
+      "renderer_binding": {
+        "compiled_renderer_payload_sha256": "8045e8c31afe68bf02e54b42d47151438e056b05fb97b94b4135a941bf8a702e",
+        "fixture_representation_type_used_by_compiler_rule": false,
+        "matching_context_keys": [],
+        "status": "NO_EXACT_RENDERER_BINDING"
+      },
+      "renderer_contract": "SPEC038_REPRESENTATION_PLAN",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": "NO_TRUSTED_SUPPORTING_RELATIONSHIP",
+          "predicates": [],
+          "relationship_count": 0,
+          "rule_id": "TRUTHFUL_PROSE_FALLBACK",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [],
+        "payload": {
+          "body": "A DNA region near which RNA polymerase binds to begin gene expression.",
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "A DNA region near which RNA polymerase binds to begin gene expression.",
+            "identity": "gene",
+            "label": "Gene"
+          },
+          "nodes": [
+            {
+              "description": "A DNA region near which RNA polymerase binds to begin gene expression.",
+              "entity_id": "gene",
+              "entity_type": "CONCEPT",
+              "label": "Gene"
+            }
+          ],
+          "relationships": []
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "gene",
+        "strategy_type": "CONCISE_PROSE",
+        "title": "Gene",
+        "trusted_input_refs": [
+          "validated KnowledgeModel entity"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "CONCISE_PROSE",
+      "selected_rule_id": "TRUTHFUL_PROSE_FALLBACK",
+      "selected_structure_ids": [],
+      "semantic_class": "concept",
+      "semantic_focus_identity": "gene",
+      "semantic_payload": {},
+      "source": "biology",
+      "source_document_id": "text-e8f26f10caa19160",
+      "source_provenance": {
+        "document_id": "text-e8f26f10caa19160",
+        "grounding_validation": "PASS",
+        "path": "examples/evaluations/spec-003-relationship-semantics-20260903/biology.knowledge.json",
+        "sha256": "dbd3bef0705d171ba4a320fd0e90a52d2a2f64b56e33fc212a4f7be2e5c3c8f2",
+        "source_type": "text"
+      },
+      "status": "PASS",
+      "sufficiency": "INSUFFICIENT_SUPPORTED_STRUCTURE"
+    },
+    {
+      "available_trusted_concepts": [
+        {
+          "entity_id": "quantity-demanded",
+          "entity_type": "VARIABLE",
+          "label": "quantity demanded"
+        },
+        {
+          "entity_id": "quantity-supplied",
+          "entity_type": "VARIABLE",
+          "label": "quantity supplied"
+        },
+        {
+          "entity_id": "shortage",
+          "entity_type": "CONCEPT",
+          "label": "shortage"
+        }
+      ],
+      "available_trusted_relationships": [],
+      "case": "compare_contrast",
+      "confidence": "DETERMINISTIC_GROUNDED",
+      "decision_id": "decision-637c90704b10e129",
+      "decision_inputs": {
+        "concept_label_used": false,
+        "domain_name_used": false,
+        "fixture_filename_used": false,
+        "renderer_used_as_strategy_authority": false,
+        "source_id_used_as_strategy_rule": false,
+        "trusted_semantics_only": true
+      },
+      "detected_structural_signals": [
+        {
+          "comparison_operator": "GREATER_THAN",
+          "detected_from_grounded_proposition": true,
+          "detected_from_normalized_relationships": false,
+          "entity_ids": [
+            "quantity-demanded",
+            "quantity-supplied",
+            "shortage"
+          ],
+          "explicit_roles": [
+            "LEFT_OPERAND",
+            "OUTCOME",
+            "RIGHT_OPERAND"
+          ],
+          "reciprocal": false,
+          "relationship_count": 0,
+          "relationship_ids": [],
+          "relationship_types": [
+            "CAUSES"
+          ],
+          "structure_ids": [],
+          "structure_type": "COMPARISON_CONDITION"
+        }
+      ],
+      "expected_strategy": "COMPARE_CONTRAST",
+      "fallback_reason": null,
+      "grounding_provenance_refs": [
+        {
+          "document_id": "text-e6c889f45171a12a",
+          "end_char": 364,
+          "quote": "If quantity demanded exceeds quantity supplied, a shortage puts upward pressure on price.",
+          "start_char": 275
+        }
+      ],
+      "label_and_domain_invariance": {
+        "changed_only": [
+          "domain label",
+          "fixture filename",
+          "entity labels",
+          "entity descriptions"
+        ],
+        "original_signature": {
+          "fallback_reason": null,
+          "selected_rule_id": "EXPLICIT_COMPARISON_PROPOSITION",
+          "selected_strategy": "COMPARE_CONTRAST",
+          "selected_structure_ids": [],
+          "signals": [
+            {
+              "reciprocal": false,
+              "relationship_count": 0,
+              "relationship_types": [
+                "CAUSES"
+              ],
+              "structure_type": "COMPARISON_CONDITION"
+            }
+          ],
+          "sufficiency": "SUFFICIENT_TRUSTED_STRUCTURE"
+        },
+        "renamed_signature": {
+          "fallback_reason": null,
+          "selected_rule_id": "EXPLICIT_COMPARISON_PROPOSITION",
+          "selected_strategy": "COMPARE_CONTRAST",
+          "selected_structure_ids": [],
+          "signals": [
+            {
+              "reciprocal": false,
+              "relationship_count": 0,
+              "relationship_types": [
+                "CAUSES"
+              ],
+              "structure_type": "COMPARISON_CONDITION"
+            }
+          ],
+          "sufficiency": "SUFFICIENT_TRUSTED_STRUCTURE"
+        },
+        "status": "PASS"
+      },
+      "rejected_richer_candidates": [],
+      "renderer_binding": {
+        "reason": "NO_PROTECTED_RENDERER_FORM",
+        "status": "NOT_RENDERED_BY_PROTECTED_SPEC038"
+      },
+      "renderer_contract": "SEMANTIC_DECISION_ONLY_NO_PROTECTED_RENDERER_FORM",
+      "representation_plan": null,
+      "selected_representation_strategy": "COMPARE_CONTRAST",
+      "selected_rule_id": "EXPLICIT_COMPARISON_PROPOSITION",
+      "selected_structure_ids": [],
+      "semantic_class": "proposition",
+      "semantic_focus_identity": "proposition-comparison-condition-3b486cc59d1cb2d9",
+      "semantic_payload": {
+        "comparison_operator": "GREATER_THAN",
+        "proposition_type": "COMPARISON_CONDITION",
+        "relationship_type": "CAUSES",
+        "role_bindings": [
+          {
+            "entity_id": "quantity-demanded",
+            "role": "LEFT_OPERAND"
+          },
+          {
+            "entity_id": "shortage",
+            "role": "OUTCOME"
+          },
+          {
+            "entity_id": "quantity-supplied",
+            "role": "RIGHT_OPERAND"
+          }
+        ],
+        "statement": "Quantity demanded greater than quantity supplied causes a shortage."
+      },
+      "source": "comparison",
+      "source_document_id": "text-e6c889f45171a12a",
+      "source_provenance": {
+        "document_id": "text-e6c889f45171a12a",
+        "grounding_validation": "PASS",
+        "path": "examples/evaluations/spec-010-proposition-modeling-20260903/economics.proposition-aware.knowledge.json",
+        "sha256": "45fd688df862011d27d3b4d4be714d816d9ae2b186bfd98a570963974df14ced",
+        "source_type": "text"
+      },
+      "status": "PASS",
+      "sufficiency": "SUFFICIENT_TRUSTED_STRUCTURE"
+    },
+    {
+      "available_trusted_concepts": [
+        {
+          "entity_id": "order-command",
+          "entity_type": "OBJECT",
+          "label": "order command"
+        },
+        {
+          "entity_id": "order-command-transfer",
+          "entity_type": "PROCESS",
+          "label": "order command transfer"
+        },
+        {
+          "entity_id": "order-component",
+          "entity_type": "COMPONENT",
+          "label": "order component"
+        }
+      ],
+      "available_trusted_relationships": [],
+      "case": "worked_example_source_sufficiency",
+      "confidence": "DETERMINISTIC_FAIL_CLOSED",
+      "decision_id": "decision-b6fc9a8f2271aefb",
+      "decision_inputs": {
+        "concept_label_used": false,
+        "domain_name_used": false,
+        "fixture_filename_used": false,
+        "renderer_used_as_strategy_authority": false,
+        "source_id_used_as_strategy_rule": false,
+        "trusted_semantics_only": true
+      },
+      "detected_structural_signals": [
+        {
+          "detected_from_grounded_proposition": true,
+          "detected_from_normalized_relationships": false,
+          "entity_ids": [
+            "order-command",
+            "order-command-transfer",
+            "order-component"
+          ],
+          "reciprocal": false,
+          "relationship_count": 0,
+          "relationship_ids": [],
+          "relationship_types": [
+            "TRANSFERS_TO"
+          ],
+          "structure_ids": [],
+          "structure_type": "TRANSFER_EVENT"
+        }
+      ],
+      "expected_strategy": "CONCISE_PROSE",
+      "fallback_reason": "NO_SUPPORTED_RULE_TO_INSTANCE_FORM",
+      "grounding_provenance_refs": [
+        {
+          "document_id": "text-79c197b799735d88",
+          "end_char": 352,
+          "quote": "After validation succeeds, the workflow creates an order command and transfers the command to the order component.",
+          "start_char": 238
+        }
+      ],
+      "label_and_domain_invariance": {
+        "changed_only": [
+          "domain label",
+          "fixture filename",
+          "entity labels",
+          "entity descriptions"
+        ],
+        "original_signature": {
+          "fallback_reason": "NO_SUPPORTED_RULE_TO_INSTANCE_FORM",
+          "selected_rule_id": "UNSUPPORTED_PROPOSITION_FORM_FALLBACK",
+          "selected_strategy": "CONCISE_PROSE",
+          "selected_structure_ids": [],
+          "signals": [
+            {
+              "reciprocal": false,
+              "relationship_count": 0,
+              "relationship_types": [
+                "TRANSFERS_TO"
+              ],
+              "structure_type": "TRANSFER_EVENT"
+            }
+          ],
+          "sufficiency": "INSUFFICIENT_SUPPORTED_STRUCTURE"
+        },
+        "renamed_signature": {
+          "fallback_reason": "NO_SUPPORTED_RULE_TO_INSTANCE_FORM",
+          "selected_rule_id": "UNSUPPORTED_PROPOSITION_FORM_FALLBACK",
+          "selected_strategy": "CONCISE_PROSE",
+          "selected_structure_ids": [],
+          "signals": [
+            {
+              "reciprocal": false,
+              "relationship_count": 0,
+              "relationship_types": [
+                "TRANSFERS_TO"
+              ],
+              "structure_type": "TRANSFER_EVENT"
+            }
+          ],
+          "sufficiency": "INSUFFICIENT_SUPPORTED_STRUCTURE"
+        },
+        "status": "PASS"
+      },
+      "rejected_richer_candidates": [
+        {
+          "candidate": "WORKED_EXAMPLE",
+          "reason": "TRANSFER_EVENT_IS_NOT_A_RULE_TO_INSTANCE_MAPPING"
+        }
+      ],
+      "renderer_binding": {
+        "compiled_renderer_payload_sha256": "22be742168726db24acafa1d31712b903c7647a4d3ebedea25e652a29493085b",
+        "fixture_representation_type_used_by_compiler_rule": false,
+        "matching_context_keys": [],
+        "status": "NO_EXACT_RENDERER_BINDING"
+      },
+      "renderer_contract": "SPEC038_REPRESENTATION_PLAN",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": "SOURCE_BACKED_EXPLANATION_HAS_NO_ADMITTED_STRUCTURAL_FORM",
+          "predicates": [],
+          "relationship_count": 0,
+          "rule_id": "TRUTHFUL_PROSE_FALLBACK",
+          "semantic_class": "explanation",
+          "structure_type": null
+        },
+        "evidence_refs": [],
+        "payload": {
+          "body": "The order command transfer sends the order command to the order component.",
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "The order command transfer sends the order command to the order component.",
+            "identity": "proposition-transfer-event-0585bfd49a1173f1",
+            "label": "The order command transfer sends the order command to the order component."
+          },
+          "nodes": [
+            {
+              "description": "The component that receives the order command.",
+              "entity_id": "order-component",
+              "entity_type": "COMPONENT",
+              "label": "order component"
+            },
+            {
+              "description": "The handoff of the order command to the order component.",
+              "entity_id": "order-command-transfer",
+              "entity_type": "PROCESS",
+              "label": "order command transfer"
+            },
+            {
+              "description": "The command transferred from the API to the order component.",
+              "entity_id": "order-command",
+              "entity_type": "OBJECT",
+              "label": "order command"
+            }
+          ],
+          "relationships": []
+        },
+        "semantic_class": "explanation",
+        "semantic_focus_identity": "proposition-transfer-event-0585bfd49a1173f1",
+        "strategy_type": "CONCISE_PROSE",
+        "title": "The order command transfer sends the order command to the order component.",
+        "trusted_input_refs": [
+          "validated KnowledgeModel proposition"
+        ],
+        "warnings": [
+          "No admitted rule-to-instance representation form."
+        ]
+      },
+      "selected_representation_strategy": "CONCISE_PROSE",
+      "selected_rule_id": "UNSUPPORTED_PROPOSITION_FORM_FALLBACK",
+      "selected_structure_ids": [],
+      "semantic_class": "proposition",
+      "semantic_focus_identity": "proposition-transfer-event-0585bfd49a1173f1",
+      "semantic_payload": {
+        "comparison_operator": null,
+        "proposition_type": "TRANSFER_EVENT",
+        "relationship_type": "TRANSFERS_TO",
+        "role_bindings": [
+          {
+            "entity_id": "order-component",
+            "role": "DESTINATION"
+          },
+          {
+            "entity_id": "order-command-transfer",
+            "role": "EVENT"
+          },
+          {
+            "entity_id": "order-command",
+            "role": "OBJECT"
+          }
+        ],
+        "statement": "The order command transfer sends the order command to the order component."
+      },
+      "source": "transfer",
+      "source_document_id": "text-79c197b799735d88",
+      "source_provenance": {
+        "document_id": "text-79c197b799735d88",
+        "grounding_validation": "PASS",
+        "path": "examples/evaluations/spec-010-proposition-modeling-20260903/process.proposition-aware.knowledge.json",
+        "sha256": "294e8d0b9b29b2f2ff85ec45f14f3d1f45201ab63334c6ec978d772f8c642493",
+        "source_type": "text"
+      },
+      "source_sufficiency_finding": "The committed transfer event has grounded EVENT, OBJECT, and DESTINATION roles, but it is not a rule-to-instance mapping. Selecting WORKED_EXAMPLE would invent a pedagogical relation, so the compiler fails closed.",
+      "status": "PASS",
+      "sufficiency": "INSUFFICIENT_SUPPORTED_STRUCTURE"
+    }
+  ],
+  "coverage_findings": {
+    "compare_contrast": "SUPPORTED by an explicit grounded COMPARISON_CONDITION proposition; the protected SPEC-038 renderer has no comparison form.",
+    "worked_example": "UNSUPPORTED: no committed evaluated source provides a grounded rule-to-instance mapping. The transfer event is preserved as a negative case."
+  },
+  "execution_mode": "OFFLINE_DETERMINISTIC",
+  "generalization_proofs": {
+    "all_label_and_domain_invariance_checks": true,
+    "ambiguous_relationship_fails_closed": {
+      "available_predicate": "INTERACTS_WITH",
+      "fallback_reason": "NO_DETECTED_TRUSTED_STRUCTURE_CONTAINS_FOCUS",
+      "invented_topology": false,
+      "selected_strategy": "CONCISE_PROSE",
+      "status": "PASS"
+    },
+    "single_direction_does_not_imply_reciprocal": {
+      "fallback_reason": "NO_DETECTED_TRUSTED_STRUCTURE_CONTAINS_FOCUS",
+      "reciprocal_inferred": false,
+      "selected_strategy": "CONCISE_PROSE",
+      "status": "PASS",
+      "trusted_direction_count": 1
+    }
+  },
+  "schema": "semantic-representation-decision-v1",
+  "spec": "SPEC-039"
+}

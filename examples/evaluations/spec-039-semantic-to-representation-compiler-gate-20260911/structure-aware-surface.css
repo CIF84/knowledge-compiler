@@ -1,0 +1,40 @@
+/* SPEC-036 strengthens the explanation while leaving My Map and Explore Next intact. */
+#representation-strategy-host{min-height:390px;padding:18px 20px;box-shadow:0 8px 26px rgba(23,33,29,.07)}
+#representation-strategy-host .strategy-surface{min-height:340px;grid-template-rows:auto auto 1fr auto}
+#representation-strategy-host .strategy-header{padding-bottom:.75rem;border-bottom:1px solid #d8dfda}
+#representation-strategy-host .strategy-description{max-width:70ch;font:1rem/1.55 ui-serif,Georgia,serif;color:#31453b}
+#representation-strategy-host .spec036-inspectable{transition:opacity .12s ease,background .12s ease,border-color .12s ease,box-shadow .12s ease;cursor:pointer}
+#representation-strategy-host .spec036-inspectable:hover,
+#representation-strategy-host .spec036-inspectable.is-local-preview{border-color:#9a5f10;background:#fff5e3;box-shadow:0 0 0 2px rgba(154,95,16,.12)}
+#representation-strategy-host .spec036-inspectable.is-local-highlight{border-color:#176b50;background:#e7f2ec;box-shadow:0 0 0 2px rgba(23,107,80,.17)}
+#representation-strategy-host.spec036-has-local .spec036-inspectable:not(.is-local-preview):not(.is-local-highlight){opacity:.48}
+#representation-strategy-host .spec036-relationship{border:1px solid #9fb0a6;border-radius:999px;background:#f7faf8;color:#176b50;padding:.36rem .58rem;font:800 .68rem/1.25 ui-sans-serif,system-ui,sans-serif;letter-spacing:.035em;text-align:center}
+#representation-strategy-host .strategy-predicate.spec036-relationship,
+#representation-strategy-host .strategy-arrow.spec036-relationship{align-self:center;max-width:150px}
+.strategy-relationship-rail{display:grid;gap:.5rem;padding:.85rem 0;border-top:1px solid #d8dfda}
+.strategy-relationship-list{display:flex;flex-wrap:wrap;gap:.45rem}
+.strategy-relationship-list button{font:inherit}
+#representation-strategy-host.spec036-rich .strategy-causal,
+#representation-strategy-host.spec036-rich .strategy-hierarchy,
+#representation-strategy-host.spec036-rich .strategy-dependency{align-self:center;padding:1rem;border-radius:14px;background:#f8faf8}
+#representation-strategy-host.spec036-sparse{min-height:300px}
+#representation-strategy-host.spec036-sparse .strategy-surface{min-height:250px;grid-template-rows:auto auto auto auto}
+#representation-strategy-host.spec036-sparse .strategy-card{padding:.68rem .76rem}
+#representation-strategy-host .strategy-warning{font-size:.7rem;padding:.42rem .58rem;color:#6e571e;background:#fffaf0}
+#representation-strategy-host .strategy-evidence{align-self:end}
+#representation-strategy-host .strategy-evidence summary{color:#58675f}
+#representation-strategy-host .strategy-hierarchy>.strategy-arrow{width:max-content;padding:.35rem .8rem}
+#representation-strategy-host .strategy-focused{align-self:center;padding:1rem;border-radius:14px;background:linear-gradient(90deg,#f5f8f6,#fffefa,#f5f8f6)}
+#representation-inspection{margin-top:10px;border:1px solid #d3dbd6;border-radius:7px;background:#fbfcfa;padding:14px 16px;min-height:160px}
+.surface-inspection-header{display:flex;justify-content:space-between;align-items:start;gap:1rem}
+.surface-inspection-header h3{margin:.1rem 0 .45rem;font-size:1.05rem}
+.surface-clear{border:1px solid #c8d2cc;border-radius:6px;background:#fff;padding:.35rem .55rem;color:#4a5a52;font-size:.72rem;cursor:pointer}
+.surface-clear:disabled{opacity:.4;cursor:default}
+.surface-inspection-body{max-width:72ch;margin:.2rem 0 .65rem;color:#33483d;line-height:1.5}
+.surface-inspection-guidance{margin:.3rem 0;color:#66736c;font-size:.78rem}
+.surface-inspection-facts{display:grid;grid-template-columns:auto 1fr;gap:.2rem .75rem;margin:.5rem 0;font-size:.75rem}
+.surface-inspection-facts dt{color:#66736c}.surface-inspection-facts dd{margin:0;color:#263a31}
+.surface-inspection-evidence:empty{display:none}
+.surface-inspection-evidence blockquote{margin:.5rem 0 .2rem;padding:.55rem .7rem;border-left:3px solid #176b50;background:#f1f7f3;font:italic .82rem/1.45 ui-serif,Georgia,serif}
+.surface-inspection-evidence small{color:#66736c;font-size:.66rem}
+@media(max-width:760px){#representation-strategy-host{padding:14px;min-height:0}#representation-strategy-host .strategy-surface{min-height:0}.surface-inspection-header{align-items:start}.strategy-relationship-list{display:grid}.strategy-relationship-list button{width:100%}}

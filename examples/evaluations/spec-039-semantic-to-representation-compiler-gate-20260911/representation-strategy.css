@@ -1,0 +1,36 @@
+/* SPEC-034 changes only the presentation payload inside the preserved learning pane. */
+body.spec034-strategy-active .learning-workspace{display:none}
+#representation-strategy-host{min-height:330px;overflow:auto;border:1px solid #e0e4e1;border-radius:7px;background:#fffefa;padding:14px 16px}
+.strategy-surface{display:grid;gap:1rem;align-content:start;min-height:280px}
+.strategy-header{display:flex;align-items:start;justify-content:space-between;gap:1rem}
+.strategy-header h3{margin:.15rem 0 0;font-size:1.42rem;line-height:1.15}
+.strategy-badge{display:inline-flex;border:1px solid #8aa298;border-radius:999px;padding:.3rem .58rem;color:#176b50;background:#edf4ef;font-size:.67rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+.strategy-description{margin:0;color:#3f4f47;line-height:1.55}
+.strategy-cards{display:grid;gap:.65rem}
+.strategy-card{border:1px solid #c8d2cc;border-radius:12px;background:#fff;padding:.75rem .85rem;text-align:left;color:#1d2d25}
+button.strategy-card{cursor:pointer;font:inherit}
+button.strategy-card:hover,button.strategy-card:focus{border-color:#176b50;background:#f4f8f5}
+.strategy-card strong{display:block;margin-bottom:.2rem}
+.strategy-card small{display:block;color:#66736c;line-height:1.4}
+.strategy-arrow{align-self:center;color:#176b50;font-weight:800;text-align:center}
+.strategy-causal{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:.6rem;align-items:stretch}
+.strategy-causal .strategy-link{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:.45rem;align-items:center;grid-column:1/-1}
+.strategy-predicate{font-size:.68rem;font-weight:800;color:#176b50;letter-spacing:.04em;text-align:center}
+.strategy-hierarchy{display:grid;gap:.8rem;justify-items:center}
+.strategy-hierarchy .strategy-root{min-width:min(100%,280px);border-color:#176b50;background:#edf4ef;text-align:center}
+.strategy-members{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:.55rem;width:100%;border-top:2px solid #8aa298;padding-top:.8rem}
+.strategy-sequence{display:flex;gap:.5rem;align-items:stretch;overflow-x:auto;padding:.25rem 0}
+.strategy-step{min-width:150px;position:relative}
+.strategy-step-number{display:inline-grid;place-items:center;width:1.45rem;height:1.45rem;border-radius:50%;background:#176b50;color:#fff;font-size:.72rem;font-weight:800;margin-bottom:.4rem}
+.strategy-dependency{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:.55rem;align-items:center}
+.strategy-reciprocal{display:grid;grid-template-columns:minmax(0,1fr) minmax(110px,.7fr) minmax(0,1fr);gap:.65rem;align-items:center}
+.strategy-reciprocal .strategy-cycle{display:grid;gap:.6rem;text-align:center;color:#176b50;font-size:.7rem;font-weight:800}
+.strategy-focused{display:grid;grid-template-columns:minmax(0,1fr) minmax(120px,.8fr) minmax(0,1fr);gap:.65rem;align-items:center}
+.strategy-prose{border-left:3px solid #8aa298;padding:.3rem 0 .3rem 1rem;max-width:60ch}
+.strategy-evidence{border-top:1px solid #d8dfda;padding-top:.8rem}
+.strategy-evidence summary{cursor:pointer;font-size:.72rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+.strategy-evidence blockquote{margin:.65rem 0 .25rem;padding:.65rem .8rem;border-left:3px solid #aebdb4;background:#f7f9f7;line-height:1.4;font-size:.82rem}
+.strategy-evidence p{margin:.2rem 0;color:#66736c;font-size:.7rem}
+.strategy-warning{margin:0;border:1px solid #d9c69e;background:#fffaf0;border-radius:8px;padding:.55rem .7rem;font-size:.76rem}
+#representation-strategy-host>.contextual-depth{position:sticky;bottom:0;z-index:5;display:block;width:max-content;background:#fff}
+@media(max-width:760px){.strategy-focused,.strategy-reciprocal,.strategy-dependency{grid-template-columns:1fr}.strategy-arrow{transform:rotate(90deg)}}

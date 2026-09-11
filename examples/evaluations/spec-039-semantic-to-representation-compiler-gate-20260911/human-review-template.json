@@ -1,0 +1,12 @@
+{
+  "allowed_verdicts": [
+    "COMPILER_GENERALIZATION_CONFIRMED",
+    "COMPILER_DIRECTIONALLY_CORRECT_WITH_GAPS",
+    "SEMANTIC_MODEL_TOO_WEAK",
+    "FIXTURE_LOGIC_STILL_DOMINANT",
+    "INCONCLUSIVE"
+  ],
+  "instruction": "Review the fixed compiler decisions and representative SPEC-038 renderings. Decide whether representation is being selected because the compiler has sufficient trusted semantic structure rather than because individual fixtures were assigned answers. Treat explicit comparison recognition, the unsupported worked-example finding, and fail-closed prose cases as part of the evidence.",
+  "status": "PENDING_OWNER_REVIEW",
+  "verdict": "PENDING"
+}

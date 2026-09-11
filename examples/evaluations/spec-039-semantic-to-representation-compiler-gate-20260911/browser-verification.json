@@ -1,0 +1,114 @@
+{
+  "browser": "Codex in-app browser (Chromium)",
+  "checked_at": "2026-09-11",
+  "checks": {
+    "browser_console_clean": true,
+    "compiler_causal_decision_reaches_spec038_canvas": true,
+    "compiler_dependency_decision_reaches_spec038_canvas": true,
+    "compiler_hierarchy_decision_reaches_spec038_canvas": true,
+    "compiler_process_decision_reaches_spec038_canvas": true,
+    "compiler_reciprocal_decision_reaches_spec038_canvas": true,
+    "explore_next_remains_forward_authority": true,
+    "local_hover_click_remains_non_navigational": true,
+    "my_map_remains_quiet_territory_tree": true,
+    "prose_fallback_remains_prose_without_canvas": true,
+    "representation_diversity_remains_visible": true,
+    "structural_representation_is_dominant": true
+  },
+  "console": {
+    "errors": [],
+    "result": "PASS",
+    "warnings": []
+  },
+  "deterministic_captures": [
+    {
+      "case": "causal_mechanism",
+      "diagram_grammar": "causal-system",
+      "diagram_nodes": 6,
+      "diagram_relationships": 5,
+      "directed_paths": 5,
+      "dominant_representation_precedes_inspection": true,
+      "focus": "market-price",
+      "forward_authority": "EXPLORE_NEXT_ONLY",
+      "map_grammar": "quiet-territory-tree",
+      "result": "PASS",
+      "strategy": "CAUSAL_MECHANISM"
+    },
+    {
+      "case": "hierarchy_composition",
+      "diagram_grammar": "hierarchy-composition",
+      "diagram_nodes": 5,
+      "diagram_relationships": 4,
+      "directed_paths": 4,
+      "focus": "modular-order-processing-service",
+      "forward_authority": "EXPLORE_NEXT_ONLY",
+      "map_grammar": "quiet-territory-tree",
+      "result": "PASS",
+      "strategy": "HIERARCHY_COMPOSITION"
+    },
+    {
+      "case": "dependency_structure",
+      "diagram_grammar": "dependency-flow",
+      "diagram_nodes": 4,
+      "diagram_relationships": 3,
+      "directed_paths": 3,
+      "focus": "printing",
+      "result": "PASS",
+      "strategy": "DEPENDENCY_STRUCTURE"
+    },
+    {
+      "case": "process_sequence",
+      "diagram_grammar": "ordered-sequence",
+      "diagram_nodes": 2,
+      "diagram_relationships": 1,
+      "directed_paths": 1,
+      "focus": "authorities",
+      "result": "PASS",
+      "strategy": "PROCESS_SEQUENCE"
+    },
+    {
+      "case": "reciprocal_mechanism",
+      "diagram_grammar": "reciprocal-cycle",
+      "diagram_nodes": 2,
+      "diagram_relationships": 2,
+      "directed_paths": 2,
+      "focus": "electric-field",
+      "local_hover_behavior": "inherited byte-identically from the protected SPEC-038 runtime; the same local-preview handler is regression-protected",
+      "local_relationship_click": {
+        "learner_focus_before_equals_after": true,
+        "navigation_dispatch_count": 0,
+        "reveal_dispatch_count": 0,
+        "revealed_map_before_equals_after": true,
+        "selected_relationship": "Electric field INDUCES Magnetic field",
+        "selected_wire_count": 1
+      },
+      "result": "PASS",
+      "strategy": "RECIPROCAL_MECHANISM"
+    },
+    {
+      "case": "prose_fallback",
+      "diagram_nodes": 0,
+      "diagram_present": false,
+      "diagram_relationships": 0,
+      "evidence_details_present": true,
+      "explore_next_present": true,
+      "focus": "Electromagnetism orientation",
+      "inspect_surface_present": true,
+      "result": "PASS",
+      "strategy": "CONCISE_PROSE"
+    }
+  ],
+  "interaction_isolation": {
+    "hover_handler_identity": "byte-identical protected SPEC-038 runtime",
+    "learner_location_unchanged": true,
+    "local_click_tested": true,
+    "revealed_territory_unchanged": true
+  },
+  "notes": [
+    "The candidate reuses the protected SPEC-038 HTML, CSS, and JavaScript byte-for-byte.",
+    "Compiler plans are bound to frozen viewer plans by exact renderer signature before browser verification.",
+    "Comparison is intentionally not rendered because SPEC-038 has no protected comparison form."
+  ],
+  "status": "PASS",
+  "url": "http://127.0.0.1:8039/?gate=spec039-clean"
+}

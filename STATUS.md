@@ -112,14 +112,14 @@ This is an architectural baseline, not a declaration that the UI is finished. Fo
 ## Current approved work packet
 
 ```text
-specs/SPEC-039-semantic-to-representation-compiler-gate.md
+NONE
 ```
 
-Status: `APPROVED_FOR_IMPLEMENTATION`
+Status: `NONE`
 
-Authority: `OFFLINE_ONLY`
+Authority: `NONE`
 
-Human gate: `OWNER_REVIEW`
+Human gate: `NONE`
 
 Promotion: `NOT_AUTHORIZED`
 
@@ -185,7 +185,7 @@ Representation strategy remains heterogeneous: causal/mechanism, process/sequenc
 
 ## Current gate
 
-SPEC-039 is the active approved implementation packet. It tests compiler-side semantic-to-representation capability against the protected SPEC-038 learner-facing baseline. Implementation must remain offline-only and must stop at owner review; promotion and follow-up implementation are unauthorized.
+SPEC-039 is implemented and awaiting owner review. Its offline machine and browser gates passed while preserving the protected SPEC-038 learner-facing baseline. The evidence remains deliberately mixed: comparison is recognized semantically but has no protected renderer, and the committed corpus does not support a true worked-example relation. No packet is active; promotion and follow-up implementation remain unauthorized.
 
 ## Frozen / protected state
 

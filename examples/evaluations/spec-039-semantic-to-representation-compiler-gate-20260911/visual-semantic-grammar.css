@@ -1,0 +1,87 @@
+/* SPEC-037: visual form communicates role; behavior remains owned by SPEC-033/036. */
+body.spec037-visual-grammar .navigation-pane{background:#f4f2eb}
+body.spec037-visual-grammar .nav-viewport{background:#f8f7f2;background-image:none}
+body.spec037-visual-grammar #revealed-knowledge-map{padding:18px 14px;gap:15px}
+body.spec037-visual-grammar .revealed-map-intro{padding:0 5px;color:#697269}
+body.spec037-visual-grammar .revealed-tree>li+li{margin-top:15px}
+body.spec037-visual-grammar .revealed-tree ul{margin-left:10px;padding-left:17px;border-left:1px solid #c2cbc2}
+body.spec037-visual-grammar .revealed-tree ul li{position:relative}
+body.spec037-visual-grammar .revealed-tree ul li::before{content:"";position:absolute;left:-17px;top:17px;width:12px;border-top:1px solid #c2cbc2}
+body.spec037-visual-grammar .revealed-row{grid-template-columns:18px minmax(0,1fr);gap:2px;align-items:center}
+body.spec037-visual-grammar .revealed-disclosure{width:18px;min-height:24px;padding:0;border:0;border-radius:3px;background:transparent;color:#667068;font-size:17px;line-height:1}
+body.spec037-visual-grammar .revealed-disclosure:hover,body.spec037-visual-grammar .revealed-disclosure:focus-visible{background:#e4e9e3;color:#175f48;outline:2px solid transparent}
+body.spec037-visual-grammar .revealed-node-button{position:relative;width:100%;min-height:29px;padding:4px 7px;border:0;border-radius:3px;background:transparent;grid-template-columns:minmax(44px,auto) minmax(0,1fr);gap:7px}
+body.spec037-visual-grammar .revealed-node-button:hover{border:0;background:#e9ece7}
+body.spec037-visual-grammar .revealed-node-button:focus-visible{outline:2px solid #28765e;outline-offset:1px}
+body.spec037-visual-grammar .revealed-node-button.is-current{border:0;background:linear-gradient(90deg,#dbe9e1 0,#eaf1ec 72%,transparent);box-shadow:inset 3px 0 #176b50}
+body.spec037-visual-grammar .revealed-node-button.is-current::after{content:"CURRENT";grid-column:2;color:#176b50;font-size:8px;font-weight:800;letter-spacing:.11em}
+body.spec037-visual-grammar [data-visual-role="territory-region"] .revealed-label{font:700 12px/1.35 ui-serif,Georgia,serif;color:#24352d}
+body.spec037-visual-grammar [data-visual-role="territory-region"] .revealed-kind{color:#176b50}
+body.spec037-visual-grammar [data-visual-role="territory-concept"] .revealed-label{font-weight:620}
+body.spec037-visual-grammar [data-visual-role="territory-relationship"] .revealed-label{font-weight:500;color:#40534a}
+body.spec037-visual-grammar [data-visual-role="territory-relationship"] .revealed-kind{color:#8a6635}
+body.spec037-visual-grammar [data-visual-role="territory-explanation"] .revealed-label{font-style:italic;font-weight:500;color:#5d665f}
+body.spec037-visual-grammar .revealed-count{margin:4px 5px 0;padding-top:10px}
+
+body.spec037-visual-grammar #representation-strategy-host{min-height:330px;padding:18px 20px;border:0;border-top:1px solid #d6ddd8;border-bottom:1px solid #d6ddd8;border-radius:0;background:#fffefa;box-shadow:none;overflow:auto}
+body.spec037-visual-grammar #representation-strategy-host.spec036-rich{min-height:470px}
+body.spec037-visual-grammar #representation-strategy-host .strategy-surface{min-height:285px}
+body.spec037-visual-grammar .strategy-header{border-bottom:0;padding-bottom:0}
+body.spec037-visual-grammar .strategy-badge{border:0;border-radius:0;padding:.18rem 0;background:transparent;color:#65766d;font-size:.62rem}
+body.spec037-visual-grammar .visual-semantic-object{appearance:none;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;cursor:pointer;position:relative}
+body.spec037-visual-grammar .visual-semantic-object:hover,body.spec037-visual-grammar .visual-semantic-object.is-local-preview{background:#fff2d9!important}
+body.spec037-visual-grammar .visual-semantic-object.is-local-highlight{background:#e3f1e9!important;box-shadow:inset 0 -3px #176b50!important}
+body.spec037-visual-grammar .visual-semantic-object:focus-visible{outline:2px solid #9a5f10;outline-offset:3px}
+body.spec037-visual-grammar #representation-strategy-host.spec036-has-local .visual-semantic-object:not(.is-local-preview):not(.is-local-highlight){opacity:.43}
+body.spec037-visual-grammar .visual-semantic-connector{border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;color:#176b50;cursor:pointer;position:relative}
+body.spec037-visual-grammar .visual-semantic-connector:hover,body.spec037-visual-grammar .visual-semantic-connector.is-local-preview{color:#8a540d;background:#fff2d9!important}
+body.spec037-visual-grammar .visual-semantic-connector.is-local-highlight{color:#0f5f45;background:#e3f1e9!important;box-shadow:inset 0 -2px #176b50!important}
+
+body.spec037-visual-grammar .strategy-causal{padding:1.25rem .7rem!important;background:linear-gradient(90deg,transparent,#f5f8f5 18%,#f5f8f5 82%,transparent)!important}
+body.spec037-visual-grammar .strategy-causal .strategy-link{gap:.2rem;position:relative}
+body.spec037-visual-grammar .strategy-causal .strategy-card{padding:.75rem .85rem;border-left:3px solid #7fa28f!important}
+body.spec037-visual-grammar .strategy-causal .strategy-predicate{min-width:100px;padding:.25rem .15rem}
+body.spec037-visual-grammar .strategy-causal .strategy-predicate::before{content:"";position:absolute;left:0;right:0;top:50%;border-top:1px solid #176b50;z-index:-1}
+
+body.spec037-visual-grammar .strategy-hierarchy{padding:1rem .8rem!important;background:transparent!important;gap:.45rem}
+body.spec037-visual-grammar .strategy-hierarchy .strategy-root{min-width:0;padding:.6rem 1rem;border-bottom:2px solid #176b50!important;font-family:ui-serif,Georgia,serif}
+body.spec037-visual-grammar .strategy-hierarchy>.strategy-arrow{min-width:140px;padding:.65rem 0 .15rem!important;font-size:.66rem}
+body.spec037-visual-grammar .strategy-hierarchy>.strategy-arrow::before{content:"";position:absolute;left:50%;top:0;height:.62rem;border-left:1px solid #789488}
+body.spec037-visual-grammar .strategy-members{position:relative;border-top:1px solid #789488;padding-top:1rem}
+body.spec037-visual-grammar .strategy-members .strategy-card{padding:.45rem .7rem;border-top:2px solid #c4d1ca!important;text-align:center}
+
+body.spec037-visual-grammar .strategy-focused{padding:1.2rem .5rem!important;background:linear-gradient(90deg,#f6f8f6,transparent 42%,transparent 58%,#f6f8f6)!important}
+body.spec037-visual-grammar .strategy-focused>.strategy-card:first-child,body.spec037-visual-grammar .strategy-focused>.strategy-card:last-child{padding:.8rem;border-bottom:2px solid #91aa9e!important}
+body.spec037-visual-grammar .strategy-focused>[data-visual-role="semantic-relationship"]{padding:.7rem .2rem;color:#176b50;text-align:center}
+body.spec037-visual-grammar .strategy-focused>[data-visual-role="semantic-relationship"]::before,body.spec037-visual-grammar .strategy-focused>[data-visual-role="semantic-relationship"]::after{content:"";display:block;border-top:1px solid #176b50;margin:.35rem 0}
+
+body.spec037-visual-grammar .strategy-dependency{padding:1rem .4rem!important;background:transparent!important;row-gap:.75rem}
+body.spec037-visual-grammar .strategy-dependency .strategy-card{padding:.55rem .7rem;border-left:3px solid #9a7b4c!important}
+body.spec037-visual-grammar .strategy-dependency .strategy-arrow{min-width:90px;padding:.3rem .15rem}
+body.spec037-visual-grammar .strategy-dependency .strategy-arrow::before{content:"";position:absolute;left:0;right:0;top:50%;border-top:1px dashed #9a7b4c;z-index:-1}
+
+body.spec037-visual-grammar .strategy-sequence{padding:1.1rem .3rem;align-items:start;background:linear-gradient(#fffefa 48%,#bdcbc4 49%,#bdcbc4 51%,#fffefa 52%)}
+body.spec037-visual-grammar .strategy-sequence .strategy-step{padding:.55rem .65rem;background:#fffefa!important;border-top:3px solid #176b50!important}
+body.spec037-visual-grammar .strategy-sequence .strategy-arrow{padding-top:2.2rem}
+body.spec037-visual-grammar .strategy-step-number{box-shadow:0 0 0 5px #fffefa}
+
+body.spec037-visual-grammar .strategy-reciprocal{padding:1.1rem .5rem;background:radial-gradient(circle at center,#eef4f0,transparent 54%)}
+body.spec037-visual-grammar .strategy-reciprocal .strategy-card{padding:.65rem;border-bottom:2px solid #7f9b8e!important}
+body.spec037-visual-grammar .strategy-cycle{position:relative}
+body.spec037-visual-grammar .strategy-cycle span{padding:.2rem 0}
+body.spec037-visual-grammar .strategy-prose{max-width:67ch;margin:1rem 0;padding:.2rem 0 1rem;border-left:0;font:1.08rem/1.68 ui-serif,Georgia,serif;color:#293b32}
+
+body.spec037-visual-grammar .visual-connection-index{padding:.7rem 0;border-top:1px solid #d6ddd8;display:block}
+body.spec037-visual-grammar .visual-connection-index .strategy-relationship-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.2rem 1rem}
+body.spec037-visual-grammar .visual-connection-index button{padding:.4rem 0!important;text-align:left;font-size:.68rem;border-bottom:1px dotted #aab9b0!important}
+body.spec037-visual-grammar #representation-inspection{min-height:150px;margin-top:12px;padding:16px 20px;border:0;border-top:1px solid #cfd8d2;border-radius:0;background:#fafbf8;overflow:auto}
+body.spec037-visual-grammar .surface-inspection-body{font:1rem/1.6 ui-serif,Georgia,serif}
+body.spec037-visual-grammar .surface-inspection-evidence blockquote{border-left:2px solid #7d9d8d;background:transparent}
+body.spec037-visual-grammar .surface-clear{border:1px solid #aebbb4;border-radius:4px;background:#fff}
+
+body.spec037-visual-grammar #exploration-suggestions{margin-top:14px;padding:15px 16px;border:1px solid #d3ddd6;border-radius:9px;background:#f5f8f5}
+body.spec037-visual-grammar .revealed-suggestion{position:relative;padding:10px 30px 10px 11px;border:1px solid #b8c8bf;border-radius:6px;background:#fff;box-shadow:0 1px 0 rgba(23,43,32,.04)}
+body.spec037-visual-grammar .revealed-suggestion::after{content:"→";position:absolute;right:11px;top:50%;transform:translateY(-50%);color:#176b50;font-weight:800}
+body.spec037-visual-grammar .revealed-suggestion:hover,body.spec037-visual-grammar .revealed-suggestion:focus-visible{border-color:#176b50;background:#edf5f0}
+
+@media(max-width:760px){body.spec037-visual-grammar .strategy-causal .strategy-link{grid-template-columns:1fr}body.spec037-visual-grammar .strategy-causal .strategy-predicate::before{display:none}body.spec037-visual-grammar .strategy-focused{grid-template-columns:1fr}body.spec037-visual-grammar .strategy-dependency{grid-template-columns:1fr}body.spec037-visual-grammar .visual-connection-index .strategy-relationship-list{grid-template-columns:1fr}}

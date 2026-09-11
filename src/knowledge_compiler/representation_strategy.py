@@ -380,14 +380,12 @@ def _strategy_rule(context: RepresentationContext) -> tuple[StrategyType, str, s
     predicates = {item["relationship_type"] for item in context.relationships}
     if _is_reciprocal(context):
         return StrategyType.RECIPROCAL_MECHANISM, "RECIPROCAL_DIRECTIONAL_PAIR", None
-    if context.structure_type == "PROCESS_CHAIN" and predicates <= SEQUENCE_PREDICATES:
+    if predicates <= SEQUENCE_PREDICATES:
         return StrategyType.PROCESS_SEQUENCE, "EXPLICIT_PRECEDES_CHAIN", None
-    if context.structure_type == "HIERARCHY" and predicates <= HIERARCHY_PREDICATES:
-        return StrategyType.HIERARCHY_COMPOSITION, "TYPED_HIERARCHY_EDGES", None
-    if context.structure_type == "DEPENDENCY_CHAIN" and predicates <= DEPENDENCY_PREDICATES:
-        return StrategyType.DEPENDENCY_STRUCTURE, "TYPED_DEPENDENCY_EDGES", None
     if predicates <= HIERARCHY_PREDICATES:
         return StrategyType.HIERARCHY_COMPOSITION, "TYPED_HIERARCHY_EDGES", None
+    if predicates <= DEPENDENCY_PREDICATES:
+        return StrategyType.DEPENDENCY_STRUCTURE, "TYPED_DEPENDENCY_EDGES", None
     if predicates <= CAUSAL_PREDICATES:
         return StrategyType.CAUSAL_MECHANISM, "DIRECTIONAL_CAUSAL_NETWORK", None
     return (

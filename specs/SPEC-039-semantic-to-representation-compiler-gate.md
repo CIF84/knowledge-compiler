@@ -1,6 +1,6 @@
 # SPEC-039 — Semantic-to-Representation Compiler Gate
 
-Status: `APPROVED_FOR_IMPLEMENTATION`
+Status: `IMPLEMENTED_AWAITING_REVIEW`
 Authority: `OFFLINE_ONLY`
 Human gate: `OWNER_REVIEW`
 Promotion: `NOT_AUTHORIZED`
@@ -250,3 +250,18 @@ After implementation and validation:
 Owner review should answer one primary question:
 
 > Is representation now being chosen because the compiler understands enough of the source's trusted semantic structure, rather than because we taught individual examples how they should look?
+
+## Implementation record
+
+The offline compiler gate is implemented and awaits owner review. Deterministic
+semantic decisions cover the supported causal, hierarchy, dependency, process,
+reciprocal, focused-relationship, comparison, and prose cases without domain,
+fixture, label, or source-ID strategy rules. The protected SPEC-038 runtime binds
+exactly to every supported renderer plan and passes the representative browser
+gate without navigation or interaction changes.
+
+The evidence is intentionally mixed rather than promoted: the compiler recognizes
+an explicit grounded comparison proposition but SPEC-038 has no protected comparison
+renderer, and the committed corpus does not contain a grounded rule-to-instance
+mapping that would justify `WORKED_EXAMPLE`. The transfer-event candidate therefore
+fails closed to prose. No product verdict or baseline promotion is recorded here.
