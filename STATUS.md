@@ -51,86 +51,72 @@ Implementation status: `IMPLEMENTED_REVIEWED`
 
 Owner verdict: `GENERIC_HARNESS_CONFIRMED_SOURCE_FREEZE_NEXT`
 
-Accepted findings:
+Frozen harness/compiler identity:
 
-- generic harness/compiler frozen at `5622df131dc71346d5890f42ce16fe1e3e55f33a`;
-- blind sources remained absent during implementation;
-- anti-overfitting and source-identity invariance checks passed;
-- dry-run and SPEC-038 browser regressions passed;
-- no live/model/external execution occurred;
-- the next gate may freeze the exact blind source set, but transmission to OpenAI remains separately gated.
+`5622df131dc71346d5890f42ce16fe1e3e55f33a`
 
 ## Blind source set freeze
 
 `SPEC-041 — blind source set freeze`
 
-Implementation status: `IMPLEMENTED_AWAITING_REVIEW`
+Implementation status: `IMPLEMENTED_REVIEWED`
 
-Owner verdict: `PENDING`
+Owner verdict: `BLIND_SOURCE_SET_APPROVED_FOR_EXACT_TRANSMISSION`
 
-Recorded result:
+Owner/ChatGPT reviewed the exact three-source packet and call manifest and approved exactly those frozen passages for the bounded live run. No adaptation after source selection is permitted.
 
-- exactly three public U.S. federal sources are frozen in the required geology, meteorology, and civics order;
-- each exact passage is 300–650 words and has recorded provenance, size, and SHA-256;
-- the packet contains no semantic or representation answer key;
-- the SPEC-040 harness/compiler remains byte-equivalent to frozen commit `5622df131dc71346d5890f42ce16fe1e3e55f33a`;
-- the proposed live manifest permits at most three `gpt-5.6-luna` calls with `store=False` and every retry class at zero;
-- source retrieval occurred, but OpenAI/model calls and semantic extraction remained zero.
+Frozen packet SHA-256:
+
+`ccf1c5e9fb607934f790eb06cd828bf5a1d42e4f6e4d7913722debc4269c72b0`
+
+Frozen live-manifest SHA-256:
+
+`f45c8797b94a0a5d6a1902aa50b71a63af6277dfcf1e6956a2d2d1107339d075`
 
 ## Current approved work packet
 
 ```text
-NONE
+specs/SPEC-042-blind-out-of-sample-live-execution.md
 ```
 
-Status: `NONE`
+Status: `APPROVED_FOR_IMPLEMENTATION`
 
-Authority: `NONE`
+Authority: `LIVE_CALLS_EXPLICITLY_BOUNDED`
 
-Human gate: `NONE`
+Human gate: `OWNER_REVIEW`
 
 Promotion: `NOT_AUTHORIZED`
 
 ## Current gate
 
-SPEC-041 is implemented and awaiting owner review. The exact blind source packet and
-proposed three-call manifest are frozen under
-`examples/evaluations/spec-041-blind-source-set-freeze-20260911/`.
+SPEC-042 is authorized to execute the frozen blind evaluation exactly once under the approved manifest.
 
-No packet is active. OpenAI/model execution remains unauthorized. Owner/ChatGPT must
-review the exact packet, non-cherry-picking evidence, provenance, and call bounds before
-a later packet may authorize transmission of these passages.
+Authorized provider activity is limited to exactly three maximum OpenAI Responses API calls: one per frozen source, in frozen packet order, using `gpt-5.6-luna`, `store=False`, prompt `spec-010-v1`, and zero SDK, hidden, semantic, repair, or follow-up model retries/calls.
+
+No other provider call, external retrieval/enrichment, source substitution, implementation adaptation, prompt adaptation, semantic-vocabulary change, representation-rule change, renderer change, or evaluation-rule change is authorized.
+
+Preflight frozen-identity/hash mismatch must stop execution before any provider call.
+
+After the single run, SPEC-042 must stop at owner review with no promotion or follow-up implementation.
 
 ## Current product direction
 
-The primary uncertainty is generalization beyond the development corpus:
+The active uncertainty is genuine out-of-sample generalization:
 
 ```text
-previously unseen source material
+three frozen unseen source passages
         ↓
-semantic extraction + grounding
+exactly one extraction call each
         ↓
-trusted semantic structure
+deterministic grounding + canonical validation
+        ↓
+trusted semantic structure or fail closed
         ↓
 semantic representation decision
         ↓
-SPEC-038 learner-facing representation
-```
-
-The experimental order is protected:
-
-```text
-frozen compiler + harness
+protected SPEC-038 learner-facing representation when supported
         ↓
-freeze three out-of-sample sources
-        ↓
-owner approves exact transmitted packet
-        ↓
-exactly three bounded model calls
-        ↓
-no implementation adaptation
-        ↓
-owner reviews learner-facing outputs
+owner judges learning usefulness
 ```
 
 ## Frozen / protected state
@@ -139,34 +125,33 @@ owner reviews learner-facing outputs
 - SPEC-038 learner-facing visual/interaction baseline;
 - SPEC-039 semantic-to-representation compiler behavior and accepted principles;
 - SPEC-040 frozen harness/compiler identity `5622df131dc71346d5890f42ce16fe1e3e55f33a`;
-- SPEC-041 exact source packet and proposed live-execution manifest;
+- SPEC-041 exact source packet and live-execution manifest;
+- all three exact source passage hashes;
+- prompt `spec-010-v1`;
+- trusted semantic vocabulary, grounding, provenance, and fail-closed behavior;
+- representation strategy rules and current renderer coverage;
 - SPEC-033 navigation semantics;
 - SPEC-034 representation diversity;
 - SPEC-035 explanation/navigation isolation;
 - SPEC-036 local inspection semantics;
 - SPEC-037 quiet My Map grammar;
-- trusted semantic vocabulary, grounding, provenance, and fail-closed behavior;
-- source-bounded depth behavior;
-- known renderer/corpus coverage gaps from SPEC-039;
 - unrelated user work.
 
-## Explicitly deferred
+## Explicitly deferred / forbidden during this packet
 
-Do not yet implement or execute:
+Do not:
 
-- OpenAI/model semantic extraction of blind sources;
-- any blind-run provider call;
-- source-specific compiler/prompt/semantic/renderer adaptation;
-- comparison renderer completion;
-- worked-example feature work;
-- Back / learner traversal history;
-- traversal persistence/history UI;
-- personalization/learner-state modeling;
-- quizzes/mastery;
-- guided courses/pathways;
-- broad navigation redesign;
-- universal graph viewer;
-- decorative animation as a product goal.
+- retry a provider result;
+- repair a provider result;
+- substitute or edit a source;
+- retrieve external enrichment;
+- modify compiler/harness/prompt after seeing source output;
+- complete the comparison renderer;
+- add worked-example capability;
+- implement Back/history;
+- add personalization, quizzes, mastery, or guided courses;
+- redesign navigation or the learner-facing baseline;
+- promote the result or assign the subjective owner verdict.
 
 ## Coordination rule
 
