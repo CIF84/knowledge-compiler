@@ -73,31 +73,47 @@ Frozen live-manifest SHA-256:
 
 `f45c8797b94a0a5d6a1902aa50b71a63af6277dfcf1e6956a2d2d1107339d075`
 
+## Blind out-of-sample live execution
+
+`SPEC-042 — blind out-of-sample live execution`
+
+Implementation status: `IMPLEMENTED_AWAITING_REVIEW`
+
+Owner verdict: `PENDING`
+
+Recorded objective result:
+
+- exactly three approved `gpt-5.6-luna` Responses API calls executed in frozen source order;
+- `store=False`; SDK, hidden, semantic, repair, and follow-up retries/calls all remained zero;
+- geology failed closed because a relationship referenced an undeclared entity;
+- meteorology failed closed because typed propositions referenced undeclared entities;
+- civics admitted 20 entities, 10 relationships, 3 detected structures, and 30 representation decisions;
+- no source, prompt, compiler, semantic, representation, renderer, or evaluation adaptation occurred;
+- the final pedagogical/product verdict remains reserved for owner review.
+
 ## Current approved work packet
 
 ```text
-specs/SPEC-042-blind-out-of-sample-live-execution.md
+NONE
 ```
 
-Status: `APPROVED_FOR_IMPLEMENTATION`
+Status: `NONE`
 
-Authority: `LIVE_CALLS_EXPLICITLY_BOUNDED`
+Authority: `NONE`
 
-Human gate: `OWNER_REVIEW`
+Human gate: `NONE`
 
 Promotion: `NOT_AUTHORIZED`
 
 ## Current gate
 
-SPEC-042 is authorized to execute the frozen blind evaluation exactly once under the approved manifest.
+SPEC-042 is implemented and awaiting owner review. The single authorized run is complete,
+and its immutable evidence is under
+`examples/evaluations/spec-042-blind-out-of-sample-live-execution-20260911/`.
 
-Authorized provider activity is limited to exactly three maximum OpenAI Responses API calls: one per frozen source, in frozen packet order, using `gpt-5.6-luna`, `store=False`, prompt `spec-010-v1`, and zero SDK, hidden, semantic, repair, or follow-up model retries/calls.
-
-No other provider call, external retrieval/enrichment, source substitution, implementation adaptation, prompt adaptation, semantic-vocabulary change, representation-rule change, renderer change, or evaluation-rule change is authorized.
-
-Preflight frozen-identity/hash mismatch must stop execution before any provider call.
-
-After the single run, SPEC-042 must stop at owner review with no promotion or follow-up implementation.
+No packet is active. No retry, repair, follow-up model call, implementation change, or
+promotion is authorized. Owner review must assess semantic fidelity, structural usefulness,
+representation appropriateness, and learning usefulness separately.
 
 ## Current product direction
 
@@ -126,6 +142,7 @@ owner judges learning usefulness
 - SPEC-039 semantic-to-representation compiler behavior and accepted principles;
 - SPEC-040 frozen harness/compiler identity `5622df131dc71346d5890f42ce16fe1e3e55f33a`;
 - SPEC-041 exact source packet and live-execution manifest;
+- SPEC-042 complete three-call run history and admitted/failed-closed outcomes;
 - all three exact source passage hashes;
 - prompt `spec-010-v1`;
 - trusted semantic vocabulary, grounding, provenance, and fail-closed behavior;

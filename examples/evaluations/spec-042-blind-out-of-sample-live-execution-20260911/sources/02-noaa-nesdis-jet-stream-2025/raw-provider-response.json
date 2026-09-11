@@ -1,0 +1,440 @@
+{
+  "actual_model": "gpt-5.6-luna",
+  "completed_at_utc": "2026-09-11T19:50:16.719690Z",
+  "duration_ms": 25653.444,
+  "http_request_id": "req_efad75aff3b54df7ae53844ccc34cce2",
+  "prompt_version": "spec-010-v1",
+  "provider": "OpenAI Responses API",
+  "provider_response_id": "resp_0d1619de3d65af4f016aa45b5f46f087d2a1d178753042500c",
+  "request_error": null,
+  "requested_model": "gpt-5.6-luna",
+  "response": {
+    "background": false,
+    "billing": {
+      "payer": "developer"
+    },
+    "completed_at": 1789156216.0,
+    "conversation": null,
+    "created_at": 1789156191.0,
+    "error": null,
+    "frequency_penalty": 0.0,
+    "id": "resp_0d1619de3d65af4f016aa45b5f46f087d2a1d178753042500c",
+    "incomplete_details": null,
+    "instructions": "You extract a semantic knowledge model from explanatory source text.\n\nIdentify important concepts, objects, processes, variables, systems, and components.\nCreate claims for meaningful propositions that do not naturally form graph edges.\nCreate relationships only when one supplied semantic contract fits both the meaning and\ndirection. Prefer important explanatory structure over exhaustive sentence decomposition.\nIf no relationship contract represents a meaningful proposition truthfully, preserve it\nas a claim instead of forcing it into the nearest edge label. Fewer truthful edges are\nbetter than more misleading edges. Use concise grounded descriptions and conservative\nconfidence values.\n\nUse a typed proposition only for either of these binary-edge failure modes:\n- COMPARISON_CONDITION: a comparison is itself the antecedent of an outcome. Bind\n  LEFT_OPERAND, RIGHT_OPERAND, and OUTCOME; use GREATER_THAN and CAUSES.\n- TRANSFER_EVENT: a transfer must distinguish the EVENT, transferred OBJECT, and\n  DESTINATION; use TRANSFERS_TO.\nDo not also emit a lossy binary edge for the same source proposition. Proposition IDs are\nassigned deterministically by trusted code; do not return an id.\n\nSOURCE means the item is explicitly supported by the supplied text. Every SOURCE item\nmust cite one or more exact, verbatim, uniquely occurring source substrings in evidence.\nUse a complete clause or sentence long enough to occur exactly once; never cite a short\nentity name or other repeated fragment. Do not count characters; return quotes only.\nINFERRED means useful structure not stated explicitly and must have an empty evidence\nlist. Any item with evidence must be SOURCE. Before returning, verify every SOURCE item\nhas at least one unique quote and every INFERRED item has none. Do not use external\nknowledge unless the item is marked INFERRED. Do not fabricate evidence.\n\nAvoid entities created only to reproduce grammar. Avoid duplicates; use aliases only\nfor genuine naming equivalence, and keep related but distinct concepts separate.\nRelationship endpoints must use IDs from the entities array. IDs must be unique,\nconcise, stable kebab-case strings. Do not generate summaries, visualizations, Mermaid,\nteaching prose, or output outside the requested schema.\n\nACTIVE RELATIONSHIP CONTRACTS (source --TYPE--> target):\nIS_A [STRUCTURAL; direction=instance_to_type]\n  meaning: The source is a kind, category, or subtype of the target.\n  roles: source=instance or subtype; target=broader type or category\n  use: The source can truthfully be described as a target.\n  avoid: Do not use for parts, examples, similarity, or temporary states.\nPART_OF [STRUCTURAL; direction=part_to_whole]\n  meaning: The source is a constituent or component of the target.\n  roles: source=part or component; target=containing whole\n  use: The source exists as a component or subpart of the target.\n  avoid: Never reverse whole and part; do not use for interaction or dependency.\nEXAMPLE_OF [STRUCTURAL; direction=example_to_concept]\n  meaning: The source is an illustrative instance of the target concept.\n  roles: source=example; target=concept illustrated\n  use: The source is presented as an example of the target.\n  avoid: Do not use merely because the source is a subtype; prefer IS_A for classification.\nCAUSES [CAUSAL; direction=cause_to_effect]\n  meaning: The source brings about the target as an effect.\n  roles: source=cause; target=effect\n  use: The source is stated to produce the target outcome.\n  avoid: Do not use for chronology, association, contribution, or unspecified influence.\nAFFECTS [CAUSAL; direction=influence_to_affected]\n  meaning: The source causally influences the target without a specified direction or complete production.\n  roles: source=influence; target=affected entity, process, or variable\n  use: The source changes or influences the target, but the text does not support CAUSES, INCREASES, or DECREASES.\n  avoid: Do not use for mere association, chronology, physical force, or interaction with no stated effect.\nINCREASES [CAUSAL; direction=increaser_to_increased_variable]\n  meaning: The source causally raises the amount, rate, value, probability, or intensity of the target.\n  roles: source=causal factor; target=quantity or variable increased\n  use: The source is explicitly said to make the target greater, faster, more likely, or more intense.\n  avoid: Do not infer from nearby words such as more or faster; never use when the source says slower, lower, or less.\nDECREASES [CAUSAL; direction=decreaser_to_decreased_variable]\n  meaning: The source causally lowers the amount, rate, value, probability, or intensity of the target.\n  roles: source=causal factor; target=quantity or variable decreased\n  use: The source is explicitly said to make the target smaller, slower, less likely, or less intense.\n  avoid: Do not use for absence, prevention without a scalar target, or mere negative association.\nINDUCES [CAUSAL; direction=inducer_to_induced_effect]\n  meaning: The source produces the target through an explicitly described induction mechanism.\n  roles: source=inducing phenomenon; target=induced phenomenon\n  use: The source explicitly says induces or describes a recognized induction mechanism.\n  avoid: Do not use as a metaphor for generic causation, influence, motivation, or historical response.\nENABLES [DEPENDENCY; direction=enabler_to_enabled]\n  meaning: The source makes the target possible without necessarily causing it to occur.\n  roles: source=enabling condition or capability; target=capability or process made possible\n  use: The target could not occur, or is materially made possible, because of the source.\n  avoid: Do not use for delivery, participation, weak assistance, or an effect that actually occurred.\nREQUIRES [DEPENDENCY; direction=dependent_to_requirement]\n  meaning: The source depends on the target as a prerequisite or necessary resource.\n  roles: source=dependent; target=prerequisite or required resource\n  use: The source cannot operate or occur as described without the target.\n  avoid: Do not reverse prerequisite and dependent; do not use for optional support.\nCONSTRAINS [DEPENDENCY; direction=constraint_to_constrained]\n  meaning: The source limits the possible behavior, values, or choices of the target.\n  roles: source=constraint; target=constrained entity, process, or variable\n  use: The source imposes a limit, rule, boundary, or restriction on the target.\n  avoid: Do not use to mean unchanged, unrelated, merely different, or causally reduced.\nPRECEDES [TEMPORAL; direction=earlier_to_later]\n  meaning: The source occurs before the target in time or an explicit process sequence.\n  roles: source=earlier event or process; target=later event or process\n  use: The source explicitly occurs before, previously, first, then, or after relative to the target.\n  avoid: Do not infer causality from order; do not reverse earlier and later.\nINTERACTS_WITH [INTERACTION; symmetric]\n  meaning: The source and target directly interact, with no more precise directional semantics supported.\n  roles: source=interaction participant; target=interaction participant\n  use: The text supports direct mutual interaction but not a more precise active predicate.\n  avoid: Do not use for distant association, one-way effect, dependency, or chronology.\nBINDS_TO [INTERACTION; symmetric]\n  meaning: The source physically or chemically binds or attaches to the target.\n  roles: source=binding participant; target=binding participant\n  use: The source explicitly binds or attaches to the target.\n  avoid: Do not use for metaphorical commitment, dependency, influence, or literal physical force.\nTRANSFERS_TO [INTERACTION; direction=transferred_item_to_destination]\n  meaning: The source item, material, or information moves to the target destination or recipient.\n  roles: source=item, material, or information transferred; target=destination or recipient\n  use: The source is explicitly carried, delivered, moved, or transferred to the target.\n  avoid: Do not make the carrier the source unless the carrier itself moves to the destination; do not use for enabling.\nEXERTS_FORCE_ON [INTERACTION; direction=force_exerter_to_physical_target]\n  meaning: The source exerts a literal physical force on the target.\n  roles: source=physical force source; target=physical object receiving force\n  use: A literal physical force is explicitly exerted on the target.\n  avoid: Never use metaphorically for influence, contribution, binding, pressure, or causation.\nTRANSFORMS_INTO [TRANSFORMATION; direction=prior_state_to_resulting_state]\n  meaning: The source itself changes state or identity and becomes the target.\n  roles: source=entity or state before transformation; target=same entity or resulting material after transformation\n  use: The source itself becomes the target through a transformation.\n  avoid: Do not use when an actor causes, creates, attempts, participates in, or responds to the target.\nCREATES [TRANSFORMATION; direction=creator_to_created]\n  meaning: The source produces or brings a distinct target into existence.\n  roles: source=producer or generative process; target=newly produced entity or result\n  use: The source produces a target that is distinct from the source.\n  avoid: Do not use when the source itself becomes the target; use TRANSFORMS_INTO instead.\nMEASURED_BY [DESCRIPTIVE; direction=measurand_to_measure]\n  meaning: The source property or variable is quantified or assessed by the target metric, observation, or procedure.\n  roles: source=property or variable measured; target=metric, observation, or measurement procedure\n  use: The target is explicitly how the source is measured or quantified.\n  avoid: Do not point to something that merely responds to, correlates with, or exemplifies the source.\nCONTRADICTS [DESCRIPTIVE; symmetric]\n  meaning: The source and target assert mutually incompatible propositions.\n  roles: source=proposition or claim; target=incompatible proposition or claim\n  use: Both sides are explicit propositions that cannot simultaneously hold as stated.\n  avoid: Do not use for difference, disagreement without incompatibility, trade-off, or negative causality.",
+    "max_output_tokens": null,
+    "max_tool_calls": null,
+    "metadata": {},
+    "model": "gpt-5.6-luna",
+    "moderation": null,
+    "object": "response",
+    "output": [
+      {
+        "content": [],
+        "encrypted_content": "gAAAAABqpFt4gj4NmtwbflbPUq60j2x39iU8yOmfHQgi2N03K8jnb9yiL_lr78y5SVAAWFjeukSm7qv40-h1btj762oBrg9DDif3X6ZkDnH33BpDgp5kx4wL_j9QXI5xNjULK_w8Vb1XHw2wEXgDcZOsXR3qyuhr5ElvdzkKz3AndV3gjgVhPmfilEQcOZeMXrKwcQfUz-JPc5Qbk_TvLG0mrmhJRt5plhnTJX0-qYtarjdwGdH09hHWCUOZ2gJraMePeaCm13LS_5sjp1iffozdV74ijfvLD_1D54bN-JkZdzHpFrW28u4scvpca0olH65PwBGY40kY1COPBYw-uaJ89-l8yTCDEm_eTYHTwPIg-fNOWbuLxkBO6jgKR-4hBTnF5nGo8TKprPOodLzmws_SlGF7SYufYFgStLUHB_hGUTqv2znkzIz0PMHgDOe-c2DjNHaq5E2lruefsaX36bfonIZGRvtlhDXa-PSRNHeMfy25fmB19r0N119oieoM_S0T_uyQ85Z4WOu54a-wtZSabjvT3mmRJ2IteeSheRZuUIFdl98taECC2zPfNETfN8rQ__5bnR8Fkdh4nmcocbGuU2KXTBLg-FK1AJe7E75I7Exw-ZOtpwCZ8mEXlr3mqxzjCGUTYtGOD3pOgzhwesOAeXiPX_yXaU4Ou7Az85hje9iDb8C6UPu6ORV8yyH9hEYb_mM7VlZ8SQDdp_LzPV4K8ne0dnbyzXpr9a64_co1vo1aP2PKd7eNw6CWJt--kqkcXIHyOMGVqfFR0srNxJxWQtPtwhUJAJ3Bu4Yyb-gzBwi3MAagZWzmevndAjcwYtM1ePWKH-RcVnHRQ5z4iipfm_MUFVK-_0pWXfRV2gJZ8yxmdYbg8pfXVFotdo9107QUNxPnfqYL2uz5Sr90Ztmnz0YOy8tfYlO30Co5a0G9KgdCWLHSDmqhPrx6xx4lSLTMaWJlFrX4RZCMPrbrfoxXJ7E_8asjdFd1zwj9cxMs3iAMXENsQfNHolaloX_vr1Dome_uC19M6lUNgRIhaEG4zqIBs3EWWhC9P-UDpEk0Vg31clZqpyOwnj6XhR37LMPux10YR2bEs3AmUMJ4ZKLMnvEeJALae5qDiZJlhB5pK9x4XXbuNz-Eztvxq5G-mWUmBiM1VI3QOZRLxfk0zao3zXpoUs_HtMFRdg6urz5SdjMTHyvcbu_ZolQGHd9ZoRI1oHk_t-kKF2bRO9Gn6i6RvqQuFZ2yurT1erePPV4xl_sof2ZbbACgTJfXx05MP7UDCFWE4PJDJ3Q3LKwkM9Wrt4FkoNfjM1tlO6kUSxM4hBgTV1WSez2aCSARi2Cwa-uCyDEa0jp1e1uM_vIT7dmyK3_4UGkOvlOs9uY3jWYpbG4ByjHH2bP4pQqrIKf5B33Z19pccAkZXd4xj3PNR-3eCAHwgyS5wo5malrvPRj_sLJvqnLKiMq_q4REvRuOoBYQVHXj7DAq8KHDYguDBjDhVpeGfwmZ40CpvQT_f2Fje2BthxaRw_hSgmS10sFI0c6p7M1DeFxCL6Bf9kmd5qYY0cBm_5o_ouev7WZRChHqJa5XRdqy3x7lLkCPNhBfhPGNqKjt15SxszHYulBoj5rAgCUxi_rPcjQhCt-tAZW8yWju7dEztbPZtTD0Y9QguH3J1HTnD5C5LlkoXU4V8dvjg7FVPAzQnOR9KXTi8xJomD628I6dvCaxEqAkzvXLxIpXCCO_9cuCphtVRldvO7PLNs7-4Qb_ePT5uRFOZ3qtzMMRmrNNuKpHZ1vj6F1NQGxDU87uX-V_J82tFMb76FWlXaLM09q2BGEs-k5OvOgzCQo775H5KahT5jASEEn8kWf_2g4hQjJRTc2ksHEI8t1cxCzrF6uIa_SsPBEJZYasmvEzLIiHXgRu0a-LogaScN3Zegqjx-x8NQmNDnEcrTSvvp7jslJPswNIMpzf5UrxecOnUcakt4Q-D8UQ_dQus-_HUAYxeLK-VsHLlMCGJNuoqN6RumqbxX2k_Hy2fZsmjEQtY6phIGvPjp8DnpLPBPwpSjv33SMpGtvo-QGCNf6A4C1xYn_f5pcO5hctrlKL87QWl3VTYDLNdIH1VI5q2qp8NR0NOoddLQAC6wIpPclJETvxxK8XdT3cTeACb1CqoUbqsdEw83ta4aqiDWPT-6CSibRBSYDvKqWr2S_pNOA6U1tiWi8NRYvGWgOv1lE_TLAPx-XS6fVMCfMBv9lWV3jxY6XXogiNcpku7FafIUpIon_DJsnFpZk4ObcLICxj_pgfiE9O_0MZxAtd6e0BGo95FlxLEvSK_5oi0XmUPbJ1nCpgn7AJQXULgUU0LPPwQfgZFiqWAnT0hhExQ16kgHglgErLWWYxOlPyB2gsrIbegZ8ohUNqkAAn2GJ1-bgBy8Qtgqp7iH8WkpDi7ujoj1IxKCHbRRQ34LJhyR8jujZ3uDv6vdQ9WOAZUgr0djLVhAGAnSsA7c1z467ApttcjGsDV2FD1WliRcq2mpZAqrCph-Keub4K7eZ_HWG1XW3V0xDhKf_mXkmeMoxfRcJN7nnDQKgbnuVuDED-x4IU-yOUdatoWvuV0Q0vGLaKQAKmLWAa4OOT7fMmOEAMX2WArPGCLXnDDikuWr4DbhiSaU63FvjIGmGngRgoGn3wVPkuibvmZA9NpD7RJA6kL9Yw_gxOSqYs93hA-XMsoqgM1pHT5Gp-TUNuHWKxwrp3rZegvNT3vYfgPxbWSTWRlAKBje9LzgkfGUBm",
+        "id": "rs_0d1619de3d65af4f016aa45b6055c087d29c9b0bee814c131c",
+        "status": null,
+        "summary": [],
+        "type": "reasoning"
+      },
+      {
+        "content": [
+          {
+            "annotations": [],
+            "logprobs": [],
+            "text": "{\"entities\":[{\"id\":\"jet-stream\",\"name\":\"Jet stream\",\"description\":\"A narrow band of strong wind and a type of air current that forms high in the atmosphere.\",\"entity_type\":\"CONCEPT\",\"aliases\":[\"jet streams\"]},{\"id\":\"air-current\",\"name\":\"Air current\",\"description\":\"A moving flow of air, or wind.\",\"entity_type\":\"CONCEPT\",\"aliases\":[\"wind\"]},{\"id\":\"polar-jet-stream\",\"name\":\"Polar jet stream\",\"description\":\"A jet stream located near one of Earth’s poles.\",\"entity_type\":\"CONCEPT\",\"aliases\":[\"polar jet streams\"]},{\"id\":\"subtropical-jet-stream\",\"name\":\"Subtropical jet stream\",\"description\":\"A jet stream located closer to the equator than a polar jet stream.\",\"entity_type\":\"CONCEPT\",\"aliases\":[\"subtropical jet streams\"]},{\"id\":\"warm-air-mass\",\"name\":\"Warm air mass\",\"description\":\"A mass of relatively warm air in the atmosphere.\",\"entity_type\":\"OBJECT\",\"aliases\":[\"warmer air masses\",\"warm air\"]},{\"id\":\"cool-air-mass\",\"name\":\"Cool air mass\",\"description\":\"A mass of relatively cool or cold air in the atmosphere.\",\"entity_type\":\"OBJECT\",\"aliases\":[\"cooler air masses\",\"cold air masses\",\"cool air\"]},{\"id\":\"air-mass-meeting\",\"name\":\"Meeting of warm and cool air masses\",\"description\":\"An atmospheric interaction in which warmer and cooler air masses meet.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"id\":\"warm-air-rise\",\"name\":\"Warm-air rising\",\"description\":\"The upward movement of warmer air in the atmosphere.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"id\":\"cool-air-sink\",\"name\":\"Cool-air sinking\",\"description\":\"The downward movement of cooler air to replace rising warm air.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"id\":\"earth\",\"name\":\"Earth\",\"description\":\"The planet whose atmosphere contains the jet streams discussed in the text.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"id\":\"atmosphere\",\"name\":\"Atmosphere\",\"description\":\"The gaseous envelope surrounding Earth in which jet streams form.\",\"entity_type\":\"SYSTEM\",\"aliases\":[]},{\"id\":\"troposphere\",\"name\":\"Troposphere\",\"description\":\"The layer of Earth’s atmosphere where people live and breathe.\",\"entity_type\":\"SYSTEM\",\"aliases\":[]},{\"id\":\"temperature-difference\",\"name\":\"Temperature difference between air masses\",\"description\":\"The difference in temperature between warm and cool air masses.\",\"entity_type\":\"VARIABLE\",\"aliases\":[\"dramatic temperature differences\"]},{\"id\":\"jet-stream-speed\",\"name\":\"Jet-stream speed\",\"description\":\"The speed at which a jet stream moves.\",\"entity_type\":\"VARIABLE\",\"aliases\":[\"speeds of jet streams\"]},{\"id\":\"airplane\",\"name\":\"Airplane\",\"description\":\"An aircraft flying in the mid to upper troposphere.\",\"entity_type\":\"OBJECT\",\"aliases\":[\"airplanes\"]},{\"id\":\"weather-system\",\"name\":\"Weather system\",\"description\":\"A moving or stationary atmospheric system that can be transported by a jet stream.\",\"entity_type\":\"SYSTEM\",\"aliases\":[\"weather systems\"]},{\"id\":\"united-states\",\"name\":\"United States\",\"description\":\"A geographic destination across which jet streams can transport weather systems.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"id\":\"temperature\",\"name\":\"Temperature\",\"description\":\"An atmospheric condition affected by weather systems and jet-stream position.\",\"entity_type\":\"VARIABLE\",\"aliases\":[]},{\"id\":\"precipitation\",\"name\":\"Precipitation\",\"description\":\"An atmospheric outcome affected by weather systems transported by jet streams.\",\"entity_type\":\"VARIABLE\",\"aliases\":[]},{\"id\":\"storm\",\"name\":\"Storm\",\"description\":\"A weather event that tends to follow the edge of a jet stream.\",\"entity_type\":\"PROCESS\",\"aliases\":[\"storms\"]},{\"id\":\"turbulent-conditions\",\"name\":\"Turbulent conditions\",\"description\":\"Conditions created where cool and warm air meet at the edge of a jet stream.\",\"entity_type\":\"CONCEPT\",\"aliases\":[]},{\"id\":\"arctic-air\",\"name\":\"Arctic air\",\"description\":\"Cold air from the Arctic that can meet warmer and wetter air near a displaced jet stream.\",\"entity_type\":\"OBJECT\",\"aliases\":[\"colder Arctic air\"]},{\"id\":\"thunder-lightning\",\"name\":\"Thunder and lightning\",\"description\":\"Storm phenomena that become more common when the jet stream is pushed farther south.\",\"entity_type\":\"PROCESS\",\"aliases\":[\"thunder and lightning\"]},{\"id\":\"tornado\",\"name\":\"Tornado\",\"description\":\"A storm phenomenon that becomes more common under the described conditions.\",\"entity_type\":\"PROCESS\",\"aliases\":[\"tornadoes\"]},{\"id\":\"heat-wave\",\"name\":\"Heat wave\",\"description\":\"A period of unusually hot weather that may occur when a weather system remains in place.\",\"entity_type\":\"PROCESS\",\"aliases\":[\"heat waves\"]},{\"id\":\"flood\",\"name\":\"Flood\",\"description\":\"An event that may occur when a weather system remains in place.\",\"entity_type\":\"PROCESS\",\"aliases\":[\"floods\"]}],\"claims\":[{\"id\":\"claim-jet-stream-count\",\"statement\":\"Earth has four primary jet streams: two polar and two subtropical.\",\"evidence\":[{\"quote\":\"Earth has four primary jet streams: two polar jet streams, near the north and south poles, and two subtropical jet streams closer to the equator.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"claim-global-direction\",\"statement\":\"Earth’s four primary jet streams generally travel from west to east across the globe.\",\"evidence\":[{\"quote\":\"Jet streams are narrow bands of strong wind that generally blow from west to east all across the globe.\"},{\"quote\":\"Earth’s four primary jet streams only travel from west to east.\"}],\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"claim-average-speed\",\"statement\":\"Jet streams move at about 110 miles per hour on average.\",\"evidence\":[{\"quote\":\"On average, jet streams move at about 110 miles per hour.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"claim-high-speed\",\"statement\":\"Jet streams can move at 250 miles per hour or faster when temperature differences are dramatic, especially in polar jet streams during winter.\",\"evidence\":[{\"quote\":\"But dramatic temperature differences between the warm and cool air masses can cause jet streams to move at much higher speeds — 250 miles per hour or faster.\"},{\"quote\":\"Speeds this high usually happen in polar jet streams in the winter time.\"}],\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"claim-location\",\"statement\":\"Jet streams are located about five to nine miles above Earth’s surface in the mid to upper troposphere.\",\"evidence\":[{\"quote\":\"Jet streams are located about five to nine miles above Earth’s surface in the mid to upper troposphere — the layer of Earth’s atmosphere where we live and breathe.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"claim-airplane-boost\",\"statement\":\"An airplane flying in a powerful jet stream in the same direction can receive a boost.\",\"evidence\":[{\"quote\":\"So, if an airplane flies in a powerful jet stream and they are traveling in the same direction, the airplane can get a boost.\"}],\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"claim-west-east-faster\",\"statement\":\"A west-to-east airplane route can generally be completed faster than the same route traveled east to west.\",\"evidence\":[{\"quote\":\"That’s why an airplane flying a route from west to east can generally make the trip faster than an airplane traveling the same route east to west.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"claim-weather-stationary\",\"statement\":\"A weather system far from a jet stream might remain in one place, causing heat waves or floods.\",\"evidence\":[{\"quote\":\"However, if a weather system is far away from a jet stream, it might stay in one place, causing heat waves or floods.\"}],\"confidence\":0.96,\"origin\":\"SOURCE\"},{\"id\":\"claim-jet-stream-direction-variation\",\"statement\":\"Jet streams can move in different ways and create northward and southward bulges of wind.\",\"evidence\":[{\"quote\":\"However, jet streams can move in different ways, creating bulges of winds to the north and south.\"}],\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"claim-storm-edge\",\"statement\":\"Storms tend to follow the edge of the jet stream.\",\"evidence\":[{\"quote\":\"Storms tend to follow the edge of the jet stream, where the difference between cool and warm air creates the turbulent conditions for storms.\"}],\"confidence\":0.98,\"origin\":\"SOURCE\"}],\"relationships\":[{\"id\":\"rel-jet-stream-is-air-current\",\"source_entity_id\":\"jet-stream\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"air-current\",\"statement\":\"A jet stream is a type of air current.\",\"evidence\":[{\"quote\":\"A jet stream is a type of air current that forms high in the atmosphere.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"rel-polar-is-jet\",\"source_entity_id\":\"polar-jet-stream\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"jet-stream\",\"statement\":\"A polar jet stream is a type of jet stream.\",\"evidence\":[{\"quote\":\"Earth has four primary jet streams: two polar jet streams, near the north and south poles, and two subtropical jet streams closer to the equator.\"}],\"confidence\":0.96,\"origin\":\"SOURCE\"},{\"id\":\"rel-subtropical-is-jet\",\"source_entity_id\":\"subtropical-jet-stream\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"jet-stream\",\"statement\":\"A subtropical jet stream is a type of jet stream.\",\"evidence\":[{\"quote\":\"Earth has four primary jet streams: two polar jet streams, near the north and south poles, and two subtropical jet streams closer to the equator.\"}],\"confidence\":0.96,\"origin\":\"SOURCE\"},{\"id\":\"rel-meeting-creates-rise\",\"source_entity_id\":\"air-mass-meeting\",\"relationship_type\":\"CAUSES\",\"target_entity_id\":\"warm-air-rise\",\"statement\":\"Meeting warm and cool air masses causes warmer air to rise.\",\"evidence\":[{\"quote\":\"So when Earth’s warmer air masses meet cooler air masses, the warmer air rises up higher in the atmosphere\"}],\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"rel-meeting-causes-sink\",\"source_entity_id\":\"air-mass-meeting\",\"relationship_type\":\"CAUSES\",\"target_entity_id\":\"cool-air-sink\",\"statement\":\"Meeting warm and cool air masses causes cooler air to sink to replace warm air.\",\"evidence\":[{\"quote\":\"while cooler air sinks down to replace the warm air.\"}],\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"rel-air-motion-creates-current\",\"source_entity_id\":\"warm-air-rise\",\"relationship_type\":\"CAUSES\",\"target_entity_id\":\"air-current\",\"statement\":\"The rising and sinking movement of air creates an air current or wind.\",\"evidence\":[{\"quote\":\"This movement creates an air current, or wind.\"}],\"confidence\":0.97,\"origin\":\"SOURCE\"},{\"id\":\"rel-jetstream-affects-temperature\",\"source_entity_id\":\"jet-stream\",\"relationship_type\":\"AFFECTS\",\"target_entity_id\":\"temperature\",\"statement\":\"Jet streams affect temperature through the weather systems they transport.\",\"evidence\":[{\"quote\":\"The fast-moving air currents in a jet stream can transport weather systems across the United States, affecting temperature and precipitation.\"}],\"confidence\":0.94,\"origin\":\"SOURCE\"},{\"id\":\"rel-jetstream-affects-precipitation\",\"source_entity_id\":\"jet-stream\",\"relationship_type\":\"AFFECTS\",\"target_entity_id\":\"precipitation\",\"statement\":\"Jet streams affect precipitation through the weather systems they transport.\",\"evidence\":[{\"quote\":\"The fast-moving air currents in a jet stream can transport weather systems across the United States, affecting temperature and precipitation.\"}],\"confidence\":0.94,\"origin\":\"SOURCE\"},{\"id\":\"rel-temp-difference-induces-turbulence\",\"source_entity_id\":\"temperature-difference\",\"relationship_type\":\"CAUSES\",\"target_entity_id\":\"turbulent-conditions\",\"statement\":\"The difference between cool and warm air creates turbulent conditions for storms.\",\"evidence\":[{\"quote\":\"where the difference between cool and warm air creates the turbulent conditions for storms.\"}],\"confidence\":0.97,\"origin\":\"SOURCE\"},{\"id\":\"rel-storm-follows-edge\",\"source_entity_id\":\"storm\",\"relationship_type\":\"AFFECTS\",\"target_entity_id\":\"jet-stream\",\"statement\":\"Storms tend to follow the edge of the jet stream.\",\"evidence\":[{\"quote\":\"Storms tend to follow the edge of the jet stream\"}],\"confidence\":0.9,\"origin\":\"SOURCE\"}],\"propositions\":[{\"proposition_type\":\"TRANSFER_EVENT\",\"statement\":\"Jet streams transport weather systems across the United States.\",\"role_bindings\":[{\"role\":\"EVENT\",\"entity_id\":\"jet-stream-weather-transport\"},{\"role\":\"OBJECT\",\"entity_id\":\"weather-system\"},{\"role\":\"DESTINATION\",\"entity_id\":\"united-states\"}],\"relationship_type\":\"TRANSFERS_TO\",\"comparison_operator\":null,\"evidence\":[{\"quote\":\"The fast-moving air currents in a jet stream can transport weather systems across the United States\"}],\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"proposition_type\":\"COMPARISON_CONDITION\",\"statement\":\"When the difference between warm and cool air masses is dramatic, jet-stream speed is greater than its average speed.\",\"role_bindings\":[{\"role\":\"LEFT_OPERAND\",\"entity_id\":\"temperature-difference\"},{\"role\":\"RIGHT_OPERAND\",\"entity_id\":\"average-temperature-difference\"},{\"role\":\"OUTCOME\",\"entity_id\":\"jet-stream-speed\"}],\"relationship_type\":\"CAUSES\",\"comparison_operator\":\"GREATER_THAN\",\"evidence\":[{\"quote\":\"But dramatic temperature differences between the warm and cool air masses can cause jet streams to move at much higher speeds\"}],\"confidence\":0.9,\"origin\":\"SOURCE\"}]}",
+            "type": "output_text"
+          }
+        ],
+        "id": "msg_0d1619de3d65af4f016aa45b633b0887d2bbe67bd157461efd",
+        "phase": "final_answer",
+        "role": "assistant",
+        "status": "completed",
+        "type": "message"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "presence_penalty": 0.0,
+    "previous_response_id": null,
+    "prompt": null,
+    "prompt_cache_key": null,
+    "prompt_cache_options": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+      "context": "all_turns",
+      "effort": "low",
+      "generate_summary": null,
+      "mode": "standard",
+      "summary": null
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "status": "completed",
+    "store": false,
+    "temperature": 1.0,
+    "text": {
+      "format": {
+        "description": null,
+        "name": "knowledge_extraction",
+        "schema_": {
+          "additionalProperties": false,
+          "properties": {
+            "claims": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "confidence": {
+                    "maximum": 1,
+                    "minimum": 0,
+                    "type": "number"
+                  },
+                  "evidence": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "quote": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "quote"
+                      ],
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "id": {
+                    "type": "string"
+                  },
+                  "origin": {
+                    "enum": [
+                      "SOURCE",
+                      "INFERRED"
+                    ],
+                    "type": "string"
+                  },
+                  "statement": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "statement",
+                  "evidence",
+                  "confidence",
+                  "origin"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "entities": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "aliases": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "entity_type": {
+                    "enum": [
+                      "CONCEPT",
+                      "OBJECT",
+                      "PROCESS",
+                      "VARIABLE",
+                      "SYSTEM",
+                      "COMPONENT"
+                    ],
+                    "type": "string"
+                  },
+                  "id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "name",
+                  "description",
+                  "entity_type",
+                  "aliases"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "propositions": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "comparison_operator": {
+                    "anyOf": [
+                      {
+                        "enum": [
+                          "GREATER_THAN"
+                        ],
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "confidence": {
+                    "maximum": 1,
+                    "minimum": 0,
+                    "type": "number"
+                  },
+                  "evidence": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "quote": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "quote"
+                      ],
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "origin": {
+                    "enum": [
+                      "SOURCE",
+                      "INFERRED"
+                    ],
+                    "type": "string"
+                  },
+                  "proposition_type": {
+                    "enum": [
+                      "COMPARISON_CONDITION",
+                      "TRANSFER_EVENT"
+                    ],
+                    "type": "string"
+                  },
+                  "relationship_type": {
+                    "enum": [
+                      "IS_A",
+                      "PART_OF",
+                      "CAUSES",
+                      "INCREASES",
+                      "DECREASES",
+                      "ENABLES",
+                      "REQUIRES",
+                      "CONSTRAINS",
+                      "PRECEDES",
+                      "TRANSFORMS_INTO",
+                      "INTERACTS_WITH",
+                      "MEASURED_BY",
+                      "EXAMPLE_OF",
+                      "CONTRADICTS",
+                      "CREATES",
+                      "INDUCES",
+                      "EXERTS_FORCE_ON",
+                      "AFFECTS",
+                      "BINDS_TO",
+                      "TRANSFERS_TO"
+                    ],
+                    "type": "string"
+                  },
+                  "role_bindings": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "entity_id": {
+                          "type": "string"
+                        },
+                        "role": {
+                          "enum": [
+                            "LEFT_OPERAND",
+                            "RIGHT_OPERAND",
+                            "OUTCOME",
+                            "EVENT",
+                            "OBJECT",
+                            "DESTINATION"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "role",
+                        "entity_id"
+                      ],
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "statement": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "proposition_type",
+                  "statement",
+                  "role_bindings",
+                  "relationship_type",
+                  "comparison_operator",
+                  "evidence",
+                  "confidence",
+                  "origin"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "relationships": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "confidence": {
+                    "maximum": 1,
+                    "minimum": 0,
+                    "type": "number"
+                  },
+                  "evidence": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "quote": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "quote"
+                      ],
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "id": {
+                    "type": "string"
+                  },
+                  "origin": {
+                    "enum": [
+                      "SOURCE",
+                      "INFERRED"
+                    ],
+                    "type": "string"
+                  },
+                  "relationship_type": {
+                    "enum": [
+                      "IS_A",
+                      "PART_OF",
+                      "CAUSES",
+                      "INCREASES",
+                      "DECREASES",
+                      "ENABLES",
+                      "REQUIRES",
+                      "CONSTRAINS",
+                      "PRECEDES",
+                      "TRANSFORMS_INTO",
+                      "INTERACTS_WITH",
+                      "MEASURED_BY",
+                      "EXAMPLE_OF",
+                      "CONTRADICTS",
+                      "CREATES",
+                      "INDUCES",
+                      "EXERTS_FORCE_ON",
+                      "AFFECTS",
+                      "BINDS_TO",
+                      "TRANSFERS_TO"
+                    ],
+                    "type": "string"
+                  },
+                  "source_entity_id": {
+                    "type": "string"
+                  },
+                  "statement": {
+                    "type": "string"
+                  },
+                  "target_entity_id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "source_entity_id",
+                  "relationship_type",
+                  "target_entity_id",
+                  "statement",
+                  "evidence",
+                  "confidence",
+                  "origin"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "entities",
+            "claims",
+            "relationships",
+            "propositions"
+          ],
+          "type": "object"
+        },
+        "strict": true,
+        "type": "json_schema"
+      },
+      "verbosity": "medium"
+    },
+    "tool_choice": "auto",
+    "tool_usage": {
+      "image_gen": {
+        "input_tokens": 0,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "total_tokens": 0
+      },
+      "web_search": {
+        "num_requests": 0
+      }
+    },
+    "tools": [],
+    "top_logprobs": 0,
+    "top_p": 0.98,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 3261,
+      "input_tokens_details": {
+        "cache_write_tokens": 483,
+        "cached_tokens": 2775
+      },
+      "output_tokens": 3048,
+      "output_tokens_details": {
+        "reasoning_tokens": 217
+      },
+      "total_tokens": 6309
+    },
+    "user": null
+  },
+  "started_at_utc": "2026-09-11T19:49:51.066330Z",
+  "usage": {
+    "input_tokens": 3261,
+    "input_tokens_details": {
+      "cache_write_tokens": 483,
+      "cached_tokens": 2775
+    },
+    "output_tokens": 3048,
+    "output_tokens_details": {
+      "reasoning_tokens": 217
+    },
+    "total_tokens": 6309
+  }
+}

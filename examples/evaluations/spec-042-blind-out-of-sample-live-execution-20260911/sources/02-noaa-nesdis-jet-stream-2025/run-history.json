@@ -1,0 +1,43 @@
+{
+  "adapter_invocation_count": 1,
+  "hidden_retry_count": 0,
+  "history": [
+    {
+      "attempt": 1,
+      "completed_at_utc": "2026-09-11T19:50:16.719690Z",
+      "duration_ms": 25653.444,
+      "error": null,
+      "error_type": null,
+      "http_request_id": "req_efad75aff3b54df7ae53844ccc34cce2",
+      "kind": "OPENAI_RESPONSES_STRUCTURED_EXTRACTION",
+      "live_call": true,
+      "outcome": "RESPONSE_RECEIVED",
+      "provider_request_id": "resp_0d1619de3d65af4f016aa45b5f46f087d2a1d178753042500c",
+      "retry": false,
+      "started_at_utc": "2026-09-11T19:49:51.066330Z",
+      "usage": {
+        "input_tokens": 3261,
+        "output_tokens": 3048,
+        "total_tokens": 6309
+      }
+    },
+    {
+      "attempt": 1,
+      "error": null,
+      "error_type": null,
+      "kind": "LOCAL_EVIDENCE_RESOLUTION",
+      "live_call": false,
+      "outcome": "PASS",
+      "retry": false
+    },
+    {
+      "attempt": 1,
+      "error": "proposition 'proposition-transfer-event-ca132e97bce01eea' references unknown entities: ['jet-stream-weather-transport']",
+      "error_type": "ValidationError",
+      "failure_stage": "GROUNDING_AND_SEMANTIC_VALIDATION",
+      "outcome": "FAILED_CLOSED",
+      "retry_count": 0
+    }
+  ],
+  "source_id": "noaa-nesdis-jet-stream-2025"
+}

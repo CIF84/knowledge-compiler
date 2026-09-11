@@ -1,0 +1,2389 @@
+{
+  "bindings": [
+    {
+      "decision_id": "decision-b545f6196c1729b5",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": null,
+          "predicates": [
+            "CAUSES"
+          ],
+          "relationship_count": 1,
+          "rule_id": "CANONICAL_EDGE_FOCUS",
+          "semantic_class": "canonical",
+          "structure_type": null
+        },
+        "evidence_refs": [
+          {
+            "document_id": "text-fe61b7c3b2a9373e",
+            "end_char": 911,
+            "quote": "The committee chair has the primary agenda-setting authority for each committee and identifies which bills will receive formal committee attention during the course of the two-year Congress.",
+            "relationship_ids": [
+              "rel-chair-sets-agenda"
+            ],
+            "start_char": 721
+          }
+        ],
+        "payload": {
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "The source brings about the target as an effect.",
+            "identity": "rel-chair-sets-agenda",
+            "label": "rel-chair-sets-agenda"
+          },
+          "nodes": [
+            {
+              "description": "The chair of a committee, with primary agenda-setting authority for that committee.",
+              "entity_id": "committee-chair",
+              "entity_type": "COMPONENT",
+              "label": "Committee chair"
+            },
+            {
+              "description": "Identification of bills that will receive formal committee attention during a two-year Congress.",
+              "entity_id": "committee-agenda-setting",
+              "entity_type": "PROCESS",
+              "label": "Committee agenda setting"
+            }
+          ],
+          "relationship": {
+            "direction": "cause_to_effect",
+            "evidence": [
+              {
+                "document_id": "text-fe61b7c3b2a9373e",
+                "end_char": 911,
+                "quote": "The committee chair has the primary agenda-setting authority for each committee and identifies which bills will receive formal committee attention during the course of the two-year Congress.",
+                "start_char": 721
+              }
+            ],
+            "meaning": "The source brings about the target as an effect.",
+            "provenance_status": "SOURCE_EVIDENCE",
+            "relationship_ids": [
+              "rel-chair-sets-agenda"
+            ],
+            "relationship_type": "CAUSES",
+            "source_entity_id": "committee-chair",
+            "source_label": "Committee chair",
+            "target_entity_id": "committee-agenda-setting",
+            "target_label": "Committee agenda setting"
+          },
+          "relationships": [
+            {
+              "direction": "cause_to_effect",
+              "evidence": [
+                {
+                  "document_id": "text-fe61b7c3b2a9373e",
+                  "end_char": 911,
+                  "quote": "The committee chair has the primary agenda-setting authority for each committee and identifies which bills will receive formal committee attention during the course of the two-year Congress.",
+                  "start_char": 721
+                }
+              ],
+              "meaning": "The source brings about the target as an effect.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-chair-sets-agenda"
+              ],
+              "relationship_type": "CAUSES",
+              "source_entity_id": "committee-chair",
+              "source_label": "Committee chair",
+              "target_entity_id": "committee-agenda-setting",
+              "target_label": "Committee agenda setting"
+            }
+          ]
+        },
+        "semantic_class": "canonical",
+        "semantic_focus_identity": "rel-chair-sets-agenda",
+        "strategy_type": "FOCUSED_RELATIONSHIP",
+        "title": "Committee chair → Committee agenda setting",
+        "trusted_input_refs": [
+          "validated KnowledgeModel canonical relationship"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "FOCUSED_RELATIONSHIP",
+      "semantic_focus_identity": "rel-chair-sets-agenda",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-b49adacb273f439e",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": null,
+          "predicates": [
+            "AFFECTS"
+          ],
+          "relationship_count": 1,
+          "rule_id": "CANONICAL_EDGE_FOCUS",
+          "semantic_class": "canonical",
+          "structure_type": null
+        },
+        "evidence_refs": [
+          {
+            "document_id": "text-fe61b7c3b2a9373e",
+            "end_char": 485,
+            "quote": "panels of Members who typically take the lead in developing and assessing proposed legislation within specified policy jurisdictions",
+            "relationship_ids": [
+              "rel-committees-develop-legislation"
+            ],
+            "start_char": 353
+          }
+        ],
+        "payload": {
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "The source causally influences the target without a specified direction or complete production.",
+            "identity": "rel-committees-develop-legislation",
+            "label": "rel-committees-develop-legislation"
+          },
+          "nodes": [
+            {
+              "description": "Panels of Members with specified policy jurisdictions that develop and assess proposed legislation.",
+              "entity_id": "standing-committees",
+              "entity_type": "SYSTEM",
+              "label": "Standing committees"
+            },
+            {
+              "description": "A proposed piece of legislation introduced by a Member of the House or Senate.",
+              "entity_id": "bill",
+              "entity_type": "OBJECT",
+              "label": "Bill"
+            }
+          ],
+          "relationship": {
+            "direction": "influence_to_affected",
+            "evidence": [
+              {
+                "document_id": "text-fe61b7c3b2a9373e",
+                "end_char": 485,
+                "quote": "panels of Members who typically take the lead in developing and assessing proposed legislation within specified policy jurisdictions",
+                "start_char": 353
+              }
+            ],
+            "meaning": "The source causally influences the target without a specified direction or complete production.",
+            "provenance_status": "SOURCE_EVIDENCE",
+            "relationship_ids": [
+              "rel-committees-develop-legislation"
+            ],
+            "relationship_type": "AFFECTS",
+            "source_entity_id": "standing-committees",
+            "source_label": "Standing committees",
+            "target_entity_id": "bill",
+            "target_label": "Bill"
+          },
+          "relationships": [
+            {
+              "direction": "influence_to_affected",
+              "evidence": [
+                {
+                  "document_id": "text-fe61b7c3b2a9373e",
+                  "end_char": 485,
+                  "quote": "panels of Members who typically take the lead in developing and assessing proposed legislation within specified policy jurisdictions",
+                  "start_char": 353
+                }
+              ],
+              "meaning": "The source causally influences the target without a specified direction or complete production.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-committees-develop-legislation"
+              ],
+              "relationship_type": "AFFECTS",
+              "source_entity_id": "standing-committees",
+              "source_label": "Standing committees",
+              "target_entity_id": "bill",
+              "target_label": "Bill"
+            }
+          ]
+        },
+        "semantic_class": "canonical",
+        "semantic_focus_identity": "rel-committees-develop-legislation",
+        "strategy_type": "FOCUSED_RELATIONSHIP",
+        "title": "Standing committees → Bill",
+        "trusted_input_refs": [
+          "validated KnowledgeModel canonical relationship"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "FOCUSED_RELATIONSHIP",
+      "semantic_focus_identity": "rel-committees-develop-legislation",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-9f99c0ef42e5448f",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": null,
+          "predicates": [
+            "PRECEDES"
+          ],
+          "relationship_count": 1,
+          "rule_id": "CANONICAL_EDGE_FOCUS",
+          "semantic_class": "canonical",
+          "structure_type": null
+        },
+        "evidence_refs": [
+          {
+            "document_id": "text-fe61b7c3b2a9373e",
+            "end_char": 2151,
+            "quote": "if no Senator objects to a unanimous consent request to bring it up",
+            "relationship_id": "rel-consent-precedes-floor",
+            "relationship_ids": [
+              "rel-consent-precedes-floor"
+            ],
+            "start_char": 2084
+          }
+        ],
+        "payload": {
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "The source occurs before the target in time or an explicit process sequence.",
+            "identity": "rel-consent-precedes-floor",
+            "label": "rel-consent-precedes-floor"
+          },
+          "nodes": [
+            {
+              "description": "Consideration of a bill by the full chamber.",
+              "entity_id": "floor-consideration",
+              "entity_type": "PROCESS",
+              "label": "Floor consideration"
+            },
+            {
+              "description": "A Senate request to bring a bill to the floor when no Senator objects.",
+              "entity_id": "unanimous-consent-request",
+              "entity_type": "PROCESS",
+              "label": "Unanimous consent request"
+            }
+          ],
+          "relationship": {
+            "direction": "earlier_to_later",
+            "evidence": [
+              {
+                "document_id": "text-fe61b7c3b2a9373e",
+                "end_char": 2151,
+                "quote": "if no Senator objects to a unanimous consent request to bring it up",
+                "relationship_id": "rel-consent-precedes-floor",
+                "start_char": 2084
+              }
+            ],
+            "meaning": "The source occurs before the target in time or an explicit process sequence.",
+            "provenance_status": "SOURCE_EVIDENCE",
+            "relationship_ids": [
+              "rel-consent-precedes-floor"
+            ],
+            "relationship_type": "PRECEDES",
+            "source_entity_id": "unanimous-consent-request",
+            "source_label": "Unanimous consent request",
+            "target_entity_id": "floor-consideration",
+            "target_label": "Floor consideration"
+          },
+          "relationships": [
+            {
+              "direction": "earlier_to_later",
+              "evidence": [
+                {
+                  "document_id": "text-fe61b7c3b2a9373e",
+                  "end_char": 2151,
+                  "quote": "if no Senator objects to a unanimous consent request to bring it up",
+                  "relationship_id": "rel-consent-precedes-floor",
+                  "start_char": 2084
+                }
+              ],
+              "meaning": "The source occurs before the target in time or an explicit process sequence.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-consent-precedes-floor"
+              ],
+              "relationship_type": "PRECEDES",
+              "source_entity_id": "unanimous-consent-request",
+              "source_label": "Unanimous consent request",
+              "target_entity_id": "floor-consideration",
+              "target_label": "Floor consideration"
+            }
+          ]
+        },
+        "semantic_class": "canonical",
+        "semantic_focus_identity": "rel-consent-precedes-floor",
+        "strategy_type": "FOCUSED_RELATIONSHIP",
+        "title": "Unanimous consent request → Floor consideration",
+        "trusted_input_refs": [
+          "workspace-fixture.json selected canonical edge",
+          "workspace-fixture.json selected edge endpoints and evidence"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "FOCUSED_RELATIONSHIP",
+      "semantic_focus_identity": "rel-consent-precedes-floor",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-54e9de9f87099df6",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": null,
+          "predicates": [
+            "TRANSFERS_TO"
+          ],
+          "relationship_count": 1,
+          "rule_id": "CANONICAL_EDGE_FOCUS",
+          "semantic_class": "canonical",
+          "structure_type": null
+        },
+        "evidence_refs": [
+          {
+            "document_id": "text-fe61b7c3b2a9373e",
+            "end_char": 654,
+            "quote": "Once a Member of the House or Senate introduces a bill, it is typically referred to the committee (or committees) in that chamber with jurisdiction over its elements.",
+            "relationship_ids": [
+              "rel-introduced-bill-referred"
+            ],
+            "start_char": 488
+          }
+        ],
+        "payload": {
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "The source item, material, or information moves to the target destination or recipient.",
+            "identity": "rel-introduced-bill-referred",
+            "label": "rel-introduced-bill-referred"
+          },
+          "nodes": [
+            {
+              "description": "A proposed piece of legislation introduced by a Member of the House or Senate.",
+              "entity_id": "bill",
+              "entity_type": "OBJECT",
+              "label": "Bill"
+            },
+            {
+              "description": "Panels of Members with specified policy jurisdictions that develop and assess proposed legislation.",
+              "entity_id": "standing-committees",
+              "entity_type": "SYSTEM",
+              "label": "Standing committees"
+            }
+          ],
+          "relationship": {
+            "direction": "transferred_item_to_destination",
+            "evidence": [
+              {
+                "document_id": "text-fe61b7c3b2a9373e",
+                "end_char": 654,
+                "quote": "Once a Member of the House or Senate introduces a bill, it is typically referred to the committee (or committees) in that chamber with jurisdiction over its elements.",
+                "start_char": 488
+              }
+            ],
+            "meaning": "The source item, material, or information moves to the target destination or recipient.",
+            "provenance_status": "SOURCE_EVIDENCE",
+            "relationship_ids": [
+              "rel-introduced-bill-referred"
+            ],
+            "relationship_type": "TRANSFERS_TO",
+            "source_entity_id": "bill",
+            "source_label": "Bill",
+            "target_entity_id": "standing-committees",
+            "target_label": "Standing committees"
+          },
+          "relationships": [
+            {
+              "direction": "transferred_item_to_destination",
+              "evidence": [
+                {
+                  "document_id": "text-fe61b7c3b2a9373e",
+                  "end_char": 654,
+                  "quote": "Once a Member of the House or Senate introduces a bill, it is typically referred to the committee (or committees) in that chamber with jurisdiction over its elements.",
+                  "start_char": 488
+                }
+              ],
+              "meaning": "The source item, material, or information moves to the target destination or recipient.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-introduced-bill-referred"
+              ],
+              "relationship_type": "TRANSFERS_TO",
+              "source_entity_id": "bill",
+              "source_label": "Bill",
+              "target_entity_id": "standing-committees",
+              "target_label": "Standing committees"
+            }
+          ]
+        },
+        "semantic_class": "canonical",
+        "semantic_focus_identity": "rel-introduced-bill-referred",
+        "strategy_type": "FOCUSED_RELATIONSHIP",
+        "title": "Bill → Standing committees",
+        "trusted_input_refs": [
+          "validated KnowledgeModel canonical relationship"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "FOCUSED_RELATIONSHIP",
+      "semantic_focus_identity": "rel-introduced-bill-referred",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-eae261da464a7026",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": null,
+          "predicates": [
+            "AFFECTS"
+          ],
+          "relationship_count": 1,
+          "rule_id": "CANONICAL_EDGE_FOCUS",
+          "semantic_class": "canonical",
+          "structure_type": null
+        },
+        "evidence_refs": [
+          {
+            "document_id": "text-fe61b7c3b2a9373e",
+            "end_char": 99,
+            "quote": "Congressional action on bills is typically planned and coordinated by party leaders in each chamber",
+            "relationship_ids": [
+              "rel-leaders-coordinate-action"
+            ],
+            "start_char": 0
+          }
+        ],
+        "payload": {
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "The source causally influences the target without a specified direction or complete production.",
+            "identity": "rel-leaders-coordinate-action",
+            "label": "rel-leaders-coordinate-action"
+          },
+          "nodes": [
+            {
+              "description": "Leaders who plan and coordinate congressional action on bills within each chamber.",
+              "entity_id": "party-leaders",
+              "entity_type": "COMPONENT",
+              "label": "Party leaders"
+            },
+            {
+              "description": "Legislative action concerning bills in Congress.",
+              "entity_id": "congressional-action-on-bills",
+              "entity_type": "PROCESS",
+              "label": "Congressional action on bills"
+            }
+          ],
+          "relationship": {
+            "direction": "influence_to_affected",
+            "evidence": [
+              {
+                "document_id": "text-fe61b7c3b2a9373e",
+                "end_char": 99,
+                "quote": "Congressional action on bills is typically planned and coordinated by party leaders in each chamber",
+                "start_char": 0
+              }
+            ],
+            "meaning": "The source causally influences the target without a specified direction or complete production.",
+            "provenance_status": "SOURCE_EVIDENCE",
+            "relationship_ids": [
+              "rel-leaders-coordinate-action"
+            ],
+            "relationship_type": "AFFECTS",
+            "source_entity_id": "party-leaders",
+            "source_label": "Party leaders",
+            "target_entity_id": "congressional-action-on-bills",
+            "target_label": "Congressional action on bills"
+          },
+          "relationships": [
+            {
+              "direction": "influence_to_affected",
+              "evidence": [
+                {
+                  "document_id": "text-fe61b7c3b2a9373e",
+                  "end_char": 99,
+                  "quote": "Congressional action on bills is typically planned and coordinated by party leaders in each chamber",
+                  "start_char": 0
+                }
+              ],
+              "meaning": "The source causally influences the target without a specified direction or complete production.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-leaders-coordinate-action"
+              ],
+              "relationship_type": "AFFECTS",
+              "source_entity_id": "party-leaders",
+              "source_label": "Party leaders",
+              "target_entity_id": "congressional-action-on-bills",
+              "target_label": "Congressional action on bills"
+            }
+          ]
+        },
+        "semantic_class": "canonical",
+        "semantic_focus_identity": "rel-leaders-coordinate-action",
+        "strategy_type": "FOCUSED_RELATIONSHIP",
+        "title": "Party leaders → Congressional action on bills",
+        "trusted_input_refs": [
+          "validated KnowledgeModel canonical relationship"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "FOCUSED_RELATIONSHIP",
+      "semantic_focus_identity": "rel-leaders-coordinate-action",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-7e885d059e50b124",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": null,
+          "predicates": [
+            "CAUSES"
+          ],
+          "relationship_count": 1,
+          "rule_id": "CANONICAL_EDGE_FOCUS",
+          "semantic_class": "canonical",
+          "structure_type": null
+        },
+        "evidence_refs": [
+          {
+            "document_id": "text-fe61b7c3b2a9373e",
+            "end_char": 1555,
+            "quote": "The markup concludes when the committee agrees, by majority vote, to report the bill",
+            "relationship_ids": [
+              "rel-majority-vote-report"
+            ],
+            "start_char": 1471
+          }
+        ],
+        "payload": {
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "The source brings about the target as an effect.",
+            "identity": "rel-majority-vote-report",
+            "label": "rel-majority-vote-report"
+          },
+          "nodes": [
+            {
+              "description": "The vote by which a committee agrees to report a bill after markup.",
+              "entity_id": "majority-vote",
+              "entity_type": "PROCESS",
+              "label": "Majority vote"
+            },
+            {
+              "description": "A committee's formal report of a bill, including recommended changes adopted in markup, to its chamber.",
+              "entity_id": "bill-report",
+              "entity_type": "OBJECT",
+              "label": "Bill report"
+            }
+          ],
+          "relationship": {
+            "direction": "cause_to_effect",
+            "evidence": [
+              {
+                "document_id": "text-fe61b7c3b2a9373e",
+                "end_char": 1555,
+                "quote": "The markup concludes when the committee agrees, by majority vote, to report the bill",
+                "start_char": 1471
+              }
+            ],
+            "meaning": "The source brings about the target as an effect.",
+            "provenance_status": "SOURCE_EVIDENCE",
+            "relationship_ids": [
+              "rel-majority-vote-report"
+            ],
+            "relationship_type": "CAUSES",
+            "source_entity_id": "majority-vote",
+            "source_label": "Majority vote",
+            "target_entity_id": "bill-report",
+            "target_label": "Bill report"
+          },
+          "relationships": [
+            {
+              "direction": "cause_to_effect",
+              "evidence": [
+                {
+                  "document_id": "text-fe61b7c3b2a9373e",
+                  "end_char": 1555,
+                  "quote": "The markup concludes when the committee agrees, by majority vote, to report the bill",
+                  "start_char": 1471
+                }
+              ],
+              "meaning": "The source brings about the target as an effect.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-majority-vote-report"
+              ],
+              "relationship_type": "CAUSES",
+              "source_entity_id": "majority-vote",
+              "source_label": "Majority vote",
+              "target_entity_id": "bill-report",
+              "target_label": "Bill report"
+            }
+          ]
+        },
+        "semantic_class": "canonical",
+        "semantic_focus_identity": "rel-majority-vote-report",
+        "strategy_type": "FOCUSED_RELATIONSHIP",
+        "title": "Majority vote → Bill report",
+        "trusted_input_refs": [
+          "validated KnowledgeModel canonical relationship"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "FOCUSED_RELATIONSHIP",
+      "semantic_focus_identity": "rel-majority-vote-report",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-fe7e7ec2c6d464a1",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": null,
+          "predicates": [
+            "AFFECTS"
+          ],
+          "relationship_count": 1,
+          "rule_id": "CANONICAL_EDGE_FOCUS",
+          "semantic_class": "canonical",
+          "structure_type": null
+        },
+        "evidence_refs": [
+          {
+            "document_id": "text-fe61b7c3b2a9373e",
+            "end_char": 1469,
+            "quote": "at which committee members vote on any proposed amendments",
+            "relationship_ids": [
+              "rel-markup-considers-amendments"
+            ],
+            "start_char": 1411
+          }
+        ],
+        "payload": {
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "The source causally influences the target without a specified direction or complete production.",
+            "identity": "rel-markup-considers-amendments",
+            "label": "rel-markup-considers-amendments"
+          },
+          "nodes": [
+            {
+              "description": "A committee proceeding during which members vote on proposed amendments and may agree to report a bill.",
+              "entity_id": "markup",
+              "entity_type": "PROCESS",
+              "label": "Markup"
+            },
+            {
+              "description": "Proposed changes to a bill considered and voted on during markup.",
+              "entity_id": "proposed-amendments",
+              "entity_type": "OBJECT",
+              "label": "Proposed amendments"
+            }
+          ],
+          "relationship": {
+            "direction": "influence_to_affected",
+            "evidence": [
+              {
+                "document_id": "text-fe61b7c3b2a9373e",
+                "end_char": 1469,
+                "quote": "at which committee members vote on any proposed amendments",
+                "start_char": 1411
+              }
+            ],
+            "meaning": "The source causally influences the target without a specified direction or complete production.",
+            "provenance_status": "SOURCE_EVIDENCE",
+            "relationship_ids": [
+              "rel-markup-considers-amendments"
+            ],
+            "relationship_type": "AFFECTS",
+            "source_entity_id": "markup",
+            "source_label": "Markup",
+            "target_entity_id": "proposed-amendments",
+            "target_label": "Proposed amendments"
+          },
+          "relationships": [
+            {
+              "direction": "influence_to_affected",
+              "evidence": [
+                {
+                  "document_id": "text-fe61b7c3b2a9373e",
+                  "end_char": 1469,
+                  "quote": "at which committee members vote on any proposed amendments",
+                  "start_char": 1411
+                }
+              ],
+              "meaning": "The source causally influences the target without a specified direction or complete production.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-markup-considers-amendments"
+              ],
+              "relationship_type": "AFFECTS",
+              "source_entity_id": "markup",
+              "source_label": "Markup",
+              "target_entity_id": "proposed-amendments",
+              "target_label": "Proposed amendments"
+            }
+          ]
+        },
+        "semantic_class": "canonical",
+        "semantic_focus_identity": "rel-markup-considers-amendments",
+        "strategy_type": "FOCUSED_RELATIONSHIP",
+        "title": "Markup → Proposed amendments",
+        "trusted_input_refs": [
+          "validated KnowledgeModel canonical relationship"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "FOCUSED_RELATIONSHIP",
+      "semantic_focus_identity": "rel-markup-considers-amendments",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-0aec017b00a7b48b",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": null,
+          "predicates": [
+            "PRECEDES"
+          ],
+          "relationship_count": 1,
+          "rule_id": "CANONICAL_EDGE_FOCUS",
+          "semantic_class": "canonical",
+          "structure_type": null
+        },
+        "evidence_refs": [
+          {
+            "document_id": "text-fe61b7c3b2a9373e",
+            "end_char": 2064,
+            "quote": "bills are brought to the floor only after the Senate agrees to a motion (typically offered by the majority leader) to proceed to a specific bill",
+            "relationship_id": "rel-motion-precedes-floor",
+            "relationship_ids": [
+              "rel-motion-precedes-floor"
+            ],
+            "start_char": 1920
+          }
+        ],
+        "payload": {
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "The source occurs before the target in time or an explicit process sequence.",
+            "identity": "rel-motion-precedes-floor",
+            "label": "rel-motion-precedes-floor"
+          },
+          "nodes": [
+            {
+              "description": "Consideration of a bill by the full chamber.",
+              "entity_id": "floor-consideration",
+              "entity_type": "PROCESS",
+              "label": "Floor consideration"
+            },
+            {
+              "description": "A Senate motion to proceed to a specific bill.",
+              "entity_id": "motion-to-proceed",
+              "entity_type": "OBJECT",
+              "label": "Motion to proceed"
+            }
+          ],
+          "relationship": {
+            "direction": "earlier_to_later",
+            "evidence": [
+              {
+                "document_id": "text-fe61b7c3b2a9373e",
+                "end_char": 2064,
+                "quote": "bills are brought to the floor only after the Senate agrees to a motion (typically offered by the majority leader) to proceed to a specific bill",
+                "relationship_id": "rel-motion-precedes-floor",
+                "start_char": 1920
+              }
+            ],
+            "meaning": "The source occurs before the target in time or an explicit process sequence.",
+            "provenance_status": "SOURCE_EVIDENCE",
+            "relationship_ids": [
+              "rel-motion-precedes-floor"
+            ],
+            "relationship_type": "PRECEDES",
+            "source_entity_id": "motion-to-proceed",
+            "source_label": "Motion to proceed",
+            "target_entity_id": "floor-consideration",
+            "target_label": "Floor consideration"
+          },
+          "relationships": [
+            {
+              "direction": "earlier_to_later",
+              "evidence": [
+                {
+                  "document_id": "text-fe61b7c3b2a9373e",
+                  "end_char": 2064,
+                  "quote": "bills are brought to the floor only after the Senate agrees to a motion (typically offered by the majority leader) to proceed to a specific bill",
+                  "relationship_id": "rel-motion-precedes-floor",
+                  "start_char": 1920
+                }
+              ],
+              "meaning": "The source occurs before the target in time or an explicit process sequence.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-motion-precedes-floor"
+              ],
+              "relationship_type": "PRECEDES",
+              "source_entity_id": "motion-to-proceed",
+              "source_label": "Motion to proceed",
+              "target_entity_id": "floor-consideration",
+              "target_label": "Floor consideration"
+            }
+          ]
+        },
+        "semantic_class": "canonical",
+        "semantic_focus_identity": "rel-motion-precedes-floor",
+        "strategy_type": "FOCUSED_RELATIONSHIP",
+        "title": "Motion to proceed → Floor consideration",
+        "trusted_input_refs": [
+          "workspace-fixture.json selected canonical edge",
+          "workspace-fixture.json selected edge endpoints and evidence"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "FOCUSED_RELATIONSHIP",
+      "semantic_focus_identity": "rel-motion-precedes-floor",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-33407dc1d16abc52",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": null,
+          "predicates": [
+            "PART_OF"
+          ],
+          "relationship_count": 1,
+          "rule_id": "CANONICAL_EDGE_FOCUS",
+          "semantic_class": "canonical",
+          "structure_type": null
+        },
+        "evidence_refs": [
+          {
+            "document_id": "text-fe61b7c3b2a9373e",
+            "end_char": 351,
+            "quote": "In both chambers, much of the policy expertise resides in the standing committees",
+            "relationship_id": "rel-policy-expertise-committees",
+            "relationship_ids": [
+              "rel-policy-expertise-committees"
+            ],
+            "start_char": 270
+          }
+        ],
+        "payload": {
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "The source is a constituent or component of the target.",
+            "identity": "rel-policy-expertise-committees",
+            "label": "rel-policy-expertise-committees"
+          },
+          "nodes": [
+            {
+              "description": "Expertise concerning the development and assessment of proposed legislation.",
+              "entity_id": "policy-expertise",
+              "entity_type": "CONCEPT",
+              "label": "Policy expertise"
+            },
+            {
+              "description": "Panels of Members with specified policy jurisdictions that develop and assess proposed legislation.",
+              "entity_id": "standing-committees",
+              "entity_type": "SYSTEM",
+              "label": "Standing committees"
+            }
+          ],
+          "relationship": {
+            "direction": "part_to_whole",
+            "evidence": [
+              {
+                "document_id": "text-fe61b7c3b2a9373e",
+                "end_char": 351,
+                "quote": "In both chambers, much of the policy expertise resides in the standing committees",
+                "relationship_id": "rel-policy-expertise-committees",
+                "start_char": 270
+              }
+            ],
+            "meaning": "The source is a constituent or component of the target.",
+            "provenance_status": "SOURCE_EVIDENCE",
+            "relationship_ids": [
+              "rel-policy-expertise-committees"
+            ],
+            "relationship_type": "PART_OF",
+            "source_entity_id": "policy-expertise",
+            "source_label": "Policy expertise",
+            "target_entity_id": "standing-committees",
+            "target_label": "Standing committees"
+          },
+          "relationships": [
+            {
+              "direction": "part_to_whole",
+              "evidence": [
+                {
+                  "document_id": "text-fe61b7c3b2a9373e",
+                  "end_char": 351,
+                  "quote": "In both chambers, much of the policy expertise resides in the standing committees",
+                  "relationship_id": "rel-policy-expertise-committees",
+                  "start_char": 270
+                }
+              ],
+              "meaning": "The source is a constituent or component of the target.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-policy-expertise-committees"
+              ],
+              "relationship_type": "PART_OF",
+              "source_entity_id": "policy-expertise",
+              "source_label": "Policy expertise",
+              "target_entity_id": "standing-committees",
+              "target_label": "Standing committees"
+            }
+          ]
+        },
+        "semantic_class": "canonical",
+        "semantic_focus_identity": "rel-policy-expertise-committees",
+        "strategy_type": "FOCUSED_RELATIONSHIP",
+        "title": "Policy expertise → Standing committees",
+        "trusted_input_refs": [
+          "workspace-fixture.json selected canonical edge",
+          "workspace-fixture.json selected edge endpoints and evidence"
+        ],
+        "warnings": [
+          "Sparse structure: this view contains only one supported relationship."
+        ]
+      },
+      "selected_representation_strategy": "FOCUSED_RELATIONSHIP",
+      "semantic_focus_identity": "rel-policy-expertise-committees",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-7efaec6657ac0e34",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": null,
+          "predicates": [
+            "CREATES"
+          ],
+          "relationship_count": 1,
+          "rule_id": "CANONICAL_EDGE_FOCUS",
+          "semantic_class": "canonical",
+          "structure_type": null
+        },
+        "evidence_refs": [
+          {
+            "document_id": "text-fe61b7c3b2a9373e",
+            "end_char": 1903,
+            "quote": "ask the Rules Committee to propose a set of tailored parameters for floor consideration",
+            "relationship_ids": [
+              "rel-rules-committee-parameters"
+            ],
+            "start_char": 1816
+          }
+        ],
+        "payload": {
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "The source produces or brings a distinct target into existence.",
+            "identity": "rel-rules-committee-parameters",
+            "label": "rel-rules-committee-parameters"
+          },
+          "nodes": [
+            {
+              "description": "The House committee asked by majority party leaders to propose tailored parameters for floor consideration.",
+              "entity_id": "rules-committee",
+              "entity_type": "SYSTEM",
+              "label": "Rules Committee"
+            },
+            {
+              "description": "Consideration of a bill by the full chamber.",
+              "entity_id": "floor-consideration",
+              "entity_type": "PROCESS",
+              "label": "Floor consideration"
+            }
+          ],
+          "relationship": {
+            "direction": "creator_to_created",
+            "evidence": [
+              {
+                "document_id": "text-fe61b7c3b2a9373e",
+                "end_char": 1903,
+                "quote": "ask the Rules Committee to propose a set of tailored parameters for floor consideration",
+                "start_char": 1816
+              }
+            ],
+            "meaning": "The source produces or brings a distinct target into existence.",
+            "provenance_status": "SOURCE_EVIDENCE",
+            "relationship_ids": [
+              "rel-rules-committee-parameters"
+            ],
+            "relationship_type": "CREATES",
+            "source_entity_id": "rules-committee",
+            "source_label": "Rules Committee",
+            "target_entity_id": "floor-consideration",
+            "target_label": "Floor consideration"
+          },
+          "relationships": [
+            {
+              "direction": "creator_to_created",
+              "evidence": [
+                {
+                  "document_id": "text-fe61b7c3b2a9373e",
+                  "end_char": 1903,
+                  "quote": "ask the Rules Committee to propose a set of tailored parameters for floor consideration",
+                  "start_char": 1816
+                }
+              ],
+              "meaning": "The source produces or brings a distinct target into existence.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-rules-committee-parameters"
+              ],
+              "relationship_type": "CREATES",
+              "source_entity_id": "rules-committee",
+              "source_label": "Rules Committee",
+              "target_entity_id": "floor-consideration",
+              "target_label": "Floor consideration"
+            }
+          ]
+        },
+        "semantic_class": "canonical",
+        "semantic_focus_identity": "rel-rules-committee-parameters",
+        "strategy_type": "FOCUSED_RELATIONSHIP",
+        "title": "Rules Committee → Floor consideration",
+        "trusted_input_refs": [
+          "validated KnowledgeModel canonical relationship"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "FOCUSED_RELATIONSHIP",
+      "semantic_focus_identity": "rel-rules-committee-parameters",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-dfe28e6a699dba9f",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": "NO_TRUSTED_SUPPORTING_RELATIONSHIP",
+          "predicates": [],
+          "relationship_count": 0,
+          "rule_id": "TRUTHFUL_PROSE_FALLBACK",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [],
+        "payload": {
+          "body": "A proposed piece of legislation introduced by a Member of the House or Senate.",
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "A proposed piece of legislation introduced by a Member of the House or Senate.",
+            "identity": "bill",
+            "label": "Bill"
+          },
+          "nodes": [
+            {
+              "description": "A proposed piece of legislation introduced by a Member of the House or Senate.",
+              "entity_id": "bill",
+              "entity_type": "OBJECT",
+              "label": "Bill"
+            }
+          ],
+          "relationships": []
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "bill",
+        "strategy_type": "CONCISE_PROSE",
+        "title": "Bill",
+        "trusted_input_refs": [
+          "validated KnowledgeModel entity"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "CONCISE_PROSE",
+      "semantic_focus_identity": "bill",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-0456a031d1193060",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": "NO_TRUSTED_SUPPORTING_RELATIONSHIP",
+          "predicates": [],
+          "relationship_count": 0,
+          "rule_id": "TRUTHFUL_PROSE_FALLBACK",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [],
+        "payload": {
+          "body": "A committee's formal report of a bill, including recommended changes adopted in markup, to its chamber.",
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "A committee's formal report of a bill, including recommended changes adopted in markup, to its chamber.",
+            "identity": "bill-report",
+            "label": "Bill report"
+          },
+          "nodes": [
+            {
+              "description": "A committee's formal report of a bill, including recommended changes adopted in markup, to its chamber.",
+              "entity_id": "bill-report",
+              "entity_type": "OBJECT",
+              "label": "Bill report"
+            }
+          ],
+          "relationships": []
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "bill-report",
+        "strategy_type": "CONCISE_PROSE",
+        "title": "Bill report",
+        "trusted_input_refs": [
+          "validated KnowledgeModel entity"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "CONCISE_PROSE",
+      "semantic_focus_identity": "bill-report",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-92716402e76c84ed",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": "NO_TRUSTED_SUPPORTING_RELATIONSHIP",
+          "predicates": [],
+          "relationship_count": 0,
+          "rule_id": "TRUTHFUL_PROSE_FALLBACK",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [],
+        "payload": {
+          "body": "Identification of bills that will receive formal committee attention during a two-year Congress.",
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "Identification of bills that will receive formal committee attention during a two-year Congress.",
+            "identity": "committee-agenda-setting",
+            "label": "Committee agenda setting"
+          },
+          "nodes": [
+            {
+              "description": "Identification of bills that will receive formal committee attention during a two-year Congress.",
+              "entity_id": "committee-agenda-setting",
+              "entity_type": "PROCESS",
+              "label": "Committee agenda setting"
+            }
+          ],
+          "relationships": []
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "committee-agenda-setting",
+        "strategy_type": "CONCISE_PROSE",
+        "title": "Committee agenda setting",
+        "trusted_input_refs": [
+          "validated KnowledgeModel entity"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "CONCISE_PROSE",
+      "semantic_focus_identity": "committee-agenda-setting",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-0a7ac2d5958ebf1a",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": "NO_TRUSTED_SUPPORTING_RELATIONSHIP",
+          "predicates": [],
+          "relationship_count": 0,
+          "rule_id": "TRUTHFUL_PROSE_FALLBACK",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [],
+        "payload": {
+          "body": "The chair of a committee, with primary agenda-setting authority for that committee.",
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "The chair of a committee, with primary agenda-setting authority for that committee.",
+            "identity": "committee-chair",
+            "label": "Committee chair"
+          },
+          "nodes": [
+            {
+              "description": "The chair of a committee, with primary agenda-setting authority for that committee.",
+              "entity_id": "committee-chair",
+              "entity_type": "COMPONENT",
+              "label": "Committee chair"
+            }
+          ],
+          "relationships": []
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "committee-chair",
+        "strategy_type": "CONCISE_PROSE",
+        "title": "Committee chair",
+        "trusted_input_refs": [
+          "validated KnowledgeModel entity"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "CONCISE_PROSE",
+      "semantic_focus_identity": "committee-chair",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-2af578bc91f8e50a",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": "NO_TRUSTED_SUPPORTING_RELATIONSHIP",
+          "predicates": [],
+          "relationship_count": 0,
+          "rule_id": "TRUTHFUL_PROSE_FALLBACK",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [],
+        "payload": {
+          "body": "The process by which an introduced bill is referred to committees with jurisdiction over its elements.",
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "The process by which an introduced bill is referred to committees with jurisdiction over its elements.",
+            "identity": "committee-referral",
+            "label": "Committee referral"
+          },
+          "nodes": [
+            {
+              "description": "The process by which an introduced bill is referred to committees with jurisdiction over its elements.",
+              "entity_id": "committee-referral",
+              "entity_type": "PROCESS",
+              "label": "Committee referral"
+            }
+          ],
+          "relationships": []
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "committee-referral",
+        "strategy_type": "CONCISE_PROSE",
+        "title": "Committee referral",
+        "trusted_input_refs": [
+          "validated KnowledgeModel entity"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "CONCISE_PROSE",
+      "semantic_focus_identity": "committee-referral",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-25a318156bd80e0f",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": "NO_TRUSTED_SUPPORTING_RELATIONSHIP",
+          "predicates": [],
+          "relationship_count": 0,
+          "rule_id": "TRUTHFUL_PROSE_FALLBACK",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [],
+        "payload": {
+          "body": "Legislative action concerning bills in Congress.",
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "Legislative action concerning bills in Congress.",
+            "identity": "congressional-action-on-bills",
+            "label": "Congressional action on bills"
+          },
+          "nodes": [
+            {
+              "description": "Legislative action concerning bills in Congress.",
+              "entity_id": "congressional-action-on-bills",
+              "entity_type": "PROCESS",
+              "label": "Congressional action on bills"
+            }
+          ],
+          "relationships": []
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "congressional-action-on-bills",
+        "strategy_type": "CONCISE_PROSE",
+        "title": "Congressional action on bills",
+        "trusted_input_refs": [
+          "validated KnowledgeModel entity"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "CONCISE_PROSE",
+      "semantic_focus_identity": "congressional-action-on-bills",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-b827fe096f065a5c",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": "NO_TRUSTED_SUPPORTING_RELATIONSHIP",
+          "predicates": [],
+          "relationship_count": 0,
+          "rule_id": "TRUTHFUL_PROSE_FALLBACK",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [],
+        "payload": {
+          "body": "Tools available to chamber majority party leaders for setting the floor agenda.",
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "Tools available to chamber majority party leaders for setting the floor agenda.",
+            "identity": "floor-agenda-setting-tools",
+            "label": "Floor agenda-setting tools"
+          },
+          "nodes": [
+            {
+              "description": "Tools available to chamber majority party leaders for setting the floor agenda.",
+              "entity_id": "floor-agenda-setting-tools",
+              "entity_type": "VARIABLE",
+              "label": "Floor agenda-setting tools"
+            }
+          ],
+          "relationships": []
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "floor-agenda-setting-tools",
+        "strategy_type": "CONCISE_PROSE",
+        "title": "Floor agenda-setting tools",
+        "trusted_input_refs": [
+          "validated KnowledgeModel entity"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "CONCISE_PROSE",
+      "semantic_focus_identity": "floor-agenda-setting-tools",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-4cc1a72983bb8e83",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": null,
+          "predicates": [
+            "PRECEDES"
+          ],
+          "relationship_count": 2,
+          "rule_id": "EXPLICIT_PRECEDES_CHAIN",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [
+          {
+            "document_id": "text-fe61b7c3b2a9373e",
+            "end_char": 2064,
+            "quote": "bills are brought to the floor only after the Senate agrees to a motion (typically offered by the majority leader) to proceed to a specific bill",
+            "relationship_id": "rel-motion-precedes-floor",
+            "relationship_ids": [
+              "rel-motion-precedes-floor"
+            ],
+            "start_char": 1920
+          },
+          {
+            "document_id": "text-fe61b7c3b2a9373e",
+            "end_char": 2151,
+            "quote": "if no Senator objects to a unanimous consent request to bring it up",
+            "relationship_id": "rel-consent-precedes-floor",
+            "relationship_ids": [
+              "rel-consent-precedes-floor"
+            ],
+            "start_char": 2084
+          }
+        ],
+        "payload": {
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "Consideration of a bill by the full chamber.",
+            "identity": "floor-consideration",
+            "label": "Floor consideration"
+          },
+          "nodes": [
+            {
+              "description": "Consideration of a bill by the full chamber.",
+              "entity_id": "floor-consideration",
+              "entity_type": "PROCESS",
+              "label": "Floor consideration"
+            },
+            {
+              "description": "A Senate motion to proceed to a specific bill.",
+              "entity_id": "motion-to-proceed",
+              "entity_type": "OBJECT",
+              "label": "Motion to proceed"
+            },
+            {
+              "description": "A Senate request to bring a bill to the floor when no Senator objects.",
+              "entity_id": "unanimous-consent-request",
+              "entity_type": "PROCESS",
+              "label": "Unanimous consent request"
+            }
+          ],
+          "ordered_nodes": [
+            {
+              "description": "A Senate motion to proceed to a specific bill.",
+              "entity_id": "motion-to-proceed",
+              "entity_type": "OBJECT",
+              "label": "Motion to proceed"
+            },
+            {
+              "description": "A Senate request to bring a bill to the floor when no Senator objects.",
+              "entity_id": "unanimous-consent-request",
+              "entity_type": "PROCESS",
+              "label": "Unanimous consent request"
+            },
+            {
+              "description": "Consideration of a bill by the full chamber.",
+              "entity_id": "floor-consideration",
+              "entity_type": "PROCESS",
+              "label": "Floor consideration"
+            }
+          ],
+          "relationships": [
+            {
+              "direction": "earlier_to_later",
+              "evidence": [
+                {
+                  "document_id": "text-fe61b7c3b2a9373e",
+                  "end_char": 2064,
+                  "quote": "bills are brought to the floor only after the Senate agrees to a motion (typically offered by the majority leader) to proceed to a specific bill",
+                  "relationship_id": "rel-motion-precedes-floor",
+                  "start_char": 1920
+                }
+              ],
+              "meaning": "The source occurs before the target in time or an explicit process sequence.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-motion-precedes-floor"
+              ],
+              "relationship_type": "PRECEDES",
+              "source_entity_id": "motion-to-proceed",
+              "source_label": "Motion to proceed",
+              "target_entity_id": "floor-consideration",
+              "target_label": "Floor consideration"
+            },
+            {
+              "direction": "earlier_to_later",
+              "evidence": [
+                {
+                  "document_id": "text-fe61b7c3b2a9373e",
+                  "end_char": 2151,
+                  "quote": "if no Senator objects to a unanimous consent request to bring it up",
+                  "relationship_id": "rel-consent-precedes-floor",
+                  "start_char": 2084
+                }
+              ],
+              "meaning": "The source occurs before the target in time or an explicit process sequence.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-consent-precedes-floor"
+              ],
+              "relationship_type": "PRECEDES",
+              "source_entity_id": "unanimous-consent-request",
+              "source_label": "Unanimous consent request",
+              "target_entity_id": "floor-consideration",
+              "target_label": "Floor consideration"
+            }
+          ]
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "floor-consideration",
+        "strategy_type": "PROCESS_SEQUENCE",
+        "title": "Floor consideration",
+        "trusted_input_refs": [
+          "workspace-fixture.json representation.nodes selected concept",
+          "workspace-fixture.json connected representation edges"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "PROCESS_SEQUENCE",
+      "semantic_focus_identity": "floor-consideration",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-25925d46df194197",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": "NO_TRUSTED_SUPPORTING_RELATIONSHIP",
+          "predicates": [],
+          "relationship_count": 0,
+          "rule_id": "TRUTHFUL_PROSE_FALLBACK",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [],
+        "payload": {
+          "body": "Proceedings that allow committee members and the public to hear selected parties discuss a bill's strengths and weaknesses.",
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "Proceedings that allow committee members and the public to hear selected parties discuss a bill's strengths and weaknesses.",
+            "identity": "hearings",
+            "label": "Committee hearings"
+          },
+          "nodes": [
+            {
+              "description": "Proceedings that allow committee members and the public to hear selected parties discuss a bill's strengths and weaknesses.",
+              "entity_id": "hearings",
+              "entity_type": "PROCESS",
+              "label": "Committee hearings"
+            }
+          ],
+          "relationships": []
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "hearings",
+        "strategy_type": "CONCISE_PROSE",
+        "title": "Committee hearings",
+        "trusted_input_refs": [
+          "validated KnowledgeModel entity"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "CONCISE_PROSE",
+      "semantic_focus_identity": "hearings",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-9ea1847098a4e35e",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": "NO_TRUSTED_SUPPORTING_RELATIONSHIP",
+          "predicates": [],
+          "relationship_count": 0,
+          "rule_id": "TRUTHFUL_PROSE_FALLBACK",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [],
+        "payload": {
+          "body": "The House chamber of Congress.",
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "The House chamber of Congress.",
+            "identity": "house",
+            "label": "House"
+          },
+          "nodes": [
+            {
+              "description": "The House chamber of Congress.",
+              "entity_id": "house",
+              "entity_type": "SYSTEM",
+              "label": "House"
+            }
+          ],
+          "relationships": []
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "house",
+        "strategy_type": "CONCISE_PROSE",
+        "title": "House",
+        "trusted_input_refs": [
+          "validated KnowledgeModel entity"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "CONCISE_PROSE",
+      "semantic_focus_identity": "house",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-764d75f95a3491b4",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": "NO_TRUSTED_SUPPORTING_RELATIONSHIP",
+          "predicates": [],
+          "relationship_count": 0,
+          "rule_id": "TRUTHFUL_PROSE_FALLBACK",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [],
+        "payload": {
+          "body": "The vote by which a committee agrees to report a bill after markup.",
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "The vote by which a committee agrees to report a bill after markup.",
+            "identity": "majority-vote",
+            "label": "Majority vote"
+          },
+          "nodes": [
+            {
+              "description": "The vote by which a committee agrees to report a bill after markup.",
+              "entity_id": "majority-vote",
+              "entity_type": "PROCESS",
+              "label": "Majority vote"
+            }
+          ],
+          "relationships": []
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "majority-vote",
+        "strategy_type": "CONCISE_PROSE",
+        "title": "Majority vote",
+        "trusted_input_refs": [
+          "validated KnowledgeModel entity"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "CONCISE_PROSE",
+      "semantic_focus_identity": "majority-vote",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-8d379276e840c54d",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": "NO_TRUSTED_SUPPORTING_RELATIONSHIP",
+          "predicates": [],
+          "relationship_count": 0,
+          "rule_id": "TRUTHFUL_PROSE_FALLBACK",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [],
+        "payload": {
+          "body": "A committee proceeding during which members vote on proposed amendments and may agree to report a bill.",
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "A committee proceeding during which members vote on proposed amendments and may agree to report a bill.",
+            "identity": "markup",
+            "label": "Markup"
+          },
+          "nodes": [
+            {
+              "description": "A committee proceeding during which members vote on proposed amendments and may agree to report a bill.",
+              "entity_id": "markup",
+              "entity_type": "PROCESS",
+              "label": "Markup"
+            }
+          ],
+          "relationships": []
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "markup",
+        "strategy_type": "CONCISE_PROSE",
+        "title": "Markup",
+        "trusted_input_refs": [
+          "validated KnowledgeModel entity"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "CONCISE_PROSE",
+      "semantic_focus_identity": "markup",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-50142e42b0ecfbd9",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": null,
+          "predicates": [
+            "PRECEDES"
+          ],
+          "relationship_count": 2,
+          "rule_id": "EXPLICIT_PRECEDES_CHAIN",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [
+          {
+            "document_id": "text-fe61b7c3b2a9373e",
+            "end_char": 2064,
+            "quote": "bills are brought to the floor only after the Senate agrees to a motion (typically offered by the majority leader) to proceed to a specific bill",
+            "relationship_id": "rel-motion-precedes-floor",
+            "relationship_ids": [
+              "rel-motion-precedes-floor"
+            ],
+            "start_char": 1920
+          },
+          {
+            "document_id": "text-fe61b7c3b2a9373e",
+            "end_char": 2151,
+            "quote": "if no Senator objects to a unanimous consent request to bring it up",
+            "relationship_id": "rel-consent-precedes-floor",
+            "relationship_ids": [
+              "rel-consent-precedes-floor"
+            ],
+            "start_char": 2084
+          }
+        ],
+        "payload": {
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "A Senate motion to proceed to a specific bill.",
+            "identity": "motion-to-proceed",
+            "label": "Motion to proceed"
+          },
+          "nodes": [
+            {
+              "description": "Consideration of a bill by the full chamber.",
+              "entity_id": "floor-consideration",
+              "entity_type": "PROCESS",
+              "label": "Floor consideration"
+            },
+            {
+              "description": "A Senate motion to proceed to a specific bill.",
+              "entity_id": "motion-to-proceed",
+              "entity_type": "OBJECT",
+              "label": "Motion to proceed"
+            },
+            {
+              "description": "A Senate request to bring a bill to the floor when no Senator objects.",
+              "entity_id": "unanimous-consent-request",
+              "entity_type": "PROCESS",
+              "label": "Unanimous consent request"
+            }
+          ],
+          "ordered_nodes": [
+            {
+              "description": "A Senate motion to proceed to a specific bill.",
+              "entity_id": "motion-to-proceed",
+              "entity_type": "OBJECT",
+              "label": "Motion to proceed"
+            },
+            {
+              "description": "A Senate request to bring a bill to the floor when no Senator objects.",
+              "entity_id": "unanimous-consent-request",
+              "entity_type": "PROCESS",
+              "label": "Unanimous consent request"
+            },
+            {
+              "description": "Consideration of a bill by the full chamber.",
+              "entity_id": "floor-consideration",
+              "entity_type": "PROCESS",
+              "label": "Floor consideration"
+            }
+          ],
+          "relationships": [
+            {
+              "direction": "earlier_to_later",
+              "evidence": [
+                {
+                  "document_id": "text-fe61b7c3b2a9373e",
+                  "end_char": 2064,
+                  "quote": "bills are brought to the floor only after the Senate agrees to a motion (typically offered by the majority leader) to proceed to a specific bill",
+                  "relationship_id": "rel-motion-precedes-floor",
+                  "start_char": 1920
+                }
+              ],
+              "meaning": "The source occurs before the target in time or an explicit process sequence.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-motion-precedes-floor"
+              ],
+              "relationship_type": "PRECEDES",
+              "source_entity_id": "motion-to-proceed",
+              "source_label": "Motion to proceed",
+              "target_entity_id": "floor-consideration",
+              "target_label": "Floor consideration"
+            },
+            {
+              "direction": "earlier_to_later",
+              "evidence": [
+                {
+                  "document_id": "text-fe61b7c3b2a9373e",
+                  "end_char": 2151,
+                  "quote": "if no Senator objects to a unanimous consent request to bring it up",
+                  "relationship_id": "rel-consent-precedes-floor",
+                  "start_char": 2084
+                }
+              ],
+              "meaning": "The source occurs before the target in time or an explicit process sequence.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-consent-precedes-floor"
+              ],
+              "relationship_type": "PRECEDES",
+              "source_entity_id": "unanimous-consent-request",
+              "source_label": "Unanimous consent request",
+              "target_entity_id": "floor-consideration",
+              "target_label": "Floor consideration"
+            }
+          ]
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "motion-to-proceed",
+        "strategy_type": "PROCESS_SEQUENCE",
+        "title": "Motion to proceed",
+        "trusted_input_refs": [
+          "workspace-fixture.json representation.nodes selected concept",
+          "workspace-fixture.json connected representation edges"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "PROCESS_SEQUENCE",
+      "semantic_focus_identity": "motion-to-proceed",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-6d45663890eee9f7",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": "NO_TRUSTED_SUPPORTING_RELATIONSHIP",
+          "predicates": [],
+          "relationship_count": 0,
+          "rule_id": "TRUTHFUL_PROSE_FALLBACK",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [],
+        "payload": {
+          "body": "Leaders who plan and coordinate congressional action on bills within each chamber.",
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "Leaders who plan and coordinate congressional action on bills within each chamber.",
+            "identity": "party-leaders",
+            "label": "Party leaders"
+          },
+          "nodes": [
+            {
+              "description": "Leaders who plan and coordinate congressional action on bills within each chamber.",
+              "entity_id": "party-leaders",
+              "entity_type": "COMPONENT",
+              "label": "Party leaders"
+            }
+          ],
+          "relationships": []
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "party-leaders",
+        "strategy_type": "CONCISE_PROSE",
+        "title": "Party leaders",
+        "trusted_input_refs": [
+          "validated KnowledgeModel entity"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "CONCISE_PROSE",
+      "semantic_focus_identity": "party-leaders",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-b19a3f5d081166e5",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": null,
+          "predicates": [
+            "PART_OF"
+          ],
+          "relationship_count": 1,
+          "rule_id": "TYPED_HIERARCHY_EDGES",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [
+          {
+            "document_id": "text-fe61b7c3b2a9373e",
+            "end_char": 351,
+            "quote": "In both chambers, much of the policy expertise resides in the standing committees",
+            "relationship_id": "rel-policy-expertise-committees",
+            "relationship_ids": [
+              "rel-policy-expertise-committees"
+            ],
+            "start_char": 270
+          }
+        ],
+        "payload": {
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "Expertise concerning the development and assessment of proposed legislation.",
+            "identity": "policy-expertise",
+            "label": "Policy expertise"
+          },
+          "members": [
+            {
+              "description": "Expertise concerning the development and assessment of proposed legislation.",
+              "entity_id": "policy-expertise",
+              "entity_type": "CONCEPT",
+              "label": "Policy expertise"
+            }
+          ],
+          "nodes": [
+            {
+              "description": "Expertise concerning the development and assessment of proposed legislation.",
+              "entity_id": "policy-expertise",
+              "entity_type": "CONCEPT",
+              "label": "Policy expertise"
+            },
+            {
+              "description": "Panels of Members with specified policy jurisdictions that develop and assess proposed legislation.",
+              "entity_id": "standing-committees",
+              "entity_type": "SYSTEM",
+              "label": "Standing committees"
+            }
+          ],
+          "relationships": [
+            {
+              "direction": "part_to_whole",
+              "evidence": [
+                {
+                  "document_id": "text-fe61b7c3b2a9373e",
+                  "end_char": 351,
+                  "quote": "In both chambers, much of the policy expertise resides in the standing committees",
+                  "relationship_id": "rel-policy-expertise-committees",
+                  "start_char": 270
+                }
+              ],
+              "meaning": "The source is a constituent or component of the target.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-policy-expertise-committees"
+              ],
+              "relationship_type": "PART_OF",
+              "source_entity_id": "policy-expertise",
+              "source_label": "Policy expertise",
+              "target_entity_id": "standing-committees",
+              "target_label": "Standing committees"
+            }
+          ],
+          "roots": [
+            {
+              "description": "Panels of Members with specified policy jurisdictions that develop and assess proposed legislation.",
+              "entity_id": "standing-committees",
+              "entity_type": "SYSTEM",
+              "label": "Standing committees"
+            }
+          ]
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "policy-expertise",
+        "strategy_type": "HIERARCHY_COMPOSITION",
+        "title": "Policy expertise",
+        "trusted_input_refs": [
+          "workspace-fixture.json representation.nodes selected concept",
+          "workspace-fixture.json connected representation edges"
+        ],
+        "warnings": [
+          "Sparse structure: this view contains only one supported relationship."
+        ]
+      },
+      "selected_representation_strategy": "HIERARCHY_COMPOSITION",
+      "semantic_focus_identity": "policy-expertise",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-3fb2101a6533ab7c",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": "NO_TRUSTED_SUPPORTING_RELATIONSHIP",
+          "predicates": [],
+          "relationship_count": 0,
+          "rule_id": "TRUTHFUL_PROSE_FALLBACK",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [],
+        "payload": {
+          "body": "Proposed changes to a bill considered and voted on during markup.",
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "Proposed changes to a bill considered and voted on during markup.",
+            "identity": "proposed-amendments",
+            "label": "Proposed amendments"
+          },
+          "nodes": [
+            {
+              "description": "Proposed changes to a bill considered and voted on during markup.",
+              "entity_id": "proposed-amendments",
+              "entity_type": "OBJECT",
+              "label": "Proposed amendments"
+            }
+          ],
+          "relationships": []
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "proposed-amendments",
+        "strategy_type": "CONCISE_PROSE",
+        "title": "Proposed amendments",
+        "trusted_input_refs": [
+          "validated KnowledgeModel entity"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "CONCISE_PROSE",
+      "semantic_focus_identity": "proposed-amendments",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-efaa40feb4ea831a",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": "NO_TRUSTED_SUPPORTING_RELATIONSHIP",
+          "predicates": [],
+          "relationship_count": 0,
+          "rule_id": "TRUTHFUL_PROSE_FALLBACK",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [],
+        "payload": {
+          "body": "The House committee asked by majority party leaders to propose tailored parameters for floor consideration.",
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "The House committee asked by majority party leaders to propose tailored parameters for floor consideration.",
+            "identity": "rules-committee",
+            "label": "Rules Committee"
+          },
+          "nodes": [
+            {
+              "description": "The House committee asked by majority party leaders to propose tailored parameters for floor consideration.",
+              "entity_id": "rules-committee",
+              "entity_type": "SYSTEM",
+              "label": "Rules Committee"
+            }
+          ],
+          "relationships": []
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "rules-committee",
+        "strategy_type": "CONCISE_PROSE",
+        "title": "Rules Committee",
+        "trusted_input_refs": [
+          "validated KnowledgeModel entity"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "CONCISE_PROSE",
+      "semantic_focus_identity": "rules-committee",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-a5a80d5024cabfc0",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": "NO_TRUSTED_SUPPORTING_RELATIONSHIP",
+          "predicates": [],
+          "relationship_count": 0,
+          "rule_id": "TRUTHFUL_PROSE_FALLBACK",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [],
+        "payload": {
+          "body": "The Senate chamber of Congress.",
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "The Senate chamber of Congress.",
+            "identity": "senate",
+            "label": "Senate"
+          },
+          "nodes": [
+            {
+              "description": "The Senate chamber of Congress.",
+              "entity_id": "senate",
+              "entity_type": "SYSTEM",
+              "label": "Senate"
+            }
+          ],
+          "relationships": []
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "senate",
+        "strategy_type": "CONCISE_PROSE",
+        "title": "Senate",
+        "trusted_input_refs": [
+          "validated KnowledgeModel entity"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "CONCISE_PROSE",
+      "semantic_focus_identity": "senate",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-a86aadef2e8c69c3",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": null,
+          "predicates": [
+            "PART_OF"
+          ],
+          "relationship_count": 1,
+          "rule_id": "TYPED_HIERARCHY_EDGES",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [
+          {
+            "document_id": "text-fe61b7c3b2a9373e",
+            "end_char": 351,
+            "quote": "In both chambers, much of the policy expertise resides in the standing committees",
+            "relationship_id": "rel-policy-expertise-committees",
+            "relationship_ids": [
+              "rel-policy-expertise-committees"
+            ],
+            "start_char": 270
+          }
+        ],
+        "payload": {
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "Panels of Members with specified policy jurisdictions that develop and assess proposed legislation.",
+            "identity": "standing-committees",
+            "label": "Standing committees"
+          },
+          "members": [
+            {
+              "description": "Expertise concerning the development and assessment of proposed legislation.",
+              "entity_id": "policy-expertise",
+              "entity_type": "CONCEPT",
+              "label": "Policy expertise"
+            }
+          ],
+          "nodes": [
+            {
+              "description": "Expertise concerning the development and assessment of proposed legislation.",
+              "entity_id": "policy-expertise",
+              "entity_type": "CONCEPT",
+              "label": "Policy expertise"
+            },
+            {
+              "description": "Panels of Members with specified policy jurisdictions that develop and assess proposed legislation.",
+              "entity_id": "standing-committees",
+              "entity_type": "SYSTEM",
+              "label": "Standing committees"
+            }
+          ],
+          "relationships": [
+            {
+              "direction": "part_to_whole",
+              "evidence": [
+                {
+                  "document_id": "text-fe61b7c3b2a9373e",
+                  "end_char": 351,
+                  "quote": "In both chambers, much of the policy expertise resides in the standing committees",
+                  "relationship_id": "rel-policy-expertise-committees",
+                  "start_char": 270
+                }
+              ],
+              "meaning": "The source is a constituent or component of the target.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-policy-expertise-committees"
+              ],
+              "relationship_type": "PART_OF",
+              "source_entity_id": "policy-expertise",
+              "source_label": "Policy expertise",
+              "target_entity_id": "standing-committees",
+              "target_label": "Standing committees"
+            }
+          ],
+          "roots": [
+            {
+              "description": "Panels of Members with specified policy jurisdictions that develop and assess proposed legislation.",
+              "entity_id": "standing-committees",
+              "entity_type": "SYSTEM",
+              "label": "Standing committees"
+            }
+          ]
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "standing-committees",
+        "strategy_type": "HIERARCHY_COMPOSITION",
+        "title": "Standing committees",
+        "trusted_input_refs": [
+          "workspace-fixture.json representation.nodes selected concept",
+          "workspace-fixture.json connected representation edges"
+        ],
+        "warnings": [
+          "Sparse structure: this view contains only one supported relationship."
+        ]
+      },
+      "selected_representation_strategy": "HIERARCHY_COMPOSITION",
+      "semantic_focus_identity": "standing-committees",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-e0e00e6accea1f2e",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": null,
+          "predicates": [
+            "PRECEDES"
+          ],
+          "relationship_count": 2,
+          "rule_id": "EXPLICIT_PRECEDES_CHAIN",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [
+          {
+            "document_id": "text-fe61b7c3b2a9373e",
+            "end_char": 2064,
+            "quote": "bills are brought to the floor only after the Senate agrees to a motion (typically offered by the majority leader) to proceed to a specific bill",
+            "relationship_id": "rel-motion-precedes-floor",
+            "relationship_ids": [
+              "rel-motion-precedes-floor"
+            ],
+            "start_char": 1920
+          },
+          {
+            "document_id": "text-fe61b7c3b2a9373e",
+            "end_char": 2151,
+            "quote": "if no Senator objects to a unanimous consent request to bring it up",
+            "relationship_id": "rel-consent-precedes-floor",
+            "relationship_ids": [
+              "rel-consent-precedes-floor"
+            ],
+            "start_char": 2084
+          }
+        ],
+        "payload": {
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "A Senate request to bring a bill to the floor when no Senator objects.",
+            "identity": "unanimous-consent-request",
+            "label": "Unanimous consent request"
+          },
+          "nodes": [
+            {
+              "description": "Consideration of a bill by the full chamber.",
+              "entity_id": "floor-consideration",
+              "entity_type": "PROCESS",
+              "label": "Floor consideration"
+            },
+            {
+              "description": "A Senate motion to proceed to a specific bill.",
+              "entity_id": "motion-to-proceed",
+              "entity_type": "OBJECT",
+              "label": "Motion to proceed"
+            },
+            {
+              "description": "A Senate request to bring a bill to the floor when no Senator objects.",
+              "entity_id": "unanimous-consent-request",
+              "entity_type": "PROCESS",
+              "label": "Unanimous consent request"
+            }
+          ],
+          "ordered_nodes": [
+            {
+              "description": "A Senate motion to proceed to a specific bill.",
+              "entity_id": "motion-to-proceed",
+              "entity_type": "OBJECT",
+              "label": "Motion to proceed"
+            },
+            {
+              "description": "A Senate request to bring a bill to the floor when no Senator objects.",
+              "entity_id": "unanimous-consent-request",
+              "entity_type": "PROCESS",
+              "label": "Unanimous consent request"
+            },
+            {
+              "description": "Consideration of a bill by the full chamber.",
+              "entity_id": "floor-consideration",
+              "entity_type": "PROCESS",
+              "label": "Floor consideration"
+            }
+          ],
+          "relationships": [
+            {
+              "direction": "earlier_to_later",
+              "evidence": [
+                {
+                  "document_id": "text-fe61b7c3b2a9373e",
+                  "end_char": 2064,
+                  "quote": "bills are brought to the floor only after the Senate agrees to a motion (typically offered by the majority leader) to proceed to a specific bill",
+                  "relationship_id": "rel-motion-precedes-floor",
+                  "start_char": 1920
+                }
+              ],
+              "meaning": "The source occurs before the target in time or an explicit process sequence.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-motion-precedes-floor"
+              ],
+              "relationship_type": "PRECEDES",
+              "source_entity_id": "motion-to-proceed",
+              "source_label": "Motion to proceed",
+              "target_entity_id": "floor-consideration",
+              "target_label": "Floor consideration"
+            },
+            {
+              "direction": "earlier_to_later",
+              "evidence": [
+                {
+                  "document_id": "text-fe61b7c3b2a9373e",
+                  "end_char": 2151,
+                  "quote": "if no Senator objects to a unanimous consent request to bring it up",
+                  "relationship_id": "rel-consent-precedes-floor",
+                  "start_char": 2084
+                }
+              ],
+              "meaning": "The source occurs before the target in time or an explicit process sequence.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-consent-precedes-floor"
+              ],
+              "relationship_type": "PRECEDES",
+              "source_entity_id": "unanimous-consent-request",
+              "source_label": "Unanimous consent request",
+              "target_entity_id": "floor-consideration",
+              "target_label": "Floor consideration"
+            }
+          ]
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "unanimous-consent-request",
+        "strategy_type": "PROCESS_SEQUENCE",
+        "title": "Unanimous consent request",
+        "trusted_input_refs": [
+          "workspace-fixture.json representation.nodes selected concept",
+          "workspace-fixture.json connected representation edges"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "PROCESS_SEQUENCE",
+      "semantic_focus_identity": "unanimous-consent-request",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    }
+  ],
+  "protected_surface_contract": "SPEC038_REPRESENTATION_PLAN"
+}

@@ -1,0 +1,440 @@
+{
+  "actual_model": "gpt-5.6-luna",
+  "completed_at_utc": "2026-09-11T19:50:36.903504Z",
+  "duration_ms": 20177.402,
+  "http_request_id": "req_1e1c398637cc43b9a1adfe6971c4daeb",
+  "prompt_version": "spec-010-v1",
+  "provider": "OpenAI Responses API",
+  "provider_response_id": "resp_03f1b12ec499d4dc016aa45b78fb9087d29437408984449abf",
+  "request_error": null,
+  "requested_model": "gpt-5.6-luna",
+  "response": {
+    "background": false,
+    "billing": {
+      "payer": "developer"
+    },
+    "completed_at": 1789156236.0,
+    "conversation": null,
+    "created_at": 1789156217.0,
+    "error": null,
+    "frequency_penalty": 0.0,
+    "id": "resp_03f1b12ec499d4dc016aa45b78fb9087d29437408984449abf",
+    "incomplete_details": null,
+    "instructions": "You extract a semantic knowledge model from explanatory source text.\n\nIdentify important concepts, objects, processes, variables, systems, and components.\nCreate claims for meaningful propositions that do not naturally form graph edges.\nCreate relationships only when one supplied semantic contract fits both the meaning and\ndirection. Prefer important explanatory structure over exhaustive sentence decomposition.\nIf no relationship contract represents a meaningful proposition truthfully, preserve it\nas a claim instead of forcing it into the nearest edge label. Fewer truthful edges are\nbetter than more misleading edges. Use concise grounded descriptions and conservative\nconfidence values.\n\nUse a typed proposition only for either of these binary-edge failure modes:\n- COMPARISON_CONDITION: a comparison is itself the antecedent of an outcome. Bind\n  LEFT_OPERAND, RIGHT_OPERAND, and OUTCOME; use GREATER_THAN and CAUSES.\n- TRANSFER_EVENT: a transfer must distinguish the EVENT, transferred OBJECT, and\n  DESTINATION; use TRANSFERS_TO.\nDo not also emit a lossy binary edge for the same source proposition. Proposition IDs are\nassigned deterministically by trusted code; do not return an id.\n\nSOURCE means the item is explicitly supported by the supplied text. Every SOURCE item\nmust cite one or more exact, verbatim, uniquely occurring source substrings in evidence.\nUse a complete clause or sentence long enough to occur exactly once; never cite a short\nentity name or other repeated fragment. Do not count characters; return quotes only.\nINFERRED means useful structure not stated explicitly and must have an empty evidence\nlist. Any item with evidence must be SOURCE. Before returning, verify every SOURCE item\nhas at least one unique quote and every INFERRED item has none. Do not use external\nknowledge unless the item is marked INFERRED. Do not fabricate evidence.\n\nAvoid entities created only to reproduce grammar. Avoid duplicates; use aliases only\nfor genuine naming equivalence, and keep related but distinct concepts separate.\nRelationship endpoints must use IDs from the entities array. IDs must be unique,\nconcise, stable kebab-case strings. Do not generate summaries, visualizations, Mermaid,\nteaching prose, or output outside the requested schema.\n\nACTIVE RELATIONSHIP CONTRACTS (source --TYPE--> target):\nIS_A [STRUCTURAL; direction=instance_to_type]\n  meaning: The source is a kind, category, or subtype of the target.\n  roles: source=instance or subtype; target=broader type or category\n  use: The source can truthfully be described as a target.\n  avoid: Do not use for parts, examples, similarity, or temporary states.\nPART_OF [STRUCTURAL; direction=part_to_whole]\n  meaning: The source is a constituent or component of the target.\n  roles: source=part or component; target=containing whole\n  use: The source exists as a component or subpart of the target.\n  avoid: Never reverse whole and part; do not use for interaction or dependency.\nEXAMPLE_OF [STRUCTURAL; direction=example_to_concept]\n  meaning: The source is an illustrative instance of the target concept.\n  roles: source=example; target=concept illustrated\n  use: The source is presented as an example of the target.\n  avoid: Do not use merely because the source is a subtype; prefer IS_A for classification.\nCAUSES [CAUSAL; direction=cause_to_effect]\n  meaning: The source brings about the target as an effect.\n  roles: source=cause; target=effect\n  use: The source is stated to produce the target outcome.\n  avoid: Do not use for chronology, association, contribution, or unspecified influence.\nAFFECTS [CAUSAL; direction=influence_to_affected]\n  meaning: The source causally influences the target without a specified direction or complete production.\n  roles: source=influence; target=affected entity, process, or variable\n  use: The source changes or influences the target, but the text does not support CAUSES, INCREASES, or DECREASES.\n  avoid: Do not use for mere association, chronology, physical force, or interaction with no stated effect.\nINCREASES [CAUSAL; direction=increaser_to_increased_variable]\n  meaning: The source causally raises the amount, rate, value, probability, or intensity of the target.\n  roles: source=causal factor; target=quantity or variable increased\n  use: The source is explicitly said to make the target greater, faster, more likely, or more intense.\n  avoid: Do not infer from nearby words such as more or faster; never use when the source says slower, lower, or less.\nDECREASES [CAUSAL; direction=decreaser_to_decreased_variable]\n  meaning: The source causally lowers the amount, rate, value, probability, or intensity of the target.\n  roles: source=causal factor; target=quantity or variable decreased\n  use: The source is explicitly said to make the target smaller, slower, less likely, or less intense.\n  avoid: Do not use for absence, prevention without a scalar target, or mere negative association.\nINDUCES [CAUSAL; direction=inducer_to_induced_effect]\n  meaning: The source produces the target through an explicitly described induction mechanism.\n  roles: source=inducing phenomenon; target=induced phenomenon\n  use: The source explicitly says induces or describes a recognized induction mechanism.\n  avoid: Do not use as a metaphor for generic causation, influence, motivation, or historical response.\nENABLES [DEPENDENCY; direction=enabler_to_enabled]\n  meaning: The source makes the target possible without necessarily causing it to occur.\n  roles: source=enabling condition or capability; target=capability or process made possible\n  use: The target could not occur, or is materially made possible, because of the source.\n  avoid: Do not use for delivery, participation, weak assistance, or an effect that actually occurred.\nREQUIRES [DEPENDENCY; direction=dependent_to_requirement]\n  meaning: The source depends on the target as a prerequisite or necessary resource.\n  roles: source=dependent; target=prerequisite or required resource\n  use: The source cannot operate or occur as described without the target.\n  avoid: Do not reverse prerequisite and dependent; do not use for optional support.\nCONSTRAINS [DEPENDENCY; direction=constraint_to_constrained]\n  meaning: The source limits the possible behavior, values, or choices of the target.\n  roles: source=constraint; target=constrained entity, process, or variable\n  use: The source imposes a limit, rule, boundary, or restriction on the target.\n  avoid: Do not use to mean unchanged, unrelated, merely different, or causally reduced.\nPRECEDES [TEMPORAL; direction=earlier_to_later]\n  meaning: The source occurs before the target in time or an explicit process sequence.\n  roles: source=earlier event or process; target=later event or process\n  use: The source explicitly occurs before, previously, first, then, or after relative to the target.\n  avoid: Do not infer causality from order; do not reverse earlier and later.\nINTERACTS_WITH [INTERACTION; symmetric]\n  meaning: The source and target directly interact, with no more precise directional semantics supported.\n  roles: source=interaction participant; target=interaction participant\n  use: The text supports direct mutual interaction but not a more precise active predicate.\n  avoid: Do not use for distant association, one-way effect, dependency, or chronology.\nBINDS_TO [INTERACTION; symmetric]\n  meaning: The source physically or chemically binds or attaches to the target.\n  roles: source=binding participant; target=binding participant\n  use: The source explicitly binds or attaches to the target.\n  avoid: Do not use for metaphorical commitment, dependency, influence, or literal physical force.\nTRANSFERS_TO [INTERACTION; direction=transferred_item_to_destination]\n  meaning: The source item, material, or information moves to the target destination or recipient.\n  roles: source=item, material, or information transferred; target=destination or recipient\n  use: The source is explicitly carried, delivered, moved, or transferred to the target.\n  avoid: Do not make the carrier the source unless the carrier itself moves to the destination; do not use for enabling.\nEXERTS_FORCE_ON [INTERACTION; direction=force_exerter_to_physical_target]\n  meaning: The source exerts a literal physical force on the target.\n  roles: source=physical force source; target=physical object receiving force\n  use: A literal physical force is explicitly exerted on the target.\n  avoid: Never use metaphorically for influence, contribution, binding, pressure, or causation.\nTRANSFORMS_INTO [TRANSFORMATION; direction=prior_state_to_resulting_state]\n  meaning: The source itself changes state or identity and becomes the target.\n  roles: source=entity or state before transformation; target=same entity or resulting material after transformation\n  use: The source itself becomes the target through a transformation.\n  avoid: Do not use when an actor causes, creates, attempts, participates in, or responds to the target.\nCREATES [TRANSFORMATION; direction=creator_to_created]\n  meaning: The source produces or brings a distinct target into existence.\n  roles: source=producer or generative process; target=newly produced entity or result\n  use: The source produces a target that is distinct from the source.\n  avoid: Do not use when the source itself becomes the target; use TRANSFORMS_INTO instead.\nMEASURED_BY [DESCRIPTIVE; direction=measurand_to_measure]\n  meaning: The source property or variable is quantified or assessed by the target metric, observation, or procedure.\n  roles: source=property or variable measured; target=metric, observation, or measurement procedure\n  use: The target is explicitly how the source is measured or quantified.\n  avoid: Do not point to something that merely responds to, correlates with, or exemplifies the source.\nCONTRADICTS [DESCRIPTIVE; symmetric]\n  meaning: The source and target assert mutually incompatible propositions.\n  roles: source=proposition or claim; target=incompatible proposition or claim\n  use: Both sides are explicit propositions that cannot simultaneously hold as stated.\n  avoid: Do not use for difference, disagreement without incompatibility, trade-off, or negative causality.",
+    "max_output_tokens": null,
+    "max_tool_calls": null,
+    "metadata": {},
+    "model": "gpt-5.6-luna",
+    "moderation": null,
+    "object": "response",
+    "output": [
+      {
+        "content": [],
+        "encrypted_content": "gAAAAABqpFuMeZHoGlP74y0duwI7s-6C7NorfgZvyXh_lzOMvhceJ2JAtOlfKUVJBwfq5fgxWv3d89cT1aRw5-t480AI1HYEL7TVqg3xHbZ3L2lTLgPq-q4gr5vAxKapHyjjPK8tPL3JCmmeWVw-BOQeNCjH89_jGAAj_JRI46dEExO5wWU4lY2HCuirKXuuAhk5kbYLLevk1AdrFPKF1vUxdJNQkc7avG6uWs9ITF98YfDuaq8-KsD7XBMMIeNxcNpTHNGF9uxfzPRFEs8Ae4rREL_QJD237ady8jub85OfgGY2gpd0OE5G3JAsMcftZkl0aDFsVc_EeZxZTJ50CqXrAQvEBxeeJFLYykqUYGA78oInVEAti4dCfHkGVjJmNDlL4JycwpxiXtpXIe-BYcihpy6C9Mty6b4no7GZnD0C_iefloFis107zFqsykPNw7sYhAVIo73kiiGJX_NftRrhQS3qVCstsJClDfwaAWSBoWfBxNSmJ6h0mqzsAcGCxgARoVeRDwen7yUgYQX2RcLYeRFysr_TR7bTmk70g-ClI9oAGzC-zZjFYWwbuH3MnmrV2mlemkrev7p-tGHsoPivyg-G4ZYN6mLqp1IECQN6wftEPmwFKm0zraziaa85hl6nJu7ld_d1Za5HsB_cpw4m2Z63qP-A9H0fqzmRsWtZnV96zvbq4_gjX6o27gGI4ZVs0Lw9wmAk-88vaoPY28Hzkd4UcF-CNQnr24xNM4TRB6WfGq791EmybwEQZhPoyL_mHbijVRsiVPgS6QNvezT1lzXCZTYJ_y8fWlWK8gBWs6feJscGXPQPwpjL5aEW3nETlzFOXGhHmnhtkCJY4ssJcDNr2WHhZ_dXHJdeJP4_8ay-8nLw3YGJRgsOxXOjoUrOdZ12m7HW-aELrCkM_y6YBJWtNm-v9k8xmkI8HkKzt541idDP75hZdz5OMUVAXkVYiSeyJ6MNJJ6wauclzpR4wKPtQIBbQCB0MmeCyjkVG1sJWjpNDa7e7TQNn2WnsfZLiySLpdGtoDWNBehfA4blvtvdXSORJz2c645vS8UQdOd2z_-ZOdzLs_8NBIIWPgn3Z01RHpJMQyBK-yg5-2nfL5M08wue22xtUKbygKfPbqI5JdLcQmRLOkSGHuqhuF_A13gZ-HchtTYq8B95RuuDeeLAH0By6buTTkG7Vzxug3Vgi4NxU8uU5OhinRDR4m71oVbKMXLBuo7OG3mwENS01vRH4y8ZpJANAGL_pwBtSC5AEdF6NOsOUhtGsSLI1v_JFkWPzUkEBtsRDlOuxnu_G1mYWMK2C5r_f7-gQB8w53v5ZlzyZZO_dRdYr-pns8sI5b4oqbWVAoCy5yo2qJ6pxv3olDEAgPNUXiMAFSezAenTJo6DO_x6qc4UK2LEJQsQayrf-m2wuEUVhukkn3TFbaZb7CThI1hvOCQ20D7oJxRjAJDJephn8Y_xElGMGr17l2Fdxa4RBfLeFrsKJBQPeVABUz7gbzRTwEmAAOEr6f6WzLS_ssqj6PayOrCl8cfdrZSFw5Rb5PK3nDpQ4G5qbF3oqEEV3_XPvJTnZlF0jicqmjxK28v2O1G3p9GVqlor14IM27UmG3Go9KnDH2bpXCoDG4Q6OQ3hsKVhCCft9K2A4Q4djITPgfKcbpt48Ne2rvb1RPcnIgcjMATSpSfDQEbDNW_Yjb9SJeWhORzuYa61BXRCy_ytmvskUACW5h2nMrs0EEYOnwBrDj3TANzOyaAEVHlmpcql_vq-WtYT8sQprALpsLLEMLXwLcd4V06JqiMr8_2gQJDpMLf1pGVnzVtG_w-YA3GHAw4rHcOR0zgL7cgE3SOnjqeEBqcXdzb1nAT97TNY",
+        "id": "rs_03f1b12ec499d4dc016aa45b797ee887d2b454506dee717c11",
+        "status": null,
+        "summary": [],
+        "type": "reasoning"
+      },
+      {
+        "content": [
+          {
+            "annotations": [],
+            "logprobs": [],
+            "text": "{\"entities\":[{\"id\":\"congressional-action-on-bills\",\"name\":\"Congressional action on bills\",\"description\":\"Legislative action concerning bills in Congress.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"id\":\"party-leaders\",\"name\":\"Party leaders\",\"description\":\"Leaders who plan and coordinate congressional action on bills within each chamber.\",\"entity_type\":\"COMPONENT\",\"aliases\":[]},{\"id\":\"house\",\"name\":\"House\",\"description\":\"The House chamber of Congress.\",\"entity_type\":\"SYSTEM\",\"aliases\":[\"House of Representatives\"]},{\"id\":\"senate\",\"name\":\"Senate\",\"description\":\"The Senate chamber of Congress.\",\"entity_type\":\"SYSTEM\",\"aliases\":[]},{\"id\":\"floor-agenda-setting-tools\",\"name\":\"Floor agenda-setting tools\",\"description\":\"Tools available to chamber majority party leaders for setting the floor agenda.\",\"entity_type\":\"VARIABLE\",\"aliases\":[]},{\"id\":\"standing-committees\",\"name\":\"Standing committees\",\"description\":\"Panels of Members with specified policy jurisdictions that develop and assess proposed legislation.\",\"entity_type\":\"SYSTEM\",\"aliases\":[\"committees\"]},{\"id\":\"policy-expertise\",\"name\":\"Policy expertise\",\"description\":\"Expertise concerning the development and assessment of proposed legislation.\",\"entity_type\":\"CONCEPT\",\"aliases\":[]},{\"id\":\"bill\",\"name\":\"Bill\",\"description\":\"A proposed piece of legislation introduced by a Member of the House or Senate.\",\"entity_type\":\"OBJECT\",\"aliases\":[\"measure\"]},{\"id\":\"committee-referral\",\"name\":\"Committee referral\",\"description\":\"The process by which an introduced bill is referred to committees with jurisdiction over its elements.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"id\":\"committee-chair\",\"name\":\"Committee chair\",\"description\":\"The chair of a committee, with primary agenda-setting authority for that committee.\",\"entity_type\":\"COMPONENT\",\"aliases\":[]},{\"id\":\"committee-agenda-setting\",\"name\":\"Committee agenda setting\",\"description\":\"Identification of bills that will receive formal committee attention during a two-year Congress.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"id\":\"hearings\",\"name\":\"Committee hearings\",\"description\":\"Proceedings that allow committee members and the public to hear selected parties discuss a bill's strengths and weaknesses.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"id\":\"markup\",\"name\":\"Markup\",\"description\":\"A committee proceeding during which members vote on proposed amendments and may agree to report a bill.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"id\":\"proposed-amendments\",\"name\":\"Proposed amendments\",\"description\":\"Proposed changes to a bill considered and voted on during markup.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"id\":\"majority-vote\",\"name\":\"Majority vote\",\"description\":\"The vote by which a committee agrees to report a bill after markup.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"id\":\"bill-report\",\"name\":\"Bill report\",\"description\":\"A committee's formal report of a bill, including recommended changes adopted in markup, to its chamber.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"id\":\"floor-consideration\",\"name\":\"Floor consideration\",\"description\":\"Consideration of a bill by the full chamber.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"id\":\"rules-committee\",\"name\":\"Rules Committee\",\"description\":\"The House committee asked by majority party leaders to propose tailored parameters for floor consideration.\",\"entity_type\":\"SYSTEM\",\"aliases\":[]},{\"id\":\"motion-to-proceed\",\"name\":\"Motion to proceed\",\"description\":\"A Senate motion to proceed to a specific bill.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"id\":\"unanimous-consent-request\",\"name\":\"Unanimous consent request\",\"description\":\"A Senate request to bring a bill to the floor when no Senator objects.\",\"entity_type\":\"PROCESS\",\"aliases\":[]}],\"claims\":[{\"id\":\"claim-house-more-tools\",\"statement\":\"Majority party leaders in the House have more tools with which to set the floor agenda than majority party leaders in the Senate.\",\"evidence\":[{\"quote\":\"majority party leaders in the House have more tools with which to set the floor agenda than do majority party leaders in the Senate\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"claim-committees-select-bills\",\"statement\":\"Committees do not formally consider every bill referred to them.\",\"evidence\":[{\"quote\":\"Committees do not formally consider each of these referred bills.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"claim-committees-may-initiate\",\"statement\":\"Committees may initiate legislative action on their own and are not limited to measures referred to them.\",\"evidence\":[{\"quote\":\"Committees are not limited, however, to consideration of measures referred to them and may initiate legislative action on their own.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"claim-hearings-purpose\",\"statement\":\"Hearings provide committee members and the public an opportunity to hear from selected parties about a bill's strengths and weaknesses.\",\"evidence\":[{\"quote\":\"A committee may conduct hearings on a bill to provide committee members and the public an opportunity to hear from selected parties (e.g., a federal agency or organized interest) about the bill’s strengths and weaknesses.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"claim-markup-recommendation\",\"statement\":\"A committee holds a markup when it wants to formally recommend that its parent chamber consider a bill.\",\"evidence\":[{\"quote\":\"If the committee wants to formally recommend that the bill receive consideration from its parent chamber, it will hold a markup on the bill\"}],\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"claim-house-floor-options\",\"statement\":\"In the House, majority party leaders generally decide which bills receive floor consideration and may schedule a bill for streamlined consideration or ask the Rules Committee to propose tailored parameters.\",\"evidence\":[{\"quote\":\"In the House, majority party leaders generally decide which bills will receive floor consideration; typically, they schedule a bill for a type of streamlined floor consideration, or instead ask the Rules Committee to propose a set of tailored parameters for floor consideration.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"claim-senate-floor-conditions\",\"statement\":\"In the Senate, a bill reaches the floor after the Senate agrees to a motion to proceed to it or when no Senator objects to a unanimous consent request to bring it up.\",\"evidence\":[{\"quote\":\"In the Senate, bills are brought to the floor only after the Senate agrees to a motion (typically offered by the majority leader) to proceed to a specific bill or, alternatively, if no Senator objects to a unanimous consent request to bring it up.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"}],\"relationships\":[{\"id\":\"rel-leaders-coordinate-action\",\"source_entity_id\":\"party-leaders\",\"relationship_type\":\"AFFECTS\",\"target_entity_id\":\"congressional-action-on-bills\",\"statement\":\"Party leaders plan and coordinate congressional action on bills.\",\"evidence\":[{\"quote\":\"Congressional action on bills is typically planned and coordinated by party leaders in each chamber\"}],\"confidence\":0.97,\"origin\":\"SOURCE\"},{\"id\":\"rel-policy-expertise-committees\",\"source_entity_id\":\"policy-expertise\",\"relationship_type\":\"PART_OF\",\"target_entity_id\":\"standing-committees\",\"statement\":\"Much of the policy expertise resides in standing committees.\",\"evidence\":[{\"quote\":\"In both chambers, much of the policy expertise resides in the standing committees\"}],\"confidence\":0.97,\"origin\":\"SOURCE\"},{\"id\":\"rel-committees-develop-legislation\",\"source_entity_id\":\"standing-committees\",\"relationship_type\":\"AFFECTS\",\"target_entity_id\":\"bill\",\"statement\":\"Standing committees typically lead in developing and assessing proposed legislation within specified policy jurisdictions.\",\"evidence\":[{\"quote\":\"panels of Members who typically take the lead in developing and assessing proposed legislation within specified policy jurisdictions\"}],\"confidence\":0.96,\"origin\":\"SOURCE\"},{\"id\":\"rel-introduced-bill-referred\",\"source_entity_id\":\"bill\",\"relationship_type\":\"TRANSFERS_TO\",\"target_entity_id\":\"standing-committees\",\"statement\":\"An introduced bill is typically referred to the committee or committees with jurisdiction over its elements.\",\"evidence\":[{\"quote\":\"Once a Member of the House or Senate introduces a bill, it is typically referred to the committee (or committees) in that chamber with jurisdiction over its elements.\"}],\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"rel-chair-sets-agenda\",\"source_entity_id\":\"committee-chair\",\"relationship_type\":\"CAUSES\",\"target_entity_id\":\"committee-agenda-setting\",\"statement\":\"The committee chair's primary agenda-setting authority causes the identification of bills receiving formal committee attention.\",\"evidence\":[{\"quote\":\"The committee chair has the primary agenda-setting authority for each committee and identifies which bills will receive formal committee attention during the course of the two-year Congress.\"}],\"confidence\":0.96,\"origin\":\"SOURCE\"},{\"id\":\"rel-markup-considers-amendments\",\"source_entity_id\":\"markup\",\"relationship_type\":\"AFFECTS\",\"target_entity_id\":\"proposed-amendments\",\"statement\":\"During markup, committee members vote on proposed amendments.\",\"evidence\":[{\"quote\":\"at which committee members vote on any proposed amendments\"}],\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"rel-majority-vote-report\",\"source_entity_id\":\"majority-vote\",\"relationship_type\":\"CAUSES\",\"target_entity_id\":\"bill-report\",\"statement\":\"A committee's majority vote concludes markup by producing agreement to report the bill to its chamber.\",\"evidence\":[{\"quote\":\"The markup concludes when the committee agrees, by majority vote, to report the bill\"}],\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"rel-rules-committee-parameters\",\"source_entity_id\":\"rules-committee\",\"relationship_type\":\"CREATES\",\"target_entity_id\":\"floor-consideration\",\"statement\":\"The Rules Committee may propose tailored parameters for floor consideration.\",\"evidence\":[{\"quote\":\"ask the Rules Committee to propose a set of tailored parameters for floor consideration\"}],\"confidence\":0.9,\"origin\":\"SOURCE\"},{\"id\":\"rel-motion-precedes-floor\",\"source_entity_id\":\"motion-to-proceed\",\"relationship_type\":\"PRECEDES\",\"target_entity_id\":\"floor-consideration\",\"statement\":\"In the Senate, agreement to a motion to proceed occurs before bringing a bill to the floor.\",\"evidence\":[{\"quote\":\"bills are brought to the floor only after the Senate agrees to a motion (typically offered by the majority leader) to proceed to a specific bill\"}],\"confidence\":0.97,\"origin\":\"SOURCE\"},{\"id\":\"rel-consent-precedes-floor\",\"source_entity_id\":\"unanimous-consent-request\",\"relationship_type\":\"PRECEDES\",\"target_entity_id\":\"floor-consideration\",\"statement\":\"A Senate unanimous consent request with no objection precedes bringing a bill to the floor.\",\"evidence\":[{\"quote\":\"if no Senator objects to a unanimous consent request to bring it up\"}],\"confidence\":0.95,\"origin\":\"SOURCE\"}],\"propositions\":[]}",
+            "type": "output_text"
+          }
+        ],
+        "id": "msg_03f1b12ec499d4dc016aa45b7b066887d29cb0a950edd88d37",
+        "phase": "final_answer",
+        "role": "assistant",
+        "status": "completed",
+        "type": "message"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "presence_penalty": 0.0,
+    "previous_response_id": null,
+    "prompt": null,
+    "prompt_cache_key": null,
+    "prompt_cache_options": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+      "context": "all_turns",
+      "effort": "low",
+      "generate_summary": null,
+      "mode": "standard",
+      "summary": null
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "status": "completed",
+    "store": false,
+    "temperature": 1.0,
+    "text": {
+      "format": {
+        "description": null,
+        "name": "knowledge_extraction",
+        "schema_": {
+          "additionalProperties": false,
+          "properties": {
+            "claims": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "confidence": {
+                    "maximum": 1,
+                    "minimum": 0,
+                    "type": "number"
+                  },
+                  "evidence": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "quote": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "quote"
+                      ],
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "id": {
+                    "type": "string"
+                  },
+                  "origin": {
+                    "enum": [
+                      "SOURCE",
+                      "INFERRED"
+                    ],
+                    "type": "string"
+                  },
+                  "statement": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "statement",
+                  "evidence",
+                  "confidence",
+                  "origin"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "entities": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "aliases": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "entity_type": {
+                    "enum": [
+                      "CONCEPT",
+                      "OBJECT",
+                      "PROCESS",
+                      "VARIABLE",
+                      "SYSTEM",
+                      "COMPONENT"
+                    ],
+                    "type": "string"
+                  },
+                  "id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "name",
+                  "description",
+                  "entity_type",
+                  "aliases"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "propositions": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "comparison_operator": {
+                    "anyOf": [
+                      {
+                        "enum": [
+                          "GREATER_THAN"
+                        ],
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "confidence": {
+                    "maximum": 1,
+                    "minimum": 0,
+                    "type": "number"
+                  },
+                  "evidence": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "quote": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "quote"
+                      ],
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "origin": {
+                    "enum": [
+                      "SOURCE",
+                      "INFERRED"
+                    ],
+                    "type": "string"
+                  },
+                  "proposition_type": {
+                    "enum": [
+                      "COMPARISON_CONDITION",
+                      "TRANSFER_EVENT"
+                    ],
+                    "type": "string"
+                  },
+                  "relationship_type": {
+                    "enum": [
+                      "IS_A",
+                      "PART_OF",
+                      "CAUSES",
+                      "INCREASES",
+                      "DECREASES",
+                      "ENABLES",
+                      "REQUIRES",
+                      "CONSTRAINS",
+                      "PRECEDES",
+                      "TRANSFORMS_INTO",
+                      "INTERACTS_WITH",
+                      "MEASURED_BY",
+                      "EXAMPLE_OF",
+                      "CONTRADICTS",
+                      "CREATES",
+                      "INDUCES",
+                      "EXERTS_FORCE_ON",
+                      "AFFECTS",
+                      "BINDS_TO",
+                      "TRANSFERS_TO"
+                    ],
+                    "type": "string"
+                  },
+                  "role_bindings": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "entity_id": {
+                          "type": "string"
+                        },
+                        "role": {
+                          "enum": [
+                            "LEFT_OPERAND",
+                            "RIGHT_OPERAND",
+                            "OUTCOME",
+                            "EVENT",
+                            "OBJECT",
+                            "DESTINATION"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "role",
+                        "entity_id"
+                      ],
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "statement": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "proposition_type",
+                  "statement",
+                  "role_bindings",
+                  "relationship_type",
+                  "comparison_operator",
+                  "evidence",
+                  "confidence",
+                  "origin"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "relationships": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "confidence": {
+                    "maximum": 1,
+                    "minimum": 0,
+                    "type": "number"
+                  },
+                  "evidence": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "quote": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "quote"
+                      ],
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "id": {
+                    "type": "string"
+                  },
+                  "origin": {
+                    "enum": [
+                      "SOURCE",
+                      "INFERRED"
+                    ],
+                    "type": "string"
+                  },
+                  "relationship_type": {
+                    "enum": [
+                      "IS_A",
+                      "PART_OF",
+                      "CAUSES",
+                      "INCREASES",
+                      "DECREASES",
+                      "ENABLES",
+                      "REQUIRES",
+                      "CONSTRAINS",
+                      "PRECEDES",
+                      "TRANSFORMS_INTO",
+                      "INTERACTS_WITH",
+                      "MEASURED_BY",
+                      "EXAMPLE_OF",
+                      "CONTRADICTS",
+                      "CREATES",
+                      "INDUCES",
+                      "EXERTS_FORCE_ON",
+                      "AFFECTS",
+                      "BINDS_TO",
+                      "TRANSFERS_TO"
+                    ],
+                    "type": "string"
+                  },
+                  "source_entity_id": {
+                    "type": "string"
+                  },
+                  "statement": {
+                    "type": "string"
+                  },
+                  "target_entity_id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "source_entity_id",
+                  "relationship_type",
+                  "target_entity_id",
+                  "statement",
+                  "evidence",
+                  "confidence",
+                  "origin"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "entities",
+            "claims",
+            "relationships",
+            "propositions"
+          ],
+          "type": "object"
+        },
+        "strict": true,
+        "type": "json_schema"
+      },
+      "verbosity": "medium"
+    },
+    "tool_choice": "auto",
+    "tool_usage": {
+      "image_gen": {
+        "input_tokens": 0,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "total_tokens": 0
+      },
+      "web_search": {
+        "num_requests": 0
+      }
+    },
+    "tools": [],
+    "top_logprobs": 0,
+    "top_p": 0.98,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 3168,
+      "input_tokens_details": {
+        "cache_write_tokens": 390,
+        "cached_tokens": 2775
+      },
+      "output_tokens": 2307,
+      "output_tokens_details": {
+        "reasoning_tokens": 90
+      },
+      "total_tokens": 5475
+    },
+    "user": null
+  },
+  "started_at_utc": "2026-09-11T19:50:16.726176Z",
+  "usage": {
+    "input_tokens": 3168,
+    "input_tokens_details": {
+      "cache_write_tokens": 390,
+      "cached_tokens": 2775
+    },
+    "output_tokens": 2307,
+    "output_tokens_details": {
+      "reasoning_tokens": 90
+    },
+    "total_tokens": 5475
+  }
+}

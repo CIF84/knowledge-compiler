@@ -1,0 +1,76 @@
+{
+  "items": [
+    {
+      "failure": "UNKNOWN_PROPOSITION_ROLE_ENTITY_REFERENCE",
+      "missing_entity_ids": [
+        "jet-stream-weather-transport"
+      ],
+      "raw_item": {
+        "comparison_operator": null,
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "quote": "The fast-moving air currents in a jet stream can transport weather systems across the United States"
+          }
+        ],
+        "origin": "SOURCE",
+        "proposition_type": "TRANSFER_EVENT",
+        "relationship_type": "TRANSFERS_TO",
+        "role_bindings": [
+          {
+            "entity_id": "jet-stream-weather-transport",
+            "role": "EVENT"
+          },
+          {
+            "entity_id": "weather-system",
+            "role": "OBJECT"
+          },
+          {
+            "entity_id": "united-states",
+            "role": "DESTINATION"
+          }
+        ],
+        "statement": "Jet streams transport weather systems across the United States."
+      },
+      "semantic_collection": "propositions"
+    },
+    {
+      "failure": "UNKNOWN_PROPOSITION_ROLE_ENTITY_REFERENCE",
+      "missing_entity_ids": [
+        "average-temperature-difference"
+      ],
+      "raw_item": {
+        "comparison_operator": "GREATER_THAN",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "quote": "But dramatic temperature differences between the warm and cool air masses can cause jet streams to move at much higher speeds"
+          }
+        ],
+        "origin": "SOURCE",
+        "proposition_type": "COMPARISON_CONDITION",
+        "relationship_type": "CAUSES",
+        "role_bindings": [
+          {
+            "entity_id": "temperature-difference",
+            "role": "LEFT_OPERAND"
+          },
+          {
+            "entity_id": "average-temperature-difference",
+            "role": "RIGHT_OPERAND"
+          },
+          {
+            "entity_id": "jet-stream-speed",
+            "role": "OUTCOME"
+          }
+        ],
+        "statement": "When the difference between warm and cool air masses is dramatic, jet-stream speed is greater than its average speed."
+      },
+      "semantic_collection": "propositions"
+    }
+  ],
+  "repair_performed": false,
+  "result": "FAILED_CLOSED",
+  "source": "raw-extraction-proposal.json",
+  "validation_error": "proposition 'proposition-transfer-event-ca132e97bce01eea' references unknown entities: ['jet-stream-weather-transport']"
+}

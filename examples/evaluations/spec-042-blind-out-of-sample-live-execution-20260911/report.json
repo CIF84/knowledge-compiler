@@ -1,0 +1,216 @@
+{
+  "billing": {
+    "cost_amount": null,
+    "cost_note": "Provider response metadata identified the payer as developer but supplied no monetary amount. No cost was estimated.",
+    "payer": "developer"
+  },
+  "browser_integrity": {
+    "emitted_browser_artifact_count": 0,
+    "protected_spec038_baseline_preserved": true,
+    "status": "PASS",
+    "viewer_status": "NOT_APPLICABLE_NO_EMITTED_BROWSER_ARTIFACT"
+  },
+  "execution": {
+    "actual_order": [
+      "usgs-divergent-plate-boundaries-1996",
+      "noaa-nesdis-jet-stream-2025",
+      "crs-legislative-process-r42843-17"
+    ],
+    "external_retrieval_or_enrichment": 0,
+    "follow_up_calls": 0,
+    "frozen_order_preserved": true,
+    "hidden_retries": 0,
+    "maximum_authorized_calls": 3,
+    "provider_calls_started": 3,
+    "repair_calls": 0,
+    "sdk_retries": 0,
+    "semantic_retries": 0,
+    "store": false
+  },
+  "frozen_identity": {
+    "frozen_implementation_commit": "5622df131dc71346d5890f42ce16fe1e3e55f33a",
+    "implementation_files_verified": true,
+    "live_manifest_sha256": "f45c8797b94a0a5d6a1902aa50b71a63af6277dfcf1e6956a2d2d1107339d075",
+    "no_source_specific_adaptation": true,
+    "prompt_version": "spec-010-v1",
+    "source_packet_sha256": "ccf1c5e9fb607934f790eb06cd828bf5a1d42e4f6e4d7913722debc4269c72b0",
+    "verified": true
+  },
+  "objective_verdict": "PASS_WITH_TWO_VALID_FAIL_CLOSED_SOURCES",
+  "outcomes": [
+    {
+      "call": {
+        "duration_ms": 26016.859,
+        "http_request_id": "req_85f53a9db1034336b5da5c8811acc7b2",
+        "model": "gpt-5.6-luna",
+        "provider_response_id": "resp_0e2c2fdfaf12ca5e016aa45b46cd6887d29f3674b12c389190",
+        "usage": {
+          "input_tokens": 3325,
+          "input_tokens_details": {
+            "cache_write_tokens": 3322,
+            "cached_tokens": 0
+          },
+          "output_tokens": 2824,
+          "output_tokens_details": {
+            "reasoning_tokens": 265
+          },
+          "total_tokens": 6149
+        }
+      },
+      "failure": {
+        "error": "relationship 'rel-5' references unknown entities: ['spreading-processes']",
+        "error_type": "ValidationError",
+        "missing_entity_ids": [
+          "spreading-processes"
+        ],
+        "repair_performed": false,
+        "retry_performed": false,
+        "stage": "GROUNDING_AND_SEMANTIC_VALIDATION"
+      },
+      "proposal_counts": {
+        "claims": 8,
+        "entities": 28,
+        "propositions": 0,
+        "relationships": 12
+      },
+      "source_id": "usgs-divergent-plate-boundaries-1996",
+      "source_sha256": "a9539d135ff1577d7e2791d498b92f55239175565b925b24aec2ed0bf633f186",
+      "status": "FAILED_CLOSED"
+    },
+    {
+      "call": {
+        "duration_ms": 25653.444,
+        "http_request_id": "req_efad75aff3b54df7ae53844ccc34cce2",
+        "model": "gpt-5.6-luna",
+        "provider_response_id": "resp_0d1619de3d65af4f016aa45b5f46f087d2a1d178753042500c",
+        "usage": {
+          "input_tokens": 3261,
+          "input_tokens_details": {
+            "cache_write_tokens": 483,
+            "cached_tokens": 2775
+          },
+          "output_tokens": 3048,
+          "output_tokens_details": {
+            "reasoning_tokens": 217
+          },
+          "total_tokens": 6309
+        }
+      },
+      "failure": {
+        "error": "proposition 'proposition-transfer-event-ca132e97bce01eea' references unknown entities: ['jet-stream-weather-transport']",
+        "error_type": "ValidationError",
+        "missing_entity_ids_across_rejected_propositions": [
+          "jet-stream-weather-transport",
+          "average-temperature-difference"
+        ],
+        "rejected_proposition_count": 2,
+        "repair_performed": false,
+        "retry_performed": false,
+        "stage": "GROUNDING_AND_SEMANTIC_VALIDATION"
+      },
+      "proposal_counts": {
+        "claims": 10,
+        "entities": 26,
+        "propositions": 2,
+        "relationships": 10
+      },
+      "source_id": "noaa-nesdis-jet-stream-2025",
+      "source_sha256": "256ade61be620cfaa7b1327e3c982576611dd29b6a1fb42217d86ffdc0783ca1",
+      "status": "FAILED_CLOSED"
+    },
+    {
+      "admitted_counts": {
+        "entities": 20,
+        "propositions": 0,
+        "relationships": 10
+      },
+      "call": {
+        "duration_ms": 20177.402,
+        "http_request_id": "req_1e1c398637cc43b9a1adfe6971c4daeb",
+        "model": "gpt-5.6-luna",
+        "provider_response_id": "resp_03f1b12ec499d4dc016aa45b78fb9087d29437408984449abf",
+        "usage": {
+          "input_tokens": 3168,
+          "input_tokens_details": {
+            "cache_write_tokens": 390,
+            "cached_tokens": 2775
+          },
+          "output_tokens": 2307,
+          "output_tokens_details": {
+            "reasoning_tokens": 90
+          },
+          "total_tokens": 5475
+        }
+      },
+      "detected_structures": {
+        "count": 3,
+        "types": {
+          "HIERARCHY": 1,
+          "PROCESS_CHAIN": 2
+        }
+      },
+      "proposal_counts": {
+        "claims": 7,
+        "entities": 20,
+        "propositions": 0,
+        "relationships": 10
+      },
+      "renderer_bindings": {
+        "SPEC038_COMPATIBLE_PLAN": 30,
+        "executable_browser_artifacts": 0
+      },
+      "representation_decisions": {
+        "count": 30,
+        "strategies": {
+          "CONCISE_PROSE": 15,
+          "FOCUSED_RELATIONSHIP": 10,
+          "HIERARCHY_COMPOSITION": 2,
+          "PROCESS_SEQUENCE": 3
+        },
+        "sufficiency": {
+          "INSUFFICIENT_SUPPORTED_STRUCTURE": 15,
+          "SUFFICIENT_TRUSTED_STRUCTURE": 15
+        }
+      },
+      "source_id": "crs-legislative-process-r42843-17",
+      "source_sha256": "fe61b7c3b2a9373e7eb3b30d16b94adc2c8b5f4307327265943995550a6384b4",
+      "status": "PASS"
+    }
+  ],
+  "owner_review": {
+    "dimensions": [
+      "semantic_fidelity",
+      "structural_usefulness",
+      "representation_appropriateness",
+      "learning_usefulness"
+    ],
+    "promotion": "NOT_AUTHORIZED",
+    "question": "Given three genuinely unseen source passages and no adaptation after source selection, did Knowledge Compiler produce trustworthy representations that actually made the material easier to understand?",
+    "verdict": "PENDING"
+  },
+  "provenance": {
+    "complete_for_all_sources": true,
+    "exact_frozen_sources_preserved": true,
+    "raw_provider_responses_preserved": true,
+    "request_metadata_preserved": true,
+    "run_histories_preserved": true
+  },
+  "schema": "spec-042-blind-out-of-sample-live-execution-report-v1",
+  "source_count": 3,
+  "source_status_counts": {
+    "FAILED_CLOSED": 2,
+    "PASS": 1
+  },
+  "tests": {
+    "complete_offline_suite": "560 passed",
+    "control_plane": "13 passed",
+    "focused": "60 passed",
+    "git_diff_check": "PASS"
+  },
+  "usage_totals": {
+    "duration_ms": 71847.705,
+    "input_tokens": 9754,
+    "output_tokens": 8179,
+    "total_tokens": 17933
+  }
+}

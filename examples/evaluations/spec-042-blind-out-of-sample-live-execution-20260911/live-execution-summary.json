@@ -1,0 +1,79 @@
+{
+  "actual_order": [
+    "usgs-divergent-plate-boundaries-1996",
+    "noaa-nesdis-jet-stream-2025",
+    "crs-legislative-process-r42843-17"
+  ],
+  "external_retrieval_or_enrichment": 0,
+  "follow_up_calls": 0,
+  "frozen_order": [
+    "usgs-divergent-plate-boundaries-1996",
+    "noaa-nesdis-jet-stream-2025",
+    "crs-legislative-process-r42843-17"
+  ],
+  "hidden_retries": 0,
+  "maximum_authorized_calls": 3,
+  "provider_calls_started": 3,
+  "repair_calls": 0,
+  "report": {
+    "execution_policy": {
+      "adapter_invocations_per_source": 1,
+      "allow_live": true,
+      "hidden_retries": 0,
+      "semantic_retries": 0,
+      "source_order_changes_semantic_decisions": false
+    },
+    "failed_closed_source_count": 2,
+    "learner_usefulness_verdict": "PENDING_OWNER_REVIEW",
+    "live_model_or_external_calls": 3,
+    "outcomes": [
+      {
+        "failure": {
+          "error": "relationship 'rel-5' references unknown entities: ['spreading-processes']",
+          "error_type": "ValidationError",
+          "retry_performed": false,
+          "stage": "GROUNDING_AND_SEMANTIC_VALIDATION",
+          "status": "FAILED_CLOSED"
+        },
+        "source_id": "usgs-divergent-plate-boundaries-1996",
+        "source_sha256": "a9539d135ff1577d7e2791d498b92f55239175565b925b24aec2ed0bf633f186",
+        "status": "FAILED_CLOSED"
+      },
+      {
+        "failure": {
+          "error": "proposition 'proposition-transfer-event-ca132e97bce01eea' references unknown entities: ['jet-stream-weather-transport']",
+          "error_type": "ValidationError",
+          "retry_performed": false,
+          "stage": "GROUNDING_AND_SEMANTIC_VALIDATION",
+          "status": "FAILED_CLOSED"
+        },
+        "source_id": "noaa-nesdis-jet-stream-2025",
+        "source_sha256": "256ade61be620cfaa7b1327e3c982576611dd29b6a1fb42217d86ffdc0783ca1",
+        "status": "FAILED_CLOSED"
+      },
+      {
+        "detected_structure_count": 3,
+        "entity_count": 20,
+        "proposition_count": 0,
+        "relationship_count": 10,
+        "representation_decision_count": 30,
+        "selected_strategies": [
+          "CONCISE_PROSE",
+          "FOCUSED_RELATIONSHIP",
+          "HIERARCHY_COMPOSITION",
+          "PROCESS_SEQUENCE"
+        ],
+        "source_id": "crs-legislative-process-r42843-17",
+        "source_sha256": "fe61b7c3b2a9373e7eb3b30d16b94adc2c8b5f4307327265943995550a6384b4",
+        "status": "PASS"
+      }
+    ],
+    "passed_source_count": 1,
+    "schema": "spec-040-blind-evaluation-report-v1",
+    "source_count": 3
+  },
+  "schema": "spec-042-live-execution-summary-v1",
+  "sdk_retries": 0,
+  "semantic_retries": 0,
+  "store": false
+}

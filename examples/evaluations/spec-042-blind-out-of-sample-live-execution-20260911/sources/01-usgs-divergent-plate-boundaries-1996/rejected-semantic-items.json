@@ -1,0 +1,29 @@
+{
+  "items": [
+    {
+      "failure": "UNKNOWN_SOURCE_ENTITY_REFERENCE",
+      "missing_entity_ids": [
+        "spreading-processes"
+      ],
+      "raw_item": {
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "quote": "spreading processes have already torn Saudi Arabia away from the rest of the African continent, forming the Red Sea."
+          }
+        ],
+        "id": "rel-5",
+        "origin": "SOURCE",
+        "relationship_type": "CREATES",
+        "source_entity_id": "spreading-processes",
+        "statement": "Spreading processes formed the Red Sea by tearing Saudi Arabia away from Africa.",
+        "target_entity_id": "red-sea"
+      },
+      "semantic_collection": "relationships"
+    }
+  ],
+  "repair_performed": false,
+  "result": "FAILED_CLOSED",
+  "source": "raw-extraction-proposal.json",
+  "validation_error": "relationship 'rel-5' references unknown entities: ['spreading-processes']"
+}

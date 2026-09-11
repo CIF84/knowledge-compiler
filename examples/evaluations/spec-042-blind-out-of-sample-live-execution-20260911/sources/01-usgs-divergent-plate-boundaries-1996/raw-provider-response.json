@@ -1,0 +1,440 @@
+{
+  "actual_model": "gpt-5.6-luna",
+  "completed_at_utc": "2026-09-11T19:49:51.061177Z",
+  "duration_ms": 26016.859,
+  "http_request_id": "req_85f53a9db1034336b5da5c8811acc7b2",
+  "prompt_version": "spec-010-v1",
+  "provider": "OpenAI Responses API",
+  "provider_response_id": "resp_0e2c2fdfaf12ca5e016aa45b46cd6887d29f3674b12c389190",
+  "request_error": null,
+  "requested_model": "gpt-5.6-luna",
+  "response": {
+    "background": false,
+    "billing": {
+      "payer": "developer"
+    },
+    "completed_at": 1789156190.0,
+    "conversation": null,
+    "created_at": 1789156166.0,
+    "error": null,
+    "frequency_penalty": 0.0,
+    "id": "resp_0e2c2fdfaf12ca5e016aa45b46cd6887d29f3674b12c389190",
+    "incomplete_details": null,
+    "instructions": "You extract a semantic knowledge model from explanatory source text.\n\nIdentify important concepts, objects, processes, variables, systems, and components.\nCreate claims for meaningful propositions that do not naturally form graph edges.\nCreate relationships only when one supplied semantic contract fits both the meaning and\ndirection. Prefer important explanatory structure over exhaustive sentence decomposition.\nIf no relationship contract represents a meaningful proposition truthfully, preserve it\nas a claim instead of forcing it into the nearest edge label. Fewer truthful edges are\nbetter than more misleading edges. Use concise grounded descriptions and conservative\nconfidence values.\n\nUse a typed proposition only for either of these binary-edge failure modes:\n- COMPARISON_CONDITION: a comparison is itself the antecedent of an outcome. Bind\n  LEFT_OPERAND, RIGHT_OPERAND, and OUTCOME; use GREATER_THAN and CAUSES.\n- TRANSFER_EVENT: a transfer must distinguish the EVENT, transferred OBJECT, and\n  DESTINATION; use TRANSFERS_TO.\nDo not also emit a lossy binary edge for the same source proposition. Proposition IDs are\nassigned deterministically by trusted code; do not return an id.\n\nSOURCE means the item is explicitly supported by the supplied text. Every SOURCE item\nmust cite one or more exact, verbatim, uniquely occurring source substrings in evidence.\nUse a complete clause or sentence long enough to occur exactly once; never cite a short\nentity name or other repeated fragment. Do not count characters; return quotes only.\nINFERRED means useful structure not stated explicitly and must have an empty evidence\nlist. Any item with evidence must be SOURCE. Before returning, verify every SOURCE item\nhas at least one unique quote and every INFERRED item has none. Do not use external\nknowledge unless the item is marked INFERRED. Do not fabricate evidence.\n\nAvoid entities created only to reproduce grammar. Avoid duplicates; use aliases only\nfor genuine naming equivalence, and keep related but distinct concepts separate.\nRelationship endpoints must use IDs from the entities array. IDs must be unique,\nconcise, stable kebab-case strings. Do not generate summaries, visualizations, Mermaid,\nteaching prose, or output outside the requested schema.\n\nACTIVE RELATIONSHIP CONTRACTS (source --TYPE--> target):\nIS_A [STRUCTURAL; direction=instance_to_type]\n  meaning: The source is a kind, category, or subtype of the target.\n  roles: source=instance or subtype; target=broader type or category\n  use: The source can truthfully be described as a target.\n  avoid: Do not use for parts, examples, similarity, or temporary states.\nPART_OF [STRUCTURAL; direction=part_to_whole]\n  meaning: The source is a constituent or component of the target.\n  roles: source=part or component; target=containing whole\n  use: The source exists as a component or subpart of the target.\n  avoid: Never reverse whole and part; do not use for interaction or dependency.\nEXAMPLE_OF [STRUCTURAL; direction=example_to_concept]\n  meaning: The source is an illustrative instance of the target concept.\n  roles: source=example; target=concept illustrated\n  use: The source is presented as an example of the target.\n  avoid: Do not use merely because the source is a subtype; prefer IS_A for classification.\nCAUSES [CAUSAL; direction=cause_to_effect]\n  meaning: The source brings about the target as an effect.\n  roles: source=cause; target=effect\n  use: The source is stated to produce the target outcome.\n  avoid: Do not use for chronology, association, contribution, or unspecified influence.\nAFFECTS [CAUSAL; direction=influence_to_affected]\n  meaning: The source causally influences the target without a specified direction or complete production.\n  roles: source=influence; target=affected entity, process, or variable\n  use: The source changes or influences the target, but the text does not support CAUSES, INCREASES, or DECREASES.\n  avoid: Do not use for mere association, chronology, physical force, or interaction with no stated effect.\nINCREASES [CAUSAL; direction=increaser_to_increased_variable]\n  meaning: The source causally raises the amount, rate, value, probability, or intensity of the target.\n  roles: source=causal factor; target=quantity or variable increased\n  use: The source is explicitly said to make the target greater, faster, more likely, or more intense.\n  avoid: Do not infer from nearby words such as more or faster; never use when the source says slower, lower, or less.\nDECREASES [CAUSAL; direction=decreaser_to_decreased_variable]\n  meaning: The source causally lowers the amount, rate, value, probability, or intensity of the target.\n  roles: source=causal factor; target=quantity or variable decreased\n  use: The source is explicitly said to make the target smaller, slower, less likely, or less intense.\n  avoid: Do not use for absence, prevention without a scalar target, or mere negative association.\nINDUCES [CAUSAL; direction=inducer_to_induced_effect]\n  meaning: The source produces the target through an explicitly described induction mechanism.\n  roles: source=inducing phenomenon; target=induced phenomenon\n  use: The source explicitly says induces or describes a recognized induction mechanism.\n  avoid: Do not use as a metaphor for generic causation, influence, motivation, or historical response.\nENABLES [DEPENDENCY; direction=enabler_to_enabled]\n  meaning: The source makes the target possible without necessarily causing it to occur.\n  roles: source=enabling condition or capability; target=capability or process made possible\n  use: The target could not occur, or is materially made possible, because of the source.\n  avoid: Do not use for delivery, participation, weak assistance, or an effect that actually occurred.\nREQUIRES [DEPENDENCY; direction=dependent_to_requirement]\n  meaning: The source depends on the target as a prerequisite or necessary resource.\n  roles: source=dependent; target=prerequisite or required resource\n  use: The source cannot operate or occur as described without the target.\n  avoid: Do not reverse prerequisite and dependent; do not use for optional support.\nCONSTRAINS [DEPENDENCY; direction=constraint_to_constrained]\n  meaning: The source limits the possible behavior, values, or choices of the target.\n  roles: source=constraint; target=constrained entity, process, or variable\n  use: The source imposes a limit, rule, boundary, or restriction on the target.\n  avoid: Do not use to mean unchanged, unrelated, merely different, or causally reduced.\nPRECEDES [TEMPORAL; direction=earlier_to_later]\n  meaning: The source occurs before the target in time or an explicit process sequence.\n  roles: source=earlier event or process; target=later event or process\n  use: The source explicitly occurs before, previously, first, then, or after relative to the target.\n  avoid: Do not infer causality from order; do not reverse earlier and later.\nINTERACTS_WITH [INTERACTION; symmetric]\n  meaning: The source and target directly interact, with no more precise directional semantics supported.\n  roles: source=interaction participant; target=interaction participant\n  use: The text supports direct mutual interaction but not a more precise active predicate.\n  avoid: Do not use for distant association, one-way effect, dependency, or chronology.\nBINDS_TO [INTERACTION; symmetric]\n  meaning: The source physically or chemically binds or attaches to the target.\n  roles: source=binding participant; target=binding participant\n  use: The source explicitly binds or attaches to the target.\n  avoid: Do not use for metaphorical commitment, dependency, influence, or literal physical force.\nTRANSFERS_TO [INTERACTION; direction=transferred_item_to_destination]\n  meaning: The source item, material, or information moves to the target destination or recipient.\n  roles: source=item, material, or information transferred; target=destination or recipient\n  use: The source is explicitly carried, delivered, moved, or transferred to the target.\n  avoid: Do not make the carrier the source unless the carrier itself moves to the destination; do not use for enabling.\nEXERTS_FORCE_ON [INTERACTION; direction=force_exerter_to_physical_target]\n  meaning: The source exerts a literal physical force on the target.\n  roles: source=physical force source; target=physical object receiving force\n  use: A literal physical force is explicitly exerted on the target.\n  avoid: Never use metaphorically for influence, contribution, binding, pressure, or causation.\nTRANSFORMS_INTO [TRANSFORMATION; direction=prior_state_to_resulting_state]\n  meaning: The source itself changes state or identity and becomes the target.\n  roles: source=entity or state before transformation; target=same entity or resulting material after transformation\n  use: The source itself becomes the target through a transformation.\n  avoid: Do not use when an actor causes, creates, attempts, participates in, or responds to the target.\nCREATES [TRANSFORMATION; direction=creator_to_created]\n  meaning: The source produces or brings a distinct target into existence.\n  roles: source=producer or generative process; target=newly produced entity or result\n  use: The source produces a target that is distinct from the source.\n  avoid: Do not use when the source itself becomes the target; use TRANSFORMS_INTO instead.\nMEASURED_BY [DESCRIPTIVE; direction=measurand_to_measure]\n  meaning: The source property or variable is quantified or assessed by the target metric, observation, or procedure.\n  roles: source=property or variable measured; target=metric, observation, or measurement procedure\n  use: The target is explicitly how the source is measured or quantified.\n  avoid: Do not point to something that merely responds to, correlates with, or exemplifies the source.\nCONTRADICTS [DESCRIPTIVE; symmetric]\n  meaning: The source and target assert mutually incompatible propositions.\n  roles: source=proposition or claim; target=incompatible proposition or claim\n  use: Both sides are explicit propositions that cannot simultaneously hold as stated.\n  avoid: Do not use for difference, disagreement without incompatibility, trade-off, or negative causality.",
+    "max_output_tokens": null,
+    "max_tool_calls": null,
+    "metadata": {},
+    "model": "gpt-5.6-luna",
+    "moderation": null,
+    "object": "response",
+    "output": [
+      {
+        "content": [],
+        "encrypted_content": "gAAAAABqpFtem3ztDjte4pmis9uoAg727TmxRR0K1CNtPLSJFpTb8XL0t9itv8AZI64pm9Z-WPlzep7gT-kAdghQm8OIX9Rzw9KBDkJsiGoJZYHYfspIfnJP5Ko4P0F47R4_lL-JXap5h9-622OzUlJky6VGSfWDJ8VMew7YaEeuKn9vaZWhv5vat28aKPANSrS5Pf1NMOiy3jYEm7lObNypya6rdS7zWCs_ZK4bbCSG0FKTVpUqR_5-pIvQ1eEP-kY5PTY-8JdxrHHBxkucbRJ1CCm4Lcs7Dr9I8nEiSfN2b9MozHgSJ-VRIV6yXhhfu7PAFdGOx0T58SKShgsmwHSxYPgSm7E9iI7-z6UrnRdNK-bx_yb_zqK_4dS8Fz8GhHCoOk94ohgb3KZQ1ebHg0_t59bRWEiY1Y59v-cjc8olLbqPUpp0Iz-AUrEKVvof-X_rxlAQzK8djyyNVI9F_cifhSvp_aRMs_p3rIPET7Oh3xuB0kI6mISxu9U2XKE9rNTUZ5NPR0b_qKhRhuFpw3edNP9XunsWRFYaY3na9Y0MCrrtNwkPt_jQcEhAc1HgADnA7JZ3dbcSOAtuRf8Kbgr9QACUpj_qlD-e2OatFfWgNgZ35IuPQoluL8ez9mwPKJeW92Yj298YQ_r4Op3LELetZEDPupr5Ye1a_W4u3DD63rjN0p5qQXNe2BHurv8xy0GbKbPmKp4zZOjifIZNGGzZFuTJ7klKG3SyYexCLOdrEdVZBJhb_cv18gLJoNrNyHa7Efu_w-3XmvD735Lk2nvpTk8MONstWy-ft7TOZkSaY4qlP_OGoFpqwamngqTVXz0cEjoaNhm874KYcXG2YC9QS55h6p3AhPZiHpdV0eOYcHQFEi2jPfj9Yc2VhvffJibp6LaIw_QLYZP7ngpHuL5HV8XxGo2rv_gqEoKtHl6yyUVCNw3Ej8G7W-Oiyn9iE_TLEwyessamOaBTpIg7HX9cP2dTHcCyirlZHOs2cMP5QWv6Nm7BVBuzSo2_kdeRNm8S7sKqRInvB_FaN6dH7xyxWbi6f0Ur8ySHqmp7iCZwjvmRrUcQWexrxpLAmVB8mwB3w-W-DXIF8__JSd5Zg3jlq3Bplkq4-7fihvnwlIHRiWNKG_UQxrlzKX9kTboKFrLw1xhp9bGEERKy6vKpbdYbhRJs-A857IB9KkcHSL4wmqPxIGbC6vh_iMNUit_z27EXV59etmZA8MGlmdtgvb3nyYJubMNmQ3Z4EZ8irHNu6Ipn7VXtvY6gTSuplX7Nx0-CY5VFLJUD3gsdjRPnwho3s1zAXWrmcx9NZHSIyi9yGVlsrK2U_BB7eJge4cOZ2lHeNmwf_CcRto3rhSFUns6t5AQxqig45xkmvbnZ_H93Zd6UpQoDdseoGUIMTQUa-5w0E2IhujvxNH29QzOLKAeXRqweAe7ILpo1GYQh2t2QPC83FePD_YlcU2yMzY9Y3H_4wbwFzte-gYws4JU5Ctom0jJRMuvzLIqGZx1OGSafyXZcsN_zpqpyh71DSzioaWKA0ev-Wr6mZp5SbPp0sCkWBbkxOJ9SbPTTrMorhqIkH3QxYKfQO-r_sUW4t12zHFFZBfYhpbhZHZVzcCjTGIXuEBI-ycoNsrEh89c27nsHOt7mC6nCaayPfWVO_e58B6x8LRQPNEUXiOklQecBi8sybwaDNdiA696MTk2zsAIObLYdRk9vdJsJxv40kF0c0xlmGeM0b8z0ps7V0K81eZ-03jbWsG4rRPimvUSSlBtrl1mGUadesMpvus5VM8r9Ih3kKV-KQXSw_Kn4nokK9OaQlZ8q4v2yEOwuouGk-Dfkn9oGjCIuLJKf2_LcgJEs6rj6BknPAsw0w-OFftIx8SfoAGEJIgYsV6zJQFEze10KZS0tnw8VMSGb3_BzhcBzlPEpnPz05H05wkG11QS2G_uRJL9v2SHuLOlX10W0XxOdTbKHGiUXAjgiyw3h-BnjIXa-K-aKBS8pF4Gm-RjRtd2F-dpFBovh5vOz4busWTCtiKhbHT1rO8n7ozUQ0HZRfr_cTjMnHHHNLiZ-LRnhNbs3tUyZ4zf_l1YseZcKeXA5QL4ixAZhNYHcNcphE7dtOFsm7a8nXAhTJVlZrTPBmEBURStfuPwIByVpZ4_UErgmH9dZfF0j5L9G5jckoC8W_NH_gpFHSLg1QEH6gxY3gx-rTy7pxA6VsFuuyW5lPSr4NAhBiJr_cPvIdPMpmN9C_Pj1BK0ucxtrw2PMxNI0f9iH7cRH0-saKZlHB3kNaje6uJdB7j_3apOiBbeS5yiWkApHAU2-7POlVvpmVKWNloHn9U-2Uka8t4R_QSx2h-O5Lww533WvHBh-G9zqWThP9R9Ynw7B1RopSgWwkW3RvSAwpL68h6iOXPaL_ivTsspm_qE8RRDGjUXASy1XRl8w-o__D23ZDt944sK-NFrNhXZ1kjTyZbnRLt_YUF_wLrRN5c-uhaYOCqKXNmcl7k_LWeQAUgJJ8P_ZFgN4nz5t7-XG-F8x4zms_N5znd6LNkCI0oinuwvA-nui9sCmcZTRZqI2c_6j2esqmqm25IP30UPy9Naj5khxn0BU2BPvG3PSU5jRveyc3X5DKgssp7U_PTX4p1jSCbvr76rvukIg2CeSiGk7k-nF9ZWShI1Ck0qhJVgSNH5_GalWCWNpYy6K3x782AOKmp9IG7vTn9mw6-LgxqEdo-PU7BNNj-06-btCGbss25AW9xZcBaAjSAB0uuL7faa3FR6ei3RCEyN7otM6tQoqCee74NbxRZiUcE11Z4_Cu74ZRpYkYDsLltD0do70LdadvUWqZAYvp1OmVan1jLEpQSZN16UuVclS4UhfmdW2vuCmHuDqznVrdHgCcP4LzXm-PEGvCgK4t_UL5LQTvn1DKdrbZP9uDtAlh6Ki6DG9Fjn9JUOejZ78v6R9NLV3raCon-xWmlJXt8yfYPUdxP7m9HV1E_6iCo4iLV0_eaDHna2kE4DNxrOXsq7u94OiyoGz5CtWj8ESdv38DooOxdVRMVyn94Z-c0hByQzKHauLPbFDf1U=",
+        "id": "rs_0e2c2fdfaf12ca5e016aa45b47c65c87d289c7aac76956b817",
+        "status": null,
+        "summary": [],
+        "type": "reasoning"
+      },
+      {
+        "content": [
+          {
+            "annotations": [],
+            "logprobs": [],
+            "text": "{\"entities\":[{\"id\":\"divergent-boundary\",\"name\":\"Divergent boundary\",\"description\":\"A plate boundary where plates move apart and new crust is created.\",\"entity_type\":\"CONCEPT\",\"aliases\":[]},{\"id\":\"spreading-center\",\"name\":\"Spreading center\",\"description\":\"A region where tectonic plates move apart and new crust forms.\",\"entity_type\":\"PROCESS\",\"aliases\":[\"spreading ridge\"]},{\"id\":\"magma\",\"name\":\"Magma\",\"description\":\"Molten material rising from the mantle or through crustal cracks.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"id\":\"mantle\",\"name\":\"Mantle\",\"description\":\"Earth layer from which magma pushes upward at spreading centers.\",\"entity_type\":\"SYSTEM\",\"aliases\":[]},{\"id\":\"oceanic-crust\",\"name\":\"Oceanic crust\",\"description\":\"Newly formed crust transported away from a ridge crest.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"id\":\"mid-atlantic-ridge\",\"name\":\"Mid-Atlantic Ridge\",\"description\":\"A submerged mountain range and segment of the global mid-ocean ridge system.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"id\":\"mid-ocean-ridge-system\",\"name\":\"Global mid-ocean ridge system\",\"description\":\"A ridge system encircling Earth, of which the Mid-Atlantic Ridge is one segment.\",\"entity_type\":\"SYSTEM\",\"aliases\":[]},{\"id\":\"seafloor-spreading\",\"name\":\"Seafloor spreading\",\"description\":\"The process that moves newly formed oceanic crust away from a spreading ridge.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"id\":\"atlantic-ocean\",\"name\":\"Atlantic Ocean\",\"description\":\"Ocean whose growth was caused by seafloor spreading over geological time.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"id\":\"iceland\",\"name\":\"Iceland\",\"description\":\"A volcanic country straddling the Mid-Atlantic Ridge and exposing spreading processes on land.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"id\":\"north-american-plate\",\"name\":\"North American Plate\",\"description\":\"Tectonic plate moving westward relative to Eurasia at Iceland.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"id\":\"eurasian-plate\",\"name\":\"Eurasian Plate\",\"description\":\"Tectonic plate east of the North American Plate at Iceland.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"id\":\"krafla-volcano\",\"name\":\"Krafla Volcano\",\"description\":\"A volcano in northeastern Iceland where consequences of plate movement are visible.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"id\":\"ground-cracks\",\"name\":\"Ground cracks\",\"description\":\"Cracks in the ground that widen or newly appear around Krafla.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"id\":\"rifting\",\"name\":\"Rifting\",\"description\":\"Surface cracking associated with spreading and plate movement.\",\"entity_type\":\"PROCESS\",\"aliases\":[\"surface cracking\"]},{\"id\":\"volcanic-activity\",\"name\":\"Volcanic activity\",\"description\":\"Activity accompanying some rifting events at the Krafla fissure zone.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"id\":\"krafla-fissure-zone\",\"name\":\"Krafla fissure zone\",\"description\":\"Zone along which repeated rifting episodes occurred from 1975 to 1984.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"id\":\"east-african-rift-zone\",\"name\":\"East African Rift Zone\",\"description\":\"A region under Africa where a new spreading center may be developing.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"id\":\"african-plate\",\"name\":\"African Plate\",\"description\":\"Plate actively splitting in the East African region.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"id\":\"arabian-plate\",\"name\":\"Arabian Plate\",\"description\":\"Plate meeting the African Plate at a triple junction near the Red Sea and Gulf of Aden.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"id\":\"red-sea\",\"name\":\"Red Sea\",\"description\":\"Sea formed as spreading processes tore Saudi Arabia away from Africa.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"id\":\"continental-crust\",\"name\":\"Continental crust\",\"description\":\"Crust that can stretch and develop tension cracks when stretched beyond its limits.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"id\":\"tension-cracks\",\"name\":\"Tension cracks\",\"description\":\"Cracks appearing at Earth's surface when continental crust stretches beyond its limits.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"id\":\"volcanoes\",\"name\":\"Volcanoes\",\"description\":\"Landforms that can form when magma erupts through widening cracks.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"id\":\"fractures\",\"name\":\"Fractures\",\"description\":\"Additional breaks in the crust produced by pressure from rising magma.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"id\":\"spreading-rate\",\"name\":\"Spreading rate\",\"description\":\"Rate of plate separation along a spreading ridge, reported for the Mid-Atlantic Ridge as about 2.5 cm/yr.\",\"entity_type\":\"VARIABLE\",\"aliases\":[]},{\"id\":\"plate-movement\",\"name\":\"Plate movement\",\"description\":\"Long-term movement of tectonic plates associated with spreading processes.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"id\":\"ground-displacement\",\"name\":\"Ground displacement\",\"description\":\"Cumulative displacement caused by rifting, totaling about 7 m from 1975 to 1984 at Krafla.\",\"entity_type\":\"VARIABLE\",\"aliases\":[]}],\"claims\":[{\"id\":\"claim-1\",\"statement\":\"The Mid-Atlantic Ridge extends from the Arctic Ocean to beyond the southern tip of Africa.\",\"evidence\":[{\"quote\":\"This submerged mountain range, which extends from the Arctic Ocean to beyond the southern tip of Africa\"}],\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"claim-2\",\"statement\":\"The Mid-Atlantic Ridge spreads at an average rate of about 2.5 centimeters per year, equivalent to 25 kilometers in a million years.\",\"evidence\":[{\"quote\":\"The rate of spreading along the Mid-Atlantic Ridge averages about 2.5 centimeters per year (cm/yr), or 25 km in a million years.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"claim-3\",\"statement\":\"Long-term spreading has produced plate movement of thousands of kilometers.\",\"evidence\":[{\"quote\":\"because this process has been going on for millions of years, it has resulted in plate movement of thousands of kilometers.\"}],\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"claim-4\",\"statement\":\"The North American Plate moves westward relative to the Eurasian Plate at Iceland.\",\"evidence\":[{\"quote\":\"as North America moves westward relative to Eurasia.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"claim-5\",\"statement\":\"At Krafla, the ground gradually rose 1–2 meters before abruptly dropping, signaling an impending eruption.\",\"evidence\":[{\"quote\":\"the ground would gradually rise 1-2 m before abruptly dropping, signalling an impending eruption.\"}],\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"claim-6\",\"statement\":\"Rifting displacements at Krafla totaled about 7 meters between 1975 and 1984.\",\"evidence\":[{\"quote\":\"Between 1975 and 1984, the displacements caused by rifting totalled about 7 m.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"claim-7\",\"statement\":\"The African Plate and Arabian Plate meet at a triple junction where the Red Sea meets the Gulf of Aden.\",\"evidence\":[{\"quote\":\"The actively splitting African Plate and the Arabian Plate meet in what geologists call a triple junction, where the Red Sea meets the Gulf of Aden.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"claim-8\",\"statement\":\"A new spreading center may be developing beneath Africa along the East African Rift Zone.\",\"evidence\":[{\"quote\":\"A new spreading center may be developing under Africa along the East African Rift Zone.\"}],\"confidence\":0.98,\"origin\":\"SOURCE\"}],\"relationships\":[{\"id\":\"rel-1\",\"source_entity_id\":\"spreading-center\",\"relationship_type\":\"CAUSES\",\"target_entity_id\":\"oceanic-crust\",\"statement\":\"Spreading centers cause the creation of new oceanic crust.\",\"evidence\":[{\"quote\":\"new crust is created by magma pushing up from the mantle\"}],\"confidence\":0.9,\"origin\":\"SOURCE\"},{\"id\":\"rel-2\",\"source_entity_id\":\"magma\",\"relationship_type\":\"CAUSES\",\"target_entity_id\":\"oceanic-crust\",\"statement\":\"Magma pushing up from the mantle causes new crust to be created.\",\"evidence\":[{\"quote\":\"new crust is created by magma pushing up from the mantle\"}],\"confidence\":0.95,\"origin\":\"SOURCE\"},{\"id\":\"rel-3\",\"source_entity_id\":\"seafloor-spreading\",\"relationship_type\":\"CAUSES\",\"target_entity_id\":\"atlantic-ocean\",\"statement\":\"Seafloor spreading caused the Atlantic Ocean to grow.\",\"evidence\":[{\"quote\":\"Seafloor spreading over the past 100 to 200 million years has caused the Atlantic Ocean to grow\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"rel-4\",\"source_entity_id\":\"rifting\",\"relationship_type\":\"CAUSES\",\"target_entity_id\":\"ground-cracks\",\"statement\":\"Rifting causes existing ground cracks to widen and new cracks to appear.\",\"evidence\":[{\"quote\":\"Here, existing ground cracks have widened and new ones appear every few months.\"}],\"confidence\":0.88,\"origin\":\"SOURCE\"},{\"id\":\"rel-5\",\"source_entity_id\":\"spreading-processes\",\"relationship_type\":\"CREATES\",\"target_entity_id\":\"red-sea\",\"statement\":\"Spreading processes formed the Red Sea by tearing Saudi Arabia away from Africa.\",\"evidence\":[{\"quote\":\"spreading processes have already torn Saudi Arabia away from the rest of the African continent, forming the Red Sea.\"}],\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"rel-6\",\"source_entity_id\":\"continental-crust\",\"relationship_type\":\"CAUSES\",\"target_entity_id\":\"tension-cracks\",\"statement\":\"Continental crust stretching beyond its limits causes tension cracks to appear at Earth's surface.\",\"evidence\":[{\"quote\":\"When the continental crust stretches beyond its limits, tension cracks begin to appear on the Earth's surface.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"rel-7\",\"source_entity_id\":\"magma\",\"relationship_type\":\"TRANSFERS_TO\",\"target_entity_id\":\"tension-cracks\",\"statement\":\"Magma rises and moves through widening tension cracks.\",\"evidence\":[{\"quote\":\"Magma rises and squeezes through the widening cracks\"}],\"confidence\":0.92,\"origin\":\"SOURCE\"},{\"id\":\"rel-8\",\"source_entity_id\":\"magma\",\"relationship_type\":\"CREATES\",\"target_entity_id\":\"volcanoes\",\"statement\":\"Magma can erupt and form volcanoes.\",\"evidence\":[{\"quote\":\"sometimes to erupt and form volcanoes.\"}],\"confidence\":0.96,\"origin\":\"SOURCE\"},{\"id\":\"rel-9\",\"source_entity_id\":\"magma\",\"relationship_type\":\"CAUSES\",\"target_entity_id\":\"fractures\",\"statement\":\"Rising magma puts pressure on the crust that produces additional fractures.\",\"evidence\":[{\"quote\":\"The rising magma, whether or not it erupts, puts more pressure on the crust to produce additional fractures\"}],\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"rel-10\",\"source_entity_id\":\"mid-atlantic-ridge\",\"relationship_type\":\"PART_OF\",\"target_entity_id\":\"mid-ocean-ridge-system\",\"statement\":\"The Mid-Atlantic Ridge is one segment of the global mid-ocean ridge system.\",\"evidence\":[{\"quote\":\"is but one segment of the global mid-ocean ridge system\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"rel-11\",\"source_entity_id\":\"iceland\",\"relationship_type\":\"INTERACTS_WITH\",\"target_entity_id\":\"mid-atlantic-ridge\",\"statement\":\"Iceland straddles the Mid-Atlantic Ridge.\",\"evidence\":[{\"quote\":\"Iceland, which straddles the Mid-Atlantic Ridge\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"rel-12\",\"source_entity_id\":\"seafloor-spreading\",\"relationship_type\":\"TRANSFERS_TO\",\"target_entity_id\":\"oceanic-crust\",\"statement\":\"Seafloor spreading transports newly formed oceanic crust away from the ridge crest.\",\"evidence\":[{\"quote\":\"as they transport newly formed oceanic crust away from the ridge crest\"}],\"confidence\":0.9,\"origin\":\"SOURCE\"}],\"propositions\":[]}",
+            "type": "output_text"
+          }
+        ],
+        "id": "msg_0e2c2fdfaf12ca5e016aa45b4b300087d29f901a9671969b31",
+        "phase": "final_answer",
+        "role": "assistant",
+        "status": "completed",
+        "type": "message"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "presence_penalty": 0.0,
+    "previous_response_id": null,
+    "prompt": null,
+    "prompt_cache_key": null,
+    "prompt_cache_options": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+      "context": "all_turns",
+      "effort": "low",
+      "generate_summary": null,
+      "mode": "standard",
+      "summary": null
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "status": "completed",
+    "store": false,
+    "temperature": 1.0,
+    "text": {
+      "format": {
+        "description": null,
+        "name": "knowledge_extraction",
+        "schema_": {
+          "additionalProperties": false,
+          "properties": {
+            "claims": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "confidence": {
+                    "maximum": 1,
+                    "minimum": 0,
+                    "type": "number"
+                  },
+                  "evidence": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "quote": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "quote"
+                      ],
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "id": {
+                    "type": "string"
+                  },
+                  "origin": {
+                    "enum": [
+                      "SOURCE",
+                      "INFERRED"
+                    ],
+                    "type": "string"
+                  },
+                  "statement": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "statement",
+                  "evidence",
+                  "confidence",
+                  "origin"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "entities": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "aliases": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "entity_type": {
+                    "enum": [
+                      "CONCEPT",
+                      "OBJECT",
+                      "PROCESS",
+                      "VARIABLE",
+                      "SYSTEM",
+                      "COMPONENT"
+                    ],
+                    "type": "string"
+                  },
+                  "id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "name",
+                  "description",
+                  "entity_type",
+                  "aliases"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "propositions": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "comparison_operator": {
+                    "anyOf": [
+                      {
+                        "enum": [
+                          "GREATER_THAN"
+                        ],
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "confidence": {
+                    "maximum": 1,
+                    "minimum": 0,
+                    "type": "number"
+                  },
+                  "evidence": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "quote": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "quote"
+                      ],
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "origin": {
+                    "enum": [
+                      "SOURCE",
+                      "INFERRED"
+                    ],
+                    "type": "string"
+                  },
+                  "proposition_type": {
+                    "enum": [
+                      "COMPARISON_CONDITION",
+                      "TRANSFER_EVENT"
+                    ],
+                    "type": "string"
+                  },
+                  "relationship_type": {
+                    "enum": [
+                      "IS_A",
+                      "PART_OF",
+                      "CAUSES",
+                      "INCREASES",
+                      "DECREASES",
+                      "ENABLES",
+                      "REQUIRES",
+                      "CONSTRAINS",
+                      "PRECEDES",
+                      "TRANSFORMS_INTO",
+                      "INTERACTS_WITH",
+                      "MEASURED_BY",
+                      "EXAMPLE_OF",
+                      "CONTRADICTS",
+                      "CREATES",
+                      "INDUCES",
+                      "EXERTS_FORCE_ON",
+                      "AFFECTS",
+                      "BINDS_TO",
+                      "TRANSFERS_TO"
+                    ],
+                    "type": "string"
+                  },
+                  "role_bindings": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "entity_id": {
+                          "type": "string"
+                        },
+                        "role": {
+                          "enum": [
+                            "LEFT_OPERAND",
+                            "RIGHT_OPERAND",
+                            "OUTCOME",
+                            "EVENT",
+                            "OBJECT",
+                            "DESTINATION"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "role",
+                        "entity_id"
+                      ],
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "statement": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "proposition_type",
+                  "statement",
+                  "role_bindings",
+                  "relationship_type",
+                  "comparison_operator",
+                  "evidence",
+                  "confidence",
+                  "origin"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "relationships": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "confidence": {
+                    "maximum": 1,
+                    "minimum": 0,
+                    "type": "number"
+                  },
+                  "evidence": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "quote": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "quote"
+                      ],
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "id": {
+                    "type": "string"
+                  },
+                  "origin": {
+                    "enum": [
+                      "SOURCE",
+                      "INFERRED"
+                    ],
+                    "type": "string"
+                  },
+                  "relationship_type": {
+                    "enum": [
+                      "IS_A",
+                      "PART_OF",
+                      "CAUSES",
+                      "INCREASES",
+                      "DECREASES",
+                      "ENABLES",
+                      "REQUIRES",
+                      "CONSTRAINS",
+                      "PRECEDES",
+                      "TRANSFORMS_INTO",
+                      "INTERACTS_WITH",
+                      "MEASURED_BY",
+                      "EXAMPLE_OF",
+                      "CONTRADICTS",
+                      "CREATES",
+                      "INDUCES",
+                      "EXERTS_FORCE_ON",
+                      "AFFECTS",
+                      "BINDS_TO",
+                      "TRANSFERS_TO"
+                    ],
+                    "type": "string"
+                  },
+                  "source_entity_id": {
+                    "type": "string"
+                  },
+                  "statement": {
+                    "type": "string"
+                  },
+                  "target_entity_id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "source_entity_id",
+                  "relationship_type",
+                  "target_entity_id",
+                  "statement",
+                  "evidence",
+                  "confidence",
+                  "origin"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "entities",
+            "claims",
+            "relationships",
+            "propositions"
+          ],
+          "type": "object"
+        },
+        "strict": true,
+        "type": "json_schema"
+      },
+      "verbosity": "medium"
+    },
+    "tool_choice": "auto",
+    "tool_usage": {
+      "image_gen": {
+        "input_tokens": 0,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "total_tokens": 0
+      },
+      "web_search": {
+        "num_requests": 0
+      }
+    },
+    "tools": [],
+    "top_logprobs": 0,
+    "top_p": 0.98,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 3325,
+      "input_tokens_details": {
+        "cache_write_tokens": 3322,
+        "cached_tokens": 0
+      },
+      "output_tokens": 2824,
+      "output_tokens_details": {
+        "reasoning_tokens": 265
+      },
+      "total_tokens": 6149
+    },
+    "user": null
+  },
+  "started_at_utc": "2026-09-11T19:49:25.044240Z",
+  "usage": {
+    "input_tokens": 3325,
+    "input_tokens_details": {
+      "cache_write_tokens": 3322,
+      "cached_tokens": 0
+    },
+    "output_tokens": 2824,
+    "output_tokens_details": {
+      "reasoning_tokens": 265
+    },
+    "total_tokens": 6149
+  }
+}

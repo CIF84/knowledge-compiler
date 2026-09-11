@@ -1,0 +1,16 @@
+{
+  "artifact_inspection_command": ".venv/bin/python -m json.tool examples/evaluations/spec-042-blind-out-of-sample-live-execution-20260911/sources/03-crs-legislative-process-r42843-17/learner-review-artifact.json",
+  "artifact_inspection_note": "This command displays the admitted plan-level learner-review artifact. It is not a learner viewer.",
+  "dimensions": [
+    "semantic_fidelity",
+    "structural_usefulness",
+    "representation_appropriateness",
+    "learning_usefulness"
+  ],
+  "owner_question": "Given three genuinely unseen source passages and no adaptation after source selection, did Knowledge Compiler produce trustworthy representations that actually made the material easier to understand?",
+  "promotion": "NOT_AUTHORIZED",
+  "schema": "spec-042-human-review-template-v1",
+  "verdict": "PENDING",
+  "viewer_commands": [],
+  "viewer_unavailable_reason": "No executable learner-facing browser artifact was emitted by the frozen harness. Creating one after observing the results would violate the frozen renderer and no-adaptation controls."
+}

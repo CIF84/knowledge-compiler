@@ -1,0 +1,91 @@
+{
+  "detector_version": "spec-004-v1",
+  "metadata": {
+    "input_relationship_count": 10,
+    "logical_relationship_count": 10,
+    "maximum_causal_path_edges": 5,
+    "structure_counts": {
+      "CAUSAL_PATH": 0,
+      "DEPENDENCY_CHAIN": 0,
+      "FEEDBACK_CANDIDATE": 0,
+      "HIERARCHY": 1,
+      "PROCESS_CHAIN": 2
+    }
+  },
+  "source_document_id": "text-fe61b7c3b2a9373e",
+  "structures": [
+    {
+      "entity_ids": [
+        "policy-expertise",
+        "standing-committees"
+      ],
+      "id": "structure-hierarchy-4407bf6cd7193925",
+      "metadata": {
+        "contains_cycle": false,
+        "hierarchy_relationship_type": "PART_OF",
+        "leaves": [
+          "policy-expertise"
+        ],
+        "roots": [
+          "standing-committees"
+        ],
+        "supporting_relationship_ids_by_edge": [
+          [
+            "rel-policy-expertise-committees"
+          ]
+        ]
+      },
+      "relationship_ids": [
+        "rel-policy-expertise-committees"
+      ],
+      "relationship_types": [
+        "PART_OF"
+      ],
+      "structure_type": "HIERARCHY"
+    },
+    {
+      "entity_ids": [
+        "motion-to-proceed",
+        "floor-consideration"
+      ],
+      "id": "structure-process-chain-60d7436e2ee60611",
+      "metadata": {
+        "edge_count": 1,
+        "supporting_relationship_ids_by_edge": [
+          [
+            "rel-motion-precedes-floor"
+          ]
+        ]
+      },
+      "relationship_ids": [
+        "rel-motion-precedes-floor"
+      ],
+      "relationship_types": [
+        "PRECEDES"
+      ],
+      "structure_type": "PROCESS_CHAIN"
+    },
+    {
+      "entity_ids": [
+        "unanimous-consent-request",
+        "floor-consideration"
+      ],
+      "id": "structure-process-chain-ecac65769e01d69b",
+      "metadata": {
+        "edge_count": 1,
+        "supporting_relationship_ids_by_edge": [
+          [
+            "rel-consent-precedes-floor"
+          ]
+        ]
+      },
+      "relationship_ids": [
+        "rel-consent-precedes-floor"
+      ],
+      "relationship_types": [
+        "PRECEDES"
+      ],
+      "structure_type": "PROCESS_CHAIN"
+    }
+  ]
+}

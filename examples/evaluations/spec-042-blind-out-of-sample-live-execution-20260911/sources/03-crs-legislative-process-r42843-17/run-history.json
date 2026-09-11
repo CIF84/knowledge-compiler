@@ -1,0 +1,41 @@
+{
+  "adapter_invocation_count": 1,
+  "hidden_retry_count": 0,
+  "history": [
+    {
+      "attempt": 1,
+      "completed_at_utc": "2026-09-11T19:50:36.903504Z",
+      "duration_ms": 20177.402,
+      "error": null,
+      "error_type": null,
+      "http_request_id": "req_1e1c398637cc43b9a1adfe6971c4daeb",
+      "kind": "OPENAI_RESPONSES_STRUCTURED_EXTRACTION",
+      "live_call": true,
+      "outcome": "RESPONSE_RECEIVED",
+      "provider_request_id": "resp_03f1b12ec499d4dc016aa45b78fb9087d29437408984449abf",
+      "retry": false,
+      "started_at_utc": "2026-09-11T19:50:16.726176Z",
+      "usage": {
+        "input_tokens": 3168,
+        "output_tokens": 2307,
+        "total_tokens": 5475
+      }
+    },
+    {
+      "attempt": 1,
+      "error": null,
+      "error_type": null,
+      "kind": "LOCAL_EVIDENCE_RESOLUTION",
+      "live_call": false,
+      "outcome": "PASS",
+      "retry": false
+    },
+    {
+      "attempt": 1,
+      "final_stage": "LEARNER_REVIEW_ARTIFACT",
+      "outcome": "ADMITTED",
+      "retry_count": 0
+    }
+  ],
+  "source_id": "crs-legislative-process-r42843-17"
+}

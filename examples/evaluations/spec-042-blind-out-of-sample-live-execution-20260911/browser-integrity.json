@@ -1,0 +1,29 @@
+{
+  "browser_console_check": {
+    "reason": "The frozen SPEC-040 harness emitted a plan-level JSON learner-review artifact but no HTML, JavaScript, CSS, or executable browser application. Adding or adapting a renderer after observing the results is expressly prohibited by SPEC-042.",
+    "status": "NOT_APPLICABLE_NO_EMITTED_BROWSER_ARTIFACT"
+  },
+  "emitted_browser_artifact_count": 0,
+  "learner_review_artifacts": [
+    {
+      "artifact_kind": "SPEC038_REPRESENTATION_PLAN_JSON",
+      "browser_renderable": false,
+      "path": "sources/03-crs-legislative-process-r42843-17/learner-review-artifact.json",
+      "source_id": "crs-legislative-process-r42843-17"
+    }
+  ],
+  "no_renderer_adaptation": true,
+  "protected_spec038_baseline": {
+    "actual_aggregate_sha256": "453f7d2a233224628e03f5e1449650ec20bbff04ffae5ea07e9f6137cf54fd6e",
+    "expected_aggregate_sha256": "453f7d2a233224628e03f5e1449650ec20bbff04ffae5ea07e9f6137cf54fd6e",
+    "file_count": 50,
+    "verified": true
+  },
+  "schema": "spec-042-browser-integrity-v1",
+  "spec040_browser_regression": {
+    "path": "examples/evaluations/spec-040-blind-out-of-sample-evaluation-harness-20260911/browser-regression.json",
+    "sha256": "fa40f4ad3dd8f0b3e3bfac8f59d005fd00332d330837ea1c9213f0ba5ed8eb3d",
+    "status": "PASS_UNCHANGED_FROZEN_EVIDENCE"
+  },
+  "status": "PASS"
+}

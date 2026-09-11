@@ -1,0 +1,537 @@
+{
+  "claims": [
+    {
+      "confidence": 0.99,
+      "evidence": [
+        {
+          "quote": "Earth has four primary jet streams: two polar jet streams, near the north and south poles, and two subtropical jet streams closer to the equator."
+        }
+      ],
+      "id": "claim-jet-stream-count",
+      "origin": "SOURCE",
+      "statement": "Earth has four primary jet streams: two polar and two subtropical."
+    },
+    {
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "quote": "Jet streams are narrow bands of strong wind that generally blow from west to east all across the globe."
+        },
+        {
+          "quote": "Earth’s four primary jet streams only travel from west to east."
+        }
+      ],
+      "id": "claim-global-direction",
+      "origin": "SOURCE",
+      "statement": "Earth’s four primary jet streams generally travel from west to east across the globe."
+    },
+    {
+      "confidence": 0.99,
+      "evidence": [
+        {
+          "quote": "On average, jet streams move at about 110 miles per hour."
+        }
+      ],
+      "id": "claim-average-speed",
+      "origin": "SOURCE",
+      "statement": "Jet streams move at about 110 miles per hour on average."
+    },
+    {
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "quote": "But dramatic temperature differences between the warm and cool air masses can cause jet streams to move at much higher speeds — 250 miles per hour or faster."
+        },
+        {
+          "quote": "Speeds this high usually happen in polar jet streams in the winter time."
+        }
+      ],
+      "id": "claim-high-speed",
+      "origin": "SOURCE",
+      "statement": "Jet streams can move at 250 miles per hour or faster when temperature differences are dramatic, especially in polar jet streams during winter."
+    },
+    {
+      "confidence": 0.99,
+      "evidence": [
+        {
+          "quote": "Jet streams are located about five to nine miles above Earth’s surface in the mid to upper troposphere — the layer of Earth’s atmosphere where we live and breathe."
+        }
+      ],
+      "id": "claim-location",
+      "origin": "SOURCE",
+      "statement": "Jet streams are located about five to nine miles above Earth’s surface in the mid to upper troposphere."
+    },
+    {
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "quote": "So, if an airplane flies in a powerful jet stream and they are traveling in the same direction, the airplane can get a boost."
+        }
+      ],
+      "id": "claim-airplane-boost",
+      "origin": "SOURCE",
+      "statement": "An airplane flying in a powerful jet stream in the same direction can receive a boost."
+    },
+    {
+      "confidence": 0.99,
+      "evidence": [
+        {
+          "quote": "That’s why an airplane flying a route from west to east can generally make the trip faster than an airplane traveling the same route east to west."
+        }
+      ],
+      "id": "claim-west-east-faster",
+      "origin": "SOURCE",
+      "statement": "A west-to-east airplane route can generally be completed faster than the same route traveled east to west."
+    },
+    {
+      "confidence": 0.96,
+      "evidence": [
+        {
+          "quote": "However, if a weather system is far away from a jet stream, it might stay in one place, causing heat waves or floods."
+        }
+      ],
+      "id": "claim-weather-stationary",
+      "origin": "SOURCE",
+      "statement": "A weather system far from a jet stream might remain in one place, causing heat waves or floods."
+    },
+    {
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "quote": "However, jet streams can move in different ways, creating bulges of winds to the north and south."
+        }
+      ],
+      "id": "claim-jet-stream-direction-variation",
+      "origin": "SOURCE",
+      "statement": "Jet streams can move in different ways and create northward and southward bulges of wind."
+    },
+    {
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "quote": "Storms tend to follow the edge of the jet stream, where the difference between cool and warm air creates the turbulent conditions for storms."
+        }
+      ],
+      "id": "claim-storm-edge",
+      "origin": "SOURCE",
+      "statement": "Storms tend to follow the edge of the jet stream."
+    }
+  ],
+  "entities": [
+    {
+      "aliases": [
+        "jet streams"
+      ],
+      "description": "A narrow band of strong wind and a type of air current that forms high in the atmosphere.",
+      "entity_type": "CONCEPT",
+      "id": "jet-stream",
+      "name": "Jet stream"
+    },
+    {
+      "aliases": [
+        "wind"
+      ],
+      "description": "A moving flow of air, or wind.",
+      "entity_type": "CONCEPT",
+      "id": "air-current",
+      "name": "Air current"
+    },
+    {
+      "aliases": [
+        "polar jet streams"
+      ],
+      "description": "A jet stream located near one of Earth’s poles.",
+      "entity_type": "CONCEPT",
+      "id": "polar-jet-stream",
+      "name": "Polar jet stream"
+    },
+    {
+      "aliases": [
+        "subtropical jet streams"
+      ],
+      "description": "A jet stream located closer to the equator than a polar jet stream.",
+      "entity_type": "CONCEPT",
+      "id": "subtropical-jet-stream",
+      "name": "Subtropical jet stream"
+    },
+    {
+      "aliases": [
+        "warmer air masses",
+        "warm air"
+      ],
+      "description": "A mass of relatively warm air in the atmosphere.",
+      "entity_type": "OBJECT",
+      "id": "warm-air-mass",
+      "name": "Warm air mass"
+    },
+    {
+      "aliases": [
+        "cooler air masses",
+        "cold air masses",
+        "cool air"
+      ],
+      "description": "A mass of relatively cool or cold air in the atmosphere.",
+      "entity_type": "OBJECT",
+      "id": "cool-air-mass",
+      "name": "Cool air mass"
+    },
+    {
+      "aliases": [],
+      "description": "An atmospheric interaction in which warmer and cooler air masses meet.",
+      "entity_type": "PROCESS",
+      "id": "air-mass-meeting",
+      "name": "Meeting of warm and cool air masses"
+    },
+    {
+      "aliases": [],
+      "description": "The upward movement of warmer air in the atmosphere.",
+      "entity_type": "PROCESS",
+      "id": "warm-air-rise",
+      "name": "Warm-air rising"
+    },
+    {
+      "aliases": [],
+      "description": "The downward movement of cooler air to replace rising warm air.",
+      "entity_type": "PROCESS",
+      "id": "cool-air-sink",
+      "name": "Cool-air sinking"
+    },
+    {
+      "aliases": [],
+      "description": "The planet whose atmosphere contains the jet streams discussed in the text.",
+      "entity_type": "OBJECT",
+      "id": "earth",
+      "name": "Earth"
+    },
+    {
+      "aliases": [],
+      "description": "The gaseous envelope surrounding Earth in which jet streams form.",
+      "entity_type": "SYSTEM",
+      "id": "atmosphere",
+      "name": "Atmosphere"
+    },
+    {
+      "aliases": [],
+      "description": "The layer of Earth’s atmosphere where people live and breathe.",
+      "entity_type": "SYSTEM",
+      "id": "troposphere",
+      "name": "Troposphere"
+    },
+    {
+      "aliases": [
+        "dramatic temperature differences"
+      ],
+      "description": "The difference in temperature between warm and cool air masses.",
+      "entity_type": "VARIABLE",
+      "id": "temperature-difference",
+      "name": "Temperature difference between air masses"
+    },
+    {
+      "aliases": [
+        "speeds of jet streams"
+      ],
+      "description": "The speed at which a jet stream moves.",
+      "entity_type": "VARIABLE",
+      "id": "jet-stream-speed",
+      "name": "Jet-stream speed"
+    },
+    {
+      "aliases": [
+        "airplanes"
+      ],
+      "description": "An aircraft flying in the mid to upper troposphere.",
+      "entity_type": "OBJECT",
+      "id": "airplane",
+      "name": "Airplane"
+    },
+    {
+      "aliases": [
+        "weather systems"
+      ],
+      "description": "A moving or stationary atmospheric system that can be transported by a jet stream.",
+      "entity_type": "SYSTEM",
+      "id": "weather-system",
+      "name": "Weather system"
+    },
+    {
+      "aliases": [],
+      "description": "A geographic destination across which jet streams can transport weather systems.",
+      "entity_type": "OBJECT",
+      "id": "united-states",
+      "name": "United States"
+    },
+    {
+      "aliases": [],
+      "description": "An atmospheric condition affected by weather systems and jet-stream position.",
+      "entity_type": "VARIABLE",
+      "id": "temperature",
+      "name": "Temperature"
+    },
+    {
+      "aliases": [],
+      "description": "An atmospheric outcome affected by weather systems transported by jet streams.",
+      "entity_type": "VARIABLE",
+      "id": "precipitation",
+      "name": "Precipitation"
+    },
+    {
+      "aliases": [
+        "storms"
+      ],
+      "description": "A weather event that tends to follow the edge of a jet stream.",
+      "entity_type": "PROCESS",
+      "id": "storm",
+      "name": "Storm"
+    },
+    {
+      "aliases": [],
+      "description": "Conditions created where cool and warm air meet at the edge of a jet stream.",
+      "entity_type": "CONCEPT",
+      "id": "turbulent-conditions",
+      "name": "Turbulent conditions"
+    },
+    {
+      "aliases": [
+        "colder Arctic air"
+      ],
+      "description": "Cold air from the Arctic that can meet warmer and wetter air near a displaced jet stream.",
+      "entity_type": "OBJECT",
+      "id": "arctic-air",
+      "name": "Arctic air"
+    },
+    {
+      "aliases": [
+        "thunder and lightning"
+      ],
+      "description": "Storm phenomena that become more common when the jet stream is pushed farther south.",
+      "entity_type": "PROCESS",
+      "id": "thunder-lightning",
+      "name": "Thunder and lightning"
+    },
+    {
+      "aliases": [
+        "tornadoes"
+      ],
+      "description": "A storm phenomenon that becomes more common under the described conditions.",
+      "entity_type": "PROCESS",
+      "id": "tornado",
+      "name": "Tornado"
+    },
+    {
+      "aliases": [
+        "heat waves"
+      ],
+      "description": "A period of unusually hot weather that may occur when a weather system remains in place.",
+      "entity_type": "PROCESS",
+      "id": "heat-wave",
+      "name": "Heat wave"
+    },
+    {
+      "aliases": [
+        "floods"
+      ],
+      "description": "An event that may occur when a weather system remains in place.",
+      "entity_type": "PROCESS",
+      "id": "flood",
+      "name": "Flood"
+    }
+  ],
+  "propositions": [
+    {
+      "comparison_operator": null,
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "quote": "The fast-moving air currents in a jet stream can transport weather systems across the United States"
+        }
+      ],
+      "origin": "SOURCE",
+      "proposition_type": "TRANSFER_EVENT",
+      "relationship_type": "TRANSFERS_TO",
+      "role_bindings": [
+        {
+          "entity_id": "jet-stream-weather-transport",
+          "role": "EVENT"
+        },
+        {
+          "entity_id": "weather-system",
+          "role": "OBJECT"
+        },
+        {
+          "entity_id": "united-states",
+          "role": "DESTINATION"
+        }
+      ],
+      "statement": "Jet streams transport weather systems across the United States."
+    },
+    {
+      "comparison_operator": "GREATER_THAN",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "quote": "But dramatic temperature differences between the warm and cool air masses can cause jet streams to move at much higher speeds"
+        }
+      ],
+      "origin": "SOURCE",
+      "proposition_type": "COMPARISON_CONDITION",
+      "relationship_type": "CAUSES",
+      "role_bindings": [
+        {
+          "entity_id": "temperature-difference",
+          "role": "LEFT_OPERAND"
+        },
+        {
+          "entity_id": "average-temperature-difference",
+          "role": "RIGHT_OPERAND"
+        },
+        {
+          "entity_id": "jet-stream-speed",
+          "role": "OUTCOME"
+        }
+      ],
+      "statement": "When the difference between warm and cool air masses is dramatic, jet-stream speed is greater than its average speed."
+    }
+  ],
+  "relationships": [
+    {
+      "confidence": 0.99,
+      "evidence": [
+        {
+          "quote": "A jet stream is a type of air current that forms high in the atmosphere."
+        }
+      ],
+      "id": "rel-jet-stream-is-air-current",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "jet-stream",
+      "statement": "A jet stream is a type of air current.",
+      "target_entity_id": "air-current"
+    },
+    {
+      "confidence": 0.96,
+      "evidence": [
+        {
+          "quote": "Earth has four primary jet streams: two polar jet streams, near the north and south poles, and two subtropical jet streams closer to the equator."
+        }
+      ],
+      "id": "rel-polar-is-jet",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "polar-jet-stream",
+      "statement": "A polar jet stream is a type of jet stream.",
+      "target_entity_id": "jet-stream"
+    },
+    {
+      "confidence": 0.96,
+      "evidence": [
+        {
+          "quote": "Earth has four primary jet streams: two polar jet streams, near the north and south poles, and two subtropical jet streams closer to the equator."
+        }
+      ],
+      "id": "rel-subtropical-is-jet",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "subtropical-jet-stream",
+      "statement": "A subtropical jet stream is a type of jet stream.",
+      "target_entity_id": "jet-stream"
+    },
+    {
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "quote": "So when Earth’s warmer air masses meet cooler air masses, the warmer air rises up higher in the atmosphere"
+        }
+      ],
+      "id": "rel-meeting-creates-rise",
+      "origin": "SOURCE",
+      "relationship_type": "CAUSES",
+      "source_entity_id": "air-mass-meeting",
+      "statement": "Meeting warm and cool air masses causes warmer air to rise.",
+      "target_entity_id": "warm-air-rise"
+    },
+    {
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "quote": "while cooler air sinks down to replace the warm air."
+        }
+      ],
+      "id": "rel-meeting-causes-sink",
+      "origin": "SOURCE",
+      "relationship_type": "CAUSES",
+      "source_entity_id": "air-mass-meeting",
+      "statement": "Meeting warm and cool air masses causes cooler air to sink to replace warm air.",
+      "target_entity_id": "cool-air-sink"
+    },
+    {
+      "confidence": 0.97,
+      "evidence": [
+        {
+          "quote": "This movement creates an air current, or wind."
+        }
+      ],
+      "id": "rel-air-motion-creates-current",
+      "origin": "SOURCE",
+      "relationship_type": "CAUSES",
+      "source_entity_id": "warm-air-rise",
+      "statement": "The rising and sinking movement of air creates an air current or wind.",
+      "target_entity_id": "air-current"
+    },
+    {
+      "confidence": 0.94,
+      "evidence": [
+        {
+          "quote": "The fast-moving air currents in a jet stream can transport weather systems across the United States, affecting temperature and precipitation."
+        }
+      ],
+      "id": "rel-jetstream-affects-temperature",
+      "origin": "SOURCE",
+      "relationship_type": "AFFECTS",
+      "source_entity_id": "jet-stream",
+      "statement": "Jet streams affect temperature through the weather systems they transport.",
+      "target_entity_id": "temperature"
+    },
+    {
+      "confidence": 0.94,
+      "evidence": [
+        {
+          "quote": "The fast-moving air currents in a jet stream can transport weather systems across the United States, affecting temperature and precipitation."
+        }
+      ],
+      "id": "rel-jetstream-affects-precipitation",
+      "origin": "SOURCE",
+      "relationship_type": "AFFECTS",
+      "source_entity_id": "jet-stream",
+      "statement": "Jet streams affect precipitation through the weather systems they transport.",
+      "target_entity_id": "precipitation"
+    },
+    {
+      "confidence": 0.97,
+      "evidence": [
+        {
+          "quote": "where the difference between cool and warm air creates the turbulent conditions for storms."
+        }
+      ],
+      "id": "rel-temp-difference-induces-turbulence",
+      "origin": "SOURCE",
+      "relationship_type": "CAUSES",
+      "source_entity_id": "temperature-difference",
+      "statement": "The difference between cool and warm air creates turbulent conditions for storms.",
+      "target_entity_id": "turbulent-conditions"
+    },
+    {
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "quote": "Storms tend to follow the edge of the jet stream"
+        }
+      ],
+      "id": "rel-storm-follows-edge",
+      "origin": "SOURCE",
+      "relationship_type": "AFFECTS",
+      "source_entity_id": "storm",
+      "statement": "Storms tend to follow the edge of the jet stream.",
+      "target_entity_id": "jet-stream"
+    }
+  ]
+}
