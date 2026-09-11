@@ -77,18 +77,37 @@ Owner review confirms:
 
 - My Map is materially improved by the quiet tree/territory grammar and should be preserved;
 - the explanatory surface overcorrected away from generic cards and flattened structural representations toward typography;
-- structural explanations are now less visually distinctive and less immediately legible than the earlier diagram-rich candidates;
+- structural explanations became less visually distinctive and less immediately legible than the earlier diagram-rich candidates;
 - representation-local hover/click inspection remains useful;
-- representation diversity remains authoritative;
-- the next packet should restore true spatial/diagrammatic explanatory composition without restoring navigation coupling.
+- representation diversity remains authoritative.
 
 ## Dominant explanatory diagram canvas
 
 `SPEC-038 — dominant explanatory diagram canvas`
 
-Implementation status: `IMPLEMENTED_AWAITING_OWNER_REVIEW`
+Implementation status: `IMPLEMENTED_REVIEWED`
 
-The offline implementation, deterministic regeneration, inherited regressions, and browser gate pass. The exact candidate is awaiting the required owner review; no product verdict or baseline promotion has been assigned.
+Owner verdict: `NEW_VISUAL_BASELINE_EXPLANATORY_ARCHITECTURE_CONFIRMED`
+
+Owner review confirms that SPEC-038 materially restores explanatory richness while preserving the cleaner responsibility architecture. Structural representations again use a dominant diagram canvas where trusted semantics warrant it, representation diversity remains intact, local inspection remains non-navigational, and My Map retains the quieter territory/tree grammar.
+
+SPEC-038 is the strongest learner-facing visual baseline so far. The four-surface responsibility model is now protected:
+
+```text
+MY MAP
+→ remembers revealed territory
+
+WHAT DOES THIS MEAN?
+→ represents the current idea using the fitting semantic representation
+
+INSPECT / SELECTED / PREVIEW
+→ explains components of that representation without changing learner location
+
+EXPLORE NEXT
+→ proposes future traversal
+```
+
+This is an architectural baseline, not a declaration that the UI is finished. Follow-up work must justify any change to these responsibility boundaries rather than casually redesigning them.
 
 ## Current approved work packet
 
@@ -106,16 +125,19 @@ Promotion: `NOT_AUTHORIZED`
 
 ## Current product direction
 
-The project keeps the clean responsibility model established by SPEC-033 through SPEC-037 while restoring spatial explanatory power where trusted semantics warrant it.
+The primary product uncertainty now moves below the interface: whether the compiler can reliably infer sufficient trusted semantic structure from arbitrary source material to select and populate these learner-facing representations without handcrafted fixture logic.
+
+The learner-facing architecture remains:
 
 ```text
 MY MAP
 → revealed territory / deliberate navigation
-→ quiet tree / territory grammar from SPEC-037
+→ quiet tree / territory grammar
 
 WHAT DOES THIS MEAN?
 → dominant representation of the current knowledge object
 → true spatial/diagrammatic composition for structural strategies
+→ heterogeneous representation strategy when another form fits better
 → representation-local inspection only
 
 INSPECT / SELECTED / PREVIEW
@@ -132,9 +154,11 @@ LEARNING HISTORY / BACK
 The explanatory surface must not equate explanation with either prose or diagrams. It should choose a representation because the representation fits the trusted semantic structure currently in focus.
 
 ```text
-selected canonical object
+source material
         ↓
-trusted local semantic structure
+extraction / normalization
+        ↓
+trusted semantic structure
         ↓
 representation strategy resolver
         ↓
@@ -153,23 +177,20 @@ The active representation principle remains:
 
 > The compiler should choose the representation that minimizes the cognitive work required to understand the trusted structure currently in focus.
 
-SPEC-038 adds the current visual interpretation:
+The active visual principle remains:
 
 > Explanation should not look like navigation, but semantic structure must still look like structure.
-
-And:
-
-> Removing boxes is not the same thing as creating a diagram.
 
 Representation strategy remains heterogeneous: causal/mechanism, process/sequence, hierarchy/composition, compare/contrast, worked example, focused relationship, concise prose, or another truthfully supported form.
 
 ## Current gate
 
-SPEC-038 is implemented and awaiting owner review. There is no active approved implementation packet. Baseline promotion, live/model/external calls, and unrelated follow-up implementation remain unauthorized.
+SPEC-038 has passed owner review and establishes the current learner-facing visual baseline. There is no active approved implementation packet. The next packet should test compiler-side semantic-to-representation capability rather than perform another broad UI redesign. Live/model/external calls remain unauthorized until explicitly granted by an approved packet.
 
 ## Frozen / protected state
 
 - BASELINE-001 through BASELINE-004;
+- SPEC-038 learner-facing visual/interaction architecture as the best-known current baseline;
 - prior SPEC evaluation artifacts;
 - SPEC-030 role separation;
 - SPEC-031 reciprocal/multi-edge semantic identity;
@@ -189,7 +210,6 @@ Do not yet implement:
 - Back / learner traversal history;
 - traversal persistence or history UI;
 - breadcrumbs as a substitute for traversal history;
-- live/model-generated pedagogy;
 - personalization or learner-state modeling;
 - quizzes/mastery;
 - guided pathways/courses;
@@ -198,7 +218,7 @@ Do not yet implement:
 - universal graph viewer;
 - decorative animation as a product goal.
 
-A later packet may separately test traversal-memory semantics after the learner-facing explanatory grammar is stable.
+A later packet may separately test traversal-memory semantics after compiler-side representation intelligence is validated.
 
 ## Coordination rule
 
