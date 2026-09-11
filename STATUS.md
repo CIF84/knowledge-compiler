@@ -63,7 +63,7 @@ Implementation status: `IMPLEMENTED_REVIEWED`
 
 Owner verdict: `BLIND_SOURCE_SET_APPROVED_FOR_EXACT_TRANSMISSION`
 
-Owner/ChatGPT reviewed the exact three-source packet and call manifest and approved exactly those frozen passages for the bounded live run. No adaptation after source selection is permitted.
+Owner/ChatGPT reviewed the exact SPEC-041 source packet and call manifest and approved exactly those frozen passages for the bounded live run. No adaptation after source selection is permitted.
 
 Frozen packet SHA-256:
 
@@ -79,61 +79,65 @@ Frozen live-manifest SHA-256:
 
 Implementation status: `IMPLEMENTED_AWAITING_REVIEW`
 
-Owner verdict: `PENDING`
+Owner verdict: `PENDING_DIAGNOSTIC_REVIEW`
 
 Recorded objective result:
 
 - exactly three approved `gpt-5.6-luna` Responses API calls executed in frozen source order;
 - `store=False`; SDK, hidden, semantic, repair, and follow-up retries/calls all remained zero;
-- geology failed closed because a relationship referenced an undeclared entity;
-- meteorology failed closed because typed propositions referenced undeclared entities;
+- geology failed closed because a relationship referenced undeclared entity `spreading-processes`;
+- meteorology failed closed because propositions referenced undeclared entities `jet-stream-weather-transport` and `average-temperature-difference`;
 - civics admitted 20 entities, 10 relationships, 3 detected structures, and 30 representation decisions;
 - no source, prompt, compiler, semantic, representation, renderer, or evaluation adaptation occurred;
-- the final pedagogical/product verdict remains reserved for owner review.
+- owner review determined that the next step is offline diagnosis before any repair or promotion decision.
 
 ## Current approved work packet
 
 ```text
-NONE
+specs/SPEC-043-blind-failure-diagnosis.md
 ```
 
-Status: `NONE`
+Status: `APPROVED_FOR_IMPLEMENTATION`
 
-Authority: `NONE`
+Authority: `OFFLINE_ONLY`
 
-Human gate: `NONE`
+Human gate: `OWNER_REVIEW`
 
 Promotion: `NOT_AUTHORIZED`
 
 ## Current gate
 
-SPEC-042 is implemented and awaiting owner review. The single authorized run is complete,
-and its immutable evidence is under
-`examples/evaluations/spec-042-blind-out-of-sample-live-execution-20260911/`.
+SPEC-043 is authorized to diagnose the two SPEC-042 failed-closed outcomes from committed evidence only.
 
-No packet is active. No retry, repair, follow-up model call, implementation change, or
-promotion is authorized. Owner review must assess semantic fidelity, structural usefulness,
-representation appropriateness, and learning usefulness separately.
+The diagnostic question is whether each rejection is primarily:
+
+- `MODEL_ERROR`;
+- `CONTRACT_GAP`;
+- `EXTRACTION_GRANULARITY`;
+- `VALIDATION_BUG`; or
+- `AMBIGUOUS`.
+
+No repair, retry, semantic adaptation, provider/model call, external retrieval, or product promotion is authorized.
 
 ## Current product direction
 
-The active uncertainty is genuine out-of-sample generalization:
+The active uncertainty is now the interface between natural semantic extraction and deterministic admission:
 
 ```text
-three frozen unseen source passages
+frozen unseen source
         ↓
-exactly one extraction call each
+model proposes semantic structure
         ↓
-deterministic grounding + canonical validation
+compiler validates declared identities + trusted semantics
         ↓
-trusted semantic structure or fail closed
+PASS or FAIL CLOSED
         ↓
-semantic representation decision
+SPEC-043 diagnoses why failures occurred
         ↓
-protected SPEC-038 learner-facing representation when supported
-        ↓
-owner judges learning usefulness
+owner decides which class of change, if any, is justified
 ```
+
+The immediate goal is diagnosis, not improving the pass rate.
 
 ## Frozen / protected state
 
@@ -144,6 +148,7 @@ owner judges learning usefulness
 - SPEC-041 exact source packet and live-execution manifest;
 - SPEC-042 complete three-call run history and admitted/failed-closed outcomes;
 - all three exact source passage hashes;
+- raw SPEC-042 provider responses and provenance;
 - prompt `spec-010-v1`;
 - trusted semantic vocabulary, grounding, provenance, and fail-closed behavior;
 - representation strategy rules and current renderer coverage;
@@ -158,17 +163,20 @@ owner judges learning usefulness
 
 Do not:
 
-- retry a provider result;
-- repair a provider result;
-- substitute or edit a source;
-- retrieve external enrichment;
-- modify compiler/harness/prompt after seeing source output;
+- call a provider/model;
+- retry or repair a provider result;
+- substitute, edit, or enrich a source;
+- modify extraction outputs;
+- add or normalize missing entities;
+- modify compiler/harness/prompt/schema after seeing source output;
+- modify canonical semantic vocabulary or validation behavior;
 - complete the comparison renderer;
 - add worked-example capability;
+- create a learner/browser artifact from the civics result;
 - implement Back/history;
 - add personalization, quizzes, mastery, or guided courses;
 - redesign navigation or the learner-facing baseline;
-- promote the result or assign the subjective owner verdict.
+- promote SPEC-042 or assign its final subjective product verdict.
 
 ## Coordination rule
 
