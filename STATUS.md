@@ -60,27 +60,46 @@ Accepted findings:
 - no live/model/external execution occurred;
 - the next gate may freeze the exact blind source set, but transmission to OpenAI remains separately gated.
 
+## Blind source set freeze
+
+`SPEC-041 — blind source set freeze`
+
+Implementation status: `IMPLEMENTED_AWAITING_REVIEW`
+
+Owner verdict: `PENDING`
+
+Recorded result:
+
+- exactly three public U.S. federal sources are frozen in the required geology, meteorology, and civics order;
+- each exact passage is 300–650 words and has recorded provenance, size, and SHA-256;
+- the packet contains no semantic or representation answer key;
+- the SPEC-040 harness/compiler remains byte-equivalent to frozen commit `5622df131dc71346d5890f42ce16fe1e3e55f33a`;
+- the proposed live manifest permits at most three `gpt-5.6-luna` calls with `store=False` and every retry class at zero;
+- source retrieval occurred, but OpenAI/model calls and semantic extraction remained zero.
+
 ## Current approved work packet
 
 ```text
-specs/SPEC-041-blind-source-set-freeze.md
+NONE
 ```
 
-Status: `APPROVED_FOR_IMPLEMENTATION`
+Status: `NONE`
 
-Authority: `LIVE_CALLS_EXPLICITLY_BOUNDED`
+Authority: `NONE`
 
-Human gate: `OWNER_REVIEW`
+Human gate: `NONE`
 
 Promotion: `NOT_AUTHORIZED`
 
 ## Current gate
 
-SPEC-041 is authorized only to retrieve public source material needed to select and freeze the exact three-source blind packet.
+SPEC-041 is implemented and awaiting owner review. The exact blind source packet and
+proposed three-call manifest are frozen under
+`examples/evaluations/spec-041-blind-source-set-freeze-20260911/`.
 
-Allowed external activity is limited to ordinary public HTTPS retrieval/search/navigation for source selection and capture. No OpenAI Responses API call, LLM/model/provider call, semantic extraction, or blind-run execution is authorized.
-
-SPEC-041 must preserve the frozen SPEC-040 harness/compiler identity and stop after committing/pushing the exact source packet, hashes, provenance, and proposed three-call execution manifest. Owner/ChatGPT review is required before any source text may be transmitted to OpenAI.
+No packet is active. OpenAI/model execution remains unauthorized. Owner/ChatGPT must
+review the exact packet, non-cherry-picking evidence, provenance, and call bounds before
+a later packet may authorize transmission of these passages.
 
 ## Current product direction
 
@@ -120,6 +139,7 @@ owner reviews learner-facing outputs
 - SPEC-038 learner-facing visual/interaction baseline;
 - SPEC-039 semantic-to-representation compiler behavior and accepted principles;
 - SPEC-040 frozen harness/compiler identity `5622df131dc71346d5890f42ce16fe1e3e55f33a`;
+- SPEC-041 exact source packet and proposed live-execution manifest;
 - SPEC-033 navigation semantics;
 - SPEC-034 representation diversity;
 - SPEC-035 explanation/navigation isolation;

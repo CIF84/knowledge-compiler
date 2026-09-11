@@ -1,0 +1,90 @@
+{
+  "authority_order": [
+    "U.S. federal government science/institutional agency page or publication",
+    "another national-government science/institutional source",
+    "intergovernmental public source",
+    "stable openly licensed educational/reference source with clear reuse terms"
+  ],
+  "candidates_by_domain": [
+    {
+      "candidates": [
+        {
+          "decision": "SELECTED_FIRST_ELIGIBLE",
+          "publisher": "U.S. Geological Survey",
+          "reason": "Rank-1 federal source with a self-contained 438-word explanatory passage meeting every explicit eligibility rule.",
+          "title": "Understanding plate motions",
+          "url": "https://pubs.usgs.gov/gip/dynamic/understanding.html"
+        }
+      ],
+      "domain_family": "geology / Earth systems",
+      "query": "site:usgs.gov plate tectonics explanatory section USGS"
+    },
+    {
+      "candidates": [
+        {
+          "decision": "REJECTED",
+          "failed_rules": [
+            "primarily explanatory rather than a glossary",
+            "contiguous explanatory passage between 300 and 650 words"
+          ],
+          "measured_content": "Three matched glossary definitions totaled 208 words; the result was explicitly a glossary.",
+          "publisher": "National Weather Service",
+          "title": "National Weather Service Glossary — Jet Stream",
+          "url": "https://forecast.weather.gov/glossary.php?word=jet%20stream"
+        },
+        {
+          "decision": "SELECTED_FIRST_ELIGIBLE_AFTER_EXPLICIT_REJECTION",
+          "publisher": "NOAA National Environmental Satellite, Data, and Information Service",
+          "reason": "Rank-1 federal source with a self-contained 417-word explanatory passage meeting every explicit eligibility rule after figure-dependent content was removed.",
+          "title": "What Is the Jet Stream?",
+          "url": "https://www.nesdis.noaa.gov/about/k-12-education/atmosphere/what-the-jet-stream"
+        }
+      ],
+      "domain_family": "meteorology / atmospheric systems",
+      "query": "site:noaa.gov weather atmosphere explanatory process NOAA jet stream"
+    },
+    {
+      "candidates": [
+        {
+          "decision": "REJECTED",
+          "failed_rules": [
+            "contiguous explanatory passage between 300 and 650 words"
+          ],
+          "measured_content": "The complete explanatory overview before navigation links was 114 words.",
+          "publisher": "United States Senate",
+          "title": "About Filibusters and Cloture",
+          "url": "https://www.senate.gov/about/powers-procedures/filibusters-cloture.htm"
+        },
+        {
+          "decision": "SELECTED_FIRST_ELIGIBLE_AFTER_EXPLICIT_REJECTION",
+          "publisher": "Congressional Research Service",
+          "reason": "Rank-1 federal source with a version-addressed, self-contained 340-word institutional-process passage meeting every explicit eligibility rule.",
+          "title": "Introduction to the Legislative Process in the U.S. Congress",
+          "url": "https://www.congress.gov/crs_external_products/R/PDF/R42843/R42843.17.pdf"
+        }
+      ],
+      "domain_family": "civics / institutional process",
+      "query": "site:senate.gov legislative process explanatory cloture filibuster"
+    }
+  ],
+  "deterministic_selection_policy": {
+    "answer_key_created": false,
+    "candidate_comparison_for_attractive_output": false,
+    "domain_order": [
+      "geology / Earth systems",
+      "meteorology / atmospheric systems",
+      "civics / institutional process"
+    ],
+    "known_predicate_word_selection": false,
+    "source_replacement_after_freeze": false
+  },
+  "retrieval_activity": {
+    "authenticated_or_private_sources": 0,
+    "model_or_provider_calls": 0,
+    "paid_api_calls": 0,
+    "minimum_documented_public_https_search_queries": 3,
+    "official_civics_follow_up_navigation": true,
+    "selected_documents_retrieved": 3
+  },
+  "schema": "spec-041-source-selection-log-v1"
+}

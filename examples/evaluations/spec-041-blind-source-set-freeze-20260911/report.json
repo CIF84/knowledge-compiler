@@ -1,0 +1,166 @@
+{
+  "dependencies_added": [],
+  "dependencies_removed": [],
+  "deviations": [],
+  "execution": {
+    "openai_responses_api_calls": 0,
+    "other_model_or_provider_calls": 0,
+    "semantic_extraction_runs": 0,
+    "source_retrieval_only": true
+  },
+  "external_source_retrieval": {
+    "allowed_scope": "Ordinary public HTTPS search, navigation, GET, and HEAD requests for source selection and provenance capture only.",
+    "events": [
+      {
+        "outcome": "SUCCESS",
+        "request": "Public-web searches in fixed domain order plus official civics follow-up navigation",
+        "result": "Federal candidates identified without authentication or paid APIs."
+      },
+      {
+        "outcome": "HTTP_200",
+        "request": "GET https://pubs.usgs.gov/gip/dynamic/understanding.html"
+      },
+      {
+        "outcome": "HTTP_200",
+        "request": "GET https://www.nesdis.noaa.gov/about/k-12-education/atmosphere/what-the-jet-stream"
+      },
+      {
+        "outcome": "HTTP_200",
+        "request": "GET https://www.congress.gov/crs_external_products/R/PDF/R42843/R42843.17.pdf"
+      },
+      {
+        "outcome": "HTTP_200",
+        "request": "GET https://forecast.weather.gov/glossary.php?word=jet%20stream",
+        "result": "Rejected candidate measured and recorded."
+      },
+      {
+        "outcome": "HTTP_403_FROM_DIRECT_CURL_THEN_SUCCESSFUL_PUBLIC_NAVIGATION",
+        "request": "GET/navigation https://www.senate.gov/about/powers-procedures/filibusters-cloture.htm",
+        "result": "The public page remained inspectable through ordinary web navigation; its 114-word overview was rejected under the minimum-length rule."
+      },
+      {
+        "outcome": "HTTP_200_HTTP_200_HTTP_403",
+        "request": "HEAD requests for USGS, NOAA/NESDIS, and CRS selected URLs respectively",
+        "result": "CRS HEAD was blocked by its edge service although the versioned PDF GET had already succeeded; no source substitution occurred."
+      }
+    ],
+    "external_enrichment_after_freeze": 0,
+    "private_or_authenticated_sources": 0
+  },
+  "files_changed": [
+    "STATUS.md",
+    "specs/SPEC-041-blind-source-set-freeze.md",
+    "examples/evaluations/spec-041-blind-source-set-freeze-20260911/blind-source-packet.json",
+    "examples/evaluations/spec-041-blind-source-set-freeze-20260911/human-review-template.json",
+    "examples/evaluations/spec-041-blind-source-set-freeze-20260911/live-execution-manifest.json",
+    "examples/evaluations/spec-041-blind-source-set-freeze-20260911/machine-gate.json",
+    "examples/evaluations/spec-041-blind-source-set-freeze-20260911/manifest.json",
+    "examples/evaluations/spec-041-blind-source-set-freeze-20260911/report.json",
+    "examples/evaluations/spec-041-blind-source-set-freeze-20260911/selection-log.json"
+  ],
+  "frozen_harness_check": {
+    "commit": "5622df131dc71346d5890f42ce16fe1e3e55f33a",
+    "executable_file_count": 5,
+    "result": "PASS_BYTE_EQUIVALENT",
+    "source_or_test_implementation_changes": []
+  },
+  "live_execution_manifest": {
+    "path": "live-execution-manifest.json",
+    "sha256": "f45c8797b94a0a5d6a1902aa50b71a63af6277dfcf1e6956a2d2d1107339d075",
+    "status": "FROZEN_AWAITING_OWNER_APPROVAL"
+  },
+  "machine_gate": {
+    "path": "machine-gate.json",
+    "status": "PASS"
+  },
+  "offline_tests": {
+    "control_plane": "13 passed",
+    "focused_blind_harness": "20 passed",
+    "full_suite": "560 passed",
+    "result": "PASS"
+  },
+  "owner_review": {
+    "question": "Are these three sources genuinely out-of-sample, selected under a non-cherry-picking rule, frozen exactly enough to make the later three-call run scientifically interpretable, and safe to transmit under the stated bounds?",
+    "status": "PENDING",
+    "transmission_authorized": false
+  },
+  "packet": {
+    "domain_order": [
+      "geology / Earth systems",
+      "meteorology / atmospheric systems",
+      "civics / institutional process"
+    ],
+    "path": "blind-source-packet.json",
+    "sha256": "ccf1c5e9fb607934f790eb06cd828bf5a1d42e4f6e4d7913722debc4269c72b0",
+    "source_count": 3
+  },
+  "promotion": "NOT_AUTHORIZED",
+  "rejected_candidates": [
+    {
+      "failed_rules": [
+        "glossary rather than explanatory prose",
+        "208 words is below the 300-word minimum"
+      ],
+      "title": "National Weather Service Glossary — Jet Stream",
+      "url": "https://forecast.weather.gov/glossary.php?word=jet%20stream"
+    },
+    {
+      "failed_rules": [
+        "114 words is below the 300-word minimum"
+      ],
+      "title": "About Filibusters and Cloture",
+      "url": "https://www.senate.gov/about/powers-procedures/filibusters-cloture.htm"
+    }
+  ],
+  "repository_completion": {
+    "commit": "SELF_REFERENTIAL_COMMIT_SHA_REPORTED_IN_FINAL_HANDOFF",
+    "push_target": "origin/main",
+    "required_finish_state": "HEAD_EQUALS_ORIGIN_MAIN_AND_WORKING_TREE_CLEAN"
+  },
+  "repository_non_overlap": {
+    "checked_against": "HEAD a8c6a8abe807233ff2cc5b5552c848d0b6e89a3f before the SPEC-041 packet was introduced",
+    "checks": [
+      "all three selected canonical URLs",
+      "all three selected passage SHA-256 values",
+      "a unique opening prefix from each selected passage"
+    ],
+    "matches": 0,
+    "result": "PASS"
+  },
+  "schema": "spec-041-blind-source-freeze-report-v1",
+  "selected_sources": [
+    {
+      "domain_family": "geology / Earth systems",
+      "eligibility": "PASS",
+      "institutional_publisher": "U.S. Geological Survey",
+      "source_id": "usgs-divergent-plate-boundaries-1996",
+      "source_sha256": "a9539d135ff1577d7e2791d498b92f55239175565b925b24aec2ed0bf633f186",
+      "title": "Understanding plate motions",
+      "utf8_character_count": 2716,
+      "word_count": 438
+    },
+    {
+      "domain_family": "meteorology / atmospheric systems",
+      "eligibility": "PASS",
+      "institutional_publisher": "NOAA National Environmental Satellite, Data, and Information Service",
+      "source_id": "noaa-nesdis-jet-stream-2025",
+      "source_sha256": "256ade61be620cfaa7b1327e3c982576611dd29b6a1fb42217d86ffdc0783ca1",
+      "title": "What Is the Jet Stream?",
+      "utf8_character_count": 2350,
+      "word_count": 417
+    },
+    {
+      "domain_family": "civics / institutional process",
+      "eligibility": "PASS",
+      "institutional_publisher": "Congressional Research Service",
+      "source_id": "crs-legislative-process-r42843-17",
+      "source_sha256": "fe61b7c3b2a9373e7eb3b30d16b94adc2c8b5f4307327265943995550a6384b4",
+      "title": "Introduction to the Legislative Process in the U.S. Congress",
+      "utf8_character_count": 2152,
+      "word_count": 340
+    }
+  ],
+  "selection_log": "selection-log.json",
+  "spec": "SPEC-041",
+  "status": "IMPLEMENTED_AWAITING_OWNER_REVIEW"
+}

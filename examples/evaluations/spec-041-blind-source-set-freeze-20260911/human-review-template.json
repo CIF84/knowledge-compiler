@@ -1,0 +1,20 @@
+{
+  "allowed_verdicts": [
+    "SOURCE_PACKET_APPROVED_FOR_EXACT_THREE_CALL_RUN",
+    "SOURCE_PACKET_SELECTION_BIAS_OR_PROVENANCE_DEFECT",
+    "SOURCE_PACKET_INCOMPLETE",
+    "INCONCLUSIVE"
+  ],
+  "blind_source_packet": {
+    "path": "blind-source-packet.json",
+    "sha256": "ccf1c5e9fb607934f790eb06cd828bf5a1d42e4f6e4d7913722debc4269c72b0"
+  },
+  "live_execution_manifest": {
+    "path": "live-execution-manifest.json",
+    "sha256": "f45c8797b94a0a5d6a1902aa50b71a63af6277dfcf1e6956a2d2d1107339d075"
+  },
+  "live_execution_authorized": false,
+  "question": "Are these three sources genuinely out-of-sample, selected under a non-cherry-picking rule, frozen exactly enough to make the later three-call run scientifically interpretable, and safe to transmit under the stated bounds?",
+  "status": "PENDING_OWNER_REVIEW",
+  "verdict": "PENDING"
+}

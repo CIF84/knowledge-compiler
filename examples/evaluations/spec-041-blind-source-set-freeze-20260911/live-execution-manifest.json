@@ -1,0 +1,90 @@
+{
+  "approval": {
+    "live_execution_authorized": false,
+    "required_next_action": "Owner/ChatGPT must inspect this exact manifest and blind-source-packet.json, then provide separate explicit approval before any passage is transmitted."
+  },
+  "call_contract": {
+    "call_purpose": "semantic extraction with deterministic local grounding and canonical validation",
+    "calls_per_source": 1,
+    "canonicalization_model_follow_up_calls": 0,
+    "execution_order": [
+      "usgs-divergent-plate-boundaries-1996",
+      "noaa-nesdis-jet-stream-2025",
+      "crs-legislative-process-r42843-17"
+    ],
+    "external_retrieval_or_enrichment_during_execution": 0,
+    "maximum_total_calls": 3,
+    "model": "gpt-5.6-luna",
+    "provider": "OpenAI Responses API",
+    "storage": {
+      "store": false
+    }
+  },
+  "failure_policy": {
+    "frozen_commit_or_file_mismatch": "Stop before any provider call.",
+    "implementation_change_after_source_freeze": "Invalidate the run and require a newly designated frozen experiment.",
+    "malformed_packet": "Stop before any provider call.",
+    "provider_or_validation_failure": "Preserve the complete failed attempt, perform no retry, and continue only to the next already-approved source."
+  },
+  "frozen_implementation": {
+    "commit": "5622df131dc71346d5890f42ce16fe1e3e55f33a",
+    "files": {
+      "src/knowledge_compiler/blind_evaluation.py": "cd4311f7504cb3af02c9d74f5721f3cf64e11b7aec374e9936afd9fa17cf7873",
+      "src/knowledge_compiler/blind_evaluation_harness.py": "6b9fcb305d5323913562e7d3c83f1516b58a384d5d237a8d6731f67c518b48e4",
+      "src/knowledge_compiler/openai_extractor.py": "3152640aa23a5049591d83b48f706d33e207d415dab311e67a58cfbf88067be3",
+      "src/knowledge_compiler/representation_strategy.py": "5ef4e0a602e16b63f46511a780fc405c85e7dbc5fe631cb47b8a3c248efe5a8f",
+      "src/knowledge_compiler/semantic_representation_compiler.py": "84dbfe048da4b27ecdad2139bd2db3c1a9ef1be56676496bc9fc18974dea107a"
+    },
+    "policy": "No frozen compiler, harness, prompt, semantic vocabulary, grounding, representation rule, renderer, or evaluation-rule change is permitted after this source freeze."
+  },
+  "packet": {
+    "path": "blind-source-packet.json",
+    "sha256": "ccf1c5e9fb607934f790eb06cd828bf5a1d42e4f6e4d7913722debc4269c72b0",
+    "source_count": 3
+  },
+  "prompt": {
+    "prompt_version": "spec-010-v1",
+    "relationship_grammar": "current frozen trusted relationship vocabulary",
+    "repair_after_results": false,
+    "schema": "knowledge_extraction"
+  },
+  "retry_policy": {
+    "additional_calls_without_new_approval": 0,
+    "hidden_retries": 0,
+    "repair_calls": 0,
+    "sdk_retries": 0,
+    "semantic_retries": 0
+  },
+  "schema": "spec-041-frozen-live-execution-manifest-v1",
+  "source_transmission": [
+    {
+      "character_count": 2716,
+      "source_id": "usgs-divergent-plate-boundaries-1996",
+      "source_sha256": "a9539d135ff1577d7e2791d498b92f55239175565b925b24aec2ed0bf633f186",
+      "utf8_byte_count": 2716,
+      "word_count": 438
+    },
+    {
+      "character_count": 2350,
+      "source_id": "noaa-nesdis-jet-stream-2025",
+      "source_sha256": "256ade61be620cfaa7b1327e3c982576611dd29b6a1fb42217d86ffdc0783ca1",
+      "utf8_byte_count": 2368,
+      "word_count": 417
+    },
+    {
+      "character_count": 2152,
+      "source_id": "crs-legislative-process-r42843-17",
+      "source_sha256": "fe61b7c3b2a9373e7eb3b30d16b94adc2c8b5f4307327265943995550a6384b4",
+      "utf8_byte_count": 2154,
+      "word_count": 340
+    }
+  ],
+  "status": "FROZEN_AWAITING_OWNER_APPROVAL",
+  "token_and_cost_accounting": {
+    "monetary_cost_estimate": "NOT_PROMISED_OR_ESTIMATED",
+    "passage_character_total": 7218,
+    "passage_utf8_byte_total": 7238,
+    "passage_word_total": 1195,
+    "required_after_execution": "Preserve exact provider input, output, total token usage, request identifiers, timing, and available cost evidence per response."
+  }
+}
