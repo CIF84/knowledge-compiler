@@ -43,34 +43,48 @@ Accepted findings:
 - compare/contrast recognition is demonstrated but SPEC-038 lacks a comparison renderer;
 - worked-example / rule-to-instance capability remains unproven because the committed corpus lacks a grounded case.
 
+## Blind evaluation harness
+
+`SPEC-040 — blind out-of-sample evaluation harness`
+
+Implementation status: `IMPLEMENTED_REVIEWED`
+
+Owner verdict: `GENERIC_HARNESS_CONFIRMED_SOURCE_FREEZE_NEXT`
+
+Accepted findings:
+
+- generic harness/compiler frozen at `5622df131dc71346d5890f42ce16fe1e3e55f33a`;
+- blind sources remained absent during implementation;
+- anti-overfitting and source-identity invariance checks passed;
+- dry-run and SPEC-038 browser regressions passed;
+- no live/model/external execution occurred;
+- the next gate may freeze the exact blind source set, but transmission to OpenAI remains separately gated.
+
 ## Current approved work packet
 
 ```text
-NONE
+specs/SPEC-041-blind-source-set-freeze.md
 ```
 
-Status: `NONE`
+Status: `APPROVED_FOR_IMPLEMENTATION`
 
-Authority: `NONE`
+Authority: `LIVE_CALLS_EXPLICITLY_BOUNDED`
 
-Human gate: `NONE`
+Human gate: `OWNER_REVIEW`
 
 Promotion: `NOT_AUTHORIZED`
 
 ## Current gate
 
-SPEC-040 is implemented and awaiting owner review. The generic harness/compiler is
-frozen at commit `5622df131dc71346d5890f42ce16fe1e3e55f33a`; its deterministic dry-run,
-anti-overfitting checks, and protected SPEC-038 browser regression pass.
+SPEC-041 is authorized only to retrieve public source material needed to select and freeze the exact three-source blind packet.
 
-No blind source set has been selected or disclosed, and no live/model/external call
-was made. No packet is active. A later gate may freeze the source set and separately
-authorize bounded live execution only after owner/ChatGPT review confirms that the
-harness is generic; it must not modify the frozen compiler/harness.
+Allowed external activity is limited to ordinary public HTTPS retrieval/search/navigation for source selection and capture. No OpenAI Responses API call, LLM/model/provider call, semantic extraction, or blind-run execution is authorized.
+
+SPEC-041 must preserve the frozen SPEC-040 harness/compiler identity and stop after committing/pushing the exact source packet, hashes, provenance, and proposed three-call execution manifest. Owner/ChatGPT review is required before any source text may be transmitted to OpenAI.
 
 ## Current product direction
 
-The primary uncertainty is now generalization beyond the development corpus:
+The primary uncertainty is generalization beyond the development corpus:
 
 ```text
 previously unseen source material
@@ -84,13 +98,28 @@ semantic representation decision
 SPEC-038 learner-facing representation
 ```
 
-The blind experiment must distinguish semantic fidelity, structural usefulness, representation appropriateness, and owner-judged learner usefulness.
+The experimental order is protected:
+
+```text
+frozen compiler + harness
+        ↓
+freeze three out-of-sample sources
+        ↓
+owner approves exact transmitted packet
+        ↓
+exactly three bounded model calls
+        ↓
+no implementation adaptation
+        ↓
+owner reviews learner-facing outputs
+```
 
 ## Frozen / protected state
 
 - BASELINE-001 through BASELINE-004;
 - SPEC-038 learner-facing visual/interaction baseline;
 - SPEC-039 semantic-to-representation compiler behavior and accepted principles;
+- SPEC-040 frozen harness/compiler identity `5622df131dc71346d5890f42ce16fe1e3e55f33a`;
 - SPEC-033 navigation semantics;
 - SPEC-034 representation diversity;
 - SPEC-035 explanation/navigation isolation;
@@ -103,10 +132,11 @@ The blind experiment must distinguish semantic fidelity, structural usefulness, 
 
 ## Explicitly deferred
 
-Do not yet implement:
+Do not yet implement or execute:
 
-- real blind-source execution;
-- live/model/external calls;
+- OpenAI/model semantic extraction of blind sources;
+- any blind-run provider call;
+- source-specific compiler/prompt/semantic/renderer adaptation;
 - comparison renderer completion;
 - worked-example feature work;
 - Back / learner traversal history;
