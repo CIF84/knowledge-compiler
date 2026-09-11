@@ -34,6 +34,7 @@ from .diagram_canvas_evaluation import prepare_diagram_canvas_evaluation
 from .semantic_representation_gate_evaluation import (
     prepare_semantic_representation_gate_evaluation,
 )
+from .blind_evaluation_harness import prepare_blind_evaluation_harness
 from .interface_restoration_evaluation import prepare_interface_restoration_evaluation
 from .learner_navigation_evaluation import prepare_learner_navigation_evaluation
 from .learning_path_evaluation import prepare_learning_path_evaluation
@@ -393,6 +394,12 @@ def _parser() -> argparse.ArgumentParser:
         help="build the offline SPEC-039 semantic-to-representation compiler gate",
     )
     semantic_representation_gate.add_argument("--output-dir", required=True, type=Path)
+    blind_evaluation_harness = subcommands.add_parser(
+        "prepare-blind-evaluation-harness",
+        help="build the offline SPEC-040 blind out-of-sample evaluation harness",
+    )
+    blind_evaluation_harness.add_argument("--output-dir", required=True, type=Path)
+    blind_evaluation_harness.add_argument("--frozen-commit", required=True)
     view = subcommands.add_parser("view-representations", help="serve a prepared representation review locally")
     view.add_argument("directory", type=Path)
     view.add_argument("--host", default="127.0.0.1")
@@ -404,6 +411,18 @@ def _parser() -> argparse.ArgumentParser:
 def main(argv: list[str] | None = None) -> int:
     args = _parser().parse_args(argv)
     try:
+        if args.command == "prepare-blind-evaluation-harness":
+            report = prepare_blind_evaluation_harness(
+                output_dir=args.output_dir,
+                frozen_commit=args.frozen_commit,
+            )
+            print(
+                f"Wrote {args.output_dir / 'report.json'} "
+                f"(offline harness {report['machine_gate']['status']}; "
+                "browser verification pending)"
+            )
+            return 0
+
         if args.command == "prepare-semantic-representation-gate":
             report = prepare_semantic_representation_gate_evaluation(
                 output_dir=args.output_dir
