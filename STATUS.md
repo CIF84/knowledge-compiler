@@ -24,8 +24,6 @@ EXPLORE NEXT
 → proposes future traversal
 ```
 
-SPEC-038 is an architectural/visual baseline, not a declaration that every renderer family is complete.
-
 ## Semantic-to-representation compiler
 
 `SPEC-039 — semantic-to-representation compiler gate`
@@ -34,60 +32,21 @@ Implementation status: `IMPLEMENTED_REVIEWED`
 
 Owner verdict: `SEMANTIC_REPRESENTATION_COMPILER_CONFIRMED_WITH_COVERAGE_GAPS`
 
-Accepted findings:
-
-- representation strategy is compiler output rather than fixture/UI logic;
-- strategy selection follows trusted semantic structure rather than domain/label/source identity;
-- insufficient structure fails closed;
-- renderer coverage may lag semantic recognition without invalidating the semantic decision;
-- compare/contrast recognition is demonstrated but SPEC-038 lacks a comparison renderer;
-- worked-example / rule-to-instance capability remains unproven because the committed corpus lacks a grounded case.
-
 ## Blind evaluation harness
 
 `SPEC-040 — blind out-of-sample evaluation harness`
 
 Implementation status: `IMPLEMENTED_REVIEWED`
 
-Owner verdict: `GENERIC_HARNESS_CONFIRMED_SOURCE_FREEZE_NEXT`
-
 Frozen harness/compiler identity:
 
 `5622df131dc71346d5890f42ce16fe1e3e55f33a`
 
-## Blind source set freeze
-
-`SPEC-041 — blind source set freeze`
-
-Implementation status: `IMPLEMENTED_REVIEWED`
-
-Owner verdict: `BLIND_SOURCE_SET_APPROVED_FOR_EXACT_TRANSMISSION`
-
-Frozen packet SHA-256:
-
-`ccf1c5e9fb607934f790eb06cd828bf5a1d42e4f6e4d7913722debc4269c72b0`
-
-Frozen live-manifest SHA-256:
-
-`f45c8797b94a0a5d6a1902aa50b71a63af6277dfcf1e6956a2d2d1107339d075`
-
-## Blind out-of-sample live execution
+## Initial blind run and diagnosis
 
 `SPEC-042 — blind out-of-sample live execution`
 
 Implementation status: `IMPLEMENTED_REVIEWED_FOR_DIAGNOSIS`
-
-Owner verdict: `FAILURES_REQUIRE_DIAGNOSIS_NO_REPAIR_AUTHORIZED`
-
-Recorded objective result:
-
-- exactly three approved `gpt-5.6-luna` Responses API calls executed in frozen source order;
-- geology failed closed on undeclared `spreading-processes`;
-- meteorology failed closed on undeclared `jet-stream-weather-transport` and `average-temperature-difference`;
-- civics passed deterministic admission and produced semantic/representation output;
-- frozen behavior remained unchanged throughout the run.
-
-## Blind failure diagnosis
 
 `SPEC-043 — blind failure diagnosis`
 
@@ -97,136 +56,133 @@ Owner verdict: `DIAGNOSIS_CONFIRMED_NO_CONTRACT_CHANGE_REPLICATION_REQUIRED`
 
 Accepted findings:
 
-- 2 rejected objects are `EXTRACTION_GRANULARITY` failures: source-supported process/event identities were used without corresponding entity declarations;
-- 1 rejected object is a genuine `MODEL_ERROR`: `average-temperature-difference` was unsupported by the source;
-- 0 `CONTRACT_GAP`;
-- 0 `VALIDATION_BUG`;
-- 0 `AMBIGUOUS`;
-- strict declared-identity validation behaved correctly and remains protected;
-- the current sample is insufficient to justify changing the semantic contract;
-- the correct next experiment is blind replication before repair.
+- 2 `EXTRACTION_GRANULARITY` rejected objects;
+- 1 `MODEL_ERROR` rejected object;
+- 0 `CONTRACT_GAP`, `VALIDATION_BUG`, or `AMBIGUOUS`;
+- strict declared-identity validation behaved correctly;
+- evidence was insufficient for a contract change;
+- replication was required before repair.
 
-Canonical evidence:
-
-`examples/evaluations/spec-043-blind-failure-diagnosis-20260911/report.json`
-
-## Blind replication source set freeze
+## Blind replication source set
 
 `SPEC-044 — blind replication source set freeze`
 
-Implementation status: `IMPLEMENTED_AWAITING_REVIEW`
+Implementation status: `IMPLEMENTED_REVIEWED`
 
-Owner verdict: `PENDING`
+Owner verdict: `SIX_SOURCE_REPLICATION_PACKET_APPROVED_FOR_EXACT_TRANSMISSION`
 
-Recorded objective result:
+Accepted evidence:
 
-- six unrelated U.S. federal sources were selected in the predeclared domain order;
-- each exact explanatory passage is 300–650 words and is frozen with retrieval provenance and SHA-256 identity;
-- repository contamination checks found no prior URL, title, source ID, passage hash, or exact passage occurrence;
-- the later six-call manifest freezes one `gpt-5.6-luna` Responses API call per source, `store=False`, and zero SDK, semantic, repair, hidden, or follow-up retries/calls;
-- source transmission remains unauthorized pending a later canonical owner-approved execution packet;
-- SPEC-044 made zero provider/model calls and performed no semantic extraction or protected implementation change.
+- six unrelated priority-rank-1 U.S. institutional sources;
+- fixed predeclared domain order;
+- exact 300–650-word passages frozen with provenance and SHA-256;
+- repository non-overlap: zero matches;
+- semantic shape not used for selection;
+- no answer key and no model behavior inspected during selection;
+- frozen compiler/harness and SPEC-038 baseline preserved;
+- zero provider/model calls during source freeze.
 
 Frozen packet SHA-256:
 
 `85f7a7be47fa827799d532ab7ca5edc03b359162894dc2ee4e72a750de28e52b`
 
-Frozen live-manifest SHA-256:
+Frozen manifest SHA-256:
 
 `beaf3df4a941afc7fadf2abf13543affeae798e3d14486798cbb0060fccdc57e`
-
-Canonical evidence:
-
-`examples/evaluations/spec-044-blind-replication-source-set-freeze-20260912/report.json`
 
 ## Current approved work packet
 
 ```text
-NONE
+specs/SPEC-045-blind-replication-live-execution.md
 ```
 
-Status: `NONE`
+Status: `APPROVED_FOR_IMPLEMENTATION`
 
-Authority: `NONE`
+Authority: `LIVE_CALLS_EXPLICITLY_BOUNDED`
 
-Human gate: `NONE`
+Human gate: `OWNER_REVIEW`
 
 Promotion: `NOT_AUTHORIZED`
 
 ## Current gate
 
-SPEC-044 is implemented and awaiting owner review. Its canonical evidence is
-`examples/evaluations/spec-044-blind-replication-source-set-freeze-20260912/report.json`.
+SPEC-045 is authorized to execute the exact frozen SPEC-044 six-source packet once.
 
-No packet is active. No provider/model call, source transmission, semantic extraction,
-repair, retry, semantic adaptation, semantic-contract change, or product promotion is
-authorized.
+Authorized provider activity is limited to:
 
-## Current product direction
+- OpenAI Responses API;
+- `gpt-5.6-luna`;
+- exactly six maximum calls total;
+- one call maximum per frozen source;
+- exact frozen source order;
+- prompt `spec-010-v1` / `knowledge_extraction`;
+- `store=False`;
+- zero SDK, semantic, repair, hidden, follow-up, or additional retries/calls;
+- zero external retrieval/enrichment during execution;
+- zero source-specific prompt edits;
+- zero implementation adaptations between calls.
 
-The present uncertainty is whether the SPEC-043 extraction-granularity pattern is systematic or incidental:
+After execution, every rejected semantic object must be classified offline using the unchanged SPEC-043 taxonomy. No repair or implementation change is authorized.
+
+Any frozen identity/hash mismatch must stop execution before provider transmission.
+
+## Current product question
 
 ```text
-frozen semantic/compiler behavior
+unchanged frozen compiler
         ↓
-6 new unrelated blind sources frozen exactly
+6 new unrelated frozen sources
         ↓
-OWNER REVIEW
+1 extraction call each
         ↓
-later bounded execution packet, if separately approved
+strict deterministic admission / fail closed
         ↓
-SPEC-043 taxonomy applied unchanged
+SPEC-043 taxonomy applied unchanged to rejections
         ↓
-decide whether any narrow repair experiment is justified
+owner decides whether extraction-granularity pattern replicated
 ```
 
-The immediate goal is owner review of the frozen replication sample, not execution or improving pass rate.
+The immediate goal is evidence about recurrence, not pass-rate improvement.
 
 ## Frozen / protected state
 
 - BASELINE-001 through BASELINE-004;
-- SPEC-038 learner-facing visual/interaction baseline;
-- SPEC-039 semantic-to-representation compiler behavior and accepted principles;
+- SPEC-038 learner-facing baseline;
+- SPEC-039 representation compiler behavior;
 - SPEC-040 frozen harness/compiler identity `5622df131dc71346d5890f42ce16fe1e3e55f33a`;
-- SPEC-041 exact source packet and live-execution manifest;
-- SPEC-042 complete three-call run history and admitted/failed-closed outcomes;
-- all exact SPEC-041/042 source passage hashes and raw provider responses/provenance;
-- SPEC-043 rejection reconstruction, taxonomy, and accepted diagnosis;
-- SPEC-044 six-source packet, fixed order, exact passages, source hashes, later execution manifest, frozen taxonomy, and decision framework;
+- SPEC-042 complete execution evidence;
+- SPEC-043 taxonomy, diagnosis, and canonical report;
+- SPEC-044 exact six-source packet, order, hashes, manifest, selection evidence, and decision framework;
 - prompt `spec-010-v1`;
-- trusted semantic vocabulary, grounding, provenance, and fail-closed behavior;
-- declared-identity invariant;
+- extraction schema;
+- semantic vocabulary;
+- grounding/provenance;
+- strict declared-identity validation;
 - representation strategy rules and current renderer coverage;
 - SPEC-033 navigation semantics;
-- SPEC-034 representation diversity;
 - SPEC-035 explanation/navigation isolation;
-- SPEC-036 local inspection semantics;
-- SPEC-037 quiet My Map grammar;
+- SPEC-036 inspection semantics;
+- SPEC-037 My Map grammar;
 - unrelated user work.
 
-## Explicitly forbidden pending owner review
+## Explicitly forbidden
 
 Do not:
 
-- call OpenAI or any other model/provider;
-- transmit selected source text to a model;
-- perform semantic extraction on selected sources;
-- retry or repair provider/model output;
-- modify extraction outputs;
-- add or normalize missing entities;
-- modify prompt `spec-010-v1`;
-- modify extraction schema;
-- modify canonical semantic vocabulary or validation behavior;
-- weaken declared-identity validation;
-- modify SPEC-039 strategy selection or renderer behavior;
-- complete comparison/worked-example renderer coverage;
-- redesign navigation or the learner-facing baseline;
-- implement Back/history;
-- add personalization, quizzes, mastery, or guided courses;
-- assign expected semantic answers to the six blind sources;
-- choose sources for attractive expected output;
-- execute the later six-call manifest;
-- promote the product or assign a final architectural verdict.
+- exceed six provider calls;
+- retry or repair any result;
+- use another model;
+- edit or substitute frozen sources;
+- retrieve external evidence during execution or classification;
+- add/normalize missing entities;
+- change extraction granularity;
+- change prompt/schema/vocabulary/validation;
+- adapt implementation between calls;
+- change representation or renderer logic;
+- redesign UI/navigation;
+- implement Back/history or other deferred product features;
+- implement a fix after classification;
+- promote the result or authorize follow-up work.
 
 ## Coordination rule
 
