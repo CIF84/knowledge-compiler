@@ -91,37 +91,49 @@ Recorded objective result:
 - no source, prompt, compiler, semantic, representation, renderer, or evaluation adaptation occurred;
 - owner review determined that the next step is offline diagnosis before any repair or promotion decision.
 
+## Blind failure diagnosis
+
+`SPEC-043 — blind failure diagnosis`
+
+Implementation status: `IMPLEMENTED_AWAITING_REVIEW`
+
+Owner verdict: `PENDING`
+
+Recorded objective result:
+
+- three rejected semantic objects were reconstructed from immutable SPEC-042 evidence;
+- two are classified `EXTRACTION_GRANULARITY`: the geology spreading-process endpoint and the meteorology transfer-event identity were source-supported but never declared;
+- one is classified `MODEL_ERROR`: the meteorology comparison introduced an unsupported `average-temperature-difference` baseline;
+- no `CONTRACT_GAP`, `VALIDATION_BUG`, or `AMBIGUOUS` primary classification was found;
+- all three share the immediate mechanism of dangling entity references, but their semantic causes differ;
+- evidence is `INSUFFICIENT_EVIDENCE` to justify changing the semantic contract now;
+- no provider/model call, external retrieval, repair, retry, semantic adaptation, or protected-state change occurred.
+
 ## Current approved work packet
 
 ```text
-specs/SPEC-043-blind-failure-diagnosis.md
+NONE
 ```
 
-Status: `APPROVED_FOR_IMPLEMENTATION`
+Status: `NONE`
 
-Authority: `OFFLINE_ONLY`
+Authority: `NONE`
 
-Human gate: `OWNER_REVIEW`
+Human gate: `NONE`
 
 Promotion: `NOT_AUTHORIZED`
 
 ## Current gate
 
-SPEC-043 is authorized to diagnose the two SPEC-042 failed-closed outcomes from committed evidence only.
+SPEC-043 is implemented and awaiting owner review. Its canonical evidence is
+`examples/evaluations/spec-043-blind-failure-diagnosis-20260911/report.json`.
 
-The diagnostic question is whether each rejection is primarily:
-
-- `MODEL_ERROR`;
-- `CONTRACT_GAP`;
-- `EXTRACTION_GRANULARITY`;
-- `VALIDATION_BUG`; or
-- `AMBIGUOUS`.
-
-No repair, retry, semantic adaptation, provider/model call, external retrieval, or product promotion is authorized.
+No packet is active. No repair, retry, semantic adaptation, provider/model call,
+external retrieval, semantic-contract change, or product promotion is authorized.
 
 ## Current product direction
 
-The active uncertainty is now the interface between natural semantic extraction and deterministic admission:
+The diagnosed uncertainty is the interface between natural semantic extraction and deterministic admission:
 
 ```text
 frozen unseen source
@@ -132,12 +144,12 @@ compiler validates declared identities + trusted semantics
         ↓
 PASS or FAIL CLOSED
         ↓
-SPEC-043 diagnoses why failures occurred
+SPEC-043 diagnosis reconstructs and classifies each rejected object
         ↓
 owner decides which class of change, if any, is justified
 ```
 
-The immediate goal is diagnosis, not improving the pass rate.
+The immediate goal is owner review of the diagnosis, not improving the pass rate.
 
 ## Frozen / protected state
 
@@ -149,6 +161,7 @@ The immediate goal is diagnosis, not improving the pass rate.
 - SPEC-042 complete three-call run history and admitted/failed-closed outcomes;
 - all three exact source passage hashes;
 - raw SPEC-042 provider responses and provenance;
+- SPEC-043 evidence-only rejection reconstruction and diagnostic classifications;
 - prompt `spec-010-v1`;
 - trusted semantic vocabulary, grounding, provenance, and fail-closed behavior;
 - representation strategy rules and current renderer coverage;
@@ -159,7 +172,7 @@ The immediate goal is diagnosis, not improving the pass rate.
 - SPEC-037 quiet My Map grammar;
 - unrelated user work.
 
-## Explicitly deferred / forbidden during this packet
+## Explicitly deferred / forbidden pending owner review
 
 Do not:
 

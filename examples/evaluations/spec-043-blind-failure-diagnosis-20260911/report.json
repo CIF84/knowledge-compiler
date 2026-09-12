@@ -1,0 +1,335 @@
+{
+  "aggregate_diagnosis": {
+    "answers": {
+      "1_semantic_or_model_correctness_failures": {
+        "answer": 1,
+        "explanation": "The meteorology comparison proposition invents average-temperature-difference as a comparison baseline even though the source's explicit average is jet-stream speed, not temperature difference."
+      },
+      "2_interface_contract_or_granularity_failures": {
+        "answer": 2,
+        "breakdown": {
+          "CONTRACT_GAP": 0,
+          "EXTRACTION_GRANULARITY": 2
+        },
+        "explanation": "The geology relationship and meteorology transfer proposition express source-supported meanings but reference process/event identities that were never declared in the entity array."
+      },
+      "3_deterministic_validator_bug": {
+        "answer": "NO",
+        "explanation": "KnowledgeModel validation applies its declared-identity invariant exactly: every relationship endpoint and proposition role binding must reference a declared entity. The reported missing sets match the provider output."
+      },
+      "4_common_or_different_mechanism": {
+        "answer": "SHARED_IMMEDIATE_MECHANISM_DIFFERENT_SEMANTIC_CAUSES",
+        "explanation": "All three objects fail through dangling entity references. Two dangling identities are otherwise defensible process/event reifications; the third is an unsupported comparison baseline and therefore a semantic correctness error."
+      },
+      "5_change_semantic_contract_now": {
+        "answer": "INSUFFICIENT_EVIDENCE",
+        "explanation": "This two-failed-source sample does not justify changing semantic vocabulary or weakening declared-identity validation. The evidence supports investigating extraction-to-contract alignment, but another diagnostic sample is needed before choosing a contract change."
+      }
+    },
+    "classification_counts": {
+      "AMBIGUOUS": 0,
+      "CONTRACT_GAP": 0,
+      "EXTRACTION_GRANULARITY": 2,
+      "MODEL_ERROR": 1,
+      "VALIDATION_BUG": 0
+    },
+    "rejected_object_count": 3,
+    "source_level_failed_closed_count": 2
+  },
+  "deviations": [],
+  "execution_integrity": {
+    "external_calls": 0,
+    "external_retrieval_or_enrichment": 0,
+    "model_calls": 0,
+    "provider_calls": 0,
+    "repairs": 0,
+    "retries": 0,
+    "semantic_outputs_modified": false
+  },
+  "frozen_spec042_evidence": {
+    "aggregate_sha256": "523abe4b6fd47d531650c9a48f00b65d06dccbe947af4af1d04cad3678ef5200",
+    "commit": "0af6cf593aaf23686ce7e262730e2ed29551cab5",
+    "directory": "examples/evaluations/spec-042-blind-out-of-sample-live-execution-20260911",
+    "file_count": 50,
+    "provider_call_ledger_sha256": "bee82071d37f663d14601748bb486da5eec5203b26b417ae20d255004b29de67",
+    "report_sha256": "e750df70e87ef81211c1fa58492d4a596e712ce759e2aadfa81e078aa9d762ef",
+    "spec041_live_manifest_sha256": "f45c8797b94a0a5d6a1902aa50b71a63af6277dfcf1e6956a2d2d1107339d075",
+    "spec041_source_packet_sha256": "ccf1c5e9fb607934f790eb06cd828bf5a1d42e4f6e4d7913722debc4269c72b0",
+    "unchanged": true
+  },
+  "inspected_source_ids": [
+    "usgs-divergent-plate-boundaries-1996",
+    "noaa-nesdis-jet-stream-2025"
+  ],
+  "missing_identity_traces": [
+    {
+      "construction_kind": "PROCESS_CONCEPT_REFERENCE",
+      "declared": false,
+      "first_provider_output_location": "relationships[4].source_entity_id",
+      "first_provider_output_value": "spreading-processes",
+      "impacted_object_id": "rel-5",
+      "missing_identity": "spreading-processes",
+      "near_equivalent_declared_entities": [
+        {
+          "entity_id": "spreading-center",
+          "entity_type": "PROCESS",
+          "equivalence_assessment": "RELATED_NOT_EXACT",
+          "reason": "A spreading center is the region/process locus where plates move apart; the rejected statement refers more generally to spreading processes in East Africa."
+        },
+        {
+          "entity_id": "seafloor-spreading",
+          "entity_type": "PROCESS",
+          "equivalence_assessment": "RELATED_NOT_EXACT",
+          "reason": "This declared process is described for newly formed oceanic crust and the Atlantic; substituting it into the East Africa statement would be a semantic normalization not supported by the output itself."
+        },
+        {
+          "entity_id": "rifting",
+          "entity_type": "PROCESS",
+          "equivalence_assessment": "RELATED_NOT_EXACT",
+          "reason": "Rifting is surface cracking associated with spreading, not an asserted alias of spreading-processes."
+        }
+      ],
+      "source_support": "SUPPORTED_EXPLICITLY",
+      "source_support_evidence": {
+        "document_id": "text-a9539d135ff1577d",
+        "end_char": 2135,
+        "quote": "spreading processes have already torn Saudi Arabia away from the rest of the African continent, forming the Red Sea.",
+        "start_char": 2019
+      },
+      "trace_result": "The identity first appears as a relationship endpoint after the entity array and is never declared. The phrase and causal construction are explicit in the source, while only related—not safely interchangeable—process entities were declared."
+    },
+    {
+      "construction_kind": "TRANSFER_EVENT_REIFICATION",
+      "declared": false,
+      "first_provider_output_location": "propositions[0].role_bindings[0].entity_id",
+      "first_provider_output_value": "jet-stream-weather-transport",
+      "impacted_object_id": "proposition-transfer-event-ca132e97bce01eea",
+      "missing_identity": "jet-stream-weather-transport",
+      "near_equivalent_declared_entities": [
+        {
+          "entity_id": "jet-stream",
+          "entity_type": "CONCEPT",
+          "equivalence_assessment": "PARTICIPANT_NOT_EVENT",
+          "reason": "The jet stream participates in transport but is not the transport event required by the EVENT role."
+        },
+        {
+          "entity_id": "weather-system",
+          "entity_type": "SYSTEM",
+          "equivalence_assessment": "OBJECT_NOT_EVENT",
+          "reason": "This is the transferred object, not the transfer event."
+        },
+        {
+          "entity_id": "united-states",
+          "entity_type": "OBJECT",
+          "equivalence_assessment": "DESTINATION_NOT_EVENT",
+          "reason": "This is the destination, not the transfer event."
+        }
+      ],
+      "source_support": "SUPPORTED_EXPLICITLY",
+      "source_support_evidence": {
+        "document_id": "text-256ade61be620cfa",
+        "end_char": 1614,
+        "quote": "The fast-moving air currents in a jet stream can transport weather systems across the United States",
+        "start_char": 1515
+      },
+      "trace_result": "The identity first appears only as the proposition EVENT role. The source supports a transport event, but the extraction did not declare a PROCESS entity for that event."
+    },
+    {
+      "construction_kind": "COMPARISON_BASELINE_VARIABLE",
+      "declared": false,
+      "first_provider_output_location": "propositions[1].role_bindings[1].entity_id",
+      "first_provider_output_value": "average-temperature-difference",
+      "impacted_object_id": "proposition-comparison-condition-bf72862321e8611b",
+      "missing_identity": "average-temperature-difference",
+      "near_equivalent_declared_entities": [
+        {
+          "entity_id": "temperature-difference",
+          "entity_type": "VARIABLE",
+          "equivalence_assessment": "RELATED_LEFT_OPERAND_NOT_BASELINE",
+          "reason": "This is the declared temperature-difference variable used as LEFT_OPERAND, not evidence for a distinct average-temperature-difference baseline."
+        },
+        {
+          "entity_id": "jet-stream-speed",
+          "entity_type": "VARIABLE",
+          "equivalence_assessment": "DIFFERENT_QUANTITY_WITH_EXPLICIT_AVERAGE",
+          "reason": "The source gives an average for jet-stream speed, not for temperature difference."
+        }
+      ],
+      "source_support": "NOT_SUPPORTED_AS_STATED",
+      "source_support_evidence": [
+        {
+          "assessment": "The cited sentence supports dramatic temperature difference causing higher jet-stream speed, but does not name or quantify an average temperature difference.",
+          "document_id": "text-256ade61be620cfa",
+          "end_char": 917,
+          "quote": "But dramatic temperature differences between the warm and cool air masses can cause jet streams to move at much higher speeds",
+          "start_char": 792
+        },
+        {
+          "assessment": "This nearby sentence establishes that the explicit average belongs to jet-stream speed.",
+          "document_id": "text-256ade61be620cfa",
+          "end_char": 791,
+          "quote": "On average, jet streams move at about 110 miles per hour.",
+          "start_char": 734
+        }
+      ],
+      "trace_result": "The identity first appears only as RIGHT_OPERAND. No declared entity or source phrase supports an average-temperature-difference baseline; the provider conflated an average speed comparison with the temperature-difference antecedent."
+    }
+  ],
+  "owner_review": {
+    "promotion": "NOT_AUTHORIZED",
+    "question": "Did the blind failures reveal that the model misunderstood the sources, or that our compiler interface is too brittle for otherwise defensible semantic output — and do we now have enough evidence to know what class of change should come next?",
+    "verdict": "PENDING"
+  },
+  "rejections": [
+    {
+      "classification": {
+        "confidence": "HIGH",
+        "counterfactual": "Would require extraction to declare the referenced spreading process as an entity or to choose an already-declared identity only if semantically equivalent.",
+        "current_contract_assessment": "The CREATES predicate and direction fit the source, but the relationship contract explicitly requires both endpoint IDs to occur in the entity array. The source endpoint was not declared.",
+        "primary_classification": "EXTRACTION_GRANULARITY",
+        "rationale": "The relationship's meaning is materially source-supported. Failure arose because the extraction reified a general spreading-process concept at the relationship endpoint without including that concept in its declared entity granularity.",
+        "source_support_assessment": "FULLY_SUPPORTED"
+      },
+      "declared_referenced_entity_ids": [
+        "red-sea"
+      ],
+      "evidence": [
+        {
+          "assessment": "SUPPORTS",
+          "document_id": "text-a9539d135ff1577d",
+          "end_char": 2135,
+          "quote": "spreading processes have already torn Saudi Arabia away from the rest of the African continent, forming the Red Sea.",
+          "start_char": 2019
+        }
+      ],
+      "object_id": "rel-5",
+      "object_kind": "RELATIONSHIP",
+      "relationship_type": "CREATES",
+      "referenced_entity_ids": {
+        "source_entity_id": "spreading-processes",
+        "target_entity_id": "red-sea"
+      },
+      "source_id": "usgs-divergent-plate-boundaries-1996",
+      "statement": "Spreading processes formed the Red Sea by tearing Saudi Arabia away from Africa.",
+      "undeclared_referenced_entity_ids": [
+        "spreading-processes"
+      ],
+      "validator": {
+        "exact_rejection_reason": "relationship 'rel-5' references unknown entities: ['spreading-processes']",
+        "stage": "GROUNDING_AND_SEMANTIC_VALIDATION"
+      }
+    },
+    {
+      "classification": {
+        "confidence": "HIGH",
+        "counterfactual": "Would require extraction to declare the referenced transport event as a PROCESS entity.",
+        "current_contract_assessment": "The proposition uses the required EVENT, OBJECT, and DESTINATION roles with TRANSFERS_TO and no comparison operator. The current validator additionally requires every role identity to be declared and the EVENT entity to be a PROCESS; the event identity was absent.",
+        "primary_classification": "EXTRACTION_GRANULARITY",
+        "rationale": "The source explicitly supports the event, object, and destination. The extraction represented the event at proposition-role granularity but omitted the corresponding entity declaration.",
+        "source_support_assessment": "FULLY_SUPPORTED"
+      },
+      "declared_referenced_entity_ids": [
+        "weather-system",
+        "united-states"
+      ],
+      "evidence": [
+        {
+          "assessment": "SUPPORTS",
+          "document_id": "text-256ade61be620cfa",
+          "end_char": 1614,
+          "quote": "The fast-moving air currents in a jet stream can transport weather systems across the United States",
+          "start_char": 1515
+        }
+      ],
+      "object_id": "proposition-transfer-event-ca132e97bce01eea",
+      "object_kind": "PROPOSITION",
+      "proposition_type": "TRANSFER_EVENT",
+      "referenced_entity_ids": {
+        "DESTINATION": "united-states",
+        "EVENT": "jet-stream-weather-transport",
+        "OBJECT": "weather-system"
+      },
+      "source_id": "noaa-nesdis-jet-stream-2025",
+      "statement": "Jet streams transport weather systems across the United States.",
+      "undeclared_referenced_entity_ids": [
+        "jet-stream-weather-transport"
+      ],
+      "validator": {
+        "exact_rejection_reason": "proposition 'proposition-transfer-event-ca132e97bce01eea' references unknown entities: ['jet-stream-weather-transport']",
+        "stage": "GROUNDING_AND_SEMANTIC_VALIDATION"
+      }
+    },
+    {
+      "classification": {
+        "confidence": "HIGH",
+        "counterfactual": "Would require the extractor not to introduce an unsupported average-temperature-difference operand and to preserve only the comparison actually grounded by the source.",
+        "current_contract_assessment": "The proposition has the syntactically required comparison roles, GREATER_THAN, and CAUSES, but RIGHT_OPERAND is undeclared. More importantly, declaring that operand would not resolve its lack of source support.",
+        "primary_classification": "MODEL_ERROR",
+        "rationale": "The source supports dramatic temperature difference causing higher jet-stream speed, while the provider created an average-temperature-difference baseline absent from the text; the nearby explicit average refers instead to jet-stream speed.",
+        "source_support_assessment": "PARTIALLY_SUPPORTED_PROPOSITION_WITH_UNSUPPORTED_OPERAND"
+      },
+      "declared_referenced_entity_ids": [
+        "temperature-difference",
+        "jet-stream-speed"
+      ],
+      "evidence": [
+        {
+          "assessment": "SUPPORTS_CAUSAL_CORE_BUT_NOT_RIGHT_OPERAND",
+          "document_id": "text-256ade61be620cfa",
+          "end_char": 917,
+          "quote": "But dramatic temperature differences between the warm and cool air masses can cause jet streams to move at much higher speeds",
+          "start_char": 792
+        },
+        {
+          "assessment": "LIMITS_SUPPORT_DIFFERENT_AVERAGED_QUANTITY",
+          "document_id": "text-256ade61be620cfa",
+          "end_char": 791,
+          "quote": "On average, jet streams move at about 110 miles per hour.",
+          "start_char": 734
+        }
+      ],
+      "object_id": "proposition-comparison-condition-bf72862321e8611b",
+      "object_kind": "PROPOSITION",
+      "proposition_type": "COMPARISON_CONDITION",
+      "referenced_entity_ids": {
+        "LEFT_OPERAND": "temperature-difference",
+        "OUTCOME": "jet-stream-speed",
+        "RIGHT_OPERAND": "average-temperature-difference"
+      },
+      "source_id": "noaa-nesdis-jet-stream-2025",
+      "statement": "When the difference between warm and cool air masses is dramatic, jet-stream speed is greater than its average speed.",
+      "undeclared_referenced_entity_ids": [
+        "average-temperature-difference"
+      ],
+      "validator": {
+        "exact_object_level_rejection_reason": "proposition 'proposition-comparison-condition-bf72862321e8611b' references unknown entities: ['average-temperature-difference']",
+        "run_visibility": "The whole-model validator stopped at the preceding transfer proposition. This object-level reason is the direct application of the same deterministic missing-identity rule and is corroborated by SPEC-042 rejected-semantic-items.json.",
+        "stage": "GROUNDING_AND_SEMANTIC_VALIDATION"
+      }
+    }
+  ],
+  "schema": "spec-043-blind-failure-diagnosis-report-v1",
+  "status": "IMPLEMENTED_AWAITING_REVIEW",
+  "validation": {
+    "complete_offline_suite": {
+      "collected": 560,
+      "status": "PASS"
+    },
+    "control_plane_after_lifecycle_update": "PASS_ACTIVE_PACKET_NONE",
+    "diagnostic_cross_artifact_validation": "PASS",
+    "focused_final_run": {
+      "passed": 53,
+      "status": "PASS"
+    },
+    "focused_pre_lifecycle_run": {
+      "expected_lifecycle_failure": "test_repository_status_has_an_explicit_valid_pointer_state requires the active pointer to be NONE",
+      "failed": 1,
+      "passed": 52,
+      "total": 53
+    },
+    "frozen_spec041_spec042_evidence_unchanged": "PASS",
+    "git_diff_check": "PASS",
+    "json_validation": "PASS",
+    "provider_artifact_secret_safety": "PASS_NO_SECRET_PATTERN_MATCHES"
+  }
+}
