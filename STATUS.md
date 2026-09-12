@@ -63,8 +63,6 @@ Implementation status: `IMPLEMENTED_REVIEWED`
 
 Owner verdict: `BLIND_SOURCE_SET_APPROVED_FOR_EXACT_TRANSMISSION`
 
-Owner/ChatGPT reviewed the exact SPEC-041 source packet and call manifest and approved exactly those frozen passages for the bounded live run. No adaptation after source selection is permitted.
-
 Frozen packet SHA-256:
 
 `ccf1c5e9fb607934f790eb06cd828bf5a1d42e4f6e4d7913722debc4269c72b0`
@@ -77,79 +75,84 @@ Frozen live-manifest SHA-256:
 
 `SPEC-042 — blind out-of-sample live execution`
 
-Implementation status: `IMPLEMENTED_AWAITING_REVIEW`
+Implementation status: `IMPLEMENTED_REVIEWED_FOR_DIAGNOSIS`
 
-Owner verdict: `PENDING_DIAGNOSTIC_REVIEW`
+Owner verdict: `FAILURES_REQUIRE_DIAGNOSIS_NO_REPAIR_AUTHORIZED`
 
 Recorded objective result:
 
 - exactly three approved `gpt-5.6-luna` Responses API calls executed in frozen source order;
-- `store=False`; SDK, hidden, semantic, repair, and follow-up retries/calls all remained zero;
-- geology failed closed because a relationship referenced undeclared entity `spreading-processes`;
-- meteorology failed closed because propositions referenced undeclared entities `jet-stream-weather-transport` and `average-temperature-difference`;
-- civics admitted 20 entities, 10 relationships, 3 detected structures, and 30 representation decisions;
-- no source, prompt, compiler, semantic, representation, renderer, or evaluation adaptation occurred;
-- owner review determined that the next step is offline diagnosis before any repair or promotion decision.
+- geology failed closed on undeclared `spreading-processes`;
+- meteorology failed closed on undeclared `jet-stream-weather-transport` and `average-temperature-difference`;
+- civics passed deterministic admission and produced semantic/representation output;
+- frozen behavior remained unchanged throughout the run.
 
 ## Blind failure diagnosis
 
 `SPEC-043 — blind failure diagnosis`
 
-Implementation status: `IMPLEMENTED_AWAITING_REVIEW`
+Implementation status: `IMPLEMENTED_REVIEWED`
 
-Owner verdict: `PENDING`
+Owner verdict: `DIAGNOSIS_CONFIRMED_NO_CONTRACT_CHANGE_REPLICATION_REQUIRED`
 
-Recorded objective result:
+Accepted findings:
 
-- three rejected semantic objects were reconstructed from immutable SPEC-042 evidence;
-- two are classified `EXTRACTION_GRANULARITY`: the geology spreading-process endpoint and the meteorology transfer-event identity were source-supported but never declared;
-- one is classified `MODEL_ERROR`: the meteorology comparison introduced an unsupported `average-temperature-difference` baseline;
-- no `CONTRACT_GAP`, `VALIDATION_BUG`, or `AMBIGUOUS` primary classification was found;
-- all three share the immediate mechanism of dangling entity references, but their semantic causes differ;
-- evidence is `INSUFFICIENT_EVIDENCE` to justify changing the semantic contract now;
-- no provider/model call, external retrieval, repair, retry, semantic adaptation, or protected-state change occurred.
+- 2 rejected objects are `EXTRACTION_GRANULARITY` failures: source-supported process/event identities were used without corresponding entity declarations;
+- 1 rejected object is a genuine `MODEL_ERROR`: `average-temperature-difference` was unsupported by the source;
+- 0 `CONTRACT_GAP`;
+- 0 `VALIDATION_BUG`;
+- 0 `AMBIGUOUS`;
+- strict declared-identity validation behaved correctly and remains protected;
+- the current sample is insufficient to justify changing the semantic contract;
+- the correct next experiment is blind replication before repair.
+
+Canonical evidence:
+
+`examples/evaluations/spec-043-blind-failure-diagnosis-20260911/report.json`
 
 ## Current approved work packet
 
 ```text
-NONE
+specs/SPEC-044-blind-replication-source-set-freeze.md
 ```
 
-Status: `NONE`
+Status: `APPROVED_FOR_IMPLEMENTATION`
 
-Authority: `NONE`
+Authority: `LIVE_CALLS_EXPLICITLY_BOUNDED`
 
-Human gate: `NONE`
+Human gate: `OWNER_REVIEW`
 
 Promotion: `NOT_AUTHORIZED`
 
 ## Current gate
 
-SPEC-043 is implemented and awaiting owner review. Its canonical evidence is
-`examples/evaluations/spec-043-blind-failure-diagnosis-20260911/report.json`.
+SPEC-044 is approved for implementation.
 
-No packet is active. No repair, retry, semantic adaptation, provider/model call,
-external retrieval, semantic-contract change, or product promotion is authorized.
+The packet authorizes only public-source retrieval required to select and freeze a six-source blind replication packet and its later six-call manifest. It does **not** authorize any provider/model call, semantic extraction, source transmission, repair, retry, semantic adaptation, or implementation change to protected compiler behavior.
+
+On completion, SPEC-044 must clear the active pointer to `NONE` and stop for owner review before any source text is transmitted.
 
 ## Current product direction
 
-The diagnosed uncertainty is the interface between natural semantic extraction and deterministic admission:
+The present uncertainty is whether the SPEC-043 extraction-granularity pattern is systematic or incidental:
 
 ```text
-frozen unseen source
+frozen semantic/compiler behavior
         ↓
-model proposes semantic structure
+6 new unrelated blind sources
         ↓
-compiler validates declared identities + trusted semantics
+exact source packet + exact later call manifest frozen
         ↓
-PASS or FAIL CLOSED
+OWNER REVIEW
         ↓
-SPEC-043 diagnosis reconstructs and classifies each rejected object
+later bounded execution packet
         ↓
-owner decides which class of change, if any, is justified
+SPEC-043 taxonomy applied unchanged
+        ↓
+decide whether any narrow repair experiment is justified
 ```
 
-The immediate goal is owner review of the diagnosis, not improving the pass rate.
+The immediate goal is replication sample construction, not improving pass rate.
 
 ## Frozen / protected state
 
@@ -159,11 +162,11 @@ The immediate goal is owner review of the diagnosis, not improving the pass rate
 - SPEC-040 frozen harness/compiler identity `5622df131dc71346d5890f42ce16fe1e3e55f33a`;
 - SPEC-041 exact source packet and live-execution manifest;
 - SPEC-042 complete three-call run history and admitted/failed-closed outcomes;
-- all three exact source passage hashes;
-- raw SPEC-042 provider responses and provenance;
-- SPEC-043 evidence-only rejection reconstruction and diagnostic classifications;
+- all exact SPEC-041/042 source passage hashes and raw provider responses/provenance;
+- SPEC-043 rejection reconstruction, taxonomy, and accepted diagnosis;
 - prompt `spec-010-v1`;
 - trusted semantic vocabulary, grounding, provenance, and fail-closed behavior;
+- declared-identity invariant;
 - representation strategy rules and current renderer coverage;
 - SPEC-033 navigation semantics;
 - SPEC-034 representation diversity;
@@ -172,24 +175,29 @@ The immediate goal is owner review of the diagnosis, not improving the pass rate
 - SPEC-037 quiet My Map grammar;
 - unrelated user work.
 
-## Explicitly deferred / forbidden pending owner review
+## Explicitly forbidden during SPEC-044
 
 Do not:
 
-- call a provider/model;
-- retry or repair a provider result;
-- substitute, edit, or enrich a source;
+- call OpenAI or any other model/provider;
+- transmit selected source text to a model;
+- perform semantic extraction on selected sources;
+- retry or repair provider/model output;
 - modify extraction outputs;
 - add or normalize missing entities;
-- modify compiler/harness/prompt/schema after seeing source output;
+- modify prompt `spec-010-v1`;
+- modify extraction schema;
 - modify canonical semantic vocabulary or validation behavior;
-- complete the comparison renderer;
-- add worked-example capability;
-- create a learner/browser artifact from the civics result;
+- weaken declared-identity validation;
+- modify SPEC-039 strategy selection or renderer behavior;
+- complete comparison/worked-example renderer coverage;
+- redesign navigation or the learner-facing baseline;
 - implement Back/history;
 - add personalization, quizzes, mastery, or guided courses;
-- redesign navigation or the learner-facing baseline;
-- promote SPEC-042 or assign its final subjective product verdict.
+- assign expected semantic answers to the six blind sources;
+- choose sources for attractive expected output;
+- execute the later six-call manifest;
+- promote the product or assign a final architectural verdict.
 
 ## Coordination rule
 
