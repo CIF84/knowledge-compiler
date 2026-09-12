@@ -110,27 +110,57 @@ Canonical evidence:
 
 `examples/evaluations/spec-043-blind-failure-diagnosis-20260911/report.json`
 
+## Blind replication source set freeze
+
+`SPEC-044 — blind replication source set freeze`
+
+Implementation status: `IMPLEMENTED_AWAITING_REVIEW`
+
+Owner verdict: `PENDING`
+
+Recorded objective result:
+
+- six unrelated U.S. federal sources were selected in the predeclared domain order;
+- each exact explanatory passage is 300–650 words and is frozen with retrieval provenance and SHA-256 identity;
+- repository contamination checks found no prior URL, title, source ID, passage hash, or exact passage occurrence;
+- the later six-call manifest freezes one `gpt-5.6-luna` Responses API call per source, `store=False`, and zero SDK, semantic, repair, hidden, or follow-up retries/calls;
+- source transmission remains unauthorized pending a later canonical owner-approved execution packet;
+- SPEC-044 made zero provider/model calls and performed no semantic extraction or protected implementation change.
+
+Frozen packet SHA-256:
+
+`85f7a7be47fa827799d532ab7ca5edc03b359162894dc2ee4e72a750de28e52b`
+
+Frozen live-manifest SHA-256:
+
+`beaf3df4a941afc7fadf2abf13543affeae798e3d14486798cbb0060fccdc57e`
+
+Canonical evidence:
+
+`examples/evaluations/spec-044-blind-replication-source-set-freeze-20260912/report.json`
+
 ## Current approved work packet
 
 ```text
-specs/SPEC-044-blind-replication-source-set-freeze.md
+NONE
 ```
 
-Status: `APPROVED_FOR_IMPLEMENTATION`
+Status: `NONE`
 
-Authority: `LIVE_CALLS_EXPLICITLY_BOUNDED`
+Authority: `NONE`
 
-Human gate: `OWNER_REVIEW`
+Human gate: `NONE`
 
 Promotion: `NOT_AUTHORIZED`
 
 ## Current gate
 
-SPEC-044 is approved for implementation.
+SPEC-044 is implemented and awaiting owner review. Its canonical evidence is
+`examples/evaluations/spec-044-blind-replication-source-set-freeze-20260912/report.json`.
 
-The packet authorizes only public-source retrieval required to select and freeze a six-source blind replication packet and its later six-call manifest. It does **not** authorize any provider/model call, semantic extraction, source transmission, repair, retry, semantic adaptation, or implementation change to protected compiler behavior.
-
-On completion, SPEC-044 must clear the active pointer to `NONE` and stop for owner review before any source text is transmitted.
+No packet is active. No provider/model call, source transmission, semantic extraction,
+repair, retry, semantic adaptation, semantic-contract change, or product promotion is
+authorized.
 
 ## Current product direction
 
@@ -139,20 +169,18 @@ The present uncertainty is whether the SPEC-043 extraction-granularity pattern i
 ```text
 frozen semantic/compiler behavior
         ↓
-6 new unrelated blind sources
-        ↓
-exact source packet + exact later call manifest frozen
+6 new unrelated blind sources frozen exactly
         ↓
 OWNER REVIEW
         ↓
-later bounded execution packet
+later bounded execution packet, if separately approved
         ↓
 SPEC-043 taxonomy applied unchanged
         ↓
 decide whether any narrow repair experiment is justified
 ```
 
-The immediate goal is replication sample construction, not improving pass rate.
+The immediate goal is owner review of the frozen replication sample, not execution or improving pass rate.
 
 ## Frozen / protected state
 
@@ -164,6 +192,7 @@ The immediate goal is replication sample construction, not improving pass rate.
 - SPEC-042 complete three-call run history and admitted/failed-closed outcomes;
 - all exact SPEC-041/042 source passage hashes and raw provider responses/provenance;
 - SPEC-043 rejection reconstruction, taxonomy, and accepted diagnosis;
+- SPEC-044 six-source packet, fixed order, exact passages, source hashes, later execution manifest, frozen taxonomy, and decision framework;
 - prompt `spec-010-v1`;
 - trusted semantic vocabulary, grounding, provenance, and fail-closed behavior;
 - declared-identity invariant;
@@ -175,7 +204,7 @@ The immediate goal is replication sample construction, not improving pass rate.
 - SPEC-037 quiet My Map grammar;
 - unrelated user work.
 
-## Explicitly forbidden during SPEC-044
+## Explicitly forbidden pending owner review
 
 Do not:
 

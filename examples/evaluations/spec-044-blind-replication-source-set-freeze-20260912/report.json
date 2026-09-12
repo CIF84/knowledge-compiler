@@ -1,0 +1,244 @@
+{
+  "schema": "spec-044-blind-replication-source-freeze-report-v1",
+  "spec": "SPEC-044",
+  "status": "IMPLEMENTED_AWAITING_OWNER_REVIEW",
+  "promotion": "NOT_AUTHORIZED",
+  "packet": {
+    "path": "blind-source-packet.json",
+    "sha256": "85f7a7be47fa827799d532ab7ca5edc03b359162894dc2ee4e72a750de28e52b",
+    "source_count": 6,
+    "domain_order": [
+      "astronomy / planetary science",
+      "ecology / environmental systems",
+      "chemistry / materials science",
+      "biology / organismal or cellular mechanism",
+      "transportation / infrastructure systems",
+      "statistics / measurement methodology"
+    ]
+  },
+  "live_execution_manifest": {
+    "path": "live-execution-manifest.json",
+    "sha256": "beaf3df4a941afc7fadf2abf13543affeae798e3d14486798cbb0060fccdc57e",
+    "status": "FROZEN_PENDING_LATER_EXECUTION_AUTHORITY",
+    "source_transmission_authorized": false
+  },
+  "selected_sources": [
+    {
+      "ordinal": 1,
+      "source_id": "nasa-solar-system-formation-2026",
+      "domain_stratum": "astronomy / planetary science",
+      "institutional_publisher": "National Aeronautics and Space Administration",
+      "title": "How did our Solar System form?",
+      "source_sha256": "c0cb2519673b8f3ef23c0be2856e03790f53d44971cbff09d593190ab3fa155d",
+      "character_count": 2490,
+      "utf8_byte_count": 2510,
+      "word_count": 460,
+      "eligibility": "PASS"
+    },
+    {
+      "ordinal": 2,
+      "source_id": "epa-ecological-processes-2026",
+      "domain_stratum": "ecology / environmental systems",
+      "institutional_publisher": "U.S. Environmental Protection Agency",
+      "title": "Ecological Processes",
+      "source_sha256": "70e7e3d20325dd5d22e9cf4484934419447907ba9f6cf5a4dfd65ddcbfa80ad5",
+      "character_count": 2728,
+      "utf8_byte_count": 2734,
+      "word_count": 379,
+      "eligibility": "PASS"
+    },
+    {
+      "ordinal": 3,
+      "source_id": "doe-iron-platinum-atomic-structure-2017",
+      "domain_stratum": "chemistry / materials science",
+      "institutional_publisher": "U.S. Department of Energy, Office of Science",
+      "title": "Deciphering Material Properties at the Single-Atom Level",
+      "source_sha256": "e9d2260c9980239431fc195e7dc687afea93598af4f28d774ed5e4c4317f9e1e",
+      "character_count": 2664,
+      "utf8_byte_count": 2668,
+      "word_count": 380,
+      "eligibility": "PASS"
+    },
+    {
+      "ordinal": 4,
+      "source_id": "nhgri-dna-fact-sheet-2020",
+      "domain_stratum": "biology / organismal or cellular mechanism",
+      "institutional_publisher": "National Human Genome Research Institute",
+      "title": "Deoxyribonucleic Acid (DNA) Fact Sheet",
+      "source_sha256": "54e2147221cf186fe1b4f965422c69e815f986a7d009eddae9c01bf32ec25f89",
+      "character_count": 2239,
+      "utf8_byte_count": 2239,
+      "word_count": 365,
+      "eligibility": "PASS"
+    },
+    {
+      "ordinal": 5,
+      "source_id": "fhwa-traffic-bottleneck-concepts-2016",
+      "domain_stratum": "transportation / infrastructure systems",
+      "institutional_publisher": "Federal Highway Administration",
+      "title": "Chapter 3. Bottleneck Mitigation Concepts — Traffic Bottlenecks: Identification and Solutions",
+      "source_sha256": "1fd7e9851839f5f35cd2a231cd3ce5aea8196ec85cabd04694f681c063ea4345",
+      "character_count": 3068,
+      "utf8_byte_count": 3078,
+      "word_count": 476,
+      "eligibility": "PASS"
+    },
+    {
+      "ordinal": 6,
+      "source_id": "nist-measurement-uncertainty-2025",
+      "domain_stratum": "statistics / measurement methodology",
+      "institutional_publisher": "National Institute of Standards and Technology",
+      "title": "Measurement Uncertainty",
+      "source_sha256": "b3ae508f3982dfdd89f41a1d9ca59eb1f658b1648e3fae35168feba212046730",
+      "character_count": 2242,
+      "utf8_byte_count": 2242,
+      "word_count": 334,
+      "eligibility": "PASS"
+    }
+  ],
+  "source_selection": {
+    "authority_priority_rank_used_for_all_sources": 1,
+    "fixed_order_preserved": true,
+    "passage_word_bound": {
+      "minimum": 300,
+      "maximum": 650,
+      "result": "PASS"
+    },
+    "answer_key_created": false,
+    "semantic_shape_used_for_selection": false,
+    "model_behavior_inspected_during_selection": false,
+    "rejected_candidates": [
+      {
+        "domain_stratum": "astronomy / planetary science",
+        "candidate": "NASA source page, first K–2 explanatory passage",
+        "failed_rules": [
+          "182 words is below the 300-word minimum"
+        ]
+      },
+      {
+        "domain_stratum": "astronomy / planetary science",
+        "candidate": "NASA source page, first grade 3–5 explanatory passage",
+        "failed_rules": [
+          "222 words is below the 300-word minimum"
+        ]
+      }
+    ]
+  },
+  "repository_non_overlap": {
+    "checked_against": "HEAD 77e084013b2029b72036a95b2ebbdc701d5d372b before SPEC-044 artifacts were introduced",
+    "checks": [
+      "all six canonical URLs",
+      "all six source titles",
+      "all six stable source IDs",
+      "all six selected passage SHA-256 values",
+      "all six complete exact selected passages"
+    ],
+    "matches": 0,
+    "source_identity_specific_implementation_branches": 0,
+    "result": "PASS"
+  },
+  "protected_state": {
+    "frozen_harness_commit": "5622df131dc71346d5890f42ce16fe1e3e55f33a",
+    "frozen_executable_files": {
+      "src/knowledge_compiler/blind_evaluation.py": "cd4311f7504cb3af02c9d74f5721f3cf64e11b7aec374e9936afd9fa17cf7873",
+      "src/knowledge_compiler/blind_evaluation_harness.py": "6b9fcb305d5323913562e7d3c83f1516b58a384d5d237a8d6731f67c518b48e4",
+      "src/knowledge_compiler/openai_extractor.py": "3152640aa23a5049591d83b48f706d33e207d415dab311e67a58cfbf88067be3",
+      "src/knowledge_compiler/representation_strategy.py": "5ef4e0a602e16b63f46511a780fc405c85e7dbc5fe631cb47b8a3c248efe5a8f",
+      "src/knowledge_compiler/semantic_representation_compiler.py": "84dbfe048da4b27ecdad2139bd2db3c1a9ef1be56676496bc9fc18974dea107a"
+    },
+    "spec_038_baseline": {
+      "file_count": 50,
+      "aggregate_sha256": "453f7d2a233224628e03f5e1449650ec20bbff04ffae5ea07e9f6137cf54fd6e"
+    },
+    "spec_042_evidence": {
+      "file_count": 50,
+      "aggregate_sha256": "523abe4b6fd47d531650c9a48f00b65d06dccbe947af4af1d04cad3678ef5200"
+    },
+    "spec_043_report_sha256": "bbc42f9ece6031c971fea37b8d59fef8701d4fcd1dfd143acbfe72a184bdbbfc",
+    "source_or_test_implementation_changes": [],
+    "result": "PASS_BYTE_EQUIVALENT"
+  },
+  "external_source_retrieval": {
+    "allowed_scope": "Ordinary public HTTPS search, navigation, and GET requests for source selection and provenance capture only.",
+    "events": [
+      {
+        "outcome": "SUCCESS",
+        "request": "Public-web searches in the six fixed domain strata",
+        "result": "Priority-rank-1 U.S. federal candidates identified without authentication or paid APIs."
+      },
+      {
+        "outcome": "HTTP_200",
+        "request": "GET https://science.nasa.gov/astrobiology/learning-resources/alp/how-did-our-solar-system-form/"
+      },
+      {
+        "outcome": "HTTP_200",
+        "request": "GET https://www.epa.gov/report-environment/ecological-processes"
+      },
+      {
+        "outcome": "HTTP_200",
+        "request": "GET https://www.energy.gov/science/bes/articles/deciphering-material-properties-single-atom-level"
+      },
+      {
+        "outcome": "HTTP_200",
+        "request": "GET https://www.genome.gov/about-genomics/fact-sheets/Deoxyribonucleic-Acid-Fact-Sheet"
+      },
+      {
+        "outcome": "HTTP_200",
+        "request": "GET https://www.fhwa.dot.gov/publications/research/operations/16064/004.cfm"
+      },
+      {
+        "outcome": "HTTP_200",
+        "request": "GET https://www.nist.gov/itl/sed/topic-areas/measurement-uncertainty"
+      }
+    ],
+    "tooling_observations": [
+      "The project virtual environment did not contain the optional requests package, so the first local Python retrieval command stopped before making a network request; system curl then performed the six authorized public GETs. No dependency was added."
+    ],
+    "external_enrichment_after_freeze": 0,
+    "private_or_authenticated_sources": 0
+  },
+  "execution": {
+    "openai_responses_api_calls": 0,
+    "other_model_or_provider_calls": 0,
+    "source_transmissions_to_models": 0,
+    "semantic_extraction_runs": 0,
+    "semantic_retries": 0,
+    "repair_calls": 0,
+    "source_retrieval_only": true
+  },
+  "validation": {
+    "artifact_json": "PASS",
+    "source_count_and_fixed_order": "PASS",
+    "passage_counts_and_hashes": "PASS",
+    "packet_hash": "PASS",
+    "manifest_call_and_retry_bounds": "PASS",
+    "manifest_source_id_hash_and_count_alignment": "PASS",
+    "frozen_spec_040_packet_loader": "PASS (6 sources)",
+    "focused_blind_harness": "20 passed",
+    "control_plane_pre_completion": "12 passed, 1 expected lifecycle failure because the completed packet had not yet been cleared",
+    "control_plane_post_completion": "13 passed",
+    "complete_offline_suite": "560 passed",
+    "git_diff_check": "PASS",
+    "secret_safety": "PASS"
+  },
+  "files_changed": [
+    "STATUS.md",
+    "specs/SPEC-044-blind-replication-source-set-freeze.md",
+    "examples/evaluations/spec-044-blind-replication-source-set-freeze-20260912/blind-source-packet.json",
+    "examples/evaluations/spec-044-blind-replication-source-set-freeze-20260912/live-execution-manifest.json",
+    "examples/evaluations/spec-044-blind-replication-source-set-freeze-20260912/report.json"
+  ],
+  "dependencies_added": [],
+  "dependencies_removed": [],
+  "deviations": [],
+  "owner_review": {
+    "status": "PENDING",
+    "question": "Is this six-source packet a sufficiently blind, diverse, and uncontaminated replication sample to authorize one frozen model call per source without changing any semantic/compiler behavior?",
+    "transmission_authorized": false
+  },
+  "repository_completion": {
+    "commit": "SELF_REFERENTIAL_COMMIT_SHA_REPORTED_IN_FINAL_HANDOFF",
+    "push_target": "origin/main",
+    "required_finish_state": "HEAD_EQUALS_ORIGIN_MAIN_AND_WORKING_TREE_CLEAN"
+  }
+}

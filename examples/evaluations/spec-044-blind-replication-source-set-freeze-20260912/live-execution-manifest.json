@@ -1,0 +1,179 @@
+{
+  "schema": "spec-044-frozen-live-execution-manifest-v1",
+  "status": "FROZEN_PENDING_LATER_EXECUTION_AUTHORITY",
+  "approval": {
+    "live_execution_authorized": false,
+    "source_transmission_authorized": false,
+    "required_next_action": "A later canonical execution packet must be explicitly approved by the owner before any source text is transmitted to OpenAI or another model/provider."
+  },
+  "packet": {
+    "path": "blind-source-packet.json",
+    "sha256": "85f7a7be47fa827799d532ab7ca5edc03b359162894dc2ee4e72a750de28e52b",
+    "source_count": 6
+  },
+  "call_contract": {
+    "provider": "OpenAI Responses API",
+    "model": "gpt-5.6-luna",
+    "call_purpose": "semantic extraction with deterministic local grounding and canonical validation",
+    "maximum_total_calls": 6,
+    "calls_per_source": 1,
+    "execution_order": [
+      "nasa-solar-system-formation-2026",
+      "epa-ecological-processes-2026",
+      "doe-iron-platinum-atomic-structure-2017",
+      "nhgri-dna-fact-sheet-2020",
+      "fhwa-traffic-bottleneck-concepts-2016",
+      "nist-measurement-uncertainty-2025"
+    ],
+    "storage": {
+      "store": false
+    },
+    "source_specific_prompt_edits": 0,
+    "implementation_adaptations_between_calls": 0,
+    "external_retrieval_or_enrichment_during_execution": 0,
+    "canonicalization_model_follow_up_calls": 0
+  },
+  "prompt": {
+    "prompt_version": "spec-010-v1",
+    "schema": "knowledge_extraction",
+    "relationship_grammar": "current frozen trusted relationship vocabulary",
+    "prompt_repair_after_results": false,
+    "source_specific_edits": false
+  },
+  "retry_policy": {
+    "sdk_retries": 0,
+    "semantic_retries": 0,
+    "repair_calls": 0,
+    "hidden_retries": 0,
+    "follow_up_calls": 0,
+    "additional_calls_without_new_approval": 0
+  },
+  "failure_policy": {
+    "frozen_commit_or_file_mismatch": "Stop before any provider call.",
+    "malformed_packet": "Stop before any provider call.",
+    "implementation_change_after_source_freeze": "Invalidate the run and require a newly designated frozen experiment.",
+    "provider_or_validation_failure": "Preserve the complete failed attempt, perform no retry, and continue only to the next already-authorized frozen source.",
+    "fail_closed_behavior": "Unchanged from the frozen harness and semantic validator."
+  },
+  "frozen_implementation": {
+    "commit": "5622df131dc71346d5890f42ce16fe1e3e55f33a",
+    "files": {
+      "src/knowledge_compiler/blind_evaluation.py": "cd4311f7504cb3af02c9d74f5721f3cf64e11b7aec374e9936afd9fa17cf7873",
+      "src/knowledge_compiler/blind_evaluation_harness.py": "6b9fcb305d5323913562e7d3c83f1516b58a384d5d237a8d6731f67c518b48e4",
+      "src/knowledge_compiler/openai_extractor.py": "3152640aa23a5049591d83b48f706d33e207d415dab311e67a58cfbf88067be3",
+      "src/knowledge_compiler/representation_strategy.py": "5ef4e0a602e16b63f46511a780fc405c85e7dbc5fe631cb47b8a3c248efe5a8f",
+      "src/knowledge_compiler/semantic_representation_compiler.py": "84dbfe048da4b27ecdad2139bd2db3c1a9ef1be56676496bc9fc18974dea107a"
+    },
+    "learner_facing_baseline": {
+      "identity": "SPEC-038 accepted baseline",
+      "file_count": 50,
+      "aggregate_sha256": "453f7d2a233224628e03f5e1449650ec20bbff04ffae5ea07e9f6137cf54fd6e"
+    },
+    "spec_042_execution_evidence": {
+      "file_count": 50,
+      "aggregate_sha256": "523abe4b6fd47d531650c9a48f00b65d06dccbe947af4af1d04cad3678ef5200"
+    },
+    "spec_043_diagnosis_report_sha256": "bbc42f9ece6031c971fea37b8d59fef8701d4fcd1dfd143acbfe72a184bdbbfc",
+    "policy": "No frozen compiler, harness, prompt, schema, semantic vocabulary, grounding, provenance, representation rule, renderer, learner-facing baseline, or evaluation-rule change is permitted after this source freeze."
+  },
+  "source_transmission": [
+    {
+      "ordinal": 1,
+      "source_id": "nasa-solar-system-formation-2026",
+      "source_sha256": "c0cb2519673b8f3ef23c0be2856e03790f53d44971cbff09d593190ab3fa155d",
+      "character_count": 2490,
+      "utf8_byte_count": 2510,
+      "word_count": 460
+    },
+    {
+      "ordinal": 2,
+      "source_id": "epa-ecological-processes-2026",
+      "source_sha256": "70e7e3d20325dd5d22e9cf4484934419447907ba9f6cf5a4dfd65ddcbfa80ad5",
+      "character_count": 2728,
+      "utf8_byte_count": 2734,
+      "word_count": 379
+    },
+    {
+      "ordinal": 3,
+      "source_id": "doe-iron-platinum-atomic-structure-2017",
+      "source_sha256": "e9d2260c9980239431fc195e7dc687afea93598af4f28d774ed5e4c4317f9e1e",
+      "character_count": 2664,
+      "utf8_byte_count": 2668,
+      "word_count": 380
+    },
+    {
+      "ordinal": 4,
+      "source_id": "nhgri-dna-fact-sheet-2020",
+      "source_sha256": "54e2147221cf186fe1b4f965422c69e815f986a7d009eddae9c01bf32ec25f89",
+      "character_count": 2239,
+      "utf8_byte_count": 2239,
+      "word_count": 365
+    },
+    {
+      "ordinal": 5,
+      "source_id": "fhwa-traffic-bottleneck-concepts-2016",
+      "source_sha256": "1fd7e9851839f5f35cd2a231cd3ce5aea8196ec85cabd04694f681c063ea4345",
+      "character_count": 3068,
+      "utf8_byte_count": 3078,
+      "word_count": 476
+    },
+    {
+      "ordinal": 6,
+      "source_id": "nist-measurement-uncertainty-2025",
+      "source_sha256": "b3ae508f3982dfdd89f41a1d9ca59eb1f658b1648e3fae35168feba212046730",
+      "character_count": 2242,
+      "utf8_byte_count": 2242,
+      "word_count": 334
+    }
+  ],
+  "replication_evaluation_plan": {
+    "primary_taxonomy": [
+      "MODEL_ERROR",
+      "CONTRACT_GAP",
+      "EXTRACTION_GRANULARITY",
+      "VALIDATION_BUG",
+      "AMBIGUOUS"
+    ],
+    "aggregate_questions": [
+      "How many sources pass deterministic admission completely?",
+      "How many sources fail closed?",
+      "Across all rejected semantic objects, what are the counts by SPEC-043 classification?",
+      "How many failures involve undeclared identities that are nevertheless materially source-supported?",
+      "Of those, how many are process/event reifications absent from the entity array?",
+      "Does the same immediate dangling-identity mechanism recur across at least two unrelated new domain strata?",
+      "Are genuine model errors more frequent than extraction-granularity failures?",
+      "Is there any evidence of CONTRACT_GAP or VALIDATION_BUG?",
+      "Does the replication evidence justify a narrow extraction→contract alignment experiment, or remain insufficient?"
+    ],
+    "automatic_contract_change_threshold": null,
+    "owner_review_required_for_next_experiment": true
+  },
+  "owner_decision_framework": {
+    "A_SYSTEMATIC_ALIGNMENT_SIGNAL": "Source-supported undeclared process/event identities recur across unrelated new strata, especially with otherwise valid semantics; evidence supports designing a narrow extraction→contract alignment experiment while preserving strict declared-identity validation.",
+    "B_HETEROGENEOUS_FAILURES": "Failures do not recur by mechanism or classification; do not optimize the architecture around SPEC-043's two granularity cases.",
+    "C_MODEL_ERROR_DOMINATED": "Unsupported semantic inventions dominate; the next problem is extraction/model reliability rather than contract alignment.",
+    "D_CLEAN_REPLICATION": "The new sample largely or completely passes; retain the current contract and treat the original granularity cases as insufficient evidence of a systematic defect.",
+    "diagnostic_only": true,
+    "implementation_changes_authorized": false
+  },
+  "raw_response_and_provenance_preservation": {
+    "required_in_later_execution_packet": true,
+    "required_fields": [
+      "exact provider input",
+      "full raw provider response",
+      "request identifier",
+      "model identifier",
+      "timing",
+      "token usage",
+      "available cost evidence",
+      "grounding and validation result",
+      "complete failure detail"
+    ]
+  },
+  "token_and_cost_accounting": {
+    "passage_character_total": 15431,
+    "passage_utf8_byte_total": 15471,
+    "passage_word_total": 2394,
+    "monetary_cost_estimate": "NOT_PROMISED_OR_ESTIMATED"
+  }
+}
