@@ -98,47 +98,66 @@ VALIDATION_BUG          0
 AMBIGUOUS               0
 ```
 
+## Extraction reliability failure-mode analysis
+
+`SPEC-046 — extraction reliability failure-mode analysis`
+
+Implementation status: `IMPLEMENTED_AWAITING_REVIEW`
+
+Owner verdict: `PENDING`
+
+Recorded objective result:
+
+- all nine blind source outcomes and seven rejected objects reconcile with immutable SPEC-042 through SPEC-045 evidence;
+- failure origins span four stages: 3 `ENTITY_INVENTORY`, 2 `RELATIONSHIP_SEMANTICS`, 1 `PROPOSITION_CONSTRUCTION`, and 1 `EVIDENCE_FIDELITY`;
+- `ENTITY_INVENTORY` is the only origin stage recurring across unrelated domains, but no single stage is a majority of rejected objects;
+- extraction reliability is 4/9 admitted sources, while the trusted boundary prevented all 7 known invalid or malformed objects from admission;
+- exactly one next experiment class is recommended: `EXTRACTION_DECOMPOSITION`;
+- no repair, model/provider call, semantic change, behavior change, or promotion occurred.
+
+Canonical evidence:
+
+`examples/evaluations/spec-046-extraction-reliability-failure-mode-analysis-20260913/report.json`
+
 ## Current approved work packet
 
 ```text
-specs/SPEC-046-extraction-reliability-failure-mode-analysis.md
+NONE
 ```
 
-Status: `APPROVED_FOR_IMPLEMENTATION`
+Status: `NONE`
 
-Authority: `OFFLINE_ONLY`
+Authority: `NONE`
 
-Human gate: `OWNER_REVIEW`
+Human gate: `NONE`
 
 Promotion: `NOT_AUTHORIZED`
 
 ## Current gate
 
-SPEC-046 is authorized to analyze immutable SPEC-042 through SPEC-045 evidence offline and determine where extraction failures originate.
+SPEC-046 is implemented and awaiting owner review. Its canonical evidence is
+`examples/evaluations/spec-046-extraction-reliability-failure-mode-analysis-20260913/report.json`.
 
-It must distinguish failure **origin stage** from deterministic **detection stage**, aggregate failure modes across all nine blind sources, separate extraction reliability from trust-boundary reliability, map observed origin stages to candidate intervention classes, and recommend exactly one next experiment class.
-
-No repair or behavior change is authorized.
-
-No provider/model/network call is authorized.
+No packet is active. No provider/model call, retry, repair, semantic adaptation,
+behavior change, implementation of the recommendation, or promotion is authorized.
 
 ## Current product question
 
 ```text
-9 blind sources
+9 blind sources / 7 rejected objects
         ↓
-4 admitted / 5 failed closed
+4 origin stages
         ↓
-7 known rejected semantic objects
+ENTITY_INVENTORY is the only cross-domain recurrence
         ↓
-classify WHERE errors originate
+extraction reliability 4/9
         ↓
-separate extraction failure from trust-boundary success
+trust-boundary containment 7/7
         ↓
-identify one evidence-backed intervention class to test next
+OWNER REVIEW of EXTRACTION_DECOMPOSITION recommendation
 ```
 
-The goal is not to improve pass rate in this packet. The goal is to choose the right experimental lever.
+The immediate goal is owner review of the diagnostic result and recommended experiment class, not implementation.
 
 ## Frozen / protected state
 

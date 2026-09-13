@@ -1,0 +1,1002 @@
+{
+  "aggregate_detection_stage_analysis": {
+    "CANONICAL_VALIDATION": {
+      "classification_composition": {
+        "EXTRACTION_GRANULARITY": 3,
+        "MODEL_ERROR": 1
+      },
+      "rejected_object_count": 4,
+      "source_count_affected": 3
+    },
+    "GROUNDING_RESOLUTION": {
+      "classification_composition": {
+        "MODEL_ERROR": 3
+      },
+      "rejected_object_count": 3,
+      "source_count_affected": 2
+    }
+  },
+  "aggregate_origin_stage_analysis": {
+    "dominance_assessment": "HETEROGENEOUS_WITH_ENTITY_INVENTORY_MOST_RECURRENT_BUT_NOT_A_MAJORITY",
+    "origin_stages": [
+      {
+        "classification_composition": {
+          "EXTRACTION_GRANULARITY": 3
+        },
+        "cross_domain_recurrence": true,
+        "domains": [
+          "biology / organismal or cellular mechanism",
+          "geology / Earth systems",
+          "meteorology / atmospheric systems"
+        ],
+        "origin_stage": "ENTITY_INVENTORY",
+        "rejected_object_count": 3,
+        "source_count_affected": 3,
+        "source_ids": [
+          "nhgri-dna-fact-sheet-2020",
+          "noaa-nesdis-jet-stream-2025",
+          "usgs-divergent-plate-boundaries-1996"
+        ]
+      },
+      {
+        "classification_composition": {
+          "MODEL_ERROR": 1
+        },
+        "cross_domain_recurrence": false,
+        "domains": [
+          "chemistry / materials science"
+        ],
+        "origin_stage": "EVIDENCE_FIDELITY",
+        "rejected_object_count": 1,
+        "source_count_affected": 1,
+        "source_ids": [
+          "doe-iron-platinum-atomic-structure-2017"
+        ]
+      },
+      {
+        "classification_composition": {
+          "MODEL_ERROR": 1
+        },
+        "cross_domain_recurrence": false,
+        "domains": [
+          "meteorology / atmospheric systems"
+        ],
+        "origin_stage": "PROPOSITION_CONSTRUCTION",
+        "rejected_object_count": 1,
+        "source_count_affected": 1,
+        "source_ids": [
+          "noaa-nesdis-jet-stream-2025"
+        ]
+      },
+      {
+        "classification_composition": {
+          "MODEL_ERROR": 2
+        },
+        "cross_domain_recurrence": false,
+        "domains": [
+          "statistics / measurement methodology"
+        ],
+        "origin_stage": "RELATIONSHIP_SEMANTICS",
+        "rejected_object_count": 2,
+        "source_count_affected": 1,
+        "source_ids": [
+          "nist-measurement-uncertainty-2025"
+        ]
+      }
+    ],
+    "summary": "Failures originate in four stages. ENTITY_INVENTORY is largest at 3/7 and is the only stage recurring across unrelated domains; no single origin stage exceeds half of rejected objects."
+  },
+  "deviations": [],
+  "evidence_integrity": {
+    "directories": {
+      "spec042_dir": {
+        "aggregate_sha256": "523abe4b6fd47d531650c9a48f00b65d06dccbe947af4af1d04cad3678ef5200",
+        "file_count": 50,
+        "verified": true
+      },
+      "spec045_dir": {
+        "aggregate_sha256": "58761c6de9cee6591d45d098197b2f54046fe616cf346eabf22f17ecdd222b93",
+        "file_count": 103,
+        "verified": true
+      }
+    },
+    "files": {
+      "spec041_manifest": {
+        "path": "examples/evaluations/spec-041-blind-source-set-freeze-20260911/live-execution-manifest.json",
+        "sha256": "f45c8797b94a0a5d6a1902aa50b71a63af6277dfcf1e6956a2d2d1107339d075",
+        "verified": true
+      },
+      "spec041_packet": {
+        "path": "examples/evaluations/spec-041-blind-source-set-freeze-20260911/blind-source-packet.json",
+        "sha256": "ccf1c5e9fb607934f790eb06cd828bf5a1d42e4f6e4d7913722debc4269c72b0",
+        "verified": true
+      },
+      "spec042_report": {
+        "path": "examples/evaluations/spec-042-blind-out-of-sample-live-execution-20260911/report.json",
+        "sha256": "e750df70e87ef81211c1fa58492d4a596e712ce759e2aadfa81e078aa9d762ef",
+        "verified": true
+      },
+      "spec043_report": {
+        "path": "examples/evaluations/spec-043-blind-failure-diagnosis-20260911/report.json",
+        "sha256": "bbc42f9ece6031c971fea37b8d59fef8701d4fcd1dfd143acbfe72a184bdbbfc",
+        "verified": true
+      },
+      "spec044_manifest": {
+        "path": "examples/evaluations/spec-044-blind-replication-source-set-freeze-20260912/live-execution-manifest.json",
+        "sha256": "beaf3df4a941afc7fadf2abf13543affeae798e3d14486798cbb0060fccdc57e",
+        "verified": true
+      },
+      "spec044_packet": {
+        "path": "examples/evaluations/spec-044-blind-replication-source-set-freeze-20260912/blind-source-packet.json",
+        "sha256": "85f7a7be47fa827799d532ab7ca5edc03b359162894dc2ee4e72a750de28e52b",
+        "verified": true
+      },
+      "spec044_report": {
+        "path": "examples/evaluations/spec-044-blind-replication-source-set-freeze-20260912/report.json",
+        "sha256": "e11e67b59d54106ba665764c037df0c6d522e416d501c3a4593f2a2c9a29f663",
+        "verified": true
+      },
+      "spec045_report": {
+        "path": "examples/evaluations/spec-045-blind-replication-live-execution-20260912/report.json",
+        "sha256": "8e0d5bc5d362eeabff039e8399082faee74f47c8dae6b48706b8f6e259fdf287",
+        "verified": true
+      }
+    },
+    "historical_classifications_unchanged": true,
+    "nine_source_identities_and_outcomes_verified": true,
+    "protected_implementation_and_evidence_unchanged": true,
+    "rejected_object_total_reconciled": true
+  },
+  "execution_integrity": {
+    "behavior_changes": 0,
+    "deterministic_repairs": 0,
+    "external_evidence_retrievals": 0,
+    "historical_output_regenerations": 0,
+    "model_calls": 0,
+    "provider_calls": 0,
+    "semantic_output_modifications": 0,
+    "web_calls": 0
+  },
+  "failure_inventory": [
+    {
+      "confidence": "HIGH",
+      "detection_stage": "CANONICAL_VALIDATION",
+      "domain": "geology / Earth systems",
+      "exact_provider_proposal": {
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "quote": "spreading processes have already torn Saudi Arabia away from the rest of the African continent, forming the Red Sea."
+          }
+        ],
+        "id": "rel-5",
+        "origin": "SOURCE",
+        "relationship_type": "CREATES",
+        "source_entity_id": "spreading-processes",
+        "statement": "Spreading processes formed the Red Sea by tearing Saudi Arabia away from Africa.",
+        "target_entity_id": "red-sea"
+      },
+      "exact_source_evidence": [
+        {
+          "assessment": "SUPPORTS",
+          "document_id": "text-a9539d135ff1577d",
+          "end_char": 2135,
+          "quote": "spreading processes have already torn Saudi Arabia away from the rest of the African continent, forming the Red Sea.",
+          "start_char": 2019
+        }
+      ],
+      "existing_spec043_primary_classification": "EXTRACTION_GRANULARITY",
+      "experiment": "SPEC-042 / SPEC-043",
+      "object_id": "rel-5",
+      "object_kind": "RELATIONSHIP",
+      "origin_stage": "ENTITY_INVENTORY",
+      "rationale": "A source-supported spreading-process identity was first omitted from the entity inventory, then rejected when the relationship endpoint was checked against declared entities.",
+      "recorded_detection_stage": "GROUNDING_AND_SEMANTIC_VALIDATION",
+      "secondary_findings": [],
+      "source_id": "usgs-divergent-plate-boundaries-1996",
+      "source_level_status": "FAILED_CLOSED",
+      "validation_or_grounding_error": "relationship 'rel-5' references unknown entities: ['spreading-processes']"
+    },
+    {
+      "confidence": "HIGH",
+      "detection_stage": "CANONICAL_VALIDATION",
+      "domain": "meteorology / atmospheric systems",
+      "exact_provider_proposal": {
+        "comparison_operator": null,
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "quote": "The fast-moving air currents in a jet stream can transport weather systems across the United States"
+          }
+        ],
+        "origin": "SOURCE",
+        "proposition_type": "TRANSFER_EVENT",
+        "relationship_type": "TRANSFERS_TO",
+        "role_bindings": [
+          {
+            "entity_id": "jet-stream-weather-transport",
+            "role": "EVENT"
+          },
+          {
+            "entity_id": "weather-system",
+            "role": "OBJECT"
+          },
+          {
+            "entity_id": "united-states",
+            "role": "DESTINATION"
+          }
+        ],
+        "statement": "Jet streams transport weather systems across the United States."
+      },
+      "exact_source_evidence": [
+        {
+          "assessment": "SUPPORTS",
+          "document_id": "text-256ade61be620cfa",
+          "end_char": 1614,
+          "quote": "The fast-moving air currents in a jet stream can transport weather systems across the United States",
+          "start_char": 1515
+        }
+      ],
+      "existing_spec043_primary_classification": "EXTRACTION_GRANULARITY",
+      "experiment": "SPEC-042 / SPEC-043",
+      "object_id": "proposition-transfer-event-ca132e97bce01eea",
+      "object_kind": "PROPOSITION",
+      "origin_stage": "ENTITY_INVENTORY",
+      "rationale": "The supported transport event was used as a proposition role identity without a corresponding PROCESS entity declaration; strict declared-reference validation detected the omission.",
+      "recorded_detection_stage": "GROUNDING_AND_SEMANTIC_VALIDATION",
+      "secondary_findings": [],
+      "source_id": "noaa-nesdis-jet-stream-2025",
+      "source_level_status": "FAILED_CLOSED",
+      "validation_or_grounding_error": "proposition 'proposition-transfer-event-ca132e97bce01eea' references unknown entities: ['jet-stream-weather-transport']"
+    },
+    {
+      "confidence": "HIGH",
+      "detection_stage": "CANONICAL_VALIDATION",
+      "domain": "meteorology / atmospheric systems",
+      "exact_provider_proposal": {
+        "comparison_operator": "GREATER_THAN",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "quote": "But dramatic temperature differences between the warm and cool air masses can cause jet streams to move at much higher speeds"
+          }
+        ],
+        "origin": "SOURCE",
+        "proposition_type": "COMPARISON_CONDITION",
+        "relationship_type": "CAUSES",
+        "role_bindings": [
+          {
+            "entity_id": "temperature-difference",
+            "role": "LEFT_OPERAND"
+          },
+          {
+            "entity_id": "average-temperature-difference",
+            "role": "RIGHT_OPERAND"
+          },
+          {
+            "entity_id": "jet-stream-speed",
+            "role": "OUTCOME"
+          }
+        ],
+        "statement": "When the difference between warm and cool air masses is dramatic, jet-stream speed is greater than its average speed."
+      },
+      "exact_source_evidence": [
+        {
+          "assessment": "SUPPORTS_CAUSAL_CORE_BUT_NOT_RIGHT_OPERAND",
+          "document_id": "text-256ade61be620cfa",
+          "end_char": 917,
+          "quote": "But dramatic temperature differences between the warm and cool air masses can cause jet streams to move at much higher speeds",
+          "start_char": 792
+        },
+        {
+          "assessment": "LIMITS_SUPPORT_DIFFERENT_AVERAGED_QUANTITY",
+          "document_id": "text-256ade61be620cfa",
+          "end_char": 791,
+          "quote": "On average, jet streams move at about 110 miles per hour.",
+          "start_char": 734
+        }
+      ],
+      "existing_spec043_primary_classification": "MODEL_ERROR",
+      "experiment": "SPEC-042 / SPEC-043",
+      "object_id": "proposition-comparison-condition-bf72862321e8611b",
+      "object_kind": "PROPOSITION",
+      "origin_stage": "PROPOSITION_CONSTRUCTION",
+      "rationale": "The comparison proposition introduced an unsupported average-temperature-difference operand. Its missing declaration triggered rejection, but declaring it would not cure the unsupported semantic construction.",
+      "recorded_detection_stage": "GROUNDING_AND_SEMANTIC_VALIDATION",
+      "secondary_findings": [
+        "ENTITY_INVENTORY"
+      ],
+      "source_id": "noaa-nesdis-jet-stream-2025",
+      "source_level_status": "FAILED_CLOSED",
+      "validation_or_grounding_error": "proposition 'proposition-comparison-condition-bf72862321e8611b' references unknown entities: ['average-temperature-difference']"
+    },
+    {
+      "confidence": "HIGH",
+      "detection_stage": "GROUNDING_RESOLUTION",
+      "domain": "chemistry / materials science",
+      "exact_provider_proposal": {
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "quote": "They identified rich structural variety and chemical order/disorder with unprecedented 3D detail including atomic composition, grain boundaries, anti-phase boundaries, anti-site point defects and swap defects."
+          }
+        ],
+        "id": "claim-4",
+        "origin": "SOURCE",
+        "statement": "The nanoparticle exhibited rich structural variety and chemical order/disorder, including several types of boundaries and point defects."
+      },
+      "exact_source_evidence": [
+        {
+          "assessment": "SUPPORTS",
+          "document_id": "text-e9d2260c99802394",
+          "end_char": 1896,
+          "quote": "They identified rich structural variety and chemical order/disorder with unprecedented 3D detail including atomic composition, grain boundaries, anti-phase boundaries (where atoms are arranged in the opposite order of the perfect, parent crystal), anti-site point defects and swap defects (where individual or a pair of nearest-neighbor atoms switch places).",
+          "start_char": 1538
+        }
+      ],
+      "existing_spec043_primary_classification": "MODEL_ERROR",
+      "experiment": "SPEC-045",
+      "object_id": "claim-4",
+      "object_kind": "CLAIM",
+      "origin_stage": "EVIDENCE_FIDELITY",
+      "rationale": "The claim meaning is supported, but the provider removed parenthetical text and presented the resulting paraphrase as an exact quote; exact source resolution correctly failed.",
+      "recorded_detection_stage": "EXTRACTION_BOUNDARY",
+      "secondary_findings": [],
+      "source_id": "doe-iron-platinum-atomic-structure-2017",
+      "source_level_status": "FAILED_CLOSED",
+      "validation_or_grounding_error": "evidence quote was not found in source: 'They identified rich structural variety and chemical order/disorder with unprecedented 3D detail including atomic composition, grain boundaries, anti-phase boundaries, anti-site point defects and swap defects.'",
+      "validator_observed_in_run": true
+    },
+    {
+      "confidence": "HIGH",
+      "detection_stage": "CANONICAL_VALIDATION",
+      "domain": "biology / organismal or cellular mechanism",
+      "exact_provider_proposal": {
+        "confidence": 0.99,
+        "evidence": [
+          {
+            "quote": "Deoxyribonucleic acid (DNA) is a molecule that contains the biological instructions that make each species unique."
+          }
+        ],
+        "id": "rel-dna-is-molecule",
+        "origin": "SOURCE",
+        "relationship_type": "IS_A",
+        "source_entity_id": "dna",
+        "statement": "DNA is a molecule.",
+        "target_entity_id": "molecule"
+      },
+      "exact_source_evidence": [
+        {
+          "assessment": "SUPPORTS",
+          "document_id": "text-54e2147221cf186f",
+          "end_char": 114,
+          "quote": "Deoxyribonucleic acid (DNA) is a molecule that contains the biological instructions that make each species unique.",
+          "start_char": 0
+        }
+      ],
+      "existing_spec043_primary_classification": "EXTRACTION_GRANULARITY",
+      "experiment": "SPEC-045",
+      "object_id": "rel-dna-is-molecule",
+      "object_kind": "RELATIONSHIP",
+      "origin_stage": "ENTITY_INVENTORY",
+      "rationale": "The source-supported molecule endpoint was omitted from the entity array and was caught by declared-reference validation.",
+      "recorded_detection_stage": "GROUNDING_AND_SEMANTIC_VALIDATION",
+      "secondary_findings": [],
+      "source_id": "nhgri-dna-fact-sheet-2020",
+      "source_level_status": "FAILED_CLOSED",
+      "validation_or_grounding_error": "relationship 'rel-dna-is-molecule' references unknown entities: ['molecule']",
+      "validator_observed_in_run": true
+    },
+    {
+      "confidence": "HIGH",
+      "detection_stage": "GROUNDING_RESOLUTION",
+      "domain": "statistics / measurement methodology",
+      "exact_provider_proposal": {
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "quote": "the measurand) has a numerical magnitude and a reference"
+          }
+        ],
+        "id": "measurand-magnitude",
+        "origin": "SOURCE",
+        "relationship_type": "PART_OF",
+        "source_entity_id": "measurand",
+        "statement": "The measurand has a numerical magnitude.",
+        "target_entity_id": "numerical-magnitude"
+      },
+      "exact_source_evidence": [
+        {
+          "assessment": "SUPPORTS",
+          "document_id": "text-b3ae508f3982dfdd",
+          "end_char": 380,
+          "quote": "This property that is the object of measurement (measurand) has a numerical magnitude and a reference that gives meaning to that numerical magnitude: for example, the mass of the International Prototype Kilogram is 1 kg.",
+          "start_char": 160
+        }
+      ],
+      "existing_spec043_primary_classification": "MODEL_ERROR",
+      "experiment": "SPEC-045",
+      "object_id": "measurand-magnitude",
+      "object_kind": "RELATIONSHIP",
+      "origin_stage": "RELATIONSHIP_SEMANTICS",
+      "rationale": "The proposed PART_OF direction does not faithfully express that a measurand has a magnitude, and its evidence excerpt is also non-verbatim. Exact grounding detected the quote defect before later admission.",
+      "recorded_detection_stage": "EXTRACTION_BOUNDARY",
+      "secondary_findings": [
+        "EVIDENCE_FIDELITY"
+      ],
+      "source_id": "nist-measurement-uncertainty-2025",
+      "source_level_status": "FAILED_CLOSED",
+      "validation_or_grounding_error": "evidence quote was not found in source: 'the measurand) has a numerical magnitude and a reference'",
+      "validator_observed_in_run": true
+    },
+    {
+      "confidence": "HIGH",
+      "detection_stage": "GROUNDING_RESOLUTION",
+      "domain": "statistics / measurement methodology",
+      "exact_provider_proposal": {
+        "confidence": 0.96,
+        "evidence": [
+          {
+            "quote": "a parameter, associated with the result of a measurement"
+          }
+        ],
+        "id": "measurement-uncertainty-associated-result",
+        "origin": "SOURCE",
+        "relationship_type": "PART_OF",
+        "source_entity_id": "measurement-uncertainty",
+        "statement": "Measurement uncertainty is associated with the result of a measurement.",
+        "target_entity_id": "measurement-value"
+      },
+      "exact_source_evidence": [
+        {
+          "assessment": "SUPPORTS",
+          "document_id": "text-b3ae508f3982dfdd",
+          "end_char": 1142,
+          "quote": "The GUM defines measurement uncertainty as a \"parameter, associated with the result of a measurement, that characterizes the dispersion of the values that could reasonably be attributed to the measurand''.",
+          "start_char": 937
+        }
+      ],
+      "existing_spec043_primary_classification": "MODEL_ERROR",
+      "experiment": "SPEC-045",
+      "object_id": "measurement-uncertainty-associated-result",
+      "object_kind": "RELATIONSHIP",
+      "origin_stage": "RELATIONSHIP_SEMANTICS",
+      "rationale": "PART_OF does not faithfully express association with a measurement result, and the proposed quote is non-verbatim. The earlier object caused fail-fast, but exhaustive frozen-evidence inspection establishes the same grounding rejection for this later object.",
+      "recorded_detection_stage": "EXTRACTION_BOUNDARY",
+      "secondary_findings": [
+        "EVIDENCE_FIDELITY"
+      ],
+      "source_id": "nist-measurement-uncertainty-2025",
+      "source_level_status": "FAILED_CLOSED",
+      "validation_or_grounding_error": "evidence quote was not found in source: 'a parameter, associated with the result of a measurement'",
+      "validator_observed_in_run": false
+    }
+  ],
+  "fixed_vocabularies": {
+    "failure_origin_and_detection_stages": [
+      "CANONICAL_VALIDATION",
+      "CROSS_REFERENCE_CONSISTENCY",
+      "ENTITY_INVENTORY",
+      "EVIDENCE_FIDELITY",
+      "GROUNDING_RESOLUTION",
+      "OTHER",
+      "PROPOSITION_CONSTRUCTION",
+      "RELATIONSHIP_SEMANTICS"
+    ],
+    "intervention_classes": [
+      "DETERMINISTIC_PREVALIDATION",
+      "EXTRACTION_DECOMPOSITION",
+      "GROUNDING_IMPROVEMENT",
+      "MODEL_SELECTION",
+      "NO_CHANGE_YET",
+      "PROMPT_CONSTRAINT",
+      "SCHEMA_CONSTRAINT"
+    ]
+  },
+  "instrumentation_findings": [
+    {
+      "classification": "OBSERVABILITY_LIMITATION_NOT_EXTRACTION_FAILURE",
+      "finding": "The frozen SPEC-045 harness reports four completed adapter returns because two calls failed exact-evidence resolution before BlindExtractionAttempt returned. The authoritative ledger and six preserved raw responses establish six actual calls.",
+      "impact_on_analysis": "NONE: source outcomes, rejected objects, and provider-call history remain fully preserved and reconciled.",
+      "repair_performed": false
+    }
+  ],
+  "intervention_class_mapping": [
+    {
+      "evidence": "Three source-supported identities were consumed downstream without declarations across geology, meteorology, and biology. A separately established inventory boundary is the smallest experiment that directly isolates this recurrent origin stage while retaining strict admission.",
+      "origin_stage": "ENTITY_INVENTORY",
+      "ranked_candidate_classes": [
+        "EXTRACTION_DECOMPOSITION",
+        "SCHEMA_CONSTRAINT",
+        "PROMPT_CONSTRAINT"
+      ]
+    },
+    {
+      "evidence": "One comparison proposition invented an unsupported operand. Separating supported symbols/assertions from proposition construction would test whether composition, rather than schema shape, introduced it.",
+      "origin_stage": "PROPOSITION_CONSTRUCTION",
+      "ranked_candidate_classes": [
+        "EXTRACTION_DECOMPOSITION",
+        "MODEL_SELECTION",
+        "PROMPT_CONSTRAINT"
+      ]
+    },
+    {
+      "evidence": "One claim converted a source sentence into a shortened paraphrase while labeling it an exact quote. Grounding already detects this safely; only a bounded extraction-quality experiment is warranted.",
+      "origin_stage": "EVIDENCE_FIDELITY",
+      "ranked_candidate_classes": [
+        "PROMPT_CONSTRAINT",
+        "MODEL_SELECTION",
+        "NO_CHANGE_YET"
+      ]
+    },
+    {
+      "evidence": "Two relationships in one statistics source used PART_OF for meanings expressed as possession or association and also carried non-verbatim evidence. Staged construction could isolate relationship choice from evidence capture, but recurrence across domains is not established.",
+      "origin_stage": "RELATIONSHIP_SEMANTICS",
+      "ranked_candidate_classes": [
+        "EXTRACTION_DECOMPOSITION",
+        "MODEL_SELECTION",
+        "PROMPT_CONSTRAINT"
+      ]
+    }
+  ],
+  "next_experiment": {
+    "competing_classes_not_first_priority": {
+      "DETERMINISTIC_PREVALIDATION": "The current deterministic boundary already prevented every known invalid object from admission; another detector would not address extraction origin.",
+      "GROUNDING_IMPROVEMENT": "Grounding rejected the non-verbatim evidence correctly; relaxing it would weaken trust rather than improve extraction.",
+      "MODEL_SELECTION": "MODEL_ERROR is numerically largest, but its origin is split across proposition, evidence, and relationship stages, so a model swap would vary a broader factor before isolating the recurrent mechanism.",
+      "NO_CHANGE_YET": "Nine blind sources now show the same entity-inventory omission in three unrelated domains, sufficient for one bounded falsifiable experiment.",
+      "PROMPT_CONSTRAINT": "No one prompt-level failure mechanism spans the heterogeneous evidence, and the current prompt already requires exact quotes and declared references.",
+      "SCHEMA_CONSTRAINT": "The static schema already enforces shape; ensuring downstream IDs come from an established inventory requires testing a staged boundary rather than weakening or merely restating the schema."
+    },
+    "falsification_evidence": "The hypothesis is falsified if a bounded staged extraction condition does not reduce source-supported undeclared-identity failures versus an unchanged one-pass control, or if it increases unsupported propositions, relationship errors, evidence-fidelity failures, or trusted-boundary escapes.",
+    "protected_behavior": [
+      "exact source grounding",
+      "provenance",
+      "semantic vocabulary",
+      "strict declared-identity validation",
+      "fail-closed admission",
+      "representation and renderer behavior",
+      "learner-facing baselines and navigation"
+    ],
+    "rationale": "ENTITY_INVENTORY is the only origin stage repeated across unrelated domains (3 objects/3 sources). Testing separation of inventory establishment from downstream semantic construction directly targets that recurrent mechanism without changing the trusted-knowledge boundary.",
+    "recommended_experiment_class": "EXTRACTION_DECOMPOSITION"
+  },
+  "objective_result": "ENTITY_INVENTORY_IS_MOST_RECURRENT_WITH_HETEROGENEOUS_REMAINDER",
+  "outcome_inventory": [
+    {
+      "domain": "geology / Earth systems",
+      "experiment": "SPEC-042",
+      "proposal_counts": {
+        "claims": 8,
+        "entities": 28,
+        "propositions": 0,
+        "relationships": 12
+      },
+      "recorded_detection_stage": "GROUNDING_AND_SEMANTIC_VALIDATION",
+      "recorded_error": "relationship 'rel-5' references unknown entities: ['spreading-processes']",
+      "source_id": "usgs-divergent-plate-boundaries-1996",
+      "source_sha256": "a9539d135ff1577d7e2791d498b92f55239175565b925b24aec2ed0bf633f186",
+      "status": "FAILED_CLOSED",
+      "title": "Understanding plate motions"
+    },
+    {
+      "domain": "meteorology / atmospheric systems",
+      "experiment": "SPEC-042",
+      "proposal_counts": {
+        "claims": 10,
+        "entities": 26,
+        "propositions": 2,
+        "relationships": 10
+      },
+      "recorded_detection_stage": "GROUNDING_AND_SEMANTIC_VALIDATION",
+      "recorded_error": "proposition 'proposition-transfer-event-ca132e97bce01eea' references unknown entities: ['jet-stream-weather-transport']",
+      "source_id": "noaa-nesdis-jet-stream-2025",
+      "source_sha256": "256ade61be620cfaa7b1327e3c982576611dd29b6a1fb42217d86ffdc0783ca1",
+      "status": "FAILED_CLOSED",
+      "title": "What Is the Jet Stream?"
+    },
+    {
+      "admitted_counts": {
+        "entities": 20,
+        "propositions": 0,
+        "relationships": 10
+      },
+      "detected_structures": {
+        "count": 3,
+        "types": {
+          "HIERARCHY": 1,
+          "PROCESS_CHAIN": 2
+        }
+      },
+      "domain": "civics / institutional process",
+      "experiment": "SPEC-042",
+      "proposal_counts": {
+        "claims": 7,
+        "entities": 20,
+        "propositions": 0,
+        "relationships": 10
+      },
+      "representation_decisions": {
+        "count": 30,
+        "strategies": {
+          "CONCISE_PROSE": 15,
+          "FOCUSED_RELATIONSHIP": 10,
+          "HIERARCHY_COMPOSITION": 2,
+          "PROCESS_SEQUENCE": 3
+        },
+        "sufficiency": {
+          "INSUFFICIENT_SUPPORTED_STRUCTURE": 15,
+          "SUFFICIENT_TRUSTED_STRUCTURE": 15
+        }
+      },
+      "source_id": "crs-legislative-process-r42843-17",
+      "source_sha256": "fe61b7c3b2a9373e7eb3b30d16b94adc2c8b5f4307327265943995550a6384b4",
+      "status": "PASS",
+      "title": "Introduction to the Legislative Process in the U.S. Congress"
+    },
+    {
+      "admitted_counts": {
+        "entities": 19,
+        "propositions": 0,
+        "relationships": 10
+      },
+      "detected_structures": {
+        "count": 4,
+        "types": {
+          "CAUSAL_PATH": 1,
+          "HIERARCHY": 3
+        }
+      },
+      "domain": "astronomy / planetary science",
+      "experiment": "SPEC-045",
+      "proposal_counts": {
+        "claims": 8,
+        "entities": 19,
+        "propositions": 0,
+        "relationships": 10
+      },
+      "representation_decisions": {
+        "count": 29,
+        "strategies": {
+          "CAUSAL_MECHANISM": 4,
+          "CONCISE_PROSE": 9,
+          "FOCUSED_RELATIONSHIP": 10,
+          "HIERARCHY_COMPOSITION": 6
+        },
+        "sufficiency": {
+          "INSUFFICIENT_SUPPORTED_STRUCTURE": 9,
+          "SUFFICIENT_TRUSTED_STRUCTURE": 20
+        }
+      },
+      "source_id": "nasa-solar-system-formation-2026",
+      "source_sha256": "c0cb2519673b8f3ef23c0be2856e03790f53d44971cbff09d593190ab3fa155d",
+      "status": "PASS",
+      "title": "How did our Solar System form?"
+    },
+    {
+      "admitted_counts": {
+        "entities": 29,
+        "propositions": 0,
+        "relationships": 16
+      },
+      "detected_structures": {
+        "count": 5,
+        "types": {
+          "CAUSAL_PATH": 4,
+          "HIERARCHY": 1
+        }
+      },
+      "domain": "ecology / environmental systems",
+      "experiment": "SPEC-045",
+      "proposal_counts": {
+        "claims": 8,
+        "entities": 29,
+        "propositions": 0,
+        "relationships": 16
+      },
+      "representation_decisions": {
+        "count": 45,
+        "strategies": {
+          "CAUSAL_MECHANISM": 5,
+          "CONCISE_PROSE": 21,
+          "FOCUSED_RELATIONSHIP": 16,
+          "HIERARCHY_COMPOSITION": 3
+        },
+        "sufficiency": {
+          "INSUFFICIENT_SUPPORTED_STRUCTURE": 21,
+          "SUFFICIENT_TRUSTED_STRUCTURE": 24
+        }
+      },
+      "source_id": "epa-ecological-processes-2026",
+      "source_sha256": "70e7e3d20325dd5d22e9cf4484934419447907ba9f6cf5a4dfd65ddcbfa80ad5",
+      "status": "PASS",
+      "title": "Ecological Processes"
+    },
+    {
+      "domain": "chemistry / materials science",
+      "experiment": "SPEC-045",
+      "proposal_counts": {
+        "claims": 9,
+        "entities": 19,
+        "propositions": 0,
+        "relationships": 9
+      },
+      "recorded_detection_stage": "EXTRACTION_BOUNDARY",
+      "recorded_error": "evidence quote was not found in source: 'They identified rich structural variety and chemical order/disorder with unprecedented 3D detail including atomic composition, grain boundaries, anti-phase boundaries, anti-site point defects and swap defects.'",
+      "source_id": "doe-iron-platinum-atomic-structure-2017",
+      "source_sha256": "e9d2260c9980239431fc195e7dc687afea93598af4f28d774ed5e4c4317f9e1e",
+      "status": "FAILED_CLOSED",
+      "title": "Deciphering Material Properties at the Single-Atom Level"
+    },
+    {
+      "domain": "biology / organismal or cellular mechanism",
+      "experiment": "SPEC-045",
+      "proposal_counts": {
+        "claims": 7,
+        "entities": 35,
+        "propositions": 0,
+        "relationships": 23
+      },
+      "recorded_detection_stage": "GROUNDING_AND_SEMANTIC_VALIDATION",
+      "recorded_error": "relationship 'rel-dna-is-molecule' references unknown entities: ['molecule']",
+      "source_id": "nhgri-dna-fact-sheet-2020",
+      "source_sha256": "54e2147221cf186fe1b4f965422c69e815f986a7d009eddae9c01bf32ec25f89",
+      "status": "FAILED_CLOSED",
+      "title": "Deoxyribonucleic Acid (DNA) Fact Sheet"
+    },
+    {
+      "admitted_counts": {
+        "entities": 24,
+        "propositions": 0,
+        "relationships": 16
+      },
+      "detected_structures": {
+        "count": 5,
+        "types": {
+          "CAUSAL_PATH": 3,
+          "HIERARCHY": 2
+        }
+      },
+      "domain": "transportation / infrastructure systems",
+      "experiment": "SPEC-045",
+      "proposal_counts": {
+        "claims": 10,
+        "entities": 24,
+        "propositions": 0,
+        "relationships": 16
+      },
+      "representation_decisions": {
+        "count": 40,
+        "strategies": {
+          "CAUSAL_MECHANISM": 5,
+          "CONCISE_PROSE": 10,
+          "FOCUSED_RELATIONSHIP": 16,
+          "HIERARCHY_COMPOSITION": 9
+        },
+        "sufficiency": {
+          "INSUFFICIENT_SUPPORTED_STRUCTURE": 10,
+          "SUFFICIENT_TRUSTED_STRUCTURE": 30
+        }
+      },
+      "source_id": "fhwa-traffic-bottleneck-concepts-2016",
+      "source_sha256": "1fd7e9851839f5f35cd2a231cd3ce5aea8196ec85cabd04694f681c063ea4345",
+      "status": "PASS",
+      "title": "Chapter 3. Bottleneck Mitigation Concepts \u2014 Traffic Bottlenecks: Identification and Solutions"
+    },
+    {
+      "domain": "statistics / measurement methodology",
+      "experiment": "SPEC-045",
+      "proposal_counts": {
+        "claims": 7,
+        "entities": 16,
+        "propositions": 0,
+        "relationships": 15
+      },
+      "recorded_detection_stage": "EXTRACTION_BOUNDARY",
+      "recorded_error": "evidence quote was not found in source: 'the measurand) has a numerical magnitude and a reference'",
+      "source_id": "nist-measurement-uncertainty-2025",
+      "source_sha256": "b3ae508f3982dfdd89f41a1d9ca59eb1f658b1648e3fae35168feba212046730",
+      "status": "FAILED_CLOSED",
+      "title": "Measurement Uncertainty"
+    }
+  ],
+  "owner_review": {
+    "promotion": "NOT_AUTHORIZED",
+    "question": "Across all nine blind sources, where do extraction failures actually originate, and which single intervention class now has the strongest evidence for being tested next while preserving the strict trusted-knowledge boundary?",
+    "state": "OWNER_REVIEW",
+    "verdict": "PENDING"
+  },
+  "protected_state": {
+    "frozen_spec040_commit": "5622df131dc71346d5890f42ce16fe1e3e55f33a",
+    "frozen_spec040_files": [
+      {
+        "path": "src/knowledge_compiler/blind_evaluation.py",
+        "sha256": "cd4311f7504cb3af02c9d74f5721f3cf64e11b7aec374e9936afd9fa17cf7873",
+        "verified": true
+      },
+      {
+        "path": "src/knowledge_compiler/blind_evaluation_harness.py",
+        "sha256": "6b9fcb305d5323913562e7d3c83f1516b58a384d5d237a8d6731f67c518b48e4",
+        "verified": true
+      },
+      {
+        "path": "src/knowledge_compiler/openai_extractor.py",
+        "sha256": "3152640aa23a5049591d83b48f706d33e207d415dab311e67a58cfbf88067be3",
+        "verified": true
+      },
+      {
+        "path": "src/knowledge_compiler/representation_strategy.py",
+        "sha256": "5ef4e0a602e16b63f46511a780fc405c85e7dbc5fe631cb47b8a3c248efe5a8f",
+        "verified": true
+      },
+      {
+        "path": "src/knowledge_compiler/semantic_representation_compiler.py",
+        "sha256": "84dbfe048da4b27ecdad2139bd2db3c1a9ef1be56676496bc9fc18974dea107a",
+        "verified": true
+      }
+    ],
+    "production_code_changes": 0,
+    "protected_spec038": {
+      "aggregate_sha256": "453f7d2a233224628e03f5e1449650ec20bbff04ffae5ea07e9f6137cf54fd6e",
+      "file_count": 50,
+      "verified": true
+    },
+    "representation_renderer_ui_navigation_changes": 0,
+    "semantic_contract_changes": 0
+  },
+  "reliability_separation": {
+    "extraction_reliability": {
+      "admitted_source_count": 4,
+      "failed_closed_source_count": 5,
+      "rate": 0.4444444444444444,
+      "rate_display": "4/9 (44.44%)",
+      "unit": "blind source"
+    },
+    "interpretation": "A fail-closed source counts as an extraction failure and simultaneously as trust-boundary success when its invalid objects remain untrusted.",
+    "trust_boundary_reliability": {
+      "affected_sources_prevented_from_admission": "5/5 (100%)",
+      "known_invalid_or_malformed_objects_prevented_from_admission": "7/7 (100%)",
+      "scope_note": "This measures containment of the seven known rejected objects, not unseen validator recall."
+    }
+  },
+  "schema": "spec-046-extraction-reliability-failure-mode-analysis-report-v1",
+  "successful_source_controls": [
+    {
+      "claim_count": 7,
+      "declared_reference_consistency": "PASS",
+      "detected_structures": {
+        "count": 3,
+        "types": {
+          "HIERARCHY": 1,
+          "PROCESS_CHAIN": 2
+        }
+      },
+      "domain": "civics / institutional process",
+      "entity_count": 20,
+      "exact_evidence_acceptance": "PASS",
+      "experiment": "SPEC-042",
+      "proposition_count": 0,
+      "relationship_count": 10,
+      "representation_decisions": {
+        "count": 30,
+        "strategies": {
+          "CONCISE_PROSE": 15,
+          "FOCUSED_RELATIONSHIP": 10,
+          "HIERARCHY_COMPOSITION": 2,
+          "PROCESS_SEQUENCE": 3
+        },
+        "sufficiency": {
+          "INSUFFICIENT_SUPPORTED_STRUCTURE": 15,
+          "SUFFICIENT_TRUSTED_STRUCTURE": 15
+        }
+      },
+      "representation_plan_produced": true,
+      "source_id": "crs-legislative-process-r42843-17"
+    },
+    {
+      "claim_count": 8,
+      "declared_reference_consistency": "PASS",
+      "detected_structures": {
+        "count": 4,
+        "types": {
+          "CAUSAL_PATH": 1,
+          "HIERARCHY": 3
+        }
+      },
+      "domain": "astronomy / planetary science",
+      "entity_count": 19,
+      "exact_evidence_acceptance": "PASS",
+      "experiment": "SPEC-045",
+      "proposition_count": 0,
+      "relationship_count": 10,
+      "representation_decisions": {
+        "count": 29,
+        "strategies": {
+          "CAUSAL_MECHANISM": 4,
+          "CONCISE_PROSE": 9,
+          "FOCUSED_RELATIONSHIP": 10,
+          "HIERARCHY_COMPOSITION": 6
+        },
+        "sufficiency": {
+          "INSUFFICIENT_SUPPORTED_STRUCTURE": 9,
+          "SUFFICIENT_TRUSTED_STRUCTURE": 20
+        }
+      },
+      "representation_plan_produced": true,
+      "source_id": "nasa-solar-system-formation-2026"
+    },
+    {
+      "claim_count": 8,
+      "declared_reference_consistency": "PASS",
+      "detected_structures": {
+        "count": 5,
+        "types": {
+          "CAUSAL_PATH": 4,
+          "HIERARCHY": 1
+        }
+      },
+      "domain": "ecology / environmental systems",
+      "entity_count": 29,
+      "exact_evidence_acceptance": "PASS",
+      "experiment": "SPEC-045",
+      "proposition_count": 0,
+      "relationship_count": 16,
+      "representation_decisions": {
+        "count": 45,
+        "strategies": {
+          "CAUSAL_MECHANISM": 5,
+          "CONCISE_PROSE": 21,
+          "FOCUSED_RELATIONSHIP": 16,
+          "HIERARCHY_COMPOSITION": 3
+        },
+        "sufficiency": {
+          "INSUFFICIENT_SUPPORTED_STRUCTURE": 21,
+          "SUFFICIENT_TRUSTED_STRUCTURE": 24
+        }
+      },
+      "representation_plan_produced": true,
+      "source_id": "epa-ecological-processes-2026"
+    },
+    {
+      "claim_count": 10,
+      "declared_reference_consistency": "PASS",
+      "detected_structures": {
+        "count": 5,
+        "types": {
+          "CAUSAL_PATH": 3,
+          "HIERARCHY": 2
+        }
+      },
+      "domain": "transportation / infrastructure systems",
+      "entity_count": 24,
+      "exact_evidence_acceptance": "PASS",
+      "experiment": "SPEC-045",
+      "proposition_count": 0,
+      "relationship_count": 16,
+      "representation_decisions": {
+        "count": 40,
+        "strategies": {
+          "CAUSAL_MECHANISM": 5,
+          "CONCISE_PROSE": 10,
+          "FOCUSED_RELATIONSHIP": 16,
+          "HIERARCHY_COMPOSITION": 9
+        },
+        "sufficiency": {
+          "INSUFFICIENT_SUPPORTED_STRUCTURE": 10,
+          "SUFFICIENT_TRUSTED_STRUCTURE": 30
+        }
+      },
+      "representation_plan_produced": true,
+      "source_id": "fhwa-traffic-bottleneck-concepts-2016"
+    }
+  ],
+  "tests": {
+    "complete_offline_suite": "560 passed",
+    "control_plane": "13 passed",
+    "focused_diagnostic_validation": "PASS: 9 outcomes, 7 rejections, fixed vocabularies, reliability split, and exactly one recommendation reconciled",
+    "focused_regression_suite": "60 passed",
+    "git_diff_check": "PASS",
+    "json_validation": "PASS",
+    "provenance_and_secret_safety": "PASS"
+  }
+}
