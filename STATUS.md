@@ -38,119 +38,126 @@ Owner verdict: `SEMANTIC_REPRESENTATION_COMPILER_CONFIRMED_WITH_COVERAGE_GAPS`
 
 Implementation status: `IMPLEMENTED_REVIEWED`
 
-Frozen single-pass control identity:
+Frozen single-pass Control-A identity:
 
 `5622df131dc71346d5890f42ce16fe1e3e55f33a`
 
 ## Blind reliability evidence
 
-`SPEC-042 — blind out-of-sample live execution`
+SPEC-042 through SPEC-046 remain accepted historical evidence. The current accepted diagnostic conclusion is:
 
-Implementation status: `IMPLEMENTED_REVIEWED_FOR_DIAGNOSIS`
+`FAILURE_STAGES_MAPPED_EXTRACTION_DECOMPOSITION_NEXT`
 
-`SPEC-043 — blind failure diagnosis`
+Key evidence:
 
-Implementation status: `IMPLEMENTED_REVIEWED`
-
-`SPEC-044 — blind replication source set freeze`
-
-Implementation status: `IMPLEMENTED_REVIEWED`
-
-`SPEC-045 — blind replication live execution`
-
-Implementation status: `IMPLEMENTED_REVIEWED_FOR_FAILURE_MODE_ANALYSIS`
-
-## Extraction reliability failure-mode analysis
-
-`SPEC-046 — extraction reliability failure-mode analysis`
-
-Implementation status: `IMPLEMENTED_REVIEWED`
-
-Owner verdict: `FAILURE_STAGES_MAPPED_EXTRACTION_DECOMPOSITION_NEXT`
-
-Accepted findings:
-
-- nine blind sources: 4 admitted, 5 failed closed;
-- all 7 known invalid/malformed semantic objects were prevented from admission;
-- failure origin stages: 3 `ENTITY_INVENTORY`, 2 `RELATIONSHIP_SEMANTICS`, 1 `PROPOSITION_CONSTRUCTION`, 1 `EVIDENCE_FIDELITY`;
-- detection stages: 4 `CANONICAL_VALIDATION`, 3 `GROUNDING_RESOLUTION`;
-- `ENTITY_INVENTORY` is the only origin stage recurring across unrelated domains, but failures remain heterogeneous overall;
-- extraction reliability and trust-boundary reliability must remain separate measures;
-- exactly one next experiment class is accepted: `EXTRACTION_DECOMPOSITION`.
-
-Canonical evidence:
-
-`examples/evaluations/spec-046-extraction-reliability-failure-mode-analysis-20260913/report.json`
+- 9 blind sources total;
+- historical Control A admitted 4/9;
+- all 7 known invalid/malformed semantic objects were contained by the deterministic boundary;
+- failure origins span entity inventory, relationship semantics, proposition construction, and evidence fidelity;
+- entity inventory is the only origin stage recurring across unrelated domains.
 
 ## Decomposed extraction A/B harness
 
 `SPEC-047 — decomposed extraction A/B harness`
 
-Implementation status: `IMPLEMENTED_AWAITING_REVIEW`
+Implementation status: `IMPLEMENTED_REVIEWED`
 
-Candidate B is frozen as a three-stage extractor with deterministic fail-closed
-gates, immutable upstream identities, request-start accounting, and the unchanged
-canonical validator. The comparison harness preserves historical Control-A evidence
-and semantic-richness metrics without rerunning the control or the blind corpus.
+Owner verdict: `CANDIDATE_B_FROZEN_LIVE_AB_EXECUTION_APPROVED`
 
-Canonical evidence:
+Accepted Candidate-B architecture:
 
-`examples/evaluations/spec-047-decomposed-extraction-ab-harness-20260913/report.json`
+```text
+STAGE 1 — ENTITY_INVENTORY
+  ↓ deterministic gate / freeze IDs
+STAGE 2 — SEMANTIC_STRUCTURE
+  ↓ deterministic gate against frozen IDs
+STAGE 3 — CLAIM_EVIDENCE_BINDING
+  ↓ exact evidence grounding
+EXISTING canonical validator
+  ↓
+trusted KnowledgeModel or fail closed
+```
+
+Frozen Candidate-B implementation commit:
+
+`9ad5e0854e6866c73b3f6febd989e0766cc14a13`
+
+Frozen implementation hashes:
+
+- core `a09bb36a2214364f915b05e0f7818ffe0b145760b76afb1f00fc66ed09dc75ea`
+- OpenAI adapter `2d91a2fdfcf04bcc2180331571e3d7c2a20e797fe9fbc83c046aafdad1764280`
+- A/B harness `85e60376aabc797e75bafbda71df3ec2a68d24f0220f931b2eb89f0d9b9824fc`
+
+Frozen stage-contract SHA-256:
+
+`b13c96ac01b2f0730f57852078c702f01a2234bca1f7567654686d214c50f694`
+
+Control A remains historical only; no rerun is authorized.
 
 ## Current approved work packet
 
 ```text
-NONE
+specs/SPEC-048-decomposed-extraction-live-ab-execution.md
 ```
 
-Status: `NONE`
+Status: `APPROVED_FOR_IMPLEMENTATION`
 
-Authority: `NONE`
+Authority: `LIVE_CALLS_EXPLICITLY_BOUNDED`
 
-Human gate: `NONE`
+Human gate: `OWNER_REVIEW`
 
 Promotion: `NOT_AUTHORIZED`
 
 ## Current gate
 
-SPEC-047 is implemented and awaiting owner review. Its canonical evidence is
-`examples/evaluations/spec-047-decomposed-extraction-ab-harness-20260913/report.json`.
+SPEC-048 is authorized to execute frozen Candidate B against the exact nine frozen blind passages.
 
-No packet is active. The proposed nine-source Candidate-B execution remains
-unauthorized. No provider/model call, blind-corpus execution, repair, adaptation,
-promotion, or Control-A rerun is authorized.
+Provider authority is limited to:
+
+- OpenAI Responses API;
+- model `gpt-5.6-luna`;
+- `store=False`;
+- maximum 27 Candidate-B calls total;
+- maximum one call per stage per source;
+- fixed Stage 1 → Stage 2 → Stage 3 order;
+- mandatory upstream-failure short-circuiting;
+- zero SDK, hidden, semantic, repair, or extra follow-up calls;
+- zero prompt adaptation between sources;
+- zero implementation adaptation after execution begins;
+- zero external retrieval/enrichment.
+
+Control A must not be rerun.
+
+Any frozen identity/hash mismatch must stop execution before provider transmission.
 
 ## Current product question
 
 ```text
-frozen single-pass Control A evidence
+historical Control A: 4/9 admitted
         ↔
-frozen staged Candidate B contract
+live frozen Candidate B
         ↓
-same 9 frozen source identities
+compare admission + trust containment
         ↓
-compare admission + semantic richness + failure origin
+compare semantic richness + structures
         ↓
-proposed ceiling: 27 Candidate-B calls, not authorized
+compare failures + calls/tokens/latency
         ↓
-OWNER REVIEW of candidate + A/B contract
+owner decides whether decomposition justifies its cost
 ```
 
-The immediate goal is owner review of whether the implementation and experiment
-contract are clean enough to authorize a later bounded comparison, not execution.
+Small/marginal differences must be interpreted conservatively because Control A is historical rather than contemporaneous.
 
 ## Frozen / protected state
 
 - BASELINE-001 through BASELINE-004;
 - SPEC-038 learner-facing baseline;
 - SPEC-039 representation compiler behavior;
-- SPEC-040 Control-A implementation and frozen identity;
-- SPEC-041/042/044/045 source packets, manifests, raw responses, run histories, and evidence;
-- SPEC-043 taxonomy and historical classifications;
-- SPEC-046 failure-stage analysis and accepted recommendation;
-- SPEC-047 Candidate-B implementation, prompt/schema contracts, offline fixtures,
-  A/B comparison contract, historical Control-A adapter, and proposed live manifest;
-- prompt `spec-010-v1` and Control-A extraction behavior;
+- SPEC-040 Control-A implementation/frozen identity;
+- SPEC-041/042/044/045 exact source packets, manifests, raw responses, run histories, and evidence;
+- SPEC-043 taxonomy and classifications;
+- SPEC-046 failure-stage analysis;
+- SPEC-047 Candidate-B implementation, prompts/schemas, stage contracts, comparison contract, Control-A comparison records, offline fixtures, and proposed live manifest;
 - trusted semantic vocabulary;
 - canonical grounding/provenance behavior;
 - strict declared-identity validation;
@@ -163,18 +170,18 @@ contract are clean enough to authorize a later bounded comparison, not execution
 
 Do not:
 
-- call OpenAI or another model/provider;
-- use web/network retrieval;
-- execute Candidate B on the blind corpus;
 - rerun Control A;
-- tune Candidate B using historical failed-source answers/examples;
-- modify Control A;
-- weaken canonical validation or evidence exactness;
-- add deterministic semantic repair or automatic missing-ID normalization;
+- exceed 27 Candidate-B provider calls;
+- retry or repair any failed stage;
+- change model/source/order/prompt/schema between sources;
+- retrieve external enrichment;
+- automatically normalize missing IDs;
+- weaken evidence exactness or canonical validation;
 - change trusted semantic vocabulary;
 - change representation/renderers/UI/navigation;
-- promote Candidate B;
-- authorize the future live A/B execution automatically.
+- implement additional extraction improvements during or after the run;
+- promote Candidate B automatically;
+- authorize follow-up work without owner review.
 
 ## Coordination rule
 
