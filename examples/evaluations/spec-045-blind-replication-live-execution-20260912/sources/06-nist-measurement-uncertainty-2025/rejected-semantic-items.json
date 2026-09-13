@@ -1,0 +1,97 @@
+{
+  "items": [
+    {
+      "classification": {
+        "confidence": "HIGH",
+        "primary_classification": "MODEL_ERROR",
+        "rationale": "The source supports that a measurand has a magnitude, but the evidence string is not verbatim and PART_OF from measurand to numerical-magnitude reverses the containment implied by the predicate. The validator correctly rejected the non-verbatim evidence before semantic admission.",
+        "source_support_assessment": "STATEMENT_SUPPORTED_BUT_EVIDENCE_AND_PREDICATE_INVALID"
+      },
+      "invalid_evidence_quotes": [
+        "the measurand) has a numerical magnitude and a reference"
+      ],
+      "missing_or_invalid_identities": [],
+      "object_id": "measurand-magnitude",
+      "object_kind": "RELATIONSHIP",
+      "proposed_object": {
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "quote": "the measurand) has a numerical magnitude and a reference"
+          }
+        ],
+        "id": "measurand-magnitude",
+        "origin": "SOURCE",
+        "relationship_type": "PART_OF",
+        "source_entity_id": "measurand",
+        "statement": "The measurand has a numerical magnitude.",
+        "target_entity_id": "numerical-magnitude"
+      },
+      "provider_output_location": "relationships[2]",
+      "source_evidence": [
+        {
+          "assessment": "SUPPORTS",
+          "document_id": "text-b3ae508f3982dfdd",
+          "end_char": 380,
+          "quote": "This property that is the object of measurement (measurand) has a numerical magnitude and a reference that gives meaning to that numerical magnitude: for example, the mass of the International Prototype Kilogram is 1 kg.",
+          "start_char": 160
+        }
+      ],
+      "source_id": "nist-measurement-uncertainty-2025",
+      "source_sha256": "b3ae508f3982dfdd89f41a1d9ca59eb1f658b1648e3fae35168feba212046730",
+      "validator": {
+        "exact_rejection_reason": "evidence quote was not found in source: 'the measurand) has a numerical magnitude and a reference'",
+        "failure_stage": "EXTRACTION_BOUNDARY",
+        "observed_in_run": true
+      }
+    },
+    {
+      "classification": {
+        "confidence": "HIGH",
+        "primary_classification": "MODEL_ERROR",
+        "rationale": "The source supports an association, but the proposed excerpt is not an exact source substring and PART_OF does not faithfully express merely being associated with a measurement result. This is erroneous model output, not a contract or validator defect.",
+        "source_support_assessment": "STATEMENT_SUPPORTED_BUT_EVIDENCE_AND_PREDICATE_INVALID"
+      },
+      "invalid_evidence_quotes": [
+        "a parameter, associated with the result of a measurement"
+      ],
+      "missing_or_invalid_identities": [],
+      "object_id": "measurement-uncertainty-associated-result",
+      "object_kind": "RELATIONSHIP",
+      "proposed_object": {
+        "confidence": 0.96,
+        "evidence": [
+          {
+            "quote": "a parameter, associated with the result of a measurement"
+          }
+        ],
+        "id": "measurement-uncertainty-associated-result",
+        "origin": "SOURCE",
+        "relationship_type": "PART_OF",
+        "source_entity_id": "measurement-uncertainty",
+        "statement": "Measurement uncertainty is associated with the result of a measurement.",
+        "target_entity_id": "measurement-value"
+      },
+      "provider_output_location": "relationships[8]",
+      "source_evidence": [
+        {
+          "assessment": "SUPPORTS",
+          "document_id": "text-b3ae508f3982dfdd",
+          "end_char": 1142,
+          "quote": "The GUM defines measurement uncertainty as a \"parameter, associated with the result of a measurement, that characterizes the dispersion of the values that could reasonably be attributed to the measurand''.",
+          "start_char": 937
+        }
+      ],
+      "source_id": "nist-measurement-uncertainty-2025",
+      "source_sha256": "b3ae508f3982dfdd89f41a1d9ca59eb1f658b1648e3fae35168feba212046730",
+      "validator": {
+        "exact_rejection_reason": "evidence quote was not found in source: 'a parameter, associated with the result of a measurement'",
+        "failure_stage": "EXTRACTION_BOUNDARY",
+        "observed_in_run": false,
+        "offline_scan_note": "The unchanged validator stopped at relationships[2]. Exhaustive offline inspection found this later object violates the same exact-quote rule; no semantic output was modified or re-executed."
+      }
+    }
+  ],
+  "schema": "spec-045-rejected-semantic-items-v1",
+  "source_id": "nist-measurement-uncertainty-2025"
+}

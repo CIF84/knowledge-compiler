@@ -1,0 +1,776 @@
+{
+  "claims": [
+    {
+      "confidence": 0.99,
+      "evidence": [
+        {
+          "document_id": "text-54e2147221cf186f",
+          "end_char": 231,
+          "quote": "DNA, along with the instructions it contains, is passed from adult organisms to their offspring during reproduction.",
+          "start_char": 115
+        }
+      ],
+      "id": "claim-dna-inheritance",
+      "origin": "SOURCE",
+      "statement": "DNA, along with its instructions, is passed from adult organisms to offspring during reproduction."
+    },
+    {
+      "confidence": 0.99,
+      "evidence": [
+        {
+          "document_id": "text-54e2147221cf186f",
+          "end_char": 716,
+          "quote": "During DNA replication, DNA unwinds so it can be copied. At other times in the cell cycle, DNA also unwinds so that its instructions can be used to make proteins and for other biological processes.",
+          "start_char": 519
+        }
+      ],
+      "id": "claim-dna-unwinding-uses",
+      "origin": "SOURCE",
+      "statement": "DNA unwinds during DNA replication so it can be copied, and at other times so its instructions can be used for protein production and other biological processes."
+    },
+    {
+      "confidence": 0.99,
+      "evidence": [
+        {
+          "document_id": "text-54e2147221cf186f",
+          "end_char": 1290,
+          "quote": "In sexual reproduction, organisms inherit half of their nuclear DNA from the male parent and half from the female parent.",
+          "start_char": 1169
+        }
+      ],
+      "id": "claim-half-nuclear-inheritance",
+      "origin": "SOURCE",
+      "statement": "In sexual reproduction, offspring inherit half of their nuclear DNA from the male parent and half from the female parent."
+    },
+    {
+      "confidence": 0.99,
+      "evidence": [
+        {
+          "document_id": "text-54e2147221cf186f",
+          "end_char": 1372,
+          "quote": "However, organisms inherit all of their mitochondrial DNA from the female parent.",
+          "start_char": 1291
+        }
+      ],
+      "id": "claim-all-mitochondrial-inheritance",
+      "origin": "SOURCE",
+      "statement": "In sexual reproduction, offspring inherit all of their mitochondrial DNA from the female parent."
+    },
+    {
+      "confidence": 0.99,
+      "evidence": [
+        {
+          "document_id": "text-54e2147221cf186f",
+          "end_char": 1475,
+          "quote": "This occurs because only egg cells, and not sperm cells, keep their mitochondria during fertilization.",
+          "start_char": 1373
+        }
+      ],
+      "id": "claim-mitochondrial-inheritance-mechanism",
+      "origin": "SOURCE",
+      "statement": "Mitochondrial DNA is inherited from the female parent because only egg cells, and not sperm cells, keep their mitochondria during fertilization."
+    },
+    {
+      "confidence": 0.97,
+      "evidence": [
+        {
+          "document_id": "text-54e2147221cf186f",
+          "end_char": 2098,
+          "quote": "For example, the sequence ATCGTT might instruct for blue eyes, while ATCGCT might instruct for brown.",
+          "start_char": 1997
+        }
+      ],
+      "id": "claim-base-example",
+      "origin": "SOURCE",
+      "statement": "The sequence ATCGTT might instruct for blue eyes, while ATCGCT might instruct for brown eyes."
+    },
+    {
+      "confidence": 0.99,
+      "evidence": [
+        {
+          "document_id": "text-54e2147221cf186f",
+          "end_char": 2239,
+          "quote": "The complete DNA instruction book, or genome, for a human contains about 3 billion bases and about 20,000 genes on 23 pairs of chromosomes.",
+          "start_char": 2100
+        }
+      ],
+      "id": "claim-human-genome-size",
+      "origin": "SOURCE",
+      "statement": "The human genome contains about 3 billion bases and about 20,000 genes on 23 pairs of chromosomes."
+    }
+  ],
+  "entities": [
+    {
+      "aliases": [
+        "DNA"
+      ],
+      "description": "A molecule containing biological instructions that make each species unique.",
+      "entity_type": "OBJECT",
+      "id": "dna",
+      "name": "Deoxyribonucleic acid (DNA)"
+    },
+    {
+      "aliases": [],
+      "description": "Instructions contained in DNA that guide biological traits and processes.",
+      "entity_type": "CONCEPT",
+      "id": "biological-instructions",
+      "name": "biological instructions"
+    },
+    {
+      "aliases": [],
+      "description": "A biological grouping whose members share DNA-based instructions that distinguish the group.",
+      "entity_type": "CONCEPT",
+      "id": "species",
+      "name": "species"
+    },
+    {
+      "aliases": [],
+      "description": "Organisms that receive DNA from adult organisms during reproduction.",
+      "entity_type": "OBJECT",
+      "id": "offspring",
+      "name": "offspring"
+    },
+    {
+      "aliases": [
+        "eukaryotic organism"
+      ],
+      "description": "An organism whose DNA is found inside a nucleus.",
+      "entity_type": "OBJECT",
+      "id": "eukaryote",
+      "name": "eukaryote"
+    },
+    {
+      "aliases": [],
+      "description": "The small biological unit containing DNA and cellular structures.",
+      "entity_type": "OBJECT",
+      "id": "cell",
+      "name": "cell"
+    },
+    {
+      "aliases": [],
+      "description": "A special area of a eukaryotic cell containing DNA.",
+      "entity_type": "COMPONENT",
+      "id": "nucleus",
+      "name": "nucleus"
+    },
+    {
+      "aliases": [],
+      "description": "The tightly packaged form of a DNA molecule.",
+      "entity_type": "OBJECT",
+      "id": "chromosome",
+      "name": "chromosome"
+    },
+    {
+      "aliases": [],
+      "description": "A process during which DNA unwinds so it can be copied.",
+      "entity_type": "PROCESS",
+      "id": "dna-replication",
+      "name": "DNA replication"
+    },
+    {
+      "aliases": [],
+      "description": "The cycle during which DNA may unwind for use in biological processes and becomes compact during cell division.",
+      "entity_type": "PROCESS",
+      "id": "cell-cycle",
+      "name": "cell cycle"
+    },
+    {
+      "aliases": [
+        "making proteins"
+      ],
+      "description": "A biological process that uses DNA instructions to make proteins.",
+      "entity_type": "PROCESS",
+      "id": "protein-production",
+      "name": "protein production"
+    },
+    {
+      "aliases": [],
+      "description": "A process during which DNA is in compact chromosome form to enable transfer to new cells.",
+      "entity_type": "PROCESS",
+      "id": "cell-division",
+      "name": "cell division"
+    },
+    {
+      "aliases": [],
+      "description": "DNA located in the cell nucleus.",
+      "entity_type": "OBJECT",
+      "id": "nuclear-dna",
+      "name": "nuclear DNA"
+    },
+    {
+      "aliases": [
+        "DNA instruction book"
+      ],
+      "description": "An organism's complete set of nuclear DNA; also described as the complete DNA instruction book.",
+      "entity_type": "OBJECT",
+      "id": "genome",
+      "name": "genome"
+    },
+    {
+      "aliases": [
+        "mitochondria"
+      ],
+      "description": "A cell structure containing a small amount of DNA and generating energy needed for cellular function.",
+      "entity_type": "COMPONENT",
+      "id": "mitochondrion",
+      "name": "mitochondrion"
+    },
+    {
+      "aliases": [],
+      "description": "Energy generated by mitochondria that the cell needs to function properly.",
+      "entity_type": "VARIABLE",
+      "id": "energy",
+      "name": "cellular energy"
+    },
+    {
+      "aliases": [],
+      "description": "A reproductive process in which nuclear DNA is inherited from male and female parents.",
+      "entity_type": "PROCESS",
+      "id": "sexual-reproduction",
+      "name": "sexual reproduction"
+    },
+    {
+      "aliases": [],
+      "description": "A parent contributing half of an offspring's nuclear DNA in sexual reproduction.",
+      "entity_type": "OBJECT",
+      "id": "male-parent",
+      "name": "male parent"
+    },
+    {
+      "aliases": [],
+      "description": "A parent contributing half of an offspring's nuclear DNA and all of its mitochondrial DNA in sexual reproduction.",
+      "entity_type": "OBJECT",
+      "id": "female-parent",
+      "name": "female parent"
+    },
+    {
+      "aliases": [],
+      "description": "DNA located in mitochondria and inherited from the female parent in the described reproductive process.",
+      "entity_type": "OBJECT",
+      "id": "mitochondrial-dna",
+      "name": "mitochondrial DNA"
+    },
+    {
+      "aliases": [],
+      "description": "A reproductive cell that retains mitochondria during fertilization.",
+      "entity_type": "OBJECT",
+      "id": "egg-cell",
+      "name": "egg cell"
+    },
+    {
+      "aliases": [],
+      "description": "A reproductive cell that does not retain mitochondria during fertilization.",
+      "entity_type": "OBJECT",
+      "id": "sperm-cell",
+      "name": "sperm cell"
+    },
+    {
+      "aliases": [],
+      "description": "The process during which egg and sperm cells combine and mitochondrial inheritance is determined.",
+      "entity_type": "PROCESS",
+      "id": "fertilization",
+      "name": "fertilization"
+    },
+    {
+      "aliases": [],
+      "description": "A chemical building block of DNA made of a phosphate group, a sugar group, and one nitrogen base.",
+      "entity_type": "OBJECT",
+      "id": "nucleotide",
+      "name": "nucleotide"
+    },
+    {
+      "aliases": [],
+      "description": "One of the three parts of a nucleotide.",
+      "entity_type": "COMPONENT",
+      "id": "phosphate-group",
+      "name": "phosphate group"
+    },
+    {
+      "aliases": [],
+      "description": "One of the three parts of a nucleotide.",
+      "entity_type": "COMPONENT",
+      "id": "sugar-group",
+      "name": "sugar group"
+    },
+    {
+      "aliases": [],
+      "description": "One of four types of chemical component in a nucleotide.",
+      "entity_type": "COMPONENT",
+      "id": "nitrogen-base",
+      "name": "nitrogen base"
+    },
+    {
+      "aliases": [],
+      "description": "A chain formed by linking nucleotides together.",
+      "entity_type": "OBJECT",
+      "id": "dna-strand",
+      "name": "DNA strand"
+    },
+    {
+      "aliases": [
+        "A"
+      ],
+      "description": "One of the four nitrogen bases found in DNA nucleotides.",
+      "entity_type": "OBJECT",
+      "id": "adenine",
+      "name": "adenine"
+    },
+    {
+      "aliases": [
+        "T"
+      ],
+      "description": "One of the four nitrogen bases found in DNA nucleotides.",
+      "entity_type": "OBJECT",
+      "id": "thymine",
+      "name": "thymine"
+    },
+    {
+      "aliases": [
+        "G"
+      ],
+      "description": "One of the four nitrogen bases found in DNA nucleotides.",
+      "entity_type": "OBJECT",
+      "id": "guanine",
+      "name": "guanine"
+    },
+    {
+      "aliases": [
+        "C"
+      ],
+      "description": "One of the four nitrogen bases found in DNA nucleotides.",
+      "entity_type": "OBJECT",
+      "id": "cytosine",
+      "name": "cytosine"
+    },
+    {
+      "aliases": [
+        "sequence"
+      ],
+      "description": "The order of nitrogen bases in a DNA strand, which determines its biological instructions.",
+      "entity_type": "VARIABLE",
+      "id": "base-sequence",
+      "name": "DNA base sequence"
+    },
+    {
+      "aliases": [],
+      "description": "A unit included in the genome's biological instructions.",
+      "entity_type": "CONCEPT",
+      "id": "gene",
+      "name": "gene"
+    },
+    {
+      "aliases": [],
+      "description": "The complete DNA instruction set of a human, containing about 3 billion bases and about 20,000 genes on 23 pairs of chromosomes.",
+      "entity_type": "OBJECT",
+      "id": "human-genome",
+      "name": "human genome"
+    }
+  ],
+  "metadata": {
+    "extractor": "llm",
+    "http_request_id": "req_ccdb221e9a194f028af278f0b45e9842",
+    "model": "gpt-5.6-luna",
+    "prompt_version": "spec-010-v1",
+    "provider": "openai",
+    "provider_request_id": "resp_046da05e10fb3f24016aa6674188c887d2a21e5b1942d0347b",
+    "usage": {
+      "input_tokens": 3241,
+      "output_tokens": 3845,
+      "total_tokens": 7086
+    }
+  },
+  "propositions": [],
+  "relationships": [
+    {
+      "confidence": 0.99,
+      "evidence": [
+        {
+          "document_id": "text-54e2147221cf186f",
+          "end_char": 114,
+          "quote": "Deoxyribonucleic acid (DNA) is a molecule that contains the biological instructions that make each species unique.",
+          "start_char": 0
+        }
+      ],
+      "id": "rel-dna-is-molecule",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "dna",
+      "statement": "DNA is a molecule.",
+      "target_entity_id": "molecule"
+    },
+    {
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "document_id": "text-54e2147221cf186f",
+          "end_char": 114,
+          "quote": "Deoxyribonucleic acid (DNA) is a molecule that contains the biological instructions that make each species unique.",
+          "start_char": 0
+        }
+      ],
+      "id": "rel-dna-contains-instructions",
+      "origin": "SOURCE",
+      "relationship_type": "PART_OF",
+      "source_entity_id": "dna",
+      "statement": "DNA contains biological instructions.",
+      "target_entity_id": "biological-instructions"
+    },
+    {
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "document_id": "text-54e2147221cf186f",
+          "end_char": 517,
+          "quote": "This packaged form of the DNA is called a chromosome.",
+          "start_char": 464
+        }
+      ],
+      "id": "rel-dna-part-of-chromosome",
+      "origin": "SOURCE",
+      "relationship_type": "PART_OF",
+      "source_entity_id": "dna",
+      "statement": "A chromosome is the tightly packaged form of a DNA molecule.",
+      "target_entity_id": "chromosome"
+    },
+    {
+      "confidence": 0.99,
+      "evidence": [
+        {
+          "document_id": "text-54e2147221cf186f",
+          "end_char": 331,
+          "quote": "DNA is found inside a special area of the cell called the nucleus.",
+          "start_char": 265
+        }
+      ],
+      "id": "rel-nucleus-part-of-cell",
+      "origin": "SOURCE",
+      "relationship_type": "PART_OF",
+      "source_entity_id": "nucleus",
+      "statement": "The nucleus is a special area of the cell.",
+      "target_entity_id": "cell"
+    },
+    {
+      "confidence": 0.99,
+      "evidence": [
+        {
+          "document_id": "text-54e2147221cf186f",
+          "end_char": 331,
+          "quote": "In organisms called eukaryotes, DNA is found inside a special area of the cell called the nucleus.",
+          "start_char": 233
+        }
+      ],
+      "id": "rel-dna-in-nucleus",
+      "origin": "SOURCE",
+      "relationship_type": "PART_OF",
+      "source_entity_id": "dna",
+      "statement": "DNA is found inside the nucleus in eukaryotes.",
+      "target_entity_id": "nucleus"
+    },
+    {
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "document_id": "text-54e2147221cf186f",
+          "end_char": 813,
+          "quote": "But during cell division, DNA is in its compact chromosome form to enable transfer to new cells.",
+          "start_char": 717
+        }
+      ],
+      "id": "rel-cell-division-enables-transfer",
+      "origin": "SOURCE",
+      "relationship_type": "ENABLES",
+      "source_entity_id": "chromosome",
+      "statement": "The compact chromosome form of DNA enables transfer to new cells during cell division.",
+      "target_entity_id": "cell-division"
+    },
+    {
+      "confidence": 0.99,
+      "evidence": [
+        {
+          "document_id": "text-54e2147221cf186f",
+          "end_char": 883,
+          "quote": "Researchers refer to DNA found in the cell's nucleus as nuclear DNA.",
+          "start_char": 815
+        }
+      ],
+      "id": "rel-nuclear-dna-is-dna",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "nuclear-dna",
+      "statement": "Nuclear DNA is DNA found in the cell nucleus.",
+      "target_entity_id": "dna"
+    },
+    {
+      "confidence": 0.99,
+      "evidence": [
+        {
+          "document_id": "text-54e2147221cf186f",
+          "end_char": 947,
+          "quote": "An organism's complete set of nuclear DNA is called its genome.",
+          "start_char": 884
+        }
+      ],
+      "id": "rel-genome-is-nuclear-dna",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "genome",
+      "statement": "An organism's genome is its complete set of nuclear DNA.",
+      "target_entity_id": "nuclear-dna"
+    },
+    {
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "document_id": "text-54e2147221cf186f",
+          "end_char": 1097,
+          "quote": "humans and other complex organisms also have a small amount of DNA in cell structures known as mitochondria.",
+          "start_char": 989
+        }
+      ],
+      "id": "rel-mitochondria-part-of-cell",
+      "origin": "SOURCE",
+      "relationship_type": "PART_OF",
+      "source_entity_id": "mitochondrion",
+      "statement": "Mitochondria are cell structures.",
+      "target_entity_id": "cell"
+    },
+    {
+      "confidence": 0.99,
+      "evidence": [
+        {
+          "document_id": "text-54e2147221cf186f",
+          "end_char": 1167,
+          "quote": "Mitochondria generate the energy the cell needs to function properly.",
+          "start_char": 1098
+        }
+      ],
+      "id": "rel-mitochondria-generate-energy",
+      "origin": "SOURCE",
+      "relationship_type": "CAUSES",
+      "source_entity_id": "mitochondrion",
+      "statement": "Mitochondria generate the energy the cell needs to function properly.",
+      "target_entity_id": "energy"
+    },
+    {
+      "confidence": 0.94,
+      "evidence": [
+        {
+          "document_id": "text-54e2147221cf186f",
+          "end_char": 1097,
+          "quote": "humans and other complex organisms also have a small amount of DNA in cell structures known as mitochondria.",
+          "start_char": 989
+        }
+      ],
+      "id": "rel-mitochondrial-dna-part-of-mitochondria",
+      "origin": "SOURCE",
+      "relationship_type": "PART_OF",
+      "source_entity_id": "mitochondrial-dna",
+      "statement": "Mitochondria contain mitochondrial DNA.",
+      "target_entity_id": "mitochondrion"
+    },
+    {
+      "confidence": 0.99,
+      "evidence": [
+        {
+          "document_id": "text-54e2147221cf186f",
+          "end_char": 1536,
+          "quote": "DNA is made of chemical building blocks called nucleotides.",
+          "start_char": 1477
+        }
+      ],
+      "id": "rel-nucleotide-part-of-dna",
+      "origin": "SOURCE",
+      "relationship_type": "PART_OF",
+      "source_entity_id": "nucleotide",
+      "statement": "DNA is made of nucleotides.",
+      "target_entity_id": "dna"
+    },
+    {
+      "confidence": 0.99,
+      "evidence": [
+        {
+          "document_id": "text-54e2147221cf186f",
+          "end_char": 1657,
+          "quote": "These building blocks are made of three parts: a phosphate group, a sugar group and one of four types of nitrogen bases.",
+          "start_char": 1537
+        }
+      ],
+      "id": "rel-phosphate-part-of-nucleotide",
+      "origin": "SOURCE",
+      "relationship_type": "PART_OF",
+      "source_entity_id": "phosphate-group",
+      "statement": "A phosphate group is part of a nucleotide.",
+      "target_entity_id": "nucleotide"
+    },
+    {
+      "confidence": 0.99,
+      "evidence": [
+        {
+          "document_id": "text-54e2147221cf186f",
+          "end_char": 1657,
+          "quote": "These building blocks are made of three parts: a phosphate group, a sugar group and one of four types of nitrogen bases.",
+          "start_char": 1537
+        }
+      ],
+      "id": "rel-sugar-part-of-nucleotide",
+      "origin": "SOURCE",
+      "relationship_type": "PART_OF",
+      "source_entity_id": "sugar-group",
+      "statement": "A sugar group is part of a nucleotide.",
+      "target_entity_id": "nucleotide"
+    },
+    {
+      "confidence": 0.99,
+      "evidence": [
+        {
+          "document_id": "text-54e2147221cf186f",
+          "end_char": 1657,
+          "quote": "These building blocks are made of three parts: a phosphate group, a sugar group and one of four types of nitrogen bases.",
+          "start_char": 1537
+        }
+      ],
+      "id": "rel-base-part-of-nucleotide",
+      "origin": "SOURCE",
+      "relationship_type": "PART_OF",
+      "source_entity_id": "nitrogen-base",
+      "statement": "A nitrogen base is part of a nucleotide.",
+      "target_entity_id": "nucleotide"
+    },
+    {
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "document_id": "text-54e2147221cf186f",
+          "end_char": 1767,
+          "quote": "To form a strand of DNA, nucleotides are linked into chains, with the phosphate and sugar groups alternating.",
+          "start_char": 1658
+        }
+      ],
+      "id": "rel-nucleotide-chain-creates-strand",
+      "origin": "SOURCE",
+      "relationship_type": "CREATES",
+      "source_entity_id": "nucleotide",
+      "statement": "Linked nucleotides form a DNA strand.",
+      "target_entity_id": "dna-strand"
+    },
+    {
+      "confidence": 0.99,
+      "evidence": [
+        {
+          "document_id": "text-54e2147221cf186f",
+          "end_char": 1883,
+          "quote": "The four types of nitrogen bases found in nucleotides are: adenine (A), thymine (T), guanine (G) and cytosine (C).",
+          "start_char": 1769
+        }
+      ],
+      "id": "rel-adenine-is-base",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "adenine",
+      "statement": "Adenine is a nitrogen base found in DNA nucleotides.",
+      "target_entity_id": "nitrogen-base"
+    },
+    {
+      "confidence": 0.99,
+      "evidence": [
+        {
+          "document_id": "text-54e2147221cf186f",
+          "end_char": 1883,
+          "quote": "The four types of nitrogen bases found in nucleotides are: adenine (A), thymine (T), guanine (G) and cytosine (C).",
+          "start_char": 1769
+        }
+      ],
+      "id": "rel-thymine-is-base",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "thymine",
+      "statement": "Thymine is a nitrogen base found in DNA nucleotides.",
+      "target_entity_id": "nitrogen-base"
+    },
+    {
+      "confidence": 0.99,
+      "evidence": [
+        {
+          "document_id": "text-54e2147221cf186f",
+          "end_char": 1883,
+          "quote": "The four types of nitrogen bases found in nucleotides are: adenine (A), thymine (T), guanine (G) and cytosine (C).",
+          "start_char": 1769
+        }
+      ],
+      "id": "rel-guanine-is-base",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "guanine",
+      "statement": "Guanine is a nitrogen base found in DNA nucleotides.",
+      "target_entity_id": "nitrogen-base"
+    },
+    {
+      "confidence": 0.99,
+      "evidence": [
+        {
+          "document_id": "text-54e2147221cf186f",
+          "end_char": 1883,
+          "quote": "The four types of nitrogen bases found in nucleotides are: adenine (A), thymine (T), guanine (G) and cytosine (C).",
+          "start_char": 1769
+        }
+      ],
+      "id": "rel-cytosine-is-base",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "cytosine",
+      "statement": "Cytosine is a nitrogen base found in DNA nucleotides.",
+      "target_entity_id": "nitrogen-base"
+    },
+    {
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "document_id": "text-54e2147221cf186f",
+          "end_char": 1996,
+          "quote": "The order, or sequence, of these bases determines what biological instructions are contained in a strand of DNA.",
+          "start_char": 1884
+        }
+      ],
+      "id": "rel-sequence-determines-instructions",
+      "origin": "SOURCE",
+      "relationship_type": "CAUSES",
+      "source_entity_id": "base-sequence",
+      "statement": "The order of nitrogen bases determines the biological instructions contained in a DNA strand.",
+      "target_entity_id": "biological-instructions"
+    },
+    {
+      "confidence": 0.99,
+      "evidence": [
+        {
+          "document_id": "text-54e2147221cf186f",
+          "end_char": 2239,
+          "quote": "The complete DNA instruction book, or genome, for a human contains about 3 billion bases and about 20,000 genes on 23 pairs of chromosomes.",
+          "start_char": 2100
+        }
+      ],
+      "id": "rel-human-genome-example",
+      "origin": "SOURCE",
+      "relationship_type": "EXAMPLE_OF",
+      "source_entity_id": "human-genome",
+      "statement": "The human genome is an example of a genome.",
+      "target_entity_id": "genome"
+    },
+    {
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "document_id": "text-54e2147221cf186f",
+          "end_char": 2239,
+          "quote": "The complete DNA instruction book, or genome, for a human contains about 3 billion bases and about 20,000 genes on 23 pairs of chromosomes.",
+          "start_char": 2100
+        }
+      ],
+      "id": "rel-human-genome-part-chromosomes",
+      "origin": "SOURCE",
+      "relationship_type": "PART_OF",
+      "source_entity_id": "chromosome",
+      "statement": "The human genome includes 23 pairs of chromosomes.",
+      "target_entity_id": "human-genome"
+    }
+  ]
+}

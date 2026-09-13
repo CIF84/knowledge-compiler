@@ -1,0 +1,129 @@
+{
+  "actual_order": [
+    "nasa-solar-system-formation-2026",
+    "epa-ecological-processes-2026",
+    "doe-iron-platinum-atomic-structure-2017",
+    "nhgri-dna-fact-sheet-2020",
+    "fhwa-traffic-bottleneck-concepts-2016",
+    "nist-measurement-uncertainty-2025"
+  ],
+  "external_retrieval_or_enrichment": 0,
+  "follow_up_calls": 0,
+  "frozen_order": [
+    "nasa-solar-system-formation-2026",
+    "epa-ecological-processes-2026",
+    "doe-iron-platinum-atomic-structure-2017",
+    "nhgri-dna-fact-sheet-2020",
+    "fhwa-traffic-bottleneck-concepts-2016",
+    "nist-measurement-uncertainty-2025"
+  ],
+  "hidden_retries": 0,
+  "maximum_authorized_calls": 6,
+  "provider_calls_started": 6,
+  "repair_calls": 0,
+  "report": {
+    "execution_policy": {
+      "adapter_invocations_per_source": 1,
+      "allow_live": true,
+      "hidden_retries": 0,
+      "semantic_retries": 0,
+      "source_order_changes_semantic_decisions": false
+    },
+    "failed_closed_source_count": 3,
+    "learner_usefulness_verdict": "PENDING_OWNER_REVIEW",
+    "live_model_or_external_calls": 4,
+    "outcomes": [
+      {
+        "detected_structure_count": 4,
+        "entity_count": 19,
+        "proposition_count": 0,
+        "relationship_count": 10,
+        "representation_decision_count": 29,
+        "selected_strategies": [
+          "CAUSAL_MECHANISM",
+          "CONCISE_PROSE",
+          "FOCUSED_RELATIONSHIP",
+          "HIERARCHY_COMPOSITION"
+        ],
+        "source_id": "nasa-solar-system-formation-2026",
+        "source_sha256": "c0cb2519673b8f3ef23c0be2856e03790f53d44971cbff09d593190ab3fa155d",
+        "status": "PASS"
+      },
+      {
+        "detected_structure_count": 5,
+        "entity_count": 29,
+        "proposition_count": 0,
+        "relationship_count": 16,
+        "representation_decision_count": 45,
+        "selected_strategies": [
+          "CAUSAL_MECHANISM",
+          "CONCISE_PROSE",
+          "FOCUSED_RELATIONSHIP",
+          "HIERARCHY_COMPOSITION"
+        ],
+        "source_id": "epa-ecological-processes-2026",
+        "source_sha256": "70e7e3d20325dd5d22e9cf4484934419447907ba9f6cf5a4dfd65ddcbfa80ad5",
+        "status": "PASS"
+      },
+      {
+        "failure": {
+          "error": "evidence quote was not found in source: 'They identified rich structural variety and chemical order/disorder with unprecedented 3D detail including atomic composition, grain boundaries, anti-phase boundaries, anti-site point defects and swap defects.'",
+          "error_type": "ValidationError",
+          "retry_performed": false,
+          "stage": "EXTRACTION_BOUNDARY",
+          "status": "FAILED_CLOSED"
+        },
+        "source_id": "doe-iron-platinum-atomic-structure-2017",
+        "source_sha256": "e9d2260c9980239431fc195e7dc687afea93598af4f28d774ed5e4c4317f9e1e",
+        "status": "FAILED_CLOSED"
+      },
+      {
+        "failure": {
+          "error": "relationship 'rel-dna-is-molecule' references unknown entities: ['molecule']",
+          "error_type": "ValidationError",
+          "retry_performed": false,
+          "stage": "GROUNDING_AND_SEMANTIC_VALIDATION",
+          "status": "FAILED_CLOSED"
+        },
+        "source_id": "nhgri-dna-fact-sheet-2020",
+        "source_sha256": "54e2147221cf186fe1b4f965422c69e815f986a7d009eddae9c01bf32ec25f89",
+        "status": "FAILED_CLOSED"
+      },
+      {
+        "detected_structure_count": 5,
+        "entity_count": 24,
+        "proposition_count": 0,
+        "relationship_count": 16,
+        "representation_decision_count": 40,
+        "selected_strategies": [
+          "CAUSAL_MECHANISM",
+          "CONCISE_PROSE",
+          "FOCUSED_RELATIONSHIP",
+          "HIERARCHY_COMPOSITION"
+        ],
+        "source_id": "fhwa-traffic-bottleneck-concepts-2016",
+        "source_sha256": "1fd7e9851839f5f35cd2a231cd3ce5aea8196ec85cabd04694f681c063ea4345",
+        "status": "PASS"
+      },
+      {
+        "failure": {
+          "error": "evidence quote was not found in source: 'the measurand) has a numerical magnitude and a reference'",
+          "error_type": "ValidationError",
+          "retry_performed": false,
+          "stage": "EXTRACTION_BOUNDARY",
+          "status": "FAILED_CLOSED"
+        },
+        "source_id": "nist-measurement-uncertainty-2025",
+        "source_sha256": "b3ae508f3982dfdd89f41a1d9ca59eb1f658b1648e3fae35168feba212046730",
+        "status": "FAILED_CLOSED"
+      }
+    ],
+    "passed_source_count": 3,
+    "schema": "spec-040-blind-evaluation-report-v1",
+    "source_count": 6
+  },
+  "schema": "spec-045-live-execution-summary-v1",
+  "sdk_retries": 0,
+  "semantic_retries": 0,
+  "store": false
+}

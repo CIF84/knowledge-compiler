@@ -1,0 +1,428 @@
+{
+  "actual_model": "gpt-5.6-luna",
+  "completed_at_utc": "2026-09-13T09:04:21.437756Z",
+  "duration_ms": 20215.38,
+  "http_request_id": "req_6fa9f369970b4f25b10eaa79982fc8ab",
+  "prompt_version": "spec-010-v1",
+  "provider": "OpenAI Responses API",
+  "provider_response_id": "resp_0c4819210955efd2016aa66703084c87d296e9ae86c12f49a2",
+  "request_error": null,
+  "requested_model": "gpt-5.6-luna",
+  "response": {
+    "background": false,
+    "billing": {
+      "payer": "developer"
+    },
+    "completed_at": 1789290261.0,
+    "conversation": null,
+    "created_at": 1789290243.0,
+    "error": null,
+    "frequency_penalty": 0.0,
+    "id": "resp_0c4819210955efd2016aa66703084c87d296e9ae86c12f49a2",
+    "incomplete_details": null,
+    "instructions": "You extract a semantic knowledge model from explanatory source text.\n\nIdentify important concepts, objects, processes, variables, systems, and components.\nCreate claims for meaningful propositions that do not naturally form graph edges.\nCreate relationships only when one supplied semantic contract fits both the meaning and\ndirection. Prefer important explanatory structure over exhaustive sentence decomposition.\nIf no relationship contract represents a meaningful proposition truthfully, preserve it\nas a claim instead of forcing it into the nearest edge label. Fewer truthful edges are\nbetter than more misleading edges. Use concise grounded descriptions and conservative\nconfidence values.\n\nUse a typed proposition only for either of these binary-edge failure modes:\n- COMPARISON_CONDITION: a comparison is itself the antecedent of an outcome. Bind\n  LEFT_OPERAND, RIGHT_OPERAND, and OUTCOME; use GREATER_THAN and CAUSES.\n- TRANSFER_EVENT: a transfer must distinguish the EVENT, transferred OBJECT, and\n  DESTINATION; use TRANSFERS_TO.\nDo not also emit a lossy binary edge for the same source proposition. Proposition IDs are\nassigned deterministically by trusted code; do not return an id.\n\nSOURCE means the item is explicitly supported by the supplied text. Every SOURCE item\nmust cite one or more exact, verbatim, uniquely occurring source substrings in evidence.\nUse a complete clause or sentence long enough to occur exactly once; never cite a short\nentity name or other repeated fragment. Do not count characters; return quotes only.\nINFERRED means useful structure not stated explicitly and must have an empty evidence\nlist. Any item with evidence must be SOURCE. Before returning, verify every SOURCE item\nhas at least one unique quote and every INFERRED item has none. Do not use external\nknowledge unless the item is marked INFERRED. Do not fabricate evidence.\n\nAvoid entities created only to reproduce grammar. Avoid duplicates; use aliases only\nfor genuine naming equivalence, and keep related but distinct concepts separate.\nRelationship endpoints must use IDs from the entities array. IDs must be unique,\nconcise, stable kebab-case strings. Do not generate summaries, visualizations, Mermaid,\nteaching prose, or output outside the requested schema.\n\nACTIVE RELATIONSHIP CONTRACTS (source --TYPE--> target):\nIS_A [STRUCTURAL; direction=instance_to_type]\n  meaning: The source is a kind, category, or subtype of the target.\n  roles: source=instance or subtype; target=broader type or category\n  use: The source can truthfully be described as a target.\n  avoid: Do not use for parts, examples, similarity, or temporary states.\nPART_OF [STRUCTURAL; direction=part_to_whole]\n  meaning: The source is a constituent or component of the target.\n  roles: source=part or component; target=containing whole\n  use: The source exists as a component or subpart of the target.\n  avoid: Never reverse whole and part; do not use for interaction or dependency.\nEXAMPLE_OF [STRUCTURAL; direction=example_to_concept]\n  meaning: The source is an illustrative instance of the target concept.\n  roles: source=example; target=concept illustrated\n  use: The source is presented as an example of the target.\n  avoid: Do not use merely because the source is a subtype; prefer IS_A for classification.\nCAUSES [CAUSAL; direction=cause_to_effect]\n  meaning: The source brings about the target as an effect.\n  roles: source=cause; target=effect\n  use: The source is stated to produce the target outcome.\n  avoid: Do not use for chronology, association, contribution, or unspecified influence.\nAFFECTS [CAUSAL; direction=influence_to_affected]\n  meaning: The source causally influences the target without a specified direction or complete production.\n  roles: source=influence; target=affected entity, process, or variable\n  use: The source changes or influences the target, but the text does not support CAUSES, INCREASES, or DECREASES.\n  avoid: Do not use for mere association, chronology, physical force, or interaction with no stated effect.\nINCREASES [CAUSAL; direction=increaser_to_increased_variable]\n  meaning: The source causally raises the amount, rate, value, probability, or intensity of the target.\n  roles: source=causal factor; target=quantity or variable increased\n  use: The source is explicitly said to make the target greater, faster, more likely, or more intense.\n  avoid: Do not infer from nearby words such as more or faster; never use when the source says slower, lower, or less.\nDECREASES [CAUSAL; direction=decreaser_to_decreased_variable]\n  meaning: The source causally lowers the amount, rate, value, probability, or intensity of the target.\n  roles: source=causal factor; target=quantity or variable decreased\n  use: The source is explicitly said to make the target smaller, slower, less likely, or less intense.\n  avoid: Do not use for absence, prevention without a scalar target, or mere negative association.\nINDUCES [CAUSAL; direction=inducer_to_induced_effect]\n  meaning: The source produces the target through an explicitly described induction mechanism.\n  roles: source=inducing phenomenon; target=induced phenomenon\n  use: The source explicitly says induces or describes a recognized induction mechanism.\n  avoid: Do not use as a metaphor for generic causation, influence, motivation, or historical response.\nENABLES [DEPENDENCY; direction=enabler_to_enabled]\n  meaning: The source makes the target possible without necessarily causing it to occur.\n  roles: source=enabling condition or capability; target=capability or process made possible\n  use: The target could not occur, or is materially made possible, because of the source.\n  avoid: Do not use for delivery, participation, weak assistance, or an effect that actually occurred.\nREQUIRES [DEPENDENCY; direction=dependent_to_requirement]\n  meaning: The source depends on the target as a prerequisite or necessary resource.\n  roles: source=dependent; target=prerequisite or required resource\n  use: The source cannot operate or occur as described without the target.\n  avoid: Do not reverse prerequisite and dependent; do not use for optional support.\nCONSTRAINS [DEPENDENCY; direction=constraint_to_constrained]\n  meaning: The source limits the possible behavior, values, or choices of the target.\n  roles: source=constraint; target=constrained entity, process, or variable\n  use: The source imposes a limit, rule, boundary, or restriction on the target.\n  avoid: Do not use to mean unchanged, unrelated, merely different, or causally reduced.\nPRECEDES [TEMPORAL; direction=earlier_to_later]\n  meaning: The source occurs before the target in time or an explicit process sequence.\n  roles: source=earlier event or process; target=later event or process\n  use: The source explicitly occurs before, previously, first, then, or after relative to the target.\n  avoid: Do not infer causality from order; do not reverse earlier and later.\nINTERACTS_WITH [INTERACTION; symmetric]\n  meaning: The source and target directly interact, with no more precise directional semantics supported.\n  roles: source=interaction participant; target=interaction participant\n  use: The text supports direct mutual interaction but not a more precise active predicate.\n  avoid: Do not use for distant association, one-way effect, dependency, or chronology.\nBINDS_TO [INTERACTION; symmetric]\n  meaning: The source physically or chemically binds or attaches to the target.\n  roles: source=binding participant; target=binding participant\n  use: The source explicitly binds or attaches to the target.\n  avoid: Do not use for metaphorical commitment, dependency, influence, or literal physical force.\nTRANSFERS_TO [INTERACTION; direction=transferred_item_to_destination]\n  meaning: The source item, material, or information moves to the target destination or recipient.\n  roles: source=item, material, or information transferred; target=destination or recipient\n  use: The source is explicitly carried, delivered, moved, or transferred to the target.\n  avoid: Do not make the carrier the source unless the carrier itself moves to the destination; do not use for enabling.\nEXERTS_FORCE_ON [INTERACTION; direction=force_exerter_to_physical_target]\n  meaning: The source exerts a literal physical force on the target.\n  roles: source=physical force source; target=physical object receiving force\n  use: A literal physical force is explicitly exerted on the target.\n  avoid: Never use metaphorically for influence, contribution, binding, pressure, or causation.\nTRANSFORMS_INTO [TRANSFORMATION; direction=prior_state_to_resulting_state]\n  meaning: The source itself changes state or identity and becomes the target.\n  roles: source=entity or state before transformation; target=same entity or resulting material after transformation\n  use: The source itself becomes the target through a transformation.\n  avoid: Do not use when an actor causes, creates, attempts, participates in, or responds to the target.\nCREATES [TRANSFORMATION; direction=creator_to_created]\n  meaning: The source produces or brings a distinct target into existence.\n  roles: source=producer or generative process; target=newly produced entity or result\n  use: The source produces a target that is distinct from the source.\n  avoid: Do not use when the source itself becomes the target; use TRANSFORMS_INTO instead.\nMEASURED_BY [DESCRIPTIVE; direction=measurand_to_measure]\n  meaning: The source property or variable is quantified or assessed by the target metric, observation, or procedure.\n  roles: source=property or variable measured; target=metric, observation, or measurement procedure\n  use: The target is explicitly how the source is measured or quantified.\n  avoid: Do not point to something that merely responds to, correlates with, or exemplifies the source.\nCONTRADICTS [DESCRIPTIVE; symmetric]\n  meaning: The source and target assert mutually incompatible propositions.\n  roles: source=proposition or claim; target=incompatible proposition or claim\n  use: Both sides are explicit propositions that cannot simultaneously hold as stated.\n  avoid: Do not use for difference, disagreement without incompatibility, trade-off, or negative causality.",
+    "max_output_tokens": null,
+    "max_tool_calls": null,
+    "metadata": {},
+    "model": "gpt-5.6-luna",
+    "moderation": null,
+    "object": "response",
+    "output": [
+      {
+        "content": [],
+        "encrypted_content": "gAAAAABqpmcVFi1VOX5XSSuOkb2NilWE3raRjf_QlahY8rDujqVn1acL_XCnfNWDC1FEcM7E_1thEdkcIE55O5Mhbx8BNRjkFuHpMpXJkV0kIpOBbQnXm3rxZdg1iYTKZ4gNGNJi5YTy6DmQ8k0wfJQA-cz0VjuKXPTk--Ko2JJ5ABpeXGiPum939STd0Cx7wcrqbdDTP3PIjJqQMOMLzNsEWOinG5WtQjMEKuEkd23Uu7ynjOfiC4VwnuRNZ7we5FC8-GY73cYCrv-WSEWJSKPC17eQsERQt-FFkzTI2u2DptwYvoXrsQkjmSbxzRwwPGu3tOfktE87MrIvtzbtSa6ev9LckYa-Y1g75bOdQVBu_8nT8Oela63CfxcW2Tp5TH8YIFJnT08A1XQM1dya93mi5NQ7cCy8r6SSFqYvvUaJCQgtlMHHWwL6gAzVceGlw2DT3nsKhbYxtw4-qKBEwXfPBizOqou49dDrPDEGhs0uNhpmGyIj4qPZWsO9Btiriy7WF-VdG-hRfKr2ZjAa69A3IbuzrrlW7qKQqNSdHXIV0DqjWkIQKZf1QYvPuQjQgLyPdlJU0c1jgVo4FneHir8MVKG36_8dI2Mtd9OZXIj0_o8Z2wcFjPAvGVo5wDeYMOWz-aWouUsQZPyex1pKBacWjECXPql-3yu1ktVuxvrolncP1p_8wuEsFSYBYkotrV-56wiKBA-CA_Wn5B40VewWHe7okfwJbSlKDThsdv5xTo412F50MgCo6-zUd8f-XVyhcTO7O8Vo9o2YfB5BBsezWdxMZ5nBqr4d1uM1qXErdQ0nEaNEoDS09OhaFU1FhJiMFV9dyBS7xlP7wYPc94IvDLsuPMLhEG2NRVws4Jl0_1EiO85x6jV45QYabPGgsI8A-jGRGWonK7FHJSQs6qOLYKJaul5Sf7NBNraZkfE8F7mlVchoa-1XTf6di5MNdF0PkH-Q3pOF-U7dQk1K8c07XJxGk5Ayr1x4GUEghEOskW_i4Jnv47avQtoyb-Fb3tv5ZejMo47dlzes0xXwflrQJZuLSAu3abjD9MUFVAJfTxiyGd6KF4XSyhKAKb31o-wHjwnVRsCvUylEd9ZO_d1H66a7qIXtBpqbn_ju4HmfOOVr7VZiDHPu23V3LvsuhrKsZtZkWOmFjuAhaPGvtwV4gscFrDcTHxwnkLnaEzERLlVgbCQlrQkz8DoLKbr2P2MDX0UVNHVBIRb-YDxGOHc3hBtstEYvZOgRVSxamz71OetI0uVYAepLnrpQrBQ4Wblcajqzv7j_zHn3NMixxg4AaZN7gkVqirDgvyzocNQ3cHh97GTYYOxoHqNCL85F5VG-I3R3czyLvghvQdYm-56qI76deYcMIAHWYuxf9Qn6kSddRR3tx8uw-q_CIbVST5e6RNE5uz1ShccFRpEaW5k5pNUZR3CT7coa9DG6zRVDiciAFKoIthVIc_13ic_f0n9F9b0WLLESeLKBWaPPehH3nhLA98Za951ib3BvCirY_lAH16K7BLcwQl8X2ENPxk-lzynWzvcCYHg-WteLQ4ZgKEs43gGzZ4eGxmmfQrg7XlBpzLLFxDlVCu9s65K691LI2M8iG57uTylLaRslu1y3UVDmdEjwhC74VPHfeit3iGSdQJkLj5o330T4jyIr_vo9kXxIgV7iRDvGBGJbw14pnJEJ586nT60-loRdMfqhtnU0yx0oGnIvel-4v7HfhrJKAT4KFTd0nMjH1uWmQHpITRpnuEt0SNNsNh6MJ0LsJqvUpfFLfkzcIEWSiMc0CJqlA_4Zy_plBW_sHSo1ywZCX8s3vqWMzHknu3d_JMy76iVFiqy1m3HH4HZ_0BtbWoQArrIsaCQjMJRMenvNkXDQV8RPKiUlRU2ysWMHIrrMadyCPkwAPz9i1fZUwE43oJStJoecYBT6Xmf8dlTfT8v75uve7rc-z0DAr0_rTuJ4HQl41Hcn-Bn-N0AVHJMlPV-Ao6RK_O_lupFFTb2nijFux7fcTNVWrA18Og8njC0jA4qMCHsQbj-LH5WXvpp9lCZ5kfInYdQMx2L2SPLyBaxaCgwUjoKiyVbW7fWWWqCUs1fpGS_HGDgxj5lO8yuG-4w1BCsOnd63nn0G5uWerCjZVTCwHRn62h7Mh2q3Mnj574b1G4Q4olAJmB49-xc04WhGj2goCMssw6FaQGEl6IFh287uXXFz2m7WTgBpoZfdqpaXyVy91_GMD0JaOfj1Xe5Eeey8kc6eqFb5zFLLHrZGawK6gG4ydA==",
+        "id": "rs_0c4819210955efd2016aa6670415b087d2813a948721a4ae45",
+        "status": null,
+        "summary": [],
+        "type": "reasoning"
+      },
+      {
+        "content": [
+          {
+            "annotations": [],
+            "logprobs": [],
+            "text": "{\"entities\":[{\"id\":\"earth\",\"name\":\"Earth\",\"description\":\"The only world currently known to have life.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"id\":\"life\",\"name\":\"life\",\"description\":\"Living phenomena found on Earth.\",\"entity_type\":\"CONCEPT\",\"aliases\":[]},{\"id\":\"solar-system\",\"name\":\"solar system\",\"description\":\"The Sun, planets, and other material orbiting within the system.\",\"entity_type\":\"SYSTEM\",\"aliases\":[]},{\"id\":\"nebula\",\"name\":\"nebula\",\"description\":\"A massive cloud of gas, dust, and debris in space from which stars and planets can form.\",\"entity_type\":\"OBJECT\",\"aliases\":[\"nebulae\"]},{\"id\":\"star\",\"name\":\"star\",\"description\":\"A celestial object that can form from a nebula.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"id\":\"planet\",\"name\":\"planet\",\"description\":\"A large celestial body that can form from material in a nebula and orbits a star.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"id\":\"supernova\",\"name\":\"supernova\",\"description\":\"The explosion of a large star.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"id\":\"gas-and-dust\",\"name\":\"gas and dust\",\"description\":\"Material in a nebula used to form stars and planets.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"id\":\"material-aggregation\",\"name\":\"material aggregation\",\"description\":\"The sticking together of available material into progressively larger masses.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"id\":\"solar-system-formation\",\"name\":\"solar system formation\",\"description\":\"The long process through which the solar system formed from a nebula.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"id\":\"cloud-spinning\",\"name\":\"nebula spinning\",\"description\":\"The spinning motion of the nebula during formation of the solar system.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"id\":\"material-fall-to-center\",\"name\":\"material falling into the center\",\"description\":\"The movement of nebular material toward the center of the spinning nebula.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"id\":\"sun\",\"name\":\"Sun\",\"description\":\"The star that formed at the center of the solar system's nebula.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"id\":\"collisions\",\"name\":\"collisions\",\"description\":\"Repeated collisions among pieces of metal and rock during planet formation.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"id\":\"rock-and-metal-pieces\",\"name\":\"pieces of metal and rock\",\"description\":\"Small solid pieces formed when gas and dust collided and stuck together.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"id\":\"eight-planets\",\"name\":\"eight planets\",\"description\":\"Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, and Neptune.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"id\":\"orbit\",\"name\":\"orbit\",\"description\":\"The pattern or path made by an object as it goes around another astronomical body.\",\"entity_type\":\"CONCEPT\",\"aliases\":[]},{\"id\":\"galaxy\",\"name\":\"galaxy\",\"description\":\"A larger astronomical system around which star systems orbit.\",\"entity_type\":\"SYSTEM\",\"aliases\":[]},{\"id\":\"moon\",\"name\":\"Moon\",\"description\":\"Earth's natural satellite, which orbits Earth.\",\"entity_type\":\"OBJECT\",\"aliases\":[]}],\"claims\":[{\"id\":\"claim-life-evolution\",\"statement\":\"All plants, animals, microbes, and other living things on Earth have evolved on Earth.\",\"evidence\":[{\"quote\":\"All of the plants and animals and microbes and other living things on Earth have evolved here.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"claim-orbits-important\",\"statement\":\"Orbits are important for understanding where we came from.\",\"evidence\":[{\"quote\":\"So, orbits are really important for us to learn about if we want to know where we came from.\"}],\"confidence\":0.96,\"origin\":\"SOURCE\"},{\"id\":\"claim-planet-requirement\",\"statement\":\"A planet has to orbit a star.\",\"evidence\":[{\"quote\":\"One thing that makes a planet is that a planet has to be orbiting a star.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"claim-moon-requirement\",\"statement\":\"An object must orbit a planet to be a moon.\",\"evidence\":[{\"quote\":\"For something to be a moon, it needs to be in orbit around a planet.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"claim-system-orbits-galaxy\",\"statement\":\"Star systems orbit around their entire galaxy.\",\"evidence\":[{\"quote\":\"But star systems also have orbits. They orbit around their entire galaxy.\"}],\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"claim-nebula-ingredients\",\"statement\":\"Nebulae contain the ingredients needed to form stars and planets.\",\"evidence\":[{\"quote\":\"Nebulae are massive clouds of dust and debris in space and have all the ingredients to form stars and planets.\"}],\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"claim-orbit-direction\",\"statement\":\"The early nebula, the forming Sun, and the planets' present orbits shared the same direction of spinning or motion.\",\"evidence\":[{\"quote\":\"the cloud itself was spinning in the same direction as the orbits of the planets today, with the Sun forming in the middle and also spinning in the same direction.\"}],\"confidence\":0.96,\"origin\":\"SOURCE\"},{\"id\":\"claim-supernova-possibility\",\"statement\":\"The solar system may have formed from a large nebula after a nearby star exploded.\",\"evidence\":[{\"quote\":\"We currently think that our solar system formed from a large nebula, perhaps after the explosion of a nearby star.\"}],\"confidence\":0.9,\"origin\":\"SOURCE\"}],\"relationships\":[{\"id\":\"rel-nebula-cloud\",\"source_entity_id\":\"nebula\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"gas-and-dust\",\"statement\":\"A nebula is a cloud of gas and dust in space.\",\"evidence\":[{\"quote\":\"We call such a cloud a “nebula”\"}],\"confidence\":0.96,\"origin\":\"SOURCE\"},{\"id\":\"rel-nebula-creates-stars\",\"source_entity_id\":\"nebula\",\"relationship_type\":\"CREATES\",\"target_entity_id\":\"star\",\"statement\":\"Nebulae form stars.\",\"evidence\":[{\"quote\":\"it’s from these nebulae that stars and planets form.\"}],\"confidence\":0.95,\"origin\":\"SOURCE\"},{\"id\":\"rel-nebula-creates-planets\",\"source_entity_id\":\"nebula\",\"relationship_type\":\"CREATES\",\"target_entity_id\":\"planet\",\"statement\":\"Nebulae form planets.\",\"evidence\":[{\"quote\":\"it’s from these nebulae that stars and planets form.\"}],\"confidence\":0.95,\"origin\":\"SOURCE\"},{\"id\":\"rel-aggregation-creates-mass\",\"source_entity_id\":\"material-aggregation\",\"relationship_type\":\"CREATES\",\"target_entity_id\":\"rock-and-metal-pieces\",\"statement\":\"Material sticking together forms larger masses and solid pieces.\",\"evidence\":[{\"quote\":\"When enough material is available, it begins to stick together forming a large mass.\"}],\"confidence\":0.88,\"origin\":\"SOURCE\"},{\"id\":\"rel-supernova-causes-spinning\",\"source_entity_id\":\"supernova\",\"relationship_type\":\"CAUSES\",\"target_entity_id\":\"cloud-spinning\",\"statement\":\"A supernova can cause gas and dust in nearby nebulae to start swirling and spinning.\",\"evidence\":[{\"quote\":\"that explosion has enough energy to make the gas and dust in nearby nebulae start swirling and spinning about.\"}],\"confidence\":0.97,\"origin\":\"SOURCE\"},{\"id\":\"rel-spinning-causes-fall\",\"source_entity_id\":\"cloud-spinning\",\"relationship_type\":\"CAUSES\",\"target_entity_id\":\"material-fall-to-center\",\"statement\":\"The spinning process caused much of the nebular material to fall into the center.\",\"evidence\":[{\"quote\":\"As this happened, it caused a lot of the material in the nebula to fall into its center\"}],\"confidence\":0.94,\"origin\":\"SOURCE\"},{\"id\":\"rel-fall-creates-sun\",\"source_entity_id\":\"material-fall-to-center\",\"relationship_type\":\"CAUSES\",\"target_entity_id\":\"sun\",\"statement\":\"Material falling into the center is where the Sun started forming.\",\"evidence\":[{\"quote\":\"and that’s where the Sun started forming.\"}],\"confidence\":0.86,\"origin\":\"SOURCE\"},{\"id\":\"rel-collisions-creates-planets\",\"source_entity_id\":\"collisions\",\"relationship_type\":\"CREATES\",\"target_entity_id\":\"planet\",\"statement\":\"Repeated collisions among progressively larger pieces formed young planets.\",\"evidence\":[{\"quote\":\"These were young planets, and eventually, over a long time and through many, many collisions, our eight planets were formed\"}],\"confidence\":0.97,\"origin\":\"SOURCE\"},{\"id\":\"rel-eight-planets-example\",\"source_entity_id\":\"eight-planets\",\"relationship_type\":\"EXAMPLE_OF\",\"target_entity_id\":\"planet\",\"statement\":\"The eight listed planets are examples of planets.\",\"evidence\":[{\"quote\":\"our eight planets were formed – Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, and Neptune.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"rel-earth-example-life-world\",\"source_entity_id\":\"earth\",\"relationship_type\":\"EXAMPLE_OF\",\"target_entity_id\":\"life\",\"statement\":\"Earth is the known world that has life.\",\"evidence\":[{\"quote\":\"Earth is the only world that we know of that has life.\"}],\"confidence\":0.84,\"origin\":\"SOURCE\"}],\"propositions\":[] }",
+            "type": "output_text"
+          }
+        ],
+        "id": "msg_0c4819210955efd2016aa66706683487d2a286fd279986f100",
+        "phase": "final_answer",
+        "role": "assistant",
+        "status": "completed",
+        "type": "message"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "presence_penalty": 0.0,
+    "previous_response_id": null,
+    "prompt": null,
+    "prompt_cache_key": null,
+    "prompt_cache_options": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+      "context": "all_turns",
+      "effort": "low",
+      "generate_summary": null,
+      "mode": "standard",
+      "summary": null
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "status": "completed",
+    "store": false,
+    "temperature": 1.0,
+    "text": {
+      "format": {
+        "description": null,
+        "name": "knowledge_extraction",
+        "schema_": {
+          "additionalProperties": false,
+          "properties": {
+            "claims": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "confidence": {
+                    "maximum": 1,
+                    "minimum": 0,
+                    "type": "number"
+                  },
+                  "evidence": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "quote": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "quote"
+                      ],
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "id": {
+                    "type": "string"
+                  },
+                  "origin": {
+                    "enum": [
+                      "SOURCE",
+                      "INFERRED"
+                    ],
+                    "type": "string"
+                  },
+                  "statement": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "statement",
+                  "evidence",
+                  "confidence",
+                  "origin"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "entities": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "aliases": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "entity_type": {
+                    "enum": [
+                      "CONCEPT",
+                      "OBJECT",
+                      "PROCESS",
+                      "VARIABLE",
+                      "SYSTEM",
+                      "COMPONENT"
+                    ],
+                    "type": "string"
+                  },
+                  "id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "name",
+                  "description",
+                  "entity_type",
+                  "aliases"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "propositions": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "comparison_operator": {
+                    "anyOf": [
+                      {
+                        "enum": [
+                          "GREATER_THAN"
+                        ],
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "confidence": {
+                    "maximum": 1,
+                    "minimum": 0,
+                    "type": "number"
+                  },
+                  "evidence": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "quote": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "quote"
+                      ],
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "origin": {
+                    "enum": [
+                      "SOURCE",
+                      "INFERRED"
+                    ],
+                    "type": "string"
+                  },
+                  "proposition_type": {
+                    "enum": [
+                      "COMPARISON_CONDITION",
+                      "TRANSFER_EVENT"
+                    ],
+                    "type": "string"
+                  },
+                  "relationship_type": {
+                    "enum": [
+                      "IS_A",
+                      "PART_OF",
+                      "CAUSES",
+                      "INCREASES",
+                      "DECREASES",
+                      "ENABLES",
+                      "REQUIRES",
+                      "CONSTRAINS",
+                      "PRECEDES",
+                      "TRANSFORMS_INTO",
+                      "INTERACTS_WITH",
+                      "MEASURED_BY",
+                      "EXAMPLE_OF",
+                      "CONTRADICTS",
+                      "CREATES",
+                      "INDUCES",
+                      "EXERTS_FORCE_ON",
+                      "AFFECTS",
+                      "BINDS_TO",
+                      "TRANSFERS_TO"
+                    ],
+                    "type": "string"
+                  },
+                  "role_bindings": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "entity_id": {
+                          "type": "string"
+                        },
+                        "role": {
+                          "enum": [
+                            "LEFT_OPERAND",
+                            "RIGHT_OPERAND",
+                            "OUTCOME",
+                            "EVENT",
+                            "OBJECT",
+                            "DESTINATION"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "role",
+                        "entity_id"
+                      ],
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "statement": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "proposition_type",
+                  "statement",
+                  "role_bindings",
+                  "relationship_type",
+                  "comparison_operator",
+                  "evidence",
+                  "confidence",
+                  "origin"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "relationships": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "confidence": {
+                    "maximum": 1,
+                    "minimum": 0,
+                    "type": "number"
+                  },
+                  "evidence": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "quote": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "quote"
+                      ],
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "id": {
+                    "type": "string"
+                  },
+                  "origin": {
+                    "enum": [
+                      "SOURCE",
+                      "INFERRED"
+                    ],
+                    "type": "string"
+                  },
+                  "relationship_type": {
+                    "enum": [
+                      "IS_A",
+                      "PART_OF",
+                      "CAUSES",
+                      "INCREASES",
+                      "DECREASES",
+                      "ENABLES",
+                      "REQUIRES",
+                      "CONSTRAINS",
+                      "PRECEDES",
+                      "TRANSFORMS_INTO",
+                      "INTERACTS_WITH",
+                      "MEASURED_BY",
+                      "EXAMPLE_OF",
+                      "CONTRADICTS",
+                      "CREATES",
+                      "INDUCES",
+                      "EXERTS_FORCE_ON",
+                      "AFFECTS",
+                      "BINDS_TO",
+                      "TRANSFERS_TO"
+                    ],
+                    "type": "string"
+                  },
+                  "source_entity_id": {
+                    "type": "string"
+                  },
+                  "statement": {
+                    "type": "string"
+                  },
+                  "target_entity_id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "source_entity_id",
+                  "relationship_type",
+                  "target_entity_id",
+                  "statement",
+                  "evidence",
+                  "confidence",
+                  "origin"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "entities",
+            "claims",
+            "relationships",
+            "propositions"
+          ],
+          "type": "object"
+        },
+        "strict": true,
+        "type": "json_schema"
+      },
+      "verbosity": "medium"
+    },
+    "tool_choice": "auto",
+    "tool_usage": {
+      "image_gen": {
+        "input_tokens": 0,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "total_tokens": 0
+      },
+      "web_search": {
+        "num_requests": 0
+      }
+    },
+    "tools": [],
+    "top_logprobs": 0,
+    "top_p": 0.98,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 3325,
+      "input_tokens_details": {
+        "cache_write_tokens": 3322,
+        "cached_tokens": 0
+      },
+      "output_tokens": 2122,
+      "output_tokens_details": {
+        "reasoning_tokens": 166
+      },
+      "total_tokens": 5447
+    },
+    "user": null
+  },
+  "started_at_utc": "2026-09-13T09:04:01.222357Z"
+}

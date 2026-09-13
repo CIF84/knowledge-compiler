@@ -1,0 +1,2876 @@
+{
+  "bindings": [
+    {
+      "decision_id": "decision-5d44e04da7a7c0ec",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": null,
+          "predicates": [
+            "CREATES"
+          ],
+          "relationship_count": 1,
+          "rule_id": "CANONICAL_EDGE_FOCUS",
+          "semantic_class": "canonical",
+          "structure_type": null
+        },
+        "evidence_refs": [
+          {
+            "document_id": "text-c0cb2519673b8f3e",
+            "end_char": 771,
+            "quote": "When enough material is available, it begins to stick together forming a large mass.",
+            "relationship_ids": [
+              "rel-aggregation-creates-mass"
+            ],
+            "start_char": 687
+          }
+        ],
+        "payload": {
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "The source produces or brings a distinct target into existence.",
+            "identity": "rel-aggregation-creates-mass",
+            "label": "rel-aggregation-creates-mass"
+          },
+          "nodes": [
+            {
+              "description": "The sticking together of available material into progressively larger masses.",
+              "entity_id": "material-aggregation",
+              "entity_type": "PROCESS",
+              "label": "material aggregation"
+            },
+            {
+              "description": "Small solid pieces formed when gas and dust collided and stuck together.",
+              "entity_id": "rock-and-metal-pieces",
+              "entity_type": "OBJECT",
+              "label": "pieces of metal and rock"
+            }
+          ],
+          "relationship": {
+            "direction": "creator_to_created",
+            "evidence": [
+              {
+                "document_id": "text-c0cb2519673b8f3e",
+                "end_char": 771,
+                "quote": "When enough material is available, it begins to stick together forming a large mass.",
+                "start_char": 687
+              }
+            ],
+            "meaning": "The source produces or brings a distinct target into existence.",
+            "provenance_status": "SOURCE_EVIDENCE",
+            "relationship_ids": [
+              "rel-aggregation-creates-mass"
+            ],
+            "relationship_type": "CREATES",
+            "source_entity_id": "material-aggregation",
+            "source_label": "material aggregation",
+            "target_entity_id": "rock-and-metal-pieces",
+            "target_label": "pieces of metal and rock"
+          },
+          "relationships": [
+            {
+              "direction": "creator_to_created",
+              "evidence": [
+                {
+                  "document_id": "text-c0cb2519673b8f3e",
+                  "end_char": 771,
+                  "quote": "When enough material is available, it begins to stick together forming a large mass.",
+                  "start_char": 687
+                }
+              ],
+              "meaning": "The source produces or brings a distinct target into existence.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-aggregation-creates-mass"
+              ],
+              "relationship_type": "CREATES",
+              "source_entity_id": "material-aggregation",
+              "source_label": "material aggregation",
+              "target_entity_id": "rock-and-metal-pieces",
+              "target_label": "pieces of metal and rock"
+            }
+          ]
+        },
+        "semantic_class": "canonical",
+        "semantic_focus_identity": "rel-aggregation-creates-mass",
+        "strategy_type": "FOCUSED_RELATIONSHIP",
+        "title": "material aggregation → pieces of metal and rock",
+        "trusted_input_refs": [
+          "validated KnowledgeModel canonical relationship"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "FOCUSED_RELATIONSHIP",
+      "semantic_focus_identity": "rel-aggregation-creates-mass",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-fa1dc43a48281540",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": null,
+          "predicates": [
+            "CREATES"
+          ],
+          "relationship_count": 1,
+          "rule_id": "CANONICAL_EDGE_FOCUS",
+          "semantic_class": "canonical",
+          "structure_type": null
+        },
+        "evidence_refs": [
+          {
+            "document_id": "text-c0cb2519673b8f3e",
+            "end_char": 1660,
+            "quote": "These were young planets, and eventually, over a long time and through many, many collisions, our eight planets were formed",
+            "relationship_ids": [
+              "rel-collisions-creates-planets"
+            ],
+            "start_char": 1537
+          }
+        ],
+        "payload": {
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "The source produces or brings a distinct target into existence.",
+            "identity": "rel-collisions-creates-planets",
+            "label": "rel-collisions-creates-planets"
+          },
+          "nodes": [
+            {
+              "description": "Repeated collisions among pieces of metal and rock during planet formation.",
+              "entity_id": "collisions",
+              "entity_type": "PROCESS",
+              "label": "collisions"
+            },
+            {
+              "description": "A large celestial body that can form from material in a nebula and orbits a star.",
+              "entity_id": "planet",
+              "entity_type": "OBJECT",
+              "label": "planet"
+            }
+          ],
+          "relationship": {
+            "direction": "creator_to_created",
+            "evidence": [
+              {
+                "document_id": "text-c0cb2519673b8f3e",
+                "end_char": 1660,
+                "quote": "These were young planets, and eventually, over a long time and through many, many collisions, our eight planets were formed",
+                "start_char": 1537
+              }
+            ],
+            "meaning": "The source produces or brings a distinct target into existence.",
+            "provenance_status": "SOURCE_EVIDENCE",
+            "relationship_ids": [
+              "rel-collisions-creates-planets"
+            ],
+            "relationship_type": "CREATES",
+            "source_entity_id": "collisions",
+            "source_label": "collisions",
+            "target_entity_id": "planet",
+            "target_label": "planet"
+          },
+          "relationships": [
+            {
+              "direction": "creator_to_created",
+              "evidence": [
+                {
+                  "document_id": "text-c0cb2519673b8f3e",
+                  "end_char": 1660,
+                  "quote": "These were young planets, and eventually, over a long time and through many, many collisions, our eight planets were formed",
+                  "start_char": 1537
+                }
+              ],
+              "meaning": "The source produces or brings a distinct target into existence.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-collisions-creates-planets"
+              ],
+              "relationship_type": "CREATES",
+              "source_entity_id": "collisions",
+              "source_label": "collisions",
+              "target_entity_id": "planet",
+              "target_label": "planet"
+            }
+          ]
+        },
+        "semantic_class": "canonical",
+        "semantic_focus_identity": "rel-collisions-creates-planets",
+        "strategy_type": "FOCUSED_RELATIONSHIP",
+        "title": "collisions → planet",
+        "trusted_input_refs": [
+          "validated KnowledgeModel canonical relationship"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "FOCUSED_RELATIONSHIP",
+      "semantic_focus_identity": "rel-collisions-creates-planets",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-3691ea8ceee23142",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": null,
+          "predicates": [
+            "EXAMPLE_OF"
+          ],
+          "relationship_count": 1,
+          "rule_id": "CANONICAL_EDGE_FOCUS",
+          "semantic_class": "canonical",
+          "structure_type": null
+        },
+        "evidence_refs": [
+          {
+            "document_id": "text-c0cb2519673b8f3e",
+            "end_char": 54,
+            "quote": "Earth is the only world that we know of that has life.",
+            "relationship_id": "rel-earth-example-life-world",
+            "relationship_ids": [
+              "rel-earth-example-life-world"
+            ],
+            "start_char": 0
+          }
+        ],
+        "payload": {
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "The source is an illustrative instance of the target concept.",
+            "identity": "rel-earth-example-life-world",
+            "label": "rel-earth-example-life-world"
+          },
+          "nodes": [
+            {
+              "description": "The only world currently known to have life.",
+              "entity_id": "earth",
+              "entity_type": "OBJECT",
+              "label": "Earth"
+            },
+            {
+              "description": "Living phenomena found on Earth.",
+              "entity_id": "life",
+              "entity_type": "CONCEPT",
+              "label": "life"
+            }
+          ],
+          "relationship": {
+            "direction": "example_to_concept",
+            "evidence": [
+              {
+                "document_id": "text-c0cb2519673b8f3e",
+                "end_char": 54,
+                "quote": "Earth is the only world that we know of that has life.",
+                "relationship_id": "rel-earth-example-life-world",
+                "start_char": 0
+              }
+            ],
+            "meaning": "The source is an illustrative instance of the target concept.",
+            "provenance_status": "SOURCE_EVIDENCE",
+            "relationship_ids": [
+              "rel-earth-example-life-world"
+            ],
+            "relationship_type": "EXAMPLE_OF",
+            "source_entity_id": "earth",
+            "source_label": "Earth",
+            "target_entity_id": "life",
+            "target_label": "life"
+          },
+          "relationships": [
+            {
+              "direction": "example_to_concept",
+              "evidence": [
+                {
+                  "document_id": "text-c0cb2519673b8f3e",
+                  "end_char": 54,
+                  "quote": "Earth is the only world that we know of that has life.",
+                  "relationship_id": "rel-earth-example-life-world",
+                  "start_char": 0
+                }
+              ],
+              "meaning": "The source is an illustrative instance of the target concept.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-earth-example-life-world"
+              ],
+              "relationship_type": "EXAMPLE_OF",
+              "source_entity_id": "earth",
+              "source_label": "Earth",
+              "target_entity_id": "life",
+              "target_label": "life"
+            }
+          ]
+        },
+        "semantic_class": "canonical",
+        "semantic_focus_identity": "rel-earth-example-life-world",
+        "strategy_type": "FOCUSED_RELATIONSHIP",
+        "title": "Earth → life",
+        "trusted_input_refs": [
+          "workspace-fixture.json selected canonical edge",
+          "workspace-fixture.json selected edge endpoints and evidence"
+        ],
+        "warnings": [
+          "Sparse structure: this view contains only one supported relationship."
+        ]
+      },
+      "selected_representation_strategy": "FOCUSED_RELATIONSHIP",
+      "semantic_focus_identity": "rel-earth-example-life-world",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-61b603e835b8130b",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": null,
+          "predicates": [
+            "EXAMPLE_OF"
+          ],
+          "relationship_count": 1,
+          "rule_id": "CANONICAL_EDGE_FOCUS",
+          "semantic_class": "canonical",
+          "structure_type": null
+        },
+        "evidence_refs": [
+          {
+            "document_id": "text-c0cb2519673b8f3e",
+            "end_char": 1729,
+            "quote": "our eight planets were formed – Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, and Neptune.",
+            "relationship_id": "rel-eight-planets-example",
+            "relationship_ids": [
+              "rel-eight-planets-example"
+            ],
+            "start_char": 1631
+          }
+        ],
+        "payload": {
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "The source is an illustrative instance of the target concept.",
+            "identity": "rel-eight-planets-example",
+            "label": "rel-eight-planets-example"
+          },
+          "nodes": [
+            {
+              "description": "Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, and Neptune.",
+              "entity_id": "eight-planets",
+              "entity_type": "OBJECT",
+              "label": "eight planets"
+            },
+            {
+              "description": "A large celestial body that can form from material in a nebula and orbits a star.",
+              "entity_id": "planet",
+              "entity_type": "OBJECT",
+              "label": "planet"
+            }
+          ],
+          "relationship": {
+            "direction": "example_to_concept",
+            "evidence": [
+              {
+                "document_id": "text-c0cb2519673b8f3e",
+                "end_char": 1729,
+                "quote": "our eight planets were formed – Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, and Neptune.",
+                "relationship_id": "rel-eight-planets-example",
+                "start_char": 1631
+              }
+            ],
+            "meaning": "The source is an illustrative instance of the target concept.",
+            "provenance_status": "SOURCE_EVIDENCE",
+            "relationship_ids": [
+              "rel-eight-planets-example"
+            ],
+            "relationship_type": "EXAMPLE_OF",
+            "source_entity_id": "eight-planets",
+            "source_label": "eight planets",
+            "target_entity_id": "planet",
+            "target_label": "planet"
+          },
+          "relationships": [
+            {
+              "direction": "example_to_concept",
+              "evidence": [
+                {
+                  "document_id": "text-c0cb2519673b8f3e",
+                  "end_char": 1729,
+                  "quote": "our eight planets were formed – Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, and Neptune.",
+                  "relationship_id": "rel-eight-planets-example",
+                  "start_char": 1631
+                }
+              ],
+              "meaning": "The source is an illustrative instance of the target concept.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-eight-planets-example"
+              ],
+              "relationship_type": "EXAMPLE_OF",
+              "source_entity_id": "eight-planets",
+              "source_label": "eight planets",
+              "target_entity_id": "planet",
+              "target_label": "planet"
+            }
+          ]
+        },
+        "semantic_class": "canonical",
+        "semantic_focus_identity": "rel-eight-planets-example",
+        "strategy_type": "FOCUSED_RELATIONSHIP",
+        "title": "eight planets → planet",
+        "trusted_input_refs": [
+          "workspace-fixture.json selected canonical edge",
+          "workspace-fixture.json selected edge endpoints and evidence"
+        ],
+        "warnings": [
+          "Sparse structure: this view contains only one supported relationship."
+        ]
+      },
+      "selected_representation_strategy": "FOCUSED_RELATIONSHIP",
+      "semantic_focus_identity": "rel-eight-planets-example",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-325e3baee9f232be",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": null,
+          "predicates": [
+            "CAUSES"
+          ],
+          "relationship_count": 1,
+          "rule_id": "CANONICAL_EDGE_FOCUS",
+          "semantic_class": "canonical",
+          "structure_type": null
+        },
+        "evidence_refs": [
+          {
+            "document_id": "text-c0cb2519673b8f3e",
+            "end_char": 1268,
+            "quote": "and that’s where the Sun started forming.",
+            "relationship_id": "rel-fall-creates-sun",
+            "relationship_ids": [
+              "rel-fall-creates-sun"
+            ],
+            "start_char": 1227
+          }
+        ],
+        "payload": {
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "The source brings about the target as an effect.",
+            "identity": "rel-fall-creates-sun",
+            "label": "rel-fall-creates-sun"
+          },
+          "nodes": [
+            {
+              "description": "The movement of nebular material toward the center of the spinning nebula.",
+              "entity_id": "material-fall-to-center",
+              "entity_type": "PROCESS",
+              "label": "material falling into the center"
+            },
+            {
+              "description": "The star that formed at the center of the solar system's nebula.",
+              "entity_id": "sun",
+              "entity_type": "OBJECT",
+              "label": "Sun"
+            }
+          ],
+          "relationship": {
+            "direction": "cause_to_effect",
+            "evidence": [
+              {
+                "document_id": "text-c0cb2519673b8f3e",
+                "end_char": 1268,
+                "quote": "and that’s where the Sun started forming.",
+                "relationship_id": "rel-fall-creates-sun",
+                "start_char": 1227
+              }
+            ],
+            "meaning": "The source brings about the target as an effect.",
+            "provenance_status": "SOURCE_EVIDENCE",
+            "relationship_ids": [
+              "rel-fall-creates-sun"
+            ],
+            "relationship_type": "CAUSES",
+            "source_entity_id": "material-fall-to-center",
+            "source_label": "material falling into the center",
+            "target_entity_id": "sun",
+            "target_label": "Sun"
+          },
+          "relationships": [
+            {
+              "direction": "cause_to_effect",
+              "evidence": [
+                {
+                  "document_id": "text-c0cb2519673b8f3e",
+                  "end_char": 1268,
+                  "quote": "and that’s where the Sun started forming.",
+                  "relationship_id": "rel-fall-creates-sun",
+                  "start_char": 1227
+                }
+              ],
+              "meaning": "The source brings about the target as an effect.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-fall-creates-sun"
+              ],
+              "relationship_type": "CAUSES",
+              "source_entity_id": "material-fall-to-center",
+              "source_label": "material falling into the center",
+              "target_entity_id": "sun",
+              "target_label": "Sun"
+            }
+          ]
+        },
+        "semantic_class": "canonical",
+        "semantic_focus_identity": "rel-fall-creates-sun",
+        "strategy_type": "FOCUSED_RELATIONSHIP",
+        "title": "material falling into the center → Sun",
+        "trusted_input_refs": [
+          "workspace-fixture.json selected canonical edge",
+          "workspace-fixture.json selected edge endpoints and evidence"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "FOCUSED_RELATIONSHIP",
+      "semantic_focus_identity": "rel-fall-creates-sun",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-7bdcfc73bfd1c7ac",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": null,
+          "predicates": [
+            "IS_A"
+          ],
+          "relationship_count": 1,
+          "rule_id": "CANONICAL_EDGE_FOCUS",
+          "semantic_class": "canonical",
+          "structure_type": null
+        },
+        "evidence_refs": [
+          {
+            "document_id": "text-c0cb2519673b8f3e",
+            "end_char": 425,
+            "quote": "We call such a cloud a “nebula”",
+            "relationship_id": "rel-nebula-cloud",
+            "relationship_ids": [
+              "rel-nebula-cloud"
+            ],
+            "start_char": 394
+          }
+        ],
+        "payload": {
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "The source is a kind, category, or subtype of the target.",
+            "identity": "rel-nebula-cloud",
+            "label": "rel-nebula-cloud"
+          },
+          "nodes": [
+            {
+              "description": "Material in a nebula used to form stars and planets.",
+              "entity_id": "gas-and-dust",
+              "entity_type": "OBJECT",
+              "label": "gas and dust"
+            },
+            {
+              "description": "A massive cloud of gas, dust, and debris in space from which stars and planets can form.",
+              "entity_id": "nebula",
+              "entity_type": "OBJECT",
+              "label": "nebula"
+            }
+          ],
+          "relationship": {
+            "direction": "instance_to_type",
+            "evidence": [
+              {
+                "document_id": "text-c0cb2519673b8f3e",
+                "end_char": 425,
+                "quote": "We call such a cloud a “nebula”",
+                "relationship_id": "rel-nebula-cloud",
+                "start_char": 394
+              }
+            ],
+            "meaning": "The source is a kind, category, or subtype of the target.",
+            "provenance_status": "SOURCE_EVIDENCE",
+            "relationship_ids": [
+              "rel-nebula-cloud"
+            ],
+            "relationship_type": "IS_A",
+            "source_entity_id": "nebula",
+            "source_label": "nebula",
+            "target_entity_id": "gas-and-dust",
+            "target_label": "gas and dust"
+          },
+          "relationships": [
+            {
+              "direction": "instance_to_type",
+              "evidence": [
+                {
+                  "document_id": "text-c0cb2519673b8f3e",
+                  "end_char": 425,
+                  "quote": "We call such a cloud a “nebula”",
+                  "relationship_id": "rel-nebula-cloud",
+                  "start_char": 394
+                }
+              ],
+              "meaning": "The source is a kind, category, or subtype of the target.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-nebula-cloud"
+              ],
+              "relationship_type": "IS_A",
+              "source_entity_id": "nebula",
+              "source_label": "nebula",
+              "target_entity_id": "gas-and-dust",
+              "target_label": "gas and dust"
+            }
+          ]
+        },
+        "semantic_class": "canonical",
+        "semantic_focus_identity": "rel-nebula-cloud",
+        "strategy_type": "FOCUSED_RELATIONSHIP",
+        "title": "nebula → gas and dust",
+        "trusted_input_refs": [
+          "workspace-fixture.json selected canonical edge",
+          "workspace-fixture.json selected edge endpoints and evidence"
+        ],
+        "warnings": [
+          "Sparse structure: this view contains only one supported relationship."
+        ]
+      },
+      "selected_representation_strategy": "FOCUSED_RELATIONSHIP",
+      "semantic_focus_identity": "rel-nebula-cloud",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-09b0e7a0b1e12006",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": null,
+          "predicates": [
+            "CREATES"
+          ],
+          "relationship_count": 1,
+          "rule_id": "CANONICAL_EDGE_FOCUS",
+          "semantic_class": "canonical",
+          "structure_type": null
+        },
+        "evidence_refs": [
+          {
+            "document_id": "text-c0cb2519673b8f3e",
+            "end_char": 575,
+            "quote": "it’s from these nebulae that stars and planets form.",
+            "relationship_ids": [
+              "rel-nebula-creates-planets"
+            ],
+            "start_char": 523
+          }
+        ],
+        "payload": {
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "The source produces or brings a distinct target into existence.",
+            "identity": "rel-nebula-creates-planets",
+            "label": "rel-nebula-creates-planets"
+          },
+          "nodes": [
+            {
+              "description": "A massive cloud of gas, dust, and debris in space from which stars and planets can form.",
+              "entity_id": "nebula",
+              "entity_type": "OBJECT",
+              "label": "nebula"
+            },
+            {
+              "description": "A large celestial body that can form from material in a nebula and orbits a star.",
+              "entity_id": "planet",
+              "entity_type": "OBJECT",
+              "label": "planet"
+            }
+          ],
+          "relationship": {
+            "direction": "creator_to_created",
+            "evidence": [
+              {
+                "document_id": "text-c0cb2519673b8f3e",
+                "end_char": 575,
+                "quote": "it’s from these nebulae that stars and planets form.",
+                "start_char": 523
+              }
+            ],
+            "meaning": "The source produces or brings a distinct target into existence.",
+            "provenance_status": "SOURCE_EVIDENCE",
+            "relationship_ids": [
+              "rel-nebula-creates-planets"
+            ],
+            "relationship_type": "CREATES",
+            "source_entity_id": "nebula",
+            "source_label": "nebula",
+            "target_entity_id": "planet",
+            "target_label": "planet"
+          },
+          "relationships": [
+            {
+              "direction": "creator_to_created",
+              "evidence": [
+                {
+                  "document_id": "text-c0cb2519673b8f3e",
+                  "end_char": 575,
+                  "quote": "it’s from these nebulae that stars and planets form.",
+                  "start_char": 523
+                }
+              ],
+              "meaning": "The source produces or brings a distinct target into existence.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-nebula-creates-planets"
+              ],
+              "relationship_type": "CREATES",
+              "source_entity_id": "nebula",
+              "source_label": "nebula",
+              "target_entity_id": "planet",
+              "target_label": "planet"
+            }
+          ]
+        },
+        "semantic_class": "canonical",
+        "semantic_focus_identity": "rel-nebula-creates-planets",
+        "strategy_type": "FOCUSED_RELATIONSHIP",
+        "title": "nebula → planet",
+        "trusted_input_refs": [
+          "validated KnowledgeModel canonical relationship"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "FOCUSED_RELATIONSHIP",
+      "semantic_focus_identity": "rel-nebula-creates-planets",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-015cfc160cf3c69e",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": null,
+          "predicates": [
+            "CREATES"
+          ],
+          "relationship_count": 1,
+          "rule_id": "CANONICAL_EDGE_FOCUS",
+          "semantic_class": "canonical",
+          "structure_type": null
+        },
+        "evidence_refs": [
+          {
+            "document_id": "text-c0cb2519673b8f3e",
+            "end_char": 575,
+            "quote": "it’s from these nebulae that stars and planets form.",
+            "relationship_ids": [
+              "rel-nebula-creates-stars"
+            ],
+            "start_char": 523
+          }
+        ],
+        "payload": {
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "The source produces or brings a distinct target into existence.",
+            "identity": "rel-nebula-creates-stars",
+            "label": "rel-nebula-creates-stars"
+          },
+          "nodes": [
+            {
+              "description": "A massive cloud of gas, dust, and debris in space from which stars and planets can form.",
+              "entity_id": "nebula",
+              "entity_type": "OBJECT",
+              "label": "nebula"
+            },
+            {
+              "description": "A celestial object that can form from a nebula.",
+              "entity_id": "star",
+              "entity_type": "OBJECT",
+              "label": "star"
+            }
+          ],
+          "relationship": {
+            "direction": "creator_to_created",
+            "evidence": [
+              {
+                "document_id": "text-c0cb2519673b8f3e",
+                "end_char": 575,
+                "quote": "it’s from these nebulae that stars and planets form.",
+                "start_char": 523
+              }
+            ],
+            "meaning": "The source produces or brings a distinct target into existence.",
+            "provenance_status": "SOURCE_EVIDENCE",
+            "relationship_ids": [
+              "rel-nebula-creates-stars"
+            ],
+            "relationship_type": "CREATES",
+            "source_entity_id": "nebula",
+            "source_label": "nebula",
+            "target_entity_id": "star",
+            "target_label": "star"
+          },
+          "relationships": [
+            {
+              "direction": "creator_to_created",
+              "evidence": [
+                {
+                  "document_id": "text-c0cb2519673b8f3e",
+                  "end_char": 575,
+                  "quote": "it’s from these nebulae that stars and planets form.",
+                  "start_char": 523
+                }
+              ],
+              "meaning": "The source produces or brings a distinct target into existence.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-nebula-creates-stars"
+              ],
+              "relationship_type": "CREATES",
+              "source_entity_id": "nebula",
+              "source_label": "nebula",
+              "target_entity_id": "star",
+              "target_label": "star"
+            }
+          ]
+        },
+        "semantic_class": "canonical",
+        "semantic_focus_identity": "rel-nebula-creates-stars",
+        "strategy_type": "FOCUSED_RELATIONSHIP",
+        "title": "nebula → star",
+        "trusted_input_refs": [
+          "validated KnowledgeModel canonical relationship"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "FOCUSED_RELATIONSHIP",
+      "semantic_focus_identity": "rel-nebula-creates-stars",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-b7375a63851b91a3",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": null,
+          "predicates": [
+            "CAUSES"
+          ],
+          "relationship_count": 1,
+          "rule_id": "CANONICAL_EDGE_FOCUS",
+          "semantic_class": "canonical",
+          "structure_type": null
+        },
+        "evidence_refs": [
+          {
+            "document_id": "text-c0cb2519673b8f3e",
+            "end_char": 1225,
+            "quote": "As this happened, it caused a lot of the material in the nebula to fall into its center",
+            "relationship_id": "rel-spinning-causes-fall",
+            "relationship_ids": [
+              "rel-spinning-causes-fall"
+            ],
+            "start_char": 1138
+          }
+        ],
+        "payload": {
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "The source brings about the target as an effect.",
+            "identity": "rel-spinning-causes-fall",
+            "label": "rel-spinning-causes-fall"
+          },
+          "nodes": [
+            {
+              "description": "The spinning motion of the nebula during formation of the solar system.",
+              "entity_id": "cloud-spinning",
+              "entity_type": "PROCESS",
+              "label": "nebula spinning"
+            },
+            {
+              "description": "The movement of nebular material toward the center of the spinning nebula.",
+              "entity_id": "material-fall-to-center",
+              "entity_type": "PROCESS",
+              "label": "material falling into the center"
+            }
+          ],
+          "relationship": {
+            "direction": "cause_to_effect",
+            "evidence": [
+              {
+                "document_id": "text-c0cb2519673b8f3e",
+                "end_char": 1225,
+                "quote": "As this happened, it caused a lot of the material in the nebula to fall into its center",
+                "relationship_id": "rel-spinning-causes-fall",
+                "start_char": 1138
+              }
+            ],
+            "meaning": "The source brings about the target as an effect.",
+            "provenance_status": "SOURCE_EVIDENCE",
+            "relationship_ids": [
+              "rel-spinning-causes-fall"
+            ],
+            "relationship_type": "CAUSES",
+            "source_entity_id": "cloud-spinning",
+            "source_label": "nebula spinning",
+            "target_entity_id": "material-fall-to-center",
+            "target_label": "material falling into the center"
+          },
+          "relationships": [
+            {
+              "direction": "cause_to_effect",
+              "evidence": [
+                {
+                  "document_id": "text-c0cb2519673b8f3e",
+                  "end_char": 1225,
+                  "quote": "As this happened, it caused a lot of the material in the nebula to fall into its center",
+                  "relationship_id": "rel-spinning-causes-fall",
+                  "start_char": 1138
+                }
+              ],
+              "meaning": "The source brings about the target as an effect.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-spinning-causes-fall"
+              ],
+              "relationship_type": "CAUSES",
+              "source_entity_id": "cloud-spinning",
+              "source_label": "nebula spinning",
+              "target_entity_id": "material-fall-to-center",
+              "target_label": "material falling into the center"
+            }
+          ]
+        },
+        "semantic_class": "canonical",
+        "semantic_focus_identity": "rel-spinning-causes-fall",
+        "strategy_type": "FOCUSED_RELATIONSHIP",
+        "title": "nebula spinning → material falling into the center",
+        "trusted_input_refs": [
+          "workspace-fixture.json selected canonical edge",
+          "workspace-fixture.json selected edge endpoints and evidence"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "FOCUSED_RELATIONSHIP",
+      "semantic_focus_identity": "rel-spinning-causes-fall",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-17416abd9dd5e0c0",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": null,
+          "predicates": [
+            "CAUSES"
+          ],
+          "relationship_count": 1,
+          "rule_id": "CANONICAL_EDGE_FOCUS",
+          "semantic_class": "canonical",
+          "structure_type": null
+        },
+        "evidence_refs": [
+          {
+            "document_id": "text-c0cb2519673b8f3e",
+            "end_char": 1137,
+            "quote": "that explosion has enough energy to make the gas and dust in nearby nebulae start swirling and spinning about.",
+            "relationship_id": "rel-supernova-causes-spinning",
+            "relationship_ids": [
+              "rel-supernova-causes-spinning"
+            ],
+            "start_char": 1027
+          }
+        ],
+        "payload": {
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "The source brings about the target as an effect.",
+            "identity": "rel-supernova-causes-spinning",
+            "label": "rel-supernova-causes-spinning"
+          },
+          "nodes": [
+            {
+              "description": "The spinning motion of the nebula during formation of the solar system.",
+              "entity_id": "cloud-spinning",
+              "entity_type": "PROCESS",
+              "label": "nebula spinning"
+            },
+            {
+              "description": "The explosion of a large star.",
+              "entity_id": "supernova",
+              "entity_type": "PROCESS",
+              "label": "supernova"
+            }
+          ],
+          "relationship": {
+            "direction": "cause_to_effect",
+            "evidence": [
+              {
+                "document_id": "text-c0cb2519673b8f3e",
+                "end_char": 1137,
+                "quote": "that explosion has enough energy to make the gas and dust in nearby nebulae start swirling and spinning about.",
+                "relationship_id": "rel-supernova-causes-spinning",
+                "start_char": 1027
+              }
+            ],
+            "meaning": "The source brings about the target as an effect.",
+            "provenance_status": "SOURCE_EVIDENCE",
+            "relationship_ids": [
+              "rel-supernova-causes-spinning"
+            ],
+            "relationship_type": "CAUSES",
+            "source_entity_id": "supernova",
+            "source_label": "supernova",
+            "target_entity_id": "cloud-spinning",
+            "target_label": "nebula spinning"
+          },
+          "relationships": [
+            {
+              "direction": "cause_to_effect",
+              "evidence": [
+                {
+                  "document_id": "text-c0cb2519673b8f3e",
+                  "end_char": 1137,
+                  "quote": "that explosion has enough energy to make the gas and dust in nearby nebulae start swirling and spinning about.",
+                  "relationship_id": "rel-supernova-causes-spinning",
+                  "start_char": 1027
+                }
+              ],
+              "meaning": "The source brings about the target as an effect.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-supernova-causes-spinning"
+              ],
+              "relationship_type": "CAUSES",
+              "source_entity_id": "supernova",
+              "source_label": "supernova",
+              "target_entity_id": "cloud-spinning",
+              "target_label": "nebula spinning"
+            }
+          ]
+        },
+        "semantic_class": "canonical",
+        "semantic_focus_identity": "rel-supernova-causes-spinning",
+        "strategy_type": "FOCUSED_RELATIONSHIP",
+        "title": "supernova → nebula spinning",
+        "trusted_input_refs": [
+          "workspace-fixture.json selected canonical edge",
+          "workspace-fixture.json selected edge endpoints and evidence"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "FOCUSED_RELATIONSHIP",
+      "semantic_focus_identity": "rel-supernova-causes-spinning",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-471e52b8cdca9a66",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": null,
+          "predicates": [
+            "CAUSES"
+          ],
+          "relationship_count": 3,
+          "rule_id": "DIRECTIONAL_CAUSAL_NETWORK",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [
+          {
+            "document_id": "text-c0cb2519673b8f3e",
+            "end_char": 1137,
+            "quote": "that explosion has enough energy to make the gas and dust in nearby nebulae start swirling and spinning about.",
+            "relationship_id": "rel-supernova-causes-spinning",
+            "relationship_ids": [
+              "rel-supernova-causes-spinning"
+            ],
+            "start_char": 1027
+          },
+          {
+            "document_id": "text-c0cb2519673b8f3e",
+            "end_char": 1225,
+            "quote": "As this happened, it caused a lot of the material in the nebula to fall into its center",
+            "relationship_id": "rel-spinning-causes-fall",
+            "relationship_ids": [
+              "rel-spinning-causes-fall"
+            ],
+            "start_char": 1138
+          },
+          {
+            "document_id": "text-c0cb2519673b8f3e",
+            "end_char": 1268,
+            "quote": "and that’s where the Sun started forming.",
+            "relationship_id": "rel-fall-creates-sun",
+            "relationship_ids": [
+              "rel-fall-creates-sun"
+            ],
+            "start_char": 1227
+          }
+        ],
+        "payload": {
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "The spinning motion of the nebula during formation of the solar system.",
+            "identity": "cloud-spinning",
+            "label": "nebula spinning"
+          },
+          "nodes": [
+            {
+              "description": "The spinning motion of the nebula during formation of the solar system.",
+              "entity_id": "cloud-spinning",
+              "entity_type": "PROCESS",
+              "label": "nebula spinning"
+            },
+            {
+              "description": "The movement of nebular material toward the center of the spinning nebula.",
+              "entity_id": "material-fall-to-center",
+              "entity_type": "PROCESS",
+              "label": "material falling into the center"
+            },
+            {
+              "description": "The star that formed at the center of the solar system's nebula.",
+              "entity_id": "sun",
+              "entity_type": "OBJECT",
+              "label": "Sun"
+            },
+            {
+              "description": "The explosion of a large star.",
+              "entity_id": "supernova",
+              "entity_type": "PROCESS",
+              "label": "supernova"
+            }
+          ],
+          "ordered_nodes": [
+            {
+              "description": "The explosion of a large star.",
+              "entity_id": "supernova",
+              "entity_type": "PROCESS",
+              "label": "supernova"
+            },
+            {
+              "description": "The spinning motion of the nebula during formation of the solar system.",
+              "entity_id": "cloud-spinning",
+              "entity_type": "PROCESS",
+              "label": "nebula spinning"
+            },
+            {
+              "description": "The movement of nebular material toward the center of the spinning nebula.",
+              "entity_id": "material-fall-to-center",
+              "entity_type": "PROCESS",
+              "label": "material falling into the center"
+            },
+            {
+              "description": "The star that formed at the center of the solar system's nebula.",
+              "entity_id": "sun",
+              "entity_type": "OBJECT",
+              "label": "Sun"
+            }
+          ],
+          "relationships": [
+            {
+              "direction": "cause_to_effect",
+              "evidence": [
+                {
+                  "document_id": "text-c0cb2519673b8f3e",
+                  "end_char": 1225,
+                  "quote": "As this happened, it caused a lot of the material in the nebula to fall into its center",
+                  "relationship_id": "rel-spinning-causes-fall",
+                  "start_char": 1138
+                }
+              ],
+              "meaning": "The source brings about the target as an effect.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-spinning-causes-fall"
+              ],
+              "relationship_type": "CAUSES",
+              "source_entity_id": "cloud-spinning",
+              "source_label": "nebula spinning",
+              "target_entity_id": "material-fall-to-center",
+              "target_label": "material falling into the center"
+            },
+            {
+              "direction": "cause_to_effect",
+              "evidence": [
+                {
+                  "document_id": "text-c0cb2519673b8f3e",
+                  "end_char": 1268,
+                  "quote": "and that’s where the Sun started forming.",
+                  "relationship_id": "rel-fall-creates-sun",
+                  "start_char": 1227
+                }
+              ],
+              "meaning": "The source brings about the target as an effect.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-fall-creates-sun"
+              ],
+              "relationship_type": "CAUSES",
+              "source_entity_id": "material-fall-to-center",
+              "source_label": "material falling into the center",
+              "target_entity_id": "sun",
+              "target_label": "Sun"
+            },
+            {
+              "direction": "cause_to_effect",
+              "evidence": [
+                {
+                  "document_id": "text-c0cb2519673b8f3e",
+                  "end_char": 1137,
+                  "quote": "that explosion has enough energy to make the gas and dust in nearby nebulae start swirling and spinning about.",
+                  "relationship_id": "rel-supernova-causes-spinning",
+                  "start_char": 1027
+                }
+              ],
+              "meaning": "The source brings about the target as an effect.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-supernova-causes-spinning"
+              ],
+              "relationship_type": "CAUSES",
+              "source_entity_id": "supernova",
+              "source_label": "supernova",
+              "target_entity_id": "cloud-spinning",
+              "target_label": "nebula spinning"
+            }
+          ]
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "cloud-spinning",
+        "strategy_type": "CAUSAL_MECHANISM",
+        "title": "nebula spinning",
+        "trusted_input_refs": [
+          "workspace-fixture.json representation.nodes selected concept",
+          "workspace-fixture.json connected representation edges"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "CAUSAL_MECHANISM",
+      "semantic_focus_identity": "cloud-spinning",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-c10be8d01a3725de",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": "NO_TRUSTED_SUPPORTING_RELATIONSHIP",
+          "predicates": [],
+          "relationship_count": 0,
+          "rule_id": "TRUTHFUL_PROSE_FALLBACK",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [],
+        "payload": {
+          "body": "Repeated collisions among pieces of metal and rock during planet formation.",
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "Repeated collisions among pieces of metal and rock during planet formation.",
+            "identity": "collisions",
+            "label": "collisions"
+          },
+          "nodes": [
+            {
+              "description": "Repeated collisions among pieces of metal and rock during planet formation.",
+              "entity_id": "collisions",
+              "entity_type": "PROCESS",
+              "label": "collisions"
+            }
+          ],
+          "relationships": []
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "collisions",
+        "strategy_type": "CONCISE_PROSE",
+        "title": "collisions",
+        "trusted_input_refs": [
+          "validated KnowledgeModel entity"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "CONCISE_PROSE",
+      "semantic_focus_identity": "collisions",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-ba55ef4d78455b95",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": null,
+          "predicates": [
+            "EXAMPLE_OF"
+          ],
+          "relationship_count": 1,
+          "rule_id": "TYPED_HIERARCHY_EDGES",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [
+          {
+            "document_id": "text-c0cb2519673b8f3e",
+            "end_char": 54,
+            "quote": "Earth is the only world that we know of that has life.",
+            "relationship_id": "rel-earth-example-life-world",
+            "relationship_ids": [
+              "rel-earth-example-life-world"
+            ],
+            "start_char": 0
+          }
+        ],
+        "payload": {
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "The only world currently known to have life.",
+            "identity": "earth",
+            "label": "Earth"
+          },
+          "members": [
+            {
+              "description": "The only world currently known to have life.",
+              "entity_id": "earth",
+              "entity_type": "OBJECT",
+              "label": "Earth"
+            }
+          ],
+          "nodes": [
+            {
+              "description": "The only world currently known to have life.",
+              "entity_id": "earth",
+              "entity_type": "OBJECT",
+              "label": "Earth"
+            },
+            {
+              "description": "Living phenomena found on Earth.",
+              "entity_id": "life",
+              "entity_type": "CONCEPT",
+              "label": "life"
+            }
+          ],
+          "relationships": [
+            {
+              "direction": "example_to_concept",
+              "evidence": [
+                {
+                  "document_id": "text-c0cb2519673b8f3e",
+                  "end_char": 54,
+                  "quote": "Earth is the only world that we know of that has life.",
+                  "relationship_id": "rel-earth-example-life-world",
+                  "start_char": 0
+                }
+              ],
+              "meaning": "The source is an illustrative instance of the target concept.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-earth-example-life-world"
+              ],
+              "relationship_type": "EXAMPLE_OF",
+              "source_entity_id": "earth",
+              "source_label": "Earth",
+              "target_entity_id": "life",
+              "target_label": "life"
+            }
+          ],
+          "roots": [
+            {
+              "description": "Living phenomena found on Earth.",
+              "entity_id": "life",
+              "entity_type": "CONCEPT",
+              "label": "life"
+            }
+          ]
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "earth",
+        "strategy_type": "HIERARCHY_COMPOSITION",
+        "title": "Earth",
+        "trusted_input_refs": [
+          "workspace-fixture.json representation.nodes selected concept",
+          "workspace-fixture.json connected representation edges"
+        ],
+        "warnings": [
+          "Sparse structure: this view contains only one supported relationship."
+        ]
+      },
+      "selected_representation_strategy": "HIERARCHY_COMPOSITION",
+      "semantic_focus_identity": "earth",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-450a7668485a255f",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": null,
+          "predicates": [
+            "EXAMPLE_OF"
+          ],
+          "relationship_count": 1,
+          "rule_id": "TYPED_HIERARCHY_EDGES",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [
+          {
+            "document_id": "text-c0cb2519673b8f3e",
+            "end_char": 1729,
+            "quote": "our eight planets were formed – Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, and Neptune.",
+            "relationship_id": "rel-eight-planets-example",
+            "relationship_ids": [
+              "rel-eight-planets-example"
+            ],
+            "start_char": 1631
+          }
+        ],
+        "payload": {
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, and Neptune.",
+            "identity": "eight-planets",
+            "label": "eight planets"
+          },
+          "members": [
+            {
+              "description": "Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, and Neptune.",
+              "entity_id": "eight-planets",
+              "entity_type": "OBJECT",
+              "label": "eight planets"
+            }
+          ],
+          "nodes": [
+            {
+              "description": "Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, and Neptune.",
+              "entity_id": "eight-planets",
+              "entity_type": "OBJECT",
+              "label": "eight planets"
+            },
+            {
+              "description": "A large celestial body that can form from material in a nebula and orbits a star.",
+              "entity_id": "planet",
+              "entity_type": "OBJECT",
+              "label": "planet"
+            }
+          ],
+          "relationships": [
+            {
+              "direction": "example_to_concept",
+              "evidence": [
+                {
+                  "document_id": "text-c0cb2519673b8f3e",
+                  "end_char": 1729,
+                  "quote": "our eight planets were formed – Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, and Neptune.",
+                  "relationship_id": "rel-eight-planets-example",
+                  "start_char": 1631
+                }
+              ],
+              "meaning": "The source is an illustrative instance of the target concept.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-eight-planets-example"
+              ],
+              "relationship_type": "EXAMPLE_OF",
+              "source_entity_id": "eight-planets",
+              "source_label": "eight planets",
+              "target_entity_id": "planet",
+              "target_label": "planet"
+            }
+          ],
+          "roots": [
+            {
+              "description": "A large celestial body that can form from material in a nebula and orbits a star.",
+              "entity_id": "planet",
+              "entity_type": "OBJECT",
+              "label": "planet"
+            }
+          ]
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "eight-planets",
+        "strategy_type": "HIERARCHY_COMPOSITION",
+        "title": "eight planets",
+        "trusted_input_refs": [
+          "workspace-fixture.json representation.nodes selected concept",
+          "workspace-fixture.json connected representation edges"
+        ],
+        "warnings": [
+          "Sparse structure: this view contains only one supported relationship."
+        ]
+      },
+      "selected_representation_strategy": "HIERARCHY_COMPOSITION",
+      "semantic_focus_identity": "eight-planets",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-52e3d46ed9b8a408",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": "NO_TRUSTED_SUPPORTING_RELATIONSHIP",
+          "predicates": [],
+          "relationship_count": 0,
+          "rule_id": "TRUTHFUL_PROSE_FALLBACK",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [],
+        "payload": {
+          "body": "A larger astronomical system around which star systems orbit.",
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "A larger astronomical system around which star systems orbit.",
+            "identity": "galaxy",
+            "label": "galaxy"
+          },
+          "nodes": [
+            {
+              "description": "A larger astronomical system around which star systems orbit.",
+              "entity_id": "galaxy",
+              "entity_type": "SYSTEM",
+              "label": "galaxy"
+            }
+          ],
+          "relationships": []
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "galaxy",
+        "strategy_type": "CONCISE_PROSE",
+        "title": "galaxy",
+        "trusted_input_refs": [
+          "validated KnowledgeModel entity"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "CONCISE_PROSE",
+      "semantic_focus_identity": "galaxy",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-d509005c81823de3",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": null,
+          "predicates": [
+            "IS_A"
+          ],
+          "relationship_count": 1,
+          "rule_id": "TYPED_HIERARCHY_EDGES",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [
+          {
+            "document_id": "text-c0cb2519673b8f3e",
+            "end_char": 425,
+            "quote": "We call such a cloud a “nebula”",
+            "relationship_id": "rel-nebula-cloud",
+            "relationship_ids": [
+              "rel-nebula-cloud"
+            ],
+            "start_char": 394
+          }
+        ],
+        "payload": {
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "Material in a nebula used to form stars and planets.",
+            "identity": "gas-and-dust",
+            "label": "gas and dust"
+          },
+          "members": [
+            {
+              "description": "A massive cloud of gas, dust, and debris in space from which stars and planets can form.",
+              "entity_id": "nebula",
+              "entity_type": "OBJECT",
+              "label": "nebula"
+            }
+          ],
+          "nodes": [
+            {
+              "description": "Material in a nebula used to form stars and planets.",
+              "entity_id": "gas-and-dust",
+              "entity_type": "OBJECT",
+              "label": "gas and dust"
+            },
+            {
+              "description": "A massive cloud of gas, dust, and debris in space from which stars and planets can form.",
+              "entity_id": "nebula",
+              "entity_type": "OBJECT",
+              "label": "nebula"
+            }
+          ],
+          "relationships": [
+            {
+              "direction": "instance_to_type",
+              "evidence": [
+                {
+                  "document_id": "text-c0cb2519673b8f3e",
+                  "end_char": 425,
+                  "quote": "We call such a cloud a “nebula”",
+                  "relationship_id": "rel-nebula-cloud",
+                  "start_char": 394
+                }
+              ],
+              "meaning": "The source is a kind, category, or subtype of the target.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-nebula-cloud"
+              ],
+              "relationship_type": "IS_A",
+              "source_entity_id": "nebula",
+              "source_label": "nebula",
+              "target_entity_id": "gas-and-dust",
+              "target_label": "gas and dust"
+            }
+          ],
+          "roots": [
+            {
+              "description": "Material in a nebula used to form stars and planets.",
+              "entity_id": "gas-and-dust",
+              "entity_type": "OBJECT",
+              "label": "gas and dust"
+            }
+          ]
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "gas-and-dust",
+        "strategy_type": "HIERARCHY_COMPOSITION",
+        "title": "gas and dust",
+        "trusted_input_refs": [
+          "workspace-fixture.json representation.nodes selected concept",
+          "workspace-fixture.json connected representation edges"
+        ],
+        "warnings": [
+          "Sparse structure: this view contains only one supported relationship."
+        ]
+      },
+      "selected_representation_strategy": "HIERARCHY_COMPOSITION",
+      "semantic_focus_identity": "gas-and-dust",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-4ec20507484d6f94",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": null,
+          "predicates": [
+            "EXAMPLE_OF"
+          ],
+          "relationship_count": 1,
+          "rule_id": "TYPED_HIERARCHY_EDGES",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [
+          {
+            "document_id": "text-c0cb2519673b8f3e",
+            "end_char": 54,
+            "quote": "Earth is the only world that we know of that has life.",
+            "relationship_id": "rel-earth-example-life-world",
+            "relationship_ids": [
+              "rel-earth-example-life-world"
+            ],
+            "start_char": 0
+          }
+        ],
+        "payload": {
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "Living phenomena found on Earth.",
+            "identity": "life",
+            "label": "life"
+          },
+          "members": [
+            {
+              "description": "The only world currently known to have life.",
+              "entity_id": "earth",
+              "entity_type": "OBJECT",
+              "label": "Earth"
+            }
+          ],
+          "nodes": [
+            {
+              "description": "The only world currently known to have life.",
+              "entity_id": "earth",
+              "entity_type": "OBJECT",
+              "label": "Earth"
+            },
+            {
+              "description": "Living phenomena found on Earth.",
+              "entity_id": "life",
+              "entity_type": "CONCEPT",
+              "label": "life"
+            }
+          ],
+          "relationships": [
+            {
+              "direction": "example_to_concept",
+              "evidence": [
+                {
+                  "document_id": "text-c0cb2519673b8f3e",
+                  "end_char": 54,
+                  "quote": "Earth is the only world that we know of that has life.",
+                  "relationship_id": "rel-earth-example-life-world",
+                  "start_char": 0
+                }
+              ],
+              "meaning": "The source is an illustrative instance of the target concept.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-earth-example-life-world"
+              ],
+              "relationship_type": "EXAMPLE_OF",
+              "source_entity_id": "earth",
+              "source_label": "Earth",
+              "target_entity_id": "life",
+              "target_label": "life"
+            }
+          ],
+          "roots": [
+            {
+              "description": "Living phenomena found on Earth.",
+              "entity_id": "life",
+              "entity_type": "CONCEPT",
+              "label": "life"
+            }
+          ]
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "life",
+        "strategy_type": "HIERARCHY_COMPOSITION",
+        "title": "life",
+        "trusted_input_refs": [
+          "workspace-fixture.json representation.nodes selected concept",
+          "workspace-fixture.json connected representation edges"
+        ],
+        "warnings": [
+          "Sparse structure: this view contains only one supported relationship."
+        ]
+      },
+      "selected_representation_strategy": "HIERARCHY_COMPOSITION",
+      "semantic_focus_identity": "life",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-30c7cdf9d230981b",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": "NO_TRUSTED_SUPPORTING_RELATIONSHIP",
+          "predicates": [],
+          "relationship_count": 0,
+          "rule_id": "TRUTHFUL_PROSE_FALLBACK",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [],
+        "payload": {
+          "body": "The sticking together of available material into progressively larger masses.",
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "The sticking together of available material into progressively larger masses.",
+            "identity": "material-aggregation",
+            "label": "material aggregation"
+          },
+          "nodes": [
+            {
+              "description": "The sticking together of available material into progressively larger masses.",
+              "entity_id": "material-aggregation",
+              "entity_type": "PROCESS",
+              "label": "material aggregation"
+            }
+          ],
+          "relationships": []
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "material-aggregation",
+        "strategy_type": "CONCISE_PROSE",
+        "title": "material aggregation",
+        "trusted_input_refs": [
+          "validated KnowledgeModel entity"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "CONCISE_PROSE",
+      "semantic_focus_identity": "material-aggregation",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-caa021c1e70f44e7",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": null,
+          "predicates": [
+            "CAUSES"
+          ],
+          "relationship_count": 3,
+          "rule_id": "DIRECTIONAL_CAUSAL_NETWORK",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [
+          {
+            "document_id": "text-c0cb2519673b8f3e",
+            "end_char": 1137,
+            "quote": "that explosion has enough energy to make the gas and dust in nearby nebulae start swirling and spinning about.",
+            "relationship_id": "rel-supernova-causes-spinning",
+            "relationship_ids": [
+              "rel-supernova-causes-spinning"
+            ],
+            "start_char": 1027
+          },
+          {
+            "document_id": "text-c0cb2519673b8f3e",
+            "end_char": 1225,
+            "quote": "As this happened, it caused a lot of the material in the nebula to fall into its center",
+            "relationship_id": "rel-spinning-causes-fall",
+            "relationship_ids": [
+              "rel-spinning-causes-fall"
+            ],
+            "start_char": 1138
+          },
+          {
+            "document_id": "text-c0cb2519673b8f3e",
+            "end_char": 1268,
+            "quote": "and that’s where the Sun started forming.",
+            "relationship_id": "rel-fall-creates-sun",
+            "relationship_ids": [
+              "rel-fall-creates-sun"
+            ],
+            "start_char": 1227
+          }
+        ],
+        "payload": {
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "The movement of nebular material toward the center of the spinning nebula.",
+            "identity": "material-fall-to-center",
+            "label": "material falling into the center"
+          },
+          "nodes": [
+            {
+              "description": "The spinning motion of the nebula during formation of the solar system.",
+              "entity_id": "cloud-spinning",
+              "entity_type": "PROCESS",
+              "label": "nebula spinning"
+            },
+            {
+              "description": "The movement of nebular material toward the center of the spinning nebula.",
+              "entity_id": "material-fall-to-center",
+              "entity_type": "PROCESS",
+              "label": "material falling into the center"
+            },
+            {
+              "description": "The star that formed at the center of the solar system's nebula.",
+              "entity_id": "sun",
+              "entity_type": "OBJECT",
+              "label": "Sun"
+            },
+            {
+              "description": "The explosion of a large star.",
+              "entity_id": "supernova",
+              "entity_type": "PROCESS",
+              "label": "supernova"
+            }
+          ],
+          "ordered_nodes": [
+            {
+              "description": "The explosion of a large star.",
+              "entity_id": "supernova",
+              "entity_type": "PROCESS",
+              "label": "supernova"
+            },
+            {
+              "description": "The spinning motion of the nebula during formation of the solar system.",
+              "entity_id": "cloud-spinning",
+              "entity_type": "PROCESS",
+              "label": "nebula spinning"
+            },
+            {
+              "description": "The movement of nebular material toward the center of the spinning nebula.",
+              "entity_id": "material-fall-to-center",
+              "entity_type": "PROCESS",
+              "label": "material falling into the center"
+            },
+            {
+              "description": "The star that formed at the center of the solar system's nebula.",
+              "entity_id": "sun",
+              "entity_type": "OBJECT",
+              "label": "Sun"
+            }
+          ],
+          "relationships": [
+            {
+              "direction": "cause_to_effect",
+              "evidence": [
+                {
+                  "document_id": "text-c0cb2519673b8f3e",
+                  "end_char": 1225,
+                  "quote": "As this happened, it caused a lot of the material in the nebula to fall into its center",
+                  "relationship_id": "rel-spinning-causes-fall",
+                  "start_char": 1138
+                }
+              ],
+              "meaning": "The source brings about the target as an effect.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-spinning-causes-fall"
+              ],
+              "relationship_type": "CAUSES",
+              "source_entity_id": "cloud-spinning",
+              "source_label": "nebula spinning",
+              "target_entity_id": "material-fall-to-center",
+              "target_label": "material falling into the center"
+            },
+            {
+              "direction": "cause_to_effect",
+              "evidence": [
+                {
+                  "document_id": "text-c0cb2519673b8f3e",
+                  "end_char": 1268,
+                  "quote": "and that’s where the Sun started forming.",
+                  "relationship_id": "rel-fall-creates-sun",
+                  "start_char": 1227
+                }
+              ],
+              "meaning": "The source brings about the target as an effect.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-fall-creates-sun"
+              ],
+              "relationship_type": "CAUSES",
+              "source_entity_id": "material-fall-to-center",
+              "source_label": "material falling into the center",
+              "target_entity_id": "sun",
+              "target_label": "Sun"
+            },
+            {
+              "direction": "cause_to_effect",
+              "evidence": [
+                {
+                  "document_id": "text-c0cb2519673b8f3e",
+                  "end_char": 1137,
+                  "quote": "that explosion has enough energy to make the gas and dust in nearby nebulae start swirling and spinning about.",
+                  "relationship_id": "rel-supernova-causes-spinning",
+                  "start_char": 1027
+                }
+              ],
+              "meaning": "The source brings about the target as an effect.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-supernova-causes-spinning"
+              ],
+              "relationship_type": "CAUSES",
+              "source_entity_id": "supernova",
+              "source_label": "supernova",
+              "target_entity_id": "cloud-spinning",
+              "target_label": "nebula spinning"
+            }
+          ]
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "material-fall-to-center",
+        "strategy_type": "CAUSAL_MECHANISM",
+        "title": "material falling into the center",
+        "trusted_input_refs": [
+          "workspace-fixture.json representation.nodes selected concept",
+          "workspace-fixture.json connected representation edges"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "CAUSAL_MECHANISM",
+      "semantic_focus_identity": "material-fall-to-center",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-97525e25da836ac7",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": "NO_TRUSTED_SUPPORTING_RELATIONSHIP",
+          "predicates": [],
+          "relationship_count": 0,
+          "rule_id": "TRUTHFUL_PROSE_FALLBACK",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [],
+        "payload": {
+          "body": "Earth's natural satellite, which orbits Earth.",
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "Earth's natural satellite, which orbits Earth.",
+            "identity": "moon",
+            "label": "Moon"
+          },
+          "nodes": [
+            {
+              "description": "Earth's natural satellite, which orbits Earth.",
+              "entity_id": "moon",
+              "entity_type": "OBJECT",
+              "label": "Moon"
+            }
+          ],
+          "relationships": []
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "moon",
+        "strategy_type": "CONCISE_PROSE",
+        "title": "Moon",
+        "trusted_input_refs": [
+          "validated KnowledgeModel entity"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "CONCISE_PROSE",
+      "semantic_focus_identity": "moon",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-289734949924b449",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": null,
+          "predicates": [
+            "IS_A"
+          ],
+          "relationship_count": 1,
+          "rule_id": "TYPED_HIERARCHY_EDGES",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [
+          {
+            "document_id": "text-c0cb2519673b8f3e",
+            "end_char": 425,
+            "quote": "We call such a cloud a “nebula”",
+            "relationship_id": "rel-nebula-cloud",
+            "relationship_ids": [
+              "rel-nebula-cloud"
+            ],
+            "start_char": 394
+          }
+        ],
+        "payload": {
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "A massive cloud of gas, dust, and debris in space from which stars and planets can form.",
+            "identity": "nebula",
+            "label": "nebula"
+          },
+          "members": [
+            {
+              "description": "A massive cloud of gas, dust, and debris in space from which stars and planets can form.",
+              "entity_id": "nebula",
+              "entity_type": "OBJECT",
+              "label": "nebula"
+            }
+          ],
+          "nodes": [
+            {
+              "description": "Material in a nebula used to form stars and planets.",
+              "entity_id": "gas-and-dust",
+              "entity_type": "OBJECT",
+              "label": "gas and dust"
+            },
+            {
+              "description": "A massive cloud of gas, dust, and debris in space from which stars and planets can form.",
+              "entity_id": "nebula",
+              "entity_type": "OBJECT",
+              "label": "nebula"
+            }
+          ],
+          "relationships": [
+            {
+              "direction": "instance_to_type",
+              "evidence": [
+                {
+                  "document_id": "text-c0cb2519673b8f3e",
+                  "end_char": 425,
+                  "quote": "We call such a cloud a “nebula”",
+                  "relationship_id": "rel-nebula-cloud",
+                  "start_char": 394
+                }
+              ],
+              "meaning": "The source is a kind, category, or subtype of the target.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-nebula-cloud"
+              ],
+              "relationship_type": "IS_A",
+              "source_entity_id": "nebula",
+              "source_label": "nebula",
+              "target_entity_id": "gas-and-dust",
+              "target_label": "gas and dust"
+            }
+          ],
+          "roots": [
+            {
+              "description": "Material in a nebula used to form stars and planets.",
+              "entity_id": "gas-and-dust",
+              "entity_type": "OBJECT",
+              "label": "gas and dust"
+            }
+          ]
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "nebula",
+        "strategy_type": "HIERARCHY_COMPOSITION",
+        "title": "nebula",
+        "trusted_input_refs": [
+          "workspace-fixture.json representation.nodes selected concept",
+          "workspace-fixture.json connected representation edges"
+        ],
+        "warnings": [
+          "Sparse structure: this view contains only one supported relationship."
+        ]
+      },
+      "selected_representation_strategy": "HIERARCHY_COMPOSITION",
+      "semantic_focus_identity": "nebula",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-31cb9c938c659450",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": "NO_TRUSTED_SUPPORTING_RELATIONSHIP",
+          "predicates": [],
+          "relationship_count": 0,
+          "rule_id": "TRUTHFUL_PROSE_FALLBACK",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [],
+        "payload": {
+          "body": "The pattern or path made by an object as it goes around another astronomical body.",
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "The pattern or path made by an object as it goes around another astronomical body.",
+            "identity": "orbit",
+            "label": "orbit"
+          },
+          "nodes": [
+            {
+              "description": "The pattern or path made by an object as it goes around another astronomical body.",
+              "entity_id": "orbit",
+              "entity_type": "CONCEPT",
+              "label": "orbit"
+            }
+          ],
+          "relationships": []
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "orbit",
+        "strategy_type": "CONCISE_PROSE",
+        "title": "orbit",
+        "trusted_input_refs": [
+          "validated KnowledgeModel entity"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "CONCISE_PROSE",
+      "semantic_focus_identity": "orbit",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-3fdd751218cbaf6b",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": null,
+          "predicates": [
+            "EXAMPLE_OF"
+          ],
+          "relationship_count": 1,
+          "rule_id": "TYPED_HIERARCHY_EDGES",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [
+          {
+            "document_id": "text-c0cb2519673b8f3e",
+            "end_char": 1729,
+            "quote": "our eight planets were formed – Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, and Neptune.",
+            "relationship_id": "rel-eight-planets-example",
+            "relationship_ids": [
+              "rel-eight-planets-example"
+            ],
+            "start_char": 1631
+          }
+        ],
+        "payload": {
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "A large celestial body that can form from material in a nebula and orbits a star.",
+            "identity": "planet",
+            "label": "planet"
+          },
+          "members": [
+            {
+              "description": "Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, and Neptune.",
+              "entity_id": "eight-planets",
+              "entity_type": "OBJECT",
+              "label": "eight planets"
+            }
+          ],
+          "nodes": [
+            {
+              "description": "Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, and Neptune.",
+              "entity_id": "eight-planets",
+              "entity_type": "OBJECT",
+              "label": "eight planets"
+            },
+            {
+              "description": "A large celestial body that can form from material in a nebula and orbits a star.",
+              "entity_id": "planet",
+              "entity_type": "OBJECT",
+              "label": "planet"
+            }
+          ],
+          "relationships": [
+            {
+              "direction": "example_to_concept",
+              "evidence": [
+                {
+                  "document_id": "text-c0cb2519673b8f3e",
+                  "end_char": 1729,
+                  "quote": "our eight planets were formed – Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, and Neptune.",
+                  "relationship_id": "rel-eight-planets-example",
+                  "start_char": 1631
+                }
+              ],
+              "meaning": "The source is an illustrative instance of the target concept.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-eight-planets-example"
+              ],
+              "relationship_type": "EXAMPLE_OF",
+              "source_entity_id": "eight-planets",
+              "source_label": "eight planets",
+              "target_entity_id": "planet",
+              "target_label": "planet"
+            }
+          ],
+          "roots": [
+            {
+              "description": "A large celestial body that can form from material in a nebula and orbits a star.",
+              "entity_id": "planet",
+              "entity_type": "OBJECT",
+              "label": "planet"
+            }
+          ]
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "planet",
+        "strategy_type": "HIERARCHY_COMPOSITION",
+        "title": "planet",
+        "trusted_input_refs": [
+          "workspace-fixture.json representation.nodes selected concept",
+          "workspace-fixture.json connected representation edges"
+        ],
+        "warnings": [
+          "Sparse structure: this view contains only one supported relationship."
+        ]
+      },
+      "selected_representation_strategy": "HIERARCHY_COMPOSITION",
+      "semantic_focus_identity": "planet",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-b055fe0ccc847ae5",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": "NO_TRUSTED_SUPPORTING_RELATIONSHIP",
+          "predicates": [],
+          "relationship_count": 0,
+          "rule_id": "TRUTHFUL_PROSE_FALLBACK",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [],
+        "payload": {
+          "body": "Small solid pieces formed when gas and dust collided and stuck together.",
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "Small solid pieces formed when gas and dust collided and stuck together.",
+            "identity": "rock-and-metal-pieces",
+            "label": "pieces of metal and rock"
+          },
+          "nodes": [
+            {
+              "description": "Small solid pieces formed when gas and dust collided and stuck together.",
+              "entity_id": "rock-and-metal-pieces",
+              "entity_type": "OBJECT",
+              "label": "pieces of metal and rock"
+            }
+          ],
+          "relationships": []
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "rock-and-metal-pieces",
+        "strategy_type": "CONCISE_PROSE",
+        "title": "pieces of metal and rock",
+        "trusted_input_refs": [
+          "validated KnowledgeModel entity"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "CONCISE_PROSE",
+      "semantic_focus_identity": "rock-and-metal-pieces",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-0a8b8b7516e2e4f7",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": "NO_TRUSTED_SUPPORTING_RELATIONSHIP",
+          "predicates": [],
+          "relationship_count": 0,
+          "rule_id": "TRUTHFUL_PROSE_FALLBACK",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [],
+        "payload": {
+          "body": "The Sun, planets, and other material orbiting within the system.",
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "The Sun, planets, and other material orbiting within the system.",
+            "identity": "solar-system",
+            "label": "solar system"
+          },
+          "nodes": [
+            {
+              "description": "The Sun, planets, and other material orbiting within the system.",
+              "entity_id": "solar-system",
+              "entity_type": "SYSTEM",
+              "label": "solar system"
+            }
+          ],
+          "relationships": []
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "solar-system",
+        "strategy_type": "CONCISE_PROSE",
+        "title": "solar system",
+        "trusted_input_refs": [
+          "validated KnowledgeModel entity"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "CONCISE_PROSE",
+      "semantic_focus_identity": "solar-system",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-88fa7f929dea0ca8",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": "NO_TRUSTED_SUPPORTING_RELATIONSHIP",
+          "predicates": [],
+          "relationship_count": 0,
+          "rule_id": "TRUTHFUL_PROSE_FALLBACK",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [],
+        "payload": {
+          "body": "The long process through which the solar system formed from a nebula.",
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "The long process through which the solar system formed from a nebula.",
+            "identity": "solar-system-formation",
+            "label": "solar system formation"
+          },
+          "nodes": [
+            {
+              "description": "The long process through which the solar system formed from a nebula.",
+              "entity_id": "solar-system-formation",
+              "entity_type": "PROCESS",
+              "label": "solar system formation"
+            }
+          ],
+          "relationships": []
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "solar-system-formation",
+        "strategy_type": "CONCISE_PROSE",
+        "title": "solar system formation",
+        "trusted_input_refs": [
+          "validated KnowledgeModel entity"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "CONCISE_PROSE",
+      "semantic_focus_identity": "solar-system-formation",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-bb626b6a819d6456",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": "NO_TRUSTED_SUPPORTING_RELATIONSHIP",
+          "predicates": [],
+          "relationship_count": 0,
+          "rule_id": "TRUTHFUL_PROSE_FALLBACK",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [],
+        "payload": {
+          "body": "A celestial object that can form from a nebula.",
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "A celestial object that can form from a nebula.",
+            "identity": "star",
+            "label": "star"
+          },
+          "nodes": [
+            {
+              "description": "A celestial object that can form from a nebula.",
+              "entity_id": "star",
+              "entity_type": "OBJECT",
+              "label": "star"
+            }
+          ],
+          "relationships": []
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "star",
+        "strategy_type": "CONCISE_PROSE",
+        "title": "star",
+        "trusted_input_refs": [
+          "validated KnowledgeModel entity"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "CONCISE_PROSE",
+      "semantic_focus_identity": "star",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-c72db0eef860045e",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": null,
+          "predicates": [
+            "CAUSES"
+          ],
+          "relationship_count": 3,
+          "rule_id": "DIRECTIONAL_CAUSAL_NETWORK",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [
+          {
+            "document_id": "text-c0cb2519673b8f3e",
+            "end_char": 1137,
+            "quote": "that explosion has enough energy to make the gas and dust in nearby nebulae start swirling and spinning about.",
+            "relationship_id": "rel-supernova-causes-spinning",
+            "relationship_ids": [
+              "rel-supernova-causes-spinning"
+            ],
+            "start_char": 1027
+          },
+          {
+            "document_id": "text-c0cb2519673b8f3e",
+            "end_char": 1225,
+            "quote": "As this happened, it caused a lot of the material in the nebula to fall into its center",
+            "relationship_id": "rel-spinning-causes-fall",
+            "relationship_ids": [
+              "rel-spinning-causes-fall"
+            ],
+            "start_char": 1138
+          },
+          {
+            "document_id": "text-c0cb2519673b8f3e",
+            "end_char": 1268,
+            "quote": "and that’s where the Sun started forming.",
+            "relationship_id": "rel-fall-creates-sun",
+            "relationship_ids": [
+              "rel-fall-creates-sun"
+            ],
+            "start_char": 1227
+          }
+        ],
+        "payload": {
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "The star that formed at the center of the solar system's nebula.",
+            "identity": "sun",
+            "label": "Sun"
+          },
+          "nodes": [
+            {
+              "description": "The spinning motion of the nebula during formation of the solar system.",
+              "entity_id": "cloud-spinning",
+              "entity_type": "PROCESS",
+              "label": "nebula spinning"
+            },
+            {
+              "description": "The movement of nebular material toward the center of the spinning nebula.",
+              "entity_id": "material-fall-to-center",
+              "entity_type": "PROCESS",
+              "label": "material falling into the center"
+            },
+            {
+              "description": "The star that formed at the center of the solar system's nebula.",
+              "entity_id": "sun",
+              "entity_type": "OBJECT",
+              "label": "Sun"
+            },
+            {
+              "description": "The explosion of a large star.",
+              "entity_id": "supernova",
+              "entity_type": "PROCESS",
+              "label": "supernova"
+            }
+          ],
+          "ordered_nodes": [
+            {
+              "description": "The explosion of a large star.",
+              "entity_id": "supernova",
+              "entity_type": "PROCESS",
+              "label": "supernova"
+            },
+            {
+              "description": "The spinning motion of the nebula during formation of the solar system.",
+              "entity_id": "cloud-spinning",
+              "entity_type": "PROCESS",
+              "label": "nebula spinning"
+            },
+            {
+              "description": "The movement of nebular material toward the center of the spinning nebula.",
+              "entity_id": "material-fall-to-center",
+              "entity_type": "PROCESS",
+              "label": "material falling into the center"
+            },
+            {
+              "description": "The star that formed at the center of the solar system's nebula.",
+              "entity_id": "sun",
+              "entity_type": "OBJECT",
+              "label": "Sun"
+            }
+          ],
+          "relationships": [
+            {
+              "direction": "cause_to_effect",
+              "evidence": [
+                {
+                  "document_id": "text-c0cb2519673b8f3e",
+                  "end_char": 1225,
+                  "quote": "As this happened, it caused a lot of the material in the nebula to fall into its center",
+                  "relationship_id": "rel-spinning-causes-fall",
+                  "start_char": 1138
+                }
+              ],
+              "meaning": "The source brings about the target as an effect.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-spinning-causes-fall"
+              ],
+              "relationship_type": "CAUSES",
+              "source_entity_id": "cloud-spinning",
+              "source_label": "nebula spinning",
+              "target_entity_id": "material-fall-to-center",
+              "target_label": "material falling into the center"
+            },
+            {
+              "direction": "cause_to_effect",
+              "evidence": [
+                {
+                  "document_id": "text-c0cb2519673b8f3e",
+                  "end_char": 1268,
+                  "quote": "and that’s where the Sun started forming.",
+                  "relationship_id": "rel-fall-creates-sun",
+                  "start_char": 1227
+                }
+              ],
+              "meaning": "The source brings about the target as an effect.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-fall-creates-sun"
+              ],
+              "relationship_type": "CAUSES",
+              "source_entity_id": "material-fall-to-center",
+              "source_label": "material falling into the center",
+              "target_entity_id": "sun",
+              "target_label": "Sun"
+            },
+            {
+              "direction": "cause_to_effect",
+              "evidence": [
+                {
+                  "document_id": "text-c0cb2519673b8f3e",
+                  "end_char": 1137,
+                  "quote": "that explosion has enough energy to make the gas and dust in nearby nebulae start swirling and spinning about.",
+                  "relationship_id": "rel-supernova-causes-spinning",
+                  "start_char": 1027
+                }
+              ],
+              "meaning": "The source brings about the target as an effect.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-supernova-causes-spinning"
+              ],
+              "relationship_type": "CAUSES",
+              "source_entity_id": "supernova",
+              "source_label": "supernova",
+              "target_entity_id": "cloud-spinning",
+              "target_label": "nebula spinning"
+            }
+          ]
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "sun",
+        "strategy_type": "CAUSAL_MECHANISM",
+        "title": "Sun",
+        "trusted_input_refs": [
+          "workspace-fixture.json representation.nodes selected concept",
+          "workspace-fixture.json connected representation edges"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "CAUSAL_MECHANISM",
+      "semantic_focus_identity": "sun",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-45b2ab6723862d0a",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": null,
+          "predicates": [
+            "CAUSES"
+          ],
+          "relationship_count": 3,
+          "rule_id": "DIRECTIONAL_CAUSAL_NETWORK",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [
+          {
+            "document_id": "text-c0cb2519673b8f3e",
+            "end_char": 1137,
+            "quote": "that explosion has enough energy to make the gas and dust in nearby nebulae start swirling and spinning about.",
+            "relationship_id": "rel-supernova-causes-spinning",
+            "relationship_ids": [
+              "rel-supernova-causes-spinning"
+            ],
+            "start_char": 1027
+          },
+          {
+            "document_id": "text-c0cb2519673b8f3e",
+            "end_char": 1225,
+            "quote": "As this happened, it caused a lot of the material in the nebula to fall into its center",
+            "relationship_id": "rel-spinning-causes-fall",
+            "relationship_ids": [
+              "rel-spinning-causes-fall"
+            ],
+            "start_char": 1138
+          },
+          {
+            "document_id": "text-c0cb2519673b8f3e",
+            "end_char": 1268,
+            "quote": "and that’s where the Sun started forming.",
+            "relationship_id": "rel-fall-creates-sun",
+            "relationship_ids": [
+              "rel-fall-creates-sun"
+            ],
+            "start_char": 1227
+          }
+        ],
+        "payload": {
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "The explosion of a large star.",
+            "identity": "supernova",
+            "label": "supernova"
+          },
+          "nodes": [
+            {
+              "description": "The spinning motion of the nebula during formation of the solar system.",
+              "entity_id": "cloud-spinning",
+              "entity_type": "PROCESS",
+              "label": "nebula spinning"
+            },
+            {
+              "description": "The movement of nebular material toward the center of the spinning nebula.",
+              "entity_id": "material-fall-to-center",
+              "entity_type": "PROCESS",
+              "label": "material falling into the center"
+            },
+            {
+              "description": "The star that formed at the center of the solar system's nebula.",
+              "entity_id": "sun",
+              "entity_type": "OBJECT",
+              "label": "Sun"
+            },
+            {
+              "description": "The explosion of a large star.",
+              "entity_id": "supernova",
+              "entity_type": "PROCESS",
+              "label": "supernova"
+            }
+          ],
+          "ordered_nodes": [
+            {
+              "description": "The explosion of a large star.",
+              "entity_id": "supernova",
+              "entity_type": "PROCESS",
+              "label": "supernova"
+            },
+            {
+              "description": "The spinning motion of the nebula during formation of the solar system.",
+              "entity_id": "cloud-spinning",
+              "entity_type": "PROCESS",
+              "label": "nebula spinning"
+            },
+            {
+              "description": "The movement of nebular material toward the center of the spinning nebula.",
+              "entity_id": "material-fall-to-center",
+              "entity_type": "PROCESS",
+              "label": "material falling into the center"
+            },
+            {
+              "description": "The star that formed at the center of the solar system's nebula.",
+              "entity_id": "sun",
+              "entity_type": "OBJECT",
+              "label": "Sun"
+            }
+          ],
+          "relationships": [
+            {
+              "direction": "cause_to_effect",
+              "evidence": [
+                {
+                  "document_id": "text-c0cb2519673b8f3e",
+                  "end_char": 1225,
+                  "quote": "As this happened, it caused a lot of the material in the nebula to fall into its center",
+                  "relationship_id": "rel-spinning-causes-fall",
+                  "start_char": 1138
+                }
+              ],
+              "meaning": "The source brings about the target as an effect.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-spinning-causes-fall"
+              ],
+              "relationship_type": "CAUSES",
+              "source_entity_id": "cloud-spinning",
+              "source_label": "nebula spinning",
+              "target_entity_id": "material-fall-to-center",
+              "target_label": "material falling into the center"
+            },
+            {
+              "direction": "cause_to_effect",
+              "evidence": [
+                {
+                  "document_id": "text-c0cb2519673b8f3e",
+                  "end_char": 1268,
+                  "quote": "and that’s where the Sun started forming.",
+                  "relationship_id": "rel-fall-creates-sun",
+                  "start_char": 1227
+                }
+              ],
+              "meaning": "The source brings about the target as an effect.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-fall-creates-sun"
+              ],
+              "relationship_type": "CAUSES",
+              "source_entity_id": "material-fall-to-center",
+              "source_label": "material falling into the center",
+              "target_entity_id": "sun",
+              "target_label": "Sun"
+            },
+            {
+              "direction": "cause_to_effect",
+              "evidence": [
+                {
+                  "document_id": "text-c0cb2519673b8f3e",
+                  "end_char": 1137,
+                  "quote": "that explosion has enough energy to make the gas and dust in nearby nebulae start swirling and spinning about.",
+                  "relationship_id": "rel-supernova-causes-spinning",
+                  "start_char": 1027
+                }
+              ],
+              "meaning": "The source brings about the target as an effect.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-supernova-causes-spinning"
+              ],
+              "relationship_type": "CAUSES",
+              "source_entity_id": "supernova",
+              "source_label": "supernova",
+              "target_entity_id": "cloud-spinning",
+              "target_label": "nebula spinning"
+            }
+          ]
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "supernova",
+        "strategy_type": "CAUSAL_MECHANISM",
+        "title": "supernova",
+        "trusted_input_refs": [
+          "workspace-fixture.json representation.nodes selected concept",
+          "workspace-fixture.json connected representation edges"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "CAUSAL_MECHANISM",
+      "semantic_focus_identity": "supernova",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    }
+  ],
+  "protected_surface_contract": "SPEC038_REPRESENTATION_PLAN"
+}

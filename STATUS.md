@@ -90,59 +90,66 @@ Frozen manifest SHA-256:
 
 `beaf3df4a941afc7fadf2abf13543affeae798e3d14486798cbb0060fccdc57e`
 
+## Blind replication live execution
+
+`SPEC-045 — blind replication live execution`
+
+Implementation status: `IMPLEMENTED_AWAITING_REVIEW`
+
+Owner verdict: `PENDING`
+
+Recorded objective result:
+
+- exactly six approved `gpt-5.6-luna` Responses API calls executed in the frozen source order;
+- astronomy, ecology, and transportation passed deterministic admission;
+- chemistry, biology, and statistics failed closed with complete attempts preserved;
+- four rejected objects classify as 3 `MODEL_ERROR`, 1 `EXTRACTION_GRANULARITY`, 0 `CONTRACT_GAP`, 0 `VALIDATION_BUG`, and 0 `AMBIGUOUS`;
+- one materially source-supported undeclared identity occurred, but it was not a process/event reification and the same dangling-identity mechanism did not recur across two new strata;
+- frozen compiler, validator, representation behavior, and protected baselines remained unchanged.
+
+Canonical evidence:
+
+`examples/evaluations/spec-045-blind-replication-live-execution-20260912/report.json`
+
 ## Current approved work packet
 
 ```text
-specs/SPEC-045-blind-replication-live-execution.md
+NONE
 ```
 
-Status: `APPROVED_FOR_IMPLEMENTATION`
+Status: `NONE`
 
-Authority: `LIVE_CALLS_EXPLICITLY_BOUNDED`
+Authority: `NONE`
 
-Human gate: `OWNER_REVIEW`
+Human gate: `NONE`
 
 Promotion: `NOT_AUTHORIZED`
 
 ## Current gate
 
-SPEC-045 is authorized to execute the exact frozen SPEC-044 six-source packet once.
+SPEC-045 is implemented and awaiting owner review. Its canonical evidence is
+`examples/evaluations/spec-045-blind-replication-live-execution-20260912/report.json`.
 
-Authorized provider activity is limited to:
-
-- OpenAI Responses API;
-- `gpt-5.6-luna`;
-- exactly six maximum calls total;
-- one call maximum per frozen source;
-- exact frozen source order;
-- prompt `spec-010-v1` / `knowledge_extraction`;
-- `store=False`;
-- zero SDK, semantic, repair, hidden, follow-up, or additional retries/calls;
-- zero external retrieval/enrichment during execution;
-- zero source-specific prompt edits;
-- zero implementation adaptations between calls.
-
-After execution, every rejected semantic object must be classified offline using the unchanged SPEC-043 taxonomy. No repair or implementation change is authorized.
-
-Any frozen identity/hash mismatch must stop execution before provider transmission.
+No packet is active. No provider/model call, retry, repair, semantic adaptation,
+semantic-contract change, or product promotion is authorized.
 
 ## Current product question
 
 ```text
-unchanged frozen compiler
+3 admitted / 3 failed closed
         ↓
-6 new unrelated frozen sources
+4 rejected objects classified offline
         ↓
-1 extraction call each
+3 MODEL_ERROR / 1 EXTRACTION_GRANULARITY
         ↓
-strict deterministic admission / fail closed
+no repeated process/event dangling-identity mechanism
         ↓
-SPEC-043 taxonomy applied unchanged to rejections
+OWNER REVIEW
         ↓
-owner decides whether extraction-granularity pattern replicated
+decide whether evidence supports narrow alignment work or points elsewhere
 ```
 
-The immediate goal is evidence about recurrence, not pass-rate improvement.
+The immediate goal is owner interpretation of the preserved replication evidence, not repair.
 
 ## Frozen / protected state
 

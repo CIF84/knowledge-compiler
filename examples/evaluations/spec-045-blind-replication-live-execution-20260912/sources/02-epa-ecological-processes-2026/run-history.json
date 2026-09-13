@@ -1,0 +1,59 @@
+{
+  "adapter_invocation_count": 1,
+  "follow_up_call_count": 0,
+  "hidden_retry_count": 0,
+  "history": [
+    {
+      "attempt": 1,
+      "completed_at_utc": "2026-09-13T09:04:44.786758Z",
+      "duration_ms": 23325.15,
+      "error": null,
+      "error_type": null,
+      "http_request_id": "req_e07c59832e794a54bbe5d05d0132c7a4",
+      "kind": "OPENAI_RESPONSES_STRUCTURED_EXTRACTION",
+      "live_call": true,
+      "outcome": "RESPONSE_RECEIVED",
+      "provider_request_id": "resp_045d21ef1a42db13016aa66715ab5087d2a52c8300604fd928",
+      "retry": false,
+      "started_at_utc": "2026-09-13T09:04:21.461592Z",
+      "usage": {
+        "input_tokens": 3253,
+        "output_tokens": 2950,
+        "total_tokens": 6203
+      }
+    },
+    {
+      "attempt": 1,
+      "completed_at_utc": "2026-09-13T09:04:44.786758Z",
+      "duration_ms": 23325.15,
+      "http_request_id": "req_e07c59832e794a54bbe5d05d0132c7a4",
+      "kind": "OPENAI_RESPONSES_API",
+      "live_call": true,
+      "provider_request_id": "resp_045d21ef1a42db13016aa66715ab5087d2a52c8300604fd928",
+      "retry": false,
+      "started_at_utc": "2026-09-13T09:04:21.461592Z",
+      "usage": {
+        "input_tokens": 3253,
+        "input_tokens_details": {
+          "cache_write_tokens": 475,
+          "cached_tokens": 2775
+        },
+        "output_tokens": 2950,
+        "output_tokens_details": {
+          "reasoning_tokens": 34
+        },
+        "total_tokens": 6203
+      }
+    },
+    {
+      "attempt": 1,
+      "final_stage": "LEARNER_REVIEW_ARTIFACT",
+      "outcome": "ADMITTED",
+      "retry_count": 0
+    }
+  ],
+  "repair_call_count": 0,
+  "sdk_retry_count": 0,
+  "semantic_retry_count": 0,
+  "source_id": "epa-ecological-processes-2026"
+}

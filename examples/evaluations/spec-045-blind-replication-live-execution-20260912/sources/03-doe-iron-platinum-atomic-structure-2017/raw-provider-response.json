@@ -1,0 +1,428 @@
+{
+  "actual_model": "gpt-5.6-luna",
+  "completed_at_utc": "2026-09-13T09:05:05.352269Z",
+  "duration_ms": 20508.425,
+  "http_request_id": "req_db74c44b8744484d871f95444a0e4b62",
+  "prompt_version": "spec-010-v1",
+  "provider": "OpenAI Responses API",
+  "provider_response_id": "resp_015a5362c58e9b95016aa6672d032087d29cb8c0ed0a7cd324",
+  "request_error": null,
+  "requested_model": "gpt-5.6-luna",
+  "response": {
+    "background": false,
+    "billing": {
+      "payer": "developer"
+    },
+    "completed_at": 1789290305.0,
+    "conversation": null,
+    "created_at": 1789290285.0,
+    "error": null,
+    "frequency_penalty": 0.0,
+    "id": "resp_015a5362c58e9b95016aa6672d032087d29cb8c0ed0a7cd324",
+    "incomplete_details": null,
+    "instructions": "You extract a semantic knowledge model from explanatory source text.\n\nIdentify important concepts, objects, processes, variables, systems, and components.\nCreate claims for meaningful propositions that do not naturally form graph edges.\nCreate relationships only when one supplied semantic contract fits both the meaning and\ndirection. Prefer important explanatory structure over exhaustive sentence decomposition.\nIf no relationship contract represents a meaningful proposition truthfully, preserve it\nas a claim instead of forcing it into the nearest edge label. Fewer truthful edges are\nbetter than more misleading edges. Use concise grounded descriptions and conservative\nconfidence values.\n\nUse a typed proposition only for either of these binary-edge failure modes:\n- COMPARISON_CONDITION: a comparison is itself the antecedent of an outcome. Bind\n  LEFT_OPERAND, RIGHT_OPERAND, and OUTCOME; use GREATER_THAN and CAUSES.\n- TRANSFER_EVENT: a transfer must distinguish the EVENT, transferred OBJECT, and\n  DESTINATION; use TRANSFERS_TO.\nDo not also emit a lossy binary edge for the same source proposition. Proposition IDs are\nassigned deterministically by trusted code; do not return an id.\n\nSOURCE means the item is explicitly supported by the supplied text. Every SOURCE item\nmust cite one or more exact, verbatim, uniquely occurring source substrings in evidence.\nUse a complete clause or sentence long enough to occur exactly once; never cite a short\nentity name or other repeated fragment. Do not count characters; return quotes only.\nINFERRED means useful structure not stated explicitly and must have an empty evidence\nlist. Any item with evidence must be SOURCE. Before returning, verify every SOURCE item\nhas at least one unique quote and every INFERRED item has none. Do not use external\nknowledge unless the item is marked INFERRED. Do not fabricate evidence.\n\nAvoid entities created only to reproduce grammar. Avoid duplicates; use aliases only\nfor genuine naming equivalence, and keep related but distinct concepts separate.\nRelationship endpoints must use IDs from the entities array. IDs must be unique,\nconcise, stable kebab-case strings. Do not generate summaries, visualizations, Mermaid,\nteaching prose, or output outside the requested schema.\n\nACTIVE RELATIONSHIP CONTRACTS (source --TYPE--> target):\nIS_A [STRUCTURAL; direction=instance_to_type]\n  meaning: The source is a kind, category, or subtype of the target.\n  roles: source=instance or subtype; target=broader type or category\n  use: The source can truthfully be described as a target.\n  avoid: Do not use for parts, examples, similarity, or temporary states.\nPART_OF [STRUCTURAL; direction=part_to_whole]\n  meaning: The source is a constituent or component of the target.\n  roles: source=part or component; target=containing whole\n  use: The source exists as a component or subpart of the target.\n  avoid: Never reverse whole and part; do not use for interaction or dependency.\nEXAMPLE_OF [STRUCTURAL; direction=example_to_concept]\n  meaning: The source is an illustrative instance of the target concept.\n  roles: source=example; target=concept illustrated\n  use: The source is presented as an example of the target.\n  avoid: Do not use merely because the source is a subtype; prefer IS_A for classification.\nCAUSES [CAUSAL; direction=cause_to_effect]\n  meaning: The source brings about the target as an effect.\n  roles: source=cause; target=effect\n  use: The source is stated to produce the target outcome.\n  avoid: Do not use for chronology, association, contribution, or unspecified influence.\nAFFECTS [CAUSAL; direction=influence_to_affected]\n  meaning: The source causally influences the target without a specified direction or complete production.\n  roles: source=influence; target=affected entity, process, or variable\n  use: The source changes or influences the target, but the text does not support CAUSES, INCREASES, or DECREASES.\n  avoid: Do not use for mere association, chronology, physical force, or interaction with no stated effect.\nINCREASES [CAUSAL; direction=increaser_to_increased_variable]\n  meaning: The source causally raises the amount, rate, value, probability, or intensity of the target.\n  roles: source=causal factor; target=quantity or variable increased\n  use: The source is explicitly said to make the target greater, faster, more likely, or more intense.\n  avoid: Do not infer from nearby words such as more or faster; never use when the source says slower, lower, or less.\nDECREASES [CAUSAL; direction=decreaser_to_decreased_variable]\n  meaning: The source causally lowers the amount, rate, value, probability, or intensity of the target.\n  roles: source=causal factor; target=quantity or variable decreased\n  use: The source is explicitly said to make the target smaller, slower, less likely, or less intense.\n  avoid: Do not use for absence, prevention without a scalar target, or mere negative association.\nINDUCES [CAUSAL; direction=inducer_to_induced_effect]\n  meaning: The source produces the target through an explicitly described induction mechanism.\n  roles: source=inducing phenomenon; target=induced phenomenon\n  use: The source explicitly says induces or describes a recognized induction mechanism.\n  avoid: Do not use as a metaphor for generic causation, influence, motivation, or historical response.\nENABLES [DEPENDENCY; direction=enabler_to_enabled]\n  meaning: The source makes the target possible without necessarily causing it to occur.\n  roles: source=enabling condition or capability; target=capability or process made possible\n  use: The target could not occur, or is materially made possible, because of the source.\n  avoid: Do not use for delivery, participation, weak assistance, or an effect that actually occurred.\nREQUIRES [DEPENDENCY; direction=dependent_to_requirement]\n  meaning: The source depends on the target as a prerequisite or necessary resource.\n  roles: source=dependent; target=prerequisite or required resource\n  use: The source cannot operate or occur as described without the target.\n  avoid: Do not reverse prerequisite and dependent; do not use for optional support.\nCONSTRAINS [DEPENDENCY; direction=constraint_to_constrained]\n  meaning: The source limits the possible behavior, values, or choices of the target.\n  roles: source=constraint; target=constrained entity, process, or variable\n  use: The source imposes a limit, rule, boundary, or restriction on the target.\n  avoid: Do not use to mean unchanged, unrelated, merely different, or causally reduced.\nPRECEDES [TEMPORAL; direction=earlier_to_later]\n  meaning: The source occurs before the target in time or an explicit process sequence.\n  roles: source=earlier event or process; target=later event or process\n  use: The source explicitly occurs before, previously, first, then, or after relative to the target.\n  avoid: Do not infer causality from order; do not reverse earlier and later.\nINTERACTS_WITH [INTERACTION; symmetric]\n  meaning: The source and target directly interact, with no more precise directional semantics supported.\n  roles: source=interaction participant; target=interaction participant\n  use: The text supports direct mutual interaction but not a more precise active predicate.\n  avoid: Do not use for distant association, one-way effect, dependency, or chronology.\nBINDS_TO [INTERACTION; symmetric]\n  meaning: The source physically or chemically binds or attaches to the target.\n  roles: source=binding participant; target=binding participant\n  use: The source explicitly binds or attaches to the target.\n  avoid: Do not use for metaphorical commitment, dependency, influence, or literal physical force.\nTRANSFERS_TO [INTERACTION; direction=transferred_item_to_destination]\n  meaning: The source item, material, or information moves to the target destination or recipient.\n  roles: source=item, material, or information transferred; target=destination or recipient\n  use: The source is explicitly carried, delivered, moved, or transferred to the target.\n  avoid: Do not make the carrier the source unless the carrier itself moves to the destination; do not use for enabling.\nEXERTS_FORCE_ON [INTERACTION; direction=force_exerter_to_physical_target]\n  meaning: The source exerts a literal physical force on the target.\n  roles: source=physical force source; target=physical object receiving force\n  use: A literal physical force is explicitly exerted on the target.\n  avoid: Never use metaphorically for influence, contribution, binding, pressure, or causation.\nTRANSFORMS_INTO [TRANSFORMATION; direction=prior_state_to_resulting_state]\n  meaning: The source itself changes state or identity and becomes the target.\n  roles: source=entity or state before transformation; target=same entity or resulting material after transformation\n  use: The source itself becomes the target through a transformation.\n  avoid: Do not use when an actor causes, creates, attempts, participates in, or responds to the target.\nCREATES [TRANSFORMATION; direction=creator_to_created]\n  meaning: The source produces or brings a distinct target into existence.\n  roles: source=producer or generative process; target=newly produced entity or result\n  use: The source produces a target that is distinct from the source.\n  avoid: Do not use when the source itself becomes the target; use TRANSFORMS_INTO instead.\nMEASURED_BY [DESCRIPTIVE; direction=measurand_to_measure]\n  meaning: The source property or variable is quantified or assessed by the target metric, observation, or procedure.\n  roles: source=property or variable measured; target=metric, observation, or measurement procedure\n  use: The target is explicitly how the source is measured or quantified.\n  avoid: Do not point to something that merely responds to, correlates with, or exemplifies the source.\nCONTRADICTS [DESCRIPTIVE; symmetric]\n  meaning: The source and target assert mutually incompatible propositions.\n  roles: source=proposition or claim; target=incompatible proposition or claim\n  use: Both sides are explicit propositions that cannot simultaneously hold as stated.\n  avoid: Do not use for difference, disagreement without incompatibility, trade-off, or negative causality.",
+    "max_output_tokens": null,
+    "max_tool_calls": null,
+    "metadata": {},
+    "model": "gpt-5.6-luna",
+    "moderation": null,
+    "object": "response",
+    "output": [
+      {
+        "content": [],
+        "encrypted_content": "gAAAAABqpmdBN95zWoae7hpkdv9NsW4JCqKn2Xv9DlEjxaT2gUvx-5zEswL4sGrV_lICpQkdn5mEWkYj14d6k101MA3-Glh4RW38poxfUIAYIoBzg8FNQ6lYglE6bKUhjK-3_MUR4z291EQHBNMYPrJy3onLildnB4Az9ivFJxjsoS-64mXLHrIJUHOpLQhxcQN_ass8wk_xt3LJu9YRBx9FFJQsOTlJ6nYm0Vffa-7J7TEKxPNlQsHaBxGJbjASvtSEKWsCkePrnLPp-MVFSVOI2geCnY9NVsGnFlMBsb7pS3fAEgm2X_kWC4aDyVFYu4u9YuSUOSg9qtxgGwy8_W7dmqokPzjcJn_yESLbaZ7AilU8KhOLAuldkL76a9DMkrGid0njcm1zF-5cYtsD33JjWi2q3zHF8Rgkrb-kxlsnCJH4QG36ESYvyB3OBiQIha8HD1rg7005kKORHH1Ey219pkTNFgcOwBcqlBP3EUOvHMZhtbdnmfshLZonjKKpGTp7tfLdPBy3jghxIr_D_L_JwnmSXLqn06eAqR4IyPAX7AT2nSRDCDen2QyaIVaw2Vo1swP1H9QB_oO3cpvheDe03yL48btbo2WjtoVgT01O9hMkgp7edQ9SOFuKrqX24pafaUOJhbc4TB0u81JDOMs7iWce0FL8FZN8bzqYLRUODDSWGvLdk90IDz6nDzeeKKikjrz5d6EcldwncbKV0dD9gFC2d3LgArgSpAwrVH6reBd9u2X-rgHbd85rN65hWqc5AlThEeiU--bIK2l_PoCfx_df1kvEr5NAHHCW3req8_egMDdp9IoPwWeQ-b5GTYdiHrStTLfPBzsF8GdkYUXO3WMA6IjP58a_SD-MhhM982X8el3AfLwmxxTK4zpFxcbmhSzL4LF8SQYJHqTin-GfT6j37XJ7pifMeX5--BL9eYomTBNFEVX0kr9oKPmYw9SHpogcxDtizo7vIrvqYgISaeZRqBXLWHVqfjWMyb8oZYURe8d3KVyyZLKeYdZZr_5VGjVUGqCy79-MO5Cx_TVdPORkLWUbwnHfYtXKCKHM1BUHIoWvI7mq-IOXTiuj-xmXDuWhtKcCDKpQuFxCU2lZdFqaQGdIbLdLfGFPPNo3iSof71a3UpUT7qMuLcZr7138hFT9010S7iDoLxI5tT6QOmd5EXZbSo5IQqWs9pdzPbfvc29Y86cZGo2wIQpl9pfy1233NZQbKA5YRfNUSPHJBzsS20ooijDkOp0ViE4Ka5O9Gf6yWMdhy1955OfBe1s2F3_sctRdpqFoJK-gAQS2U6SbCgN8y2xf_FtwQ6KwXIzhian15Nb6ZHl9tHbUnW6RLqG5PxSzCXLbXBxOi98qQRXuFdn4Ius6JZJhNR1GwMXuQs1l0i7QpPg8dcR68VQbXNb5FGPRA4pXhM6xld4MYXrEjtzmVMCeJfXD2J7GAaPyOPEgVPzr7EOIfO2lGNr312T59_WWXdN8t3irQfVCr9RTJ4IvKTrSpehgV-qoo1jsCaNpNjHOhTNXELuWvodW2wp7XjXgxmSL9caRxvUH2uwFBVcSTmYX8eUC78Ni3UhKbaaX4NdXLdAXd5rRC-H2mLRjmqbuFE6Z1Sf6vMdDCdkE_kRxsgdLAEphFSchHSmhzJvqjCthVc2OR0Sln9LtvxCU08YFbLViJ7cBZuXIkU1rCjwzLv_tQCbKv1V0SpBX5HGkCkM4m06EPhdwgDv3B23wB2ZLZ2bGGu8MGCSczQIZikGu7iZNeGRmERW-B7g8m4d-4L7fy_nKt_ARBoQVwq0-_XgcC2UceLB7l7bKSHOQnGCdbNR5OumoEEvBWm3tSNt5Vf7uWABXNFIBLit5L3lvY4pRv77Mf3Lzp5SOLBD3MZAG6BUDUMOfgwQt1yToJnpZzwqnQZtJjsuUrtbZdbluRNPinzYu8a893zUqdqeO4cyZQlNhzg-xT_sn_9wao0twGlKETS-fIkx0bakk93ksKWdoL8NUlgGYqM9h9-gFNtrt0J1G925S1TwWPiOJ22dp6s7ishbUb0HA4VRiMA8y65_j2ugaHHyl3XP7vDguwe60AZB4jKiXRXblPgFu9RQdMUkD7RYYj2BZmP16uCoZT44n6liY2Pe1FQdNlExS83SweLufEWLdGlp_Uz4gzc9CtftwSVWNCAAw5Rn-rJuAzdXF2IOw7e_ZWsTBOETuCD4hEN9WHoAFsA6npA9me_Wf98ysqIQzO51RqbiQg8XqTXkwJ7WTXnHPaAOkktHw6FdQW08mYNZB9lw_bOGBpXRY2rLug_h6AKNVNmH9UkYv3Umv_qSouq_Ob7kB41iEER3KNj6wmaenwQdzQ2u_VK1MYv8=",
+        "id": "rs_015a5362c58e9b95016aa6672dd23887d2a9521efc339b3ed5",
+        "status": null,
+        "summary": [],
+        "type": "reasoning"
+      },
+      {
+        "content": [
+          {
+            "annotations": [],
+            "logprobs": [],
+            "text": "{\"entities\":[{\"id\":\"iron-platinum-nanoparticle\",\"name\":\"iron-platinum nanoparticle\",\"description\":\"A tiny iron-platinum particle whose atomic structure and properties were characterized.\",\"entity_type\":\"OBJECT\",\"aliases\":[\"iron-platinum particle\"]},{\"id\":\"iron-atoms\",\"name\":\"iron atoms\",\"description\":\"Iron atoms identified and located in the iron-platinum nanoparticle.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"id\":\"platinum-atoms\",\"name\":\"platinum atoms\",\"description\":\"Platinum atoms identified and located in the iron-platinum nanoparticle.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"id\":\"three-dimensional-atomic-coordinates\",\"name\":\"three-dimensional atomic coordinates\",\"description\":\"The 3D positions of atoms determined with 22 picometer precision.\",\"entity_type\":\"VARIABLE\",\"aliases\":[\"3D coordinates\",\"three-dimensional position\"]},{\"id\":\"atomic-electron-tomography\",\"name\":\"atomic electron tomography\",\"description\":\"An imaging technique used to determine and correlate three-dimensional atomic arrangements.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"id\":\"chemical-order-disorder\",\"name\":\"chemical order/disorder\",\"description\":\"The ordered or disordered arrangement of chemical species in an atomic structure.\",\"entity_type\":\"CONCEPT\",\"aliases\":[\"chemical order and disorder\"]},{\"id\":\"atomic-structure-defects\",\"name\":\"defects in atomic structure\",\"description\":\"Structural irregularities in materials, including grain boundaries, anti-phase boundaries, anti-site point defects, and swap defects.\",\"entity_type\":\"CONCEPT\",\"aliases\":[\"defects\",\"atomic defects\"]},{\"id\":\"material-properties\",\"name\":\"material properties\",\"description\":\"Properties of materials correlated with atomic arrangements, order/disorder, and defects.\",\"entity_type\":\"VARIABLE\",\"aliases\":[]},{\"id\":\"magnetic-properties\",\"name\":\"magnetic properties\",\"description\":\"Magnetic characteristics studied at the single-atom level, including atomic magnetic moments and local magnetocrystalline anisotropy.\",\"entity_type\":\"VARIABLE\",\"aliases\":[]},{\"id\":\"atomic-magnetic-moments\",\"name\":\"atomic magnetic moments\",\"description\":\"A material property used as an input or output of first-principles calculations.\",\"entity_type\":\"VARIABLE\",\"aliases\":[]},{\"id\":\"local-magnetocrystalline-anisotropy\",\"name\":\"local magnetocrystalline anisotropy\",\"description\":\"A material property calculated from experimentally measured atomic coordinates and chemical species.\",\"entity_type\":\"VARIABLE\",\"aliases\":[]},{\"id\":\"first-principles-calculations\",\"name\":\"first-principles calculations\",\"description\":\"Calculations of material properties using experimentally measured 3D atomic coordinates and chemical species as direct input.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"id\":\"materials-design\",\"name\":\"materials design\",\"description\":\"The design of new or improved materials by tailoring atomic composition to obtain desired properties.\",\"entity_type\":\"PROCESS\",\"aliases\":[\"designing new materials\"]},{\"id\":\"grain-boundaries\",\"name\":\"grain boundaries\",\"description\":\"Structural boundaries identified within the nanoparticle's atomic arrangement.\",\"entity_type\":\"CONCEPT\",\"aliases\":[]},{\"id\":\"anti-phase-boundaries\",\"name\":\"anti-phase boundaries\",\"description\":\"Boundaries where atoms are arranged in the opposite order of the perfect parent crystal.\",\"entity_type\":\"CONCEPT\",\"aliases\":[]},{\"id\":\"anti-site-point-defects\",\"name\":\"anti-site point defects\",\"description\":\"Point defects identified in the atomic structure.\",\"entity_type\":\"CONCEPT\",\"aliases\":[]},{\"id\":\"swap-defects\",\"name\":\"swap defects\",\"description\":\"Defects in which an individual atom or pair of nearest-neighbor atoms switch places.\",\"entity_type\":\"CONCEPT\",\"aliases\":[]},{\"id\":\"atomic-composition\",\"name\":\"atomic composition\",\"description\":\"The composition of a material at the atomic level, including its chemical species.\",\"entity_type\":\"VARIABLE\",\"aliases\":[]},{\"id\":\"structure-property-relationships\",\"name\":\"structure-property relationships\",\"description\":\"Relationships between a material's atomic structure and its properties or functionality.\",\"entity_type\":\"CONCEPT\",\"aliases\":[]}],\"claims\":[{\"id\":\"claim-1\",\"statement\":\"Scientists determined the positions of more than 23,000 atoms in a tiny iron-platinum particle with 22 picometer precision.\",\"evidence\":[{\"quote\":\"Scientists determined the three-dimensional position of more than 23,000 atoms in a tiny iron-platinum particle with 22 picometer precision.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"claim-2\",\"statement\":\"The characterized nanoparticle contained 6,569 iron atoms and 16,627 platinum atoms.\",\"evidence\":[{\"quote\":\"scientists determined the 3D coordinates of 6,569 iron and 16,627 platinum atoms in an iron-platinum nanoparticle.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"claim-3\",\"statement\":\"Atomic electron tomography was used to correlate 3D atomic arrangements and chemical order/disorder with material properties at the single-atom level.\",\"evidence\":[{\"quote\":\"They used an imaging technique called atomic electron tomography to correlate 3D atomic arrangements and chemical order/disorder with material properties at the single-atom level.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"claim-4\",\"statement\":\"The nanoparticle exhibited rich structural variety and chemical order/disorder, including several types of boundaries and point defects.\",\"evidence\":[{\"quote\":\"They identified rich structural variety and chemical order/disorder with unprecedented 3D detail including atomic composition, grain boundaries, anti-phase boundaries, anti-site point defects and swap defects.\"}],\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"claim-5\",\"statement\":\"Anti-phase boundaries are locations where atoms are arranged in the opposite order of the perfect parent crystal.\",\"evidence\":[{\"quote\":\"anti-phase boundaries (where atoms are arranged in the opposite order of the perfect, parent crystal)\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"claim-6\",\"statement\":\"Swap defects occur when individual atoms or pairs of nearest-neighbor atoms switch places.\",\"evidence\":[{\"quote\":\"swap defects (where individual or a pair of nearest-neighbor atoms switch places)\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"claim-7\",\"statement\":\"Experimentally measured 3D atomic coordinates and chemical species with 22 picometer precision can be used as direct input for first-principles calculations of material properties.\",\"evidence\":[{\"quote\":\"experimentally measured 3D atomic coordinates and chemical species with 22 picometer precision can be used as direct input for first-principles calculations of material properties\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"claim-8\",\"statement\":\"The approach is expected to find broad use in materials science, physics, chemistry, and other fields.\",\"evidence\":[{\"quote\":\"scientists expect this approach to find broad use in materials science, physics, chemistry, and other fields.\"}],\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"claim-9\",\"statement\":\"The approach enables study of material properties at the single-atom level and may transform understanding of structure-property relationships at the most fundamental level.\",\"evidence\":[{\"quote\":\"It also gives researchers the ability to study material properties on the single-atom level that could transform our understanding of structure-property relationships at the most fundamental level.\"}],\"confidence\":0.97,\"origin\":\"SOURCE\"}],\"relationships\":[{\"id\":\"rel-1\",\"source_entity_id\":\"atomic-structure-defects\",\"relationship_type\":\"AFFECTS\",\"target_entity_id\":\"material-properties\",\"statement\":\"Defects in atomic structure affect material properties.\",\"evidence\":[{\"quote\":\"Understanding the disorder – and its effect on material properties – are critical to designing improved materials\"}],\"confidence\":0.97,\"origin\":\"SOURCE\"},{\"id\":\"rel-2\",\"source_entity_id\":\"chemical-order-disorder\",\"relationship_type\":\"AFFECTS\",\"target_entity_id\":\"material-properties\",\"statement\":\"Chemical order/disorder affects material properties.\",\"evidence\":[{\"quote\":\"They used an imaging technique called atomic electron tomography to correlate 3D atomic arrangements and chemical order/disorder with material properties at the single-atom level.\"}],\"confidence\":0.91,\"origin\":\"SOURCE\"},{\"id\":\"rel-3\",\"source_entity_id\":\"three-dimensional-atomic-coordinates\",\"relationship_type\":\"ENABLES\",\"target_entity_id\":\"first-principles-calculations\",\"statement\":\"Experimentally measured 3D atomic coordinates enable their use as direct input for first-principles calculations.\",\"evidence\":[{\"quote\":\"experimentally measured 3D atomic coordinates and chemical species with 22 picometer precision can be used as direct input for first-principles calculations\"}],\"confidence\":0.94,\"origin\":\"SOURCE\"},{\"id\":\"rel-4\",\"source_entity_id\":\"materials-design\",\"relationship_type\":\"REQUIRES\",\"target_entity_id\":\"structure-property-relationships\",\"statement\":\"Designing new and improved materials requires understanding relationships between structure and properties.\",\"evidence\":[{\"quote\":\"The ability to correlate the 3D arrangements of atoms and defects with a material's properties and functionality is vital in designing new and improved materials\"}],\"confidence\":0.91,\"origin\":\"SOURCE\"},{\"id\":\"rel-5\",\"source_entity_id\":\"atomic-composition\",\"relationship_type\":\"AFFECTS\",\"target_entity_id\":\"material-properties\",\"statement\":\"Atomic composition is related to the material properties targeted in materials design.\",\"evidence\":[{\"quote\":\"This data can serve scientists to model and design new materials whose atomic composition is tailored to obtain the desired properties.\"}],\"confidence\":0.89,\"origin\":\"SOURCE\"},{\"id\":\"rel-6\",\"source_entity_id\":\"atomic-magnetic-moments\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"magnetic-properties\",\"statement\":\"Atomic magnetic moments are a type of magnetic property.\",\"evidence\":[{\"quote\":\"material properties such as atomic magnetic moments and local magnetocrystalline anisotropy\"}],\"confidence\":0.91,\"origin\":\"SOURCE\"},{\"id\":\"rel-7\",\"source_entity_id\":\"local-magnetocrystalline-anisotropy\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"magnetic-properties\",\"statement\":\"Local magnetocrystalline anisotropy is a type of magnetic property.\",\"evidence\":[{\"quote\":\"material properties such as atomic magnetic moments and local magnetocrystalline anisotropy\"}],\"confidence\":0.91,\"origin\":\"SOURCE\"},{\"id\":\"rel-8\",\"source_entity_id\":\"iron-atoms\",\"relationship_type\":\"PART_OF\",\"target_entity_id\":\"iron-platinum-nanoparticle\",\"statement\":\"The iron atoms are constituent atoms of the iron-platinum nanoparticle.\",\"evidence\":[{\"quote\":\"the 3D coordinates of 6,569 iron and 16,627 platinum atoms in an iron-platinum nanoparticle\"}],\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"rel-9\",\"source_entity_id\":\"platinum-atoms\",\"relationship_type\":\"PART_OF\",\"target_entity_id\":\"iron-platinum-nanoparticle\",\"statement\":\"The platinum atoms are constituent atoms of the iron-platinum nanoparticle.\",\"evidence\":[{\"quote\":\"the 3D coordinates of 6,569 iron and 16,627 platinum atoms in an iron-platinum nanoparticle\"}],\"confidence\":0.98,\"origin\":\"SOURCE\"}],\"propositions\":[]}",
+            "type": "output_text"
+          }
+        ],
+        "id": "msg_015a5362c58e9b95016aa66730006087d28452bb491aec2665",
+        "phase": "final_answer",
+        "role": "assistant",
+        "status": "completed",
+        "type": "message"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "presence_penalty": 0.0,
+    "previous_response_id": null,
+    "prompt": null,
+    "prompt_cache_key": null,
+    "prompt_cache_options": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+      "context": "all_turns",
+      "effort": "low",
+      "generate_summary": null,
+      "mode": "standard",
+      "summary": null
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "status": "completed",
+    "store": false,
+    "temperature": 1.0,
+    "text": {
+      "format": {
+        "description": null,
+        "name": "knowledge_extraction",
+        "schema_": {
+          "additionalProperties": false,
+          "properties": {
+            "claims": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "confidence": {
+                    "maximum": 1,
+                    "minimum": 0,
+                    "type": "number"
+                  },
+                  "evidence": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "quote": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "quote"
+                      ],
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "id": {
+                    "type": "string"
+                  },
+                  "origin": {
+                    "enum": [
+                      "SOURCE",
+                      "INFERRED"
+                    ],
+                    "type": "string"
+                  },
+                  "statement": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "statement",
+                  "evidence",
+                  "confidence",
+                  "origin"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "entities": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "aliases": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "entity_type": {
+                    "enum": [
+                      "CONCEPT",
+                      "OBJECT",
+                      "PROCESS",
+                      "VARIABLE",
+                      "SYSTEM",
+                      "COMPONENT"
+                    ],
+                    "type": "string"
+                  },
+                  "id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "name",
+                  "description",
+                  "entity_type",
+                  "aliases"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "propositions": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "comparison_operator": {
+                    "anyOf": [
+                      {
+                        "enum": [
+                          "GREATER_THAN"
+                        ],
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "confidence": {
+                    "maximum": 1,
+                    "minimum": 0,
+                    "type": "number"
+                  },
+                  "evidence": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "quote": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "quote"
+                      ],
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "origin": {
+                    "enum": [
+                      "SOURCE",
+                      "INFERRED"
+                    ],
+                    "type": "string"
+                  },
+                  "proposition_type": {
+                    "enum": [
+                      "COMPARISON_CONDITION",
+                      "TRANSFER_EVENT"
+                    ],
+                    "type": "string"
+                  },
+                  "relationship_type": {
+                    "enum": [
+                      "IS_A",
+                      "PART_OF",
+                      "CAUSES",
+                      "INCREASES",
+                      "DECREASES",
+                      "ENABLES",
+                      "REQUIRES",
+                      "CONSTRAINS",
+                      "PRECEDES",
+                      "TRANSFORMS_INTO",
+                      "INTERACTS_WITH",
+                      "MEASURED_BY",
+                      "EXAMPLE_OF",
+                      "CONTRADICTS",
+                      "CREATES",
+                      "INDUCES",
+                      "EXERTS_FORCE_ON",
+                      "AFFECTS",
+                      "BINDS_TO",
+                      "TRANSFERS_TO"
+                    ],
+                    "type": "string"
+                  },
+                  "role_bindings": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "entity_id": {
+                          "type": "string"
+                        },
+                        "role": {
+                          "enum": [
+                            "LEFT_OPERAND",
+                            "RIGHT_OPERAND",
+                            "OUTCOME",
+                            "EVENT",
+                            "OBJECT",
+                            "DESTINATION"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "role",
+                        "entity_id"
+                      ],
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "statement": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "proposition_type",
+                  "statement",
+                  "role_bindings",
+                  "relationship_type",
+                  "comparison_operator",
+                  "evidence",
+                  "confidence",
+                  "origin"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "relationships": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "confidence": {
+                    "maximum": 1,
+                    "minimum": 0,
+                    "type": "number"
+                  },
+                  "evidence": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "quote": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "quote"
+                      ],
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "id": {
+                    "type": "string"
+                  },
+                  "origin": {
+                    "enum": [
+                      "SOURCE",
+                      "INFERRED"
+                    ],
+                    "type": "string"
+                  },
+                  "relationship_type": {
+                    "enum": [
+                      "IS_A",
+                      "PART_OF",
+                      "CAUSES",
+                      "INCREASES",
+                      "DECREASES",
+                      "ENABLES",
+                      "REQUIRES",
+                      "CONSTRAINS",
+                      "PRECEDES",
+                      "TRANSFORMS_INTO",
+                      "INTERACTS_WITH",
+                      "MEASURED_BY",
+                      "EXAMPLE_OF",
+                      "CONTRADICTS",
+                      "CREATES",
+                      "INDUCES",
+                      "EXERTS_FORCE_ON",
+                      "AFFECTS",
+                      "BINDS_TO",
+                      "TRANSFERS_TO"
+                    ],
+                    "type": "string"
+                  },
+                  "source_entity_id": {
+                    "type": "string"
+                  },
+                  "statement": {
+                    "type": "string"
+                  },
+                  "target_entity_id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "source_entity_id",
+                  "relationship_type",
+                  "target_entity_id",
+                  "statement",
+                  "evidence",
+                  "confidence",
+                  "origin"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "entities",
+            "claims",
+            "relationships",
+            "propositions"
+          ],
+          "type": "object"
+        },
+        "strict": true,
+        "type": "json_schema"
+      },
+      "verbosity": "medium"
+    },
+    "tool_choice": "auto",
+    "tool_usage": {
+      "image_gen": {
+        "input_tokens": 0,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "total_tokens": 0
+      },
+      "web_search": {
+        "num_requests": 0
+      }
+    },
+    "tools": [],
+    "top_logprobs": 0,
+    "top_p": 0.98,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 3256,
+      "input_tokens_details": {
+        "cache_write_tokens": 478,
+        "cached_tokens": 2775
+      },
+      "output_tokens": 2444,
+      "output_tokens_details": {
+        "reasoning_tokens": 166
+      },
+      "total_tokens": 5700
+    },
+    "user": null
+  },
+  "started_at_utc": "2026-09-13T09:04:44.843833Z"
+}

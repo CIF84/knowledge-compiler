@@ -1,0 +1,4401 @@
+{
+  "bindings": [
+    {
+      "decision_id": "decision-fa26b3e1d46e8940",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": null,
+          "predicates": [
+            "IS_A"
+          ],
+          "relationship_count": 1,
+          "rule_id": "CANONICAL_EDGE_FOCUS",
+          "semantic_class": "canonical",
+          "structure_type": null
+        },
+        "evidence_refs": [
+          {
+            "document_id": "text-70e7e3d20325dd5d",
+            "end_char": 1826,
+            "quote": "Ecological processes such as primary production, respiration, energy, carbon and nutrient flow through food webs, reproduction, and decomposition",
+            "relationship_id": "rel-1",
+            "relationship_ids": [
+              "rel-1"
+            ],
+            "start_char": 1681
+          }
+        ],
+        "payload": {
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "The source is a kind, category, or subtype of the target.",
+            "identity": "rel-1",
+            "label": "rel-1"
+          },
+          "nodes": [
+            {
+              "description": "Biological, physical, and chemical processes that sustain ecological systems and produce ecological outcomes.",
+              "entity_id": "ecological-processes",
+              "entity_type": "PROCESS",
+              "label": "Ecological processes"
+            },
+            {
+              "description": "Conversion of the sun's energy into organic matter through photosynthesis.",
+              "entity_id": "primary-production",
+              "entity_type": "PROCESS",
+              "label": "Primary production"
+            }
+          ],
+          "relationship": {
+            "direction": "instance_to_type",
+            "evidence": [
+              {
+                "document_id": "text-70e7e3d20325dd5d",
+                "end_char": 1826,
+                "quote": "Ecological processes such as primary production, respiration, energy, carbon and nutrient flow through food webs, reproduction, and decomposition",
+                "relationship_id": "rel-1",
+                "start_char": 1681
+              }
+            ],
+            "meaning": "The source is a kind, category, or subtype of the target.",
+            "provenance_status": "SOURCE_EVIDENCE",
+            "relationship_ids": [
+              "rel-1"
+            ],
+            "relationship_type": "IS_A",
+            "source_entity_id": "primary-production",
+            "source_label": "Primary production",
+            "target_entity_id": "ecological-processes",
+            "target_label": "Ecological processes"
+          },
+          "relationships": [
+            {
+              "direction": "instance_to_type",
+              "evidence": [
+                {
+                  "document_id": "text-70e7e3d20325dd5d",
+                  "end_char": 1826,
+                  "quote": "Ecological processes such as primary production, respiration, energy, carbon and nutrient flow through food webs, reproduction, and decomposition",
+                  "relationship_id": "rel-1",
+                  "start_char": 1681
+                }
+              ],
+              "meaning": "The source is a kind, category, or subtype of the target.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-1"
+              ],
+              "relationship_type": "IS_A",
+              "source_entity_id": "primary-production",
+              "source_label": "Primary production",
+              "target_entity_id": "ecological-processes",
+              "target_label": "Ecological processes"
+            }
+          ]
+        },
+        "semantic_class": "canonical",
+        "semantic_focus_identity": "rel-1",
+        "strategy_type": "FOCUSED_RELATIONSHIP",
+        "title": "Primary production → Ecological processes",
+        "trusted_input_refs": [
+          "workspace-fixture.json selected canonical edge",
+          "workspace-fixture.json selected edge endpoints and evidence"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "FOCUSED_RELATIONSHIP",
+      "semantic_focus_identity": "rel-1",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-7ad579eb69e81d5a",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": null,
+          "predicates": [
+            "AFFECTS"
+          ],
+          "relationship_count": 1,
+          "rule_id": "CANONICAL_EDGE_FOCUS",
+          "semantic_class": "canonical",
+          "structure_type": null
+        },
+        "evidence_refs": [
+          {
+            "document_id": "text-70e7e3d20325dd5d",
+            "end_char": 1225,
+            "quote": "ecological processes are affected by both small-scale natural events such as seasonal changes in temperature, precipitation, and stream flows and large-scale events such as climate change",
+            "relationship_id": "rel-10",
+            "relationship_ids": [
+              "rel-10"
+            ],
+            "start_char": 1038
+          }
+        ],
+        "payload": {
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "The source causally influences the target without a specified direction or complete production.",
+            "identity": "rel-10",
+            "label": "rel-10"
+          },
+          "nodes": [
+            {
+              "description": "Biological, physical, and chemical processes that sustain ecological systems and produce ecological outcomes.",
+              "entity_id": "ecological-processes",
+              "entity_type": "PROCESS",
+              "label": "Ecological processes"
+            },
+            {
+              "description": "Natural events and changes that affect ecological processes across temporal and spatial scales.",
+              "entity_id": "natural-forces",
+              "entity_type": "CONCEPT",
+              "label": "Natural forces"
+            }
+          ],
+          "relationship": {
+            "direction": "influence_to_affected",
+            "evidence": [
+              {
+                "document_id": "text-70e7e3d20325dd5d",
+                "end_char": 1225,
+                "quote": "ecological processes are affected by both small-scale natural events such as seasonal changes in temperature, precipitation, and stream flows and large-scale events such as climate change",
+                "relationship_id": "rel-10",
+                "start_char": 1038
+              }
+            ],
+            "meaning": "The source causally influences the target without a specified direction or complete production.",
+            "provenance_status": "SOURCE_EVIDENCE",
+            "relationship_ids": [
+              "rel-10"
+            ],
+            "relationship_type": "AFFECTS",
+            "source_entity_id": "natural-forces",
+            "source_label": "Natural forces",
+            "target_entity_id": "ecological-processes",
+            "target_label": "Ecological processes"
+          },
+          "relationships": [
+            {
+              "direction": "influence_to_affected",
+              "evidence": [
+                {
+                  "document_id": "text-70e7e3d20325dd5d",
+                  "end_char": 1225,
+                  "quote": "ecological processes are affected by both small-scale natural events such as seasonal changes in temperature, precipitation, and stream flows and large-scale events such as climate change",
+                  "relationship_id": "rel-10",
+                  "start_char": 1038
+                }
+              ],
+              "meaning": "The source causally influences the target without a specified direction or complete production.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-10"
+              ],
+              "relationship_type": "AFFECTS",
+              "source_entity_id": "natural-forces",
+              "source_label": "Natural forces",
+              "target_entity_id": "ecological-processes",
+              "target_label": "Ecological processes"
+            }
+          ]
+        },
+        "semantic_class": "canonical",
+        "semantic_focus_identity": "rel-10",
+        "strategy_type": "FOCUSED_RELATIONSHIP",
+        "title": "Natural forces → Ecological processes",
+        "trusted_input_refs": [
+          "workspace-fixture.json selected canonical edge",
+          "workspace-fixture.json selected edge endpoints and evidence"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "FOCUSED_RELATIONSHIP",
+      "semantic_focus_identity": "rel-10",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-b886772f11c6979f",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": null,
+          "predicates": [
+            "AFFECTS"
+          ],
+          "relationship_count": 1,
+          "rule_id": "CANONICAL_EDGE_FOCUS",
+          "semantic_class": "canonical",
+          "structure_type": null
+        },
+        "evidence_refs": [
+          {
+            "document_id": "text-70e7e3d20325dd5d",
+            "end_char": 1467,
+            "quote": "EPA has long been concerned with the impacts of human activities—including pesticide use, chemical use, waste generation, land use changes, and water quality management, among others—on the rates, types, and timing of ecological processes.",
+            "relationship_id": "rel-11",
+            "relationship_ids": [
+              "rel-11"
+            ],
+            "start_char": 1228
+          }
+        ],
+        "payload": {
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "The source causally influences the target without a specified direction or complete production.",
+            "identity": "rel-11",
+            "label": "rel-11"
+          },
+          "nodes": [
+            {
+              "description": "Biological, physical, and chemical processes that sustain ecological systems and produce ecological outcomes.",
+              "entity_id": "ecological-processes",
+              "entity_type": "PROCESS",
+              "label": "Ecological processes"
+            },
+            {
+              "description": "Activities that affect the rates, types, and timing of ecological processes.",
+              "entity_id": "human-activities",
+              "entity_type": "CONCEPT",
+              "label": "Human activities"
+            }
+          ],
+          "relationship": {
+            "direction": "influence_to_affected",
+            "evidence": [
+              {
+                "document_id": "text-70e7e3d20325dd5d",
+                "end_char": 1467,
+                "quote": "EPA has long been concerned with the impacts of human activities—including pesticide use, chemical use, waste generation, land use changes, and water quality management, among others—on the rates, types, and timing of ecological processes.",
+                "relationship_id": "rel-11",
+                "start_char": 1228
+              }
+            ],
+            "meaning": "The source causally influences the target without a specified direction or complete production.",
+            "provenance_status": "SOURCE_EVIDENCE",
+            "relationship_ids": [
+              "rel-11"
+            ],
+            "relationship_type": "AFFECTS",
+            "source_entity_id": "human-activities",
+            "source_label": "Human activities",
+            "target_entity_id": "ecological-processes",
+            "target_label": "Ecological processes"
+          },
+          "relationships": [
+            {
+              "direction": "influence_to_affected",
+              "evidence": [
+                {
+                  "document_id": "text-70e7e3d20325dd5d",
+                  "end_char": 1467,
+                  "quote": "EPA has long been concerned with the impacts of human activities—including pesticide use, chemical use, waste generation, land use changes, and water quality management, among others—on the rates, types, and timing of ecological processes.",
+                  "relationship_id": "rel-11",
+                  "start_char": 1228
+                }
+              ],
+              "meaning": "The source causally influences the target without a specified direction or complete production.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-11"
+              ],
+              "relationship_type": "AFFECTS",
+              "source_entity_id": "human-activities",
+              "source_label": "Human activities",
+              "target_entity_id": "ecological-processes",
+              "target_label": "Ecological processes"
+            }
+          ]
+        },
+        "semantic_class": "canonical",
+        "semantic_focus_identity": "rel-11",
+        "strategy_type": "FOCUSED_RELATIONSHIP",
+        "title": "Human activities → Ecological processes",
+        "trusted_input_refs": [
+          "workspace-fixture.json selected canonical edge",
+          "workspace-fixture.json selected edge endpoints and evidence"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "FOCUSED_RELATIONSHIP",
+      "semantic_focus_identity": "rel-11",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-f2c47862ed45d77f",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": null,
+          "predicates": [
+            "MEASURED_BY"
+          ],
+          "relationship_count": 1,
+          "rule_id": "CANONICAL_EDGE_FOCUS",
+          "semantic_class": "canonical",
+          "structure_type": null
+        },
+        "evidence_refs": [
+          {
+            "document_id": "text-70e7e3d20325dd5d",
+            "end_char": 1861,
+            "quote": "Ecological processes such as primary production, respiration, energy, carbon and nutrient flow through food webs, reproduction, and decomposition are represented as rates of change",
+            "relationship_ids": [
+              "rel-12"
+            ],
+            "start_char": 1681
+          }
+        ],
+        "payload": {
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "The source property or variable is quantified or assessed by the target metric, observation, or procedure.",
+            "identity": "rel-12",
+            "label": "rel-12"
+          },
+          "nodes": [
+            {
+              "description": "Biological, physical, and chemical processes that sustain ecological systems and produce ecological outcomes.",
+              "entity_id": "ecological-processes",
+              "entity_type": "PROCESS",
+              "label": "Ecological processes"
+            },
+            {
+              "description": "Representation of ecological processes as changes measured over time.",
+              "entity_id": "rates-of-change",
+              "entity_type": "VARIABLE",
+              "label": "Rates of change"
+            }
+          ],
+          "relationship": {
+            "direction": "measurand_to_measure",
+            "evidence": [
+              {
+                "document_id": "text-70e7e3d20325dd5d",
+                "end_char": 1861,
+                "quote": "Ecological processes such as primary production, respiration, energy, carbon and nutrient flow through food webs, reproduction, and decomposition are represented as rates of change",
+                "start_char": 1681
+              }
+            ],
+            "meaning": "The source property or variable is quantified or assessed by the target metric, observation, or procedure.",
+            "provenance_status": "SOURCE_EVIDENCE",
+            "relationship_ids": [
+              "rel-12"
+            ],
+            "relationship_type": "MEASURED_BY",
+            "source_entity_id": "ecological-processes",
+            "source_label": "Ecological processes",
+            "target_entity_id": "rates-of-change",
+            "target_label": "Rates of change"
+          },
+          "relationships": [
+            {
+              "direction": "measurand_to_measure",
+              "evidence": [
+                {
+                  "document_id": "text-70e7e3d20325dd5d",
+                  "end_char": 1861,
+                  "quote": "Ecological processes such as primary production, respiration, energy, carbon and nutrient flow through food webs, reproduction, and decomposition are represented as rates of change",
+                  "start_char": 1681
+                }
+              ],
+              "meaning": "The source property or variable is quantified or assessed by the target metric, observation, or procedure.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-12"
+              ],
+              "relationship_type": "MEASURED_BY",
+              "source_entity_id": "ecological-processes",
+              "source_label": "Ecological processes",
+              "target_entity_id": "rates-of-change",
+              "target_label": "Rates of change"
+            }
+          ]
+        },
+        "semantic_class": "canonical",
+        "semantic_focus_identity": "rel-12",
+        "strategy_type": "FOCUSED_RELATIONSHIP",
+        "title": "Ecological processes → Rates of change",
+        "trusted_input_refs": [
+          "validated KnowledgeModel canonical relationship"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "FOCUSED_RELATIONSHIP",
+      "semantic_focus_identity": "rel-12",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-a93faabca510fb5e",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": null,
+          "predicates": [
+            "REQUIRES"
+          ],
+          "relationship_count": 1,
+          "rule_id": "CANONICAL_EDGE_FOCUS",
+          "semantic_class": "canonical",
+          "structure_type": null
+        },
+        "evidence_refs": [
+          {
+            "document_id": "text-70e7e3d20325dd5d",
+            "end_char": 1908,
+            "quote": "are represented as rates of change, which requires repeated measurement over time",
+            "relationship_ids": [
+              "rel-13"
+            ],
+            "start_char": 1827
+          }
+        ],
+        "payload": {
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "The source depends on the target as a prerequisite or necessary resource.",
+            "identity": "rel-13",
+            "label": "rel-13"
+          },
+          "nodes": [
+            {
+              "description": "Representation of ecological processes as changes measured over time.",
+              "entity_id": "rates-of-change",
+              "entity_type": "VARIABLE",
+              "label": "Rates of change"
+            },
+            {
+              "description": "Measurement approach required to represent ecological processes as rates of change.",
+              "entity_id": "repeated-measurement",
+              "entity_type": "PROCESS",
+              "label": "Repeated measurement over time"
+            }
+          ],
+          "relationship": {
+            "direction": "dependent_to_requirement",
+            "evidence": [
+              {
+                "document_id": "text-70e7e3d20325dd5d",
+                "end_char": 1908,
+                "quote": "are represented as rates of change, which requires repeated measurement over time",
+                "start_char": 1827
+              }
+            ],
+            "meaning": "The source depends on the target as a prerequisite or necessary resource.",
+            "provenance_status": "SOURCE_EVIDENCE",
+            "relationship_ids": [
+              "rel-13"
+            ],
+            "relationship_type": "REQUIRES",
+            "source_entity_id": "rates-of-change",
+            "source_label": "Rates of change",
+            "target_entity_id": "repeated-measurement",
+            "target_label": "Repeated measurement over time"
+          },
+          "relationships": [
+            {
+              "direction": "dependent_to_requirement",
+              "evidence": [
+                {
+                  "document_id": "text-70e7e3d20325dd5d",
+                  "end_char": 1908,
+                  "quote": "are represented as rates of change, which requires repeated measurement over time",
+                  "start_char": 1827
+                }
+              ],
+              "meaning": "The source depends on the target as a prerequisite or necessary resource.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-13"
+              ],
+              "relationship_type": "REQUIRES",
+              "source_entity_id": "rates-of-change",
+              "source_label": "Rates of change",
+              "target_entity_id": "repeated-measurement",
+              "target_label": "Repeated measurement over time"
+            }
+          ]
+        },
+        "semantic_class": "canonical",
+        "semantic_focus_identity": "rel-13",
+        "strategy_type": "FOCUSED_RELATIONSHIP",
+        "title": "Rates of change → Repeated measurement over time",
+        "trusted_input_refs": [
+          "validated KnowledgeModel canonical relationship"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "FOCUSED_RELATIONSHIP",
+      "semantic_focus_identity": "rel-13",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-5128e8dd4a5aceed",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": null,
+          "predicates": [
+            "ENABLES"
+          ],
+          "relationship_count": 1,
+          "rule_id": "CANONICAL_EDGE_FOCUS",
+          "semantic_class": "canonical",
+          "structure_type": null
+        },
+        "evidence_refs": [
+          {
+            "document_id": "text-70e7e3d20325dd5d",
+            "end_char": 2220,
+            "quote": "remote sensing imagery has been used to obtain \"snapshots\" of indicators of ecosystem conditions over time, and to infer ecological processes such as terrestrial net primary production",
+            "relationship_ids": [
+              "rel-14"
+            ],
+            "start_char": 2036
+          }
+        ],
+        "payload": {
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "The source makes the target possible without necessarily causing it to occur.",
+            "identity": "rel-14",
+            "label": "rel-14"
+          },
+          "nodes": [
+            {
+              "description": "Imagery used to obtain snapshots of ecosystem conditions over time and infer ecological processes.",
+              "entity_id": "remote-sensing-imagery",
+              "entity_type": "OBJECT",
+              "label": "Remote sensing imagery"
+            },
+            {
+              "description": "Ecological process inferred from remote sensing and potentially indicated by repeated vegetation-index measurements.",
+              "entity_id": "net-primary-production",
+              "entity_type": "VARIABLE",
+              "label": "Net primary production"
+            }
+          ],
+          "relationship": {
+            "direction": "enabler_to_enabled",
+            "evidence": [
+              {
+                "document_id": "text-70e7e3d20325dd5d",
+                "end_char": 2220,
+                "quote": "remote sensing imagery has been used to obtain \"snapshots\" of indicators of ecosystem conditions over time, and to infer ecological processes such as terrestrial net primary production",
+                "start_char": 2036
+              }
+            ],
+            "meaning": "The source makes the target possible without necessarily causing it to occur.",
+            "provenance_status": "SOURCE_EVIDENCE",
+            "relationship_ids": [
+              "rel-14"
+            ],
+            "relationship_type": "ENABLES",
+            "source_entity_id": "remote-sensing-imagery",
+            "source_label": "Remote sensing imagery",
+            "target_entity_id": "net-primary-production",
+            "target_label": "Net primary production"
+          },
+          "relationships": [
+            {
+              "direction": "enabler_to_enabled",
+              "evidence": [
+                {
+                  "document_id": "text-70e7e3d20325dd5d",
+                  "end_char": 2220,
+                  "quote": "remote sensing imagery has been used to obtain \"snapshots\" of indicators of ecosystem conditions over time, and to infer ecological processes such as terrestrial net primary production",
+                  "start_char": 2036
+                }
+              ],
+              "meaning": "The source makes the target possible without necessarily causing it to occur.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-14"
+              ],
+              "relationship_type": "ENABLES",
+              "source_entity_id": "remote-sensing-imagery",
+              "source_label": "Remote sensing imagery",
+              "target_entity_id": "net-primary-production",
+              "target_label": "Net primary production"
+            }
+          ]
+        },
+        "semantic_class": "canonical",
+        "semantic_focus_identity": "rel-14",
+        "strategy_type": "FOCUSED_RELATIONSHIP",
+        "title": "Remote sensing imagery → Net primary production",
+        "trusted_input_refs": [
+          "validated KnowledgeModel canonical relationship"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "FOCUSED_RELATIONSHIP",
+      "semantic_focus_identity": "rel-14",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-8095f92c32cf79f0",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": null,
+          "predicates": [
+            "MEASURED_BY"
+          ],
+          "relationship_count": 1,
+          "rule_id": "CANONICAL_EDGE_FOCUS",
+          "semantic_class": "canonical",
+          "structure_type": null
+        },
+        "evidence_refs": [
+          {
+            "document_id": "text-70e7e3d20325dd5d",
+            "end_char": 2412,
+            "quote": "Repeated measures over a season might provide an indicator of net primary production.",
+            "relationship_ids": [
+              "rel-15"
+            ],
+            "start_char": 2327
+          }
+        ],
+        "payload": {
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "The source property or variable is quantified or assessed by the target metric, observation, or procedure.",
+            "identity": "rel-15",
+            "label": "rel-15"
+          },
+          "nodes": [
+            {
+              "description": "National-scale remote-sensing index whose repeated seasonal measurements might indicate net primary production.",
+              "entity_id": "normalized-difference-vegetation-index",
+              "entity_type": "VARIABLE",
+              "label": "Normalized Difference Vegetation Index"
+            },
+            {
+              "description": "Ecological process inferred from remote sensing and potentially indicated by repeated vegetation-index measurements.",
+              "entity_id": "net-primary-production",
+              "entity_type": "VARIABLE",
+              "label": "Net primary production"
+            }
+          ],
+          "relationship": {
+            "direction": "measurand_to_measure",
+            "evidence": [
+              {
+                "document_id": "text-70e7e3d20325dd5d",
+                "end_char": 2412,
+                "quote": "Repeated measures over a season might provide an indicator of net primary production.",
+                "start_char": 2327
+              }
+            ],
+            "meaning": "The source property or variable is quantified or assessed by the target metric, observation, or procedure.",
+            "provenance_status": "SOURCE_EVIDENCE",
+            "relationship_ids": [
+              "rel-15"
+            ],
+            "relationship_type": "MEASURED_BY",
+            "source_entity_id": "normalized-difference-vegetation-index",
+            "source_label": "Normalized Difference Vegetation Index",
+            "target_entity_id": "net-primary-production",
+            "target_label": "Net primary production"
+          },
+          "relationships": [
+            {
+              "direction": "measurand_to_measure",
+              "evidence": [
+                {
+                  "document_id": "text-70e7e3d20325dd5d",
+                  "end_char": 2412,
+                  "quote": "Repeated measures over a season might provide an indicator of net primary production.",
+                  "start_char": 2327
+                }
+              ],
+              "meaning": "The source property or variable is quantified or assessed by the target metric, observation, or procedure.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-15"
+              ],
+              "relationship_type": "MEASURED_BY",
+              "source_entity_id": "normalized-difference-vegetation-index",
+              "source_label": "Normalized Difference Vegetation Index",
+              "target_entity_id": "net-primary-production",
+              "target_label": "Net primary production"
+            }
+          ]
+        },
+        "semantic_class": "canonical",
+        "semantic_focus_identity": "rel-15",
+        "strategy_type": "FOCUSED_RELATIONSHIP",
+        "title": "Normalized Difference Vegetation Index → Net primary production",
+        "trusted_input_refs": [
+          "validated KnowledgeModel canonical relationship"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "FOCUSED_RELATIONSHIP",
+      "semantic_focus_identity": "rel-15",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-0ae761d87c19df32",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": null,
+          "predicates": [
+            "CONSTRAINS"
+          ],
+          "relationship_count": 1,
+          "rule_id": "CANONICAL_EDGE_FOCUS",
+          "semantic_class": "canonical",
+          "structure_type": null
+        },
+        "evidence_refs": [
+          {
+            "document_id": "text-70e7e3d20325dd5d",
+            "end_char": 2617,
+            "quote": "have been developed for ecosystems at watershed scales, but have not been developed at the national scale",
+            "relationship_ids": [
+              "rel-16"
+            ],
+            "start_char": 2512
+          }
+        ],
+        "payload": {
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "The source limits the possible behavior, values, or choices of the target.",
+            "identity": "rel-16",
+            "label": "rel-16"
+          },
+          "nodes": [
+            {
+              "description": "Indicators for processes such as respiration, nutrient cycling, and decomposition developed at watershed scales.",
+              "entity_id": "watershed-scale-indicators",
+              "entity_type": "SYSTEM",
+              "label": "Watershed-scale ecological process indicators"
+            },
+            {
+              "description": "Indicators intended to represent ecological processes at the national scale.",
+              "entity_id": "national-scale-indicators",
+              "entity_type": "SYSTEM",
+              "label": "National-scale ecological process indicators"
+            }
+          ],
+          "relationship": {
+            "direction": "constraint_to_constrained",
+            "evidence": [
+              {
+                "document_id": "text-70e7e3d20325dd5d",
+                "end_char": 2617,
+                "quote": "have been developed for ecosystems at watershed scales, but have not been developed at the national scale",
+                "start_char": 2512
+              }
+            ],
+            "meaning": "The source limits the possible behavior, values, or choices of the target.",
+            "provenance_status": "SOURCE_EVIDENCE",
+            "relationship_ids": [
+              "rel-16"
+            ],
+            "relationship_type": "CONSTRAINS",
+            "source_entity_id": "watershed-scale-indicators",
+            "source_label": "Watershed-scale ecological process indicators",
+            "target_entity_id": "national-scale-indicators",
+            "target_label": "National-scale ecological process indicators"
+          },
+          "relationships": [
+            {
+              "direction": "constraint_to_constrained",
+              "evidence": [
+                {
+                  "document_id": "text-70e7e3d20325dd5d",
+                  "end_char": 2617,
+                  "quote": "have been developed for ecosystems at watershed scales, but have not been developed at the national scale",
+                  "start_char": 2512
+                }
+              ],
+              "meaning": "The source limits the possible behavior, values, or choices of the target.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-16"
+              ],
+              "relationship_type": "CONSTRAINS",
+              "source_entity_id": "watershed-scale-indicators",
+              "source_label": "Watershed-scale ecological process indicators",
+              "target_entity_id": "national-scale-indicators",
+              "target_label": "National-scale ecological process indicators"
+            }
+          ]
+        },
+        "semantic_class": "canonical",
+        "semantic_focus_identity": "rel-16",
+        "strategy_type": "FOCUSED_RELATIONSHIP",
+        "title": "Watershed-scale ecological process indicators → National-scale ecological process indicators",
+        "trusted_input_refs": [
+          "validated KnowledgeModel canonical relationship"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "FOCUSED_RELATIONSHIP",
+      "semantic_focus_identity": "rel-16",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-f6e2a330acfb7fb0",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": null,
+          "predicates": [
+            "CAUSES"
+          ],
+          "relationship_count": 1,
+          "rule_id": "CANONICAL_EDGE_FOCUS",
+          "semantic_class": "canonical",
+          "structure_type": null
+        },
+        "evidence_refs": [
+          {
+            "document_id": "text-70e7e3d20325dd5d",
+            "end_char": 198,
+            "quote": "primary production (conversion of the sun's energy into organic matter through photosynthesis)",
+            "relationship_ids": [
+              "rel-2"
+            ],
+            "start_char": 104
+          }
+        ],
+        "payload": {
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "The source brings about the target as an effect.",
+            "identity": "rel-2",
+            "label": "rel-2"
+          },
+          "nodes": [
+            {
+              "description": "Conversion of the sun's energy into organic matter through photosynthesis.",
+              "entity_id": "primary-production",
+              "entity_type": "PROCESS",
+              "label": "Primary production"
+            },
+            {
+              "description": "Material produced by ecological processes, including through primary production.",
+              "entity_id": "organic-matter",
+              "entity_type": "OBJECT",
+              "label": "Organic matter"
+            }
+          ],
+          "relationship": {
+            "direction": "cause_to_effect",
+            "evidence": [
+              {
+                "document_id": "text-70e7e3d20325dd5d",
+                "end_char": 198,
+                "quote": "primary production (conversion of the sun's energy into organic matter through photosynthesis)",
+                "start_char": 104
+              }
+            ],
+            "meaning": "The source brings about the target as an effect.",
+            "provenance_status": "SOURCE_EVIDENCE",
+            "relationship_ids": [
+              "rel-2"
+            ],
+            "relationship_type": "CAUSES",
+            "source_entity_id": "primary-production",
+            "source_label": "Primary production",
+            "target_entity_id": "organic-matter",
+            "target_label": "Organic matter"
+          },
+          "relationships": [
+            {
+              "direction": "cause_to_effect",
+              "evidence": [
+                {
+                  "document_id": "text-70e7e3d20325dd5d",
+                  "end_char": 198,
+                  "quote": "primary production (conversion of the sun's energy into organic matter through photosynthesis)",
+                  "start_char": 104
+                }
+              ],
+              "meaning": "The source brings about the target as an effect.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-2"
+              ],
+              "relationship_type": "CAUSES",
+              "source_entity_id": "primary-production",
+              "source_label": "Primary production",
+              "target_entity_id": "organic-matter",
+              "target_label": "Organic matter"
+            }
+          ]
+        },
+        "semantic_class": "canonical",
+        "semantic_focus_identity": "rel-2",
+        "strategy_type": "FOCUSED_RELATIONSHIP",
+        "title": "Primary production → Organic matter",
+        "trusted_input_refs": [
+          "validated KnowledgeModel canonical relationship"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "FOCUSED_RELATIONSHIP",
+      "semantic_focus_identity": "rel-2",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-bd81b2cf0d96cfbf",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": null,
+          "predicates": [
+            "ENABLES"
+          ],
+          "relationship_count": 1,
+          "rule_id": "CANONICAL_EDGE_FOCUS",
+          "semantic_class": "canonical",
+          "structure_type": null
+        },
+        "evidence_refs": [
+          {
+            "document_id": "text-70e7e3d20325dd5d",
+            "end_char": 198,
+            "quote": "primary production (conversion of the sun's energy into organic matter through photosynthesis)",
+            "relationship_ids": [
+              "rel-3"
+            ],
+            "start_char": 104
+          }
+        ],
+        "payload": {
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "The source makes the target possible without necessarily causing it to occur.",
+            "identity": "rel-3",
+            "label": "rel-3"
+          },
+          "nodes": [
+            {
+              "description": "Process through which solar energy is converted into organic matter as part of primary production.",
+              "entity_id": "photosynthesis",
+              "entity_type": "PROCESS",
+              "label": "Photosynthesis"
+            },
+            {
+              "description": "Conversion of the sun's energy into organic matter through photosynthesis.",
+              "entity_id": "primary-production",
+              "entity_type": "PROCESS",
+              "label": "Primary production"
+            }
+          ],
+          "relationship": {
+            "direction": "enabler_to_enabled",
+            "evidence": [
+              {
+                "document_id": "text-70e7e3d20325dd5d",
+                "end_char": 198,
+                "quote": "primary production (conversion of the sun's energy into organic matter through photosynthesis)",
+                "start_char": 104
+              }
+            ],
+            "meaning": "The source makes the target possible without necessarily causing it to occur.",
+            "provenance_status": "SOURCE_EVIDENCE",
+            "relationship_ids": [
+              "rel-3"
+            ],
+            "relationship_type": "ENABLES",
+            "source_entity_id": "photosynthesis",
+            "source_label": "Photosynthesis",
+            "target_entity_id": "primary-production",
+            "target_label": "Primary production"
+          },
+          "relationships": [
+            {
+              "direction": "enabler_to_enabled",
+              "evidence": [
+                {
+                  "document_id": "text-70e7e3d20325dd5d",
+                  "end_char": 198,
+                  "quote": "primary production (conversion of the sun's energy into organic matter through photosynthesis)",
+                  "start_char": 104
+                }
+              ],
+              "meaning": "The source makes the target possible without necessarily causing it to occur.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-3"
+              ],
+              "relationship_type": "ENABLES",
+              "source_entity_id": "photosynthesis",
+              "source_label": "Photosynthesis",
+              "target_entity_id": "primary-production",
+              "target_label": "Primary production"
+            }
+          ]
+        },
+        "semantic_class": "canonical",
+        "semantic_focus_identity": "rel-3",
+        "strategy_type": "FOCUSED_RELATIONSHIP",
+        "title": "Photosynthesis → Primary production",
+        "trusted_input_refs": [
+          "validated KnowledgeModel canonical relationship"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "FOCUSED_RELATIONSHIP",
+      "semantic_focus_identity": "rel-3",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-fb8d9eac3a41f137",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": null,
+          "predicates": [
+            "IS_A"
+          ],
+          "relationship_count": 1,
+          "rule_id": "CANONICAL_EDGE_FOCUS",
+          "semantic_class": "canonical",
+          "structure_type": null
+        },
+        "evidence_refs": [
+          {
+            "document_id": "text-70e7e3d20325dd5d",
+            "end_char": 307,
+            "quote": "and the associated cycling of carbon, nutrients (nitrogen, phosphorus), hydrogen/oxygen, and other elements",
+            "relationship_id": "rel-4",
+            "relationship_ids": [
+              "rel-4"
+            ],
+            "start_char": 200
+          }
+        ],
+        "payload": {
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "The source is a kind, category, or subtype of the target.",
+            "identity": "rel-4",
+            "label": "rel-4"
+          },
+          "nodes": [
+            {
+              "description": "Movement of carbon from the physical environment through organisms and back into the physical environment.",
+              "entity_id": "carbon-cycling",
+              "entity_type": "PROCESS",
+              "label": "Carbon cycling"
+            },
+            {
+              "description": "Biological, physical, and chemical processes that sustain ecological systems and produce ecological outcomes.",
+              "entity_id": "ecological-processes",
+              "entity_type": "PROCESS",
+              "label": "Ecological processes"
+            }
+          ],
+          "relationship": {
+            "direction": "instance_to_type",
+            "evidence": [
+              {
+                "document_id": "text-70e7e3d20325dd5d",
+                "end_char": 307,
+                "quote": "and the associated cycling of carbon, nutrients (nitrogen, phosphorus), hydrogen/oxygen, and other elements",
+                "relationship_id": "rel-4",
+                "start_char": 200
+              }
+            ],
+            "meaning": "The source is a kind, category, or subtype of the target.",
+            "provenance_status": "SOURCE_EVIDENCE",
+            "relationship_ids": [
+              "rel-4"
+            ],
+            "relationship_type": "IS_A",
+            "source_entity_id": "carbon-cycling",
+            "source_label": "Carbon cycling",
+            "target_entity_id": "ecological-processes",
+            "target_label": "Ecological processes"
+          },
+          "relationships": [
+            {
+              "direction": "instance_to_type",
+              "evidence": [
+                {
+                  "document_id": "text-70e7e3d20325dd5d",
+                  "end_char": 307,
+                  "quote": "and the associated cycling of carbon, nutrients (nitrogen, phosphorus), hydrogen/oxygen, and other elements",
+                  "relationship_id": "rel-4",
+                  "start_char": 200
+                }
+              ],
+              "meaning": "The source is a kind, category, or subtype of the target.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-4"
+              ],
+              "relationship_type": "IS_A",
+              "source_entity_id": "carbon-cycling",
+              "source_label": "Carbon cycling",
+              "target_entity_id": "ecological-processes",
+              "target_label": "Ecological processes"
+            }
+          ]
+        },
+        "semantic_class": "canonical",
+        "semantic_focus_identity": "rel-4",
+        "strategy_type": "FOCUSED_RELATIONSHIP",
+        "title": "Carbon cycling → Ecological processes",
+        "trusted_input_refs": [
+          "workspace-fixture.json selected canonical edge",
+          "workspace-fixture.json selected edge endpoints and evidence"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "FOCUSED_RELATIONSHIP",
+      "semantic_focus_identity": "rel-4",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-67a81c056718bf0d",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": null,
+          "predicates": [
+            "IS_A"
+          ],
+          "relationship_count": 1,
+          "rule_id": "CANONICAL_EDGE_FOCUS",
+          "semantic_class": "canonical",
+          "structure_type": null
+        },
+        "evidence_refs": [
+          {
+            "document_id": "text-70e7e3d20325dd5d",
+            "end_char": 307,
+            "quote": "and the associated cycling of carbon, nutrients (nitrogen, phosphorus), hydrogen/oxygen, and other elements",
+            "relationship_id": "rel-5",
+            "relationship_ids": [
+              "rel-5"
+            ],
+            "start_char": 200
+          }
+        ],
+        "payload": {
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "The source is a kind, category, or subtype of the target.",
+            "identity": "rel-5",
+            "label": "rel-5"
+          },
+          "nodes": [
+            {
+              "description": "Biological, physical, and chemical processes that sustain ecological systems and produce ecological outcomes.",
+              "entity_id": "ecological-processes",
+              "entity_type": "PROCESS",
+              "label": "Ecological processes"
+            },
+            {
+              "description": "Movement of nutrients, including nitrogen and phosphorus, through organisms and the physical environment.",
+              "entity_id": "nutrient-cycling",
+              "entity_type": "PROCESS",
+              "label": "Nutrient cycling"
+            }
+          ],
+          "relationship": {
+            "direction": "instance_to_type",
+            "evidence": [
+              {
+                "document_id": "text-70e7e3d20325dd5d",
+                "end_char": 307,
+                "quote": "and the associated cycling of carbon, nutrients (nitrogen, phosphorus), hydrogen/oxygen, and other elements",
+                "relationship_id": "rel-5",
+                "start_char": 200
+              }
+            ],
+            "meaning": "The source is a kind, category, or subtype of the target.",
+            "provenance_status": "SOURCE_EVIDENCE",
+            "relationship_ids": [
+              "rel-5"
+            ],
+            "relationship_type": "IS_A",
+            "source_entity_id": "nutrient-cycling",
+            "source_label": "Nutrient cycling",
+            "target_entity_id": "ecological-processes",
+            "target_label": "Ecological processes"
+          },
+          "relationships": [
+            {
+              "direction": "instance_to_type",
+              "evidence": [
+                {
+                  "document_id": "text-70e7e3d20325dd5d",
+                  "end_char": 307,
+                  "quote": "and the associated cycling of carbon, nutrients (nitrogen, phosphorus), hydrogen/oxygen, and other elements",
+                  "relationship_id": "rel-5",
+                  "start_char": 200
+                }
+              ],
+              "meaning": "The source is a kind, category, or subtype of the target.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-5"
+              ],
+              "relationship_type": "IS_A",
+              "source_entity_id": "nutrient-cycling",
+              "source_label": "Nutrient cycling",
+              "target_entity_id": "ecological-processes",
+              "target_label": "Ecological processes"
+            }
+          ]
+        },
+        "semantic_class": "canonical",
+        "semantic_focus_identity": "rel-5",
+        "strategy_type": "FOCUSED_RELATIONSHIP",
+        "title": "Nutrient cycling → Ecological processes",
+        "trusted_input_refs": [
+          "workspace-fixture.json selected canonical edge",
+          "workspace-fixture.json selected edge endpoints and evidence"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "FOCUSED_RELATIONSHIP",
+      "semantic_focus_identity": "rel-5",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-21659646222c8297",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": null,
+          "predicates": [
+            "CAUSES"
+          ],
+          "relationship_count": 1,
+          "rule_id": "CANONICAL_EDGE_FOCUS",
+          "semantic_class": "canonical",
+          "structure_type": null
+        },
+        "evidence_refs": [
+          {
+            "document_id": "text-70e7e3d20325dd5d",
+            "end_char": 537,
+            "quote": "ecological processes produce organic matter, transfer carbon and nutrients, drive soil formation",
+            "relationship_id": "rel-6",
+            "relationship_ids": [
+              "rel-6"
+            ],
+            "start_char": 441
+          }
+        ],
+        "payload": {
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "The source brings about the target as an effect.",
+            "identity": "rel-6",
+            "label": "rel-6"
+          },
+          "nodes": [
+            {
+              "description": "Biological, physical, and chemical processes that sustain ecological systems and produce ecological outcomes.",
+              "entity_id": "ecological-processes",
+              "entity_type": "PROCESS",
+              "label": "Ecological processes"
+            },
+            {
+              "description": "Formation of soil driven by ecological processes.",
+              "entity_id": "soil-formation",
+              "entity_type": "PROCESS",
+              "label": "Soil formation"
+            }
+          ],
+          "relationship": {
+            "direction": "cause_to_effect",
+            "evidence": [
+              {
+                "document_id": "text-70e7e3d20325dd5d",
+                "end_char": 537,
+                "quote": "ecological processes produce organic matter, transfer carbon and nutrients, drive soil formation",
+                "relationship_id": "rel-6",
+                "start_char": 441
+              }
+            ],
+            "meaning": "The source brings about the target as an effect.",
+            "provenance_status": "SOURCE_EVIDENCE",
+            "relationship_ids": [
+              "rel-6"
+            ],
+            "relationship_type": "CAUSES",
+            "source_entity_id": "ecological-processes",
+            "source_label": "Ecological processes",
+            "target_entity_id": "soil-formation",
+            "target_label": "Soil formation"
+          },
+          "relationships": [
+            {
+              "direction": "cause_to_effect",
+              "evidence": [
+                {
+                  "document_id": "text-70e7e3d20325dd5d",
+                  "end_char": 537,
+                  "quote": "ecological processes produce organic matter, transfer carbon and nutrients, drive soil formation",
+                  "relationship_id": "rel-6",
+                  "start_char": 441
+                }
+              ],
+              "meaning": "The source brings about the target as an effect.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-6"
+              ],
+              "relationship_type": "CAUSES",
+              "source_entity_id": "ecological-processes",
+              "source_label": "Ecological processes",
+              "target_entity_id": "soil-formation",
+              "target_label": "Soil formation"
+            }
+          ]
+        },
+        "semantic_class": "canonical",
+        "semantic_focus_identity": "rel-6",
+        "strategy_type": "FOCUSED_RELATIONSHIP",
+        "title": "Ecological processes → Soil formation",
+        "trusted_input_refs": [
+          "workspace-fixture.json selected canonical edge",
+          "workspace-fixture.json selected edge endpoints and evidence"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "FOCUSED_RELATIONSHIP",
+      "semantic_focus_identity": "rel-6",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-7f0207c040e0346e",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": null,
+          "predicates": [
+            "ENABLES"
+          ],
+          "relationship_count": 1,
+          "rule_id": "CANONICAL_EDGE_FOCUS",
+          "semantic_class": "canonical",
+          "structure_type": null
+        },
+        "evidence_refs": [
+          {
+            "document_id": "text-70e7e3d20325dd5d",
+            "end_char": 572,
+            "quote": "ecological processes produce organic matter, transfer carbon and nutrients, drive soil formation, and enable organisms to reproduce",
+            "relationship_ids": [
+              "rel-7"
+            ],
+            "start_char": 441
+          }
+        ],
+        "payload": {
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "The source makes the target possible without necessarily causing it to occur.",
+            "identity": "rel-7",
+            "label": "rel-7"
+          },
+          "nodes": [
+            {
+              "description": "Biological, physical, and chemical processes that sustain ecological systems and produce ecological outcomes.",
+              "entity_id": "ecological-processes",
+              "entity_type": "PROCESS",
+              "label": "Ecological processes"
+            },
+            {
+              "description": "Biological process enabled by ecological processes.",
+              "entity_id": "reproduction",
+              "entity_type": "PROCESS",
+              "label": "Reproduction"
+            }
+          ],
+          "relationship": {
+            "direction": "enabler_to_enabled",
+            "evidence": [
+              {
+                "document_id": "text-70e7e3d20325dd5d",
+                "end_char": 572,
+                "quote": "ecological processes produce organic matter, transfer carbon and nutrients, drive soil formation, and enable organisms to reproduce",
+                "start_char": 441
+              }
+            ],
+            "meaning": "The source makes the target possible without necessarily causing it to occur.",
+            "provenance_status": "SOURCE_EVIDENCE",
+            "relationship_ids": [
+              "rel-7"
+            ],
+            "relationship_type": "ENABLES",
+            "source_entity_id": "ecological-processes",
+            "source_label": "Ecological processes",
+            "target_entity_id": "reproduction",
+            "target_label": "Reproduction"
+          },
+          "relationships": [
+            {
+              "direction": "enabler_to_enabled",
+              "evidence": [
+                {
+                  "document_id": "text-70e7e3d20325dd5d",
+                  "end_char": 572,
+                  "quote": "ecological processes produce organic matter, transfer carbon and nutrients, drive soil formation, and enable organisms to reproduce",
+                  "start_char": 441
+                }
+              ],
+              "meaning": "The source makes the target possible without necessarily causing it to occur.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-7"
+              ],
+              "relationship_type": "ENABLES",
+              "source_entity_id": "ecological-processes",
+              "source_label": "Ecological processes",
+              "target_entity_id": "reproduction",
+              "target_label": "Reproduction"
+            }
+          ]
+        },
+        "semantic_class": "canonical",
+        "semantic_focus_identity": "rel-7",
+        "strategy_type": "FOCUSED_RELATIONSHIP",
+        "title": "Ecological processes → Reproduction",
+        "trusted_input_refs": [
+          "validated KnowledgeModel canonical relationship"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "FOCUSED_RELATIONSHIP",
+      "semantic_focus_identity": "rel-7",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-4754569a53b80e93",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": null,
+          "predicates": [
+            "ENABLES"
+          ],
+          "relationship_count": 1,
+          "rule_id": "CANONICAL_EDGE_FOCUS",
+          "semantic_class": "canonical",
+          "structure_type": null
+        },
+        "evidence_refs": [
+          {
+            "document_id": "text-70e7e3d20325dd5d",
+            "end_char": 639,
+            "quote": "They also play an important role in providing ecological services",
+            "relationship_ids": [
+              "rel-8"
+            ],
+            "start_char": 574
+          }
+        ],
+        "payload": {
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "The source makes the target possible without necessarily causing it to occur.",
+            "identity": "rel-8",
+            "label": "rel-8"
+          },
+          "nodes": [
+            {
+              "description": "Biological, physical, and chemical processes that sustain ecological systems and produce ecological outcomes.",
+              "entity_id": "ecological-processes",
+              "entity_type": "PROCESS",
+              "label": "Ecological processes"
+            },
+            {
+              "description": "Benefits provided by ecological systems and processes, including resources and regulation of air and water quality.",
+              "entity_id": "ecological-services",
+              "entity_type": "CONCEPT",
+              "label": "Ecological services"
+            }
+          ],
+          "relationship": {
+            "direction": "enabler_to_enabled",
+            "evidence": [
+              {
+                "document_id": "text-70e7e3d20325dd5d",
+                "end_char": 639,
+                "quote": "They also play an important role in providing ecological services",
+                "start_char": 574
+              }
+            ],
+            "meaning": "The source makes the target possible without necessarily causing it to occur.",
+            "provenance_status": "SOURCE_EVIDENCE",
+            "relationship_ids": [
+              "rel-8"
+            ],
+            "relationship_type": "ENABLES",
+            "source_entity_id": "ecological-processes",
+            "source_label": "Ecological processes",
+            "target_entity_id": "ecological-services",
+            "target_label": "Ecological services"
+          },
+          "relationships": [
+            {
+              "direction": "enabler_to_enabled",
+              "evidence": [
+                {
+                  "document_id": "text-70e7e3d20325dd5d",
+                  "end_char": 639,
+                  "quote": "They also play an important role in providing ecological services",
+                  "start_char": 574
+                }
+              ],
+              "meaning": "The source makes the target possible without necessarily causing it to occur.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-8"
+              ],
+              "relationship_type": "ENABLES",
+              "source_entity_id": "ecological-processes",
+              "source_label": "Ecological processes",
+              "target_entity_id": "ecological-services",
+              "target_label": "Ecological services"
+            }
+          ]
+        },
+        "semantic_class": "canonical",
+        "semantic_focus_identity": "rel-8",
+        "strategy_type": "FOCUSED_RELATIONSHIP",
+        "title": "Ecological processes → Ecological services",
+        "trusted_input_refs": [
+          "validated KnowledgeModel canonical relationship"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "FOCUSED_RELATIONSHIP",
+      "semantic_focus_identity": "rel-8",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-443fc4fc0eff09bc",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": null,
+          "predicates": [
+            "AFFECTS"
+          ],
+          "relationship_count": 1,
+          "rule_id": "CANONICAL_EDGE_FOCUS",
+          "semantic_class": "canonical",
+          "structure_type": null
+        },
+        "evidence_refs": [
+          {
+            "document_id": "text-70e7e3d20325dd5d",
+            "end_char": 869,
+            "quote": "Ecological processes, such as primary production, influence the extent, distribution, and biodiversity of systems.",
+            "relationship_id": "rel-9",
+            "relationship_ids": [
+              "rel-9"
+            ],
+            "start_char": 755
+          }
+        ],
+        "payload": {
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "The source causally influences the target without a specified direction or complete production.",
+            "identity": "rel-9",
+            "label": "rel-9"
+          },
+          "nodes": [
+            {
+              "description": "Diversity of organisms in ecological systems.",
+              "entity_id": "biodiversity",
+              "entity_type": "VARIABLE",
+              "label": "Biodiversity"
+            },
+            {
+              "description": "Biological, physical, and chemical processes that sustain ecological systems and produce ecological outcomes.",
+              "entity_id": "ecological-processes",
+              "entity_type": "PROCESS",
+              "label": "Ecological processes"
+            }
+          ],
+          "relationship": {
+            "direction": "influence_to_affected",
+            "evidence": [
+              {
+                "document_id": "text-70e7e3d20325dd5d",
+                "end_char": 869,
+                "quote": "Ecological processes, such as primary production, influence the extent, distribution, and biodiversity of systems.",
+                "relationship_id": "rel-9",
+                "start_char": 755
+              }
+            ],
+            "meaning": "The source causally influences the target without a specified direction or complete production.",
+            "provenance_status": "SOURCE_EVIDENCE",
+            "relationship_ids": [
+              "rel-9"
+            ],
+            "relationship_type": "AFFECTS",
+            "source_entity_id": "ecological-processes",
+            "source_label": "Ecological processes",
+            "target_entity_id": "biodiversity",
+            "target_label": "Biodiversity"
+          },
+          "relationships": [
+            {
+              "direction": "influence_to_affected",
+              "evidence": [
+                {
+                  "document_id": "text-70e7e3d20325dd5d",
+                  "end_char": 869,
+                  "quote": "Ecological processes, such as primary production, influence the extent, distribution, and biodiversity of systems.",
+                  "relationship_id": "rel-9",
+                  "start_char": 755
+                }
+              ],
+              "meaning": "The source causally influences the target without a specified direction or complete production.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-9"
+              ],
+              "relationship_type": "AFFECTS",
+              "source_entity_id": "ecological-processes",
+              "source_label": "Ecological processes",
+              "target_entity_id": "biodiversity",
+              "target_label": "Biodiversity"
+            }
+          ]
+        },
+        "semantic_class": "canonical",
+        "semantic_focus_identity": "rel-9",
+        "strategy_type": "FOCUSED_RELATIONSHIP",
+        "title": "Ecological processes → Biodiversity",
+        "trusted_input_refs": [
+          "workspace-fixture.json selected canonical edge",
+          "workspace-fixture.json selected edge endpoints and evidence"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "FOCUSED_RELATIONSHIP",
+      "semantic_focus_identity": "rel-9",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-137bc293a745594b",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": "NO_TRUSTED_SUPPORTING_RELATIONSHIP",
+          "predicates": [],
+          "relationship_count": 0,
+          "rule_id": "TRUTHFUL_PROSE_FALLBACK",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [],
+        "payload": {
+          "body": "Environmental quality regulated in part by ecological services.",
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "Environmental quality regulated in part by ecological services.",
+            "identity": "air-water-quality",
+            "label": "Air and water quality"
+          },
+          "nodes": [
+            {
+              "description": "Environmental quality regulated in part by ecological services.",
+              "entity_id": "air-water-quality",
+              "entity_type": "VARIABLE",
+              "label": "Air and water quality"
+            }
+          ],
+          "relationships": []
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "air-water-quality",
+        "strategy_type": "CONCISE_PROSE",
+        "title": "Air and water quality",
+        "trusted_input_refs": [
+          "validated KnowledgeModel entity"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "CONCISE_PROSE",
+      "semantic_focus_identity": "air-water-quality",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-6586ae8b3dd9b84c",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": null,
+          "predicates": [
+            "AFFECTS",
+            "CAUSES"
+          ],
+          "relationship_count": 4,
+          "rule_id": "DIRECTIONAL_CAUSAL_NETWORK",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [
+          {
+            "document_id": "text-70e7e3d20325dd5d",
+            "end_char": 537,
+            "quote": "ecological processes produce organic matter, transfer carbon and nutrients, drive soil formation",
+            "relationship_id": "rel-6",
+            "relationship_ids": [
+              "rel-6"
+            ],
+            "start_char": 441
+          },
+          {
+            "document_id": "text-70e7e3d20325dd5d",
+            "end_char": 869,
+            "quote": "Ecological processes, such as primary production, influence the extent, distribution, and biodiversity of systems.",
+            "relationship_id": "rel-9",
+            "relationship_ids": [
+              "rel-9"
+            ],
+            "start_char": 755
+          },
+          {
+            "document_id": "text-70e7e3d20325dd5d",
+            "end_char": 1225,
+            "quote": "ecological processes are affected by both small-scale natural events such as seasonal changes in temperature, precipitation, and stream flows and large-scale events such as climate change",
+            "relationship_id": "rel-10",
+            "relationship_ids": [
+              "rel-10"
+            ],
+            "start_char": 1038
+          },
+          {
+            "document_id": "text-70e7e3d20325dd5d",
+            "end_char": 1467,
+            "quote": "EPA has long been concerned with the impacts of human activities—including pesticide use, chemical use, waste generation, land use changes, and water quality management, among others—on the rates, types, and timing of ecological processes.",
+            "relationship_id": "rel-11",
+            "relationship_ids": [
+              "rel-11"
+            ],
+            "start_char": 1228
+          }
+        ],
+        "payload": {
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "Diversity of organisms in ecological systems.",
+            "identity": "biodiversity",
+            "label": "Biodiversity"
+          },
+          "nodes": [
+            {
+              "description": "Diversity of organisms in ecological systems.",
+              "entity_id": "biodiversity",
+              "entity_type": "VARIABLE",
+              "label": "Biodiversity"
+            },
+            {
+              "description": "Biological, physical, and chemical processes that sustain ecological systems and produce ecological outcomes.",
+              "entity_id": "ecological-processes",
+              "entity_type": "PROCESS",
+              "label": "Ecological processes"
+            },
+            {
+              "description": "Activities that affect the rates, types, and timing of ecological processes.",
+              "entity_id": "human-activities",
+              "entity_type": "CONCEPT",
+              "label": "Human activities"
+            },
+            {
+              "description": "Natural events and changes that affect ecological processes across temporal and spatial scales.",
+              "entity_id": "natural-forces",
+              "entity_type": "CONCEPT",
+              "label": "Natural forces"
+            },
+            {
+              "description": "Formation of soil driven by ecological processes.",
+              "entity_id": "soil-formation",
+              "entity_type": "PROCESS",
+              "label": "Soil formation"
+            }
+          ],
+          "ordered_nodes": [
+            {
+              "description": "Activities that affect the rates, types, and timing of ecological processes.",
+              "entity_id": "human-activities",
+              "entity_type": "CONCEPT",
+              "label": "Human activities"
+            },
+            {
+              "description": "Natural events and changes that affect ecological processes across temporal and spatial scales.",
+              "entity_id": "natural-forces",
+              "entity_type": "CONCEPT",
+              "label": "Natural forces"
+            },
+            {
+              "description": "Biological, physical, and chemical processes that sustain ecological systems and produce ecological outcomes.",
+              "entity_id": "ecological-processes",
+              "entity_type": "PROCESS",
+              "label": "Ecological processes"
+            },
+            {
+              "description": "Diversity of organisms in ecological systems.",
+              "entity_id": "biodiversity",
+              "entity_type": "VARIABLE",
+              "label": "Biodiversity"
+            },
+            {
+              "description": "Formation of soil driven by ecological processes.",
+              "entity_id": "soil-formation",
+              "entity_type": "PROCESS",
+              "label": "Soil formation"
+            }
+          ],
+          "relationships": [
+            {
+              "direction": "influence_to_affected",
+              "evidence": [
+                {
+                  "document_id": "text-70e7e3d20325dd5d",
+                  "end_char": 869,
+                  "quote": "Ecological processes, such as primary production, influence the extent, distribution, and biodiversity of systems.",
+                  "relationship_id": "rel-9",
+                  "start_char": 755
+                }
+              ],
+              "meaning": "The source causally influences the target without a specified direction or complete production.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-9"
+              ],
+              "relationship_type": "AFFECTS",
+              "source_entity_id": "ecological-processes",
+              "source_label": "Ecological processes",
+              "target_entity_id": "biodiversity",
+              "target_label": "Biodiversity"
+            },
+            {
+              "direction": "cause_to_effect",
+              "evidence": [
+                {
+                  "document_id": "text-70e7e3d20325dd5d",
+                  "end_char": 537,
+                  "quote": "ecological processes produce organic matter, transfer carbon and nutrients, drive soil formation",
+                  "relationship_id": "rel-6",
+                  "start_char": 441
+                }
+              ],
+              "meaning": "The source brings about the target as an effect.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-6"
+              ],
+              "relationship_type": "CAUSES",
+              "source_entity_id": "ecological-processes",
+              "source_label": "Ecological processes",
+              "target_entity_id": "soil-formation",
+              "target_label": "Soil formation"
+            },
+            {
+              "direction": "influence_to_affected",
+              "evidence": [
+                {
+                  "document_id": "text-70e7e3d20325dd5d",
+                  "end_char": 1467,
+                  "quote": "EPA has long been concerned with the impacts of human activities—including pesticide use, chemical use, waste generation, land use changes, and water quality management, among others—on the rates, types, and timing of ecological processes.",
+                  "relationship_id": "rel-11",
+                  "start_char": 1228
+                }
+              ],
+              "meaning": "The source causally influences the target without a specified direction or complete production.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-11"
+              ],
+              "relationship_type": "AFFECTS",
+              "source_entity_id": "human-activities",
+              "source_label": "Human activities",
+              "target_entity_id": "ecological-processes",
+              "target_label": "Ecological processes"
+            },
+            {
+              "direction": "influence_to_affected",
+              "evidence": [
+                {
+                  "document_id": "text-70e7e3d20325dd5d",
+                  "end_char": 1225,
+                  "quote": "ecological processes are affected by both small-scale natural events such as seasonal changes in temperature, precipitation, and stream flows and large-scale events such as climate change",
+                  "relationship_id": "rel-10",
+                  "start_char": 1038
+                }
+              ],
+              "meaning": "The source causally influences the target without a specified direction or complete production.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-10"
+              ],
+              "relationship_type": "AFFECTS",
+              "source_entity_id": "natural-forces",
+              "source_label": "Natural forces",
+              "target_entity_id": "ecological-processes",
+              "target_label": "Ecological processes"
+            }
+          ]
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "biodiversity",
+        "strategy_type": "CAUSAL_MECHANISM",
+        "title": "Biodiversity",
+        "trusted_input_refs": [
+          "workspace-fixture.json representation.nodes selected concept",
+          "workspace-fixture.json connected representation edges"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "CAUSAL_MECHANISM",
+      "semantic_focus_identity": "biodiversity",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-7f920af8f4cad46a",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": "NO_TRUSTED_SUPPORTING_RELATIONSHIP",
+          "predicates": [],
+          "relationship_count": 0,
+          "rule_id": "TRUTHFUL_PROSE_FALLBACK",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [],
+        "payload": {
+          "body": "Living organisms that participate in ecological cycles.",
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "Living organisms that participate in ecological cycles.",
+            "identity": "biological-organisms",
+            "label": "Biological organisms"
+          },
+          "nodes": [
+            {
+              "description": "Living organisms that participate in ecological cycles.",
+              "entity_id": "biological-organisms",
+              "entity_type": "OBJECT",
+              "label": "Biological organisms"
+            }
+          ],
+          "relationships": []
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "biological-organisms",
+        "strategy_type": "CONCISE_PROSE",
+        "title": "Biological organisms",
+        "trusted_input_refs": [
+          "validated KnowledgeModel entity"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "CONCISE_PROSE",
+      "semantic_focus_identity": "biological-organisms",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-e0b26412da7457a1",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": null,
+          "predicates": [
+            "IS_A"
+          ],
+          "relationship_count": 3,
+          "rule_id": "TYPED_HIERARCHY_EDGES",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [
+          {
+            "document_id": "text-70e7e3d20325dd5d",
+            "end_char": 307,
+            "quote": "and the associated cycling of carbon, nutrients (nitrogen, phosphorus), hydrogen/oxygen, and other elements",
+            "relationship_id": "rel-4",
+            "relationship_ids": [
+              "rel-4"
+            ],
+            "start_char": 200
+          },
+          {
+            "document_id": "text-70e7e3d20325dd5d",
+            "end_char": 307,
+            "quote": "and the associated cycling of carbon, nutrients (nitrogen, phosphorus), hydrogen/oxygen, and other elements",
+            "relationship_id": "rel-5",
+            "relationship_ids": [
+              "rel-5"
+            ],
+            "start_char": 200
+          },
+          {
+            "document_id": "text-70e7e3d20325dd5d",
+            "end_char": 1826,
+            "quote": "Ecological processes such as primary production, respiration, energy, carbon and nutrient flow through food webs, reproduction, and decomposition",
+            "relationship_id": "rel-1",
+            "relationship_ids": [
+              "rel-1"
+            ],
+            "start_char": 1681
+          }
+        ],
+        "payload": {
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "Movement of carbon from the physical environment through organisms and back into the physical environment.",
+            "identity": "carbon-cycling",
+            "label": "Carbon cycling"
+          },
+          "members": [
+            {
+              "description": "Movement of carbon from the physical environment through organisms and back into the physical environment.",
+              "entity_id": "carbon-cycling",
+              "entity_type": "PROCESS",
+              "label": "Carbon cycling"
+            },
+            {
+              "description": "Movement of nutrients, including nitrogen and phosphorus, through organisms and the physical environment.",
+              "entity_id": "nutrient-cycling",
+              "entity_type": "PROCESS",
+              "label": "Nutrient cycling"
+            },
+            {
+              "description": "Conversion of the sun's energy into organic matter through photosynthesis.",
+              "entity_id": "primary-production",
+              "entity_type": "PROCESS",
+              "label": "Primary production"
+            }
+          ],
+          "nodes": [
+            {
+              "description": "Movement of carbon from the physical environment through organisms and back into the physical environment.",
+              "entity_id": "carbon-cycling",
+              "entity_type": "PROCESS",
+              "label": "Carbon cycling"
+            },
+            {
+              "description": "Biological, physical, and chemical processes that sustain ecological systems and produce ecological outcomes.",
+              "entity_id": "ecological-processes",
+              "entity_type": "PROCESS",
+              "label": "Ecological processes"
+            },
+            {
+              "description": "Movement of nutrients, including nitrogen and phosphorus, through organisms and the physical environment.",
+              "entity_id": "nutrient-cycling",
+              "entity_type": "PROCESS",
+              "label": "Nutrient cycling"
+            },
+            {
+              "description": "Conversion of the sun's energy into organic matter through photosynthesis.",
+              "entity_id": "primary-production",
+              "entity_type": "PROCESS",
+              "label": "Primary production"
+            }
+          ],
+          "relationships": [
+            {
+              "direction": "instance_to_type",
+              "evidence": [
+                {
+                  "document_id": "text-70e7e3d20325dd5d",
+                  "end_char": 307,
+                  "quote": "and the associated cycling of carbon, nutrients (nitrogen, phosphorus), hydrogen/oxygen, and other elements",
+                  "relationship_id": "rel-4",
+                  "start_char": 200
+                }
+              ],
+              "meaning": "The source is a kind, category, or subtype of the target.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-4"
+              ],
+              "relationship_type": "IS_A",
+              "source_entity_id": "carbon-cycling",
+              "source_label": "Carbon cycling",
+              "target_entity_id": "ecological-processes",
+              "target_label": "Ecological processes"
+            },
+            {
+              "direction": "instance_to_type",
+              "evidence": [
+                {
+                  "document_id": "text-70e7e3d20325dd5d",
+                  "end_char": 307,
+                  "quote": "and the associated cycling of carbon, nutrients (nitrogen, phosphorus), hydrogen/oxygen, and other elements",
+                  "relationship_id": "rel-5",
+                  "start_char": 200
+                }
+              ],
+              "meaning": "The source is a kind, category, or subtype of the target.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-5"
+              ],
+              "relationship_type": "IS_A",
+              "source_entity_id": "nutrient-cycling",
+              "source_label": "Nutrient cycling",
+              "target_entity_id": "ecological-processes",
+              "target_label": "Ecological processes"
+            },
+            {
+              "direction": "instance_to_type",
+              "evidence": [
+                {
+                  "document_id": "text-70e7e3d20325dd5d",
+                  "end_char": 1826,
+                  "quote": "Ecological processes such as primary production, respiration, energy, carbon and nutrient flow through food webs, reproduction, and decomposition",
+                  "relationship_id": "rel-1",
+                  "start_char": 1681
+                }
+              ],
+              "meaning": "The source is a kind, category, or subtype of the target.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-1"
+              ],
+              "relationship_type": "IS_A",
+              "source_entity_id": "primary-production",
+              "source_label": "Primary production",
+              "target_entity_id": "ecological-processes",
+              "target_label": "Ecological processes"
+            }
+          ],
+          "roots": [
+            {
+              "description": "Biological, physical, and chemical processes that sustain ecological systems and produce ecological outcomes.",
+              "entity_id": "ecological-processes",
+              "entity_type": "PROCESS",
+              "label": "Ecological processes"
+            }
+          ]
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "carbon-cycling",
+        "strategy_type": "HIERARCHY_COMPOSITION",
+        "title": "Carbon cycling",
+        "trusted_input_refs": [
+          "workspace-fixture.json representation.nodes selected concept",
+          "workspace-fixture.json connected representation edges"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "HIERARCHY_COMPOSITION",
+      "semantic_focus_identity": "carbon-cycling",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-9e7e0cd8407c68b4",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": "NO_TRUSTED_SUPPORTING_RELATIONSHIP",
+          "predicates": [],
+          "relationship_count": 0,
+          "rule_id": "TRUTHFUL_PROSE_FALLBACK",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [],
+        "payload": {
+          "body": "An indicator available under the ROE criteria for addressing ecological processes.",
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "An indicator available under the ROE criteria for addressing ecological processes.",
+            "identity": "carbon-storage-in-forests",
+            "label": "Carbon Storage in Forests"
+          },
+          "nodes": [
+            {
+              "description": "An indicator available under the ROE criteria for addressing ecological processes.",
+              "entity_id": "carbon-storage-in-forests",
+              "entity_type": "VARIABLE",
+              "label": "Carbon Storage in Forests"
+            }
+          ],
+          "relationships": []
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "carbon-storage-in-forests",
+        "strategy_type": "CONCISE_PROSE",
+        "title": "Carbon Storage in Forests",
+        "trusted_input_refs": [
+          "validated KnowledgeModel entity"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "CONCISE_PROSE",
+      "semantic_focus_identity": "carbon-storage-in-forests",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-5370167e146e93d6",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": "NO_TRUSTED_SUPPORTING_RELATIONSHIP",
+          "predicates": [],
+          "relationship_count": 0,
+          "rule_id": "TRUTHFUL_PROSE_FALLBACK",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [],
+        "payload": {
+          "body": "Ecological process represented as a rate of change.",
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "Ecological process represented as a rate of change.",
+            "identity": "decomposition",
+            "label": "Decomposition"
+          },
+          "nodes": [
+            {
+              "description": "Ecological process represented as a rate of change.",
+              "entity_id": "decomposition",
+              "entity_type": "PROCESS",
+              "label": "Decomposition"
+            }
+          ],
+          "relationships": []
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "decomposition",
+        "strategy_type": "CONCISE_PROSE",
+        "title": "Decomposition",
+        "trusted_input_refs": [
+          "validated KnowledgeModel entity"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "CONCISE_PROSE",
+      "semantic_focus_identity": "decomposition",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-fa8da33c1048e930",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": null,
+          "predicates": [
+            "AFFECTS",
+            "CAUSES"
+          ],
+          "relationship_count": 4,
+          "rule_id": "DIRECTIONAL_CAUSAL_NETWORK",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [
+          {
+            "document_id": "text-70e7e3d20325dd5d",
+            "end_char": 537,
+            "quote": "ecological processes produce organic matter, transfer carbon and nutrients, drive soil formation",
+            "relationship_id": "rel-6",
+            "relationship_ids": [
+              "rel-6"
+            ],
+            "start_char": 441
+          },
+          {
+            "document_id": "text-70e7e3d20325dd5d",
+            "end_char": 869,
+            "quote": "Ecological processes, such as primary production, influence the extent, distribution, and biodiversity of systems.",
+            "relationship_id": "rel-9",
+            "relationship_ids": [
+              "rel-9"
+            ],
+            "start_char": 755
+          },
+          {
+            "document_id": "text-70e7e3d20325dd5d",
+            "end_char": 1225,
+            "quote": "ecological processes are affected by both small-scale natural events such as seasonal changes in temperature, precipitation, and stream flows and large-scale events such as climate change",
+            "relationship_id": "rel-10",
+            "relationship_ids": [
+              "rel-10"
+            ],
+            "start_char": 1038
+          },
+          {
+            "document_id": "text-70e7e3d20325dd5d",
+            "end_char": 1467,
+            "quote": "EPA has long been concerned with the impacts of human activities—including pesticide use, chemical use, waste generation, land use changes, and water quality management, among others—on the rates, types, and timing of ecological processes.",
+            "relationship_id": "rel-11",
+            "relationship_ids": [
+              "rel-11"
+            ],
+            "start_char": 1228
+          }
+        ],
+        "payload": {
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "Biological, physical, and chemical processes that sustain ecological systems and produce ecological outcomes.",
+            "identity": "ecological-processes",
+            "label": "Ecological processes"
+          },
+          "nodes": [
+            {
+              "description": "Diversity of organisms in ecological systems.",
+              "entity_id": "biodiversity",
+              "entity_type": "VARIABLE",
+              "label": "Biodiversity"
+            },
+            {
+              "description": "Biological, physical, and chemical processes that sustain ecological systems and produce ecological outcomes.",
+              "entity_id": "ecological-processes",
+              "entity_type": "PROCESS",
+              "label": "Ecological processes"
+            },
+            {
+              "description": "Activities that affect the rates, types, and timing of ecological processes.",
+              "entity_id": "human-activities",
+              "entity_type": "CONCEPT",
+              "label": "Human activities"
+            },
+            {
+              "description": "Natural events and changes that affect ecological processes across temporal and spatial scales.",
+              "entity_id": "natural-forces",
+              "entity_type": "CONCEPT",
+              "label": "Natural forces"
+            },
+            {
+              "description": "Formation of soil driven by ecological processes.",
+              "entity_id": "soil-formation",
+              "entity_type": "PROCESS",
+              "label": "Soil formation"
+            }
+          ],
+          "ordered_nodes": [
+            {
+              "description": "Activities that affect the rates, types, and timing of ecological processes.",
+              "entity_id": "human-activities",
+              "entity_type": "CONCEPT",
+              "label": "Human activities"
+            },
+            {
+              "description": "Natural events and changes that affect ecological processes across temporal and spatial scales.",
+              "entity_id": "natural-forces",
+              "entity_type": "CONCEPT",
+              "label": "Natural forces"
+            },
+            {
+              "description": "Biological, physical, and chemical processes that sustain ecological systems and produce ecological outcomes.",
+              "entity_id": "ecological-processes",
+              "entity_type": "PROCESS",
+              "label": "Ecological processes"
+            },
+            {
+              "description": "Diversity of organisms in ecological systems.",
+              "entity_id": "biodiversity",
+              "entity_type": "VARIABLE",
+              "label": "Biodiversity"
+            },
+            {
+              "description": "Formation of soil driven by ecological processes.",
+              "entity_id": "soil-formation",
+              "entity_type": "PROCESS",
+              "label": "Soil formation"
+            }
+          ],
+          "relationships": [
+            {
+              "direction": "influence_to_affected",
+              "evidence": [
+                {
+                  "document_id": "text-70e7e3d20325dd5d",
+                  "end_char": 869,
+                  "quote": "Ecological processes, such as primary production, influence the extent, distribution, and biodiversity of systems.",
+                  "relationship_id": "rel-9",
+                  "start_char": 755
+                }
+              ],
+              "meaning": "The source causally influences the target without a specified direction or complete production.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-9"
+              ],
+              "relationship_type": "AFFECTS",
+              "source_entity_id": "ecological-processes",
+              "source_label": "Ecological processes",
+              "target_entity_id": "biodiversity",
+              "target_label": "Biodiversity"
+            },
+            {
+              "direction": "cause_to_effect",
+              "evidence": [
+                {
+                  "document_id": "text-70e7e3d20325dd5d",
+                  "end_char": 537,
+                  "quote": "ecological processes produce organic matter, transfer carbon and nutrients, drive soil formation",
+                  "relationship_id": "rel-6",
+                  "start_char": 441
+                }
+              ],
+              "meaning": "The source brings about the target as an effect.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-6"
+              ],
+              "relationship_type": "CAUSES",
+              "source_entity_id": "ecological-processes",
+              "source_label": "Ecological processes",
+              "target_entity_id": "soil-formation",
+              "target_label": "Soil formation"
+            },
+            {
+              "direction": "influence_to_affected",
+              "evidence": [
+                {
+                  "document_id": "text-70e7e3d20325dd5d",
+                  "end_char": 1467,
+                  "quote": "EPA has long been concerned with the impacts of human activities—including pesticide use, chemical use, waste generation, land use changes, and water quality management, among others—on the rates, types, and timing of ecological processes.",
+                  "relationship_id": "rel-11",
+                  "start_char": 1228
+                }
+              ],
+              "meaning": "The source causally influences the target without a specified direction or complete production.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-11"
+              ],
+              "relationship_type": "AFFECTS",
+              "source_entity_id": "human-activities",
+              "source_label": "Human activities",
+              "target_entity_id": "ecological-processes",
+              "target_label": "Ecological processes"
+            },
+            {
+              "direction": "influence_to_affected",
+              "evidence": [
+                {
+                  "document_id": "text-70e7e3d20325dd5d",
+                  "end_char": 1225,
+                  "quote": "ecological processes are affected by both small-scale natural events such as seasonal changes in temperature, precipitation, and stream flows and large-scale events such as climate change",
+                  "relationship_id": "rel-10",
+                  "start_char": 1038
+                }
+              ],
+              "meaning": "The source causally influences the target without a specified direction or complete production.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-10"
+              ],
+              "relationship_type": "AFFECTS",
+              "source_entity_id": "natural-forces",
+              "source_label": "Natural forces",
+              "target_entity_id": "ecological-processes",
+              "target_label": "Ecological processes"
+            }
+          ]
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "ecological-processes",
+        "strategy_type": "CAUSAL_MECHANISM",
+        "title": "Ecological processes",
+        "trusted_input_refs": [
+          "workspace-fixture.json representation.nodes selected concept",
+          "workspace-fixture.json connected representation edges"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "CAUSAL_MECHANISM",
+      "semantic_focus_identity": "ecological-processes",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-ffa2be7d1654e10a",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": "NO_TRUSTED_SUPPORTING_RELATIONSHIP",
+          "predicates": [],
+          "relationship_count": 0,
+          "rule_id": "TRUTHFUL_PROSE_FALLBACK",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [],
+        "payload": {
+          "body": "Benefits provided by ecological systems and processes, including resources and regulation of air and water quality.",
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "Benefits provided by ecological systems and processes, including resources and regulation of air and water quality.",
+            "identity": "ecological-services",
+            "label": "Ecological services"
+          },
+          "nodes": [
+            {
+              "description": "Benefits provided by ecological systems and processes, including resources and regulation of air and water quality.",
+              "entity_id": "ecological-services",
+              "entity_type": "CONCEPT",
+              "label": "Ecological services"
+            }
+          ],
+          "relationships": []
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "ecological-services",
+        "strategy_type": "CONCISE_PROSE",
+        "title": "Ecological services",
+        "trusted_input_refs": [
+          "validated KnowledgeModel entity"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "CONCISE_PROSE",
+      "semantic_focus_identity": "ecological-services",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-beb214311b098b4b",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": "NO_TRUSTED_SUPPORTING_RELATIONSHIP",
+          "predicates": [],
+          "relationship_count": 0,
+          "rule_id": "TRUTHFUL_PROSE_FALLBACK",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [],
+        "payload": {
+          "body": "Systems sustained by biological, physical, and chemical processes.",
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "Systems sustained by biological, physical, and chemical processes.",
+            "identity": "ecological-systems",
+            "label": "Ecological systems"
+          },
+          "nodes": [
+            {
+              "description": "Systems sustained by biological, physical, and chemical processes.",
+              "entity_id": "ecological-systems",
+              "entity_type": "SYSTEM",
+              "label": "Ecological systems"
+            }
+          ],
+          "relationships": []
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "ecological-systems",
+        "strategy_type": "CONCISE_PROSE",
+        "title": "Ecological systems",
+        "trusted_input_refs": [
+          "validated KnowledgeModel entity"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "CONCISE_PROSE",
+      "semantic_focus_identity": "ecological-systems",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-c4b99065c382aeff",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": "NO_TRUSTED_SUPPORTING_RELATIONSHIP",
+          "predicates": [],
+          "relationship_count": 0,
+          "rule_id": "TRUTHFUL_PROSE_FALLBACK",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [],
+        "payload": {
+          "body": "Flow processes through food webs identified as ecological processes.",
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "Flow processes through food webs identified as ecological processes.",
+            "identity": "food-web-flow",
+            "label": "Energy, carbon, and nutrient flow through food webs"
+          },
+          "nodes": [
+            {
+              "description": "Flow processes through food webs identified as ecological processes.",
+              "entity_id": "food-web-flow",
+              "entity_type": "PROCESS",
+              "label": "Energy, carbon, and nutrient flow through food webs"
+            }
+          ],
+          "relationships": []
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "food-web-flow",
+        "strategy_type": "CONCISE_PROSE",
+        "title": "Energy, carbon, and nutrient flow through food webs",
+        "trusted_input_refs": [
+          "validated KnowledgeModel entity"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "CONCISE_PROSE",
+      "semantic_focus_identity": "food-web-flow",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-2c2a54d60eb5844a",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": null,
+          "predicates": [
+            "AFFECTS",
+            "CAUSES"
+          ],
+          "relationship_count": 4,
+          "rule_id": "DIRECTIONAL_CAUSAL_NETWORK",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [
+          {
+            "document_id": "text-70e7e3d20325dd5d",
+            "end_char": 537,
+            "quote": "ecological processes produce organic matter, transfer carbon and nutrients, drive soil formation",
+            "relationship_id": "rel-6",
+            "relationship_ids": [
+              "rel-6"
+            ],
+            "start_char": 441
+          },
+          {
+            "document_id": "text-70e7e3d20325dd5d",
+            "end_char": 869,
+            "quote": "Ecological processes, such as primary production, influence the extent, distribution, and biodiversity of systems.",
+            "relationship_id": "rel-9",
+            "relationship_ids": [
+              "rel-9"
+            ],
+            "start_char": 755
+          },
+          {
+            "document_id": "text-70e7e3d20325dd5d",
+            "end_char": 1225,
+            "quote": "ecological processes are affected by both small-scale natural events such as seasonal changes in temperature, precipitation, and stream flows and large-scale events such as climate change",
+            "relationship_id": "rel-10",
+            "relationship_ids": [
+              "rel-10"
+            ],
+            "start_char": 1038
+          },
+          {
+            "document_id": "text-70e7e3d20325dd5d",
+            "end_char": 1467,
+            "quote": "EPA has long been concerned with the impacts of human activities—including pesticide use, chemical use, waste generation, land use changes, and water quality management, among others—on the rates, types, and timing of ecological processes.",
+            "relationship_id": "rel-11",
+            "relationship_ids": [
+              "rel-11"
+            ],
+            "start_char": 1228
+          }
+        ],
+        "payload": {
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "Activities that affect the rates, types, and timing of ecological processes.",
+            "identity": "human-activities",
+            "label": "Human activities"
+          },
+          "nodes": [
+            {
+              "description": "Diversity of organisms in ecological systems.",
+              "entity_id": "biodiversity",
+              "entity_type": "VARIABLE",
+              "label": "Biodiversity"
+            },
+            {
+              "description": "Biological, physical, and chemical processes that sustain ecological systems and produce ecological outcomes.",
+              "entity_id": "ecological-processes",
+              "entity_type": "PROCESS",
+              "label": "Ecological processes"
+            },
+            {
+              "description": "Activities that affect the rates, types, and timing of ecological processes.",
+              "entity_id": "human-activities",
+              "entity_type": "CONCEPT",
+              "label": "Human activities"
+            },
+            {
+              "description": "Natural events and changes that affect ecological processes across temporal and spatial scales.",
+              "entity_id": "natural-forces",
+              "entity_type": "CONCEPT",
+              "label": "Natural forces"
+            },
+            {
+              "description": "Formation of soil driven by ecological processes.",
+              "entity_id": "soil-formation",
+              "entity_type": "PROCESS",
+              "label": "Soil formation"
+            }
+          ],
+          "ordered_nodes": [
+            {
+              "description": "Activities that affect the rates, types, and timing of ecological processes.",
+              "entity_id": "human-activities",
+              "entity_type": "CONCEPT",
+              "label": "Human activities"
+            },
+            {
+              "description": "Natural events and changes that affect ecological processes across temporal and spatial scales.",
+              "entity_id": "natural-forces",
+              "entity_type": "CONCEPT",
+              "label": "Natural forces"
+            },
+            {
+              "description": "Biological, physical, and chemical processes that sustain ecological systems and produce ecological outcomes.",
+              "entity_id": "ecological-processes",
+              "entity_type": "PROCESS",
+              "label": "Ecological processes"
+            },
+            {
+              "description": "Diversity of organisms in ecological systems.",
+              "entity_id": "biodiversity",
+              "entity_type": "VARIABLE",
+              "label": "Biodiversity"
+            },
+            {
+              "description": "Formation of soil driven by ecological processes.",
+              "entity_id": "soil-formation",
+              "entity_type": "PROCESS",
+              "label": "Soil formation"
+            }
+          ],
+          "relationships": [
+            {
+              "direction": "influence_to_affected",
+              "evidence": [
+                {
+                  "document_id": "text-70e7e3d20325dd5d",
+                  "end_char": 869,
+                  "quote": "Ecological processes, such as primary production, influence the extent, distribution, and biodiversity of systems.",
+                  "relationship_id": "rel-9",
+                  "start_char": 755
+                }
+              ],
+              "meaning": "The source causally influences the target without a specified direction or complete production.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-9"
+              ],
+              "relationship_type": "AFFECTS",
+              "source_entity_id": "ecological-processes",
+              "source_label": "Ecological processes",
+              "target_entity_id": "biodiversity",
+              "target_label": "Biodiversity"
+            },
+            {
+              "direction": "cause_to_effect",
+              "evidence": [
+                {
+                  "document_id": "text-70e7e3d20325dd5d",
+                  "end_char": 537,
+                  "quote": "ecological processes produce organic matter, transfer carbon and nutrients, drive soil formation",
+                  "relationship_id": "rel-6",
+                  "start_char": 441
+                }
+              ],
+              "meaning": "The source brings about the target as an effect.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-6"
+              ],
+              "relationship_type": "CAUSES",
+              "source_entity_id": "ecological-processes",
+              "source_label": "Ecological processes",
+              "target_entity_id": "soil-formation",
+              "target_label": "Soil formation"
+            },
+            {
+              "direction": "influence_to_affected",
+              "evidence": [
+                {
+                  "document_id": "text-70e7e3d20325dd5d",
+                  "end_char": 1467,
+                  "quote": "EPA has long been concerned with the impacts of human activities—including pesticide use, chemical use, waste generation, land use changes, and water quality management, among others—on the rates, types, and timing of ecological processes.",
+                  "relationship_id": "rel-11",
+                  "start_char": 1228
+                }
+              ],
+              "meaning": "The source causally influences the target without a specified direction or complete production.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-11"
+              ],
+              "relationship_type": "AFFECTS",
+              "source_entity_id": "human-activities",
+              "source_label": "Human activities",
+              "target_entity_id": "ecological-processes",
+              "target_label": "Ecological processes"
+            },
+            {
+              "direction": "influence_to_affected",
+              "evidence": [
+                {
+                  "document_id": "text-70e7e3d20325dd5d",
+                  "end_char": 1225,
+                  "quote": "ecological processes are affected by both small-scale natural events such as seasonal changes in temperature, precipitation, and stream flows and large-scale events such as climate change",
+                  "relationship_id": "rel-10",
+                  "start_char": 1038
+                }
+              ],
+              "meaning": "The source causally influences the target without a specified direction or complete production.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-10"
+              ],
+              "relationship_type": "AFFECTS",
+              "source_entity_id": "natural-forces",
+              "source_label": "Natural forces",
+              "target_entity_id": "ecological-processes",
+              "target_label": "Ecological processes"
+            }
+          ]
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "human-activities",
+        "strategy_type": "CAUSAL_MECHANISM",
+        "title": "Human activities",
+        "trusted_input_refs": [
+          "workspace-fixture.json representation.nodes selected concept",
+          "workspace-fixture.json connected representation edges"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "CAUSAL_MECHANISM",
+      "semantic_focus_identity": "human-activities",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-bd10d71daec6406e",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": "NO_TRUSTED_SUPPORTING_RELATIONSHIP",
+          "predicates": [],
+          "relationship_count": 0,
+          "rule_id": "TRUTHFUL_PROSE_FALLBACK",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [],
+        "payload": {
+          "body": "Cycling of hydrogen and oxygen between the physical environment and biological organisms.",
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "Cycling of hydrogen and oxygen between the physical environment and biological organisms.",
+            "identity": "hydrogen-oxygen-cycling",
+            "label": "Hydrogen/oxygen cycling"
+          },
+          "nodes": [
+            {
+              "description": "Cycling of hydrogen and oxygen between the physical environment and biological organisms.",
+              "entity_id": "hydrogen-oxygen-cycling",
+              "entity_type": "PROCESS",
+              "label": "Hydrogen/oxygen cycling"
+            }
+          ],
+          "relationships": []
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "hydrogen-oxygen-cycling",
+        "strategy_type": "CONCISE_PROSE",
+        "title": "Hydrogen/oxygen cycling",
+        "trusted_input_refs": [
+          "validated KnowledgeModel entity"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "CONCISE_PROSE",
+      "semantic_focus_identity": "hydrogen-oxygen-cycling",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-a60b9cb3a724f406",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": "NO_TRUSTED_SUPPORTING_RELATIONSHIP",
+          "predicates": [],
+          "relationship_count": 0,
+          "rule_id": "TRUTHFUL_PROSE_FALLBACK",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [],
+        "payload": {
+          "body": "Indicators intended to represent ecological processes at the national scale.",
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "Indicators intended to represent ecological processes at the national scale.",
+            "identity": "national-scale-indicators",
+            "label": "National-scale ecological process indicators"
+          },
+          "nodes": [
+            {
+              "description": "Indicators intended to represent ecological processes at the national scale.",
+              "entity_id": "national-scale-indicators",
+              "entity_type": "SYSTEM",
+              "label": "National-scale ecological process indicators"
+            }
+          ],
+          "relationships": []
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "national-scale-indicators",
+        "strategy_type": "CONCISE_PROSE",
+        "title": "National-scale ecological process indicators",
+        "trusted_input_refs": [
+          "validated KnowledgeModel entity"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "CONCISE_PROSE",
+      "semantic_focus_identity": "national-scale-indicators",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-f6f59195e28002e4",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": null,
+          "predicates": [
+            "AFFECTS",
+            "CAUSES"
+          ],
+          "relationship_count": 4,
+          "rule_id": "DIRECTIONAL_CAUSAL_NETWORK",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [
+          {
+            "document_id": "text-70e7e3d20325dd5d",
+            "end_char": 537,
+            "quote": "ecological processes produce organic matter, transfer carbon and nutrients, drive soil formation",
+            "relationship_id": "rel-6",
+            "relationship_ids": [
+              "rel-6"
+            ],
+            "start_char": 441
+          },
+          {
+            "document_id": "text-70e7e3d20325dd5d",
+            "end_char": 869,
+            "quote": "Ecological processes, such as primary production, influence the extent, distribution, and biodiversity of systems.",
+            "relationship_id": "rel-9",
+            "relationship_ids": [
+              "rel-9"
+            ],
+            "start_char": 755
+          },
+          {
+            "document_id": "text-70e7e3d20325dd5d",
+            "end_char": 1225,
+            "quote": "ecological processes are affected by both small-scale natural events such as seasonal changes in temperature, precipitation, and stream flows and large-scale events such as climate change",
+            "relationship_id": "rel-10",
+            "relationship_ids": [
+              "rel-10"
+            ],
+            "start_char": 1038
+          },
+          {
+            "document_id": "text-70e7e3d20325dd5d",
+            "end_char": 1467,
+            "quote": "EPA has long been concerned with the impacts of human activities—including pesticide use, chemical use, waste generation, land use changes, and water quality management, among others—on the rates, types, and timing of ecological processes.",
+            "relationship_id": "rel-11",
+            "relationship_ids": [
+              "rel-11"
+            ],
+            "start_char": 1228
+          }
+        ],
+        "payload": {
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "Natural events and changes that affect ecological processes across temporal and spatial scales.",
+            "identity": "natural-forces",
+            "label": "Natural forces"
+          },
+          "nodes": [
+            {
+              "description": "Diversity of organisms in ecological systems.",
+              "entity_id": "biodiversity",
+              "entity_type": "VARIABLE",
+              "label": "Biodiversity"
+            },
+            {
+              "description": "Biological, physical, and chemical processes that sustain ecological systems and produce ecological outcomes.",
+              "entity_id": "ecological-processes",
+              "entity_type": "PROCESS",
+              "label": "Ecological processes"
+            },
+            {
+              "description": "Activities that affect the rates, types, and timing of ecological processes.",
+              "entity_id": "human-activities",
+              "entity_type": "CONCEPT",
+              "label": "Human activities"
+            },
+            {
+              "description": "Natural events and changes that affect ecological processes across temporal and spatial scales.",
+              "entity_id": "natural-forces",
+              "entity_type": "CONCEPT",
+              "label": "Natural forces"
+            },
+            {
+              "description": "Formation of soil driven by ecological processes.",
+              "entity_id": "soil-formation",
+              "entity_type": "PROCESS",
+              "label": "Soil formation"
+            }
+          ],
+          "ordered_nodes": [
+            {
+              "description": "Activities that affect the rates, types, and timing of ecological processes.",
+              "entity_id": "human-activities",
+              "entity_type": "CONCEPT",
+              "label": "Human activities"
+            },
+            {
+              "description": "Natural events and changes that affect ecological processes across temporal and spatial scales.",
+              "entity_id": "natural-forces",
+              "entity_type": "CONCEPT",
+              "label": "Natural forces"
+            },
+            {
+              "description": "Biological, physical, and chemical processes that sustain ecological systems and produce ecological outcomes.",
+              "entity_id": "ecological-processes",
+              "entity_type": "PROCESS",
+              "label": "Ecological processes"
+            },
+            {
+              "description": "Diversity of organisms in ecological systems.",
+              "entity_id": "biodiversity",
+              "entity_type": "VARIABLE",
+              "label": "Biodiversity"
+            },
+            {
+              "description": "Formation of soil driven by ecological processes.",
+              "entity_id": "soil-formation",
+              "entity_type": "PROCESS",
+              "label": "Soil formation"
+            }
+          ],
+          "relationships": [
+            {
+              "direction": "influence_to_affected",
+              "evidence": [
+                {
+                  "document_id": "text-70e7e3d20325dd5d",
+                  "end_char": 869,
+                  "quote": "Ecological processes, such as primary production, influence the extent, distribution, and biodiversity of systems.",
+                  "relationship_id": "rel-9",
+                  "start_char": 755
+                }
+              ],
+              "meaning": "The source causally influences the target without a specified direction or complete production.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-9"
+              ],
+              "relationship_type": "AFFECTS",
+              "source_entity_id": "ecological-processes",
+              "source_label": "Ecological processes",
+              "target_entity_id": "biodiversity",
+              "target_label": "Biodiversity"
+            },
+            {
+              "direction": "cause_to_effect",
+              "evidence": [
+                {
+                  "document_id": "text-70e7e3d20325dd5d",
+                  "end_char": 537,
+                  "quote": "ecological processes produce organic matter, transfer carbon and nutrients, drive soil formation",
+                  "relationship_id": "rel-6",
+                  "start_char": 441
+                }
+              ],
+              "meaning": "The source brings about the target as an effect.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-6"
+              ],
+              "relationship_type": "CAUSES",
+              "source_entity_id": "ecological-processes",
+              "source_label": "Ecological processes",
+              "target_entity_id": "soil-formation",
+              "target_label": "Soil formation"
+            },
+            {
+              "direction": "influence_to_affected",
+              "evidence": [
+                {
+                  "document_id": "text-70e7e3d20325dd5d",
+                  "end_char": 1467,
+                  "quote": "EPA has long been concerned with the impacts of human activities—including pesticide use, chemical use, waste generation, land use changes, and water quality management, among others—on the rates, types, and timing of ecological processes.",
+                  "relationship_id": "rel-11",
+                  "start_char": 1228
+                }
+              ],
+              "meaning": "The source causally influences the target without a specified direction or complete production.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-11"
+              ],
+              "relationship_type": "AFFECTS",
+              "source_entity_id": "human-activities",
+              "source_label": "Human activities",
+              "target_entity_id": "ecological-processes",
+              "target_label": "Ecological processes"
+            },
+            {
+              "direction": "influence_to_affected",
+              "evidence": [
+                {
+                  "document_id": "text-70e7e3d20325dd5d",
+                  "end_char": 1225,
+                  "quote": "ecological processes are affected by both small-scale natural events such as seasonal changes in temperature, precipitation, and stream flows and large-scale events such as climate change",
+                  "relationship_id": "rel-10",
+                  "start_char": 1038
+                }
+              ],
+              "meaning": "The source causally influences the target without a specified direction or complete production.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-10"
+              ],
+              "relationship_type": "AFFECTS",
+              "source_entity_id": "natural-forces",
+              "source_label": "Natural forces",
+              "target_entity_id": "ecological-processes",
+              "target_label": "Ecological processes"
+            }
+          ]
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "natural-forces",
+        "strategy_type": "CAUSAL_MECHANISM",
+        "title": "Natural forces",
+        "trusted_input_refs": [
+          "workspace-fixture.json representation.nodes selected concept",
+          "workspace-fixture.json connected representation edges"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "CAUSAL_MECHANISM",
+      "semantic_focus_identity": "natural-forces",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-de9a49286456a44f",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": "NO_TRUSTED_SUPPORTING_RELATIONSHIP",
+          "predicates": [],
+          "relationship_count": 0,
+          "rule_id": "TRUTHFUL_PROSE_FALLBACK",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [],
+        "payload": {
+          "body": "Resources provided through ecological services, including food, fiber, and timber.",
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "Resources provided through ecological services, including food, fiber, and timber.",
+            "identity": "natural-resources",
+            "label": "Natural resources"
+          },
+          "nodes": [
+            {
+              "description": "Resources provided through ecological services, including food, fiber, and timber.",
+              "entity_id": "natural-resources",
+              "entity_type": "OBJECT",
+              "label": "Natural resources"
+            }
+          ],
+          "relationships": []
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "natural-resources",
+        "strategy_type": "CONCISE_PROSE",
+        "title": "Natural resources",
+        "trusted_input_refs": [
+          "validated KnowledgeModel entity"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "CONCISE_PROSE",
+      "semantic_focus_identity": "natural-resources",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-f1d521681cbc39f3",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": "NO_TRUSTED_SUPPORTING_RELATIONSHIP",
+          "predicates": [],
+          "relationship_count": 0,
+          "rule_id": "TRUTHFUL_PROSE_FALLBACK",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [],
+        "payload": {
+          "body": "Ecological process inferred from remote sensing and potentially indicated by repeated vegetation-index measurements.",
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "Ecological process inferred from remote sensing and potentially indicated by repeated vegetation-index measurements.",
+            "identity": "net-primary-production",
+            "label": "Net primary production"
+          },
+          "nodes": [
+            {
+              "description": "Ecological process inferred from remote sensing and potentially indicated by repeated vegetation-index measurements.",
+              "entity_id": "net-primary-production",
+              "entity_type": "VARIABLE",
+              "label": "Net primary production"
+            }
+          ],
+          "relationships": []
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "net-primary-production",
+        "strategy_type": "CONCISE_PROSE",
+        "title": "Net primary production",
+        "trusted_input_refs": [
+          "validated KnowledgeModel entity"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "CONCISE_PROSE",
+      "semantic_focus_identity": "net-primary-production",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-8a2ba291f7a2bde4",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": "NO_TRUSTED_SUPPORTING_RELATIONSHIP",
+          "predicates": [],
+          "relationship_count": 0,
+          "rule_id": "TRUTHFUL_PROSE_FALLBACK",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [],
+        "payload": {
+          "body": "National-scale remote-sensing index whose repeated seasonal measurements might indicate net primary production.",
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "National-scale remote-sensing index whose repeated seasonal measurements might indicate net primary production.",
+            "identity": "normalized-difference-vegetation-index",
+            "label": "Normalized Difference Vegetation Index"
+          },
+          "nodes": [
+            {
+              "description": "National-scale remote-sensing index whose repeated seasonal measurements might indicate net primary production.",
+              "entity_id": "normalized-difference-vegetation-index",
+              "entity_type": "VARIABLE",
+              "label": "Normalized Difference Vegetation Index"
+            }
+          ],
+          "relationships": []
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "normalized-difference-vegetation-index",
+        "strategy_type": "CONCISE_PROSE",
+        "title": "Normalized Difference Vegetation Index",
+        "trusted_input_refs": [
+          "validated KnowledgeModel entity"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "CONCISE_PROSE",
+      "semantic_focus_identity": "normalized-difference-vegetation-index",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-68393067fabc1c7c",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": null,
+          "predicates": [
+            "IS_A"
+          ],
+          "relationship_count": 3,
+          "rule_id": "TYPED_HIERARCHY_EDGES",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [
+          {
+            "document_id": "text-70e7e3d20325dd5d",
+            "end_char": 307,
+            "quote": "and the associated cycling of carbon, nutrients (nitrogen, phosphorus), hydrogen/oxygen, and other elements",
+            "relationship_id": "rel-4",
+            "relationship_ids": [
+              "rel-4"
+            ],
+            "start_char": 200
+          },
+          {
+            "document_id": "text-70e7e3d20325dd5d",
+            "end_char": 307,
+            "quote": "and the associated cycling of carbon, nutrients (nitrogen, phosphorus), hydrogen/oxygen, and other elements",
+            "relationship_id": "rel-5",
+            "relationship_ids": [
+              "rel-5"
+            ],
+            "start_char": 200
+          },
+          {
+            "document_id": "text-70e7e3d20325dd5d",
+            "end_char": 1826,
+            "quote": "Ecological processes such as primary production, respiration, energy, carbon and nutrient flow through food webs, reproduction, and decomposition",
+            "relationship_id": "rel-1",
+            "relationship_ids": [
+              "rel-1"
+            ],
+            "start_char": 1681
+          }
+        ],
+        "payload": {
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "Movement of nutrients, including nitrogen and phosphorus, through organisms and the physical environment.",
+            "identity": "nutrient-cycling",
+            "label": "Nutrient cycling"
+          },
+          "members": [
+            {
+              "description": "Movement of carbon from the physical environment through organisms and back into the physical environment.",
+              "entity_id": "carbon-cycling",
+              "entity_type": "PROCESS",
+              "label": "Carbon cycling"
+            },
+            {
+              "description": "Movement of nutrients, including nitrogen and phosphorus, through organisms and the physical environment.",
+              "entity_id": "nutrient-cycling",
+              "entity_type": "PROCESS",
+              "label": "Nutrient cycling"
+            },
+            {
+              "description": "Conversion of the sun's energy into organic matter through photosynthesis.",
+              "entity_id": "primary-production",
+              "entity_type": "PROCESS",
+              "label": "Primary production"
+            }
+          ],
+          "nodes": [
+            {
+              "description": "Movement of carbon from the physical environment through organisms and back into the physical environment.",
+              "entity_id": "carbon-cycling",
+              "entity_type": "PROCESS",
+              "label": "Carbon cycling"
+            },
+            {
+              "description": "Biological, physical, and chemical processes that sustain ecological systems and produce ecological outcomes.",
+              "entity_id": "ecological-processes",
+              "entity_type": "PROCESS",
+              "label": "Ecological processes"
+            },
+            {
+              "description": "Movement of nutrients, including nitrogen and phosphorus, through organisms and the physical environment.",
+              "entity_id": "nutrient-cycling",
+              "entity_type": "PROCESS",
+              "label": "Nutrient cycling"
+            },
+            {
+              "description": "Conversion of the sun's energy into organic matter through photosynthesis.",
+              "entity_id": "primary-production",
+              "entity_type": "PROCESS",
+              "label": "Primary production"
+            }
+          ],
+          "relationships": [
+            {
+              "direction": "instance_to_type",
+              "evidence": [
+                {
+                  "document_id": "text-70e7e3d20325dd5d",
+                  "end_char": 307,
+                  "quote": "and the associated cycling of carbon, nutrients (nitrogen, phosphorus), hydrogen/oxygen, and other elements",
+                  "relationship_id": "rel-4",
+                  "start_char": 200
+                }
+              ],
+              "meaning": "The source is a kind, category, or subtype of the target.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-4"
+              ],
+              "relationship_type": "IS_A",
+              "source_entity_id": "carbon-cycling",
+              "source_label": "Carbon cycling",
+              "target_entity_id": "ecological-processes",
+              "target_label": "Ecological processes"
+            },
+            {
+              "direction": "instance_to_type",
+              "evidence": [
+                {
+                  "document_id": "text-70e7e3d20325dd5d",
+                  "end_char": 307,
+                  "quote": "and the associated cycling of carbon, nutrients (nitrogen, phosphorus), hydrogen/oxygen, and other elements",
+                  "relationship_id": "rel-5",
+                  "start_char": 200
+                }
+              ],
+              "meaning": "The source is a kind, category, or subtype of the target.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-5"
+              ],
+              "relationship_type": "IS_A",
+              "source_entity_id": "nutrient-cycling",
+              "source_label": "Nutrient cycling",
+              "target_entity_id": "ecological-processes",
+              "target_label": "Ecological processes"
+            },
+            {
+              "direction": "instance_to_type",
+              "evidence": [
+                {
+                  "document_id": "text-70e7e3d20325dd5d",
+                  "end_char": 1826,
+                  "quote": "Ecological processes such as primary production, respiration, energy, carbon and nutrient flow through food webs, reproduction, and decomposition",
+                  "relationship_id": "rel-1",
+                  "start_char": 1681
+                }
+              ],
+              "meaning": "The source is a kind, category, or subtype of the target.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-1"
+              ],
+              "relationship_type": "IS_A",
+              "source_entity_id": "primary-production",
+              "source_label": "Primary production",
+              "target_entity_id": "ecological-processes",
+              "target_label": "Ecological processes"
+            }
+          ],
+          "roots": [
+            {
+              "description": "Biological, physical, and chemical processes that sustain ecological systems and produce ecological outcomes.",
+              "entity_id": "ecological-processes",
+              "entity_type": "PROCESS",
+              "label": "Ecological processes"
+            }
+          ]
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "nutrient-cycling",
+        "strategy_type": "HIERARCHY_COMPOSITION",
+        "title": "Nutrient cycling",
+        "trusted_input_refs": [
+          "workspace-fixture.json representation.nodes selected concept",
+          "workspace-fixture.json connected representation edges"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "HIERARCHY_COMPOSITION",
+      "semantic_focus_identity": "nutrient-cycling",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-4c363ddfdcdedd6e",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": "NO_TRUSTED_SUPPORTING_RELATIONSHIP",
+          "predicates": [],
+          "relationship_count": 0,
+          "rule_id": "TRUTHFUL_PROSE_FALLBACK",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [],
+        "payload": {
+          "body": "Material produced by ecological processes, including through primary production.",
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "Material produced by ecological processes, including through primary production.",
+            "identity": "organic-matter",
+            "label": "Organic matter"
+          },
+          "nodes": [
+            {
+              "description": "Material produced by ecological processes, including through primary production.",
+              "entity_id": "organic-matter",
+              "entity_type": "OBJECT",
+              "label": "Organic matter"
+            }
+          ],
+          "relationships": []
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "organic-matter",
+        "strategy_type": "CONCISE_PROSE",
+        "title": "Organic matter",
+        "trusted_input_refs": [
+          "validated KnowledgeModel entity"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "CONCISE_PROSE",
+      "semantic_focus_identity": "organic-matter",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-cf14ac0d16c6afaa",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": "NO_TRUSTED_SUPPORTING_RELATIONSHIP",
+          "predicates": [],
+          "relationship_count": 0,
+          "rule_id": "TRUTHFUL_PROSE_FALLBACK",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [],
+        "payload": {
+          "body": "Process through which solar energy is converted into organic matter as part of primary production.",
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "Process through which solar energy is converted into organic matter as part of primary production.",
+            "identity": "photosynthesis",
+            "label": "Photosynthesis"
+          },
+          "nodes": [
+            {
+              "description": "Process through which solar energy is converted into organic matter as part of primary production.",
+              "entity_id": "photosynthesis",
+              "entity_type": "PROCESS",
+              "label": "Photosynthesis"
+            }
+          ],
+          "relationships": []
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "photosynthesis",
+        "strategy_type": "CONCISE_PROSE",
+        "title": "Photosynthesis",
+        "trusted_input_refs": [
+          "validated KnowledgeModel entity"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "CONCISE_PROSE",
+      "semantic_focus_identity": "photosynthesis",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-69e5f40df2e5a4cc",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": "NO_TRUSTED_SUPPORTING_RELATIONSHIP",
+          "predicates": [],
+          "relationship_count": 0,
+          "rule_id": "TRUTHFUL_PROSE_FALLBACK",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [],
+        "payload": {
+          "body": "Air, water, and land through which elements cycle.",
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "Air, water, and land through which elements cycle.",
+            "identity": "physical-environment",
+            "label": "Physical environment"
+          },
+          "nodes": [
+            {
+              "description": "Air, water, and land through which elements cycle.",
+              "entity_id": "physical-environment",
+              "entity_type": "SYSTEM",
+              "label": "Physical environment"
+            }
+          ],
+          "relationships": []
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "physical-environment",
+        "strategy_type": "CONCISE_PROSE",
+        "title": "Physical environment",
+        "trusted_input_refs": [
+          "validated KnowledgeModel entity"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "CONCISE_PROSE",
+      "semantic_focus_identity": "physical-environment",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-f5f8a1962e172d9b",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": null,
+          "predicates": [
+            "IS_A"
+          ],
+          "relationship_count": 3,
+          "rule_id": "TYPED_HIERARCHY_EDGES",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [
+          {
+            "document_id": "text-70e7e3d20325dd5d",
+            "end_char": 307,
+            "quote": "and the associated cycling of carbon, nutrients (nitrogen, phosphorus), hydrogen/oxygen, and other elements",
+            "relationship_id": "rel-4",
+            "relationship_ids": [
+              "rel-4"
+            ],
+            "start_char": 200
+          },
+          {
+            "document_id": "text-70e7e3d20325dd5d",
+            "end_char": 307,
+            "quote": "and the associated cycling of carbon, nutrients (nitrogen, phosphorus), hydrogen/oxygen, and other elements",
+            "relationship_id": "rel-5",
+            "relationship_ids": [
+              "rel-5"
+            ],
+            "start_char": 200
+          },
+          {
+            "document_id": "text-70e7e3d20325dd5d",
+            "end_char": 1826,
+            "quote": "Ecological processes such as primary production, respiration, energy, carbon and nutrient flow through food webs, reproduction, and decomposition",
+            "relationship_id": "rel-1",
+            "relationship_ids": [
+              "rel-1"
+            ],
+            "start_char": 1681
+          }
+        ],
+        "payload": {
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "Conversion of the sun's energy into organic matter through photosynthesis.",
+            "identity": "primary-production",
+            "label": "Primary production"
+          },
+          "members": [
+            {
+              "description": "Movement of carbon from the physical environment through organisms and back into the physical environment.",
+              "entity_id": "carbon-cycling",
+              "entity_type": "PROCESS",
+              "label": "Carbon cycling"
+            },
+            {
+              "description": "Movement of nutrients, including nitrogen and phosphorus, through organisms and the physical environment.",
+              "entity_id": "nutrient-cycling",
+              "entity_type": "PROCESS",
+              "label": "Nutrient cycling"
+            },
+            {
+              "description": "Conversion of the sun's energy into organic matter through photosynthesis.",
+              "entity_id": "primary-production",
+              "entity_type": "PROCESS",
+              "label": "Primary production"
+            }
+          ],
+          "nodes": [
+            {
+              "description": "Movement of carbon from the physical environment through organisms and back into the physical environment.",
+              "entity_id": "carbon-cycling",
+              "entity_type": "PROCESS",
+              "label": "Carbon cycling"
+            },
+            {
+              "description": "Biological, physical, and chemical processes that sustain ecological systems and produce ecological outcomes.",
+              "entity_id": "ecological-processes",
+              "entity_type": "PROCESS",
+              "label": "Ecological processes"
+            },
+            {
+              "description": "Movement of nutrients, including nitrogen and phosphorus, through organisms and the physical environment.",
+              "entity_id": "nutrient-cycling",
+              "entity_type": "PROCESS",
+              "label": "Nutrient cycling"
+            },
+            {
+              "description": "Conversion of the sun's energy into organic matter through photosynthesis.",
+              "entity_id": "primary-production",
+              "entity_type": "PROCESS",
+              "label": "Primary production"
+            }
+          ],
+          "relationships": [
+            {
+              "direction": "instance_to_type",
+              "evidence": [
+                {
+                  "document_id": "text-70e7e3d20325dd5d",
+                  "end_char": 307,
+                  "quote": "and the associated cycling of carbon, nutrients (nitrogen, phosphorus), hydrogen/oxygen, and other elements",
+                  "relationship_id": "rel-4",
+                  "start_char": 200
+                }
+              ],
+              "meaning": "The source is a kind, category, or subtype of the target.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-4"
+              ],
+              "relationship_type": "IS_A",
+              "source_entity_id": "carbon-cycling",
+              "source_label": "Carbon cycling",
+              "target_entity_id": "ecological-processes",
+              "target_label": "Ecological processes"
+            },
+            {
+              "direction": "instance_to_type",
+              "evidence": [
+                {
+                  "document_id": "text-70e7e3d20325dd5d",
+                  "end_char": 307,
+                  "quote": "and the associated cycling of carbon, nutrients (nitrogen, phosphorus), hydrogen/oxygen, and other elements",
+                  "relationship_id": "rel-5",
+                  "start_char": 200
+                }
+              ],
+              "meaning": "The source is a kind, category, or subtype of the target.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-5"
+              ],
+              "relationship_type": "IS_A",
+              "source_entity_id": "nutrient-cycling",
+              "source_label": "Nutrient cycling",
+              "target_entity_id": "ecological-processes",
+              "target_label": "Ecological processes"
+            },
+            {
+              "direction": "instance_to_type",
+              "evidence": [
+                {
+                  "document_id": "text-70e7e3d20325dd5d",
+                  "end_char": 1826,
+                  "quote": "Ecological processes such as primary production, respiration, energy, carbon and nutrient flow through food webs, reproduction, and decomposition",
+                  "relationship_id": "rel-1",
+                  "start_char": 1681
+                }
+              ],
+              "meaning": "The source is a kind, category, or subtype of the target.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-1"
+              ],
+              "relationship_type": "IS_A",
+              "source_entity_id": "primary-production",
+              "source_label": "Primary production",
+              "target_entity_id": "ecological-processes",
+              "target_label": "Ecological processes"
+            }
+          ],
+          "roots": [
+            {
+              "description": "Biological, physical, and chemical processes that sustain ecological systems and produce ecological outcomes.",
+              "entity_id": "ecological-processes",
+              "entity_type": "PROCESS",
+              "label": "Ecological processes"
+            }
+          ]
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "primary-production",
+        "strategy_type": "HIERARCHY_COMPOSITION",
+        "title": "Primary production",
+        "trusted_input_refs": [
+          "workspace-fixture.json representation.nodes selected concept",
+          "workspace-fixture.json connected representation edges"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "HIERARCHY_COMPOSITION",
+      "semantic_focus_identity": "primary-production",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-399eb6e93c1e71e7",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": "NO_TRUSTED_SUPPORTING_RELATIONSHIP",
+          "predicates": [],
+          "relationship_count": 0,
+          "rule_id": "TRUTHFUL_PROSE_FALLBACK",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [],
+        "payload": {
+          "body": "Representation of ecological processes as changes measured over time.",
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "Representation of ecological processes as changes measured over time.",
+            "identity": "rates-of-change",
+            "label": "Rates of change"
+          },
+          "nodes": [
+            {
+              "description": "Representation of ecological processes as changes measured over time.",
+              "entity_id": "rates-of-change",
+              "entity_type": "VARIABLE",
+              "label": "Rates of change"
+            }
+          ],
+          "relationships": []
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "rates-of-change",
+        "strategy_type": "CONCISE_PROSE",
+        "title": "Rates of change",
+        "trusted_input_refs": [
+          "validated KnowledgeModel entity"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "CONCISE_PROSE",
+      "semantic_focus_identity": "rates-of-change",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-0e355b61867e7988",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": "NO_TRUSTED_SUPPORTING_RELATIONSHIP",
+          "predicates": [],
+          "relationship_count": 0,
+          "rule_id": "TRUTHFUL_PROSE_FALLBACK",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [],
+        "payload": {
+          "body": "Imagery used to obtain snapshots of ecosystem conditions over time and infer ecological processes.",
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "Imagery used to obtain snapshots of ecosystem conditions over time and infer ecological processes.",
+            "identity": "remote-sensing-imagery",
+            "label": "Remote sensing imagery"
+          },
+          "nodes": [
+            {
+              "description": "Imagery used to obtain snapshots of ecosystem conditions over time and infer ecological processes.",
+              "entity_id": "remote-sensing-imagery",
+              "entity_type": "OBJECT",
+              "label": "Remote sensing imagery"
+            }
+          ],
+          "relationships": []
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "remote-sensing-imagery",
+        "strategy_type": "CONCISE_PROSE",
+        "title": "Remote sensing imagery",
+        "trusted_input_refs": [
+          "validated KnowledgeModel entity"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "CONCISE_PROSE",
+      "semantic_focus_identity": "remote-sensing-imagery",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-deed3d1e661f56fe",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": "NO_TRUSTED_SUPPORTING_RELATIONSHIP",
+          "predicates": [],
+          "relationship_count": 0,
+          "rule_id": "TRUTHFUL_PROSE_FALLBACK",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [],
+        "payload": {
+          "body": "Measurement approach required to represent ecological processes as rates of change.",
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "Measurement approach required to represent ecological processes as rates of change.",
+            "identity": "repeated-measurement",
+            "label": "Repeated measurement over time"
+          },
+          "nodes": [
+            {
+              "description": "Measurement approach required to represent ecological processes as rates of change.",
+              "entity_id": "repeated-measurement",
+              "entity_type": "PROCESS",
+              "label": "Repeated measurement over time"
+            }
+          ],
+          "relationships": []
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "repeated-measurement",
+        "strategy_type": "CONCISE_PROSE",
+        "title": "Repeated measurement over time",
+        "trusted_input_refs": [
+          "validated KnowledgeModel entity"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "CONCISE_PROSE",
+      "semantic_focus_identity": "repeated-measurement",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-fc90253a2d05b699",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": "NO_TRUSTED_SUPPORTING_RELATIONSHIP",
+          "predicates": [],
+          "relationship_count": 0,
+          "rule_id": "TRUTHFUL_PROSE_FALLBACK",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [],
+        "payload": {
+          "body": "Biological process enabled by ecological processes.",
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "Biological process enabled by ecological processes.",
+            "identity": "reproduction",
+            "label": "Reproduction"
+          },
+          "nodes": [
+            {
+              "description": "Biological process enabled by ecological processes.",
+              "entity_id": "reproduction",
+              "entity_type": "PROCESS",
+              "label": "Reproduction"
+            }
+          ],
+          "relationships": []
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "reproduction",
+        "strategy_type": "CONCISE_PROSE",
+        "title": "Reproduction",
+        "trusted_input_refs": [
+          "validated KnowledgeModel entity"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "CONCISE_PROSE",
+      "semantic_focus_identity": "reproduction",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-cc97d7ac6698788a",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": "NO_TRUSTED_SUPPORTING_RELATIONSHIP",
+          "predicates": [],
+          "relationship_count": 0,
+          "rule_id": "TRUTHFUL_PROSE_FALLBACK",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [],
+        "payload": {
+          "body": "Ecological process represented as a rate of change.",
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "Ecological process represented as a rate of change.",
+            "identity": "respiration",
+            "label": "Respiration"
+          },
+          "nodes": [
+            {
+              "description": "Ecological process represented as a rate of change.",
+              "entity_id": "respiration",
+              "entity_type": "PROCESS",
+              "label": "Respiration"
+            }
+          ],
+          "relationships": []
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "respiration",
+        "strategy_type": "CONCISE_PROSE",
+        "title": "Respiration",
+        "trusted_input_refs": [
+          "validated KnowledgeModel entity"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "CONCISE_PROSE",
+      "semantic_focus_identity": "respiration",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-ecbebe14ff387bc3",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": null,
+          "predicates": [
+            "AFFECTS",
+            "CAUSES"
+          ],
+          "relationship_count": 4,
+          "rule_id": "DIRECTIONAL_CAUSAL_NETWORK",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [
+          {
+            "document_id": "text-70e7e3d20325dd5d",
+            "end_char": 537,
+            "quote": "ecological processes produce organic matter, transfer carbon and nutrients, drive soil formation",
+            "relationship_id": "rel-6",
+            "relationship_ids": [
+              "rel-6"
+            ],
+            "start_char": 441
+          },
+          {
+            "document_id": "text-70e7e3d20325dd5d",
+            "end_char": 869,
+            "quote": "Ecological processes, such as primary production, influence the extent, distribution, and biodiversity of systems.",
+            "relationship_id": "rel-9",
+            "relationship_ids": [
+              "rel-9"
+            ],
+            "start_char": 755
+          },
+          {
+            "document_id": "text-70e7e3d20325dd5d",
+            "end_char": 1225,
+            "quote": "ecological processes are affected by both small-scale natural events such as seasonal changes in temperature, precipitation, and stream flows and large-scale events such as climate change",
+            "relationship_id": "rel-10",
+            "relationship_ids": [
+              "rel-10"
+            ],
+            "start_char": 1038
+          },
+          {
+            "document_id": "text-70e7e3d20325dd5d",
+            "end_char": 1467,
+            "quote": "EPA has long been concerned with the impacts of human activities—including pesticide use, chemical use, waste generation, land use changes, and water quality management, among others—on the rates, types, and timing of ecological processes.",
+            "relationship_id": "rel-11",
+            "relationship_ids": [
+              "rel-11"
+            ],
+            "start_char": 1228
+          }
+        ],
+        "payload": {
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "Formation of soil driven by ecological processes.",
+            "identity": "soil-formation",
+            "label": "Soil formation"
+          },
+          "nodes": [
+            {
+              "description": "Diversity of organisms in ecological systems.",
+              "entity_id": "biodiversity",
+              "entity_type": "VARIABLE",
+              "label": "Biodiversity"
+            },
+            {
+              "description": "Biological, physical, and chemical processes that sustain ecological systems and produce ecological outcomes.",
+              "entity_id": "ecological-processes",
+              "entity_type": "PROCESS",
+              "label": "Ecological processes"
+            },
+            {
+              "description": "Activities that affect the rates, types, and timing of ecological processes.",
+              "entity_id": "human-activities",
+              "entity_type": "CONCEPT",
+              "label": "Human activities"
+            },
+            {
+              "description": "Natural events and changes that affect ecological processes across temporal and spatial scales.",
+              "entity_id": "natural-forces",
+              "entity_type": "CONCEPT",
+              "label": "Natural forces"
+            },
+            {
+              "description": "Formation of soil driven by ecological processes.",
+              "entity_id": "soil-formation",
+              "entity_type": "PROCESS",
+              "label": "Soil formation"
+            }
+          ],
+          "ordered_nodes": [
+            {
+              "description": "Activities that affect the rates, types, and timing of ecological processes.",
+              "entity_id": "human-activities",
+              "entity_type": "CONCEPT",
+              "label": "Human activities"
+            },
+            {
+              "description": "Natural events and changes that affect ecological processes across temporal and spatial scales.",
+              "entity_id": "natural-forces",
+              "entity_type": "CONCEPT",
+              "label": "Natural forces"
+            },
+            {
+              "description": "Biological, physical, and chemical processes that sustain ecological systems and produce ecological outcomes.",
+              "entity_id": "ecological-processes",
+              "entity_type": "PROCESS",
+              "label": "Ecological processes"
+            },
+            {
+              "description": "Diversity of organisms in ecological systems.",
+              "entity_id": "biodiversity",
+              "entity_type": "VARIABLE",
+              "label": "Biodiversity"
+            },
+            {
+              "description": "Formation of soil driven by ecological processes.",
+              "entity_id": "soil-formation",
+              "entity_type": "PROCESS",
+              "label": "Soil formation"
+            }
+          ],
+          "relationships": [
+            {
+              "direction": "influence_to_affected",
+              "evidence": [
+                {
+                  "document_id": "text-70e7e3d20325dd5d",
+                  "end_char": 869,
+                  "quote": "Ecological processes, such as primary production, influence the extent, distribution, and biodiversity of systems.",
+                  "relationship_id": "rel-9",
+                  "start_char": 755
+                }
+              ],
+              "meaning": "The source causally influences the target without a specified direction or complete production.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-9"
+              ],
+              "relationship_type": "AFFECTS",
+              "source_entity_id": "ecological-processes",
+              "source_label": "Ecological processes",
+              "target_entity_id": "biodiversity",
+              "target_label": "Biodiversity"
+            },
+            {
+              "direction": "cause_to_effect",
+              "evidence": [
+                {
+                  "document_id": "text-70e7e3d20325dd5d",
+                  "end_char": 537,
+                  "quote": "ecological processes produce organic matter, transfer carbon and nutrients, drive soil formation",
+                  "relationship_id": "rel-6",
+                  "start_char": 441
+                }
+              ],
+              "meaning": "The source brings about the target as an effect.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-6"
+              ],
+              "relationship_type": "CAUSES",
+              "source_entity_id": "ecological-processes",
+              "source_label": "Ecological processes",
+              "target_entity_id": "soil-formation",
+              "target_label": "Soil formation"
+            },
+            {
+              "direction": "influence_to_affected",
+              "evidence": [
+                {
+                  "document_id": "text-70e7e3d20325dd5d",
+                  "end_char": 1467,
+                  "quote": "EPA has long been concerned with the impacts of human activities—including pesticide use, chemical use, waste generation, land use changes, and water quality management, among others—on the rates, types, and timing of ecological processes.",
+                  "relationship_id": "rel-11",
+                  "start_char": 1228
+                }
+              ],
+              "meaning": "The source causally influences the target without a specified direction or complete production.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-11"
+              ],
+              "relationship_type": "AFFECTS",
+              "source_entity_id": "human-activities",
+              "source_label": "Human activities",
+              "target_entity_id": "ecological-processes",
+              "target_label": "Ecological processes"
+            },
+            {
+              "direction": "influence_to_affected",
+              "evidence": [
+                {
+                  "document_id": "text-70e7e3d20325dd5d",
+                  "end_char": 1225,
+                  "quote": "ecological processes are affected by both small-scale natural events such as seasonal changes in temperature, precipitation, and stream flows and large-scale events such as climate change",
+                  "relationship_id": "rel-10",
+                  "start_char": 1038
+                }
+              ],
+              "meaning": "The source causally influences the target without a specified direction or complete production.",
+              "provenance_status": "SOURCE_EVIDENCE",
+              "relationship_ids": [
+                "rel-10"
+              ],
+              "relationship_type": "AFFECTS",
+              "source_entity_id": "natural-forces",
+              "source_label": "Natural forces",
+              "target_entity_id": "ecological-processes",
+              "target_label": "Ecological processes"
+            }
+          ]
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "soil-formation",
+        "strategy_type": "CAUSAL_MECHANISM",
+        "title": "Soil formation",
+        "trusted_input_refs": [
+          "workspace-fixture.json representation.nodes selected concept",
+          "workspace-fixture.json connected representation edges"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "CAUSAL_MECHANISM",
+      "semantic_focus_identity": "soil-formation",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    },
+    {
+      "decision_id": "decision-90c5400810c9b209",
+      "representation_plan": {
+        "deterministic_rule_metadata": {
+          "depth_is_resolver_input": false,
+          "domain_is_resolver_input": false,
+          "fallback_reason": "NO_TRUSTED_SUPPORTING_RELATIONSHIP",
+          "predicates": [],
+          "relationship_count": 0,
+          "rule_id": "TRUTHFUL_PROSE_FALLBACK",
+          "semantic_class": "concept",
+          "structure_type": null
+        },
+        "evidence_refs": [],
+        "payload": {
+          "body": "Indicators for processes such as respiration, nutrient cycling, and decomposition developed at watershed scales.",
+          "claim_source": "TRUSTED_COMMITTED_SEMANTIC_MATERIAL",
+          "focus": {
+            "description": "Indicators for processes such as respiration, nutrient cycling, and decomposition developed at watershed scales.",
+            "identity": "watershed-scale-indicators",
+            "label": "Watershed-scale ecological process indicators"
+          },
+          "nodes": [
+            {
+              "description": "Indicators for processes such as respiration, nutrient cycling, and decomposition developed at watershed scales.",
+              "entity_id": "watershed-scale-indicators",
+              "entity_type": "SYSTEM",
+              "label": "Watershed-scale ecological process indicators"
+            }
+          ],
+          "relationships": []
+        },
+        "semantic_class": "concept",
+        "semantic_focus_identity": "watershed-scale-indicators",
+        "strategy_type": "CONCISE_PROSE",
+        "title": "Watershed-scale ecological process indicators",
+        "trusted_input_refs": [
+          "validated KnowledgeModel entity"
+        ],
+        "warnings": []
+      },
+      "selected_representation_strategy": "CONCISE_PROSE",
+      "semantic_focus_identity": "watershed-scale-indicators",
+      "status": "SPEC038_COMPATIBLE_PLAN"
+    }
+  ],
+  "protected_surface_contract": "SPEC038_REPRESENTATION_PLAN"
+}

@@ -1,0 +1,38 @@
+{
+  "adapter_invocation_count": 1,
+  "follow_up_call_count": 0,
+  "hidden_retry_count": 0,
+  "history": [
+    {
+      "attempt": 1,
+      "completed_at_utc": "2026-09-13T09:07:11.980171Z",
+      "duration_ms": 10301.996,
+      "error": null,
+      "error_type": null,
+      "http_request_id": "req_1b8a3fd09e0b41b7b9d652b693208355",
+      "kind": "OPENAI_RESPONSES_STRUCTURED_EXTRACTION",
+      "live_call": true,
+      "outcome": "RESPONSE_RECEIVED",
+      "provider_request_id": "resp_08504b78cb81d33d016aa66776cbf487d2abd0fa29a90a6778",
+      "retry": false,
+      "started_at_utc": "2026-09-13T09:05:58.656684Z",
+      "usage": {
+        "input_tokens": 3187,
+        "output_tokens": 2533,
+        "total_tokens": 5720
+      }
+    },
+    {
+      "attempt": 1,
+      "error": "evidence quote was not found in source: 'the measurand) has a numerical magnitude and a reference'",
+      "error_type": "ValidationError",
+      "failure_stage": "EXTRACTION_BOUNDARY",
+      "outcome": "FAILED_CLOSED",
+      "retry_count": 0
+    }
+  ],
+  "repair_call_count": 0,
+  "sdk_retry_count": 0,
+  "semantic_retry_count": 0,
+  "source_id": "nist-measurement-uncertainty-2025"
+}

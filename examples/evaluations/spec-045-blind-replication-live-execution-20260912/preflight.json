@@ -1,0 +1,169 @@
+{
+  "approved_manifest": {
+    "actual_sha256": "beaf3df4a941afc7fadf2abf13543affeae798e3d14486798cbb0060fccdc57e",
+    "expected_sha256": "beaf3df4a941afc7fadf2abf13543affeae798e3d14486798cbb0060fccdc57e",
+    "path": "examples/evaluations/spec-044-blind-replication-source-set-freeze-20260912/live-execution-manifest.json",
+    "verified": true
+  },
+  "approved_source_packet": {
+    "actual_sha256": "85f7a7be47fa827799d532ab7ca5edc03b359162894dc2ee4e72a750de28e52b",
+    "expected_sha256": "85f7a7be47fa827799d532ab7ca5edc03b359162894dc2ee4e72a750de28e52b",
+    "path": "examples/evaluations/spec-044-blind-replication-source-set-freeze-20260912/blind-source-packet.json",
+    "verified": true
+  },
+  "authority": {
+    "active_packet_at_execution": "specs/SPEC-045-blind-replication-live-execution.md",
+    "authority": "LIVE_CALLS_EXPLICITLY_BOUNDED",
+    "human_gate": "OWNER_REVIEW",
+    "promotion": "NOT_AUTHORIZED",
+    "status": "APPROVED_FOR_IMPLEMENTATION",
+    "verified": true
+  },
+  "credential_available": true,
+  "execution_base_commit": "20548a6a6fc5ff4dc592c6feade6f91f4c539422",
+  "frozen_implementation": {
+    "commit": "5622df131dc71346d5890f42ce16fe1e3e55f33a",
+    "files": [
+      {
+        "actual_sha256": "cd4311f7504cb3af02c9d74f5721f3cf64e11b7aec374e9936afd9fa17cf7873",
+        "expected_sha256": "cd4311f7504cb3af02c9d74f5721f3cf64e11b7aec374e9936afd9fa17cf7873",
+        "path": "src/knowledge_compiler/blind_evaluation.py",
+        "verified": true
+      },
+      {
+        "actual_sha256": "6b9fcb305d5323913562e7d3c83f1516b58a384d5d237a8d6731f67c518b48e4",
+        "expected_sha256": "6b9fcb305d5323913562e7d3c83f1516b58a384d5d237a8d6731f67c518b48e4",
+        "path": "src/knowledge_compiler/blind_evaluation_harness.py",
+        "verified": true
+      },
+      {
+        "actual_sha256": "3152640aa23a5049591d83b48f706d33e207d415dab311e67a58cfbf88067be3",
+        "expected_sha256": "3152640aa23a5049591d83b48f706d33e207d415dab311e67a58cfbf88067be3",
+        "path": "src/knowledge_compiler/openai_extractor.py",
+        "verified": true
+      },
+      {
+        "actual_sha256": "5ef4e0a602e16b63f46511a780fc405c85e7dbc5fe631cb47b8a3c248efe5a8f",
+        "expected_sha256": "5ef4e0a602e16b63f46511a780fc405c85e7dbc5fe631cb47b8a3c248efe5a8f",
+        "path": "src/knowledge_compiler/representation_strategy.py",
+        "verified": true
+      },
+      {
+        "actual_sha256": "84dbfe048da4b27ecdad2139bd2db3c1a9ef1be56676496bc9fc18974dea107a",
+        "expected_sha256": "84dbfe048da4b27ecdad2139bd2db3c1a9ef1be56676496bc9fc18974dea107a",
+        "path": "src/knowledge_compiler/semantic_representation_compiler.py",
+        "verified": true
+      }
+    ],
+    "protected_paths_changed_since_frozen_commit": [],
+    "source_identity_specific_branches": 0,
+    "verified": true
+  },
+  "frozen_prompt_and_schema": {
+    "instructions_sha256": "7dfe677113846b026576610898efd3ebef1f06ddab51a4885d981a5806a9cc85",
+    "model": "gpt-5.6-luna",
+    "prompt_version": "spec-010-v1",
+    "schema_name": "knowledge_extraction",
+    "schema_sha256": "d577e0be6e0a21a7e6f4d04e8dcd1d8644ed1a465a7dca7bf73227279cc73084",
+    "verified_by_frozen_openai_extractor_file": true
+  },
+  "openai_sdk_version": "2.54.0",
+  "output_directory_absent_before_execution": true,
+  "protected_spec038": {
+    "actual_aggregate_sha256": "453f7d2a233224628e03f5e1449650ec20bbff04ffae5ea07e9f6137cf54fd6e",
+    "expected_aggregate_sha256": "453f7d2a233224628e03f5e1449650ec20bbff04ffae5ea07e9f6137cf54fd6e",
+    "file_count": 50,
+    "verified": true
+  },
+  "protected_spec042": {
+    "actual_aggregate_sha256": "523abe4b6fd47d531650c9a48f00b65d06dccbe947af4af1d04cad3678ef5200",
+    "expected_aggregate_sha256": "523abe4b6fd47d531650c9a48f00b65d06dccbe947af4af1d04cad3678ef5200",
+    "file_count": 50,
+    "verified": true
+  },
+  "protected_spec043": {
+    "actual_report_sha256": "bbc42f9ece6031c971fea37b8d59fef8701d4fcd1dfd143acbfe72a184bdbbfc",
+    "expected_report_sha256": "bbc42f9ece6031c971fea37b8d59fef8701d4fcd1dfd143acbfe72a184bdbbfc",
+    "verified": true
+  },
+  "result": "PASS",
+  "run_contract": {
+    "calls_per_source": 1,
+    "external_retrieval_or_enrichment": 0,
+    "follow_up_calls": 0,
+    "hidden_retries": 0,
+    "implementation_adaptations_between_calls": 0,
+    "maximum_total_calls": 6,
+    "model": "gpt-5.6-luna",
+    "repair_calls": 0,
+    "sdk_retries": 0,
+    "semantic_retries": 0,
+    "source_specific_prompt_edits": 0,
+    "store": false,
+    "verified": true
+  },
+  "schema": "spec-045-preflight-v1",
+  "sources": [
+    {
+      "actual_sha256": "c0cb2519673b8f3ef23c0be2856e03790f53d44971cbff09d593190ab3fa155d",
+      "character_count": 2490,
+      "expected_sha256": "c0cb2519673b8f3ef23c0be2856e03790f53d44971cbff09d593190ab3fa155d",
+      "ordinal": 1,
+      "source_id": "nasa-solar-system-formation-2026",
+      "utf8_byte_count": 2510,
+      "verified": true,
+      "word_count": 460
+    },
+    {
+      "actual_sha256": "70e7e3d20325dd5d22e9cf4484934419447907ba9f6cf5a4dfd65ddcbfa80ad5",
+      "character_count": 2728,
+      "expected_sha256": "70e7e3d20325dd5d22e9cf4484934419447907ba9f6cf5a4dfd65ddcbfa80ad5",
+      "ordinal": 2,
+      "source_id": "epa-ecological-processes-2026",
+      "utf8_byte_count": 2734,
+      "verified": true,
+      "word_count": 379
+    },
+    {
+      "actual_sha256": "e9d2260c9980239431fc195e7dc687afea93598af4f28d774ed5e4c4317f9e1e",
+      "character_count": 2664,
+      "expected_sha256": "e9d2260c9980239431fc195e7dc687afea93598af4f28d774ed5e4c4317f9e1e",
+      "ordinal": 3,
+      "source_id": "doe-iron-platinum-atomic-structure-2017",
+      "utf8_byte_count": 2668,
+      "verified": true,
+      "word_count": 380
+    },
+    {
+      "actual_sha256": "54e2147221cf186fe1b4f965422c69e815f986a7d009eddae9c01bf32ec25f89",
+      "character_count": 2239,
+      "expected_sha256": "54e2147221cf186fe1b4f965422c69e815f986a7d009eddae9c01bf32ec25f89",
+      "ordinal": 4,
+      "source_id": "nhgri-dna-fact-sheet-2020",
+      "utf8_byte_count": 2239,
+      "verified": true,
+      "word_count": 365
+    },
+    {
+      "actual_sha256": "1fd7e9851839f5f35cd2a231cd3ce5aea8196ec85cabd04694f681c063ea4345",
+      "character_count": 3068,
+      "expected_sha256": "1fd7e9851839f5f35cd2a231cd3ce5aea8196ec85cabd04694f681c063ea4345",
+      "ordinal": 5,
+      "source_id": "fhwa-traffic-bottleneck-concepts-2016",
+      "utf8_byte_count": 3078,
+      "verified": true,
+      "word_count": 476
+    },
+    {
+      "actual_sha256": "b3ae508f3982dfdd89f41a1d9ca59eb1f658b1648e3fae35168feba212046730",
+      "character_count": 2242,
+      "expected_sha256": "b3ae508f3982dfdd89f41a1d9ca59eb1f658b1648e3fae35168feba212046730",
+      "ordinal": 6,
+      "source_id": "nist-measurement-uncertainty-2025",
+      "utf8_byte_count": 2242,
+      "verified": true,
+      "word_count": 334
+    }
+  ],
+  "verified_at_utc": "2026-09-13T09:04:01.190871Z"
+}

@@ -1,0 +1,48 @@
+{
+  "items": [
+    {
+      "classification": {
+        "confidence": "HIGH",
+        "primary_classification": "MODEL_ERROR",
+        "rationale": "The claim meaning is supported, but its asserted evidence quote deletes two parenthetical passages and therefore does not occur verbatim in the frozen source. Evidence fidelity is model output, not a contract or validator defect.",
+        "source_support_assessment": "STATEMENT_SUPPORTED_BUT_PROPOSED_EVIDENCE_NOT_VERBATIM"
+      },
+      "invalid_evidence_quotes": [
+        "They identified rich structural variety and chemical order/disorder with unprecedented 3D detail including atomic composition, grain boundaries, anti-phase boundaries, anti-site point defects and swap defects."
+      ],
+      "missing_or_invalid_identities": [],
+      "object_id": "claim-4",
+      "object_kind": "CLAIM",
+      "proposed_object": {
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "quote": "They identified rich structural variety and chemical order/disorder with unprecedented 3D detail including atomic composition, grain boundaries, anti-phase boundaries, anti-site point defects and swap defects."
+          }
+        ],
+        "id": "claim-4",
+        "origin": "SOURCE",
+        "statement": "The nanoparticle exhibited rich structural variety and chemical order/disorder, including several types of boundaries and point defects."
+      },
+      "provider_output_location": "claims[3]",
+      "source_evidence": [
+        {
+          "assessment": "SUPPORTS",
+          "document_id": "text-e9d2260c99802394",
+          "end_char": 1896,
+          "quote": "They identified rich structural variety and chemical order/disorder with unprecedented 3D detail including atomic composition, grain boundaries, anti-phase boundaries (where atoms are arranged in the opposite order of the perfect, parent crystal), anti-site point defects and swap defects (where individual or a pair of nearest-neighbor atoms switch places).",
+          "start_char": 1538
+        }
+      ],
+      "source_id": "doe-iron-platinum-atomic-structure-2017",
+      "source_sha256": "e9d2260c9980239431fc195e7dc687afea93598af4f28d774ed5e4c4317f9e1e",
+      "validator": {
+        "exact_rejection_reason": "evidence quote was not found in source: 'They identified rich structural variety and chemical order/disorder with unprecedented 3D detail including atomic composition, grain boundaries, anti-phase boundaries, anti-site point defects and swap defects.'",
+        "failure_stage": "EXTRACTION_BOUNDARY",
+        "observed_in_run": true
+      }
+    }
+  ],
+  "schema": "spec-045-rejected-semantic-items-v1",
+  "source_id": "doe-iron-platinum-atomic-structure-2017"
+}

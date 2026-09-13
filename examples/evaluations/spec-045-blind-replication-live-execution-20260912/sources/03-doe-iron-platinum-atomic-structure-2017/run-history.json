@@ -1,0 +1,38 @@
+{
+  "adapter_invocation_count": 1,
+  "follow_up_call_count": 0,
+  "hidden_retry_count": 0,
+  "history": [
+    {
+      "attempt": 1,
+      "completed_at_utc": "2026-09-13T09:05:05.352269Z",
+      "duration_ms": 20508.425,
+      "error": null,
+      "error_type": null,
+      "http_request_id": "req_db74c44b8744484d871f95444a0e4b62",
+      "kind": "OPENAI_RESPONSES_STRUCTURED_EXTRACTION",
+      "live_call": true,
+      "outcome": "RESPONSE_RECEIVED",
+      "provider_request_id": "resp_015a5362c58e9b95016aa6672d032087d29cb8c0ed0a7cd324",
+      "retry": false,
+      "started_at_utc": "2026-09-13T09:04:44.843833Z",
+      "usage": {
+        "input_tokens": 3256,
+        "output_tokens": 2444,
+        "total_tokens": 5700
+      }
+    },
+    {
+      "attempt": 1,
+      "error": "evidence quote was not found in source: 'They identified rich structural variety and chemical order/disorder with unprecedented 3D detail including atomic composition, grain boundaries, anti-phase boundaries, anti-site point defects and swap defects.'",
+      "error_type": "ValidationError",
+      "failure_stage": "EXTRACTION_BOUNDARY",
+      "outcome": "FAILED_CLOSED",
+      "retry_count": 0
+    }
+  ],
+  "repair_call_count": 0,
+  "sdk_retry_count": 0,
+  "semantic_retry_count": 0,
+  "source_id": "doe-iron-platinum-atomic-structure-2017"
+}

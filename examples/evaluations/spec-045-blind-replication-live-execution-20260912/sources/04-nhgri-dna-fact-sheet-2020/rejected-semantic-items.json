@@ -1,0 +1,51 @@
+{
+  "items": [
+    {
+      "classification": {
+        "confidence": "HIGH",
+        "primary_classification": "EXTRACTION_GRANULARITY",
+        "rationale": "The source explicitly states that DNA is a molecule, and the IS_A direction is faithful. The extraction used molecule as an endpoint but omitted that materially supported concept from the entity array.",
+        "source_support_assessment": "FULLY_SUPPORTED"
+      },
+      "invalid_evidence_quotes": [],
+      "missing_or_invalid_identities": [
+        "molecule"
+      ],
+      "object_id": "rel-dna-is-molecule",
+      "object_kind": "RELATIONSHIP",
+      "proposed_object": {
+        "confidence": 0.99,
+        "evidence": [
+          {
+            "quote": "Deoxyribonucleic acid (DNA) is a molecule that contains the biological instructions that make each species unique."
+          }
+        ],
+        "id": "rel-dna-is-molecule",
+        "origin": "SOURCE",
+        "relationship_type": "IS_A",
+        "source_entity_id": "dna",
+        "statement": "DNA is a molecule.",
+        "target_entity_id": "molecule"
+      },
+      "provider_output_location": "relationships[0]",
+      "source_evidence": [
+        {
+          "assessment": "SUPPORTS",
+          "document_id": "text-54e2147221cf186f",
+          "end_char": 114,
+          "quote": "Deoxyribonucleic acid (DNA) is a molecule that contains the biological instructions that make each species unique.",
+          "start_char": 0
+        }
+      ],
+      "source_id": "nhgri-dna-fact-sheet-2020",
+      "source_sha256": "54e2147221cf186fe1b4f965422c69e815f986a7d009eddae9c01bf32ec25f89",
+      "validator": {
+        "exact_rejection_reason": "relationship 'rel-dna-is-molecule' references unknown entities: ['molecule']",
+        "failure_stage": "GROUNDING_AND_SEMANTIC_VALIDATION",
+        "observed_in_run": true
+      }
+    }
+  ],
+  "schema": "spec-045-rejected-semantic-items-v1",
+  "source_id": "nhgri-dna-fact-sheet-2020"
+}

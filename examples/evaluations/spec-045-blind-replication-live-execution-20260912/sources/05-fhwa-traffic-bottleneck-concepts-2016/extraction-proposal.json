@@ -1,0 +1,604 @@
+{
+  "claims": [
+    {
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "document_id": "text-1fd7e9851839f5f3",
+          "end_char": 177,
+          "quote": "FHWA has stated that 40 percent of all congestion nationwide is attributable to bottlenecks, while another 5 percent is attributable to poor signal timing",
+          "start_char": 23
+        }
+      ],
+      "id": "claim-01",
+      "origin": "SOURCE",
+      "statement": "FHWA has stated that bottlenecks account for 40 percent of nationwide congestion and poor signal timing accounts for another 5 percent."
+    },
+    {
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "document_id": "text-1fd7e9851839f5f3",
+          "end_char": 346,
+          "quote": "These two causes together are said to define recurring congestion and account for 45 percent of congestion.",
+          "start_char": 239
+        }
+      ],
+      "id": "claim-02",
+      "origin": "SOURCE",
+      "statement": "Bottlenecks and poor signal timing are said to account together for 45 percent of congestion and define recurring congestion."
+    },
+    {
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "document_id": "text-1fd7e9851839f5f3",
+          "end_char": 565,
+          "quote": "it is purportedly based primarily on a congestion study undertaken mostly for, or using data mostly from, the I-95 Corridor Coalition.",
+          "start_char": 431
+        }
+      ],
+      "id": "claim-03",
+      "origin": "SOURCE",
+      "statement": "The 45-percent figure is purportedly based primarily on a congestion study using data mostly from the I-95 Corridor Coalition."
+    },
+    {
+      "confidence": 0.97,
+      "evidence": [
+        {
+          "document_id": "text-1fd7e9851839f5f3",
+          "end_char": 887,
+          "quote": "said study did not break out, identify, or otherwise stratify the indicators.",
+          "start_char": 810
+        }
+      ],
+      "id": "claim-04",
+      "origin": "SOURCE",
+      "statement": "The cited study did not break out, identify, or otherwise stratify the indicators of recurring congestion."
+    },
+    {
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "document_id": "text-1fd7e9851839f5f3",
+          "end_char": 1165,
+          "quote": "it is fair to say that no confirmation or additional study has been made since.",
+          "start_char": 1086
+        }
+      ],
+      "id": "claim-05",
+      "origin": "SOURCE",
+      "statement": "No confirmation or additional study has been made since the cited study, according to the text."
+    },
+    {
+      "confidence": 0.96,
+      "evidence": [
+        {
+          "document_id": "text-1fd7e9851839f5f3",
+          "end_char": 1236,
+          "quote": "There is little consensus on a bottleneck definition in the literature",
+          "start_char": 1166
+        }
+      ],
+      "id": "claim-06",
+      "origin": "SOURCE",
+      "statement": "There is little consensus in the literature on a definition of bottleneck."
+    },
+    {
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "document_id": "text-1fd7e9851839f5f3",
+          "end_char": 2161,
+          "quote": "a road does not necessarily have to narrow for a bottleneck to exist (e.g., bottlenecks caused by a weaving condition, sun glare, rubbernecking, or a vertical climb).",
+          "start_char": 1995
+        }
+      ],
+      "id": "claim-07",
+      "origin": "SOURCE",
+      "statement": "A bottleneck need not involve a narrowing road; weaving, sun glare, rubbernecking, and a vertical climb can also cause bottlenecks."
+    },
+    {
+      "confidence": 0.99,
+      "evidence": [
+        {
+          "document_id": "text-1fd7e9851839f5f3",
+          "end_char": 2396,
+          "quote": "A bottleneck is distinct from congestion because it occurs at a specific location and not pervasively along the entire corridor.",
+          "start_char": 2268
+        }
+      ],
+      "id": "claim-08",
+      "origin": "SOURCE",
+      "statement": "A bottleneck is distinct from congestion because it occurs at a specific location rather than pervasively along an entire corridor."
+    },
+    {
+      "confidence": 0.99,
+      "evidence": [
+        {
+          "document_id": "text-1fd7e9851839f5f3",
+          "end_char": 2688,
+          "quote": "A physical bottleneck cause (e.g., a lane drop or other operationally deficient design on the roadway) only manifests itself when traffic demand overwhelms the available roadway capacity.",
+          "start_char": 2501
+        }
+      ],
+      "id": "claim-09",
+      "origin": "SOURCE",
+      "statement": "A physical bottleneck manifests only when traffic demand overwhelms available roadway capacity."
+    },
+    {
+      "confidence": 0.99,
+      "evidence": [
+        {
+          "document_id": "text-1fd7e9851839f5f3",
+          "end_char": 3068,
+          "quote": "in the case of a recurring bottleneck location, it takes both a deficiency in the design as well as traffic overburden for the delay to occur, whereas a nonrecurring event is the sole causal event that causes traffic.",
+          "start_char": 2851
+        }
+      ],
+      "id": "claim-10",
+      "origin": "SOURCE",
+      "statement": "A recurring bottleneck requires both a design deficiency and traffic overburden for delay to occur, whereas a nonrecurring event alone causes traffic."
+    }
+  ],
+  "entities": [
+    {
+      "aliases": [],
+      "description": "Federal Highway Administration, cited as the source of recurring-congestion attribution figures.",
+      "entity_type": "SYSTEM",
+      "id": "fhwa",
+      "name": "FHWA"
+    },
+    {
+      "aliases": [],
+      "description": "Reduced traffic operating conditions involving delay or restricted flow.",
+      "entity_type": "CONCEPT",
+      "id": "congestion",
+      "name": "congestion"
+    },
+    {
+      "aliases": [],
+      "description": "Congestion attributed to recurring causes such as bottlenecks and poor signal timing.",
+      "entity_type": "CONCEPT",
+      "id": "recurring-congestion",
+      "name": "recurring congestion"
+    },
+    {
+      "aliases": [],
+      "description": "Congestion attributed to special events, bad weather, work zones, and traffic incidents.",
+      "entity_type": "CONCEPT",
+      "id": "nonrecurring-congestion",
+      "name": "nonrecurring congestion"
+    },
+    {
+      "aliases": [
+        "bottleneck"
+      ],
+      "description": "A localized congestion problem at a specific location that produces an upstream queue and downstream free-flowing traffic.",
+      "entity_type": "CONCEPT",
+      "id": "bottleneck",
+      "name": "traffic bottleneck"
+    },
+    {
+      "aliases": [],
+      "description": "A recurring cause of congestion involving inadequately timed traffic signals.",
+      "entity_type": "CONCEPT",
+      "id": "poor-signal-timing",
+      "name": "poor signal timing"
+    },
+    {
+      "aliases": [],
+      "description": "The amount of traffic attempting to use a roadway.",
+      "entity_type": "VARIABLE",
+      "id": "traffic-demand",
+      "name": "traffic demand"
+    },
+    {
+      "aliases": [],
+      "description": "The traffic-carrying capacity available on a roadway.",
+      "entity_type": "VARIABLE",
+      "id": "roadway-capacity",
+      "name": "available roadway capacity"
+    },
+    {
+      "aliases": [],
+      "description": "A physical or operational deficiency in roadway design that can cause a bottleneck when demand is sufficiently high.",
+      "entity_type": "CONCEPT",
+      "id": "design-deficiency",
+      "name": "roadway design deficiency"
+    },
+    {
+      "aliases": [],
+      "description": "Delay experienced by travelers when traffic operations are disrupted or capacity is overwhelmed.",
+      "entity_type": "VARIABLE",
+      "id": "delay",
+      "name": "traffic delay"
+    },
+    {
+      "aliases": [],
+      "description": "A queue of vehicles formed upstream of a bottleneck.",
+      "entity_type": "OBJECT",
+      "id": "upstream-queue",
+      "name": "upstream queue"
+    },
+    {
+      "aliases": [],
+      "description": "Unrestricted traffic flow downstream of a bottleneck.",
+      "entity_type": "CONCEPT",
+      "id": "downstream-free-flow",
+      "name": "downstream free-flowing traffic"
+    },
+    {
+      "aliases": [],
+      "description": "An example of a nonrecurring congestion cause.",
+      "entity_type": "PROCESS",
+      "id": "special-events",
+      "name": "special events"
+    },
+    {
+      "aliases": [],
+      "description": "An example of a nonrecurring congestion cause.",
+      "entity_type": "CONCEPT",
+      "id": "bad-weather",
+      "name": "bad weather"
+    },
+    {
+      "aliases": [],
+      "description": "An example of a nonrecurring congestion cause.",
+      "entity_type": "OBJECT",
+      "id": "work-zones",
+      "name": "work zones"
+    },
+    {
+      "aliases": [],
+      "description": "An example of a nonrecurring congestion cause.",
+      "entity_type": "PROCESS",
+      "id": "traffic-incidents",
+      "name": "traffic incidents"
+    },
+    {
+      "aliases": [],
+      "description": "A theory categorizing traffic into free-flow, synchronized flow, and wide-moving jams.",
+      "entity_type": "CONCEPT",
+      "id": "kerner-three-phase-theory",
+      "name": "Kerner's three-phase traffic theory"
+    },
+    {
+      "aliases": [],
+      "description": "An unrestricted traffic condition.",
+      "entity_type": "CONCEPT",
+      "id": "free-flow",
+      "name": "free-flow"
+    },
+    {
+      "aliases": [],
+      "description": "Localized congestion in Kerner's traffic categorization.",
+      "entity_type": "CONCEPT",
+      "id": "synchronized-flow",
+      "name": "synchronized flow"
+    },
+    {
+      "aliases": [],
+      "description": "More systemic congestion in which downstream traffic velocity moves while traffic may propagate upstream.",
+      "entity_type": "CONCEPT",
+      "id": "wide-moving-jams",
+      "name": "wide-moving jams"
+    },
+    {
+      "aliases": [],
+      "description": "An example of a physical roadway design condition that can cause a bottleneck.",
+      "entity_type": "OBJECT",
+      "id": "lane-drop",
+      "name": "lane drop"
+    },
+    {
+      "aliases": [],
+      "description": "An example of a bottleneck cause that does not require roadway narrowing.",
+      "entity_type": "CONCEPT",
+      "id": "weaving-condition",
+      "name": "weaving condition"
+    },
+    {
+      "aliases": [],
+      "description": "An example of a bottleneck cause that does not require roadway narrowing.",
+      "entity_type": "CONCEPT",
+      "id": "sun-glare",
+      "name": "sun glare"
+    },
+    {
+      "aliases": [],
+      "description": "An example of a bottleneck cause that does not require roadway narrowing.",
+      "entity_type": "PROCESS",
+      "id": "rubbernecking",
+      "name": "rubbernecking"
+    }
+  ],
+  "metadata": {
+    "extractor": "llm",
+    "http_request_id": "req_24b322103fb240dba0c93c35ed0352da",
+    "model": "gpt-5.6-luna",
+    "prompt_version": "spec-010-v1",
+    "provider": "openai",
+    "provider_request_id": "resp_0b8a40b4ac87fc69016aa6675ece6487d290fae5680530b46c",
+    "usage": {
+      "input_tokens": 3412,
+      "output_tokens": 3085,
+      "total_tokens": 6497
+    }
+  },
+  "propositions": [],
+  "relationships": [
+    {
+      "confidence": 0.99,
+      "evidence": [
+        {
+          "document_id": "text-1fd7e9851839f5f3",
+          "end_char": 1389,
+          "quote": "bottlenecks, by whatever cause, result in the formation of queues upstream of the bottleneck and free-flowing traffic downstream.",
+          "start_char": 1260
+        }
+      ],
+      "id": "rel-01",
+      "origin": "SOURCE",
+      "relationship_type": "CAUSES",
+      "source_entity_id": "bottleneck",
+      "statement": "Bottlenecks cause queues to form upstream.",
+      "target_entity_id": "upstream-queue"
+    },
+    {
+      "confidence": 0.92,
+      "evidence": [
+        {
+          "document_id": "text-1fd7e9851839f5f3",
+          "end_char": 1389,
+          "quote": "bottlenecks, by whatever cause, result in the formation of queues upstream of the bottleneck and free-flowing traffic downstream.",
+          "start_char": 1260
+        }
+      ],
+      "id": "rel-02",
+      "origin": "SOURCE",
+      "relationship_type": "CAUSES",
+      "source_entity_id": "bottleneck",
+      "statement": "Bottlenecks are associated with free-flowing traffic downstream.",
+      "target_entity_id": "downstream-free-flow"
+    },
+    {
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "document_id": "text-1fd7e9851839f5f3",
+          "end_char": 304,
+          "quote": "These two causes together are said to define recurring congestion",
+          "start_char": 239
+        }
+      ],
+      "id": "rel-03",
+      "origin": "SOURCE",
+      "relationship_type": "CAUSES",
+      "source_entity_id": "bottleneck",
+      "statement": "Bottlenecks are identified as a cause of recurring congestion.",
+      "target_entity_id": "recurring-congestion"
+    },
+    {
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "document_id": "text-1fd7e9851839f5f3",
+          "end_char": 304,
+          "quote": "These two causes together are said to define recurring congestion",
+          "start_char": 239
+        }
+      ],
+      "id": "rel-04",
+      "origin": "SOURCE",
+      "relationship_type": "CAUSES",
+      "source_entity_id": "poor-signal-timing",
+      "statement": "Poor signal timing is identified as a cause of recurring congestion.",
+      "target_entity_id": "recurring-congestion"
+    },
+    {
+      "confidence": 0.99,
+      "evidence": [
+        {
+          "document_id": "text-1fd7e9851839f5f3",
+          "end_char": 1057,
+          "quote": "all other congestion is considered nonrecurring (e.g., special events, bad weather, work zones, and traffic incidents)",
+          "start_char": 939
+        }
+      ],
+      "id": "rel-05",
+      "origin": "SOURCE",
+      "relationship_type": "EXAMPLE_OF",
+      "source_entity_id": "special-events",
+      "statement": "Special events are an example of nonrecurring congestion causes.",
+      "target_entity_id": "nonrecurring-congestion"
+    },
+    {
+      "confidence": 0.99,
+      "evidence": [
+        {
+          "document_id": "text-1fd7e9851839f5f3",
+          "end_char": 1057,
+          "quote": "all other congestion is considered nonrecurring (e.g., special events, bad weather, work zones, and traffic incidents)",
+          "start_char": 939
+        }
+      ],
+      "id": "rel-06",
+      "origin": "SOURCE",
+      "relationship_type": "EXAMPLE_OF",
+      "source_entity_id": "bad-weather",
+      "statement": "Bad weather is an example of a nonrecurring congestion cause.",
+      "target_entity_id": "nonrecurring-congestion"
+    },
+    {
+      "confidence": 0.99,
+      "evidence": [
+        {
+          "document_id": "text-1fd7e9851839f5f3",
+          "end_char": 1057,
+          "quote": "all other congestion is considered nonrecurring (e.g., special events, bad weather, work zones, and traffic incidents)",
+          "start_char": 939
+        }
+      ],
+      "id": "rel-07",
+      "origin": "SOURCE",
+      "relationship_type": "EXAMPLE_OF",
+      "source_entity_id": "work-zones",
+      "statement": "Work zones are an example of nonrecurring congestion causes.",
+      "target_entity_id": "nonrecurring-congestion"
+    },
+    {
+      "confidence": 0.99,
+      "evidence": [
+        {
+          "document_id": "text-1fd7e9851839f5f3",
+          "end_char": 1057,
+          "quote": "all other congestion is considered nonrecurring (e.g., special events, bad weather, work zones, and traffic incidents)",
+          "start_char": 939
+        }
+      ],
+      "id": "rel-08",
+      "origin": "SOURCE",
+      "relationship_type": "EXAMPLE_OF",
+      "source_entity_id": "traffic-incidents",
+      "statement": "Traffic incidents are an example of nonrecurring congestion causes.",
+      "target_entity_id": "nonrecurring-congestion"
+    },
+    {
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "document_id": "text-1fd7e9851839f5f3",
+          "end_char": 1525,
+          "quote": "According to a theory proposed by Kerner, traffic is categorized into three phases: free-flow, synchronized flow, and wide-moving jams.",
+          "start_char": 1390
+        }
+      ],
+      "id": "rel-09",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "synchronized-flow",
+      "statement": "Synchronized flow is one phase in Kerner's three-phase traffic theory.",
+      "target_entity_id": "kerner-three-phase-theory"
+    },
+    {
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "document_id": "text-1fd7e9851839f5f3",
+          "end_char": 1525,
+          "quote": "According to a theory proposed by Kerner, traffic is categorized into three phases: free-flow, synchronized flow, and wide-moving jams.",
+          "start_char": 1390
+        }
+      ],
+      "id": "rel-10",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "free-flow",
+      "statement": "Free-flow is one phase in Kerner's three-phase traffic theory.",
+      "target_entity_id": "kerner-three-phase-theory"
+    },
+    {
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "document_id": "text-1fd7e9851839f5f3",
+          "end_char": 1525,
+          "quote": "According to a theory proposed by Kerner, traffic is categorized into three phases: free-flow, synchronized flow, and wide-moving jams.",
+          "start_char": 1390
+        }
+      ],
+      "id": "rel-11",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "wide-moving-jams",
+      "statement": "Wide-moving jams are one phase in Kerner's three-phase traffic theory.",
+      "target_entity_id": "kerner-three-phase-theory"
+    },
+    {
+      "confidence": 0.94,
+      "evidence": [
+        {
+          "document_id": "text-1fd7e9851839f5f3",
+          "end_char": 2688,
+          "quote": "A physical bottleneck cause (e.g., a lane drop or other operationally deficient design on the roadway) only manifests itself when traffic demand overwhelms the available roadway capacity.",
+          "start_char": 2501
+        }
+      ],
+      "id": "rel-12",
+      "origin": "SOURCE",
+      "relationship_type": "CAUSES",
+      "source_entity_id": "design-deficiency",
+      "statement": "A physical or operational roadway design deficiency can cause a bottleneck when manifested under sufficient demand.",
+      "target_entity_id": "bottleneck"
+    },
+    {
+      "confidence": 0.82,
+      "evidence": [
+        {
+          "document_id": "text-1fd7e9851839f5f3",
+          "end_char": 2687,
+          "quote": "only manifests itself when traffic demand overwhelms the available roadway capacity",
+          "start_char": 2604
+        }
+      ],
+      "id": "rel-13",
+      "origin": "SOURCE",
+      "relationship_type": "CONSTRAINS",
+      "source_entity_id": "traffic-demand",
+      "statement": "The text describes traffic demand in relation to available roadway capacity, with bottlenecks occurring when demand overwhelms capacity.",
+      "target_entity_id": "roadway-capacity"
+    },
+    {
+      "confidence": 0.96,
+      "evidence": [
+        {
+          "document_id": "text-1fd7e9851839f5f3",
+          "end_char": 2992,
+          "quote": "it takes both a deficiency in the design as well as traffic overburden for the delay to occur",
+          "start_char": 2899
+        }
+      ],
+      "id": "rel-14",
+      "origin": "SOURCE",
+      "relationship_type": "REQUIRES",
+      "source_entity_id": "design-deficiency",
+      "statement": "A recurring physical bottleneck requires traffic overburden in addition to a design deficiency for delay to occur.",
+      "target_entity_id": "traffic-demand"
+    },
+    {
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "document_id": "text-1fd7e9851839f5f3",
+          "end_char": 2992,
+          "quote": "it takes both a deficiency in the design as well as traffic overburden for the delay to occur",
+          "start_char": 2899
+        }
+      ],
+      "id": "rel-15",
+      "origin": "SOURCE",
+      "relationship_type": "CAUSES",
+      "source_entity_id": "design-deficiency",
+      "statement": "A design deficiency contributes to delay when combined with traffic overburden at a recurring bottleneck location.",
+      "target_entity_id": "delay"
+    },
+    {
+      "confidence": 0.88,
+      "evidence": [
+        {
+          "document_id": "text-1fd7e9851839f5f3",
+          "end_char": 3068,
+          "quote": "whereas a nonrecurring event is the sole causal event that causes traffic.",
+          "start_char": 2994
+        }
+      ],
+      "id": "rel-16",
+      "origin": "SOURCE",
+      "relationship_type": "CAUSES",
+      "source_entity_id": "nonrecurring-congestion",
+      "statement": "A nonrecurring event is described as the sole causal event producing traffic effects.",
+      "target_entity_id": "delay"
+    }
+  ]
+}

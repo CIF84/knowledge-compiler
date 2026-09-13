@@ -1,0 +1,428 @@
+{
+  "actual_model": "gpt-5.6-luna",
+  "completed_at_utc": "2026-09-13T09:05:34.627105Z",
+  "duration_ms": 29264.066,
+  "http_request_id": "req_ccdb221e9a194f028af278f0b45e9842",
+  "prompt_version": "spec-010-v1",
+  "provider": "OpenAI Responses API",
+  "provider_response_id": "resp_046da05e10fb3f24016aa6674188c887d2a21e5b1942d0347b",
+  "request_error": null,
+  "requested_model": "gpt-5.6-luna",
+  "response": {
+    "background": false,
+    "billing": {
+      "payer": "developer"
+    },
+    "completed_at": 1789290334.0,
+    "conversation": null,
+    "created_at": 1789290305.0,
+    "error": null,
+    "frequency_penalty": 0.0,
+    "id": "resp_046da05e10fb3f24016aa6674188c887d2a21e5b1942d0347b",
+    "incomplete_details": null,
+    "instructions": "You extract a semantic knowledge model from explanatory source text.\n\nIdentify important concepts, objects, processes, variables, systems, and components.\nCreate claims for meaningful propositions that do not naturally form graph edges.\nCreate relationships only when one supplied semantic contract fits both the meaning and\ndirection. Prefer important explanatory structure over exhaustive sentence decomposition.\nIf no relationship contract represents a meaningful proposition truthfully, preserve it\nas a claim instead of forcing it into the nearest edge label. Fewer truthful edges are\nbetter than more misleading edges. Use concise grounded descriptions and conservative\nconfidence values.\n\nUse a typed proposition only for either of these binary-edge failure modes:\n- COMPARISON_CONDITION: a comparison is itself the antecedent of an outcome. Bind\n  LEFT_OPERAND, RIGHT_OPERAND, and OUTCOME; use GREATER_THAN and CAUSES.\n- TRANSFER_EVENT: a transfer must distinguish the EVENT, transferred OBJECT, and\n  DESTINATION; use TRANSFERS_TO.\nDo not also emit a lossy binary edge for the same source proposition. Proposition IDs are\nassigned deterministically by trusted code; do not return an id.\n\nSOURCE means the item is explicitly supported by the supplied text. Every SOURCE item\nmust cite one or more exact, verbatim, uniquely occurring source substrings in evidence.\nUse a complete clause or sentence long enough to occur exactly once; never cite a short\nentity name or other repeated fragment. Do not count characters; return quotes only.\nINFERRED means useful structure not stated explicitly and must have an empty evidence\nlist. Any item with evidence must be SOURCE. Before returning, verify every SOURCE item\nhas at least one unique quote and every INFERRED item has none. Do not use external\nknowledge unless the item is marked INFERRED. Do not fabricate evidence.\n\nAvoid entities created only to reproduce grammar. Avoid duplicates; use aliases only\nfor genuine naming equivalence, and keep related but distinct concepts separate.\nRelationship endpoints must use IDs from the entities array. IDs must be unique,\nconcise, stable kebab-case strings. Do not generate summaries, visualizations, Mermaid,\nteaching prose, or output outside the requested schema.\n\nACTIVE RELATIONSHIP CONTRACTS (source --TYPE--> target):\nIS_A [STRUCTURAL; direction=instance_to_type]\n  meaning: The source is a kind, category, or subtype of the target.\n  roles: source=instance or subtype; target=broader type or category\n  use: The source can truthfully be described as a target.\n  avoid: Do not use for parts, examples, similarity, or temporary states.\nPART_OF [STRUCTURAL; direction=part_to_whole]\n  meaning: The source is a constituent or component of the target.\n  roles: source=part or component; target=containing whole\n  use: The source exists as a component or subpart of the target.\n  avoid: Never reverse whole and part; do not use for interaction or dependency.\nEXAMPLE_OF [STRUCTURAL; direction=example_to_concept]\n  meaning: The source is an illustrative instance of the target concept.\n  roles: source=example; target=concept illustrated\n  use: The source is presented as an example of the target.\n  avoid: Do not use merely because the source is a subtype; prefer IS_A for classification.\nCAUSES [CAUSAL; direction=cause_to_effect]\n  meaning: The source brings about the target as an effect.\n  roles: source=cause; target=effect\n  use: The source is stated to produce the target outcome.\n  avoid: Do not use for chronology, association, contribution, or unspecified influence.\nAFFECTS [CAUSAL; direction=influence_to_affected]\n  meaning: The source causally influences the target without a specified direction or complete production.\n  roles: source=influence; target=affected entity, process, or variable\n  use: The source changes or influences the target, but the text does not support CAUSES, INCREASES, or DECREASES.\n  avoid: Do not use for mere association, chronology, physical force, or interaction with no stated effect.\nINCREASES [CAUSAL; direction=increaser_to_increased_variable]\n  meaning: The source causally raises the amount, rate, value, probability, or intensity of the target.\n  roles: source=causal factor; target=quantity or variable increased\n  use: The source is explicitly said to make the target greater, faster, more likely, or more intense.\n  avoid: Do not infer from nearby words such as more or faster; never use when the source says slower, lower, or less.\nDECREASES [CAUSAL; direction=decreaser_to_decreased_variable]\n  meaning: The source causally lowers the amount, rate, value, probability, or intensity of the target.\n  roles: source=causal factor; target=quantity or variable decreased\n  use: The source is explicitly said to make the target smaller, slower, less likely, or less intense.\n  avoid: Do not use for absence, prevention without a scalar target, or mere negative association.\nINDUCES [CAUSAL; direction=inducer_to_induced_effect]\n  meaning: The source produces the target through an explicitly described induction mechanism.\n  roles: source=inducing phenomenon; target=induced phenomenon\n  use: The source explicitly says induces or describes a recognized induction mechanism.\n  avoid: Do not use as a metaphor for generic causation, influence, motivation, or historical response.\nENABLES [DEPENDENCY; direction=enabler_to_enabled]\n  meaning: The source makes the target possible without necessarily causing it to occur.\n  roles: source=enabling condition or capability; target=capability or process made possible\n  use: The target could not occur, or is materially made possible, because of the source.\n  avoid: Do not use for delivery, participation, weak assistance, or an effect that actually occurred.\nREQUIRES [DEPENDENCY; direction=dependent_to_requirement]\n  meaning: The source depends on the target as a prerequisite or necessary resource.\n  roles: source=dependent; target=prerequisite or required resource\n  use: The source cannot operate or occur as described without the target.\n  avoid: Do not reverse prerequisite and dependent; do not use for optional support.\nCONSTRAINS [DEPENDENCY; direction=constraint_to_constrained]\n  meaning: The source limits the possible behavior, values, or choices of the target.\n  roles: source=constraint; target=constrained entity, process, or variable\n  use: The source imposes a limit, rule, boundary, or restriction on the target.\n  avoid: Do not use to mean unchanged, unrelated, merely different, or causally reduced.\nPRECEDES [TEMPORAL; direction=earlier_to_later]\n  meaning: The source occurs before the target in time or an explicit process sequence.\n  roles: source=earlier event or process; target=later event or process\n  use: The source explicitly occurs before, previously, first, then, or after relative to the target.\n  avoid: Do not infer causality from order; do not reverse earlier and later.\nINTERACTS_WITH [INTERACTION; symmetric]\n  meaning: The source and target directly interact, with no more precise directional semantics supported.\n  roles: source=interaction participant; target=interaction participant\n  use: The text supports direct mutual interaction but not a more precise active predicate.\n  avoid: Do not use for distant association, one-way effect, dependency, or chronology.\nBINDS_TO [INTERACTION; symmetric]\n  meaning: The source physically or chemically binds or attaches to the target.\n  roles: source=binding participant; target=binding participant\n  use: The source explicitly binds or attaches to the target.\n  avoid: Do not use for metaphorical commitment, dependency, influence, or literal physical force.\nTRANSFERS_TO [INTERACTION; direction=transferred_item_to_destination]\n  meaning: The source item, material, or information moves to the target destination or recipient.\n  roles: source=item, material, or information transferred; target=destination or recipient\n  use: The source is explicitly carried, delivered, moved, or transferred to the target.\n  avoid: Do not make the carrier the source unless the carrier itself moves to the destination; do not use for enabling.\nEXERTS_FORCE_ON [INTERACTION; direction=force_exerter_to_physical_target]\n  meaning: The source exerts a literal physical force on the target.\n  roles: source=physical force source; target=physical object receiving force\n  use: A literal physical force is explicitly exerted on the target.\n  avoid: Never use metaphorically for influence, contribution, binding, pressure, or causation.\nTRANSFORMS_INTO [TRANSFORMATION; direction=prior_state_to_resulting_state]\n  meaning: The source itself changes state or identity and becomes the target.\n  roles: source=entity or state before transformation; target=same entity or resulting material after transformation\n  use: The source itself becomes the target through a transformation.\n  avoid: Do not use when an actor causes, creates, attempts, participates in, or responds to the target.\nCREATES [TRANSFORMATION; direction=creator_to_created]\n  meaning: The source produces or brings a distinct target into existence.\n  roles: source=producer or generative process; target=newly produced entity or result\n  use: The source produces a target that is distinct from the source.\n  avoid: Do not use when the source itself becomes the target; use TRANSFORMS_INTO instead.\nMEASURED_BY [DESCRIPTIVE; direction=measurand_to_measure]\n  meaning: The source property or variable is quantified or assessed by the target metric, observation, or procedure.\n  roles: source=property or variable measured; target=metric, observation, or measurement procedure\n  use: The target is explicitly how the source is measured or quantified.\n  avoid: Do not point to something that merely responds to, correlates with, or exemplifies the source.\nCONTRADICTS [DESCRIPTIVE; symmetric]\n  meaning: The source and target assert mutually incompatible propositions.\n  roles: source=proposition or claim; target=incompatible proposition or claim\n  use: Both sides are explicit propositions that cannot simultaneously hold as stated.\n  avoid: Do not use for difference, disagreement without incompatibility, trade-off, or negative causality.",
+    "max_output_tokens": null,
+    "max_tool_calls": null,
+    "metadata": {},
+    "model": "gpt-5.6-luna",
+    "moderation": null,
+    "object": "response",
+    "output": [
+      {
+        "content": [],
+        "encrypted_content": "gAAAAABqpmdeFslHBAdqKGXXTcxlgV4pAPNOFHO6KsMfnQtoK8ZQ1gIlVC-ByK-_Dv0EGZn0ieBW0nWaQtXITWk1kVSOBOAFose7NYDvbl3OxgdF0iCSGKXl0qMXy_dvYGfGoMB9W_74RNnQTtG5ftAOaB5LJvPfEfUrJ8CgJh0ST6qV6c9tDUapiJhV7EHJJ1OtiPeCp2P3RxHbk4Rvd6WFZQJplQ-tV_nB7R3J0M5haUd5HEehOpCrTeijGQlmfOFG3pC1XbkcuzLcZk7IUxtmKfKyX_ujx3JW_xgtQcnZgY8DQga3KnWanE_hUHK_2ppTcTtBN_ZI9iq7XeM_t9zNWtkgxvCYYYY1dTkTAbC9t74hAp2CnZgamc4809IlXzZRt-Z7bdhCTlFdkgRpdiVGF73vpQHRbPPwfl4H-s-1QWSEevmrUojWvx__YXv1fvJB_LIyy5pjLLIp_1HItH8AAmqCbPd5hMFFg9GT9Z6rMBw-uNLMwJDDKZdrTwUp4CaEpb2kdmRWaqiHRVctoZOVH5VAkj8N6rA7Z-5kxn3NTOS3hOwTr4aHerFkZGknEQhFQHXXD2VSj_pAtHyGs3ZObBi8UuMtUyL87vYtt_Az9D5S4oKaqcJ1xeQQcR0AT0tEer5xeYh-fRuZCHoqxIJ28IGyxHy1FFTzWCUmzCRVnB97fYan2EvF9h1Os-LEZo9d51niiQy5x1Y73ktmcm4g0M1AKfqbxjVb86YChHYZn4drujWd202VGe-5wjO5u4ssl1swhP_5h-6AsYk3WXuFMEWVkbyBxeJ1dRRn3zzmvJQEcG-WKRGCBvP5PzYjsbORb2IraIrel7JYoywHmR6-1pAHZSACwUDPdOZ7GV8LhZ0552ururV30mJIUKjfKqQZRDax1ebl7zNmvMVhQ15c2z8F0XTDcnX3UCyZ6cBA4dLcz2ZwXS9P5jXtWd2l1EUxAxV_LMGneJDy5wntUiSe3kHe4Dji9WHlxYKyTvGG26BcYRlCNeg1_dq5Df_CDUBy2DqLy8cgwS4EDn3VI_RaBl-CuE-4qu4UDbZNlvtER5QI3uy3Slw0OihgW9PQIds9EzAiFOXxOZVl8wDBQU3IRn5Y6qSChPkl9G6CGD7yaYmF0MZqXGIMF3wX78r_aJ7Z51BGaCESoOIffCc4NCesREU8XF9D4FQv5CjJvXetXZszZ9TqIE1_eP3RcPmbxnNf3jB11to7Ebk6ojF9pHRj8yruldqBQ0XlxwsSDqLHapdV_emmhF07N5aMhPbWOqCT7zd8lAYGOAb0gt7-tYBLh4D1kferrXkXndgubEyoCgadJGZcaV9RjF9MgBNvhx-hp5lEwwlx7SWrxWOZ724Xqr8qagJcaobg_LoyDNXN1Xwx7TvvId2WDD8eXmCho4Fxmo59GLv6MO7z5lQ3ww_d_yeLrmZZiumas_QMVBbjz-Y8UPVBVYl4Gytck8knKInYjfoIt-C74fsXntSXlYSrnMyApW2l9t1He8vsPZYpjKqyFfLqMj5jFmxriociy3MMTJwfMvJf2E4XAwzCfNKvLK_OFa67TqRd1HOqlTJsIu5ufz86mug-0c676RjB9cZkeJkIFZYz",
+        "id": "rs_046da05e10fb3f24016aa66742739887d2a188d73ad444dae7",
+        "status": null,
+        "summary": [],
+        "type": "reasoning"
+      },
+      {
+        "content": [
+          {
+            "annotations": [],
+            "logprobs": [],
+            "text": "{\"entities\":[{\"id\":\"dna\",\"name\":\"Deoxyribonucleic acid (DNA)\",\"description\":\"A molecule containing biological instructions that make each species unique.\",\"entity_type\":\"OBJECT\",\"aliases\":[\"DNA\"]},{\"id\":\"biological-instructions\",\"name\":\"biological instructions\",\"description\":\"Instructions contained in DNA that guide biological traits and processes.\",\"entity_type\":\"CONCEPT\",\"aliases\":[]},{\"id\":\"species\",\"name\":\"species\",\"description\":\"A biological grouping whose members share DNA-based instructions that distinguish the group.\",\"entity_type\":\"CONCEPT\",\"aliases\":[]},{\"id\":\"offspring\",\"name\":\"offspring\",\"description\":\"Organisms that receive DNA from adult organisms during reproduction.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"id\":\"eukaryote\",\"name\":\"eukaryote\",\"description\":\"An organism whose DNA is found inside a nucleus.\",\"entity_type\":\"OBJECT\",\"aliases\":[\"eukaryotic organism\"]},{\"id\":\"cell\",\"name\":\"cell\",\"description\":\"The small biological unit containing DNA and cellular structures.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"id\":\"nucleus\",\"name\":\"nucleus\",\"description\":\"A special area of a eukaryotic cell containing DNA.\",\"entity_type\":\"COMPONENT\",\"aliases\":[]},{\"id\":\"chromosome\",\"name\":\"chromosome\",\"description\":\"The tightly packaged form of a DNA molecule.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"id\":\"dna-replication\",\"name\":\"DNA replication\",\"description\":\"A process during which DNA unwinds so it can be copied.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"id\":\"cell-cycle\",\"name\":\"cell cycle\",\"description\":\"The cycle during which DNA may unwind for use in biological processes and becomes compact during cell division.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"id\":\"protein-production\",\"name\":\"protein production\",\"description\":\"A biological process that uses DNA instructions to make proteins.\",\"entity_type\":\"PROCESS\",\"aliases\":[\"making proteins\"]},{\"id\":\"cell-division\",\"name\":\"cell division\",\"description\":\"A process during which DNA is in compact chromosome form to enable transfer to new cells.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"id\":\"nuclear-dna\",\"name\":\"nuclear DNA\",\"description\":\"DNA located in the cell nucleus.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"id\":\"genome\",\"name\":\"genome\",\"description\":\"An organism's complete set of nuclear DNA; also described as the complete DNA instruction book.\",\"entity_type\":\"OBJECT\",\"aliases\":[\"DNA instruction book\"]},{\"id\":\"mitochondrion\",\"name\":\"mitochondrion\",\"description\":\"A cell structure containing a small amount of DNA and generating energy needed for cellular function.\",\"entity_type\":\"COMPONENT\",\"aliases\":[\"mitochondria\"]},{\"id\":\"energy\",\"name\":\"cellular energy\",\"description\":\"Energy generated by mitochondria that the cell needs to function properly.\",\"entity_type\":\"VARIABLE\",\"aliases\":[]},{\"id\":\"sexual-reproduction\",\"name\":\"sexual reproduction\",\"description\":\"A reproductive process in which nuclear DNA is inherited from male and female parents.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"id\":\"male-parent\",\"name\":\"male parent\",\"description\":\"A parent contributing half of an offspring's nuclear DNA in sexual reproduction.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"id\":\"female-parent\",\"name\":\"female parent\",\"description\":\"A parent contributing half of an offspring's nuclear DNA and all of its mitochondrial DNA in sexual reproduction.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"id\":\"mitochondrial-dna\",\"name\":\"mitochondrial DNA\",\"description\":\"DNA located in mitochondria and inherited from the female parent in the described reproductive process.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"id\":\"egg-cell\",\"name\":\"egg cell\",\"description\":\"A reproductive cell that retains mitochondria during fertilization.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"id\":\"sperm-cell\",\"name\":\"sperm cell\",\"description\":\"A reproductive cell that does not retain mitochondria during fertilization.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"id\":\"fertilization\",\"name\":\"fertilization\",\"description\":\"The process during which egg and sperm cells combine and mitochondrial inheritance is determined.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"id\":\"nucleotide\",\"name\":\"nucleotide\",\"description\":\"A chemical building block of DNA made of a phosphate group, a sugar group, and one nitrogen base.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"id\":\"phosphate-group\",\"name\":\"phosphate group\",\"description\":\"One of the three parts of a nucleotide.\",\"entity_type\":\"COMPONENT\",\"aliases\":[]},{\"id\":\"sugar-group\",\"name\":\"sugar group\",\"description\":\"One of the three parts of a nucleotide.\",\"entity_type\":\"COMPONENT\",\"aliases\":[]},{\"id\":\"nitrogen-base\",\"name\":\"nitrogen base\",\"description\":\"One of four types of chemical component in a nucleotide.\",\"entity_type\":\"COMPONENT\",\"aliases\":[]},{\"id\":\"dna-strand\",\"name\":\"DNA strand\",\"description\":\"A chain formed by linking nucleotides together.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"id\":\"adenine\",\"name\":\"adenine\",\"description\":\"One of the four nitrogen bases found in DNA nucleotides.\",\"entity_type\":\"OBJECT\",\"aliases\":[\"A\"]},{\"id\":\"thymine\",\"name\":\"thymine\",\"description\":\"One of the four nitrogen bases found in DNA nucleotides.\",\"entity_type\":\"OBJECT\",\"aliases\":[\"T\"]},{\"id\":\"guanine\",\"name\":\"guanine\",\"description\":\"One of the four nitrogen bases found in DNA nucleotides.\",\"entity_type\":\"OBJECT\",\"aliases\":[\"G\"]},{\"id\":\"cytosine\",\"name\":\"cytosine\",\"description\":\"One of the four nitrogen bases found in DNA nucleotides.\",\"entity_type\":\"OBJECT\",\"aliases\":[\"C\"]},{\"id\":\"base-sequence\",\"name\":\"DNA base sequence\",\"description\":\"The order of nitrogen bases in a DNA strand, which determines its biological instructions.\",\"entity_type\":\"VARIABLE\",\"aliases\":[\"sequence\"]},{\"id\":\"gene\",\"name\":\"gene\",\"description\":\"A unit included in the genome's biological instructions.\",\"entity_type\":\"CONCEPT\",\"aliases\":[]},{\"id\":\"human-genome\",\"name\":\"human genome\",\"description\":\"The complete DNA instruction set of a human, containing about 3 billion bases and about 20,000 genes on 23 pairs of chromosomes.\",\"entity_type\":\"OBJECT\",\"aliases\":[]}],\"claims\":[{\"id\":\"claim-dna-inheritance\",\"statement\":\"DNA, along with its instructions, is passed from adult organisms to offspring during reproduction.\",\"evidence\":[{\"quote\":\"DNA, along with the instructions it contains, is passed from adult organisms to their offspring during reproduction.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"claim-dna-unwinding-uses\",\"statement\":\"DNA unwinds during DNA replication so it can be copied, and at other times so its instructions can be used for protein production and other biological processes.\",\"evidence\":[{\"quote\":\"During DNA replication, DNA unwinds so it can be copied. At other times in the cell cycle, DNA also unwinds so that its instructions can be used to make proteins and for other biological processes.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"claim-half-nuclear-inheritance\",\"statement\":\"In sexual reproduction, offspring inherit half of their nuclear DNA from the male parent and half from the female parent.\",\"evidence\":[{\"quote\":\"In sexual reproduction, organisms inherit half of their nuclear DNA from the male parent and half from the female parent.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"claim-all-mitochondrial-inheritance\",\"statement\":\"In sexual reproduction, offspring inherit all of their mitochondrial DNA from the female parent.\",\"evidence\":[{\"quote\":\"However, organisms inherit all of their mitochondrial DNA from the female parent.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"claim-mitochondrial-inheritance-mechanism\",\"statement\":\"Mitochondrial DNA is inherited from the female parent because only egg cells, and not sperm cells, keep their mitochondria during fertilization.\",\"evidence\":[{\"quote\":\"This occurs because only egg cells, and not sperm cells, keep their mitochondria during fertilization.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"claim-base-example\",\"statement\":\"The sequence ATCGTT might instruct for blue eyes, while ATCGCT might instruct for brown eyes.\",\"evidence\":[{\"quote\":\"For example, the sequence ATCGTT might instruct for blue eyes, while ATCGCT might instruct for brown.\"}],\"confidence\":0.97,\"origin\":\"SOURCE\"},{\"id\":\"claim-human-genome-size\",\"statement\":\"The human genome contains about 3 billion bases and about 20,000 genes on 23 pairs of chromosomes.\",\"evidence\":[{\"quote\":\"The complete DNA instruction book, or genome, for a human contains about 3 billion bases and about 20,000 genes on 23 pairs of chromosomes.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"}],\"relationships\":[{\"id\":\"rel-dna-is-molecule\",\"source_entity_id\":\"dna\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"molecule\",\"statement\":\"DNA is a molecule.\",\"evidence\":[{\"quote\":\"Deoxyribonucleic acid (DNA) is a molecule that contains the biological instructions that make each species unique.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"rel-dna-contains-instructions\",\"source_entity_id\":\"dna\",\"relationship_type\":\"PART_OF\",\"target_entity_id\":\"biological-instructions\",\"statement\":\"DNA contains biological instructions.\",\"evidence\":[{\"quote\":\"Deoxyribonucleic acid (DNA) is a molecule that contains the biological instructions that make each species unique.\"}],\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"rel-dna-part-of-chromosome\",\"source_entity_id\":\"dna\",\"relationship_type\":\"PART_OF\",\"target_entity_id\":\"chromosome\",\"statement\":\"A chromosome is the tightly packaged form of a DNA molecule.\",\"evidence\":[{\"quote\":\"This packaged form of the DNA is called a chromosome.\"}],\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"rel-nucleus-part-of-cell\",\"source_entity_id\":\"nucleus\",\"relationship_type\":\"PART_OF\",\"target_entity_id\":\"cell\",\"statement\":\"The nucleus is a special area of the cell.\",\"evidence\":[{\"quote\":\"DNA is found inside a special area of the cell called the nucleus.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"rel-dna-in-nucleus\",\"source_entity_id\":\"dna\",\"relationship_type\":\"PART_OF\",\"target_entity_id\":\"nucleus\",\"statement\":\"DNA is found inside the nucleus in eukaryotes.\",\"evidence\":[{\"quote\":\"In organisms called eukaryotes, DNA is found inside a special area of the cell called the nucleus.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"rel-cell-division-enables-transfer\",\"source_entity_id\":\"chromosome\",\"relationship_type\":\"ENABLES\",\"target_entity_id\":\"cell-division\",\"statement\":\"The compact chromosome form of DNA enables transfer to new cells during cell division.\",\"evidence\":[{\"quote\":\"But during cell division, DNA is in its compact chromosome form to enable transfer to new cells.\"}],\"confidence\":0.9,\"origin\":\"SOURCE\"},{\"id\":\"rel-nuclear-dna-is-dna\",\"source_entity_id\":\"nuclear-dna\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"dna\",\"statement\":\"Nuclear DNA is DNA found in the cell nucleus.\",\"evidence\":[{\"quote\":\"Researchers refer to DNA found in the cell's nucleus as nuclear DNA.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"rel-genome-is-nuclear-dna\",\"source_entity_id\":\"genome\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"nuclear-dna\",\"statement\":\"An organism's genome is its complete set of nuclear DNA.\",\"evidence\":[{\"quote\":\"An organism's complete set of nuclear DNA is called its genome.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"rel-mitochondria-part-of-cell\",\"source_entity_id\":\"mitochondrion\",\"relationship_type\":\"PART_OF\",\"target_entity_id\":\"cell\",\"statement\":\"Mitochondria are cell structures.\",\"evidence\":[{\"quote\":\"humans and other complex organisms also have a small amount of DNA in cell structures known as mitochondria.\"}],\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"rel-mitochondria-generate-energy\",\"source_entity_id\":\"mitochondrion\",\"relationship_type\":\"CAUSES\",\"target_entity_id\":\"energy\",\"statement\":\"Mitochondria generate the energy the cell needs to function properly.\",\"evidence\":[{\"quote\":\"Mitochondria generate the energy the cell needs to function properly.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"rel-mitochondrial-dna-part-of-mitochondria\",\"source_entity_id\":\"mitochondrial-dna\",\"relationship_type\":\"PART_OF\",\"target_entity_id\":\"mitochondrion\",\"statement\":\"Mitochondria contain mitochondrial DNA.\",\"evidence\":[{\"quote\":\"humans and other complex organisms also have a small amount of DNA in cell structures known as mitochondria.\"}],\"confidence\":0.94,\"origin\":\"SOURCE\"},{\"id\":\"rel-nucleotide-part-of-dna\",\"source_entity_id\":\"nucleotide\",\"relationship_type\":\"PART_OF\",\"target_entity_id\":\"dna\",\"statement\":\"DNA is made of nucleotides.\",\"evidence\":[{\"quote\":\"DNA is made of chemical building blocks called nucleotides.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"rel-phosphate-part-of-nucleotide\",\"source_entity_id\":\"phosphate-group\",\"relationship_type\":\"PART_OF\",\"target_entity_id\":\"nucleotide\",\"statement\":\"A phosphate group is part of a nucleotide.\",\"evidence\":[{\"quote\":\"These building blocks are made of three parts: a phosphate group, a sugar group and one of four types of nitrogen bases.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"rel-sugar-part-of-nucleotide\",\"source_entity_id\":\"sugar-group\",\"relationship_type\":\"PART_OF\",\"target_entity_id\":\"nucleotide\",\"statement\":\"A sugar group is part of a nucleotide.\",\"evidence\":[{\"quote\":\"These building blocks are made of three parts: a phosphate group, a sugar group and one of four types of nitrogen bases.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"rel-base-part-of-nucleotide\",\"source_entity_id\":\"nitrogen-base\",\"relationship_type\":\"PART_OF\",\"target_entity_id\":\"nucleotide\",\"statement\":\"A nitrogen base is part of a nucleotide.\",\"evidence\":[{\"quote\":\"These building blocks are made of three parts: a phosphate group, a sugar group and one of four types of nitrogen bases.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"rel-nucleotide-chain-creates-strand\",\"source_entity_id\":\"nucleotide\",\"relationship_type\":\"CREATES\",\"target_entity_id\":\"dna-strand\",\"statement\":\"Linked nucleotides form a DNA strand.\",\"evidence\":[{\"quote\":\"To form a strand of DNA, nucleotides are linked into chains, with the phosphate and sugar groups alternating.\"}],\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"rel-adenine-is-base\",\"source_entity_id\":\"adenine\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"nitrogen-base\",\"statement\":\"Adenine is a nitrogen base found in DNA nucleotides.\",\"evidence\":[{\"quote\":\"The four types of nitrogen bases found in nucleotides are: adenine (A), thymine (T), guanine (G) and cytosine (C).\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"rel-thymine-is-base\",\"source_entity_id\":\"thymine\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"nitrogen-base\",\"statement\":\"Thymine is a nitrogen base found in DNA nucleotides.\",\"evidence\":[{\"quote\":\"The four types of nitrogen bases found in nucleotides are: adenine (A), thymine (T), guanine (G) and cytosine (C).\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"rel-guanine-is-base\",\"source_entity_id\":\"guanine\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"nitrogen-base\",\"statement\":\"Guanine is a nitrogen base found in DNA nucleotides.\",\"evidence\":[{\"quote\":\"The four types of nitrogen bases found in nucleotides are: adenine (A), thymine (T), guanine (G) and cytosine (C).\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"rel-cytosine-is-base\",\"source_entity_id\":\"cytosine\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"nitrogen-base\",\"statement\":\"Cytosine is a nitrogen base found in DNA nucleotides.\",\"evidence\":[{\"quote\":\"The four types of nitrogen bases found in nucleotides are: adenine (A), thymine (T), guanine (G) and cytosine (C).\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"rel-sequence-determines-instructions\",\"source_entity_id\":\"base-sequence\",\"relationship_type\":\"CAUSES\",\"target_entity_id\":\"biological-instructions\",\"statement\":\"The order of nitrogen bases determines the biological instructions contained in a DNA strand.\",\"evidence\":[{\"quote\":\"The order, or sequence, of these bases determines what biological instructions are contained in a strand of DNA.\"}],\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"rel-human-genome-example\",\"source_entity_id\":\"human-genome\",\"relationship_type\":\"EXAMPLE_OF\",\"target_entity_id\":\"genome\",\"statement\":\"The human genome is an example of a genome.\",\"evidence\":[{\"quote\":\"The complete DNA instruction book, or genome, for a human contains about 3 billion bases and about 20,000 genes on 23 pairs of chromosomes.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"rel-human-genome-part-chromosomes\",\"source_entity_id\":\"chromosome\",\"relationship_type\":\"PART_OF\",\"target_entity_id\":\"human-genome\",\"statement\":\"The human genome includes 23 pairs of chromosomes.\",\"evidence\":[{\"quote\":\"The complete DNA instruction book, or genome, for a human contains about 3 billion bases and about 20,000 genes on 23 pairs of chromosomes.\"}],\"confidence\":0.98,\"origin\":\"SOURCE\"}],\"propositions\":[]}",
+            "type": "output_text"
+          }
+        ],
+        "id": "msg_046da05e10fb3f24016aa667433bbc87d2bfd83c0bf9ca1497",
+        "phase": "final_answer",
+        "role": "assistant",
+        "status": "completed",
+        "type": "message"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "presence_penalty": 0.0,
+    "previous_response_id": null,
+    "prompt": null,
+    "prompt_cache_key": null,
+    "prompt_cache_options": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+      "context": "all_turns",
+      "effort": "low",
+      "generate_summary": null,
+      "mode": "standard",
+      "summary": null
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "status": "completed",
+    "store": false,
+    "temperature": 1.0,
+    "text": {
+      "format": {
+        "description": null,
+        "name": "knowledge_extraction",
+        "schema_": {
+          "additionalProperties": false,
+          "properties": {
+            "claims": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "confidence": {
+                    "maximum": 1,
+                    "minimum": 0,
+                    "type": "number"
+                  },
+                  "evidence": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "quote": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "quote"
+                      ],
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "id": {
+                    "type": "string"
+                  },
+                  "origin": {
+                    "enum": [
+                      "SOURCE",
+                      "INFERRED"
+                    ],
+                    "type": "string"
+                  },
+                  "statement": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "statement",
+                  "evidence",
+                  "confidence",
+                  "origin"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "entities": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "aliases": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "entity_type": {
+                    "enum": [
+                      "CONCEPT",
+                      "OBJECT",
+                      "PROCESS",
+                      "VARIABLE",
+                      "SYSTEM",
+                      "COMPONENT"
+                    ],
+                    "type": "string"
+                  },
+                  "id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "name",
+                  "description",
+                  "entity_type",
+                  "aliases"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "propositions": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "comparison_operator": {
+                    "anyOf": [
+                      {
+                        "enum": [
+                          "GREATER_THAN"
+                        ],
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "confidence": {
+                    "maximum": 1,
+                    "minimum": 0,
+                    "type": "number"
+                  },
+                  "evidence": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "quote": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "quote"
+                      ],
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "origin": {
+                    "enum": [
+                      "SOURCE",
+                      "INFERRED"
+                    ],
+                    "type": "string"
+                  },
+                  "proposition_type": {
+                    "enum": [
+                      "COMPARISON_CONDITION",
+                      "TRANSFER_EVENT"
+                    ],
+                    "type": "string"
+                  },
+                  "relationship_type": {
+                    "enum": [
+                      "IS_A",
+                      "PART_OF",
+                      "CAUSES",
+                      "INCREASES",
+                      "DECREASES",
+                      "ENABLES",
+                      "REQUIRES",
+                      "CONSTRAINS",
+                      "PRECEDES",
+                      "TRANSFORMS_INTO",
+                      "INTERACTS_WITH",
+                      "MEASURED_BY",
+                      "EXAMPLE_OF",
+                      "CONTRADICTS",
+                      "CREATES",
+                      "INDUCES",
+                      "EXERTS_FORCE_ON",
+                      "AFFECTS",
+                      "BINDS_TO",
+                      "TRANSFERS_TO"
+                    ],
+                    "type": "string"
+                  },
+                  "role_bindings": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "entity_id": {
+                          "type": "string"
+                        },
+                        "role": {
+                          "enum": [
+                            "LEFT_OPERAND",
+                            "RIGHT_OPERAND",
+                            "OUTCOME",
+                            "EVENT",
+                            "OBJECT",
+                            "DESTINATION"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "role",
+                        "entity_id"
+                      ],
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "statement": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "proposition_type",
+                  "statement",
+                  "role_bindings",
+                  "relationship_type",
+                  "comparison_operator",
+                  "evidence",
+                  "confidence",
+                  "origin"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "relationships": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "confidence": {
+                    "maximum": 1,
+                    "minimum": 0,
+                    "type": "number"
+                  },
+                  "evidence": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "quote": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "quote"
+                      ],
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "id": {
+                    "type": "string"
+                  },
+                  "origin": {
+                    "enum": [
+                      "SOURCE",
+                      "INFERRED"
+                    ],
+                    "type": "string"
+                  },
+                  "relationship_type": {
+                    "enum": [
+                      "IS_A",
+                      "PART_OF",
+                      "CAUSES",
+                      "INCREASES",
+                      "DECREASES",
+                      "ENABLES",
+                      "REQUIRES",
+                      "CONSTRAINS",
+                      "PRECEDES",
+                      "TRANSFORMS_INTO",
+                      "INTERACTS_WITH",
+                      "MEASURED_BY",
+                      "EXAMPLE_OF",
+                      "CONTRADICTS",
+                      "CREATES",
+                      "INDUCES",
+                      "EXERTS_FORCE_ON",
+                      "AFFECTS",
+                      "BINDS_TO",
+                      "TRANSFERS_TO"
+                    ],
+                    "type": "string"
+                  },
+                  "source_entity_id": {
+                    "type": "string"
+                  },
+                  "statement": {
+                    "type": "string"
+                  },
+                  "target_entity_id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "source_entity_id",
+                  "relationship_type",
+                  "target_entity_id",
+                  "statement",
+                  "evidence",
+                  "confidence",
+                  "origin"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "entities",
+            "claims",
+            "relationships",
+            "propositions"
+          ],
+          "type": "object"
+        },
+        "strict": true,
+        "type": "json_schema"
+      },
+      "verbosity": "medium"
+    },
+    "tool_choice": "auto",
+    "tool_usage": {
+      "image_gen": {
+        "input_tokens": 0,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "total_tokens": 0
+      },
+      "web_search": {
+        "num_requests": 0
+      }
+    },
+    "tools": [],
+    "top_logprobs": 0,
+    "top_p": 0.98,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 3241,
+      "input_tokens_details": {
+        "cache_write_tokens": 463,
+        "cached_tokens": 2775
+      },
+      "output_tokens": 3845,
+      "output_tokens_details": {
+        "reasoning_tokens": 57
+      },
+      "total_tokens": 7086
+    },
+    "user": null
+  },
+  "started_at_utc": "2026-09-13T09:05:05.359865Z"
+}

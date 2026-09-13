@@ -1,0 +1,603 @@
+{
+  "aggregate_replication": {
+    "answers": {
+      "1_sources_passing_deterministic_admission": 3,
+      "2_sources_failing_closed": 3,
+      "3_rejected_object_counts_by_classification": {
+        "AMBIGUOUS": 0,
+        "CONTRACT_GAP": 0,
+        "EXTRACTION_GRANULARITY": 1,
+        "MODEL_ERROR": 3,
+        "VALIDATION_BUG": 0
+      },
+      "4_failures_with_undeclared_but_materially_source_supported_identities": 1,
+      "5_supported_undeclared_identities_that_are_absent_process_or_event_reifications": 0,
+      "6_same_immediate_dangling_identity_mechanism_recurrence_across_two_new_strata": "NO",
+      "7_model_errors_more_frequent_than_extraction_granularity_failures": "YES (3 vs 1)",
+      "8_contract_gap_or_validation_bug_evidence": "NO",
+      "9_narrow_extraction_contract_alignment_signal": "INSUFFICIENT_FOR_SYSTEMATIC_ALIGNMENT; broader evidence is heterogeneous with a model-error majority"
+    },
+    "classification_counts": {
+      "AMBIGUOUS": 0,
+      "CONTRACT_GAP": 0,
+      "EXTRACTION_GRANULARITY": 1,
+      "MODEL_ERROR": 3,
+      "VALIDATION_BUG": 0
+    },
+    "rejected_object_count": 4,
+    "source_status_counts": {
+      "FAILED_CLOSED": 3,
+      "PASS": 3
+    }
+  },
+  "billing": {
+    "cost_amount": null,
+    "cost_note": "Provider response metadata supplied token usage and developer payer identity but no monetary amount. No cost was estimated.",
+    "payer": "developer"
+  },
+  "browser_integrity": {
+    "emitted_browser_artifact_count": 0,
+    "protected_spec038_baseline_preserved": true,
+    "status": "PASS",
+    "viewer_status": "NOT_APPLICABLE_NO_EMITTED_BROWSER_ARTIFACT"
+  },
+  "deviations": [],
+  "execution": {
+    "actual_order": [
+      "nasa-solar-system-formation-2026",
+      "epa-ecological-processes-2026",
+      "doe-iron-platinum-atomic-structure-2017",
+      "nhgri-dna-fact-sheet-2020",
+      "fhwa-traffic-bottleneck-concepts-2016",
+      "nist-measurement-uncertainty-2025"
+    ],
+    "authoritative_provider_ledger_calls_started": 6,
+    "external_source_retrieval_or_enrichment": 0,
+    "follow_up_calls": 0,
+    "frozen_harness_reported_live_calls_after_attempt_construction": 4,
+    "frozen_order_preserved": true,
+    "harness_counter_note": "The frozen harness increments live_model_or_external_calls only after extract_once returns a BlindExtractionAttempt. Two provider responses failed exact-evidence resolution inside extract_once, so harness-report.json records 4 while the independently written provider ledger and six complete raw responses authoritatively record all 6 calls. The frozen harness was not changed.",
+    "hidden_retries": 0,
+    "implementation_adaptations_between_calls": 0,
+    "maximum_authorized_calls": 6,
+    "provider_calls_started": 6,
+    "repair_calls": 0,
+    "sdk_retries": 0,
+    "semantic_retries": 0,
+    "source_specific_prompt_edits": 0,
+    "store": false
+  },
+  "framework_evidence": {
+    "A_SYSTEMATIC_ALIGNMENT_SIGNAL": "NOT_SATISFIED: only one supported undeclared identity and it is not a process/event reification; no cross-stratum recurrence",
+    "B_HETEROGENEOUS_FAILURES": "SUPPORTED: exact-quote fabrication, predicate misuse, and one omission of a supported entity are distinct mechanisms",
+    "C_MODEL_ERROR_DOMINATED": "NUMERICALLY_SUPPORTED (3 of 4 rejected objects), while final architectural interpretation remains owner-reserved",
+    "D_CLEAN_REPLICATION": "NOT_SATISFIED: three sources failed closed",
+    "owner_final_architectural_decision": "PENDING"
+  },
+  "frozen_identity": {
+    "frozen_implementation_commit": "5622df131dc71346d5890f42ce16fe1e3e55f33a",
+    "implementation_files_verified": true,
+    "manifest_sha256": "beaf3df4a941afc7fadf2abf13543affeae798e3d14486798cbb0060fccdc57e",
+    "no_source_specific_adaptation": true,
+    "prompt_version": "spec-010-v1",
+    "source_packet_sha256": "85f7a7be47fa827799d532ab7ca5edc03b359162894dc2ee4e72a750de28e52b",
+    "spec038_aggregate_sha256": "453f7d2a233224628e03f5e1449650ec20bbff04ffae5ea07e9f6137cf54fd6e",
+    "spec042_aggregate_sha256": "523abe4b6fd47d531650c9a48f00b65d06dccbe947af4af1d04cad3678ef5200",
+    "spec043_report_sha256": "bbc42f9ece6031c971fea37b8d59fef8701d4fcd1dfd143acbfe72a184bdbbfc",
+    "verified": true
+  },
+  "objective_result": "PASS_WITH_THREE_VALID_FAIL_CLOSED_SOURCES",
+  "outcomes": [
+    {
+      "admitted_counts": {
+        "entities": 19,
+        "propositions": 0,
+        "relationships": 10
+      },
+      "call": {
+        "duration_ms": 20215.38,
+        "http_request_id": "req_6fa9f369970b4f25b10eaa79982fc8ab",
+        "model": "gpt-5.6-luna",
+        "provider_response_id": "resp_0c4819210955efd2016aa66703084c87d296e9ae86c12f49a2",
+        "usage": {
+          "input_tokens": 3325,
+          "input_tokens_details": {
+            "cache_write_tokens": 3322,
+            "cached_tokens": 0
+          },
+          "output_tokens": 2122,
+          "output_tokens_details": {
+            "reasoning_tokens": 166
+          },
+          "total_tokens": 5447
+        }
+      },
+      "detected_structures": {
+        "count": 4,
+        "types": {
+          "CAUSAL_PATH": 1,
+          "HIERARCHY": 3
+        }
+      },
+      "proposal_counts": {
+        "claims": 8,
+        "entities": 19,
+        "propositions": 0,
+        "relationships": 10
+      },
+      "rejected_semantic_object_count": 0,
+      "renderer_bindings": {
+        "SPEC038_COMPATIBLE_PLAN": 29,
+        "executable_browser_artifacts": 0
+      },
+      "representation_decisions": {
+        "count": 29,
+        "strategies": {
+          "CAUSAL_MECHANISM": 4,
+          "CONCISE_PROSE": 9,
+          "FOCUSED_RELATIONSHIP": 10,
+          "HIERARCHY_COMPOSITION": 6
+        },
+        "sufficiency": {
+          "INSUFFICIENT_SUPPORTED_STRUCTURE": 9,
+          "SUFFICIENT_TRUSTED_STRUCTURE": 20
+        }
+      },
+      "source_id": "nasa-solar-system-formation-2026",
+      "source_sha256": "c0cb2519673b8f3ef23c0be2856e03790f53d44971cbff09d593190ab3fa155d",
+      "status": "PASS"
+    },
+    {
+      "admitted_counts": {
+        "entities": 29,
+        "propositions": 0,
+        "relationships": 16
+      },
+      "call": {
+        "duration_ms": 23325.15,
+        "http_request_id": "req_e07c59832e794a54bbe5d05d0132c7a4",
+        "model": "gpt-5.6-luna",
+        "provider_response_id": "resp_045d21ef1a42db13016aa66715ab5087d2a52c8300604fd928",
+        "usage": {
+          "input_tokens": 3253,
+          "input_tokens_details": {
+            "cache_write_tokens": 475,
+            "cached_tokens": 2775
+          },
+          "output_tokens": 2950,
+          "output_tokens_details": {
+            "reasoning_tokens": 34
+          },
+          "total_tokens": 6203
+        }
+      },
+      "detected_structures": {
+        "count": 5,
+        "types": {
+          "CAUSAL_PATH": 4,
+          "HIERARCHY": 1
+        }
+      },
+      "proposal_counts": {
+        "claims": 8,
+        "entities": 29,
+        "propositions": 0,
+        "relationships": 16
+      },
+      "rejected_semantic_object_count": 0,
+      "renderer_bindings": {
+        "SPEC038_COMPATIBLE_PLAN": 45,
+        "executable_browser_artifacts": 0
+      },
+      "representation_decisions": {
+        "count": 45,
+        "strategies": {
+          "CAUSAL_MECHANISM": 5,
+          "CONCISE_PROSE": 21,
+          "FOCUSED_RELATIONSHIP": 16,
+          "HIERARCHY_COMPOSITION": 3
+        },
+        "sufficiency": {
+          "INSUFFICIENT_SUPPORTED_STRUCTURE": 21,
+          "SUFFICIENT_TRUSTED_STRUCTURE": 24
+        }
+      },
+      "source_id": "epa-ecological-processes-2026",
+      "source_sha256": "70e7e3d20325dd5d22e9cf4484934419447907ba9f6cf5a4dfd65ddcbfa80ad5",
+      "status": "PASS"
+    },
+    {
+      "call": {
+        "duration_ms": 20508.425,
+        "http_request_id": "req_db74c44b8744484d871f95444a0e4b62",
+        "model": "gpt-5.6-luna",
+        "provider_response_id": "resp_015a5362c58e9b95016aa6672d032087d29cb8c0ed0a7cd324",
+        "usage": {
+          "input_tokens": 3256,
+          "input_tokens_details": {
+            "cache_write_tokens": 478,
+            "cached_tokens": 2775
+          },
+          "output_tokens": 2444,
+          "output_tokens_details": {
+            "reasoning_tokens": 166
+          },
+          "total_tokens": 5700
+        }
+      },
+      "failure": {
+        "error": "evidence quote was not found in source: 'They identified rich structural variety and chemical order/disorder with unprecedented 3D detail including atomic composition, grain boundaries, anti-phase boundaries, anti-site point defects and swap defects.'",
+        "error_type": "ValidationError",
+        "retry_performed": false,
+        "stage": "EXTRACTION_BOUNDARY",
+        "status": "FAILED_CLOSED"
+      },
+      "proposal_counts": {
+        "claims": 9,
+        "entities": 19,
+        "propositions": 0,
+        "relationships": 9
+      },
+      "rejected_semantic_object_count": 1,
+      "rejection_classifications": {
+        "MODEL_ERROR": 1
+      },
+      "source_id": "doe-iron-platinum-atomic-structure-2017",
+      "source_sha256": "e9d2260c9980239431fc195e7dc687afea93598af4f28d774ed5e4c4317f9e1e",
+      "status": "FAILED_CLOSED"
+    },
+    {
+      "call": {
+        "duration_ms": 29264.066,
+        "http_request_id": "req_ccdb221e9a194f028af278f0b45e9842",
+        "model": "gpt-5.6-luna",
+        "provider_response_id": "resp_046da05e10fb3f24016aa6674188c887d2a21e5b1942d0347b",
+        "usage": {
+          "input_tokens": 3241,
+          "input_tokens_details": {
+            "cache_write_tokens": 463,
+            "cached_tokens": 2775
+          },
+          "output_tokens": 3845,
+          "output_tokens_details": {
+            "reasoning_tokens": 57
+          },
+          "total_tokens": 7086
+        }
+      },
+      "failure": {
+        "error": "relationship 'rel-dna-is-molecule' references unknown entities: ['molecule']",
+        "error_type": "ValidationError",
+        "retry_performed": false,
+        "stage": "GROUNDING_AND_SEMANTIC_VALIDATION",
+        "status": "FAILED_CLOSED"
+      },
+      "proposal_counts": {
+        "claims": 7,
+        "entities": 35,
+        "propositions": 0,
+        "relationships": 23
+      },
+      "rejected_semantic_object_count": 1,
+      "rejection_classifications": {
+        "EXTRACTION_GRANULARITY": 1
+      },
+      "source_id": "nhgri-dna-fact-sheet-2020",
+      "source_sha256": "54e2147221cf186fe1b4f965422c69e815f986a7d009eddae9c01bf32ec25f89",
+      "status": "FAILED_CLOSED"
+    },
+    {
+      "admitted_counts": {
+        "entities": 24,
+        "propositions": 0,
+        "relationships": 16
+      },
+      "call": {
+        "duration_ms": 23953.423,
+        "http_request_id": "req_24b322103fb240dba0c93c35ed0352da",
+        "model": "gpt-5.6-luna",
+        "provider_response_id": "resp_0b8a40b4ac87fc69016aa6675ece6487d290fae5680530b46c",
+        "usage": {
+          "input_tokens": 3412,
+          "input_tokens_details": {
+            "cache_write_tokens": 634,
+            "cached_tokens": 2775
+          },
+          "output_tokens": 3085,
+          "output_tokens_details": {
+            "reasoning_tokens": 59
+          },
+          "total_tokens": 6497
+        }
+      },
+      "detected_structures": {
+        "count": 5,
+        "types": {
+          "CAUSAL_PATH": 3,
+          "HIERARCHY": 2
+        }
+      },
+      "proposal_counts": {
+        "claims": 10,
+        "entities": 24,
+        "propositions": 0,
+        "relationships": 16
+      },
+      "rejected_semantic_object_count": 0,
+      "renderer_bindings": {
+        "SPEC038_COMPATIBLE_PLAN": 40,
+        "executable_browser_artifacts": 0
+      },
+      "representation_decisions": {
+        "count": 40,
+        "strategies": {
+          "CAUSAL_MECHANISM": 5,
+          "CONCISE_PROSE": 10,
+          "FOCUSED_RELATIONSHIP": 16,
+          "HIERARCHY_COMPOSITION": 9
+        },
+        "sufficiency": {
+          "INSUFFICIENT_SUPPORTED_STRUCTURE": 10,
+          "SUFFICIENT_TRUSTED_STRUCTURE": 30
+        }
+      },
+      "source_id": "fhwa-traffic-bottleneck-concepts-2016",
+      "source_sha256": "1fd7e9851839f5f35cd2a231cd3ce5aea8196ec85cabd04694f681c063ea4345",
+      "status": "PASS"
+    },
+    {
+      "call": {
+        "duration_ms": 10301.996,
+        "http_request_id": "req_1b8a3fd09e0b41b7b9d652b693208355",
+        "model": "gpt-5.6-luna",
+        "provider_response_id": "resp_08504b78cb81d33d016aa66776cbf487d2abd0fa29a90a6778",
+        "usage": {
+          "input_tokens": 3187,
+          "input_tokens_details": {
+            "cache_write_tokens": 409,
+            "cached_tokens": 2775
+          },
+          "output_tokens": 2533,
+          "output_tokens_details": {
+            "reasoning_tokens": 68
+          },
+          "total_tokens": 5720
+        }
+      },
+      "failure": {
+        "error": "evidence quote was not found in source: 'the measurand) has a numerical magnitude and a reference'",
+        "error_type": "ValidationError",
+        "retry_performed": false,
+        "stage": "EXTRACTION_BOUNDARY",
+        "status": "FAILED_CLOSED"
+      },
+      "proposal_counts": {
+        "claims": 7,
+        "entities": 16,
+        "propositions": 0,
+        "relationships": 15
+      },
+      "rejected_semantic_object_count": 2,
+      "rejection_classifications": {
+        "MODEL_ERROR": 2
+      },
+      "source_id": "nist-measurement-uncertainty-2025",
+      "source_sha256": "b3ae508f3982dfdd89f41a1d9ca59eb1f658b1648e3fae35168feba212046730",
+      "status": "FAILED_CLOSED"
+    }
+  ],
+  "owner_review": {
+    "promotion": "NOT_AUTHORIZED",
+    "question": "Across six new unrelated blind sources, did the SPEC-043 extraction-granularity failure pattern replicate strongly enough to justify a narrow extraction-to-contract alignment experiment, or does the broader evidence point elsewhere?",
+    "state": "OWNER_REVIEW",
+    "verdict": "PENDING"
+  },
+  "provenance": {
+    "complete_for_all_sources": true,
+    "exact_frozen_sources_preserved": true,
+    "full_raw_provider_responses_preserved": true,
+    "request_and_response_ids_preserved": true,
+    "request_metadata_preserved": true,
+    "run_histories_preserved": true
+  },
+  "rejection_classifications": [
+    {
+      "classification": {
+        "confidence": "HIGH",
+        "primary_classification": "MODEL_ERROR",
+        "rationale": "The claim meaning is supported, but its asserted evidence quote deletes two parenthetical passages and therefore does not occur verbatim in the frozen source. Evidence fidelity is model output, not a contract or validator defect.",
+        "source_support_assessment": "STATEMENT_SUPPORTED_BUT_PROPOSED_EVIDENCE_NOT_VERBATIM"
+      },
+      "invalid_evidence_quotes": [
+        "They identified rich structural variety and chemical order/disorder with unprecedented 3D detail including atomic composition, grain boundaries, anti-phase boundaries, anti-site point defects and swap defects."
+      ],
+      "missing_or_invalid_identities": [],
+      "object_id": "claim-4",
+      "object_kind": "CLAIM",
+      "proposed_object": {
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "quote": "They identified rich structural variety and chemical order/disorder with unprecedented 3D detail including atomic composition, grain boundaries, anti-phase boundaries, anti-site point defects and swap defects."
+          }
+        ],
+        "id": "claim-4",
+        "origin": "SOURCE",
+        "statement": "The nanoparticle exhibited rich structural variety and chemical order/disorder, including several types of boundaries and point defects."
+      },
+      "provider_output_location": "claims[3]",
+      "source_evidence": [
+        {
+          "assessment": "SUPPORTS",
+          "document_id": "text-e9d2260c99802394",
+          "end_char": 1896,
+          "quote": "They identified rich structural variety and chemical order/disorder with unprecedented 3D detail including atomic composition, grain boundaries, anti-phase boundaries (where atoms are arranged in the opposite order of the perfect, parent crystal), anti-site point defects and swap defects (where individual or a pair of nearest-neighbor atoms switch places).",
+          "start_char": 1538
+        }
+      ],
+      "source_id": "doe-iron-platinum-atomic-structure-2017",
+      "source_sha256": "e9d2260c9980239431fc195e7dc687afea93598af4f28d774ed5e4c4317f9e1e",
+      "validator": {
+        "exact_rejection_reason": "evidence quote was not found in source: 'They identified rich structural variety and chemical order/disorder with unprecedented 3D detail including atomic composition, grain boundaries, anti-phase boundaries, anti-site point defects and swap defects.'",
+        "failure_stage": "EXTRACTION_BOUNDARY",
+        "observed_in_run": true
+      }
+    },
+    {
+      "classification": {
+        "confidence": "HIGH",
+        "primary_classification": "EXTRACTION_GRANULARITY",
+        "rationale": "The source explicitly states that DNA is a molecule, and the IS_A direction is faithful. The extraction used molecule as an endpoint but omitted that materially supported concept from the entity array.",
+        "source_support_assessment": "FULLY_SUPPORTED"
+      },
+      "invalid_evidence_quotes": [],
+      "missing_or_invalid_identities": [
+        "molecule"
+      ],
+      "object_id": "rel-dna-is-molecule",
+      "object_kind": "RELATIONSHIP",
+      "proposed_object": {
+        "confidence": 0.99,
+        "evidence": [
+          {
+            "quote": "Deoxyribonucleic acid (DNA) is a molecule that contains the biological instructions that make each species unique."
+          }
+        ],
+        "id": "rel-dna-is-molecule",
+        "origin": "SOURCE",
+        "relationship_type": "IS_A",
+        "source_entity_id": "dna",
+        "statement": "DNA is a molecule.",
+        "target_entity_id": "molecule"
+      },
+      "provider_output_location": "relationships[0]",
+      "source_evidence": [
+        {
+          "assessment": "SUPPORTS",
+          "document_id": "text-54e2147221cf186f",
+          "end_char": 114,
+          "quote": "Deoxyribonucleic acid (DNA) is a molecule that contains the biological instructions that make each species unique.",
+          "start_char": 0
+        }
+      ],
+      "source_id": "nhgri-dna-fact-sheet-2020",
+      "source_sha256": "54e2147221cf186fe1b4f965422c69e815f986a7d009eddae9c01bf32ec25f89",
+      "validator": {
+        "exact_rejection_reason": "relationship 'rel-dna-is-molecule' references unknown entities: ['molecule']",
+        "failure_stage": "GROUNDING_AND_SEMANTIC_VALIDATION",
+        "observed_in_run": true
+      }
+    },
+    {
+      "classification": {
+        "confidence": "HIGH",
+        "primary_classification": "MODEL_ERROR",
+        "rationale": "The source supports that a measurand has a magnitude, but the evidence string is not verbatim and PART_OF from measurand to numerical-magnitude reverses the containment implied by the predicate. The validator correctly rejected the non-verbatim evidence before semantic admission.",
+        "source_support_assessment": "STATEMENT_SUPPORTED_BUT_EVIDENCE_AND_PREDICATE_INVALID"
+      },
+      "invalid_evidence_quotes": [
+        "the measurand) has a numerical magnitude and a reference"
+      ],
+      "missing_or_invalid_identities": [],
+      "object_id": "measurand-magnitude",
+      "object_kind": "RELATIONSHIP",
+      "proposed_object": {
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "quote": "the measurand) has a numerical magnitude and a reference"
+          }
+        ],
+        "id": "measurand-magnitude",
+        "origin": "SOURCE",
+        "relationship_type": "PART_OF",
+        "source_entity_id": "measurand",
+        "statement": "The measurand has a numerical magnitude.",
+        "target_entity_id": "numerical-magnitude"
+      },
+      "provider_output_location": "relationships[2]",
+      "source_evidence": [
+        {
+          "assessment": "SUPPORTS",
+          "document_id": "text-b3ae508f3982dfdd",
+          "end_char": 380,
+          "quote": "This property that is the object of measurement (measurand) has a numerical magnitude and a reference that gives meaning to that numerical magnitude: for example, the mass of the International Prototype Kilogram is 1 kg.",
+          "start_char": 160
+        }
+      ],
+      "source_id": "nist-measurement-uncertainty-2025",
+      "source_sha256": "b3ae508f3982dfdd89f41a1d9ca59eb1f658b1648e3fae35168feba212046730",
+      "validator": {
+        "exact_rejection_reason": "evidence quote was not found in source: 'the measurand) has a numerical magnitude and a reference'",
+        "failure_stage": "EXTRACTION_BOUNDARY",
+        "observed_in_run": true
+      }
+    },
+    {
+      "classification": {
+        "confidence": "HIGH",
+        "primary_classification": "MODEL_ERROR",
+        "rationale": "The source supports an association, but the proposed excerpt is not an exact source substring and PART_OF does not faithfully express merely being associated with a measurement result. This is erroneous model output, not a contract or validator defect.",
+        "source_support_assessment": "STATEMENT_SUPPORTED_BUT_EVIDENCE_AND_PREDICATE_INVALID"
+      },
+      "invalid_evidence_quotes": [
+        "a parameter, associated with the result of a measurement"
+      ],
+      "missing_or_invalid_identities": [],
+      "object_id": "measurement-uncertainty-associated-result",
+      "object_kind": "RELATIONSHIP",
+      "proposed_object": {
+        "confidence": 0.96,
+        "evidence": [
+          {
+            "quote": "a parameter, associated with the result of a measurement"
+          }
+        ],
+        "id": "measurement-uncertainty-associated-result",
+        "origin": "SOURCE",
+        "relationship_type": "PART_OF",
+        "source_entity_id": "measurement-uncertainty",
+        "statement": "Measurement uncertainty is associated with the result of a measurement.",
+        "target_entity_id": "measurement-value"
+      },
+      "provider_output_location": "relationships[8]",
+      "source_evidence": [
+        {
+          "assessment": "SUPPORTS",
+          "document_id": "text-b3ae508f3982dfdd",
+          "end_char": 1142,
+          "quote": "The GUM defines measurement uncertainty as a \"parameter, associated with the result of a measurement, that characterizes the dispersion of the values that could reasonably be attributed to the measurand''.",
+          "start_char": 937
+        }
+      ],
+      "source_id": "nist-measurement-uncertainty-2025",
+      "source_sha256": "b3ae508f3982dfdd89f41a1d9ca59eb1f658b1648e3fae35168feba212046730",
+      "validator": {
+        "exact_rejection_reason": "evidence quote was not found in source: 'a parameter, associated with the result of a measurement'",
+        "failure_stage": "EXTRACTION_BOUNDARY",
+        "observed_in_run": false,
+        "offline_scan_note": "The unchanged validator stopped at relationships[2]. Exhaustive offline inspection found this later object violates the same exact-quote rule; no semantic output was modified or re-executed."
+      }
+    }
+  ],
+  "rejections_artifact": "rejection-classifications.json",
+  "schema": "spec-045-blind-replication-live-execution-report-v1",
+  "source_count": 6,
+  "tests": {
+    "complete_offline_suite": "560 passed",
+    "control_plane": "13 passed",
+    "focused": "60 passed",
+    "git_diff_check": "PASS",
+    "json_validation": "102 artifacts parsed before machine-gate creation; PASS",
+    "secret_safety": "PASS"
+  },
+  "usage_totals": {
+    "cache_write_input_tokens": 5781,
+    "cached_input_tokens": 13875,
+    "duration_ms": 127568.44,
+    "input_tokens": 19674,
+    "output_tokens": 16979,
+    "reasoning_tokens": 550,
+    "total_tokens": 36653
+  }
+}

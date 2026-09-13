@@ -1,0 +1,195 @@
+{
+  "detector_version": "spec-004-v1",
+  "metadata": {
+    "input_relationship_count": 16,
+    "logical_relationship_count": 16,
+    "maximum_causal_path_edges": 5,
+    "structure_counts": {
+      "CAUSAL_PATH": 3,
+      "DEPENDENCY_CHAIN": 0,
+      "FEEDBACK_CANDIDATE": 0,
+      "HIERARCHY": 2,
+      "PROCESS_CHAIN": 0
+    }
+  },
+  "source_document_id": "text-1fd7e9851839f5f3",
+  "structures": [
+    {
+      "entity_ids": [
+        "design-deficiency",
+        "bottleneck",
+        "downstream-free-flow"
+      ],
+      "id": "structure-causal-path-63ea43efd049f0ad",
+      "metadata": {
+        "edge_count": 2,
+        "supporting_relationship_ids_by_edge": [
+          [
+            "rel-12"
+          ],
+          [
+            "rel-02"
+          ]
+        ]
+      },
+      "relationship_ids": [
+        "rel-12",
+        "rel-02"
+      ],
+      "relationship_types": [
+        "CAUSES",
+        "CAUSES"
+      ],
+      "structure_type": "CAUSAL_PATH"
+    },
+    {
+      "entity_ids": [
+        "design-deficiency",
+        "bottleneck",
+        "recurring-congestion"
+      ],
+      "id": "structure-causal-path-c0db501a09e7bd64",
+      "metadata": {
+        "edge_count": 2,
+        "supporting_relationship_ids_by_edge": [
+          [
+            "rel-12"
+          ],
+          [
+            "rel-03"
+          ]
+        ]
+      },
+      "relationship_ids": [
+        "rel-12",
+        "rel-03"
+      ],
+      "relationship_types": [
+        "CAUSES",
+        "CAUSES"
+      ],
+      "structure_type": "CAUSAL_PATH"
+    },
+    {
+      "entity_ids": [
+        "design-deficiency",
+        "bottleneck",
+        "upstream-queue"
+      ],
+      "id": "structure-causal-path-4dadc63ce0478205",
+      "metadata": {
+        "edge_count": 2,
+        "supporting_relationship_ids_by_edge": [
+          [
+            "rel-12"
+          ],
+          [
+            "rel-01"
+          ]
+        ]
+      },
+      "relationship_ids": [
+        "rel-12",
+        "rel-01"
+      ],
+      "relationship_types": [
+        "CAUSES",
+        "CAUSES"
+      ],
+      "structure_type": "CAUSAL_PATH"
+    },
+    {
+      "entity_ids": [
+        "bad-weather",
+        "nonrecurring-congestion",
+        "special-events",
+        "traffic-incidents",
+        "work-zones"
+      ],
+      "id": "structure-hierarchy-9c393fb1e31ba7cf",
+      "metadata": {
+        "contains_cycle": false,
+        "hierarchy_relationship_type": "EXAMPLE_OF",
+        "leaves": [
+          "bad-weather",
+          "special-events",
+          "traffic-incidents",
+          "work-zones"
+        ],
+        "roots": [
+          "nonrecurring-congestion"
+        ],
+        "supporting_relationship_ids_by_edge": [
+          [
+            "rel-06"
+          ],
+          [
+            "rel-05"
+          ],
+          [
+            "rel-08"
+          ],
+          [
+            "rel-07"
+          ]
+        ]
+      },
+      "relationship_ids": [
+        "rel-06",
+        "rel-05",
+        "rel-08",
+        "rel-07"
+      ],
+      "relationship_types": [
+        "EXAMPLE_OF",
+        "EXAMPLE_OF",
+        "EXAMPLE_OF",
+        "EXAMPLE_OF"
+      ],
+      "structure_type": "HIERARCHY"
+    },
+    {
+      "entity_ids": [
+        "free-flow",
+        "kerner-three-phase-theory",
+        "synchronized-flow",
+        "wide-moving-jams"
+      ],
+      "id": "structure-hierarchy-fdab8d08a9e760b5",
+      "metadata": {
+        "contains_cycle": false,
+        "hierarchy_relationship_type": "IS_A",
+        "leaves": [
+          "free-flow",
+          "synchronized-flow",
+          "wide-moving-jams"
+        ],
+        "roots": [
+          "kerner-three-phase-theory"
+        ],
+        "supporting_relationship_ids_by_edge": [
+          [
+            "rel-10"
+          ],
+          [
+            "rel-09"
+          ],
+          [
+            "rel-11"
+          ]
+        ]
+      },
+      "relationship_ids": [
+        "rel-10",
+        "rel-09",
+        "rel-11"
+      ],
+      "relationship_types": [
+        "IS_A",
+        "IS_A",
+        "IS_A"
+      ],
+      "structure_type": "HIERARCHY"
+    }
+  ]
+}

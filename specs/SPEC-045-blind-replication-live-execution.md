@@ -1,6 +1,6 @@
 # SPEC-045 — Blind Replication Live Execution
 
-Status: `APPROVED_FOR_IMPLEMENTATION`
+Status: `IMPLEMENTED_AWAITING_REVIEW`
 Authority: `LIVE_CALLS_EXPLICITLY_BOUNDED`
 Human gate: `OWNER_REVIEW`
 Promotion: `NOT_AUTHORIZED`

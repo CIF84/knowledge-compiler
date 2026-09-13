@@ -1,0 +1,173 @@
+{
+  "detector_version": "spec-004-v1",
+  "metadata": {
+    "input_relationship_count": 16,
+    "logical_relationship_count": 16,
+    "maximum_causal_path_edges": 5,
+    "structure_counts": {
+      "CAUSAL_PATH": 4,
+      "DEPENDENCY_CHAIN": 0,
+      "FEEDBACK_CANDIDATE": 0,
+      "HIERARCHY": 1,
+      "PROCESS_CHAIN": 0
+    }
+  },
+  "source_document_id": "text-70e7e3d20325dd5d",
+  "structures": [
+    {
+      "entity_ids": [
+        "human-activities",
+        "ecological-processes",
+        "biodiversity"
+      ],
+      "id": "structure-causal-path-0036ea6a0620d93a",
+      "metadata": {
+        "edge_count": 2,
+        "supporting_relationship_ids_by_edge": [
+          [
+            "rel-11"
+          ],
+          [
+            "rel-9"
+          ]
+        ]
+      },
+      "relationship_ids": [
+        "rel-11",
+        "rel-9"
+      ],
+      "relationship_types": [
+        "AFFECTS",
+        "AFFECTS"
+      ],
+      "structure_type": "CAUSAL_PATH"
+    },
+    {
+      "entity_ids": [
+        "human-activities",
+        "ecological-processes",
+        "soil-formation"
+      ],
+      "id": "structure-causal-path-8a6dcc815ab71f7e",
+      "metadata": {
+        "edge_count": 2,
+        "supporting_relationship_ids_by_edge": [
+          [
+            "rel-11"
+          ],
+          [
+            "rel-6"
+          ]
+        ]
+      },
+      "relationship_ids": [
+        "rel-11",
+        "rel-6"
+      ],
+      "relationship_types": [
+        "AFFECTS",
+        "CAUSES"
+      ],
+      "structure_type": "CAUSAL_PATH"
+    },
+    {
+      "entity_ids": [
+        "natural-forces",
+        "ecological-processes",
+        "biodiversity"
+      ],
+      "id": "structure-causal-path-d6f10d816834322c",
+      "metadata": {
+        "edge_count": 2,
+        "supporting_relationship_ids_by_edge": [
+          [
+            "rel-10"
+          ],
+          [
+            "rel-9"
+          ]
+        ]
+      },
+      "relationship_ids": [
+        "rel-10",
+        "rel-9"
+      ],
+      "relationship_types": [
+        "AFFECTS",
+        "AFFECTS"
+      ],
+      "structure_type": "CAUSAL_PATH"
+    },
+    {
+      "entity_ids": [
+        "natural-forces",
+        "ecological-processes",
+        "soil-formation"
+      ],
+      "id": "structure-causal-path-a3a198bd8193a8c8",
+      "metadata": {
+        "edge_count": 2,
+        "supporting_relationship_ids_by_edge": [
+          [
+            "rel-10"
+          ],
+          [
+            "rel-6"
+          ]
+        ]
+      },
+      "relationship_ids": [
+        "rel-10",
+        "rel-6"
+      ],
+      "relationship_types": [
+        "AFFECTS",
+        "CAUSES"
+      ],
+      "structure_type": "CAUSAL_PATH"
+    },
+    {
+      "entity_ids": [
+        "carbon-cycling",
+        "ecological-processes",
+        "nutrient-cycling",
+        "primary-production"
+      ],
+      "id": "structure-hierarchy-6ed2433ed97151c9",
+      "metadata": {
+        "contains_cycle": false,
+        "hierarchy_relationship_type": "IS_A",
+        "leaves": [
+          "carbon-cycling",
+          "nutrient-cycling",
+          "primary-production"
+        ],
+        "roots": [
+          "ecological-processes"
+        ],
+        "supporting_relationship_ids_by_edge": [
+          [
+            "rel-4"
+          ],
+          [
+            "rel-5"
+          ],
+          [
+            "rel-1"
+          ]
+        ]
+      },
+      "relationship_ids": [
+        "rel-4",
+        "rel-5",
+        "rel-1"
+      ],
+      "relationship_types": [
+        "IS_A",
+        "IS_A",
+        "IS_A"
+      ],
+      "structure_type": "HIERARCHY"
+    }
+  ]
+}

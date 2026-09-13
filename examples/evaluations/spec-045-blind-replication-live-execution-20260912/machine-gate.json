@@ -1,0 +1,51 @@
+{
+  "checks": {
+    "all_failures_and_rejections_preserved": true,
+    "all_provider_request_and_response_ids_preserved": true,
+    "all_retry_and_follow_up_classes_zero": true,
+    "browser_console_clean_for_emitted_artifacts": "NOT_APPLICABLE_NO_EMITTED_BROWSER_ARTIFACT",
+    "canonical_report_uses_authoritative_provider_ledger_count": true,
+    "diagnostic_classifications_use_only_frozen_spec043_taxonomy": true,
+    "execution_order_matches_frozen_order": true,
+    "external_source_retrieval_or_enrichment_zero": true,
+    "frozen_harness_counter_limitation_preserved_and_disclosed": true,
+    "frozen_implementation_identity_preserved": true,
+    "git_diff_check": "PASS",
+    "json_validation": "PASS",
+    "no_implementation_adaptation_between_calls": true,
+    "no_source_specific_adaptation": true,
+    "one_call_maximum_per_source": true,
+    "prompt_version_preserved": true,
+    "protected_spec038_baseline_preserved": true,
+    "protected_spec042_evidence_preserved": true,
+    "protected_spec043_report_preserved": true,
+    "provenance_complete": true,
+    "provider_calls_equal_authorized_sources": true,
+    "provider_calls_within_authorized_maximum": true,
+    "raw_provider_responses_complete": true,
+    "secret_safety": "PASS",
+    "source_hashes_match_frozen_packet": true,
+    "store_false": true
+  },
+  "objective_result": "PASS_WITH_THREE_VALID_FAIL_CLOSED_SOURCES",
+  "owner_verdict": "PENDING",
+  "promotion": "NOT_AUTHORIZED",
+  "schema": "spec-045-machine-gate-v1",
+  "tests": [
+    {
+      "command": ".venv/bin/pytest -q tests/test_blind_evaluation_harness.py tests/test_semantic_representation_compiler.py tests/test_diagram_canvas.py",
+      "passed": 60,
+      "status": "PASS"
+    },
+    {
+      "command": ".venv/bin/pytest -q tests/test_control_plane.py",
+      "passed": 13,
+      "status": "PASS"
+    },
+    {
+      "command": ".venv/bin/pytest -q",
+      "passed": 560,
+      "status": "PASS"
+    }
+  ]
+}

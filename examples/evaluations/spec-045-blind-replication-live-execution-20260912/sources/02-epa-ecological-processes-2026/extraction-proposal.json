@@ -1,0 +1,613 @@
+{
+  "claims": [
+    {
+      "confidence": 0.99,
+      "evidence": [
+        {
+          "document_id": "text-70e7e3d20325dd5d",
+          "end_char": 92,
+          "quote": "Ecological systems are sustained by a number of biological, physical, and chemical processes",
+          "start_char": 0
+        }
+      ],
+      "id": "claim-1",
+      "origin": "SOURCE",
+      "statement": "Ecological systems are sustained by biological, physical, and chemical processes."
+    },
+    {
+      "confidence": 0.99,
+      "evidence": [
+        {
+          "document_id": "text-70e7e3d20325dd5d",
+          "end_char": 573,
+          "quote": "Collectively, ecological processes produce organic matter, transfer carbon and nutrients, drive soil formation, and enable organisms to reproduce.",
+          "start_char": 427
+        }
+      ],
+      "id": "claim-2",
+      "origin": "SOURCE",
+      "statement": "Ecological processes collectively produce organic matter, transfer carbon and nutrients, drive soil formation, and enable organisms to reproduce."
+    },
+    {
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "document_id": "text-70e7e3d20325dd5d",
+          "end_char": 751,
+          "quote": "providing natural resources, such as food, fiber, and timber, and regulating air and water quality",
+          "start_char": 653
+        }
+      ],
+      "id": "claim-3",
+      "origin": "SOURCE",
+      "statement": "Ecological processes provide natural resources such as food, fiber, and timber and regulate air and water quality."
+    },
+    {
+      "confidence": 0.99,
+      "evidence": [
+        {
+          "document_id": "text-70e7e3d20325dd5d",
+          "end_char": 1678,
+          "quote": "ecological processes are difficult to measure directly, particularly at a national scale",
+          "start_char": 1590
+        }
+      ],
+      "id": "claim-4",
+      "origin": "SOURCE",
+      "statement": "Ecological processes are difficult to measure directly, particularly at a national scale."
+    },
+    {
+      "confidence": 0.99,
+      "evidence": [
+        {
+          "document_id": "text-70e7e3d20325dd5d",
+          "end_char": 1581,
+          "quote": "Only one indicator that meets the ROE criteria, Carbon Storage in Forests, is available to address this question",
+          "start_char": 1469
+        }
+      ],
+      "id": "claim-5",
+      "origin": "SOURCE",
+      "statement": "Only Carbon Storage in Forests is available as an indicator meeting the ROE criteria for this question."
+    },
+    {
+      "confidence": 0.99,
+      "evidence": [
+        {
+          "document_id": "text-70e7e3d20325dd5d",
+          "end_char": 2618,
+          "quote": "Indicators for other ecological processes, such as respiration, nutrient cycling, or decomposition have been developed for ecosystems at watershed scales, but have not been developed at the national scale.",
+          "start_char": 2413
+        }
+      ],
+      "id": "claim-6",
+      "origin": "SOURCE",
+      "statement": "Indicators for respiration, nutrient cycling, and decomposition have been developed at watershed scales but not at the national scale."
+    },
+    {
+      "confidence": 0.99,
+      "evidence": [
+        {
+          "document_id": "text-70e7e3d20325dd5d",
+          "end_char": 2728,
+          "quote": "Developing these indicators at the national scale represents a significant scientific and research challenge.",
+          "start_char": 2619
+        }
+      ],
+      "id": "claim-7",
+      "origin": "SOURCE",
+      "statement": "Developing ecological process indicators at the national scale is a significant scientific and research challenge."
+    },
+    {
+      "confidence": 0.99,
+      "evidence": [
+        {
+          "document_id": "text-70e7e3d20325dd5d",
+          "end_char": 1005,
+          "quote": "Ecological processes can be impacted by both natural forces and human activities happening over different temporal and spatial scales.",
+          "start_char": 871
+        }
+      ],
+      "id": "claim-8",
+      "origin": "SOURCE",
+      "statement": "Ecological processes are impacted by natural forces and human activities across different temporal and spatial scales."
+    }
+  ],
+  "entities": [
+    {
+      "aliases": [],
+      "description": "Systems sustained by biological, physical, and chemical processes.",
+      "entity_type": "SYSTEM",
+      "id": "ecological-systems",
+      "name": "Ecological systems"
+    },
+    {
+      "aliases": [],
+      "description": "Biological, physical, and chemical processes that sustain ecological systems and produce ecological outcomes.",
+      "entity_type": "PROCESS",
+      "id": "ecological-processes",
+      "name": "Ecological processes"
+    },
+    {
+      "aliases": [],
+      "description": "Conversion of the sun's energy into organic matter through photosynthesis.",
+      "entity_type": "PROCESS",
+      "id": "primary-production",
+      "name": "Primary production"
+    },
+    {
+      "aliases": [],
+      "description": "Process through which solar energy is converted into organic matter as part of primary production.",
+      "entity_type": "PROCESS",
+      "id": "photosynthesis",
+      "name": "Photosynthesis"
+    },
+    {
+      "aliases": [],
+      "description": "Material produced by ecological processes, including through primary production.",
+      "entity_type": "OBJECT",
+      "id": "organic-matter",
+      "name": "Organic matter"
+    },
+    {
+      "aliases": [],
+      "description": "Movement of carbon from the physical environment through organisms and back into the physical environment.",
+      "entity_type": "PROCESS",
+      "id": "carbon-cycling",
+      "name": "Carbon cycling"
+    },
+    {
+      "aliases": [],
+      "description": "Movement of nutrients, including nitrogen and phosphorus, through organisms and the physical environment.",
+      "entity_type": "PROCESS",
+      "id": "nutrient-cycling",
+      "name": "Nutrient cycling"
+    },
+    {
+      "aliases": [],
+      "description": "Cycling of hydrogen and oxygen between the physical environment and biological organisms.",
+      "entity_type": "PROCESS",
+      "id": "hydrogen-oxygen-cycling",
+      "name": "Hydrogen/oxygen cycling"
+    },
+    {
+      "aliases": [],
+      "description": "Air, water, and land through which elements cycle.",
+      "entity_type": "SYSTEM",
+      "id": "physical-environment",
+      "name": "Physical environment"
+    },
+    {
+      "aliases": [],
+      "description": "Living organisms that participate in ecological cycles.",
+      "entity_type": "OBJECT",
+      "id": "biological-organisms",
+      "name": "Biological organisms"
+    },
+    {
+      "aliases": [],
+      "description": "Formation of soil driven by ecological processes.",
+      "entity_type": "PROCESS",
+      "id": "soil-formation",
+      "name": "Soil formation"
+    },
+    {
+      "aliases": [],
+      "description": "Biological process enabled by ecological processes.",
+      "entity_type": "PROCESS",
+      "id": "reproduction",
+      "name": "Reproduction"
+    },
+    {
+      "aliases": [],
+      "description": "Benefits provided by ecological systems and processes, including resources and regulation of air and water quality.",
+      "entity_type": "CONCEPT",
+      "id": "ecological-services",
+      "name": "Ecological services"
+    },
+    {
+      "aliases": [],
+      "description": "Resources provided through ecological services, including food, fiber, and timber.",
+      "entity_type": "OBJECT",
+      "id": "natural-resources",
+      "name": "Natural resources"
+    },
+    {
+      "aliases": [],
+      "description": "Environmental quality regulated in part by ecological services.",
+      "entity_type": "VARIABLE",
+      "id": "air-water-quality",
+      "name": "Air and water quality"
+    },
+    {
+      "aliases": [],
+      "description": "Diversity of organisms in ecological systems.",
+      "entity_type": "VARIABLE",
+      "id": "biodiversity",
+      "name": "Biodiversity"
+    },
+    {
+      "aliases": [],
+      "description": "Natural events and changes that affect ecological processes across temporal and spatial scales.",
+      "entity_type": "CONCEPT",
+      "id": "natural-forces",
+      "name": "Natural forces"
+    },
+    {
+      "aliases": [],
+      "description": "Activities that affect the rates, types, and timing of ecological processes.",
+      "entity_type": "CONCEPT",
+      "id": "human-activities",
+      "name": "Human activities"
+    },
+    {
+      "aliases": [],
+      "description": "An indicator available under the ROE criteria for addressing ecological processes.",
+      "entity_type": "VARIABLE",
+      "id": "carbon-storage-in-forests",
+      "name": "Carbon Storage in Forests"
+    },
+    {
+      "aliases": [],
+      "description": "Representation of ecological processes as changes measured over time.",
+      "entity_type": "VARIABLE",
+      "id": "rates-of-change",
+      "name": "Rates of change"
+    },
+    {
+      "aliases": [],
+      "description": "Measurement approach required to represent ecological processes as rates of change.",
+      "entity_type": "PROCESS",
+      "id": "repeated-measurement",
+      "name": "Repeated measurement over time"
+    },
+    {
+      "aliases": [],
+      "description": "Imagery used to obtain snapshots of ecosystem conditions over time and infer ecological processes.",
+      "entity_type": "OBJECT",
+      "id": "remote-sensing-imagery",
+      "name": "Remote sensing imagery"
+    },
+    {
+      "aliases": [
+        "NDVI"
+      ],
+      "description": "National-scale remote-sensing index whose repeated seasonal measurements might indicate net primary production.",
+      "entity_type": "VARIABLE",
+      "id": "normalized-difference-vegetation-index",
+      "name": "Normalized Difference Vegetation Index"
+    },
+    {
+      "aliases": [
+        "terrestrial net primary production"
+      ],
+      "description": "Ecological process inferred from remote sensing and potentially indicated by repeated vegetation-index measurements.",
+      "entity_type": "VARIABLE",
+      "id": "net-primary-production",
+      "name": "Net primary production"
+    },
+    {
+      "aliases": [],
+      "description": "Ecological process represented as a rate of change.",
+      "entity_type": "PROCESS",
+      "id": "respiration",
+      "name": "Respiration"
+    },
+    {
+      "aliases": [],
+      "description": "Flow processes through food webs identified as ecological processes.",
+      "entity_type": "PROCESS",
+      "id": "food-web-flow",
+      "name": "Energy, carbon, and nutrient flow through food webs"
+    },
+    {
+      "aliases": [],
+      "description": "Ecological process represented as a rate of change.",
+      "entity_type": "PROCESS",
+      "id": "decomposition",
+      "name": "Decomposition"
+    },
+    {
+      "aliases": [],
+      "description": "Indicators intended to represent ecological processes at the national scale.",
+      "entity_type": "SYSTEM",
+      "id": "national-scale-indicators",
+      "name": "National-scale ecological process indicators"
+    },
+    {
+      "aliases": [],
+      "description": "Indicators for processes such as respiration, nutrient cycling, and decomposition developed at watershed scales.",
+      "entity_type": "SYSTEM",
+      "id": "watershed-scale-indicators",
+      "name": "Watershed-scale ecological process indicators"
+    }
+  ],
+  "metadata": {
+    "extractor": "llm",
+    "http_request_id": "req_e07c59832e794a54bbe5d05d0132c7a4",
+    "model": "gpt-5.6-luna",
+    "prompt_version": "spec-010-v1",
+    "provider": "openai",
+    "provider_request_id": "resp_045d21ef1a42db13016aa66715ab5087d2a52c8300604fd928",
+    "usage": {
+      "input_tokens": 3253,
+      "output_tokens": 2950,
+      "total_tokens": 6203
+    }
+  },
+  "propositions": [],
+  "relationships": [
+    {
+      "confidence": 0.99,
+      "evidence": [
+        {
+          "document_id": "text-70e7e3d20325dd5d",
+          "end_char": 1826,
+          "quote": "Ecological processes such as primary production, respiration, energy, carbon and nutrient flow through food webs, reproduction, and decomposition",
+          "start_char": 1681
+        }
+      ],
+      "id": "rel-1",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "primary-production",
+      "statement": "Primary production is an ecological process.",
+      "target_entity_id": "ecological-processes"
+    },
+    {
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "document_id": "text-70e7e3d20325dd5d",
+          "end_char": 198,
+          "quote": "primary production (conversion of the sun's energy into organic matter through photosynthesis)",
+          "start_char": 104
+        }
+      ],
+      "id": "rel-2",
+      "origin": "SOURCE",
+      "relationship_type": "CAUSES",
+      "source_entity_id": "primary-production",
+      "statement": "Primary production produces organic matter.",
+      "target_entity_id": "organic-matter"
+    },
+    {
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "document_id": "text-70e7e3d20325dd5d",
+          "end_char": 198,
+          "quote": "primary production (conversion of the sun's energy into organic matter through photosynthesis)",
+          "start_char": 104
+        }
+      ],
+      "id": "rel-3",
+      "origin": "SOURCE",
+      "relationship_type": "ENABLES",
+      "source_entity_id": "photosynthesis",
+      "statement": "Photosynthesis enables primary production by converting solar energy into organic matter.",
+      "target_entity_id": "primary-production"
+    },
+    {
+      "confidence": 0.94,
+      "evidence": [
+        {
+          "document_id": "text-70e7e3d20325dd5d",
+          "end_char": 307,
+          "quote": "and the associated cycling of carbon, nutrients (nitrogen, phosphorus), hydrogen/oxygen, and other elements",
+          "start_char": 200
+        }
+      ],
+      "id": "rel-4",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "carbon-cycling",
+      "statement": "Carbon cycling is an ecological process associated with primary production.",
+      "target_entity_id": "ecological-processes"
+    },
+    {
+      "confidence": 0.94,
+      "evidence": [
+        {
+          "document_id": "text-70e7e3d20325dd5d",
+          "end_char": 307,
+          "quote": "and the associated cycling of carbon, nutrients (nitrogen, phosphorus), hydrogen/oxygen, and other elements",
+          "start_char": 200
+        }
+      ],
+      "id": "rel-5",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "nutrient-cycling",
+      "statement": "Nutrient cycling is an ecological process associated with primary production.",
+      "target_entity_id": "ecological-processes"
+    },
+    {
+      "confidence": 0.99,
+      "evidence": [
+        {
+          "document_id": "text-70e7e3d20325dd5d",
+          "end_char": 537,
+          "quote": "ecological processes produce organic matter, transfer carbon and nutrients, drive soil formation",
+          "start_char": 441
+        }
+      ],
+      "id": "rel-6",
+      "origin": "SOURCE",
+      "relationship_type": "CAUSES",
+      "source_entity_id": "ecological-processes",
+      "statement": "Ecological processes drive soil formation.",
+      "target_entity_id": "soil-formation"
+    },
+    {
+      "confidence": 0.99,
+      "evidence": [
+        {
+          "document_id": "text-70e7e3d20325dd5d",
+          "end_char": 572,
+          "quote": "ecological processes produce organic matter, transfer carbon and nutrients, drive soil formation, and enable organisms to reproduce",
+          "start_char": 441
+        }
+      ],
+      "id": "rel-7",
+      "origin": "SOURCE",
+      "relationship_type": "ENABLES",
+      "source_entity_id": "ecological-processes",
+      "statement": "Ecological processes enable organisms to reproduce.",
+      "target_entity_id": "reproduction"
+    },
+    {
+      "confidence": 0.86,
+      "evidence": [
+        {
+          "document_id": "text-70e7e3d20325dd5d",
+          "end_char": 639,
+          "quote": "They also play an important role in providing ecological services",
+          "start_char": 574
+        }
+      ],
+      "id": "rel-8",
+      "origin": "SOURCE",
+      "relationship_type": "ENABLES",
+      "source_entity_id": "ecological-processes",
+      "statement": "Ecological processes provide the basis for ecological services.",
+      "target_entity_id": "ecological-services"
+    },
+    {
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "document_id": "text-70e7e3d20325dd5d",
+          "end_char": 869,
+          "quote": "Ecological processes, such as primary production, influence the extent, distribution, and biodiversity of systems.",
+          "start_char": 755
+        }
+      ],
+      "id": "rel-9",
+      "origin": "SOURCE",
+      "relationship_type": "AFFECTS",
+      "source_entity_id": "ecological-processes",
+      "statement": "Ecological processes influence biodiversity.",
+      "target_entity_id": "biodiversity"
+    },
+    {
+      "confidence": 0.99,
+      "evidence": [
+        {
+          "document_id": "text-70e7e3d20325dd5d",
+          "end_char": 1225,
+          "quote": "ecological processes are affected by both small-scale natural events such as seasonal changes in temperature, precipitation, and stream flows and large-scale events such as climate change",
+          "start_char": 1038
+        }
+      ],
+      "id": "rel-10",
+      "origin": "SOURCE",
+      "relationship_type": "AFFECTS",
+      "source_entity_id": "natural-forces",
+      "statement": "Natural forces affect ecological processes.",
+      "target_entity_id": "ecological-processes"
+    },
+    {
+      "confidence": 0.99,
+      "evidence": [
+        {
+          "document_id": "text-70e7e3d20325dd5d",
+          "end_char": 1467,
+          "quote": "EPA has long been concerned with the impacts of human activities—including pesticide use, chemical use, waste generation, land use changes, and water quality management, among others—on the rates, types, and timing of ecological processes.",
+          "start_char": 1228
+        }
+      ],
+      "id": "rel-11",
+      "origin": "SOURCE",
+      "relationship_type": "AFFECTS",
+      "source_entity_id": "human-activities",
+      "statement": "Human activities affect ecological processes.",
+      "target_entity_id": "ecological-processes"
+    },
+    {
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "document_id": "text-70e7e3d20325dd5d",
+          "end_char": 1861,
+          "quote": "Ecological processes such as primary production, respiration, energy, carbon and nutrient flow through food webs, reproduction, and decomposition are represented as rates of change",
+          "start_char": 1681
+        }
+      ],
+      "id": "rel-12",
+      "origin": "SOURCE",
+      "relationship_type": "MEASURED_BY",
+      "source_entity_id": "ecological-processes",
+      "statement": "Ecological processes are represented as rates of change.",
+      "target_entity_id": "rates-of-change"
+    },
+    {
+      "confidence": 0.99,
+      "evidence": [
+        {
+          "document_id": "text-70e7e3d20325dd5d",
+          "end_char": 1908,
+          "quote": "are represented as rates of change, which requires repeated measurement over time",
+          "start_char": 1827
+        }
+      ],
+      "id": "rel-13",
+      "origin": "SOURCE",
+      "relationship_type": "REQUIRES",
+      "source_entity_id": "rates-of-change",
+      "statement": "Representing ecological processes as rates of change requires repeated measurement over time.",
+      "target_entity_id": "repeated-measurement"
+    },
+    {
+      "confidence": 0.97,
+      "evidence": [
+        {
+          "document_id": "text-70e7e3d20325dd5d",
+          "end_char": 2220,
+          "quote": "remote sensing imagery has been used to obtain \"snapshots\" of indicators of ecosystem conditions over time, and to infer ecological processes such as terrestrial net primary production",
+          "start_char": 2036
+        }
+      ],
+      "id": "rel-14",
+      "origin": "SOURCE",
+      "relationship_type": "ENABLES",
+      "source_entity_id": "remote-sensing-imagery",
+      "statement": "Remote sensing imagery has been used to infer terrestrial net primary production.",
+      "target_entity_id": "net-primary-production"
+    },
+    {
+      "confidence": 0.82,
+      "evidence": [
+        {
+          "document_id": "text-70e7e3d20325dd5d",
+          "end_char": 2412,
+          "quote": "Repeated measures over a season might provide an indicator of net primary production.",
+          "start_char": 2327
+        }
+      ],
+      "id": "rel-15",
+      "origin": "SOURCE",
+      "relationship_type": "MEASURED_BY",
+      "source_entity_id": "normalized-difference-vegetation-index",
+      "statement": "Repeated seasonal measures of the Normalized Difference Vegetation Index might provide an indicator of net primary production.",
+      "target_entity_id": "net-primary-production"
+    },
+    {
+      "confidence": 0.91,
+      "evidence": [
+        {
+          "document_id": "text-70e7e3d20325dd5d",
+          "end_char": 2617,
+          "quote": "have been developed for ecosystems at watershed scales, but have not been developed at the national scale",
+          "start_char": 2512
+        }
+      ],
+      "id": "rel-16",
+      "origin": "SOURCE",
+      "relationship_type": "CONSTRAINS",
+      "source_entity_id": "watershed-scale-indicators",
+      "statement": "The existing development of indicators at watershed scales does not extend to the national scale for the cited processes.",
+      "target_entity_id": "national-scale-indicators"
+    }
+  ]
+}

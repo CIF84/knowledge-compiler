@@ -1,0 +1,428 @@
+{
+  "actual_model": "gpt-5.6-luna",
+  "completed_at_utc": "2026-09-13T09:04:44.786758Z",
+  "duration_ms": 23325.15,
+  "http_request_id": "req_e07c59832e794a54bbe5d05d0132c7a4",
+  "prompt_version": "spec-010-v1",
+  "provider": "OpenAI Responses API",
+  "provider_response_id": "resp_045d21ef1a42db13016aa66715ab5087d2a52c8300604fd928",
+  "request_error": null,
+  "requested_model": "gpt-5.6-luna",
+  "response": {
+    "background": false,
+    "billing": {
+      "payer": "developer"
+    },
+    "completed_at": 1789290284.0,
+    "conversation": null,
+    "created_at": 1789290261.0,
+    "error": null,
+    "frequency_penalty": 0.0,
+    "id": "resp_045d21ef1a42db13016aa66715ab5087d2a52c8300604fd928",
+    "incomplete_details": null,
+    "instructions": "You extract a semantic knowledge model from explanatory source text.\n\nIdentify important concepts, objects, processes, variables, systems, and components.\nCreate claims for meaningful propositions that do not naturally form graph edges.\nCreate relationships only when one supplied semantic contract fits both the meaning and\ndirection. Prefer important explanatory structure over exhaustive sentence decomposition.\nIf no relationship contract represents a meaningful proposition truthfully, preserve it\nas a claim instead of forcing it into the nearest edge label. Fewer truthful edges are\nbetter than more misleading edges. Use concise grounded descriptions and conservative\nconfidence values.\n\nUse a typed proposition only for either of these binary-edge failure modes:\n- COMPARISON_CONDITION: a comparison is itself the antecedent of an outcome. Bind\n  LEFT_OPERAND, RIGHT_OPERAND, and OUTCOME; use GREATER_THAN and CAUSES.\n- TRANSFER_EVENT: a transfer must distinguish the EVENT, transferred OBJECT, and\n  DESTINATION; use TRANSFERS_TO.\nDo not also emit a lossy binary edge for the same source proposition. Proposition IDs are\nassigned deterministically by trusted code; do not return an id.\n\nSOURCE means the item is explicitly supported by the supplied text. Every SOURCE item\nmust cite one or more exact, verbatim, uniquely occurring source substrings in evidence.\nUse a complete clause or sentence long enough to occur exactly once; never cite a short\nentity name or other repeated fragment. Do not count characters; return quotes only.\nINFERRED means useful structure not stated explicitly and must have an empty evidence\nlist. Any item with evidence must be SOURCE. Before returning, verify every SOURCE item\nhas at least one unique quote and every INFERRED item has none. Do not use external\nknowledge unless the item is marked INFERRED. Do not fabricate evidence.\n\nAvoid entities created only to reproduce grammar. Avoid duplicates; use aliases only\nfor genuine naming equivalence, and keep related but distinct concepts separate.\nRelationship endpoints must use IDs from the entities array. IDs must be unique,\nconcise, stable kebab-case strings. Do not generate summaries, visualizations, Mermaid,\nteaching prose, or output outside the requested schema.\n\nACTIVE RELATIONSHIP CONTRACTS (source --TYPE--> target):\nIS_A [STRUCTURAL; direction=instance_to_type]\n  meaning: The source is a kind, category, or subtype of the target.\n  roles: source=instance or subtype; target=broader type or category\n  use: The source can truthfully be described as a target.\n  avoid: Do not use for parts, examples, similarity, or temporary states.\nPART_OF [STRUCTURAL; direction=part_to_whole]\n  meaning: The source is a constituent or component of the target.\n  roles: source=part or component; target=containing whole\n  use: The source exists as a component or subpart of the target.\n  avoid: Never reverse whole and part; do not use for interaction or dependency.\nEXAMPLE_OF [STRUCTURAL; direction=example_to_concept]\n  meaning: The source is an illustrative instance of the target concept.\n  roles: source=example; target=concept illustrated\n  use: The source is presented as an example of the target.\n  avoid: Do not use merely because the source is a subtype; prefer IS_A for classification.\nCAUSES [CAUSAL; direction=cause_to_effect]\n  meaning: The source brings about the target as an effect.\n  roles: source=cause; target=effect\n  use: The source is stated to produce the target outcome.\n  avoid: Do not use for chronology, association, contribution, or unspecified influence.\nAFFECTS [CAUSAL; direction=influence_to_affected]\n  meaning: The source causally influences the target without a specified direction or complete production.\n  roles: source=influence; target=affected entity, process, or variable\n  use: The source changes or influences the target, but the text does not support CAUSES, INCREASES, or DECREASES.\n  avoid: Do not use for mere association, chronology, physical force, or interaction with no stated effect.\nINCREASES [CAUSAL; direction=increaser_to_increased_variable]\n  meaning: The source causally raises the amount, rate, value, probability, or intensity of the target.\n  roles: source=causal factor; target=quantity or variable increased\n  use: The source is explicitly said to make the target greater, faster, more likely, or more intense.\n  avoid: Do not infer from nearby words such as more or faster; never use when the source says slower, lower, or less.\nDECREASES [CAUSAL; direction=decreaser_to_decreased_variable]\n  meaning: The source causally lowers the amount, rate, value, probability, or intensity of the target.\n  roles: source=causal factor; target=quantity or variable decreased\n  use: The source is explicitly said to make the target smaller, slower, less likely, or less intense.\n  avoid: Do not use for absence, prevention without a scalar target, or mere negative association.\nINDUCES [CAUSAL; direction=inducer_to_induced_effect]\n  meaning: The source produces the target through an explicitly described induction mechanism.\n  roles: source=inducing phenomenon; target=induced phenomenon\n  use: The source explicitly says induces or describes a recognized induction mechanism.\n  avoid: Do not use as a metaphor for generic causation, influence, motivation, or historical response.\nENABLES [DEPENDENCY; direction=enabler_to_enabled]\n  meaning: The source makes the target possible without necessarily causing it to occur.\n  roles: source=enabling condition or capability; target=capability or process made possible\n  use: The target could not occur, or is materially made possible, because of the source.\n  avoid: Do not use for delivery, participation, weak assistance, or an effect that actually occurred.\nREQUIRES [DEPENDENCY; direction=dependent_to_requirement]\n  meaning: The source depends on the target as a prerequisite or necessary resource.\n  roles: source=dependent; target=prerequisite or required resource\n  use: The source cannot operate or occur as described without the target.\n  avoid: Do not reverse prerequisite and dependent; do not use for optional support.\nCONSTRAINS [DEPENDENCY; direction=constraint_to_constrained]\n  meaning: The source limits the possible behavior, values, or choices of the target.\n  roles: source=constraint; target=constrained entity, process, or variable\n  use: The source imposes a limit, rule, boundary, or restriction on the target.\n  avoid: Do not use to mean unchanged, unrelated, merely different, or causally reduced.\nPRECEDES [TEMPORAL; direction=earlier_to_later]\n  meaning: The source occurs before the target in time or an explicit process sequence.\n  roles: source=earlier event or process; target=later event or process\n  use: The source explicitly occurs before, previously, first, then, or after relative to the target.\n  avoid: Do not infer causality from order; do not reverse earlier and later.\nINTERACTS_WITH [INTERACTION; symmetric]\n  meaning: The source and target directly interact, with no more precise directional semantics supported.\n  roles: source=interaction participant; target=interaction participant\n  use: The text supports direct mutual interaction but not a more precise active predicate.\n  avoid: Do not use for distant association, one-way effect, dependency, or chronology.\nBINDS_TO [INTERACTION; symmetric]\n  meaning: The source physically or chemically binds or attaches to the target.\n  roles: source=binding participant; target=binding participant\n  use: The source explicitly binds or attaches to the target.\n  avoid: Do not use for metaphorical commitment, dependency, influence, or literal physical force.\nTRANSFERS_TO [INTERACTION; direction=transferred_item_to_destination]\n  meaning: The source item, material, or information moves to the target destination or recipient.\n  roles: source=item, material, or information transferred; target=destination or recipient\n  use: The source is explicitly carried, delivered, moved, or transferred to the target.\n  avoid: Do not make the carrier the source unless the carrier itself moves to the destination; do not use for enabling.\nEXERTS_FORCE_ON [INTERACTION; direction=force_exerter_to_physical_target]\n  meaning: The source exerts a literal physical force on the target.\n  roles: source=physical force source; target=physical object receiving force\n  use: A literal physical force is explicitly exerted on the target.\n  avoid: Never use metaphorically for influence, contribution, binding, pressure, or causation.\nTRANSFORMS_INTO [TRANSFORMATION; direction=prior_state_to_resulting_state]\n  meaning: The source itself changes state or identity and becomes the target.\n  roles: source=entity or state before transformation; target=same entity or resulting material after transformation\n  use: The source itself becomes the target through a transformation.\n  avoid: Do not use when an actor causes, creates, attempts, participates in, or responds to the target.\nCREATES [TRANSFORMATION; direction=creator_to_created]\n  meaning: The source produces or brings a distinct target into existence.\n  roles: source=producer or generative process; target=newly produced entity or result\n  use: The source produces a target that is distinct from the source.\n  avoid: Do not use when the source itself becomes the target; use TRANSFORMS_INTO instead.\nMEASURED_BY [DESCRIPTIVE; direction=measurand_to_measure]\n  meaning: The source property or variable is quantified or assessed by the target metric, observation, or procedure.\n  roles: source=property or variable measured; target=metric, observation, or measurement procedure\n  use: The target is explicitly how the source is measured or quantified.\n  avoid: Do not point to something that merely responds to, correlates with, or exemplifies the source.\nCONTRADICTS [DESCRIPTIVE; symmetric]\n  meaning: The source and target assert mutually incompatible propositions.\n  roles: source=proposition or claim; target=incompatible proposition or claim\n  use: Both sides are explicit propositions that cannot simultaneously hold as stated.\n  avoid: Do not use for difference, disagreement without incompatibility, trade-off, or negative causality.",
+    "max_output_tokens": null,
+    "max_tool_calls": null,
+    "metadata": {},
+    "model": "gpt-5.6-luna",
+    "moderation": null,
+    "object": "response",
+    "output": [
+      {
+        "content": [],
+        "encrypted_content": "gAAAAABqpmcs_uiH91cZY9HwooIBQxjeOSzVySPThlChnykJUnl0h1rX8_AqR6XljjJyjfHiKnecNsAVF4dSYGEC2cCPFoFUCLh0lU3Hc0a6ALVeBE3s09tcriwCW4cGSrAOF0qw0b_v3WylZI4RG4sROgoEiu3wbx14oA6qEnquaPtb5XEZAhhH5xN2Qgi1tB5d4lILQ18L5XapWfeLnDJzOdJnA2FCer_pfCe_K5j5Aihey886SJqNUIdWg0oamGtelkrHuRaGdshHWklvoYBOA_lool-D22OPRD_xXEEeANiVIeDCShdK9AEujWYe0Lz1xOOOsw02S3cLSL2tcXVN9WHvAJ9d2Yr944H0Fn6sxzdOOnTZpwDvI7I5zHetjfdbtA2TBHtWjUSjO0v1T6f5HBQYphy7xcgeuXrN92nVkdr25EiS8Sl_JYPH2tX43AYVkLmFt2Ewfk9nM2CDXeks-5sllY9x5xPLn_rtuzSvw7VXqXXQr2DLVR7lupQvUqJR-H0kuO5s5Wjf8fC0dn9fF6Fl8Gs5ZvUoW6-rOXgJ9nW1Fc4GInW42Wv9-pVjoOS_uUjJgKzzLFsEit_KGS2IEYQfO434lW5y5E5JkzwSVlfnqI9g-6G7BxcgcJm34VLWWFIxjVhz43Knqxym7RrvmRUX17Q2PFEoyxTtLJI7zkKyhrbGsi_0dFEnqn2E90LKP063o9pp6Zz058IrNrqp2tMxbPqPcwqjBsZ2wm8rRHzhkBGfmd9pRKsDmUF1hAUBWzk1e_7S5zD5JDvvku5jVN2OUK1sh2HGO3IFfgsuvrfr0m9pe9xq47ciQcSpgUFip4kkIfxK_rcwz2mRShtjDxbhQpyraLnFIHz-RfEM6bxLeMDvCQIEmJFrFn9GkRlaYkQa2rp8klwkLKvMiJgmuqjkjZjj4fo_M3vIGgS0z7CIRL32fdQV16V5vGJ5HFcQZ_Kp3lw6_HPoZJWDRLmb3vJtQ53zAAgmUwlaVl_9188fpPGyROo74QxgqJz4v41AccrGEkSWr4eZAI6JI1of5K8k9jOiK39MWUfXO97Wd0T8AvXrzKMgT1nF5yvClmFg1PqxMYSwDe_JZytWwZu0AKnuC1LIuhd00-9QjKk7_c2v6IAkxlwbT5OEHaj8OqcYzK5GJW_z1zE6m-8cfP8yXOKhK01OvsmQSeb_8ramW-2hqkHvpTARtVc_3af6wLBvu1ooYmOhKsHQzk-IY_otHn_HEyBu4jhbW7CJj3__UFK7GQuI1vp9kwZ_a6JHPzfILRxeOeoqSf2kgdMuIVc64-oe_OpC_LBq1PDbNYw6VZAkxOMoNEAyqc256boiFCF7fcrq2GrmsfGN9fQXD-eiG7TqMc6Ai2szhWMTwlgzUuN-YEJ4LrWZc9SzpumgfN3TW1iVB1Ig",
+        "id": "rs_045d21ef1a42db13016aa66716b4b887d2893cf7418097065d",
+        "status": null,
+        "summary": [],
+        "type": "reasoning"
+      },
+      {
+        "content": [
+          {
+            "annotations": [],
+            "logprobs": [],
+            "text": "{\"entities\":[{\"id\":\"ecological-systems\",\"name\":\"Ecological systems\",\"description\":\"Systems sustained by biological, physical, and chemical processes.\",\"entity_type\":\"SYSTEM\",\"aliases\":[]},{\"id\":\"ecological-processes\",\"name\":\"Ecological processes\",\"description\":\"Biological, physical, and chemical processes that sustain ecological systems and produce ecological outcomes.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"id\":\"primary-production\",\"name\":\"Primary production\",\"description\":\"Conversion of the sun's energy into organic matter through photosynthesis.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"id\":\"photosynthesis\",\"name\":\"Photosynthesis\",\"description\":\"Process through which solar energy is converted into organic matter as part of primary production.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"id\":\"organic-matter\",\"name\":\"Organic matter\",\"description\":\"Material produced by ecological processes, including through primary production.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"id\":\"carbon-cycling\",\"name\":\"Carbon cycling\",\"description\":\"Movement of carbon from the physical environment through organisms and back into the physical environment.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"id\":\"nutrient-cycling\",\"name\":\"Nutrient cycling\",\"description\":\"Movement of nutrients, including nitrogen and phosphorus, through organisms and the physical environment.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"id\":\"hydrogen-oxygen-cycling\",\"name\":\"Hydrogen/oxygen cycling\",\"description\":\"Cycling of hydrogen and oxygen between the physical environment and biological organisms.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"id\":\"physical-environment\",\"name\":\"Physical environment\",\"description\":\"Air, water, and land through which elements cycle.\",\"entity_type\":\"SYSTEM\",\"aliases\":[]},{\"id\":\"biological-organisms\",\"name\":\"Biological organisms\",\"description\":\"Living organisms that participate in ecological cycles.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"id\":\"soil-formation\",\"name\":\"Soil formation\",\"description\":\"Formation of soil driven by ecological processes.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"id\":\"reproduction\",\"name\":\"Reproduction\",\"description\":\"Biological process enabled by ecological processes.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"id\":\"ecological-services\",\"name\":\"Ecological services\",\"description\":\"Benefits provided by ecological systems and processes, including resources and regulation of air and water quality.\",\"entity_type\":\"CONCEPT\",\"aliases\":[]},{\"id\":\"natural-resources\",\"name\":\"Natural resources\",\"description\":\"Resources provided through ecological services, including food, fiber, and timber.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"id\":\"air-water-quality\",\"name\":\"Air and water quality\",\"description\":\"Environmental quality regulated in part by ecological services.\",\"entity_type\":\"VARIABLE\",\"aliases\":[]},{\"id\":\"biodiversity\",\"name\":\"Biodiversity\",\"description\":\"Diversity of organisms in ecological systems.\",\"entity_type\":\"VARIABLE\",\"aliases\":[]},{\"id\":\"natural-forces\",\"name\":\"Natural forces\",\"description\":\"Natural events and changes that affect ecological processes across temporal and spatial scales.\",\"entity_type\":\"CONCEPT\",\"aliases\":[]},{\"id\":\"human-activities\",\"name\":\"Human activities\",\"description\":\"Activities that affect the rates, types, and timing of ecological processes.\",\"entity_type\":\"CONCEPT\",\"aliases\":[]},{\"id\":\"carbon-storage-in-forests\",\"name\":\"Carbon Storage in Forests\",\"description\":\"An indicator available under the ROE criteria for addressing ecological processes.\",\"entity_type\":\"VARIABLE\",\"aliases\":[]},{\"id\":\"rates-of-change\",\"name\":\"Rates of change\",\"description\":\"Representation of ecological processes as changes measured over time.\",\"entity_type\":\"VARIABLE\",\"aliases\":[]},{\"id\":\"repeated-measurement\",\"name\":\"Repeated measurement over time\",\"description\":\"Measurement approach required to represent ecological processes as rates of change.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"id\":\"remote-sensing-imagery\",\"name\":\"Remote sensing imagery\",\"description\":\"Imagery used to obtain snapshots of ecosystem conditions over time and infer ecological processes.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"id\":\"normalized-difference-vegetation-index\",\"name\":\"Normalized Difference Vegetation Index\",\"description\":\"National-scale remote-sensing index whose repeated seasonal measurements might indicate net primary production.\",\"entity_type\":\"VARIABLE\",\"aliases\":[\"NDVI\"]},{\"id\":\"net-primary-production\",\"name\":\"Net primary production\",\"description\":\"Ecological process inferred from remote sensing and potentially indicated by repeated vegetation-index measurements.\",\"entity_type\":\"VARIABLE\",\"aliases\":[\"terrestrial net primary production\"]},{\"id\":\"respiration\",\"name\":\"Respiration\",\"description\":\"Ecological process represented as a rate of change.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"id\":\"food-web-flow\",\"name\":\"Energy, carbon, and nutrient flow through food webs\",\"description\":\"Flow processes through food webs identified as ecological processes.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"id\":\"decomposition\",\"name\":\"Decomposition\",\"description\":\"Ecological process represented as a rate of change.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"id\":\"national-scale-indicators\",\"name\":\"National-scale ecological process indicators\",\"description\":\"Indicators intended to represent ecological processes at the national scale.\",\"entity_type\":\"SYSTEM\",\"aliases\":[]},{\"id\":\"watershed-scale-indicators\",\"name\":\"Watershed-scale ecological process indicators\",\"description\":\"Indicators for processes such as respiration, nutrient cycling, and decomposition developed at watershed scales.\",\"entity_type\":\"SYSTEM\",\"aliases\":[]}],\"claims\":[{\"id\":\"claim-1\",\"statement\":\"Ecological systems are sustained by biological, physical, and chemical processes.\",\"evidence\":[{\"quote\":\"Ecological systems are sustained by a number of biological, physical, and chemical processes\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"claim-2\",\"statement\":\"Ecological processes collectively produce organic matter, transfer carbon and nutrients, drive soil formation, and enable organisms to reproduce.\",\"evidence\":[{\"quote\":\"Collectively, ecological processes produce organic matter, transfer carbon and nutrients, drive soil formation, and enable organisms to reproduce.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"claim-3\",\"statement\":\"Ecological processes provide natural resources such as food, fiber, and timber and regulate air and water quality.\",\"evidence\":[{\"quote\":\"providing natural resources, such as food, fiber, and timber, and regulating air and water quality\"}],\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"claim-4\",\"statement\":\"Ecological processes are difficult to measure directly, particularly at a national scale.\",\"evidence\":[{\"quote\":\"ecological processes are difficult to measure directly, particularly at a national scale\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"claim-5\",\"statement\":\"Only Carbon Storage in Forests is available as an indicator meeting the ROE criteria for this question.\",\"evidence\":[{\"quote\":\"Only one indicator that meets the ROE criteria, Carbon Storage in Forests, is available to address this question\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"claim-6\",\"statement\":\"Indicators for respiration, nutrient cycling, and decomposition have been developed at watershed scales but not at the national scale.\",\"evidence\":[{\"quote\":\"Indicators for other ecological processes, such as respiration, nutrient cycling, or decomposition have been developed for ecosystems at watershed scales, but have not been developed at the national scale.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"claim-7\",\"statement\":\"Developing ecological process indicators at the national scale is a significant scientific and research challenge.\",\"evidence\":[{\"quote\":\"Developing these indicators at the national scale represents a significant scientific and research challenge.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"claim-8\",\"statement\":\"Ecological processes are impacted by natural forces and human activities across different temporal and spatial scales.\",\"evidence\":[{\"quote\":\"Ecological processes can be impacted by both natural forces and human activities happening over different temporal and spatial scales.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"}],\"relationships\":[{\"id\":\"rel-1\",\"source_entity_id\":\"primary-production\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"ecological-processes\",\"statement\":\"Primary production is an ecological process.\",\"evidence\":[{\"quote\":\"Ecological processes such as primary production, respiration, energy, carbon and nutrient flow through food webs, reproduction, and decomposition\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"rel-2\",\"source_entity_id\":\"primary-production\",\"relationship_type\":\"CAUSES\",\"target_entity_id\":\"organic-matter\",\"statement\":\"Primary production produces organic matter.\",\"evidence\":[{\"quote\":\"primary production (conversion of the sun's energy into organic matter through photosynthesis)\"}],\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"rel-3\",\"source_entity_id\":\"photosynthesis\",\"relationship_type\":\"ENABLES\",\"target_entity_id\":\"primary-production\",\"statement\":\"Photosynthesis enables primary production by converting solar energy into organic matter.\",\"evidence\":[{\"quote\":\"primary production (conversion of the sun's energy into organic matter through photosynthesis)\"}],\"confidence\":0.95,\"origin\":\"SOURCE\"},{\"id\":\"rel-4\",\"source_entity_id\":\"carbon-cycling\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"ecological-processes\",\"statement\":\"Carbon cycling is an ecological process associated with primary production.\",\"evidence\":[{\"quote\":\"and the associated cycling of carbon, nutrients (nitrogen, phosphorus), hydrogen/oxygen, and other elements\"}],\"confidence\":0.94,\"origin\":\"SOURCE\"},{\"id\":\"rel-5\",\"source_entity_id\":\"nutrient-cycling\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"ecological-processes\",\"statement\":\"Nutrient cycling is an ecological process associated with primary production.\",\"evidence\":[{\"quote\":\"and the associated cycling of carbon, nutrients (nitrogen, phosphorus), hydrogen/oxygen, and other elements\"}],\"confidence\":0.94,\"origin\":\"SOURCE\"},{\"id\":\"rel-6\",\"source_entity_id\":\"ecological-processes\",\"relationship_type\":\"CAUSES\",\"target_entity_id\":\"soil-formation\",\"statement\":\"Ecological processes drive soil formation.\",\"evidence\":[{\"quote\":\"ecological processes produce organic matter, transfer carbon and nutrients, drive soil formation\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"rel-7\",\"source_entity_id\":\"ecological-processes\",\"relationship_type\":\"ENABLES\",\"target_entity_id\":\"reproduction\",\"statement\":\"Ecological processes enable organisms to reproduce.\",\"evidence\":[{\"quote\":\"ecological processes produce organic matter, transfer carbon and nutrients, drive soil formation, and enable organisms to reproduce\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"rel-8\",\"source_entity_id\":\"ecological-processes\",\"relationship_type\":\"ENABLES\",\"target_entity_id\":\"ecological-services\",\"statement\":\"Ecological processes provide the basis for ecological services.\",\"evidence\":[{\"quote\":\"They also play an important role in providing ecological services\"}],\"confidence\":0.86,\"origin\":\"SOURCE\"},{\"id\":\"rel-9\",\"source_entity_id\":\"ecological-processes\",\"relationship_type\":\"AFFECTS\",\"target_entity_id\":\"biodiversity\",\"statement\":\"Ecological processes influence biodiversity.\",\"evidence\":[{\"quote\":\"Ecological processes, such as primary production, influence the extent, distribution, and biodiversity of systems.\"}],\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"rel-10\",\"source_entity_id\":\"natural-forces\",\"relationship_type\":\"AFFECTS\",\"target_entity_id\":\"ecological-processes\",\"statement\":\"Natural forces affect ecological processes.\",\"evidence\":[{\"quote\":\"ecological processes are affected by both small-scale natural events such as seasonal changes in temperature, precipitation, and stream flows and large-scale events such as climate change\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"rel-11\",\"source_entity_id\":\"human-activities\",\"relationship_type\":\"AFFECTS\",\"target_entity_id\":\"ecological-processes\",\"statement\":\"Human activities affect ecological processes.\",\"evidence\":[{\"quote\":\"EPA has long been concerned with the impacts of human activities—including pesticide use, chemical use, waste generation, land use changes, and water quality management, among others—on the rates, types, and timing of ecological processes.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"rel-12\",\"source_entity_id\":\"ecological-processes\",\"relationship_type\":\"MEASURED_BY\",\"target_entity_id\":\"rates-of-change\",\"statement\":\"Ecological processes are represented as rates of change.\",\"evidence\":[{\"quote\":\"Ecological processes such as primary production, respiration, energy, carbon and nutrient flow through food webs, reproduction, and decomposition are represented as rates of change\"}],\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"rel-13\",\"source_entity_id\":\"rates-of-change\",\"relationship_type\":\"REQUIRES\",\"target_entity_id\":\"repeated-measurement\",\"statement\":\"Representing ecological processes as rates of change requires repeated measurement over time.\",\"evidence\":[{\"quote\":\"are represented as rates of change, which requires repeated measurement over time\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"rel-14\",\"source_entity_id\":\"remote-sensing-imagery\",\"relationship_type\":\"ENABLES\",\"target_entity_id\":\"net-primary-production\",\"statement\":\"Remote sensing imagery has been used to infer terrestrial net primary production.\",\"evidence\":[{\"quote\":\"remote sensing imagery has been used to obtain \\\"snapshots\\\" of indicators of ecosystem conditions over time, and to infer ecological processes such as terrestrial net primary production\"}],\"confidence\":0.97,\"origin\":\"SOURCE\"},{\"id\":\"rel-15\",\"source_entity_id\":\"normalized-difference-vegetation-index\",\"relationship_type\":\"MEASURED_BY\",\"target_entity_id\":\"net-primary-production\",\"statement\":\"Repeated seasonal measures of the Normalized Difference Vegetation Index might provide an indicator of net primary production.\",\"evidence\":[{\"quote\":\"Repeated measures over a season might provide an indicator of net primary production.\"}],\"confidence\":0.82,\"origin\":\"SOURCE\"},{\"id\":\"rel-16\",\"source_entity_id\":\"watershed-scale-indicators\",\"relationship_type\":\"CONSTRAINS\",\"target_entity_id\":\"national-scale-indicators\",\"statement\":\"The existing development of indicators at watershed scales does not extend to the national scale for the cited processes.\",\"evidence\":[{\"quote\":\"have been developed for ecosystems at watershed scales, but have not been developed at the national scale\"}],\"confidence\":0.91,\"origin\":\"SOURCE\"}],\"propositions\":[]}",
+            "type": "output_text"
+          }
+        ],
+        "id": "msg_045d21ef1a42db13016aa66717276087d2abb25da9ab5567e5",
+        "phase": "final_answer",
+        "role": "assistant",
+        "status": "completed",
+        "type": "message"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "presence_penalty": 0.0,
+    "previous_response_id": null,
+    "prompt": null,
+    "prompt_cache_key": null,
+    "prompt_cache_options": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+      "context": "all_turns",
+      "effort": "low",
+      "generate_summary": null,
+      "mode": "standard",
+      "summary": null
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "status": "completed",
+    "store": false,
+    "temperature": 1.0,
+    "text": {
+      "format": {
+        "description": null,
+        "name": "knowledge_extraction",
+        "schema_": {
+          "additionalProperties": false,
+          "properties": {
+            "claims": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "confidence": {
+                    "maximum": 1,
+                    "minimum": 0,
+                    "type": "number"
+                  },
+                  "evidence": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "quote": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "quote"
+                      ],
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "id": {
+                    "type": "string"
+                  },
+                  "origin": {
+                    "enum": [
+                      "SOURCE",
+                      "INFERRED"
+                    ],
+                    "type": "string"
+                  },
+                  "statement": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "statement",
+                  "evidence",
+                  "confidence",
+                  "origin"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "entities": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "aliases": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "entity_type": {
+                    "enum": [
+                      "CONCEPT",
+                      "OBJECT",
+                      "PROCESS",
+                      "VARIABLE",
+                      "SYSTEM",
+                      "COMPONENT"
+                    ],
+                    "type": "string"
+                  },
+                  "id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "name",
+                  "description",
+                  "entity_type",
+                  "aliases"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "propositions": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "comparison_operator": {
+                    "anyOf": [
+                      {
+                        "enum": [
+                          "GREATER_THAN"
+                        ],
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "confidence": {
+                    "maximum": 1,
+                    "minimum": 0,
+                    "type": "number"
+                  },
+                  "evidence": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "quote": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "quote"
+                      ],
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "origin": {
+                    "enum": [
+                      "SOURCE",
+                      "INFERRED"
+                    ],
+                    "type": "string"
+                  },
+                  "proposition_type": {
+                    "enum": [
+                      "COMPARISON_CONDITION",
+                      "TRANSFER_EVENT"
+                    ],
+                    "type": "string"
+                  },
+                  "relationship_type": {
+                    "enum": [
+                      "IS_A",
+                      "PART_OF",
+                      "CAUSES",
+                      "INCREASES",
+                      "DECREASES",
+                      "ENABLES",
+                      "REQUIRES",
+                      "CONSTRAINS",
+                      "PRECEDES",
+                      "TRANSFORMS_INTO",
+                      "INTERACTS_WITH",
+                      "MEASURED_BY",
+                      "EXAMPLE_OF",
+                      "CONTRADICTS",
+                      "CREATES",
+                      "INDUCES",
+                      "EXERTS_FORCE_ON",
+                      "AFFECTS",
+                      "BINDS_TO",
+                      "TRANSFERS_TO"
+                    ],
+                    "type": "string"
+                  },
+                  "role_bindings": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "entity_id": {
+                          "type": "string"
+                        },
+                        "role": {
+                          "enum": [
+                            "LEFT_OPERAND",
+                            "RIGHT_OPERAND",
+                            "OUTCOME",
+                            "EVENT",
+                            "OBJECT",
+                            "DESTINATION"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "role",
+                        "entity_id"
+                      ],
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "statement": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "proposition_type",
+                  "statement",
+                  "role_bindings",
+                  "relationship_type",
+                  "comparison_operator",
+                  "evidence",
+                  "confidence",
+                  "origin"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "relationships": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "confidence": {
+                    "maximum": 1,
+                    "minimum": 0,
+                    "type": "number"
+                  },
+                  "evidence": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "quote": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "quote"
+                      ],
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "id": {
+                    "type": "string"
+                  },
+                  "origin": {
+                    "enum": [
+                      "SOURCE",
+                      "INFERRED"
+                    ],
+                    "type": "string"
+                  },
+                  "relationship_type": {
+                    "enum": [
+                      "IS_A",
+                      "PART_OF",
+                      "CAUSES",
+                      "INCREASES",
+                      "DECREASES",
+                      "ENABLES",
+                      "REQUIRES",
+                      "CONSTRAINS",
+                      "PRECEDES",
+                      "TRANSFORMS_INTO",
+                      "INTERACTS_WITH",
+                      "MEASURED_BY",
+                      "EXAMPLE_OF",
+                      "CONTRADICTS",
+                      "CREATES",
+                      "INDUCES",
+                      "EXERTS_FORCE_ON",
+                      "AFFECTS",
+                      "BINDS_TO",
+                      "TRANSFERS_TO"
+                    ],
+                    "type": "string"
+                  },
+                  "source_entity_id": {
+                    "type": "string"
+                  },
+                  "statement": {
+                    "type": "string"
+                  },
+                  "target_entity_id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "source_entity_id",
+                  "relationship_type",
+                  "target_entity_id",
+                  "statement",
+                  "evidence",
+                  "confidence",
+                  "origin"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "entities",
+            "claims",
+            "relationships",
+            "propositions"
+          ],
+          "type": "object"
+        },
+        "strict": true,
+        "type": "json_schema"
+      },
+      "verbosity": "medium"
+    },
+    "tool_choice": "auto",
+    "tool_usage": {
+      "image_gen": {
+        "input_tokens": 0,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "total_tokens": 0
+      },
+      "web_search": {
+        "num_requests": 0
+      }
+    },
+    "tools": [],
+    "top_logprobs": 0,
+    "top_p": 0.98,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 3253,
+      "input_tokens_details": {
+        "cache_write_tokens": 475,
+        "cached_tokens": 2775
+      },
+      "output_tokens": 2950,
+      "output_tokens_details": {
+        "reasoning_tokens": 34
+      },
+      "total_tokens": 6203
+    },
+    "user": null
+  },
+  "started_at_utc": "2026-09-13T09:04:21.461592Z"
+}

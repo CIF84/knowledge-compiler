@@ -1,0 +1,428 @@
+{
+  "actual_model": "gpt-5.6-luna",
+  "completed_at_utc": "2026-09-13T09:07:11.980171Z",
+  "duration_ms": 10301.996,
+  "http_request_id": "req_1b8a3fd09e0b41b7b9d652b693208355",
+  "prompt_version": "spec-010-v1",
+  "provider": "OpenAI Responses API",
+  "provider_response_id": "resp_08504b78cb81d33d016aa66776cbf487d2abd0fa29a90a6778",
+  "request_error": null,
+  "requested_model": "gpt-5.6-luna",
+  "response": {
+    "background": false,
+    "billing": {
+      "payer": "developer"
+    },
+    "completed_at": 1789290377.0,
+    "conversation": null,
+    "created_at": 1789290358.0,
+    "error": null,
+    "frequency_penalty": 0.0,
+    "id": "resp_08504b78cb81d33d016aa66776cbf487d2abd0fa29a90a6778",
+    "incomplete_details": null,
+    "instructions": "You extract a semantic knowledge model from explanatory source text.\n\nIdentify important concepts, objects, processes, variables, systems, and components.\nCreate claims for meaningful propositions that do not naturally form graph edges.\nCreate relationships only when one supplied semantic contract fits both the meaning and\ndirection. Prefer important explanatory structure over exhaustive sentence decomposition.\nIf no relationship contract represents a meaningful proposition truthfully, preserve it\nas a claim instead of forcing it into the nearest edge label. Fewer truthful edges are\nbetter than more misleading edges. Use concise grounded descriptions and conservative\nconfidence values.\n\nUse a typed proposition only for either of these binary-edge failure modes:\n- COMPARISON_CONDITION: a comparison is itself the antecedent of an outcome. Bind\n  LEFT_OPERAND, RIGHT_OPERAND, and OUTCOME; use GREATER_THAN and CAUSES.\n- TRANSFER_EVENT: a transfer must distinguish the EVENT, transferred OBJECT, and\n  DESTINATION; use TRANSFERS_TO.\nDo not also emit a lossy binary edge for the same source proposition. Proposition IDs are\nassigned deterministically by trusted code; do not return an id.\n\nSOURCE means the item is explicitly supported by the supplied text. Every SOURCE item\nmust cite one or more exact, verbatim, uniquely occurring source substrings in evidence.\nUse a complete clause or sentence long enough to occur exactly once; never cite a short\nentity name or other repeated fragment. Do not count characters; return quotes only.\nINFERRED means useful structure not stated explicitly and must have an empty evidence\nlist. Any item with evidence must be SOURCE. Before returning, verify every SOURCE item\nhas at least one unique quote and every INFERRED item has none. Do not use external\nknowledge unless the item is marked INFERRED. Do not fabricate evidence.\n\nAvoid entities created only to reproduce grammar. Avoid duplicates; use aliases only\nfor genuine naming equivalence, and keep related but distinct concepts separate.\nRelationship endpoints must use IDs from the entities array. IDs must be unique,\nconcise, stable kebab-case strings. Do not generate summaries, visualizations, Mermaid,\nteaching prose, or output outside the requested schema.\n\nACTIVE RELATIONSHIP CONTRACTS (source --TYPE--> target):\nIS_A [STRUCTURAL; direction=instance_to_type]\n  meaning: The source is a kind, category, or subtype of the target.\n  roles: source=instance or subtype; target=broader type or category\n  use: The source can truthfully be described as a target.\n  avoid: Do not use for parts, examples, similarity, or temporary states.\nPART_OF [STRUCTURAL; direction=part_to_whole]\n  meaning: The source is a constituent or component of the target.\n  roles: source=part or component; target=containing whole\n  use: The source exists as a component or subpart of the target.\n  avoid: Never reverse whole and part; do not use for interaction or dependency.\nEXAMPLE_OF [STRUCTURAL; direction=example_to_concept]\n  meaning: The source is an illustrative instance of the target concept.\n  roles: source=example; target=concept illustrated\n  use: The source is presented as an example of the target.\n  avoid: Do not use merely because the source is a subtype; prefer IS_A for classification.\nCAUSES [CAUSAL; direction=cause_to_effect]\n  meaning: The source brings about the target as an effect.\n  roles: source=cause; target=effect\n  use: The source is stated to produce the target outcome.\n  avoid: Do not use for chronology, association, contribution, or unspecified influence.\nAFFECTS [CAUSAL; direction=influence_to_affected]\n  meaning: The source causally influences the target without a specified direction or complete production.\n  roles: source=influence; target=affected entity, process, or variable\n  use: The source changes or influences the target, but the text does not support CAUSES, INCREASES, or DECREASES.\n  avoid: Do not use for mere association, chronology, physical force, or interaction with no stated effect.\nINCREASES [CAUSAL; direction=increaser_to_increased_variable]\n  meaning: The source causally raises the amount, rate, value, probability, or intensity of the target.\n  roles: source=causal factor; target=quantity or variable increased\n  use: The source is explicitly said to make the target greater, faster, more likely, or more intense.\n  avoid: Do not infer from nearby words such as more or faster; never use when the source says slower, lower, or less.\nDECREASES [CAUSAL; direction=decreaser_to_decreased_variable]\n  meaning: The source causally lowers the amount, rate, value, probability, or intensity of the target.\n  roles: source=causal factor; target=quantity or variable decreased\n  use: The source is explicitly said to make the target smaller, slower, less likely, or less intense.\n  avoid: Do not use for absence, prevention without a scalar target, or mere negative association.\nINDUCES [CAUSAL; direction=inducer_to_induced_effect]\n  meaning: The source produces the target through an explicitly described induction mechanism.\n  roles: source=inducing phenomenon; target=induced phenomenon\n  use: The source explicitly says induces or describes a recognized induction mechanism.\n  avoid: Do not use as a metaphor for generic causation, influence, motivation, or historical response.\nENABLES [DEPENDENCY; direction=enabler_to_enabled]\n  meaning: The source makes the target possible without necessarily causing it to occur.\n  roles: source=enabling condition or capability; target=capability or process made possible\n  use: The target could not occur, or is materially made possible, because of the source.\n  avoid: Do not use for delivery, participation, weak assistance, or an effect that actually occurred.\nREQUIRES [DEPENDENCY; direction=dependent_to_requirement]\n  meaning: The source depends on the target as a prerequisite or necessary resource.\n  roles: source=dependent; target=prerequisite or required resource\n  use: The source cannot operate or occur as described without the target.\n  avoid: Do not reverse prerequisite and dependent; do not use for optional support.\nCONSTRAINS [DEPENDENCY; direction=constraint_to_constrained]\n  meaning: The source limits the possible behavior, values, or choices of the target.\n  roles: source=constraint; target=constrained entity, process, or variable\n  use: The source imposes a limit, rule, boundary, or restriction on the target.\n  avoid: Do not use to mean unchanged, unrelated, merely different, or causally reduced.\nPRECEDES [TEMPORAL; direction=earlier_to_later]\n  meaning: The source occurs before the target in time or an explicit process sequence.\n  roles: source=earlier event or process; target=later event or process\n  use: The source explicitly occurs before, previously, first, then, or after relative to the target.\n  avoid: Do not infer causality from order; do not reverse earlier and later.\nINTERACTS_WITH [INTERACTION; symmetric]\n  meaning: The source and target directly interact, with no more precise directional semantics supported.\n  roles: source=interaction participant; target=interaction participant\n  use: The text supports direct mutual interaction but not a more precise active predicate.\n  avoid: Do not use for distant association, one-way effect, dependency, or chronology.\nBINDS_TO [INTERACTION; symmetric]\n  meaning: The source physically or chemically binds or attaches to the target.\n  roles: source=binding participant; target=binding participant\n  use: The source explicitly binds or attaches to the target.\n  avoid: Do not use for metaphorical commitment, dependency, influence, or literal physical force.\nTRANSFERS_TO [INTERACTION; direction=transferred_item_to_destination]\n  meaning: The source item, material, or information moves to the target destination or recipient.\n  roles: source=item, material, or information transferred; target=destination or recipient\n  use: The source is explicitly carried, delivered, moved, or transferred to the target.\n  avoid: Do not make the carrier the source unless the carrier itself moves to the destination; do not use for enabling.\nEXERTS_FORCE_ON [INTERACTION; direction=force_exerter_to_physical_target]\n  meaning: The source exerts a literal physical force on the target.\n  roles: source=physical force source; target=physical object receiving force\n  use: A literal physical force is explicitly exerted on the target.\n  avoid: Never use metaphorically for influence, contribution, binding, pressure, or causation.\nTRANSFORMS_INTO [TRANSFORMATION; direction=prior_state_to_resulting_state]\n  meaning: The source itself changes state or identity and becomes the target.\n  roles: source=entity or state before transformation; target=same entity or resulting material after transformation\n  use: The source itself becomes the target through a transformation.\n  avoid: Do not use when an actor causes, creates, attempts, participates in, or responds to the target.\nCREATES [TRANSFORMATION; direction=creator_to_created]\n  meaning: The source produces or brings a distinct target into existence.\n  roles: source=producer or generative process; target=newly produced entity or result\n  use: The source produces a target that is distinct from the source.\n  avoid: Do not use when the source itself becomes the target; use TRANSFORMS_INTO instead.\nMEASURED_BY [DESCRIPTIVE; direction=measurand_to_measure]\n  meaning: The source property or variable is quantified or assessed by the target metric, observation, or procedure.\n  roles: source=property or variable measured; target=metric, observation, or measurement procedure\n  use: The target is explicitly how the source is measured or quantified.\n  avoid: Do not point to something that merely responds to, correlates with, or exemplifies the source.\nCONTRADICTS [DESCRIPTIVE; symmetric]\n  meaning: The source and target assert mutually incompatible propositions.\n  roles: source=proposition or claim; target=incompatible proposition or claim\n  use: Both sides are explicit propositions that cannot simultaneously hold as stated.\n  avoid: Do not use for difference, disagreement without incompatibility, trade-off, or negative causality.",
+    "max_output_tokens": null,
+    "max_tool_calls": null,
+    "metadata": {},
+    "model": "gpt-5.6-luna",
+    "moderation": null,
+    "object": "response",
+    "output": [
+      {
+        "content": [],
+        "encrypted_content": "gAAAAABqpmeJCeKtf78shAX4CKHLqa0gyHfqLaq3VfeZBP2xX0DzmdfI2GeRtKeNy1dNKwQe6HnxkNBd65zyL9vG3F1nfeUEeoyjUVBQytwBAJhbZqENlzCeAexviHZfQgEPHbu2Zk6aM9YWj6O5hpAfEktY-c-wZtEuIOr7d_sSVjrHd61ekFxu7D9xT1XGzMFs-UK_F5K7zBx1yGLBfnMDBBY7do4OMf2wdKU0Ouj7w2KzsY7w9gCKO0oLHsYOz7BFXF6lvTON_6v7nWHiD86Guc8wSNzCd8tMP8G8eLiu_hpmnP4O9_3_MV66_8E9dOG4SOUm2JOmhuUWhyr4tUNGNyuRdf4pOukZWo4vSHGELy9mL8Fa-nMbWmbRon9hvJvud0nQBxG43tfKTGPeaXDnNlQl4OJFs8FzNA4zop7Og_PxBV0SRqM4jlZui8MhZayta-5FFouZDQdPni6ptsevJ9zmQUoqB9oNHg6jbalxB-g7C9-OnzpBFo5BZjelasKOntZ7E4UWS2yVAMdOGUkqiqxluujWp2XzzzjAgn6dUZu3Kn5BWgGpMzbyCTsL5wsSg517kH6_W1eh7bSQ89G5zuVvGnCkjDSr2b5mihqLGCXVwAswTuba8MJO_IalaYJ-cOhymdoeDzEYnr6FcV3MR1g7uoHlCfM3Ss0puSdIclMkekjaOKxvubqluwe-0erjCagshIiFN4XWQ5tEBmt-8-rgAY8khefKCbMMbW50auDqqEJkunyhRBIZBWCsGDZuNM88Qq_2I1gcUIVd4C67XjyCsnmSlguPzZfFQlDXfJPoINH6-Xij26rA3nWctOIQFVtUeoZfSMNdC0-caTbkBp6Yb9YXVUdjFjoqnXYQZw2j54jVsoy2sDUUKAbwlHjCp-jV9lY5WpT84FMgw-p2YzKOfXiXgIWWOdfQxSHfRcCXl9tJdQ6ywoTiF2FIjgHTCVZwsliQN9IkkxUNW3_97kqyzcwj4gcphYVOTaRlSFQDUl1a7DfufyV6HKUNawvzFzOBlXw4BAGnPDdjVCb0V_1wFdfMS9lqZ6pDvoyRkey0Xj53MWNyJLeIayGf5pqOhJvDnPFnhpTDak0RZIIVCRZlhqSzUzrdX0HneRkTUTvn3p4rhLsr9At08IlgSSOzz4tEcdGxNFTezFHMLj_EoG5babZumo8pU4Qb6Ht6or3z1dYZ1nS7TmxNpMrerTG3SxNxMDsDpSEumUP05eG2J7M4Jj_KCnHkCrVG8D4AAgn8mMXArNjPDrvZ5GYZu9U-iuBV8PdPplN7YyglBcJVeiKmsgabW1mQrg2VJqm_ArzzxNcVXjcsPM4W19jDV-E_9Gn1weoOQ0pPGuBqVHzcAbuzl9vWo-HKZDyxQx2sSxAyO5njfW390_XfmP7isbJbTBfl91lOlLrdNdh-hhoDRM3lAa8RUYYq3-XiOu-6p4fcPcdls2o2r6yJdGca3FmQ3NoH48ipCf8S3pyY0aohtVTCdh2I63e2tPcEIX0Q3gTNiznir6ERMDYs3tLnfmo2SHv26i3vqbfwW4XS3qGuCFWKA3D2_rZLVZJZUmlHQThu738WfMGcglPuV1ZB0d_2GtZSF8wbbc3wioe72dDA4mKNDQ7W7qfKMVUQDm3TNiOaXeiORvajh2Z075hoK6ElFoE6ZYOSYCXC4RA0XTT0sajthgkX3_xfYENRu8QkenHRPvo03MkHnD6WsfdpkrX-iMQW9VXu",
+        "id": "rs_08504b78cb81d33d016aa6677736c487d2a9bf6e874af6786e",
+        "status": null,
+        "summary": [],
+        "type": "reasoning"
+      },
+      {
+        "content": [
+          {
+            "annotations": [],
+            "logprobs": [],
+            "text": "{\"entities\":[{\"id\":\"measurement\",\"name\":\"Measurement\",\"description\":\"An experimental process that produces a value attributable to a quantitative property of a phenomenon, body, or substance.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"id\":\"measurement-value\",\"name\":\"Measurement value\",\"description\":\"The value produced by a measurement and attributed to a measurand.\",\"entity_type\":\"VARIABLE\",\"aliases\":[]},{\"id\":\"measurand\",\"name\":\"Measurand\",\"description\":\"The quantitative property that is the object of measurement.\",\"entity_type\":\"VARIABLE\",\"aliases\":[]},{\"id\":\"numerical-magnitude\",\"name\":\"Numerical magnitude\",\"description\":\"The numerical component of a measurand's value.\",\"entity_type\":\"VARIABLE\",\"aliases\":[]},{\"id\":\"reference\",\"name\":\"Reference\",\"description\":\"A reference that gives meaning to the numerical magnitude of a measurand.\",\"entity_type\":\"CONCEPT\",\"aliases\":[]},{\"id\":\"measurement-standard\",\"name\":\"Measurement standard\",\"description\":\"A standard used for direct or indirect comparison in measurement.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"id\":\"measuring-instrument\",\"name\":\"Measuring instrument\",\"description\":\"An instrument that produces an indication responsive to a property of interest.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"id\":\"instrument-indication\",\"name\":\"Instrument indication\",\"description\":\"An indication produced by a measuring instrument in response to a property of interest.\",\"entity_type\":\"VARIABLE\",\"aliases\":[]},{\"id\":\"calibration\",\"name\":\"Calibration\",\"description\":\"The condition or process by which an instrument's indications are related to a relevant standard.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"id\":\"measurement-uncertainty\",\"name\":\"Measurement uncertainty\",\"description\":\"A non-negative parameter associated with a measurement result that characterizes the dispersion of values reasonably attributable to the measurand.\",\"entity_type\":\"VARIABLE\",\"aliases\":[]},{\"id\":\"scalar-measurand\",\"name\":\"Scalar measurand\",\"description\":\"A measurand whose property of interest can be quantified by a single real number.\",\"entity_type\":\"VARIABLE\",\"aliases\":[]},{\"id\":\"standard-measurement-uncertainty\",\"name\":\"Standard measurement uncertainty\",\"description\":\"Measurement uncertainty expressed as a standard deviation.\",\"entity_type\":\"VARIABLE\",\"aliases\":[]},{\"id\":\"coverage-interval-half-width\",\"name\":\"Coverage-interval half-width\",\"description\":\"The half-width of an interval that includes the measurand with a stated coverage probability.\",\"entity_type\":\"VARIABLE\",\"aliases\":[]},{\"id\":\"probability-distribution\",\"name\":\"Probability distribution\",\"description\":\"A distribution over possible measurand values representing the corresponding state of knowledge.\",\"entity_type\":\"CONCEPT\",\"aliases\":[]},{\"id\":\"state-of-knowledge\",\"name\":\"State of knowledge\",\"description\":\"The incomplete knowledge about the measurand represented by a probability distribution.\",\"entity_type\":\"CONCEPT\",\"aliases\":[]},{\"id\":\"standard-deviation\",\"name\":\"Standard deviation\",\"description\":\"An attribute of a probability distribution representing its scatter over possible values.\",\"entity_type\":\"VARIABLE\",\"aliases\":[]}],\"claims\":[{\"id\":\"claim-measurand-structure\",\"statement\":\"A measurand has both a numerical magnitude and a reference that gives meaning to that magnitude.\",\"evidence\":[{\"quote\":\"This property that is the object of measurement (measurand) has a numerical magnitude and a reference that gives meaning to that numerical magnitude\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"claim-comparison-examples\",\"statement\":\"Examples of measurement standards include a certified 32768 Hz quartz crystal resonator and a primary gas mixture with 1.079 micromole of methane per mole of air.\",\"evidence\":[{\"quote\":\"for example, a certified 32768 Hz quartz crystal resonator, or a primary gas mixture with 1.079 micromole of methane per mole of air\"}],\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"claim-uncertainty-gum-definition\",\"statement\":\"The GUM defines measurement uncertainty as a parameter associated with a measurement result that characterizes the dispersion of values reasonably attributable to the measurand.\",\"evidence\":[{\"quote\":\"The GUM defines measurement uncertainty as a \\\"parameter, associated with the result of a measurement, that characterizes the dispersion of the values that could reasonably be attributed to the measurand''\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"claim-uncertainty-vim-definition\",\"statement\":\"The VIM defines measurement uncertainty as a non-negative parameter characterizing the dispersion of quantity values attributed to a measurand based on the information used.\",\"evidence\":[{\"quote\":\"The VIM defines it as a \\\"non-negative parameter characterizing the dispersion of the quantity values being attributed to a measurand, based on the information used''\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"claim-uncertainty-alternatives\",\"statement\":\"For scalar measurands, measurement uncertainty may be represented by a standard deviation or by the half-width of an interval containing the measurand with a stated coverage probability.\",\"evidence\":[{\"quote\":\"For scalar measurands (that is, when the property of interest can be quantified by a single real number), the VIM suggests that this parameter may be, for example, a standard deviation called standard measurement uncertainty (or a specified multiple of it), or the half-width of an interval that includes the measurand with a stated coverage probability.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"claim-standard-uncertainty-terminology\",\"statement\":\"The term standard measurement uncertainty is reserved for measurement uncertainty expressed as a standard deviation.\",\"evidence\":[{\"quote\":\"The expression standard measurement uncertainty is reserved for measurement uncertainty expressed as a standard deviation.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"claim-incomplete-knowledge\",\"statement\":\"Measurement uncertainty expresses incomplete knowledge about the measurand.\",\"evidence\":[{\"quote\":\"This suggestion follows from the position that measurement uncertainty expresses incomplete knowledge about the measurand\"}],\"confidence\":0.98,\"origin\":\"SOURCE\"}],\"relationships\":[{\"id\":\"measurement-produces-value\",\"source_entity_id\":\"measurement\",\"relationship_type\":\"CREATES\",\"target_entity_id\":\"measurement-value\",\"statement\":\"Measurement produces a value.\",\"evidence\":[{\"quote\":\"Measurement is an experimental process that produces a value that can reasonably be attributed to a quantitative property\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"measurement-measurand\",\"source_entity_id\":\"measurement\",\"relationship_type\":\"MEASURED_BY\",\"target_entity_id\":\"measurand\",\"statement\":\"The measurand is the property that is the object of measurement.\",\"evidence\":[{\"quote\":\"This property that is the object of measurement (measurand)\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"measurand-magnitude\",\"source_entity_id\":\"measurand\",\"relationship_type\":\"PART_OF\",\"target_entity_id\":\"numerical-magnitude\",\"statement\":\"The measurand has a numerical magnitude.\",\"evidence\":[{\"quote\":\"the measurand) has a numerical magnitude and a reference\"}],\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"measurand-reference\",\"source_entity_id\":\"reference\",\"relationship_type\":\"PART_OF\",\"target_entity_id\":\"measurand\",\"statement\":\"A reference is part of the specification of a measurand and gives meaning to its numerical magnitude.\",\"evidence\":[{\"quote\":\"has a numerical magnitude and a reference that gives meaning to that numerical magnitude\"}],\"confidence\":0.97,\"origin\":\"SOURCE\"},{\"id\":\"measurement-standard-comparison\",\"source_entity_id\":\"measurement\",\"relationship_type\":\"REQUIRES\",\"target_entity_id\":\"measurement-standard\",\"statement\":\"Measurement involves direct or indirect comparison with a standard.\",\"evidence\":[{\"quote\":\"That process involves direct or indirect comparison with a standard\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"measurement-instrument\",\"source_entity_id\":\"measurement\",\"relationship_type\":\"REQUIRES\",\"target_entity_id\":\"measuring-instrument\",\"statement\":\"Measurement typically uses a measuring instrument capable of producing an indication responsive to the property of interest.\",\"evidence\":[{\"quote\":\"This comparison typically is accomplished by making the phenomenon, body, or substance of interest interact with a measuring instrument capable of producing an indication that is responsive to the property of interest.\"}],\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"instrument-produces-indication\",\"source_entity_id\":\"measuring-instrument\",\"relationship_type\":\"CREATES\",\"target_entity_id\":\"instrument-indication\",\"statement\":\"A measuring instrument produces an indication.\",\"evidence\":[{\"quote\":\"a measuring instrument capable of producing an indication that is responsive to the property of interest\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"calibration-indication-standard\",\"source_entity_id\":\"calibration\",\"relationship_type\":\"ENABLES\",\"target_entity_id\":\"instrument-indication\",\"statement\":\"Calibration makes instrument indications meaningful in relation to a relevant standard.\",\"evidence\":[{\"quote\":\"If the instrument has been calibrated, then the indications that it produces are meaningful in relation with a relevant standard.\"}],\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"measurement-uncertainty-associated-result\",\"source_entity_id\":\"measurement-uncertainty\",\"relationship_type\":\"PART_OF\",\"target_entity_id\":\"measurement-value\",\"statement\":\"Measurement uncertainty is associated with the result of a measurement.\",\"evidence\":[{\"quote\":\"a parameter, associated with the result of a measurement\"}],\"confidence\":0.96,\"origin\":\"SOURCE\"},{\"id\":\"scalar-measurand-is-measurand\",\"source_entity_id\":\"scalar-measurand\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"measurand\",\"statement\":\"A scalar measurand is a type of measurand quantified by a single real number.\",\"evidence\":[{\"quote\":\"For scalar measurands (that is, when the property of interest can be quantified by a single real number)\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"standard-uncertainty-is-uncertainty\",\"source_entity_id\":\"standard-measurement-uncertainty\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"measurement-uncertainty\",\"statement\":\"Standard measurement uncertainty is measurement uncertainty expressed as a standard deviation.\",\"evidence\":[{\"quote\":\"The expression standard measurement uncertainty is reserved for measurement uncertainty expressed as a standard deviation.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"uncertainty-distribution\",\"source_entity_id\":\"probability-distribution\",\"relationship_type\":\"AFFECTS\",\"target_entity_id\":\"state-of-knowledge\",\"statement\":\"A probability distribution represents the state of knowledge about the measurand.\",\"evidence\":[{\"quote\":\"a probability distribution over the set of possible values for the measurand is used to represent the corresponding state of knowledge about it\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"distribution-measurand-values\",\"source_entity_id\":\"probability-distribution\",\"relationship_type\":\"PART_OF\",\"target_entity_id\":\"measurand\",\"statement\":\"The probability distribution is defined over possible values for the measurand.\",\"evidence\":[{\"quote\":\"a probability distribution over the set of possible values for the measurand\"}],\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"standard-deviation-distribution\",\"source_entity_id\":\"standard-deviation\",\"relationship_type\":\"PART_OF\",\"target_entity_id\":\"probability-distribution\",\"statement\":\"The standard deviation is an attribute of the probability distribution.\",\"evidence\":[{\"quote\":\"the standard deviation aforementioned is an attribute of this probability distribution\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"standard-deviation-scatter\",\"source_entity_id\":\"standard-deviation\",\"relationship_type\":\"MEASURED_BY\",\"target_entity_id\":\"probability-distribution\",\"statement\":\"The standard deviation characterizes the distribution's scatter over the range of possible values.\",\"evidence\":[{\"quote\":\"an attribute of this probability distribution that represents its scatter over the range of possible values\"}],\"confidence\":0.95,\"origin\":\"SOURCE\"}],\"propositions\":[]}",
+            "type": "output_text"
+          }
+        ],
+        "id": "msg_08504b78cb81d33d016aa66778842087d29a2fbbad44950b9a",
+        "phase": "final_answer",
+        "role": "assistant",
+        "status": "completed",
+        "type": "message"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "presence_penalty": 0.0,
+    "previous_response_id": null,
+    "prompt": null,
+    "prompt_cache_key": null,
+    "prompt_cache_options": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+      "context": "all_turns",
+      "effort": "low",
+      "generate_summary": null,
+      "mode": "standard",
+      "summary": null
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "status": "completed",
+    "store": false,
+    "temperature": 1.0,
+    "text": {
+      "format": {
+        "description": null,
+        "name": "knowledge_extraction",
+        "schema_": {
+          "additionalProperties": false,
+          "properties": {
+            "claims": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "confidence": {
+                    "maximum": 1,
+                    "minimum": 0,
+                    "type": "number"
+                  },
+                  "evidence": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "quote": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "quote"
+                      ],
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "id": {
+                    "type": "string"
+                  },
+                  "origin": {
+                    "enum": [
+                      "SOURCE",
+                      "INFERRED"
+                    ],
+                    "type": "string"
+                  },
+                  "statement": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "statement",
+                  "evidence",
+                  "confidence",
+                  "origin"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "entities": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "aliases": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "entity_type": {
+                    "enum": [
+                      "CONCEPT",
+                      "OBJECT",
+                      "PROCESS",
+                      "VARIABLE",
+                      "SYSTEM",
+                      "COMPONENT"
+                    ],
+                    "type": "string"
+                  },
+                  "id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "name",
+                  "description",
+                  "entity_type",
+                  "aliases"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "propositions": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "comparison_operator": {
+                    "anyOf": [
+                      {
+                        "enum": [
+                          "GREATER_THAN"
+                        ],
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "confidence": {
+                    "maximum": 1,
+                    "minimum": 0,
+                    "type": "number"
+                  },
+                  "evidence": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "quote": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "quote"
+                      ],
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "origin": {
+                    "enum": [
+                      "SOURCE",
+                      "INFERRED"
+                    ],
+                    "type": "string"
+                  },
+                  "proposition_type": {
+                    "enum": [
+                      "COMPARISON_CONDITION",
+                      "TRANSFER_EVENT"
+                    ],
+                    "type": "string"
+                  },
+                  "relationship_type": {
+                    "enum": [
+                      "IS_A",
+                      "PART_OF",
+                      "CAUSES",
+                      "INCREASES",
+                      "DECREASES",
+                      "ENABLES",
+                      "REQUIRES",
+                      "CONSTRAINS",
+                      "PRECEDES",
+                      "TRANSFORMS_INTO",
+                      "INTERACTS_WITH",
+                      "MEASURED_BY",
+                      "EXAMPLE_OF",
+                      "CONTRADICTS",
+                      "CREATES",
+                      "INDUCES",
+                      "EXERTS_FORCE_ON",
+                      "AFFECTS",
+                      "BINDS_TO",
+                      "TRANSFERS_TO"
+                    ],
+                    "type": "string"
+                  },
+                  "role_bindings": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "entity_id": {
+                          "type": "string"
+                        },
+                        "role": {
+                          "enum": [
+                            "LEFT_OPERAND",
+                            "RIGHT_OPERAND",
+                            "OUTCOME",
+                            "EVENT",
+                            "OBJECT",
+                            "DESTINATION"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "role",
+                        "entity_id"
+                      ],
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "statement": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "proposition_type",
+                  "statement",
+                  "role_bindings",
+                  "relationship_type",
+                  "comparison_operator",
+                  "evidence",
+                  "confidence",
+                  "origin"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "relationships": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "confidence": {
+                    "maximum": 1,
+                    "minimum": 0,
+                    "type": "number"
+                  },
+                  "evidence": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "quote": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "quote"
+                      ],
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "id": {
+                    "type": "string"
+                  },
+                  "origin": {
+                    "enum": [
+                      "SOURCE",
+                      "INFERRED"
+                    ],
+                    "type": "string"
+                  },
+                  "relationship_type": {
+                    "enum": [
+                      "IS_A",
+                      "PART_OF",
+                      "CAUSES",
+                      "INCREASES",
+                      "DECREASES",
+                      "ENABLES",
+                      "REQUIRES",
+                      "CONSTRAINS",
+                      "PRECEDES",
+                      "TRANSFORMS_INTO",
+                      "INTERACTS_WITH",
+                      "MEASURED_BY",
+                      "EXAMPLE_OF",
+                      "CONTRADICTS",
+                      "CREATES",
+                      "INDUCES",
+                      "EXERTS_FORCE_ON",
+                      "AFFECTS",
+                      "BINDS_TO",
+                      "TRANSFERS_TO"
+                    ],
+                    "type": "string"
+                  },
+                  "source_entity_id": {
+                    "type": "string"
+                  },
+                  "statement": {
+                    "type": "string"
+                  },
+                  "target_entity_id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "source_entity_id",
+                  "relationship_type",
+                  "target_entity_id",
+                  "statement",
+                  "evidence",
+                  "confidence",
+                  "origin"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "entities",
+            "claims",
+            "relationships",
+            "propositions"
+          ],
+          "type": "object"
+        },
+        "strict": true,
+        "type": "json_schema"
+      },
+      "verbosity": "medium"
+    },
+    "tool_choice": "auto",
+    "tool_usage": {
+      "image_gen": {
+        "input_tokens": 0,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "total_tokens": 0
+      },
+      "web_search": {
+        "num_requests": 0
+      }
+    },
+    "tools": [],
+    "top_logprobs": 0,
+    "top_p": 0.98,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 3187,
+      "input_tokens_details": {
+        "cache_write_tokens": 409,
+        "cached_tokens": 2775
+      },
+      "output_tokens": 2533,
+      "output_tokens_details": {
+        "reasoning_tokens": 68
+      },
+      "total_tokens": 5720
+    },
+    "user": null
+  },
+  "started_at_utc": "2026-09-13T09:05:58.656684Z"
+}

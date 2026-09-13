@@ -1,0 +1,59 @@
+{
+  "adapter_invocation_count": 1,
+  "follow_up_call_count": 0,
+  "hidden_retry_count": 0,
+  "history": [
+    {
+      "attempt": 1,
+      "completed_at_utc": "2026-09-13T09:05:58.596255Z",
+      "duration_ms": 23953.423,
+      "error": null,
+      "error_type": null,
+      "http_request_id": "req_24b322103fb240dba0c93c35ed0352da",
+      "kind": "OPENAI_RESPONSES_STRUCTURED_EXTRACTION",
+      "live_call": true,
+      "outcome": "RESPONSE_RECEIVED",
+      "provider_request_id": "resp_0b8a40b4ac87fc69016aa6675ece6487d290fae5680530b46c",
+      "retry": false,
+      "started_at_utc": "2026-09-13T09:05:34.636583Z",
+      "usage": {
+        "input_tokens": 3412,
+        "output_tokens": 3085,
+        "total_tokens": 6497
+      }
+    },
+    {
+      "attempt": 1,
+      "completed_at_utc": "2026-09-13T09:05:58.596255Z",
+      "duration_ms": 23953.423,
+      "http_request_id": "req_24b322103fb240dba0c93c35ed0352da",
+      "kind": "OPENAI_RESPONSES_API",
+      "live_call": true,
+      "provider_request_id": "resp_0b8a40b4ac87fc69016aa6675ece6487d290fae5680530b46c",
+      "retry": false,
+      "started_at_utc": "2026-09-13T09:05:34.636583Z",
+      "usage": {
+        "input_tokens": 3412,
+        "input_tokens_details": {
+          "cache_write_tokens": 634,
+          "cached_tokens": 2775
+        },
+        "output_tokens": 3085,
+        "output_tokens_details": {
+          "reasoning_tokens": 59
+        },
+        "total_tokens": 6497
+      }
+    },
+    {
+      "attempt": 1,
+      "final_stage": "LEARNER_REVIEW_ARTIFACT",
+      "outcome": "ADMITTED",
+      "retry_count": 0
+    }
+  ],
+  "repair_call_count": 0,
+  "sdk_retry_count": 0,
+  "semantic_retry_count": 0,
+  "source_id": "fhwa-traffic-bottleneck-concepts-2016"
+}

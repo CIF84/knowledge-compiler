@@ -1,0 +1,139 @@
+{
+  "detector_version": "spec-004-v1",
+  "metadata": {
+    "input_relationship_count": 10,
+    "logical_relationship_count": 10,
+    "maximum_causal_path_edges": 5,
+    "structure_counts": {
+      "CAUSAL_PATH": 1,
+      "DEPENDENCY_CHAIN": 0,
+      "FEEDBACK_CANDIDATE": 0,
+      "HIERARCHY": 3,
+      "PROCESS_CHAIN": 0
+    }
+  },
+  "source_document_id": "text-c0cb2519673b8f3e",
+  "structures": [
+    {
+      "entity_ids": [
+        "supernova",
+        "cloud-spinning",
+        "material-fall-to-center",
+        "sun"
+      ],
+      "id": "structure-causal-path-50345d37201aabbe",
+      "metadata": {
+        "edge_count": 3,
+        "supporting_relationship_ids_by_edge": [
+          [
+            "rel-supernova-causes-spinning"
+          ],
+          [
+            "rel-spinning-causes-fall"
+          ],
+          [
+            "rel-fall-creates-sun"
+          ]
+        ]
+      },
+      "relationship_ids": [
+        "rel-supernova-causes-spinning",
+        "rel-spinning-causes-fall",
+        "rel-fall-creates-sun"
+      ],
+      "relationship_types": [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      "structure_type": "CAUSAL_PATH"
+    },
+    {
+      "entity_ids": [
+        "earth",
+        "life"
+      ],
+      "id": "structure-hierarchy-60e100a2b8e461c3",
+      "metadata": {
+        "contains_cycle": false,
+        "hierarchy_relationship_type": "EXAMPLE_OF",
+        "leaves": [
+          "earth"
+        ],
+        "roots": [
+          "life"
+        ],
+        "supporting_relationship_ids_by_edge": [
+          [
+            "rel-earth-example-life-world"
+          ]
+        ]
+      },
+      "relationship_ids": [
+        "rel-earth-example-life-world"
+      ],
+      "relationship_types": [
+        "EXAMPLE_OF"
+      ],
+      "structure_type": "HIERARCHY"
+    },
+    {
+      "entity_ids": [
+        "eight-planets",
+        "planet"
+      ],
+      "id": "structure-hierarchy-270b0dd3cb7307f5",
+      "metadata": {
+        "contains_cycle": false,
+        "hierarchy_relationship_type": "EXAMPLE_OF",
+        "leaves": [
+          "eight-planets"
+        ],
+        "roots": [
+          "planet"
+        ],
+        "supporting_relationship_ids_by_edge": [
+          [
+            "rel-eight-planets-example"
+          ]
+        ]
+      },
+      "relationship_ids": [
+        "rel-eight-planets-example"
+      ],
+      "relationship_types": [
+        "EXAMPLE_OF"
+      ],
+      "structure_type": "HIERARCHY"
+    },
+    {
+      "entity_ids": [
+        "gas-and-dust",
+        "nebula"
+      ],
+      "id": "structure-hierarchy-bbbdd49e3836671e",
+      "metadata": {
+        "contains_cycle": false,
+        "hierarchy_relationship_type": "IS_A",
+        "leaves": [
+          "nebula"
+        ],
+        "roots": [
+          "gas-and-dust"
+        ],
+        "supporting_relationship_ids_by_edge": [
+          [
+            "rel-nebula-cloud"
+          ]
+        ]
+      },
+      "relationship_ids": [
+        "rel-nebula-cloud"
+      ],
+      "relationship_types": [
+        "IS_A"
+      ],
+      "structure_type": "HIERARCHY"
+    }
+  ]
+}
