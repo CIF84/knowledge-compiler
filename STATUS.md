@@ -32,7 +32,7 @@ Implementation status: `IMPLEMENTED_REVIEWED`
 
 Owner verdict: `SEMANTIC_REPRESENTATION_COMPILER_CONFIRMED_WITH_COVERAGE_GAPS`
 
-## Blind evaluation harness
+## Blind evaluation foundation
 
 `SPEC-040 — blind out-of-sample evaluation harness`
 
@@ -42,7 +42,7 @@ Frozen harness/compiler identity:
 
 `5622df131dc71346d5890f42ce16fe1e3e55f33a`
 
-## Initial blind run and diagnosis
+## Initial blind run + diagnosis
 
 `SPEC-042 — blind out-of-sample live execution`
 
@@ -54,102 +54,91 @@ Implementation status: `IMPLEMENTED_REVIEWED`
 
 Owner verdict: `DIAGNOSIS_CONFIRMED_NO_CONTRACT_CHANGE_REPLICATION_REQUIRED`
 
-Accepted findings:
+Accepted initial diagnosis:
 
 - 2 `EXTRACTION_GRANULARITY` rejected objects;
-- 1 `MODEL_ERROR` rejected object;
-- 0 `CONTRACT_GAP`, `VALIDATION_BUG`, or `AMBIGUOUS`;
+- 1 `MODEL_ERROR`;
+- 0 `CONTRACT_GAP`, `VALIDATION_BUG`, `AMBIGUOUS`;
 - strict declared-identity validation behaved correctly;
-- evidence was insufficient for a contract change;
 - replication was required before repair.
 
-## Blind replication source set
+## Blind replication
 
 `SPEC-044 — blind replication source set freeze`
 
 Implementation status: `IMPLEMENTED_REVIEWED`
 
-Owner verdict: `SIX_SOURCE_REPLICATION_PACKET_APPROVED_FOR_EXACT_TRANSMISSION`
-
-Accepted evidence:
-
-- six unrelated priority-rank-1 U.S. institutional sources;
-- fixed predeclared domain order;
-- exact 300–650-word passages frozen with provenance and SHA-256;
-- repository non-overlap: zero matches;
-- semantic shape not used for selection;
-- no answer key and no model behavior inspected during selection;
-- frozen compiler/harness and SPEC-038 baseline preserved;
-- zero provider/model calls during source freeze.
-
-Frozen packet SHA-256:
-
-`85f7a7be47fa827799d532ab7ca5edc03b359162894dc2ee4e72a750de28e52b`
-
-Frozen manifest SHA-256:
-
-`beaf3df4a941afc7fadf2abf13543affeae798e3d14486798cbb0060fccdc57e`
-
-## Blind replication live execution
-
 `SPEC-045 — blind replication live execution`
 
-Implementation status: `IMPLEMENTED_AWAITING_REVIEW`
+Implementation status: `IMPLEMENTED_REVIEWED_FOR_FAILURE_MODE_ANALYSIS`
 
-Owner verdict: `PENDING`
+Owner verdict: `REPLICATION_CONFIRMS_HETEROGENEOUS_MODEL_ERROR_DOMINATED_FAILURES`
 
-Recorded objective result:
+Accepted replication findings:
 
-- exactly six approved `gpt-5.6-luna` Responses API calls executed in the frozen source order;
-- astronomy, ecology, and transportation passed deterministic admission;
-- chemistry, biology, and statistics failed closed with complete attempts preserved;
-- four rejected objects classify as 3 `MODEL_ERROR`, 1 `EXTRACTION_GRANULARITY`, 0 `CONTRACT_GAP`, 0 `VALIDATION_BUG`, and 0 `AMBIGUOUS`;
-- one materially source-supported undeclared identity occurred, but it was not a process/event reification and the same dangling-identity mechanism did not recur across two new strata;
-- frozen compiler, validator, representation behavior, and protected baselines remained unchanged.
+- 3 of 6 new sources passed deterministic admission;
+- 3 failed closed;
+- 4 rejected semantic objects: 3 `MODEL_ERROR`, 1 `EXTRACTION_GRANULARITY`;
+- 0 `CONTRACT_GAP`, `VALIDATION_BUG`, `AMBIGUOUS`;
+- the earlier process/event dangling-identity pattern did not recur across unrelated new domains;
+- model errors numerically dominate the replication failures;
+- narrow extraction→contract alignment is not justified by current evidence;
+- strict fail-closed behavior remains protected.
 
-Canonical evidence:
+Combined blind evidence entering the next diagnostic step:
 
-`examples/evaluations/spec-045-blind-replication-live-execution-20260912/report.json`
+```text
+9 unseen sources total
+
+known rejected objects:
+MODEL_ERROR             4
+EXTRACTION_GRANULARITY  3
+CONTRACT_GAP            0
+VALIDATION_BUG          0
+AMBIGUOUS               0
+```
 
 ## Current approved work packet
 
 ```text
-NONE
+specs/SPEC-046-extraction-reliability-failure-mode-analysis.md
 ```
 
-Status: `NONE`
+Status: `APPROVED_FOR_IMPLEMENTATION`
 
-Authority: `NONE`
+Authority: `OFFLINE_ONLY`
 
-Human gate: `NONE`
+Human gate: `OWNER_REVIEW`
 
 Promotion: `NOT_AUTHORIZED`
 
 ## Current gate
 
-SPEC-045 is implemented and awaiting owner review. Its canonical evidence is
-`examples/evaluations/spec-045-blind-replication-live-execution-20260912/report.json`.
+SPEC-046 is authorized to analyze immutable SPEC-042 through SPEC-045 evidence offline and determine where extraction failures originate.
 
-No packet is active. No provider/model call, retry, repair, semantic adaptation,
-semantic-contract change, or product promotion is authorized.
+It must distinguish failure **origin stage** from deterministic **detection stage**, aggregate failure modes across all nine blind sources, separate extraction reliability from trust-boundary reliability, map observed origin stages to candidate intervention classes, and recommend exactly one next experiment class.
+
+No repair or behavior change is authorized.
+
+No provider/model/network call is authorized.
 
 ## Current product question
 
 ```text
-3 admitted / 3 failed closed
+9 blind sources
         ↓
-4 rejected objects classified offline
+4 admitted / 5 failed closed
         ↓
-3 MODEL_ERROR / 1 EXTRACTION_GRANULARITY
+7 known rejected semantic objects
         ↓
-no repeated process/event dangling-identity mechanism
+classify WHERE errors originate
         ↓
-OWNER REVIEW
+separate extraction failure from trust-boundary success
         ↓
-decide whether evidence supports narrow alignment work or points elsewhere
+identify one evidence-backed intervention class to test next
 ```
 
-The immediate goal is owner interpretation of the preserved replication evidence, not repair.
+The goal is not to improve pass rate in this packet. The goal is to choose the right experimental lever.
 
 ## Frozen / protected state
 
@@ -157,15 +146,15 @@ The immediate goal is owner interpretation of the preserved replication evidence
 - SPEC-038 learner-facing baseline;
 - SPEC-039 representation compiler behavior;
 - SPEC-040 frozen harness/compiler identity `5622df131dc71346d5890f42ce16fe1e3e55f33a`;
-- SPEC-042 complete execution evidence;
-- SPEC-043 taxonomy, diagnosis, and canonical report;
-- SPEC-044 exact six-source packet, order, hashes, manifest, selection evidence, and decision framework;
+- SPEC-041/042 source packet, manifest, raw responses, run history, and evidence;
+- SPEC-043 taxonomy, accepted classifications, and canonical report;
+- SPEC-044/045 source packet, manifest, raw responses, run history, classifications, and evidence;
 - prompt `spec-010-v1`;
 - extraction schema;
 - semantic vocabulary;
 - grounding/provenance;
 - strict declared-identity validation;
-- representation strategy rules and current renderer coverage;
+- representation strategy rules and renderer coverage;
 - SPEC-033 navigation semantics;
 - SPEC-035 explanation/navigation isolation;
 - SPEC-036 inspection semantics;
@@ -176,20 +165,18 @@ The immediate goal is owner interpretation of the preserved replication evidence
 
 Do not:
 
-- exceed six provider calls;
-- retry or repair any result;
-- use another model;
-- edit or substitute frozen sources;
-- retrieve external evidence during execution or classification;
+- call OpenAI or another model/provider;
+- use web/network retrieval;
+- rerun or repair historical extraction;
+- change historical classifications silently;
+- change model, prompt, schema, semantic vocabulary, grounding, or validation;
 - add/normalize missing entities;
-- change extraction granularity;
-- change prompt/schema/vocabulary/validation;
-- adapt implementation between calls;
-- change representation or renderer logic;
-- redesign UI/navigation;
-- implement Back/history or other deferred product features;
-- implement a fix after classification;
-- promote the result or authorize follow-up work.
+- add deterministic repair logic;
+- implement extraction decomposition or any other recommended intervention;
+- change representation/renderers/UI/navigation;
+- create new learner-facing artifacts;
+- promote product/baseline state;
+- automatically prepare follow-up implementation after analysis.
 
 ## Coordination rule
 
