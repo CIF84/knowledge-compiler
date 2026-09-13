@@ -1,0 +1,243 @@
+{
+  "decision_framework": [
+    "B_CLEAR_IMPROVEMENT",
+    "B_SAFER_BUT_TOO_SPARSE",
+    "B_NO_MATERIAL_GAIN",
+    "B_REGRESSION",
+    "INCONCLUSIVE"
+  ],
+  "primary_metrics": [
+    "source_admission_rate",
+    "trust_boundary_containment",
+    "failure_origin_distribution"
+  ],
+  "record_schema": {
+    "additionalProperties": false,
+    "properties": {
+      "admitted_counts": {
+        "anyOf": [
+          {
+            "additionalProperties": false,
+            "properties": {
+              "claims": {
+                "minimum": 0,
+                "type": "integer"
+              },
+              "entities": {
+                "minimum": 0,
+                "type": "integer"
+              },
+              "propositions": {
+                "minimum": 0,
+                "type": "integer"
+              },
+              "relationships": {
+                "minimum": 0,
+                "type": "integer"
+              }
+            },
+            "required": [
+              "entities",
+              "relationships",
+              "propositions",
+              "claims"
+            ],
+            "type": "object"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "arm": {
+        "enum": [
+          "CONTROL_A",
+          "CANDIDATE_B"
+        ],
+        "type": "string"
+      },
+      "detected_structure_count": {
+        "minimum": 0,
+        "type": "integer"
+      },
+      "detected_structure_types": {
+        "additionalProperties": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "type": "object"
+      },
+      "execution_mode": {
+        "enum": [
+          "HISTORICAL_FROZEN",
+          "FUTURE_LIVE"
+        ],
+        "type": "string"
+      },
+      "failure_origins": {
+        "items": {
+          "type": "string"
+        },
+        "type": "array"
+      },
+      "known_invalid_objects_admitted": {
+        "minimum": 0,
+        "type": "integer"
+      },
+      "monetary_cost": {
+        "anyOf": [
+          {
+            "type": "number"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "proposal_counts": {
+        "additionalProperties": false,
+        "properties": {
+          "claims": {
+            "minimum": 0,
+            "type": "integer"
+          },
+          "entities": {
+            "minimum": 0,
+            "type": "integer"
+          },
+          "propositions": {
+            "minimum": 0,
+            "type": "integer"
+          },
+          "relationships": {
+            "minimum": 0,
+            "type": "integer"
+          }
+        },
+        "required": [
+          "entities",
+          "relationships",
+          "propositions",
+          "claims"
+        ],
+        "type": "object"
+      },
+      "provider_calls_started": {
+        "minimum": 0,
+        "type": "integer"
+      },
+      "provider_latency_ms": {
+        "minimum": 0,
+        "type": "number"
+      },
+      "representation_strategy_counts": {
+        "additionalProperties": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "type": "object"
+      },
+      "representation_sufficiency_counts": {
+        "additionalProperties": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "type": "object"
+      },
+      "source_id": {
+        "type": "string"
+      },
+      "source_sha256": {
+        "type": "string"
+      },
+      "stage_gates": {
+        "items": {
+          "type": "object"
+        },
+        "type": "array"
+      },
+      "status": {
+        "enum": [
+          "PASS",
+          "FAILED_CLOSED"
+        ],
+        "type": "string"
+      },
+      "sufficient_representation_decision_count": {
+        "minimum": 0,
+        "type": "integer"
+      },
+      "usage": {
+        "additionalProperties": false,
+        "properties": {
+          "input_tokens": {
+            "minimum": 0,
+            "type": "integer"
+          },
+          "output_tokens": {
+            "minimum": 0,
+            "type": "integer"
+          },
+          "total_tokens": {
+            "minimum": 0,
+            "type": "integer"
+          }
+        },
+        "required": [
+          "input_tokens",
+          "output_tokens",
+          "total_tokens"
+        ],
+        "type": "object"
+      }
+    },
+    "required": [
+      "arm",
+      "source_id",
+      "source_sha256",
+      "status",
+      "execution_mode",
+      "proposal_counts",
+      "admitted_counts",
+      "failure_origins",
+      "known_invalid_objects_admitted",
+      "detected_structure_count",
+      "detected_structure_types",
+      "representation_strategy_counts",
+      "representation_sufficiency_counts",
+      "sufficient_representation_decision_count",
+      "provider_calls_started",
+      "usage",
+      "provider_latency_ms",
+      "monetary_cost",
+      "stage_gates"
+    ],
+    "type": "object"
+  },
+  "schema": "spec-047-comparison-contract-v1",
+  "secondary_metrics": [
+    "entity_inventory_consistency",
+    "undeclared_reference_failures",
+    "relationship_proposition_semantic_rejections",
+    "evidence_fidelity_rejections",
+    "admitted_semantic_counts",
+    "detected_structure_counts_and_types",
+    "representation_strategy_counts_and_sufficiency",
+    "provider_calls_per_source",
+    "tokens_per_admitted_and_attempted_source",
+    "end_to_end_provider_latency_per_source",
+    "available_monetary_cost_evidence"
+  ],
+  "semantic_richness_guard": {
+    "automatic_promotion_threshold": null,
+    "fields": [
+      "entities",
+      "relationships",
+      "propositions",
+      "detected_structures",
+      "sufficient_representation_decisions"
+    ],
+    "owner_review_required": true,
+    "required": true
+  }
+}

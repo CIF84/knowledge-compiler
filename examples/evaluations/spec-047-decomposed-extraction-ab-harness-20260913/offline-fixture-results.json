@@ -1,0 +1,282 @@
+{
+  "blind_corpus_used": false,
+  "fixture_source_sha256": "bd0b31bfd52d9e0d3733f22260be3357e7a402f6b9f7299c1481801e0014ea92",
+  "invariant_rejections": [
+    {
+      "case": "STAGE_2_CANNOT_ADD_ENTITIES",
+      "error_type": "ValidationError",
+      "exact_failure": "Stage 2 proposal must contain exactly ['missing_symbols', 'propositions', 'relationships']; missing=[], unknown=['entities']",
+      "status": "FAIL_CLOSED"
+    },
+    {
+      "case": "STAGE_2_CANNOT_REFERENCE_UNDECLARED_IDS",
+      "error_type": "ValidationError",
+      "exact_failure": "Stage 2 relationship 'controller-causes-pump' references unknown frozen entities: ['undeclared']",
+      "status": "FAIL_CLOSED"
+    },
+    {
+      "case": "STAGE_3_CANNOT_ALTER_SEMANTIC_STRUCTURE",
+      "error_type": "ValidationError",
+      "exact_failure": "Stage 3 proposal must contain exactly ['claims', 'semantic_evidence_bindings']; missing=[], unknown=['relationships']",
+      "status": "FAIL_CLOSED"
+    },
+    {
+      "case": "EXACT_EVIDENCE_MISMATCH_FAILS_CLOSED",
+      "error_type": "ValidationError",
+      "exact_failure": "evidence quote was not found in source: 'A controller starts a pump.'",
+      "status": "FAIL_CLOSED"
+    }
+  ],
+  "model_calls": 0,
+  "provider_calls": 0,
+  "upstream_short_circuits": {
+    "CLAIM_EVIDENCE_BINDING": {
+      "adapter_stage_invocations": [
+        "ENTITY_INVENTORY",
+        "SEMANTIC_STRUCTURE",
+        "CLAIM_EVIDENCE_BINDING"
+      ],
+      "canonical_gate": {
+        "error_type": null,
+        "exact_failure": null,
+        "output_identity_sha256": null,
+        "stage": "CANONICAL_VALIDATION",
+        "stage_version": "existing-knowledge-model-validator",
+        "status": "NOT_RUN_UPSTREAM_FAILURE",
+        "upstream_identity_sha256": null
+      },
+      "stage_gates": [
+        {
+          "error_type": null,
+          "exact_failure": null,
+          "output_identity_sha256": "180e8d680e771179b142c3fdcbd60899dc5d4cea81163f11f898c886a334571a",
+          "stage": "ENTITY_INVENTORY",
+          "stage_version": "spec-047-entity-inventory-v1",
+          "status": "PASS",
+          "upstream_identity_sha256": "bd0b31bfd52d9e0d3733f22260be3357e7a402f6b9f7299c1481801e0014ea92"
+        },
+        {
+          "error_type": null,
+          "exact_failure": null,
+          "output_identity_sha256": "1bf72b34ce9977cd5f5b012b15f04123c6e8bdd424f1fa70b1454c96da8dc070",
+          "stage": "SEMANTIC_STRUCTURE",
+          "stage_version": "spec-047-semantic-structure-v1",
+          "status": "PASS",
+          "upstream_identity_sha256": "180e8d680e771179b142c3fdcbd60899dc5d4cea81163f11f898c886a334571a"
+        },
+        {
+          "error_type": "ValueError",
+          "exact_failure": "synthetic CLAIM_EVIDENCE_BINDING failure",
+          "output_identity_sha256": null,
+          "stage": "CLAIM_EVIDENCE_BINDING",
+          "stage_version": "spec-047-claim-evidence-binding-v1",
+          "status": "FAIL_CLOSED",
+          "upstream_identity_sha256": "682ccda56922566012c53da369fbd8d1ac95be8d59abc4ac1d735fb083d7ec18"
+        }
+      ],
+      "status": "FAIL_CLOSED"
+    },
+    "ENTITY_INVENTORY": {
+      "adapter_stage_invocations": [
+        "ENTITY_INVENTORY"
+      ],
+      "canonical_gate": {
+        "error_type": null,
+        "exact_failure": null,
+        "output_identity_sha256": null,
+        "stage": "CANONICAL_VALIDATION",
+        "stage_version": "existing-knowledge-model-validator",
+        "status": "NOT_RUN_UPSTREAM_FAILURE",
+        "upstream_identity_sha256": null
+      },
+      "stage_gates": [
+        {
+          "error_type": "ValueError",
+          "exact_failure": "synthetic ENTITY_INVENTORY failure",
+          "output_identity_sha256": null,
+          "stage": "ENTITY_INVENTORY",
+          "stage_version": "spec-047-entity-inventory-v1",
+          "status": "FAIL_CLOSED",
+          "upstream_identity_sha256": "bd0b31bfd52d9e0d3733f22260be3357e7a402f6b9f7299c1481801e0014ea92"
+        },
+        {
+          "error_type": null,
+          "exact_failure": null,
+          "output_identity_sha256": null,
+          "stage": "SEMANTIC_STRUCTURE",
+          "stage_version": "spec-047-semantic-structure-v1",
+          "status": "NOT_RUN_UPSTREAM_FAILURE",
+          "upstream_identity_sha256": null
+        },
+        {
+          "error_type": null,
+          "exact_failure": null,
+          "output_identity_sha256": null,
+          "stage": "CLAIM_EVIDENCE_BINDING",
+          "stage_version": "spec-047-claim-evidence-binding-v1",
+          "status": "NOT_RUN_UPSTREAM_FAILURE",
+          "upstream_identity_sha256": null
+        }
+      ],
+      "status": "FAIL_CLOSED"
+    },
+    "SEMANTIC_STRUCTURE": {
+      "adapter_stage_invocations": [
+        "ENTITY_INVENTORY",
+        "SEMANTIC_STRUCTURE"
+      ],
+      "canonical_gate": {
+        "error_type": null,
+        "exact_failure": null,
+        "output_identity_sha256": null,
+        "stage": "CANONICAL_VALIDATION",
+        "stage_version": "existing-knowledge-model-validator",
+        "status": "NOT_RUN_UPSTREAM_FAILURE",
+        "upstream_identity_sha256": null
+      },
+      "stage_gates": [
+        {
+          "error_type": null,
+          "exact_failure": null,
+          "output_identity_sha256": "180e8d680e771179b142c3fdcbd60899dc5d4cea81163f11f898c886a334571a",
+          "stage": "ENTITY_INVENTORY",
+          "stage_version": "spec-047-entity-inventory-v1",
+          "status": "PASS",
+          "upstream_identity_sha256": "bd0b31bfd52d9e0d3733f22260be3357e7a402f6b9f7299c1481801e0014ea92"
+        },
+        {
+          "error_type": "ValueError",
+          "exact_failure": "synthetic SEMANTIC_STRUCTURE failure",
+          "output_identity_sha256": null,
+          "stage": "SEMANTIC_STRUCTURE",
+          "stage_version": "spec-047-semantic-structure-v1",
+          "status": "FAIL_CLOSED",
+          "upstream_identity_sha256": "180e8d680e771179b142c3fdcbd60899dc5d4cea81163f11f898c886a334571a"
+        },
+        {
+          "error_type": null,
+          "exact_failure": null,
+          "output_identity_sha256": null,
+          "stage": "CLAIM_EVIDENCE_BINDING",
+          "stage_version": "spec-047-claim-evidence-binding-v1",
+          "status": "NOT_RUN_UPSTREAM_FAILURE",
+          "upstream_identity_sha256": null
+        }
+      ],
+      "status": "FAIL_CLOSED"
+    }
+  },
+  "valid_flow": {
+    "canonical_gate": {
+      "error_type": null,
+      "exact_failure": null,
+      "output_identity_sha256": "f740084dd4800edf4f0df02a9a0087d36f8095584d6ace45c66ec0791a6bfc03",
+      "stage": "CANONICAL_VALIDATION",
+      "stage_version": "existing-knowledge-model-validator",
+      "status": "PASS",
+      "upstream_identity_sha256": "560113241e686f5c413e84f1802e8a1b0605383a54e761827414266d9089db3d"
+    },
+    "downstream_comparison_record": {
+      "admitted_counts": {
+        "claims": 0,
+        "entities": 3,
+        "propositions": 0,
+        "relationships": 2
+      },
+      "arm": "CANDIDATE_B",
+      "detected_structure_count": 1,
+      "detected_structure_types": {
+        "HIERARCHY": 1
+      },
+      "execution_mode": "FUTURE_LIVE",
+      "failure_origins": [],
+      "known_invalid_objects_admitted": 0,
+      "monetary_cost": null,
+      "proposal_counts": {
+        "claims": 0,
+        "entities": 3,
+        "propositions": 0,
+        "relationships": 2
+      },
+      "provider_calls_started": 0,
+      "provider_latency_ms": 0,
+      "representation_strategy_counts": {
+        "CONCISE_PROSE": 1,
+        "FOCUSED_RELATIONSHIP": 2,
+        "HIERARCHY_COMPOSITION": 2
+      },
+      "representation_sufficiency_counts": {
+        "INSUFFICIENT_SUPPORTED_STRUCTURE": 1,
+        "SUFFICIENT_TRUSTED_STRUCTURE": 4
+      },
+      "source_id": "synthetic-control-system",
+      "source_sha256": "bd0b31bfd52d9e0d3733f22260be3357e7a402f6b9f7299c1481801e0014ea92",
+      "stage_gates": [
+        {
+          "error_type": null,
+          "exact_failure": null,
+          "output_identity_sha256": "180e8d680e771179b142c3fdcbd60899dc5d4cea81163f11f898c886a334571a",
+          "stage": "ENTITY_INVENTORY",
+          "stage_version": "spec-047-entity-inventory-v1",
+          "status": "PASS",
+          "upstream_identity_sha256": "bd0b31bfd52d9e0d3733f22260be3357e7a402f6b9f7299c1481801e0014ea92"
+        },
+        {
+          "error_type": null,
+          "exact_failure": null,
+          "output_identity_sha256": "1bf72b34ce9977cd5f5b012b15f04123c6e8bdd424f1fa70b1454c96da8dc070",
+          "stage": "SEMANTIC_STRUCTURE",
+          "stage_version": "spec-047-semantic-structure-v1",
+          "status": "PASS",
+          "upstream_identity_sha256": "180e8d680e771179b142c3fdcbd60899dc5d4cea81163f11f898c886a334571a"
+        },
+        {
+          "error_type": null,
+          "exact_failure": null,
+          "output_identity_sha256": "31358919678629174259a6a0ba3b8746d61d097a9fd0ebfe410f7b73d7719a27",
+          "stage": "CLAIM_EVIDENCE_BINDING",
+          "stage_version": "spec-047-claim-evidence-binding-v1",
+          "status": "PASS",
+          "upstream_identity_sha256": "682ccda56922566012c53da369fbd8d1ac95be8d59abc4ac1d735fb083d7ec18"
+        }
+      ],
+      "status": "PASS",
+      "sufficient_representation_decision_count": 4,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "total_tokens": 0
+      }
+    },
+    "stage_gates": [
+      {
+        "error_type": null,
+        "exact_failure": null,
+        "output_identity_sha256": "180e8d680e771179b142c3fdcbd60899dc5d4cea81163f11f898c886a334571a",
+        "stage": "ENTITY_INVENTORY",
+        "stage_version": "spec-047-entity-inventory-v1",
+        "status": "PASS",
+        "upstream_identity_sha256": "bd0b31bfd52d9e0d3733f22260be3357e7a402f6b9f7299c1481801e0014ea92"
+      },
+      {
+        "error_type": null,
+        "exact_failure": null,
+        "output_identity_sha256": "1bf72b34ce9977cd5f5b012b15f04123c6e8bdd424f1fa70b1454c96da8dc070",
+        "stage": "SEMANTIC_STRUCTURE",
+        "stage_version": "spec-047-semantic-structure-v1",
+        "status": "PASS",
+        "upstream_identity_sha256": "180e8d680e771179b142c3fdcbd60899dc5d4cea81163f11f898c886a334571a"
+      },
+      {
+        "error_type": null,
+        "exact_failure": null,
+        "output_identity_sha256": "31358919678629174259a6a0ba3b8746d61d097a9fd0ebfe410f7b73d7719a27",
+        "stage": "CLAIM_EVIDENCE_BINDING",
+        "stage_version": "spec-047-claim-evidence-binding-v1",
+        "status": "PASS",
+        "upstream_identity_sha256": "682ccda56922566012c53da369fbd8d1ac95be8d59abc4ac1d735fb083d7ec18"
+      }
+    ],
+    "status": "PASS"
+  }
+}

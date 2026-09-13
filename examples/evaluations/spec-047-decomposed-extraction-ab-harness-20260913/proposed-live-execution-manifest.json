@@ -1,0 +1,108 @@
+{
+  "authorization_granted": false,
+  "blind_source_text_embedded": false,
+  "candidate_b": {
+    "calls_counted_when_request_starts": true,
+    "expected_total_calls": null,
+    "external_enrichment": 0,
+    "follow_up_calls_outside_defined_stages": 0,
+    "frozen_stage_contract_sha256": "b13c96ac01b2f0730f57852078c702f01a2234bca1f7567654686d214c50f694",
+    "hidden_retries": 0,
+    "implementation_adaptation_after_execution_begins": 0,
+    "maximum_calls_per_stage_per_source": 1,
+    "maximum_total_calls": 27,
+    "model": "gpt-5.6-luna",
+    "preserve_failures_exactly": true,
+    "prompt_adaptation_between_sources": 0,
+    "provider": "OpenAI Responses API",
+    "repair_calls": 0,
+    "sdk_retries": 0,
+    "semantic_retries": 0,
+    "short_circuit": {
+      "CLAIM_EVIDENCE_BINDING reached": "3 calls total for source",
+      "ENTITY_INVENTORY failure": "1 call total for source",
+      "SEMANTIC_STRUCTURE failure": "2 calls total for source"
+    },
+    "stage_order": [
+      "ENTITY_INVENTORY",
+      "SEMANTIC_STRUCTURE",
+      "CLAIM_EVIDENCE_BINDING"
+    ],
+    "store": false
+  },
+  "candidate_version": "spec-047-candidate-b-v1",
+  "control_a": {
+    "comparability_limitation": "Control A is historical while Candidate B would be a future run; contemporaneous stochastic/time drift is not controlled.",
+    "execution": "PRESERVED_HISTORICAL_SPEC042_AND_SPEC045",
+    "new_calls": 0,
+    "prompt_version": "spec-010-v1"
+  },
+  "fixed_source_order": [
+    {
+      "ordinal": 1,
+      "packet_reference": "examples/evaluations/spec-041-blind-source-set-freeze-20260911/blind-source-packet.json",
+      "source_id": "usgs-divergent-plate-boundaries-1996",
+      "source_sha256": "a9539d135ff1577d7e2791d498b92f55239175565b925b24aec2ed0bf633f186"
+    },
+    {
+      "ordinal": 2,
+      "packet_reference": "examples/evaluations/spec-041-blind-source-set-freeze-20260911/blind-source-packet.json",
+      "source_id": "noaa-nesdis-jet-stream-2025",
+      "source_sha256": "256ade61be620cfaa7b1327e3c982576611dd29b6a1fb42217d86ffdc0783ca1"
+    },
+    {
+      "ordinal": 3,
+      "packet_reference": "examples/evaluations/spec-041-blind-source-set-freeze-20260911/blind-source-packet.json",
+      "source_id": "crs-legislative-process-r42843-17",
+      "source_sha256": "fe61b7c3b2a9373e7eb3b30d16b94adc2c8b5f4307327265943995550a6384b4"
+    },
+    {
+      "ordinal": 4,
+      "packet_reference": "examples/evaluations/spec-044-blind-replication-source-set-freeze-20260912/blind-source-packet.json",
+      "source_id": "nasa-solar-system-formation-2026",
+      "source_sha256": "c0cb2519673b8f3ef23c0be2856e03790f53d44971cbff09d593190ab3fa155d"
+    },
+    {
+      "ordinal": 5,
+      "packet_reference": "examples/evaluations/spec-044-blind-replication-source-set-freeze-20260912/blind-source-packet.json",
+      "source_id": "epa-ecological-processes-2026",
+      "source_sha256": "70e7e3d20325dd5d22e9cf4484934419447907ba9f6cf5a4dfd65ddcbfa80ad5"
+    },
+    {
+      "ordinal": 6,
+      "packet_reference": "examples/evaluations/spec-044-blind-replication-source-set-freeze-20260912/blind-source-packet.json",
+      "source_id": "doe-iron-platinum-atomic-structure-2017",
+      "source_sha256": "e9d2260c9980239431fc195e7dc687afea93598af4f28d774ed5e4c4317f9e1e"
+    },
+    {
+      "ordinal": 7,
+      "packet_reference": "examples/evaluations/spec-044-blind-replication-source-set-freeze-20260912/blind-source-packet.json",
+      "source_id": "nhgri-dna-fact-sheet-2020",
+      "source_sha256": "54e2147221cf186fe1b4f965422c69e815f986a7d009eddae9c01bf32ec25f89"
+    },
+    {
+      "ordinal": 8,
+      "packet_reference": "examples/evaluations/spec-044-blind-replication-source-set-freeze-20260912/blind-source-packet.json",
+      "source_id": "fhwa-traffic-bottleneck-concepts-2016",
+      "source_sha256": "1fd7e9851839f5f35cd2a231cd3ce5aea8196ec85cabd04694f681c063ea4345"
+    },
+    {
+      "ordinal": 9,
+      "packet_reference": "examples/evaluations/spec-044-blind-replication-source-set-freeze-20260912/blind-source-packet.json",
+      "source_id": "nist-measurement-uncertainty-2025",
+      "source_sha256": "b3ae508f3982dfdd89f41a1d9ca59eb1f658b1648e3fae35168feba212046730"
+    }
+  ],
+  "schema": "spec-047-proposed-candidate-b-live-manifest-v1",
+  "source_packets": [
+    {
+      "path": "examples/evaluations/spec-041-blind-source-set-freeze-20260911/blind-source-packet.json",
+      "sha256": "ccf1c5e9fb607934f790eb06cd828bf5a1d42e4f6e4d7913722debc4269c72b0"
+    },
+    {
+      "path": "examples/evaluations/spec-044-blind-replication-source-set-freeze-20260912/blind-source-packet.json",
+      "sha256": "85f7a7be47fa827799d532ab7ca5edc03b359162894dc2ee4e72a750de28e52b"
+    }
+  ],
+  "status": "PROPOSED_NOT_AUTHORIZED"
+}

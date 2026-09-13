@@ -82,61 +82,62 @@ Canonical evidence:
 
 `examples/evaluations/spec-046-extraction-reliability-failure-mode-analysis-20260913/report.json`
 
+## Decomposed extraction A/B harness
+
+`SPEC-047 — decomposed extraction A/B harness`
+
+Implementation status: `IMPLEMENTED_AWAITING_REVIEW`
+
+Candidate B is frozen as a three-stage extractor with deterministic fail-closed
+gates, immutable upstream identities, request-start accounting, and the unchanged
+canonical validator. The comparison harness preserves historical Control-A evidence
+and semantic-richness metrics without rerunning the control or the blind corpus.
+
+Canonical evidence:
+
+`examples/evaluations/spec-047-decomposed-extraction-ab-harness-20260913/report.json`
+
 ## Current approved work packet
 
 ```text
-specs/SPEC-047-decomposed-extraction-ab-harness.md
+NONE
 ```
 
-Status: `APPROVED_FOR_IMPLEMENTATION`
+Status: `NONE`
 
-Authority: `OFFLINE_ONLY`
+Authority: `NONE`
 
-Human gate: `OWNER_REVIEW`
+Human gate: `NONE`
 
 Promotion: `NOT_AUTHORIZED`
 
 ## Current gate
 
-SPEC-047 is authorized to implement and freeze a decomposed Candidate-B extractor and A/B evaluation harness **without any live/model execution**.
+SPEC-047 is implemented and awaiting owner review. Its canonical evidence is
+`examples/evaluations/spec-047-decomposed-extraction-ab-harness-20260913/report.json`.
 
-Candidate B is constrained to three stages:
-
-```text
-SOURCE
-  ↓
-STAGE 1 — ENTITY INVENTORY
-  ↓ deterministic gate / freeze IDs
-STAGE 2 — SEMANTIC STRUCTURE
-  ↓ deterministic gate against frozen IDs
-STAGE 3 — CLAIM / EVIDENCE BINDING
-  ↓ exact evidence grounding
-EXISTING canonical validator
-  ↓
-trusted KnowledgeModel or fail closed
-```
-
-Control A remains the unchanged historical single-pass `spec-010-v1` extractor used in SPEC-042/SPEC-045.
-
-SPEC-047 must freeze the future nine-source comparison contract and proposed Candidate-B call ceiling (27 maximum calls with upstream-failure short-circuiting), but it must not authorize or make those calls.
+No packet is active. The proposed nine-source Candidate-B execution remains
+unauthorized. No provider/model call, blind-corpus execution, repair, adaptation,
+promotion, or Control-A rerun is authorized.
 
 ## Current product question
 
 ```text
-single-pass Control A
-        versus
-explicitly staged Candidate B
+frozen single-pass Control A evidence
+        ↔
+frozen staged Candidate B contract
         ↓
-same 9 frozen blind sources
+same 9 frozen source identities
         ↓
 compare admission + semantic richness + failure origin
         ↓
-compare calls/tokens/latency/cost evidence
+proposed ceiling: 27 Candidate-B calls, not authorized
         ↓
-trusted boundary must remain unchanged
+OWNER REVIEW of candidate + A/B contract
 ```
 
-The immediate goal is to build a scientifically clean candidate and experiment harness, not to prove Candidate B better.
+The immediate goal is owner review of whether the implementation and experiment
+contract are clean enough to authorize a later bounded comparison, not execution.
 
 ## Frozen / protected state
 
@@ -147,6 +148,8 @@ The immediate goal is to build a scientifically clean candidate and experiment h
 - SPEC-041/042/044/045 source packets, manifests, raw responses, run histories, and evidence;
 - SPEC-043 taxonomy and historical classifications;
 - SPEC-046 failure-stage analysis and accepted recommendation;
+- SPEC-047 Candidate-B implementation, prompt/schema contracts, offline fixtures,
+  A/B comparison contract, historical Control-A adapter, and proposed live manifest;
 - prompt `spec-010-v1` and Control-A extraction behavior;
 - trusted semantic vocabulary;
 - canonical grounding/provenance behavior;
