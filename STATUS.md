@@ -44,19 +44,13 @@ Frozen single-pass Control-A identity:
 
 ## Blind reliability evidence
 
-SPEC-042 through SPEC-046 remain accepted historical evidence. The current accepted diagnostic conclusion is:
+SPEC-042 through SPEC-046 remain accepted historical evidence.
+
+Accepted diagnostic verdict from SPEC-046:
 
 `FAILURE_STAGES_MAPPED_EXTRACTION_DECOMPOSITION_NEXT`
 
-Key evidence:
-
-- 9 blind sources total;
-- historical Control A admitted 4/9;
-- all 7 known invalid/malformed semantic objects were contained by the deterministic boundary;
-- failure origins span entity inventory, relationship semantics, proposition construction, and evidence fidelity;
-- entity inventory is the only origin stage recurring across unrelated domains.
-
-## Decomposed extraction A/B harness
+## Decomposed extraction Candidate B v1
 
 `SPEC-047 — decomposed extraction A/B harness`
 
@@ -64,90 +58,73 @@ Implementation status: `IMPLEMENTED_REVIEWED`
 
 Owner verdict: `CANDIDATE_B_FROZEN_LIVE_AB_EXECUTION_APPROVED`
 
-Accepted Candidate-B architecture:
-
-```text
-STAGE 1 — ENTITY_INVENTORY
-  ↓ deterministic gate / freeze IDs
-STAGE 2 — SEMANTIC_STRUCTURE
-  ↓ deterministic gate against frozen IDs
-STAGE 3 — CLAIM_EVIDENCE_BINDING
-  ↓ exact evidence grounding
-EXISTING canonical validator
-  ↓
-trusted KnowledgeModel or fail closed
-```
-
-Frozen Candidate-B implementation commit:
-
-`9ad5e0854e6866c73b3f6febd989e0766cc14a13`
-
-Frozen implementation hashes:
-
-- core `a09bb36a2214364f915b05e0f7818ffe0b145760b76afb1f00fc66ed09dc75ea`
-- OpenAI adapter `2d91a2fdfcf04bcc2180331571e3d7c2a20e797fe9fbc83c046aafdad1764280`
-- A/B harness `85e60376aabc797e75bafbda71df3ec2a68d24f0220f931b2eb89f0d9b9824fc`
-
-Frozen stage-contract SHA-256:
-
-`b13c96ac01b2f0730f57852078c702f01a2234bca1f7567654686d214c50f694`
-
-Control A remains historical only; no rerun is authorized.
-
-## Decomposed extraction live A/B execution
-
 `SPEC-048 — decomposed extraction live A/B execution`
 
-Implementation status: `IMPLEMENTED_AWAITING_REVIEW`
+Implementation status: `IMPLEMENTED_REVIEWED_FOR_DIAGNOSIS`
 
-Candidate B admitted 2/9 sources in 19 calls versus historical Control A's
-4/9 in 9 calls. All seven Candidate-B rejections failed closed, zero known-invalid
-objects were admitted, and the mechanically supported branch is `B_REGRESSION`.
+Owner verdict: `CANDIDATE_B_V1_REJECTED_STAGE2_INTERFACE_FAILURE_DOMINATES`
 
-Canonical evidence:
+Accepted SPEC-048 findings:
+
+- historical Control A admitted 4/9 sources in 9 calls;
+- Candidate B v1 admitted 2/9 sources in 19 calls;
+- Candidate B used 94,574 total tokens versus historical Control A's 54,586;
+- both arms admitted zero known-invalid objects;
+- Candidate B v1 mechanically satisfies `B_REGRESSION`;
+- seven Candidate-B sources failed closed;
+- six failures originate in `PROPOSITION_CONSTRUCTION` at Stage 2;
+- one failure originates in `ENTITY_INVENTORY`;
+- the six Stage-2 failures are sufficiently concentrated to diagnose the intermediate proposition interface before rejecting decomposition as a whole.
+
+Canonical SPEC-048 evidence:
 
 `examples/evaluations/spec-048-decomposed-extraction-live-ab-execution-20260913/final-report.json`
+
+Authoritative taxonomy correction:
+
+`examples/evaluations/spec-048-decomposed-extraction-live-ab-execution-20260913/post-run-failure-taxonomy-audit.json`
 
 ## Current approved work packet
 
 ```text
-NONE
+specs/SPEC-049-stage2-proposition-contract-diagnosis.md
 ```
 
-Status: `NONE`
+Status: `APPROVED_FOR_IMPLEMENTATION`
 
-Authority: `NONE`
+Authority: `OFFLINE_ONLY`
 
-Human gate: `NONE`
+Human gate: `OWNER_REVIEW`
 
 Promotion: `NOT_AUTHORIZED`
 
 ## Current gate
 
-SPEC-048 is implemented and awaiting owner review. Its canonical report is
-`examples/evaluations/spec-048-decomposed-extraction-live-ab-execution-20260913/final-report.json`.
+SPEC-049 is authorized to diagnose whether the six concentrated Stage-2 proposition failures arose because Candidate B v1 exposed structurally invalid proposition states in its machine-readable schema/interface.
 
-No packet is active. No further provider/model call, retry, repair, adaptation,
-promotion, or follow-up implementation is authorized.
+It must reconstruct the pre-existing canonical contracts for `COMPARISON_CONDITION` and `TRANSFER_EVENT`, distinguish schema/prompt/validator enforcement, replay the six preserved failures offline against a diagnostic discriminated contract where feasible, and determine whether a narrowly schema-constrained Candidate-B-v2 experiment is justified.
+
+No production behavior change is authorized.
+
+No provider/model/network call is authorized.
 
 ## Current product question
 
 ```text
-historical Control A: 4/9 admitted, 9 calls
-        ↔
-frozen Candidate B: 2/9 admitted, 19 calls
+Candidate B v1 regression
         ↓
-zero known-invalid admission in both arms
+6/7 failures concentrated in Stage-2 proposition construction
         ↓
-7 Candidate-B failures preserved closed
+inspect proposition interface
         ↓
-mechanical branch: B_REGRESSION
+were invalid combinations structurally expressible?
+        ↓
+can pre-existing canonical rules make them impossible at schema level?
         ↓
 OWNER REVIEW
 ```
 
-The immediate goal is owner review of the observed regression and cost evidence,
-not promotion, repair, or another extraction experiment.
+The goal is diagnosis, not improving Candidate B in this packet.
 
 ## Frozen / protected state
 
@@ -155,16 +132,15 @@ not promotion, repair, or another extraction experiment.
 - SPEC-038 learner-facing baseline;
 - SPEC-039 representation compiler behavior;
 - SPEC-040 Control-A implementation/frozen identity;
-- SPEC-041/042/044/045 exact source packets, manifests, raw responses, run histories, and evidence;
-- SPEC-043 taxonomy and classifications;
+- SPEC-041/042/044/045 source packets, manifests, raw responses, run histories, and evidence;
+- SPEC-043 taxonomy and historical classifications;
 - SPEC-046 failure-stage analysis;
-- SPEC-047 Candidate-B implementation, prompts/schemas, stage contracts, comparison contract, Control-A comparison records, offline fixtures, and proposed live manifest;
-- SPEC-048 raw provider responses, parsed proposals, request ledger, stage gates,
-  final outcomes, A/B comparison, and post-run taxonomy audit;
+- SPEC-047 Candidate-B-v1 implementation, prompts, schemas, stage contracts, harness, fixtures, and evidence;
+- SPEC-048 raw provider outputs, provider ledger, stage gates, comparison results, final report, and authoritative post-run taxonomy audit;
 - trusted semantic vocabulary;
 - canonical grounding/provenance behavior;
 - strict declared-identity validation;
-- canonical KnowledgeModel validator;
+- canonical proposition and KnowledgeModel validation;
 - representation strategy logic and renderer coverage;
 - navigation/UI behavior;
 - unrelated user work.
@@ -173,19 +149,19 @@ not promotion, repair, or another extraction experiment.
 
 Do not:
 
-- rerun Control A;
-- make any additional Candidate-B provider call;
-- exceed 27 Candidate-B provider calls;
-- retry or repair any failed stage;
-- change model/source/order/prompt/schema between sources;
-- retrieve external enrichment;
-- automatically normalize missing IDs;
-- weaken evidence exactness or canonical validation;
-- change trusted semantic vocabulary;
+- call OpenAI or another model/provider;
+- use external web/network retrieval;
+- rerun Control A or Candidate B;
+- implement Candidate B v2;
+- edit Candidate-B-v1 production prompt/schema;
+- change canonical proposition validation;
+- repair preserved outputs;
+- weaken trust-boundary behavior;
+- add proposition types or trusted predicates;
+- add source-specific exceptions;
 - change representation/renderers/UI/navigation;
-- implement additional extraction improvements during or after the run;
-- promote Candidate B automatically;
-- authorize follow-up work without owner review.
+- promote any extractor;
+- automatically prepare follow-up implementation after diagnosis.
 
 ## Coordination rule
 
