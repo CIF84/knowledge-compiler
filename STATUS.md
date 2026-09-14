@@ -32,21 +32,11 @@ Implementation status: `IMPLEMENTED_REVIEWED`
 
 Owner verdict: `SEMANTIC_REPRESENTATION_COMPILER_CONFIRMED_WITH_COVERAGE_GAPS`
 
-## Blind evaluation foundation
+## Blind extraction evidence
 
-`SPEC-040 — blind out-of-sample evaluation harness`
+SPEC-040 through SPEC-046 remain accepted historical evidence.
 
-Implementation status: `IMPLEMENTED_REVIEWED`
-
-Frozen single-pass Control-A identity:
-
-`5622df131dc71346d5890f42ce16fe1e3e55f33a`
-
-## Blind reliability evidence
-
-SPEC-042 through SPEC-046 remain accepted historical evidence.
-
-Accepted diagnostic verdict from SPEC-046:
+Accepted diagnostic conclusion from SPEC-046:
 
 `FAILURE_STAGES_MAPPED_EXTRACTION_DECOMPOSITION_NEXT`
 
@@ -56,8 +46,6 @@ Accepted diagnostic verdict from SPEC-046:
 
 Implementation status: `IMPLEMENTED_REVIEWED`
 
-Owner verdict: `CANDIDATE_B_FROZEN_LIVE_AB_EXECUTION_APPROVED`
-
 `SPEC-048 — decomposed extraction live A/B execution`
 
 Implementation status: `IMPLEMENTED_REVIEWED_FOR_DIAGNOSIS`
@@ -66,65 +54,84 @@ Owner verdict: `CANDIDATE_B_V1_REJECTED_STAGE2_INTERFACE_FAILURE_DOMINATES`
 
 Accepted SPEC-048 findings:
 
-- historical Control A admitted 4/9 sources in 9 calls;
-- Candidate B v1 admitted 2/9 sources in 19 calls;
-- Candidate B used 94,574 total tokens versus historical Control A's 54,586;
-- both arms admitted zero known-invalid objects;
-- Candidate B v1 mechanically satisfies `B_REGRESSION`;
-- seven Candidate-B sources failed closed;
-- six failures originate in `PROPOSITION_CONSTRUCTION` at Stage 2;
-- one failure originates in `ENTITY_INVENTORY`;
-- the six Stage-2 failures are sufficiently concentrated to diagnose the intermediate proposition interface before rejecting decomposition as a whole.
+- Candidate B v1 regressed versus historical Control A: 2/9 admitted vs 4/9;
+- Candidate B used more calls/tokens while preserving zero known-invalid admissions;
+- 6 of 7 Candidate-B failures originated in Stage-2 `PROPOSITION_CONSTRUCTION`;
+- the concentration warranted proposition-interface diagnosis before abandoning decomposition entirely.
 
-Canonical SPEC-048 evidence:
+## Stage-2 proposition contract diagnosis
 
-`examples/evaluations/spec-048-decomposed-extraction-live-ab-execution-20260913/final-report.json`
+`SPEC-049 — stage2 proposition contract diagnosis`
 
-Authoritative taxonomy correction:
+Implementation status: `IMPLEMENTED_REVIEWED_FOR_FOLLOWUP_DIAGNOSIS`
 
-`examples/evaluations/spec-048-decomposed-extraction-live-ab-execution-20260913/post-run-failure-taxonomy-audit.json`
+Owner interpretation: `MIXED_SIGNAL_MORE_DIAGNOSIS_REQUIRED`
+
+Accepted objective findings:
+
+- all six exact failed Stage-2 outputs were expressible under Candidate-B-v1's broad machine-readable proposition schema;
+- a stricter subtype-specific interface could reject all six before canonical validation while preserving valid canonical proposition variants;
+- 1 failure is `STRUCTURALLY_PREVENTABLE` only;
+- 5 failures are `BOTH_STRUCTURE_AND_SEMANTICS`;
+- four mixed cases involve source-supported standalone comparisons that do not fit canonical causal `COMPARISON_CONDITION` semantics;
+- at least one mixed transfer case conflicts with canonical `TRANSFER_EVENT` role semantics;
+- schema tightening alone is therefore insufficient evidence for Candidate B v2;
+- no semantic-model expansion is yet justified.
+
+Canonical evidence:
+
+`examples/evaluations/spec-049-stage2-proposition-contract-diagnosis-20260914/report.json`
 
 ## Current approved work packet
 
 ```text
-NONE
+specs/SPEC-050-proposition-semantic-coverage-diagnosis.md
 ```
 
-Status: `NONE`
+Status: `APPROVED_FOR_IMPLEMENTATION`
 
-Authority: `NONE`
+Authority: `OFFLINE_ONLY`
 
-Human gate: `NONE`
+Human gate: `OWNER_REVIEW`
 
 Promotion: `NOT_AUTHORIZED`
 
 ## Current gate
 
-SPEC-049 is implemented and awaiting owner review. Its canonical report is:
+SPEC-050 is authorized to determine whether the five SPEC-049 mixed cases represent genuine semantic-model coverage gaps or whether Candidate B v1 was forcing source-supported meanings into proposition types that were never appropriate.
 
-`examples/evaluations/spec-049-stage2-proposition-contract-diagnosis-20260914/report.json`
+It must classify each mixed meaning into exactly one of:
 
-The objective diagnosis is `MIXED_SIGNAL_MORE_DIAGNOSIS_REQUIRED`: a stricter interface would reject all six exact source outputs before canonical validation, but five failures also contain semantic mismatches that structural discrimination alone cannot resolve.
+- `CANONICAL_PROPOSITION_FIT`;
+- `EXISTING_RELATIONSHIP_FIT`;
+- `CLAIM_ONLY_FIT`;
+- `TRUE_SEMANTIC_COVERAGE_GAP`;
+- `AMBIGUOUS`.
 
-No packet is active. No provider/model call, repair, Candidate-B-v2 implementation, production behavior change, or promotion is authorized.
+It must then recommend exactly one next branch:
+
+- `SCHEMA_CONSTRAINED_B_V2_WITH_SEMANTIC_OMISSION`;
+- `SEMANTIC_MODEL_EXPANSION_DIAGNOSIS`;
+- `ABANDON_DECOMPOSITION_RETURN_TO_CONTROL_A`;
+- `MORE_EVIDENCE_REQUIRED`.
+
+No provider/model/network calls or production behavior changes are authorized.
 
 ## Current product question
 
 ```text
-Candidate B v1 regression
+5 source-supported mixed proposition failures
         ↓
-6/7 failures concentrated in Stage-2 proposition construction
+Are these meanings already representable elsewhere?
         ↓
-all 6 exact failed outputs were schema-expressible
+existing proposition / relationship / grounded claim
+        versus
+true semantic coverage gap
         ↓
-1 structurally preventable; 5 structure + semantics
-        ↓
-recommended branch: MIXED_SIGNAL_MORE_DIAGNOSIS_REQUIRED
-        ↓
-OWNER REVIEW
+choose one evidence-backed next branch
 ```
 
-The immediate goal is owner review of the objective diagnosis, not implementation of Candidate B v2.
+The immediate goal is semantic destination diagnosis, not Candidate-B-v2 implementation or ontology expansion.
 
 ## Frozen / protected state
 
@@ -135,8 +142,9 @@ The immediate goal is owner review of the objective diagnosis, not implementatio
 - SPEC-041/042/044/045 source packets, manifests, raw responses, run histories, and evidence;
 - SPEC-043 taxonomy and historical classifications;
 - SPEC-046 failure-stage analysis;
-- SPEC-047 Candidate-B-v1 implementation, prompts, schemas, stage contracts, harness, fixtures, and evidence;
-- SPEC-048 raw provider outputs, provider ledger, stage gates, comparison results, final report, and authoritative post-run taxonomy audit;
+- SPEC-047 Candidate-B-v1 implementation, prompts, schemas, contracts, harness, fixtures, and evidence;
+- SPEC-048 raw provider outputs, ledger, stage gates, A/B comparison, final report, and taxonomy audit;
+- SPEC-049 diagnostic contract analysis and preserved canonical proposition semantics;
 - trusted semantic vocabulary;
 - canonical grounding/provenance behavior;
 - strict declared-identity validation;
@@ -153,15 +161,16 @@ Do not:
 - use external web/network retrieval;
 - rerun Control A or Candidate B;
 - implement Candidate B v2;
-- edit Candidate-B-v1 production prompt/schema;
-- change canonical proposition validation;
-- repair preserved outputs;
-- weaken trust-boundary behavior;
+- edit Candidate-B-v1 prompts/schemas;
 - add proposition types or trusted predicates;
-- add source-specific exceptions;
+- reinterpret canonical proposition semantics;
+- change canonical validation;
+- repair preserved outputs;
+- force claims into graph topology;
+- weaken trust-boundary behavior;
 - change representation/renderers/UI/navigation;
-- promote any extractor;
-- automatically prepare follow-up implementation after diagnosis.
+- promote any extractor or baseline;
+- automatically implement the recommended next branch.
 
 ## Coordination rule
 
