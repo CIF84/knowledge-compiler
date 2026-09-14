@@ -85,53 +85,49 @@ Canonical evidence:
 ## Current approved work packet
 
 ```text
-specs/SPEC-050-proposition-semantic-coverage-diagnosis.md
+NONE
 ```
 
-Status: `APPROVED_FOR_IMPLEMENTATION`
+Status: `NONE`
 
-Authority: `OFFLINE_ONLY`
+Authority: `NONE`
 
-Human gate: `OWNER_REVIEW`
+Human gate: `NONE`
 
 Promotion: `NOT_AUTHORIZED`
 
 ## Current gate
 
-SPEC-050 is authorized to determine whether the five SPEC-049 mixed cases represent genuine semantic-model coverage gaps or whether Candidate B v1 was forcing source-supported meanings into proposition types that were never appropriate.
+SPEC-050 is implemented and awaiting owner review. Its canonical report is:
 
-It must classify each mixed meaning into exactly one of:
+`examples/evaluations/spec-050-proposition-semantic-coverage-diagnosis-20260914/report.json`
 
-- `CANONICAL_PROPOSITION_FIT`;
-- `EXISTING_RELATIONSHIP_FIT`;
-- `CLAIM_ONLY_FIT`;
-- `TRUE_SEMANTIC_COVERAGE_GAP`;
-- `AMBIGUOUS`.
+Objective destination findings:
 
-It must then recommend exactly one next branch:
+- 4 cases are `CLAIM_ONLY_FIT`;
+- 1 case is `EXISTING_RELATIONSHIP_FIT`;
+- 0 cases are `TRUE_SEMANTIC_COVERAGE_GAP` or `AMBIGUOUS`;
+- the structural-only control remains a canonical `TRANSFER_EVENT` fit.
 
-- `SCHEMA_CONSTRAINED_B_V2_WITH_SEMANTIC_OMISSION`;
-- `SEMANTIC_MODEL_EXPANSION_DIAGNOSIS`;
-- `ABANDON_DECOMPOSITION_RETURN_TO_CONTROL_A`;
-- `MORE_EVIDENCE_REQUIRED`.
+Recommended branch: `SCHEMA_CONSTRAINED_B_V2_WITH_SEMANTIC_OMISSION`.
 
-No provider/model/network calls or production behavior changes are authorized.
+No packet is active. No provider/model call, production change, Candidate-B-v2 implementation, semantic expansion, or promotion is authorized.
 
 ## Current product question
 
 ```text
 5 source-supported mixed proposition failures
         ↓
-Are these meanings already representable elsewhere?
+4 grounded-claim fits + 1 existing-relationship fit
         ↓
-existing proposition / relationship / grounded claim
-        versus
-true semantic coverage gap
+0 demonstrated semantic-model coverage gaps
         ↓
-choose one evidence-backed next branch
+SCHEMA_CONSTRAINED_B_V2_WITH_SEMANTIC_OMISSION
+        ↓
+OWNER REVIEW
 ```
 
-The immediate goal is semantic destination diagnosis, not Candidate-B-v2 implementation or ontology expansion.
+The immediate goal is owner review of the diagnosis, not Candidate-B-v2 implementation or ontology expansion.
 
 ## Frozen / protected state
 

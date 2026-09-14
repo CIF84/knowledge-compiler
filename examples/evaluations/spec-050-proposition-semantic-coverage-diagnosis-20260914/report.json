@@ -1,0 +1,521 @@
+{
+  "aggregate_answers": {
+    "destination_counts": {
+      "AMBIGUOUS": 0,
+      "CANONICAL_PROPOSITION_FIT": 0,
+      "CLAIM_ONLY_FIT": 4,
+      "EXISTING_RELATIONSHIP_FIT": 1,
+      "TRUE_SEMANTIC_COVERAGE_GAP": 0
+    },
+    "question_6_expand_canonical_proposition_model_now": {
+      "answer": false,
+      "reason": "None of the five meanings satisfies the conservative TRUE_SEMANTIC_COVERAGE_GAP test. Four comparisons remain truthful as grounded claims without required topology, while the DOE input meaning has an existing ENABLES relationship fit plus a grounded claim for the direct-input detail."
+    },
+    "question_7_semantic_omission_preserves_more_truth": {
+      "answer": true,
+      "reason": "Rejecting or omitting unsupported proposition forms while retaining exact grounded claims and any independently valid relationships prevents false topology without discarding the source-supported meaning. This is a counterfactual design finding, not an implemented repair."
+    },
+    "question_8_stricter_subtype_schema_still_necessary": {
+      "answer": true,
+      "reason": "SPEC-049 proved all six exact failures were schema-valid but canonically invalid. Semantic omission addresses what not to force into a proposition; subtype discrimination separately prevents malformed proposition states from crossing Stage 2."
+    },
+    "question_9_best_supported_branch": "SCHEMA_CONSTRAINED_B_V2_WITH_SEMANTIC_OMISSION"
+  },
+  "architecture_analysis": {
+    "claim_availability": "Grounded claims are first-class KnowledgeModel members with exact evidence and round-trip serialization. The assertion-aware explanatory path explicitly realizes accepted claim-tier assertions as PRESERVED_AS_CLAIM cards.",
+    "claim_only_tradeoff": "Current generic structure detection consumes canonical relationships, not claims or propositions. Omitting these non-topological proposition attempts therefore removes no currently required structure-detection input. Their exact statements remain trusted explanatory material, although they do not drive graph topology or structural strategy selection.",
+    "core_distinction": "A source-supported statement does not require a typed edge or proposition unless the compiler needs that topology to preserve or select a representation.",
+    "mechanical_references": [
+      "src/knowledge_compiler/models.py: KnowledgeModel",
+      "src/knowledge_compiler/structure_detection.py: StructureDetector",
+      "src/knowledge_compiler/assertion_aware_representation.py: PRESERVED_AS_CLAIM",
+      "src/knowledge_compiler/representation_strategy.py: TRUTHFUL_PROSE_FALLBACK"
+    ]
+  },
+  "controls": {
+    "candidate_b_v1_changes": 0,
+    "canonical_semantic_model_changes": 0,
+    "external_network_calls": 0,
+    "historical_output_repairs": 0,
+    "production_changes": 0,
+    "provider_model_calls": 0,
+    "retries": 0
+  },
+  "deviations_or_blockers": [],
+  "execution_statement": "The semantic diagnosis used only immutable committed repository evidence. No provider/model call, external evidence retrieval, extractor rerun, output repair, schema/prompt/validator change, or production change occurred. Git fetch/push are repository synchronization required by protocol, not evidence retrieval.",
+  "immutable_evidence": [
+    {
+      "path": "examples/evaluations/spec-047-decomposed-extraction-ab-harness-20260913/candidate-b-contract.json",
+      "sha256": "abc61d8ae98c823fa97b78c03cd04cbd351be9b2aeb578bc17d240f6485c04fe"
+    },
+    {
+      "path": "examples/evaluations/spec-048-decomposed-extraction-live-ab-execution-20260913/final-report.json",
+      "sha256": "e1331270a6c65790cfad0c2edfb046aef87aa368ecac18e046f063531ea99d9b"
+    },
+    {
+      "path": "examples/evaluations/spec-048-decomposed-extraction-live-ab-execution-20260913/post-run-failure-taxonomy-audit.json",
+      "sha256": "b6f8cea62e73d7eacef50be8ce54a3a927bcde2356fda451a9e461f2e57f69cd"
+    },
+    {
+      "path": "examples/evaluations/spec-049-stage2-proposition-contract-diagnosis-20260914/report.json",
+      "sha256": "1506c446c19d70c0ab007887cd99d1bbb115958eda72f2ea401e4dec49984deb"
+    },
+    {
+      "path": "examples/evaluations/spec-042-blind-out-of-sample-live-execution-20260911/sources/02-noaa-nesdis-jet-stream-2025/source.json",
+      "sha256": "b79adf56ca2cd77b0ef2ba3fbd66d29814b373ba178200ea83d1b12b63720f79"
+    },
+    {
+      "path": "examples/evaluations/spec-042-blind-out-of-sample-live-execution-20260911/sources/03-crs-legislative-process-r42843-17/source.json",
+      "sha256": "b6b9dee62d779ecbc3d435b442210351939c599685571f35f612396d46511d17"
+    },
+    {
+      "path": "examples/evaluations/spec-045-blind-replication-live-execution-20260912/sources/02-epa-ecological-processes-2026/source.json",
+      "sha256": "ff626a00442ff3d5bb2854577b2696890c91bb78d8a4fbc51ca726a8d43fc2d5"
+    },
+    {
+      "path": "examples/evaluations/spec-045-blind-replication-live-execution-20260912/sources/03-doe-iron-platinum-atomic-structure-2017/source.json",
+      "sha256": "7849564cea7542c421e7c31d71f3676db632a0be24f4c0b474e1a8d620319f42"
+    },
+    {
+      "path": "examples/evaluations/spec-045-blind-replication-live-execution-20260912/sources/04-nhgri-dna-fact-sheet-2020/source.json",
+      "sha256": "10c9fdf96a03f54fd262c112ee56b80031740c2794741203007e53316b22b279"
+    },
+    {
+      "path": "examples/evaluations/spec-045-blind-replication-live-execution-20260912/sources/05-fhwa-traffic-bottleneck-concepts-2016/source.json",
+      "sha256": "70bf303f311865509148a24930e12bc655a57d0cc118af074729ce13e6a23816"
+    }
+  ],
+  "mixed_cases": [
+    {
+      "candidate_proposition_objects": [
+        {
+          "comparison_operator": "GREATER_THAN",
+          "confidence": 0.94,
+          "origin": "SOURCE",
+          "proposition_type": "COMPARISON_CONDITION",
+          "relationship_type": "CONSTRAINS",
+          "role_bindings": [
+            {
+              "entity_id": "jet-stream-speed",
+              "role": "LEFT_OPERAND"
+            },
+            {
+              "entity_id": "jet-stream-speed",
+              "role": "RIGHT_OPERAND"
+            },
+            {
+              "entity_id": "polar-jet-stream",
+              "role": "OUTCOME"
+            }
+          ],
+          "statement": "Jet-stream speeds of 250 miles per hour or faster are greater than the average speed of about 110 miles per hour."
+        }
+      ],
+      "canonical_proposition_test": {
+        "fit": false,
+        "reason": "The source comparison is not itself a causal condition and supplies no outcome caused by 250 being greater than 110. Candidate B also used one jet-stream-speed identity for both operands."
+      },
+      "canonical_rejection": "COMPARISON_CONDITION used CONSTRAINS rather than CAUSES and bound identical LEFT_OPERAND and RIGHT_OPERAND IDs.",
+      "claim_only_test": {
+        "essential_semantics_lost": false,
+        "grounded_claim_available_to_explanatory_layer": true,
+        "reason": "The average and high-speed observations can be preserved with their exact source spans. The useful numeric contrast remains explanatory content; no accepted structure detector or representation selector requires it as topology.",
+        "required_structure_removed": false
+      },
+      "control_a_comparison": {
+        "evidence": {
+          "path": "examples/evaluations/spec-042-blind-out-of-sample-live-execution-20260911/sources/02-noaa-nesdis-jet-stream-2025/extraction-proposal.json",
+          "sha256": "f4e2651fcfdf97854124b6a58756aa5c873d61db60e50d7d96b8c83debe65a0f"
+        },
+        "finding": "Control A failed closed, so it is not positive ground truth. Its preserved proposal represented 110 mph and 250+ mph as two grounded claims and also attempted a different invalid comparison proposition. The claim treatment demonstrates availability, not correctness of the failed proposition.",
+        "same_meaning_treatment": "PARTIALLY_PRESERVED_AS_TWO_CLAIMS_PLUS_DIFFERENT_FAILED_PROPOSITION",
+        "status": "FAILED_CLOSED"
+      },
+      "domain": "meteorology",
+      "exact_source_supported_meaning": "Jet streams average about 110 miles per hour, while dramatic temperature differences can produce much higher speeds of 250 miles per hour or faster, usually in polar jet streams in winter.",
+      "existing_relationship_test": {
+        "fit": false,
+        "reason": "INCREASES can represent the separately stated causal influence of dramatic temperature differences on speed, but no trusted binary predicate expresses the exact 250-versus-110 comparison. CONSTRAINS would invent a limiting relation."
+      },
+      "primary_destination": "CLAIM_ONLY_FIT",
+      "source_id": "noaa-nesdis-jet-stream-2025",
+      "source_support": [
+        "On average, jet streams move at about 110 miles per hour.",
+        "But dramatic temperature differences between the warm and cool air masses can cause jet streams to move at much higher speeds — 250 miles per hour or faster."
+      ],
+      "spec049_diagnosis": "BOTH_STRUCTURE_AND_SEMANTICS",
+      "spec049_semantic_intent": "SOURCE_SUPPORTED_STATEMENT_BUT_UNSUPPORTED_CANONICAL_PROPOSITION_USE",
+      "true_coverage_gap_test": {
+        "result": false,
+        "reason": "The comparison is useful but not shown to recur as required compiler topology, and claim preservation retains the learner-relevant numbers without semantic distortion."
+      }
+    },
+    {
+      "candidate_proposition_objects": [
+        {
+          "comparison_operator": "GREATER_THAN",
+          "confidence": 0.99,
+          "origin": "SOURCE",
+          "proposition_type": "COMPARISON_CONDITION",
+          "relationship_type": "AFFECTS",
+          "role_bindings": [
+            {
+              "entity_id": "house-majority-party-leader",
+              "role": "LEFT_OPERAND"
+            },
+            {
+              "entity_id": "senate-majority-leader",
+              "role": "RIGHT_OPERAND"
+            }
+          ],
+          "statement": "House majority party leaders have more tools with which to set the floor agenda than Senate majority party leaders."
+        }
+      ],
+      "canonical_proposition_test": {
+        "fit": false,
+        "reason": "This is a standalone comparison of available agenda-setting tools. The source supplies no causal outcome produced by that comparison."
+      },
+      "canonical_rejection": "COMPARISON_CONDITION omitted OUTCOME and used AFFECTS rather than CAUSES.",
+      "claim_only_test": {
+        "essential_semantics_lost": false,
+        "grounded_claim_available_to_explanatory_layer": true,
+        "reason": "A grounded claim preserves the chamber comparison exactly. The legislative hierarchy and process sequence remain represented by independent canonical relationships.",
+        "required_structure_removed": false
+      },
+      "control_a_comparison": {
+        "evidence": {
+          "path": "examples/evaluations/spec-042-blind-out-of-sample-live-execution-20260911/sources/03-crs-legislative-process-r42843-17/admitted-knowledge-model.json",
+          "sha256": "6f7e4db5f553287879cf3c8a6eef84c59b0d5e8786b7d3a334d446e866e24bfa"
+        },
+        "finding": "Control A passed with the exact comparison as claim-house-more-tools and no proposition. Its independent hierarchy/process relationships produced useful structures without converting the comparison into topology.",
+        "same_meaning_treatment": "EXACT_GROUNDED_CLAIM",
+        "status": "PASS"
+      },
+      "domain": "legislative process",
+      "exact_source_supported_meaning": "Majority party leaders in the House have more tools for setting the floor agenda than majority party leaders in the Senate.",
+      "existing_relationship_test": {
+        "fit": false,
+        "reason": "AFFECTS requires a causal influence and no binary predicate expresses relative tool quantity. CAUSES, INCREASES, or CONSTRAINS would overstate or change the comparison."
+      },
+      "primary_destination": "CLAIM_ONLY_FIT",
+      "source_id": "crs-legislative-process-r42843-17",
+      "source_support": [
+        "majority party leaders in the House have more tools with which to set the floor agenda than do majority party leaders in the Senate"
+      ],
+      "spec049_diagnosis": "BOTH_STRUCTURE_AND_SEMANTICS",
+      "spec049_semantic_intent": "SOURCE_SUPPORTED_STATEMENT_BUT_UNSUPPORTED_CANONICAL_PROPOSITION_USE",
+      "true_coverage_gap_test": {
+        "result": false,
+        "reason": "The admitted Control-A model demonstrates that exact claim preservation coexists with useful hierarchy and process structures; no compiler impairment from absent comparison topology is evidenced."
+      }
+    },
+    {
+      "candidate_proposition_objects": [
+        {
+          "comparison_operator": "GREATER_THAN",
+          "confidence": 0.96,
+          "origin": "SOURCE",
+          "proposition_type": "COMPARISON_CONDITION",
+          "relationship_type": "CONTRADICTS",
+          "role_bindings": [
+            {
+              "entity_id": "national-scale",
+              "role": "LEFT_OPERAND"
+            },
+            {
+              "entity_id": "local-scale",
+              "role": "RIGHT_OPERAND"
+            }
+          ],
+          "statement": "The difficulty of measuring ecological processes is greater at the national scale than at the local scale."
+        }
+      ],
+      "canonical_proposition_test": {
+        "fit": false,
+        "reason": "The source states relative measurement difficulty, not a comparison that causes an outcome."
+      },
+      "canonical_rejection": "COMPARISON_CONDITION omitted OUTCOME and used CONTRADICTS rather than CAUSES.",
+      "claim_only_test": {
+        "essential_semantics_lost": false,
+        "grounded_claim_available_to_explanatory_layer": true,
+        "reason": "The local-to-national difficulty contrast remains exact grounded explanatory content. Existing ecological causal/hierarchy structures do not require this scalar contrast as an edge.",
+        "required_structure_removed": false
+      },
+      "control_a_comparison": {
+        "evidence": {
+          "path": "examples/evaluations/spec-045-blind-replication-live-execution-20260912/sources/02-epa-ecological-processes-2026/admitted-knowledge-model.json",
+          "sha256": "38a3d20c04c922b929de8e05520e538ec1b1b0109165409b9e94892dc72a9b50"
+        },
+        "finding": "Control A passed with no proposition. It preserved national-scale measurement difficulty in grounded claims but did not preserve the exact local-versus-national gradation as one semantic object. This shows omission did not block structure compilation, while also warning that a future claim should preserve the full contrast.",
+        "same_meaning_treatment": "PARTIAL_GROUNDED_CLAIM_NO_PROPOSITION",
+        "status": "PASS"
+      },
+      "domain": "ecology",
+      "exact_source_supported_meaning": "Repeated measurement is difficult for many ecosystems at a local scale and even more difficult at the national scale.",
+      "existing_relationship_test": {
+        "fit": false,
+        "reason": "CONTRADICTS is false because scales are not propositions. CONSTRAINS would assert a limiting relation rather than relative difficulty, and no other trusted predicate encodes a scalar ordering."
+      },
+      "primary_destination": "CLAIM_ONLY_FIT",
+      "source_id": "epa-ecological-processes-2026",
+      "source_support": [
+        "This is difficult to achieve for many ecosystems at a local scale and even more difficult at the national scale."
+      ],
+      "spec049_diagnosis": "BOTH_STRUCTURE_AND_SEMANTICS",
+      "spec049_semantic_intent": "SOURCE_SUPPORTED_STATEMENT_BUT_UNSUPPORTED_CANONICAL_PROPOSITION_USE",
+      "true_coverage_gap_test": {
+        "result": false,
+        "reason": "No evidence shows the scalar ordering is recurrent or required by structure detection/representation selection; exact claim preservation is sufficient for this packet."
+      }
+    },
+    {
+      "candidate_proposition_objects": [
+        {
+          "comparison_operator": null,
+          "confidence": 0.99,
+          "origin": "SOURCE",
+          "proposition_type": "TRANSFER_EVENT",
+          "relationship_type": "TRANSFERS_TO",
+          "role_bindings": [
+            {
+              "entity_id": "three-dimensional-atomic-coordinates",
+              "role": "OBJECT"
+            },
+            {
+              "entity_id": "first-principles-calculation",
+              "role": "DESTINATION"
+            }
+          ],
+          "statement": "Experimentally measured three-dimensional atomic coordinates are provided as direct input to first-principles calculations."
+        },
+        {
+          "comparison_operator": null,
+          "confidence": 0.99,
+          "origin": "SOURCE",
+          "proposition_type": "TRANSFER_EVENT",
+          "relationship_type": "TRANSFERS_TO",
+          "role_bindings": [
+            {
+              "entity_id": "chemical-species",
+              "role": "OBJECT"
+            },
+            {
+              "entity_id": "first-principles-calculation",
+              "role": "DESTINATION"
+            }
+          ],
+          "statement": "Chemical species are provided as direct input to first-principles calculations."
+        }
+      ],
+      "canonical_proposition_test": {
+        "fit": false,
+        "reason": "No distinct transfer PROCESS event is stated or bound, and first-principles-calculation is itself a PROCESS rather than a legal transfer destination."
+      },
+      "canonical_rejection": "Both TRANSFER_EVENT objects omitted EVENT and used the PROCESS first-principles-calculation as DESTINATION.",
+      "claim_only_test": {
+        "essential_semantics_lost": false,
+        "grounded_claim_available_to_explanatory_layer": true,
+        "reason": "The exact direct-input detail remains a grounded claim alongside an ENABLES edge. The claim carries the detail that the broader dependency predicate intentionally abstracts.",
+        "required_structure_removed": false
+      },
+      "control_a_comparison": {
+        "evidence": {
+          "path": "examples/evaluations/spec-045-blind-replication-live-execution-20260912/sources/03-doe-iron-platinum-atomic-structure-2017/raw-extraction-proposal.json",
+          "sha256": "a6205a7c6f9912f9a0f4614a93fef7d8cdd3284d858ba6e59b4891a152e2466e"
+        },
+        "finding": "Control A failed closed on evidence fidelity and is not ground truth. Its preserved proposal nevertheless used an exact grounded claim for both inputs and proposed three-dimensional-atomic-coordinates --ENABLES--> first-principles-calculations, with no transfer proposition. That relationship independently matches the canonical ENABLES direction, though Control A omitted a parallel chemical-species edge.",
+        "same_meaning_treatment": "GROUNDED_CLAIM_PLUS_PARTIAL_ENABLES_RELATIONSHIP_IN_FAILED_OUTPUT",
+        "status": "FAILED_CLOSED"
+      },
+      "domain": "materials science",
+      "exact_source_supported_meaning": "Experimentally measured three-dimensional atomic coordinates and chemical species can be used as direct input for first-principles calculations of material properties.",
+      "existing_relationship_test": {
+        "fit": true,
+        "relationships": [
+          {
+            "direction": "enabler_to_enabled",
+            "predicate": "ENABLES",
+            "source_role": "three-dimensional atomic coordinates as enabling input",
+            "target_role": "first-principles calculation as enabled process"
+          },
+          {
+            "direction": "enabler_to_enabled",
+            "predicate": "ENABLES",
+            "source_role": "chemical species as enabling input",
+            "target_role": "first-principles calculation as enabled process"
+          }
+        ],
+        "why_not_overstated": "The source explicitly says these measured inputs can be used directly for the calculations. ENABLES captures that they make this measurement-grounded calculation possible without claiming they cause its execution or physically transfer to a recipient. The exact direct-input wording remains in a grounded claim rather than being overloaded into the edge."
+      },
+      "primary_destination": "EXISTING_RELATIONSHIP_FIT",
+      "source_id": "doe-iron-platinum-atomic-structure-2017",
+      "source_support": [
+        "experimentally measured 3D atomic coordinates and chemical species with 22 picometer precision can be used as direct input for first-principles calculations of material properties"
+      ],
+      "spec049_diagnosis": "BOTH_STRUCTURE_AND_SEMANTICS",
+      "spec049_semantic_intent": "SOURCE_SUPPORTED_INPUT_DEPENDENCY_BUT_UNSUPPORTED_CANONICAL_TRANSFER_ROLES",
+      "true_coverage_gap_test": {
+        "result": false,
+        "reason": "Existing ENABLES topology plus a grounded claim preserves the compiler-relevant dependency and exact direct-input meaning. One observed case does not establish a recurring need for a new typed input proposition."
+      }
+    },
+    {
+      "candidate_proposition_objects": [
+        {
+          "comparison_operator": "GREATER_THAN",
+          "confidence": 0.99,
+          "origin": "SOURCE",
+          "proposition_type": "COMPARISON_CONDITION",
+          "relationship_type": "CONSTRAINS",
+          "role_bindings": [
+            {
+              "entity_id": "bottleneck-congestion-proportion",
+              "role": "LEFT_OPERAND"
+            },
+            {
+              "entity_id": "poor-signal-timing-congestion-proportion",
+              "role": "RIGHT_OPERAND"
+            }
+          ],
+          "statement": "The bottleneck congestion proportion is greater than the poor signal timing congestion proportion."
+        }
+      ],
+      "canonical_proposition_test": {
+        "fit": false,
+        "reason": "The source reports two attributed percentages; their ordering does not act as a causal condition and has no outcome."
+      },
+      "canonical_rejection": "COMPARISON_CONDITION omitted OUTCOME and used CONSTRAINS rather than CAUSES.",
+      "claim_only_test": {
+        "essential_semantics_lost": false,
+        "grounded_claim_available_to_explanatory_layer": true,
+        "reason": "A single grounded claim preserves both percentages. Separate source-supported CAUSES relationships already carry the useful congestion topology.",
+        "required_structure_removed": false
+      },
+      "control_a_comparison": {
+        "evidence": {
+          "path": "examples/evaluations/spec-045-blind-replication-live-execution-20260912/sources/05-fhwa-traffic-bottleneck-concepts-2016/admitted-knowledge-model.json",
+          "sha256": "799b3e9c73e8add8a7467b2eb25069a6826b93fd8d81f94d259333f6325d3e7e"
+        },
+        "finding": "Control A passed with both percentages in claim-01, no propositions, and separate bottleneck/poor-signal-timing CAUSES relationships to recurring congestion. It preserved the numeric contrast as prose and the causal meaning as topology without conflating them.",
+        "same_meaning_treatment": "EXACT_GROUNDED_CLAIM_WITH_SEPARATE_CAUSAL_RELATIONSHIPS",
+        "status": "PASS"
+      },
+      "domain": "traffic engineering",
+      "exact_source_supported_meaning": "FHWA stated that bottlenecks account for 40 percent of nationwide congestion, while poor signal timing accounts for another 5 percent.",
+      "existing_relationship_test": {
+        "fit": false,
+        "reason": "CAUSES can separately represent each factor's stated causal role, but no trusted predicate faithfully encodes the 40-percent-versus-5-percent ordering. CONSTRAINS would invent a limit."
+      },
+      "primary_destination": "CLAIM_ONLY_FIT",
+      "source_id": "fhwa-traffic-bottleneck-concepts-2016",
+      "source_support": [
+        "FHWA has stated that 40 percent of all congestion nationwide is attributable to bottlenecks, while another 5 percent is attributable to poor signal timing"
+      ],
+      "spec049_diagnosis": "BOTH_STRUCTURE_AND_SEMANTICS",
+      "spec049_semantic_intent": "SOURCE_SUPPORTED_STATEMENT_BUT_UNSUPPORTED_CANONICAL_PROPOSITION_USE",
+      "true_coverage_gap_test": {
+        "result": false,
+        "reason": "The admitted comparison shows exact claim preservation plus causal topology is sufficient; no required learner structure depends on a generic comparison node."
+      }
+    }
+  ],
+  "owner_review": {
+    "promotion": "NOT_AUTHORIZED",
+    "state": "OWNER_REVIEW",
+    "verdict": "PENDING"
+  },
+  "protected_identities": [
+    {
+      "path": "src/knowledge_compiler/models.py",
+      "sha256": "671b5ad6fddc6edb5912bd5b3596fac56f5ba2d6351795af662a56002f6a244e"
+    },
+    {
+      "path": "src/knowledge_compiler/structure_detection.py",
+      "sha256": "7d83b5e010e9b5fdf6ad4d67985c790c9ed52a8840983a21a681cf546eb5299c"
+    },
+    {
+      "path": "src/knowledge_compiler/representation_strategy.py",
+      "sha256": "5ef4e0a602e16b63f46511a780fc405c85e7dbc5fe631cb47b8a3c248efe5a8f"
+    },
+    {
+      "path": "src/knowledge_compiler/assertion_aware_representation.py",
+      "sha256": "6398f7d47c4f23c1a926d67b89adf6bcf48f8ec21065531c1f70e4ac8d410ffe"
+    },
+    {
+      "path": "src/knowledge_compiler/openai_decomposed_extractor.py",
+      "sha256": "2d91a2fdfcf04bcc2180331571e3d7c2a20e797fe9fbc83c046aafdad1764280"
+    },
+    {
+      "path": "src/knowledge_compiler/decomposed_extraction.py",
+      "sha256": "a09bb36a2214364f915b05e0f7818ffe0b145760b76afb1f00fc66ed09dc75ea"
+    }
+  ],
+  "recommended_branch": "SCHEMA_CONSTRAINED_B_V2_WITH_SEMANTIC_OMISSION",
+  "schema": "spec-050-proposition-semantic-coverage-diagnosis-v1",
+  "status": "IMPLEMENTED_AWAITING_REVIEW",
+  "structural_only_control": {
+    "candidate_proposition_objects": [
+      {
+        "comparison_operator": null,
+        "confidence": 0.99,
+        "origin": "SOURCE",
+        "proposition_type": "TRANSFER_EVENT",
+        "relationship_type": "TRANSFERS_TO",
+        "role_bindings": [
+          {
+            "entity_id": "deoxyribonucleic-acid",
+            "role": "OBJECT"
+          },
+          {
+            "entity_id": "offspring",
+            "role": "DESTINATION"
+          }
+        ],
+        "statement": "DNA is passed from adult organisms to offspring during reproduction."
+      },
+      {
+        "comparison_operator": null,
+        "confidence": 0.96,
+        "origin": "SOURCE",
+        "proposition_type": "TRANSFER_EVENT",
+        "relationship_type": "TRANSFERS_TO",
+        "role_bindings": [
+          {
+            "entity_id": "mitochondrial-dna",
+            "role": "OBJECT"
+          },
+          {
+            "entity_id": "offspring",
+            "role": "DESTINATION"
+          }
+        ],
+        "statement": "Mitochondrial DNA is inherited by offspring from the female parent."
+      }
+    ],
+    "canonical_rejection": "Both TRANSFER_EVENT objects omitted the required EVENT role.",
+    "control_a_comparison": {
+      "evidence": {
+        "path": "examples/evaluations/spec-045-blind-replication-live-execution-20260912/sources/04-nhgri-dna-fact-sheet-2020/extraction-proposal.json",
+        "sha256": "0dfbfadb9697b8049fa0957d56aa6b7be7f6eb1b9dd150f98323f0b904a911a8"
+      },
+      "finding": "Control A failed closed on entity inventory and is not ground truth. Its proposal used grounded inheritance claims and no proposition. Candidate B's frozen inventory independently contains PROCESS entities sexual-reproduction and fertilization, so a canonical transfer destination exists without semantic-model expansion.",
+      "same_meaning_treatment": "GROUNDED_CLAIMS_IN_FAILED_OUTPUT",
+      "status": "FAILED_CLOSED"
+    },
+    "resolution_by_stricter_contract": "A subtype-specific interface makes the missing-EVENT state impossible. It can require one frozen PROCESS EVENT while retaining OBJECT, non-PROCESS DESTINATION, TRANSFERS_TO, and null comparison_operator. The source-supported semantic destination remains TRANSFER_EVENT; no new type or predicate is needed.",
+    "semantic_destination": "CANONICAL_PROPOSITION_FIT",
+    "source_id": "nhgri-dna-fact-sheet-2020",
+    "spec049_diagnosis": "STRUCTURALLY_PREVENTABLE"
+  },
+  "validation": {
+    "control_plane_tests": "PASS (13 tests)",
+    "focused_diagnostic_tests": "PASS (25 tests: SPEC-050, SPEC-049, and canonical proposition controls)",
+    "full_offline_suite": "PASS (599 tests)",
+    "git_diff_check": "PASS",
+    "json_validation": "PASS",
+    "protected_identity_audit": "PASS (hash-bound tests and empty protected-path diff)",
+    "provenance_and_evidence_audit": "PASS (all recorded hashes match; every quoted source-support span occurs exactly once in its frozen source)",
+    "provider_model_network_call_audit": "PASS: zero calls by construction and execution record",
+    "secret_safety": "PASS"
+  }
+}
