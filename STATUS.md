@@ -87,26 +87,26 @@ Authoritative taxonomy correction:
 ## Current approved work packet
 
 ```text
-specs/SPEC-049-stage2-proposition-contract-diagnosis.md
+NONE
 ```
 
-Status: `APPROVED_FOR_IMPLEMENTATION`
+Status: `NONE`
 
-Authority: `OFFLINE_ONLY`
+Authority: `NONE`
 
-Human gate: `OWNER_REVIEW`
+Human gate: `NONE`
 
 Promotion: `NOT_AUTHORIZED`
 
 ## Current gate
 
-SPEC-049 is authorized to diagnose whether the six concentrated Stage-2 proposition failures arose because Candidate B v1 exposed structurally invalid proposition states in its machine-readable schema/interface.
+SPEC-049 is implemented and awaiting owner review. Its canonical report is:
 
-It must reconstruct the pre-existing canonical contracts for `COMPARISON_CONDITION` and `TRANSFER_EVENT`, distinguish schema/prompt/validator enforcement, replay the six preserved failures offline against a diagnostic discriminated contract where feasible, and determine whether a narrowly schema-constrained Candidate-B-v2 experiment is justified.
+`examples/evaluations/spec-049-stage2-proposition-contract-diagnosis-20260914/report.json`
 
-No production behavior change is authorized.
+The objective diagnosis is `MIXED_SIGNAL_MORE_DIAGNOSIS_REQUIRED`: a stricter interface would reject all six exact source outputs before canonical validation, but five failures also contain semantic mismatches that structural discrimination alone cannot resolve.
 
-No provider/model/network call is authorized.
+No packet is active. No provider/model call, repair, Candidate-B-v2 implementation, production behavior change, or promotion is authorized.
 
 ## Current product question
 
@@ -115,16 +115,16 @@ Candidate B v1 regression
         ↓
 6/7 failures concentrated in Stage-2 proposition construction
         ↓
-inspect proposition interface
+all 6 exact failed outputs were schema-expressible
         ↓
-were invalid combinations structurally expressible?
+1 structurally preventable; 5 structure + semantics
         ↓
-can pre-existing canonical rules make them impossible at schema level?
+recommended branch: MIXED_SIGNAL_MORE_DIAGNOSIS_REQUIRED
         ↓
 OWNER REVIEW
 ```
 
-The goal is diagnosis, not improving Candidate B in this packet.
+The immediate goal is owner review of the objective diagnosis, not implementation of Candidate B v2.
 
 ## Frozen / protected state
 

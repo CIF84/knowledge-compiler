@@ -1,0 +1,769 @@
+{
+  "aggregate_answers": {
+    "diagnosis_1_structurally_preventable": 1,
+    "diagnosis_2_semantically_wrong": 0,
+    "diagnosis_3_both_structure_and_semantics": 5,
+    "diagnosis_4_not_schema_expressible_or_ambiguous": 0,
+    "exact_outputs_prevented_before_canonical_validation": 6,
+    "question_6_valid_variants_preserved": true,
+    "question_6_explanation": "The diagnostic contract admits both and only the two canonical proposition variants. Synthetic controls exercise one valid COMPARISON_CONDITION and one valid TRANSFER_EVENT, while canonical tests remain unchanged and passing.",
+    "question_7_primary_defect": "MIXED: the immediate interface expressiveness defect allowed every exact rejected output, but five source-level failures also reveal a deeper semantic mismatch that shape constraints alone cannot remove.",
+    "question_8_next_experiment": "MORE_DIAGNOSIS_REQUIRED_BEFORE_CANDIDATE_B_V2: a narrow contract is technically feasible, but the fixed taxonomy does not show most failures as purely STRUCTURALLY_PREVENTABLE; four standalone comparisons do not fit the canonical causal comparison form and the DOE input-to-process transfer also conflicts with canonical endpoint roles.",
+    "taxonomy_counts": {
+      "BOTH_STRUCTURE_AND_SEMANTICS": 5,
+      "NOT_SCHEMA_EXPRESSIBLE_OR_AMBIGUOUS": 0,
+      "SEMANTICALLY_WRONG": 0,
+      "STRUCTURALLY_PREVENTABLE": 1
+    }
+  },
+  "canonical_contracts": {
+    "COMPARISON_CONDITION": {
+      "additional_roles_legal": false,
+      "allowed_cardinality": 3,
+      "comparison_operator": "GREATER_THAN",
+      "entity_id_requirements": [
+        "every role entity_id is non-empty",
+        "every Stage-2 role entity_id belongs to the exact frozen Stage-1 inventory",
+        "LEFT_OPERAND and RIGHT_OPERAND reference distinct entity IDs"
+      ],
+      "nullability": "comparison_operator is required and non-null",
+      "relationship_type": "CAUSES",
+      "required_roles": [
+        "LEFT_OPERAND",
+        "RIGHT_OPERAND",
+        "OUTCOME"
+      ],
+      "role_uniqueness_required": true,
+      "trace": [
+        "src/knowledge_compiler/models.py: Proposition.__post_init__",
+        "src/knowledge_compiler/decomposed_extraction.py: _validate_proposition_skeleton",
+        "src/knowledge_compiler/semantic_gate.py: PROPOSITION_CONTRACTS",
+        "tests/test_propositions.py",
+        "specs/SPEC-010-proposition-and-endpoint-modeling.md"
+      ]
+    },
+    "TRANSFER_EVENT": {
+      "additional_roles_legal": false,
+      "allowed_cardinality": 3,
+      "comparison_operator": null,
+      "entity_id_requirements": [
+        "every role entity_id is non-empty",
+        "every Stage-2 role entity_id belongs to the exact frozen Stage-1 inventory",
+        "EVENT references a PROCESS entity in a canonical KnowledgeModel",
+        "DESTINATION does not reference a PROCESS entity in a canonical KnowledgeModel",
+        "EVENT and DESTINATION reference different entity IDs"
+      ],
+      "nullability": "comparison_operator is required as a field and must be null",
+      "relationship_type": "TRANSFERS_TO",
+      "required_roles": [
+        "EVENT",
+        "OBJECT",
+        "DESTINATION"
+      ],
+      "role_uniqueness_required": true,
+      "trace": [
+        "src/knowledge_compiler/models.py: Proposition.__post_init__ and KnowledgeModel.__post_init__",
+        "src/knowledge_compiler/decomposed_extraction.py: _validate_proposition_skeleton",
+        "src/knowledge_compiler/semantic_gate.py: PROPOSITION_CONTRACTS",
+        "tests/test_propositions.py",
+        "specs/SPEC-010-proposition-and-endpoint-modeling.md"
+      ]
+    },
+    "scope": {
+      "other_canonical_proposition_types": [],
+      "stage_2_exposed_types": [
+        "COMPARISON_CONDITION",
+        "TRANSFER_EVENT"
+      ]
+    }
+  },
+  "controls": {
+    "candidate_b_v1_changes": 0,
+    "canonical_semantic_or_validation_changes": 0,
+    "external_network_calls": 0,
+    "output_repairs": 0,
+    "production_changes": 0,
+    "provider_model_calls": 0,
+    "retries": 0,
+    "statement": "SPEC-049 was executed entirely from committed local evidence. No provider, model, external retrieval, or other network call was made; git fetch/push are repository synchronization and are not evidence retrieval."
+  },
+  "counterfactual_replay": {
+    "checker": "tests/test_spec049_stage2_proposition_diagnosis.py::_diagnostic_contract_errors",
+    "checker_scope": "Diagnostic-only; it is test-local and is not imported or wired into any extractor.",
+    "failed_source_outputs_rejected": 6,
+    "invalid_provider_proposition_objects_rejected": 8,
+    "model_calls": 0,
+    "output_mutation_or_repair": 0,
+    "result": "PASS"
+  },
+  "deviations_or_blockers": [],
+  "failure_audits": [
+    {
+      "canonical_failure": "comparison condition requires left operand, right operand, outcome, operator, and CAUSES",
+      "current_schema_allowed_combination": true,
+      "evidence": {
+        "gate": {
+          "path": "examples/evaluations/spec-048-decomposed-extraction-live-ab-execution-20260913/sources/02-noaa-nesdis-jet-stream-2025/stages/02-semantic-structure/gate.json",
+          "sha256": "2965696832ec69ce447adfab8e32e5f9e228a1130a37da4538536734db0a10b6"
+        },
+        "parsed_proposal": {
+          "path": "examples/evaluations/spec-048-decomposed-extraction-live-ab-execution-20260913/sources/02-noaa-nesdis-jet-stream-2025/stages/02-semantic-structure/parsed-proposal.json",
+          "sha256": "54d8ed2ba666c6c6b308d635d836d02bdf7968b3f1631927a64cf69fc956414f"
+        },
+        "raw_provider_response": {
+          "path": "examples/evaluations/spec-048-decomposed-extraction-live-ab-execution-20260913/sources/02-noaa-nesdis-jet-stream-2025/stages/02-semantic-structure/raw-provider-response.json",
+          "sha256": "34f286a2c487ad94cece0eeb117f701d61deae426ab3c6c306502e5fb72fb5c1"
+        }
+      },
+      "diagnostic_contract_replay": {
+        "exact_source_output_rejected": true,
+        "reasons": [
+          "COMPARISON_CONDITION relationship_type is CONSTRAINS instead of CAUSES",
+          "LEFT_OPERAND and RIGHT_OPERAND reference the same entity ID"
+        ]
+      },
+      "individual_fields_schema_valid": {
+        "comparison_operator": true,
+        "confidence": true,
+        "origin": true,
+        "proposition_type": true,
+        "relationship_type": true,
+        "role_bindings": true,
+        "statement": true
+      },
+      "invalid_combination": "A globally allowed CONSTRAINS predicate was combined with COMPARISON_CONDITION, and both operands bind jet-stream-speed.",
+      "primary_diagnosis": "BOTH_STRUCTURE_AND_SEMANTICS",
+      "prompt_explicitly_prohibited_combination": false,
+      "provider_proposition_objects": [
+        {
+          "comparison_operator": "GREATER_THAN",
+          "confidence": 0.94,
+          "origin": "SOURCE",
+          "proposition_type": "COMPARISON_CONDITION",
+          "relationship_type": "CONSTRAINS",
+          "role_bindings": [
+            {
+              "entity_id": "jet-stream-speed",
+              "role": "LEFT_OPERAND"
+            },
+            {
+              "entity_id": "jet-stream-speed",
+              "role": "RIGHT_OPERAND"
+            },
+            {
+              "entity_id": "polar-jet-stream",
+              "role": "OUTCOME"
+            }
+          ],
+          "statement": "Jet-stream speeds of 250 miles per hour or faster are greater than the average speed of about 110 miles per hour."
+        }
+      ],
+      "schema_counterfactual": "A subtype-specific CAUSES singleton and distinct operand validator reject the exact object. The singleton alone is enough to reject it at schema time.",
+      "semantic_intent": {
+        "assessment": "SOURCE_SUPPORTED_STATEMENT_BUT_UNSUPPORTED_CANONICAL_PROPOSITION_USE",
+        "basis": "The frozen source supports a numeric speed comparison. It does not make that comparison a compound causal antecedent with polar-jet-stream as its outcome, which is the only canonical meaning of COMPARISON_CONDITION."
+      },
+      "source_id": "noaa-nesdis-jet-stream-2025"
+    },
+    {
+      "canonical_failure": "comparison condition requires left operand, right operand, outcome, operator, and CAUSES",
+      "current_schema_allowed_combination": true,
+      "evidence": {
+        "gate": {
+          "path": "examples/evaluations/spec-048-decomposed-extraction-live-ab-execution-20260913/sources/03-crs-legislative-process-r42843-17/stages/02-semantic-structure/gate.json",
+          "sha256": "630c2be1d08196ff672c8225dd932aad2f638634a10f6cdc5d8ad63e893f8e8b"
+        },
+        "parsed_proposal": {
+          "path": "examples/evaluations/spec-048-decomposed-extraction-live-ab-execution-20260913/sources/03-crs-legislative-process-r42843-17/stages/02-semantic-structure/parsed-proposal.json",
+          "sha256": "510fa735f0981ec4e3a7e0259b52e774d790592a85100c99d37cdfcba1dde7cb"
+        },
+        "raw_provider_response": {
+          "path": "examples/evaluations/spec-048-decomposed-extraction-live-ab-execution-20260913/sources/03-crs-legislative-process-r42843-17/stages/02-semantic-structure/raw-provider-response.json",
+          "sha256": "7f8872ae01efce7741527059efa3294e5bcf90a904b7a6e4d7361a83d656ce24"
+        }
+      },
+      "diagnostic_contract_replay": {
+        "exact_source_output_rejected": true,
+        "reasons": [
+          "COMPARISON_CONDITION has two roles instead of exactly LEFT_OPERAND, RIGHT_OPERAND, OUTCOME",
+          "relationship_type is AFFECTS instead of CAUSES"
+        ]
+      },
+      "individual_fields_schema_valid": {
+        "comparison_operator": true,
+        "confidence": true,
+        "origin": true,
+        "proposition_type": true,
+        "relationship_type": true,
+        "role_bindings": true,
+        "statement": true
+      },
+      "invalid_combination": "A two-role comparison and globally allowed AFFECTS predicate were combined with COMPARISON_CONDITION; OUTCOME is absent.",
+      "latent_preserved_observation": "The later TRANSFER_EVENT object has all three proposition roles but binds EVENT and OBJECT to bill-report; the Stage-1 inventory types bill-report as OBJECT, so it would fail the canonical KnowledgeModel EVENT-is-PROCESS rule if reached.",
+      "primary_diagnosis": "BOTH_STRUCTURE_AND_SEMANTICS",
+      "prompt_explicitly_prohibited_combination": false,
+      "provider_proposition_objects": [
+        {
+          "comparison_operator": "GREATER_THAN",
+          "confidence": 0.99,
+          "origin": "SOURCE",
+          "proposition_type": "COMPARISON_CONDITION",
+          "relationship_type": "AFFECTS",
+          "role_bindings": [
+            {
+              "entity_id": "house-majority-party-leader",
+              "role": "LEFT_OPERAND"
+            },
+            {
+              "entity_id": "senate-majority-leader",
+              "role": "RIGHT_OPERAND"
+            }
+          ],
+          "statement": "House majority party leaders have more tools with which to set the floor agenda than Senate majority party leaders."
+        }
+      ],
+      "schema_counterfactual": "Subtype-specific named roles with exact cardinality and a CAUSES singleton reject the exact object.",
+      "semantic_intent": {
+        "assessment": "SOURCE_SUPPORTED_STATEMENT_BUT_UNSUPPORTED_CANONICAL_PROPOSITION_USE",
+        "basis": "The source supports the standalone comparison in agenda-setting tools. It supplies no causal OUTCOME, so completing the canonical COMPARISON_CONDITION shape would require inventing a different meaning."
+      },
+      "source_id": "crs-legislative-process-r42843-17"
+    },
+    {
+      "canonical_failure": "comparison condition requires left operand, right operand, outcome, operator, and CAUSES",
+      "current_schema_allowed_combination": true,
+      "evidence": {
+        "gate": {
+          "path": "examples/evaluations/spec-048-decomposed-extraction-live-ab-execution-20260913/sources/05-epa-ecological-processes-2026/stages/02-semantic-structure/gate.json",
+          "sha256": "145d9b14e53e631f39e66a802110566dc7364ef8889384bf993422a4c498b052"
+        },
+        "parsed_proposal": {
+          "path": "examples/evaluations/spec-048-decomposed-extraction-live-ab-execution-20260913/sources/05-epa-ecological-processes-2026/stages/02-semantic-structure/parsed-proposal.json",
+          "sha256": "27b658e66b7984dc724e02a60f6a094e1c83d1e49317653c01d1dd4b75e9fc19"
+        },
+        "raw_provider_response": {
+          "path": "examples/evaluations/spec-048-decomposed-extraction-live-ab-execution-20260913/sources/05-epa-ecological-processes-2026/stages/02-semantic-structure/raw-provider-response.json",
+          "sha256": "91d45db6eb9fd420e9dab67da46033d877b5f147c475d8b27830deb1b0bdc2c0"
+        }
+      },
+      "diagnostic_contract_replay": {
+        "exact_source_output_rejected": true,
+        "reasons": [
+          "COMPARISON_CONDITION has two roles instead of exactly LEFT_OPERAND, RIGHT_OPERAND, OUTCOME",
+          "relationship_type is CONTRADICTS instead of CAUSES"
+        ]
+      },
+      "individual_fields_schema_valid": {
+        "comparison_operator": true,
+        "confidence": true,
+        "origin": true,
+        "proposition_type": true,
+        "relationship_type": true,
+        "role_bindings": true,
+        "statement": true
+      },
+      "invalid_combination": "A two-role comparison and globally allowed CONTRADICTS predicate were combined with COMPARISON_CONDITION; OUTCOME is absent.",
+      "primary_diagnosis": "BOTH_STRUCTURE_AND_SEMANTICS",
+      "prompt_explicitly_prohibited_combination": false,
+      "provider_proposition_objects": [
+        {
+          "comparison_operator": "GREATER_THAN",
+          "confidence": 0.96,
+          "origin": "SOURCE",
+          "proposition_type": "COMPARISON_CONDITION",
+          "relationship_type": "CONTRADICTS",
+          "role_bindings": [
+            {
+              "entity_id": "national-scale",
+              "role": "LEFT_OPERAND"
+            },
+            {
+              "entity_id": "local-scale",
+              "role": "RIGHT_OPERAND"
+            }
+          ],
+          "statement": "The difficulty of measuring ecological processes is greater at the national scale than at the local scale."
+        }
+      ],
+      "schema_counterfactual": "Subtype-specific named roles with exact cardinality and a CAUSES singleton reject the exact object.",
+      "semantic_intent": {
+        "assessment": "SOURCE_SUPPORTED_STATEMENT_BUT_UNSUPPORTED_CANONICAL_PROPOSITION_USE",
+        "basis": "The source supports a scale comparison. It does not supply a causal outcome for the comparison, and CONTRADICTS is semantically inapplicable to two scales."
+      },
+      "source_id": "epa-ecological-processes-2026"
+    },
+    {
+      "canonical_failure": "transfer event requires event, object, destination, TRANSFERS_TO, and no comparison operator",
+      "current_schema_allowed_combination": true,
+      "evidence": {
+        "gate": {
+          "path": "examples/evaluations/spec-048-decomposed-extraction-live-ab-execution-20260913/sources/06-doe-iron-platinum-atomic-structure-2017/stages/02-semantic-structure/gate.json",
+          "sha256": "945af353a119ef710f6d833c524e18aab095a1ac2a49cff771511205dc7a5d5c"
+        },
+        "parsed_proposal": {
+          "path": "examples/evaluations/spec-048-decomposed-extraction-live-ab-execution-20260913/sources/06-doe-iron-platinum-atomic-structure-2017/stages/02-semantic-structure/parsed-proposal.json",
+          "sha256": "040e3810e1845ccf6374164b503a5101b91913e14302a0f56c1b06d0c33c464b"
+        },
+        "raw_provider_response": {
+          "path": "examples/evaluations/spec-048-decomposed-extraction-live-ab-execution-20260913/sources/06-doe-iron-platinum-atomic-structure-2017/stages/02-semantic-structure/raw-provider-response.json",
+          "sha256": "ff8627989679374566a30da4ea39309dc1c57449ee584adcfaadacd423028bca"
+        }
+      },
+      "diagnostic_contract_replay": {
+        "exact_source_output_rejected": true,
+        "reasons": [
+          "both TRANSFER_EVENT objects omit EVENT",
+          "both objects bind DESTINATION to first-principles-calculation, a PROCESS that canonical KnowledgeModel rules prohibit as a destination"
+        ]
+      },
+      "individual_fields_schema_valid": {
+        "comparison_operator": true,
+        "confidence": true,
+        "origin": true,
+        "proposition_type": true,
+        "relationship_type": true,
+        "role_bindings": true,
+        "statement": true
+      },
+      "invalid_combination": "Each TRANSFER_EVENT has only OBJECT and DESTINATION. The selected destination is a frozen PROCESS entity and no separate source-supported transfer EVENT is bound.",
+      "primary_diagnosis": "BOTH_STRUCTURE_AND_SEMANTICS",
+      "prompt_explicitly_prohibited_combination": false,
+      "provider_proposition_objects": [
+        {
+          "comparison_operator": null,
+          "confidence": 0.99,
+          "origin": "SOURCE",
+          "proposition_type": "TRANSFER_EVENT",
+          "relationship_type": "TRANSFERS_TO",
+          "role_bindings": [
+            {
+              "entity_id": "three-dimensional-atomic-coordinates",
+              "role": "OBJECT"
+            },
+            {
+              "entity_id": "first-principles-calculation",
+              "role": "DESTINATION"
+            }
+          ],
+          "statement": "Experimentally measured three-dimensional atomic coordinates are provided as direct input to first-principles calculations."
+        },
+        {
+          "comparison_operator": null,
+          "confidence": 0.99,
+          "origin": "SOURCE",
+          "proposition_type": "TRANSFER_EVENT",
+          "relationship_type": "TRANSFERS_TO",
+          "role_bindings": [
+            {
+              "entity_id": "chemical-species",
+              "role": "OBJECT"
+            },
+            {
+              "entity_id": "first-principles-calculation",
+              "role": "DESTINATION"
+            }
+          ],
+          "statement": "Chemical species are provided as direct input to first-principles calculations."
+        }
+      ],
+      "schema_counterfactual": "An exact EVENT/OBJECT/DESTINATION shape rejects both objects. A repository-compatible schema may additionally derive EVENT enums from frozen PROCESS IDs and DESTINATION enums from frozen non-PROCESS IDs.",
+      "semantic_intent": {
+        "assessment": "SOURCE_SUPPORTED_INPUT_DEPENDENCY_BUT_UNSUPPORTED_CANONICAL_TRANSFER_ROLES",
+        "basis": "The source supports coordinates and species as direct calculation inputs. The frozen inventory makes first-principles-calculation a PROCESS, whereas canonical TRANSFER_EVENT requires a separate PROCESS event and a non-PROCESS destination. Shape enforcement cannot decide whether this input relation should be omitted or represented by another existing semantic form."
+      },
+      "source_id": "doe-iron-platinum-atomic-structure-2017"
+    },
+    {
+      "canonical_failure": "transfer event requires event, object, destination, TRANSFERS_TO, and no comparison operator",
+      "current_schema_allowed_combination": true,
+      "evidence": {
+        "gate": {
+          "path": "examples/evaluations/spec-048-decomposed-extraction-live-ab-execution-20260913/sources/07-nhgri-dna-fact-sheet-2020/stages/02-semantic-structure/gate.json",
+          "sha256": "90f52784e2ea7fd0801dfde7c47f5ce171edc6e9c75c18c36e9e2774af591457"
+        },
+        "parsed_proposal": {
+          "path": "examples/evaluations/spec-048-decomposed-extraction-live-ab-execution-20260913/sources/07-nhgri-dna-fact-sheet-2020/stages/02-semantic-structure/parsed-proposal.json",
+          "sha256": "11fd65071f03529aa258905d480ab81be2705b9f8ffaf81aed9369912313ddc0"
+        },
+        "raw_provider_response": {
+          "path": "examples/evaluations/spec-048-decomposed-extraction-live-ab-execution-20260913/sources/07-nhgri-dna-fact-sheet-2020/stages/02-semantic-structure/raw-provider-response.json",
+          "sha256": "d665bd8d2492c0fa62aaf34bea76a36e68ba44ae35044e74cab2aaacbc89f587"
+        }
+      },
+      "diagnostic_contract_replay": {
+        "exact_source_output_rejected": true,
+        "reasons": [
+          "both TRANSFER_EVENT objects omit EVENT"
+        ]
+      },
+      "individual_fields_schema_valid": {
+        "comparison_operator": true,
+        "confidence": true,
+        "origin": true,
+        "proposition_type": true,
+        "relationship_type": true,
+        "role_bindings": true,
+        "statement": true
+      },
+      "invalid_combination": "Each TRANSFER_EVENT has OBJECT and DESTINATION but omits the required EVENT role.",
+      "primary_diagnosis": "STRUCTURALLY_PREVENTABLE",
+      "prompt_explicitly_prohibited_combination": false,
+      "provider_proposition_objects": [
+        {
+          "comparison_operator": null,
+          "confidence": 0.99,
+          "origin": "SOURCE",
+          "proposition_type": "TRANSFER_EVENT",
+          "relationship_type": "TRANSFERS_TO",
+          "role_bindings": [
+            {
+              "entity_id": "deoxyribonucleic-acid",
+              "role": "OBJECT"
+            },
+            {
+              "entity_id": "offspring",
+              "role": "DESTINATION"
+            }
+          ],
+          "statement": "DNA is passed from adult organisms to offspring during reproduction."
+        },
+        {
+          "comparison_operator": null,
+          "confidence": 0.96,
+          "origin": "SOURCE",
+          "proposition_type": "TRANSFER_EVENT",
+          "relationship_type": "TRANSFERS_TO",
+          "role_bindings": [
+            {
+              "entity_id": "mitochondrial-dna",
+              "role": "OBJECT"
+            },
+            {
+              "entity_id": "offspring",
+              "role": "DESTINATION"
+            }
+          ],
+          "statement": "Mitochondrial DNA is inherited by offspring from the female parent."
+        }
+      ],
+      "schema_counterfactual": "An exact EVENT/OBJECT/DESTINATION variant rejects both objects. The frozen inventory already contains source-supported PROCESS entities sexual-reproduction and fertilization, so requiring EVENT does not require minting a source-specific answer.",
+      "semantic_intent": {
+        "assessment": "SOURCE_SUPPORTED",
+        "basis": "The source and frozen inventory explicitly support DNA transfer to offspring during sexual reproduction and mitochondrial inheritance in the described fertilization process. The failure is omission of a required role, not an unsupported transfer meaning."
+      },
+      "source_id": "nhgri-dna-fact-sheet-2020"
+    },
+    {
+      "canonical_failure": "comparison condition requires left operand, right operand, outcome, operator, and CAUSES",
+      "current_schema_allowed_combination": true,
+      "evidence": {
+        "gate": {
+          "path": "examples/evaluations/spec-048-decomposed-extraction-live-ab-execution-20260913/sources/08-fhwa-traffic-bottleneck-concepts-2016/stages/02-semantic-structure/gate.json",
+          "sha256": "1d9f2ac5ba4142b4c71b849a8f6e12e80df19123f6e1c70264fbefecdb25412e"
+        },
+        "parsed_proposal": {
+          "path": "examples/evaluations/spec-048-decomposed-extraction-live-ab-execution-20260913/sources/08-fhwa-traffic-bottleneck-concepts-2016/stages/02-semantic-structure/parsed-proposal.json",
+          "sha256": "347927b2a8ddd6077db322c2f9f56225365b9a1db53db03cf9a670810d4b20c7"
+        },
+        "raw_provider_response": {
+          "path": "examples/evaluations/spec-048-decomposed-extraction-live-ab-execution-20260913/sources/08-fhwa-traffic-bottleneck-concepts-2016/stages/02-semantic-structure/raw-provider-response.json",
+          "sha256": "1e754689d2512f7e72fc1969a1793d758730c383a2489da3a2623fcc3dfa25c1"
+        }
+      },
+      "diagnostic_contract_replay": {
+        "exact_source_output_rejected": true,
+        "reasons": [
+          "COMPARISON_CONDITION has two roles instead of exactly LEFT_OPERAND, RIGHT_OPERAND, OUTCOME",
+          "relationship_type is CONSTRAINS instead of CAUSES"
+        ]
+      },
+      "individual_fields_schema_valid": {
+        "comparison_operator": true,
+        "confidence": true,
+        "origin": true,
+        "proposition_type": true,
+        "relationship_type": true,
+        "role_bindings": true,
+        "statement": true
+      },
+      "invalid_combination": "A two-role comparison and globally allowed CONSTRAINS predicate were combined with COMPARISON_CONDITION; OUTCOME is absent.",
+      "primary_diagnosis": "BOTH_STRUCTURE_AND_SEMANTICS",
+      "prompt_explicitly_prohibited_combination": false,
+      "provider_proposition_objects": [
+        {
+          "comparison_operator": "GREATER_THAN",
+          "confidence": 0.99,
+          "origin": "SOURCE",
+          "proposition_type": "COMPARISON_CONDITION",
+          "relationship_type": "CONSTRAINS",
+          "role_bindings": [
+            {
+              "entity_id": "bottleneck-congestion-proportion",
+              "role": "LEFT_OPERAND"
+            },
+            {
+              "entity_id": "poor-signal-timing-congestion-proportion",
+              "role": "RIGHT_OPERAND"
+            }
+          ],
+          "statement": "The bottleneck congestion proportion is greater than the poor signal timing congestion proportion."
+        }
+      ],
+      "schema_counterfactual": "Subtype-specific named roles with exact cardinality and a CAUSES singleton reject the exact object.",
+      "semantic_intent": {
+        "assessment": "SOURCE_SUPPORTED_STATEMENT_BUT_UNSUPPORTED_CANONICAL_PROPOSITION_USE",
+        "basis": "The frozen source supports the 40-percent versus 5-percent comparison. It does not state that the comparison is a compound causal antecedent with an OUTCOME, so it is not the accepted COMPARISON_CONDITION form."
+      },
+      "source_id": "fhwa-traffic-bottleneck-concepts-2016"
+    }
+  ],
+  "immutable_evidence": [
+    {
+      "path": "examples/evaluations/spec-047-decomposed-extraction-ab-harness-20260913/candidate-b-contract.json",
+      "sha256": "abc61d8ae98c823fa97b78c03cd04cbd351be9b2aeb578bc17d240f6485c04fe"
+    },
+    {
+      "path": "examples/evaluations/spec-048-decomposed-extraction-live-ab-execution-20260913/final-report.json",
+      "sha256": "e1331270a6c65790cfad0c2edfb046aef87aa368ecac18e046f063531ea99d9b"
+    },
+    {
+      "path": "examples/evaluations/spec-048-decomposed-extraction-live-ab-execution-20260913/post-run-failure-taxonomy-audit.json",
+      "sha256": "b6f8cea62e73d7eacef50be8ce54a3a927bcde2356fda451a9e461f2e57f69cd"
+    },
+    {
+      "path": "examples/evaluations/spec-042-blind-out-of-sample-live-execution-20260911/sources/02-noaa-nesdis-jet-stream-2025/source.json",
+      "sha256": "b79adf56ca2cd77b0ef2ba3fbd66d29814b373ba178200ea83d1b12b63720f79"
+    },
+    {
+      "path": "examples/evaluations/spec-042-blind-out-of-sample-live-execution-20260911/sources/03-crs-legislative-process-r42843-17/source.json",
+      "sha256": "b6b9dee62d779ecbc3d435b442210351939c599685571f35f612396d46511d17"
+    },
+    {
+      "path": "examples/evaluations/spec-045-blind-replication-live-execution-20260912/sources/02-epa-ecological-processes-2026/source.json",
+      "sha256": "ff626a00442ff3d5bb2854577b2696890c91bb78d8a4fbc51ca726a8d43fc2d5"
+    },
+    {
+      "path": "examples/evaluations/spec-045-blind-replication-live-execution-20260912/sources/03-doe-iron-platinum-atomic-structure-2017/source.json",
+      "sha256": "7849564cea7542c421e7c31d71f3676db632a0be24f4c0b474e1a8d620319f42"
+    },
+    {
+      "path": "examples/evaluations/spec-045-blind-replication-live-execution-20260912/sources/04-nhgri-dna-fact-sheet-2020/source.json",
+      "sha256": "10c9fdf96a03f54fd262c112ee56b80031740c2794741203007e53316b22b279"
+    },
+    {
+      "path": "examples/evaluations/spec-045-blind-replication-live-execution-20260912/sources/05-fhwa-traffic-bottleneck-concepts-2016/source.json",
+      "sha256": "70bf303f311865509148a24930e12bc655a57d0cc118af074729ce13e6a23816"
+    }
+  ],
+  "interface_analysis": {
+    "decomposition_principle_result": "VIOLATED",
+    "findings": {
+      "globally_valid_roles_invalid_for_subtype_allowed": true,
+      "globally_valid_relationship_predicates_invalid_for_subtype_allowed": true,
+      "json_schema_valid_guaranteed_canonical_failure_possible": true,
+      "null_non_null_operator_inconsistent_with_subtype_allowed": true,
+      "subtype_correlated_fields_exposed_independently": true
+    },
+    "mechanical_basis": "Candidate B v1's strict Stage-2 schema validates proposition_type, each role token, each frozen entity ID, relationship_type, and comparison_operator independently. It contains no conditional correlation among those fields, no exact role cardinality, and no role uniqueness constraint."
+  },
+  "machine_readable_contract_feasibility": {
+    "conclusion": "FEASIBLE_WITH_REPOSITORY_COMPATIBLE_VARIANT_OBJECTS",
+    "design_only_not_implemented": true,
+    "preferred_conceptual_form": {
+      "comparison_conditions": {
+        "item": {
+          "comparison_operator": "singleton enum GREATER_THAN",
+          "left_operand_entity_id": "dynamic frozen Stage-1 entity-ID enum",
+          "outcome_entity_id": "dynamic frozen Stage-1 entity-ID enum",
+          "relationship_type": "singleton enum CAUSES",
+          "right_operand_entity_id": "dynamic frozen Stage-1 entity-ID enum"
+        }
+      },
+      "transfer_events": {
+        "item": {
+          "comparison_operator": "null",
+          "destination_entity_id": "dynamic frozen non-PROCESS entity-ID enum",
+          "event_entity_id": "dynamic frozen PROCESS entity-ID enum",
+          "object_entity_id": "dynamic frozen Stage-1 entity-ID enum",
+          "relationship_type": "singleton enum TRANSFERS_TO"
+        }
+      }
+    },
+    "repository_compatibility": "The current schema generator already uses strict objects, arrays, required fields, singleton-capable enums, null types, and dynamic frozen entity-ID enums. Separate variant arrays avoid reliance on provider-specific discriminator, oneOf, contains, or tuple-order support and map losslessly to the unchanged canonical Proposition model.",
+    "residual_validator_rules": [
+      "LEFT_OPERAND and RIGHT_OPERAND distinctness remains simplest in deterministic validation unless all legal unequal pairs are enumerated.",
+      "Non-empty statements, confidence, deterministic proposition identity, provenance/evidence, and cross-object uniqueness remain deterministic gates.",
+      "Schema can narrow EVENT and DESTINATION by frozen entity type, but canonical KnowledgeModel validation remains authoritative."
+    ],
+    "viable_alternatives": [
+      "discriminated union/oneOf with variant-specific named endpoint properties",
+      "separate arrays for COMPARISON_CONDITION and TRANSFER_EVENT",
+      "a common envelope containing one required variant-specific payload"
+    ]
+  },
+  "owner_review": {
+    "promotion": "NOT_AUTHORIZED",
+    "question": "Did Candidate B v1 fail because Stage 2 exposed proposition states that should have been structurally impossible strongly enough to justify one narrowly scoped schema-constrained Candidate-B-v2 experiment, or did decomposition expose a deeper semantic extraction failure?",
+    "state": "OWNER_REVIEW",
+    "verdict": "PENDING"
+  },
+  "post_hoc_restriction_audit": {
+    "accepted_restrictions": [
+      "exact subtype roles and cardinality",
+      "role uniqueness",
+      "subtype relationship singleton",
+      "subtype comparison-operator state",
+      "frozen entity-ID membership",
+      "comparison operand distinctness",
+      "transfer EVENT PROCESS type",
+      "transfer DESTINATION non-PROCESS type",
+      "transfer EVENT/DESTINATION distinctness"
+    ],
+    "finding": "Every proposed structural restriction is present in canonical model, KnowledgeModel, semantic-gate, or proposition tests predating SPEC-048. No source-specific answer, observed field value, new proposition type, or new predicate is proposed.",
+    "post_hoc_restrictions_recommended": []
+  },
+  "protected_identities": [
+    {
+      "path": "src/knowledge_compiler/models.py",
+      "sha256": "671b5ad6fddc6edb5912bd5b3596fac56f5ba2d6351795af662a56002f6a244e"
+    },
+    {
+      "path": "src/knowledge_compiler/openai_decomposed_extractor.py",
+      "sha256": "2d91a2fdfcf04bcc2180331571e3d7c2a20e797fe9fbc83c046aafdad1764280"
+    },
+    {
+      "path": "src/knowledge_compiler/decomposed_extraction.py",
+      "sha256": "a09bb36a2214364f915b05e0f7818ffe0b145760b76afb1f00fc66ed09dc75ea"
+    },
+    {
+      "path": "examples/evaluations/spec-047-decomposed-extraction-ab-harness-20260913/candidate-b-contract.json",
+      "sha256": "abc61d8ae98c823fa97b78c03cd04cbd351be9b2aeb578bc17d240f6485c04fe"
+    },
+    {
+      "path": "examples/evaluations/spec-048-decomposed-extraction-live-ab-execution-20260913/final-report.json",
+      "sha256": "e1331270a6c65790cfad0c2edfb046aef87aa368ecac18e046f063531ea99d9b"
+    },
+    {
+      "path": "examples/evaluations/spec-048-decomposed-extraction-live-ab-execution-20260913/post-run-failure-taxonomy-audit.json",
+      "sha256": "b6f8cea62e73d7eacef50be8ce54a3a927bcde2356fda451a9e461f2e57f69cd"
+    }
+  ],
+  "recommended_branch": "MIXED_SIGNAL_MORE_DIAGNOSIS_REQUIRED",
+  "rule_layer_matrix": [
+    {
+      "current_layer": "MULTI_LAYER",
+      "rule": "proposition_type is one of COMPARISON_CONDITION or TRANSFER_EVENT",
+      "schema": "two-value enum",
+      "prompt": "names the two supported forms",
+      "validator": "PropositionType enum"
+    },
+    {
+      "current_layer": "MULTI_LAYER",
+      "rule": "all seven proposition fields are present and no extra field is present",
+      "schema": "required plus additionalProperties=false",
+      "prompt": "requests output only in schema",
+      "validator": "_exact_fields"
+    },
+    {
+      "current_layer": "VALIDATOR_ONLY",
+      "rule": "COMPARISON_CONDITION roles are exactly LEFT_OPERAND, RIGHT_OPERAND, OUTCOME",
+      "schema": "global role enum in an unconstrained-length array",
+      "prompt": "says under supplied contract but does not enumerate the subtype contract",
+      "validator": "Proposition.__post_init__"
+    },
+    {
+      "current_layer": "VALIDATOR_ONLY",
+      "rule": "TRANSFER_EVENT roles are exactly EVENT, OBJECT, DESTINATION",
+      "schema": "global role enum in an unconstrained-length array",
+      "prompt": "says under supplied contract but does not enumerate the subtype contract",
+      "validator": "Proposition.__post_init__"
+    },
+    {
+      "current_layer": "VALIDATOR_ONLY",
+      "rule": "role names are unique and no additional role is legal",
+      "schema": "no unique, cardinality, or subtype-role correlation",
+      "prompt": "not explicit",
+      "validator": "Proposition.__post_init__"
+    },
+    {
+      "current_layer": "VALIDATOR_ONLY",
+      "rule": "COMPARISON_CONDITION relationship_type is CAUSES",
+      "schema": "all 20 trusted relationship types are allowed independently",
+      "prompt": "not explicit",
+      "validator": "Proposition.__post_init__ and semantic_gate.PROPOSITION_CONTRACTS"
+    },
+    {
+      "current_layer": "VALIDATOR_ONLY",
+      "rule": "TRANSFER_EVENT relationship_type is TRANSFERS_TO",
+      "schema": "all 20 trusted relationship types are allowed independently",
+      "prompt": "not explicit",
+      "validator": "Proposition.__post_init__ and semantic_gate.PROPOSITION_CONTRACTS"
+    },
+    {
+      "current_layer": "VALIDATOR_ONLY",
+      "rule": "COMPARISON_CONDITION comparison_operator is GREATER_THAN and non-null",
+      "schema": "GREATER_THAN or null allowed independently",
+      "prompt": "not explicit",
+      "validator": "Proposition.__post_init__ and semantic_gate.PROPOSITION_CONTRACTS"
+    },
+    {
+      "current_layer": "VALIDATOR_ONLY",
+      "rule": "TRANSFER_EVENT comparison_operator is null",
+      "schema": "GREATER_THAN or null allowed independently",
+      "prompt": "not explicit",
+      "validator": "Proposition.__post_init__ and semantic_gate.PROPOSITION_CONTRACTS"
+    },
+    {
+      "current_layer": "MULTI_LAYER",
+      "rule": "role entity IDs belong to the exact frozen Stage-1 inventory",
+      "schema": "dynamic enum for each Stage-1 ID",
+      "prompt": "explicitly requires exact supplied IDs and forbids minting",
+      "validator": "_validate_proposition_skeleton known-ID set"
+    },
+    {
+      "current_layer": "VALIDATOR_ONLY",
+      "rule": "COMPARISON_CONDITION operands are distinct",
+      "schema": "no cross-property inequality",
+      "prompt": "not explicit",
+      "validator": "Proposition.__post_init__"
+    },
+    {
+      "current_layer": "VALIDATOR_ONLY",
+      "rule": "TRANSFER_EVENT EVENT is PROCESS, DESTINATION is non-PROCESS, and they differ",
+      "schema": "all role entity IDs use the same global frozen-ID enum",
+      "prompt": "not explicit",
+      "validator": "KnowledgeModel.__post_init__"
+    }
+  ],
+  "schema": "spec-049-stage2-proposition-contract-diagnosis-v1",
+  "status": "IMPLEMENTED_AWAITING_REVIEW",
+  "valid_state_preservation": {
+    "canonical_variants_preserved": [
+      "COMPARISON_CONDITION",
+      "TRANSFER_EVENT"
+    ],
+    "fixtures_are_synthetic_not_blind_source_answers": true,
+    "invalid_cases_rejected": [
+      "missing required role",
+      "duplicate role",
+      "wrong subtype role",
+      "wrong subtype relationship_type",
+      "wrong subtype comparison_operator state",
+      "unknown frozen entity ID",
+      "duplicate comparison operands"
+    ],
+    "result": "PASS",
+    "valid_comparison_condition_admitted": true,
+    "valid_transfer_event_admitted": true
+  },
+  "validation": {
+    "control_plane_tests": "PASS (13 tests)",
+    "focused_diagnostic_tests": "PASS (19 tests: SPEC-049 diagnostic plus canonical proposition controls)",
+    "full_offline_suite": "PASS (593 tests)",
+    "git_diff_check": "PASS",
+    "json_validation": "PASS",
+    "protected_identity_audit": "PASS (hash-bound test plus empty protected-path diff)",
+    "provider_model_network_call_audit": "PASS: zero calls by construction and execution record",
+    "secret_safety": "PASS"
+  }
+}
