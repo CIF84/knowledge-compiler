@@ -1,0 +1,70 @@
+{
+  "authoritative_candidate_failure_origin_distribution": {
+    "ENTITY_INVENTORY": 1,
+    "PROPOSITION_CONSTRUCTION": 6
+  },
+  "audit_finding": {
+    "affected_generated_files_preserved": [
+      "ab-comparison.json",
+      "candidate-b-comparison-records.json",
+      "report.json",
+      "sources/*/final-outcome.json"
+    ],
+    "candidate_behavior_changed": false,
+    "description": "The frozen generic Candidate-B comparison adapter classifies a Stage-2 rejection as PROPOSITION_CONSTRUCTION only when the exception text contains the word proposition. The six Stage-2 exceptions below arise directly from Proposition validation but name the proposition subtype instead, so the generated comparison records label them RELATIONSHIP_SEMANTICS. Those generated records remain byte-preserved; this audit supplies the authoritative SPEC-046 taxonomy classification.",
+    "mechanically_supported_branch_changed": false,
+    "prompts_or_schemas_changed": false,
+    "repair_or_retry_performed": false,
+    "semantic_or_canonical_validation_changed": false
+  },
+  "candidate_rejections": [
+    {
+      "detection_stage": "SEMANTIC_STRUCTURE",
+      "exact_failure": "comparison condition requires left operand, right operand, outcome, operator, and CAUSES",
+      "origin_stage": "PROPOSITION_CONSTRUCTION",
+      "source_id": "noaa-nesdis-jet-stream-2025"
+    },
+    {
+      "detection_stage": "SEMANTIC_STRUCTURE",
+      "exact_failure": "comparison condition requires left operand, right operand, outcome, operator, and CAUSES",
+      "origin_stage": "PROPOSITION_CONSTRUCTION",
+      "source_id": "crs-legislative-process-r42843-17"
+    },
+    {
+      "detection_stage": "ENTITY_INVENTORY",
+      "exact_failure": "Stage 1 duplicate entity declaration: 'moon'",
+      "origin_stage": "ENTITY_INVENTORY",
+      "source_id": "nasa-solar-system-formation-2026"
+    },
+    {
+      "detection_stage": "SEMANTIC_STRUCTURE",
+      "exact_failure": "comparison condition requires left operand, right operand, outcome, operator, and CAUSES",
+      "origin_stage": "PROPOSITION_CONSTRUCTION",
+      "source_id": "epa-ecological-processes-2026"
+    },
+    {
+      "detection_stage": "SEMANTIC_STRUCTURE",
+      "exact_failure": "transfer event requires event, object, destination, TRANSFERS_TO, and no comparison operator",
+      "origin_stage": "PROPOSITION_CONSTRUCTION",
+      "source_id": "doe-iron-platinum-atomic-structure-2017"
+    },
+    {
+      "detection_stage": "SEMANTIC_STRUCTURE",
+      "exact_failure": "transfer event requires event, object, destination, TRANSFERS_TO, and no comparison operator",
+      "origin_stage": "PROPOSITION_CONSTRUCTION",
+      "source_id": "nhgri-dna-fact-sheet-2020"
+    },
+    {
+      "detection_stage": "SEMANTIC_STRUCTURE",
+      "exact_failure": "comparison condition requires left operand, right operand, outcome, operator, and CAUSES",
+      "origin_stage": "PROPOSITION_CONSTRUCTION",
+      "source_id": "fhwa-traffic-bottleneck-concepts-2016"
+    }
+  ],
+  "generated_adapter_distribution_preserved_for_audit": {
+    "ENTITY_INVENTORY": 1,
+    "RELATIONSHIP_SEMANTICS": 6
+  },
+  "schema": "spec-048-post-run-failure-taxonomy-audit-v1",
+  "status": "PASS_WITH_TRANSPARENT_CLASSIFICATION_CORRECTION"
+}

@@ -1,0 +1,1169 @@
+{
+  "all_retry_classes": 0,
+  "candidate_version": "spec-047-candidate-b-v1",
+  "checks": [
+    {
+      "actual": "a09bb36a2214364f915b05e0f7818ffe0b145760b76afb1f00fc66ed09dc75ea",
+      "check": "candidate file src/knowledge_compiler/decomposed_extraction.py",
+      "expected": "a09bb36a2214364f915b05e0f7818ffe0b145760b76afb1f00fc66ed09dc75ea",
+      "status": "PASS"
+    },
+    {
+      "actual": "2d91a2fdfcf04bcc2180331571e3d7c2a20e797fe9fbc83c046aafdad1764280",
+      "check": "candidate file src/knowledge_compiler/openai_decomposed_extractor.py",
+      "expected": "2d91a2fdfcf04bcc2180331571e3d7c2a20e797fe9fbc83c046aafdad1764280",
+      "status": "PASS"
+    },
+    {
+      "actual": "85e60376aabc797e75bafbda71df3ec2a68d24f0220f931b2eb89f0d9b9824fc",
+      "check": "candidate file src/knowledge_compiler/decomposed_ab_evaluation.py",
+      "expected": "85e60376aabc797e75bafbda71df3ec2a68d24f0220f931b2eb89f0d9b9824fc",
+      "status": "PASS"
+    },
+    {
+      "actual": {
+        "candidate_version": "spec-047-candidate-b-v1",
+        "dynamic_schema_note": "Stage 2 endpoint enums use the exact frozen Stage-1 IDs; Stage 3 binding enums use the exact frozen Stage-2 object IDs. Per-run schema hashes are recorded.",
+        "hidden_retries": 0,
+        "model": "gpt-5.6-luna",
+        "provider": "openai",
+        "repair_calls": 0,
+        "sdk_retries": 0,
+        "semantic_retries": 0,
+        "stages": [
+          {
+            "instructions": "You perform Stage 1 entity inventory for a semantic compiler.\n\nRead only the exact supplied source. Return a precision-first inventory of concepts,\nobjects, processes, variables, systems, and components that later semantic statements\nneed as endpoints or proposition roles. Include source-supported process/event concepts\nwhen later meaning would need to refer to them. Do not use external knowledge.\n\nDo not assign IDs: trusted code assigns stable IDs after this stage. Each semantic thing\nmust appear once. Do not fragment one identity into variants, merge related but distinct\nthings, or use aliases except for genuine naming equivalence. Names and descriptions must\nremain source-bounded.\n\nReturn entities only. Do not return claims, evidence, relationships, propositions,\nteaching prose, diagnostics, or output outside the requested schema.",
+            "prompt_sha256": "b1c00eb4547de56c62dcc18c7aec013ee1e2de4a8c1dfa45bcb475f00591f785",
+            "prompt_version": "spec-047-entity-inventory-v1",
+            "schema_sha256": "003db7546ae3ffafe7dc098bc50e1a5f223b891f6ee3160f7537214c8e9c9956",
+            "schema_template": {
+              "additionalProperties": false,
+              "properties": {
+                "symbols": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "aliases": {
+                        "items": {
+                          "type": "string"
+                        },
+                        "type": "array"
+                      },
+                      "description": {
+                        "type": "string"
+                      },
+                      "entity_type": {
+                        "enum": [
+                          "CONCEPT",
+                          "OBJECT",
+                          "PROCESS",
+                          "VARIABLE",
+                          "SYSTEM",
+                          "COMPONENT"
+                        ],
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "name",
+                      "description",
+                      "entity_type",
+                      "aliases"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                }
+              },
+              "required": [
+                "symbols"
+              ],
+              "type": "object"
+            },
+            "stage": "ENTITY_INVENTORY"
+          },
+          {
+            "instructions": "You perform Stage 2 semantic structure extraction.\n\nThe user supplies an immutable entity inventory and the exact source. Return only\nsource-supported relationships and the two supported typed proposition forms. Every\nendpoint and role binding must use an exact supplied entity ID. Never create, rename,\nalias, or imply a new entity. If an important semantic item requires a missing identity,\nomit it and record a missing_symbols diagnostic. Never substitute a nearby identity.\n\nChoose a relationship only when its meaning and direction fit exactly. Do not force\nassociation, explanation, possession, or historical context into PART_OF or CAUSES.\nUse a typed proposition only for COMPARISON_CONDITION or TRANSFER_EVENT under the supplied\ncontract. Proposition IDs are assigned by trusted code; do not return them.\n\nDo not return claims or evidence in this stage. Do not return entities. Do not summarize,\nrepair the inventory, or emit output outside the requested schema.\n\nACTIVE RELATIONSHIP CONTRACTS (source --TYPE--> target):\nIS_A [STRUCTURAL; direction=instance_to_type]\n  meaning: The source is a kind, category, or subtype of the target.\n  roles: source=instance or subtype; target=broader type or category\n  use: The source can truthfully be described as a target.\n  avoid: Do not use for parts, examples, similarity, or temporary states.\nPART_OF [STRUCTURAL; direction=part_to_whole]\n  meaning: The source is a constituent or component of the target.\n  roles: source=part or component; target=containing whole\n  use: The source exists as a component or subpart of the target.\n  avoid: Never reverse whole and part; do not use for interaction or dependency.\nEXAMPLE_OF [STRUCTURAL; direction=example_to_concept]\n  meaning: The source is an illustrative instance of the target concept.\n  roles: source=example; target=concept illustrated\n  use: The source is presented as an example of the target.\n  avoid: Do not use merely because the source is a subtype; prefer IS_A for classification.\nCAUSES [CAUSAL; direction=cause_to_effect]\n  meaning: The source brings about the target as an effect.\n  roles: source=cause; target=effect\n  use: The source is stated to produce the target outcome.\n  avoid: Do not use for chronology, association, contribution, or unspecified influence.\nAFFECTS [CAUSAL; direction=influence_to_affected]\n  meaning: The source causally influences the target without a specified direction or complete production.\n  roles: source=influence; target=affected entity, process, or variable\n  use: The source changes or influences the target, but the text does not support CAUSES, INCREASES, or DECREASES.\n  avoid: Do not use for mere association, chronology, physical force, or interaction with no stated effect.\nINCREASES [CAUSAL; direction=increaser_to_increased_variable]\n  meaning: The source causally raises the amount, rate, value, probability, or intensity of the target.\n  roles: source=causal factor; target=quantity or variable increased\n  use: The source is explicitly said to make the target greater, faster, more likely, or more intense.\n  avoid: Do not infer from nearby words such as more or faster; never use when the source says slower, lower, or less.\nDECREASES [CAUSAL; direction=decreaser_to_decreased_variable]\n  meaning: The source causally lowers the amount, rate, value, probability, or intensity of the target.\n  roles: source=causal factor; target=quantity or variable decreased\n  use: The source is explicitly said to make the target smaller, slower, less likely, or less intense.\n  avoid: Do not use for absence, prevention without a scalar target, or mere negative association.\nINDUCES [CAUSAL; direction=inducer_to_induced_effect]\n  meaning: The source produces the target through an explicitly described induction mechanism.\n  roles: source=inducing phenomenon; target=induced phenomenon\n  use: The source explicitly says induces or describes a recognized induction mechanism.\n  avoid: Do not use as a metaphor for generic causation, influence, motivation, or historical response.\nENABLES [DEPENDENCY; direction=enabler_to_enabled]\n  meaning: The source makes the target possible without necessarily causing it to occur.\n  roles: source=enabling condition or capability; target=capability or process made possible\n  use: The target could not occur, or is materially made possible, because of the source.\n  avoid: Do not use for delivery, participation, weak assistance, or an effect that actually occurred.\nREQUIRES [DEPENDENCY; direction=dependent_to_requirement]\n  meaning: The source depends on the target as a prerequisite or necessary resource.\n  roles: source=dependent; target=prerequisite or required resource\n  use: The source cannot operate or occur as described without the target.\n  avoid: Do not reverse prerequisite and dependent; do not use for optional support.\nCONSTRAINS [DEPENDENCY; direction=constraint_to_constrained]\n  meaning: The source limits the possible behavior, values, or choices of the target.\n  roles: source=constraint; target=constrained entity, process, or variable\n  use: The source imposes a limit, rule, boundary, or restriction on the target.\n  avoid: Do not use to mean unchanged, unrelated, merely different, or causally reduced.\nPRECEDES [TEMPORAL; direction=earlier_to_later]\n  meaning: The source occurs before the target in time or an explicit process sequence.\n  roles: source=earlier event or process; target=later event or process\n  use: The source explicitly occurs before, previously, first, then, or after relative to the target.\n  avoid: Do not infer causality from order; do not reverse earlier and later.\nINTERACTS_WITH [INTERACTION; symmetric]\n  meaning: The source and target directly interact, with no more precise directional semantics supported.\n  roles: source=interaction participant; target=interaction participant\n  use: The text supports direct mutual interaction but not a more precise active predicate.\n  avoid: Do not use for distant association, one-way effect, dependency, or chronology.\nBINDS_TO [INTERACTION; symmetric]\n  meaning: The source physically or chemically binds or attaches to the target.\n  roles: source=binding participant; target=binding participant\n  use: The source explicitly binds or attaches to the target.\n  avoid: Do not use for metaphorical commitment, dependency, influence, or literal physical force.\nTRANSFERS_TO [INTERACTION; direction=transferred_item_to_destination]\n  meaning: The source item, material, or information moves to the target destination or recipient.\n  roles: source=item, material, or information transferred; target=destination or recipient\n  use: The source is explicitly carried, delivered, moved, or transferred to the target.\n  avoid: Do not make the carrier the source unless the carrier itself moves to the destination; do not use for enabling.\nEXERTS_FORCE_ON [INTERACTION; direction=force_exerter_to_physical_target]\n  meaning: The source exerts a literal physical force on the target.\n  roles: source=physical force source; target=physical object receiving force\n  use: A literal physical force is explicitly exerted on the target.\n  avoid: Never use metaphorically for influence, contribution, binding, pressure, or causation.\nTRANSFORMS_INTO [TRANSFORMATION; direction=prior_state_to_resulting_state]\n  meaning: The source itself changes state or identity and becomes the target.\n  roles: source=entity or state before transformation; target=same entity or resulting material after transformation\n  use: The source itself becomes the target through a transformation.\n  avoid: Do not use when an actor causes, creates, attempts, participates in, or responds to the target.\nCREATES [TRANSFORMATION; direction=creator_to_created]\n  meaning: The source produces or brings a distinct target into existence.\n  roles: source=producer or generative process; target=newly produced entity or result\n  use: The source produces a target that is distinct from the source.\n  avoid: Do not use when the source itself becomes the target; use TRANSFORMS_INTO instead.\nMEASURED_BY [DESCRIPTIVE; direction=measurand_to_measure]\n  meaning: The source property or variable is quantified or assessed by the target metric, observation, or procedure.\n  roles: source=property or variable measured; target=metric, observation, or measurement procedure\n  use: The target is explicitly how the source is measured or quantified.\n  avoid: Do not point to something that merely responds to, correlates with, or exemplifies the source.\nCONTRADICTS [DESCRIPTIVE; symmetric]\n  meaning: The source and target assert mutually incompatible propositions.\n  roles: source=proposition or claim; target=incompatible proposition or claim\n  use: Both sides are explicit propositions that cannot simultaneously hold as stated.\n  avoid: Do not use for difference, disagreement without incompatibility, trade-off, or negative causality.",
+            "prompt_sha256": "ed0a05dbfe2bc12cd55b524a41fe7b2b3668f37942bf8c087d4b606162216d6c",
+            "prompt_version": "spec-047-semantic-structure-v1",
+            "schema_sha256": "7624f1d6c94724ed1c71c7dd5c70d99901289f34ccdebdf759a8532296189031",
+            "schema_template": {
+              "additionalProperties": false,
+              "properties": {
+                "missing_symbols": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "reason": {
+                        "type": "string"
+                      },
+                      "semantic_item": {
+                        "type": "string"
+                      },
+                      "surface_form": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "surface_form",
+                      "semantic_item",
+                      "reason"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                "propositions": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "comparison_operator": {
+                        "anyOf": [
+                          {
+                            "enum": [
+                              "GREATER_THAN"
+                            ],
+                            "type": "string"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      },
+                      "confidence": {
+                        "maximum": 1,
+                        "minimum": 0,
+                        "type": "number"
+                      },
+                      "origin": {
+                        "enum": [
+                          "SOURCE",
+                          "INFERRED"
+                        ],
+                        "type": "string"
+                      },
+                      "proposition_type": {
+                        "enum": [
+                          "COMPARISON_CONDITION",
+                          "TRANSFER_EVENT"
+                        ],
+                        "type": "string"
+                      },
+                      "relationship_type": {
+                        "enum": [
+                          "IS_A",
+                          "PART_OF",
+                          "CAUSES",
+                          "INCREASES",
+                          "DECREASES",
+                          "ENABLES",
+                          "REQUIRES",
+                          "CONSTRAINS",
+                          "PRECEDES",
+                          "TRANSFORMS_INTO",
+                          "INTERACTS_WITH",
+                          "MEASURED_BY",
+                          "EXAMPLE_OF",
+                          "CONTRADICTS",
+                          "CREATES",
+                          "INDUCES",
+                          "EXERTS_FORCE_ON",
+                          "AFFECTS",
+                          "BINDS_TO",
+                          "TRANSFERS_TO"
+                        ],
+                        "type": "string"
+                      },
+                      "role_bindings": {
+                        "items": {
+                          "additionalProperties": false,
+                          "properties": {
+                            "entity_id": {
+                              "enum": [
+                                "frozen-entity-a",
+                                "frozen-entity-b"
+                              ],
+                              "type": "string"
+                            },
+                            "role": {
+                              "enum": [
+                                "LEFT_OPERAND",
+                                "RIGHT_OPERAND",
+                                "OUTCOME",
+                                "EVENT",
+                                "OBJECT",
+                                "DESTINATION"
+                              ],
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "role",
+                            "entity_id"
+                          ],
+                          "type": "object"
+                        },
+                        "type": "array"
+                      },
+                      "statement": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "proposition_type",
+                      "statement",
+                      "role_bindings",
+                      "relationship_type",
+                      "comparison_operator",
+                      "confidence",
+                      "origin"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                "relationships": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "confidence": {
+                        "maximum": 1,
+                        "minimum": 0,
+                        "type": "number"
+                      },
+                      "id": {
+                        "type": "string"
+                      },
+                      "origin": {
+                        "enum": [
+                          "SOURCE",
+                          "INFERRED"
+                        ],
+                        "type": "string"
+                      },
+                      "relationship_type": {
+                        "enum": [
+                          "IS_A",
+                          "PART_OF",
+                          "CAUSES",
+                          "INCREASES",
+                          "DECREASES",
+                          "ENABLES",
+                          "REQUIRES",
+                          "CONSTRAINS",
+                          "PRECEDES",
+                          "TRANSFORMS_INTO",
+                          "INTERACTS_WITH",
+                          "MEASURED_BY",
+                          "EXAMPLE_OF",
+                          "CONTRADICTS",
+                          "CREATES",
+                          "INDUCES",
+                          "EXERTS_FORCE_ON",
+                          "AFFECTS",
+                          "BINDS_TO",
+                          "TRANSFERS_TO"
+                        ],
+                        "type": "string"
+                      },
+                      "source_entity_id": {
+                        "enum": [
+                          "frozen-entity-a",
+                          "frozen-entity-b"
+                        ],
+                        "type": "string"
+                      },
+                      "statement": {
+                        "type": "string"
+                      },
+                      "target_entity_id": {
+                        "enum": [
+                          "frozen-entity-a",
+                          "frozen-entity-b"
+                        ],
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "source_entity_id",
+                      "relationship_type",
+                      "target_entity_id",
+                      "statement",
+                      "confidence",
+                      "origin"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                }
+              },
+              "required": [
+                "relationships",
+                "propositions",
+                "missing_symbols"
+              ],
+              "type": "object"
+            },
+            "stage": "SEMANTIC_STRUCTURE"
+          },
+          {
+            "instructions": "You perform Stage 3 claim and evidence binding.\n\nThe user supplies an immutable entity inventory, immutable semantic structure, and the\nexact source. You may add learner-useful claims and bind exact source evidence to the\nsupplied relationship/proposition IDs. You must not add, delete, rename, reorder, or alter\nentities, relationships, propositions, predicates, directions, role bindings, statements,\nconfidence, or origin. Return no semantic topology.\n\nEvery SOURCE claim and SOURCE semantic object must cite one or more exact, verbatim,\nuniquely occurring substrings from the supplied source. Use a complete clause or sentence\nlong enough to occur exactly once. Never paraphrase a quote or remove text from inside it.\nINFERRED claims and semantic objects must have no source evidence. Do not fabricate\nevidence or use external knowledge.\n\nReturn only claims and semantic_evidence_bindings in the requested schema.",
+            "prompt_sha256": "1b92dd0a739159dadb592baed7b33a840d78a8383cad2fe7f2d90cf0487fc43c",
+            "prompt_version": "spec-047-claim-evidence-binding-v1",
+            "schema_sha256": "bd8957cc40b49c7482767fb1cbbfec958ae924ad89ded740aeaa18c168e699de",
+            "schema_template": {
+              "additionalProperties": false,
+              "properties": {
+                "claims": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "confidence": {
+                        "maximum": 1,
+                        "minimum": 0,
+                        "type": "number"
+                      },
+                      "evidence": {
+                        "items": {
+                          "additionalProperties": false,
+                          "properties": {
+                            "quote": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "quote"
+                          ],
+                          "type": "object"
+                        },
+                        "type": "array"
+                      },
+                      "id": {
+                        "type": "string"
+                      },
+                      "origin": {
+                        "enum": [
+                          "SOURCE",
+                          "INFERRED"
+                        ],
+                        "type": "string"
+                      },
+                      "statement": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "statement",
+                      "evidence",
+                      "confidence",
+                      "origin"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                "semantic_evidence_bindings": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "evidence": {
+                        "items": {
+                          "additionalProperties": false,
+                          "properties": {
+                            "quote": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "quote"
+                          ],
+                          "type": "object"
+                        },
+                        "type": "array"
+                      },
+                      "semantic_object_id": {
+                        "enum": [
+                          "frozen-semantic-object-a"
+                        ],
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "semantic_object_id",
+                      "evidence"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                }
+              },
+              "required": [
+                "claims",
+                "semantic_evidence_bindings"
+              ],
+              "type": "object"
+            },
+            "stage": "CLAIM_EVIDENCE_BINDING"
+          }
+        ],
+        "store": false
+      },
+      "check": "stage contract artifact/runtime equality",
+      "expected": {
+        "candidate_version": "spec-047-candidate-b-v1",
+        "dynamic_schema_note": "Stage 2 endpoint enums use the exact frozen Stage-1 IDs; Stage 3 binding enums use the exact frozen Stage-2 object IDs. Per-run schema hashes are recorded.",
+        "hidden_retries": 0,
+        "model": "gpt-5.6-luna",
+        "provider": "openai",
+        "repair_calls": 0,
+        "sdk_retries": 0,
+        "semantic_retries": 0,
+        "stages": [
+          {
+            "instructions": "You perform Stage 1 entity inventory for a semantic compiler.\n\nRead only the exact supplied source. Return a precision-first inventory of concepts,\nobjects, processes, variables, systems, and components that later semantic statements\nneed as endpoints or proposition roles. Include source-supported process/event concepts\nwhen later meaning would need to refer to them. Do not use external knowledge.\n\nDo not assign IDs: trusted code assigns stable IDs after this stage. Each semantic thing\nmust appear once. Do not fragment one identity into variants, merge related but distinct\nthings, or use aliases except for genuine naming equivalence. Names and descriptions must\nremain source-bounded.\n\nReturn entities only. Do not return claims, evidence, relationships, propositions,\nteaching prose, diagnostics, or output outside the requested schema.",
+            "prompt_sha256": "b1c00eb4547de56c62dcc18c7aec013ee1e2de4a8c1dfa45bcb475f00591f785",
+            "prompt_version": "spec-047-entity-inventory-v1",
+            "schema_sha256": "003db7546ae3ffafe7dc098bc50e1a5f223b891f6ee3160f7537214c8e9c9956",
+            "schema_template": {
+              "additionalProperties": false,
+              "properties": {
+                "symbols": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "aliases": {
+                        "items": {
+                          "type": "string"
+                        },
+                        "type": "array"
+                      },
+                      "description": {
+                        "type": "string"
+                      },
+                      "entity_type": {
+                        "enum": [
+                          "CONCEPT",
+                          "OBJECT",
+                          "PROCESS",
+                          "VARIABLE",
+                          "SYSTEM",
+                          "COMPONENT"
+                        ],
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "name",
+                      "description",
+                      "entity_type",
+                      "aliases"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                }
+              },
+              "required": [
+                "symbols"
+              ],
+              "type": "object"
+            },
+            "stage": "ENTITY_INVENTORY"
+          },
+          {
+            "instructions": "You perform Stage 2 semantic structure extraction.\n\nThe user supplies an immutable entity inventory and the exact source. Return only\nsource-supported relationships and the two supported typed proposition forms. Every\nendpoint and role binding must use an exact supplied entity ID. Never create, rename,\nalias, or imply a new entity. If an important semantic item requires a missing identity,\nomit it and record a missing_symbols diagnostic. Never substitute a nearby identity.\n\nChoose a relationship only when its meaning and direction fit exactly. Do not force\nassociation, explanation, possession, or historical context into PART_OF or CAUSES.\nUse a typed proposition only for COMPARISON_CONDITION or TRANSFER_EVENT under the supplied\ncontract. Proposition IDs are assigned by trusted code; do not return them.\n\nDo not return claims or evidence in this stage. Do not return entities. Do not summarize,\nrepair the inventory, or emit output outside the requested schema.\n\nACTIVE RELATIONSHIP CONTRACTS (source --TYPE--> target):\nIS_A [STRUCTURAL; direction=instance_to_type]\n  meaning: The source is a kind, category, or subtype of the target.\n  roles: source=instance or subtype; target=broader type or category\n  use: The source can truthfully be described as a target.\n  avoid: Do not use for parts, examples, similarity, or temporary states.\nPART_OF [STRUCTURAL; direction=part_to_whole]\n  meaning: The source is a constituent or component of the target.\n  roles: source=part or component; target=containing whole\n  use: The source exists as a component or subpart of the target.\n  avoid: Never reverse whole and part; do not use for interaction or dependency.\nEXAMPLE_OF [STRUCTURAL; direction=example_to_concept]\n  meaning: The source is an illustrative instance of the target concept.\n  roles: source=example; target=concept illustrated\n  use: The source is presented as an example of the target.\n  avoid: Do not use merely because the source is a subtype; prefer IS_A for classification.\nCAUSES [CAUSAL; direction=cause_to_effect]\n  meaning: The source brings about the target as an effect.\n  roles: source=cause; target=effect\n  use: The source is stated to produce the target outcome.\n  avoid: Do not use for chronology, association, contribution, or unspecified influence.\nAFFECTS [CAUSAL; direction=influence_to_affected]\n  meaning: The source causally influences the target without a specified direction or complete production.\n  roles: source=influence; target=affected entity, process, or variable\n  use: The source changes or influences the target, but the text does not support CAUSES, INCREASES, or DECREASES.\n  avoid: Do not use for mere association, chronology, physical force, or interaction with no stated effect.\nINCREASES [CAUSAL; direction=increaser_to_increased_variable]\n  meaning: The source causally raises the amount, rate, value, probability, or intensity of the target.\n  roles: source=causal factor; target=quantity or variable increased\n  use: The source is explicitly said to make the target greater, faster, more likely, or more intense.\n  avoid: Do not infer from nearby words such as more or faster; never use when the source says slower, lower, or less.\nDECREASES [CAUSAL; direction=decreaser_to_decreased_variable]\n  meaning: The source causally lowers the amount, rate, value, probability, or intensity of the target.\n  roles: source=causal factor; target=quantity or variable decreased\n  use: The source is explicitly said to make the target smaller, slower, less likely, or less intense.\n  avoid: Do not use for absence, prevention without a scalar target, or mere negative association.\nINDUCES [CAUSAL; direction=inducer_to_induced_effect]\n  meaning: The source produces the target through an explicitly described induction mechanism.\n  roles: source=inducing phenomenon; target=induced phenomenon\n  use: The source explicitly says induces or describes a recognized induction mechanism.\n  avoid: Do not use as a metaphor for generic causation, influence, motivation, or historical response.\nENABLES [DEPENDENCY; direction=enabler_to_enabled]\n  meaning: The source makes the target possible without necessarily causing it to occur.\n  roles: source=enabling condition or capability; target=capability or process made possible\n  use: The target could not occur, or is materially made possible, because of the source.\n  avoid: Do not use for delivery, participation, weak assistance, or an effect that actually occurred.\nREQUIRES [DEPENDENCY; direction=dependent_to_requirement]\n  meaning: The source depends on the target as a prerequisite or necessary resource.\n  roles: source=dependent; target=prerequisite or required resource\n  use: The source cannot operate or occur as described without the target.\n  avoid: Do not reverse prerequisite and dependent; do not use for optional support.\nCONSTRAINS [DEPENDENCY; direction=constraint_to_constrained]\n  meaning: The source limits the possible behavior, values, or choices of the target.\n  roles: source=constraint; target=constrained entity, process, or variable\n  use: The source imposes a limit, rule, boundary, or restriction on the target.\n  avoid: Do not use to mean unchanged, unrelated, merely different, or causally reduced.\nPRECEDES [TEMPORAL; direction=earlier_to_later]\n  meaning: The source occurs before the target in time or an explicit process sequence.\n  roles: source=earlier event or process; target=later event or process\n  use: The source explicitly occurs before, previously, first, then, or after relative to the target.\n  avoid: Do not infer causality from order; do not reverse earlier and later.\nINTERACTS_WITH [INTERACTION; symmetric]\n  meaning: The source and target directly interact, with no more precise directional semantics supported.\n  roles: source=interaction participant; target=interaction participant\n  use: The text supports direct mutual interaction but not a more precise active predicate.\n  avoid: Do not use for distant association, one-way effect, dependency, or chronology.\nBINDS_TO [INTERACTION; symmetric]\n  meaning: The source physically or chemically binds or attaches to the target.\n  roles: source=binding participant; target=binding participant\n  use: The source explicitly binds or attaches to the target.\n  avoid: Do not use for metaphorical commitment, dependency, influence, or literal physical force.\nTRANSFERS_TO [INTERACTION; direction=transferred_item_to_destination]\n  meaning: The source item, material, or information moves to the target destination or recipient.\n  roles: source=item, material, or information transferred; target=destination or recipient\n  use: The source is explicitly carried, delivered, moved, or transferred to the target.\n  avoid: Do not make the carrier the source unless the carrier itself moves to the destination; do not use for enabling.\nEXERTS_FORCE_ON [INTERACTION; direction=force_exerter_to_physical_target]\n  meaning: The source exerts a literal physical force on the target.\n  roles: source=physical force source; target=physical object receiving force\n  use: A literal physical force is explicitly exerted on the target.\n  avoid: Never use metaphorically for influence, contribution, binding, pressure, or causation.\nTRANSFORMS_INTO [TRANSFORMATION; direction=prior_state_to_resulting_state]\n  meaning: The source itself changes state or identity and becomes the target.\n  roles: source=entity or state before transformation; target=same entity or resulting material after transformation\n  use: The source itself becomes the target through a transformation.\n  avoid: Do not use when an actor causes, creates, attempts, participates in, or responds to the target.\nCREATES [TRANSFORMATION; direction=creator_to_created]\n  meaning: The source produces or brings a distinct target into existence.\n  roles: source=producer or generative process; target=newly produced entity or result\n  use: The source produces a target that is distinct from the source.\n  avoid: Do not use when the source itself becomes the target; use TRANSFORMS_INTO instead.\nMEASURED_BY [DESCRIPTIVE; direction=measurand_to_measure]\n  meaning: The source property or variable is quantified or assessed by the target metric, observation, or procedure.\n  roles: source=property or variable measured; target=metric, observation, or measurement procedure\n  use: The target is explicitly how the source is measured or quantified.\n  avoid: Do not point to something that merely responds to, correlates with, or exemplifies the source.\nCONTRADICTS [DESCRIPTIVE; symmetric]\n  meaning: The source and target assert mutually incompatible propositions.\n  roles: source=proposition or claim; target=incompatible proposition or claim\n  use: Both sides are explicit propositions that cannot simultaneously hold as stated.\n  avoid: Do not use for difference, disagreement without incompatibility, trade-off, or negative causality.",
+            "prompt_sha256": "ed0a05dbfe2bc12cd55b524a41fe7b2b3668f37942bf8c087d4b606162216d6c",
+            "prompt_version": "spec-047-semantic-structure-v1",
+            "schema_sha256": "7624f1d6c94724ed1c71c7dd5c70d99901289f34ccdebdf759a8532296189031",
+            "schema_template": {
+              "additionalProperties": false,
+              "properties": {
+                "missing_symbols": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "reason": {
+                        "type": "string"
+                      },
+                      "semantic_item": {
+                        "type": "string"
+                      },
+                      "surface_form": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "surface_form",
+                      "semantic_item",
+                      "reason"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                "propositions": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "comparison_operator": {
+                        "anyOf": [
+                          {
+                            "enum": [
+                              "GREATER_THAN"
+                            ],
+                            "type": "string"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      },
+                      "confidence": {
+                        "maximum": 1,
+                        "minimum": 0,
+                        "type": "number"
+                      },
+                      "origin": {
+                        "enum": [
+                          "SOURCE",
+                          "INFERRED"
+                        ],
+                        "type": "string"
+                      },
+                      "proposition_type": {
+                        "enum": [
+                          "COMPARISON_CONDITION",
+                          "TRANSFER_EVENT"
+                        ],
+                        "type": "string"
+                      },
+                      "relationship_type": {
+                        "enum": [
+                          "IS_A",
+                          "PART_OF",
+                          "CAUSES",
+                          "INCREASES",
+                          "DECREASES",
+                          "ENABLES",
+                          "REQUIRES",
+                          "CONSTRAINS",
+                          "PRECEDES",
+                          "TRANSFORMS_INTO",
+                          "INTERACTS_WITH",
+                          "MEASURED_BY",
+                          "EXAMPLE_OF",
+                          "CONTRADICTS",
+                          "CREATES",
+                          "INDUCES",
+                          "EXERTS_FORCE_ON",
+                          "AFFECTS",
+                          "BINDS_TO",
+                          "TRANSFERS_TO"
+                        ],
+                        "type": "string"
+                      },
+                      "role_bindings": {
+                        "items": {
+                          "additionalProperties": false,
+                          "properties": {
+                            "entity_id": {
+                              "enum": [
+                                "frozen-entity-a",
+                                "frozen-entity-b"
+                              ],
+                              "type": "string"
+                            },
+                            "role": {
+                              "enum": [
+                                "LEFT_OPERAND",
+                                "RIGHT_OPERAND",
+                                "OUTCOME",
+                                "EVENT",
+                                "OBJECT",
+                                "DESTINATION"
+                              ],
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "role",
+                            "entity_id"
+                          ],
+                          "type": "object"
+                        },
+                        "type": "array"
+                      },
+                      "statement": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "proposition_type",
+                      "statement",
+                      "role_bindings",
+                      "relationship_type",
+                      "comparison_operator",
+                      "confidence",
+                      "origin"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                "relationships": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "confidence": {
+                        "maximum": 1,
+                        "minimum": 0,
+                        "type": "number"
+                      },
+                      "id": {
+                        "type": "string"
+                      },
+                      "origin": {
+                        "enum": [
+                          "SOURCE",
+                          "INFERRED"
+                        ],
+                        "type": "string"
+                      },
+                      "relationship_type": {
+                        "enum": [
+                          "IS_A",
+                          "PART_OF",
+                          "CAUSES",
+                          "INCREASES",
+                          "DECREASES",
+                          "ENABLES",
+                          "REQUIRES",
+                          "CONSTRAINS",
+                          "PRECEDES",
+                          "TRANSFORMS_INTO",
+                          "INTERACTS_WITH",
+                          "MEASURED_BY",
+                          "EXAMPLE_OF",
+                          "CONTRADICTS",
+                          "CREATES",
+                          "INDUCES",
+                          "EXERTS_FORCE_ON",
+                          "AFFECTS",
+                          "BINDS_TO",
+                          "TRANSFERS_TO"
+                        ],
+                        "type": "string"
+                      },
+                      "source_entity_id": {
+                        "enum": [
+                          "frozen-entity-a",
+                          "frozen-entity-b"
+                        ],
+                        "type": "string"
+                      },
+                      "statement": {
+                        "type": "string"
+                      },
+                      "target_entity_id": {
+                        "enum": [
+                          "frozen-entity-a",
+                          "frozen-entity-b"
+                        ],
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "source_entity_id",
+                      "relationship_type",
+                      "target_entity_id",
+                      "statement",
+                      "confidence",
+                      "origin"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                }
+              },
+              "required": [
+                "relationships",
+                "propositions",
+                "missing_symbols"
+              ],
+              "type": "object"
+            },
+            "stage": "SEMANTIC_STRUCTURE"
+          },
+          {
+            "instructions": "You perform Stage 3 claim and evidence binding.\n\nThe user supplies an immutable entity inventory, immutable semantic structure, and the\nexact source. You may add learner-useful claims and bind exact source evidence to the\nsupplied relationship/proposition IDs. You must not add, delete, rename, reorder, or alter\nentities, relationships, propositions, predicates, directions, role bindings, statements,\nconfidence, or origin. Return no semantic topology.\n\nEvery SOURCE claim and SOURCE semantic object must cite one or more exact, verbatim,\nuniquely occurring substrings from the supplied source. Use a complete clause or sentence\nlong enough to occur exactly once. Never paraphrase a quote or remove text from inside it.\nINFERRED claims and semantic objects must have no source evidence. Do not fabricate\nevidence or use external knowledge.\n\nReturn only claims and semantic_evidence_bindings in the requested schema.",
+            "prompt_sha256": "1b92dd0a739159dadb592baed7b33a840d78a8383cad2fe7f2d90cf0487fc43c",
+            "prompt_version": "spec-047-claim-evidence-binding-v1",
+            "schema_sha256": "bd8957cc40b49c7482767fb1cbbfec958ae924ad89ded740aeaa18c168e699de",
+            "schema_template": {
+              "additionalProperties": false,
+              "properties": {
+                "claims": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "confidence": {
+                        "maximum": 1,
+                        "minimum": 0,
+                        "type": "number"
+                      },
+                      "evidence": {
+                        "items": {
+                          "additionalProperties": false,
+                          "properties": {
+                            "quote": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "quote"
+                          ],
+                          "type": "object"
+                        },
+                        "type": "array"
+                      },
+                      "id": {
+                        "type": "string"
+                      },
+                      "origin": {
+                        "enum": [
+                          "SOURCE",
+                          "INFERRED"
+                        ],
+                        "type": "string"
+                      },
+                      "statement": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "statement",
+                      "evidence",
+                      "confidence",
+                      "origin"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                "semantic_evidence_bindings": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "evidence": {
+                        "items": {
+                          "additionalProperties": false,
+                          "properties": {
+                            "quote": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "quote"
+                          ],
+                          "type": "object"
+                        },
+                        "type": "array"
+                      },
+                      "semantic_object_id": {
+                        "enum": [
+                          "frozen-semantic-object-a"
+                        ],
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "semantic_object_id",
+                      "evidence"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                }
+              },
+              "required": [
+                "claims",
+                "semantic_evidence_bindings"
+              ],
+              "type": "object"
+            },
+            "stage": "CLAIM_EVIDENCE_BINDING"
+          }
+        ],
+        "store": false
+      },
+      "status": "PASS"
+    },
+    {
+      "actual": "b13c96ac01b2f0730f57852078c702f01a2234bca1f7567654686d214c50f694",
+      "check": "stage contract SHA-256",
+      "expected": "b13c96ac01b2f0730f57852078c702f01a2234bca1f7567654686d214c50f694",
+      "status": "PASS"
+    },
+    {
+      "actual": "ccf1c5e9fb607934f790eb06cd828bf5a1d42e4f6e4d7913722debc4269c72b0",
+      "check": "source packet examples/evaluations/spec-041-blind-source-set-freeze-20260911/blind-source-packet.json",
+      "expected": "ccf1c5e9fb607934f790eb06cd828bf5a1d42e4f6e4d7913722debc4269c72b0",
+      "status": "PASS"
+    },
+    {
+      "actual": "85f7a7be47fa827799d532ab7ca5edc03b359162894dc2ee4e72a750de28e52b",
+      "check": "source packet examples/evaluations/spec-044-blind-replication-source-set-freeze-20260912/blind-source-packet.json",
+      "expected": "85f7a7be47fa827799d532ab7ca5edc03b359162894dc2ee4e72a750de28e52b",
+      "status": "PASS"
+    },
+    {
+      "actual": [
+        [
+          "usgs-divergent-plate-boundaries-1996",
+          "a9539d135ff1577d7e2791d498b92f55239175565b925b24aec2ed0bf633f186"
+        ],
+        [
+          "noaa-nesdis-jet-stream-2025",
+          "256ade61be620cfaa7b1327e3c982576611dd29b6a1fb42217d86ffdc0783ca1"
+        ],
+        [
+          "crs-legislative-process-r42843-17",
+          "fe61b7c3b2a9373e7eb3b30d16b94adc2c8b5f4307327265943995550a6384b4"
+        ],
+        [
+          "nasa-solar-system-formation-2026",
+          "c0cb2519673b8f3ef23c0be2856e03790f53d44971cbff09d593190ab3fa155d"
+        ],
+        [
+          "epa-ecological-processes-2026",
+          "70e7e3d20325dd5d22e9cf4484934419447907ba9f6cf5a4dfd65ddcbfa80ad5"
+        ],
+        [
+          "doe-iron-platinum-atomic-structure-2017",
+          "e9d2260c9980239431fc195e7dc687afea93598af4f28d774ed5e4c4317f9e1e"
+        ],
+        [
+          "nhgri-dna-fact-sheet-2020",
+          "54e2147221cf186fe1b4f965422c69e815f986a7d009eddae9c01bf32ec25f89"
+        ],
+        [
+          "fhwa-traffic-bottleneck-concepts-2016",
+          "1fd7e9851839f5f35cd2a231cd3ce5aea8196ec85cabd04694f681c063ea4345"
+        ],
+        [
+          "nist-measurement-uncertainty-2025",
+          "b3ae508f3982dfdd89f41a1d9ca59eb1f658b1648e3fae35168feba212046730"
+        ]
+      ],
+      "check": "nine source identities and fixed order",
+      "expected": [
+        [
+          "usgs-divergent-plate-boundaries-1996",
+          "a9539d135ff1577d7e2791d498b92f55239175565b925b24aec2ed0bf633f186"
+        ],
+        [
+          "noaa-nesdis-jet-stream-2025",
+          "256ade61be620cfaa7b1327e3c982576611dd29b6a1fb42217d86ffdc0783ca1"
+        ],
+        [
+          "crs-legislative-process-r42843-17",
+          "fe61b7c3b2a9373e7eb3b30d16b94adc2c8b5f4307327265943995550a6384b4"
+        ],
+        [
+          "nasa-solar-system-formation-2026",
+          "c0cb2519673b8f3ef23c0be2856e03790f53d44971cbff09d593190ab3fa155d"
+        ],
+        [
+          "epa-ecological-processes-2026",
+          "70e7e3d20325dd5d22e9cf4484934419447907ba9f6cf5a4dfd65ddcbfa80ad5"
+        ],
+        [
+          "doe-iron-platinum-atomic-structure-2017",
+          "e9d2260c9980239431fc195e7dc687afea93598af4f28d774ed5e4c4317f9e1e"
+        ],
+        [
+          "nhgri-dna-fact-sheet-2020",
+          "54e2147221cf186fe1b4f965422c69e815f986a7d009eddae9c01bf32ec25f89"
+        ],
+        [
+          "fhwa-traffic-bottleneck-concepts-2016",
+          "1fd7e9851839f5f35cd2a231cd3ce5aea8196ec85cabd04694f681c063ea4345"
+        ],
+        [
+          "nist-measurement-uncertainty-2025",
+          "b3ae508f3982dfdd89f41a1d9ca59eb1f658b1648e3fae35168feba212046730"
+        ]
+      ],
+      "status": "PASS"
+    },
+    {
+      "actual": [
+        [
+          "usgs-divergent-plate-boundaries-1996",
+          "a9539d135ff1577d7e2791d498b92f55239175565b925b24aec2ed0bf633f186"
+        ],
+        [
+          "noaa-nesdis-jet-stream-2025",
+          "256ade61be620cfaa7b1327e3c982576611dd29b6a1fb42217d86ffdc0783ca1"
+        ],
+        [
+          "crs-legislative-process-r42843-17",
+          "fe61b7c3b2a9373e7eb3b30d16b94adc2c8b5f4307327265943995550a6384b4"
+        ],
+        [
+          "nasa-solar-system-formation-2026",
+          "c0cb2519673b8f3ef23c0be2856e03790f53d44971cbff09d593190ab3fa155d"
+        ],
+        [
+          "epa-ecological-processes-2026",
+          "70e7e3d20325dd5d22e9cf4484934419447907ba9f6cf5a4dfd65ddcbfa80ad5"
+        ],
+        [
+          "doe-iron-platinum-atomic-structure-2017",
+          "e9d2260c9980239431fc195e7dc687afea93598af4f28d774ed5e4c4317f9e1e"
+        ],
+        [
+          "nhgri-dna-fact-sheet-2020",
+          "54e2147221cf186fe1b4f965422c69e815f986a7d009eddae9c01bf32ec25f89"
+        ],
+        [
+          "fhwa-traffic-bottleneck-concepts-2016",
+          "1fd7e9851839f5f35cd2a231cd3ce5aea8196ec85cabd04694f681c063ea4345"
+        ],
+        [
+          "nist-measurement-uncertainty-2025",
+          "b3ae508f3982dfdd89f41a1d9ca59eb1f658b1648e3fae35168feba212046730"
+        ]
+      ],
+      "check": "SPEC-047 manifest source order",
+      "expected": [
+        [
+          "usgs-divergent-plate-boundaries-1996",
+          "a9539d135ff1577d7e2791d498b92f55239175565b925b24aec2ed0bf633f186"
+        ],
+        [
+          "noaa-nesdis-jet-stream-2025",
+          "256ade61be620cfaa7b1327e3c982576611dd29b6a1fb42217d86ffdc0783ca1"
+        ],
+        [
+          "crs-legislative-process-r42843-17",
+          "fe61b7c3b2a9373e7eb3b30d16b94adc2c8b5f4307327265943995550a6384b4"
+        ],
+        [
+          "nasa-solar-system-formation-2026",
+          "c0cb2519673b8f3ef23c0be2856e03790f53d44971cbff09d593190ab3fa155d"
+        ],
+        [
+          "epa-ecological-processes-2026",
+          "70e7e3d20325dd5d22e9cf4484934419447907ba9f6cf5a4dfd65ddcbfa80ad5"
+        ],
+        [
+          "doe-iron-platinum-atomic-structure-2017",
+          "e9d2260c9980239431fc195e7dc687afea93598af4f28d774ed5e4c4317f9e1e"
+        ],
+        [
+          "nhgri-dna-fact-sheet-2020",
+          "54e2147221cf186fe1b4f965422c69e815f986a7d009eddae9c01bf32ec25f89"
+        ],
+        [
+          "fhwa-traffic-bottleneck-concepts-2016",
+          "1fd7e9851839f5f35cd2a231cd3ce5aea8196ec85cabd04694f681c063ea4345"
+        ],
+        [
+          "nist-measurement-uncertainty-2025",
+          "b3ae508f3982dfdd89f41a1d9ca59eb1f658b1648e3fae35168feba212046730"
+        ]
+      ],
+      "status": "PASS"
+    },
+    {
+      "actual": "gpt-5.6-luna",
+      "check": "execution control model",
+      "expected": "gpt-5.6-luna",
+      "status": "PASS"
+    },
+    {
+      "actual": false,
+      "check": "execution control store",
+      "expected": false,
+      "status": "PASS"
+    },
+    {
+      "actual": 0,
+      "check": "execution control sdk_retries",
+      "expected": 0,
+      "status": "PASS"
+    },
+    {
+      "actual": 0,
+      "check": "execution control hidden_retries",
+      "expected": 0,
+      "status": "PASS"
+    },
+    {
+      "actual": 0,
+      "check": "execution control semantic_retries",
+      "expected": 0,
+      "status": "PASS"
+    },
+    {
+      "actual": 0,
+      "check": "execution control repair_calls",
+      "expected": 0,
+      "status": "PASS"
+    },
+    {
+      "actual": 0,
+      "check": "execution control follow_up_calls_outside_defined_stages",
+      "expected": 0,
+      "status": "PASS"
+    },
+    {
+      "actual": 0,
+      "check": "execution control external_enrichment",
+      "expected": 0,
+      "status": "PASS"
+    },
+    {
+      "actual": 0,
+      "check": "execution control prompt_adaptation_between_sources",
+      "expected": 0,
+      "status": "PASS"
+    },
+    {
+      "actual": 0,
+      "check": "execution control implementation_adaptation_after_execution_begins",
+      "expected": 0,
+      "status": "PASS"
+    },
+    {
+      "actual": 27,
+      "check": "execution control maximum_total_calls",
+      "expected": 27,
+      "status": "PASS"
+    },
+    {
+      "actual": "gpt-5.6-luna",
+      "check": "runtime model",
+      "expected": "gpt-5.6-luna",
+      "status": "PASS"
+    },
+    {
+      "actual": "cd4311f7504cb3af02c9d74f5721f3cf64e11b7aec374e9936afd9fa17cf7873",
+      "check": "protected src/knowledge_compiler/blind_evaluation.py",
+      "expected": "cd4311f7504cb3af02c9d74f5721f3cf64e11b7aec374e9936afd9fa17cf7873",
+      "status": "PASS"
+    },
+    {
+      "actual": "6b9fcb305d5323913562e7d3c83f1516b58a384d5d237a8d6731f67c518b48e4",
+      "check": "protected src/knowledge_compiler/blind_evaluation_harness.py",
+      "expected": "6b9fcb305d5323913562e7d3c83f1516b58a384d5d237a8d6731f67c518b48e4",
+      "status": "PASS"
+    },
+    {
+      "actual": "3152640aa23a5049591d83b48f706d33e207d415dab311e67a58cfbf88067be3",
+      "check": "protected src/knowledge_compiler/openai_extractor.py",
+      "expected": "3152640aa23a5049591d83b48f706d33e207d415dab311e67a58cfbf88067be3",
+      "status": "PASS"
+    },
+    {
+      "actual": "671b5ad6fddc6edb5912bd5b3596fac56f5ba2d6351795af662a56002f6a244e",
+      "check": "protected src/knowledge_compiler/models.py",
+      "expected": "671b5ad6fddc6edb5912bd5b3596fac56f5ba2d6351795af662a56002f6a244e",
+      "status": "PASS"
+    },
+    {
+      "actual": "637ad67b0b28320820a4b0a43745fc97b866fa6d2b20b204148adbe30a9ef3f5",
+      "check": "protected src/knowledge_compiler/proposition_validation.py",
+      "expected": "637ad67b0b28320820a4b0a43745fc97b866fa6d2b20b204148adbe30a9ef3f5",
+      "status": "PASS"
+    },
+    {
+      "actual": "84dbfe048da4b27ecdad2139bd2db3c1a9ef1be56676496bc9fc18974dea107a",
+      "check": "representation compiler",
+      "expected": "84dbfe048da4b27ecdad2139bd2db3c1a9ef1be56676496bc9fc18974dea107a",
+      "status": "PASS"
+    },
+    {
+      "actual": {
+        "aggregate_sha256": "5f516effcedc8acd2c3ee29a6bba929a75572d9049d4d0126ae44b32b84306fc",
+        "file_count": 7
+      },
+      "check": "SPEC-047 directory identity",
+      "expected": {
+        "aggregate_sha256": "5f516effcedc8acd2c3ee29a6bba929a75572d9049d4d0126ae44b32b84306fc",
+        "file_count": 7
+      },
+      "status": "PASS"
+    },
+    {
+      "actual": {
+        "spec038": {
+          "aggregate_sha256": "453f7d2a233224628e03f5e1449650ec20bbff04ffae5ea07e9f6137cf54fd6e",
+          "file_count": 50
+        },
+        "spec041_live_manifest_sha256": "f45c8797b94a0a5d6a1902aa50b71a63af6277dfcf1e6956a2d2d1107339d075",
+        "spec041_packet_sha256": "ccf1c5e9fb607934f790eb06cd828bf5a1d42e4f6e4d7913722debc4269c72b0",
+        "spec042": {
+          "aggregate_sha256": "523abe4b6fd47d531650c9a48f00b65d06dccbe947af4af1d04cad3678ef5200",
+          "file_count": 50
+        },
+        "spec043_report_sha256": "bbc42f9ece6031c971fea37b8d59fef8701d4fcd1dfd143acbfe72a184bdbbfc",
+        "spec044_live_manifest_sha256": "beaf3df4a941afc7fadf2abf13543affeae798e3d14486798cbb0060fccdc57e",
+        "spec044_packet_sha256": "85f7a7be47fa827799d532ab7ca5edc03b359162894dc2ee4e72a750de28e52b",
+        "spec045": {
+          "aggregate_sha256": "58761c6de9cee6591d45d098197b2f54046fe616cf346eabf22f17ecdd222b93",
+          "file_count": 103
+        },
+        "spec046_report_sha256": "60073de7d60598f9c98f7d42bdd0718da8ce8134c5cf8cc3e2ea594e8b339cb0"
+      },
+      "check": "SPEC-038 through SPEC-046 evidence",
+      "expected": {
+        "spec038": {
+          "aggregate_sha256": "453f7d2a233224628e03f5e1449650ec20bbff04ffae5ea07e9f6137cf54fd6e",
+          "file_count": 50
+        },
+        "spec041_live_manifest_sha256": "f45c8797b94a0a5d6a1902aa50b71a63af6277dfcf1e6956a2d2d1107339d075",
+        "spec041_packet_sha256": "ccf1c5e9fb607934f790eb06cd828bf5a1d42e4f6e4d7913722debc4269c72b0",
+        "spec042": {
+          "aggregate_sha256": "523abe4b6fd47d531650c9a48f00b65d06dccbe947af4af1d04cad3678ef5200",
+          "file_count": 50
+        },
+        "spec043_report_sha256": "bbc42f9ece6031c971fea37b8d59fef8701d4fcd1dfd143acbfe72a184bdbbfc",
+        "spec044_live_manifest_sha256": "beaf3df4a941afc7fadf2abf13543affeae798e3d14486798cbb0060fccdc57e",
+        "spec044_packet_sha256": "85f7a7be47fa827799d532ab7ca5edc03b359162894dc2ee4e72a750de28e52b",
+        "spec045": {
+          "aggregate_sha256": "58761c6de9cee6591d45d098197b2f54046fe616cf346eabf22f17ecdd222b93",
+          "file_count": 103
+        },
+        "spec046_report_sha256": "60073de7d60598f9c98f7d42bdd0718da8ce8134c5cf8cc3e2ea594e8b339cb0"
+      },
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "check": "OPENAI_API_KEY present",
+      "expected": true,
+      "status": "PASS"
+    }
+  ],
+  "control_a_reruns": 0,
+  "external_retrievals": 0,
+  "maximum_calls": 27,
+  "model": "gpt-5.6-luna",
+  "provider": "OpenAI Responses API",
+  "schema": "spec-048-preflight-v1",
+  "source_count": 9,
+  "status": "PASS",
+  "store": false
+}

@@ -1,0 +1,79 @@
+{
+  "admitted_counts": {
+    "claims": 23,
+    "entities": 46,
+    "propositions": 0,
+    "relationships": 23
+  },
+  "arm": "CANDIDATE_B",
+  "detected_structure_count": 9,
+  "detected_structure_types": {
+    "CAUSAL_PATH": 4,
+    "HIERARCHY": 4,
+    "PROCESS_CHAIN": 1
+  },
+  "detection_stage": null,
+  "error_type": null,
+  "exact_failure": null,
+  "execution_mode": "FUTURE_LIVE",
+  "failure_origins": [],
+  "known_invalid_objects_admitted": 0,
+  "monetary_cost": null,
+  "proposal_counts": {
+    "claims": 23,
+    "entities": 46,
+    "propositions": 0,
+    "relationships": 23
+  },
+  "provider_calls_started": 3,
+  "provider_latency_ms": 55303.38612500054,
+  "representation_strategy_counts": {
+    "CAUSAL_MECHANISM": 9,
+    "CONCISE_PROSE": 26,
+    "FOCUSED_RELATIONSHIP": 23,
+    "HIERARCHY_COMPOSITION": 9,
+    "PROCESS_SEQUENCE": 2
+  },
+  "representation_sufficiency_counts": {
+    "INSUFFICIENT_SUPPORTED_STRUCTURE": 26,
+    "SUFFICIENT_TRUSTED_STRUCTURE": 43
+  },
+  "source_id": "usgs-divergent-plate-boundaries-1996",
+  "source_sha256": "a9539d135ff1577d7e2791d498b92f55239175565b925b24aec2ed0bf633f186",
+  "stage_gates": [
+    {
+      "error_type": null,
+      "exact_failure": null,
+      "output_identity_sha256": "da0c5a26b5b95ebc37c9cb9c6bec85e84d9ba82ee8d1f2335d51d8aba13d2281",
+      "stage": "ENTITY_INVENTORY",
+      "stage_version": "spec-047-entity-inventory-v1",
+      "status": "PASS",
+      "upstream_identity_sha256": "a9539d135ff1577d7e2791d498b92f55239175565b925b24aec2ed0bf633f186"
+    },
+    {
+      "error_type": null,
+      "exact_failure": null,
+      "output_identity_sha256": "d7cfaf12cd9df93fd442530de7102a431d033b9b7f9858f68c7ccfcb804cc7b4",
+      "stage": "SEMANTIC_STRUCTURE",
+      "stage_version": "spec-047-semantic-structure-v1",
+      "status": "PASS",
+      "upstream_identity_sha256": "da0c5a26b5b95ebc37c9cb9c6bec85e84d9ba82ee8d1f2335d51d8aba13d2281"
+    },
+    {
+      "error_type": null,
+      "exact_failure": null,
+      "output_identity_sha256": "dc0b84e7c0b0fbeba49acf0d49b736cf033efd7af22128405c300c9b55c41cf3",
+      "stage": "CLAIM_EVIDENCE_BINDING",
+      "stage_version": "spec-047-claim-evidence-binding-v1",
+      "status": "PASS",
+      "upstream_identity_sha256": "428763de21ee2ad563411871fdfd972da9230470f73f8ba5841f69358c3bc15e"
+    }
+  ],
+  "status": "PASS",
+  "sufficient_representation_decision_count": 43,
+  "usage": {
+    "input_tokens": 10834,
+    "output_tokens": 6655,
+    "total_tokens": 17489
+  }
+}

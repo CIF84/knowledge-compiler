@@ -1,0 +1,156 @@
+{
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1789400656.0,
+  "conversation": null,
+  "created_at": 1789400639.0,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "id": "resp_0b46c767b1eb1834016aa8163fa75c87d2a0af83b52de9a8fb",
+  "incomplete_details": null,
+  "instructions": "You perform Stage 1 entity inventory for a semantic compiler.\n\nRead only the exact supplied source. Return a precision-first inventory of concepts,\nobjects, processes, variables, systems, and components that later semantic statements\nneed as endpoints or proposition roles. Include source-supported process/event concepts\nwhen later meaning would need to refer to them. Do not use external knowledge.\n\nDo not assign IDs: trusted code assigns stable IDs after this stage. Each semantic thing\nmust appear once. Do not fragment one identity into variants, merge related but distinct\nthings, or use aliases except for genuine naming equivalence. Names and descriptions must\nremain source-bounded.\n\nReturn entities only. Do not return claims, evidence, relationships, propositions,\nteaching prose, diagnostics, or output outside the requested schema.",
+  "max_output_tokens": null,
+  "max_tool_calls": null,
+  "metadata": {},
+  "model": "gpt-5.6-luna",
+  "moderation": null,
+  "object": "response",
+  "output": [
+    {
+      "content": [],
+      "encrypted_content": "gAAAAABqqBZQKxMOQDSLlVnHfBRFX8esxC9MiIgSHwJD4IDxdYZXMfewpG_QTZ6q9-QTiCCeZTaVJifGJBrVgi_S7ua6oT8oHmuavZXYoJV59xWkLosKu5lacBDnRZYl3V4HnwLbeZLC_8jsv6FFwJRIeANhcB5MoGwp15fCjNKTG3IaGUk5qldRsJ7uEihx9XkqnvL3Bl5VQUMHZXIKX85AFR3Koyd-A-BS73MMQavNCIwV7Aw7kyBE1FZifJGlassIKR660AOq_LVbuETAPL6f9HPL3BlP01LFuukaHZ2hIFQyiDwftj1p_82ZFKVH9KXJeP05zlPOtlES0YCyjyeAfgABqZtUeIrZpGUaVEHZO14CfxXaL37j_bQ49QBQ4r9Kn1W97_p-8JNNxMG5-RaGqWllkM4X9xxNzhiMR_IniaxrGEQ6OeJJVksBJHT2j5DNbeJJFYR8grLrtVvUf36PpOWvvfk7UB0af1oF49skgZDCMcjNVMb9nEhJoUFYDQMfsre2wqWKgF_Y24CvFYNnaQp4-bzB7gyu4qYuClhKGt-ttRRjjHmVvm_kymI5Hsh_g7ulQh0d92mSPoky5-W0muMynv_NR-wnKtrd2UTqcwvZi0PpcoSohwVcWilTz8HPRuiVVpJxFSN9PUh2PyzsMHefr8L8BE9dr5U-1L2Oex5bx3hBfdDq2d0dP0GzaGKF5KlQ963q78MbHJYZHB0ik6uHaGhDzmLBlWgXyiizKvM_nVdJa3NzY0UBH6IKXQVuUTvDX1nLscy71XTUyGHrQiMTMCvHknCJ1CeK6GUUZoVbTypntwNoM36KtIH4r4zKfDcXGS9kSag_k5j_oTHBCpyt8GEIVHpwu_VgS43eQJJ4fj4VkaNBILNiOSwnnyrwa7Dqi69y0cNWVsjCn_jBDX6O_lErgHwSpGc7b5-5ucAGWvnPLv-71XrAjBnuM3vX1qHc4yRli6k6JwTJFctWjqZE4RC59tcSGzU-7vnCTO6b4mMx8dkZ5y4OjQRc8t67f7BlGo1pKf1mB76EjI5UK-FzhCTMcl5fe16T5LlYxdUwMEN05Gk_QinUfb50E3KyQB9IW40E5b-95BMCabEKFhb4RaqCBTijIZGMWc2gwmx2w3_j00JlZQCy5PprzzPXIDIdjSFI2kma_axZwjjT3EfQoIGCFBaYljMgtGcyLOKTYbWJOKGI3xwWFoyIBPuHGEHd6naEHdNEHHxMN63uEPq1MXovnf1RgbOK3LdLAWefkWMAh8KTiwPvHx9VlAuy7VRqSKHidLYm0d-qzgPevPqMlJxw-FyDNSIVp3l26pVNb1zdwpVVU-SJzy5VBiMgkpTNc2gq1YO8eMdub1IThs0ZzCwiamZIsRV-hOQLqx9zDdHuovZdD3vcwsEvYSyeWxVyn3i63-nM8ZD2o4kZ36iKRVYHW2F-YcqA5u31sdTSHH2bAhUSxZ3TmyePUI6u7vtvPrWAsRD4Ugn4CY2ZXUqpsvrVzRz-FP-6q53lfVQ3PxaIFiIRphnd8xQAarQRwZrRBwHw5wUvfC0ZFZB5V1RWvaooKeaX-NMUajiiTv2MHvzXpqV-6eu2Qej8K636x1UIQix74dd1q3PW5sKBQZkFj7SRHleNl3ssmeqUoIgNVo8Vxz-efMuN-TKGmotEyhZWALFMgnn94e0_jsVDm0CGCfOlB0Rnbxfuo58g1yuk7ile6nD3TndG60TpAB4G13micDFcje4voexxcpKzgncuMPD3Fvlpvwwu-igjDmmHNaQa5HpV-jE6-FVOyZo5qZ0KTyFPSeD-g71UyHaK6HtVWBcJQIFGynsCgZR00eeZtXRo9KqgjM2LKOsdLB0UMPR4IKAHSIJQDwxxCgIpikt1S1DjnF05yOwPFF00wVj7Da75ywz8qO9TAuNOtKQL73Cuxa7qf0iIIsedO6fDiH9hjLp921mxUPgQfBPh_t0EcGbKmJ8vt4Aih-vT7w6MjRDkB6zjCrTf1w9poNHshjNg8nQbbyxHYweqhlPTMvpkHDF4FZpPEesdaXyaxgRxkhiA0PcITE_H13NyhfgvwsEsF8KBHd6y0ZOB6jHHiEEpwilkfXiq_21G6JfCAHO_ReMK6aegK5H3CwM55h32jUdsu91O28WGd2stLa8EaInXvM5lnaJ7YyTAA9ftCcsSkYJ_lPDOXp4iSiJIUOMYUScbjDr0kLFNNZ38tIV5RjgFVezFAqwKNA__xE5-CKLrbNO2jnGVb0nhu2Wu0cJ6VfObKhrPa57zVl_B2mPhCh6DAAJdit7Rh8J9honkJVUM6WcOwF_dxUS1n7rZZ3ccepcJmoi8RAOGhpylnwcoqV2x91CcUu0lDGEBhl3UoaeW3Y7VYr_lpqFPas3gAYzC1ZAlG_FweYAoK2JofroZ9bF4VhnHy_0ARux7b8W7FSPlgT8S5kPL6oaryqI_4MLRdYhrJAz1PQapQDlL8wDwVGWUlI2Hlj2Pjphr0NSS47rIkrupFrcrzWDkoptvgeleXkTkfxm8TQ==",
+      "id": "rs_0b46c767b1eb1834016aa816418de487d2bbd4acf0d1cbfa9f",
+      "status": null,
+      "summary": [],
+      "type": "reasoning"
+    },
+    {
+      "content": [
+        {
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"symbols\":[{\"name\":\"divergent boundary\",\"description\":\"A boundary where plates move apart and new crust is created by magma pushing up from the mantle.\",\"entity_type\":\"CONCEPT\",\"aliases\":[]},{\"name\":\"spreading center\",\"description\":\"A location or zone where plates move apart and new crust forms.\",\"entity_type\":\"CONCEPT\",\"aliases\":[]},{\"name\":\"plate movement\",\"description\":\"Movement of tectonic plates, including movement of thousands of kilometers over millions of years.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"name\":\"magma\",\"description\":\"Molten material that rises from the mantle, pushes up to create new crust, and can squeeze through cracks or erupt.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"mantle\",\"description\":\"The Earth layer from which magma pushes upward.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"new crust\",\"description\":\"Crust created at spreading centers by magma pushing up from the mantle.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"oceanic crust\",\"description\":\"Newly formed crust transported away from a ridge crest.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"seafloor spreading\",\"description\":\"Spreading process that transports newly formed oceanic crust away from a ridge crest and has caused the Atlantic Ocean to grow.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"name\":\"Mid-Atlantic Ridge\",\"description\":\"A submerged mountain range extending from the Arctic Ocean to beyond the southern tip of Africa and forming one segment of the global mid-ocean ridge system.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"global mid-ocean ridge system\",\"description\":\"A system of mid-ocean ridges that encircles the Earth.\",\"entity_type\":\"SYSTEM\",\"aliases\":[]},{\"name\":\"spreading rate\",\"description\":\"The rate at which spreading occurs along the Mid-Atlantic Ridge, averaging about 2.5 centimeters per year.\",\"entity_type\":\"VARIABLE\",\"aliases\":[]},{\"name\":\"Atlantic Ocean\",\"description\":\"An ocean that grew from a tiny inlet between Europe, Africa, and the Americas through seafloor spreading.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"Iceland\",\"description\":\"A volcanic country that straddles the Mid-Atlantic Ridge and provides an exposed setting for studying spreading-ridge processes.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"North American Plate\",\"description\":\"A plate involved in the spreading center across Iceland that moves westward relative to Eurasia.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"Eurasian Plate\",\"description\":\"A plate relative to which North America moves westward across the spreading center in Iceland.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"relative plate motion\",\"description\":\"Movement of one plate in relation to another, specifically North America moving westward relative to Eurasia.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"name\":\"Krafla Volcano\",\"description\":\"A volcano in northeastern Iceland around which consequences of plate movement are visible.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"ground crack\",\"description\":\"A crack in the ground that can widen or newly appear around Krafla Volcano.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"Krafla fissure zone\",\"description\":\"The fissure zone along which numerous episodes of surface cracking took place from 1975 to 1984.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"rifting\",\"description\":\"Surface cracking involving widening existing ground cracks and formation of new ones.\",\"entity_type\":\"PROCESS\",\"aliases\":[\"surface cracking\"]},{\"name\":\"rifting event\",\"description\":\"An episode of rifting along the Krafla fissure zone.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"name\":\"volcanic activity\",\"description\":\"Volcanic activity that accompanied some rifting events.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"name\":\"ground rise\",\"description\":\"Gradual rising of the ground by 1–2 meters before an abrupt drop and impending eruption during some events.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"name\":\"ground drop\",\"description\":\"Abrupt dropping of the ground following gradual ground rise during some events.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"name\":\"displacement\",\"description\":\"Movement caused by rifting, totaling about 7 meters from 1975 to 1984.\",\"entity_type\":\"VARIABLE\",\"aliases\":[]},{\"name\":\"East Africa\",\"description\":\"Region where spreading processes have torn Saudi Arabia away from the rest of the African continent.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"Saudi Arabia\",\"description\":\"Landmass described as having been torn away from the rest of the African continent by spreading processes.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"African continent\",\"description\":\"Continent from which Saudi Arabia was torn away by spreading processes.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"Red Sea\",\"description\":\"Sea formed as spreading processes tore Saudi Arabia away from the rest of the African continent.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"African Plate\",\"description\":\"Actively splitting plate that meets the Arabian Plate at the triple junction near the Red Sea and Gulf of Aden.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"Arabian Plate\",\"description\":\"Plate that meets the actively splitting African Plate at the triple junction near the Red Sea and Gulf of Aden.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"triple junction\",\"description\":\"A junction where the actively splitting African Plate and Arabian Plate meet, at the meeting of the Red Sea and Gulf of Aden.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"Gulf of Aden\",\"description\":\"Body of water whose meeting with the Red Sea marks the triple junction between the African and Arabian Plates.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"East African Rift Zone\",\"description\":\"A zone under Africa where a new spreading center may be developing.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"continental crust\",\"description\":\"Crust that can stretch beyond its limits, causing tension cracks to appear at Earth's surface.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"crustal stretching\",\"description\":\"Stretching of continental crust beyond its limits.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"name\":\"tension crack\",\"description\":\"A crack that begins to appear on Earth's surface when continental crust stretches beyond its limits.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"fracture\",\"description\":\"An additional break in the crust produced by pressure from rising magma.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"volcano\",\"description\":\"A volcanic landform that can form when magma erupts through widening cracks.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"eruption\",\"description\":\"An event in which magma erupts, potentially forming volcanoes.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"name\":\"rift zone\",\"description\":\"A zone ultimately produced by rising magma, pressure on the crust, and additional fractures.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"Earth\",\"description\":\"The planet encircled by the global mid-ocean ridge system.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"Arctic Ocean\",\"description\":\"Ocean marking the northern extent of the Mid-Atlantic Ridge.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"Europe\",\"description\":\"Continent bordering the Atlantic Ocean inlet described in the source.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"Americas\",\"description\":\"Continental landmasses bordering the Atlantic Ocean inlet described in the source.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"pressure on the crust\",\"description\":\"Pressure produced by rising magma that generates additional fractures in the crust.\",\"entity_type\":\"VARIABLE\",\"aliases\":[]}]}",
+          "type": "output_text"
+        }
+      ],
+      "id": "msg_0b46c767b1eb1834016aa816441f6487d296ba8cde767aba1e",
+      "phase": "final_answer",
+      "role": "assistant",
+      "status": "completed",
+      "type": "message"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt": null,
+  "prompt_cache_key": null,
+  "prompt_cache_options": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "low",
+    "generate_summary": null,
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "status": "completed",
+  "store": false,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "description": null,
+      "name": "candidate_b_entity_inventory",
+      "schema_": {
+        "additionalProperties": false,
+        "properties": {
+          "symbols": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "aliases": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "entity_type": {
+                  "enum": [
+                    "CONCEPT",
+                    "OBJECT",
+                    "PROCESS",
+                    "VARIABLE",
+                    "SYSTEM",
+                    "COMPONENT"
+                  ],
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name",
+                "description",
+                "entity_type",
+                "aliases"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "symbols"
+        ],
+        "type": "object"
+      },
+      "strict": true,
+      "type": "json_schema"
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 794,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1742,
+    "output_tokens_details": {
+      "reasoning_tokens": 211
+    },
+    "total_tokens": 2536
+  },
+  "user": null
+}

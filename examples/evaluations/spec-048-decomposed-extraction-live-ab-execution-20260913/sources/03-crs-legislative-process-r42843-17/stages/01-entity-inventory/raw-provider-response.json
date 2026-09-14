@@ -1,0 +1,156 @@
+{
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1789400743.0,
+  "conversation": null,
+  "created_at": 1789400727.0,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "id": "resp_091f6f9db6aa093a016aa81697381487d2a76bb8b7b1595b75",
+  "incomplete_details": null,
+  "instructions": "You perform Stage 1 entity inventory for a semantic compiler.\n\nRead only the exact supplied source. Return a precision-first inventory of concepts,\nobjects, processes, variables, systems, and components that later semantic statements\nneed as endpoints or proposition roles. Include source-supported process/event concepts\nwhen later meaning would need to refer to them. Do not use external knowledge.\n\nDo not assign IDs: trusted code assigns stable IDs after this stage. Each semantic thing\nmust appear once. Do not fragment one identity into variants, merge related but distinct\nthings, or use aliases except for genuine naming equivalence. Names and descriptions must\nremain source-bounded.\n\nReturn entities only. Do not return claims, evidence, relationships, propositions,\nteaching prose, diagnostics, or output outside the requested schema.",
+  "max_output_tokens": null,
+  "max_tool_calls": null,
+  "metadata": {},
+  "model": "gpt-5.6-luna",
+  "moderation": null,
+  "object": "response",
+  "output": [
+    {
+      "content": [],
+      "encrypted_content": "gAAAAABqqBan9vZigWRcauELUyzQ0LUZk5vPZGsZthAjerBjiEMqdaWo1tQ0vAXUMc_vQinJVtCWhVa0VnDuV35T2UXpb-NakCLLYdOSW9JTVxVuPQIoT11YEhAkW6fw-Iqgt50gNOFGoWqPlZ6MlrGqcP1DNDXlLH2qgiWaQNgF_zCtikv02YfYlhS9mWjcWaEmPOvJG0w-Fsg-W9P9KVo3bwf3XhjudPxKbnxzCd590vyT7zG_en2g7rPsAuR0FO1U5od7xhpImiM79fHtrbwbCZjBpc741t9ZrSQww7sGTDrQpLzO6NV0eA-EtKNSHGPE-TAP62rEc3cuDwQLG_M7Af92TbiIv6110AHpy7DNjcbjK5XDvngDfwZHhWpPFxNhaL8my6U-gEVtVG4EMR89s11ARXD3zJqA0kDoxBuJt2FRrigPm9fwPkCM3cWDmxmjUVULvYnWGK1jhtAb0DiEMdZAR8UgnEuohCe4wvjWcbrBP3m5ZiJTxdVvNsIxbZheR1_ysppctr5_C6a2lxcHyBE2vo6q6CCQZxuhHwgZeZKRVv1MsF2MopDGGzG1gacejlTRpTEH3pLisORCw9n9b09edbJmkvzPtviP9qL-06fh3JCh6vX2y48oPsujOejdVWfGutePg2HvBYoEiI03scWUYhsaKRwRsiwO9N-ZwSILSfN7k78bh5L7yIifZwwKAb8jFhz-kr02fATOSuJQ9zGHAQIMwNZYa07anxRg_U0NLdGZlnUkYQIXj8dJBhoq9syA9gMWnGr0rKZTjdNweJ9Bdr5hvenb0YijY5cY4kPW_OFZZy6ZVcgm4rW_kxszNHWCgdLeE-MHTpj8mRZxxwaZYzfNhjXcoUa9LBTO1L-20kPvV4ul-c-31d7ba82tDQI3CuALg2d4UkPHKd9lsoIIYrtr0nuQWxNeiOOVmqbTJZ3iFzWKeAFzuEhw2-vWFkELW-0T3XHBXEjRZpnlSsvLJTyMIRgMAuuUzqoQCEcF4GHlaFwBGYz27JSnNPRDhy7FGvNgE6ZvnTQv96kBZYMrSc2hCqDWEShZei4jTrhl96_5uBCDauba9GpNpBMP_C97IAB7VBhDUd6bysP7e5lpm-6erascK7phSJOAeS6ppaUxfv_nJX-0WfEcC0om_tv4Bt2Rv7fwof2y6jBzP--xvbRcYFcqw9jdt2Ui_E7dlTI_LD_pQk3Emy2huZ-9eZoyymYVJSGwZ4JdYG1UnY9eFOhlYhFpP1bUyindUaxlyuVzwoexDLi0zHRFZ3jxqyPG7_u_heoqW4Bko2WrqxwcKt-Z72VRuzUVusA3ShqSeCUL4XV0MtAq1fPcwKs3b8ZYuRFHVyZOBpT8HkMhOOLcYFTsnhouLGza48wzjKYC7hW2AwulTFhD5tM4abdWjXFtyv1ilb8EUCxWoka3QLsV95qBJ67hmUbSUIPe42zjn1Z3cSI5vZjuK9n9QUt-qUy5UMGVnKzqqXJV4f9hoqZ2-M_becqf70lFydarnmuIx2fJ3kGx4jItDkaMhmYQANYmK2YroJojSfleOHEq_C_X2pNM7edy1dUFERY8bsUDL5dE4lBYID75gyD7-P1JGhFKSrHah53aoGH3NhJdzAW_DfPrPedKixeuJaOIzzwSwxhuLwZrKSHSyn-aYYxf1BWnbWHMp1SLnuuASL5X6sb9aVbwd8ZQNZcH6hlZeIr2deR0nG2PTqeqz4-eQLDgh3GNvz-AAZ-jVIJwQC5YwJ5cgiBAWseIqYo3EhxFzqhjVazSXb7rQTnLfxM4_Lrccb1GXZKr-7vYshcu5G8sOZGo0X__JU-Tu-I8woFvTe-s__9cUAsDYhnDqUSQzTuAqv8CdiRhLD8K_4kpjWJ1hc5ldmPsIQ0JthoV__sR1HpN-hB_AAoOrJ5AWHSTFQqqEG0jKQ4a3hCUjYi_akdaLs1bjlawycFwJa6ewFQVOA0302P_QGICCFzFV-u-MzacsyRErTAoumfY8tH_8SQsQNgsfsQuu58w5zMffZGfJUIKprHIBuEHPsmLVJ5VgEgi3NOa1T0QF6aIeD6mxtvLkyILIacCXRqyJyfKhaL4n9N9O_4sskdDkC98bQCu2Td5_yw_qqowC5TaVdhrUTLWJlnUoQJVT8d7HSaVtc0U-b_9OXGccaYmGIJMi8YLoqPsgZKf9hNOJ1GbPSdBdHXUQJHZI6ZyoFpkrZlHZwYorcAWTEk05jShiuuSWXoheSXB-mRMw-6fWRZYR3O3tjg-B7UGGK54oCcvJgykuyjhA6cqfu_JPwML6biqTX4VmY2TBdgW1PwMnkcCUNJDWHeHxtoADXAB5dE_JmGODIW2_uAtl_55T26_aa3wm_qBUk4qlYdkji5N4h34t6jfDH1Tp76ZEz9Fyw2TygqeSJjhRZMvJZmx5zmHlOTxrm_FF6n9Y3STm2nkkbz5XlDNtTOmy1i_fP1CKusgUlXDvDqUsT55-IQAXtbicd-6gteUxDqf407DghfTq6wUiQA8pMrqknfrqYTa8miRlhptWEJXNZtJjGRzyKcHqwv6CfFaMuBdpdmZF9XFU3RJHWW0Ir9Jy1JntmczO53PI7DjLsfkD99LdUwGgaI1tQPUgR9P3U0LfgJODdQaSO5JxUrtBJ2WlFfr4PhMbv4a8DgrQluNQskjYQPh7NeJ4dv0AQLLXp3wE838VXabBbCclr4mVnYNRQjjljWsm1urzp1ftwHVR3LWG8oZ1PtyUTxZ1ek5iq19HBhst_A7dDEnfaVwNl0rnjzGzHR_MhMI_cuBAG4X_3vv9mynHWKJrDSPlxSyF4Bxe2EUJ688dQtOfdiCvffLskk7_X3MpVcYNbdHY1TZNsCxR-eU040x3EePMnP2rHLz2LfuF94bTejEGx_beQ-AMRNkWcYZEw5I8KQA7Km14JAEQzyFhsM9Y9vLS1-T4aAG2XakoXbl9MceARzV1UrA4taoJEILKnTfYd0W-tG32egtGvMIsasj4Uwzxy9YQg6ruXU2yR9hU8Mr5yDHlBZkK1nNFjYhvDRHBCE94CKSOuucKlLDSmFgFdOnvywHhPaVEL_fWC4o1GF_b3qaibzaiToR3_iXbQE7kaZDZAlTiJSWqKd5t5uIq8urI1GEVq1nVb3FExaIorL-wRqdhTv6NpleqA3P5w==",
+      "id": "rs_091f6f9db6aa093a016aa81697d72487d281c57926c765068d",
+      "status": null,
+      "summary": [],
+      "type": "reasoning"
+    },
+    {
+      "content": [
+        {
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"symbols\":[{\"name\":\"Congress\",\"description\":\"The two-year national legislative body in which House and Senate actions on bills occur.\",\"entity_type\":\"SYSTEM\",\"aliases\":[]},{\"name\":\"House\",\"description\":\"One chamber of Congress, referred to as the House of Representatives.\",\"entity_type\":\"SYSTEM\",\"aliases\":[\"House of Representatives\"]},{\"name\":\"Senate\",\"description\":\"One chamber of Congress.\",\"entity_type\":\"SYSTEM\",\"aliases\":[]},{\"name\":\"Chamber\",\"description\":\"A legislative chamber of Congress, specifically the House or Senate.\",\"entity_type\":\"COMPONENT\",\"aliases\":[]},{\"name\":\"Party leader\",\"description\":\"A leader of a party in a congressional chamber who plans and coordinates congressional action on bills.\",\"entity_type\":\"COMPONENT\",\"aliases\":[\"Party leaders\"]},{\"name\":\"Majority party leader\",\"description\":\"A leader of the majority party in the House or Senate who has roles in setting the agenda or bringing bills to the floor.\",\"entity_type\":\"COMPONENT\",\"aliases\":[\"Majority party leaders\"]},{\"name\":\"Bill\",\"description\":\"A proposed legislative measure introduced by a Member of the House or Senate and potentially considered by committees and a chamber.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"Standing committee\",\"description\":\"A panel of Members that holds policy expertise and typically leads in developing and assessing proposed legislation within a specified policy jurisdiction.\",\"entity_type\":\"COMPONENT\",\"aliases\":[\"Standing committees\"]},{\"name\":\"Committee\",\"description\":\"A congressional body that may receive referred bills, conduct hearings and markups, and report bills to its chamber.\",\"entity_type\":\"COMPONENT\",\"aliases\":[\"Committees\"]},{\"name\":\"Committee jurisdiction\",\"description\":\"The specified policy area or areas over which a committee has authority regarding elements of a bill.\",\"entity_type\":\"CONCEPT\",\"aliases\":[\"Policy jurisdiction\"]},{\"name\":\"Member\",\"description\":\"A Member of the House or Senate who may introduce a bill or participate in committee action.\",\"entity_type\":\"COMPONENT\",\"aliases\":[\"Members\"]},{\"name\":\"Committee chair\",\"description\":\"The chair of a committee who has primary authority to set the committee agenda and identify bills for formal committee attention.\",\"entity_type\":\"COMPONENT\",\"aliases\":[]},{\"name\":\"Committee agenda-setting authority\",\"description\":\"The primary authority of a committee chair to determine which bills receive formal committee attention.\",\"entity_type\":\"CONCEPT\",\"aliases\":[\"Agenda-setting authority\"]},{\"name\":\"Legislative action\",\"description\":\"Action undertaken to develop, assess, or advance legislation, including action initiated by a committee.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"name\":\"Bill referral\",\"description\":\"The process by which an introduced bill is referred to the committee or committees with jurisdiction over its elements.\",\"entity_type\":\"PROCESS\",\"aliases\":[\"Referral\"]},{\"name\":\"Formal committee consideration\",\"description\":\"A committee's formal consideration of a referred bill during the Congress.\",\"entity_type\":\"PROCESS\",\"aliases\":[\"Formal committee attention\"]},{\"name\":\"Committee-initiated legislative action\",\"description\":\"Legislative action initiated by a committee rather than limited to bills referred to it.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"name\":\"Hearing\",\"description\":\"A committee event providing committee members and the public an opportunity to hear selected parties discuss a bill's strengths and weaknesses.\",\"entity_type\":\"PROCESS\",\"aliases\":[\"Hearings\"]},{\"name\":\"Committee member\",\"description\":\"A Member participating in the work of a committee, including hearing and markup activities.\",\"entity_type\":\"COMPONENT\",\"aliases\":[\"Committee members\"]},{\"name\":\"Public\",\"description\":\"The public audience given an opportunity at a hearing to hear selected parties discuss a bill.\",\"entity_type\":\"CONCEPT\",\"aliases\":[]},{\"name\":\"Selected party\",\"description\":\"A party invited to provide views at a committee hearing about a bill's strengths and weaknesses.\",\"entity_type\":\"COMPONENT\",\"aliases\":[\"Selected parties\"]},{\"name\":\"Federal agency\",\"description\":\"An example of a selected party that may provide views at a committee hearing.\",\"entity_type\":\"COMPONENT\",\"aliases\":[]},{\"name\":\"Organized interest\",\"description\":\"An example of a selected party that may provide views at a committee hearing.\",\"entity_type\":\"COMPONENT\",\"aliases\":[]},{\"name\":\"Bill strengths and weaknesses\",\"description\":\"The strengths and weaknesses of a bill discussed at a committee hearing.\",\"entity_type\":\"CONCEPT\",\"aliases\":[]},{\"name\":\"Markup\",\"description\":\"A committee proceeding during which committee members vote on proposed amendments to a bill.\",\"entity_type\":\"PROCESS\",\"aliases\":[\"Markups\"]},{\"name\":\"Proposed amendment\",\"description\":\"A proposed change to a bill considered and voted on by committee members during a markup.\",\"entity_type\":\"OBJECT\",\"aliases\":[\"Proposed amendments\"]},{\"name\":\"Majority vote\",\"description\":\"The vote by which a committee agrees to report a bill, and the voting threshold applied to proposed amendments in a markup.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"name\":\"Bill report\",\"description\":\"A committee's formal recommendation that its parent chamber consider a bill, including any changes adopted in the markup.\",\"entity_type\":\"OBJECT\",\"aliases\":[\"Report the bill\"]},{\"name\":\"Parent chamber\",\"description\":\"The House or Senate to which a committee reports a bill for consideration.\",\"entity_type\":\"COMPONENT\",\"aliases\":[]},{\"name\":\"Floor consideration\",\"description\":\"Consideration of a bill by the full House or Senate on the chamber floor.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"name\":\"House majority party leader\",\"description\":\"A majority party leader in the House who generally decides which bills receive floor consideration and may schedule them or seek tailored parameters.\",\"entity_type\":\"COMPONENT\",\"aliases\":[\"House majority party leaders\"]},{\"name\":\"Streamlined floor consideration\",\"description\":\"A type of floor consideration for which House majority party leaders may schedule a bill.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"name\":\"Rules Committee\",\"description\":\"The committee that House majority party leaders may ask to propose tailored parameters for a bill's floor consideration.\",\"entity_type\":\"COMPONENT\",\"aliases\":[]},{\"name\":\"Tailored floor-consideration parameters\",\"description\":\"A set of parameters proposed for the House floor consideration of a bill.\",\"entity_type\":\"OBJECT\",\"aliases\":[\"Tailored parameters\"]},{\"name\":\"Senate motion to proceed\",\"description\":\"A motion in the Senate to proceed to a specific bill, typically offered by the majority leader.\",\"entity_type\":\"OBJECT\",\"aliases\":[\"Motion to proceed\"]},{\"name\":\"Senate majority leader\",\"description\":\"The majority leader who typically offers a Senate motion to proceed to a specific bill.\",\"entity_type\":\"COMPONENT\",\"aliases\":[\"Majority leader\"]},{\"name\":\"Senator\",\"description\":\"A Member of the Senate who may object to a unanimous consent request to bring a bill to the floor.\",\"entity_type\":\"COMPONENT\",\"aliases\":[\"Senators\"]},{\"name\":\"Unanimous consent request\",\"description\":\"A request in the Senate to bring a specific bill to the floor, effective if no Senator objects.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"Objection\",\"description\":\"A Senator's objection to a unanimous consent request to bring a bill to the Senate floor.\",\"entity_type\":\"PROCESS\",\"aliases\":[]}]}",
+          "type": "output_text"
+        }
+      ],
+      "id": "msg_091f6f9db6aa093a016aa8169acc8c87d2b6a8b622adc52ea9",
+      "phase": "final_answer",
+      "role": "assistant",
+      "status": "completed",
+      "type": "message"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt": null,
+  "prompt_cache_key": null,
+  "prompt_cache_options": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "low",
+    "generate_summary": null,
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "status": "completed",
+  "store": false,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "description": null,
+      "name": "candidate_b_entity_inventory",
+      "schema_": {
+        "additionalProperties": false,
+        "properties": {
+          "symbols": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "aliases": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "entity_type": {
+                  "enum": [
+                    "CONCEPT",
+                    "OBJECT",
+                    "PROCESS",
+                    "VARIABLE",
+                    "SYSTEM",
+                    "COMPONENT"
+                  ],
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name",
+                "description",
+                "entity_type",
+                "aliases"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "symbols"
+        ],
+        "type": "object"
+      },
+      "strict": true,
+      "type": "json_schema"
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 637,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1668,
+    "output_tokens_details": {
+      "reasoning_tokens": 257
+    },
+    "total_tokens": 2305
+  },
+  "user": null
+}

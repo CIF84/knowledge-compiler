@@ -1,0 +1,266 @@
+{
+  "structures": [
+    {
+      "entity_ids": [
+        "continental-crust",
+        "crustal-stretching",
+        "tension-crack"
+      ],
+      "id": "structure-causal-path-19038280714986ca",
+      "metadata": {
+        "edge_count": 2,
+        "supporting_relationship_ids_by_edge": [
+          [
+            "r8"
+          ],
+          [
+            "r9"
+          ]
+        ]
+      },
+      "relationship_ids": [
+        "r8",
+        "r9"
+      ],
+      "relationship_types": [
+        "AFFECTS",
+        "CAUSES"
+      ],
+      "structure_type": "CAUSAL_PATH"
+    },
+    {
+      "entity_ids": [
+        "magma",
+        "eruption",
+        "volcano"
+      ],
+      "id": "structure-causal-path-27f74ec7d49bfe8d",
+      "metadata": {
+        "edge_count": 2,
+        "supporting_relationship_ids_by_edge": [
+          [
+            "r11"
+          ],
+          [
+            "r12"
+          ]
+        ]
+      },
+      "relationship_ids": [
+        "r11",
+        "r12"
+      ],
+      "relationship_types": [
+        "CAUSES",
+        "CAUSES"
+      ],
+      "structure_type": "CAUSAL_PATH"
+    },
+    {
+      "entity_ids": [
+        "magma",
+        "pressure-on-the-crust",
+        "fracture"
+      ],
+      "id": "structure-causal-path-fd538d640fd7c056",
+      "metadata": {
+        "edge_count": 2,
+        "supporting_relationship_ids_by_edge": [
+          [
+            "r13"
+          ],
+          [
+            "r14"
+          ]
+        ]
+      },
+      "relationship_ids": [
+        "r13",
+        "r14"
+      ],
+      "relationship_types": [
+        "CAUSES",
+        "CAUSES"
+      ],
+      "structure_type": "CAUSAL_PATH"
+    },
+    {
+      "entity_ids": [
+        "magma",
+        "pressure-on-the-crust",
+        "rift-zone"
+      ],
+      "id": "structure-causal-path-6d58f943691fe8e8",
+      "metadata": {
+        "edge_count": 2,
+        "supporting_relationship_ids_by_edge": [
+          [
+            "r13"
+          ],
+          [
+            "r15"
+          ]
+        ]
+      },
+      "relationship_ids": [
+        "r13",
+        "r15"
+      ],
+      "relationship_types": [
+        "CAUSES",
+        "CAUSES"
+      ],
+      "structure_type": "CAUSAL_PATH"
+    },
+    {
+      "entity_ids": [
+        "african-continent",
+        "east-african-rift-zone"
+      ],
+      "id": "structure-hierarchy-8e3b078d3611cdfd",
+      "metadata": {
+        "contains_cycle": false,
+        "hierarchy_relationship_type": "PART_OF",
+        "leaves": [
+          "east-african-rift-zone"
+        ],
+        "roots": [
+          "african-continent"
+        ],
+        "supporting_relationship_ids_by_edge": [
+          [
+            "r16"
+          ]
+        ]
+      },
+      "relationship_ids": [
+        "r16"
+      ],
+      "relationship_types": [
+        "PART_OF"
+      ],
+      "structure_type": "HIERARCHY"
+    },
+    {
+      "entity_ids": [
+        "earth",
+        "global-mid-ocean-ridge-system",
+        "mid-atlantic-ridge"
+      ],
+      "id": "structure-hierarchy-e223405bfb4fa0d1",
+      "metadata": {
+        "contains_cycle": false,
+        "hierarchy_relationship_type": "PART_OF",
+        "leaves": [
+          "mid-atlantic-ridge"
+        ],
+        "roots": [
+          "earth"
+        ],
+        "supporting_relationship_ids_by_edge": [
+          [
+            "r2"
+          ],
+          [
+            "r1"
+          ]
+        ]
+      },
+      "relationship_ids": [
+        "r2",
+        "r1"
+      ],
+      "relationship_types": [
+        "PART_OF",
+        "PART_OF"
+      ],
+      "structure_type": "HIERARCHY"
+    },
+    {
+      "entity_ids": [
+        "iceland",
+        "krafla-fissure-zone"
+      ],
+      "id": "structure-hierarchy-917c2a7dd65a2bf4",
+      "metadata": {
+        "contains_cycle": false,
+        "hierarchy_relationship_type": "PART_OF",
+        "leaves": [
+          "krafla-fissure-zone"
+        ],
+        "roots": [
+          "iceland"
+        ],
+        "supporting_relationship_ids_by_edge": [
+          [
+            "r22"
+          ]
+        ]
+      },
+      "relationship_ids": [
+        "r22"
+      ],
+      "relationship_types": [
+        "PART_OF"
+      ],
+      "structure_type": "HIERARCHY"
+    },
+    {
+      "entity_ids": [
+        "rifting",
+        "rifting-event"
+      ],
+      "id": "structure-hierarchy-30c578af6f3b2f92",
+      "metadata": {
+        "contains_cycle": false,
+        "hierarchy_relationship_type": "PART_OF",
+        "leaves": [
+          "rifting"
+        ],
+        "roots": [
+          "rifting-event"
+        ],
+        "supporting_relationship_ids_by_edge": [
+          [
+            "r23"
+          ]
+        ]
+      },
+      "relationship_ids": [
+        "r23"
+      ],
+      "relationship_types": [
+        "PART_OF"
+      ],
+      "structure_type": "HIERARCHY"
+    },
+    {
+      "entity_ids": [
+        "ground-rise",
+        "ground-drop",
+        "eruption"
+      ],
+      "id": "structure-process-chain-79b98dfeecdcc56e",
+      "metadata": {
+        "edge_count": 2,
+        "supporting_relationship_ids_by_edge": [
+          [
+            "r6"
+          ],
+          [
+            "r7"
+          ]
+        ]
+      },
+      "relationship_ids": [
+        "r6",
+        "r7"
+      ],
+      "relationship_types": [
+        "PRECEDES",
+        "PRECEDES"
+      ],
+      "structure_type": "PROCESS_CHAIN"
+    }
+  ]
+}

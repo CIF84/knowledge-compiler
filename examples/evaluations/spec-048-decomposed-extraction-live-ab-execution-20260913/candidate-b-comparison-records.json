@@ -1,0 +1,573 @@
+{
+  "records": [
+    {
+      "admitted_counts": {
+        "claims": 23,
+        "entities": 46,
+        "propositions": 0,
+        "relationships": 23
+      },
+      "arm": "CANDIDATE_B",
+      "detected_structure_count": 9,
+      "detected_structure_types": {
+        "CAUSAL_PATH": 4,
+        "HIERARCHY": 4,
+        "PROCESS_CHAIN": 1
+      },
+      "execution_mode": "FUTURE_LIVE",
+      "failure_origins": [],
+      "known_invalid_objects_admitted": 0,
+      "monetary_cost": null,
+      "proposal_counts": {
+        "claims": 23,
+        "entities": 46,
+        "propositions": 0,
+        "relationships": 23
+      },
+      "provider_calls_started": 3,
+      "provider_latency_ms": 55303.38612500054,
+      "representation_strategy_counts": {
+        "CAUSAL_MECHANISM": 9,
+        "CONCISE_PROSE": 26,
+        "FOCUSED_RELATIONSHIP": 23,
+        "HIERARCHY_COMPOSITION": 9,
+        "PROCESS_SEQUENCE": 2
+      },
+      "representation_sufficiency_counts": {
+        "INSUFFICIENT_SUPPORTED_STRUCTURE": 26,
+        "SUFFICIENT_TRUSTED_STRUCTURE": 43
+      },
+      "source_id": "usgs-divergent-plate-boundaries-1996",
+      "source_sha256": "a9539d135ff1577d7e2791d498b92f55239175565b925b24aec2ed0bf633f186",
+      "stage_gates": [
+        {
+          "error_type": null,
+          "exact_failure": null,
+          "output_identity_sha256": "da0c5a26b5b95ebc37c9cb9c6bec85e84d9ba82ee8d1f2335d51d8aba13d2281",
+          "stage": "ENTITY_INVENTORY",
+          "stage_version": "spec-047-entity-inventory-v1",
+          "status": "PASS",
+          "upstream_identity_sha256": "a9539d135ff1577d7e2791d498b92f55239175565b925b24aec2ed0bf633f186"
+        },
+        {
+          "error_type": null,
+          "exact_failure": null,
+          "output_identity_sha256": "d7cfaf12cd9df93fd442530de7102a431d033b9b7f9858f68c7ccfcb804cc7b4",
+          "stage": "SEMANTIC_STRUCTURE",
+          "stage_version": "spec-047-semantic-structure-v1",
+          "status": "PASS",
+          "upstream_identity_sha256": "da0c5a26b5b95ebc37c9cb9c6bec85e84d9ba82ee8d1f2335d51d8aba13d2281"
+        },
+        {
+          "error_type": null,
+          "exact_failure": null,
+          "output_identity_sha256": "dc0b84e7c0b0fbeba49acf0d49b736cf033efd7af22128405c300c9b55c41cf3",
+          "stage": "CLAIM_EVIDENCE_BINDING",
+          "stage_version": "spec-047-claim-evidence-binding-v1",
+          "status": "PASS",
+          "upstream_identity_sha256": "428763de21ee2ad563411871fdfd972da9230470f73f8ba5841f69358c3bc15e"
+        }
+      ],
+      "status": "PASS",
+      "sufficient_representation_decision_count": 43,
+      "usage": {
+        "input_tokens": 10834,
+        "output_tokens": 6655,
+        "total_tokens": 17489
+      }
+    },
+    {
+      "admitted_counts": null,
+      "arm": "CANDIDATE_B",
+      "detected_structure_count": 0,
+      "detected_structure_types": {},
+      "execution_mode": "FUTURE_LIVE",
+      "failure_origins": [
+        "RELATIONSHIP_SEMANTICS"
+      ],
+      "known_invalid_objects_admitted": 0,
+      "monetary_cost": null,
+      "proposal_counts": {
+        "claims": 0,
+        "entities": 37,
+        "propositions": 0,
+        "relationships": 0
+      },
+      "provider_calls_started": 2,
+      "provider_latency_ms": 33972.48350099835,
+      "representation_strategy_counts": {},
+      "representation_sufficiency_counts": {},
+      "source_id": "noaa-nesdis-jet-stream-2025",
+      "source_sha256": "256ade61be620cfaa7b1327e3c982576611dd29b6a1fb42217d86ffdc0783ca1",
+      "stage_gates": [
+        {
+          "error_type": null,
+          "exact_failure": null,
+          "output_identity_sha256": "750049741d1821b65f61eb4447c50fa9c91a3b7f637344f3ba4e84e45faef6e5",
+          "stage": "ENTITY_INVENTORY",
+          "stage_version": "spec-047-entity-inventory-v1",
+          "status": "PASS",
+          "upstream_identity_sha256": "256ade61be620cfaa7b1327e3c982576611dd29b6a1fb42217d86ffdc0783ca1"
+        },
+        {
+          "error_type": "ValidationError",
+          "exact_failure": "comparison condition requires left operand, right operand, outcome, operator, and CAUSES",
+          "output_identity_sha256": null,
+          "stage": "SEMANTIC_STRUCTURE",
+          "stage_version": "spec-047-semantic-structure-v1",
+          "status": "FAIL_CLOSED",
+          "upstream_identity_sha256": "750049741d1821b65f61eb4447c50fa9c91a3b7f637344f3ba4e84e45faef6e5"
+        },
+        {
+          "error_type": null,
+          "exact_failure": null,
+          "output_identity_sha256": null,
+          "stage": "CLAIM_EVIDENCE_BINDING",
+          "stage_version": "spec-047-claim-evidence-binding-v1",
+          "status": "NOT_RUN_UPSTREAM_FAILURE",
+          "upstream_identity_sha256": null
+        }
+      ],
+      "status": "FAILED_CLOSED",
+      "sufficient_representation_decision_count": 0,
+      "usage": {
+        "input_tokens": 6360,
+        "output_tokens": 3885,
+        "total_tokens": 10245
+      }
+    },
+    {
+      "admitted_counts": null,
+      "arm": "CANDIDATE_B",
+      "detected_structure_count": 0,
+      "detected_structure_types": {},
+      "execution_mode": "FUTURE_LIVE",
+      "failure_origins": [
+        "RELATIONSHIP_SEMANTICS"
+      ],
+      "known_invalid_objects_admitted": 0,
+      "monetary_cost": null,
+      "proposal_counts": {
+        "claims": 0,
+        "entities": 39,
+        "propositions": 0,
+        "relationships": 0
+      },
+      "provider_calls_started": 2,
+      "provider_latency_ms": 43128.10012498812,
+      "representation_strategy_counts": {},
+      "representation_sufficiency_counts": {},
+      "source_id": "crs-legislative-process-r42843-17",
+      "source_sha256": "fe61b7c3b2a9373e7eb3b30d16b94adc2c8b5f4307327265943995550a6384b4",
+      "stage_gates": [
+        {
+          "error_type": null,
+          "exact_failure": null,
+          "output_identity_sha256": "1003f4a42af7a731d60b6b60b2e4cb896a6aaa50b8e003214f3ca5ca8ca44623",
+          "stage": "ENTITY_INVENTORY",
+          "stage_version": "spec-047-entity-inventory-v1",
+          "status": "PASS",
+          "upstream_identity_sha256": "fe61b7c3b2a9373e7eb3b30d16b94adc2c8b5f4307327265943995550a6384b4"
+        },
+        {
+          "error_type": "ValidationError",
+          "exact_failure": "comparison condition requires left operand, right operand, outcome, operator, and CAUSES",
+          "output_identity_sha256": null,
+          "stage": "SEMANTIC_STRUCTURE",
+          "stage_version": "spec-047-semantic-structure-v1",
+          "status": "FAIL_CLOSED",
+          "upstream_identity_sha256": "1003f4a42af7a731d60b6b60b2e4cb896a6aaa50b8e003214f3ca5ca8ca44623"
+        },
+        {
+          "error_type": null,
+          "exact_failure": null,
+          "output_identity_sha256": null,
+          "stage": "CLAIM_EVIDENCE_BINDING",
+          "stage_version": "spec-047-claim-evidence-binding-v1",
+          "status": "NOT_RUN_UPSTREAM_FAILURE",
+          "upstream_identity_sha256": null
+        }
+      ],
+      "status": "FAILED_CLOSED",
+      "sufficient_representation_decision_count": 0,
+      "usage": {
+        "input_tokens": 6249,
+        "output_tokens": 4041,
+        "total_tokens": 10290
+      }
+    },
+    {
+      "admitted_counts": null,
+      "arm": "CANDIDATE_B",
+      "detected_structure_count": 0,
+      "detected_structure_types": {},
+      "execution_mode": "FUTURE_LIVE",
+      "failure_origins": [
+        "ENTITY_INVENTORY"
+      ],
+      "known_invalid_objects_admitted": 0,
+      "monetary_cost": null,
+      "proposal_counts": {
+        "claims": 0,
+        "entities": 0,
+        "propositions": 0,
+        "relationships": 0
+      },
+      "provider_calls_started": 1,
+      "provider_latency_ms": 14440.241709002294,
+      "representation_strategy_counts": {},
+      "representation_sufficiency_counts": {},
+      "source_id": "nasa-solar-system-formation-2026",
+      "source_sha256": "c0cb2519673b8f3ef23c0be2856e03790f53d44971cbff09d593190ab3fa155d",
+      "stage_gates": [
+        {
+          "error_type": "ValidationError",
+          "exact_failure": "Stage 1 duplicate entity declaration: 'moon'",
+          "output_identity_sha256": null,
+          "stage": "ENTITY_INVENTORY",
+          "stage_version": "spec-047-entity-inventory-v1",
+          "status": "FAIL_CLOSED",
+          "upstream_identity_sha256": "c0cb2519673b8f3ef23c0be2856e03790f53d44971cbff09d593190ab3fa155d"
+        },
+        {
+          "error_type": null,
+          "exact_failure": null,
+          "output_identity_sha256": null,
+          "stage": "SEMANTIC_STRUCTURE",
+          "stage_version": "spec-047-semantic-structure-v1",
+          "status": "NOT_RUN_UPSTREAM_FAILURE",
+          "upstream_identity_sha256": null
+        },
+        {
+          "error_type": null,
+          "exact_failure": null,
+          "output_identity_sha256": null,
+          "stage": "CLAIM_EVIDENCE_BINDING",
+          "stage_version": "spec-047-claim-evidence-binding-v1",
+          "status": "NOT_RUN_UPSTREAM_FAILURE",
+          "upstream_identity_sha256": null
+        }
+      ],
+      "status": "FAILED_CLOSED",
+      "sufficient_representation_decision_count": 0,
+      "usage": {
+        "input_tokens": 794,
+        "output_tokens": 1588,
+        "total_tokens": 2382
+      }
+    },
+    {
+      "admitted_counts": null,
+      "arm": "CANDIDATE_B",
+      "detected_structure_count": 0,
+      "detected_structure_types": {},
+      "execution_mode": "FUTURE_LIVE",
+      "failure_origins": [
+        "RELATIONSHIP_SEMANTICS"
+      ],
+      "known_invalid_objects_admitted": 0,
+      "monetary_cost": null,
+      "proposal_counts": {
+        "claims": 0,
+        "entities": 62,
+        "propositions": 0,
+        "relationships": 0
+      },
+      "provider_calls_started": 2,
+      "provider_latency_ms": 34467.951083002845,
+      "representation_strategy_counts": {},
+      "representation_sufficiency_counts": {},
+      "source_id": "epa-ecological-processes-2026",
+      "source_sha256": "70e7e3d20325dd5d22e9cf4484934419447907ba9f6cf5a4dfd65ddcbfa80ad5",
+      "stage_gates": [
+        {
+          "error_type": null,
+          "exact_failure": null,
+          "output_identity_sha256": "bd2be959d8b7b4fe855a9b7e51256d0062984d47f1da77049302c9063b2d9c43",
+          "stage": "ENTITY_INVENTORY",
+          "stage_version": "spec-047-entity-inventory-v1",
+          "status": "PASS",
+          "upstream_identity_sha256": "70e7e3d20325dd5d22e9cf4484934419447907ba9f6cf5a4dfd65ddcbfa80ad5"
+        },
+        {
+          "error_type": "ValidationError",
+          "exact_failure": "comparison condition requires left operand, right operand, outcome, operator, and CAUSES",
+          "output_identity_sha256": null,
+          "stage": "SEMANTIC_STRUCTURE",
+          "stage_version": "spec-047-semantic-structure-v1",
+          "status": "FAIL_CLOSED",
+          "upstream_identity_sha256": "bd2be959d8b7b4fe855a9b7e51256d0062984d47f1da77049302c9063b2d9c43"
+        },
+        {
+          "error_type": null,
+          "exact_failure": null,
+          "output_identity_sha256": null,
+          "stage": "CLAIM_EVIDENCE_BINDING",
+          "stage_version": "spec-047-claim-evidence-binding-v1",
+          "status": "NOT_RUN_UPSTREAM_FAILURE",
+          "upstream_identity_sha256": null
+        }
+      ],
+      "status": "FAILED_CLOSED",
+      "sufficient_representation_decision_count": 0,
+      "usage": {
+        "input_tokens": 6732,
+        "output_tokens": 4595,
+        "total_tokens": 11327
+      }
+    },
+    {
+      "admitted_counts": null,
+      "arm": "CANDIDATE_B",
+      "detected_structure_count": 0,
+      "detected_structure_types": {},
+      "execution_mode": "FUTURE_LIVE",
+      "failure_origins": [
+        "RELATIONSHIP_SEMANTICS"
+      ],
+      "known_invalid_objects_admitted": 0,
+      "monetary_cost": null,
+      "proposal_counts": {
+        "claims": 0,
+        "entities": 39,
+        "propositions": 0,
+        "relationships": 0
+      },
+      "provider_calls_started": 2,
+      "provider_latency_ms": 29309.0367080149,
+      "representation_strategy_counts": {},
+      "representation_sufficiency_counts": {},
+      "source_id": "doe-iron-platinum-atomic-structure-2017",
+      "source_sha256": "e9d2260c9980239431fc195e7dc687afea93598af4f28d774ed5e4c4317f9e1e",
+      "stage_gates": [
+        {
+          "error_type": null,
+          "exact_failure": null,
+          "output_identity_sha256": "df4e254973f0317a64256be87e9bafb976bfac4aafd675abf14023c1eeb273e8",
+          "stage": "ENTITY_INVENTORY",
+          "stage_version": "spec-047-entity-inventory-v1",
+          "status": "PASS",
+          "upstream_identity_sha256": "e9d2260c9980239431fc195e7dc687afea93598af4f28d774ed5e4c4317f9e1e"
+        },
+        {
+          "error_type": "ValidationError",
+          "exact_failure": "transfer event requires event, object, destination, TRANSFERS_TO, and no comparison operator",
+          "output_identity_sha256": null,
+          "stage": "SEMANTIC_STRUCTURE",
+          "stage_version": "spec-047-semantic-structure-v1",
+          "status": "FAIL_CLOSED",
+          "upstream_identity_sha256": "df4e254973f0317a64256be87e9bafb976bfac4aafd675abf14023c1eeb273e8"
+        },
+        {
+          "error_type": null,
+          "exact_failure": null,
+          "output_identity_sha256": null,
+          "stage": "CLAIM_EVIDENCE_BINDING",
+          "stage_version": "spec-047-claim-evidence-binding-v1",
+          "status": "NOT_RUN_UPSTREAM_FAILURE",
+          "upstream_identity_sha256": null
+        }
+      ],
+      "status": "FAILED_CLOSED",
+      "sufficient_representation_decision_count": 0,
+      "usage": {
+        "input_tokens": 6543,
+        "output_tokens": 2787,
+        "total_tokens": 9330
+      }
+    },
+    {
+      "admitted_counts": null,
+      "arm": "CANDIDATE_B",
+      "detected_structure_count": 0,
+      "detected_structure_types": {},
+      "execution_mode": "FUTURE_LIVE",
+      "failure_origins": [
+        "RELATIONSHIP_SEMANTICS"
+      ],
+      "known_invalid_objects_admitted": 0,
+      "monetary_cost": null,
+      "proposal_counts": {
+        "claims": 0,
+        "entities": 38,
+        "propositions": 0,
+        "relationships": 0
+      },
+      "provider_calls_started": 2,
+      "provider_latency_ms": 38167.67525000614,
+      "representation_strategy_counts": {},
+      "representation_sufficiency_counts": {},
+      "source_id": "nhgri-dna-fact-sheet-2020",
+      "source_sha256": "54e2147221cf186fe1b4f965422c69e815f986a7d009eddae9c01bf32ec25f89",
+      "stage_gates": [
+        {
+          "error_type": null,
+          "exact_failure": null,
+          "output_identity_sha256": "9bf0a88a3528853970d4a830a99e284a1fa0efb03091c0f0e7a7ea2ebde58e9a",
+          "stage": "ENTITY_INVENTORY",
+          "stage_version": "spec-047-entity-inventory-v1",
+          "status": "PASS",
+          "upstream_identity_sha256": "54e2147221cf186fe1b4f965422c69e815f986a7d009eddae9c01bf32ec25f89"
+        },
+        {
+          "error_type": "ValidationError",
+          "exact_failure": "transfer event requires event, object, destination, TRANSFERS_TO, and no comparison operator",
+          "output_identity_sha256": null,
+          "stage": "SEMANTIC_STRUCTURE",
+          "stage_version": "spec-047-semantic-structure-v1",
+          "status": "FAIL_CLOSED",
+          "upstream_identity_sha256": "9bf0a88a3528853970d4a830a99e284a1fa0efb03091c0f0e7a7ea2ebde58e9a"
+        },
+        {
+          "error_type": null,
+          "exact_failure": null,
+          "output_identity_sha256": null,
+          "stage": "CLAIM_EVIDENCE_BINDING",
+          "stage_version": "spec-047-claim-evidence-binding-v1",
+          "status": "NOT_RUN_UPSTREAM_FAILURE",
+          "upstream_identity_sha256": null
+        }
+      ],
+      "status": "FAILED_CLOSED",
+      "sufficient_representation_decision_count": 0,
+      "usage": {
+        "input_tokens": 6045,
+        "output_tokens": 4138,
+        "total_tokens": 10183
+      }
+    },
+    {
+      "admitted_counts": null,
+      "arm": "CANDIDATE_B",
+      "detected_structure_count": 0,
+      "detected_structure_types": {},
+      "execution_mode": "FUTURE_LIVE",
+      "failure_origins": [
+        "RELATIONSHIP_SEMANTICS"
+      ],
+      "known_invalid_objects_admitted": 0,
+      "monetary_cost": null,
+      "proposal_counts": {
+        "claims": 0,
+        "entities": 38,
+        "propositions": 0,
+        "relationships": 0
+      },
+      "provider_calls_started": 2,
+      "provider_latency_ms": 27260.575542008155,
+      "representation_strategy_counts": {},
+      "representation_sufficiency_counts": {},
+      "source_id": "fhwa-traffic-bottleneck-concepts-2016",
+      "source_sha256": "1fd7e9851839f5f35cd2a231cd3ce5aea8196ec85cabd04694f681c063ea4345",
+      "stage_gates": [
+        {
+          "error_type": null,
+          "exact_failure": null,
+          "output_identity_sha256": "e14ae049ed69776343dc10cf220a2a13379bb3012a61bae55816ef9d77c377e2",
+          "stage": "ENTITY_INVENTORY",
+          "stage_version": "spec-047-entity-inventory-v1",
+          "status": "PASS",
+          "upstream_identity_sha256": "1fd7e9851839f5f35cd2a231cd3ce5aea8196ec85cabd04694f681c063ea4345"
+        },
+        {
+          "error_type": "ValidationError",
+          "exact_failure": "comparison condition requires left operand, right operand, outcome, operator, and CAUSES",
+          "output_identity_sha256": null,
+          "stage": "SEMANTIC_STRUCTURE",
+          "stage_version": "spec-047-semantic-structure-v1",
+          "status": "FAIL_CLOSED",
+          "upstream_identity_sha256": "e14ae049ed69776343dc10cf220a2a13379bb3012a61bae55816ef9d77c377e2"
+        },
+        {
+          "error_type": null,
+          "exact_failure": null,
+          "output_identity_sha256": null,
+          "stage": "CLAIM_EVIDENCE_BINDING",
+          "stage_version": "spec-047-claim-evidence-binding-v1",
+          "status": "NOT_RUN_UPSTREAM_FAILURE",
+          "upstream_identity_sha256": null
+        }
+      ],
+      "status": "FAILED_CLOSED",
+      "sufficient_representation_decision_count": 0,
+      "usage": {
+        "input_tokens": 6469,
+        "output_tokens": 3264,
+        "total_tokens": 9733
+      }
+    },
+    {
+      "admitted_counts": {
+        "claims": 15,
+        "entities": 38,
+        "propositions": 0,
+        "relationships": 12
+      },
+      "arm": "CANDIDATE_B",
+      "detected_structure_count": 3,
+      "detected_structure_types": {
+        "HIERARCHY": 3
+      },
+      "execution_mode": "FUTURE_LIVE",
+      "failure_origins": [],
+      "known_invalid_objects_admitted": 0,
+      "monetary_cost": null,
+      "proposal_counts": {
+        "claims": 15,
+        "entities": 38,
+        "propositions": 0,
+        "relationships": 12
+      },
+      "provider_calls_started": 3,
+      "provider_latency_ms": 36861.49058199953,
+      "representation_strategy_counts": {
+        "CONCISE_PROSE": 29,
+        "FOCUSED_RELATIONSHIP": 12,
+        "HIERARCHY_COMPOSITION": 9
+      },
+      "representation_sufficiency_counts": {
+        "INSUFFICIENT_SUPPORTED_STRUCTURE": 29,
+        "SUFFICIENT_TRUSTED_STRUCTURE": 21
+      },
+      "source_id": "nist-measurement-uncertainty-2025",
+      "source_sha256": "b3ae508f3982dfdd89f41a1d9ca59eb1f658b1648e3fae35168feba212046730",
+      "stage_gates": [
+        {
+          "error_type": null,
+          "exact_failure": null,
+          "output_identity_sha256": "296033f6097786a09329fada500f9d04db09fa6a339914ed6c32e15d5c82c524",
+          "stage": "ENTITY_INVENTORY",
+          "stage_version": "spec-047-entity-inventory-v1",
+          "status": "PASS",
+          "upstream_identity_sha256": "b3ae508f3982dfdd89f41a1d9ca59eb1f658b1648e3fae35168feba212046730"
+        },
+        {
+          "error_type": null,
+          "exact_failure": null,
+          "output_identity_sha256": "80af30f1af8c8ca60686da75237c863da32be5a6df7437b457ba15abaf6a707a",
+          "stage": "SEMANTIC_STRUCTURE",
+          "stage_version": "spec-047-semantic-structure-v1",
+          "status": "PASS",
+          "upstream_identity_sha256": "296033f6097786a09329fada500f9d04db09fa6a339914ed6c32e15d5c82c524"
+        },
+        {
+          "error_type": null,
+          "exact_failure": null,
+          "output_identity_sha256": "14c24a973e1e7338b5365c5ff691a2e95b366f2081a6535cfc3a3624eac863ec",
+          "stage": "CLAIM_EVIDENCE_BINDING",
+          "stage_version": "spec-047-claim-evidence-binding-v1",
+          "status": "PASS",
+          "upstream_identity_sha256": "88def53ce47e9ef80dc81038a19e5dfa0a83c4abc802857f6a9e504ac2fdd109"
+        }
+      ],
+      "status": "PASS",
+      "sufficient_representation_decision_count": 21,
+      "usage": {
+        "input_tokens": 9134,
+        "output_tokens": 4461,
+        "total_tokens": 13595
+      }
+    }
+  ],
+  "schema": "spec-048-candidate-b-comparison-records-v1"
+}

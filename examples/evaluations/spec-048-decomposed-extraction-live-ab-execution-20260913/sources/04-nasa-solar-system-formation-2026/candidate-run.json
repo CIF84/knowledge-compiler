@@ -1,0 +1,542 @@
+{
+  "attempts": [
+    {
+      "provider_metadata": {
+        "actual_model": "gpt-5.6-luna",
+        "candidate_version": "spec-047-candidate-b-v1",
+        "duration_ms": 14440.241709002294,
+        "hidden_retries": 0,
+        "http_request_id": "req_394bedd1faa0494fa39ee8eb9fa576c9",
+        "prompt_sha256": "b1c00eb4547de56c62dcc18c7aec013ee1e2de4a8c1dfa45bcb475f00591f785",
+        "prompt_version": "spec-047-entity-inventory-v1",
+        "provider": "openai",
+        "provider_response_id": "resp_03c85375037849fa016aa816c25e1887d295f4fd9b3f2ae9a9",
+        "repair_calls": 0,
+        "requested_model": "gpt-5.6-luna",
+        "schema_name": "candidate_b_entity_inventory",
+        "schema_sha256": "003db7546ae3ffafe7dc098bc50e1a5f223b891f6ee3160f7537214c8e9c9956",
+        "sdk_retries": 0,
+        "semantic_retries": 0,
+        "stage": "ENTITY_INVENTORY",
+        "store": false,
+        "upstream_input_sha256": "c0cb2519673b8f3ef23c0be2856e03790f53d44971cbff09d593190ab3fa155d",
+        "usage": {
+          "input_tokens": 794,
+          "output_tokens": 1588,
+          "total_tokens": 2382
+        }
+      },
+      "raw_proposal": {
+        "symbols": [
+          {
+            "aliases": [
+              "our planet"
+            ],
+            "description": "The world identified as the only world known in the source to have life; also called our planet.",
+            "entity_type": "OBJECT",
+            "name": "Earth"
+          },
+          {
+            "aliases": [
+              "life as we know it"
+            ],
+            "description": "Living existence found on Earth, including life as known in the source.",
+            "entity_type": "CONCEPT",
+            "name": "life"
+          },
+          {
+            "aliases": [],
+            "description": "Living things on Earth identified as plants.",
+            "entity_type": "OBJECT",
+            "name": "plants"
+          },
+          {
+            "aliases": [],
+            "description": "Living things on Earth identified as animals.",
+            "entity_type": "OBJECT",
+            "name": "animals"
+          },
+          {
+            "aliases": [],
+            "description": "Living things on Earth identified as microbes.",
+            "entity_type": "OBJECT",
+            "name": "microbes"
+          },
+          {
+            "aliases": [],
+            "description": "Living things on Earth other than the plants, animals, and microbes explicitly named.",
+            "entity_type": "OBJECT",
+            "name": "other living things"
+          },
+          {
+            "aliases": [
+              "our solar system"
+            ],
+            "description": "The system containing the Sun, planets, and other material described as having formed from a nebula.",
+            "entity_type": "SYSTEM",
+            "name": "solar system"
+          },
+          {
+            "aliases": [],
+            "description": "The star at the center of the solar system described as having started forming from material falling into the center of a nebula.",
+            "entity_type": "OBJECT",
+            "name": "Sun"
+          },
+          {
+            "aliases": [
+              "planets"
+            ],
+            "description": "A body that can form from nebular material and that, according to the source, has to orbit a star.",
+            "entity_type": "OBJECT",
+            "name": "planet"
+          },
+          {
+            "aliases": [],
+            "description": "One of the eight planets named in the source.",
+            "entity_type": "OBJECT",
+            "name": "Mercury"
+          },
+          {
+            "aliases": [],
+            "description": "One of the eight planets named in the source.",
+            "entity_type": "OBJECT",
+            "name": "Venus"
+          },
+          {
+            "aliases": [],
+            "description": "One of the eight planets named in the source.",
+            "entity_type": "OBJECT",
+            "name": "Mars"
+          },
+          {
+            "aliases": [],
+            "description": "One of the eight planets named in the source.",
+            "entity_type": "OBJECT",
+            "name": "Jupiter"
+          },
+          {
+            "aliases": [],
+            "description": "One of the eight planets named in the source.",
+            "entity_type": "OBJECT",
+            "name": "Saturn"
+          },
+          {
+            "aliases": [],
+            "description": "One of the eight planets named in the source.",
+            "entity_type": "OBJECT",
+            "name": "Uranus"
+          },
+          {
+            "aliases": [],
+            "description": "One of the eight planets named in the source.",
+            "entity_type": "OBJECT",
+            "name": "Neptune"
+          },
+          {
+            "aliases": [],
+            "description": "The object described as orbiting Earth and as an example of something that can be a moon.",
+            "entity_type": "OBJECT",
+            "name": "Moon"
+          },
+          {
+            "aliases": [
+              "moons"
+            ],
+            "description": "An object that, according to the source, is in orbit around a planet.",
+            "entity_type": "OBJECT",
+            "name": "moon"
+          },
+          {
+            "aliases": [
+              "stars"
+            ],
+            "description": "A celestial object that can form from nebular material and that planets orbit according to the source.",
+            "entity_type": "OBJECT",
+            "name": "star"
+          },
+          {
+            "aliases": [
+              "star systems"
+            ],
+            "description": "A system described as orbiting around its entire galaxy.",
+            "entity_type": "SYSTEM",
+            "name": "star system"
+          },
+          {
+            "aliases": [
+              "galaxies"
+            ],
+            "description": "A larger astronomical system around which star systems orbit; the source refers to our galaxy.",
+            "entity_type": "SYSTEM",
+            "name": "galaxy"
+          },
+          {
+            "aliases": [
+              "nebulae"
+            ],
+            "description": "A large cloud of gas and dust in space from which stars, planets, and solar systems can form.",
+            "entity_type": "OBJECT",
+            "name": "nebula"
+          },
+          {
+            "aliases": [],
+            "description": "Material in space that forms part of nebulae and the solar system's originating cloud.",
+            "entity_type": "OBJECT",
+            "name": "gas"
+          },
+          {
+            "aliases": [],
+            "description": "Material in space that forms part of nebulae and the solar system's originating cloud.",
+            "entity_type": "OBJECT",
+            "name": "dust"
+          },
+          {
+            "aliases": [],
+            "description": "Material identified as part of massive clouds in space called nebulae.",
+            "entity_type": "OBJECT",
+            "name": "debris"
+          },
+          {
+            "aliases": [],
+            "description": "Available material in a nebula that can stick together and form larger masses.",
+            "entity_type": "CONCEPT",
+            "name": "material"
+          },
+          {
+            "aliases": [
+              "little pieces of metal and rock"
+            ],
+            "description": "Small pieces formed when gas and dust in the nebula collided and stuck together.",
+            "entity_type": "OBJECT",
+            "name": "metal and rock pieces"
+          },
+          {
+            "aliases": [],
+            "description": "A large amount of material formed as material sticks together and capable of growing into a planet or star.",
+            "entity_type": "OBJECT",
+            "name": "mass"
+          },
+          {
+            "aliases": [],
+            "description": "An explosion of a big star described as having enough energy to make gas and dust in nearby nebulae swirl and spin.",
+            "entity_type": "PROCESS",
+            "name": "supernova"
+          },
+          {
+            "aliases": [],
+            "description": "A star whose possible explosion is proposed as preceding the formation of the solar system.",
+            "entity_type": "OBJECT",
+            "name": "nearby star"
+          },
+          {
+            "aliases": [],
+            "description": "The process by which material in nebulae grows through sticking and collisions into planets.",
+            "entity_type": "PROCESS",
+            "name": "planet formation"
+          },
+          {
+            "aliases": [],
+            "description": "The process by which material in nebulae forms stars, including the Sun.",
+            "entity_type": "PROCESS",
+            "name": "star formation"
+          },
+          {
+            "aliases": [],
+            "description": "The process by which the plants, animals, microbes, and other living things on Earth have evolved here.",
+            "entity_type": "PROCESS",
+            "name": "evolution of life on Earth"
+          },
+          {
+            "aliases": [],
+            "description": "The process in which available material begins to adhere together to form a larger mass.",
+            "entity_type": "PROCESS",
+            "name": "sticking together"
+          },
+          {
+            "aliases": [
+              "collisions"
+            ],
+            "description": "An impact process through which pieces of gas, dust, metal, and rock collide and contribute to forming larger pieces and planets.",
+            "entity_type": "PROCESS",
+            "name": "collision"
+          },
+          {
+            "aliases": [],
+            "description": "Motion initiated in gas and dust in nearby nebulae by the energy of a supernova explosion.",
+            "entity_type": "PROCESS",
+            "name": "swirling and spinning"
+          },
+          {
+            "aliases": [],
+            "description": "The movement of material in a nebula toward its center, where the Sun started forming.",
+            "entity_type": "PROCESS",
+            "name": "falling into the center"
+          },
+          {
+            "aliases": [
+              "orbits"
+            ],
+            "description": "The pattern made when planets go around the Sun, and more generally movement around a planet, star, or galaxy.",
+            "entity_type": "CONCEPT",
+            "name": "orbit"
+          },
+          {
+            "aliases": [],
+            "description": "The direction in which the nebular cloud, the Sun, and the planets are described as spinning or moving around the Sun.",
+            "entity_type": "VARIABLE",
+            "name": "orbital direction"
+          },
+          {
+            "aliases": [],
+            "description": "The central region into which much of the nebular material fell and where the Sun started forming.",
+            "entity_type": "COMPONENT",
+            "name": "center of the nebula"
+          },
+          {
+            "aliases": [],
+            "description": "Energy from a supernova explosion described as sufficient to make gas and dust in nearby nebulae start swirling and spinning.",
+            "entity_type": "CONCEPT",
+            "name": "energy"
+          }
+        ]
+      },
+      "raw_provider_response": {
+        "background": false,
+        "billing": {
+          "payer": "developer"
+        },
+        "completed_at": 1789400784.0,
+        "conversation": null,
+        "created_at": 1789400770.0,
+        "error": null,
+        "frequency_penalty": 0.0,
+        "id": "resp_03c85375037849fa016aa816c25e1887d295f4fd9b3f2ae9a9",
+        "incomplete_details": null,
+        "instructions": "You perform Stage 1 entity inventory for a semantic compiler.\n\nRead only the exact supplied source. Return a precision-first inventory of concepts,\nobjects, processes, variables, systems, and components that later semantic statements\nneed as endpoints or proposition roles. Include source-supported process/event concepts\nwhen later meaning would need to refer to them. Do not use external knowledge.\n\nDo not assign IDs: trusted code assigns stable IDs after this stage. Each semantic thing\nmust appear once. Do not fragment one identity into variants, merge related but distinct\nthings, or use aliases except for genuine naming equivalence. Names and descriptions must\nremain source-bounded.\n\nReturn entities only. Do not return claims, evidence, relationships, propositions,\nteaching prose, diagnostics, or output outside the requested schema.",
+        "max_output_tokens": null,
+        "max_tool_calls": null,
+        "metadata": {},
+        "model": "gpt-5.6-luna",
+        "moderation": null,
+        "object": "response",
+        "output": [
+          {
+            "content": [],
+            "encrypted_content": "gAAAAABqqBbQVupBqULlsL5MwAmGti5Xu6IMxFCFIQNZJIXA6ZqQUJNek41tTJruQNnCnI4WdwD2xBY9FuEzdTL1ZM-jwJbomnXkicW-WTsmu3W_GWjFe03gw5I5n8JjSLhtTzuoR8oWtaA5eOOlg8-rhMQRhcfovBo5oufdUotTiHwjXQPPMz90Jm8PamwwJ-4_5lylsrJLE_G1OYJVR_MquH1R8ATlreZkp-lJR5Btsuuu2iniaDJ4_maSXfmjgAwTxndyi_e9C4sRgv19F_BniFojTGrTdHefXbHoUQIyRQhQKLKG0rXfJkjxzmtCRRAnpspsQzbR-oIdae2gRjr5nRzaiqRZIIWxe4b1KwMV5Jqbx8Xz9uboeVA9u14dDuvp_wX_L8L5jtnRMijpVODlC1fH9MerVFJ5AHuqBwP6QqHooif_p-ZQi8svwTwvBn3-uKEJxsXJAu3zVxJJ9AEsV25LiBOB45q3U2jvTvUj8CFlhT4QmgcfKgopfmxlH-ZllSrq3AFqE7h4RlUez8bfXPU93FXP7Ww_oT7FiIfo8CZZmDr1CEUYQ4o4UFn8RGEl0o6M2tSd4-qnuswxOahDMH-5b0GM96toGzkkf3l43Fjhd_f8DBqEQJURmeLmRqx-vRVnUV_h8Hw6BPWdoteQHX8CW7LukCt_-d7HarAJGC6fvGR1HD8nfJ4eNOLtxT2UeV3qEz8uBW5ugrUGgCSUxwiGLV037-MW4UTacyLHF6yOs6-LEriIoWbwjpEFy1M_h_W3jBuLgxs6uCBxlIkmNZOiB5aDKZX4ek-XopHukVdqDo7BIQFh9s1aShtzZpdzFKyXBUYZuEynqu0NHZ5rFv8URV1HIsaKXUsSlL4e6LSV6Npgoax-p16aXnyKaagYq9wPSiYb7s6wAvm-kHpbZNN7PiCW7hnIU_kvDboAFqC2XUL_rwxpCrSSA_DwQ8SKvzqTCu1HyE_mnz3oKWMuV6v8l3NNlj_1RVI5dMynps5Xgm9TgzKhIfhRwUjniWCSvAvD5WHCWBeSh9ve8jycPJmlS8InkluRnOCrYK5C6thm3cTcFWYFeWWEdvXXhEjUj88VErfcxF9eeWMf_VrAsu6ly9FW9ujXxJoAfB4qqbylw0F_iRTBp5hskZRZxX-b7epBX0EW75afVTcTnoQACjT1qjzMEGn1ydPmmAIV0bq7ouElJK9sWwlUqjcQ7P_HdbYs_EuGyvXVhzubj_kb2q-4NBT6lKj2vNQVhdSP_MLn5BVZtIpy7RSyMlS24LQxfpjuPq1zFgwQJq8y90xVLeS-vvEUYh09UvM4vCbAZcq5PhWGDKgSfmnivarzOg6jslz1IK7iTvxyx-Y-PJskpzN1eNldVRUdKqLd5y7ZvP5mKMO1rLG4diDBxyW69gVSOMV57dbvNwjvew65emdzX-VkSojPYjtx21I7xkrTzSzhhbemvccWUodIxh66Ox73tsdgvOb4BmWTeNBjpqvYV5lplqpmOOljj43V3u4xCc0kdbTzcWw85hc-JfRnBuCnR9dxWeWAHkIprQKs-9XWf_eZx5yDZgWek6z0kWTflBMSjcKf9zH19b2IcjuBplBUJCuKFMCpBNdfBdjw4YwrsMlGVgJ6g_tobUBKtgFUbdBj7Nmj125qxThUkvcoMMAYSXEXmRy15CNUoc2uTt2WNO3D76CdpZwTOH2Ly-XG3j9YrKaOnnCToqX-7G8d5dXGwdxQMZoxVKdqt-pxgbwE1HYiNbmxsSog7gmwsIFNdT-hD9tMW9-YMgHHIJBUJN0e1B5Scquoy-tNixrLEZToSAhJnHAa9SjzY2A1E6pcEcfpYLvkCqM2zgbit4td7yhM6g-HyMDvAf6VRmUe300LHrdTKbHYs5NOaJcxlwGgS6U2LkMuG0zC7l3RnmnqEqGjbdY6zkuwpYzFoYcGmm--dRn3LbTg9fTGALzXE3XRAPw_agRh5gMF4645JLmy6Tm0CuuBYfzaDPmGiAz0NYmRkyi1-24mmAdyl1kK3cZm4CnKc_6MWDyrSyHEKvtDW7cJwYS3CDCVZqjISuIYiNaK2j6wGw13Q81LsrYGw-qZFH3SwFPEpAmzNlYNB_ZSuXQq0-U0KbzPrxpmW7ubaX60tVDBdBAjBNyUfn5IrKSho2Dno6kviKs3s0iEAVetFHtNgCdxl_SWQ8_zIzwZM8Xvs5_JlYBjrJM9iOWa6dgYReEevb6YgwuKYIUXUDN1XV525QRp8AtTLIzf2tH5y_R-gePlgYfJ92__eo4DM1EEFzTiSE-qh4njLB6052TGwp8sqfgbX0m1UyxpfRE145j6la0IaIu20e533t-c-e2fBxzLi7Z3fesfFV01TH5GYWyxwkSHAHdfQ2ZD7vp-FP_aSu1BUbeMWeEqKnYaVo_0-KaFdqwDm0zQc84esbhDZr9ll0cqU4WQcO50o6O_gR7BUAFcxXJtSXrCJLcbxkkmdXk9JgjMh1MZO7-fBJcch6jJKR-fEkfv250aACGrkUOkK_N4fAEXsQRMWj6E9AhLbEOnSwvQ6n3DzlreN6ej3Nyy9ZqmIVlrBpZj8qlB1hcuExu_e6CeqPygEqJqSbS6Is4wKCnwUC0=",
+            "id": "rs_03c85375037849fa016aa816c2e8b087d296f1e555315c12ea",
+            "status": null,
+            "summary": [],
+            "type": "reasoning"
+          },
+          {
+            "content": [
+              {
+                "annotations": [],
+                "logprobs": [],
+                "text": "{\"symbols\":[{\"name\":\"Earth\",\"description\":\"The world identified as the only world known in the source to have life; also called our planet.\",\"entity_type\":\"OBJECT\",\"aliases\":[\"our planet\"]},{\"name\":\"life\",\"description\":\"Living existence found on Earth, including life as known in the source.\",\"entity_type\":\"CONCEPT\",\"aliases\":[\"life as we know it\"]},{\"name\":\"plants\",\"description\":\"Living things on Earth identified as plants.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"animals\",\"description\":\"Living things on Earth identified as animals.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"microbes\",\"description\":\"Living things on Earth identified as microbes.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"other living things\",\"description\":\"Living things on Earth other than the plants, animals, and microbes explicitly named.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"solar system\",\"description\":\"The system containing the Sun, planets, and other material described as having formed from a nebula.\",\"entity_type\":\"SYSTEM\",\"aliases\":[\"our solar system\"]},{\"name\":\"Sun\",\"description\":\"The star at the center of the solar system described as having started forming from material falling into the center of a nebula.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"planet\",\"description\":\"A body that can form from nebular material and that, according to the source, has to orbit a star.\",\"entity_type\":\"OBJECT\",\"aliases\":[\"planets\"]},{\"name\":\"Mercury\",\"description\":\"One of the eight planets named in the source.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"Venus\",\"description\":\"One of the eight planets named in the source.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"Mars\",\"description\":\"One of the eight planets named in the source.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"Jupiter\",\"description\":\"One of the eight planets named in the source.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"Saturn\",\"description\":\"One of the eight planets named in the source.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"Uranus\",\"description\":\"One of the eight planets named in the source.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"Neptune\",\"description\":\"One of the eight planets named in the source.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"Moon\",\"description\":\"The object described as orbiting Earth and as an example of something that can be a moon.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"moon\",\"description\":\"An object that, according to the source, is in orbit around a planet.\",\"entity_type\":\"OBJECT\",\"aliases\":[\"moons\"]},{\"name\":\"star\",\"description\":\"A celestial object that can form from nebular material and that planets orbit according to the source.\",\"entity_type\":\"OBJECT\",\"aliases\":[\"stars\"]},{\"name\":\"star system\",\"description\":\"A system described as orbiting around its entire galaxy.\",\"entity_type\":\"SYSTEM\",\"aliases\":[\"star systems\"]},{\"name\":\"galaxy\",\"description\":\"A larger astronomical system around which star systems orbit; the source refers to our galaxy.\",\"entity_type\":\"SYSTEM\",\"aliases\":[\"galaxies\"]},{\"name\":\"nebula\",\"description\":\"A large cloud of gas and dust in space from which stars, planets, and solar systems can form.\",\"entity_type\":\"OBJECT\",\"aliases\":[\"nebulae\"]},{\"name\":\"gas\",\"description\":\"Material in space that forms part of nebulae and the solar system's originating cloud.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"dust\",\"description\":\"Material in space that forms part of nebulae and the solar system's originating cloud.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"debris\",\"description\":\"Material identified as part of massive clouds in space called nebulae.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"material\",\"description\":\"Available material in a nebula that can stick together and form larger masses.\",\"entity_type\":\"CONCEPT\",\"aliases\":[]},{\"name\":\"metal and rock pieces\",\"description\":\"Small pieces formed when gas and dust in the nebula collided and stuck together.\",\"entity_type\":\"OBJECT\",\"aliases\":[\"little pieces of metal and rock\"]},{\"name\":\"mass\",\"description\":\"A large amount of material formed as material sticks together and capable of growing into a planet or star.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"supernova\",\"description\":\"An explosion of a big star described as having enough energy to make gas and dust in nearby nebulae swirl and spin.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"name\":\"nearby star\",\"description\":\"A star whose possible explosion is proposed as preceding the formation of the solar system.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"planet formation\",\"description\":\"The process by which material in nebulae grows through sticking and collisions into planets.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"name\":\"star formation\",\"description\":\"The process by which material in nebulae forms stars, including the Sun.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"name\":\"evolution of life on Earth\",\"description\":\"The process by which the plants, animals, microbes, and other living things on Earth have evolved here.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"name\":\"sticking together\",\"description\":\"The process in which available material begins to adhere together to form a larger mass.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"name\":\"collision\",\"description\":\"An impact process through which pieces of gas, dust, metal, and rock collide and contribute to forming larger pieces and planets.\",\"entity_type\":\"PROCESS\",\"aliases\":[\"collisions\"]},{\"name\":\"swirling and spinning\",\"description\":\"Motion initiated in gas and dust in nearby nebulae by the energy of a supernova explosion.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"name\":\"falling into the center\",\"description\":\"The movement of material in a nebula toward its center, where the Sun started forming.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"name\":\"orbit\",\"description\":\"The pattern made when planets go around the Sun, and more generally movement around a planet, star, or galaxy.\",\"entity_type\":\"CONCEPT\",\"aliases\":[\"orbits\"]},{\"name\":\"orbital direction\",\"description\":\"The direction in which the nebular cloud, the Sun, and the planets are described as spinning or moving around the Sun.\",\"entity_type\":\"VARIABLE\",\"aliases\":[]},{\"name\":\"center of the nebula\",\"description\":\"The central region into which much of the nebular material fell and where the Sun started forming.\",\"entity_type\":\"COMPONENT\",\"aliases\":[]},{\"name\":\"energy\",\"description\":\"Energy from a supernova explosion described as sufficient to make gas and dust in nearby nebulae start swirling and spinning.\",\"entity_type\":\"CONCEPT\",\"aliases\":[]}]}",
+                "type": "output_text"
+              }
+            ],
+            "id": "msg_03c85375037849fa016aa816c58bfc87d291efe74b13340cda",
+            "phase": "final_answer",
+            "role": "assistant",
+            "status": "completed",
+            "type": "message"
+          }
+        ],
+        "parallel_tool_calls": true,
+        "presence_penalty": 0.0,
+        "previous_response_id": null,
+        "prompt": null,
+        "prompt_cache_key": null,
+        "prompt_cache_options": null,
+        "prompt_cache_retention": "24h",
+        "reasoning": {
+          "context": "all_turns",
+          "effort": "low",
+          "generate_summary": null,
+          "mode": "standard",
+          "summary": null
+        },
+        "safety_identifier": null,
+        "service_tier": "default",
+        "status": "completed",
+        "store": false,
+        "temperature": 1.0,
+        "text": {
+          "format": {
+            "description": null,
+            "name": "candidate_b_entity_inventory",
+            "schema_": {
+              "additionalProperties": false,
+              "properties": {
+                "symbols": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "aliases": {
+                        "items": {
+                          "type": "string"
+                        },
+                        "type": "array"
+                      },
+                      "description": {
+                        "type": "string"
+                      },
+                      "entity_type": {
+                        "enum": [
+                          "CONCEPT",
+                          "OBJECT",
+                          "PROCESS",
+                          "VARIABLE",
+                          "SYSTEM",
+                          "COMPONENT"
+                        ],
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "name",
+                      "description",
+                      "entity_type",
+                      "aliases"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                }
+              },
+              "required": [
+                "symbols"
+              ],
+              "type": "object"
+            },
+            "strict": true,
+            "type": "json_schema"
+          },
+          "verbosity": "medium"
+        },
+        "tool_choice": "auto",
+        "tool_usage": {
+          "image_gen": {
+            "input_tokens": 0,
+            "input_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            },
+            "output_tokens": 0,
+            "output_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            },
+            "total_tokens": 0
+          },
+          "web_search": {
+            "num_requests": 0
+          }
+        },
+        "tools": [],
+        "top_logprobs": 0,
+        "top_p": 0.98,
+        "truncation": "disabled",
+        "usage": {
+          "input_tokens": 794,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0
+          },
+          "output_tokens": 1588,
+          "output_tokens_details": {
+            "reasoning_tokens": 223
+          },
+          "total_tokens": 2382
+        },
+        "user": null
+      },
+      "stage": "ENTITY_INVENTORY"
+    }
+  ],
+  "candidate_version": "spec-047-candidate-b-v1",
+  "canonical_gate": {
+    "error_type": null,
+    "exact_failure": null,
+    "output_identity_sha256": null,
+    "stage": "CANONICAL_VALIDATION",
+    "stage_version": "existing-knowledge-model-validator",
+    "status": "NOT_RUN_UPSTREAM_FAILURE",
+    "upstream_identity_sha256": null
+  },
+  "claim_evidence_binding": null,
+  "entity_inventory": null,
+  "model": null,
+  "provider_call_ledger": {
+    "calls_started": 1,
+    "candidate_version": "spec-047-candidate-b-v1",
+    "entries": [
+      {
+        "actual_model": "gpt-5.6-luna",
+        "call_ordinal": 1,
+        "completed_at_utc": "2026-09-14T15:46:24.521324+00:00",
+        "duration_ms": 14440.241709002294,
+        "hidden_retries": 0,
+        "http_request_id": "req_394bedd1faa0494fa39ee8eb9fa576c9",
+        "prompt_sha256": "b1c00eb4547de56c62dcc18c7aec013ee1e2de4a8c1dfa45bcb475f00591f785",
+        "prompt_version": "spec-047-entity-inventory-v1",
+        "provider_response_id": "resp_03c85375037849fa016aa816c25e1887d295f4fd9b3f2ae9a9",
+        "repair_calls": 0,
+        "requested_model": "gpt-5.6-luna",
+        "schema_sha256": "003db7546ae3ffafe7dc098bc50e1a5f223b891f6ee3160f7537214c8e9c9956",
+        "sdk_retries": 0,
+        "semantic_retries": 0,
+        "source_id": "nasa-solar-system-formation-2026",
+        "source_sha256": "c0cb2519673b8f3ef23c0be2856e03790f53d44971cbff09d593190ab3fa155d",
+        "stage": "ENTITY_INVENTORY",
+        "started_at_utc": "2026-09-14T15:46:10.080965+00:00",
+        "status": "PROVIDER_RESPONSE_RECEIVED",
+        "store": false,
+        "upstream_input_sha256": "c0cb2519673b8f3ef23c0be2856e03790f53d44971cbff09d593190ab3fa155d",
+        "usage": {
+          "input_tokens": 794,
+          "output_tokens": 1588,
+          "total_tokens": 2382
+        }
+      }
+    ]
+  },
+  "semantic_structure": null,
+  "source_id": "nasa-solar-system-formation-2026",
+  "source_sha256": "c0cb2519673b8f3ef23c0be2856e03790f53d44971cbff09d593190ab3fa155d",
+  "stage_gates": [
+    {
+      "error_type": "ValidationError",
+      "exact_failure": "Stage 1 duplicate entity declaration: 'moon'",
+      "output_identity_sha256": null,
+      "stage": "ENTITY_INVENTORY",
+      "stage_version": "spec-047-entity-inventory-v1",
+      "status": "FAIL_CLOSED",
+      "upstream_identity_sha256": "c0cb2519673b8f3ef23c0be2856e03790f53d44971cbff09d593190ab3fa155d"
+    },
+    {
+      "error_type": null,
+      "exact_failure": null,
+      "output_identity_sha256": null,
+      "stage": "SEMANTIC_STRUCTURE",
+      "stage_version": "spec-047-semantic-structure-v1",
+      "status": "NOT_RUN_UPSTREAM_FAILURE",
+      "upstream_identity_sha256": null
+    },
+    {
+      "error_type": null,
+      "exact_failure": null,
+      "output_identity_sha256": null,
+      "stage": "CLAIM_EVIDENCE_BINDING",
+      "stage_version": "spec-047-claim-evidence-binding-v1",
+      "status": "NOT_RUN_UPSTREAM_FAILURE",
+      "upstream_identity_sha256": null
+    }
+  ],
+  "status": "FAIL_CLOSED"
+}

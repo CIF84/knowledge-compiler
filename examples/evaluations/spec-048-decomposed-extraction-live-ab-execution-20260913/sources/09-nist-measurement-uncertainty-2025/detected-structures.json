@@ -1,0 +1,111 @@
+{
+  "structures": [
+    {
+      "entity_ids": [
+        "32768-hz-quartz-crystal-resonator",
+        "primary-gas-mixture",
+        "standard"
+      ],
+      "id": "structure-hierarchy-f9d47923cc505362",
+      "metadata": {
+        "contains_cycle": false,
+        "hierarchy_relationship_type": "EXAMPLE_OF",
+        "leaves": [
+          "32768-hz-quartz-crystal-resonator",
+          "primary-gas-mixture"
+        ],
+        "roots": [
+          "standard"
+        ],
+        "supporting_relationship_ids_by_edge": [
+          [
+            "r3"
+          ],
+          [
+            "r4"
+          ]
+        ]
+      },
+      "relationship_ids": [
+        "r3",
+        "r4"
+      ],
+      "relationship_types": [
+        "EXAMPLE_OF",
+        "EXAMPLE_OF"
+      ],
+      "structure_type": "HIERARCHY"
+    },
+    {
+      "entity_ids": [
+        "measurand",
+        "scalar-measurand"
+      ],
+      "id": "structure-hierarchy-bb56f1452dda36b3",
+      "metadata": {
+        "contains_cycle": false,
+        "hierarchy_relationship_type": "IS_A",
+        "leaves": [
+          "scalar-measurand"
+        ],
+        "roots": [
+          "measurand"
+        ],
+        "supporting_relationship_ids_by_edge": [
+          [
+            "r11"
+          ]
+        ]
+      },
+      "relationship_ids": [
+        "r11"
+      ],
+      "relationship_types": [
+        "IS_A"
+      ],
+      "structure_type": "HIERARCHY"
+    },
+    {
+      "entity_ids": [
+        "measurement-uncertainty",
+        "parameter",
+        "standard-deviation",
+        "standard-measurement-uncertainty"
+      ],
+      "id": "structure-hierarchy-63ad6fb189d740c2",
+      "metadata": {
+        "contains_cycle": false,
+        "hierarchy_relationship_type": "IS_A",
+        "leaves": [
+          "standard-deviation",
+          "standard-measurement-uncertainty"
+        ],
+        "roots": [
+          "parameter"
+        ],
+        "supporting_relationship_ids_by_edge": [
+          [
+            "r9"
+          ],
+          [
+            "r12"
+          ],
+          [
+            "r10"
+          ]
+        ]
+      },
+      "relationship_ids": [
+        "r9",
+        "r12",
+        "r10"
+      ],
+      "relationship_types": [
+        "IS_A",
+        "IS_A",
+        "IS_A"
+      ],
+      "structure_type": "HIERARCHY"
+    }
+  ]
+}

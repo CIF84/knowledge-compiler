@@ -1,0 +1,232 @@
+{
+  "missing_symbols": [],
+  "propositions": [
+    {
+      "comparison_operator": "GREATER_THAN",
+      "confidence": 0.99,
+      "origin": "SOURCE",
+      "proposition_type": "COMPARISON_CONDITION",
+      "relationship_type": "CONSTRAINS",
+      "role_bindings": [
+        {
+          "entity_id": "bottleneck-congestion-proportion",
+          "role": "LEFT_OPERAND"
+        },
+        {
+          "entity_id": "poor-signal-timing-congestion-proportion",
+          "role": "RIGHT_OPERAND"
+        }
+      ],
+      "statement": "The bottleneck congestion proportion is greater than the poor signal timing congestion proportion."
+    }
+  ],
+  "relationships": [
+    {
+      "confidence": 0.72,
+      "id": "r1",
+      "origin": "SOURCE",
+      "relationship_type": "MEASURED_BY",
+      "source_entity_id": "bottleneck-congestion-proportion",
+      "statement": "The bottleneck congestion proportion is associated with the congestion study as its primary evidentiary basis.",
+      "target_entity_id": "congestion-study"
+    },
+    {
+      "confidence": 0.72,
+      "id": "r2",
+      "origin": "SOURCE",
+      "relationship_type": "MEASURED_BY",
+      "source_entity_id": "poor-signal-timing-congestion-proportion",
+      "statement": "The poor signal timing congestion proportion is associated with the congestion study as its primary evidentiary basis.",
+      "target_entity_id": "congestion-study"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r3",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "recurring-congestion",
+      "statement": "Recurring congestion is a type of congestion.",
+      "target_entity_id": "congestion"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r4",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "nonrecurring-congestion",
+      "statement": "Nonrecurring congestion is a type of congestion.",
+      "target_entity_id": "congestion"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r5",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "physical-bottleneck-cause",
+      "statement": "A physical bottleneck cause is a type of bottleneck cause.",
+      "target_entity_id": "bottleneck-cause"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r6",
+      "origin": "SOURCE",
+      "relationship_type": "EXAMPLE_OF",
+      "source_entity_id": "lane-drop",
+      "statement": "A lane drop is given as an example of a physical bottleneck cause.",
+      "target_entity_id": "physical-bottleneck-cause"
+    },
+    {
+      "confidence": 0.9,
+      "id": "r7",
+      "origin": "SOURCE",
+      "relationship_type": "EXAMPLE_OF",
+      "source_entity_id": "special-event",
+      "statement": "A special event is given as an example associated with nonrecurring congestion.",
+      "target_entity_id": "nonrecurring-congestion"
+    },
+    {
+      "confidence": 0.9,
+      "id": "r8",
+      "origin": "SOURCE",
+      "relationship_type": "EXAMPLE_OF",
+      "source_entity_id": "bad-weather",
+      "statement": "Bad weather is given as an example associated with nonrecurring congestion.",
+      "target_entity_id": "nonrecurring-congestion"
+    },
+    {
+      "confidence": 0.9,
+      "id": "r9",
+      "origin": "SOURCE",
+      "relationship_type": "EXAMPLE_OF",
+      "source_entity_id": "work-zone",
+      "statement": "A work zone is given as an example associated with nonrecurring congestion.",
+      "target_entity_id": "nonrecurring-congestion"
+    },
+    {
+      "confidence": 0.9,
+      "id": "r10",
+      "origin": "SOURCE",
+      "relationship_type": "EXAMPLE_OF",
+      "source_entity_id": "traffic-incident",
+      "statement": "A traffic incident is given as an example associated with nonrecurring congestion.",
+      "target_entity_id": "nonrecurring-congestion"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r11",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "free-flowing-traffic",
+      "statement": "Free-flow is one of the traffic phases in Kerner's categorization.",
+      "target_entity_id": "traffic-phase"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r12",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "synchronized-flow",
+      "statement": "Synchronized flow is one of the traffic phases in Kerner's categorization.",
+      "target_entity_id": "traffic-phase"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r13",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "wide-moving-jam",
+      "statement": "Wide-moving jams are one of the traffic phases in Kerner's categorization.",
+      "target_entity_id": "traffic-phase"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r14",
+      "origin": "SOURCE",
+      "relationship_type": "CAUSES",
+      "source_entity_id": "bottleneck",
+      "statement": "Bottlenecks result in the formation of queues upstream.",
+      "target_entity_id": "queue-formation"
+    },
+    {
+      "confidence": 0.95,
+      "id": "r15",
+      "origin": "SOURCE",
+      "relationship_type": "CAUSES",
+      "source_entity_id": "bottleneck",
+      "statement": "Bottlenecks result in free-flowing traffic downstream.",
+      "target_entity_id": "free-flowing-traffic"
+    },
+    {
+      "confidence": 0.97,
+      "id": "r16",
+      "origin": "SOURCE",
+      "relationship_type": "EXAMPLE_OF",
+      "source_entity_id": "downstream-front",
+      "statement": "The downstream front at which synchronized traffic is fixed is described as a de facto bottleneck.",
+      "target_entity_id": "bottleneck"
+    },
+    {
+      "confidence": 0.86,
+      "id": "r17",
+      "origin": "SOURCE",
+      "relationship_type": "CAUSES",
+      "source_entity_id": "physical-bottleneck-cause",
+      "statement": "A physical bottleneck cause contributes to delay when the recurring bottleneck conditions occur.",
+      "target_entity_id": "traffic-delay"
+    },
+    {
+      "confidence": 0.86,
+      "id": "r18",
+      "origin": "SOURCE",
+      "relationship_type": "CAUSES",
+      "source_entity_id": "traffic-overburden",
+      "statement": "Traffic overburden contributes to delay when the recurring bottleneck conditions occur.",
+      "target_entity_id": "traffic-delay"
+    },
+    {
+      "confidence": 0.94,
+      "id": "r19",
+      "origin": "SOURCE",
+      "relationship_type": "AFFECTS",
+      "source_entity_id": "traffic-propagation",
+      "statement": "Traffic may propagate upstream through bottlenecks in wide-moving jams.",
+      "target_entity_id": "upstream"
+    },
+    {
+      "confidence": 0.88,
+      "id": "r20",
+      "origin": "SOURCE",
+      "relationship_type": "AFFECTS",
+      "source_entity_id": "downstream-traffic-velocity",
+      "statement": "Downstream traffic velocity moves in the description of wide-moving jams.",
+      "target_entity_id": "wide-moving-jam"
+    },
+    {
+      "confidence": 0.78,
+      "id": "r21",
+      "origin": "SOURCE",
+      "relationship_type": "CAUSES",
+      "source_entity_id": "recurring-congestion",
+      "statement": "Recurring causes define recurring congestion as a portion of overall congestion.",
+      "target_entity_id": "congestion"
+    },
+    {
+      "confidence": 0.9,
+      "id": "r22",
+      "origin": "SOURCE",
+      "relationship_type": "EXAMPLE_OF",
+      "source_entity_id": "bottleneck",
+      "statement": "Bottlenecks are identified as a recurring cause of congestion.",
+      "target_entity_id": "recurring-congestion"
+    },
+    {
+      "confidence": 0.9,
+      "id": "r23",
+      "origin": "SOURCE",
+      "relationship_type": "EXAMPLE_OF",
+      "source_entity_id": "poor-signal-timing",
+      "statement": "Poor signal timing is identified as a recurring cause of congestion.",
+      "target_entity_id": "recurring-congestion"
+    }
+  ]
+}

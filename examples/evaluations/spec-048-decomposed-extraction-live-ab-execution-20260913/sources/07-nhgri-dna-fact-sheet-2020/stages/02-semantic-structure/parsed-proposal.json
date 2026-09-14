@@ -1,0 +1,311 @@
+{
+  "missing_symbols": [
+    {
+      "reason": "No supplied entity identifies the quantity or a measurable base-count variable.",
+      "semantic_item": "numeric quantity of bases",
+      "surface_form": "about 3 billion bases"
+    },
+    {
+      "reason": "No supplied entity identifies the quantity or a measurable gene-count variable.",
+      "semantic_item": "numeric quantity of genes",
+      "surface_form": "about 20,000 genes"
+    },
+    {
+      "reason": "No supplied entity identifies chromosome-pair count as a semantic item.",
+      "semantic_item": "numeric chromosome-pair quantity",
+      "surface_form": "23 pairs of chromosomes"
+    }
+  ],
+  "propositions": [
+    {
+      "comparison_operator": null,
+      "confidence": 0.99,
+      "origin": "SOURCE",
+      "proposition_type": "TRANSFER_EVENT",
+      "relationship_type": "TRANSFERS_TO",
+      "role_bindings": [
+        {
+          "entity_id": "deoxyribonucleic-acid",
+          "role": "OBJECT"
+        },
+        {
+          "entity_id": "offspring",
+          "role": "DESTINATION"
+        }
+      ],
+      "statement": "DNA is passed from adult organisms to offspring during reproduction."
+    },
+    {
+      "comparison_operator": null,
+      "confidence": 0.96,
+      "origin": "SOURCE",
+      "proposition_type": "TRANSFER_EVENT",
+      "relationship_type": "TRANSFERS_TO",
+      "role_bindings": [
+        {
+          "entity_id": "mitochondrial-dna",
+          "role": "OBJECT"
+        },
+        {
+          "entity_id": "offspring",
+          "role": "DESTINATION"
+        }
+      ],
+      "statement": "Mitochondrial DNA is inherited by offspring from the female parent."
+    }
+  ],
+  "relationships": [
+    {
+      "confidence": 0.99,
+      "id": "r1",
+      "origin": "SOURCE",
+      "relationship_type": "PART_OF",
+      "source_entity_id": "biological-instructions",
+      "statement": "Biological instructions are contained in DNA.",
+      "target_entity_id": "deoxyribonucleic-acid"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r2",
+      "origin": "SOURCE",
+      "relationship_type": "TRANSFERS_TO",
+      "source_entity_id": "deoxyribonucleic-acid",
+      "statement": "DNA is passed from adult organisms to their offspring during reproduction.",
+      "target_entity_id": "offspring"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r3",
+      "origin": "SOURCE",
+      "relationship_type": "PART_OF",
+      "source_entity_id": "nucleus",
+      "statement": "The nucleus is a special area inside the cell.",
+      "target_entity_id": "cell"
+    },
+    {
+      "confidence": 0.98,
+      "id": "r4",
+      "origin": "SOURCE",
+      "relationship_type": "PART_OF",
+      "source_entity_id": "deoxyribonucleic-acid",
+      "statement": "In eukaryotes, DNA is found inside the nucleus.",
+      "target_entity_id": "nucleus"
+    },
+    {
+      "confidence": 0.9,
+      "id": "r5",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "chromosome",
+      "statement": "A chromosome is the tightly packaged form of a DNA molecule.",
+      "target_entity_id": "deoxyribonucleic-acid"
+    },
+    {
+      "confidence": 0.83,
+      "id": "r6",
+      "origin": "SOURCE",
+      "relationship_type": "PRECEDES",
+      "source_entity_id": "dna-replication",
+      "statement": "DNA unwinding occurs during DNA replication.",
+      "target_entity_id": "dna-unwinding"
+    },
+    {
+      "confidence": 0.94,
+      "id": "r7",
+      "origin": "SOURCE",
+      "relationship_type": "ENABLES",
+      "source_entity_id": "dna-unwinding",
+      "statement": "DNA unwinds so that its instructions can be used to make proteins.",
+      "target_entity_id": "protein-production"
+    },
+    {
+      "confidence": 0.82,
+      "id": "r8",
+      "origin": "SOURCE",
+      "relationship_type": "REQUIRES",
+      "source_entity_id": "cell-division",
+      "statement": "During cell division, DNA is in its compact chromosome form to enable transfer to new cells.",
+      "target_entity_id": "chromosome"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r9",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "nuclear-dna",
+      "statement": "DNA found in the nucleus is called nuclear DNA.",
+      "target_entity_id": "deoxyribonucleic-acid"
+    },
+    {
+      "confidence": 0.97,
+      "id": "r10",
+      "origin": "SOURCE",
+      "relationship_type": "PART_OF",
+      "source_entity_id": "nuclear-dna",
+      "statement": "An organism's complete set of nuclear DNA is called its genome.",
+      "target_entity_id": "genome"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r11",
+      "origin": "SOURCE",
+      "relationship_type": "PART_OF",
+      "source_entity_id": "mitochondrion",
+      "statement": "Mitochondria are cell structures.",
+      "target_entity_id": "cell"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r12",
+      "origin": "SOURCE",
+      "relationship_type": "PART_OF",
+      "source_entity_id": "mitochondrial-dna",
+      "statement": "A small amount of DNA is located in mitochondria.",
+      "target_entity_id": "mitochondrion"
+    },
+    {
+      "confidence": 0.98,
+      "id": "r13",
+      "origin": "SOURCE",
+      "relationship_type": "CAUSES",
+      "source_entity_id": "mitochondrion",
+      "statement": "Mitochondria generate the energy the cell needs to function properly.",
+      "target_entity_id": "cellular-energy"
+    },
+    {
+      "confidence": 0.96,
+      "id": "r14",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "human",
+      "statement": "Humans are identified as complex organisms.",
+      "target_entity_id": "complex-organism"
+    },
+    {
+      "confidence": 0.92,
+      "id": "r15",
+      "origin": "SOURCE",
+      "relationship_type": "TRANSFERS_TO",
+      "source_entity_id": "nuclear-dna",
+      "statement": "In sexual reproduction, organisms inherit nuclear DNA from the male parent and the female parent.",
+      "target_entity_id": "offspring"
+    },
+    {
+      "confidence": 0.96,
+      "id": "r16",
+      "origin": "SOURCE",
+      "relationship_type": "TRANSFERS_TO",
+      "source_entity_id": "mitochondrial-dna",
+      "statement": "Organisms inherit all of their mitochondrial DNA from the female parent.",
+      "target_entity_id": "offspring"
+    },
+    {
+      "confidence": 0.9,
+      "id": "r17",
+      "origin": "SOURCE",
+      "relationship_type": "PART_OF",
+      "source_entity_id": "mitochondrial-dna",
+      "statement": "Egg cells keep their mitochondria during fertilization, which retain mitochondrial DNA.",
+      "target_entity_id": "egg-cell"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r18",
+      "origin": "SOURCE",
+      "relationship_type": "PART_OF",
+      "source_entity_id": "nucleotide",
+      "statement": "DNA is made of nucleotides.",
+      "target_entity_id": "deoxyribonucleic-acid"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r19",
+      "origin": "SOURCE",
+      "relationship_type": "PART_OF",
+      "source_entity_id": "phosphate-group",
+      "statement": "A phosphate group is one of the three parts of a nucleotide.",
+      "target_entity_id": "nucleotide"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r20",
+      "origin": "SOURCE",
+      "relationship_type": "PART_OF",
+      "source_entity_id": "sugar-group",
+      "statement": "A sugar group is one of the three parts of a nucleotide.",
+      "target_entity_id": "nucleotide"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r21",
+      "origin": "SOURCE",
+      "relationship_type": "PART_OF",
+      "source_entity_id": "nitrogen-base",
+      "statement": "A nitrogen base is one of the three parts of a nucleotide.",
+      "target_entity_id": "nucleotide"
+    },
+    {
+      "confidence": 0.98,
+      "id": "r22",
+      "origin": "SOURCE",
+      "relationship_type": "PART_OF",
+      "source_entity_id": "nucleotide",
+      "statement": "Nucleotides are linked into chains to form a DNA strand.",
+      "target_entity_id": "dna-strand"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r23",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "adenine",
+      "statement": "Adenine is one of the four types of nitrogen bases found in nucleotides.",
+      "target_entity_id": "nitrogen-base"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r24",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "thymine",
+      "statement": "Thymine is one of the four types of nitrogen bases found in nucleotides.",
+      "target_entity_id": "nitrogen-base"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r25",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "guanine",
+      "statement": "Guanine is one of the four types of nitrogen bases found in nucleotides.",
+      "target_entity_id": "nitrogen-base"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r26",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "cytosine",
+      "statement": "Cytosine is one of the four types of nitrogen bases found in nucleotides.",
+      "target_entity_id": "nitrogen-base"
+    },
+    {
+      "confidence": 0.98,
+      "id": "r27",
+      "origin": "SOURCE",
+      "relationship_type": "AFFECTS",
+      "source_entity_id": "base-sequence",
+      "statement": "The order, or sequence, of nitrogen bases determines which biological instructions are contained in a DNA strand.",
+      "target_entity_id": "biological-instructions"
+    },
+    {
+      "confidence": 0.95,
+      "id": "r28",
+      "origin": "SOURCE",
+      "relationship_type": "PART_OF",
+      "source_entity_id": "gene",
+      "statement": "Genes are included in the human genome.",
+      "target_entity_id": "genome"
+    }
+  ]
+}

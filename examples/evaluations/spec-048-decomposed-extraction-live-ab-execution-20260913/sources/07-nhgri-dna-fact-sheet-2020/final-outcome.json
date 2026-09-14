@@ -1,0 +1,63 @@
+{
+  "admitted_counts": null,
+  "arm": "CANDIDATE_B",
+  "detected_structure_count": 0,
+  "detected_structure_types": {},
+  "detection_stage": "SEMANTIC_STRUCTURE",
+  "error_type": "ValidationError",
+  "exact_failure": "transfer event requires event, object, destination, TRANSFERS_TO, and no comparison operator",
+  "execution_mode": "FUTURE_LIVE",
+  "failure_origins": [
+    "RELATIONSHIP_SEMANTICS"
+  ],
+  "known_invalid_objects_admitted": 0,
+  "monetary_cost": null,
+  "proposal_counts": {
+    "claims": 0,
+    "entities": 38,
+    "propositions": 0,
+    "relationships": 0
+  },
+  "provider_calls_started": 2,
+  "provider_latency_ms": 38167.67525000614,
+  "representation_strategy_counts": {},
+  "representation_sufficiency_counts": {},
+  "source_id": "nhgri-dna-fact-sheet-2020",
+  "source_sha256": "54e2147221cf186fe1b4f965422c69e815f986a7d009eddae9c01bf32ec25f89",
+  "stage_gates": [
+    {
+      "error_type": null,
+      "exact_failure": null,
+      "output_identity_sha256": "9bf0a88a3528853970d4a830a99e284a1fa0efb03091c0f0e7a7ea2ebde58e9a",
+      "stage": "ENTITY_INVENTORY",
+      "stage_version": "spec-047-entity-inventory-v1",
+      "status": "PASS",
+      "upstream_identity_sha256": "54e2147221cf186fe1b4f965422c69e815f986a7d009eddae9c01bf32ec25f89"
+    },
+    {
+      "error_type": "ValidationError",
+      "exact_failure": "transfer event requires event, object, destination, TRANSFERS_TO, and no comparison operator",
+      "output_identity_sha256": null,
+      "stage": "SEMANTIC_STRUCTURE",
+      "stage_version": "spec-047-semantic-structure-v1",
+      "status": "FAIL_CLOSED",
+      "upstream_identity_sha256": "9bf0a88a3528853970d4a830a99e284a1fa0efb03091c0f0e7a7ea2ebde58e9a"
+    },
+    {
+      "error_type": null,
+      "exact_failure": null,
+      "output_identity_sha256": null,
+      "stage": "CLAIM_EVIDENCE_BINDING",
+      "stage_version": "spec-047-claim-evidence-binding-v1",
+      "status": "NOT_RUN_UPSTREAM_FAILURE",
+      "upstream_identity_sha256": null
+    }
+  ],
+  "status": "FAILED_CLOSED",
+  "sufficient_representation_decision_count": 0,
+  "usage": {
+    "input_tokens": 6045,
+    "output_tokens": 4138,
+    "total_tokens": 10183
+  }
+}

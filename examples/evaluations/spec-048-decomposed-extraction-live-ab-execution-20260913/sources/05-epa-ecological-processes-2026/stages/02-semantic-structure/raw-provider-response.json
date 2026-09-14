@@ -1,0 +1,515 @@
+{
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1789400818.0,
+  "conversation": null,
+  "created_at": 1789400799.0,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "id": "resp_0825dc298f020318016aa816dfad9c87d2ac9e45b4300fdac8",
+  "incomplete_details": null,
+  "instructions": "You perform Stage 2 semantic structure extraction.\n\nThe user supplies an immutable entity inventory and the exact source. Return only\nsource-supported relationships and the two supported typed proposition forms. Every\nendpoint and role binding must use an exact supplied entity ID. Never create, rename,\nalias, or imply a new entity. If an important semantic item requires a missing identity,\nomit it and record a missing_symbols diagnostic. Never substitute a nearby identity.\n\nChoose a relationship only when its meaning and direction fit exactly. Do not force\nassociation, explanation, possession, or historical context into PART_OF or CAUSES.\nUse a typed proposition only for COMPARISON_CONDITION or TRANSFER_EVENT under the supplied\ncontract. Proposition IDs are assigned by trusted code; do not return them.\n\nDo not return claims or evidence in this stage. Do not return entities. Do not summarize,\nrepair the inventory, or emit output outside the requested schema.\n\nACTIVE RELATIONSHIP CONTRACTS (source --TYPE--> target):\nIS_A [STRUCTURAL; direction=instance_to_type]\n  meaning: The source is a kind, category, or subtype of the target.\n  roles: source=instance or subtype; target=broader type or category\n  use: The source can truthfully be described as a target.\n  avoid: Do not use for parts, examples, similarity, or temporary states.\nPART_OF [STRUCTURAL; direction=part_to_whole]\n  meaning: The source is a constituent or component of the target.\n  roles: source=part or component; target=containing whole\n  use: The source exists as a component or subpart of the target.\n  avoid: Never reverse whole and part; do not use for interaction or dependency.\nEXAMPLE_OF [STRUCTURAL; direction=example_to_concept]\n  meaning: The source is an illustrative instance of the target concept.\n  roles: source=example; target=concept illustrated\n  use: The source is presented as an example of the target.\n  avoid: Do not use merely because the source is a subtype; prefer IS_A for classification.\nCAUSES [CAUSAL; direction=cause_to_effect]\n  meaning: The source brings about the target as an effect.\n  roles: source=cause; target=effect\n  use: The source is stated to produce the target outcome.\n  avoid: Do not use for chronology, association, contribution, or unspecified influence.\nAFFECTS [CAUSAL; direction=influence_to_affected]\n  meaning: The source causally influences the target without a specified direction or complete production.\n  roles: source=influence; target=affected entity, process, or variable\n  use: The source changes or influences the target, but the text does not support CAUSES, INCREASES, or DECREASES.\n  avoid: Do not use for mere association, chronology, physical force, or interaction with no stated effect.\nINCREASES [CAUSAL; direction=increaser_to_increased_variable]\n  meaning: The source causally raises the amount, rate, value, probability, or intensity of the target.\n  roles: source=causal factor; target=quantity or variable increased\n  use: The source is explicitly said to make the target greater, faster, more likely, or more intense.\n  avoid: Do not infer from nearby words such as more or faster; never use when the source says slower, lower, or less.\nDECREASES [CAUSAL; direction=decreaser_to_decreased_variable]\n  meaning: The source causally lowers the amount, rate, value, probability, or intensity of the target.\n  roles: source=causal factor; target=quantity or variable decreased\n  use: The source is explicitly said to make the target smaller, slower, less likely, or less intense.\n  avoid: Do not use for absence, prevention without a scalar target, or mere negative association.\nINDUCES [CAUSAL; direction=inducer_to_induced_effect]\n  meaning: The source produces the target through an explicitly described induction mechanism.\n  roles: source=inducing phenomenon; target=induced phenomenon\n  use: The source explicitly says induces or describes a recognized induction mechanism.\n  avoid: Do not use as a metaphor for generic causation, influence, motivation, or historical response.\nENABLES [DEPENDENCY; direction=enabler_to_enabled]\n  meaning: The source makes the target possible without necessarily causing it to occur.\n  roles: source=enabling condition or capability; target=capability or process made possible\n  use: The target could not occur, or is materially made possible, because of the source.\n  avoid: Do not use for delivery, participation, weak assistance, or an effect that actually occurred.\nREQUIRES [DEPENDENCY; direction=dependent_to_requirement]\n  meaning: The source depends on the target as a prerequisite or necessary resource.\n  roles: source=dependent; target=prerequisite or required resource\n  use: The source cannot operate or occur as described without the target.\n  avoid: Do not reverse prerequisite and dependent; do not use for optional support.\nCONSTRAINS [DEPENDENCY; direction=constraint_to_constrained]\n  meaning: The source limits the possible behavior, values, or choices of the target.\n  roles: source=constraint; target=constrained entity, process, or variable\n  use: The source imposes a limit, rule, boundary, or restriction on the target.\n  avoid: Do not use to mean unchanged, unrelated, merely different, or causally reduced.\nPRECEDES [TEMPORAL; direction=earlier_to_later]\n  meaning: The source occurs before the target in time or an explicit process sequence.\n  roles: source=earlier event or process; target=later event or process\n  use: The source explicitly occurs before, previously, first, then, or after relative to the target.\n  avoid: Do not infer causality from order; do not reverse earlier and later.\nINTERACTS_WITH [INTERACTION; symmetric]\n  meaning: The source and target directly interact, with no more precise directional semantics supported.\n  roles: source=interaction participant; target=interaction participant\n  use: The text supports direct mutual interaction but not a more precise active predicate.\n  avoid: Do not use for distant association, one-way effect, dependency, or chronology.\nBINDS_TO [INTERACTION; symmetric]\n  meaning: The source physically or chemically binds or attaches to the target.\n  roles: source=binding participant; target=binding participant\n  use: The source explicitly binds or attaches to the target.\n  avoid: Do not use for metaphorical commitment, dependency, influence, or literal physical force.\nTRANSFERS_TO [INTERACTION; direction=transferred_item_to_destination]\n  meaning: The source item, material, or information moves to the target destination or recipient.\n  roles: source=item, material, or information transferred; target=destination or recipient\n  use: The source is explicitly carried, delivered, moved, or transferred to the target.\n  avoid: Do not make the carrier the source unless the carrier itself moves to the destination; do not use for enabling.\nEXERTS_FORCE_ON [INTERACTION; direction=force_exerter_to_physical_target]\n  meaning: The source exerts a literal physical force on the target.\n  roles: source=physical force source; target=physical object receiving force\n  use: A literal physical force is explicitly exerted on the target.\n  avoid: Never use metaphorically for influence, contribution, binding, pressure, or causation.\nTRANSFORMS_INTO [TRANSFORMATION; direction=prior_state_to_resulting_state]\n  meaning: The source itself changes state or identity and becomes the target.\n  roles: source=entity or state before transformation; target=same entity or resulting material after transformation\n  use: The source itself becomes the target through a transformation.\n  avoid: Do not use when an actor causes, creates, attempts, participates in, or responds to the target.\nCREATES [TRANSFORMATION; direction=creator_to_created]\n  meaning: The source produces or brings a distinct target into existence.\n  roles: source=producer or generative process; target=newly produced entity or result\n  use: The source produces a target that is distinct from the source.\n  avoid: Do not use when the source itself becomes the target; use TRANSFORMS_INTO instead.\nMEASURED_BY [DESCRIPTIVE; direction=measurand_to_measure]\n  meaning: The source property or variable is quantified or assessed by the target metric, observation, or procedure.\n  roles: source=property or variable measured; target=metric, observation, or measurement procedure\n  use: The target is explicitly how the source is measured or quantified.\n  avoid: Do not point to something that merely responds to, correlates with, or exemplifies the source.\nCONTRADICTS [DESCRIPTIVE; symmetric]\n  meaning: The source and target assert mutually incompatible propositions.\n  roles: source=proposition or claim; target=incompatible proposition or claim\n  use: Both sides are explicit propositions that cannot simultaneously hold as stated.\n  avoid: Do not use for difference, disagreement without incompatibility, trade-off, or negative causality.",
+  "max_output_tokens": null,
+  "max_tool_calls": null,
+  "metadata": {},
+  "model": "gpt-5.6-luna",
+  "moderation": null,
+  "object": "response",
+  "output": [
+    {
+      "content": [],
+      "encrypted_content": "gAAAAABqqBbyV_2HHhDoHaPXOO_fcub-UNPpcAbXRyULi3Zpt4kZ12obPaMqd-2L32Ic75ye6Gf_5t4xDminDBbeIvu-1Luf9blYc2Fh7EV1XrOgQe_w_vTtZUXkrTxyO0uO5InAMIuxDJPR59bH_BNv7GkER6ppL2wIYVS8iNcZGStFTB6j45cS9ZZ2QVUG1-vMpPRFFZfHPbGogsQWCu23UCpH9vEBvHvN0iGUiPoJxJxGEZMVOhQmeY6VFWfZBEPsykZLOllnZc4cu8lpSG5qZt94AK61zkxUwulaOJZo1Bh3PRXTvXtiT07AQQRHqN7k2N8abyGJKOY4FmMGR9UesnYHZsRA2kR7Typw6kkMghJD1WfCVuyqWKQ1al0y-fNKb9sdFFU4oNa7-8ZOULqh5iY689ZprQGa1q3Mb3EfJs3bcVGRb3JrEEF7Yh4aoVrzGBS9EgTV2Xe3Qv95ZZk5aLvAv-H1YxOhUWuzEdq7RMF-O0vGBqHQLrhxhS_rEtHgVmJCDJRAMdvNKV-niiUWAULmuzobu9d-yrWuOVLNovGACP_BOtikO61-hXtj0TKMmxkjt_SKi9ldB4rS6p_jYrl2R3KMs0WlINcyUgk9Ij0SuKhGh_jWk3GSLP6V1jWqsaKJkP1_phSOd8g_zJa6qhJFFg11iiZ85HJqU2R97W6UUYGzlGW9-ugkREyaW8f3GG5VAk5IGPnBVEzk0Ga8NsvV8ajMxy0JvbvlMI-VCr18yJg-dsganTXp1O4zyI3quTdmm8W8smp7Nj8X-TLp02Cxbf5hbV5fObCQ_1wDSCFv9fmOTGZ-ih6oFNAveBTrWBdLaItlEu6I6EYvGgdp3tyf_lixZS5S3WztsvaY8fMzUqNcxOsW7OlTUxX2INaHBrhrwlGfm9hp9t8sZSjFaOHNzQr-mQ7Bn8QGOOZk7HoqhUYGTBV-KpUbBUbnel4Jq-rHpOo-nUZa-A-Bqn5aBL4gwgBFRdmYZ2VqzmD82O1EDnmeMPbOlV9mdZX99MSShhdtuPU0iP2R1-GYOcEy8Lq7hQvT-iyzcVRpBcaXQ2e4jvZRYLvvQ1tZT8c1VI3nShVXjSOlWzhTQgO3cJPO80m2CfBbKnT-ee4C-jW5DWnybg7fGxsOfv-LHQkXCmcDBGoClTiBICMg-0AewjJfPJik6bx-8ZE0grAzmgF3Vuz85GbvK_R__Z76JJvQZpRXQdY2Fo8ooswpLz26sazAKkZ2qW1nAVxZuo99nPQ2j7DYGBDfQr8MGorzwQS7_Bux5RM2_HZrhj-sG5QXgDModFKtgmZu2n7Ne02gkh9Wgg_M06Lq9fPRJ_tNvJOdAbaax0JT1GlMEYYjrZB8JjkJi81Pr4PStMCfHQ1vFL1xAddTQXntrK_RqQvvZisYH_ABx6sY22lxaS96eMUdb6nD7pVYi2RUTBuOlIbPADhHtlj6CC9d9TEg0nfvO6hGcpVLlwBgl3OiuP0GMnYFs53I8KY0eRaDdGHbVv1kvznilXZVIbUqvOAYR03u2LKNtjU9Bno9vEmMe3e7Ut6R1IJZj0YsMDCYS7jsrwHj3WxUaYTZQsOsepdrS3zTZhLkUGpRUCkjCntGHVveYzwyFk1nlkbU13lRBFds5pMR6iS5YeSF4kg0hSTAjVe2Aa9aw339D4Jq48jWA0S4Ld4gfv1AHMfz2dq-T8sw2jJUX7N3kSiAqd63E_gTx4jACwizlnXG1J9VYNsS-4ppCWxbedfW9yEDCqQ3zN4Pdq1AlZphIMMPzWvoHHKR6POzIrlCz2CBJmlXANRx3depf_-AaScqIpB3TdZeLFSfYo78TRAS02YN76BAKaEQqgRDgFl-AM9OjouHkdze6AfvpB2RPA_5gfsJYWTtYsRvROMYwVBBSxqsX53ke4hpXdXd0UhyKdW8CiZxAYYNX5M7u23B6eaL9hpm3tZZCChi3Xm7Z1T9rvJ7aW-IrnEX0Meq-oiaIyvlQzwrhta5JJqTNZh21yx_OpsR00puyCjP9OGyyTHVuGxXW4SliVJhj0pailWqCJkcY4Ru0aYb1VsYZwIA9KxwY0DOHooJpDmxfrjEdG7zwgd-TVKtrfPIkpgoM2vrUlU46xdSa0G1qX3cr01NBJCFovOKhwz-3eAgzflXx-hg2gu1YdkVJhe5pfJ532PAy18yEncpKsMOuF9MZr--idbMF9i2qLjOwj9H3VrbTpOqGuTamVRWw4lN6FJEi_JRmOLuPeDZXyJpNqPvWOdWmTIZIGKOHuGSnb4hQktcBhEjBbcOe5IbUjTAfHZ3bjiHKUi2R7V09SJh0U2u486Ks4Mo1C57cnWgpjPVNfN9A5zbYm8T-ntuZHO7LaBt4vUatJFzrWFUpzCKYbNFlfSU5J-g1YOx0q-ZGXwqUCjoxOWycqYj3tv40Q2ntZbOtOq62AcgtaTJws_ESNIc5aC6KlvZNHnV4jOGJjQOvw72Y2QlaigzdvepuLOZ1npcCFjbkGp5qpsE-Ww1uKzRzWmO6s8HSYaH4cMm6ltVbpQpBmiOZ81mnSv6vz7kdCcUSxk91Nt9Vu404qyjhF-KZdUmYMuHZw3iUDIxTWNrbMpybUVKIuIdPyB4feuOdeEdlciVmXaivPSfGqbnUmneEXaZgfr5OUwuA_yDJj4h3YoJIHLE9GNgNJLBfnkMAAUErpxcbrTo93FlaE8h6gSTZ-4NrfcGDabjj4Ews6xslslLL1e7eW-PumjOgTOdcXTX_Vekn14A8NC8Ogczhq0-QiI0po2cP_ZAR4NI_K9MZQN1M20yNYz9Qo6Bgb4dW_PN6jdQ26fL8WRa2HBtdg3jrgarY1WqPUbHEVE-y9RdeaQtzmG1rhG4x8LCxK8msVBxf_JCeletL1czYIAidi67Cj_flNijYHH_hXTWErG6Lo5CrmKZ3nb-m9qHn7Z29g4etm9BE1KOEejytKCjHzt6CeWnLxbkwu6ceIws5CvK5bP140B2kax5xk2eokpsx6BJjLNTJ0a0CK09LoUpf1wyhucZjnzG6OIkMvDKDztm1nzFqK-bcQ5WAY4UWRkNcEh_LqQUSl9xcm79n2xkumyvrUUb1mFwJDqoHNMsOnR7Roq7jXMPiFoDLAscl-6D0Bd2hLawxopEX6dJzLA2ZDh0-2Nzy00-rKC0YV5u3j86moJJOuPGERJkEt7Kf5UrSCGeWmBN4flORUnIQ3hXturOtkvNdiyOdsrTC2GZBeON3X7hSnVCaGHxLyKlsftjQ15PFLmyNJesdVUa-2Wz0uL5d-LVyUlIulw2cV9kcpG8YEduw0ZaWHTYMAO4AqsNRHhYqZyGs2V-v-fhw07dNvA5_4leAQLlZNRnTJLQhV5Cag1FrCH3OM4Iq1F_5ATIr7WZ8I0WMUxXJWRU5DjiB85EY-K3VI1fV8eGVj8mUh2dHbuT5De1-EKoeLZGwAhLaMb6NSRQHJeu6Q66qtSMDA-zcREzzueVzLoYf2QOI0kMZ3iJ7773FzBgYm0G5L3wb4Ic6SptCbPPaNwkeTyHLa00W4iTnnk29uEW0n3Sk10Yl71pvKow0-8weCeJ7At1eQJporMzSATfoaL3H_ch11tVFhqZnQKxSoKeakwC1uqSOlDOA2Wh9EYKyoSSau1xe2flVs6EbldJivZBm3UiA4tAOKRQCJFswkXufUx7EDzkZIkRfoleEKkehfcQRF_wiVJe_lKHem_XuS9S2R6ISc5xnsP3hjboN1pcztrK69ECwlsHcoVyFS9ohdqxdqbOxIngekKjpCljj0iEPIR5dazTqb_vT0kmsL1IaSGKY6cK7m5whBz9KG7IROJVdj2yDA6DqDfAXw691mMo1MxjyR9KjKzUEALYB-ksJ34sLe4XNsOevxLHRDof2LoSMxpuNgXifr_U9N222pjRAb4H4MET1fOTB-G6fbkP8FzIcj1ljnSM5TQkKqSSnMfhdjLO8YXjGD6aiXLgeF99UYo8Z-PwYi3T_9bLx-sWt2tSo8URMJc3uJMNmt73xgCsVuC_rixGsoFekA-S37SYpL3jL1q07FZJUuUz2RBoJe3vtPCOo5-U_KM3GZZ1WkWjoBe318E0k0UsKTpS_GX5moSnMHfUFVHtorOPd9RU-n5su_CHJCxKrqbK9JDUGGZswLaDjGE6Rlue-mHR05GxXDP6g3bQimNkTBPWZkgwtO_cgUOMmJq7Vf8WW9qAayr-X0AwKR4EjkqS8QT9i0X2KfVIZ4TZT95QNZZPa15XGOR3wxX8kBJwfIIqmVGHl54WM5VbctA97OPymAlDXZF37Rij5nu75r1tqOzYQhdmhqTbaksHSKrEzWgPX5BLKN2TMFDk8Cs5wygvdBhQbsK6cpyP5I4SJq0ZDxgm1tnxVA3eUM6SzmVpFbjMMsYISrOKhrUG20Wr4-6OInj0krwYv2YbbBEyir54uuPzMlPFjJbzxFNptoL7ez0QCvRHZSfBHFHSdhFeaC64FMd2LLH-VSmJV_Eya_q0PISPUq0en1OZE7S6YPkF_UTJ6p8PVvBwIxpj7UEV0YVsJr-K5rN4e3v-An8S8bHD60Ft_uXeaUOPANDGBY-XjPS6LqQUG8Vxzlj4WBkDgptsPbnl7ELQLs0bNs_NZFLJ1mDhQXfBJTNa94S5RVctyROWVrdbVyXk8bg0IgyFWkLYPRhAfGtC3khUi_jKjWJ1HSx501HlFUMVwisTqxi3NUWN0VoP8hRQGGYCvJeyPrpRT-gbb9-DVf6lncXaatZPC1Dl3tKB0Q8MQA30HYwyhlKJGGJ69kFfSFU0xYKsbByJfE36_0D2xqVqWY2VTWR7gv_HWQ2a917LGAje-x8m8PiE70F2DLOhnGF64B8QLp6yvWwqe6XIOLAqlX1UFV1vPH_4IVu76wdOIh6BNn9Was9wvCVOkJ7Y_21xWCqSPLJ-XlVOXdfGxMrT5sVC9rYssQS7hMzRBkZnmQ988F8iqxbgOPVVkGJU4vE1jB7G5x1uIQ2CHHOsYAR9aQGYnO7Z31PC3-JW4hNgCH7Y7SujN7tBPZkrM5IckdGm-TyMyJSHuAeW97UMaAWHyd7FhutYcsKZ6_zqJ6WYP2appsvIUzE2iNm1bogNo5bkMCNw39NKAXQJAK0vPn5aP51RP4O2nC4rbxNxWrG3qFUnor6Mm602qXRIceEwBt0yKjCmp5MMF8q9QOMj0F2n",
+      "id": "rs_0825dc298f020318016aa816e130a087d2b0dbb52e5b43fcff",
+      "status": null,
+      "summary": [],
+      "type": "reasoning"
+    },
+    {
+      "content": [],
+      "encrypted_content": "gAAAAABqqBbyiDgkowfODaXVMwRnp9hLmH2LBHiXNjygosSpvq9U9fMxFVu_TQAyDnTNXD2nP9DSJpUjdpqMo84R95ec1vBjW0eSIS-iov0yPaZr_8RSIFqWBphKGBuYa5-YW-FrXWJGome7D1fk6Jqz2PDwwv9Uw8pOMuq0wG7QuO97J0InHoedI_L1RSuIxab0n_rE65Oq7ZRhugW95EMvrfCBS2oSt9mjOLWn5sa6KzIz3Xe7oMPawOcu_-qGkOPuUqI98KVMvUdTIymt7w3EHiDVLG5mMJ2KWxaivAj9h8aZ_Em7tHxmomhFJeJ0QnIRfOoMvvizllTyjz5SJSOKrrC7dUd8cSTR7CJ4MIA194Mn_5oDE1RvlPi4jZDvCLeF_2DnLkUXc23UvZ3iW7xmIwKgWhfvNKQpyFfORr9kyhGoblLIkfKRXp1Dy5SF-uxELI8oUTe-V08ChrT_GzYbUmg2oZAXAOWlMheEWJWORRo0va_oipmQVVfhnIHgK0DvLzr-r1noBzUMjQqmEwDpebRLZYrjSLVS_VafCTXCYEXvB0bs2efudzeE4wKFia2Mii9Df3qEemx4sTxERtwoHlRUn0fzi3oTgO2PK8DUexmxSgtqie96ZrFpvgxPl5JGp1fbeD1puY53bsT-zfGq1Nbla-6gTSWVz7UgS_lAXqbv2PZ3mrsDmoOdWHwnVHAeC8ZrQ_1aOJAISZo6JxSDE2DIS9RWM4etDIG_zRZL326eSiCnpNGVU14kwvIGsFhzuKd1Zem8h6MZee44K3gE6wgK9L-Loib9RC0bBt2VrIXHKJhvLnR35LfGAiOWF-jPpPdjJrxYe4eQSGVkGN6J6hau_xiGT3APhXg8RAmgARGM0AvlD79lZ3_MP9Y-zVaMOMt80ut4DMiCN-SkZuUqdivyDwiU0zDlQF-VnH5SPI7cyu106bVD6_UD4n0OoXCXXUS7jaBJuz-OiSublYiaqlrq9EQ60aKwJ6HWIKopJNNTlcnDE5HaZTZUZhVocFbj1zzZvHMi6eb3vUjSRmPQGYWo12uGBVcjzeYeTY0H7RIK5DCP0HAfGcOq64t8haeLctpbDUt19-B5BkSJTeDUoUSKJC1m3JSPPN4n1H2bpTcYfPvoLUors6CGQhcPE_Uq3nOk2CCPD8Sy9mQLB8XIV56uXeKlGhWOXZ44_Zaz5eQDJXNZZTWMvHpox4qG2wr_Fz1HnxDbyoUHrKI_Ykyz864HGQN1mDW-19r5mF9UroBBe9TZneOWXhVjlge87CUE_Ti8muSgmEaJSdI3FTvxxP1kS5gnbsOWGqjgsKzpcInfB33L-72Q6MtEHo6hFYENIL3-_58U51RsjzLNFklChDp8JSSjLfE6g6OqEtFA7UlbinKn_eVWUkN4LWbDlHdhpb6b_U9usSjqpc4nIiUtB_iWDrLuZES46B6S96rdtF0EdeFNeQHkJkigKKA_WOthlfsQpcyTMHsvY3nu972k28FKDcE1T90ZA3I0Xt4_pg3Dh5rFpXXx5deW5M90ZMU1eK1cRFgG",
+      "id": "rs_0825dc298f020318016aa816e658d087d29ee6bae0957bbc95",
+      "status": null,
+      "summary": [],
+      "type": "reasoning"
+    },
+    {
+      "content": [
+        {
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relationships\":[{\"id\":\"r1\",\"source_entity_id\":\"ecological-systems\",\"relationship_type\":\"REQUIRES\",\"target_entity_id\":\"ecological-processes\",\"statement\":\"Ecological systems are sustained by biological, physical, and chemical ecological processes.\",\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"r2\",\"source_entity_id\":\"primary-production\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"ecological-processes\",\"statement\":\"Primary production is an ecological process.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r3\",\"source_entity_id\":\"carbon-cycling\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"ecological-processes\",\"statement\":\"Carbon cycling is an ecological process.\",\"confidence\":0.94,\"origin\":\"INFERRED\"},{\"id\":\"r4\",\"source_entity_id\":\"nutrient-cycling\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"ecological-processes\",\"statement\":\"Nutrient cycling is an ecological process.\",\"confidence\":0.94,\"origin\":\"INFERRED\"},{\"id\":\"r5\",\"source_entity_id\":\"hydrogen-oxygen-cycling\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"ecological-processes\",\"statement\":\"Hydrogen/oxygen cycling is an ecological process.\",\"confidence\":0.94,\"origin\":\"INFERRED\"},{\"id\":\"r6\",\"source_entity_id\":\"photosynthesis\",\"relationship_type\":\"ENABLES\",\"target_entity_id\":\"primary-production\",\"statement\":\"Photosynthesis enables primary production by converting the sun's energy into organic matter.\",\"confidence\":0.9,\"origin\":\"SOURCE\"},{\"id\":\"r7\",\"source_entity_id\":\"primary-production\",\"relationship_type\":\"CREATES\",\"target_entity_id\":\"organic-matter\",\"statement\":\"Primary production produces organic matter.\",\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"r8\",\"source_entity_id\":\"ecological-processes\",\"relationship_type\":\"CREATES\",\"target_entity_id\":\"organic-matter\",\"statement\":\"Ecological processes collectively produce organic matter.\",\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"r9\",\"source_entity_id\":\"ecological-processes\",\"relationship_type\":\"CAUSES\",\"target_entity_id\":\"soil-formation\",\"statement\":\"Ecological processes drive soil formation.\",\"confidence\":0.97,\"origin\":\"SOURCE\"},{\"id\":\"r10\",\"source_entity_id\":\"ecological-processes\",\"relationship_type\":\"ENABLES\",\"target_entity_id\":\"reproduction\",\"statement\":\"Ecological processes enable organisms to reproduce.\",\"confidence\":0.97,\"origin\":\"SOURCE\"},{\"id\":\"r11\",\"source_entity_id\":\"primary-production\",\"relationship_type\":\"AFFECTS\",\"target_entity_id\":\"biodiversity\",\"statement\":\"Primary production influences biodiversity.\",\"confidence\":0.9,\"origin\":\"SOURCE\"},{\"id\":\"r12\",\"source_entity_id\":\"ecological-processes\",\"relationship_type\":\"AFFECTS\",\"target_entity_id\":\"biodiversity\",\"statement\":\"Ecological processes influence biodiversity.\",\"confidence\":0.96,\"origin\":\"SOURCE\"},{\"id\":\"r13\",\"source_entity_id\":\"ecological-processes\",\"relationship_type\":\"AFFECTS\",\"target_entity_id\":\"ecosystem-conditions\",\"statement\":\"Ecological processes are inferred as affecting ecosystem conditions through indicators.\",\"confidence\":0.74,\"origin\":\"INFERRED\"},{\"id\":\"r14\",\"source_entity_id\":\"natural-forces\",\"relationship_type\":\"AFFECTS\",\"target_entity_id\":\"ecological-processes\",\"statement\":\"Natural forces affect ecological processes.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r15\",\"source_entity_id\":\"human-activities\",\"relationship_type\":\"AFFECTS\",\"target_entity_id\":\"ecological-processes\",\"statement\":\"Human activities impact ecological processes.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r16\",\"source_entity_id\":\"seasonal-changes-in-temperature\",\"relationship_type\":\"AFFECTS\",\"target_entity_id\":\"ecological-processes\",\"statement\":\"Seasonal changes in temperature affect ecological processes.\",\"confidence\":0.97,\"origin\":\"SOURCE\"},{\"id\":\"r17\",\"source_entity_id\":\"precipitation\",\"relationship_type\":\"AFFECTS\",\"target_entity_id\":\"ecological-processes\",\"statement\":\"Seasonal precipitation affects ecological processes.\",\"confidence\":0.92,\"origin\":\"SOURCE\"},{\"id\":\"r18\",\"source_entity_id\":\"stream-flows\",\"relationship_type\":\"AFFECTS\",\"target_entity_id\":\"ecological-processes\",\"statement\":\"Seasonal stream flows affect ecological processes.\",\"confidence\":0.92,\"origin\":\"SOURCE\"},{\"id\":\"r19\",\"source_entity_id\":\"climate-change\",\"relationship_type\":\"AFFECTS\",\"target_entity_id\":\"ecological-processes\",\"statement\":\"Climate change affects ecological processes.\",\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"r20\",\"source_entity_id\":\"pesticide-use\",\"relationship_type\":\"AFFECTS\",\"target_entity_id\":\"ecological-processes\",\"statement\":\"Pesticide use impacts ecological processes.\",\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"r21\",\"source_entity_id\":\"chemical-use\",\"relationship_type\":\"AFFECTS\",\"target_entity_id\":\"ecological-processes\",\"statement\":\"Chemical use impacts ecological processes.\",\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"r22\",\"source_entity_id\":\"waste-generation\",\"relationship_type\":\"AFFECTS\",\"target_entity_id\":\"ecological-processes\",\"statement\":\"Waste generation impacts ecological processes.\",\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"r23\",\"source_entity_id\":\"land-use-changes\",\"relationship_type\":\"AFFECTS\",\"target_entity_id\":\"ecological-processes\",\"statement\":\"Land use changes impact ecological processes.\",\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"r24\",\"source_entity_id\":\"water-quality-management\",\"relationship_type\":\"AFFECTS\",\"target_entity_id\":\"ecological-processes\",\"statement\":\"Water quality management impacts ecological processes.\",\"confidence\":0.95,\"origin\":\"SOURCE\"},{\"id\":\"r25\",\"source_entity_id\":\"ecological-processes\",\"relationship_type\":\"MEASURED_BY\",\"target_entity_id\":\"rate-of-change\",\"statement\":\"Ecological processes are represented as rates of change.\",\"confidence\":0.96,\"origin\":\"SOURCE\"},{\"id\":\"r26\",\"source_entity_id\":\"indicator\",\"relationship_type\":\"MEASURED_BY\",\"target_entity_id\":\"remote-sensing-imagery\",\"statement\":\"Remote sensing imagery is used to obtain snapshots of indicators of ecosystem conditions over time.\",\"confidence\":0.88,\"origin\":\"SOURCE\"},{\"id\":\"r27\",\"source_entity_id\":\"terrestrial-net-primary-production\",\"relationship_type\":\"MEASURED_BY\",\"target_entity_id\":\"remote-sensing-imagery\",\"statement\":\"Terrestrial net primary production is inferred using remote sensing imagery.\",\"confidence\":0.97,\"origin\":\"SOURCE\"},{\"id\":\"r28\",\"source_entity_id\":\"normalized-difference-vegetation-index\",\"relationship_type\":\"MEASURED_BY\",\"target_entity_id\":\"remote-sensing-imagery\",\"statement\":\"The Normalized Difference Vegetation Index has been estimated using remote sensing.\",\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"r29\",\"source_entity_id\":\"net-primary-production\",\"relationship_type\":\"MEASURED_BY\",\"target_entity_id\":\"indicator\",\"statement\":\"Repeated measures over a season might provide an indicator of net primary production.\",\"confidence\":0.84,\"origin\":\"SOURCE\"},{\"id\":\"r30\",\"source_entity_id\":\"ecological-processes\",\"relationship_type\":\"AFFECTS\",\"target_entity_id\":\"air-quality\",\"statement\":\"Ecological processes provide regulation of air quality through ecological services.\",\"confidence\":0.86,\"origin\":\"SOURCE\"},{\"id\":\"r31\",\"source_entity_id\":\"ecological-processes\",\"relationship_type\":\"AFFECTS\",\"target_entity_id\":\"water-quality\",\"statement\":\"Ecological processes provide regulation of water quality through ecological services.\",\"confidence\":0.86,\"origin\":\"SOURCE\"},{\"id\":\"r32\",\"source_entity_id\":\"respiration\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"ecological-processes\",\"statement\":\"Respiration is an ecological process.\",\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"r33\",\"source_entity_id\":\"decomposition\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"ecological-processes\",\"statement\":\"Decomposition is an ecological process.\",\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"r34\",\"source_entity_id\":\"reproduction\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"ecological-processes\",\"statement\":\"Reproduction is an ecological process represented as a rate of change.\",\"confidence\":0.94,\"origin\":\"SOURCE\"},{\"id\":\"r35\",\"source_entity_id\":\"energy-flow-through-food-webs\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"ecological-processes\",\"statement\":\"Energy flow through food webs is an ecological process.\",\"confidence\":0.96,\"origin\":\"SOURCE\"},{\"id\":\"r36\",\"source_entity_id\":\"carbon-flow-through-food-webs\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"ecological-processes\",\"statement\":\"Carbon flow through food webs is an ecological process.\",\"confidence\":0.96,\"origin\":\"SOURCE\"},{\"id\":\"r37\",\"source_entity_id\":\"nutrient-flow-through-food-webs\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"ecological-processes\",\"statement\":\"Nutrient flow through food webs is an ecological process.\",\"confidence\":0.96,\"origin\":\"SOURCE\"},{\"id\":\"r38\",\"source_entity_id\":\"ecological-processes\",\"relationship_type\":\"AFFECTS\",\"target_entity_id\":\"spatial-scales\",\"statement\":\"Natural forces and human activities affect ecological processes over different spatial scales.\",\"confidence\":0.82,\"origin\":\"SOURCE\"},{\"id\":\"r39\",\"source_entity_id\":\"ecological-processes\",\"relationship_type\":\"AFFECTS\",\"target_entity_id\":\"temporal-scales\",\"statement\":\"Natural forces and human activities affect ecological processes over different temporal scales.\",\"confidence\":0.82,\"origin\":\"SOURCE\"}],\"propositions\":[{\"proposition_type\":\"COMPARISON_CONDITION\",\"statement\":\"The difficulty of measuring ecological processes is greater at the national scale than at the local scale.\",\"role_bindings\":[{\"role\":\"LEFT_OPERAND\",\"entity_id\":\"national-scale\"},{\"role\":\"RIGHT_OPERAND\",\"entity_id\":\"local-scale\"}],\"relationship_type\":\"CONTRADICTS\",\"comparison_operator\":\"GREATER_THAN\",\"confidence\":0.96,\"origin\":\"SOURCE\"}],\"missing_symbols\":[]}",
+          "type": "output_text"
+        }
+      ],
+      "id": "msg_0825dc298f020318016aa816e6f7f887d28c9587f77d302e55",
+      "phase": "final_answer",
+      "role": "assistant",
+      "status": "completed",
+      "type": "message"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt": null,
+  "prompt_cache_key": null,
+  "prompt_cache_options": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "low",
+    "generate_summary": null,
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "status": "completed",
+  "store": false,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "description": null,
+      "name": "candidate_b_semantic_structure",
+      "schema_": {
+        "additionalProperties": false,
+        "properties": {
+          "missing_symbols": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "reason": {
+                  "type": "string"
+                },
+                "semantic_item": {
+                  "type": "string"
+                },
+                "surface_form": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "surface_form",
+                "semantic_item",
+                "reason"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "propositions": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "comparison_operator": {
+                  "anyOf": [
+                    {
+                      "enum": [
+                        "GREATER_THAN"
+                      ],
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "confidence": {
+                  "maximum": 1,
+                  "minimum": 0,
+                  "type": "number"
+                },
+                "origin": {
+                  "enum": [
+                    "SOURCE",
+                    "INFERRED"
+                  ],
+                  "type": "string"
+                },
+                "proposition_type": {
+                  "enum": [
+                    "COMPARISON_CONDITION",
+                    "TRANSFER_EVENT"
+                  ],
+                  "type": "string"
+                },
+                "relationship_type": {
+                  "enum": [
+                    "IS_A",
+                    "PART_OF",
+                    "CAUSES",
+                    "INCREASES",
+                    "DECREASES",
+                    "ENABLES",
+                    "REQUIRES",
+                    "CONSTRAINS",
+                    "PRECEDES",
+                    "TRANSFORMS_INTO",
+                    "INTERACTS_WITH",
+                    "MEASURED_BY",
+                    "EXAMPLE_OF",
+                    "CONTRADICTS",
+                    "CREATES",
+                    "INDUCES",
+                    "EXERTS_FORCE_ON",
+                    "AFFECTS",
+                    "BINDS_TO",
+                    "TRANSFERS_TO"
+                  ],
+                  "type": "string"
+                },
+                "role_bindings": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "entity_id": {
+                        "enum": [
+                          "air",
+                          "air-quality",
+                          "biodiversity",
+                          "biological-organisms",
+                          "carbon-cycling",
+                          "carbon-flow-through-food-webs",
+                          "carbon-storage-in-forests",
+                          "carbon-transfer",
+                          "chemical-use",
+                          "climate-change",
+                          "decomposition",
+                          "ecological-processes",
+                          "ecological-services",
+                          "ecological-systems",
+                          "ecosystem-conditions",
+                          "energy-flow-through-food-webs",
+                          "fiber",
+                          "food",
+                          "food-webs",
+                          "human-activities",
+                          "hydrogen",
+                          "hydrogen-oxygen-cycling",
+                          "indicator",
+                          "land",
+                          "land-use-changes",
+                          "local-scale",
+                          "national-scale",
+                          "natural-forces",
+                          "natural-resources",
+                          "net-primary-production",
+                          "nitrogen",
+                          "normalized-difference-vegetation-index",
+                          "nutrient-cycling",
+                          "nutrient-flow-through-food-webs",
+                          "nutrients",
+                          "organic-matter",
+                          "oxygen",
+                          "pesticide-use",
+                          "phosphorus",
+                          "photosynthesis",
+                          "physical-environment",
+                          "precipitation",
+                          "primary-production",
+                          "rate-of-change",
+                          "remote-sensing-imagery",
+                          "reproduction",
+                          "respiration",
+                          "scientific-and-research-challenge",
+                          "seasonal-changes-in-temperature",
+                          "soil-formation",
+                          "spatial-scales",
+                          "stream-flows",
+                          "sun-s-energy",
+                          "temperature",
+                          "temporal-scales",
+                          "terrestrial-net-primary-production",
+                          "timber",
+                          "waste-generation",
+                          "water",
+                          "water-quality",
+                          "water-quality-management",
+                          "watershed-scales"
+                        ],
+                        "type": "string"
+                      },
+                      "role": {
+                        "enum": [
+                          "LEFT_OPERAND",
+                          "RIGHT_OPERAND",
+                          "OUTCOME",
+                          "EVENT",
+                          "OBJECT",
+                          "DESTINATION"
+                        ],
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "role",
+                      "entity_id"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                "statement": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "proposition_type",
+                "statement",
+                "role_bindings",
+                "relationship_type",
+                "comparison_operator",
+                "confidence",
+                "origin"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "relationships": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "confidence": {
+                  "maximum": 1,
+                  "minimum": 0,
+                  "type": "number"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "origin": {
+                  "enum": [
+                    "SOURCE",
+                    "INFERRED"
+                  ],
+                  "type": "string"
+                },
+                "relationship_type": {
+                  "enum": [
+                    "IS_A",
+                    "PART_OF",
+                    "CAUSES",
+                    "INCREASES",
+                    "DECREASES",
+                    "ENABLES",
+                    "REQUIRES",
+                    "CONSTRAINS",
+                    "PRECEDES",
+                    "TRANSFORMS_INTO",
+                    "INTERACTS_WITH",
+                    "MEASURED_BY",
+                    "EXAMPLE_OF",
+                    "CONTRADICTS",
+                    "CREATES",
+                    "INDUCES",
+                    "EXERTS_FORCE_ON",
+                    "AFFECTS",
+                    "BINDS_TO",
+                    "TRANSFERS_TO"
+                  ],
+                  "type": "string"
+                },
+                "source_entity_id": {
+                  "enum": [
+                    "air",
+                    "air-quality",
+                    "biodiversity",
+                    "biological-organisms",
+                    "carbon-cycling",
+                    "carbon-flow-through-food-webs",
+                    "carbon-storage-in-forests",
+                    "carbon-transfer",
+                    "chemical-use",
+                    "climate-change",
+                    "decomposition",
+                    "ecological-processes",
+                    "ecological-services",
+                    "ecological-systems",
+                    "ecosystem-conditions",
+                    "energy-flow-through-food-webs",
+                    "fiber",
+                    "food",
+                    "food-webs",
+                    "human-activities",
+                    "hydrogen",
+                    "hydrogen-oxygen-cycling",
+                    "indicator",
+                    "land",
+                    "land-use-changes",
+                    "local-scale",
+                    "national-scale",
+                    "natural-forces",
+                    "natural-resources",
+                    "net-primary-production",
+                    "nitrogen",
+                    "normalized-difference-vegetation-index",
+                    "nutrient-cycling",
+                    "nutrient-flow-through-food-webs",
+                    "nutrients",
+                    "organic-matter",
+                    "oxygen",
+                    "pesticide-use",
+                    "phosphorus",
+                    "photosynthesis",
+                    "physical-environment",
+                    "precipitation",
+                    "primary-production",
+                    "rate-of-change",
+                    "remote-sensing-imagery",
+                    "reproduction",
+                    "respiration",
+                    "scientific-and-research-challenge",
+                    "seasonal-changes-in-temperature",
+                    "soil-formation",
+                    "spatial-scales",
+                    "stream-flows",
+                    "sun-s-energy",
+                    "temperature",
+                    "temporal-scales",
+                    "terrestrial-net-primary-production",
+                    "timber",
+                    "waste-generation",
+                    "water",
+                    "water-quality",
+                    "water-quality-management",
+                    "watershed-scales"
+                  ],
+                  "type": "string"
+                },
+                "statement": {
+                  "type": "string"
+                },
+                "target_entity_id": {
+                  "enum": [
+                    "air",
+                    "air-quality",
+                    "biodiversity",
+                    "biological-organisms",
+                    "carbon-cycling",
+                    "carbon-flow-through-food-webs",
+                    "carbon-storage-in-forests",
+                    "carbon-transfer",
+                    "chemical-use",
+                    "climate-change",
+                    "decomposition",
+                    "ecological-processes",
+                    "ecological-services",
+                    "ecological-systems",
+                    "ecosystem-conditions",
+                    "energy-flow-through-food-webs",
+                    "fiber",
+                    "food",
+                    "food-webs",
+                    "human-activities",
+                    "hydrogen",
+                    "hydrogen-oxygen-cycling",
+                    "indicator",
+                    "land",
+                    "land-use-changes",
+                    "local-scale",
+                    "national-scale",
+                    "natural-forces",
+                    "natural-resources",
+                    "net-primary-production",
+                    "nitrogen",
+                    "normalized-difference-vegetation-index",
+                    "nutrient-cycling",
+                    "nutrient-flow-through-food-webs",
+                    "nutrients",
+                    "organic-matter",
+                    "oxygen",
+                    "pesticide-use",
+                    "phosphorus",
+                    "photosynthesis",
+                    "physical-environment",
+                    "precipitation",
+                    "primary-production",
+                    "rate-of-change",
+                    "remote-sensing-imagery",
+                    "reproduction",
+                    "respiration",
+                    "scientific-and-research-challenge",
+                    "seasonal-changes-in-temperature",
+                    "soil-formation",
+                    "spatial-scales",
+                    "stream-flows",
+                    "sun-s-energy",
+                    "temperature",
+                    "temporal-scales",
+                    "terrestrial-net-primary-production",
+                    "timber",
+                    "waste-generation",
+                    "water",
+                    "water-quality",
+                    "water-quality-management",
+                    "watershed-scales"
+                  ],
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "source_entity_id",
+                "relationship_type",
+                "target_entity_id",
+                "statement",
+                "confidence",
+                "origin"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "relationships",
+          "propositions",
+          "missing_symbols"
+        ],
+        "type": "object"
+      },
+      "strict": true,
+      "type": "json_schema"
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 6010,
+    "input_tokens_details": {
+      "cache_write_tokens": 6007,
+      "cached_tokens": 0
+    },
+    "output_tokens": 2676,
+    "output_tokens_details": {
+      "reasoning_tokens": 580
+    },
+    "total_tokens": 8686
+  },
+  "user": null
+}

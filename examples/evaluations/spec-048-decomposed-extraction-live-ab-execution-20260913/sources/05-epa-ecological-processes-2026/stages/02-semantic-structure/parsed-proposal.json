@@ -1,0 +1,376 @@
+{
+  "missing_symbols": [],
+  "propositions": [
+    {
+      "comparison_operator": "GREATER_THAN",
+      "confidence": 0.96,
+      "origin": "SOURCE",
+      "proposition_type": "COMPARISON_CONDITION",
+      "relationship_type": "CONTRADICTS",
+      "role_bindings": [
+        {
+          "entity_id": "national-scale",
+          "role": "LEFT_OPERAND"
+        },
+        {
+          "entity_id": "local-scale",
+          "role": "RIGHT_OPERAND"
+        }
+      ],
+      "statement": "The difficulty of measuring ecological processes is greater at the national scale than at the local scale."
+    }
+  ],
+  "relationships": [
+    {
+      "confidence": 0.98,
+      "id": "r1",
+      "origin": "SOURCE",
+      "relationship_type": "REQUIRES",
+      "source_entity_id": "ecological-systems",
+      "statement": "Ecological systems are sustained by biological, physical, and chemical ecological processes.",
+      "target_entity_id": "ecological-processes"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r2",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "primary-production",
+      "statement": "Primary production is an ecological process.",
+      "target_entity_id": "ecological-processes"
+    },
+    {
+      "confidence": 0.94,
+      "id": "r3",
+      "origin": "INFERRED",
+      "relationship_type": "IS_A",
+      "source_entity_id": "carbon-cycling",
+      "statement": "Carbon cycling is an ecological process.",
+      "target_entity_id": "ecological-processes"
+    },
+    {
+      "confidence": 0.94,
+      "id": "r4",
+      "origin": "INFERRED",
+      "relationship_type": "IS_A",
+      "source_entity_id": "nutrient-cycling",
+      "statement": "Nutrient cycling is an ecological process.",
+      "target_entity_id": "ecological-processes"
+    },
+    {
+      "confidence": 0.94,
+      "id": "r5",
+      "origin": "INFERRED",
+      "relationship_type": "IS_A",
+      "source_entity_id": "hydrogen-oxygen-cycling",
+      "statement": "Hydrogen/oxygen cycling is an ecological process.",
+      "target_entity_id": "ecological-processes"
+    },
+    {
+      "confidence": 0.9,
+      "id": "r6",
+      "origin": "SOURCE",
+      "relationship_type": "ENABLES",
+      "source_entity_id": "photosynthesis",
+      "statement": "Photosynthesis enables primary production by converting the sun's energy into organic matter.",
+      "target_entity_id": "primary-production"
+    },
+    {
+      "confidence": 0.98,
+      "id": "r7",
+      "origin": "SOURCE",
+      "relationship_type": "CREATES",
+      "source_entity_id": "primary-production",
+      "statement": "Primary production produces organic matter.",
+      "target_entity_id": "organic-matter"
+    },
+    {
+      "confidence": 0.98,
+      "id": "r8",
+      "origin": "SOURCE",
+      "relationship_type": "CREATES",
+      "source_entity_id": "ecological-processes",
+      "statement": "Ecological processes collectively produce organic matter.",
+      "target_entity_id": "organic-matter"
+    },
+    {
+      "confidence": 0.97,
+      "id": "r9",
+      "origin": "SOURCE",
+      "relationship_type": "CAUSES",
+      "source_entity_id": "ecological-processes",
+      "statement": "Ecological processes drive soil formation.",
+      "target_entity_id": "soil-formation"
+    },
+    {
+      "confidence": 0.97,
+      "id": "r10",
+      "origin": "SOURCE",
+      "relationship_type": "ENABLES",
+      "source_entity_id": "ecological-processes",
+      "statement": "Ecological processes enable organisms to reproduce.",
+      "target_entity_id": "reproduction"
+    },
+    {
+      "confidence": 0.9,
+      "id": "r11",
+      "origin": "SOURCE",
+      "relationship_type": "AFFECTS",
+      "source_entity_id": "primary-production",
+      "statement": "Primary production influences biodiversity.",
+      "target_entity_id": "biodiversity"
+    },
+    {
+      "confidence": 0.96,
+      "id": "r12",
+      "origin": "SOURCE",
+      "relationship_type": "AFFECTS",
+      "source_entity_id": "ecological-processes",
+      "statement": "Ecological processes influence biodiversity.",
+      "target_entity_id": "biodiversity"
+    },
+    {
+      "confidence": 0.74,
+      "id": "r13",
+      "origin": "INFERRED",
+      "relationship_type": "AFFECTS",
+      "source_entity_id": "ecological-processes",
+      "statement": "Ecological processes are inferred as affecting ecosystem conditions through indicators.",
+      "target_entity_id": "ecosystem-conditions"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r14",
+      "origin": "SOURCE",
+      "relationship_type": "AFFECTS",
+      "source_entity_id": "natural-forces",
+      "statement": "Natural forces affect ecological processes.",
+      "target_entity_id": "ecological-processes"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r15",
+      "origin": "SOURCE",
+      "relationship_type": "AFFECTS",
+      "source_entity_id": "human-activities",
+      "statement": "Human activities impact ecological processes.",
+      "target_entity_id": "ecological-processes"
+    },
+    {
+      "confidence": 0.97,
+      "id": "r16",
+      "origin": "SOURCE",
+      "relationship_type": "AFFECTS",
+      "source_entity_id": "seasonal-changes-in-temperature",
+      "statement": "Seasonal changes in temperature affect ecological processes.",
+      "target_entity_id": "ecological-processes"
+    },
+    {
+      "confidence": 0.92,
+      "id": "r17",
+      "origin": "SOURCE",
+      "relationship_type": "AFFECTS",
+      "source_entity_id": "precipitation",
+      "statement": "Seasonal precipitation affects ecological processes.",
+      "target_entity_id": "ecological-processes"
+    },
+    {
+      "confidence": 0.92,
+      "id": "r18",
+      "origin": "SOURCE",
+      "relationship_type": "AFFECTS",
+      "source_entity_id": "stream-flows",
+      "statement": "Seasonal stream flows affect ecological processes.",
+      "target_entity_id": "ecological-processes"
+    },
+    {
+      "confidence": 0.98,
+      "id": "r19",
+      "origin": "SOURCE",
+      "relationship_type": "AFFECTS",
+      "source_entity_id": "climate-change",
+      "statement": "Climate change affects ecological processes.",
+      "target_entity_id": "ecological-processes"
+    },
+    {
+      "confidence": 0.98,
+      "id": "r20",
+      "origin": "SOURCE",
+      "relationship_type": "AFFECTS",
+      "source_entity_id": "pesticide-use",
+      "statement": "Pesticide use impacts ecological processes.",
+      "target_entity_id": "ecological-processes"
+    },
+    {
+      "confidence": 0.98,
+      "id": "r21",
+      "origin": "SOURCE",
+      "relationship_type": "AFFECTS",
+      "source_entity_id": "chemical-use",
+      "statement": "Chemical use impacts ecological processes.",
+      "target_entity_id": "ecological-processes"
+    },
+    {
+      "confidence": 0.98,
+      "id": "r22",
+      "origin": "SOURCE",
+      "relationship_type": "AFFECTS",
+      "source_entity_id": "waste-generation",
+      "statement": "Waste generation impacts ecological processes.",
+      "target_entity_id": "ecological-processes"
+    },
+    {
+      "confidence": 0.98,
+      "id": "r23",
+      "origin": "SOURCE",
+      "relationship_type": "AFFECTS",
+      "source_entity_id": "land-use-changes",
+      "statement": "Land use changes impact ecological processes.",
+      "target_entity_id": "ecological-processes"
+    },
+    {
+      "confidence": 0.95,
+      "id": "r24",
+      "origin": "SOURCE",
+      "relationship_type": "AFFECTS",
+      "source_entity_id": "water-quality-management",
+      "statement": "Water quality management impacts ecological processes.",
+      "target_entity_id": "ecological-processes"
+    },
+    {
+      "confidence": 0.96,
+      "id": "r25",
+      "origin": "SOURCE",
+      "relationship_type": "MEASURED_BY",
+      "source_entity_id": "ecological-processes",
+      "statement": "Ecological processes are represented as rates of change.",
+      "target_entity_id": "rate-of-change"
+    },
+    {
+      "confidence": 0.88,
+      "id": "r26",
+      "origin": "SOURCE",
+      "relationship_type": "MEASURED_BY",
+      "source_entity_id": "indicator",
+      "statement": "Remote sensing imagery is used to obtain snapshots of indicators of ecosystem conditions over time.",
+      "target_entity_id": "remote-sensing-imagery"
+    },
+    {
+      "confidence": 0.97,
+      "id": "r27",
+      "origin": "SOURCE",
+      "relationship_type": "MEASURED_BY",
+      "source_entity_id": "terrestrial-net-primary-production",
+      "statement": "Terrestrial net primary production is inferred using remote sensing imagery.",
+      "target_entity_id": "remote-sensing-imagery"
+    },
+    {
+      "confidence": 0.98,
+      "id": "r28",
+      "origin": "SOURCE",
+      "relationship_type": "MEASURED_BY",
+      "source_entity_id": "normalized-difference-vegetation-index",
+      "statement": "The Normalized Difference Vegetation Index has been estimated using remote sensing.",
+      "target_entity_id": "remote-sensing-imagery"
+    },
+    {
+      "confidence": 0.84,
+      "id": "r29",
+      "origin": "SOURCE",
+      "relationship_type": "MEASURED_BY",
+      "source_entity_id": "net-primary-production",
+      "statement": "Repeated measures over a season might provide an indicator of net primary production.",
+      "target_entity_id": "indicator"
+    },
+    {
+      "confidence": 0.86,
+      "id": "r30",
+      "origin": "SOURCE",
+      "relationship_type": "AFFECTS",
+      "source_entity_id": "ecological-processes",
+      "statement": "Ecological processes provide regulation of air quality through ecological services.",
+      "target_entity_id": "air-quality"
+    },
+    {
+      "confidence": 0.86,
+      "id": "r31",
+      "origin": "SOURCE",
+      "relationship_type": "AFFECTS",
+      "source_entity_id": "ecological-processes",
+      "statement": "Ecological processes provide regulation of water quality through ecological services.",
+      "target_entity_id": "water-quality"
+    },
+    {
+      "confidence": 0.98,
+      "id": "r32",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "respiration",
+      "statement": "Respiration is an ecological process.",
+      "target_entity_id": "ecological-processes"
+    },
+    {
+      "confidence": 0.98,
+      "id": "r33",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "decomposition",
+      "statement": "Decomposition is an ecological process.",
+      "target_entity_id": "ecological-processes"
+    },
+    {
+      "confidence": 0.94,
+      "id": "r34",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "reproduction",
+      "statement": "Reproduction is an ecological process represented as a rate of change.",
+      "target_entity_id": "ecological-processes"
+    },
+    {
+      "confidence": 0.96,
+      "id": "r35",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "energy-flow-through-food-webs",
+      "statement": "Energy flow through food webs is an ecological process.",
+      "target_entity_id": "ecological-processes"
+    },
+    {
+      "confidence": 0.96,
+      "id": "r36",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "carbon-flow-through-food-webs",
+      "statement": "Carbon flow through food webs is an ecological process.",
+      "target_entity_id": "ecological-processes"
+    },
+    {
+      "confidence": 0.96,
+      "id": "r37",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "nutrient-flow-through-food-webs",
+      "statement": "Nutrient flow through food webs is an ecological process.",
+      "target_entity_id": "ecological-processes"
+    },
+    {
+      "confidence": 0.82,
+      "id": "r38",
+      "origin": "SOURCE",
+      "relationship_type": "AFFECTS",
+      "source_entity_id": "ecological-processes",
+      "statement": "Natural forces and human activities affect ecological processes over different spatial scales.",
+      "target_entity_id": "spatial-scales"
+    },
+    {
+      "confidence": 0.82,
+      "id": "r39",
+      "origin": "SOURCE",
+      "relationship_type": "AFFECTS",
+      "source_entity_id": "ecological-processes",
+      "statement": "Natural forces and human activities affect ecological processes over different temporal scales.",
+      "target_entity_id": "temporal-scales"
+    }
+  ]
+}

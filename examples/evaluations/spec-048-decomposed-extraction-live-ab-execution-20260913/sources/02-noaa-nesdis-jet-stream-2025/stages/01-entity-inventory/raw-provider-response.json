@@ -1,0 +1,156 @@
+{
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1789400707.0,
+  "conversation": null,
+  "created_at": 1789400693.0,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "id": "resp_0ec4cd49124416b8016aa816752c3c87d2adcdf2ef21e75ec2",
+  "incomplete_details": null,
+  "instructions": "You perform Stage 1 entity inventory for a semantic compiler.\n\nRead only the exact supplied source. Return a precision-first inventory of concepts,\nobjects, processes, variables, systems, and components that later semantic statements\nneed as endpoints or proposition roles. Include source-supported process/event concepts\nwhen later meaning would need to refer to them. Do not use external knowledge.\n\nDo not assign IDs: trusted code assigns stable IDs after this stage. Each semantic thing\nmust appear once. Do not fragment one identity into variants, merge related but distinct\nthings, or use aliases except for genuine naming equivalence. Names and descriptions must\nremain source-bounded.\n\nReturn entities only. Do not return claims, evidence, relationships, propositions,\nteaching prose, diagnostics, or output outside the requested schema.",
+  "max_output_tokens": null,
+  "max_tool_calls": null,
+  "metadata": {},
+  "model": "gpt-5.6-luna",
+  "moderation": null,
+  "object": "response",
+  "output": [
+    {
+      "content": [],
+      "encrypted_content": "gAAAAABqqBaDMHv9KqqPvmCU0yY5TbZvTLzPDQfRLvxUiXeiLThStbCTcQju3k8sHTO-GmILTt5AT3o6e7fuWa9Xa6FLByC3kEAdiKQpiPpXbJ3GtvQbhpJM_6DqaqnKgEo6c9M6DCl8LsLGLpS2CDYOBNqK4hY1Jw5v319NPNBFJqkCoUY_BQv8hqiXC2eqfqn2PGFk45XsGFcLGibL518Js5TRRlPCMV2fzdsZAYJ7U9nCl0cLD-r63i09iWtBWP6k9idB2CDmE2LXT3qU5TiixItH2ogeYozK2J_Dvacg2bDCkGg9HR1pUBhlKfE4Z-rwhlW_SUUbYiMzZI06PFJyU8aM5a6ZvC8wxcojS3UftQu8UqbBQwulmUcF9R-rCrCyvTa8_G46jsY0uAOFYpdhCwGIxwuUQgxDAlBqWVmOPuIjtECyCLzlhXbfzwOWdcaFKJiDYiOE527A-Xum1qzQTRLOZl3WeLzFZCaLeO9UvSTwPpPa1VizZ4ZcUSnEMwjMWFIpdn4a3vdvaeHF3zDAhidagSEN6_d2g8_D4ItfnF9hZQ3gt_--avxu-lv962M1OZ6M8n7UQ0l4FVxQBqcZ7UigA8LOR2122wyej0tx0E4aZvppZP4XZ2N-DgPl_gd049Xw2YUUlgy7JJG0nqjjV64mWzFFar-IJ02n3PUPhqK_v6sMUpxNyqdDXcgathpSEh_-S4Lwwx-LjGq5AVOAs5coWWc3uGZHJhB3ux4MoX4TofN6ZbVuUnqLFrgwhGlw8Wf_DcDATzpF2B5yOCPsFWkSUm186g5_qeoRjXAwYnca1LQCp0QOekyBXSOLUdkZwlT3Vd231emVQoh7IhmuDXjJW_0vYaLD8Ec_HJ0HoA_XyROYDlqI6TIeIf9j8AkkwNGsVzjKkPjPJgUHoVnUWPpQ-0broQ0bmiKsuvkIh_xancB-o-SoRyjfbikxtv9WHQ6EQOJDbG0qKz--rnXCtJz7_JR9q-EKmvVdEVBm9FltjzArkD0vFEPgVvxcU7V_WdGWrjI3LJmQJj70ePAfdShehWoJFuWaxeJPRvPg3diVe-JhNG3s9F7jPAQxZlA9SDPc-EF9FO8-mvlq2FxAlCVtZEzE2nf2vvCS1s2oyVgKLjbJWcAmIIF3zybm4sJFJK3SP3UzQLJ02D_x5eMPEQB3WSRYm_pcc15ibniEL4gX8yWYBGCKUTbVmWRVTzaR2ssWsGQAqUOrwjNBb07PlTsoo79m4wTheQdP2ht4ASGOXVEiu8LLdsWVybsplHtMIIUt71iJXw3bkeGbQFXYmqdhlUWvIEY5LwRvu_oTHMD8ErUBJZEGls3BQnU6C_eKimaPbHsBfSoKKn_sa7GtP56Kzdyg17PPCtKyrCmi1Qxlnn0GWTe438-p0gGstrES-qXplzjk7C3eAKRxl5DJ4PAFlx2aHLtb-XYAZHpVloCqK-XN6fPf95sWNkyniFP_Mqm82okNQjTHxyNiJ7T3MmlOrTdkkQ86sSL9xWYMOfeIqtdv1SodGmjKwzdDmlL6mRx1dMrV3sFdlfsW6W5CWCWuPh2oFOnzvGRa7_lPRaBrQnuU41pCIabl7piZueF07PD7ByRONcNvotDG5do0tnT3WWIUO-8x24_PDJ6K19f7mNyPhSA_oJZj4uWif_-kjNOFWHwB_HMq1lvSzSXdS-dhL_PvwwO1NxIrK1ENOmoMkGj9XgGUZhMlP-c7mN-P0yKU9r1UZBq-yb1oJxalqJLTHrrUwivYuKA7RXg3vFUMzvx6--weY-wYXXnp-8vqFmdUCXNBuZqbcmnNffT5dvNH4_3Pqg==",
+      "id": "rs_0ec4cd49124416b8016aa816770dd487d2b6433be25b348774",
+      "status": null,
+      "summary": [],
+      "type": "reasoning"
+    },
+    {
+      "content": [
+        {
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"symbols\":[{\"name\":\"Jet stream\",\"description\":\"A narrow band of strong wind and a type of air current that forms high in the atmosphere.\",\"entity_type\":\"CONCEPT\",\"aliases\":[\"jet streams\"]},{\"name\":\"Primary jet streams\",\"description\":\"The four main jet streams associated with Earth: two polar jet streams and two subtropical jet streams.\",\"entity_type\":\"SYSTEM\",\"aliases\":[]},{\"name\":\"Polar jet stream\",\"description\":\"A jet stream near one of Earth’s poles; polar jet streams can reach especially high speeds in winter.\",\"entity_type\":\"COMPONENT\",\"aliases\":[\"polar jet streams\"]},{\"name\":\"Subtropical jet stream\",\"description\":\"A jet stream located closer to the equator.\",\"entity_type\":\"COMPONENT\",\"aliases\":[\"subtropical jet streams\"]},{\"name\":\"Wind\",\"description\":\"Moving air, including the strong movement found in jet streams.\",\"entity_type\":\"CONCEPT\",\"aliases\":[]},{\"name\":\"Air current\",\"description\":\"A movement of air; a jet stream is a type of air current.\",\"entity_type\":\"CONCEPT\",\"aliases\":[\"air currents\"]},{\"name\":\"Warm air mass\",\"description\":\"A mass of warmer air that meets cooler air masses and rises higher in the atmosphere.\",\"entity_type\":\"OBJECT\",\"aliases\":[\"warm air masses\"]},{\"name\":\"Cool air mass\",\"description\":\"A mass of cooler air that meets warmer air masses and sinks to replace rising warm air.\",\"entity_type\":\"OBJECT\",\"aliases\":[\"cooler air masses\",\"cold air masses\"]},{\"name\":\"Atmosphere\",\"description\":\"The layer of air surrounding Earth in which jet streams form and in which air masses move.\",\"entity_type\":\"SYSTEM\",\"aliases\":[]},{\"name\":\"Earth\",\"description\":\"The planet whose atmosphere, surface, poles, equator, and jet streams are described.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"Sun\",\"description\":\"The source of heating that does not warm the whole Earth evenly.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"Equator\",\"description\":\"The region of Earth near which areas are hot and subtropical jet streams are located closer.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"Poles\",\"description\":\"The north and south polar regions of Earth, near which areas are cold and polar jet streams are located.\",\"entity_type\":\"OBJECT\",\"aliases\":[\"north and south poles\"]},{\"name\":\"Warm-air rise\",\"description\":\"The upward movement of warmer air in the atmosphere when it meets cooler air.\",\"entity_type\":\"PROCESS\",\"aliases\":[\"warm air rises\"]},{\"name\":\"Cool-air sinking\",\"description\":\"The downward movement of cooler air to replace warmer air that has risen.\",\"entity_type\":\"PROCESS\",\"aliases\":[\"cooler air sinks\"]},{\"name\":\"Air-mass meeting\",\"description\":\"The meeting of warm and cool air masses that forms jet streams and can create turbulent conditions.\",\"entity_type\":\"PROCESS\",\"aliases\":[\"warm air masses meet cold air masses\"]},{\"name\":\"Jet-stream formation\",\"description\":\"The formation of a jet stream when warm air masses meet cold air masses in the atmosphere.\",\"entity_type\":\"PROCESS\",\"aliases\":[\"jet streams form\"]},{\"name\":\"Jet-stream speed\",\"description\":\"The speed at which a jet stream moves, averaging about 110 miles per hour and sometimes reaching 250 miles per hour or faster.\",\"entity_type\":\"VARIABLE\",\"aliases\":[\"speed\"]},{\"name\":\"Jet-stream direction\",\"description\":\"The direction in which a jet stream travels or moves, generally from west to east but sometimes in different ways.\",\"entity_type\":\"VARIABLE\",\"aliases\":[]},{\"name\":\"Jet-stream location\",\"description\":\"The position of a jet stream about five to nine miles above Earth’s surface in the mid to upper troposphere.\",\"entity_type\":\"VARIABLE\",\"aliases\":[]},{\"name\":\"Troposphere\",\"description\":\"The layer of Earth’s atmosphere where people live and breathe, including its mid to upper region where jet streams and airplanes are located.\",\"entity_type\":\"SYSTEM\",\"aliases\":[\"mid to upper troposphere\"]},{\"name\":\"Airplane\",\"description\":\"An aircraft that flies in the mid to upper troposphere and can receive a boost from a jet stream when traveling in the same direction.\",\"entity_type\":\"OBJECT\",\"aliases\":[\"airplanes\"]},{\"name\":\"Airplane boost\",\"description\":\"An increase in an airplane’s travel advantage when it flies in the same direction as a powerful jet stream.\",\"entity_type\":\"PROCESS\",\"aliases\":[\"boost\"]},{\"name\":\"Weather system\",\"description\":\"A system of weather that jet streams can transport across the United States or that can remain in place when far from a jet stream.\",\"entity_type\":\"SYSTEM\",\"aliases\":[\"weather systems\"]},{\"name\":\"United States\",\"description\":\"The region across which jet streams can transport weather systems.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"Temperature\",\"description\":\"A property of air and weather that differs between warm and cool air masses and is affected by jet streams.\",\"entity_type\":\"VARIABLE\",\"aliases\":[]},{\"name\":\"Precipitation\",\"description\":\"A weather condition affected by weather systems transported by jet streams.\",\"entity_type\":\"CONCEPT\",\"aliases\":[]},{\"name\":\"Heat wave\",\"description\":\"A period of heat that can result when a weather system remains in one place away from a jet stream.\",\"entity_type\":\"CONCEPT\",\"aliases\":[\"heat waves\"]},{\"name\":\"Flood\",\"description\":\"A condition that can result when a weather system remains in one place away from a jet stream.\",\"entity_type\":\"CONCEPT\",\"aliases\":[\"floods\"]},{\"name\":\"Storm\",\"description\":\"A weather event that jet streams typically move and that tends to follow the edge of a jet stream.\",\"entity_type\":\"CONCEPT\",\"aliases\":[\"storms\"]},{\"name\":\"Jet-stream bulge\",\"description\":\"A bulge of winds to the north or south created when a jet stream moves in a different way from its usual west-to-east travel.\",\"entity_type\":\"CONCEPT\",\"aliases\":[\"bulges of winds\"]},{\"name\":\"Jet-stream edge\",\"description\":\"The edge of a jet stream that storms tend to follow.\",\"entity_type\":\"COMPONENT\",\"aliases\":[\"edge of the jet stream\"]},{\"name\":\"Turbulent conditions\",\"description\":\"Conditions created where the difference between cool and warm air near the edge of a jet stream contributes to storms.\",\"entity_type\":\"CONCEPT\",\"aliases\":[]},{\"name\":\"Arctic air\",\"description\":\"Cold air that meets warmer and wetter air when a jet stream is pushed farther south.\",\"entity_type\":\"OBJECT\",\"aliases\":[\"colder Arctic air\"]},{\"name\":\"Thunder\",\"description\":\"An atmospheric phenomenon associated with the warmer and wetter air meeting colder Arctic air near a southward-pushed jet stream.\",\"entity_type\":\"CONCEPT\",\"aliases\":[]},{\"name\":\"Lightning\",\"description\":\"An atmospheric phenomenon associated with the warmer and wetter air meeting colder Arctic air near a southward-pushed jet stream.\",\"entity_type\":\"CONCEPT\",\"aliases\":[]},{\"name\":\"Tornado\",\"description\":\"A severe weather event associated with the warmer and wetter air meeting colder Arctic air near a southward-pushed jet stream.\",\"entity_type\":\"CONCEPT\",\"aliases\":[\"tornadoes\"]}]}",
+          "type": "output_text"
+        }
+      ],
+      "id": "msg_0ec4cd49124416b8016aa81678367887d2b1835c3422f244a6",
+      "phase": "final_answer",
+      "role": "assistant",
+      "status": "completed",
+      "type": "message"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt": null,
+  "prompt_cache_key": null,
+  "prompt_cache_options": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "low",
+    "generate_summary": null,
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "status": "completed",
+  "store": false,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "description": null,
+      "name": "candidate_b_entity_inventory",
+      "schema_": {
+        "additionalProperties": false,
+        "properties": {
+          "symbols": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "aliases": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "entity_type": {
+                  "enum": [
+                    "CONCEPT",
+                    "OBJECT",
+                    "PROCESS",
+                    "VARIABLE",
+                    "SYSTEM",
+                    "COMPONENT"
+                  ],
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name",
+                "description",
+                "entity_type",
+                "aliases"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "symbols"
+        ],
+        "type": "object"
+      },
+      "strict": true,
+      "type": "json_schema"
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 730,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1515,
+    "output_tokens_details": {
+      "reasoning_tokens": 100
+    },
+    "total_tokens": 2245
+  },
+  "user": null
+}

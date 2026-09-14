@@ -1,0 +1,133 @@
+{
+  "missing_symbols": [],
+  "propositions": [
+    {
+      "comparison_operator": null,
+      "confidence": 0.99,
+      "origin": "SOURCE",
+      "proposition_type": "TRANSFER_EVENT",
+      "relationship_type": "TRANSFERS_TO",
+      "role_bindings": [
+        {
+          "entity_id": "three-dimensional-atomic-coordinates",
+          "role": "OBJECT"
+        },
+        {
+          "entity_id": "first-principles-calculation",
+          "role": "DESTINATION"
+        }
+      ],
+      "statement": "Experimentally measured three-dimensional atomic coordinates are provided as direct input to first-principles calculations."
+    },
+    {
+      "comparison_operator": null,
+      "confidence": 0.99,
+      "origin": "SOURCE",
+      "proposition_type": "TRANSFER_EVENT",
+      "relationship_type": "TRANSFERS_TO",
+      "role_bindings": [
+        {
+          "entity_id": "chemical-species",
+          "role": "OBJECT"
+        },
+        {
+          "entity_id": "first-principles-calculation",
+          "role": "DESTINATION"
+        }
+      ],
+      "statement": "Chemical species are provided as direct input to first-principles calculations."
+    }
+  ],
+  "relationships": [
+    {
+      "confidence": 0.99,
+      "id": "r1",
+      "origin": "SOURCE",
+      "relationship_type": "PART_OF",
+      "source_entity_id": "iron-atom",
+      "statement": "Iron atoms are constituents of the iron-platinum nanoparticle.",
+      "target_entity_id": "iron-platinum-nanoparticle"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r2",
+      "origin": "SOURCE",
+      "relationship_type": "PART_OF",
+      "source_entity_id": "platinum-atom",
+      "statement": "Platinum atoms are constituents of the iron-platinum nanoparticle.",
+      "target_entity_id": "iron-platinum-nanoparticle"
+    },
+    {
+      "confidence": 0.95,
+      "id": "r3",
+      "origin": "SOURCE",
+      "relationship_type": "PART_OF",
+      "source_entity_id": "chemical-order",
+      "statement": "Chemical order is part of the atomic structure.",
+      "target_entity_id": "atomic-structure"
+    },
+    {
+      "confidence": 0.95,
+      "id": "r4",
+      "origin": "SOURCE",
+      "relationship_type": "PART_OF",
+      "source_entity_id": "chemical-disorder",
+      "statement": "Chemical disorder is part of the atomic structure.",
+      "target_entity_id": "atomic-structure"
+    },
+    {
+      "confidence": 0.98,
+      "id": "r5",
+      "origin": "SOURCE",
+      "relationship_type": "PART_OF",
+      "source_entity_id": "material-defect",
+      "statement": "Material defects are part of the atomic structure.",
+      "target_entity_id": "atomic-structure"
+    },
+    {
+      "confidence": 0.98,
+      "id": "r6",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "anti-site-point-defect",
+      "statement": "Anti-site point defects are identified as defects in the atomic structure.",
+      "target_entity_id": "material-defect"
+    },
+    {
+      "confidence": 0.98,
+      "id": "r7",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "swap-defect",
+      "statement": "Swap defects are identified as defects in the atomic structure.",
+      "target_entity_id": "material-defect"
+    },
+    {
+      "confidence": 0.96,
+      "id": "r8",
+      "origin": "SOURCE",
+      "relationship_type": "ENABLES",
+      "source_entity_id": "atomic-electron-tomography",
+      "statement": "Atomic electron tomography was used to correlate three-dimensional atomic arrangements and chemical order or disorder with material properties.",
+      "target_entity_id": "correlation-of-atomic-structure-with-material-properties"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r9",
+      "origin": "SOURCE",
+      "relationship_type": "TRANSFERS_TO",
+      "source_entity_id": "three-dimensional-atomic-coordinates",
+      "statement": "Experimentally measured three-dimensional atomic coordinates were used as direct input for first-principles calculations.",
+      "target_entity_id": "first-principles-calculation"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r10",
+      "origin": "SOURCE",
+      "relationship_type": "TRANSFERS_TO",
+      "source_entity_id": "chemical-species",
+      "statement": "Chemical species were used as direct input for first-principles calculations.",
+      "target_entity_id": "first-principles-calculation"
+    }
+  ]
+}

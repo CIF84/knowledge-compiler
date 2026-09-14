@@ -94,59 +94,60 @@ Frozen stage-contract SHA-256:
 
 Control A remains historical only; no rerun is authorized.
 
+## Decomposed extraction live A/B execution
+
+`SPEC-048 — decomposed extraction live A/B execution`
+
+Implementation status: `IMPLEMENTED_AWAITING_REVIEW`
+
+Candidate B admitted 2/9 sources in 19 calls versus historical Control A's
+4/9 in 9 calls. All seven Candidate-B rejections failed closed, zero known-invalid
+objects were admitted, and the mechanically supported branch is `B_REGRESSION`.
+
+Canonical evidence:
+
+`examples/evaluations/spec-048-decomposed-extraction-live-ab-execution-20260913/final-report.json`
+
 ## Current approved work packet
 
 ```text
-specs/SPEC-048-decomposed-extraction-live-ab-execution.md
+NONE
 ```
 
-Status: `APPROVED_FOR_IMPLEMENTATION`
+Status: `NONE`
 
-Authority: `LIVE_CALLS_EXPLICITLY_BOUNDED`
+Authority: `NONE`
 
-Human gate: `OWNER_REVIEW`
+Human gate: `NONE`
 
 Promotion: `NOT_AUTHORIZED`
 
 ## Current gate
 
-SPEC-048 is authorized to execute frozen Candidate B against the exact nine frozen blind passages.
+SPEC-048 is implemented and awaiting owner review. Its canonical report is
+`examples/evaluations/spec-048-decomposed-extraction-live-ab-execution-20260913/final-report.json`.
 
-Provider authority is limited to:
-
-- OpenAI Responses API;
-- model `gpt-5.6-luna`;
-- `store=False`;
-- maximum 27 Candidate-B calls total;
-- maximum one call per stage per source;
-- fixed Stage 1 → Stage 2 → Stage 3 order;
-- mandatory upstream-failure short-circuiting;
-- zero SDK, hidden, semantic, repair, or extra follow-up calls;
-- zero prompt adaptation between sources;
-- zero implementation adaptation after execution begins;
-- zero external retrieval/enrichment.
-
-Control A must not be rerun.
-
-Any frozen identity/hash mismatch must stop execution before provider transmission.
+No packet is active. No further provider/model call, retry, repair, adaptation,
+promotion, or follow-up implementation is authorized.
 
 ## Current product question
 
 ```text
-historical Control A: 4/9 admitted
+historical Control A: 4/9 admitted, 9 calls
         ↔
-live frozen Candidate B
+frozen Candidate B: 2/9 admitted, 19 calls
         ↓
-compare admission + trust containment
+zero known-invalid admission in both arms
         ↓
-compare semantic richness + structures
+7 Candidate-B failures preserved closed
         ↓
-compare failures + calls/tokens/latency
+mechanical branch: B_REGRESSION
         ↓
-owner decides whether decomposition justifies its cost
+OWNER REVIEW
 ```
 
-Small/marginal differences must be interpreted conservatively because Control A is historical rather than contemporaneous.
+The immediate goal is owner review of the observed regression and cost evidence,
+not promotion, repair, or another extraction experiment.
 
 ## Frozen / protected state
 
@@ -158,6 +159,8 @@ Small/marginal differences must be interpreted conservatively because Control A 
 - SPEC-043 taxonomy and classifications;
 - SPEC-046 failure-stage analysis;
 - SPEC-047 Candidate-B implementation, prompts/schemas, stage contracts, comparison contract, Control-A comparison records, offline fixtures, and proposed live manifest;
+- SPEC-048 raw provider responses, parsed proposals, request ledger, stage gates,
+  final outcomes, A/B comparison, and post-run taxonomy audit;
 - trusted semantic vocabulary;
 - canonical grounding/provenance behavior;
 - strict declared-identity validation;
@@ -171,6 +174,7 @@ Small/marginal differences must be interpreted conservatively because Control A 
 Do not:
 
 - rerun Control A;
+- make any additional Candidate-B provider call;
 - exceed 27 Candidate-B provider calls;
 - retry or repair any failed stage;
 - change model/source/order/prompt/schema between sources;

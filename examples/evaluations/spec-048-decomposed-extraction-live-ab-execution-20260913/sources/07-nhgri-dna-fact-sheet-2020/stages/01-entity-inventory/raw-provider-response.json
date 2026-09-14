@@ -1,0 +1,156 @@
+{
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1789400860.0,
+  "conversation": null,
+  "created_at": 1789400848.0,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "id": "resp_00c2db0a24a2f576016aa817109dd887d2bd5fe55c0d38e74f",
+  "incomplete_details": null,
+  "instructions": "You perform Stage 1 entity inventory for a semantic compiler.\n\nRead only the exact supplied source. Return a precision-first inventory of concepts,\nobjects, processes, variables, systems, and components that later semantic statements\nneed as endpoints or proposition roles. Include source-supported process/event concepts\nwhen later meaning would need to refer to them. Do not use external knowledge.\n\nDo not assign IDs: trusted code assigns stable IDs after this stage. Each semantic thing\nmust appear once. Do not fragment one identity into variants, merge related but distinct\nthings, or use aliases except for genuine naming equivalence. Names and descriptions must\nremain source-bounded.\n\nReturn entities only. Do not return claims, evidence, relationships, propositions,\nteaching prose, diagnostics, or output outside the requested schema.",
+  "max_output_tokens": null,
+  "max_tool_calls": null,
+  "metadata": {},
+  "model": "gpt-5.6-luna",
+  "moderation": null,
+  "object": "response",
+  "output": [
+    {
+      "content": [],
+      "encrypted_content": "gAAAAABqqBccy8wUh8hST3ebf7qmiW1KXcBfcPlkTHOEw7oYs-CVIQeZDkTg2pZjyZykIc7ZGzrxPND62gmQTZvhVfBLgbDcPZzFBKpSJB2FulN97Wyzq5NUgTKJDq1vQrMF9AldFgQIRESQAfRlzNVVlq4lTHj9HKxAqKdaQj6zJWyh17TofRlGt8dGgiiCqojm47XNN6XcfMGDmnyuOzIUEFoIXLeLGbALB0TW-kGRKyiM9KTdJTeYdF2drFF8vIDBrq0Di515i95e5zGXochEUi7vZYMT2fKltHCYQtlq8qMN1TH6_j7EeLykpyl52PAnkYUmTrGkbOCuLwv7e-OGm5GecLwGA9E5Bcm0Nvenr-SI176AMt6g7ytUDnTYbtKxYb3nHQLCWyX00sITemLd1leAJCBDLozHv-MsXQA-gU_UPeFK88P0bIUlCob8ZUVzaDJB5oIRqHAnBZVY4tTXuqZ9UUlP_uvXDFTL79BWoxmW9uydIX9sY1mAaDymoepMkD56TdWSZCx6t0xfvMZbTAndW0NnXZ0wwmzyTvm9xMli5VJGtPYLGaWBORUHHPHQid7tHs-XhjDXNtV18QM5q2OdAbtWETvf2NSXiTx_0GttCFuVB3GQozLpkaibDOzfrmjcYFtGv7ZrWph_cKBPZ7Z4P5HCZLJxDoWZfkjzuvZCsBozCQOVHFvykog-3LMypDDzntJRDxjtbeLEYx3-WwtgGuTvbRTHorHADehPiyTtBYO-V_mivgiipOT-5lXBPXgK-Fq75upw-txd5LVJMeUklOfInhjhqYdx8jXQ2HkUKXEd4CZOTkhvYgToLwkEyM_nWU7aIAtrognctrsIRzhOtkahr0rWemyk7m9r3-hzj0yefo2P6d8HQU8cSDaGmvSOmChYplJ0SRIWwPjfYxtfgrkJVIBcAms2X_Q6ifW7A-MSOScr0kmJbDMrbGzJuEp00KMYi3K3YUK9oIO2QSVgAhTKr7I7160QV-cEDCiRYLBLECuOfuT2084ZDo4wkcJURW8LoiV-oReSdG_PeL9hrR8Ze9HFBoZJbCI7PYQcczSIGw8y7SFaWUogFVNzsxckIaNCA8Y_72SepCuGuFrblPMCRPSdsG3jo4F2HmllSBFEz56xXC9Bvi_4V83jvbUptUdfGsOwteQR3q3BlGK4rt8x6Gb5vVD2Z9CrDirPMEEG2dNfJYpZlihP3Cx-9h0SeRxycamWigUwOnXNjRlyADuTlqSX-2301VvMpqMNgWJI4cynfx3jTt1JYmFbZ4eXlhPBOUdXA2JMiBBCWIdapYA6TBCMOBb_zR4SeV1TIoQdAtPRkCK1KkEmFa_IsH1EHC8YXkoxY31Tv7nY-QYyKYONiyNog7OPxRscE3eolsrL6Kz9giyM5yA_cN_3skGIRLQgaQUqxRnc_BDSGYGG_013HSf4mj9EvMyrWCwi63d7X5pIAqEWdgKKvnAgG2IYLEsbyv_gDXkZfch6yJSuEa1M0LxUF1znGpE3rpFkRUr8tuHkviSXvPYPK7pDelYnai7QzqmEv_Axz-xyziV7cOxWB1Gk6nblwsCaLkXjh2eCOqFYAn1B3qOBWZlk2k5nxE5JvBm1oC6-P6RaoDfewIojDFnFVAsXPcoDV46fv1MxYNmc9nL1g0lq9p_Rw4caQLYj1Z2-XynQjclzb3KKZdSo1B4A5bGIuiPEoaQZzKDXDd40eFTFfdhW9_ZYhpVaT6PrTvY8XYtRKiTwJv3CNaiUjK28LS1ICt19b08wQBT_jN__isFxIuRdzN75MWDago_UcPfYS_WwSAqEN8F28NWACIM1zcmoaJP5kDWded1q5kD5X3IZuEIePX5EY7oJuN-M8diTChu885DsDlmf8kClV8j7a7HRUEsXnhpAsHPA2nBVNZM7JL0-Q-olHkR8sPwy8dzFasic6Vertfs6xpUDEgZVep_3fgQ9Kq4mL2RLUywNXyo1NIwPXbHg0STpFLkEgfdqAF-9u2b08orRN3wJp1H-aM5zsaiMIEjpkyj5irD0Rh0lHfRPJ8wi6Gjf3tqu7NnLxC9pIEUA5kkNydm80fvh1zZF5-3CC9HrTtmADC0y4zrHjX7X7zcIWi0Kbv3cW3uw4mdin2Iz5Qxc0QwPMmvrwB8oNr6GI5priPxggc_on6j0zsMJKuq1Y5XZoXskEqvdWY8m4z63Tx-ApxX1RhMBUzeImAXUUUKfkp72Z9DkjPpTyQVLVwryeWp3ZPBMwjZuEeAj6rdqob5W5lquQGr5EgXElrpdzv9T7-hU9oOpR0u3YByO9ogJpLDj9AKRsSOUQ0cSe2xJmLYyPJzZSA==",
+      "id": "rs_00c2db0a24a2f576016aa81711379c87d2a085b279477300a2",
+      "status": null,
+      "summary": [],
+      "type": "reasoning"
+    },
+    {
+      "content": [
+        {
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"symbols\":[{\"name\":\"Deoxyribonucleic acid\",\"description\":\"A molecule that contains biological instructions and is passed from adult organisms to offspring during reproduction.\",\"entity_type\":\"OBJECT\",\"aliases\":[\"DNA\"]},{\"name\":\"biological instructions\",\"description\":\"Instructions contained in DNA that make each species unique and can be used to make proteins and for other biological processes.\",\"entity_type\":\"CONCEPT\",\"aliases\":[]},{\"name\":\"species\",\"description\":\"A biological grouping whose uniqueness is associated with the instructions contained in DNA.\",\"entity_type\":\"CONCEPT\",\"aliases\":[]},{\"name\":\"adult organism\",\"description\":\"An organism that can pass DNA to its offspring during reproduction.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"offspring\",\"description\":\"An organism that receives DNA from adult organisms during reproduction.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"eukaryote\",\"description\":\"An organism in which DNA is found inside a nucleus.\",\"entity_type\":\"OBJECT\",\"aliases\":[\"eukaryotes\"]},{\"name\":\"cell\",\"description\":\"A small biological structure that contains DNA and, in the described organisms, may contain a nucleus and mitochondria.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"nucleus\",\"description\":\"A special area of a cell in which DNA is found in eukaryotes.\",\"entity_type\":\"COMPONENT\",\"aliases\":[]},{\"name\":\"chromosome\",\"description\":\"The tightly packaged form of a DNA molecule, present during cell division to enable transfer to new cells.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"DNA replication\",\"description\":\"A process during which DNA unwinds so it can be copied.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"name\":\"DNA unwinding\",\"description\":\"The process in which DNA becomes unwound for copying or for use of its instructions.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"name\":\"cell cycle\",\"description\":\"The cycle during which DNA may unwind at times other than DNA replication.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"name\":\"protein production\",\"description\":\"The making of proteins using DNA instructions.\",\"entity_type\":\"PROCESS\",\"aliases\":[\"making proteins\"]},{\"name\":\"cell division\",\"description\":\"A process during which DNA is in compact chromosome form to enable transfer to new cells.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"name\":\"nuclear DNA\",\"description\":\"DNA found in the nucleus of a cell.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"genome\",\"description\":\"An organism's complete set of nuclear DNA.\",\"entity_type\":\"OBJECT\",\"aliases\":[\"complete DNA instruction book\"]},{\"name\":\"mitochondrion\",\"description\":\"A cell structure containing a small amount of DNA in humans and other complex organisms and generating energy needed for the cell to function properly.\",\"entity_type\":\"COMPONENT\",\"aliases\":[\"mitochondria\"]},{\"name\":\"cellular energy\",\"description\":\"Energy generated by mitochondria that the cell needs to function properly.\",\"entity_type\":\"CONCEPT\",\"aliases\":[]},{\"name\":\"sexual reproduction\",\"description\":\"A form of reproduction in which organisms inherit nuclear DNA from a male parent and a female parent.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"name\":\"male parent\",\"description\":\"The parent from which an organism inherits half of its nuclear DNA in sexual reproduction.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"female parent\",\"description\":\"The parent from which an organism inherits half of its nuclear DNA and all of its mitochondrial DNA in sexual reproduction.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"mitochondrial DNA\",\"description\":\"DNA located in mitochondria and inherited from the female parent in the described sexual reproduction.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"egg cell\",\"description\":\"A cell that keeps its mitochondria during fertilization.\",\"entity_type\":\"OBJECT\",\"aliases\":[\"egg cells\"]},{\"name\":\"sperm cell\",\"description\":\"A cell that does not keep its mitochondria during fertilization.\",\"entity_type\":\"OBJECT\",\"aliases\":[\"sperm cells\"]},{\"name\":\"fertilization\",\"description\":\"The process during which only egg cells, and not sperm cells, keep their mitochondria in the described inheritance pattern.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"name\":\"nucleotide\",\"description\":\"A chemical building block of DNA made of a phosphate group, a sugar group, and one of four types of nitrogen bases.\",\"entity_type\":\"OBJECT\",\"aliases\":[\"nucleotides\"]},{\"name\":\"phosphate group\",\"description\":\"One of the three parts of a nucleotide.\",\"entity_type\":\"COMPONENT\",\"aliases\":[]},{\"name\":\"sugar group\",\"description\":\"One of the three parts of a nucleotide.\",\"entity_type\":\"COMPONENT\",\"aliases\":[]},{\"name\":\"nitrogen base\",\"description\":\"One of four types of chemical parts in a nucleotide.\",\"entity_type\":\"OBJECT\",\"aliases\":[\"nitrogen bases\"]},{\"name\":\"DNA strand\",\"description\":\"A strand formed when nucleotides are linked into a chain, with phosphate and sugar groups alternating.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"adenine\",\"description\":\"One of the four types of nitrogen bases found in DNA nucleotides.\",\"entity_type\":\"OBJECT\",\"aliases\":[\"A\"]},{\"name\":\"thymine\",\"description\":\"One of the four types of nitrogen bases found in DNA nucleotides.\",\"entity_type\":\"OBJECT\",\"aliases\":[\"T\"]},{\"name\":\"guanine\",\"description\":\"One of the four types of nitrogen bases found in DNA nucleotides.\",\"entity_type\":\"OBJECT\",\"aliases\":[\"G\"]},{\"name\":\"cytosine\",\"description\":\"One of the four types of nitrogen bases found in DNA nucleotides.\",\"entity_type\":\"OBJECT\",\"aliases\":[\"C\"]},{\"name\":\"base sequence\",\"description\":\"The order of nitrogen bases in a DNA strand, which determines the biological instructions contained in the strand.\",\"entity_type\":\"VARIABLE\",\"aliases\":[\"sequence\"]},{\"name\":\"gene\",\"description\":\"A unit included in the approximately 20,000 genes on the 23 pairs of chromosomes in a human genome.\",\"entity_type\":\"OBJECT\",\"aliases\":[\"genes\"]},{\"name\":\"human\",\"description\":\"An organism whose genome contains about 3 billion bases and about 20,000 genes on 23 pairs of chromosomes.\",\"entity_type\":\"OBJECT\",\"aliases\":[\"humans\"]},{\"name\":\"complex organism\",\"description\":\"An organism that, like humans, has a small amount of DNA in mitochondria in addition to DNA in the nucleus.\",\"entity_type\":\"OBJECT\",\"aliases\":[\"complex organisms\"]}]}",
+          "type": "output_text"
+        }
+      ],
+      "id": "msg_00c2db0a24a2f576016aa817133cb887d2bed6643486c05887",
+      "phase": "final_answer",
+      "role": "assistant",
+      "status": "completed",
+      "type": "message"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt": null,
+  "prompt_cache_key": null,
+  "prompt_cache_options": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "low",
+    "generate_summary": null,
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "status": "completed",
+  "store": false,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "description": null,
+      "name": "candidate_b_entity_inventory",
+      "schema_": {
+        "additionalProperties": false,
+        "properties": {
+          "symbols": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "aliases": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "entity_type": {
+                  "enum": [
+                    "CONCEPT",
+                    "OBJECT",
+                    "PROCESS",
+                    "VARIABLE",
+                    "SYSTEM",
+                    "COMPONENT"
+                  ],
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name",
+                "description",
+                "entity_type",
+                "aliases"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "symbols"
+        ],
+        "type": "object"
+      },
+      "strict": true,
+      "type": "json_schema"
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 710,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1464,
+    "output_tokens_details": {
+      "reasoning_tokens": 181
+    },
+    "total_tokens": 2174
+  },
+  "user": null
+}

@@ -1,0 +1,125 @@
+{
+  "missing_symbols": [
+    {
+      "reason": "The source gives mass as a specific measured property, but no mass entity is present in the frozen inventory.",
+      "semantic_item": "mass of the International Prototype Kilogram",
+      "surface_form": "mass"
+    },
+    {
+      "reason": "The source gives a numerical quantity value, but no corresponding quantity-value identity for 1 kg is present in the frozen inventory.",
+      "semantic_item": "the quantity value 1 kg",
+      "surface_form": "1 kg"
+    }
+  ],
+  "propositions": [],
+  "relationships": [
+    {
+      "confidence": 0.99,
+      "id": "r1",
+      "origin": "SOURCE",
+      "relationship_type": "CREATES",
+      "source_entity_id": "measurement",
+      "statement": "Measurement produces a value reasonably attributable to a quantitative property.",
+      "target_entity_id": "measurement-value"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r2",
+      "origin": "SOURCE",
+      "relationship_type": "INTERACTS_WITH",
+      "source_entity_id": "measurement-comparison",
+      "statement": "Measurement involves direct or indirect comparison with a standard.",
+      "target_entity_id": "standard"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r3",
+      "origin": "SOURCE",
+      "relationship_type": "EXAMPLE_OF",
+      "source_entity_id": "32768-hz-quartz-crystal-resonator",
+      "statement": "A certified 32768 Hz quartz crystal resonator is given as an example of a standard.",
+      "target_entity_id": "standard"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r4",
+      "origin": "SOURCE",
+      "relationship_type": "EXAMPLE_OF",
+      "source_entity_id": "primary-gas-mixture",
+      "statement": "A primary gas mixture is given as an example of a standard.",
+      "target_entity_id": "standard"
+    },
+    {
+      "confidence": 0.98,
+      "id": "r5",
+      "origin": "SOURCE",
+      "relationship_type": "INTERACTS_WITH",
+      "source_entity_id": "phenomenon",
+      "statement": "The phenomenon of interest interacts with a measuring instrument.",
+      "target_entity_id": "measuring-instrument"
+    },
+    {
+      "confidence": 0.98,
+      "id": "r6",
+      "origin": "SOURCE",
+      "relationship_type": "INTERACTS_WITH",
+      "source_entity_id": "body",
+      "statement": "The body of interest interacts with a measuring instrument.",
+      "target_entity_id": "measuring-instrument"
+    },
+    {
+      "confidence": 0.98,
+      "id": "r7",
+      "origin": "SOURCE",
+      "relationship_type": "INTERACTS_WITH",
+      "source_entity_id": "substance",
+      "statement": "The substance of interest interacts with a measuring instrument.",
+      "target_entity_id": "measuring-instrument"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r8",
+      "origin": "SOURCE",
+      "relationship_type": "CREATES",
+      "source_entity_id": "measuring-instrument",
+      "statement": "A measuring instrument produces an indication responsive to the property of interest.",
+      "target_entity_id": "indication"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r9",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "measurement-uncertainty",
+      "statement": "Measurement uncertainty is defined as a parameter associated with a measurement result and characterizing dispersion.",
+      "target_entity_id": "parameter"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r10",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "standard-measurement-uncertainty",
+      "statement": "Standard measurement uncertainty is measurement uncertainty expressed as a standard deviation.",
+      "target_entity_id": "measurement-uncertainty"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r11",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "scalar-measurand",
+      "statement": "A scalar measurand is a measurand whose property of interest can be quantified by a single real number.",
+      "target_entity_id": "measurand"
+    },
+    {
+      "confidence": 0.97,
+      "id": "r12",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "standard-deviation",
+      "statement": "For scalar measurands, standard deviation is described as a parameter that may express measurement uncertainty.",
+      "target_entity_id": "parameter"
+    }
+  ]
+}

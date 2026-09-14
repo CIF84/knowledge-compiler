@@ -1,0 +1,75 @@
+{
+  "admitted_counts": {
+    "claims": 15,
+    "entities": 38,
+    "propositions": 0,
+    "relationships": 12
+  },
+  "arm": "CANDIDATE_B",
+  "detected_structure_count": 3,
+  "detected_structure_types": {
+    "HIERARCHY": 3
+  },
+  "detection_stage": null,
+  "error_type": null,
+  "exact_failure": null,
+  "execution_mode": "FUTURE_LIVE",
+  "failure_origins": [],
+  "known_invalid_objects_admitted": 0,
+  "monetary_cost": null,
+  "proposal_counts": {
+    "claims": 15,
+    "entities": 38,
+    "propositions": 0,
+    "relationships": 12
+  },
+  "provider_calls_started": 3,
+  "provider_latency_ms": 36861.49058199953,
+  "representation_strategy_counts": {
+    "CONCISE_PROSE": 29,
+    "FOCUSED_RELATIONSHIP": 12,
+    "HIERARCHY_COMPOSITION": 9
+  },
+  "representation_sufficiency_counts": {
+    "INSUFFICIENT_SUPPORTED_STRUCTURE": 29,
+    "SUFFICIENT_TRUSTED_STRUCTURE": 21
+  },
+  "source_id": "nist-measurement-uncertainty-2025",
+  "source_sha256": "b3ae508f3982dfdd89f41a1d9ca59eb1f658b1648e3fae35168feba212046730",
+  "stage_gates": [
+    {
+      "error_type": null,
+      "exact_failure": null,
+      "output_identity_sha256": "296033f6097786a09329fada500f9d04db09fa6a339914ed6c32e15d5c82c524",
+      "stage": "ENTITY_INVENTORY",
+      "stage_version": "spec-047-entity-inventory-v1",
+      "status": "PASS",
+      "upstream_identity_sha256": "b3ae508f3982dfdd89f41a1d9ca59eb1f658b1648e3fae35168feba212046730"
+    },
+    {
+      "error_type": null,
+      "exact_failure": null,
+      "output_identity_sha256": "80af30f1af8c8ca60686da75237c863da32be5a6df7437b457ba15abaf6a707a",
+      "stage": "SEMANTIC_STRUCTURE",
+      "stage_version": "spec-047-semantic-structure-v1",
+      "status": "PASS",
+      "upstream_identity_sha256": "296033f6097786a09329fada500f9d04db09fa6a339914ed6c32e15d5c82c524"
+    },
+    {
+      "error_type": null,
+      "exact_failure": null,
+      "output_identity_sha256": "14c24a973e1e7338b5365c5ff691a2e95b366f2081a6535cfc3a3624eac863ec",
+      "stage": "CLAIM_EVIDENCE_BINDING",
+      "stage_version": "spec-047-claim-evidence-binding-v1",
+      "status": "PASS",
+      "upstream_identity_sha256": "88def53ce47e9ef80dc81038a19e5dfa0a83c4abc802857f6a9e504ac2fdd109"
+    }
+  ],
+  "status": "PASS",
+  "sufficient_representation_decision_count": 21,
+  "usage": {
+    "input_tokens": 9134,
+    "output_tokens": 4461,
+    "total_tokens": 13595
+  }
+}

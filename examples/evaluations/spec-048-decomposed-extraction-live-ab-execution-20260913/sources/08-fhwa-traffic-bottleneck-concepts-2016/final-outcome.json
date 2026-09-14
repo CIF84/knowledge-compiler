@@ -1,0 +1,63 @@
+{
+  "admitted_counts": null,
+  "arm": "CANDIDATE_B",
+  "detected_structure_count": 0,
+  "detected_structure_types": {},
+  "detection_stage": "SEMANTIC_STRUCTURE",
+  "error_type": "ValidationError",
+  "exact_failure": "comparison condition requires left operand, right operand, outcome, operator, and CAUSES",
+  "execution_mode": "FUTURE_LIVE",
+  "failure_origins": [
+    "RELATIONSHIP_SEMANTICS"
+  ],
+  "known_invalid_objects_admitted": 0,
+  "monetary_cost": null,
+  "proposal_counts": {
+    "claims": 0,
+    "entities": 38,
+    "propositions": 0,
+    "relationships": 0
+  },
+  "provider_calls_started": 2,
+  "provider_latency_ms": 27260.575542008155,
+  "representation_strategy_counts": {},
+  "representation_sufficiency_counts": {},
+  "source_id": "fhwa-traffic-bottleneck-concepts-2016",
+  "source_sha256": "1fd7e9851839f5f35cd2a231cd3ce5aea8196ec85cabd04694f681c063ea4345",
+  "stage_gates": [
+    {
+      "error_type": null,
+      "exact_failure": null,
+      "output_identity_sha256": "e14ae049ed69776343dc10cf220a2a13379bb3012a61bae55816ef9d77c377e2",
+      "stage": "ENTITY_INVENTORY",
+      "stage_version": "spec-047-entity-inventory-v1",
+      "status": "PASS",
+      "upstream_identity_sha256": "1fd7e9851839f5f35cd2a231cd3ce5aea8196ec85cabd04694f681c063ea4345"
+    },
+    {
+      "error_type": "ValidationError",
+      "exact_failure": "comparison condition requires left operand, right operand, outcome, operator, and CAUSES",
+      "output_identity_sha256": null,
+      "stage": "SEMANTIC_STRUCTURE",
+      "stage_version": "spec-047-semantic-structure-v1",
+      "status": "FAIL_CLOSED",
+      "upstream_identity_sha256": "e14ae049ed69776343dc10cf220a2a13379bb3012a61bae55816ef9d77c377e2"
+    },
+    {
+      "error_type": null,
+      "exact_failure": null,
+      "output_identity_sha256": null,
+      "stage": "CLAIM_EVIDENCE_BINDING",
+      "stage_version": "spec-047-claim-evidence-binding-v1",
+      "status": "NOT_RUN_UPSTREAM_FAILURE",
+      "upstream_identity_sha256": null
+    }
+  ],
+  "status": "FAILED_CLOSED",
+  "sufficient_representation_decision_count": 0,
+  "usage": {
+    "input_tokens": 6469,
+    "output_tokens": 3264,
+    "total_tokens": 9733
+  }
+}

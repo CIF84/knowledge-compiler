@@ -1,0 +1,1641 @@
+{
+  "attempts": [
+    {
+      "provider_metadata": {
+        "actual_model": "gpt-5.6-luna",
+        "candidate_version": "spec-047-candidate-b-v1",
+        "duration_ms": 12641.856917005498,
+        "hidden_retries": 0,
+        "http_request_id": "req_782acdb57ed54683903b2ca1949f44a5",
+        "prompt_sha256": "b1c00eb4547de56c62dcc18c7aec013ee1e2de4a8c1dfa45bcb475f00591f785",
+        "prompt_version": "spec-047-entity-inventory-v1",
+        "provider": "openai",
+        "provider_response_id": "resp_0556d58d9138f939016aa81737045c87d2a35461ab41bcc055",
+        "repair_calls": 0,
+        "requested_model": "gpt-5.6-luna",
+        "schema_name": "candidate_b_entity_inventory",
+        "schema_sha256": "003db7546ae3ffafe7dc098bc50e1a5f223b891f6ee3160f7537214c8e9c9956",
+        "sdk_retries": 0,
+        "semantic_retries": 0,
+        "stage": "ENTITY_INVENTORY",
+        "store": false,
+        "upstream_input_sha256": "1fd7e9851839f5f35cd2a231cd3ce5aea8196ec85cabd04694f681c063ea4345",
+        "usage": {
+          "input_tokens": 881,
+          "output_tokens": 1443,
+          "total_tokens": 2324
+        }
+      },
+      "raw_proposal": {
+        "symbols": [
+          {
+            "aliases": [],
+            "description": "Organization cited as stating the proportions of congestion attributable to bottlenecks and poor signal timing.",
+            "entity_type": "SYSTEM",
+            "name": "FHWA"
+          },
+          {
+            "aliases": [],
+            "description": "Corridor coalition associated with the congestion study said to underlie the frequently quoted proportions.",
+            "entity_type": "SYSTEM",
+            "name": "I-95 Corridor Coalition"
+          },
+          {
+            "aliases": [],
+            "description": "Traffic condition discussed as having recurring and nonrecurring causes and as occurring either locally or systemically.",
+            "entity_type": "CONCEPT",
+            "name": "congestion"
+          },
+          {
+            "aliases": [],
+            "description": "Congestion attributed to recurring causes, especially bottlenecks and poor signal timing.",
+            "entity_type": "CONCEPT",
+            "name": "recurring congestion"
+          },
+          {
+            "aliases": [],
+            "description": "Congestion other than recurring congestion, including congestion associated with special events, bad weather, work zones, and traffic incidents.",
+            "entity_type": "CONCEPT",
+            "name": "nonrecurring congestion"
+          },
+          {
+            "aliases": [
+              "traffic bottleneck"
+            ],
+            "description": "A specific location or point associated with localized traffic congestion, upstream queue formation, and free-flowing traffic downstream.",
+            "entity_type": "CONCEPT",
+            "name": "bottleneck"
+          },
+          {
+            "aliases": [],
+            "description": "A recurring cause of congestion identified as a tangible problem rather than a random event.",
+            "entity_type": "CONCEPT",
+            "name": "poor signal timing"
+          },
+          {
+            "aliases": [],
+            "description": "A cause associated with a bottleneck, including physical roadway deficiencies and other conditions such as weaving, sun glare, rubbernecking, or a vertical climb.",
+            "entity_type": "CONCEPT",
+            "name": "bottleneck cause"
+          },
+          {
+            "aliases": [],
+            "description": "A physical roadway condition that can cause a bottleneck, such as a lane drop or other operationally deficient roadway design.",
+            "entity_type": "CONCEPT",
+            "name": "physical bottleneck cause"
+          },
+          {
+            "aliases": [],
+            "description": "An operational deficiency in roadway design that can contribute to a recurring bottleneck.",
+            "entity_type": "CONCEPT",
+            "name": "roadway design deficiency"
+          },
+          {
+            "aliases": [],
+            "description": "A roadway design condition given as an example of a physical bottleneck cause.",
+            "entity_type": "OBJECT",
+            "name": "lane drop"
+          },
+          {
+            "aliases": [],
+            "description": "A roadway traffic condition given as an example of a bottleneck cause.",
+            "entity_type": "CONCEPT",
+            "name": "weaving condition"
+          },
+          {
+            "aliases": [],
+            "description": "An environmental condition given as an example of a bottleneck cause.",
+            "entity_type": "CONCEPT",
+            "name": "sun glare"
+          },
+          {
+            "aliases": [],
+            "description": "A traffic-related condition given as an example of a bottleneck cause.",
+            "entity_type": "PROCESS",
+            "name": "rubbernecking"
+          },
+          {
+            "aliases": [],
+            "description": "A roadway condition given as an example of a bottleneck cause.",
+            "entity_type": "CONCEPT",
+            "name": "vertical climb"
+          },
+          {
+            "aliases": [
+              "special events"
+            ],
+            "description": "An example of a nonrecurring congestion event.",
+            "entity_type": "OBJECT",
+            "name": "special event"
+          },
+          {
+            "aliases": [],
+            "description": "An example of a nonrecurring congestion cause.",
+            "entity_type": "CONCEPT",
+            "name": "bad weather"
+          },
+          {
+            "aliases": [
+              "work zones"
+            ],
+            "description": "An example of a nonrecurring congestion cause.",
+            "entity_type": "OBJECT",
+            "name": "work zone"
+          },
+          {
+            "aliases": [
+              "traffic incidents"
+            ],
+            "description": "An example of a nonrecurring congestion cause.",
+            "entity_type": "PROCESS",
+            "name": "traffic incident"
+          },
+          {
+            "aliases": [
+              "queues"
+            ],
+            "description": "A line of vehicles formed upstream of a bottleneck.",
+            "entity_type": "OBJECT",
+            "name": "queue"
+          },
+          {
+            "aliases": [],
+            "description": "The direction or region before a bottleneck where queues form and traffic may propagate.",
+            "entity_type": "CONCEPT",
+            "name": "upstream"
+          },
+          {
+            "aliases": [],
+            "description": "The direction or region after a bottleneck where traffic is described as free-flowing or where a downstream front may be fixed or moving.",
+            "entity_type": "CONCEPT",
+            "name": "downstream"
+          },
+          {
+            "aliases": [
+              "free-flow"
+            ],
+            "description": "Traffic moving without the localized or systemic congestion described for the other traffic phases.",
+            "entity_type": "CONCEPT",
+            "name": "free-flowing traffic"
+          },
+          {
+            "aliases": [
+              "synchronized traffic"
+            ],
+            "description": "A traffic phase involving localized congestion in Kerner's three-phase categorization.",
+            "entity_type": "CONCEPT",
+            "name": "synchronized flow"
+          },
+          {
+            "aliases": [
+              "wide-moving jams"
+            ],
+            "description": "A traffic phase characterized as more or less systemic congestion, with downstream traffic velocity moving while traffic may propagate upstream through bottlenecks.",
+            "entity_type": "CONCEPT",
+            "name": "wide-moving jam"
+          },
+          {
+            "aliases": [
+              "traffic phases"
+            ],
+            "description": "One of the three categories in Kerner's traffic categorization: free-flow, synchronized flow, or wide-moving jams.",
+            "entity_type": "CONCEPT",
+            "name": "traffic phase"
+          },
+          {
+            "aliases": [],
+            "description": "A front at which Kerner's synchronized traffic is described as fixed; it is characterized as a de facto bottleneck.",
+            "entity_type": "OBJECT",
+            "name": "downstream front"
+          },
+          {
+            "aliases": [],
+            "description": "The amount of traffic using or attempting to use a roadway, which can overwhelm available roadway capacity.",
+            "entity_type": "VARIABLE",
+            "name": "traffic demand"
+          },
+          {
+            "aliases": [],
+            "description": "The available capacity of a roadway that may be overwhelmed by traffic demand.",
+            "entity_type": "VARIABLE",
+            "name": "roadway capacity"
+          },
+          {
+            "aliases": [
+              "delay"
+            ],
+            "description": "Delay that occurs when a recurring bottleneck's design deficiency combines with traffic overburden.",
+            "entity_type": "CONCEPT",
+            "name": "traffic delay"
+          },
+          {
+            "aliases": [],
+            "description": "Traffic demand exceeding or overwhelming available roadway capacity in the context of a recurring bottleneck.",
+            "entity_type": "CONCEPT",
+            "name": "traffic overburden"
+          },
+          {
+            "aliases": [],
+            "description": "The velocity of traffic downstream, described as moving in wide-moving jams.",
+            "entity_type": "VARIABLE",
+            "name": "downstream traffic velocity"
+          },
+          {
+            "aliases": [
+              "traffic may propagate upstream"
+            ],
+            "description": "Movement of traffic upstream through bottlenecks, particularly in the description of wide-moving jams.",
+            "entity_type": "PROCESS",
+            "name": "traffic propagation"
+          },
+          {
+            "aliases": [],
+            "description": "Formation of queues upstream of a bottleneck.",
+            "entity_type": "PROCESS",
+            "name": "queue formation"
+          },
+          {
+            "aliases": [],
+            "description": "A study said to have been undertaken mostly for, or using data mostly from, the I-95 Corridor Coalition and used as the primary basis for the quoted congestion proportions.",
+            "entity_type": "OBJECT",
+            "name": "congestion study"
+          },
+          {
+            "aliases": [],
+            "description": "The quoted proportion of congestion attributed jointly to bottlenecks and poor signal timing, stated as 45 percent.",
+            "entity_type": "VARIABLE",
+            "name": "recurring congestion proportion"
+          },
+          {
+            "aliases": [],
+            "description": "The quoted proportion of nationwide congestion attributed to bottlenecks, stated as 40 percent.",
+            "entity_type": "VARIABLE",
+            "name": "bottleneck congestion proportion"
+          },
+          {
+            "aliases": [],
+            "description": "The quoted proportion of nationwide congestion attributed to poor signal timing, stated as 5 percent.",
+            "entity_type": "VARIABLE",
+            "name": "poor-signal-timing congestion proportion"
+          }
+        ]
+      },
+      "raw_provider_response": {
+        "background": false,
+        "billing": {
+          "payer": "developer"
+        },
+        "completed_at": 1789400899.0,
+        "conversation": null,
+        "created_at": 1789400887.0,
+        "error": null,
+        "frequency_penalty": 0.0,
+        "id": "resp_0556d58d9138f939016aa81737045c87d2a35461ab41bcc055",
+        "incomplete_details": null,
+        "instructions": "You perform Stage 1 entity inventory for a semantic compiler.\n\nRead only the exact supplied source. Return a precision-first inventory of concepts,\nobjects, processes, variables, systems, and components that later semantic statements\nneed as endpoints or proposition roles. Include source-supported process/event concepts\nwhen later meaning would need to refer to them. Do not use external knowledge.\n\nDo not assign IDs: trusted code assigns stable IDs after this stage. Each semantic thing\nmust appear once. Do not fragment one identity into variants, merge related but distinct\nthings, or use aliases except for genuine naming equivalence. Names and descriptions must\nremain source-bounded.\n\nReturn entities only. Do not return claims, evidence, relationships, propositions,\nteaching prose, diagnostics, or output outside the requested schema.",
+        "max_output_tokens": null,
+        "max_tool_calls": null,
+        "metadata": {},
+        "model": "gpt-5.6-luna",
+        "moderation": null,
+        "object": "response",
+        "output": [
+          {
+            "content": [],
+            "encrypted_content": "gAAAAABqqBdDRtNQ281556gLuEbaCnp8dpvqTQFocSM9xCNJR9DWgsnX0uzDLwPADZ0hxgj2fhGI5p1X3ABoZmym7fdBRKqzYzOiSuHQO5mbLBVphNBNYGtpQLPMzmcFYuV3HLvIy-vUKxBjfWimBIK9bIH9W5I82hk7WhyPhBlgglDZL6F71eMVVHQi6ozx0rupBJw9v68bb0isEMLaSV8AMI6o0DuSkt1RX6TJuqUmHpu7FwRDClp6jIL_K7MkgHHn5tukMZpNZVuUUxvL60MK8rADOuogadUEV6U7jVW2NC6rmEgaoMU-SDyiBbRQQw-WcB0CHcM0nwfo0xB8AEaXLnoC1GkKDWJ0mCjRE7VrLsL1x9VMvskF3C_Dk1znEYK4xDlTtSss8DhIkE-BSs2iLbySraxSJSxAyZrpV0-hTx3wRaNyMY0-Z7a8Ys0DLU9c-gERij5GRfKwYY_N8NfRFkyFwbhQlzLc-AKuJCFj4BAD8Cd13ZxqH0jjR5s9HVXTDBMYpFGxPae9Ijl-ohU6SjEnDbmh0Ds8RasyMqZvFTEraoBxpe5taS7hNM3jjWPZOG3YRHCgS4ZHrcdyqGZVwK09L7G_9cA-lGwMe9OZDj8tN7WVuuv9quH9xU6Ah6pCvgbCs4LXt2Dxf3_QHaRNNRvkqHrgxTLabK5YWkif3B9Al-dtlFVTYugLhMDW21F_LugRJjaxZr90c6MuWTNMjNamtqoujtzkYiP8Mb82vIZlCkJsCUsDqLrvjw0yfl2H3XRDR77iOQnkEWu7UHTvfJVLvGCrAU5GmMHnBsBHRmqmgkM4mc40PTgp0xjC8Qx5qKcGpiQdIKPoYC-qjQLspLc-Z_s3NCCs7frxN_rZRYcdWnP89zctbQc57ixk019p0dm6wqXbNfdPKzJHW7cd1FElgItT3jK8AXzIRmr6dwZqzODCdZHw_aKd4lJTqh7QiHK1-o7J0w9gaZDfgPl7qElWjdisix_IjQMA7rq8vrYoG-zHnMnALDHqp3wfT13HA5dsnrt4cZ_l_wIYoZrZqrV14SBpSBZtSxLTeLFzGnKfnbMe1-0lL7DNgd6ruzDe-CvzNHp87yl1dCSdMdhxCWPkGqEWRu4o5gs5CmgPFKBVvT4_ezmA2KJO2eZ1Yjpj45a86EZ17BoFl-YIqXBLlA-sTw6ybC40s_ign1vb6nNFdhOgPsd8Xd1jvRdMcLtuBbyc2BR3Qd0b9ZC6XFxEEvtOc0zRjuLUT54n6dk7KIKblTLbLy6z31Hr1nQzvtF9yCZhlVGtVANUH4n-u7PJyN-MBcps_DBPUdR52N09gHK-bBcehLRtaQyKh_0wWO9N4F1xxekkpcNb1E8clDVV6HdSVqrrRDb6oT9WckMtdQcdfe341-wZ5eqVATV9A4TYcEiaIcrYLrvC25V0a8McUHmXQtcz6eRESc4Rak04gRkA6Y7Y4H5Ja4TLrmqkqJ_D87nkSks-xlIuuruiqNR_fatNWgGpaHafpm8gkqU7GqrcwynFO-ZcsLkEKS3JyGCZRG_GLMqqSF1IXeRGuDVzy48uLvcJWZbwqgLetlOurLD1d56IvH6Z9XwqoCVOfQ1MKgXPLCJccMF7cnzlANehc98oID4neFlIgjzBo1HJgMo4Wjem2R2RjbPUDosB5RpOwQ-OrJzvqnu86cgP6rgALvl1yzZKmFPjk8PL9aWzXw6E6hqk2a79IoEVYpBZ0QW2C-ME27dL-_-d9rhfg2zZyoCw12fcCG8jL2UkVaBH7fREXWKFCSQ=",
+            "id": "rs_0556d58d9138f939016aa81737d87087d28f979e5c7c8e30a3",
+            "status": null,
+            "summary": [],
+            "type": "reasoning"
+          },
+          {
+            "content": [
+              {
+                "annotations": [],
+                "logprobs": [],
+                "text": "{\"symbols\":[{\"name\":\"FHWA\",\"description\":\"Organization cited as stating the proportions of congestion attributable to bottlenecks and poor signal timing.\",\"entity_type\":\"SYSTEM\",\"aliases\":[]},{\"name\":\"I-95 Corridor Coalition\",\"description\":\"Corridor coalition associated with the congestion study said to underlie the frequently quoted proportions.\",\"entity_type\":\"SYSTEM\",\"aliases\":[]},{\"name\":\"congestion\",\"description\":\"Traffic condition discussed as having recurring and nonrecurring causes and as occurring either locally or systemically.\",\"entity_type\":\"CONCEPT\",\"aliases\":[]},{\"name\":\"recurring congestion\",\"description\":\"Congestion attributed to recurring causes, especially bottlenecks and poor signal timing.\",\"entity_type\":\"CONCEPT\",\"aliases\":[]},{\"name\":\"nonrecurring congestion\",\"description\":\"Congestion other than recurring congestion, including congestion associated with special events, bad weather, work zones, and traffic incidents.\",\"entity_type\":\"CONCEPT\",\"aliases\":[]},{\"name\":\"bottleneck\",\"description\":\"A specific location or point associated with localized traffic congestion, upstream queue formation, and free-flowing traffic downstream.\",\"entity_type\":\"CONCEPT\",\"aliases\":[\"traffic bottleneck\"]},{\"name\":\"poor signal timing\",\"description\":\"A recurring cause of congestion identified as a tangible problem rather than a random event.\",\"entity_type\":\"CONCEPT\",\"aliases\":[]},{\"name\":\"bottleneck cause\",\"description\":\"A cause associated with a bottleneck, including physical roadway deficiencies and other conditions such as weaving, sun glare, rubbernecking, or a vertical climb.\",\"entity_type\":\"CONCEPT\",\"aliases\":[]},{\"name\":\"physical bottleneck cause\",\"description\":\"A physical roadway condition that can cause a bottleneck, such as a lane drop or other operationally deficient roadway design.\",\"entity_type\":\"CONCEPT\",\"aliases\":[]},{\"name\":\"roadway design deficiency\",\"description\":\"An operational deficiency in roadway design that can contribute to a recurring bottleneck.\",\"entity_type\":\"CONCEPT\",\"aliases\":[]},{\"name\":\"lane drop\",\"description\":\"A roadway design condition given as an example of a physical bottleneck cause.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"weaving condition\",\"description\":\"A roadway traffic condition given as an example of a bottleneck cause.\",\"entity_type\":\"CONCEPT\",\"aliases\":[]},{\"name\":\"sun glare\",\"description\":\"An environmental condition given as an example of a bottleneck cause.\",\"entity_type\":\"CONCEPT\",\"aliases\":[]},{\"name\":\"rubbernecking\",\"description\":\"A traffic-related condition given as an example of a bottleneck cause.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"name\":\"vertical climb\",\"description\":\"A roadway condition given as an example of a bottleneck cause.\",\"entity_type\":\"CONCEPT\",\"aliases\":[]},{\"name\":\"special event\",\"description\":\"An example of a nonrecurring congestion event.\",\"entity_type\":\"OBJECT\",\"aliases\":[\"special events\"]},{\"name\":\"bad weather\",\"description\":\"An example of a nonrecurring congestion cause.\",\"entity_type\":\"CONCEPT\",\"aliases\":[]},{\"name\":\"work zone\",\"description\":\"An example of a nonrecurring congestion cause.\",\"entity_type\":\"OBJECT\",\"aliases\":[\"work zones\"]},{\"name\":\"traffic incident\",\"description\":\"An example of a nonrecurring congestion cause.\",\"entity_type\":\"PROCESS\",\"aliases\":[\"traffic incidents\"]},{\"name\":\"queue\",\"description\":\"A line of vehicles formed upstream of a bottleneck.\",\"entity_type\":\"OBJECT\",\"aliases\":[\"queues\"]},{\"name\":\"upstream\",\"description\":\"The direction or region before a bottleneck where queues form and traffic may propagate.\",\"entity_type\":\"CONCEPT\",\"aliases\":[]},{\"name\":\"downstream\",\"description\":\"The direction or region after a bottleneck where traffic is described as free-flowing or where a downstream front may be fixed or moving.\",\"entity_type\":\"CONCEPT\",\"aliases\":[]},{\"name\":\"free-flowing traffic\",\"description\":\"Traffic moving without the localized or systemic congestion described for the other traffic phases.\",\"entity_type\":\"CONCEPT\",\"aliases\":[\"free-flow\"]},{\"name\":\"synchronized flow\",\"description\":\"A traffic phase involving localized congestion in Kerner's three-phase categorization.\",\"entity_type\":\"CONCEPT\",\"aliases\":[\"synchronized traffic\"]},{\"name\":\"wide-moving jam\",\"description\":\"A traffic phase characterized as more or less systemic congestion, with downstream traffic velocity moving while traffic may propagate upstream through bottlenecks.\",\"entity_type\":\"CONCEPT\",\"aliases\":[\"wide-moving jams\"]},{\"name\":\"traffic phase\",\"description\":\"One of the three categories in Kerner's traffic categorization: free-flow, synchronized flow, or wide-moving jams.\",\"entity_type\":\"CONCEPT\",\"aliases\":[\"traffic phases\"]},{\"name\":\"downstream front\",\"description\":\"A front at which Kerner's synchronized traffic is described as fixed; it is characterized as a de facto bottleneck.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"traffic demand\",\"description\":\"The amount of traffic using or attempting to use a roadway, which can overwhelm available roadway capacity.\",\"entity_type\":\"VARIABLE\",\"aliases\":[]},{\"name\":\"roadway capacity\",\"description\":\"The available capacity of a roadway that may be overwhelmed by traffic demand.\",\"entity_type\":\"VARIABLE\",\"aliases\":[]},{\"name\":\"traffic delay\",\"description\":\"Delay that occurs when a recurring bottleneck's design deficiency combines with traffic overburden.\",\"entity_type\":\"CONCEPT\",\"aliases\":[\"delay\"]},{\"name\":\"traffic overburden\",\"description\":\"Traffic demand exceeding or overwhelming available roadway capacity in the context of a recurring bottleneck.\",\"entity_type\":\"CONCEPT\",\"aliases\":[]},{\"name\":\"downstream traffic velocity\",\"description\":\"The velocity of traffic downstream, described as moving in wide-moving jams.\",\"entity_type\":\"VARIABLE\",\"aliases\":[]},{\"name\":\"traffic propagation\",\"description\":\"Movement of traffic upstream through bottlenecks, particularly in the description of wide-moving jams.\",\"entity_type\":\"PROCESS\",\"aliases\":[\"traffic may propagate upstream\"]},{\"name\":\"queue formation\",\"description\":\"Formation of queues upstream of a bottleneck.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"name\":\"congestion study\",\"description\":\"A study said to have been undertaken mostly for, or using data mostly from, the I-95 Corridor Coalition and used as the primary basis for the quoted congestion proportions.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"recurring congestion proportion\",\"description\":\"The quoted proportion of congestion attributed jointly to bottlenecks and poor signal timing, stated as 45 percent.\",\"entity_type\":\"VARIABLE\",\"aliases\":[]},{\"name\":\"bottleneck congestion proportion\",\"description\":\"The quoted proportion of nationwide congestion attributed to bottlenecks, stated as 40 percent.\",\"entity_type\":\"VARIABLE\",\"aliases\":[]},{\"name\":\"poor-signal-timing congestion proportion\",\"description\":\"The quoted proportion of nationwide congestion attributed to poor signal timing, stated as 5 percent.\",\"entity_type\":\"VARIABLE\",\"aliases\":[]}]}",
+                "type": "output_text"
+              }
+            ],
+            "id": "msg_0556d58d9138f939016aa817391edc87d29a792536523c43cf",
+            "phase": "final_answer",
+            "role": "assistant",
+            "status": "completed",
+            "type": "message"
+          }
+        ],
+        "parallel_tool_calls": true,
+        "presence_penalty": 0.0,
+        "previous_response_id": null,
+        "prompt": null,
+        "prompt_cache_key": null,
+        "prompt_cache_options": null,
+        "prompt_cache_retention": "24h",
+        "reasoning": {
+          "context": "all_turns",
+          "effort": "low",
+          "generate_summary": null,
+          "mode": "standard",
+          "summary": null
+        },
+        "safety_identifier": null,
+        "service_tier": "default",
+        "status": "completed",
+        "store": false,
+        "temperature": 1.0,
+        "text": {
+          "format": {
+            "description": null,
+            "name": "candidate_b_entity_inventory",
+            "schema_": {
+              "additionalProperties": false,
+              "properties": {
+                "symbols": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "aliases": {
+                        "items": {
+                          "type": "string"
+                        },
+                        "type": "array"
+                      },
+                      "description": {
+                        "type": "string"
+                      },
+                      "entity_type": {
+                        "enum": [
+                          "CONCEPT",
+                          "OBJECT",
+                          "PROCESS",
+                          "VARIABLE",
+                          "SYSTEM",
+                          "COMPONENT"
+                        ],
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "name",
+                      "description",
+                      "entity_type",
+                      "aliases"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                }
+              },
+              "required": [
+                "symbols"
+              ],
+              "type": "object"
+            },
+            "strict": true,
+            "type": "json_schema"
+          },
+          "verbosity": "medium"
+        },
+        "tool_choice": "auto",
+        "tool_usage": {
+          "image_gen": {
+            "input_tokens": 0,
+            "input_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            },
+            "output_tokens": 0,
+            "output_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            },
+            "total_tokens": 0
+          },
+          "web_search": {
+            "num_requests": 0
+          }
+        },
+        "tools": [],
+        "top_logprobs": 0,
+        "top_p": 0.98,
+        "truncation": "disabled",
+        "usage": {
+          "input_tokens": 881,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0
+          },
+          "output_tokens": 1443,
+          "output_tokens_details": {
+            "reasoning_tokens": 92
+          },
+          "total_tokens": 2324
+        },
+        "user": null
+      },
+      "stage": "ENTITY_INVENTORY"
+    },
+    {
+      "provider_metadata": {
+        "actual_model": "gpt-5.6-luna",
+        "candidate_version": "spec-047-candidate-b-v1",
+        "duration_ms": 14618.718625002657,
+        "hidden_retries": 0,
+        "http_request_id": "req_3174837c528a459b959f52d50944dfe2",
+        "prompt_sha256": "ed0a05dbfe2bc12cd55b524a41fe7b2b3668f37942bf8c087d4b606162216d6c",
+        "prompt_version": "spec-047-semantic-structure-v1",
+        "provider": "openai",
+        "provider_response_id": "resp_0452a91029c3c632016aa817435c2487d285f2c5fec4ca85ad",
+        "repair_calls": 0,
+        "requested_model": "gpt-5.6-luna",
+        "schema_name": "candidate_b_semantic_structure",
+        "schema_sha256": "a2f47f0ae187669e27b0f9413ae4fa717a2808f88f59756233b951d4cf486826",
+        "sdk_retries": 0,
+        "semantic_retries": 0,
+        "stage": "SEMANTIC_STRUCTURE",
+        "store": false,
+        "upstream_input_sha256": "e14ae049ed69776343dc10cf220a2a13379bb3012a61bae55816ef9d77c377e2",
+        "usage": {
+          "input_tokens": 5588,
+          "output_tokens": 1821,
+          "total_tokens": 7409
+        }
+      },
+      "raw_proposal": {
+        "missing_symbols": [],
+        "propositions": [
+          {
+            "comparison_operator": "GREATER_THAN",
+            "confidence": 0.99,
+            "origin": "SOURCE",
+            "proposition_type": "COMPARISON_CONDITION",
+            "relationship_type": "CONSTRAINS",
+            "role_bindings": [
+              {
+                "entity_id": "bottleneck-congestion-proportion",
+                "role": "LEFT_OPERAND"
+              },
+              {
+                "entity_id": "poor-signal-timing-congestion-proportion",
+                "role": "RIGHT_OPERAND"
+              }
+            ],
+            "statement": "The bottleneck congestion proportion is greater than the poor signal timing congestion proportion."
+          }
+        ],
+        "relationships": [
+          {
+            "confidence": 0.72,
+            "id": "r1",
+            "origin": "SOURCE",
+            "relationship_type": "MEASURED_BY",
+            "source_entity_id": "bottleneck-congestion-proportion",
+            "statement": "The bottleneck congestion proportion is associated with the congestion study as its primary evidentiary basis.",
+            "target_entity_id": "congestion-study"
+          },
+          {
+            "confidence": 0.72,
+            "id": "r2",
+            "origin": "SOURCE",
+            "relationship_type": "MEASURED_BY",
+            "source_entity_id": "poor-signal-timing-congestion-proportion",
+            "statement": "The poor signal timing congestion proportion is associated with the congestion study as its primary evidentiary basis.",
+            "target_entity_id": "congestion-study"
+          },
+          {
+            "confidence": 0.99,
+            "id": "r3",
+            "origin": "SOURCE",
+            "relationship_type": "IS_A",
+            "source_entity_id": "recurring-congestion",
+            "statement": "Recurring congestion is a type of congestion.",
+            "target_entity_id": "congestion"
+          },
+          {
+            "confidence": 0.99,
+            "id": "r4",
+            "origin": "SOURCE",
+            "relationship_type": "IS_A",
+            "source_entity_id": "nonrecurring-congestion",
+            "statement": "Nonrecurring congestion is a type of congestion.",
+            "target_entity_id": "congestion"
+          },
+          {
+            "confidence": 0.99,
+            "id": "r5",
+            "origin": "SOURCE",
+            "relationship_type": "IS_A",
+            "source_entity_id": "physical-bottleneck-cause",
+            "statement": "A physical bottleneck cause is a type of bottleneck cause.",
+            "target_entity_id": "bottleneck-cause"
+          },
+          {
+            "confidence": 0.99,
+            "id": "r6",
+            "origin": "SOURCE",
+            "relationship_type": "EXAMPLE_OF",
+            "source_entity_id": "lane-drop",
+            "statement": "A lane drop is given as an example of a physical bottleneck cause.",
+            "target_entity_id": "physical-bottleneck-cause"
+          },
+          {
+            "confidence": 0.9,
+            "id": "r7",
+            "origin": "SOURCE",
+            "relationship_type": "EXAMPLE_OF",
+            "source_entity_id": "special-event",
+            "statement": "A special event is given as an example associated with nonrecurring congestion.",
+            "target_entity_id": "nonrecurring-congestion"
+          },
+          {
+            "confidence": 0.9,
+            "id": "r8",
+            "origin": "SOURCE",
+            "relationship_type": "EXAMPLE_OF",
+            "source_entity_id": "bad-weather",
+            "statement": "Bad weather is given as an example associated with nonrecurring congestion.",
+            "target_entity_id": "nonrecurring-congestion"
+          },
+          {
+            "confidence": 0.9,
+            "id": "r9",
+            "origin": "SOURCE",
+            "relationship_type": "EXAMPLE_OF",
+            "source_entity_id": "work-zone",
+            "statement": "A work zone is given as an example associated with nonrecurring congestion.",
+            "target_entity_id": "nonrecurring-congestion"
+          },
+          {
+            "confidence": 0.9,
+            "id": "r10",
+            "origin": "SOURCE",
+            "relationship_type": "EXAMPLE_OF",
+            "source_entity_id": "traffic-incident",
+            "statement": "A traffic incident is given as an example associated with nonrecurring congestion.",
+            "target_entity_id": "nonrecurring-congestion"
+          },
+          {
+            "confidence": 0.99,
+            "id": "r11",
+            "origin": "SOURCE",
+            "relationship_type": "IS_A",
+            "source_entity_id": "free-flowing-traffic",
+            "statement": "Free-flow is one of the traffic phases in Kerner's categorization.",
+            "target_entity_id": "traffic-phase"
+          },
+          {
+            "confidence": 0.99,
+            "id": "r12",
+            "origin": "SOURCE",
+            "relationship_type": "IS_A",
+            "source_entity_id": "synchronized-flow",
+            "statement": "Synchronized flow is one of the traffic phases in Kerner's categorization.",
+            "target_entity_id": "traffic-phase"
+          },
+          {
+            "confidence": 0.99,
+            "id": "r13",
+            "origin": "SOURCE",
+            "relationship_type": "IS_A",
+            "source_entity_id": "wide-moving-jam",
+            "statement": "Wide-moving jams are one of the traffic phases in Kerner's categorization.",
+            "target_entity_id": "traffic-phase"
+          },
+          {
+            "confidence": 0.99,
+            "id": "r14",
+            "origin": "SOURCE",
+            "relationship_type": "CAUSES",
+            "source_entity_id": "bottleneck",
+            "statement": "Bottlenecks result in the formation of queues upstream.",
+            "target_entity_id": "queue-formation"
+          },
+          {
+            "confidence": 0.95,
+            "id": "r15",
+            "origin": "SOURCE",
+            "relationship_type": "CAUSES",
+            "source_entity_id": "bottleneck",
+            "statement": "Bottlenecks result in free-flowing traffic downstream.",
+            "target_entity_id": "free-flowing-traffic"
+          },
+          {
+            "confidence": 0.97,
+            "id": "r16",
+            "origin": "SOURCE",
+            "relationship_type": "EXAMPLE_OF",
+            "source_entity_id": "downstream-front",
+            "statement": "The downstream front at which synchronized traffic is fixed is described as a de facto bottleneck.",
+            "target_entity_id": "bottleneck"
+          },
+          {
+            "confidence": 0.86,
+            "id": "r17",
+            "origin": "SOURCE",
+            "relationship_type": "CAUSES",
+            "source_entity_id": "physical-bottleneck-cause",
+            "statement": "A physical bottleneck cause contributes to delay when the recurring bottleneck conditions occur.",
+            "target_entity_id": "traffic-delay"
+          },
+          {
+            "confidence": 0.86,
+            "id": "r18",
+            "origin": "SOURCE",
+            "relationship_type": "CAUSES",
+            "source_entity_id": "traffic-overburden",
+            "statement": "Traffic overburden contributes to delay when the recurring bottleneck conditions occur.",
+            "target_entity_id": "traffic-delay"
+          },
+          {
+            "confidence": 0.94,
+            "id": "r19",
+            "origin": "SOURCE",
+            "relationship_type": "AFFECTS",
+            "source_entity_id": "traffic-propagation",
+            "statement": "Traffic may propagate upstream through bottlenecks in wide-moving jams.",
+            "target_entity_id": "upstream"
+          },
+          {
+            "confidence": 0.88,
+            "id": "r20",
+            "origin": "SOURCE",
+            "relationship_type": "AFFECTS",
+            "source_entity_id": "downstream-traffic-velocity",
+            "statement": "Downstream traffic velocity moves in the description of wide-moving jams.",
+            "target_entity_id": "wide-moving-jam"
+          },
+          {
+            "confidence": 0.78,
+            "id": "r21",
+            "origin": "SOURCE",
+            "relationship_type": "CAUSES",
+            "source_entity_id": "recurring-congestion",
+            "statement": "Recurring causes define recurring congestion as a portion of overall congestion.",
+            "target_entity_id": "congestion"
+          },
+          {
+            "confidence": 0.9,
+            "id": "r22",
+            "origin": "SOURCE",
+            "relationship_type": "EXAMPLE_OF",
+            "source_entity_id": "bottleneck",
+            "statement": "Bottlenecks are identified as a recurring cause of congestion.",
+            "target_entity_id": "recurring-congestion"
+          },
+          {
+            "confidence": 0.9,
+            "id": "r23",
+            "origin": "SOURCE",
+            "relationship_type": "EXAMPLE_OF",
+            "source_entity_id": "poor-signal-timing",
+            "statement": "Poor signal timing is identified as a recurring cause of congestion.",
+            "target_entity_id": "recurring-congestion"
+          }
+        ]
+      },
+      "raw_provider_response": {
+        "background": false,
+        "billing": {
+          "payer": "developer"
+        },
+        "completed_at": 1789400913.0,
+        "conversation": null,
+        "created_at": 1789400899.0,
+        "error": null,
+        "frequency_penalty": 0.0,
+        "id": "resp_0452a91029c3c632016aa817435c2487d285f2c5fec4ca85ad",
+        "incomplete_details": null,
+        "instructions": "You perform Stage 2 semantic structure extraction.\n\nThe user supplies an immutable entity inventory and the exact source. Return only\nsource-supported relationships and the two supported typed proposition forms. Every\nendpoint and role binding must use an exact supplied entity ID. Never create, rename,\nalias, or imply a new entity. If an important semantic item requires a missing identity,\nomit it and record a missing_symbols diagnostic. Never substitute a nearby identity.\n\nChoose a relationship only when its meaning and direction fit exactly. Do not force\nassociation, explanation, possession, or historical context into PART_OF or CAUSES.\nUse a typed proposition only for COMPARISON_CONDITION or TRANSFER_EVENT under the supplied\ncontract. Proposition IDs are assigned by trusted code; do not return them.\n\nDo not return claims or evidence in this stage. Do not return entities. Do not summarize,\nrepair the inventory, or emit output outside the requested schema.\n\nACTIVE RELATIONSHIP CONTRACTS (source --TYPE--> target):\nIS_A [STRUCTURAL; direction=instance_to_type]\n  meaning: The source is a kind, category, or subtype of the target.\n  roles: source=instance or subtype; target=broader type or category\n  use: The source can truthfully be described as a target.\n  avoid: Do not use for parts, examples, similarity, or temporary states.\nPART_OF [STRUCTURAL; direction=part_to_whole]\n  meaning: The source is a constituent or component of the target.\n  roles: source=part or component; target=containing whole\n  use: The source exists as a component or subpart of the target.\n  avoid: Never reverse whole and part; do not use for interaction or dependency.\nEXAMPLE_OF [STRUCTURAL; direction=example_to_concept]\n  meaning: The source is an illustrative instance of the target concept.\n  roles: source=example; target=concept illustrated\n  use: The source is presented as an example of the target.\n  avoid: Do not use merely because the source is a subtype; prefer IS_A for classification.\nCAUSES [CAUSAL; direction=cause_to_effect]\n  meaning: The source brings about the target as an effect.\n  roles: source=cause; target=effect\n  use: The source is stated to produce the target outcome.\n  avoid: Do not use for chronology, association, contribution, or unspecified influence.\nAFFECTS [CAUSAL; direction=influence_to_affected]\n  meaning: The source causally influences the target without a specified direction or complete production.\n  roles: source=influence; target=affected entity, process, or variable\n  use: The source changes or influences the target, but the text does not support CAUSES, INCREASES, or DECREASES.\n  avoid: Do not use for mere association, chronology, physical force, or interaction with no stated effect.\nINCREASES [CAUSAL; direction=increaser_to_increased_variable]\n  meaning: The source causally raises the amount, rate, value, probability, or intensity of the target.\n  roles: source=causal factor; target=quantity or variable increased\n  use: The source is explicitly said to make the target greater, faster, more likely, or more intense.\n  avoid: Do not infer from nearby words such as more or faster; never use when the source says slower, lower, or less.\nDECREASES [CAUSAL; direction=decreaser_to_decreased_variable]\n  meaning: The source causally lowers the amount, rate, value, probability, or intensity of the target.\n  roles: source=causal factor; target=quantity or variable decreased\n  use: The source is explicitly said to make the target smaller, slower, less likely, or less intense.\n  avoid: Do not use for absence, prevention without a scalar target, or mere negative association.\nINDUCES [CAUSAL; direction=inducer_to_induced_effect]\n  meaning: The source produces the target through an explicitly described induction mechanism.\n  roles: source=inducing phenomenon; target=induced phenomenon\n  use: The source explicitly says induces or describes a recognized induction mechanism.\n  avoid: Do not use as a metaphor for generic causation, influence, motivation, or historical response.\nENABLES [DEPENDENCY; direction=enabler_to_enabled]\n  meaning: The source makes the target possible without necessarily causing it to occur.\n  roles: source=enabling condition or capability; target=capability or process made possible\n  use: The target could not occur, or is materially made possible, because of the source.\n  avoid: Do not use for delivery, participation, weak assistance, or an effect that actually occurred.\nREQUIRES [DEPENDENCY; direction=dependent_to_requirement]\n  meaning: The source depends on the target as a prerequisite or necessary resource.\n  roles: source=dependent; target=prerequisite or required resource\n  use: The source cannot operate or occur as described without the target.\n  avoid: Do not reverse prerequisite and dependent; do not use for optional support.\nCONSTRAINS [DEPENDENCY; direction=constraint_to_constrained]\n  meaning: The source limits the possible behavior, values, or choices of the target.\n  roles: source=constraint; target=constrained entity, process, or variable\n  use: The source imposes a limit, rule, boundary, or restriction on the target.\n  avoid: Do not use to mean unchanged, unrelated, merely different, or causally reduced.\nPRECEDES [TEMPORAL; direction=earlier_to_later]\n  meaning: The source occurs before the target in time or an explicit process sequence.\n  roles: source=earlier event or process; target=later event or process\n  use: The source explicitly occurs before, previously, first, then, or after relative to the target.\n  avoid: Do not infer causality from order; do not reverse earlier and later.\nINTERACTS_WITH [INTERACTION; symmetric]\n  meaning: The source and target directly interact, with no more precise directional semantics supported.\n  roles: source=interaction participant; target=interaction participant\n  use: The text supports direct mutual interaction but not a more precise active predicate.\n  avoid: Do not use for distant association, one-way effect, dependency, or chronology.\nBINDS_TO [INTERACTION; symmetric]\n  meaning: The source physically or chemically binds or attaches to the target.\n  roles: source=binding participant; target=binding participant\n  use: The source explicitly binds or attaches to the target.\n  avoid: Do not use for metaphorical commitment, dependency, influence, or literal physical force.\nTRANSFERS_TO [INTERACTION; direction=transferred_item_to_destination]\n  meaning: The source item, material, or information moves to the target destination or recipient.\n  roles: source=item, material, or information transferred; target=destination or recipient\n  use: The source is explicitly carried, delivered, moved, or transferred to the target.\n  avoid: Do not make the carrier the source unless the carrier itself moves to the destination; do not use for enabling.\nEXERTS_FORCE_ON [INTERACTION; direction=force_exerter_to_physical_target]\n  meaning: The source exerts a literal physical force on the target.\n  roles: source=physical force source; target=physical object receiving force\n  use: A literal physical force is explicitly exerted on the target.\n  avoid: Never use metaphorically for influence, contribution, binding, pressure, or causation.\nTRANSFORMS_INTO [TRANSFORMATION; direction=prior_state_to_resulting_state]\n  meaning: The source itself changes state or identity and becomes the target.\n  roles: source=entity or state before transformation; target=same entity or resulting material after transformation\n  use: The source itself becomes the target through a transformation.\n  avoid: Do not use when an actor causes, creates, attempts, participates in, or responds to the target.\nCREATES [TRANSFORMATION; direction=creator_to_created]\n  meaning: The source produces or brings a distinct target into existence.\n  roles: source=producer or generative process; target=newly produced entity or result\n  use: The source produces a target that is distinct from the source.\n  avoid: Do not use when the source itself becomes the target; use TRANSFORMS_INTO instead.\nMEASURED_BY [DESCRIPTIVE; direction=measurand_to_measure]\n  meaning: The source property or variable is quantified or assessed by the target metric, observation, or procedure.\n  roles: source=property or variable measured; target=metric, observation, or measurement procedure\n  use: The target is explicitly how the source is measured or quantified.\n  avoid: Do not point to something that merely responds to, correlates with, or exemplifies the source.\nCONTRADICTS [DESCRIPTIVE; symmetric]\n  meaning: The source and target assert mutually incompatible propositions.\n  roles: source=proposition or claim; target=incompatible proposition or claim\n  use: Both sides are explicit propositions that cannot simultaneously hold as stated.\n  avoid: Do not use for difference, disagreement without incompatibility, trade-off, or negative causality.",
+        "max_output_tokens": null,
+        "max_tool_calls": null,
+        "metadata": {},
+        "model": "gpt-5.6-luna",
+        "moderation": null,
+        "object": "response",
+        "output": [
+          {
+            "content": [],
+            "encrypted_content": "gAAAAABqqBdRHY_o2QJhr7-YSEbjUs6PLQyUArqbw81_qr8OKEJT3dG5oslbT9RYt7XJSdqH6eSGNieXbnsde1nAYD-yRjz4KTYcV-oNQFFtV4QXwm9rmJwiIiLHRP2UxnryiQ49Sref1SQcPb1UW0-4HROaxTxHFmPXnBZRenmkWhwqjf6Ev3MMXiYxkyMCNLtAQtEeYO9EB7fdXKoSWG6vtOXjf9lhmRr_mPHecOk3EOO0fTovks29bLmcISg9KQomYHoLuemEqA6LS3v6z6vO0MryqdjZCc1UkkK0nI-4nfE6_poWG9swJLhpFMmiskfVgonqF-C8Z6AZ2NocMd9yu5EY3510jur-_m0yoz9qZ-pMwLDbuJ-SVVsX4Tnzb46XjTB8Y1cVIRbtE2jhBedwO6JHq_h0e4ntOw6YRHnLvLdczYjpwiPob0lQa5yvhTldyag6ecmv_Sui8gBq_3-9U8rGtBi38YTJhdOQpXthmaO5kbQK3lNBQ7Pu6_QQxo16KcWam2ioNIGS6-u4o3somM0mhoAvWJodenQC3m-AjgIdZ0vmi-UK7k4f53tZv66JXn4fCYkfDwLyZ_l2-XQefOHvW2q1OaZ6uhbDlIwf18ui2h-Pxn1Fa6VNHjbJxuCq5d9Optl541MOTaMJfli4KtRP-IK-wBeMh1peWI7KsaGtZfNfaSLY8QUh5V1NUMbyJh_9YhOJ2zirIM-XQBQIS4uFimsVVhjzflDMzrk6M_zHlx2HwEG4GO6daS72rueU1LlhShtWk1-aXQRXk8tkUSBnxXzfgovgNAwGuaEJR6cR9rD-1iG9vRbRUIisdH1i09q5S8u3yc7S2gelI6L4U8wV9oFcInwXpKVLQZu1iBXgGMj2sH8rllHwyskIjljddiFivSfpLHwiPMxY_-dKCUCXacodEHGrx03v9YCMqI7O_NlH_rFIaRf8iozEg9ycVjAwVkuQm7gIONS64OI0uLDekUzN2lbNjaPnYeBMsA0DXEHDKmAGHpV0oPv-yXogy3AU2egbJNmcxWDFtixtEGU9MoSFw-xRRon0dpKP0GDdUBrKzBn7e_bRiRnqNV3yyjWbGafI63fU-m7NyjwDQzg3fl9DV3yWE1mlpuXd61pzZCfxInqoN0EfJmH3FKqicbwFqtKHVfQVyp6Rp4bBGXbvBRgFxuVesfAEVzy6voYMAY2L2jLyAkhrPLXXPXHPjBzKJdYW4OzkSsc3hZyn5DXtL0tz-id9GsAED6-eWXl_T50FrC9cpTpZQ1MIp1t9fAw4nafTXo6Dr7MnQNN5Tqee38vz9KtNLo0oScGutAokTEeuoWpWEFyd0AI1AY9cayeN8KaouDx4D3CVnTBT6197QLNoJSVfBeoc8nq6CKNzVl43YVDWzOyexRgBoGvmKtbM_GSR8egFx-LE5Eam5Ly9evpa1OSKJWd_1pAWzM3Nd-eYT1tfE9lwp0qOfFZtYoXYm2sTTeHQVREUm5hOUwaYqhWwOG6IqwmaZvmMmQF_IZHhTJ0b1KxmqqEDy-u4KjmIWYUb9JFkoR0ce7BCTvOyP7m6rwj7CXIo4pbauJQaqvBx5BbkyHomNsTCFR3QWn2WnpYRgD6oLBG68hh_HJzU2rp6ctpc7NVTZVsqg-vX3voZ1JSXfkD07e0CEVaRLuvhbMWvDn8-h3Zzh_5CopZpYnG7c3tbu4ptaCv3b3dXaV22r2MaOtJODUbdo1s83iqpqvGB0zvQ5AothsGP9T4nDUjDXFZQ4a6lNiaDwZl0ICpPa3SvzdVSCDOxMdmYxVmLgVSpzlnXjQfgi9CchGyY8eV0rXcbaFZImwULeUgas2kZjWaO-ZvYkj2mnulg-rKEt6QqZjLl5eIWh7PD0lXdj4gytfeM9CIilPhVH9rLK2uIagD22RwZDykxPOb1nyyBmarkC9F5Wj5gP0hjJ2VVTiUi7LUahjaF3XMYB786mk00B34ix8q3GGzPt3Je9EANijRf_SgOzhMibkxURLDoB5I0A_kCJLgfYXw85MYCcHOf7gAQHJUzK6rivHMlUOzYzkRTTLk9KzfurIthitAuxbBbikGqjBCU-iCPbpLQXEwIK5fDN6-6POzDWA7cdwZMB80usClrGVCqVe5D7bT7_6BArYWcIVSQEgMO3QKUsGdV0YkJedJ6LgArSTDnLdgaMoOa9jzh2G8w03ruJCY_B5RS5K8Pb93AjxS3SLvVgrWeQ28BPusEhu_HRXSb7NYQ6tHXIFyCwR-iIJKs5wkAt0kor6ba94xuAv9i1EAjoPBJXUZ2-12g5ry4lb1JJYZIsyMWyI_R1cQj2CG9AFrWdqo6RQUEqD36ogwZXQTQFhxDI7CawcAwuIUCXD0eWZsUayaFSX8wLYtcu5HanENLiMSbvxH-457VWhszZBk0DNFLAgaIKuZr8OjTVjqlpgiUxZEgOBqxPEHZrBeeS9fwUIjdvn0ZAci6sAaxnnL-n96xe_s08bVEG7YS4gF-9G4kFQ_PQYXfXZkK5s8xQVuxIlz6SvnWGZYSx73F9k7jOi41hszQpiQ8r-oEx4MSpATpiAmx4x1j6K_gqCreeQc5ZdGpC7vJul6Qvrhbz9pEaH2O5UxYCdEErrxA7ZUnePI_yMhoCsrNZizny9jZF8n6_FbAyhWPGTvie4G6VR8YWdGvKIWBRTuryF1xZmFfvq014qYjHdQI9y08cd6LUEBaDJET_DCQ7J_eGoS1-i-BldQ_G18d8EVhFjSIrL7489cw6I3w4IOhKlhzZEgy37BCjUh3bxDgEsiiS6-a0Jt5neIOd8Pkrvew_uvr8hLlcEHBV0BTFczvqAqQqtI8PWmh3j8ZhnqL09jzcKbhjAKlhULJf0a6d4OGiUraSmzHoJ0YMVuf6PcTVT7a8VFfd5jMf-QF-GsPt3-v5qj-R38yx_2RuU6Nno-csaM7DAydbpbch5OpWAc1kFp40o-mho1IfsMK1uQf9C9yjRzFpSZsAkS6XNTBIsMGzu_vXtvPgyioqd_huXXQ_qMHsreeRGvkEqBdxUhK92Oe_3BkKg62hT22wJs5qTgG2ChKy4T9TU60aGAEJgF-0gf_F7Z9lK8GiYYFshF-tpg1mzeEvKBHUMoJVukemEDHEPDXcHPmK2wCXU1-ABmFdQUbuuXDOCKSuVy2QcUELcgoATGjgKMQclirTTwQ08Qq0jTOd8UG2B1rKVoNyBCrvdPKaMqZRyqblEfr-cz7a5OojcwdaZm32UoHVFwb1SCOM-4LSfKsYiExA74XNA5kxA0kRNextKwgTHEUsfFb7IOG0MKxnaxC2H_f9bRm8QbjHbMD3yxgAcHVci7ojBJCJ2VjZUdmyt1fz3ujEtrJhS0PizEu_1bZjoxyIZBYV6Xc9Q96hE9hxAUarQpW2vnBBIGIESR-Ue5PeNQfbSvZ3QMAKGuVeKooom6xCQF1S_yud6__sijt5rE66-pTrN45RKSDnyZMi3mkyRjDUqt7TaLCA84Ax-i2t4NG8_BNHXivoryN3e1l3UO8pKWs4vyfkUg6CffJTeH-yeHOgsuta-FC43OdF0uBLrNym-P8mIdUpMgDIVZ3m9fO3ENfG7BDZcGjQNj3POOilxIhRJQKYKD3DcWvXauaomSg3rqBLuq_rBkH9m0XutFMCK3vXPMMI0GFkubRSD4XpEY5GCjm1TXN1aVX38H6_jWoRPwi8OSA94eX68r9pKTq1E8EHVg4zk9Mcz_egeam9MUpDRToDViYd4Amw7O4gtljDJnDH4gkHB9jHFn_pZ9AD9MmKiQXVDfbF5PqNl4X9CwWOj6bSu3DCuZBkRDOP81NMs2uEj8y6k6-ivhWjez0ge4kPSxhipJ2z9gz6buUrazK8qo8CPydI0aYPG8rT6kgZkcAXMLvALFOrB6rOsKYuydSybw0jyIzQtqoqBPaydyviN0GlwRSo5Z6X66V9tMg1rwmn-of1wXAO4IMAX6hlqaFFBurYe3PjHrepC_5kncJM-ZmvkUFCCTBiBa30AF1iQaLfPZGQXDMJ7RJT9NuiNqiGFLjaNVX9OUC3l_fQZn3tuHmpdi1_4JBojnXHwYfVLEpcSXblAFeQ9BqpP1QrIBIUffzBB0ifuqUMLgXccqhNwwCAHG-H2SIR-b4OpRLBtw=",
+            "id": "rs_0452a91029c3c632016aa81743fadc87d28f908aa7c5724180",
+            "status": null,
+            "summary": [],
+            "type": "reasoning"
+          },
+          {
+            "content": [
+              {
+                "annotations": [],
+                "logprobs": [],
+                "text": "{\"relationships\":[{\"id\":\"r1\",\"source_entity_id\":\"bottleneck-congestion-proportion\",\"relationship_type\":\"MEASURED_BY\",\"target_entity_id\":\"congestion-study\",\"statement\":\"The bottleneck congestion proportion is associated with the congestion study as its primary evidentiary basis.\",\"confidence\":0.72,\"origin\":\"SOURCE\"},{\"id\":\"r2\",\"source_entity_id\":\"poor-signal-timing-congestion-proportion\",\"relationship_type\":\"MEASURED_BY\",\"target_entity_id\":\"congestion-study\",\"statement\":\"The poor signal timing congestion proportion is associated with the congestion study as its primary evidentiary basis.\",\"confidence\":0.72,\"origin\":\"SOURCE\"},{\"id\":\"r3\",\"source_entity_id\":\"recurring-congestion\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"congestion\",\"statement\":\"Recurring congestion is a type of congestion.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r4\",\"source_entity_id\":\"nonrecurring-congestion\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"congestion\",\"statement\":\"Nonrecurring congestion is a type of congestion.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r5\",\"source_entity_id\":\"physical-bottleneck-cause\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"bottleneck-cause\",\"statement\":\"A physical bottleneck cause is a type of bottleneck cause.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r6\",\"source_entity_id\":\"lane-drop\",\"relationship_type\":\"EXAMPLE_OF\",\"target_entity_id\":\"physical-bottleneck-cause\",\"statement\":\"A lane drop is given as an example of a physical bottleneck cause.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r7\",\"source_entity_id\":\"special-event\",\"relationship_type\":\"EXAMPLE_OF\",\"target_entity_id\":\"nonrecurring-congestion\",\"statement\":\"A special event is given as an example associated with nonrecurring congestion.\",\"confidence\":0.9,\"origin\":\"SOURCE\"},{\"id\":\"r8\",\"source_entity_id\":\"bad-weather\",\"relationship_type\":\"EXAMPLE_OF\",\"target_entity_id\":\"nonrecurring-congestion\",\"statement\":\"Bad weather is given as an example associated with nonrecurring congestion.\",\"confidence\":0.9,\"origin\":\"SOURCE\"},{\"id\":\"r9\",\"source_entity_id\":\"work-zone\",\"relationship_type\":\"EXAMPLE_OF\",\"target_entity_id\":\"nonrecurring-congestion\",\"statement\":\"A work zone is given as an example associated with nonrecurring congestion.\",\"confidence\":0.9,\"origin\":\"SOURCE\"},{\"id\":\"r10\",\"source_entity_id\":\"traffic-incident\",\"relationship_type\":\"EXAMPLE_OF\",\"target_entity_id\":\"nonrecurring-congestion\",\"statement\":\"A traffic incident is given as an example associated with nonrecurring congestion.\",\"confidence\":0.9,\"origin\":\"SOURCE\"},{\"id\":\"r11\",\"source_entity_id\":\"free-flowing-traffic\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"traffic-phase\",\"statement\":\"Free-flow is one of the traffic phases in Kerner's categorization.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r12\",\"source_entity_id\":\"synchronized-flow\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"traffic-phase\",\"statement\":\"Synchronized flow is one of the traffic phases in Kerner's categorization.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r13\",\"source_entity_id\":\"wide-moving-jam\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"traffic-phase\",\"statement\":\"Wide-moving jams are one of the traffic phases in Kerner's categorization.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r14\",\"source_entity_id\":\"bottleneck\",\"relationship_type\":\"CAUSES\",\"target_entity_id\":\"queue-formation\",\"statement\":\"Bottlenecks result in the formation of queues upstream.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r15\",\"source_entity_id\":\"bottleneck\",\"relationship_type\":\"CAUSES\",\"target_entity_id\":\"free-flowing-traffic\",\"statement\":\"Bottlenecks result in free-flowing traffic downstream.\",\"confidence\":0.95,\"origin\":\"SOURCE\"},{\"id\":\"r16\",\"source_entity_id\":\"downstream-front\",\"relationship_type\":\"EXAMPLE_OF\",\"target_entity_id\":\"bottleneck\",\"statement\":\"The downstream front at which synchronized traffic is fixed is described as a de facto bottleneck.\",\"confidence\":0.97,\"origin\":\"SOURCE\"},{\"id\":\"r17\",\"source_entity_id\":\"physical-bottleneck-cause\",\"relationship_type\":\"CAUSES\",\"target_entity_id\":\"traffic-delay\",\"statement\":\"A physical bottleneck cause contributes to delay when the recurring bottleneck conditions occur.\",\"confidence\":0.86,\"origin\":\"SOURCE\"},{\"id\":\"r18\",\"source_entity_id\":\"traffic-overburden\",\"relationship_type\":\"CAUSES\",\"target_entity_id\":\"traffic-delay\",\"statement\":\"Traffic overburden contributes to delay when the recurring bottleneck conditions occur.\",\"confidence\":0.86,\"origin\":\"SOURCE\"},{\"id\":\"r19\",\"source_entity_id\":\"traffic-propagation\",\"relationship_type\":\"AFFECTS\",\"target_entity_id\":\"upstream\",\"statement\":\"Traffic may propagate upstream through bottlenecks in wide-moving jams.\",\"confidence\":0.94,\"origin\":\"SOURCE\"},{\"id\":\"r20\",\"source_entity_id\":\"downstream-traffic-velocity\",\"relationship_type\":\"AFFECTS\",\"target_entity_id\":\"wide-moving-jam\",\"statement\":\"Downstream traffic velocity moves in the description of wide-moving jams.\",\"confidence\":0.88,\"origin\":\"SOURCE\"},{\"id\":\"r21\",\"source_entity_id\":\"recurring-congestion\",\"relationship_type\":\"CAUSES\",\"target_entity_id\":\"congestion\",\"statement\":\"Recurring causes define recurring congestion as a portion of overall congestion.\",\"confidence\":0.78,\"origin\":\"SOURCE\"},{\"id\":\"r22\",\"source_entity_id\":\"bottleneck\",\"relationship_type\":\"EXAMPLE_OF\",\"target_entity_id\":\"recurring-congestion\",\"statement\":\"Bottlenecks are identified as a recurring cause of congestion.\",\"confidence\":0.9,\"origin\":\"SOURCE\"},{\"id\":\"r23\",\"source_entity_id\":\"poor-signal-timing\",\"relationship_type\":\"EXAMPLE_OF\",\"target_entity_id\":\"recurring-congestion\",\"statement\":\"Poor signal timing is identified as a recurring cause of congestion.\",\"confidence\":0.9,\"origin\":\"SOURCE\"}],\"propositions\":[{\"proposition_type\":\"COMPARISON_CONDITION\",\"statement\":\"The bottleneck congestion proportion is greater than the poor signal timing congestion proportion.\",\"role_bindings\":[{\"role\":\"LEFT_OPERAND\",\"entity_id\":\"bottleneck-congestion-proportion\"},{\"role\":\"RIGHT_OPERAND\",\"entity_id\":\"poor-signal-timing-congestion-proportion\"}],\"relationship_type\":\"CONSTRAINS\",\"comparison_operator\":\"GREATER_THAN\",\"confidence\":0.99,\"origin\":\"SOURCE\"}],\"missing_symbols\":[]}",
+                "type": "output_text"
+              }
+            ],
+            "id": "msg_0452a91029c3c632016aa81748f24c87d2b143c141432a87b9",
+            "phase": "final_answer",
+            "role": "assistant",
+            "status": "completed",
+            "type": "message"
+          }
+        ],
+        "parallel_tool_calls": true,
+        "presence_penalty": 0.0,
+        "previous_response_id": null,
+        "prompt": null,
+        "prompt_cache_key": null,
+        "prompt_cache_options": null,
+        "prompt_cache_retention": "24h",
+        "reasoning": {
+          "context": "all_turns",
+          "effort": "low",
+          "generate_summary": null,
+          "mode": "standard",
+          "summary": null
+        },
+        "safety_identifier": null,
+        "service_tier": "default",
+        "status": "completed",
+        "store": false,
+        "temperature": 1.0,
+        "text": {
+          "format": {
+            "description": null,
+            "name": "candidate_b_semantic_structure",
+            "schema_": {
+              "additionalProperties": false,
+              "properties": {
+                "missing_symbols": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "reason": {
+                        "type": "string"
+                      },
+                      "semantic_item": {
+                        "type": "string"
+                      },
+                      "surface_form": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "surface_form",
+                      "semantic_item",
+                      "reason"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                "propositions": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "comparison_operator": {
+                        "anyOf": [
+                          {
+                            "enum": [
+                              "GREATER_THAN"
+                            ],
+                            "type": "string"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      },
+                      "confidence": {
+                        "maximum": 1,
+                        "minimum": 0,
+                        "type": "number"
+                      },
+                      "origin": {
+                        "enum": [
+                          "SOURCE",
+                          "INFERRED"
+                        ],
+                        "type": "string"
+                      },
+                      "proposition_type": {
+                        "enum": [
+                          "COMPARISON_CONDITION",
+                          "TRANSFER_EVENT"
+                        ],
+                        "type": "string"
+                      },
+                      "relationship_type": {
+                        "enum": [
+                          "IS_A",
+                          "PART_OF",
+                          "CAUSES",
+                          "INCREASES",
+                          "DECREASES",
+                          "ENABLES",
+                          "REQUIRES",
+                          "CONSTRAINS",
+                          "PRECEDES",
+                          "TRANSFORMS_INTO",
+                          "INTERACTS_WITH",
+                          "MEASURED_BY",
+                          "EXAMPLE_OF",
+                          "CONTRADICTS",
+                          "CREATES",
+                          "INDUCES",
+                          "EXERTS_FORCE_ON",
+                          "AFFECTS",
+                          "BINDS_TO",
+                          "TRANSFERS_TO"
+                        ],
+                        "type": "string"
+                      },
+                      "role_bindings": {
+                        "items": {
+                          "additionalProperties": false,
+                          "properties": {
+                            "entity_id": {
+                              "enum": [
+                                "bad-weather",
+                                "bottleneck",
+                                "bottleneck-cause",
+                                "bottleneck-congestion-proportion",
+                                "congestion",
+                                "congestion-study",
+                                "downstream",
+                                "downstream-front",
+                                "downstream-traffic-velocity",
+                                "fhwa",
+                                "free-flowing-traffic",
+                                "i-95-corridor-coalition",
+                                "lane-drop",
+                                "nonrecurring-congestion",
+                                "physical-bottleneck-cause",
+                                "poor-signal-timing",
+                                "poor-signal-timing-congestion-proportion",
+                                "queue",
+                                "queue-formation",
+                                "recurring-congestion",
+                                "recurring-congestion-proportion",
+                                "roadway-capacity",
+                                "roadway-design-deficiency",
+                                "rubbernecking",
+                                "special-event",
+                                "sun-glare",
+                                "synchronized-flow",
+                                "traffic-delay",
+                                "traffic-demand",
+                                "traffic-incident",
+                                "traffic-overburden",
+                                "traffic-phase",
+                                "traffic-propagation",
+                                "upstream",
+                                "vertical-climb",
+                                "weaving-condition",
+                                "wide-moving-jam",
+                                "work-zone"
+                              ],
+                              "type": "string"
+                            },
+                            "role": {
+                              "enum": [
+                                "LEFT_OPERAND",
+                                "RIGHT_OPERAND",
+                                "OUTCOME",
+                                "EVENT",
+                                "OBJECT",
+                                "DESTINATION"
+                              ],
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "role",
+                            "entity_id"
+                          ],
+                          "type": "object"
+                        },
+                        "type": "array"
+                      },
+                      "statement": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "proposition_type",
+                      "statement",
+                      "role_bindings",
+                      "relationship_type",
+                      "comparison_operator",
+                      "confidence",
+                      "origin"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                "relationships": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "confidence": {
+                        "maximum": 1,
+                        "minimum": 0,
+                        "type": "number"
+                      },
+                      "id": {
+                        "type": "string"
+                      },
+                      "origin": {
+                        "enum": [
+                          "SOURCE",
+                          "INFERRED"
+                        ],
+                        "type": "string"
+                      },
+                      "relationship_type": {
+                        "enum": [
+                          "IS_A",
+                          "PART_OF",
+                          "CAUSES",
+                          "INCREASES",
+                          "DECREASES",
+                          "ENABLES",
+                          "REQUIRES",
+                          "CONSTRAINS",
+                          "PRECEDES",
+                          "TRANSFORMS_INTO",
+                          "INTERACTS_WITH",
+                          "MEASURED_BY",
+                          "EXAMPLE_OF",
+                          "CONTRADICTS",
+                          "CREATES",
+                          "INDUCES",
+                          "EXERTS_FORCE_ON",
+                          "AFFECTS",
+                          "BINDS_TO",
+                          "TRANSFERS_TO"
+                        ],
+                        "type": "string"
+                      },
+                      "source_entity_id": {
+                        "enum": [
+                          "bad-weather",
+                          "bottleneck",
+                          "bottleneck-cause",
+                          "bottleneck-congestion-proportion",
+                          "congestion",
+                          "congestion-study",
+                          "downstream",
+                          "downstream-front",
+                          "downstream-traffic-velocity",
+                          "fhwa",
+                          "free-flowing-traffic",
+                          "i-95-corridor-coalition",
+                          "lane-drop",
+                          "nonrecurring-congestion",
+                          "physical-bottleneck-cause",
+                          "poor-signal-timing",
+                          "poor-signal-timing-congestion-proportion",
+                          "queue",
+                          "queue-formation",
+                          "recurring-congestion",
+                          "recurring-congestion-proportion",
+                          "roadway-capacity",
+                          "roadway-design-deficiency",
+                          "rubbernecking",
+                          "special-event",
+                          "sun-glare",
+                          "synchronized-flow",
+                          "traffic-delay",
+                          "traffic-demand",
+                          "traffic-incident",
+                          "traffic-overburden",
+                          "traffic-phase",
+                          "traffic-propagation",
+                          "upstream",
+                          "vertical-climb",
+                          "weaving-condition",
+                          "wide-moving-jam",
+                          "work-zone"
+                        ],
+                        "type": "string"
+                      },
+                      "statement": {
+                        "type": "string"
+                      },
+                      "target_entity_id": {
+                        "enum": [
+                          "bad-weather",
+                          "bottleneck",
+                          "bottleneck-cause",
+                          "bottleneck-congestion-proportion",
+                          "congestion",
+                          "congestion-study",
+                          "downstream",
+                          "downstream-front",
+                          "downstream-traffic-velocity",
+                          "fhwa",
+                          "free-flowing-traffic",
+                          "i-95-corridor-coalition",
+                          "lane-drop",
+                          "nonrecurring-congestion",
+                          "physical-bottleneck-cause",
+                          "poor-signal-timing",
+                          "poor-signal-timing-congestion-proportion",
+                          "queue",
+                          "queue-formation",
+                          "recurring-congestion",
+                          "recurring-congestion-proportion",
+                          "roadway-capacity",
+                          "roadway-design-deficiency",
+                          "rubbernecking",
+                          "special-event",
+                          "sun-glare",
+                          "synchronized-flow",
+                          "traffic-delay",
+                          "traffic-demand",
+                          "traffic-incident",
+                          "traffic-overburden",
+                          "traffic-phase",
+                          "traffic-propagation",
+                          "upstream",
+                          "vertical-climb",
+                          "weaving-condition",
+                          "wide-moving-jam",
+                          "work-zone"
+                        ],
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "source_entity_id",
+                      "relationship_type",
+                      "target_entity_id",
+                      "statement",
+                      "confidence",
+                      "origin"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                }
+              },
+              "required": [
+                "relationships",
+                "propositions",
+                "missing_symbols"
+              ],
+              "type": "object"
+            },
+            "strict": true,
+            "type": "json_schema"
+          },
+          "verbosity": "medium"
+        },
+        "tool_choice": "auto",
+        "tool_usage": {
+          "image_gen": {
+            "input_tokens": 0,
+            "input_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            },
+            "output_tokens": 0,
+            "output_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            },
+            "total_tokens": 0
+          },
+          "web_search": {
+            "num_requests": 0
+          }
+        },
+        "tools": [],
+        "top_logprobs": 0,
+        "top_p": 0.98,
+        "truncation": "disabled",
+        "usage": {
+          "input_tokens": 5588,
+          "input_tokens_details": {
+            "cache_write_tokens": 5585,
+            "cached_tokens": 0
+          },
+          "output_tokens": 1821,
+          "output_tokens_details": {
+            "reasoning_tokens": 428
+          },
+          "total_tokens": 7409
+        },
+        "user": null
+      },
+      "stage": "SEMANTIC_STRUCTURE"
+    }
+  ],
+  "candidate_version": "spec-047-candidate-b-v1",
+  "canonical_gate": {
+    "error_type": null,
+    "exact_failure": null,
+    "output_identity_sha256": null,
+    "stage": "CANONICAL_VALIDATION",
+    "stage_version": "existing-knowledge-model-validator",
+    "status": "NOT_RUN_UPSTREAM_FAILURE",
+    "upstream_identity_sha256": null
+  },
+  "claim_evidence_binding": null,
+  "entity_inventory": {
+    "candidate_version": "spec-047-candidate-b-v1",
+    "identity_sha256": "e14ae049ed69776343dc10cf220a2a13379bb3012a61bae55816ef9d77c377e2",
+    "immutable": true,
+    "symbol_table": {
+      "compiler_version": "spec-047-candidate-b-v1",
+      "diagnostics": {
+        "accepted_symbol_count": 38,
+        "alias_normalizations": [
+          {
+            "aliases": [
+              "traffic bottleneck"
+            ],
+            "canonical_name": "bottleneck",
+            "merged_nomination_count": 1
+          },
+          {
+            "aliases": [
+              "free-flow"
+            ],
+            "canonical_name": "free-flowing traffic",
+            "merged_nomination_count": 1
+          },
+          {
+            "aliases": [
+              "queues"
+            ],
+            "canonical_name": "queue",
+            "merged_nomination_count": 1
+          },
+          {
+            "aliases": [
+              "special events"
+            ],
+            "canonical_name": "special event",
+            "merged_nomination_count": 1
+          },
+          {
+            "aliases": [
+              "synchronized traffic"
+            ],
+            "canonical_name": "synchronized flow",
+            "merged_nomination_count": 1
+          },
+          {
+            "aliases": [
+              "delay"
+            ],
+            "canonical_name": "traffic delay",
+            "merged_nomination_count": 1
+          },
+          {
+            "aliases": [
+              "traffic incidents"
+            ],
+            "canonical_name": "traffic incident",
+            "merged_nomination_count": 1
+          },
+          {
+            "aliases": [
+              "traffic phases"
+            ],
+            "canonical_name": "traffic phase",
+            "merged_nomination_count": 1
+          },
+          {
+            "aliases": [
+              "traffic may propagate upstream"
+            ],
+            "canonical_name": "traffic propagation",
+            "merged_nomination_count": 1
+          },
+          {
+            "aliases": [
+              "wide-moving jams"
+            ],
+            "canonical_name": "wide-moving jam",
+            "merged_nomination_count": 1
+          },
+          {
+            "aliases": [
+              "work zones"
+            ],
+            "canonical_name": "work zone",
+            "merged_nomination_count": 1
+          }
+        ],
+        "candidate_version": "spec-047-candidate-b-v1",
+        "duplicate_nomination_count": 0,
+        "entity_type_counts": {
+          "COMPONENT": 0,
+          "CONCEPT": 20,
+          "OBJECT": 6,
+          "PROCESS": 4,
+          "SYSTEM": 2,
+          "VARIABLE": 6
+        },
+        "id_strategy": "NORMALIZED_ASCII_KEBAB_NAME_WITH_HASH_SUFFIX_ON_SLUG_COLLISION",
+        "ordering": "LEXICOGRAPHIC_STABLE_ENTITY_ID",
+        "raw_nomination_count": 38,
+        "rejected_nomination_count": 0,
+        "source_document_id": "text-1fd7e9851839f5f3",
+        "strict_duplicate_policy": "FAIL_CLOSED_NO_MERGE"
+      },
+      "entities": [
+        {
+          "aliases": [],
+          "description": "An example of a nonrecurring congestion cause.",
+          "entity_type": "CONCEPT",
+          "id": "bad-weather",
+          "name": "bad weather"
+        },
+        {
+          "aliases": [
+            "traffic bottleneck"
+          ],
+          "description": "A specific location or point associated with localized traffic congestion, upstream queue formation, and free-flowing traffic downstream.",
+          "entity_type": "CONCEPT",
+          "id": "bottleneck",
+          "name": "bottleneck"
+        },
+        {
+          "aliases": [],
+          "description": "A cause associated with a bottleneck, including physical roadway deficiencies and other conditions such as weaving, sun glare, rubbernecking, or a vertical climb.",
+          "entity_type": "CONCEPT",
+          "id": "bottleneck-cause",
+          "name": "bottleneck cause"
+        },
+        {
+          "aliases": [],
+          "description": "The quoted proportion of nationwide congestion attributed to bottlenecks, stated as 40 percent.",
+          "entity_type": "VARIABLE",
+          "id": "bottleneck-congestion-proportion",
+          "name": "bottleneck congestion proportion"
+        },
+        {
+          "aliases": [],
+          "description": "Traffic condition discussed as having recurring and nonrecurring causes and as occurring either locally or systemically.",
+          "entity_type": "CONCEPT",
+          "id": "congestion",
+          "name": "congestion"
+        },
+        {
+          "aliases": [],
+          "description": "A study said to have been undertaken mostly for, or using data mostly from, the I-95 Corridor Coalition and used as the primary basis for the quoted congestion proportions.",
+          "entity_type": "OBJECT",
+          "id": "congestion-study",
+          "name": "congestion study"
+        },
+        {
+          "aliases": [],
+          "description": "The direction or region after a bottleneck where traffic is described as free-flowing or where a downstream front may be fixed or moving.",
+          "entity_type": "CONCEPT",
+          "id": "downstream",
+          "name": "downstream"
+        },
+        {
+          "aliases": [],
+          "description": "A front at which Kerner's synchronized traffic is described as fixed; it is characterized as a de facto bottleneck.",
+          "entity_type": "OBJECT",
+          "id": "downstream-front",
+          "name": "downstream front"
+        },
+        {
+          "aliases": [],
+          "description": "The velocity of traffic downstream, described as moving in wide-moving jams.",
+          "entity_type": "VARIABLE",
+          "id": "downstream-traffic-velocity",
+          "name": "downstream traffic velocity"
+        },
+        {
+          "aliases": [],
+          "description": "Organization cited as stating the proportions of congestion attributable to bottlenecks and poor signal timing.",
+          "entity_type": "SYSTEM",
+          "id": "fhwa",
+          "name": "FHWA"
+        },
+        {
+          "aliases": [
+            "free-flow"
+          ],
+          "description": "Traffic moving without the localized or systemic congestion described for the other traffic phases.",
+          "entity_type": "CONCEPT",
+          "id": "free-flowing-traffic",
+          "name": "free-flowing traffic"
+        },
+        {
+          "aliases": [],
+          "description": "Corridor coalition associated with the congestion study said to underlie the frequently quoted proportions.",
+          "entity_type": "SYSTEM",
+          "id": "i-95-corridor-coalition",
+          "name": "I-95 Corridor Coalition"
+        },
+        {
+          "aliases": [],
+          "description": "A roadway design condition given as an example of a physical bottleneck cause.",
+          "entity_type": "OBJECT",
+          "id": "lane-drop",
+          "name": "lane drop"
+        },
+        {
+          "aliases": [],
+          "description": "Congestion other than recurring congestion, including congestion associated with special events, bad weather, work zones, and traffic incidents.",
+          "entity_type": "CONCEPT",
+          "id": "nonrecurring-congestion",
+          "name": "nonrecurring congestion"
+        },
+        {
+          "aliases": [],
+          "description": "A physical roadway condition that can cause a bottleneck, such as a lane drop or other operationally deficient roadway design.",
+          "entity_type": "CONCEPT",
+          "id": "physical-bottleneck-cause",
+          "name": "physical bottleneck cause"
+        },
+        {
+          "aliases": [],
+          "description": "A recurring cause of congestion identified as a tangible problem rather than a random event.",
+          "entity_type": "CONCEPT",
+          "id": "poor-signal-timing",
+          "name": "poor signal timing"
+        },
+        {
+          "aliases": [],
+          "description": "The quoted proportion of nationwide congestion attributed to poor signal timing, stated as 5 percent.",
+          "entity_type": "VARIABLE",
+          "id": "poor-signal-timing-congestion-proportion",
+          "name": "poor-signal-timing congestion proportion"
+        },
+        {
+          "aliases": [
+            "queues"
+          ],
+          "description": "A line of vehicles formed upstream of a bottleneck.",
+          "entity_type": "OBJECT",
+          "id": "queue",
+          "name": "queue"
+        },
+        {
+          "aliases": [],
+          "description": "Formation of queues upstream of a bottleneck.",
+          "entity_type": "PROCESS",
+          "id": "queue-formation",
+          "name": "queue formation"
+        },
+        {
+          "aliases": [],
+          "description": "Congestion attributed to recurring causes, especially bottlenecks and poor signal timing.",
+          "entity_type": "CONCEPT",
+          "id": "recurring-congestion",
+          "name": "recurring congestion"
+        },
+        {
+          "aliases": [],
+          "description": "The quoted proportion of congestion attributed jointly to bottlenecks and poor signal timing, stated as 45 percent.",
+          "entity_type": "VARIABLE",
+          "id": "recurring-congestion-proportion",
+          "name": "recurring congestion proportion"
+        },
+        {
+          "aliases": [],
+          "description": "The available capacity of a roadway that may be overwhelmed by traffic demand.",
+          "entity_type": "VARIABLE",
+          "id": "roadway-capacity",
+          "name": "roadway capacity"
+        },
+        {
+          "aliases": [],
+          "description": "An operational deficiency in roadway design that can contribute to a recurring bottleneck.",
+          "entity_type": "CONCEPT",
+          "id": "roadway-design-deficiency",
+          "name": "roadway design deficiency"
+        },
+        {
+          "aliases": [],
+          "description": "A traffic-related condition given as an example of a bottleneck cause.",
+          "entity_type": "PROCESS",
+          "id": "rubbernecking",
+          "name": "rubbernecking"
+        },
+        {
+          "aliases": [
+            "special events"
+          ],
+          "description": "An example of a nonrecurring congestion event.",
+          "entity_type": "OBJECT",
+          "id": "special-event",
+          "name": "special event"
+        },
+        {
+          "aliases": [],
+          "description": "An environmental condition given as an example of a bottleneck cause.",
+          "entity_type": "CONCEPT",
+          "id": "sun-glare",
+          "name": "sun glare"
+        },
+        {
+          "aliases": [
+            "synchronized traffic"
+          ],
+          "description": "A traffic phase involving localized congestion in Kerner's three-phase categorization.",
+          "entity_type": "CONCEPT",
+          "id": "synchronized-flow",
+          "name": "synchronized flow"
+        },
+        {
+          "aliases": [
+            "delay"
+          ],
+          "description": "Delay that occurs when a recurring bottleneck's design deficiency combines with traffic overburden.",
+          "entity_type": "CONCEPT",
+          "id": "traffic-delay",
+          "name": "traffic delay"
+        },
+        {
+          "aliases": [],
+          "description": "The amount of traffic using or attempting to use a roadway, which can overwhelm available roadway capacity.",
+          "entity_type": "VARIABLE",
+          "id": "traffic-demand",
+          "name": "traffic demand"
+        },
+        {
+          "aliases": [
+            "traffic incidents"
+          ],
+          "description": "An example of a nonrecurring congestion cause.",
+          "entity_type": "PROCESS",
+          "id": "traffic-incident",
+          "name": "traffic incident"
+        },
+        {
+          "aliases": [],
+          "description": "Traffic demand exceeding or overwhelming available roadway capacity in the context of a recurring bottleneck.",
+          "entity_type": "CONCEPT",
+          "id": "traffic-overburden",
+          "name": "traffic overburden"
+        },
+        {
+          "aliases": [
+            "traffic phases"
+          ],
+          "description": "One of the three categories in Kerner's traffic categorization: free-flow, synchronized flow, or wide-moving jams.",
+          "entity_type": "CONCEPT",
+          "id": "traffic-phase",
+          "name": "traffic phase"
+        },
+        {
+          "aliases": [
+            "traffic may propagate upstream"
+          ],
+          "description": "Movement of traffic upstream through bottlenecks, particularly in the description of wide-moving jams.",
+          "entity_type": "PROCESS",
+          "id": "traffic-propagation",
+          "name": "traffic propagation"
+        },
+        {
+          "aliases": [],
+          "description": "The direction or region before a bottleneck where queues form and traffic may propagate.",
+          "entity_type": "CONCEPT",
+          "id": "upstream",
+          "name": "upstream"
+        },
+        {
+          "aliases": [],
+          "description": "A roadway condition given as an example of a bottleneck cause.",
+          "entity_type": "CONCEPT",
+          "id": "vertical-climb",
+          "name": "vertical climb"
+        },
+        {
+          "aliases": [],
+          "description": "A roadway traffic condition given as an example of a bottleneck cause.",
+          "entity_type": "CONCEPT",
+          "id": "weaving-condition",
+          "name": "weaving condition"
+        },
+        {
+          "aliases": [
+            "wide-moving jams"
+          ],
+          "description": "A traffic phase characterized as more or less systemic congestion, with downstream traffic velocity moving while traffic may propagate upstream through bottlenecks.",
+          "entity_type": "CONCEPT",
+          "id": "wide-moving-jam",
+          "name": "wide-moving jam"
+        },
+        {
+          "aliases": [
+            "work zones"
+          ],
+          "description": "An example of a nonrecurring congestion cause.",
+          "entity_type": "OBJECT",
+          "id": "work-zone",
+          "name": "work zone"
+        }
+      ],
+      "immutable": true
+    }
+  },
+  "model": null,
+  "provider_call_ledger": {
+    "calls_started": 2,
+    "candidate_version": "spec-047-candidate-b-v1",
+    "entries": [
+      {
+        "actual_model": "gpt-5.6-luna",
+        "call_ordinal": 1,
+        "completed_at_utc": "2026-09-14T15:48:19.171366+00:00",
+        "duration_ms": 12641.856917005498,
+        "hidden_retries": 0,
+        "http_request_id": "req_782acdb57ed54683903b2ca1949f44a5",
+        "prompt_sha256": "b1c00eb4547de56c62dcc18c7aec013ee1e2de4a8c1dfa45bcb475f00591f785",
+        "prompt_version": "spec-047-entity-inventory-v1",
+        "provider_response_id": "resp_0556d58d9138f939016aa81737045c87d2a35461ab41bcc055",
+        "repair_calls": 0,
+        "requested_model": "gpt-5.6-luna",
+        "schema_sha256": "003db7546ae3ffafe7dc098bc50e1a5f223b891f6ee3160f7537214c8e9c9956",
+        "sdk_retries": 0,
+        "semantic_retries": 0,
+        "source_id": "fhwa-traffic-bottleneck-concepts-2016",
+        "source_sha256": "1fd7e9851839f5f35cd2a231cd3ce5aea8196ec85cabd04694f681c063ea4345",
+        "stage": "ENTITY_INVENTORY",
+        "started_at_utc": "2026-09-14T15:48:06.529533+00:00",
+        "status": "PROVIDER_RESPONSE_RECEIVED",
+        "store": false,
+        "upstream_input_sha256": "1fd7e9851839f5f35cd2a231cd3ce5aea8196ec85cabd04694f681c063ea4345",
+        "usage": {
+          "input_tokens": 881,
+          "output_tokens": 1443,
+          "total_tokens": 2324
+        }
+      },
+      {
+        "actual_model": "gpt-5.6-luna",
+        "call_ordinal": 2,
+        "completed_at_utc": "2026-09-14T15:48:33.791283+00:00",
+        "duration_ms": 14618.718625002657,
+        "hidden_retries": 0,
+        "http_request_id": "req_3174837c528a459b959f52d50944dfe2",
+        "prompt_sha256": "ed0a05dbfe2bc12cd55b524a41fe7b2b3668f37942bf8c087d4b606162216d6c",
+        "prompt_version": "spec-047-semantic-structure-v1",
+        "provider_response_id": "resp_0452a91029c3c632016aa817435c2487d285f2c5fec4ca85ad",
+        "repair_calls": 0,
+        "requested_model": "gpt-5.6-luna",
+        "schema_sha256": "a2f47f0ae187669e27b0f9413ae4fa717a2808f88f59756233b951d4cf486826",
+        "sdk_retries": 0,
+        "semantic_retries": 0,
+        "source_id": "fhwa-traffic-bottleneck-concepts-2016",
+        "source_sha256": "1fd7e9851839f5f35cd2a231cd3ce5aea8196ec85cabd04694f681c063ea4345",
+        "stage": "SEMANTIC_STRUCTURE",
+        "started_at_utc": "2026-09-14T15:48:19.172598+00:00",
+        "status": "PROVIDER_RESPONSE_RECEIVED",
+        "store": false,
+        "upstream_input_sha256": "e14ae049ed69776343dc10cf220a2a13379bb3012a61bae55816ef9d77c377e2",
+        "usage": {
+          "input_tokens": 5588,
+          "output_tokens": 1821,
+          "total_tokens": 7409
+        }
+      }
+    ]
+  },
+  "semantic_structure": null,
+  "source_id": "fhwa-traffic-bottleneck-concepts-2016",
+  "source_sha256": "1fd7e9851839f5f35cd2a231cd3ce5aea8196ec85cabd04694f681c063ea4345",
+  "stage_gates": [
+    {
+      "error_type": null,
+      "exact_failure": null,
+      "output_identity_sha256": "e14ae049ed69776343dc10cf220a2a13379bb3012a61bae55816ef9d77c377e2",
+      "stage": "ENTITY_INVENTORY",
+      "stage_version": "spec-047-entity-inventory-v1",
+      "status": "PASS",
+      "upstream_identity_sha256": "1fd7e9851839f5f35cd2a231cd3ce5aea8196ec85cabd04694f681c063ea4345"
+    },
+    {
+      "error_type": "ValidationError",
+      "exact_failure": "comparison condition requires left operand, right operand, outcome, operator, and CAUSES",
+      "output_identity_sha256": null,
+      "stage": "SEMANTIC_STRUCTURE",
+      "stage_version": "spec-047-semantic-structure-v1",
+      "status": "FAIL_CLOSED",
+      "upstream_identity_sha256": "e14ae049ed69776343dc10cf220a2a13379bb3012a61bae55816ef9d77c377e2"
+    },
+    {
+      "error_type": null,
+      "exact_failure": null,
+      "output_identity_sha256": null,
+      "stage": "CLAIM_EVIDENCE_BINDING",
+      "stage_version": "spec-047-claim-evidence-binding-v1",
+      "status": "NOT_RUN_UPSTREAM_FAILURE",
+      "upstream_identity_sha256": null
+    }
+  ],
+  "status": "FAIL_CLOSED"
+}

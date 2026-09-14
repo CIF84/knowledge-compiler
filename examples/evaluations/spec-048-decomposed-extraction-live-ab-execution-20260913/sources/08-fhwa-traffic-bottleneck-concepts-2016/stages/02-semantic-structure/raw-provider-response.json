@@ -1,0 +1,435 @@
+{
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1789400913.0,
+  "conversation": null,
+  "created_at": 1789400899.0,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "id": "resp_0452a91029c3c632016aa817435c2487d285f2c5fec4ca85ad",
+  "incomplete_details": null,
+  "instructions": "You perform Stage 2 semantic structure extraction.\n\nThe user supplies an immutable entity inventory and the exact source. Return only\nsource-supported relationships and the two supported typed proposition forms. Every\nendpoint and role binding must use an exact supplied entity ID. Never create, rename,\nalias, or imply a new entity. If an important semantic item requires a missing identity,\nomit it and record a missing_symbols diagnostic. Never substitute a nearby identity.\n\nChoose a relationship only when its meaning and direction fit exactly. Do not force\nassociation, explanation, possession, or historical context into PART_OF or CAUSES.\nUse a typed proposition only for COMPARISON_CONDITION or TRANSFER_EVENT under the supplied\ncontract. Proposition IDs are assigned by trusted code; do not return them.\n\nDo not return claims or evidence in this stage. Do not return entities. Do not summarize,\nrepair the inventory, or emit output outside the requested schema.\n\nACTIVE RELATIONSHIP CONTRACTS (source --TYPE--> target):\nIS_A [STRUCTURAL; direction=instance_to_type]\n  meaning: The source is a kind, category, or subtype of the target.\n  roles: source=instance or subtype; target=broader type or category\n  use: The source can truthfully be described as a target.\n  avoid: Do not use for parts, examples, similarity, or temporary states.\nPART_OF [STRUCTURAL; direction=part_to_whole]\n  meaning: The source is a constituent or component of the target.\n  roles: source=part or component; target=containing whole\n  use: The source exists as a component or subpart of the target.\n  avoid: Never reverse whole and part; do not use for interaction or dependency.\nEXAMPLE_OF [STRUCTURAL; direction=example_to_concept]\n  meaning: The source is an illustrative instance of the target concept.\n  roles: source=example; target=concept illustrated\n  use: The source is presented as an example of the target.\n  avoid: Do not use merely because the source is a subtype; prefer IS_A for classification.\nCAUSES [CAUSAL; direction=cause_to_effect]\n  meaning: The source brings about the target as an effect.\n  roles: source=cause; target=effect\n  use: The source is stated to produce the target outcome.\n  avoid: Do not use for chronology, association, contribution, or unspecified influence.\nAFFECTS [CAUSAL; direction=influence_to_affected]\n  meaning: The source causally influences the target without a specified direction or complete production.\n  roles: source=influence; target=affected entity, process, or variable\n  use: The source changes or influences the target, but the text does not support CAUSES, INCREASES, or DECREASES.\n  avoid: Do not use for mere association, chronology, physical force, or interaction with no stated effect.\nINCREASES [CAUSAL; direction=increaser_to_increased_variable]\n  meaning: The source causally raises the amount, rate, value, probability, or intensity of the target.\n  roles: source=causal factor; target=quantity or variable increased\n  use: The source is explicitly said to make the target greater, faster, more likely, or more intense.\n  avoid: Do not infer from nearby words such as more or faster; never use when the source says slower, lower, or less.\nDECREASES [CAUSAL; direction=decreaser_to_decreased_variable]\n  meaning: The source causally lowers the amount, rate, value, probability, or intensity of the target.\n  roles: source=causal factor; target=quantity or variable decreased\n  use: The source is explicitly said to make the target smaller, slower, less likely, or less intense.\n  avoid: Do not use for absence, prevention without a scalar target, or mere negative association.\nINDUCES [CAUSAL; direction=inducer_to_induced_effect]\n  meaning: The source produces the target through an explicitly described induction mechanism.\n  roles: source=inducing phenomenon; target=induced phenomenon\n  use: The source explicitly says induces or describes a recognized induction mechanism.\n  avoid: Do not use as a metaphor for generic causation, influence, motivation, or historical response.\nENABLES [DEPENDENCY; direction=enabler_to_enabled]\n  meaning: The source makes the target possible without necessarily causing it to occur.\n  roles: source=enabling condition or capability; target=capability or process made possible\n  use: The target could not occur, or is materially made possible, because of the source.\n  avoid: Do not use for delivery, participation, weak assistance, or an effect that actually occurred.\nREQUIRES [DEPENDENCY; direction=dependent_to_requirement]\n  meaning: The source depends on the target as a prerequisite or necessary resource.\n  roles: source=dependent; target=prerequisite or required resource\n  use: The source cannot operate or occur as described without the target.\n  avoid: Do not reverse prerequisite and dependent; do not use for optional support.\nCONSTRAINS [DEPENDENCY; direction=constraint_to_constrained]\n  meaning: The source limits the possible behavior, values, or choices of the target.\n  roles: source=constraint; target=constrained entity, process, or variable\n  use: The source imposes a limit, rule, boundary, or restriction on the target.\n  avoid: Do not use to mean unchanged, unrelated, merely different, or causally reduced.\nPRECEDES [TEMPORAL; direction=earlier_to_later]\n  meaning: The source occurs before the target in time or an explicit process sequence.\n  roles: source=earlier event or process; target=later event or process\n  use: The source explicitly occurs before, previously, first, then, or after relative to the target.\n  avoid: Do not infer causality from order; do not reverse earlier and later.\nINTERACTS_WITH [INTERACTION; symmetric]\n  meaning: The source and target directly interact, with no more precise directional semantics supported.\n  roles: source=interaction participant; target=interaction participant\n  use: The text supports direct mutual interaction but not a more precise active predicate.\n  avoid: Do not use for distant association, one-way effect, dependency, or chronology.\nBINDS_TO [INTERACTION; symmetric]\n  meaning: The source physically or chemically binds or attaches to the target.\n  roles: source=binding participant; target=binding participant\n  use: The source explicitly binds or attaches to the target.\n  avoid: Do not use for metaphorical commitment, dependency, influence, or literal physical force.\nTRANSFERS_TO [INTERACTION; direction=transferred_item_to_destination]\n  meaning: The source item, material, or information moves to the target destination or recipient.\n  roles: source=item, material, or information transferred; target=destination or recipient\n  use: The source is explicitly carried, delivered, moved, or transferred to the target.\n  avoid: Do not make the carrier the source unless the carrier itself moves to the destination; do not use for enabling.\nEXERTS_FORCE_ON [INTERACTION; direction=force_exerter_to_physical_target]\n  meaning: The source exerts a literal physical force on the target.\n  roles: source=physical force source; target=physical object receiving force\n  use: A literal physical force is explicitly exerted on the target.\n  avoid: Never use metaphorically for influence, contribution, binding, pressure, or causation.\nTRANSFORMS_INTO [TRANSFORMATION; direction=prior_state_to_resulting_state]\n  meaning: The source itself changes state or identity and becomes the target.\n  roles: source=entity or state before transformation; target=same entity or resulting material after transformation\n  use: The source itself becomes the target through a transformation.\n  avoid: Do not use when an actor causes, creates, attempts, participates in, or responds to the target.\nCREATES [TRANSFORMATION; direction=creator_to_created]\n  meaning: The source produces or brings a distinct target into existence.\n  roles: source=producer or generative process; target=newly produced entity or result\n  use: The source produces a target that is distinct from the source.\n  avoid: Do not use when the source itself becomes the target; use TRANSFORMS_INTO instead.\nMEASURED_BY [DESCRIPTIVE; direction=measurand_to_measure]\n  meaning: The source property or variable is quantified or assessed by the target metric, observation, or procedure.\n  roles: source=property or variable measured; target=metric, observation, or measurement procedure\n  use: The target is explicitly how the source is measured or quantified.\n  avoid: Do not point to something that merely responds to, correlates with, or exemplifies the source.\nCONTRADICTS [DESCRIPTIVE; symmetric]\n  meaning: The source and target assert mutually incompatible propositions.\n  roles: source=proposition or claim; target=incompatible proposition or claim\n  use: Both sides are explicit propositions that cannot simultaneously hold as stated.\n  avoid: Do not use for difference, disagreement without incompatibility, trade-off, or negative causality.",
+  "max_output_tokens": null,
+  "max_tool_calls": null,
+  "metadata": {},
+  "model": "gpt-5.6-luna",
+  "moderation": null,
+  "object": "response",
+  "output": [
+    {
+      "content": [],
+      "encrypted_content": "gAAAAABqqBdRHY_o2QJhr7-YSEbjUs6PLQyUArqbw81_qr8OKEJT3dG5oslbT9RYt7XJSdqH6eSGNieXbnsde1nAYD-yRjz4KTYcV-oNQFFtV4QXwm9rmJwiIiLHRP2UxnryiQ49Sref1SQcPb1UW0-4HROaxTxHFmPXnBZRenmkWhwqjf6Ev3MMXiYxkyMCNLtAQtEeYO9EB7fdXKoSWG6vtOXjf9lhmRr_mPHecOk3EOO0fTovks29bLmcISg9KQomYHoLuemEqA6LS3v6z6vO0MryqdjZCc1UkkK0nI-4nfE6_poWG9swJLhpFMmiskfVgonqF-C8Z6AZ2NocMd9yu5EY3510jur-_m0yoz9qZ-pMwLDbuJ-SVVsX4Tnzb46XjTB8Y1cVIRbtE2jhBedwO6JHq_h0e4ntOw6YRHnLvLdczYjpwiPob0lQa5yvhTldyag6ecmv_Sui8gBq_3-9U8rGtBi38YTJhdOQpXthmaO5kbQK3lNBQ7Pu6_QQxo16KcWam2ioNIGS6-u4o3somM0mhoAvWJodenQC3m-AjgIdZ0vmi-UK7k4f53tZv66JXn4fCYkfDwLyZ_l2-XQefOHvW2q1OaZ6uhbDlIwf18ui2h-Pxn1Fa6VNHjbJxuCq5d9Optl541MOTaMJfli4KtRP-IK-wBeMh1peWI7KsaGtZfNfaSLY8QUh5V1NUMbyJh_9YhOJ2zirIM-XQBQIS4uFimsVVhjzflDMzrk6M_zHlx2HwEG4GO6daS72rueU1LlhShtWk1-aXQRXk8tkUSBnxXzfgovgNAwGuaEJR6cR9rD-1iG9vRbRUIisdH1i09q5S8u3yc7S2gelI6L4U8wV9oFcInwXpKVLQZu1iBXgGMj2sH8rllHwyskIjljddiFivSfpLHwiPMxY_-dKCUCXacodEHGrx03v9YCMqI7O_NlH_rFIaRf8iozEg9ycVjAwVkuQm7gIONS64OI0uLDekUzN2lbNjaPnYeBMsA0DXEHDKmAGHpV0oPv-yXogy3AU2egbJNmcxWDFtixtEGU9MoSFw-xRRon0dpKP0GDdUBrKzBn7e_bRiRnqNV3yyjWbGafI63fU-m7NyjwDQzg3fl9DV3yWE1mlpuXd61pzZCfxInqoN0EfJmH3FKqicbwFqtKHVfQVyp6Rp4bBGXbvBRgFxuVesfAEVzy6voYMAY2L2jLyAkhrPLXXPXHPjBzKJdYW4OzkSsc3hZyn5DXtL0tz-id9GsAED6-eWXl_T50FrC9cpTpZQ1MIp1t9fAw4nafTXo6Dr7MnQNN5Tqee38vz9KtNLo0oScGutAokTEeuoWpWEFyd0AI1AY9cayeN8KaouDx4D3CVnTBT6197QLNoJSVfBeoc8nq6CKNzVl43YVDWzOyexRgBoGvmKtbM_GSR8egFx-LE5Eam5Ly9evpa1OSKJWd_1pAWzM3Nd-eYT1tfE9lwp0qOfFZtYoXYm2sTTeHQVREUm5hOUwaYqhWwOG6IqwmaZvmMmQF_IZHhTJ0b1KxmqqEDy-u4KjmIWYUb9JFkoR0ce7BCTvOyP7m6rwj7CXIo4pbauJQaqvBx5BbkyHomNsTCFR3QWn2WnpYRgD6oLBG68hh_HJzU2rp6ctpc7NVTZVsqg-vX3voZ1JSXfkD07e0CEVaRLuvhbMWvDn8-h3Zzh_5CopZpYnG7c3tbu4ptaCv3b3dXaV22r2MaOtJODUbdo1s83iqpqvGB0zvQ5AothsGP9T4nDUjDXFZQ4a6lNiaDwZl0ICpPa3SvzdVSCDOxMdmYxVmLgVSpzlnXjQfgi9CchGyY8eV0rXcbaFZImwULeUgas2kZjWaO-ZvYkj2mnulg-rKEt6QqZjLl5eIWh7PD0lXdj4gytfeM9CIilPhVH9rLK2uIagD22RwZDykxPOb1nyyBmarkC9F5Wj5gP0hjJ2VVTiUi7LUahjaF3XMYB786mk00B34ix8q3GGzPt3Je9EANijRf_SgOzhMibkxURLDoB5I0A_kCJLgfYXw85MYCcHOf7gAQHJUzK6rivHMlUOzYzkRTTLk9KzfurIthitAuxbBbikGqjBCU-iCPbpLQXEwIK5fDN6-6POzDWA7cdwZMB80usClrGVCqVe5D7bT7_6BArYWcIVSQEgMO3QKUsGdV0YkJedJ6LgArSTDnLdgaMoOa9jzh2G8w03ruJCY_B5RS5K8Pb93AjxS3SLvVgrWeQ28BPusEhu_HRXSb7NYQ6tHXIFyCwR-iIJKs5wkAt0kor6ba94xuAv9i1EAjoPBJXUZ2-12g5ry4lb1JJYZIsyMWyI_R1cQj2CG9AFrWdqo6RQUEqD36ogwZXQTQFhxDI7CawcAwuIUCXD0eWZsUayaFSX8wLYtcu5HanENLiMSbvxH-457VWhszZBk0DNFLAgaIKuZr8OjTVjqlpgiUxZEgOBqxPEHZrBeeS9fwUIjdvn0ZAci6sAaxnnL-n96xe_s08bVEG7YS4gF-9G4kFQ_PQYXfXZkK5s8xQVuxIlz6SvnWGZYSx73F9k7jOi41hszQpiQ8r-oEx4MSpATpiAmx4x1j6K_gqCreeQc5ZdGpC7vJul6Qvrhbz9pEaH2O5UxYCdEErrxA7ZUnePI_yMhoCsrNZizny9jZF8n6_FbAyhWPGTvie4G6VR8YWdGvKIWBRTuryF1xZmFfvq014qYjHdQI9y08cd6LUEBaDJET_DCQ7J_eGoS1-i-BldQ_G18d8EVhFjSIrL7489cw6I3w4IOhKlhzZEgy37BCjUh3bxDgEsiiS6-a0Jt5neIOd8Pkrvew_uvr8hLlcEHBV0BTFczvqAqQqtI8PWmh3j8ZhnqL09jzcKbhjAKlhULJf0a6d4OGiUraSmzHoJ0YMVuf6PcTVT7a8VFfd5jMf-QF-GsPt3-v5qj-R38yx_2RuU6Nno-csaM7DAydbpbch5OpWAc1kFp40o-mho1IfsMK1uQf9C9yjRzFpSZsAkS6XNTBIsMGzu_vXtvPgyioqd_huXXQ_qMHsreeRGvkEqBdxUhK92Oe_3BkKg62hT22wJs5qTgG2ChKy4T9TU60aGAEJgF-0gf_F7Z9lK8GiYYFshF-tpg1mzeEvKBHUMoJVukemEDHEPDXcHPmK2wCXU1-ABmFdQUbuuXDOCKSuVy2QcUELcgoATGjgKMQclirTTwQ08Qq0jTOd8UG2B1rKVoNyBCrvdPKaMqZRyqblEfr-cz7a5OojcwdaZm32UoHVFwb1SCOM-4LSfKsYiExA74XNA5kxA0kRNextKwgTHEUsfFb7IOG0MKxnaxC2H_f9bRm8QbjHbMD3yxgAcHVci7ojBJCJ2VjZUdmyt1fz3ujEtrJhS0PizEu_1bZjoxyIZBYV6Xc9Q96hE9hxAUarQpW2vnBBIGIESR-Ue5PeNQfbSvZ3QMAKGuVeKooom6xCQF1S_yud6__sijt5rE66-pTrN45RKSDnyZMi3mkyRjDUqt7TaLCA84Ax-i2t4NG8_BNHXivoryN3e1l3UO8pKWs4vyfkUg6CffJTeH-yeHOgsuta-FC43OdF0uBLrNym-P8mIdUpMgDIVZ3m9fO3ENfG7BDZcGjQNj3POOilxIhRJQKYKD3DcWvXauaomSg3rqBLuq_rBkH9m0XutFMCK3vXPMMI0GFkubRSD4XpEY5GCjm1TXN1aVX38H6_jWoRPwi8OSA94eX68r9pKTq1E8EHVg4zk9Mcz_egeam9MUpDRToDViYd4Amw7O4gtljDJnDH4gkHB9jHFn_pZ9AD9MmKiQXVDfbF5PqNl4X9CwWOj6bSu3DCuZBkRDOP81NMs2uEj8y6k6-ivhWjez0ge4kPSxhipJ2z9gz6buUrazK8qo8CPydI0aYPG8rT6kgZkcAXMLvALFOrB6rOsKYuydSybw0jyIzQtqoqBPaydyviN0GlwRSo5Z6X66V9tMg1rwmn-of1wXAO4IMAX6hlqaFFBurYe3PjHrepC_5kncJM-ZmvkUFCCTBiBa30AF1iQaLfPZGQXDMJ7RJT9NuiNqiGFLjaNVX9OUC3l_fQZn3tuHmpdi1_4JBojnXHwYfVLEpcSXblAFeQ9BqpP1QrIBIUffzBB0ifuqUMLgXccqhNwwCAHG-H2SIR-b4OpRLBtw=",
+      "id": "rs_0452a91029c3c632016aa81743fadc87d28f908aa7c5724180",
+      "status": null,
+      "summary": [],
+      "type": "reasoning"
+    },
+    {
+      "content": [
+        {
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relationships\":[{\"id\":\"r1\",\"source_entity_id\":\"bottleneck-congestion-proportion\",\"relationship_type\":\"MEASURED_BY\",\"target_entity_id\":\"congestion-study\",\"statement\":\"The bottleneck congestion proportion is associated with the congestion study as its primary evidentiary basis.\",\"confidence\":0.72,\"origin\":\"SOURCE\"},{\"id\":\"r2\",\"source_entity_id\":\"poor-signal-timing-congestion-proportion\",\"relationship_type\":\"MEASURED_BY\",\"target_entity_id\":\"congestion-study\",\"statement\":\"The poor signal timing congestion proportion is associated with the congestion study as its primary evidentiary basis.\",\"confidence\":0.72,\"origin\":\"SOURCE\"},{\"id\":\"r3\",\"source_entity_id\":\"recurring-congestion\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"congestion\",\"statement\":\"Recurring congestion is a type of congestion.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r4\",\"source_entity_id\":\"nonrecurring-congestion\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"congestion\",\"statement\":\"Nonrecurring congestion is a type of congestion.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r5\",\"source_entity_id\":\"physical-bottleneck-cause\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"bottleneck-cause\",\"statement\":\"A physical bottleneck cause is a type of bottleneck cause.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r6\",\"source_entity_id\":\"lane-drop\",\"relationship_type\":\"EXAMPLE_OF\",\"target_entity_id\":\"physical-bottleneck-cause\",\"statement\":\"A lane drop is given as an example of a physical bottleneck cause.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r7\",\"source_entity_id\":\"special-event\",\"relationship_type\":\"EXAMPLE_OF\",\"target_entity_id\":\"nonrecurring-congestion\",\"statement\":\"A special event is given as an example associated with nonrecurring congestion.\",\"confidence\":0.9,\"origin\":\"SOURCE\"},{\"id\":\"r8\",\"source_entity_id\":\"bad-weather\",\"relationship_type\":\"EXAMPLE_OF\",\"target_entity_id\":\"nonrecurring-congestion\",\"statement\":\"Bad weather is given as an example associated with nonrecurring congestion.\",\"confidence\":0.9,\"origin\":\"SOURCE\"},{\"id\":\"r9\",\"source_entity_id\":\"work-zone\",\"relationship_type\":\"EXAMPLE_OF\",\"target_entity_id\":\"nonrecurring-congestion\",\"statement\":\"A work zone is given as an example associated with nonrecurring congestion.\",\"confidence\":0.9,\"origin\":\"SOURCE\"},{\"id\":\"r10\",\"source_entity_id\":\"traffic-incident\",\"relationship_type\":\"EXAMPLE_OF\",\"target_entity_id\":\"nonrecurring-congestion\",\"statement\":\"A traffic incident is given as an example associated with nonrecurring congestion.\",\"confidence\":0.9,\"origin\":\"SOURCE\"},{\"id\":\"r11\",\"source_entity_id\":\"free-flowing-traffic\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"traffic-phase\",\"statement\":\"Free-flow is one of the traffic phases in Kerner's categorization.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r12\",\"source_entity_id\":\"synchronized-flow\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"traffic-phase\",\"statement\":\"Synchronized flow is one of the traffic phases in Kerner's categorization.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r13\",\"source_entity_id\":\"wide-moving-jam\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"traffic-phase\",\"statement\":\"Wide-moving jams are one of the traffic phases in Kerner's categorization.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r14\",\"source_entity_id\":\"bottleneck\",\"relationship_type\":\"CAUSES\",\"target_entity_id\":\"queue-formation\",\"statement\":\"Bottlenecks result in the formation of queues upstream.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r15\",\"source_entity_id\":\"bottleneck\",\"relationship_type\":\"CAUSES\",\"target_entity_id\":\"free-flowing-traffic\",\"statement\":\"Bottlenecks result in free-flowing traffic downstream.\",\"confidence\":0.95,\"origin\":\"SOURCE\"},{\"id\":\"r16\",\"source_entity_id\":\"downstream-front\",\"relationship_type\":\"EXAMPLE_OF\",\"target_entity_id\":\"bottleneck\",\"statement\":\"The downstream front at which synchronized traffic is fixed is described as a de facto bottleneck.\",\"confidence\":0.97,\"origin\":\"SOURCE\"},{\"id\":\"r17\",\"source_entity_id\":\"physical-bottleneck-cause\",\"relationship_type\":\"CAUSES\",\"target_entity_id\":\"traffic-delay\",\"statement\":\"A physical bottleneck cause contributes to delay when the recurring bottleneck conditions occur.\",\"confidence\":0.86,\"origin\":\"SOURCE\"},{\"id\":\"r18\",\"source_entity_id\":\"traffic-overburden\",\"relationship_type\":\"CAUSES\",\"target_entity_id\":\"traffic-delay\",\"statement\":\"Traffic overburden contributes to delay when the recurring bottleneck conditions occur.\",\"confidence\":0.86,\"origin\":\"SOURCE\"},{\"id\":\"r19\",\"source_entity_id\":\"traffic-propagation\",\"relationship_type\":\"AFFECTS\",\"target_entity_id\":\"upstream\",\"statement\":\"Traffic may propagate upstream through bottlenecks in wide-moving jams.\",\"confidence\":0.94,\"origin\":\"SOURCE\"},{\"id\":\"r20\",\"source_entity_id\":\"downstream-traffic-velocity\",\"relationship_type\":\"AFFECTS\",\"target_entity_id\":\"wide-moving-jam\",\"statement\":\"Downstream traffic velocity moves in the description of wide-moving jams.\",\"confidence\":0.88,\"origin\":\"SOURCE\"},{\"id\":\"r21\",\"source_entity_id\":\"recurring-congestion\",\"relationship_type\":\"CAUSES\",\"target_entity_id\":\"congestion\",\"statement\":\"Recurring causes define recurring congestion as a portion of overall congestion.\",\"confidence\":0.78,\"origin\":\"SOURCE\"},{\"id\":\"r22\",\"source_entity_id\":\"bottleneck\",\"relationship_type\":\"EXAMPLE_OF\",\"target_entity_id\":\"recurring-congestion\",\"statement\":\"Bottlenecks are identified as a recurring cause of congestion.\",\"confidence\":0.9,\"origin\":\"SOURCE\"},{\"id\":\"r23\",\"source_entity_id\":\"poor-signal-timing\",\"relationship_type\":\"EXAMPLE_OF\",\"target_entity_id\":\"recurring-congestion\",\"statement\":\"Poor signal timing is identified as a recurring cause of congestion.\",\"confidence\":0.9,\"origin\":\"SOURCE\"}],\"propositions\":[{\"proposition_type\":\"COMPARISON_CONDITION\",\"statement\":\"The bottleneck congestion proportion is greater than the poor signal timing congestion proportion.\",\"role_bindings\":[{\"role\":\"LEFT_OPERAND\",\"entity_id\":\"bottleneck-congestion-proportion\"},{\"role\":\"RIGHT_OPERAND\",\"entity_id\":\"poor-signal-timing-congestion-proportion\"}],\"relationship_type\":\"CONSTRAINS\",\"comparison_operator\":\"GREATER_THAN\",\"confidence\":0.99,\"origin\":\"SOURCE\"}],\"missing_symbols\":[]}",
+          "type": "output_text"
+        }
+      ],
+      "id": "msg_0452a91029c3c632016aa81748f24c87d2b143c141432a87b9",
+      "phase": "final_answer",
+      "role": "assistant",
+      "status": "completed",
+      "type": "message"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt": null,
+  "prompt_cache_key": null,
+  "prompt_cache_options": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "low",
+    "generate_summary": null,
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "status": "completed",
+  "store": false,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "description": null,
+      "name": "candidate_b_semantic_structure",
+      "schema_": {
+        "additionalProperties": false,
+        "properties": {
+          "missing_symbols": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "reason": {
+                  "type": "string"
+                },
+                "semantic_item": {
+                  "type": "string"
+                },
+                "surface_form": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "surface_form",
+                "semantic_item",
+                "reason"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "propositions": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "comparison_operator": {
+                  "anyOf": [
+                    {
+                      "enum": [
+                        "GREATER_THAN"
+                      ],
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "confidence": {
+                  "maximum": 1,
+                  "minimum": 0,
+                  "type": "number"
+                },
+                "origin": {
+                  "enum": [
+                    "SOURCE",
+                    "INFERRED"
+                  ],
+                  "type": "string"
+                },
+                "proposition_type": {
+                  "enum": [
+                    "COMPARISON_CONDITION",
+                    "TRANSFER_EVENT"
+                  ],
+                  "type": "string"
+                },
+                "relationship_type": {
+                  "enum": [
+                    "IS_A",
+                    "PART_OF",
+                    "CAUSES",
+                    "INCREASES",
+                    "DECREASES",
+                    "ENABLES",
+                    "REQUIRES",
+                    "CONSTRAINS",
+                    "PRECEDES",
+                    "TRANSFORMS_INTO",
+                    "INTERACTS_WITH",
+                    "MEASURED_BY",
+                    "EXAMPLE_OF",
+                    "CONTRADICTS",
+                    "CREATES",
+                    "INDUCES",
+                    "EXERTS_FORCE_ON",
+                    "AFFECTS",
+                    "BINDS_TO",
+                    "TRANSFERS_TO"
+                  ],
+                  "type": "string"
+                },
+                "role_bindings": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "entity_id": {
+                        "enum": [
+                          "bad-weather",
+                          "bottleneck",
+                          "bottleneck-cause",
+                          "bottleneck-congestion-proportion",
+                          "congestion",
+                          "congestion-study",
+                          "downstream",
+                          "downstream-front",
+                          "downstream-traffic-velocity",
+                          "fhwa",
+                          "free-flowing-traffic",
+                          "i-95-corridor-coalition",
+                          "lane-drop",
+                          "nonrecurring-congestion",
+                          "physical-bottleneck-cause",
+                          "poor-signal-timing",
+                          "poor-signal-timing-congestion-proportion",
+                          "queue",
+                          "queue-formation",
+                          "recurring-congestion",
+                          "recurring-congestion-proportion",
+                          "roadway-capacity",
+                          "roadway-design-deficiency",
+                          "rubbernecking",
+                          "special-event",
+                          "sun-glare",
+                          "synchronized-flow",
+                          "traffic-delay",
+                          "traffic-demand",
+                          "traffic-incident",
+                          "traffic-overburden",
+                          "traffic-phase",
+                          "traffic-propagation",
+                          "upstream",
+                          "vertical-climb",
+                          "weaving-condition",
+                          "wide-moving-jam",
+                          "work-zone"
+                        ],
+                        "type": "string"
+                      },
+                      "role": {
+                        "enum": [
+                          "LEFT_OPERAND",
+                          "RIGHT_OPERAND",
+                          "OUTCOME",
+                          "EVENT",
+                          "OBJECT",
+                          "DESTINATION"
+                        ],
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "role",
+                      "entity_id"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                "statement": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "proposition_type",
+                "statement",
+                "role_bindings",
+                "relationship_type",
+                "comparison_operator",
+                "confidence",
+                "origin"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "relationships": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "confidence": {
+                  "maximum": 1,
+                  "minimum": 0,
+                  "type": "number"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "origin": {
+                  "enum": [
+                    "SOURCE",
+                    "INFERRED"
+                  ],
+                  "type": "string"
+                },
+                "relationship_type": {
+                  "enum": [
+                    "IS_A",
+                    "PART_OF",
+                    "CAUSES",
+                    "INCREASES",
+                    "DECREASES",
+                    "ENABLES",
+                    "REQUIRES",
+                    "CONSTRAINS",
+                    "PRECEDES",
+                    "TRANSFORMS_INTO",
+                    "INTERACTS_WITH",
+                    "MEASURED_BY",
+                    "EXAMPLE_OF",
+                    "CONTRADICTS",
+                    "CREATES",
+                    "INDUCES",
+                    "EXERTS_FORCE_ON",
+                    "AFFECTS",
+                    "BINDS_TO",
+                    "TRANSFERS_TO"
+                  ],
+                  "type": "string"
+                },
+                "source_entity_id": {
+                  "enum": [
+                    "bad-weather",
+                    "bottleneck",
+                    "bottleneck-cause",
+                    "bottleneck-congestion-proportion",
+                    "congestion",
+                    "congestion-study",
+                    "downstream",
+                    "downstream-front",
+                    "downstream-traffic-velocity",
+                    "fhwa",
+                    "free-flowing-traffic",
+                    "i-95-corridor-coalition",
+                    "lane-drop",
+                    "nonrecurring-congestion",
+                    "physical-bottleneck-cause",
+                    "poor-signal-timing",
+                    "poor-signal-timing-congestion-proportion",
+                    "queue",
+                    "queue-formation",
+                    "recurring-congestion",
+                    "recurring-congestion-proportion",
+                    "roadway-capacity",
+                    "roadway-design-deficiency",
+                    "rubbernecking",
+                    "special-event",
+                    "sun-glare",
+                    "synchronized-flow",
+                    "traffic-delay",
+                    "traffic-demand",
+                    "traffic-incident",
+                    "traffic-overburden",
+                    "traffic-phase",
+                    "traffic-propagation",
+                    "upstream",
+                    "vertical-climb",
+                    "weaving-condition",
+                    "wide-moving-jam",
+                    "work-zone"
+                  ],
+                  "type": "string"
+                },
+                "statement": {
+                  "type": "string"
+                },
+                "target_entity_id": {
+                  "enum": [
+                    "bad-weather",
+                    "bottleneck",
+                    "bottleneck-cause",
+                    "bottleneck-congestion-proportion",
+                    "congestion",
+                    "congestion-study",
+                    "downstream",
+                    "downstream-front",
+                    "downstream-traffic-velocity",
+                    "fhwa",
+                    "free-flowing-traffic",
+                    "i-95-corridor-coalition",
+                    "lane-drop",
+                    "nonrecurring-congestion",
+                    "physical-bottleneck-cause",
+                    "poor-signal-timing",
+                    "poor-signal-timing-congestion-proportion",
+                    "queue",
+                    "queue-formation",
+                    "recurring-congestion",
+                    "recurring-congestion-proportion",
+                    "roadway-capacity",
+                    "roadway-design-deficiency",
+                    "rubbernecking",
+                    "special-event",
+                    "sun-glare",
+                    "synchronized-flow",
+                    "traffic-delay",
+                    "traffic-demand",
+                    "traffic-incident",
+                    "traffic-overburden",
+                    "traffic-phase",
+                    "traffic-propagation",
+                    "upstream",
+                    "vertical-climb",
+                    "weaving-condition",
+                    "wide-moving-jam",
+                    "work-zone"
+                  ],
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "source_entity_id",
+                "relationship_type",
+                "target_entity_id",
+                "statement",
+                "confidence",
+                "origin"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "relationships",
+          "propositions",
+          "missing_symbols"
+        ],
+        "type": "object"
+      },
+      "strict": true,
+      "type": "json_schema"
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 5588,
+    "input_tokens_details": {
+      "cache_write_tokens": 5585,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1821,
+    "output_tokens_details": {
+      "reasoning_tokens": 428
+    },
+    "total_tokens": 7409
+  },
+  "user": null
+}

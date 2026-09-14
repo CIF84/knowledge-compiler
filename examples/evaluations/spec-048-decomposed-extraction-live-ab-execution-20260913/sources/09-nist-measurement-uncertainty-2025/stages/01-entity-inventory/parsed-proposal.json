@@ -1,0 +1,242 @@
+{
+  "symbols": [
+    {
+      "aliases": [],
+      "description": "An experimental process that produces a value reasonably attributable to a quantitative property of a phenomenon, body, or substance.",
+      "entity_type": "PROCESS",
+      "name": "Measurement"
+    },
+    {
+      "aliases": [
+        "value"
+      ],
+      "description": "A value produced by a measurement and attributable to a quantitative property of a phenomenon, body, or substance.",
+      "entity_type": "OBJECT",
+      "name": "Measurement value"
+    },
+    {
+      "aliases": [],
+      "description": "A property of a phenomenon, body, or substance that can be the object of measurement.",
+      "entity_type": "CONCEPT",
+      "name": "Quantitative property"
+    },
+    {
+      "aliases": [],
+      "description": "A kind of entity whose quantitative property can be the object of measurement.",
+      "entity_type": "OBJECT",
+      "name": "Phenomenon"
+    },
+    {
+      "aliases": [],
+      "description": "A kind of entity whose quantitative property can be the object of measurement.",
+      "entity_type": "OBJECT",
+      "name": "Body"
+    },
+    {
+      "aliases": [],
+      "description": "A kind of entity whose quantitative property can be the object of measurement.",
+      "entity_type": "OBJECT",
+      "name": "Substance"
+    },
+    {
+      "aliases": [],
+      "description": "The property that is the object of measurement.",
+      "entity_type": "CONCEPT",
+      "name": "Measurand"
+    },
+    {
+      "aliases": [],
+      "description": "The numerical magnitude associated with a measurand and given meaning by a reference.",
+      "entity_type": "VARIABLE",
+      "name": "Numerical magnitude"
+    },
+    {
+      "aliases": [],
+      "description": "A reference that gives meaning to the numerical magnitude of a measurand.",
+      "entity_type": "CONCEPT",
+      "name": "Reference"
+    },
+    {
+      "aliases": [],
+      "description": "A basis used for direct or indirect comparison in measurement.",
+      "entity_type": "OBJECT",
+      "name": "Standard"
+    },
+    {
+      "aliases": [],
+      "description": "An example used to state the mass of a measurand as 1 kg.",
+      "entity_type": "OBJECT",
+      "name": "International Prototype Kilogram"
+    },
+    {
+      "aliases": [],
+      "description": "A certified standard given as an example for comparison in measurement.",
+      "entity_type": "OBJECT",
+      "name": "32768 Hz quartz crystal resonator"
+    },
+    {
+      "aliases": [],
+      "description": "A primary standard given as an example, containing 1.079 micromole of methane per mole of air.",
+      "entity_type": "OBJECT",
+      "name": "Primary gas mixture"
+    },
+    {
+      "aliases": [
+        "comparison"
+      ],
+      "description": "A direct or indirect comparison with a standard involved in measurement.",
+      "entity_type": "PROCESS",
+      "name": "Measurement comparison"
+    },
+    {
+      "aliases": [
+        "instrument"
+      ],
+      "description": "An instrument with which the phenomenon, body, or substance of interest interacts and that is capable of producing an indication responsive to the property of interest.",
+      "entity_type": "COMPONENT",
+      "name": "Measuring instrument"
+    },
+    {
+      "aliases": [],
+      "description": "An output produced by a measuring instrument that is responsive to the property of interest.",
+      "entity_type": "OBJECT",
+      "name": "Indication"
+    },
+    {
+      "aliases": [
+        "calibrated"
+      ],
+      "description": "A condition or process through which a measuring instrument is related to a relevant standard so that its indications are meaningful in relation to that standard.",
+      "entity_type": "PROCESS",
+      "name": "Calibration"
+    },
+    {
+      "aliases": [],
+      "description": "A standard in relation to which indications from a calibrated instrument are meaningful.",
+      "entity_type": "OBJECT",
+      "name": "Relevant standard"
+    },
+    {
+      "aliases": [
+        "result of a measurement"
+      ],
+      "description": "The result of a measurement with which measurement uncertainty is associated.",
+      "entity_type": "OBJECT",
+      "name": "Measurement result"
+    },
+    {
+      "aliases": [],
+      "description": "A non-negative parameter associated with a measurement result that characterizes the dispersion of values reasonably attributable to the measurand, based on the information used.",
+      "entity_type": "VARIABLE",
+      "name": "Measurement uncertainty"
+    },
+    {
+      "aliases": [],
+      "description": "A quantity associated with a measurement result that characterizes dispersion of values attributable to the measurand.",
+      "entity_type": "VARIABLE",
+      "name": "Parameter"
+    },
+    {
+      "aliases": [],
+      "description": "The spread or variability characterized by a measurement uncertainty or by an attribute of a probability distribution.",
+      "entity_type": "CONCEPT",
+      "name": "Dispersion"
+    },
+    {
+      "aliases": [],
+      "description": "A value being attributed to a measurand.",
+      "entity_type": "VARIABLE",
+      "name": "Quantity value"
+    },
+    {
+      "aliases": [],
+      "description": "Information on which the characterization of dispersion of quantity values attributed to a measurand is based.",
+      "entity_type": "OBJECT",
+      "name": "Information used"
+    },
+    {
+      "aliases": [],
+      "description": "A measurand whose property of interest can be quantified by a single real number.",
+      "entity_type": "CONCEPT",
+      "name": "Scalar measurand"
+    },
+    {
+      "aliases": [],
+      "description": "A single number used to quantify a scalar measurand.",
+      "entity_type": "VARIABLE",
+      "name": "Real number"
+    },
+    {
+      "aliases": [],
+      "description": "A parameter that may express measurement uncertainty for a scalar measurand and an attribute of a probability distribution representing its scatter.",
+      "entity_type": "VARIABLE",
+      "name": "Standard deviation"
+    },
+    {
+      "aliases": [],
+      "description": "Measurement uncertainty expressed as a standard deviation.",
+      "entity_type": "VARIABLE",
+      "name": "Standard measurement uncertainty"
+    },
+    {
+      "aliases": [],
+      "description": "A specified multiple of a standard deviation that may express measurement uncertainty.",
+      "entity_type": "VARIABLE",
+      "name": "Specified multiple"
+    },
+    {
+      "aliases": [],
+      "description": "An interval whose half-width may express measurement uncertainty when it includes the measurand with a stated coverage probability.",
+      "entity_type": "OBJECT",
+      "name": "Interval"
+    },
+    {
+      "aliases": [],
+      "description": "Half the width of an interval used as a possible expression of measurement uncertainty.",
+      "entity_type": "VARIABLE",
+      "name": "Half-width"
+    },
+    {
+      "aliases": [],
+      "description": "A stated probability that an interval includes the measurand.",
+      "entity_type": "VARIABLE",
+      "name": "Coverage probability"
+    },
+    {
+      "aliases": [],
+      "description": "The state of knowledge about the measurand expressed by measurement uncertainty.",
+      "entity_type": "CONCEPT",
+      "name": "Incomplete knowledge"
+    },
+    {
+      "aliases": [],
+      "description": "A distribution over the set of possible values for a measurand used to represent the corresponding state of knowledge.",
+      "entity_type": "OBJECT",
+      "name": "Probability distribution"
+    },
+    {
+      "aliases": [],
+      "description": "The set of possible values for a measurand over which a probability distribution is defined.",
+      "entity_type": "OBJECT",
+      "name": "Possible measurand values"
+    },
+    {
+      "aliases": [],
+      "description": "The corresponding state of knowledge about a measurand represented by a probability distribution.",
+      "entity_type": "CONCEPT",
+      "name": "State of knowledge"
+    },
+    {
+      "aliases": [],
+      "description": "An attribute of a probability distribution representing its spread over the range of possible values.",
+      "entity_type": "CONCEPT",
+      "name": "Scatter"
+    },
+    {
+      "aliases": [],
+      "description": "The range over which the scatter of a probability distribution is represented.",
+      "entity_type": "OBJECT",
+      "name": "Range of possible values"
+    }
+  ]
+}

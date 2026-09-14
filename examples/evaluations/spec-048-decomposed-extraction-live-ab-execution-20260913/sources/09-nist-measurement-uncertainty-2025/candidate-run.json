@@ -1,0 +1,3235 @@
+{
+  "attempts": [
+    {
+      "provider_metadata": {
+        "actual_model": "gpt-5.6-luna",
+        "candidate_version": "spec-047-candidate-b-v1",
+        "duration_ms": 11453.334125006222,
+        "hidden_retries": 0,
+        "http_request_id": "req_2ede85c00b704fbfa8f050565849535a",
+        "prompt_sha256": "b1c00eb4547de56c62dcc18c7aec013ee1e2de4a8c1dfa45bcb475f00591f785",
+        "prompt_version": "spec-047-entity-inventory-v1",
+        "provider": "openai",
+        "provider_response_id": "resp_0142461c611d8ced016aa817521cc087d2a2d270753c62fea8",
+        "repair_calls": 0,
+        "requested_model": "gpt-5.6-luna",
+        "schema_name": "candidate_b_entity_inventory",
+        "schema_sha256": "003db7546ae3ffafe7dc098bc50e1a5f223b891f6ee3160f7537214c8e9c9956",
+        "sdk_retries": 0,
+        "semantic_retries": 0,
+        "stage": "ENTITY_INVENTORY",
+        "store": false,
+        "upstream_input_sha256": "b3ae508f3982dfdd89f41a1d9ca59eb1f658b1648e3fae35168feba212046730",
+        "usage": {
+          "input_tokens": 656,
+          "output_tokens": 1384,
+          "total_tokens": 2040
+        }
+      },
+      "raw_proposal": {
+        "symbols": [
+          {
+            "aliases": [],
+            "description": "An experimental process that produces a value reasonably attributable to a quantitative property of a phenomenon, body, or substance.",
+            "entity_type": "PROCESS",
+            "name": "Measurement"
+          },
+          {
+            "aliases": [
+              "value"
+            ],
+            "description": "A value produced by a measurement and attributable to a quantitative property of a phenomenon, body, or substance.",
+            "entity_type": "OBJECT",
+            "name": "Measurement value"
+          },
+          {
+            "aliases": [],
+            "description": "A property of a phenomenon, body, or substance that can be the object of measurement.",
+            "entity_type": "CONCEPT",
+            "name": "Quantitative property"
+          },
+          {
+            "aliases": [],
+            "description": "A kind of entity whose quantitative property can be the object of measurement.",
+            "entity_type": "OBJECT",
+            "name": "Phenomenon"
+          },
+          {
+            "aliases": [],
+            "description": "A kind of entity whose quantitative property can be the object of measurement.",
+            "entity_type": "OBJECT",
+            "name": "Body"
+          },
+          {
+            "aliases": [],
+            "description": "A kind of entity whose quantitative property can be the object of measurement.",
+            "entity_type": "OBJECT",
+            "name": "Substance"
+          },
+          {
+            "aliases": [],
+            "description": "The property that is the object of measurement.",
+            "entity_type": "CONCEPT",
+            "name": "Measurand"
+          },
+          {
+            "aliases": [],
+            "description": "The numerical magnitude associated with a measurand and given meaning by a reference.",
+            "entity_type": "VARIABLE",
+            "name": "Numerical magnitude"
+          },
+          {
+            "aliases": [],
+            "description": "A reference that gives meaning to the numerical magnitude of a measurand.",
+            "entity_type": "CONCEPT",
+            "name": "Reference"
+          },
+          {
+            "aliases": [],
+            "description": "A basis used for direct or indirect comparison in measurement.",
+            "entity_type": "OBJECT",
+            "name": "Standard"
+          },
+          {
+            "aliases": [],
+            "description": "An example used to state the mass of a measurand as 1 kg.",
+            "entity_type": "OBJECT",
+            "name": "International Prototype Kilogram"
+          },
+          {
+            "aliases": [],
+            "description": "A certified standard given as an example for comparison in measurement.",
+            "entity_type": "OBJECT",
+            "name": "32768 Hz quartz crystal resonator"
+          },
+          {
+            "aliases": [],
+            "description": "A primary standard given as an example, containing 1.079 micromole of methane per mole of air.",
+            "entity_type": "OBJECT",
+            "name": "Primary gas mixture"
+          },
+          {
+            "aliases": [
+              "comparison"
+            ],
+            "description": "A direct or indirect comparison with a standard involved in measurement.",
+            "entity_type": "PROCESS",
+            "name": "Measurement comparison"
+          },
+          {
+            "aliases": [
+              "instrument"
+            ],
+            "description": "An instrument with which the phenomenon, body, or substance of interest interacts and that is capable of producing an indication responsive to the property of interest.",
+            "entity_type": "COMPONENT",
+            "name": "Measuring instrument"
+          },
+          {
+            "aliases": [],
+            "description": "An output produced by a measuring instrument that is responsive to the property of interest.",
+            "entity_type": "OBJECT",
+            "name": "Indication"
+          },
+          {
+            "aliases": [
+              "calibrated"
+            ],
+            "description": "A condition or process through which a measuring instrument is related to a relevant standard so that its indications are meaningful in relation to that standard.",
+            "entity_type": "PROCESS",
+            "name": "Calibration"
+          },
+          {
+            "aliases": [],
+            "description": "A standard in relation to which indications from a calibrated instrument are meaningful.",
+            "entity_type": "OBJECT",
+            "name": "Relevant standard"
+          },
+          {
+            "aliases": [
+              "result of a measurement"
+            ],
+            "description": "The result of a measurement with which measurement uncertainty is associated.",
+            "entity_type": "OBJECT",
+            "name": "Measurement result"
+          },
+          {
+            "aliases": [],
+            "description": "A non-negative parameter associated with a measurement result that characterizes the dispersion of values reasonably attributable to the measurand, based on the information used.",
+            "entity_type": "VARIABLE",
+            "name": "Measurement uncertainty"
+          },
+          {
+            "aliases": [],
+            "description": "A quantity associated with a measurement result that characterizes dispersion of values attributable to the measurand.",
+            "entity_type": "VARIABLE",
+            "name": "Parameter"
+          },
+          {
+            "aliases": [],
+            "description": "The spread or variability characterized by a measurement uncertainty or by an attribute of a probability distribution.",
+            "entity_type": "CONCEPT",
+            "name": "Dispersion"
+          },
+          {
+            "aliases": [],
+            "description": "A value being attributed to a measurand.",
+            "entity_type": "VARIABLE",
+            "name": "Quantity value"
+          },
+          {
+            "aliases": [],
+            "description": "Information on which the characterization of dispersion of quantity values attributed to a measurand is based.",
+            "entity_type": "OBJECT",
+            "name": "Information used"
+          },
+          {
+            "aliases": [],
+            "description": "A measurand whose property of interest can be quantified by a single real number.",
+            "entity_type": "CONCEPT",
+            "name": "Scalar measurand"
+          },
+          {
+            "aliases": [],
+            "description": "A single number used to quantify a scalar measurand.",
+            "entity_type": "VARIABLE",
+            "name": "Real number"
+          },
+          {
+            "aliases": [],
+            "description": "A parameter that may express measurement uncertainty for a scalar measurand and an attribute of a probability distribution representing its scatter.",
+            "entity_type": "VARIABLE",
+            "name": "Standard deviation"
+          },
+          {
+            "aliases": [],
+            "description": "Measurement uncertainty expressed as a standard deviation.",
+            "entity_type": "VARIABLE",
+            "name": "Standard measurement uncertainty"
+          },
+          {
+            "aliases": [],
+            "description": "A specified multiple of a standard deviation that may express measurement uncertainty.",
+            "entity_type": "VARIABLE",
+            "name": "Specified multiple"
+          },
+          {
+            "aliases": [],
+            "description": "An interval whose half-width may express measurement uncertainty when it includes the measurand with a stated coverage probability.",
+            "entity_type": "OBJECT",
+            "name": "Interval"
+          },
+          {
+            "aliases": [],
+            "description": "Half the width of an interval used as a possible expression of measurement uncertainty.",
+            "entity_type": "VARIABLE",
+            "name": "Half-width"
+          },
+          {
+            "aliases": [],
+            "description": "A stated probability that an interval includes the measurand.",
+            "entity_type": "VARIABLE",
+            "name": "Coverage probability"
+          },
+          {
+            "aliases": [],
+            "description": "The state of knowledge about the measurand expressed by measurement uncertainty.",
+            "entity_type": "CONCEPT",
+            "name": "Incomplete knowledge"
+          },
+          {
+            "aliases": [],
+            "description": "A distribution over the set of possible values for a measurand used to represent the corresponding state of knowledge.",
+            "entity_type": "OBJECT",
+            "name": "Probability distribution"
+          },
+          {
+            "aliases": [],
+            "description": "The set of possible values for a measurand over which a probability distribution is defined.",
+            "entity_type": "OBJECT",
+            "name": "Possible measurand values"
+          },
+          {
+            "aliases": [],
+            "description": "The corresponding state of knowledge about a measurand represented by a probability distribution.",
+            "entity_type": "CONCEPT",
+            "name": "State of knowledge"
+          },
+          {
+            "aliases": [],
+            "description": "An attribute of a probability distribution representing its spread over the range of possible values.",
+            "entity_type": "CONCEPT",
+            "name": "Scatter"
+          },
+          {
+            "aliases": [],
+            "description": "The range over which the scatter of a probability distribution is represented.",
+            "entity_type": "OBJECT",
+            "name": "Range of possible values"
+          }
+        ]
+      },
+      "raw_provider_response": {
+        "background": false,
+        "billing": {
+          "payer": "developer"
+        },
+        "completed_at": 1789400925.0,
+        "conversation": null,
+        "created_at": 1789400914.0,
+        "error": null,
+        "frequency_penalty": 0.0,
+        "id": "resp_0142461c611d8ced016aa817521cc087d2a2d270753c62fea8",
+        "incomplete_details": null,
+        "instructions": "You perform Stage 1 entity inventory for a semantic compiler.\n\nRead only the exact supplied source. Return a precision-first inventory of concepts,\nobjects, processes, variables, systems, and components that later semantic statements\nneed as endpoints or proposition roles. Include source-supported process/event concepts\nwhen later meaning would need to refer to them. Do not use external knowledge.\n\nDo not assign IDs: trusted code assigns stable IDs after this stage. Each semantic thing\nmust appear once. Do not fragment one identity into variants, merge related but distinct\nthings, or use aliases except for genuine naming equivalence. Names and descriptions must\nremain source-bounded.\n\nReturn entities only. Do not return claims, evidence, relationships, propositions,\nteaching prose, diagnostics, or output outside the requested schema.",
+        "max_output_tokens": null,
+        "max_tool_calls": null,
+        "metadata": {},
+        "model": "gpt-5.6-luna",
+        "moderation": null,
+        "object": "response",
+        "output": [
+          {
+            "content": [],
+            "encrypted_content": "gAAAAABqqBddu1T0o3edvOo-FucF0TqU3nx0zCZumjhOZmy4kbIF3AdhwmpIT6GO8v_ELOEm8HHT0DpzBeenFB0kt6_ZzAx5Ple48X31CqjzFcgd5l5EtCsPNRYzaJ4YXTAH-zUZpN08Mm7x0zp26GC8_P6xp2OcRrB3VZg60jH_mDXwao4OspWreUJLnn3D28OPw-4QtBD3QJ9jqFVnikPdh-xeftg_yn1QdHkquGExyn_-98uGNxD0OR8ysI0arUWkvzScx-deecwVvqvyB3QoVmHk_vQvRNkHLYx5hdirUFSRIaMWt-gCntfFb08E0HA2OYHqSabQQyS6CWKeBrk6x15k2-1VNtQJo07Aqu2h17Chmwz5KvzbNBnC1LV22A2_MBlR6gtwbGz-s56xQkNu7PJNf2jkLueMKVLX6hvjut6BKQ_PVNNEducJvD3ApeiY5HDJ8fzO8X9yvKfpO7HWocn9-Bc2tQY3_TJGcTjWFImy7Ml9CP0ekajcPd-eZVSYED5mkYc0g_lXlGfpFlEfIW26dNul8Y0UqejzB55h-Acin2_-ty-vZiJ5bDBUNmz_MGcGFlTWaKuDZIgyBqfhwc4RcCblmn04uqs3B2IMB4dz_lfVolOKiwyYNxIV9Q3p4ns0W-oCePKrAfuwpk4wHKXmExpf641Eid9AK1B1htgNOBV4tl9-7UATXBRS3kPfVf7hCJSarPqdGL0QwxPi-7FyZfe3W8imklAtZ3_oHCAWzc2NXMjmo11DwkROMFK6Smk80b4ZtvbI_3GhyF2MfMEAtkTWy5Ptmw6liM-T1V6qHOKiEqAPKPODFwYeC68osLjQ8iVXLmov1Yt01IZTXKUZYAf5g8xNXeJdlsteoWg7tdUrs4xYW7jXxbHkt6Ox905zZbnayuptCSumnvc9tjJxwwnddRCTyMoq7Ja4Bj5U1ytJ0AOAhdVpEt9UxPdar4KrluaF39q9Dr_ZSVm0bIQ1sbFusDWNb9lMlCdpWkuPh4T7vwoR17osDQLf_Kroda3-biUJ33XBKIzzqiIgnaM-IQM7mF7N70-iDB2Wa4fStYvwcY9jqrO7tl8RATvANnj6KO9udooOQ5Nek4xgb9jQewdcJb6F-SCetHNpS9Pkom489imkqfvRsADNQTnEr6NmReRvM59A4rniyRTIWceUQ-J1E4yLWoF2Zwbv5IJUBkQsFuYkyDjiLgptNPVHgemJKXBSK5PvvQc8_WcTFQgatmoH1GP4HXg-spLbFQ7yqhcMMQYgSzZF2KWMNK-XIbr4DJUUq0ZEa-ZtK0RpvJUCEaKgBxz_2YBBCVSg99jFilf-Aj6w1vEApz4OF03PfGyQ_1QORTxuTywm9vZmwu5DJVPU6RrMCPfh7gRZDcA1PGFlEvAeMs2-37hSmg0tPKb6sKCeXTj6vqRiDc_VAvCnPVAIWlIef1qI8mReB141eYDYMd1a3-DiJ13BK40N3sMP6cbhedhwP8nXXgumsyhPh52Y5V7l1HqLKxIa-pxTqVPEXDMiiNzb_PjsgcCxTPcw8trZWpAGqLhENVFrxuCbvZwpiTzY97nrl8_uuIbyiT09bwWhMushPAPcspDFK99O5jwKEB3vIOxmZ8MysTo4NvmdTOC7Wl5lm1V1XUS8_3vuObeEqzm2DlVgNtuJRzy0JR9TOkOTPJmZotJL4hnjFbRbQi42YXKZV-kdyPgHFSoFY5CpPMuTIRg6awdj1aiE-QRbhTT-PUV9JAnvF11cOQbC5U-czWnO0WysJJBDpWMj5XTeBnSmJ1rNvkEwiy3qOLDem1MesEsGodPwHczRwC9jQ-lBwWPTAaqIfOwDWJzSVIEQqd3p6BspCc3h7hDzGSHFj4exWFd_ebh0c-yn2lA5hGX_YNq-xZqzMivwclg-LlyX9FuHyfIhY_VNRXj0MoM6dLwwmugrBV2V8JtUjV3Gxw-QT4ECAy8pgsG7pH-R_Phy5Y_E1IH0hW5xQmBjwURnDbysbYPqdexdnpzXcqfkvX730mo1XFWtDny7mQdxMqT1Em5cV4AlgCQ938D7qxdMCfzeSc3oUupvqq9buQJ_I8ICKMnwJG3VqhcBsNqj9ZQPFcs1InJA1k8MwPFBLULc4g46kZN0vcygYbSv4JI5Dg==",
+            "id": "rs_0142461c611d8ced016aa81752e4ec87d2b17d34bb045b6370",
+            "status": null,
+            "summary": [],
+            "type": "reasoning"
+          },
+          {
+            "content": [
+              {
+                "annotations": [],
+                "logprobs": [],
+                "text": "{\"symbols\":[{\"name\":\"Measurement\",\"description\":\"An experimental process that produces a value reasonably attributable to a quantitative property of a phenomenon, body, or substance.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"name\":\"Measurement value\",\"description\":\"A value produced by a measurement and attributable to a quantitative property of a phenomenon, body, or substance.\",\"entity_type\":\"OBJECT\",\"aliases\":[\"value\"]},{\"name\":\"Quantitative property\",\"description\":\"A property of a phenomenon, body, or substance that can be the object of measurement.\",\"entity_type\":\"CONCEPT\",\"aliases\":[]},{\"name\":\"Phenomenon\",\"description\":\"A kind of entity whose quantitative property can be the object of measurement.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"Body\",\"description\":\"A kind of entity whose quantitative property can be the object of measurement.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"Substance\",\"description\":\"A kind of entity whose quantitative property can be the object of measurement.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"Measurand\",\"description\":\"The property that is the object of measurement.\",\"entity_type\":\"CONCEPT\",\"aliases\":[]},{\"name\":\"Numerical magnitude\",\"description\":\"The numerical magnitude associated with a measurand and given meaning by a reference.\",\"entity_type\":\"VARIABLE\",\"aliases\":[]},{\"name\":\"Reference\",\"description\":\"A reference that gives meaning to the numerical magnitude of a measurand.\",\"entity_type\":\"CONCEPT\",\"aliases\":[]},{\"name\":\"Standard\",\"description\":\"A basis used for direct or indirect comparison in measurement.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"International Prototype Kilogram\",\"description\":\"An example used to state the mass of a measurand as 1 kg.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"32768 Hz quartz crystal resonator\",\"description\":\"A certified standard given as an example for comparison in measurement.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"Primary gas mixture\",\"description\":\"A primary standard given as an example, containing 1.079 micromole of methane per mole of air.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"Measurement comparison\",\"description\":\"A direct or indirect comparison with a standard involved in measurement.\",\"entity_type\":\"PROCESS\",\"aliases\":[\"comparison\"]},{\"name\":\"Measuring instrument\",\"description\":\"An instrument with which the phenomenon, body, or substance of interest interacts and that is capable of producing an indication responsive to the property of interest.\",\"entity_type\":\"COMPONENT\",\"aliases\":[\"instrument\"]},{\"name\":\"Indication\",\"description\":\"An output produced by a measuring instrument that is responsive to the property of interest.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"Calibration\",\"description\":\"A condition or process through which a measuring instrument is related to a relevant standard so that its indications are meaningful in relation to that standard.\",\"entity_type\":\"PROCESS\",\"aliases\":[\"calibrated\"]},{\"name\":\"Relevant standard\",\"description\":\"A standard in relation to which indications from a calibrated instrument are meaningful.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"Measurement result\",\"description\":\"The result of a measurement with which measurement uncertainty is associated.\",\"entity_type\":\"OBJECT\",\"aliases\":[\"result of a measurement\"]},{\"name\":\"Measurement uncertainty\",\"description\":\"A non-negative parameter associated with a measurement result that characterizes the dispersion of values reasonably attributable to the measurand, based on the information used.\",\"entity_type\":\"VARIABLE\",\"aliases\":[]},{\"name\":\"Parameter\",\"description\":\"A quantity associated with a measurement result that characterizes dispersion of values attributable to the measurand.\",\"entity_type\":\"VARIABLE\",\"aliases\":[]},{\"name\":\"Dispersion\",\"description\":\"The spread or variability characterized by a measurement uncertainty or by an attribute of a probability distribution.\",\"entity_type\":\"CONCEPT\",\"aliases\":[]},{\"name\":\"Quantity value\",\"description\":\"A value being attributed to a measurand.\",\"entity_type\":\"VARIABLE\",\"aliases\":[]},{\"name\":\"Information used\",\"description\":\"Information on which the characterization of dispersion of quantity values attributed to a measurand is based.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"Scalar measurand\",\"description\":\"A measurand whose property of interest can be quantified by a single real number.\",\"entity_type\":\"CONCEPT\",\"aliases\":[]},{\"name\":\"Real number\",\"description\":\"A single number used to quantify a scalar measurand.\",\"entity_type\":\"VARIABLE\",\"aliases\":[]},{\"name\":\"Standard deviation\",\"description\":\"A parameter that may express measurement uncertainty for a scalar measurand and an attribute of a probability distribution representing its scatter.\",\"entity_type\":\"VARIABLE\",\"aliases\":[]},{\"name\":\"Standard measurement uncertainty\",\"description\":\"Measurement uncertainty expressed as a standard deviation.\",\"entity_type\":\"VARIABLE\",\"aliases\":[]},{\"name\":\"Specified multiple\",\"description\":\"A specified multiple of a standard deviation that may express measurement uncertainty.\",\"entity_type\":\"VARIABLE\",\"aliases\":[]},{\"name\":\"Interval\",\"description\":\"An interval whose half-width may express measurement uncertainty when it includes the measurand with a stated coverage probability.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"Half-width\",\"description\":\"Half the width of an interval used as a possible expression of measurement uncertainty.\",\"entity_type\":\"VARIABLE\",\"aliases\":[]},{\"name\":\"Coverage probability\",\"description\":\"A stated probability that an interval includes the measurand.\",\"entity_type\":\"VARIABLE\",\"aliases\":[]},{\"name\":\"Incomplete knowledge\",\"description\":\"The state of knowledge about the measurand expressed by measurement uncertainty.\",\"entity_type\":\"CONCEPT\",\"aliases\":[]},{\"name\":\"Probability distribution\",\"description\":\"A distribution over the set of possible values for a measurand used to represent the corresponding state of knowledge.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"Possible measurand values\",\"description\":\"The set of possible values for a measurand over which a probability distribution is defined.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"State of knowledge\",\"description\":\"The corresponding state of knowledge about a measurand represented by a probability distribution.\",\"entity_type\":\"CONCEPT\",\"aliases\":[]},{\"name\":\"Scatter\",\"description\":\"An attribute of a probability distribution representing its spread over the range of possible values.\",\"entity_type\":\"CONCEPT\",\"aliases\":[]},{\"name\":\"Range of possible values\",\"description\":\"The range over which the scatter of a probability distribution is represented.\",\"entity_type\":\"OBJECT\",\"aliases\":[]}] }",
+                "type": "output_text"
+              }
+            ],
+            "id": "msg_0142461c611d8ced016aa817541e9487d297848b09edeaf7d2",
+            "phase": "final_answer",
+            "role": "assistant",
+            "status": "completed",
+            "type": "message"
+          }
+        ],
+        "parallel_tool_calls": true,
+        "presence_penalty": 0.0,
+        "previous_response_id": null,
+        "prompt": null,
+        "prompt_cache_key": null,
+        "prompt_cache_options": null,
+        "prompt_cache_retention": "24h",
+        "reasoning": {
+          "context": "all_turns",
+          "effort": "low",
+          "generate_summary": null,
+          "mode": "standard",
+          "summary": null
+        },
+        "safety_identifier": null,
+        "service_tier": "default",
+        "status": "completed",
+        "store": false,
+        "temperature": 1.0,
+        "text": {
+          "format": {
+            "description": null,
+            "name": "candidate_b_entity_inventory",
+            "schema_": {
+              "additionalProperties": false,
+              "properties": {
+                "symbols": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "aliases": {
+                        "items": {
+                          "type": "string"
+                        },
+                        "type": "array"
+                      },
+                      "description": {
+                        "type": "string"
+                      },
+                      "entity_type": {
+                        "enum": [
+                          "CONCEPT",
+                          "OBJECT",
+                          "PROCESS",
+                          "VARIABLE",
+                          "SYSTEM",
+                          "COMPONENT"
+                        ],
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "name",
+                      "description",
+                      "entity_type",
+                      "aliases"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                }
+              },
+              "required": [
+                "symbols"
+              ],
+              "type": "object"
+            },
+            "strict": true,
+            "type": "json_schema"
+          },
+          "verbosity": "medium"
+        },
+        "tool_choice": "auto",
+        "tool_usage": {
+          "image_gen": {
+            "input_tokens": 0,
+            "input_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            },
+            "output_tokens": 0,
+            "output_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            },
+            "total_tokens": 0
+          },
+          "web_search": {
+            "num_requests": 0
+          }
+        },
+        "tools": [],
+        "top_logprobs": 0,
+        "top_p": 0.98,
+        "truncation": "disabled",
+        "usage": {
+          "input_tokens": 656,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0
+          },
+          "output_tokens": 1384,
+          "output_tokens_details": {
+            "reasoning_tokens": 123
+          },
+          "total_tokens": 2040
+        },
+        "user": null
+      },
+      "stage": "ENTITY_INVENTORY"
+    },
+    {
+      "provider_metadata": {
+        "actual_model": "gpt-5.6-luna",
+        "candidate_version": "spec-047-candidate-b-v1",
+        "duration_ms": 13922.329540990177,
+        "hidden_retries": 0,
+        "http_request_id": "req_d002034ef6664c9e8ccf4a8e37be14c6",
+        "prompt_sha256": "ed0a05dbfe2bc12cd55b524a41fe7b2b3668f37942bf8c087d4b606162216d6c",
+        "prompt_version": "spec-047-semantic-structure-v1",
+        "provider": "openai",
+        "provider_response_id": "resp_0ad967f07c1a3048016aa8175d8bd087d287ffb09a18ea41d5",
+        "repair_calls": 0,
+        "requested_model": "gpt-5.6-luna",
+        "schema_name": "candidate_b_semantic_structure",
+        "schema_sha256": "36aecb42f9b404ccc1f74c563eb02859afc6de514dda8821a9a21393250f4f08",
+        "sdk_retries": 0,
+        "semantic_retries": 0,
+        "stage": "SEMANTIC_STRUCTURE",
+        "store": false,
+        "upstream_input_sha256": "296033f6097786a09329fada500f9d04db09fa6a339914ed6c32e15d5c82c524",
+        "usage": {
+          "input_tokens": 5079,
+          "output_tokens": 1706,
+          "total_tokens": 6785
+        }
+      },
+      "raw_proposal": {
+        "missing_symbols": [
+          {
+            "reason": "The source gives mass as a specific measured property, but no mass entity is present in the frozen inventory.",
+            "semantic_item": "mass of the International Prototype Kilogram",
+            "surface_form": "mass"
+          },
+          {
+            "reason": "The source gives a numerical quantity value, but no corresponding quantity-value identity for 1 kg is present in the frozen inventory.",
+            "semantic_item": "the quantity value 1 kg",
+            "surface_form": "1 kg"
+          }
+        ],
+        "propositions": [],
+        "relationships": [
+          {
+            "confidence": 0.99,
+            "id": "r1",
+            "origin": "SOURCE",
+            "relationship_type": "CREATES",
+            "source_entity_id": "measurement",
+            "statement": "Measurement produces a value reasonably attributable to a quantitative property.",
+            "target_entity_id": "measurement-value"
+          },
+          {
+            "confidence": 0.99,
+            "id": "r2",
+            "origin": "SOURCE",
+            "relationship_type": "INTERACTS_WITH",
+            "source_entity_id": "measurement-comparison",
+            "statement": "Measurement involves direct or indirect comparison with a standard.",
+            "target_entity_id": "standard"
+          },
+          {
+            "confidence": 0.99,
+            "id": "r3",
+            "origin": "SOURCE",
+            "relationship_type": "EXAMPLE_OF",
+            "source_entity_id": "32768-hz-quartz-crystal-resonator",
+            "statement": "A certified 32768 Hz quartz crystal resonator is given as an example of a standard.",
+            "target_entity_id": "standard"
+          },
+          {
+            "confidence": 0.99,
+            "id": "r4",
+            "origin": "SOURCE",
+            "relationship_type": "EXAMPLE_OF",
+            "source_entity_id": "primary-gas-mixture",
+            "statement": "A primary gas mixture is given as an example of a standard.",
+            "target_entity_id": "standard"
+          },
+          {
+            "confidence": 0.98,
+            "id": "r5",
+            "origin": "SOURCE",
+            "relationship_type": "INTERACTS_WITH",
+            "source_entity_id": "phenomenon",
+            "statement": "The phenomenon of interest interacts with a measuring instrument.",
+            "target_entity_id": "measuring-instrument"
+          },
+          {
+            "confidence": 0.98,
+            "id": "r6",
+            "origin": "SOURCE",
+            "relationship_type": "INTERACTS_WITH",
+            "source_entity_id": "body",
+            "statement": "The body of interest interacts with a measuring instrument.",
+            "target_entity_id": "measuring-instrument"
+          },
+          {
+            "confidence": 0.98,
+            "id": "r7",
+            "origin": "SOURCE",
+            "relationship_type": "INTERACTS_WITH",
+            "source_entity_id": "substance",
+            "statement": "The substance of interest interacts with a measuring instrument.",
+            "target_entity_id": "measuring-instrument"
+          },
+          {
+            "confidence": 0.99,
+            "id": "r8",
+            "origin": "SOURCE",
+            "relationship_type": "CREATES",
+            "source_entity_id": "measuring-instrument",
+            "statement": "A measuring instrument produces an indication responsive to the property of interest.",
+            "target_entity_id": "indication"
+          },
+          {
+            "confidence": 0.99,
+            "id": "r9",
+            "origin": "SOURCE",
+            "relationship_type": "IS_A",
+            "source_entity_id": "measurement-uncertainty",
+            "statement": "Measurement uncertainty is defined as a parameter associated with a measurement result and characterizing dispersion.",
+            "target_entity_id": "parameter"
+          },
+          {
+            "confidence": 0.99,
+            "id": "r10",
+            "origin": "SOURCE",
+            "relationship_type": "IS_A",
+            "source_entity_id": "standard-measurement-uncertainty",
+            "statement": "Standard measurement uncertainty is measurement uncertainty expressed as a standard deviation.",
+            "target_entity_id": "measurement-uncertainty"
+          },
+          {
+            "confidence": 0.99,
+            "id": "r11",
+            "origin": "SOURCE",
+            "relationship_type": "IS_A",
+            "source_entity_id": "scalar-measurand",
+            "statement": "A scalar measurand is a measurand whose property of interest can be quantified by a single real number.",
+            "target_entity_id": "measurand"
+          },
+          {
+            "confidence": 0.97,
+            "id": "r12",
+            "origin": "SOURCE",
+            "relationship_type": "IS_A",
+            "source_entity_id": "standard-deviation",
+            "statement": "For scalar measurands, standard deviation is described as a parameter that may express measurement uncertainty.",
+            "target_entity_id": "parameter"
+          }
+        ]
+      },
+      "raw_provider_response": {
+        "background": false,
+        "billing": {
+          "payer": "developer"
+        },
+        "completed_at": 1789400939.0,
+        "conversation": null,
+        "created_at": 1789400925.0,
+        "error": null,
+        "frequency_penalty": 0.0,
+        "id": "resp_0ad967f07c1a3048016aa8175d8bd087d287ffb09a18ea41d5",
+        "incomplete_details": null,
+        "instructions": "You perform Stage 2 semantic structure extraction.\n\nThe user supplies an immutable entity inventory and the exact source. Return only\nsource-supported relationships and the two supported typed proposition forms. Every\nendpoint and role binding must use an exact supplied entity ID. Never create, rename,\nalias, or imply a new entity. If an important semantic item requires a missing identity,\nomit it and record a missing_symbols diagnostic. Never substitute a nearby identity.\n\nChoose a relationship only when its meaning and direction fit exactly. Do not force\nassociation, explanation, possession, or historical context into PART_OF or CAUSES.\nUse a typed proposition only for COMPARISON_CONDITION or TRANSFER_EVENT under the supplied\ncontract. Proposition IDs are assigned by trusted code; do not return them.\n\nDo not return claims or evidence in this stage. Do not return entities. Do not summarize,\nrepair the inventory, or emit output outside the requested schema.\n\nACTIVE RELATIONSHIP CONTRACTS (source --TYPE--> target):\nIS_A [STRUCTURAL; direction=instance_to_type]\n  meaning: The source is a kind, category, or subtype of the target.\n  roles: source=instance or subtype; target=broader type or category\n  use: The source can truthfully be described as a target.\n  avoid: Do not use for parts, examples, similarity, or temporary states.\nPART_OF [STRUCTURAL; direction=part_to_whole]\n  meaning: The source is a constituent or component of the target.\n  roles: source=part or component; target=containing whole\n  use: The source exists as a component or subpart of the target.\n  avoid: Never reverse whole and part; do not use for interaction or dependency.\nEXAMPLE_OF [STRUCTURAL; direction=example_to_concept]\n  meaning: The source is an illustrative instance of the target concept.\n  roles: source=example; target=concept illustrated\n  use: The source is presented as an example of the target.\n  avoid: Do not use merely because the source is a subtype; prefer IS_A for classification.\nCAUSES [CAUSAL; direction=cause_to_effect]\n  meaning: The source brings about the target as an effect.\n  roles: source=cause; target=effect\n  use: The source is stated to produce the target outcome.\n  avoid: Do not use for chronology, association, contribution, or unspecified influence.\nAFFECTS [CAUSAL; direction=influence_to_affected]\n  meaning: The source causally influences the target without a specified direction or complete production.\n  roles: source=influence; target=affected entity, process, or variable\n  use: The source changes or influences the target, but the text does not support CAUSES, INCREASES, or DECREASES.\n  avoid: Do not use for mere association, chronology, physical force, or interaction with no stated effect.\nINCREASES [CAUSAL; direction=increaser_to_increased_variable]\n  meaning: The source causally raises the amount, rate, value, probability, or intensity of the target.\n  roles: source=causal factor; target=quantity or variable increased\n  use: The source is explicitly said to make the target greater, faster, more likely, or more intense.\n  avoid: Do not infer from nearby words such as more or faster; never use when the source says slower, lower, or less.\nDECREASES [CAUSAL; direction=decreaser_to_decreased_variable]\n  meaning: The source causally lowers the amount, rate, value, probability, or intensity of the target.\n  roles: source=causal factor; target=quantity or variable decreased\n  use: The source is explicitly said to make the target smaller, slower, less likely, or less intense.\n  avoid: Do not use for absence, prevention without a scalar target, or mere negative association.\nINDUCES [CAUSAL; direction=inducer_to_induced_effect]\n  meaning: The source produces the target through an explicitly described induction mechanism.\n  roles: source=inducing phenomenon; target=induced phenomenon\n  use: The source explicitly says induces or describes a recognized induction mechanism.\n  avoid: Do not use as a metaphor for generic causation, influence, motivation, or historical response.\nENABLES [DEPENDENCY; direction=enabler_to_enabled]\n  meaning: The source makes the target possible without necessarily causing it to occur.\n  roles: source=enabling condition or capability; target=capability or process made possible\n  use: The target could not occur, or is materially made possible, because of the source.\n  avoid: Do not use for delivery, participation, weak assistance, or an effect that actually occurred.\nREQUIRES [DEPENDENCY; direction=dependent_to_requirement]\n  meaning: The source depends on the target as a prerequisite or necessary resource.\n  roles: source=dependent; target=prerequisite or required resource\n  use: The source cannot operate or occur as described without the target.\n  avoid: Do not reverse prerequisite and dependent; do not use for optional support.\nCONSTRAINS [DEPENDENCY; direction=constraint_to_constrained]\n  meaning: The source limits the possible behavior, values, or choices of the target.\n  roles: source=constraint; target=constrained entity, process, or variable\n  use: The source imposes a limit, rule, boundary, or restriction on the target.\n  avoid: Do not use to mean unchanged, unrelated, merely different, or causally reduced.\nPRECEDES [TEMPORAL; direction=earlier_to_later]\n  meaning: The source occurs before the target in time or an explicit process sequence.\n  roles: source=earlier event or process; target=later event or process\n  use: The source explicitly occurs before, previously, first, then, or after relative to the target.\n  avoid: Do not infer causality from order; do not reverse earlier and later.\nINTERACTS_WITH [INTERACTION; symmetric]\n  meaning: The source and target directly interact, with no more precise directional semantics supported.\n  roles: source=interaction participant; target=interaction participant\n  use: The text supports direct mutual interaction but not a more precise active predicate.\n  avoid: Do not use for distant association, one-way effect, dependency, or chronology.\nBINDS_TO [INTERACTION; symmetric]\n  meaning: The source physically or chemically binds or attaches to the target.\n  roles: source=binding participant; target=binding participant\n  use: The source explicitly binds or attaches to the target.\n  avoid: Do not use for metaphorical commitment, dependency, influence, or literal physical force.\nTRANSFERS_TO [INTERACTION; direction=transferred_item_to_destination]\n  meaning: The source item, material, or information moves to the target destination or recipient.\n  roles: source=item, material, or information transferred; target=destination or recipient\n  use: The source is explicitly carried, delivered, moved, or transferred to the target.\n  avoid: Do not make the carrier the source unless the carrier itself moves to the destination; do not use for enabling.\nEXERTS_FORCE_ON [INTERACTION; direction=force_exerter_to_physical_target]\n  meaning: The source exerts a literal physical force on the target.\n  roles: source=physical force source; target=physical object receiving force\n  use: A literal physical force is explicitly exerted on the target.\n  avoid: Never use metaphorically for influence, contribution, binding, pressure, or causation.\nTRANSFORMS_INTO [TRANSFORMATION; direction=prior_state_to_resulting_state]\n  meaning: The source itself changes state or identity and becomes the target.\n  roles: source=entity or state before transformation; target=same entity or resulting material after transformation\n  use: The source itself becomes the target through a transformation.\n  avoid: Do not use when an actor causes, creates, attempts, participates in, or responds to the target.\nCREATES [TRANSFORMATION; direction=creator_to_created]\n  meaning: The source produces or brings a distinct target into existence.\n  roles: source=producer or generative process; target=newly produced entity or result\n  use: The source produces a target that is distinct from the source.\n  avoid: Do not use when the source itself becomes the target; use TRANSFORMS_INTO instead.\nMEASURED_BY [DESCRIPTIVE; direction=measurand_to_measure]\n  meaning: The source property or variable is quantified or assessed by the target metric, observation, or procedure.\n  roles: source=property or variable measured; target=metric, observation, or measurement procedure\n  use: The target is explicitly how the source is measured or quantified.\n  avoid: Do not point to something that merely responds to, correlates with, or exemplifies the source.\nCONTRADICTS [DESCRIPTIVE; symmetric]\n  meaning: The source and target assert mutually incompatible propositions.\n  roles: source=proposition or claim; target=incompatible proposition or claim\n  use: Both sides are explicit propositions that cannot simultaneously hold as stated.\n  avoid: Do not use for difference, disagreement without incompatibility, trade-off, or negative causality.",
+        "max_output_tokens": null,
+        "max_tool_calls": null,
+        "metadata": {},
+        "model": "gpt-5.6-luna",
+        "moderation": null,
+        "object": "response",
+        "output": [
+          {
+            "content": [],
+            "encrypted_content": "gAAAAABqqBdr54NVSb-vxE0BIbhWYofNvxt5JdfbNY6RPiWvcElBZa2WzYxfCDqeSJY1ty6hC7WMdof0hxi_CqYeCJXaB3NTG8X4gxGquX3jC0f1_u01E40_OpPgOHx1Mt_BBqOteorgAw4ddv8ekktc7HiqI6KhtwaUKIe6aI3DyqVoSdn_sHYufs4y23biVSbw3jSU95YD7TBNAD-iiojTLlwYwVNtPv_ezbf-S3IXUx7Qlo_JMxQu_tKQWGHTtkF6jUoY2VAm_U30jYRsjrQg2P-5Fstl1Q14ODM4m0Nm7YpV6akhYj-6UgOtHZBStZj3OKkNQ2G76GSynI9EBQW8-Ph1-iRbbb_cxoHAT2cTEibuapneGDITvH_45zehjngnT-IypbkrsyKIHNcx6kSMLjqXppZHhXgpK6BgRie2IaOF5xb12uGUXvH5CrD_kA_dH8ys3Lzs-nVL1cfo7WUwR_LDiE1Xdv-6Fc6c_8ignlJAqLyyVRuJ42EtCmAlHnQfFvQq9RSQg_g3lOtlpX5ijz742gENSBlAWcjv8uu3S-ET40Y6TrLtTGt1fljzCL78_Sg5qL5UnAQXFpj3Al61UyNotQiRuztnpy3IDuK7inUi12cRUQfcPdAdMl4CmNSS-plFZ6NvxWg8R87SjxIMoFo_s1-5KkW6o3dXX0EwI-qeEkavGEbceBt295DOplXW5wL4HylKEQ9G88DY4TDkNE6UcXn__dbVpeWtXSxnG2HRmxe2VgETDqzhdXx3A7tt8BIpPjW-O3Eq7oGSVhvGoztJH1UORQDeat2xX_s4KIJjHImLIBKQIAs39bXKPro1Szaet48RFJb9k4maOPuY8yNUpIA92usIlw6G2cxvNfVbTLA3qzX0WeKFJi9ghfF6heB_1WyBSrsJ3Ey7Uo9z00DTSw7XEn9-A2CRvPgjx7w9yPWuTINGhxZKAfU3TC56ropcDpUDUp1VNgYrV0EDd2guWI170OXFC5gpFe4eCuwaZOdg7p8H5Xa4DgJ4wMicnZUNxzGVuMk9ALS2zVEVoVvczwYmD8AlZ0SPSD1tJACreOWVyiPGqRENBLOc94gP5YqvCNDtEN1zvCj-TKxJ94qOBk0VibwlaWE01z6fDieJPqWSg1SVlXBHnRthxhx0es_QUlUUXqDFZA96eYGWB_xFpIj5UKukkS8q9Zoj7LNvcxkiaI6PfwPEfQYr0h8rMrM5vUkJnrIThIok2MjAvKbILndD4_DPKCFUfJGpdHNPnILUKL8X-66wxOH8K657jnMcDTb1xkE-7dQms3ocbU5I1bpqkJWVO5Q7DG7-hsJ9t1Lhk1NoTkxLxHUbr_Jt1oKnF_j4aL7Zmaf0QqlJi431sbPm0NJInUT9_8nwGmNfWfg7j9RbXkj4Rqs3lBLUorgrpiBSvkgpzP16yaHNsmUaIYI8c9jK5RZe2b_ztql06GNF4Ounx6JBed-7UEzzPjJdyPfmTn9kDPv9wu-5mg3BLYBjO2g5oLCzIhZcpwfmTUkadazdvRo1KRbVCikDt-eVOMWdFfIwfRagtLGrt4_hauZ86efEQtxEpw6NW4rTkNZKFOt4Aid0sMSsjp36dChINg3l56ayViHYk_fLHDNMU7K6wmOROPh56gOeiNdjDl7UkW2R2aWyhdb7pt2WKUFG5NIfTnuXpk-i1qq7AcwzCWfoGdmDqyajkvJnLHqJD0OK4kKjK8tHCRI-q_mihKrbXiJ1ldULEBLlMbOkYjIQqPD1QJ8z7vs03dK5xH8WtJnhXVit3RUEQKBaylX3rnBv0P2OYQuzuw3gv2zmhvEobTzEDDFV0QgxUfFy4iUCNZpISjWKSiyV_lay2bOM_v0iAPVgtTeOFKqUdL1dBwBuAdYTrWaPXuIP4swX_zLHjcEY409GJfefrbO2LYZ7ZH_e-D_l1T4klHv5CWUoSHmwVXIZLkbIlplL70wX6EziBFUJQyEAiq-ncx88DS4xuRV6VlAigvwoRK5XQHxjFAO8W2LGjYRo_LtO04wSoJVA0PJov30Ix0V5LSrBVM_QATXEGKf2-lox-RoH2m4KKLHXpHt3MTTHLuYNAzucnDoGRqt-LTCENk-cxxmABuQ2hnGt4x9hU2zAncJ_Z-75_ewC6nazfzP1qqJ0Uifh6k8nAomj5qxc8akL0-6zSqHPgApO12p4jEsFYh-0Jv1cyd5U7W77D85L8h0pGa57UxtxY5UmrW-XeH_nuKfP8YrXgbA901bC3Hap6lCEAEw9vqr-u3NAC6KZSRp0v1YHEi-zYT_G6sW4CrmaWabvNk0KWOCReOrP0oUtrwtEO2VOKjvXRzb-f02UF6Kk5pHadAxjmkifjJkLvbrJ2vgrE7b7hWPSkicvIbfcYgE0EZ4kscN7Mh95Krk6uQtvKR3wAnmwTVjlhZx0dQyUWoW-55e_sim1_c2W6gbyqA9L64DDJjw0uUlAeO1j5ISRWFcBBWYJ-8HbmUKuD5BMZ60MVhJTRxHn3EaHHFaMehP-hhSEXOTZRgnLwRFuBn0e2H3Xk-a9zbB1OmyE_cS0YYIdbi4axPy5cNbI6OH-OiYfFbOA9S2Jryb4mfjmsFoVBpDPSUGFAaWHt7_WBykvN4FBCffS-NW2xujgsHnuobNNgK7snmvMxoUCFQxHSigoQDxz3BQdawtBsLrDx2pXwZpENEZxnkeoZn-9LjRq39HqJj90ayhS7vpMaS5S3WfJgPZwanGFjr2n7LGM03jF9bwjQ7u0niXjJZs-EUA63Oqi5KU9l6xD1zAUsHxnGToSDsVd_RZY0ogMRvudmSRGuv5lH1VAx_qCeWv27PeHymJytPeB-ZXlNuvtoW7yBH3zXmub_5DZwOg5E5B6hWrZZKmF98giLQh5Cwi0p5KJLgnbRpOh03M5hdUfYN2P_cNeoAjxEp_2OV7F3c2ih3MLhSND30_wKTJ6C7bRMq5Vmiai0BKdKZbCwWsF0E_PEhwYp8eCYoARhdBqm48jWM0Hr1Sw20aWfaKoVD1N80vgdlhjNThB2cc0S25FoxLNKdTkJmHVm11MvadYmDTXTzNbnToYOZ1nGcJ7MGQA0DM8ePeqDIznic1vkWls9ub70JjGhL3Ak3L73RMyn0SmWxOu70zxzKepwmcoFAIfhTd-IbI61n92Q9K8fQexmfE_Mr8_sVy_P1IsNj0F2WzOmpiDeq_XejPbkpFJZyw_Ag5OEQRaEMkzirRk8fhvrnLoHRPZLPQwx21D8V2gsRteau_2nPkqeUtuM209DVj-wkw2aPJDemXDpTbximlYQjlJ1akRWjmzj9r-ZBQYI6-LF9d8w62URZuQDVfX630nyBtUihmwnX9ia5v-4-C35uARCTTc5D_FcpymIFXOBNdZRzO16q4EofJN3KQW8ZL22JhIZAdhEKuFVRKyTiVG8A9mEGaM5YS_6jOtTwJgS64tG2M8jiuuVRpU6baIrmODnT-2xv7uMIHwRbllw-ISQAcGa7Mvv7Ya7IV35qY3rZtTXY0nWg3BTsISv5AuIDYYP_uJqPfAQrKf1OWiqDYWIf90rWEG68U4ih4Gm_RhmKyO0jTnaQ53fGskK78s1Ppy3DbhrlINI3dZPgGMoSNp7UBbzrZXdkqWZGY7nWghSdnLudXPMvgyg-mCCa-AFVm_8-TtujUz2UqkLn6srpGpTkN7jkkFUD88Rv2elI-p2A6SoLil8iaXku51pn_oIVvPPxpc7vzpUeEfIXCgEIr1mf2l4CN7S8YCK3T8u0L1lprIS31yN3Eu218Al7qJ0KMjDY4g2F-Z9pN54xvxezruKipjLWlo-JUOiwzSxTyHrMbz8e6Dx4JaNQn1Tbe8lHO0Pp__XCuplOKvvjLg3xE9yKk2DbGclp4ee13QJcgCtW71eceyvEm06C_2U1gvYwEfGh3iznHdsCewiTrHpzCgRt9JnxJGi37jBiAlvkYzbUqYa0x5WL1D5wq34yErf00mWWPwKO4alsHo7qpg2VDMtcahGU4_vBpnXg9TbJoKRvn_4T5U9DJ-FAiMmDRAN9_t66EqC8cLDPwPZSeq2iqyE8Hz7iCMKqal4wPKMPIZu4bMhNGW_jmLnfwD-GUlAEBbqNG6crCFrlRKOLyAVzi4sXcs7STWwx4JEqc3xv_o14UJgda5b_bGJu32J1fn6d4Bh8PDE0UJmkr6SrHnqMq-Ao6jfD_V-GQ31TnUl6GzsE64X6HAfAMg5DoMZPejN17DFKrPisycfbBU5iRuiUNoiMPzj9TxAMbPuyjlMbgdxXCGHGDtgLI4LO85wwE5-l7X5GQzf3LUrUF_ozpmfwtWRohcSgbtWe4WKycnSe47zjLYcaHZJbwWvIkDuKls5a_W7A-XpDD2ZKkW-AYAgjvJmwYV43jbE7kLr5QL738vzltqC6G4Nl9HnBrDxaZhYNoJv-wYlGDQWVxl1KktoWxUhJ9ZlGCtBZRpvp4gWktIULqjJLy52GrXefNAuVB9m1SRt7VU1wBv4Wgav0U8tVfNQOi_hzQ5ECIcC1LjjcoXEPjbU-YOyGo4OTpX9ChALbabhm0icGWOGWcu3qJT59xM7z-7hR9nq9LwzrR_ZahyAr_ch982SjVGilFYfY-VO6mUhmKjmqiUgCiy-Nc-d1hZPc08AlF0_y8OoW1ZcHy-ktAYLSMMqc_R0JRNKUPTjS4IAZBz4tQi9mIziIynMVLUijf7g4bCk93H1WVdAt8F2aoqv3ZcOeBVy2NDHIx1A58_gCJHae_GRTw--z1bj6o2koRUykQ-W-fJ68_rDLoARb6BHwpRu4GqXCxq_GI1Uk-qM1vEFkTt04DnhhB269DRRmT_YWkltZRzvJ7R6bZOiIszTMSkN34YyNbX4mVMvo5gClLscMkOHTcGapnckgybCAXWDUT43ijnROuMiXIVXwftYlGLJZti8JGl3EVKrhV3daBgfMMxiKXCvNjbyzm06R2cEjJvmRTh_m-vxvDJThyZ6jy7ASAuDUV6kVBSYOaEY261sDtgAHb62zWSE_TvYwwAuhpauEQI6mSeRJj9T0w=",
+            "id": "rs_0ad967f07c1a3048016aa8175dff9887d28317b03c6270bf65",
+            "status": null,
+            "summary": [],
+            "type": "reasoning"
+          },
+          {
+            "content": [],
+            "encrypted_content": "gAAAAABqqBdr08mVP-PHYSHUzASbMiFF9D0DGYczCStoZt31-QMWW25_O-uSfddZu5Fkrrwv_h6x5h-XXDli6GG5jaS2S2dG_QOv5MwKwQM7XNoU1hHrUojyI9gUCGYYyaYA1YYNcMKAhnE8xfEWRrVUxSvjx7w7ScTES4NHSFdoo-lOzGkHiC9yP9a4INCYwc-s3qPUoPjwWXg8ZIAL6wSCNOhe5jYgD5VLI5Z4b3NERRYm38fxN4ZlBlhi7HybiINCqloKP0eHjvYwHbMPIpU70MxfUD-6lWgHTmI5WEn4xz-Hw_DEB6Qzw3D2wbx4OFVGRE9jDaDrjIj1JsWLTI7GP6xqiZT0t-dXHPIgLf385I-VgUfdutzT96V1O5623sGb1QmdXd4cLqETd2Pv1pUMbwOH_9xMqxWiqLAARTThKqs30GeHUBthkkUHbkQ4GnHVVW3fcPNzdJ7pouyBcLYleXuy1MIBroH0dkn_cwYpG_rjQqk_pQ5Hd8wKd2F2ZMGLolzK7iIj9vyt0ffBcFa_nu5FzB4z9qj9NxE_SRn4cWxDICxCb2xum-zD8KwpFeF_7l9WTMa7SEyD1f0WsjUe7dk8pC6LMU7F8KYS0tTEGaxwLfEXWnNG9uF6btL-3NTqlHWAob6CWsUysmgs-ybJlv8tZP8OvQVhTjGWC7vWyB8Cr_RLpu8cmJ9Qrv9vRqVshefeQrYEAhTvjOq7d66Azn1Ij6uNHlX8vV5Ex-WD8dr95VIV_CnKZ_evMz0MqFMrXC7R5WTJ6cNwBC16WwKWNTbY6Iss0pp0d_TUjYP68hDltbSnmP4PHhulPva3R9k5Jrj4GTVKSf_BxwPokQFVcHJ9xLRlHwAmFdxENqm9zooiZui4jdvAUjRodW0Wnqd8P0MRqli-sGI27MlDabi6EL16GCFZgKXfOyMBHwGquNJUun6irTMJkCC68s9v3tY2v8Z7j7oIXUqimHzzc_9eKPdShqcdEM7ANOe8b7BtpgzsO6C9QGk7Yq_I7Hk0hfy5DPxTOr6T8iic4KODqpTP0MtO-146-HJi7iSqxwaCxX06QO3rTyKzK9NLMieVKGXRHhqg22rsDtFTDpruSmG3XT-kmgcWedxK4oGOrZ5z9EO-ev3GebPdwJTmumnwM23G_IrkgXoteZbpT7LDIJ8JcAqf2QD2l2X39rctEIqZRAbXhth9UXnIur957s5FaAJ-vRnMKKSqHcTGYCTvUYQ7FXi0H6eO_b5m3sy-FCqPdrIPeFLN2vi_XDR6D87FFxGAFxK6ez3bUE2mhvG-umteK5wGTTchMmKC1q2Z3-9SLLDz4LkxCQK1Hr1RJr_8LUvOIq6if6eHLT7k8DExA5VM13Lw_ocDAAPekbAkXNE--A4-igjU68W4DvGAP0TozmmdLKHM4-rLofNhmRlTpm7q-IP92rjnpWgXENWWEQnlgm7zuEmYzFP_7V35dpC8bawXozvEMJbBPn5fgT2ZgwFuqLbSq6dScIrPdiNjAkxIwx9efA-wzFmekrEg2du6OOl91Po2TjZKgedfmiurlpBQRsmFT0jxSssjqTTym8NXjT83Ann6f8SoQtcuZNJwEfyNbUcT2y9oZ_hyYqWd-fjTvUQjWB-i113CE8XfdKVn6woEyRGY2PIRriVsCXVlSpx9LQicvPlIR2K65xAHkUQ_Frc-icE4Jxv4BWDeJAtUQfxB67VR5VBk9ZpQJRtV99iYFxdJFCi1225UF6r9aD4saeqtim041oRuRMqmMGI0VgeXLCiknh-VH1RjSh35--I6HzP3m1L3uBnDrqA66ePUX6bklgVlLUyrhWrXqai1IxoSwdv_leXvqO-ejzRAKDo3s9OCeE7aD8IdZImM7neC8l5TyJ7Z81yZlXL-YDUy5nIvKARIhcB5unBe3SpCPrLFpWM2x-KAKD8A-vpndqJ3nJOXPIivSARM6rLzl5yucPciZL1gc4nX1un1GVatOuLCzNGMDMYUoyvm4UzeKxLLOeQqO1qPM1sDjuHrsKly0eEL9FTskZsFeuuq1h8gnXLIn7NHr0IMawvNJ0PuFZ69jBVQbTjoSwFND66lMoSAIsUd1clcLa97YhL-bz_nKwVXOW8WoS3VR4PadpCkF9vEI9cyYSCB15pvNsRErzUyLXxX8ti431RpoQU0VSkHoNqkHP-ePcRd59JE59QLFj3N6paeEYszXZrHA5Vasy9WEctFEY4eXVImFl4tO4M8J0g_MVkc2eJtrhMhlqe76m2geYJ7-79yC45lPsFvh_ViEMoRIORpqCOmlOYq88wPfea-sxrULwjitlkzLCKhJp3VOa4n-nmugEUJdz2kyKevIfC6ausT8LMDwf1B_UlRIKW721vaTtehjYBG24u5-_XSF6RQdmC2efUaXNhDBOgglYtN5-0i4sMVlEeOzIP4XNxEdg5CpL7PFcveNdX6Ma9O6p6iyycuEtKnkh9gx9sFRhFNWytpULlxS-pzvZ9Z78U24g1ytH-3VeolRbFiB8bKT-Z0WzWz83D5Q8-Z9Z0hZLbvQ_B75--fmENMhP5d4Xy_7xSVkvrD-8KxFc-CzUiu2l-yd4S7JdKNonjbR1BkTCcvPrGh_AcNR2eVAnvDdFmxhilueMzjLNDyO3ogaA0A5OtDCLOzzYwNzRqN1bR95R1ehmMv-ToBGMkp9O-cOo2D-qJ6MM4jTlrFvOOepNYZimFZXxDzDAx8f8_RQ4mc9zlEeqZMZLVclCiMYEHOvgG2p4903peGyOvlysjZDUSS6rLCh47x47e197bOXYgJwvpxARJvVo50OxpTZHSauO1ieSHam-uhqL5stlsb7MnN0wC6w8QWTMf-a9s0aCZHtGeypfXYUcbkJ9OiOQI0TpPlvosO76k_JnPem3Vm-PI-OLIoeGesZ3nsQ_X1ROHSFviXO50AbfJnXhZvtVG0Gyc-ADXvAgoweMTH7K0IJRC--GN07Ujb35UN5Zk0B9LV-XvkQ6q-iTuyhHrlPnIP-rj9DSmZ71ekWZdNgcCMWmx3AlEiqm00jnQDBWZ3oOSbD8BFCgbLze8P7dZbgtnz04wRDctLN2pdhUJKahm0Iu_ix4K3JgCQu3dYQp17KuydM1IspZHBsu7BVc9CgsM2Sr6B0FDDQdxzN6O8YpKn1UZt_-CnMLlV8aBkzb9Nypf-UwVQUVMQF0A1-LCXzBk56ZoEWuhlbhzZ-OKhXTrbrHWmv8poDBatAr1e1yY2gM3oAd52Jg3AN23fdsaGxecl3L9yGl9cO5ktTsSSVz4_oCbqdXP6KNOfCx6XeUZZq07OpYHbw8lazzM_cjN8eStq_GalaYmprMyDyMakho8XFy92POGT99voaZ_woLve1OXlyYyS3eApPgp_53NWCEny8f4AFxXbzWL-SRj5sSe-GgYX3V1yEmtfmNBsOJ8-QUOpdYzFFYvWnwc6NZht7vutejt9_dCM8QZteonXBI6vxEMSUhbUA6AXLxsPVQO20SOjBKeVtFZIGA9gXPd9T2e5ccMho6d4IiVujI0z-uTj4sXhWsXZPnb7xOcgMmxGdwQkdfVhzulLtEx0I0mwJ-4HIT3N4m51b2qLTIcpZDWP3AzZnquW30NIeQ33tlet4UspJiiI-k9tprue768U-sy0e6QOBXDzIbIYC6cuOmP3eOelGaPv_Metew91WC3qcV85eeCR8sOpWrq98oFLGbsaGlorc9wwHs0hTp5N9zG9hfN_dKiDEIkScT_yjqXcjjpi8HZyJKi5XJT5thkrbo_IUJhr0Vo1dnukY0tUU2X319JSZWdXJxqI2mZwmQ-9ZElcAuZRlyx5xOdvHYD-V1N_AAHb8eQEU4T-kfobVf9Alfz69dLf4ggODg6CtxU-9PA82Cr4EGX1Cbr_dlvAshOwm4KjTn15XeqYisdyYu2mubcm6uEzhz-M9m0qpfd4XJbkpu85Z8MWTUzboNtKcZTqgt7hFzOplt-9xEW1MaoGwO6OKYud-POeUl-iuUwgKCqg6aQfLrJToQtANkpPIXwb4cCq2bOvyXn-rmqzL2Xz_mnTZ_dLKBym8jPZ-Xrs1XOKUNsySgc2ob4CGqiScuJpdeToqNxwpN10AboJAoC1r5L5ifymFZPPFrtTc8k_I4LaC8jQAD5kA_V5tWDYVABSsJ1tLigzPUrlpDYeeerRXKTP-7JtrWKw0NbeDpMwMtVE-NOw6-WP08LnK12qgj0IFJw8mrco_2BmB_Mi7tVeQqqlkKlD_D6KHgrfENznfcJoHkKe0IMwa9w1P1F1qEL66AEHap_WXQKjVDBDW9QGk0Yhznjjk1cPd7t4xg1D7B8ReNuoYUkoIa06-AcpSfYOyEKg3rhcSGXi2VKYsxcchwuzv6kn7CEZCg==",
+            "id": "rs_0ad967f07c1a3048016aa81762ccb487d2b937d7492ea8e108",
+            "status": null,
+            "summary": [],
+            "type": "reasoning"
+          },
+          {
+            "content": [
+              {
+                "annotations": [],
+                "logprobs": [],
+                "text": "{\"relationships\":[{\"id\":\"r1\",\"source_entity_id\":\"measurement\",\"relationship_type\":\"CREATES\",\"target_entity_id\":\"measurement-value\",\"statement\":\"Measurement produces a value reasonably attributable to a quantitative property.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r2\",\"source_entity_id\":\"measurement-comparison\",\"relationship_type\":\"INTERACTS_WITH\",\"target_entity_id\":\"standard\",\"statement\":\"Measurement involves direct or indirect comparison with a standard.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r3\",\"source_entity_id\":\"32768-hz-quartz-crystal-resonator\",\"relationship_type\":\"EXAMPLE_OF\",\"target_entity_id\":\"standard\",\"statement\":\"A certified 32768 Hz quartz crystal resonator is given as an example of a standard.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r4\",\"source_entity_id\":\"primary-gas-mixture\",\"relationship_type\":\"EXAMPLE_OF\",\"target_entity_id\":\"standard\",\"statement\":\"A primary gas mixture is given as an example of a standard.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r5\",\"source_entity_id\":\"phenomenon\",\"relationship_type\":\"INTERACTS_WITH\",\"target_entity_id\":\"measuring-instrument\",\"statement\":\"The phenomenon of interest interacts with a measuring instrument.\",\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"r6\",\"source_entity_id\":\"body\",\"relationship_type\":\"INTERACTS_WITH\",\"target_entity_id\":\"measuring-instrument\",\"statement\":\"The body of interest interacts with a measuring instrument.\",\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"r7\",\"source_entity_id\":\"substance\",\"relationship_type\":\"INTERACTS_WITH\",\"target_entity_id\":\"measuring-instrument\",\"statement\":\"The substance of interest interacts with a measuring instrument.\",\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"r8\",\"source_entity_id\":\"measuring-instrument\",\"relationship_type\":\"CREATES\",\"target_entity_id\":\"indication\",\"statement\":\"A measuring instrument produces an indication responsive to the property of interest.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r9\",\"source_entity_id\":\"measurement-uncertainty\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"parameter\",\"statement\":\"Measurement uncertainty is defined as a parameter associated with a measurement result and characterizing dispersion.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r10\",\"source_entity_id\":\"standard-measurement-uncertainty\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"measurement-uncertainty\",\"statement\":\"Standard measurement uncertainty is measurement uncertainty expressed as a standard deviation.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r11\",\"source_entity_id\":\"scalar-measurand\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"measurand\",\"statement\":\"A scalar measurand is a measurand whose property of interest can be quantified by a single real number.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r12\",\"source_entity_id\":\"standard-deviation\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"parameter\",\"statement\":\"For scalar measurands, standard deviation is described as a parameter that may express measurement uncertainty.\",\"confidence\":0.97,\"origin\":\"SOURCE\"}],\"propositions\":[],\"missing_symbols\":[{\"surface_form\":\"mass\",\"semantic_item\":\"mass of the International Prototype Kilogram\",\"reason\":\"The source gives mass as a specific measured property, but no mass entity is present in the frozen inventory.\"},{\"surface_form\":\"1 kg\",\"semantic_item\":\"the quantity value 1 kg\",\"reason\":\"The source gives a numerical quantity value, but no corresponding quantity-value identity for 1 kg is present in the frozen inventory.\"}]}",
+                "type": "output_text"
+              }
+            ],
+            "id": "msg_0ad967f07c1a3048016aa81766c33887d2809ec78c546f2d46",
+            "phase": "final_answer",
+            "role": "assistant",
+            "status": "completed",
+            "type": "message"
+          }
+        ],
+        "parallel_tool_calls": true,
+        "presence_penalty": 0.0,
+        "previous_response_id": null,
+        "prompt": null,
+        "prompt_cache_key": null,
+        "prompt_cache_options": null,
+        "prompt_cache_retention": "24h",
+        "reasoning": {
+          "context": "all_turns",
+          "effort": "low",
+          "generate_summary": null,
+          "mode": "standard",
+          "summary": null
+        },
+        "safety_identifier": null,
+        "service_tier": "default",
+        "status": "completed",
+        "store": false,
+        "temperature": 1.0,
+        "text": {
+          "format": {
+            "description": null,
+            "name": "candidate_b_semantic_structure",
+            "schema_": {
+              "additionalProperties": false,
+              "properties": {
+                "missing_symbols": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "reason": {
+                        "type": "string"
+                      },
+                      "semantic_item": {
+                        "type": "string"
+                      },
+                      "surface_form": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "surface_form",
+                      "semantic_item",
+                      "reason"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                "propositions": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "comparison_operator": {
+                        "anyOf": [
+                          {
+                            "enum": [
+                              "GREATER_THAN"
+                            ],
+                            "type": "string"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      },
+                      "confidence": {
+                        "maximum": 1,
+                        "minimum": 0,
+                        "type": "number"
+                      },
+                      "origin": {
+                        "enum": [
+                          "SOURCE",
+                          "INFERRED"
+                        ],
+                        "type": "string"
+                      },
+                      "proposition_type": {
+                        "enum": [
+                          "COMPARISON_CONDITION",
+                          "TRANSFER_EVENT"
+                        ],
+                        "type": "string"
+                      },
+                      "relationship_type": {
+                        "enum": [
+                          "IS_A",
+                          "PART_OF",
+                          "CAUSES",
+                          "INCREASES",
+                          "DECREASES",
+                          "ENABLES",
+                          "REQUIRES",
+                          "CONSTRAINS",
+                          "PRECEDES",
+                          "TRANSFORMS_INTO",
+                          "INTERACTS_WITH",
+                          "MEASURED_BY",
+                          "EXAMPLE_OF",
+                          "CONTRADICTS",
+                          "CREATES",
+                          "INDUCES",
+                          "EXERTS_FORCE_ON",
+                          "AFFECTS",
+                          "BINDS_TO",
+                          "TRANSFERS_TO"
+                        ],
+                        "type": "string"
+                      },
+                      "role_bindings": {
+                        "items": {
+                          "additionalProperties": false,
+                          "properties": {
+                            "entity_id": {
+                              "enum": [
+                                "32768-hz-quartz-crystal-resonator",
+                                "body",
+                                "calibration",
+                                "coverage-probability",
+                                "dispersion",
+                                "half-width",
+                                "incomplete-knowledge",
+                                "indication",
+                                "information-used",
+                                "international-prototype-kilogram",
+                                "interval",
+                                "measurand",
+                                "measurement",
+                                "measurement-comparison",
+                                "measurement-result",
+                                "measurement-uncertainty",
+                                "measurement-value",
+                                "measuring-instrument",
+                                "numerical-magnitude",
+                                "parameter",
+                                "phenomenon",
+                                "possible-measurand-values",
+                                "primary-gas-mixture",
+                                "probability-distribution",
+                                "quantitative-property",
+                                "quantity-value",
+                                "range-of-possible-values",
+                                "real-number",
+                                "reference",
+                                "relevant-standard",
+                                "scalar-measurand",
+                                "scatter",
+                                "specified-multiple",
+                                "standard",
+                                "standard-deviation",
+                                "standard-measurement-uncertainty",
+                                "state-of-knowledge",
+                                "substance"
+                              ],
+                              "type": "string"
+                            },
+                            "role": {
+                              "enum": [
+                                "LEFT_OPERAND",
+                                "RIGHT_OPERAND",
+                                "OUTCOME",
+                                "EVENT",
+                                "OBJECT",
+                                "DESTINATION"
+                              ],
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "role",
+                            "entity_id"
+                          ],
+                          "type": "object"
+                        },
+                        "type": "array"
+                      },
+                      "statement": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "proposition_type",
+                      "statement",
+                      "role_bindings",
+                      "relationship_type",
+                      "comparison_operator",
+                      "confidence",
+                      "origin"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                "relationships": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "confidence": {
+                        "maximum": 1,
+                        "minimum": 0,
+                        "type": "number"
+                      },
+                      "id": {
+                        "type": "string"
+                      },
+                      "origin": {
+                        "enum": [
+                          "SOURCE",
+                          "INFERRED"
+                        ],
+                        "type": "string"
+                      },
+                      "relationship_type": {
+                        "enum": [
+                          "IS_A",
+                          "PART_OF",
+                          "CAUSES",
+                          "INCREASES",
+                          "DECREASES",
+                          "ENABLES",
+                          "REQUIRES",
+                          "CONSTRAINS",
+                          "PRECEDES",
+                          "TRANSFORMS_INTO",
+                          "INTERACTS_WITH",
+                          "MEASURED_BY",
+                          "EXAMPLE_OF",
+                          "CONTRADICTS",
+                          "CREATES",
+                          "INDUCES",
+                          "EXERTS_FORCE_ON",
+                          "AFFECTS",
+                          "BINDS_TO",
+                          "TRANSFERS_TO"
+                        ],
+                        "type": "string"
+                      },
+                      "source_entity_id": {
+                        "enum": [
+                          "32768-hz-quartz-crystal-resonator",
+                          "body",
+                          "calibration",
+                          "coverage-probability",
+                          "dispersion",
+                          "half-width",
+                          "incomplete-knowledge",
+                          "indication",
+                          "information-used",
+                          "international-prototype-kilogram",
+                          "interval",
+                          "measurand",
+                          "measurement",
+                          "measurement-comparison",
+                          "measurement-result",
+                          "measurement-uncertainty",
+                          "measurement-value",
+                          "measuring-instrument",
+                          "numerical-magnitude",
+                          "parameter",
+                          "phenomenon",
+                          "possible-measurand-values",
+                          "primary-gas-mixture",
+                          "probability-distribution",
+                          "quantitative-property",
+                          "quantity-value",
+                          "range-of-possible-values",
+                          "real-number",
+                          "reference",
+                          "relevant-standard",
+                          "scalar-measurand",
+                          "scatter",
+                          "specified-multiple",
+                          "standard",
+                          "standard-deviation",
+                          "standard-measurement-uncertainty",
+                          "state-of-knowledge",
+                          "substance"
+                        ],
+                        "type": "string"
+                      },
+                      "statement": {
+                        "type": "string"
+                      },
+                      "target_entity_id": {
+                        "enum": [
+                          "32768-hz-quartz-crystal-resonator",
+                          "body",
+                          "calibration",
+                          "coverage-probability",
+                          "dispersion",
+                          "half-width",
+                          "incomplete-knowledge",
+                          "indication",
+                          "information-used",
+                          "international-prototype-kilogram",
+                          "interval",
+                          "measurand",
+                          "measurement",
+                          "measurement-comparison",
+                          "measurement-result",
+                          "measurement-uncertainty",
+                          "measurement-value",
+                          "measuring-instrument",
+                          "numerical-magnitude",
+                          "parameter",
+                          "phenomenon",
+                          "possible-measurand-values",
+                          "primary-gas-mixture",
+                          "probability-distribution",
+                          "quantitative-property",
+                          "quantity-value",
+                          "range-of-possible-values",
+                          "real-number",
+                          "reference",
+                          "relevant-standard",
+                          "scalar-measurand",
+                          "scatter",
+                          "specified-multiple",
+                          "standard",
+                          "standard-deviation",
+                          "standard-measurement-uncertainty",
+                          "state-of-knowledge",
+                          "substance"
+                        ],
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "source_entity_id",
+                      "relationship_type",
+                      "target_entity_id",
+                      "statement",
+                      "confidence",
+                      "origin"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                }
+              },
+              "required": [
+                "relationships",
+                "propositions",
+                "missing_symbols"
+              ],
+              "type": "object"
+            },
+            "strict": true,
+            "type": "json_schema"
+          },
+          "verbosity": "medium"
+        },
+        "tool_choice": "auto",
+        "tool_usage": {
+          "image_gen": {
+            "input_tokens": 0,
+            "input_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            },
+            "output_tokens": 0,
+            "output_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            },
+            "total_tokens": 0
+          },
+          "web_search": {
+            "num_requests": 0
+          }
+        },
+        "tools": [],
+        "top_logprobs": 0,
+        "top_p": 0.98,
+        "truncation": "disabled",
+        "usage": {
+          "input_tokens": 5079,
+          "input_tokens_details": {
+            "cache_write_tokens": 5076,
+            "cached_tokens": 0
+          },
+          "output_tokens": 1706,
+          "output_tokens_details": {
+            "reasoning_tokens": 941
+          },
+          "total_tokens": 6785
+        },
+        "user": null
+      },
+      "stage": "SEMANTIC_STRUCTURE"
+    },
+    {
+      "provider_metadata": {
+        "actual_model": "gpt-5.6-luna",
+        "candidate_version": "spec-047-candidate-b-v1",
+        "duration_ms": 11485.826916003134,
+        "hidden_retries": 0,
+        "http_request_id": "req_6e80d37f09004f2689e6e912dda0e795",
+        "prompt_sha256": "1b92dd0a739159dadb592baed7b33a840d78a8383cad2fe7f2d90cf0487fc43c",
+        "prompt_version": "spec-047-claim-evidence-binding-v1",
+        "provider": "openai",
+        "provider_response_id": "resp_0297072e12e3d7fe016aa8176b577087d2a556af39ce5298e3",
+        "repair_calls": 0,
+        "requested_model": "gpt-5.6-luna",
+        "schema_name": "candidate_b_claim_evidence_binding",
+        "schema_sha256": "d4d502703aad4105ed50292f50af121d26b525d0f8f0dadbb0e130a38e10633a",
+        "sdk_retries": 0,
+        "semantic_retries": 0,
+        "stage": "CLAIM_EVIDENCE_BINDING",
+        "store": false,
+        "upstream_input_sha256": "88def53ce47e9ef80dc81038a19e5dfa0a83c4abc802857f6a9e504ac2fdd109",
+        "usage": {
+          "input_tokens": 3399,
+          "output_tokens": 1371,
+          "total_tokens": 4770
+        }
+      },
+      "raw_proposal": {
+        "claims": [
+          {
+            "confidence": 0.99,
+            "evidence": [
+              {
+                "quote": "Measurement is an experimental process that produces a value that can reasonably be attributed to a quantitative property of a phenomenon, body, or substance."
+              }
+            ],
+            "id": "c1",
+            "origin": "SOURCE",
+            "statement": "Measurement produces a value reasonably attributable to a quantitative property."
+          },
+          {
+            "confidence": 0.99,
+            "evidence": [
+              {
+                "quote": "That process involves direct or indirect comparison with a standard"
+              }
+            ],
+            "id": "c2",
+            "origin": "SOURCE",
+            "statement": "Measurement involves direct or indirect comparison with a standard."
+          },
+          {
+            "confidence": 0.99,
+            "evidence": [
+              {
+                "quote": "a certified 32768 Hz quartz crystal resonator"
+              }
+            ],
+            "id": "c3",
+            "origin": "SOURCE",
+            "statement": "A certified 32768 Hz quartz crystal resonator is an example of a standard."
+          },
+          {
+            "confidence": 0.99,
+            "evidence": [
+              {
+                "quote": "a primary gas mixture with 1.079 micromole of methane per mole of air"
+              }
+            ],
+            "id": "c4",
+            "origin": "SOURCE",
+            "statement": "A primary gas mixture is an example of a standard."
+          },
+          {
+            "confidence": 0.98,
+            "evidence": [
+              {
+                "quote": "the phenomenon, body, or substance of interest interact with a measuring instrument"
+              }
+            ],
+            "id": "c5",
+            "origin": "SOURCE",
+            "statement": "The phenomenon of interest interacts with a measuring instrument."
+          },
+          {
+            "confidence": 0.98,
+            "evidence": [
+              {
+                "quote": "the phenomenon, body, or substance of interest interact with a measuring instrument"
+              }
+            ],
+            "id": "c6",
+            "origin": "SOURCE",
+            "statement": "The body of interest interacts with a measuring instrument."
+          },
+          {
+            "confidence": 0.98,
+            "evidence": [
+              {
+                "quote": "the phenomenon, body, or substance of interest interact with a measuring instrument"
+              }
+            ],
+            "id": "c7",
+            "origin": "SOURCE",
+            "statement": "The substance of interest interacts with a measuring instrument."
+          },
+          {
+            "confidence": 0.99,
+            "evidence": [
+              {
+                "quote": "a measuring instrument capable of producing an indication that is responsive to the property of interest"
+              }
+            ],
+            "id": "c8",
+            "origin": "SOURCE",
+            "statement": "A measuring instrument produces an indication responsive to the property of interest."
+          },
+          {
+            "confidence": 0.99,
+            "evidence": [
+              {
+                "quote": "a \"parameter, associated with the result of a measurement, that characterizes the dispersion of the values that could reasonably be attributed to the measurand''"
+              }
+            ],
+            "id": "c9",
+            "origin": "SOURCE",
+            "statement": "Measurement uncertainty is a parameter associated with a measurement result and characterizes dispersion."
+          },
+          {
+            "confidence": 0.99,
+            "evidence": [
+              {
+                "quote": "The expression standard measurement uncertainty is reserved for measurement uncertainty expressed as a standard deviation."
+              }
+            ],
+            "id": "c10",
+            "origin": "SOURCE",
+            "statement": "Standard measurement uncertainty is measurement uncertainty expressed as a standard deviation."
+          },
+          {
+            "confidence": 0.99,
+            "evidence": [
+              {
+                "quote": "when the property of interest can be quantified by a single real number"
+              }
+            ],
+            "id": "c11",
+            "origin": "SOURCE",
+            "statement": "A scalar measurand is a measurand whose property of interest can be quantified by a single real number."
+          },
+          {
+            "confidence": 0.97,
+            "evidence": [
+              {
+                "quote": "this parameter may be, for example, a standard deviation called standard measurement uncertainty"
+              }
+            ],
+            "id": "c12",
+            "origin": "SOURCE",
+            "statement": "For scalar measurands, standard deviation is a parameter that may express measurement uncertainty."
+          },
+          {
+            "confidence": 0.99,
+            "evidence": [
+              {
+                "quote": "measurement uncertainty expresses incomplete knowledge about the measurand"
+              }
+            ],
+            "id": "c13",
+            "origin": "SOURCE",
+            "statement": "Measurement uncertainty expresses incomplete knowledge about the measurand."
+          },
+          {
+            "confidence": 0.99,
+            "evidence": [
+              {
+                "quote": "a probability distribution over the set of possible values for the measurand is used to represent the corresponding state of knowledge about it"
+              }
+            ],
+            "id": "c14",
+            "origin": "SOURCE",
+            "statement": "A probability distribution over possible measurand values represents the corresponding state of knowledge."
+          },
+          {
+            "confidence": 0.99,
+            "evidence": [
+              {
+                "quote": "the standard deviation aforementioned is an attribute of this probability distribution that represents its scatter over the range of possible values"
+              }
+            ],
+            "id": "c15",
+            "origin": "SOURCE",
+            "statement": "The standard deviation is an attribute of the probability distribution representing its scatter over the range of possible values."
+          }
+        ],
+        "semantic_evidence_bindings": [
+          {
+            "evidence": [
+              {
+                "quote": "Measurement is an experimental process that produces a value that can reasonably be attributed to a quantitative property of a phenomenon, body, or substance."
+              }
+            ],
+            "semantic_object_id": "r1"
+          },
+          {
+            "evidence": [
+              {
+                "quote": "That process involves direct or indirect comparison with a standard"
+              }
+            ],
+            "semantic_object_id": "r2"
+          },
+          {
+            "evidence": [
+              {
+                "quote": "a certified 32768 Hz quartz crystal resonator"
+              }
+            ],
+            "semantic_object_id": "r3"
+          },
+          {
+            "evidence": [
+              {
+                "quote": "a primary gas mixture with 1.079 micromole of methane per mole of air"
+              }
+            ],
+            "semantic_object_id": "r4"
+          },
+          {
+            "evidence": [
+              {
+                "quote": "the phenomenon, body, or substance of interest interact with a measuring instrument"
+              }
+            ],
+            "semantic_object_id": "r5"
+          },
+          {
+            "evidence": [
+              {
+                "quote": "the phenomenon, body, or substance of interest interact with a measuring instrument"
+              }
+            ],
+            "semantic_object_id": "r6"
+          },
+          {
+            "evidence": [
+              {
+                "quote": "the phenomenon, body, or substance of interest interact with a measuring instrument"
+              }
+            ],
+            "semantic_object_id": "r7"
+          },
+          {
+            "evidence": [
+              {
+                "quote": "a measuring instrument capable of producing an indication that is responsive to the property of interest"
+              }
+            ],
+            "semantic_object_id": "r8"
+          },
+          {
+            "evidence": [
+              {
+                "quote": "a \"parameter, associated with the result of a measurement, that characterizes the dispersion of the values that could reasonably be attributed to the measurand''"
+              }
+            ],
+            "semantic_object_id": "r9"
+          },
+          {
+            "evidence": [
+              {
+                "quote": "The expression standard measurement uncertainty is reserved for measurement uncertainty expressed as a standard deviation."
+              }
+            ],
+            "semantic_object_id": "r10"
+          },
+          {
+            "evidence": [
+              {
+                "quote": "when the property of interest can be quantified by a single real number"
+              }
+            ],
+            "semantic_object_id": "r11"
+          },
+          {
+            "evidence": [
+              {
+                "quote": "this parameter may be, for example, a standard deviation called standard measurement uncertainty"
+              }
+            ],
+            "semantic_object_id": "r12"
+          }
+        ]
+      },
+      "raw_provider_response": {
+        "background": false,
+        "billing": {
+          "payer": "developer"
+        },
+        "completed_at": 1789400950.0,
+        "conversation": null,
+        "created_at": 1789400939.0,
+        "error": null,
+        "frequency_penalty": 0.0,
+        "id": "resp_0297072e12e3d7fe016aa8176b577087d2a556af39ce5298e3",
+        "incomplete_details": null,
+        "instructions": "You perform Stage 3 claim and evidence binding.\n\nThe user supplies an immutable entity inventory, immutable semantic structure, and the\nexact source. You may add learner-useful claims and bind exact source evidence to the\nsupplied relationship/proposition IDs. You must not add, delete, rename, reorder, or alter\nentities, relationships, propositions, predicates, directions, role bindings, statements,\nconfidence, or origin. Return no semantic topology.\n\nEvery SOURCE claim and SOURCE semantic object must cite one or more exact, verbatim,\nuniquely occurring substrings from the supplied source. Use a complete clause or sentence\nlong enough to occur exactly once. Never paraphrase a quote or remove text from inside it.\nINFERRED claims and semantic objects must have no source evidence. Do not fabricate\nevidence or use external knowledge.\n\nReturn only claims and semantic_evidence_bindings in the requested schema.",
+        "max_output_tokens": null,
+        "max_tool_calls": null,
+        "metadata": {},
+        "model": "gpt-5.6-luna",
+        "moderation": null,
+        "object": "response",
+        "output": [
+          {
+            "content": [],
+            "encrypted_content": "gAAAAABqqBd2loEqoLUOgYCi_qxC0aEQeEHGX_soUFe1KikB0ufaDGPTkY2rie5KPwHZ8cJk8Xt3GKRe6XFLNFx6vVRR1nbDI8jsVeAq-BvPQB3qJY8V6xCHX5uaGfcDHOXzmvrfaC2V95ijN1ag6RR39vIXQiaB5Da4bC9Xf3ff4g4FkNdoprQGqhw1L3etc1so-eVMfgSIGQ1whAqtRzW_lmy97FN79ntOnaFhQnn1PBWSlmav_5utiLftq_hpAdRNKeuv8trYRSmVtyLHm-Qrn70NQOgeMtKQ58pG1z69AF0-ia191OyY2CbbhfF15QHreV5xVANZxTAoIxQNOn46_3OQVsdHmXlUA6VoptJue-iQV5YKiNDZW_xD_cTAY_Fi-jKNH7dJ98Tse2k4mRfz49qa2Ax57vyvwn-e0-ZRjtxoRKmzJRR6PP1ZMJaGO7etk2m5HTGpe0b55SQTsO7us9AZbxxa9lX_xMUAGCSzTHsKkVg2MHv9eBtLBYw2HHaxMqt5iGNCQmzFcu4WYd5JQxB94ZVtEErXo7bPByQhCkveikeiGuFhrzEtiRgHBYCx9EaI33vjKMe5_J4RzDSLU9gSHvmu3WVr7v_pQpK0F-xNJe69MyU4GUpqhGOK2WBYdBzl3QncLPe1P7jiUamCGc5oOz8KSE9D_kFMRXiHVw-0O63R1kqhVKnGJyapMsJPwEmTqYntoeKcipKkNYmWgJfb-xJVGQQyUEUhgiMVxbtKZzthLGD-rkWP2gDydy6mz1fa565J8yEOHD5JhLY9I7F6G891HoE1Sh_jahXsjtsnIG0QkZsQZus-kwejMqVYhMjttLViLd49spO9VyQ12bvL2FArr8_DrbS6tHYNu_HhuBNZ51zNNChiEW6qNajMpw3YZLVaXUJD6GWhG1A4xga066mPyb146A2qYkfnGyiqyuHf70DnhrBU2uB13Id09Ew_PyMFgG2iTVR9fYZRIoBMETDIxzUyd3EqpTQXXsEvAZdyjI2jAdbSco_uYDa_alMC6jrQnhNsW_M1VeYgrdBDPyY7xn6iCgJpgOHRU5fkwP5GpxffqO2SeGJymlSm1Agpg6K6rQWowmvpDPXT0NciS_rntm2ZKog5boPzFJT0siu1UIE-IbX3eMC8yXaWhD4JAIwr2f4Y9429yCfBZn7t4skFZr2DJYbG6tdaV3a2HG-56HHM9W-6ofkkOwkKSfhfT5iqfqnM8RWF1VUWdBBCzFi2MloFEW6WPQbp_Zi5VMmmX4v3MUjBgd03igmsFILkfzHmUqTd5Y1iVS_FG1MRDILg1Yn2--r9qCQsuTEa3zU2elIlFQluwkZhtWKC3kBBcwNcB6rSxdgEG1KocqljQiFB7lrdZzrAqMxfwXz-a5_HJFEIQ2c1zn6dMxPy77V5dc3f3MaXNvIivDUPfSTgnz5r4Zt9tv6_iDFaqpX3YZ-tCz4KUfEbOraybNXlwRtY6RPEk3d7Tj2OGsMqs5J40aG8Lmr_ZI0qeTfMRYg0iFo4AHVfg8rL4c_73A_-85XFsr7tJPgfxI6AjXKxZDTczS_gTY8CI8l8KlbO_fvnzvV8JIlvCuQNbswGXqXhdZma2rkwufU0n2P06C98VMswm-I5NyrAgaKiN0MClaSqfUzF5La18coclC6G2uqjUNeTX3c6M6iBuM8_FOZRU1uE_4dtwKgLUQGKZnBHqv8ZjVsCofJ5paQaoLOH7alXAZ68_xr2CYvcqPNdEZy9d8KCUV_uCeSUJL6g_qT7nlfgfwDpB8qEISeoypmOrMnbAOFIDii8oAEFeX6PJ8zwQo-VS13Z62aS0tAf8fmCu_uR9fOq-pMnEDfisvt8kdI0oAihK1HJduxE6fKUdDYsWYqywsUqIiO_0lN-JvurVYVNypepkXNgQu_lvrLrBl8f_IBYibmKT1GCs0Vxenv0WYsYY_FPDQ1jsVFKcpLHoYh9vyIMAks9sD7OQNqb9Lq0Jsn-FUuMR1k1hua0x60L8KkDZSCaLQ==",
+            "id": "rs_0297072e12e3d7fe016aa8176c760487d289b36f265f6fbdbe",
+            "status": null,
+            "summary": [],
+            "type": "reasoning"
+          },
+          {
+            "content": [
+              {
+                "annotations": [],
+                "logprobs": [],
+                "text": "{\"claims\":[{\"id\":\"c1\",\"statement\":\"Measurement produces a value reasonably attributable to a quantitative property.\",\"evidence\":[{\"quote\":\"Measurement is an experimental process that produces a value that can reasonably be attributed to a quantitative property of a phenomenon, body, or substance.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"c2\",\"statement\":\"Measurement involves direct or indirect comparison with a standard.\",\"evidence\":[{\"quote\":\"That process involves direct or indirect comparison with a standard\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"c3\",\"statement\":\"A certified 32768 Hz quartz crystal resonator is an example of a standard.\",\"evidence\":[{\"quote\":\"a certified 32768 Hz quartz crystal resonator\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"c4\",\"statement\":\"A primary gas mixture is an example of a standard.\",\"evidence\":[{\"quote\":\"a primary gas mixture with 1.079 micromole of methane per mole of air\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"c5\",\"statement\":\"The phenomenon of interest interacts with a measuring instrument.\",\"evidence\":[{\"quote\":\"the phenomenon, body, or substance of interest interact with a measuring instrument\"}],\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"c6\",\"statement\":\"The body of interest interacts with a measuring instrument.\",\"evidence\":[{\"quote\":\"the phenomenon, body, or substance of interest interact with a measuring instrument\"}],\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"c7\",\"statement\":\"The substance of interest interacts with a measuring instrument.\",\"evidence\":[{\"quote\":\"the phenomenon, body, or substance of interest interact with a measuring instrument\"}],\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"c8\",\"statement\":\"A measuring instrument produces an indication responsive to the property of interest.\",\"evidence\":[{\"quote\":\"a measuring instrument capable of producing an indication that is responsive to the property of interest\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"c9\",\"statement\":\"Measurement uncertainty is a parameter associated with a measurement result and characterizes dispersion.\",\"evidence\":[{\"quote\":\"a \\\"parameter, associated with the result of a measurement, that characterizes the dispersion of the values that could reasonably be attributed to the measurand''\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"c10\",\"statement\":\"Standard measurement uncertainty is measurement uncertainty expressed as a standard deviation.\",\"evidence\":[{\"quote\":\"The expression standard measurement uncertainty is reserved for measurement uncertainty expressed as a standard deviation.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"c11\",\"statement\":\"A scalar measurand is a measurand whose property of interest can be quantified by a single real number.\",\"evidence\":[{\"quote\":\"when the property of interest can be quantified by a single real number\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"c12\",\"statement\":\"For scalar measurands, standard deviation is a parameter that may express measurement uncertainty.\",\"evidence\":[{\"quote\":\"this parameter may be, for example, a standard deviation called standard measurement uncertainty\"}],\"confidence\":0.97,\"origin\":\"SOURCE\"},{\"id\":\"c13\",\"statement\":\"Measurement uncertainty expresses incomplete knowledge about the measurand.\",\"evidence\":[{\"quote\":\"measurement uncertainty expresses incomplete knowledge about the measurand\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"c14\",\"statement\":\"A probability distribution over possible measurand values represents the corresponding state of knowledge.\",\"evidence\":[{\"quote\":\"a probability distribution over the set of possible values for the measurand is used to represent the corresponding state of knowledge about it\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"c15\",\"statement\":\"The standard deviation is an attribute of the probability distribution representing its scatter over the range of possible values.\",\"evidence\":[{\"quote\":\"the standard deviation aforementioned is an attribute of this probability distribution that represents its scatter over the range of possible values\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"}],\"semantic_evidence_bindings\":[{\"semantic_object_id\":\"r1\",\"evidence\":[{\"quote\":\"Measurement is an experimental process that produces a value that can reasonably be attributed to a quantitative property of a phenomenon, body, or substance.\"}]},{\"semantic_object_id\":\"r2\",\"evidence\":[{\"quote\":\"That process involves direct or indirect comparison with a standard\"}]},{\"semantic_object_id\":\"r3\",\"evidence\":[{\"quote\":\"a certified 32768 Hz quartz crystal resonator\"}]},{\"semantic_object_id\":\"r4\",\"evidence\":[{\"quote\":\"a primary gas mixture with 1.079 micromole of methane per mole of air\"}]},{\"semantic_object_id\":\"r5\",\"evidence\":[{\"quote\":\"the phenomenon, body, or substance of interest interact with a measuring instrument\"}]},{\"semantic_object_id\":\"r6\",\"evidence\":[{\"quote\":\"the phenomenon, body, or substance of interest interact with a measuring instrument\"}]},{\"semantic_object_id\":\"r7\",\"evidence\":[{\"quote\":\"the phenomenon, body, or substance of interest interact with a measuring instrument\"}]},{\"semantic_object_id\":\"r8\",\"evidence\":[{\"quote\":\"a measuring instrument capable of producing an indication that is responsive to the property of interest\"}]},{\"semantic_object_id\":\"r9\",\"evidence\":[{\"quote\":\"a \\\"parameter, associated with the result of a measurement, that characterizes the dispersion of the values that could reasonably be attributed to the measurand''\"}]},{\"semantic_object_id\":\"r10\",\"evidence\":[{\"quote\":\"The expression standard measurement uncertainty is reserved for measurement uncertainty expressed as a standard deviation.\"}]},{\"semantic_object_id\":\"r11\",\"evidence\":[{\"quote\":\"when the property of interest can be quantified by a single real number\"}]},{\"semantic_object_id\":\"r12\",\"evidence\":[{\"quote\":\"this parameter may be, for example, a standard deviation called standard measurement uncertainty\"}]}]}",
+                "type": "output_text"
+              }
+            ],
+            "id": "msg_0297072e12e3d7fe016aa8176e03d487d29105abdc8f5971d4",
+            "phase": "final_answer",
+            "role": "assistant",
+            "status": "completed",
+            "type": "message"
+          }
+        ],
+        "parallel_tool_calls": true,
+        "presence_penalty": 0.0,
+        "previous_response_id": null,
+        "prompt": null,
+        "prompt_cache_key": null,
+        "prompt_cache_options": null,
+        "prompt_cache_retention": "24h",
+        "reasoning": {
+          "context": "all_turns",
+          "effort": "low",
+          "generate_summary": null,
+          "mode": "standard",
+          "summary": null
+        },
+        "safety_identifier": null,
+        "service_tier": "default",
+        "status": "completed",
+        "store": false,
+        "temperature": 1.0,
+        "text": {
+          "format": {
+            "description": null,
+            "name": "candidate_b_claim_evidence_binding",
+            "schema_": {
+              "additionalProperties": false,
+              "properties": {
+                "claims": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "confidence": {
+                        "maximum": 1,
+                        "minimum": 0,
+                        "type": "number"
+                      },
+                      "evidence": {
+                        "items": {
+                          "additionalProperties": false,
+                          "properties": {
+                            "quote": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "quote"
+                          ],
+                          "type": "object"
+                        },
+                        "type": "array"
+                      },
+                      "id": {
+                        "type": "string"
+                      },
+                      "origin": {
+                        "enum": [
+                          "SOURCE",
+                          "INFERRED"
+                        ],
+                        "type": "string"
+                      },
+                      "statement": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "statement",
+                      "evidence",
+                      "confidence",
+                      "origin"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                "semantic_evidence_bindings": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "evidence": {
+                        "items": {
+                          "additionalProperties": false,
+                          "properties": {
+                            "quote": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "quote"
+                          ],
+                          "type": "object"
+                        },
+                        "type": "array"
+                      },
+                      "semantic_object_id": {
+                        "enum": [
+                          "r1",
+                          "r10",
+                          "r11",
+                          "r12",
+                          "r2",
+                          "r3",
+                          "r4",
+                          "r5",
+                          "r6",
+                          "r7",
+                          "r8",
+                          "r9"
+                        ],
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "semantic_object_id",
+                      "evidence"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                }
+              },
+              "required": [
+                "claims",
+                "semantic_evidence_bindings"
+              ],
+              "type": "object"
+            },
+            "strict": true,
+            "type": "json_schema"
+          },
+          "verbosity": "medium"
+        },
+        "tool_choice": "auto",
+        "tool_usage": {
+          "image_gen": {
+            "input_tokens": 0,
+            "input_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            },
+            "output_tokens": 0,
+            "output_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            },
+            "total_tokens": 0
+          },
+          "web_search": {
+            "num_requests": 0
+          }
+        },
+        "tools": [],
+        "top_logprobs": 0,
+        "top_p": 0.98,
+        "truncation": "disabled",
+        "usage": {
+          "input_tokens": 3399,
+          "input_tokens_details": {
+            "cache_write_tokens": 3396,
+            "cached_tokens": 0
+          },
+          "output_tokens": 1371,
+          "output_tokens_details": {
+            "reasoning_tokens": 122
+          },
+          "total_tokens": 4770
+        },
+        "user": null
+      },
+      "stage": "CLAIM_EVIDENCE_BINDING"
+    }
+  ],
+  "candidate_version": "spec-047-candidate-b-v1",
+  "canonical_gate": {
+    "error_type": null,
+    "exact_failure": null,
+    "output_identity_sha256": "34ceb409bf96b35907a4bf09825878051553812f2a3f7903b0788a240fc80611",
+    "stage": "CANONICAL_VALIDATION",
+    "stage_version": "existing-knowledge-model-validator",
+    "status": "PASS",
+    "upstream_identity_sha256": "1919c9de3cd7b37b0846f58d9fd36cc0efe0f51c380d6e67c7c5559929e3956a"
+  },
+  "claim_evidence_binding": {
+    "candidate_version": "spec-047-candidate-b-v1",
+    "claims": [
+      {
+        "confidence": 0.99,
+        "evidence": [
+          {
+            "document_id": "text-b3ae508f3982dfdd",
+            "end_char": 158,
+            "quote": "Measurement is an experimental process that produces a value that can reasonably be attributed to a quantitative property of a phenomenon, body, or substance.",
+            "start_char": 0
+          }
+        ],
+        "id": "c1",
+        "origin": "SOURCE",
+        "statement": "Measurement produces a value reasonably attributable to a quantitative property."
+      },
+      {
+        "confidence": 0.99,
+        "evidence": [
+          {
+            "document_id": "text-b3ae508f3982dfdd",
+            "end_char": 449,
+            "quote": "That process involves direct or indirect comparison with a standard",
+            "start_char": 382
+          }
+        ],
+        "id": "c2",
+        "origin": "SOURCE",
+        "statement": "Measurement involves direct or indirect comparison with a standard."
+      },
+      {
+        "confidence": 0.99,
+        "evidence": [
+          {
+            "document_id": "text-b3ae508f3982dfdd",
+            "end_char": 509,
+            "quote": "a certified 32768 Hz quartz crystal resonator",
+            "start_char": 464
+          }
+        ],
+        "id": "c3",
+        "origin": "SOURCE",
+        "statement": "A certified 32768 Hz quartz crystal resonator is an example of a standard."
+      },
+      {
+        "confidence": 0.99,
+        "evidence": [
+          {
+            "document_id": "text-b3ae508f3982dfdd",
+            "end_char": 583,
+            "quote": "a primary gas mixture with 1.079 micromole of methane per mole of air",
+            "start_char": 514
+          }
+        ],
+        "id": "c4",
+        "origin": "SOURCE",
+        "statement": "A primary gas mixture is an example of a standard."
+      },
+      {
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "document_id": "text-b3ae508f3982dfdd",
+            "end_char": 722,
+            "quote": "the phenomenon, body, or substance of interest interact with a measuring instrument",
+            "start_char": 639
+          }
+        ],
+        "id": "c5",
+        "origin": "SOURCE",
+        "statement": "The phenomenon of interest interacts with a measuring instrument."
+      },
+      {
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "document_id": "text-b3ae508f3982dfdd",
+            "end_char": 722,
+            "quote": "the phenomenon, body, or substance of interest interact with a measuring instrument",
+            "start_char": 639
+          }
+        ],
+        "id": "c6",
+        "origin": "SOURCE",
+        "statement": "The body of interest interacts with a measuring instrument."
+      },
+      {
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "document_id": "text-b3ae508f3982dfdd",
+            "end_char": 722,
+            "quote": "the phenomenon, body, or substance of interest interact with a measuring instrument",
+            "start_char": 639
+          }
+        ],
+        "id": "c7",
+        "origin": "SOURCE",
+        "statement": "The substance of interest interacts with a measuring instrument."
+      },
+      {
+        "confidence": 0.99,
+        "evidence": [
+          {
+            "document_id": "text-b3ae508f3982dfdd",
+            "end_char": 804,
+            "quote": "a measuring instrument capable of producing an indication that is responsive to the property of interest",
+            "start_char": 700
+          }
+        ],
+        "id": "c8",
+        "origin": "SOURCE",
+        "statement": "A measuring instrument produces an indication responsive to the property of interest."
+      },
+      {
+        "confidence": 0.99,
+        "evidence": [
+          {
+            "document_id": "text-b3ae508f3982dfdd",
+            "end_char": 1141,
+            "quote": "a \"parameter, associated with the result of a measurement, that characterizes the dispersion of the values that could reasonably be attributed to the measurand''",
+            "start_char": 980
+          }
+        ],
+        "id": "c9",
+        "origin": "SOURCE",
+        "statement": "Measurement uncertainty is a parameter associated with a measurement result and characterizes dispersion."
+      },
+      {
+        "confidence": 0.99,
+        "evidence": [
+          {
+            "document_id": "text-b3ae508f3982dfdd",
+            "end_char": 1789,
+            "quote": "The expression standard measurement uncertainty is reserved for measurement uncertainty expressed as a standard deviation.",
+            "start_char": 1667
+          }
+        ],
+        "id": "c10",
+        "origin": "SOURCE",
+        "statement": "Standard measurement uncertainty is measurement uncertainty expressed as a standard deviation."
+      },
+      {
+        "confidence": 0.99,
+        "evidence": [
+          {
+            "document_id": "text-b3ae508f3982dfdd",
+            "end_char": 1414,
+            "quote": "when the property of interest can be quantified by a single real number",
+            "start_char": 1343
+          }
+        ],
+        "id": "c11",
+        "origin": "SOURCE",
+        "statement": "A scalar measurand is a measurand whose property of interest can be quantified by a single real number."
+      },
+      {
+        "confidence": 0.97,
+        "evidence": [
+          {
+            "document_id": "text-b3ae508f3982dfdd",
+            "end_char": 1535,
+            "quote": "this parameter may be, for example, a standard deviation called standard measurement uncertainty",
+            "start_char": 1439
+          }
+        ],
+        "id": "c12",
+        "origin": "SOURCE",
+        "statement": "For scalar measurands, standard deviation is a parameter that may express measurement uncertainty."
+      },
+      {
+        "confidence": 0.99,
+        "evidence": [
+          {
+            "document_id": "text-b3ae508f3982dfdd",
+            "end_char": 1913,
+            "quote": "measurement uncertainty expresses incomplete knowledge about the measurand",
+            "start_char": 1839
+          }
+        ],
+        "id": "c13",
+        "origin": "SOURCE",
+        "statement": "Measurement uncertainty expresses incomplete knowledge about the measurand."
+      },
+      {
+        "confidence": 0.99,
+        "evidence": [
+          {
+            "document_id": "text-b3ae508f3982dfdd",
+            "end_char": 2067,
+            "quote": "a probability distribution over the set of possible values for the measurand is used to represent the corresponding state of knowledge about it",
+            "start_char": 1924
+          }
+        ],
+        "id": "c14",
+        "origin": "SOURCE",
+        "statement": "A probability distribution over possible measurand values represents the corresponding state of knowledge."
+      },
+      {
+        "confidence": 0.99,
+        "evidence": [
+          {
+            "document_id": "text-b3ae508f3982dfdd",
+            "end_char": 2241,
+            "quote": "the standard deviation aforementioned is an attribute of this probability distribution that represents its scatter over the range of possible values",
+            "start_char": 2093
+          }
+        ],
+        "id": "c15",
+        "origin": "SOURCE",
+        "statement": "The standard deviation is an attribute of the probability distribution representing its scatter over the range of possible values."
+      }
+    ],
+    "identity_sha256": "14c24a973e1e7338b5365c5ff691a2e95b366f2081a6535cfc3a3624eac863ec",
+    "semantic_evidence_bindings": [
+      {
+        "evidence": [
+          {
+            "document_id": "text-b3ae508f3982dfdd",
+            "end_char": 158,
+            "quote": "Measurement is an experimental process that produces a value that can reasonably be attributed to a quantitative property of a phenomenon, body, or substance.",
+            "start_char": 0
+          }
+        ],
+        "semantic_object_id": "r1"
+      },
+      {
+        "evidence": [
+          {
+            "document_id": "text-b3ae508f3982dfdd",
+            "end_char": 1789,
+            "quote": "The expression standard measurement uncertainty is reserved for measurement uncertainty expressed as a standard deviation.",
+            "start_char": 1667
+          }
+        ],
+        "semantic_object_id": "r10"
+      },
+      {
+        "evidence": [
+          {
+            "document_id": "text-b3ae508f3982dfdd",
+            "end_char": 1414,
+            "quote": "when the property of interest can be quantified by a single real number",
+            "start_char": 1343
+          }
+        ],
+        "semantic_object_id": "r11"
+      },
+      {
+        "evidence": [
+          {
+            "document_id": "text-b3ae508f3982dfdd",
+            "end_char": 1535,
+            "quote": "this parameter may be, for example, a standard deviation called standard measurement uncertainty",
+            "start_char": 1439
+          }
+        ],
+        "semantic_object_id": "r12"
+      },
+      {
+        "evidence": [
+          {
+            "document_id": "text-b3ae508f3982dfdd",
+            "end_char": 449,
+            "quote": "That process involves direct or indirect comparison with a standard",
+            "start_char": 382
+          }
+        ],
+        "semantic_object_id": "r2"
+      },
+      {
+        "evidence": [
+          {
+            "document_id": "text-b3ae508f3982dfdd",
+            "end_char": 509,
+            "quote": "a certified 32768 Hz quartz crystal resonator",
+            "start_char": 464
+          }
+        ],
+        "semantic_object_id": "r3"
+      },
+      {
+        "evidence": [
+          {
+            "document_id": "text-b3ae508f3982dfdd",
+            "end_char": 583,
+            "quote": "a primary gas mixture with 1.079 micromole of methane per mole of air",
+            "start_char": 514
+          }
+        ],
+        "semantic_object_id": "r4"
+      },
+      {
+        "evidence": [
+          {
+            "document_id": "text-b3ae508f3982dfdd",
+            "end_char": 722,
+            "quote": "the phenomenon, body, or substance of interest interact with a measuring instrument",
+            "start_char": 639
+          }
+        ],
+        "semantic_object_id": "r5"
+      },
+      {
+        "evidence": [
+          {
+            "document_id": "text-b3ae508f3982dfdd",
+            "end_char": 722,
+            "quote": "the phenomenon, body, or substance of interest interact with a measuring instrument",
+            "start_char": 639
+          }
+        ],
+        "semantic_object_id": "r6"
+      },
+      {
+        "evidence": [
+          {
+            "document_id": "text-b3ae508f3982dfdd",
+            "end_char": 722,
+            "quote": "the phenomenon, body, or substance of interest interact with a measuring instrument",
+            "start_char": 639
+          }
+        ],
+        "semantic_object_id": "r7"
+      },
+      {
+        "evidence": [
+          {
+            "document_id": "text-b3ae508f3982dfdd",
+            "end_char": 804,
+            "quote": "a measuring instrument capable of producing an indication that is responsive to the property of interest",
+            "start_char": 700
+          }
+        ],
+        "semantic_object_id": "r8"
+      },
+      {
+        "evidence": [
+          {
+            "document_id": "text-b3ae508f3982dfdd",
+            "end_char": 1141,
+            "quote": "a \"parameter, associated with the result of a measurement, that characterizes the dispersion of the values that could reasonably be attributed to the measurand''",
+            "start_char": 980
+          }
+        ],
+        "semantic_object_id": "r9"
+      }
+    ]
+  },
+  "entity_inventory": {
+    "candidate_version": "spec-047-candidate-b-v1",
+    "identity_sha256": "296033f6097786a09329fada500f9d04db09fa6a339914ed6c32e15d5c82c524",
+    "immutable": true,
+    "symbol_table": {
+      "compiler_version": "spec-047-candidate-b-v1",
+      "diagnostics": {
+        "accepted_symbol_count": 38,
+        "alias_normalizations": [
+          {
+            "aliases": [
+              "calibrated"
+            ],
+            "canonical_name": "Calibration",
+            "merged_nomination_count": 1
+          },
+          {
+            "aliases": [
+              "comparison"
+            ],
+            "canonical_name": "Measurement comparison",
+            "merged_nomination_count": 1
+          },
+          {
+            "aliases": [
+              "result of a measurement"
+            ],
+            "canonical_name": "Measurement result",
+            "merged_nomination_count": 1
+          },
+          {
+            "aliases": [
+              "value"
+            ],
+            "canonical_name": "Measurement value",
+            "merged_nomination_count": 1
+          },
+          {
+            "aliases": [
+              "instrument"
+            ],
+            "canonical_name": "Measuring instrument",
+            "merged_nomination_count": 1
+          }
+        ],
+        "candidate_version": "spec-047-candidate-b-v1",
+        "duplicate_nomination_count": 0,
+        "entity_type_counts": {
+          "COMPONENT": 1,
+          "CONCEPT": 8,
+          "OBJECT": 16,
+          "PROCESS": 3,
+          "SYSTEM": 0,
+          "VARIABLE": 10
+        },
+        "id_strategy": "NORMALIZED_ASCII_KEBAB_NAME_WITH_HASH_SUFFIX_ON_SLUG_COLLISION",
+        "ordering": "LEXICOGRAPHIC_STABLE_ENTITY_ID",
+        "raw_nomination_count": 38,
+        "rejected_nomination_count": 0,
+        "source_document_id": "text-b3ae508f3982dfdd",
+        "strict_duplicate_policy": "FAIL_CLOSED_NO_MERGE"
+      },
+      "entities": [
+        {
+          "aliases": [],
+          "description": "A certified standard given as an example for comparison in measurement.",
+          "entity_type": "OBJECT",
+          "id": "32768-hz-quartz-crystal-resonator",
+          "name": "32768 Hz quartz crystal resonator"
+        },
+        {
+          "aliases": [],
+          "description": "A kind of entity whose quantitative property can be the object of measurement.",
+          "entity_type": "OBJECT",
+          "id": "body",
+          "name": "Body"
+        },
+        {
+          "aliases": [
+            "calibrated"
+          ],
+          "description": "A condition or process through which a measuring instrument is related to a relevant standard so that its indications are meaningful in relation to that standard.",
+          "entity_type": "PROCESS",
+          "id": "calibration",
+          "name": "Calibration"
+        },
+        {
+          "aliases": [],
+          "description": "A stated probability that an interval includes the measurand.",
+          "entity_type": "VARIABLE",
+          "id": "coverage-probability",
+          "name": "Coverage probability"
+        },
+        {
+          "aliases": [],
+          "description": "The spread or variability characterized by a measurement uncertainty or by an attribute of a probability distribution.",
+          "entity_type": "CONCEPT",
+          "id": "dispersion",
+          "name": "Dispersion"
+        },
+        {
+          "aliases": [],
+          "description": "Half the width of an interval used as a possible expression of measurement uncertainty.",
+          "entity_type": "VARIABLE",
+          "id": "half-width",
+          "name": "Half-width"
+        },
+        {
+          "aliases": [],
+          "description": "The state of knowledge about the measurand expressed by measurement uncertainty.",
+          "entity_type": "CONCEPT",
+          "id": "incomplete-knowledge",
+          "name": "Incomplete knowledge"
+        },
+        {
+          "aliases": [],
+          "description": "An output produced by a measuring instrument that is responsive to the property of interest.",
+          "entity_type": "OBJECT",
+          "id": "indication",
+          "name": "Indication"
+        },
+        {
+          "aliases": [],
+          "description": "Information on which the characterization of dispersion of quantity values attributed to a measurand is based.",
+          "entity_type": "OBJECT",
+          "id": "information-used",
+          "name": "Information used"
+        },
+        {
+          "aliases": [],
+          "description": "An example used to state the mass of a measurand as 1 kg.",
+          "entity_type": "OBJECT",
+          "id": "international-prototype-kilogram",
+          "name": "International Prototype Kilogram"
+        },
+        {
+          "aliases": [],
+          "description": "An interval whose half-width may express measurement uncertainty when it includes the measurand with a stated coverage probability.",
+          "entity_type": "OBJECT",
+          "id": "interval",
+          "name": "Interval"
+        },
+        {
+          "aliases": [],
+          "description": "The property that is the object of measurement.",
+          "entity_type": "CONCEPT",
+          "id": "measurand",
+          "name": "Measurand"
+        },
+        {
+          "aliases": [],
+          "description": "An experimental process that produces a value reasonably attributable to a quantitative property of a phenomenon, body, or substance.",
+          "entity_type": "PROCESS",
+          "id": "measurement",
+          "name": "Measurement"
+        },
+        {
+          "aliases": [
+            "comparison"
+          ],
+          "description": "A direct or indirect comparison with a standard involved in measurement.",
+          "entity_type": "PROCESS",
+          "id": "measurement-comparison",
+          "name": "Measurement comparison"
+        },
+        {
+          "aliases": [
+            "result of a measurement"
+          ],
+          "description": "The result of a measurement with which measurement uncertainty is associated.",
+          "entity_type": "OBJECT",
+          "id": "measurement-result",
+          "name": "Measurement result"
+        },
+        {
+          "aliases": [],
+          "description": "A non-negative parameter associated with a measurement result that characterizes the dispersion of values reasonably attributable to the measurand, based on the information used.",
+          "entity_type": "VARIABLE",
+          "id": "measurement-uncertainty",
+          "name": "Measurement uncertainty"
+        },
+        {
+          "aliases": [
+            "value"
+          ],
+          "description": "A value produced by a measurement and attributable to a quantitative property of a phenomenon, body, or substance.",
+          "entity_type": "OBJECT",
+          "id": "measurement-value",
+          "name": "Measurement value"
+        },
+        {
+          "aliases": [
+            "instrument"
+          ],
+          "description": "An instrument with which the phenomenon, body, or substance of interest interacts and that is capable of producing an indication responsive to the property of interest.",
+          "entity_type": "COMPONENT",
+          "id": "measuring-instrument",
+          "name": "Measuring instrument"
+        },
+        {
+          "aliases": [],
+          "description": "The numerical magnitude associated with a measurand and given meaning by a reference.",
+          "entity_type": "VARIABLE",
+          "id": "numerical-magnitude",
+          "name": "Numerical magnitude"
+        },
+        {
+          "aliases": [],
+          "description": "A quantity associated with a measurement result that characterizes dispersion of values attributable to the measurand.",
+          "entity_type": "VARIABLE",
+          "id": "parameter",
+          "name": "Parameter"
+        },
+        {
+          "aliases": [],
+          "description": "A kind of entity whose quantitative property can be the object of measurement.",
+          "entity_type": "OBJECT",
+          "id": "phenomenon",
+          "name": "Phenomenon"
+        },
+        {
+          "aliases": [],
+          "description": "The set of possible values for a measurand over which a probability distribution is defined.",
+          "entity_type": "OBJECT",
+          "id": "possible-measurand-values",
+          "name": "Possible measurand values"
+        },
+        {
+          "aliases": [],
+          "description": "A primary standard given as an example, containing 1.079 micromole of methane per mole of air.",
+          "entity_type": "OBJECT",
+          "id": "primary-gas-mixture",
+          "name": "Primary gas mixture"
+        },
+        {
+          "aliases": [],
+          "description": "A distribution over the set of possible values for a measurand used to represent the corresponding state of knowledge.",
+          "entity_type": "OBJECT",
+          "id": "probability-distribution",
+          "name": "Probability distribution"
+        },
+        {
+          "aliases": [],
+          "description": "A property of a phenomenon, body, or substance that can be the object of measurement.",
+          "entity_type": "CONCEPT",
+          "id": "quantitative-property",
+          "name": "Quantitative property"
+        },
+        {
+          "aliases": [],
+          "description": "A value being attributed to a measurand.",
+          "entity_type": "VARIABLE",
+          "id": "quantity-value",
+          "name": "Quantity value"
+        },
+        {
+          "aliases": [],
+          "description": "The range over which the scatter of a probability distribution is represented.",
+          "entity_type": "OBJECT",
+          "id": "range-of-possible-values",
+          "name": "Range of possible values"
+        },
+        {
+          "aliases": [],
+          "description": "A single number used to quantify a scalar measurand.",
+          "entity_type": "VARIABLE",
+          "id": "real-number",
+          "name": "Real number"
+        },
+        {
+          "aliases": [],
+          "description": "A reference that gives meaning to the numerical magnitude of a measurand.",
+          "entity_type": "CONCEPT",
+          "id": "reference",
+          "name": "Reference"
+        },
+        {
+          "aliases": [],
+          "description": "A standard in relation to which indications from a calibrated instrument are meaningful.",
+          "entity_type": "OBJECT",
+          "id": "relevant-standard",
+          "name": "Relevant standard"
+        },
+        {
+          "aliases": [],
+          "description": "A measurand whose property of interest can be quantified by a single real number.",
+          "entity_type": "CONCEPT",
+          "id": "scalar-measurand",
+          "name": "Scalar measurand"
+        },
+        {
+          "aliases": [],
+          "description": "An attribute of a probability distribution representing its spread over the range of possible values.",
+          "entity_type": "CONCEPT",
+          "id": "scatter",
+          "name": "Scatter"
+        },
+        {
+          "aliases": [],
+          "description": "A specified multiple of a standard deviation that may express measurement uncertainty.",
+          "entity_type": "VARIABLE",
+          "id": "specified-multiple",
+          "name": "Specified multiple"
+        },
+        {
+          "aliases": [],
+          "description": "A basis used for direct or indirect comparison in measurement.",
+          "entity_type": "OBJECT",
+          "id": "standard",
+          "name": "Standard"
+        },
+        {
+          "aliases": [],
+          "description": "A parameter that may express measurement uncertainty for a scalar measurand and an attribute of a probability distribution representing its scatter.",
+          "entity_type": "VARIABLE",
+          "id": "standard-deviation",
+          "name": "Standard deviation"
+        },
+        {
+          "aliases": [],
+          "description": "Measurement uncertainty expressed as a standard deviation.",
+          "entity_type": "VARIABLE",
+          "id": "standard-measurement-uncertainty",
+          "name": "Standard measurement uncertainty"
+        },
+        {
+          "aliases": [],
+          "description": "The corresponding state of knowledge about a measurand represented by a probability distribution.",
+          "entity_type": "CONCEPT",
+          "id": "state-of-knowledge",
+          "name": "State of knowledge"
+        },
+        {
+          "aliases": [],
+          "description": "A kind of entity whose quantitative property can be the object of measurement.",
+          "entity_type": "OBJECT",
+          "id": "substance",
+          "name": "Substance"
+        }
+      ],
+      "immutable": true
+    }
+  },
+  "model": {
+    "claims": [
+      {
+        "confidence": 0.99,
+        "evidence": [
+          {
+            "document_id": "text-b3ae508f3982dfdd",
+            "end_char": 158,
+            "quote": "Measurement is an experimental process that produces a value that can reasonably be attributed to a quantitative property of a phenomenon, body, or substance.",
+            "start_char": 0
+          }
+        ],
+        "id": "c1",
+        "origin": "SOURCE",
+        "statement": "Measurement produces a value reasonably attributable to a quantitative property."
+      },
+      {
+        "confidence": 0.99,
+        "evidence": [
+          {
+            "document_id": "text-b3ae508f3982dfdd",
+            "end_char": 449,
+            "quote": "That process involves direct or indirect comparison with a standard",
+            "start_char": 382
+          }
+        ],
+        "id": "c2",
+        "origin": "SOURCE",
+        "statement": "Measurement involves direct or indirect comparison with a standard."
+      },
+      {
+        "confidence": 0.99,
+        "evidence": [
+          {
+            "document_id": "text-b3ae508f3982dfdd",
+            "end_char": 509,
+            "quote": "a certified 32768 Hz quartz crystal resonator",
+            "start_char": 464
+          }
+        ],
+        "id": "c3",
+        "origin": "SOURCE",
+        "statement": "A certified 32768 Hz quartz crystal resonator is an example of a standard."
+      },
+      {
+        "confidence": 0.99,
+        "evidence": [
+          {
+            "document_id": "text-b3ae508f3982dfdd",
+            "end_char": 583,
+            "quote": "a primary gas mixture with 1.079 micromole of methane per mole of air",
+            "start_char": 514
+          }
+        ],
+        "id": "c4",
+        "origin": "SOURCE",
+        "statement": "A primary gas mixture is an example of a standard."
+      },
+      {
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "document_id": "text-b3ae508f3982dfdd",
+            "end_char": 722,
+            "quote": "the phenomenon, body, or substance of interest interact with a measuring instrument",
+            "start_char": 639
+          }
+        ],
+        "id": "c5",
+        "origin": "SOURCE",
+        "statement": "The phenomenon of interest interacts with a measuring instrument."
+      },
+      {
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "document_id": "text-b3ae508f3982dfdd",
+            "end_char": 722,
+            "quote": "the phenomenon, body, or substance of interest interact with a measuring instrument",
+            "start_char": 639
+          }
+        ],
+        "id": "c6",
+        "origin": "SOURCE",
+        "statement": "The body of interest interacts with a measuring instrument."
+      },
+      {
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "document_id": "text-b3ae508f3982dfdd",
+            "end_char": 722,
+            "quote": "the phenomenon, body, or substance of interest interact with a measuring instrument",
+            "start_char": 639
+          }
+        ],
+        "id": "c7",
+        "origin": "SOURCE",
+        "statement": "The substance of interest interacts with a measuring instrument."
+      },
+      {
+        "confidence": 0.99,
+        "evidence": [
+          {
+            "document_id": "text-b3ae508f3982dfdd",
+            "end_char": 804,
+            "quote": "a measuring instrument capable of producing an indication that is responsive to the property of interest",
+            "start_char": 700
+          }
+        ],
+        "id": "c8",
+        "origin": "SOURCE",
+        "statement": "A measuring instrument produces an indication responsive to the property of interest."
+      },
+      {
+        "confidence": 0.99,
+        "evidence": [
+          {
+            "document_id": "text-b3ae508f3982dfdd",
+            "end_char": 1141,
+            "quote": "a \"parameter, associated with the result of a measurement, that characterizes the dispersion of the values that could reasonably be attributed to the measurand''",
+            "start_char": 980
+          }
+        ],
+        "id": "c9",
+        "origin": "SOURCE",
+        "statement": "Measurement uncertainty is a parameter associated with a measurement result and characterizes dispersion."
+      },
+      {
+        "confidence": 0.99,
+        "evidence": [
+          {
+            "document_id": "text-b3ae508f3982dfdd",
+            "end_char": 1789,
+            "quote": "The expression standard measurement uncertainty is reserved for measurement uncertainty expressed as a standard deviation.",
+            "start_char": 1667
+          }
+        ],
+        "id": "c10",
+        "origin": "SOURCE",
+        "statement": "Standard measurement uncertainty is measurement uncertainty expressed as a standard deviation."
+      },
+      {
+        "confidence": 0.99,
+        "evidence": [
+          {
+            "document_id": "text-b3ae508f3982dfdd",
+            "end_char": 1414,
+            "quote": "when the property of interest can be quantified by a single real number",
+            "start_char": 1343
+          }
+        ],
+        "id": "c11",
+        "origin": "SOURCE",
+        "statement": "A scalar measurand is a measurand whose property of interest can be quantified by a single real number."
+      },
+      {
+        "confidence": 0.97,
+        "evidence": [
+          {
+            "document_id": "text-b3ae508f3982dfdd",
+            "end_char": 1535,
+            "quote": "this parameter may be, for example, a standard deviation called standard measurement uncertainty",
+            "start_char": 1439
+          }
+        ],
+        "id": "c12",
+        "origin": "SOURCE",
+        "statement": "For scalar measurands, standard deviation is a parameter that may express measurement uncertainty."
+      },
+      {
+        "confidence": 0.99,
+        "evidence": [
+          {
+            "document_id": "text-b3ae508f3982dfdd",
+            "end_char": 1913,
+            "quote": "measurement uncertainty expresses incomplete knowledge about the measurand",
+            "start_char": 1839
+          }
+        ],
+        "id": "c13",
+        "origin": "SOURCE",
+        "statement": "Measurement uncertainty expresses incomplete knowledge about the measurand."
+      },
+      {
+        "confidence": 0.99,
+        "evidence": [
+          {
+            "document_id": "text-b3ae508f3982dfdd",
+            "end_char": 2067,
+            "quote": "a probability distribution over the set of possible values for the measurand is used to represent the corresponding state of knowledge about it",
+            "start_char": 1924
+          }
+        ],
+        "id": "c14",
+        "origin": "SOURCE",
+        "statement": "A probability distribution over possible measurand values represents the corresponding state of knowledge."
+      },
+      {
+        "confidence": 0.99,
+        "evidence": [
+          {
+            "document_id": "text-b3ae508f3982dfdd",
+            "end_char": 2241,
+            "quote": "the standard deviation aforementioned is an attribute of this probability distribution that represents its scatter over the range of possible values",
+            "start_char": 2093
+          }
+        ],
+        "id": "c15",
+        "origin": "SOURCE",
+        "statement": "The standard deviation is an attribute of the probability distribution representing its scatter over the range of possible values."
+      }
+    ],
+    "document": {
+      "id": "text-b3ae508f3982dfdd",
+      "metadata": {
+        "provenance": {
+          "authority_priority_rank": 1,
+          "canonical_url": "https://www.nist.gov/itl/sed/topic-areas/measurement-uncertainty",
+          "domain_stratum": "statistics / measurement methodology",
+          "institutional_publisher": "National Institute of Standards and Technology",
+          "ordinal": 6,
+          "passage_character_count": 2242,
+          "passage_utf8_byte_count": 2242,
+          "passage_word_count": 334,
+          "public_source_provenance_note": "Publicly accessible U.S. federal measurement-science page retrieved without authentication. NIST attribution and the canonical URL are retained; no licensing inference is made beyond public accessibility.",
+          "rejected_candidates": [],
+          "retrieval": {
+            "document_byte_count": 85638,
+            "document_sha256": "0a7b7f9aac39a78af2c51044b979d2519bf9b8006328854694a33cebe903b242",
+            "format": "text/html",
+            "http_status": 200,
+            "timestamp_utc": "2026-09-12T06:51:26.293544Z"
+          },
+          "revision_or_date": {
+            "created": "2010-09-29",
+            "modified": "2025-03-17"
+          },
+          "selection_rule_evidence": {
+            "english_language": true,
+            "explanatory_prose": true,
+            "first_eligible_passage": "First consecutive explanatory paragraphs under Introduction whose cumulative length reaches 300 words after deterministic removal of the opening epigraph and page boilerplate.",
+            "images_or_tables_required": false,
+            "no_authentication": true,
+            "no_private_or_high_stakes_content": true,
+            "novel_domain_and_source": true,
+            "publisher_is_stable_institution": true,
+            "semantic_shape_not_used_for_selection": true,
+            "source_scope": "First seven Introduction paragraphs, from the definition of measurement through the probability-distribution account of uncertainty."
+          },
+          "semantic_or_representation_answer_key_included": false
+        },
+        "source_id": "nist-measurement-uncertainty-2025",
+        "title": "Measurement Uncertainty"
+      },
+      "source_type": "text",
+      "text": "Measurement is an experimental process that produces a value that can reasonably be attributed to a quantitative property of a phenomenon, body, or substance.\n\nThis property that is the object of measurement (measurand) has a numerical magnitude and a reference that gives meaning to that numerical magnitude: for example, the mass of the International Prototype Kilogram is 1 kg.\n\nThat process involves direct or indirect comparison with a standard (for example, a certified 32768 Hz quartz crystal resonator, or a primary gas mixture with 1.079 micromole of methane per mole of air).\n\nThis comparison typically is accomplished by making the phenomenon, body, or substance of interest interact with a measuring instrument capable of producing an indication that is responsive to the property of interest. If the instrument has been calibrated, then the indications that it produces are meaningful in relation with a relevant standard.\n\nThe GUM defines measurement uncertainty as a \"parameter, associated with the result of a measurement, that characterizes the dispersion of the values that could reasonably be attributed to the measurand''. The VIM defines it as a \"non-negative parameter characterizing the dispersion of the quantity values being attributed to a measurand, based on the information used''.\n\nFor scalar measurands (that is, when the property of interest can be quantified by a single real number), the VIM suggests that this parameter may be, for example, a standard deviation called standard measurement uncertainty (or a specified multiple of it), or the half-width of an interval that includes the measurand with a stated coverage probability. (The expression standard measurement uncertainty is reserved for measurement uncertainty expressed as a standard deviation.)\n\nThis suggestion follows from the position that measurement uncertainty expresses incomplete knowledge about the measurand, and that a probability distribution over the set of possible values for the measurand is used to represent the corresponding state of knowledge about it: in these circumstances, the standard deviation aforementioned is an attribute of this probability distribution that represents its scatter over the range of possible values."
+    },
+    "entities": [
+      {
+        "aliases": [],
+        "description": "A certified standard given as an example for comparison in measurement.",
+        "entity_type": "OBJECT",
+        "id": "32768-hz-quartz-crystal-resonator",
+        "name": "32768 Hz quartz crystal resonator"
+      },
+      {
+        "aliases": [],
+        "description": "A kind of entity whose quantitative property can be the object of measurement.",
+        "entity_type": "OBJECT",
+        "id": "body",
+        "name": "Body"
+      },
+      {
+        "aliases": [
+          "calibrated"
+        ],
+        "description": "A condition or process through which a measuring instrument is related to a relevant standard so that its indications are meaningful in relation to that standard.",
+        "entity_type": "PROCESS",
+        "id": "calibration",
+        "name": "Calibration"
+      },
+      {
+        "aliases": [],
+        "description": "A stated probability that an interval includes the measurand.",
+        "entity_type": "VARIABLE",
+        "id": "coverage-probability",
+        "name": "Coverage probability"
+      },
+      {
+        "aliases": [],
+        "description": "The spread or variability characterized by a measurement uncertainty or by an attribute of a probability distribution.",
+        "entity_type": "CONCEPT",
+        "id": "dispersion",
+        "name": "Dispersion"
+      },
+      {
+        "aliases": [],
+        "description": "Half the width of an interval used as a possible expression of measurement uncertainty.",
+        "entity_type": "VARIABLE",
+        "id": "half-width",
+        "name": "Half-width"
+      },
+      {
+        "aliases": [],
+        "description": "The state of knowledge about the measurand expressed by measurement uncertainty.",
+        "entity_type": "CONCEPT",
+        "id": "incomplete-knowledge",
+        "name": "Incomplete knowledge"
+      },
+      {
+        "aliases": [],
+        "description": "An output produced by a measuring instrument that is responsive to the property of interest.",
+        "entity_type": "OBJECT",
+        "id": "indication",
+        "name": "Indication"
+      },
+      {
+        "aliases": [],
+        "description": "Information on which the characterization of dispersion of quantity values attributed to a measurand is based.",
+        "entity_type": "OBJECT",
+        "id": "information-used",
+        "name": "Information used"
+      },
+      {
+        "aliases": [],
+        "description": "An example used to state the mass of a measurand as 1 kg.",
+        "entity_type": "OBJECT",
+        "id": "international-prototype-kilogram",
+        "name": "International Prototype Kilogram"
+      },
+      {
+        "aliases": [],
+        "description": "An interval whose half-width may express measurement uncertainty when it includes the measurand with a stated coverage probability.",
+        "entity_type": "OBJECT",
+        "id": "interval",
+        "name": "Interval"
+      },
+      {
+        "aliases": [],
+        "description": "The property that is the object of measurement.",
+        "entity_type": "CONCEPT",
+        "id": "measurand",
+        "name": "Measurand"
+      },
+      {
+        "aliases": [],
+        "description": "An experimental process that produces a value reasonably attributable to a quantitative property of a phenomenon, body, or substance.",
+        "entity_type": "PROCESS",
+        "id": "measurement",
+        "name": "Measurement"
+      },
+      {
+        "aliases": [
+          "comparison"
+        ],
+        "description": "A direct or indirect comparison with a standard involved in measurement.",
+        "entity_type": "PROCESS",
+        "id": "measurement-comparison",
+        "name": "Measurement comparison"
+      },
+      {
+        "aliases": [
+          "result of a measurement"
+        ],
+        "description": "The result of a measurement with which measurement uncertainty is associated.",
+        "entity_type": "OBJECT",
+        "id": "measurement-result",
+        "name": "Measurement result"
+      },
+      {
+        "aliases": [],
+        "description": "A non-negative parameter associated with a measurement result that characterizes the dispersion of values reasonably attributable to the measurand, based on the information used.",
+        "entity_type": "VARIABLE",
+        "id": "measurement-uncertainty",
+        "name": "Measurement uncertainty"
+      },
+      {
+        "aliases": [
+          "value"
+        ],
+        "description": "A value produced by a measurement and attributable to a quantitative property of a phenomenon, body, or substance.",
+        "entity_type": "OBJECT",
+        "id": "measurement-value",
+        "name": "Measurement value"
+      },
+      {
+        "aliases": [
+          "instrument"
+        ],
+        "description": "An instrument with which the phenomenon, body, or substance of interest interacts and that is capable of producing an indication responsive to the property of interest.",
+        "entity_type": "COMPONENT",
+        "id": "measuring-instrument",
+        "name": "Measuring instrument"
+      },
+      {
+        "aliases": [],
+        "description": "The numerical magnitude associated with a measurand and given meaning by a reference.",
+        "entity_type": "VARIABLE",
+        "id": "numerical-magnitude",
+        "name": "Numerical magnitude"
+      },
+      {
+        "aliases": [],
+        "description": "A quantity associated with a measurement result that characterizes dispersion of values attributable to the measurand.",
+        "entity_type": "VARIABLE",
+        "id": "parameter",
+        "name": "Parameter"
+      },
+      {
+        "aliases": [],
+        "description": "A kind of entity whose quantitative property can be the object of measurement.",
+        "entity_type": "OBJECT",
+        "id": "phenomenon",
+        "name": "Phenomenon"
+      },
+      {
+        "aliases": [],
+        "description": "The set of possible values for a measurand over which a probability distribution is defined.",
+        "entity_type": "OBJECT",
+        "id": "possible-measurand-values",
+        "name": "Possible measurand values"
+      },
+      {
+        "aliases": [],
+        "description": "A primary standard given as an example, containing 1.079 micromole of methane per mole of air.",
+        "entity_type": "OBJECT",
+        "id": "primary-gas-mixture",
+        "name": "Primary gas mixture"
+      },
+      {
+        "aliases": [],
+        "description": "A distribution over the set of possible values for a measurand used to represent the corresponding state of knowledge.",
+        "entity_type": "OBJECT",
+        "id": "probability-distribution",
+        "name": "Probability distribution"
+      },
+      {
+        "aliases": [],
+        "description": "A property of a phenomenon, body, or substance that can be the object of measurement.",
+        "entity_type": "CONCEPT",
+        "id": "quantitative-property",
+        "name": "Quantitative property"
+      },
+      {
+        "aliases": [],
+        "description": "A value being attributed to a measurand.",
+        "entity_type": "VARIABLE",
+        "id": "quantity-value",
+        "name": "Quantity value"
+      },
+      {
+        "aliases": [],
+        "description": "The range over which the scatter of a probability distribution is represented.",
+        "entity_type": "OBJECT",
+        "id": "range-of-possible-values",
+        "name": "Range of possible values"
+      },
+      {
+        "aliases": [],
+        "description": "A single number used to quantify a scalar measurand.",
+        "entity_type": "VARIABLE",
+        "id": "real-number",
+        "name": "Real number"
+      },
+      {
+        "aliases": [],
+        "description": "A reference that gives meaning to the numerical magnitude of a measurand.",
+        "entity_type": "CONCEPT",
+        "id": "reference",
+        "name": "Reference"
+      },
+      {
+        "aliases": [],
+        "description": "A standard in relation to which indications from a calibrated instrument are meaningful.",
+        "entity_type": "OBJECT",
+        "id": "relevant-standard",
+        "name": "Relevant standard"
+      },
+      {
+        "aliases": [],
+        "description": "A measurand whose property of interest can be quantified by a single real number.",
+        "entity_type": "CONCEPT",
+        "id": "scalar-measurand",
+        "name": "Scalar measurand"
+      },
+      {
+        "aliases": [],
+        "description": "An attribute of a probability distribution representing its spread over the range of possible values.",
+        "entity_type": "CONCEPT",
+        "id": "scatter",
+        "name": "Scatter"
+      },
+      {
+        "aliases": [],
+        "description": "A specified multiple of a standard deviation that may express measurement uncertainty.",
+        "entity_type": "VARIABLE",
+        "id": "specified-multiple",
+        "name": "Specified multiple"
+      },
+      {
+        "aliases": [],
+        "description": "A basis used for direct or indirect comparison in measurement.",
+        "entity_type": "OBJECT",
+        "id": "standard",
+        "name": "Standard"
+      },
+      {
+        "aliases": [],
+        "description": "A parameter that may express measurement uncertainty for a scalar measurand and an attribute of a probability distribution representing its scatter.",
+        "entity_type": "VARIABLE",
+        "id": "standard-deviation",
+        "name": "Standard deviation"
+      },
+      {
+        "aliases": [],
+        "description": "Measurement uncertainty expressed as a standard deviation.",
+        "entity_type": "VARIABLE",
+        "id": "standard-measurement-uncertainty",
+        "name": "Standard measurement uncertainty"
+      },
+      {
+        "aliases": [],
+        "description": "The corresponding state of knowledge about a measurand represented by a probability distribution.",
+        "entity_type": "CONCEPT",
+        "id": "state-of-knowledge",
+        "name": "State of knowledge"
+      },
+      {
+        "aliases": [],
+        "description": "A kind of entity whose quantitative property can be the object of measurement.",
+        "entity_type": "OBJECT",
+        "id": "substance",
+        "name": "Substance"
+      }
+    ],
+    "metadata": {
+      "candidate_version": "spec-047-candidate-b-v1",
+      "claim_evidence_binding_sha256": "14c24a973e1e7338b5365c5ff691a2e95b366f2081a6535cfc3a3624eac863ec",
+      "entity_inventory_sha256": "296033f6097786a09329fada500f9d04db09fa6a339914ed6c32e15d5c82c524",
+      "semantic_structure_sha256": "80af30f1af8c8ca60686da75237c863da32be5a6df7437b457ba15abaf6a707a"
+    },
+    "relationships": [
+      {
+        "confidence": 0.99,
+        "evidence": [
+          {
+            "document_id": "text-b3ae508f3982dfdd",
+            "end_char": 158,
+            "quote": "Measurement is an experimental process that produces a value that can reasonably be attributed to a quantitative property of a phenomenon, body, or substance.",
+            "start_char": 0
+          }
+        ],
+        "id": "r1",
+        "origin": "SOURCE",
+        "relationship_type": "CREATES",
+        "source_entity_id": "measurement",
+        "statement": "Measurement produces a value reasonably attributable to a quantitative property.",
+        "target_entity_id": "measurement-value"
+      },
+      {
+        "confidence": 0.99,
+        "evidence": [
+          {
+            "document_id": "text-b3ae508f3982dfdd",
+            "end_char": 449,
+            "quote": "That process involves direct or indirect comparison with a standard",
+            "start_char": 382
+          }
+        ],
+        "id": "r2",
+        "origin": "SOURCE",
+        "relationship_type": "INTERACTS_WITH",
+        "source_entity_id": "measurement-comparison",
+        "statement": "Measurement involves direct or indirect comparison with a standard.",
+        "target_entity_id": "standard"
+      },
+      {
+        "confidence": 0.99,
+        "evidence": [
+          {
+            "document_id": "text-b3ae508f3982dfdd",
+            "end_char": 509,
+            "quote": "a certified 32768 Hz quartz crystal resonator",
+            "start_char": 464
+          }
+        ],
+        "id": "r3",
+        "origin": "SOURCE",
+        "relationship_type": "EXAMPLE_OF",
+        "source_entity_id": "32768-hz-quartz-crystal-resonator",
+        "statement": "A certified 32768 Hz quartz crystal resonator is given as an example of a standard.",
+        "target_entity_id": "standard"
+      },
+      {
+        "confidence": 0.99,
+        "evidence": [
+          {
+            "document_id": "text-b3ae508f3982dfdd",
+            "end_char": 583,
+            "quote": "a primary gas mixture with 1.079 micromole of methane per mole of air",
+            "start_char": 514
+          }
+        ],
+        "id": "r4",
+        "origin": "SOURCE",
+        "relationship_type": "EXAMPLE_OF",
+        "source_entity_id": "primary-gas-mixture",
+        "statement": "A primary gas mixture is given as an example of a standard.",
+        "target_entity_id": "standard"
+      },
+      {
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "document_id": "text-b3ae508f3982dfdd",
+            "end_char": 722,
+            "quote": "the phenomenon, body, or substance of interest interact with a measuring instrument",
+            "start_char": 639
+          }
+        ],
+        "id": "r5",
+        "origin": "SOURCE",
+        "relationship_type": "INTERACTS_WITH",
+        "source_entity_id": "phenomenon",
+        "statement": "The phenomenon of interest interacts with a measuring instrument.",
+        "target_entity_id": "measuring-instrument"
+      },
+      {
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "document_id": "text-b3ae508f3982dfdd",
+            "end_char": 722,
+            "quote": "the phenomenon, body, or substance of interest interact with a measuring instrument",
+            "start_char": 639
+          }
+        ],
+        "id": "r6",
+        "origin": "SOURCE",
+        "relationship_type": "INTERACTS_WITH",
+        "source_entity_id": "body",
+        "statement": "The body of interest interacts with a measuring instrument.",
+        "target_entity_id": "measuring-instrument"
+      },
+      {
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "document_id": "text-b3ae508f3982dfdd",
+            "end_char": 722,
+            "quote": "the phenomenon, body, or substance of interest interact with a measuring instrument",
+            "start_char": 639
+          }
+        ],
+        "id": "r7",
+        "origin": "SOURCE",
+        "relationship_type": "INTERACTS_WITH",
+        "source_entity_id": "substance",
+        "statement": "The substance of interest interacts with a measuring instrument.",
+        "target_entity_id": "measuring-instrument"
+      },
+      {
+        "confidence": 0.99,
+        "evidence": [
+          {
+            "document_id": "text-b3ae508f3982dfdd",
+            "end_char": 804,
+            "quote": "a measuring instrument capable of producing an indication that is responsive to the property of interest",
+            "start_char": 700
+          }
+        ],
+        "id": "r8",
+        "origin": "SOURCE",
+        "relationship_type": "CREATES",
+        "source_entity_id": "measuring-instrument",
+        "statement": "A measuring instrument produces an indication responsive to the property of interest.",
+        "target_entity_id": "indication"
+      },
+      {
+        "confidence": 0.99,
+        "evidence": [
+          {
+            "document_id": "text-b3ae508f3982dfdd",
+            "end_char": 1141,
+            "quote": "a \"parameter, associated with the result of a measurement, that characterizes the dispersion of the values that could reasonably be attributed to the measurand''",
+            "start_char": 980
+          }
+        ],
+        "id": "r9",
+        "origin": "SOURCE",
+        "relationship_type": "IS_A",
+        "source_entity_id": "measurement-uncertainty",
+        "statement": "Measurement uncertainty is defined as a parameter associated with a measurement result and characterizing dispersion.",
+        "target_entity_id": "parameter"
+      },
+      {
+        "confidence": 0.99,
+        "evidence": [
+          {
+            "document_id": "text-b3ae508f3982dfdd",
+            "end_char": 1789,
+            "quote": "The expression standard measurement uncertainty is reserved for measurement uncertainty expressed as a standard deviation.",
+            "start_char": 1667
+          }
+        ],
+        "id": "r10",
+        "origin": "SOURCE",
+        "relationship_type": "IS_A",
+        "source_entity_id": "standard-measurement-uncertainty",
+        "statement": "Standard measurement uncertainty is measurement uncertainty expressed as a standard deviation.",
+        "target_entity_id": "measurement-uncertainty"
+      },
+      {
+        "confidence": 0.99,
+        "evidence": [
+          {
+            "document_id": "text-b3ae508f3982dfdd",
+            "end_char": 1414,
+            "quote": "when the property of interest can be quantified by a single real number",
+            "start_char": 1343
+          }
+        ],
+        "id": "r11",
+        "origin": "SOURCE",
+        "relationship_type": "IS_A",
+        "source_entity_id": "scalar-measurand",
+        "statement": "A scalar measurand is a measurand whose property of interest can be quantified by a single real number.",
+        "target_entity_id": "measurand"
+      },
+      {
+        "confidence": 0.97,
+        "evidence": [
+          {
+            "document_id": "text-b3ae508f3982dfdd",
+            "end_char": 1535,
+            "quote": "this parameter may be, for example, a standard deviation called standard measurement uncertainty",
+            "start_char": 1439
+          }
+        ],
+        "id": "r12",
+        "origin": "SOURCE",
+        "relationship_type": "IS_A",
+        "source_entity_id": "standard-deviation",
+        "statement": "For scalar measurands, standard deviation is described as a parameter that may express measurement uncertainty.",
+        "target_entity_id": "parameter"
+      }
+    ]
+  },
+  "provider_call_ledger": {
+    "calls_started": 3,
+    "candidate_version": "spec-047-candidate-b-v1",
+    "entries": [
+      {
+        "actual_model": "gpt-5.6-luna",
+        "call_ordinal": 1,
+        "completed_at_utc": "2026-09-14T15:48:45.254317+00:00",
+        "duration_ms": 11453.334125006222,
+        "hidden_retries": 0,
+        "http_request_id": "req_2ede85c00b704fbfa8f050565849535a",
+        "prompt_sha256": "b1c00eb4547de56c62dcc18c7aec013ee1e2de4a8c1dfa45bcb475f00591f785",
+        "prompt_version": "spec-047-entity-inventory-v1",
+        "provider_response_id": "resp_0142461c611d8ced016aa817521cc087d2a2d270753c62fea8",
+        "repair_calls": 0,
+        "requested_model": "gpt-5.6-luna",
+        "schema_sha256": "003db7546ae3ffafe7dc098bc50e1a5f223b891f6ee3160f7537214c8e9c9956",
+        "sdk_retries": 0,
+        "semantic_retries": 0,
+        "source_id": "nist-measurement-uncertainty-2025",
+        "source_sha256": "b3ae508f3982dfdd89f41a1d9ca59eb1f658b1648e3fae35168feba212046730",
+        "stage": "ENTITY_INVENTORY",
+        "started_at_utc": "2026-09-14T15:48:33.800933+00:00",
+        "status": "PROVIDER_RESPONSE_RECEIVED",
+        "store": false,
+        "upstream_input_sha256": "b3ae508f3982dfdd89f41a1d9ca59eb1f658b1648e3fae35168feba212046730",
+        "usage": {
+          "input_tokens": 656,
+          "output_tokens": 1384,
+          "total_tokens": 2040
+        }
+      },
+      {
+        "actual_model": "gpt-5.6-luna",
+        "call_ordinal": 2,
+        "completed_at_utc": "2026-09-14T15:48:59.178446+00:00",
+        "duration_ms": 13922.329540990177,
+        "hidden_retries": 0,
+        "http_request_id": "req_d002034ef6664c9e8ccf4a8e37be14c6",
+        "prompt_sha256": "ed0a05dbfe2bc12cd55b524a41fe7b2b3668f37942bf8c087d4b606162216d6c",
+        "prompt_version": "spec-047-semantic-structure-v1",
+        "provider_response_id": "resp_0ad967f07c1a3048016aa8175d8bd087d287ffb09a18ea41d5",
+        "repair_calls": 0,
+        "requested_model": "gpt-5.6-luna",
+        "schema_sha256": "36aecb42f9b404ccc1f74c563eb02859afc6de514dda8821a9a21393250f4f08",
+        "sdk_retries": 0,
+        "semantic_retries": 0,
+        "source_id": "nist-measurement-uncertainty-2025",
+        "source_sha256": "b3ae508f3982dfdd89f41a1d9ca59eb1f658b1648e3fae35168feba212046730",
+        "stage": "SEMANTIC_STRUCTURE",
+        "started_at_utc": "2026-09-14T15:48:45.256076+00:00",
+        "status": "PROVIDER_RESPONSE_RECEIVED",
+        "store": false,
+        "upstream_input_sha256": "296033f6097786a09329fada500f9d04db09fa6a339914ed6c32e15d5c82c524",
+        "usage": {
+          "input_tokens": 5079,
+          "output_tokens": 1706,
+          "total_tokens": 6785
+        }
+      },
+      {
+        "actual_model": "gpt-5.6-luna",
+        "call_ordinal": 3,
+        "completed_at_utc": "2026-09-14T15:49:10.665110+00:00",
+        "duration_ms": 11485.826916003134,
+        "hidden_retries": 0,
+        "http_request_id": "req_6e80d37f09004f2689e6e912dda0e795",
+        "prompt_sha256": "1b92dd0a739159dadb592baed7b33a840d78a8383cad2fe7f2d90cf0487fc43c",
+        "prompt_version": "spec-047-claim-evidence-binding-v1",
+        "provider_response_id": "resp_0297072e12e3d7fe016aa8176b577087d2a556af39ce5298e3",
+        "repair_calls": 0,
+        "requested_model": "gpt-5.6-luna",
+        "schema_sha256": "d4d502703aad4105ed50292f50af121d26b525d0f8f0dadbb0e130a38e10633a",
+        "sdk_retries": 0,
+        "semantic_retries": 0,
+        "source_id": "nist-measurement-uncertainty-2025",
+        "source_sha256": "b3ae508f3982dfdd89f41a1d9ca59eb1f658b1648e3fae35168feba212046730",
+        "stage": "CLAIM_EVIDENCE_BINDING",
+        "started_at_utc": "2026-09-14T15:48:59.179274+00:00",
+        "status": "PROVIDER_RESPONSE_RECEIVED",
+        "store": false,
+        "upstream_input_sha256": "88def53ce47e9ef80dc81038a19e5dfa0a83c4abc802857f6a9e504ac2fdd109",
+        "usage": {
+          "input_tokens": 3399,
+          "output_tokens": 1371,
+          "total_tokens": 4770
+        }
+      }
+    ]
+  },
+  "semantic_structure": {
+    "candidate_version": "spec-047-candidate-b-v1",
+    "identity_sha256": "80af30f1af8c8ca60686da75237c863da32be5a6df7437b457ba15abaf6a707a",
+    "missing_symbols": [
+      {
+        "reason": "The source gives mass as a specific measured property, but no mass entity is present in the frozen inventory.",
+        "semantic_item": "mass of the International Prototype Kilogram",
+        "surface_form": "mass"
+      },
+      {
+        "reason": "The source gives a numerical quantity value, but no corresponding quantity-value identity for 1 kg is present in the frozen inventory.",
+        "semantic_item": "the quantity value 1 kg",
+        "surface_form": "1 kg"
+      }
+    ],
+    "propositions": [],
+    "relationships": [
+      {
+        "confidence": 0.99,
+        "id": "r1",
+        "origin": "SOURCE",
+        "relationship_type": "CREATES",
+        "source_entity_id": "measurement",
+        "statement": "Measurement produces a value reasonably attributable to a quantitative property.",
+        "target_entity_id": "measurement-value"
+      },
+      {
+        "confidence": 0.99,
+        "id": "r2",
+        "origin": "SOURCE",
+        "relationship_type": "INTERACTS_WITH",
+        "source_entity_id": "measurement-comparison",
+        "statement": "Measurement involves direct or indirect comparison with a standard.",
+        "target_entity_id": "standard"
+      },
+      {
+        "confidence": 0.99,
+        "id": "r3",
+        "origin": "SOURCE",
+        "relationship_type": "EXAMPLE_OF",
+        "source_entity_id": "32768-hz-quartz-crystal-resonator",
+        "statement": "A certified 32768 Hz quartz crystal resonator is given as an example of a standard.",
+        "target_entity_id": "standard"
+      },
+      {
+        "confidence": 0.99,
+        "id": "r4",
+        "origin": "SOURCE",
+        "relationship_type": "EXAMPLE_OF",
+        "source_entity_id": "primary-gas-mixture",
+        "statement": "A primary gas mixture is given as an example of a standard.",
+        "target_entity_id": "standard"
+      },
+      {
+        "confidence": 0.98,
+        "id": "r5",
+        "origin": "SOURCE",
+        "relationship_type": "INTERACTS_WITH",
+        "source_entity_id": "phenomenon",
+        "statement": "The phenomenon of interest interacts with a measuring instrument.",
+        "target_entity_id": "measuring-instrument"
+      },
+      {
+        "confidence": 0.98,
+        "id": "r6",
+        "origin": "SOURCE",
+        "relationship_type": "INTERACTS_WITH",
+        "source_entity_id": "body",
+        "statement": "The body of interest interacts with a measuring instrument.",
+        "target_entity_id": "measuring-instrument"
+      },
+      {
+        "confidence": 0.98,
+        "id": "r7",
+        "origin": "SOURCE",
+        "relationship_type": "INTERACTS_WITH",
+        "source_entity_id": "substance",
+        "statement": "The substance of interest interacts with a measuring instrument.",
+        "target_entity_id": "measuring-instrument"
+      },
+      {
+        "confidence": 0.99,
+        "id": "r8",
+        "origin": "SOURCE",
+        "relationship_type": "CREATES",
+        "source_entity_id": "measuring-instrument",
+        "statement": "A measuring instrument produces an indication responsive to the property of interest.",
+        "target_entity_id": "indication"
+      },
+      {
+        "confidence": 0.99,
+        "id": "r9",
+        "origin": "SOURCE",
+        "relationship_type": "IS_A",
+        "source_entity_id": "measurement-uncertainty",
+        "statement": "Measurement uncertainty is defined as a parameter associated with a measurement result and characterizing dispersion.",
+        "target_entity_id": "parameter"
+      },
+      {
+        "confidence": 0.99,
+        "id": "r10",
+        "origin": "SOURCE",
+        "relationship_type": "IS_A",
+        "source_entity_id": "standard-measurement-uncertainty",
+        "statement": "Standard measurement uncertainty is measurement uncertainty expressed as a standard deviation.",
+        "target_entity_id": "measurement-uncertainty"
+      },
+      {
+        "confidence": 0.99,
+        "id": "r11",
+        "origin": "SOURCE",
+        "relationship_type": "IS_A",
+        "source_entity_id": "scalar-measurand",
+        "statement": "A scalar measurand is a measurand whose property of interest can be quantified by a single real number.",
+        "target_entity_id": "measurand"
+      },
+      {
+        "confidence": 0.97,
+        "id": "r12",
+        "origin": "SOURCE",
+        "relationship_type": "IS_A",
+        "source_entity_id": "standard-deviation",
+        "statement": "For scalar measurands, standard deviation is described as a parameter that may express measurement uncertainty.",
+        "target_entity_id": "parameter"
+      }
+    ]
+  },
+  "source_id": "nist-measurement-uncertainty-2025",
+  "source_sha256": "b3ae508f3982dfdd89f41a1d9ca59eb1f658b1648e3fae35168feba212046730",
+  "stage_gates": [
+    {
+      "error_type": null,
+      "exact_failure": null,
+      "output_identity_sha256": "296033f6097786a09329fada500f9d04db09fa6a339914ed6c32e15d5c82c524",
+      "stage": "ENTITY_INVENTORY",
+      "stage_version": "spec-047-entity-inventory-v1",
+      "status": "PASS",
+      "upstream_identity_sha256": "b3ae508f3982dfdd89f41a1d9ca59eb1f658b1648e3fae35168feba212046730"
+    },
+    {
+      "error_type": null,
+      "exact_failure": null,
+      "output_identity_sha256": "80af30f1af8c8ca60686da75237c863da32be5a6df7437b457ba15abaf6a707a",
+      "stage": "SEMANTIC_STRUCTURE",
+      "stage_version": "spec-047-semantic-structure-v1",
+      "status": "PASS",
+      "upstream_identity_sha256": "296033f6097786a09329fada500f9d04db09fa6a339914ed6c32e15d5c82c524"
+    },
+    {
+      "error_type": null,
+      "exact_failure": null,
+      "output_identity_sha256": "14c24a973e1e7338b5365c5ff691a2e95b366f2081a6535cfc3a3624eac863ec",
+      "stage": "CLAIM_EVIDENCE_BINDING",
+      "stage_version": "spec-047-claim-evidence-binding-v1",
+      "status": "PASS",
+      "upstream_identity_sha256": "88def53ce47e9ef80dc81038a19e5dfa0a83c4abc802857f6a9e504ac2fdd109"
+    }
+  ],
+  "status": "PASS"
+}

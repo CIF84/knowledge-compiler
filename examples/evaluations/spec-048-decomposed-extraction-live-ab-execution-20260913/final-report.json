@@ -1,0 +1,176 @@
+{
+  "ab_result": {
+    "candidate_b": {
+      "admission_rate": 0.2222222222222222,
+      "admitted_sources": 2,
+      "attempted_sources": 9,
+      "known_invalid_objects_admitted": 0
+    },
+    "control_a": {
+      "admission_rate": 0.4444444444444444,
+      "admitted_sources": 4,
+      "attempted_sources": 9,
+      "known_invalid_objects_admitted": 0
+    },
+    "mechanically_supported_branch": "B_REGRESSION",
+    "owner_verdict": "PENDING"
+  },
+  "candidate_b_execution": {
+    "calls_by_stage": {
+      "CLAIM_EVIDENCE_BINDING": 2,
+      "ENTITY_INVENTORY": 9,
+      "SEMANTIC_STRUCTURE": 8
+    },
+    "latency_ms": {
+      "per_source": 34767.88229166899,
+      "total": 312910.9406250209
+    },
+    "model": "gpt-5.6-luna",
+    "provider_calls": 19,
+    "store": false,
+    "token_usage": {
+      "input_tokens": 59160,
+      "output_tokens": 35414,
+      "total_tokens": 94574,
+      "total_tokens_per_admitted_source": 47287.0,
+      "total_tokens_per_attempted_source": 10508.222222222223
+    }
+  },
+  "candidate_b_outcomes": [
+    {
+      "calls": 3,
+      "source_id": "usgs-divergent-plate-boundaries-1996",
+      "status": "PASS",
+      "total_tokens": 17489
+    },
+    {
+      "calls": 2,
+      "detection_stage": "SEMANTIC_STRUCTURE",
+      "origin_stage": "PROPOSITION_CONSTRUCTION",
+      "source_id": "noaa-nesdis-jet-stream-2025",
+      "status": "FAILED_CLOSED",
+      "total_tokens": 10245
+    },
+    {
+      "calls": 2,
+      "detection_stage": "SEMANTIC_STRUCTURE",
+      "origin_stage": "PROPOSITION_CONSTRUCTION",
+      "source_id": "crs-legislative-process-r42843-17",
+      "status": "FAILED_CLOSED",
+      "total_tokens": 10290
+    },
+    {
+      "calls": 1,
+      "detection_stage": "ENTITY_INVENTORY",
+      "origin_stage": "ENTITY_INVENTORY",
+      "source_id": "nasa-solar-system-formation-2026",
+      "status": "FAILED_CLOSED",
+      "total_tokens": 2382
+    },
+    {
+      "calls": 2,
+      "detection_stage": "SEMANTIC_STRUCTURE",
+      "origin_stage": "PROPOSITION_CONSTRUCTION",
+      "source_id": "epa-ecological-processes-2026",
+      "status": "FAILED_CLOSED",
+      "total_tokens": 11327
+    },
+    {
+      "calls": 2,
+      "detection_stage": "SEMANTIC_STRUCTURE",
+      "origin_stage": "PROPOSITION_CONSTRUCTION",
+      "source_id": "doe-iron-platinum-atomic-structure-2017",
+      "status": "FAILED_CLOSED",
+      "total_tokens": 9330
+    },
+    {
+      "calls": 2,
+      "detection_stage": "SEMANTIC_STRUCTURE",
+      "origin_stage": "PROPOSITION_CONSTRUCTION",
+      "source_id": "nhgri-dna-fact-sheet-2020",
+      "status": "FAILED_CLOSED",
+      "total_tokens": 10183
+    },
+    {
+      "calls": 2,
+      "detection_stage": "SEMANTIC_STRUCTURE",
+      "origin_stage": "PROPOSITION_CONSTRUCTION",
+      "source_id": "fhwa-traffic-bottleneck-concepts-2016",
+      "status": "FAILED_CLOSED",
+      "total_tokens": 9733
+    },
+    {
+      "calls": 3,
+      "source_id": "nist-measurement-uncertainty-2025",
+      "status": "PASS",
+      "total_tokens": 13595
+    }
+  ],
+  "controls": {
+    "external_retrieval_or_enrichment": 0,
+    "follow_up_calls": 0,
+    "hidden_retries": 0,
+    "implementation_adaptation_after_execution_began": 0,
+    "prompt_or_schema_adaptation": 0,
+    "repair_calls": 0,
+    "sdk_retries": 0,
+    "semantic_retries": 0,
+    "single_call_per_stage_per_source": true,
+    "source_order_preserved": true,
+    "upstream_failure_short_circuiting": true
+  },
+  "cost_evidence": {
+    "monetary_cost_available": false,
+    "price_invented": false
+  },
+  "failure_analysis": {
+    "authoritative_artifact": "post-run-failure-taxonomy-audit.json",
+    "detection_stage_distribution": {
+      "ENTITY_INVENTORY": 1,
+      "SEMANTIC_STRUCTURE": 6
+    },
+    "origin_stage_distribution": {
+      "ENTITY_INVENTORY": 1,
+      "PROPOSITION_CONSTRUCTION": 6
+    }
+  },
+  "historical_control_caveat": "Control A is historical rather than contemporaneous. Candidate B nevertheless admitted fewer sources, used more calls and tokens, and had no source admitted by both arms, so the evidence mechanically supports regression rather than a marginal causal improvement.",
+  "owner_review": {
+    "promotion": "NOT_AUTHORIZED",
+    "state": "OWNER_REVIEW",
+    "verdict": "PENDING"
+  },
+  "raw_evidence": {
+    "ab_comparison": "ab-comparison.json",
+    "candidate_records": "candidate-b-comparison-records.json",
+    "provider_call_ledger": "provider-call-ledger.json",
+    "raw_harness_report": "report.json",
+    "source_directories": "sources/"
+  },
+  "schema": "spec-048-final-report-v1",
+  "semantic_richness": {
+    "candidate_b_admitted_totals": {
+      "claims": 38,
+      "entities": 84,
+      "propositions": 0,
+      "relationships": 35
+    },
+    "control_a_admitted_totals": {
+      "claims": 33,
+      "entities": 92,
+      "propositions": 0,
+      "relationships": 52
+    },
+    "same_source_pass_overlap": 0,
+    "source_level_comparison": "No source passed both arms; count deltas are therefore not treated as paired semantic-richness evidence. Aggregate totals are preserved descriptively only."
+  },
+  "status": "IMPLEMENTED_AWAITING_REVIEW",
+  "validation": {
+    "focused_tests": "PASS (24 tests)",
+    "full_offline_suite": "PASS (584 tests after lifecycle transition)",
+    "json_and_raw_evidence_audit": "PASS",
+    "protected_identity_audit": "PASS",
+    "secret_safety": "PASS",
+    "git_diff_check": "PASS"
+  }
+}

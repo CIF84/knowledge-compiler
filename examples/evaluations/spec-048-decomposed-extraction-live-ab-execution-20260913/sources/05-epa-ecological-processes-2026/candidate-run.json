@@ -1,0 +1,2055 @@
+{
+  "attempts": [
+    {
+      "provider_metadata": {
+        "actual_model": "gpt-5.6-luna",
+        "candidate_version": "spec-047-candidate-b-v1",
+        "duration_ms": 14966.006375005236,
+        "hidden_retries": 0,
+        "http_request_id": "req_b24dfa6057c947c08ab51050e163a339",
+        "prompt_sha256": "b1c00eb4547de56c62dcc18c7aec013ee1e2de4a8c1dfa45bcb475f00591f785",
+        "prompt_version": "spec-047-entity-inventory-v1",
+        "provider": "openai",
+        "provider_response_id": "resp_0caf95808c024cd7016aa816d0c41c87d2b7290f1fd8a27e59",
+        "repair_calls": 0,
+        "requested_model": "gpt-5.6-luna",
+        "schema_name": "candidate_b_entity_inventory",
+        "schema_sha256": "003db7546ae3ffafe7dc098bc50e1a5f223b891f6ee3160f7537214c8e9c9956",
+        "sdk_retries": 0,
+        "semantic_retries": 0,
+        "stage": "ENTITY_INVENTORY",
+        "store": false,
+        "upstream_input_sha256": "70e7e3d20325dd5d22e9cf4484934419447907ba9f6cf5a4dfd65ddcbfa80ad5",
+        "usage": {
+          "input_tokens": 722,
+          "output_tokens": 1919,
+          "total_tokens": 2641
+        }
+      },
+      "raw_proposal": {
+        "symbols": [
+          {
+            "aliases": [],
+            "description": "Systems sustained by biological, physical, and chemical processes.",
+            "entity_type": "SYSTEM",
+            "name": "Ecological systems"
+          },
+          {
+            "aliases": [],
+            "description": "Biological, physical, and chemical processes that sustain ecological systems and influence their extent, distribution, and biodiversity.",
+            "entity_type": "PROCESS",
+            "name": "Ecological processes"
+          },
+          {
+            "aliases": [],
+            "description": "Production involving conversion of the sun's energy into organic matter through photosynthesis.",
+            "entity_type": "PROCESS",
+            "name": "Primary production"
+          },
+          {
+            "aliases": [],
+            "description": "Process through which the sun's energy is converted into organic matter in primary production.",
+            "entity_type": "PROCESS",
+            "name": "Photosynthesis"
+          },
+          {
+            "aliases": [],
+            "description": "Energy converted into organic matter through photosynthesis.",
+            "entity_type": "OBJECT",
+            "name": "Sun's energy"
+          },
+          {
+            "aliases": [],
+            "description": "Matter produced through primary production and collectively by ecological processes.",
+            "entity_type": "OBJECT",
+            "name": "Organic matter"
+          },
+          {
+            "aliases": [],
+            "description": "Cycling of carbon from the physical environment through biological organisms and back into the physical environment.",
+            "entity_type": "PROCESS",
+            "name": "Carbon cycling"
+          },
+          {
+            "aliases": [],
+            "description": "Cycling of nutrients from the physical environment through biological organisms and back into the physical environment.",
+            "entity_type": "PROCESS",
+            "name": "Nutrient cycling"
+          },
+          {
+            "aliases": [],
+            "description": "Elements identified in the source as including nitrogen and phosphorus.",
+            "entity_type": "OBJECT",
+            "name": "Nutrients"
+          },
+          {
+            "aliases": [],
+            "description": "Nutrient identified in the source.",
+            "entity_type": "OBJECT",
+            "name": "Nitrogen"
+          },
+          {
+            "aliases": [],
+            "description": "Nutrient identified in the source.",
+            "entity_type": "OBJECT",
+            "name": "Phosphorus"
+          },
+          {
+            "aliases": [],
+            "description": "Cycling of hydrogen and oxygen from the physical environment through biological organisms and back into the physical environment.",
+            "entity_type": "PROCESS",
+            "name": "Hydrogen/oxygen cycling"
+          },
+          {
+            "aliases": [],
+            "description": "Element included in hydrogen/oxygen cycling.",
+            "entity_type": "OBJECT",
+            "name": "Hydrogen"
+          },
+          {
+            "aliases": [],
+            "description": "Element included in hydrogen/oxygen cycling.",
+            "entity_type": "OBJECT",
+            "name": "Oxygen"
+          },
+          {
+            "aliases": [],
+            "description": "Environment from which elements pass through biological organisms and to which they return; includes air, water, and land.",
+            "entity_type": "SYSTEM",
+            "name": "Physical environment"
+          },
+          {
+            "aliases": [],
+            "description": "Part of the physical environment and subject to quality regulation by ecological services.",
+            "entity_type": "OBJECT",
+            "name": "Air"
+          },
+          {
+            "aliases": [],
+            "description": "Part of the physical environment and subject to quality regulation by ecological services.",
+            "entity_type": "OBJECT",
+            "name": "Water"
+          },
+          {
+            "aliases": [],
+            "description": "Part of the physical environment.",
+            "entity_type": "OBJECT",
+            "name": "Land"
+          },
+          {
+            "aliases": [],
+            "description": "Organisms through which carbon, nutrients, hydrogen, oxygen, and other elements cycle.",
+            "entity_type": "OBJECT",
+            "name": "Biological organisms"
+          },
+          {
+            "aliases": [],
+            "description": "Transfer of carbon produced collectively by ecological processes.",
+            "entity_type": "PROCESS",
+            "name": "Carbon transfer"
+          },
+          {
+            "aliases": [],
+            "description": "Formation of soil driven by ecological processes.",
+            "entity_type": "PROCESS",
+            "name": "Soil formation"
+          },
+          {
+            "aliases": [],
+            "description": "Process enabled by ecological processes and represented as a rate of change.",
+            "entity_type": "PROCESS",
+            "name": "Reproduction"
+          },
+          {
+            "aliases": [],
+            "description": "Services provided by ecological processes, including provision of natural resources and regulation of air and water quality.",
+            "entity_type": "SYSTEM",
+            "name": "Ecological services"
+          },
+          {
+            "aliases": [],
+            "description": "Resources provided through ecological services, including food, fiber, and timber.",
+            "entity_type": "OBJECT",
+            "name": "Natural resources"
+          },
+          {
+            "aliases": [],
+            "description": "Natural resource provided through ecological services.",
+            "entity_type": "OBJECT",
+            "name": "Food"
+          },
+          {
+            "aliases": [],
+            "description": "Natural resource provided through ecological services.",
+            "entity_type": "OBJECT",
+            "name": "Fiber"
+          },
+          {
+            "aliases": [],
+            "description": "Natural resource provided through ecological services.",
+            "entity_type": "OBJECT",
+            "name": "Timber"
+          },
+          {
+            "aliases": [],
+            "description": "Quality regulated through ecological services.",
+            "entity_type": "VARIABLE",
+            "name": "Air quality"
+          },
+          {
+            "aliases": [],
+            "description": "Quality regulated through ecological services and addressed through water quality management.",
+            "entity_type": "VARIABLE",
+            "name": "Water quality"
+          },
+          {
+            "aliases": [],
+            "description": "Property whose extent and distribution are influenced by ecological processes.",
+            "entity_type": "VARIABLE",
+            "name": "Biodiversity"
+          },
+          {
+            "aliases": [],
+            "description": "Forces that can affect ecological processes, including seasonal changes and climate change.",
+            "entity_type": "SYSTEM",
+            "name": "Natural forces"
+          },
+          {
+            "aliases": [],
+            "description": "Activities that can impact ecological processes, including pesticide use, chemical use, waste generation, land use changes, and water quality management.",
+            "entity_type": "PROCESS",
+            "name": "Human activities"
+          },
+          {
+            "aliases": [],
+            "description": "Small-scale natural events affecting ecological processes.",
+            "entity_type": "PROCESS",
+            "name": "Seasonal changes in temperature"
+          },
+          {
+            "aliases": [],
+            "description": "Environmental variable involved in seasonal changes that affect ecological processes.",
+            "entity_type": "VARIABLE",
+            "name": "Temperature"
+          },
+          {
+            "aliases": [],
+            "description": "Environmental variable involved in seasonal changes that affect ecological processes.",
+            "entity_type": "VARIABLE",
+            "name": "Precipitation"
+          },
+          {
+            "aliases": [],
+            "description": "Environmental flows involved in seasonal changes that affect ecological processes.",
+            "entity_type": "VARIABLE",
+            "name": "Stream flows"
+          },
+          {
+            "aliases": [],
+            "description": "Large-scale event affecting ecological processes.",
+            "entity_type": "PROCESS",
+            "name": "Climate change"
+          },
+          {
+            "aliases": [],
+            "description": "Human activity identified as impacting ecological processes.",
+            "entity_type": "PROCESS",
+            "name": "Pesticide use"
+          },
+          {
+            "aliases": [],
+            "description": "Human activity identified as impacting ecological processes.",
+            "entity_type": "PROCESS",
+            "name": "Chemical use"
+          },
+          {
+            "aliases": [],
+            "description": "Human activity identified as impacting ecological processes.",
+            "entity_type": "PROCESS",
+            "name": "Waste generation"
+          },
+          {
+            "aliases": [],
+            "description": "Human activity identified as impacting ecological processes.",
+            "entity_type": "PROCESS",
+            "name": "Land use changes"
+          },
+          {
+            "aliases": [],
+            "description": "Human activity identified as impacting ecological processes.",
+            "entity_type": "PROCESS",
+            "name": "Water quality management"
+          },
+          {
+            "aliases": [],
+            "description": "Indicator available to address the question about ecological processes.",
+            "entity_type": "VARIABLE",
+            "name": "Carbon Storage in Forests"
+          },
+          {
+            "aliases": [],
+            "description": "Ecological process represented as a rate of change.",
+            "entity_type": "PROCESS",
+            "name": "Respiration"
+          },
+          {
+            "aliases": [],
+            "description": "Ecological process involving energy flow through food webs and represented as a rate of change.",
+            "entity_type": "PROCESS",
+            "name": "Energy flow through food webs"
+          },
+          {
+            "aliases": [],
+            "description": "Ecological process involving carbon flow through food webs and represented as a rate of change.",
+            "entity_type": "PROCESS",
+            "name": "Carbon flow through food webs"
+          },
+          {
+            "aliases": [],
+            "description": "Ecological process involving nutrient flow through food webs and represented as a rate of change.",
+            "entity_type": "PROCESS",
+            "name": "Nutrient flow through food webs"
+          },
+          {
+            "aliases": [],
+            "description": "Ecological process represented as a rate of change.",
+            "entity_type": "PROCESS",
+            "name": "Decomposition"
+          },
+          {
+            "aliases": [],
+            "description": "Biological systems through which energy, carbon, and nutrients flow.",
+            "entity_type": "SYSTEM",
+            "name": "Food webs"
+          },
+          {
+            "aliases": [],
+            "description": "Representation of ecological processes requiring repeated measurement over time.",
+            "entity_type": "VARIABLE",
+            "name": "Rate of change"
+          },
+          {
+            "aliases": [],
+            "description": "Imagery used to obtain snapshots of indicators of ecosystem conditions over time and to infer ecological processes.",
+            "entity_type": "OBJECT",
+            "name": "Remote sensing imagery"
+          },
+          {
+            "aliases": [],
+            "description": "Conditions for which remote sensing imagery provides indicators over time.",
+            "entity_type": "VARIABLE",
+            "name": "Ecosystem conditions"
+          },
+          {
+            "aliases": [],
+            "description": "Ecological process inferred using remote sensing imagery.",
+            "entity_type": "PROCESS",
+            "name": "Terrestrial net primary production"
+          },
+          {
+            "aliases": [],
+            "description": "Index estimated at a national scale using remote sensing.",
+            "entity_type": "VARIABLE",
+            "name": "Normalized Difference Vegetation Index"
+          },
+          {
+            "aliases": [],
+            "description": "Primary production for which repeated seasonal measures might provide an indicator.",
+            "entity_type": "PROCESS",
+            "name": "Net primary production"
+          },
+          {
+            "aliases": [],
+            "description": "Scales at which indicators for respiration, nutrient cycling, and decomposition have been developed.",
+            "entity_type": "VARIABLE",
+            "name": "Watershed scales"
+          },
+          {
+            "aliases": [],
+            "description": "Scale at which ecological processes are particularly difficult to measure and at which some indicators have or have not been developed.",
+            "entity_type": "VARIABLE",
+            "name": "National scale"
+          },
+          {
+            "aliases": [],
+            "description": "Scale at which repeated measurement is difficult for many ecosystems.",
+            "entity_type": "VARIABLE",
+            "name": "Local scale"
+          },
+          {
+            "aliases": [],
+            "description": "Time scales over which natural forces and human activities affect ecological processes.",
+            "entity_type": "VARIABLE",
+            "name": "Temporal scales"
+          },
+          {
+            "aliases": [],
+            "description": "Spatial scales over which natural forces and human activities affect ecological processes.",
+            "entity_type": "VARIABLE",
+            "name": "Spatial scales"
+          },
+          {
+            "aliases": [],
+            "description": "Measure used to represent or address ecological processes or ecosystem conditions.",
+            "entity_type": "VARIABLE",
+            "name": "Indicator"
+          },
+          {
+            "aliases": [],
+            "description": "Challenge associated with developing ecological-process indicators at the national scale.",
+            "entity_type": "CONCEPT",
+            "name": "Scientific and research challenge"
+          }
+        ]
+      },
+      "raw_provider_response": {
+        "background": false,
+        "billing": {
+          "payer": "developer"
+        },
+        "completed_at": 1789400799.0,
+        "conversation": null,
+        "created_at": 1789400784.0,
+        "error": null,
+        "frequency_penalty": 0.0,
+        "id": "resp_0caf95808c024cd7016aa816d0c41c87d2b7290f1fd8a27e59",
+        "incomplete_details": null,
+        "instructions": "You perform Stage 1 entity inventory for a semantic compiler.\n\nRead only the exact supplied source. Return a precision-first inventory of concepts,\nobjects, processes, variables, systems, and components that later semantic statements\nneed as endpoints or proposition roles. Include source-supported process/event concepts\nwhen later meaning would need to refer to them. Do not use external knowledge.\n\nDo not assign IDs: trusted code assigns stable IDs after this stage. Each semantic thing\nmust appear once. Do not fragment one identity into variants, merge related but distinct\nthings, or use aliases except for genuine naming equivalence. Names and descriptions must\nremain source-bounded.\n\nReturn entities only. Do not return claims, evidence, relationships, propositions,\nteaching prose, diagnostics, or output outside the requested schema.",
+        "max_output_tokens": null,
+        "max_tool_calls": null,
+        "metadata": {},
+        "model": "gpt-5.6-luna",
+        "moderation": null,
+        "object": "response",
+        "output": [
+          {
+            "content": [],
+            "encrypted_content": "gAAAAABqqBbfLKiIZ387DIb5GgYstmhIsL8rX-zngnRvtbVHxGGA_BQ3WLKz8vGQX6b7MhtQojpDQSA6IJWfALibcoIVWrj-rrwCScYRLvjMX3sJNnKhKAmp9tTRLYyRS1kyRneriqvjtW_K_YjkPjS0TIT1pSzUwbSAdpnKWq0sTsH6qsBeV-GywhuzBBP31zHO4YpKB4ZdaCxt9xsq4TRm_i1rOh8FdgNgz8FdkptXumVE-ZnTupYiUkxRzwMfax_hzXkKetdxpKXfK7LvtrPIdByYdvrje6RA0Dg9fhgt2PTctHp0_PkbjZGd0DDaU4NnpBrMnojgsFby8L3M1v0UmsGpq_AwudAdcAppuYJ2Uht3XUEO3hB7RDUkCCCfutnT0IjE13qqwSuyOck6L5ivFz3AGuEZfD4csJ3xiJAqmSawHr2GTWug92pmDokP3EosqVPJij5LD7smYrz4lvK5ORgosIxAd5nD-I0B0i3TtdSIJQAhoW4PYNuHCMN7Crll2N2VqTd8epttY7JIRzWWAQC4urtcPfr3BU9lAii9sm3fOkBWEp7z9FjTaAqgl2Rx9gTzWmFoDzPvl5fXCHt9p483inOroc1RjZkZ520mcRMy1XMT6lZMeodaUehFrj6gwdkJ72xFxrs6fjxZ5mjG2c8BGr407ICpIKY5eZlo4DFRqhOiKZkv3ucAKFOnPUkSzkoHfisSoowBrVJ-KH1DnCtawqy8uEBsS4ZuicmGR75zkp2jq8WhYEjsyNVLYlxKn8sKGLAyymvsZibjaL4FbtSEvjyMP5jhyG7yq61W4OME3DBKcSPTeNL8JdzrCRBLMkiMw9M1l6KKgWYZyzYXh2z4oOwMn5dn9j0n3UdBb_-zwAx5LIMXnIJCsmqLDz_1s5w6JzHWjxzM7Pg4_uYR_xPmhBdEzzhp7Vsihs9amtaQscOusJWNHAISukwqYCOFeorsSWuFtSd7MA4YywpaO8MqQRCUSiNjq-8yxRppQEiyDBEl9_S0P0nJctljMN9ZmA4LqO21ggg7HrbEZp7uh7ID9KeYfazAl2MWEXnd8Fg2OWdBZzVE5TUzmGVO9Ry0XCKZ0V0TvhrI8lRB_b7VTu_DpCgRfxmMoQL8KbL3ETEAfLdSdiWG-Bg58DkdcECmE_47pI3gyrxMvjKjOaRD-jVCHrvEYeNz3opGrgld-bGo7up1HaMc1DTbLCEJSwgo_Pl_GR-ObqTNHnqVE0OVACSzSvorG1vrEouKQCfroORDISq7OuVL4VYDVH9YLQUYdomQ0ZZmvN5Xco7a-KKZ_xvEDo-pcVEyXaYi8pUvGJ-Pu4FEUDxRpvTTeJzJ0cgyN4bD8sYCLFDZcPIaB09SidYiKzmi7itkeudMjx3NQas9npx_fgW_y4wN26h4lgBOt99SnMdiIJCE0sX25FD04zqgHb1PxoEn-54_0oTmpBHIUcJovbkcYhw0n2rp5G7hsnhmlilhk2dBpn43jSjgvpi-YrX4mgbK1ZRsE67bydNS3gPU35DmuTnuEpOFdBIcHu1QrqKgvvoVJbHPBKiAQ0F0116_Ioxmd-_0QOOpLHsVXcoEAtlQ3TY8X3gKiks-_TwDNLyD1XSPKtuOqXRexRT3zWdsInNeXgJ0B0NX73FSrTPqEByze4-Ams2x5gCl8ynuB07u0f8SzALGSrq5Tq84yO0wzkNivaY7d_GELtE2UgMXBFh5dtQsnpZJauITDqSYTm5Ka20jDMHJwSl2U34_hKntKkLJyNnzdQO4ufJTQGNS992w_2frDyZHyJQpL5wgPUFgOAlXdcxl7MLt2WIVSdYPWxUH3m0NGlori5GArB-mS9eXDb8BKVXsLwhwNE_kgtcnngkMai2PPCHVa8NwfT_I9zmjPoT8EbIduADC5HdFFeSu_0kjM0wblw6XlzUUw50DEwtFMeYI2Yzu_DblqEvwH-_RtJunfu1rFCKJkywx-SOdjaJsqQj4dPEB_-lsmZX6zY7_rp9QgTKj_My7IaNikmymUb85hK1ioGehhCfMBEOeVOlwTwYIPs8lmoDaNgg0pMSh88JH4K55yU6JfWod9hRe26M6QDLGZpqfF6OVtWKfChoMupcMLbRptLtsiHR5X0KNuncWfbRJel1K-qBr9XfpOAu_Qopbr0jEV15MZjg4B3E7osdAZX8beHf0uxyFl89kXwFsGavyCYhnndShCa9pZ3Y5HFk0WjvIFcrKDcgEZLiTjZb9Wjx6PCpjojwa2_HvfpLuR_ivAGcI4mY1VWwgNOXzgJzRgq3sfnn1QC_fkyCDJNKKWr_VovGtsw5BPzmDHCwJg2B6jtGbqTh-lEfkP-SzfPr2IRMpYX0Qq73Dsfnzo4iQPjS4ZpC0CKyLeL8gEhQm8D3yEyBMORTSfiJeAtaA9IfjqOleu_wveocPtU95GFSZqH-dY7SEwyYx",
+            "id": "rs_0caf95808c024cd7016aa816d1667487d29fcbc9c2a3f92dae",
+            "status": null,
+            "summary": [],
+            "type": "reasoning"
+          },
+          {
+            "content": [
+              {
+                "annotations": [],
+                "logprobs": [],
+                "text": "{\"symbols\":[{\"name\":\"Ecological systems\",\"description\":\"Systems sustained by biological, physical, and chemical processes.\",\"entity_type\":\"SYSTEM\",\"aliases\":[]},{\"name\":\"Ecological processes\",\"description\":\"Biological, physical, and chemical processes that sustain ecological systems and influence their extent, distribution, and biodiversity.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"name\":\"Primary production\",\"description\":\"Production involving conversion of the sun's energy into organic matter through photosynthesis.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"name\":\"Photosynthesis\",\"description\":\"Process through which the sun's energy is converted into organic matter in primary production.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"name\":\"Sun's energy\",\"description\":\"Energy converted into organic matter through photosynthesis.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"Organic matter\",\"description\":\"Matter produced through primary production and collectively by ecological processes.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"Carbon cycling\",\"description\":\"Cycling of carbon from the physical environment through biological organisms and back into the physical environment.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"name\":\"Nutrient cycling\",\"description\":\"Cycling of nutrients from the physical environment through biological organisms and back into the physical environment.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"name\":\"Nutrients\",\"description\":\"Elements identified in the source as including nitrogen and phosphorus.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"Nitrogen\",\"description\":\"Nutrient identified in the source.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"Phosphorus\",\"description\":\"Nutrient identified in the source.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"Hydrogen/oxygen cycling\",\"description\":\"Cycling of hydrogen and oxygen from the physical environment through biological organisms and back into the physical environment.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"name\":\"Hydrogen\",\"description\":\"Element included in hydrogen/oxygen cycling.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"Oxygen\",\"description\":\"Element included in hydrogen/oxygen cycling.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"Physical environment\",\"description\":\"Environment from which elements pass through biological organisms and to which they return; includes air, water, and land.\",\"entity_type\":\"SYSTEM\",\"aliases\":[]},{\"name\":\"Air\",\"description\":\"Part of the physical environment and subject to quality regulation by ecological services.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"Water\",\"description\":\"Part of the physical environment and subject to quality regulation by ecological services.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"Land\",\"description\":\"Part of the physical environment.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"Biological organisms\",\"description\":\"Organisms through which carbon, nutrients, hydrogen, oxygen, and other elements cycle.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"Carbon transfer\",\"description\":\"Transfer of carbon produced collectively by ecological processes.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"name\":\"Soil formation\",\"description\":\"Formation of soil driven by ecological processes.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"name\":\"Reproduction\",\"description\":\"Process enabled by ecological processes and represented as a rate of change.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"name\":\"Ecological services\",\"description\":\"Services provided by ecological processes, including provision of natural resources and regulation of air and water quality.\",\"entity_type\":\"SYSTEM\",\"aliases\":[]},{\"name\":\"Natural resources\",\"description\":\"Resources provided through ecological services, including food, fiber, and timber.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"Food\",\"description\":\"Natural resource provided through ecological services.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"Fiber\",\"description\":\"Natural resource provided through ecological services.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"Timber\",\"description\":\"Natural resource provided through ecological services.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"Air quality\",\"description\":\"Quality regulated through ecological services.\",\"entity_type\":\"VARIABLE\",\"aliases\":[]},{\"name\":\"Water quality\",\"description\":\"Quality regulated through ecological services and addressed through water quality management.\",\"entity_type\":\"VARIABLE\",\"aliases\":[]},{\"name\":\"Biodiversity\",\"description\":\"Property whose extent and distribution are influenced by ecological processes.\",\"entity_type\":\"VARIABLE\",\"aliases\":[]},{\"name\":\"Natural forces\",\"description\":\"Forces that can affect ecological processes, including seasonal changes and climate change.\",\"entity_type\":\"SYSTEM\",\"aliases\":[]},{\"name\":\"Human activities\",\"description\":\"Activities that can impact ecological processes, including pesticide use, chemical use, waste generation, land use changes, and water quality management.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"name\":\"Seasonal changes in temperature\",\"description\":\"Small-scale natural events affecting ecological processes.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"name\":\"Temperature\",\"description\":\"Environmental variable involved in seasonal changes that affect ecological processes.\",\"entity_type\":\"VARIABLE\",\"aliases\":[]},{\"name\":\"Precipitation\",\"description\":\"Environmental variable involved in seasonal changes that affect ecological processes.\",\"entity_type\":\"VARIABLE\",\"aliases\":[]},{\"name\":\"Stream flows\",\"description\":\"Environmental flows involved in seasonal changes that affect ecological processes.\",\"entity_type\":\"VARIABLE\",\"aliases\":[]},{\"name\":\"Climate change\",\"description\":\"Large-scale event affecting ecological processes.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"name\":\"Pesticide use\",\"description\":\"Human activity identified as impacting ecological processes.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"name\":\"Chemical use\",\"description\":\"Human activity identified as impacting ecological processes.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"name\":\"Waste generation\",\"description\":\"Human activity identified as impacting ecological processes.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"name\":\"Land use changes\",\"description\":\"Human activity identified as impacting ecological processes.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"name\":\"Water quality management\",\"description\":\"Human activity identified as impacting ecological processes.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"name\":\"Carbon Storage in Forests\",\"description\":\"Indicator available to address the question about ecological processes.\",\"entity_type\":\"VARIABLE\",\"aliases\":[]},{\"name\":\"Respiration\",\"description\":\"Ecological process represented as a rate of change.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"name\":\"Energy flow through food webs\",\"description\":\"Ecological process involving energy flow through food webs and represented as a rate of change.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"name\":\"Carbon flow through food webs\",\"description\":\"Ecological process involving carbon flow through food webs and represented as a rate of change.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"name\":\"Nutrient flow through food webs\",\"description\":\"Ecological process involving nutrient flow through food webs and represented as a rate of change.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"name\":\"Decomposition\",\"description\":\"Ecological process represented as a rate of change.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"name\":\"Food webs\",\"description\":\"Biological systems through which energy, carbon, and nutrients flow.\",\"entity_type\":\"SYSTEM\",\"aliases\":[]},{\"name\":\"Rate of change\",\"description\":\"Representation of ecological processes requiring repeated measurement over time.\",\"entity_type\":\"VARIABLE\",\"aliases\":[]},{\"name\":\"Remote sensing imagery\",\"description\":\"Imagery used to obtain snapshots of indicators of ecosystem conditions over time and to infer ecological processes.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"Ecosystem conditions\",\"description\":\"Conditions for which remote sensing imagery provides indicators over time.\",\"entity_type\":\"VARIABLE\",\"aliases\":[]},{\"name\":\"Terrestrial net primary production\",\"description\":\"Ecological process inferred using remote sensing imagery.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"name\":\"Normalized Difference Vegetation Index\",\"description\":\"Index estimated at a national scale using remote sensing.\",\"entity_type\":\"VARIABLE\",\"aliases\":[]},{\"name\":\"Net primary production\",\"description\":\"Primary production for which repeated seasonal measures might provide an indicator.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"name\":\"Watershed scales\",\"description\":\"Scales at which indicators for respiration, nutrient cycling, and decomposition have been developed.\",\"entity_type\":\"VARIABLE\",\"aliases\":[]},{\"name\":\"National scale\",\"description\":\"Scale at which ecological processes are particularly difficult to measure and at which some indicators have or have not been developed.\",\"entity_type\":\"VARIABLE\",\"aliases\":[]},{\"name\":\"Local scale\",\"description\":\"Scale at which repeated measurement is difficult for many ecosystems.\",\"entity_type\":\"VARIABLE\",\"aliases\":[]},{\"name\":\"Temporal scales\",\"description\":\"Time scales over which natural forces and human activities affect ecological processes.\",\"entity_type\":\"VARIABLE\",\"aliases\":[]},{\"name\":\"Spatial scales\",\"description\":\"Spatial scales over which natural forces and human activities affect ecological processes.\",\"entity_type\":\"VARIABLE\",\"aliases\":[]},{\"name\":\"Indicator\",\"description\":\"Measure used to represent or address ecological processes or ecosystem conditions.\",\"entity_type\":\"VARIABLE\",\"aliases\":[]},{\"name\":\"Scientific and research challenge\",\"description\":\"Challenge associated with developing ecological-process indicators at the national scale.\",\"entity_type\":\"CONCEPT\",\"aliases\":[]}]}",
+                "type": "output_text"
+              }
+            ],
+            "id": "msg_0caf95808c024cd7016aa816d3373087d2a402e6ab152775c8",
+            "phase": "final_answer",
+            "role": "assistant",
+            "status": "completed",
+            "type": "message"
+          }
+        ],
+        "parallel_tool_calls": true,
+        "presence_penalty": 0.0,
+        "previous_response_id": null,
+        "prompt": null,
+        "prompt_cache_key": null,
+        "prompt_cache_options": null,
+        "prompt_cache_retention": "24h",
+        "reasoning": {
+          "context": "all_turns",
+          "effort": "low",
+          "generate_summary": null,
+          "mode": "standard",
+          "summary": null
+        },
+        "safety_identifier": null,
+        "service_tier": "default",
+        "status": "completed",
+        "store": false,
+        "temperature": 1.0,
+        "text": {
+          "format": {
+            "description": null,
+            "name": "candidate_b_entity_inventory",
+            "schema_": {
+              "additionalProperties": false,
+              "properties": {
+                "symbols": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "aliases": {
+                        "items": {
+                          "type": "string"
+                        },
+                        "type": "array"
+                      },
+                      "description": {
+                        "type": "string"
+                      },
+                      "entity_type": {
+                        "enum": [
+                          "CONCEPT",
+                          "OBJECT",
+                          "PROCESS",
+                          "VARIABLE",
+                          "SYSTEM",
+                          "COMPONENT"
+                        ],
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "name",
+                      "description",
+                      "entity_type",
+                      "aliases"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                }
+              },
+              "required": [
+                "symbols"
+              ],
+              "type": "object"
+            },
+            "strict": true,
+            "type": "json_schema"
+          },
+          "verbosity": "medium"
+        },
+        "tool_choice": "auto",
+        "tool_usage": {
+          "image_gen": {
+            "input_tokens": 0,
+            "input_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            },
+            "output_tokens": 0,
+            "output_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            },
+            "total_tokens": 0
+          },
+          "web_search": {
+            "num_requests": 0
+          }
+        },
+        "tools": [],
+        "top_logprobs": 0,
+        "top_p": 0.98,
+        "truncation": "disabled",
+        "usage": {
+          "input_tokens": 722,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0
+          },
+          "output_tokens": 1919,
+          "output_tokens_details": {
+            "reasoning_tokens": 165
+          },
+          "total_tokens": 2641
+        },
+        "user": null
+      },
+      "stage": "ENTITY_INVENTORY"
+    },
+    {
+      "provider_metadata": {
+        "actual_model": "gpt-5.6-luna",
+        "candidate_version": "spec-047-candidate-b-v1",
+        "duration_ms": 19501.94470799761,
+        "hidden_retries": 0,
+        "http_request_id": "req_19045b10ca2949f79776c7118e412fcf",
+        "prompt_sha256": "ed0a05dbfe2bc12cd55b524a41fe7b2b3668f37942bf8c087d4b606162216d6c",
+        "prompt_version": "spec-047-semantic-structure-v1",
+        "provider": "openai",
+        "provider_response_id": "resp_0825dc298f020318016aa816dfad9c87d2ac9e45b4300fdac8",
+        "repair_calls": 0,
+        "requested_model": "gpt-5.6-luna",
+        "schema_name": "candidate_b_semantic_structure",
+        "schema_sha256": "c89c7f51d64e5e911696f1750ac4c10961e7a3544749e9c22add42b9c0cdc17e",
+        "sdk_retries": 0,
+        "semantic_retries": 0,
+        "stage": "SEMANTIC_STRUCTURE",
+        "store": false,
+        "upstream_input_sha256": "bd2be959d8b7b4fe855a9b7e51256d0062984d47f1da77049302c9063b2d9c43",
+        "usage": {
+          "input_tokens": 6010,
+          "output_tokens": 2676,
+          "total_tokens": 8686
+        }
+      },
+      "raw_proposal": {
+        "missing_symbols": [],
+        "propositions": [
+          {
+            "comparison_operator": "GREATER_THAN",
+            "confidence": 0.96,
+            "origin": "SOURCE",
+            "proposition_type": "COMPARISON_CONDITION",
+            "relationship_type": "CONTRADICTS",
+            "role_bindings": [
+              {
+                "entity_id": "national-scale",
+                "role": "LEFT_OPERAND"
+              },
+              {
+                "entity_id": "local-scale",
+                "role": "RIGHT_OPERAND"
+              }
+            ],
+            "statement": "The difficulty of measuring ecological processes is greater at the national scale than at the local scale."
+          }
+        ],
+        "relationships": [
+          {
+            "confidence": 0.98,
+            "id": "r1",
+            "origin": "SOURCE",
+            "relationship_type": "REQUIRES",
+            "source_entity_id": "ecological-systems",
+            "statement": "Ecological systems are sustained by biological, physical, and chemical ecological processes.",
+            "target_entity_id": "ecological-processes"
+          },
+          {
+            "confidence": 0.99,
+            "id": "r2",
+            "origin": "SOURCE",
+            "relationship_type": "IS_A",
+            "source_entity_id": "primary-production",
+            "statement": "Primary production is an ecological process.",
+            "target_entity_id": "ecological-processes"
+          },
+          {
+            "confidence": 0.94,
+            "id": "r3",
+            "origin": "INFERRED",
+            "relationship_type": "IS_A",
+            "source_entity_id": "carbon-cycling",
+            "statement": "Carbon cycling is an ecological process.",
+            "target_entity_id": "ecological-processes"
+          },
+          {
+            "confidence": 0.94,
+            "id": "r4",
+            "origin": "INFERRED",
+            "relationship_type": "IS_A",
+            "source_entity_id": "nutrient-cycling",
+            "statement": "Nutrient cycling is an ecological process.",
+            "target_entity_id": "ecological-processes"
+          },
+          {
+            "confidence": 0.94,
+            "id": "r5",
+            "origin": "INFERRED",
+            "relationship_type": "IS_A",
+            "source_entity_id": "hydrogen-oxygen-cycling",
+            "statement": "Hydrogen/oxygen cycling is an ecological process.",
+            "target_entity_id": "ecological-processes"
+          },
+          {
+            "confidence": 0.9,
+            "id": "r6",
+            "origin": "SOURCE",
+            "relationship_type": "ENABLES",
+            "source_entity_id": "photosynthesis",
+            "statement": "Photosynthesis enables primary production by converting the sun's energy into organic matter.",
+            "target_entity_id": "primary-production"
+          },
+          {
+            "confidence": 0.98,
+            "id": "r7",
+            "origin": "SOURCE",
+            "relationship_type": "CREATES",
+            "source_entity_id": "primary-production",
+            "statement": "Primary production produces organic matter.",
+            "target_entity_id": "organic-matter"
+          },
+          {
+            "confidence": 0.98,
+            "id": "r8",
+            "origin": "SOURCE",
+            "relationship_type": "CREATES",
+            "source_entity_id": "ecological-processes",
+            "statement": "Ecological processes collectively produce organic matter.",
+            "target_entity_id": "organic-matter"
+          },
+          {
+            "confidence": 0.97,
+            "id": "r9",
+            "origin": "SOURCE",
+            "relationship_type": "CAUSES",
+            "source_entity_id": "ecological-processes",
+            "statement": "Ecological processes drive soil formation.",
+            "target_entity_id": "soil-formation"
+          },
+          {
+            "confidence": 0.97,
+            "id": "r10",
+            "origin": "SOURCE",
+            "relationship_type": "ENABLES",
+            "source_entity_id": "ecological-processes",
+            "statement": "Ecological processes enable organisms to reproduce.",
+            "target_entity_id": "reproduction"
+          },
+          {
+            "confidence": 0.9,
+            "id": "r11",
+            "origin": "SOURCE",
+            "relationship_type": "AFFECTS",
+            "source_entity_id": "primary-production",
+            "statement": "Primary production influences biodiversity.",
+            "target_entity_id": "biodiversity"
+          },
+          {
+            "confidence": 0.96,
+            "id": "r12",
+            "origin": "SOURCE",
+            "relationship_type": "AFFECTS",
+            "source_entity_id": "ecological-processes",
+            "statement": "Ecological processes influence biodiversity.",
+            "target_entity_id": "biodiversity"
+          },
+          {
+            "confidence": 0.74,
+            "id": "r13",
+            "origin": "INFERRED",
+            "relationship_type": "AFFECTS",
+            "source_entity_id": "ecological-processes",
+            "statement": "Ecological processes are inferred as affecting ecosystem conditions through indicators.",
+            "target_entity_id": "ecosystem-conditions"
+          },
+          {
+            "confidence": 0.99,
+            "id": "r14",
+            "origin": "SOURCE",
+            "relationship_type": "AFFECTS",
+            "source_entity_id": "natural-forces",
+            "statement": "Natural forces affect ecological processes.",
+            "target_entity_id": "ecological-processes"
+          },
+          {
+            "confidence": 0.99,
+            "id": "r15",
+            "origin": "SOURCE",
+            "relationship_type": "AFFECTS",
+            "source_entity_id": "human-activities",
+            "statement": "Human activities impact ecological processes.",
+            "target_entity_id": "ecological-processes"
+          },
+          {
+            "confidence": 0.97,
+            "id": "r16",
+            "origin": "SOURCE",
+            "relationship_type": "AFFECTS",
+            "source_entity_id": "seasonal-changes-in-temperature",
+            "statement": "Seasonal changes in temperature affect ecological processes.",
+            "target_entity_id": "ecological-processes"
+          },
+          {
+            "confidence": 0.92,
+            "id": "r17",
+            "origin": "SOURCE",
+            "relationship_type": "AFFECTS",
+            "source_entity_id": "precipitation",
+            "statement": "Seasonal precipitation affects ecological processes.",
+            "target_entity_id": "ecological-processes"
+          },
+          {
+            "confidence": 0.92,
+            "id": "r18",
+            "origin": "SOURCE",
+            "relationship_type": "AFFECTS",
+            "source_entity_id": "stream-flows",
+            "statement": "Seasonal stream flows affect ecological processes.",
+            "target_entity_id": "ecological-processes"
+          },
+          {
+            "confidence": 0.98,
+            "id": "r19",
+            "origin": "SOURCE",
+            "relationship_type": "AFFECTS",
+            "source_entity_id": "climate-change",
+            "statement": "Climate change affects ecological processes.",
+            "target_entity_id": "ecological-processes"
+          },
+          {
+            "confidence": 0.98,
+            "id": "r20",
+            "origin": "SOURCE",
+            "relationship_type": "AFFECTS",
+            "source_entity_id": "pesticide-use",
+            "statement": "Pesticide use impacts ecological processes.",
+            "target_entity_id": "ecological-processes"
+          },
+          {
+            "confidence": 0.98,
+            "id": "r21",
+            "origin": "SOURCE",
+            "relationship_type": "AFFECTS",
+            "source_entity_id": "chemical-use",
+            "statement": "Chemical use impacts ecological processes.",
+            "target_entity_id": "ecological-processes"
+          },
+          {
+            "confidence": 0.98,
+            "id": "r22",
+            "origin": "SOURCE",
+            "relationship_type": "AFFECTS",
+            "source_entity_id": "waste-generation",
+            "statement": "Waste generation impacts ecological processes.",
+            "target_entity_id": "ecological-processes"
+          },
+          {
+            "confidence": 0.98,
+            "id": "r23",
+            "origin": "SOURCE",
+            "relationship_type": "AFFECTS",
+            "source_entity_id": "land-use-changes",
+            "statement": "Land use changes impact ecological processes.",
+            "target_entity_id": "ecological-processes"
+          },
+          {
+            "confidence": 0.95,
+            "id": "r24",
+            "origin": "SOURCE",
+            "relationship_type": "AFFECTS",
+            "source_entity_id": "water-quality-management",
+            "statement": "Water quality management impacts ecological processes.",
+            "target_entity_id": "ecological-processes"
+          },
+          {
+            "confidence": 0.96,
+            "id": "r25",
+            "origin": "SOURCE",
+            "relationship_type": "MEASURED_BY",
+            "source_entity_id": "ecological-processes",
+            "statement": "Ecological processes are represented as rates of change.",
+            "target_entity_id": "rate-of-change"
+          },
+          {
+            "confidence": 0.88,
+            "id": "r26",
+            "origin": "SOURCE",
+            "relationship_type": "MEASURED_BY",
+            "source_entity_id": "indicator",
+            "statement": "Remote sensing imagery is used to obtain snapshots of indicators of ecosystem conditions over time.",
+            "target_entity_id": "remote-sensing-imagery"
+          },
+          {
+            "confidence": 0.97,
+            "id": "r27",
+            "origin": "SOURCE",
+            "relationship_type": "MEASURED_BY",
+            "source_entity_id": "terrestrial-net-primary-production",
+            "statement": "Terrestrial net primary production is inferred using remote sensing imagery.",
+            "target_entity_id": "remote-sensing-imagery"
+          },
+          {
+            "confidence": 0.98,
+            "id": "r28",
+            "origin": "SOURCE",
+            "relationship_type": "MEASURED_BY",
+            "source_entity_id": "normalized-difference-vegetation-index",
+            "statement": "The Normalized Difference Vegetation Index has been estimated using remote sensing.",
+            "target_entity_id": "remote-sensing-imagery"
+          },
+          {
+            "confidence": 0.84,
+            "id": "r29",
+            "origin": "SOURCE",
+            "relationship_type": "MEASURED_BY",
+            "source_entity_id": "net-primary-production",
+            "statement": "Repeated measures over a season might provide an indicator of net primary production.",
+            "target_entity_id": "indicator"
+          },
+          {
+            "confidence": 0.86,
+            "id": "r30",
+            "origin": "SOURCE",
+            "relationship_type": "AFFECTS",
+            "source_entity_id": "ecological-processes",
+            "statement": "Ecological processes provide regulation of air quality through ecological services.",
+            "target_entity_id": "air-quality"
+          },
+          {
+            "confidence": 0.86,
+            "id": "r31",
+            "origin": "SOURCE",
+            "relationship_type": "AFFECTS",
+            "source_entity_id": "ecological-processes",
+            "statement": "Ecological processes provide regulation of water quality through ecological services.",
+            "target_entity_id": "water-quality"
+          },
+          {
+            "confidence": 0.98,
+            "id": "r32",
+            "origin": "SOURCE",
+            "relationship_type": "IS_A",
+            "source_entity_id": "respiration",
+            "statement": "Respiration is an ecological process.",
+            "target_entity_id": "ecological-processes"
+          },
+          {
+            "confidence": 0.98,
+            "id": "r33",
+            "origin": "SOURCE",
+            "relationship_type": "IS_A",
+            "source_entity_id": "decomposition",
+            "statement": "Decomposition is an ecological process.",
+            "target_entity_id": "ecological-processes"
+          },
+          {
+            "confidence": 0.94,
+            "id": "r34",
+            "origin": "SOURCE",
+            "relationship_type": "IS_A",
+            "source_entity_id": "reproduction",
+            "statement": "Reproduction is an ecological process represented as a rate of change.",
+            "target_entity_id": "ecological-processes"
+          },
+          {
+            "confidence": 0.96,
+            "id": "r35",
+            "origin": "SOURCE",
+            "relationship_type": "IS_A",
+            "source_entity_id": "energy-flow-through-food-webs",
+            "statement": "Energy flow through food webs is an ecological process.",
+            "target_entity_id": "ecological-processes"
+          },
+          {
+            "confidence": 0.96,
+            "id": "r36",
+            "origin": "SOURCE",
+            "relationship_type": "IS_A",
+            "source_entity_id": "carbon-flow-through-food-webs",
+            "statement": "Carbon flow through food webs is an ecological process.",
+            "target_entity_id": "ecological-processes"
+          },
+          {
+            "confidence": 0.96,
+            "id": "r37",
+            "origin": "SOURCE",
+            "relationship_type": "IS_A",
+            "source_entity_id": "nutrient-flow-through-food-webs",
+            "statement": "Nutrient flow through food webs is an ecological process.",
+            "target_entity_id": "ecological-processes"
+          },
+          {
+            "confidence": 0.82,
+            "id": "r38",
+            "origin": "SOURCE",
+            "relationship_type": "AFFECTS",
+            "source_entity_id": "ecological-processes",
+            "statement": "Natural forces and human activities affect ecological processes over different spatial scales.",
+            "target_entity_id": "spatial-scales"
+          },
+          {
+            "confidence": 0.82,
+            "id": "r39",
+            "origin": "SOURCE",
+            "relationship_type": "AFFECTS",
+            "source_entity_id": "ecological-processes",
+            "statement": "Natural forces and human activities affect ecological processes over different temporal scales.",
+            "target_entity_id": "temporal-scales"
+          }
+        ]
+      },
+      "raw_provider_response": {
+        "background": false,
+        "billing": {
+          "payer": "developer"
+        },
+        "completed_at": 1789400818.0,
+        "conversation": null,
+        "created_at": 1789400799.0,
+        "error": null,
+        "frequency_penalty": 0.0,
+        "id": "resp_0825dc298f020318016aa816dfad9c87d2ac9e45b4300fdac8",
+        "incomplete_details": null,
+        "instructions": "You perform Stage 2 semantic structure extraction.\n\nThe user supplies an immutable entity inventory and the exact source. Return only\nsource-supported relationships and the two supported typed proposition forms. Every\nendpoint and role binding must use an exact supplied entity ID. Never create, rename,\nalias, or imply a new entity. If an important semantic item requires a missing identity,\nomit it and record a missing_symbols diagnostic. Never substitute a nearby identity.\n\nChoose a relationship only when its meaning and direction fit exactly. Do not force\nassociation, explanation, possession, or historical context into PART_OF or CAUSES.\nUse a typed proposition only for COMPARISON_CONDITION or TRANSFER_EVENT under the supplied\ncontract. Proposition IDs are assigned by trusted code; do not return them.\n\nDo not return claims or evidence in this stage. Do not return entities. Do not summarize,\nrepair the inventory, or emit output outside the requested schema.\n\nACTIVE RELATIONSHIP CONTRACTS (source --TYPE--> target):\nIS_A [STRUCTURAL; direction=instance_to_type]\n  meaning: The source is a kind, category, or subtype of the target.\n  roles: source=instance or subtype; target=broader type or category\n  use: The source can truthfully be described as a target.\n  avoid: Do not use for parts, examples, similarity, or temporary states.\nPART_OF [STRUCTURAL; direction=part_to_whole]\n  meaning: The source is a constituent or component of the target.\n  roles: source=part or component; target=containing whole\n  use: The source exists as a component or subpart of the target.\n  avoid: Never reverse whole and part; do not use for interaction or dependency.\nEXAMPLE_OF [STRUCTURAL; direction=example_to_concept]\n  meaning: The source is an illustrative instance of the target concept.\n  roles: source=example; target=concept illustrated\n  use: The source is presented as an example of the target.\n  avoid: Do not use merely because the source is a subtype; prefer IS_A for classification.\nCAUSES [CAUSAL; direction=cause_to_effect]\n  meaning: The source brings about the target as an effect.\n  roles: source=cause; target=effect\n  use: The source is stated to produce the target outcome.\n  avoid: Do not use for chronology, association, contribution, or unspecified influence.\nAFFECTS [CAUSAL; direction=influence_to_affected]\n  meaning: The source causally influences the target without a specified direction or complete production.\n  roles: source=influence; target=affected entity, process, or variable\n  use: The source changes or influences the target, but the text does not support CAUSES, INCREASES, or DECREASES.\n  avoid: Do not use for mere association, chronology, physical force, or interaction with no stated effect.\nINCREASES [CAUSAL; direction=increaser_to_increased_variable]\n  meaning: The source causally raises the amount, rate, value, probability, or intensity of the target.\n  roles: source=causal factor; target=quantity or variable increased\n  use: The source is explicitly said to make the target greater, faster, more likely, or more intense.\n  avoid: Do not infer from nearby words such as more or faster; never use when the source says slower, lower, or less.\nDECREASES [CAUSAL; direction=decreaser_to_decreased_variable]\n  meaning: The source causally lowers the amount, rate, value, probability, or intensity of the target.\n  roles: source=causal factor; target=quantity or variable decreased\n  use: The source is explicitly said to make the target smaller, slower, less likely, or less intense.\n  avoid: Do not use for absence, prevention without a scalar target, or mere negative association.\nINDUCES [CAUSAL; direction=inducer_to_induced_effect]\n  meaning: The source produces the target through an explicitly described induction mechanism.\n  roles: source=inducing phenomenon; target=induced phenomenon\n  use: The source explicitly says induces or describes a recognized induction mechanism.\n  avoid: Do not use as a metaphor for generic causation, influence, motivation, or historical response.\nENABLES [DEPENDENCY; direction=enabler_to_enabled]\n  meaning: The source makes the target possible without necessarily causing it to occur.\n  roles: source=enabling condition or capability; target=capability or process made possible\n  use: The target could not occur, or is materially made possible, because of the source.\n  avoid: Do not use for delivery, participation, weak assistance, or an effect that actually occurred.\nREQUIRES [DEPENDENCY; direction=dependent_to_requirement]\n  meaning: The source depends on the target as a prerequisite or necessary resource.\n  roles: source=dependent; target=prerequisite or required resource\n  use: The source cannot operate or occur as described without the target.\n  avoid: Do not reverse prerequisite and dependent; do not use for optional support.\nCONSTRAINS [DEPENDENCY; direction=constraint_to_constrained]\n  meaning: The source limits the possible behavior, values, or choices of the target.\n  roles: source=constraint; target=constrained entity, process, or variable\n  use: The source imposes a limit, rule, boundary, or restriction on the target.\n  avoid: Do not use to mean unchanged, unrelated, merely different, or causally reduced.\nPRECEDES [TEMPORAL; direction=earlier_to_later]\n  meaning: The source occurs before the target in time or an explicit process sequence.\n  roles: source=earlier event or process; target=later event or process\n  use: The source explicitly occurs before, previously, first, then, or after relative to the target.\n  avoid: Do not infer causality from order; do not reverse earlier and later.\nINTERACTS_WITH [INTERACTION; symmetric]\n  meaning: The source and target directly interact, with no more precise directional semantics supported.\n  roles: source=interaction participant; target=interaction participant\n  use: The text supports direct mutual interaction but not a more precise active predicate.\n  avoid: Do not use for distant association, one-way effect, dependency, or chronology.\nBINDS_TO [INTERACTION; symmetric]\n  meaning: The source physically or chemically binds or attaches to the target.\n  roles: source=binding participant; target=binding participant\n  use: The source explicitly binds or attaches to the target.\n  avoid: Do not use for metaphorical commitment, dependency, influence, or literal physical force.\nTRANSFERS_TO [INTERACTION; direction=transferred_item_to_destination]\n  meaning: The source item, material, or information moves to the target destination or recipient.\n  roles: source=item, material, or information transferred; target=destination or recipient\n  use: The source is explicitly carried, delivered, moved, or transferred to the target.\n  avoid: Do not make the carrier the source unless the carrier itself moves to the destination; do not use for enabling.\nEXERTS_FORCE_ON [INTERACTION; direction=force_exerter_to_physical_target]\n  meaning: The source exerts a literal physical force on the target.\n  roles: source=physical force source; target=physical object receiving force\n  use: A literal physical force is explicitly exerted on the target.\n  avoid: Never use metaphorically for influence, contribution, binding, pressure, or causation.\nTRANSFORMS_INTO [TRANSFORMATION; direction=prior_state_to_resulting_state]\n  meaning: The source itself changes state or identity and becomes the target.\n  roles: source=entity or state before transformation; target=same entity or resulting material after transformation\n  use: The source itself becomes the target through a transformation.\n  avoid: Do not use when an actor causes, creates, attempts, participates in, or responds to the target.\nCREATES [TRANSFORMATION; direction=creator_to_created]\n  meaning: The source produces or brings a distinct target into existence.\n  roles: source=producer or generative process; target=newly produced entity or result\n  use: The source produces a target that is distinct from the source.\n  avoid: Do not use when the source itself becomes the target; use TRANSFORMS_INTO instead.\nMEASURED_BY [DESCRIPTIVE; direction=measurand_to_measure]\n  meaning: The source property or variable is quantified or assessed by the target metric, observation, or procedure.\n  roles: source=property or variable measured; target=metric, observation, or measurement procedure\n  use: The target is explicitly how the source is measured or quantified.\n  avoid: Do not point to something that merely responds to, correlates with, or exemplifies the source.\nCONTRADICTS [DESCRIPTIVE; symmetric]\n  meaning: The source and target assert mutually incompatible propositions.\n  roles: source=proposition or claim; target=incompatible proposition or claim\n  use: Both sides are explicit propositions that cannot simultaneously hold as stated.\n  avoid: Do not use for difference, disagreement without incompatibility, trade-off, or negative causality.",
+        "max_output_tokens": null,
+        "max_tool_calls": null,
+        "metadata": {},
+        "model": "gpt-5.6-luna",
+        "moderation": null,
+        "object": "response",
+        "output": [
+          {
+            "content": [],
+            "encrypted_content": "gAAAAABqqBbyV_2HHhDoHaPXOO_fcub-UNPpcAbXRyULi3Zpt4kZ12obPaMqd-2L32Ic75ye6Gf_5t4xDminDBbeIvu-1Luf9blYc2Fh7EV1XrOgQe_w_vTtZUXkrTxyO0uO5InAMIuxDJPR59bH_BNv7GkER6ppL2wIYVS8iNcZGStFTB6j45cS9ZZ2QVUG1-vMpPRFFZfHPbGogsQWCu23UCpH9vEBvHvN0iGUiPoJxJxGEZMVOhQmeY6VFWfZBEPsykZLOllnZc4cu8lpSG5qZt94AK61zkxUwulaOJZo1Bh3PRXTvXtiT07AQQRHqN7k2N8abyGJKOY4FmMGR9UesnYHZsRA2kR7Typw6kkMghJD1WfCVuyqWKQ1al0y-fNKb9sdFFU4oNa7-8ZOULqh5iY689ZprQGa1q3Mb3EfJs3bcVGRb3JrEEF7Yh4aoVrzGBS9EgTV2Xe3Qv95ZZk5aLvAv-H1YxOhUWuzEdq7RMF-O0vGBqHQLrhxhS_rEtHgVmJCDJRAMdvNKV-niiUWAULmuzobu9d-yrWuOVLNovGACP_BOtikO61-hXtj0TKMmxkjt_SKi9ldB4rS6p_jYrl2R3KMs0WlINcyUgk9Ij0SuKhGh_jWk3GSLP6V1jWqsaKJkP1_phSOd8g_zJa6qhJFFg11iiZ85HJqU2R97W6UUYGzlGW9-ugkREyaW8f3GG5VAk5IGPnBVEzk0Ga8NsvV8ajMxy0JvbvlMI-VCr18yJg-dsganTXp1O4zyI3quTdmm8W8smp7Nj8X-TLp02Cxbf5hbV5fObCQ_1wDSCFv9fmOTGZ-ih6oFNAveBTrWBdLaItlEu6I6EYvGgdp3tyf_lixZS5S3WztsvaY8fMzUqNcxOsW7OlTUxX2INaHBrhrwlGfm9hp9t8sZSjFaOHNzQr-mQ7Bn8QGOOZk7HoqhUYGTBV-KpUbBUbnel4Jq-rHpOo-nUZa-A-Bqn5aBL4gwgBFRdmYZ2VqzmD82O1EDnmeMPbOlV9mdZX99MSShhdtuPU0iP2R1-GYOcEy8Lq7hQvT-iyzcVRpBcaXQ2e4jvZRYLvvQ1tZT8c1VI3nShVXjSOlWzhTQgO3cJPO80m2CfBbKnT-ee4C-jW5DWnybg7fGxsOfv-LHQkXCmcDBGoClTiBICMg-0AewjJfPJik6bx-8ZE0grAzmgF3Vuz85GbvK_R__Z76JJvQZpRXQdY2Fo8ooswpLz26sazAKkZ2qW1nAVxZuo99nPQ2j7DYGBDfQr8MGorzwQS7_Bux5RM2_HZrhj-sG5QXgDModFKtgmZu2n7Ne02gkh9Wgg_M06Lq9fPRJ_tNvJOdAbaax0JT1GlMEYYjrZB8JjkJi81Pr4PStMCfHQ1vFL1xAddTQXntrK_RqQvvZisYH_ABx6sY22lxaS96eMUdb6nD7pVYi2RUTBuOlIbPADhHtlj6CC9d9TEg0nfvO6hGcpVLlwBgl3OiuP0GMnYFs53I8KY0eRaDdGHbVv1kvznilXZVIbUqvOAYR03u2LKNtjU9Bno9vEmMe3e7Ut6R1IJZj0YsMDCYS7jsrwHj3WxUaYTZQsOsepdrS3zTZhLkUGpRUCkjCntGHVveYzwyFk1nlkbU13lRBFds5pMR6iS5YeSF4kg0hSTAjVe2Aa9aw339D4Jq48jWA0S4Ld4gfv1AHMfz2dq-T8sw2jJUX7N3kSiAqd63E_gTx4jACwizlnXG1J9VYNsS-4ppCWxbedfW9yEDCqQ3zN4Pdq1AlZphIMMPzWvoHHKR6POzIrlCz2CBJmlXANRx3depf_-AaScqIpB3TdZeLFSfYo78TRAS02YN76BAKaEQqgRDgFl-AM9OjouHkdze6AfvpB2RPA_5gfsJYWTtYsRvROMYwVBBSxqsX53ke4hpXdXd0UhyKdW8CiZxAYYNX5M7u23B6eaL9hpm3tZZCChi3Xm7Z1T9rvJ7aW-IrnEX0Meq-oiaIyvlQzwrhta5JJqTNZh21yx_OpsR00puyCjP9OGyyTHVuGxXW4SliVJhj0pailWqCJkcY4Ru0aYb1VsYZwIA9KxwY0DOHooJpDmxfrjEdG7zwgd-TVKtrfPIkpgoM2vrUlU46xdSa0G1qX3cr01NBJCFovOKhwz-3eAgzflXx-hg2gu1YdkVJhe5pfJ532PAy18yEncpKsMOuF9MZr--idbMF9i2qLjOwj9H3VrbTpOqGuTamVRWw4lN6FJEi_JRmOLuPeDZXyJpNqPvWOdWmTIZIGKOHuGSnb4hQktcBhEjBbcOe5IbUjTAfHZ3bjiHKUi2R7V09SJh0U2u486Ks4Mo1C57cnWgpjPVNfN9A5zbYm8T-ntuZHO7LaBt4vUatJFzrWFUpzCKYbNFlfSU5J-g1YOx0q-ZGXwqUCjoxOWycqYj3tv40Q2ntZbOtOq62AcgtaTJws_ESNIc5aC6KlvZNHnV4jOGJjQOvw72Y2QlaigzdvepuLOZ1npcCFjbkGp5qpsE-Ww1uKzRzWmO6s8HSYaH4cMm6ltVbpQpBmiOZ81mnSv6vz7kdCcUSxk91Nt9Vu404qyjhF-KZdUmYMuHZw3iUDIxTWNrbMpybUVKIuIdPyB4feuOdeEdlciVmXaivPSfGqbnUmneEXaZgfr5OUwuA_yDJj4h3YoJIHLE9GNgNJLBfnkMAAUErpxcbrTo93FlaE8h6gSTZ-4NrfcGDabjj4Ews6xslslLL1e7eW-PumjOgTOdcXTX_Vekn14A8NC8Ogczhq0-QiI0po2cP_ZAR4NI_K9MZQN1M20yNYz9Qo6Bgb4dW_PN6jdQ26fL8WRa2HBtdg3jrgarY1WqPUbHEVE-y9RdeaQtzmG1rhG4x8LCxK8msVBxf_JCeletL1czYIAidi67Cj_flNijYHH_hXTWErG6Lo5CrmKZ3nb-m9qHn7Z29g4etm9BE1KOEejytKCjHzt6CeWnLxbkwu6ceIws5CvK5bP140B2kax5xk2eokpsx6BJjLNTJ0a0CK09LoUpf1wyhucZjnzG6OIkMvDKDztm1nzFqK-bcQ5WAY4UWRkNcEh_LqQUSl9xcm79n2xkumyvrUUb1mFwJDqoHNMsOnR7Roq7jXMPiFoDLAscl-6D0Bd2hLawxopEX6dJzLA2ZDh0-2Nzy00-rKC0YV5u3j86moJJOuPGERJkEt7Kf5UrSCGeWmBN4flORUnIQ3hXturOtkvNdiyOdsrTC2GZBeON3X7hSnVCaGHxLyKlsftjQ15PFLmyNJesdVUa-2Wz0uL5d-LVyUlIulw2cV9kcpG8YEduw0ZaWHTYMAO4AqsNRHhYqZyGs2V-v-fhw07dNvA5_4leAQLlZNRnTJLQhV5Cag1FrCH3OM4Iq1F_5ATIr7WZ8I0WMUxXJWRU5DjiB85EY-K3VI1fV8eGVj8mUh2dHbuT5De1-EKoeLZGwAhLaMb6NSRQHJeu6Q66qtSMDA-zcREzzueVzLoYf2QOI0kMZ3iJ7773FzBgYm0G5L3wb4Ic6SptCbPPaNwkeTyHLa00W4iTnnk29uEW0n3Sk10Yl71pvKow0-8weCeJ7At1eQJporMzSATfoaL3H_ch11tVFhqZnQKxSoKeakwC1uqSOlDOA2Wh9EYKyoSSau1xe2flVs6EbldJivZBm3UiA4tAOKRQCJFswkXufUx7EDzkZIkRfoleEKkehfcQRF_wiVJe_lKHem_XuS9S2R6ISc5xnsP3hjboN1pcztrK69ECwlsHcoVyFS9ohdqxdqbOxIngekKjpCljj0iEPIR5dazTqb_vT0kmsL1IaSGKY6cK7m5whBz9KG7IROJVdj2yDA6DqDfAXw691mMo1MxjyR9KjKzUEALYB-ksJ34sLe4XNsOevxLHRDof2LoSMxpuNgXifr_U9N222pjRAb4H4MET1fOTB-G6fbkP8FzIcj1ljnSM5TQkKqSSnMfhdjLO8YXjGD6aiXLgeF99UYo8Z-PwYi3T_9bLx-sWt2tSo8URMJc3uJMNmt73xgCsVuC_rixGsoFekA-S37SYpL3jL1q07FZJUuUz2RBoJe3vtPCOo5-U_KM3GZZ1WkWjoBe318E0k0UsKTpS_GX5moSnMHfUFVHtorOPd9RU-n5su_CHJCxKrqbK9JDUGGZswLaDjGE6Rlue-mHR05GxXDP6g3bQimNkTBPWZkgwtO_cgUOMmJq7Vf8WW9qAayr-X0AwKR4EjkqS8QT9i0X2KfVIZ4TZT95QNZZPa15XGOR3wxX8kBJwfIIqmVGHl54WM5VbctA97OPymAlDXZF37Rij5nu75r1tqOzYQhdmhqTbaksHSKrEzWgPX5BLKN2TMFDk8Cs5wygvdBhQbsK6cpyP5I4SJq0ZDxgm1tnxVA3eUM6SzmVpFbjMMsYISrOKhrUG20Wr4-6OInj0krwYv2YbbBEyir54uuPzMlPFjJbzxFNptoL7ez0QCvRHZSfBHFHSdhFeaC64FMd2LLH-VSmJV_Eya_q0PISPUq0en1OZE7S6YPkF_UTJ6p8PVvBwIxpj7UEV0YVsJr-K5rN4e3v-An8S8bHD60Ft_uXeaUOPANDGBY-XjPS6LqQUG8Vxzlj4WBkDgptsPbnl7ELQLs0bNs_NZFLJ1mDhQXfBJTNa94S5RVctyROWVrdbVyXk8bg0IgyFWkLYPRhAfGtC3khUi_jKjWJ1HSx501HlFUMVwisTqxi3NUWN0VoP8hRQGGYCvJeyPrpRT-gbb9-DVf6lncXaatZPC1Dl3tKB0Q8MQA30HYwyhlKJGGJ69kFfSFU0xYKsbByJfE36_0D2xqVqWY2VTWR7gv_HWQ2a917LGAje-x8m8PiE70F2DLOhnGF64B8QLp6yvWwqe6XIOLAqlX1UFV1vPH_4IVu76wdOIh6BNn9Was9wvCVOkJ7Y_21xWCqSPLJ-XlVOXdfGxMrT5sVC9rYssQS7hMzRBkZnmQ988F8iqxbgOPVVkGJU4vE1jB7G5x1uIQ2CHHOsYAR9aQGYnO7Z31PC3-JW4hNgCH7Y7SujN7tBPZkrM5IckdGm-TyMyJSHuAeW97UMaAWHyd7FhutYcsKZ6_zqJ6WYP2appsvIUzE2iNm1bogNo5bkMCNw39NKAXQJAK0vPn5aP51RP4O2nC4rbxNxWrG3qFUnor6Mm602qXRIceEwBt0yKjCmp5MMF8q9QOMj0F2n",
+            "id": "rs_0825dc298f020318016aa816e130a087d2b0dbb52e5b43fcff",
+            "status": null,
+            "summary": [],
+            "type": "reasoning"
+          },
+          {
+            "content": [],
+            "encrypted_content": "gAAAAABqqBbyiDgkowfODaXVMwRnp9hLmH2LBHiXNjygosSpvq9U9fMxFVu_TQAyDnTNXD2nP9DSJpUjdpqMo84R95ec1vBjW0eSIS-iov0yPaZr_8RSIFqWBphKGBuYa5-YW-FrXWJGome7D1fk6Jqz2PDwwv9Uw8pOMuq0wG7QuO97J0InHoedI_L1RSuIxab0n_rE65Oq7ZRhugW95EMvrfCBS2oSt9mjOLWn5sa6KzIz3Xe7oMPawOcu_-qGkOPuUqI98KVMvUdTIymt7w3EHiDVLG5mMJ2KWxaivAj9h8aZ_Em7tHxmomhFJeJ0QnIRfOoMvvizllTyjz5SJSOKrrC7dUd8cSTR7CJ4MIA194Mn_5oDE1RvlPi4jZDvCLeF_2DnLkUXc23UvZ3iW7xmIwKgWhfvNKQpyFfORr9kyhGoblLIkfKRXp1Dy5SF-uxELI8oUTe-V08ChrT_GzYbUmg2oZAXAOWlMheEWJWORRo0va_oipmQVVfhnIHgK0DvLzr-r1noBzUMjQqmEwDpebRLZYrjSLVS_VafCTXCYEXvB0bs2efudzeE4wKFia2Mii9Df3qEemx4sTxERtwoHlRUn0fzi3oTgO2PK8DUexmxSgtqie96ZrFpvgxPl5JGp1fbeD1puY53bsT-zfGq1Nbla-6gTSWVz7UgS_lAXqbv2PZ3mrsDmoOdWHwnVHAeC8ZrQ_1aOJAISZo6JxSDE2DIS9RWM4etDIG_zRZL326eSiCnpNGVU14kwvIGsFhzuKd1Zem8h6MZee44K3gE6wgK9L-Loib9RC0bBt2VrIXHKJhvLnR35LfGAiOWF-jPpPdjJrxYe4eQSGVkGN6J6hau_xiGT3APhXg8RAmgARGM0AvlD79lZ3_MP9Y-zVaMOMt80ut4DMiCN-SkZuUqdivyDwiU0zDlQF-VnH5SPI7cyu106bVD6_UD4n0OoXCXXUS7jaBJuz-OiSublYiaqlrq9EQ60aKwJ6HWIKopJNNTlcnDE5HaZTZUZhVocFbj1zzZvHMi6eb3vUjSRmPQGYWo12uGBVcjzeYeTY0H7RIK5DCP0HAfGcOq64t8haeLctpbDUt19-B5BkSJTeDUoUSKJC1m3JSPPN4n1H2bpTcYfPvoLUors6CGQhcPE_Uq3nOk2CCPD8Sy9mQLB8XIV56uXeKlGhWOXZ44_Zaz5eQDJXNZZTWMvHpox4qG2wr_Fz1HnxDbyoUHrKI_Ykyz864HGQN1mDW-19r5mF9UroBBe9TZneOWXhVjlge87CUE_Ti8muSgmEaJSdI3FTvxxP1kS5gnbsOWGqjgsKzpcInfB33L-72Q6MtEHo6hFYENIL3-_58U51RsjzLNFklChDp8JSSjLfE6g6OqEtFA7UlbinKn_eVWUkN4LWbDlHdhpb6b_U9usSjqpc4nIiUtB_iWDrLuZES46B6S96rdtF0EdeFNeQHkJkigKKA_WOthlfsQpcyTMHsvY3nu972k28FKDcE1T90ZA3I0Xt4_pg3Dh5rFpXXx5deW5M90ZMU1eK1cRFgG",
+            "id": "rs_0825dc298f020318016aa816e658d087d29ee6bae0957bbc95",
+            "status": null,
+            "summary": [],
+            "type": "reasoning"
+          },
+          {
+            "content": [
+              {
+                "annotations": [],
+                "logprobs": [],
+                "text": "{\"relationships\":[{\"id\":\"r1\",\"source_entity_id\":\"ecological-systems\",\"relationship_type\":\"REQUIRES\",\"target_entity_id\":\"ecological-processes\",\"statement\":\"Ecological systems are sustained by biological, physical, and chemical ecological processes.\",\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"r2\",\"source_entity_id\":\"primary-production\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"ecological-processes\",\"statement\":\"Primary production is an ecological process.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r3\",\"source_entity_id\":\"carbon-cycling\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"ecological-processes\",\"statement\":\"Carbon cycling is an ecological process.\",\"confidence\":0.94,\"origin\":\"INFERRED\"},{\"id\":\"r4\",\"source_entity_id\":\"nutrient-cycling\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"ecological-processes\",\"statement\":\"Nutrient cycling is an ecological process.\",\"confidence\":0.94,\"origin\":\"INFERRED\"},{\"id\":\"r5\",\"source_entity_id\":\"hydrogen-oxygen-cycling\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"ecological-processes\",\"statement\":\"Hydrogen/oxygen cycling is an ecological process.\",\"confidence\":0.94,\"origin\":\"INFERRED\"},{\"id\":\"r6\",\"source_entity_id\":\"photosynthesis\",\"relationship_type\":\"ENABLES\",\"target_entity_id\":\"primary-production\",\"statement\":\"Photosynthesis enables primary production by converting the sun's energy into organic matter.\",\"confidence\":0.9,\"origin\":\"SOURCE\"},{\"id\":\"r7\",\"source_entity_id\":\"primary-production\",\"relationship_type\":\"CREATES\",\"target_entity_id\":\"organic-matter\",\"statement\":\"Primary production produces organic matter.\",\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"r8\",\"source_entity_id\":\"ecological-processes\",\"relationship_type\":\"CREATES\",\"target_entity_id\":\"organic-matter\",\"statement\":\"Ecological processes collectively produce organic matter.\",\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"r9\",\"source_entity_id\":\"ecological-processes\",\"relationship_type\":\"CAUSES\",\"target_entity_id\":\"soil-formation\",\"statement\":\"Ecological processes drive soil formation.\",\"confidence\":0.97,\"origin\":\"SOURCE\"},{\"id\":\"r10\",\"source_entity_id\":\"ecological-processes\",\"relationship_type\":\"ENABLES\",\"target_entity_id\":\"reproduction\",\"statement\":\"Ecological processes enable organisms to reproduce.\",\"confidence\":0.97,\"origin\":\"SOURCE\"},{\"id\":\"r11\",\"source_entity_id\":\"primary-production\",\"relationship_type\":\"AFFECTS\",\"target_entity_id\":\"biodiversity\",\"statement\":\"Primary production influences biodiversity.\",\"confidence\":0.9,\"origin\":\"SOURCE\"},{\"id\":\"r12\",\"source_entity_id\":\"ecological-processes\",\"relationship_type\":\"AFFECTS\",\"target_entity_id\":\"biodiversity\",\"statement\":\"Ecological processes influence biodiversity.\",\"confidence\":0.96,\"origin\":\"SOURCE\"},{\"id\":\"r13\",\"source_entity_id\":\"ecological-processes\",\"relationship_type\":\"AFFECTS\",\"target_entity_id\":\"ecosystem-conditions\",\"statement\":\"Ecological processes are inferred as affecting ecosystem conditions through indicators.\",\"confidence\":0.74,\"origin\":\"INFERRED\"},{\"id\":\"r14\",\"source_entity_id\":\"natural-forces\",\"relationship_type\":\"AFFECTS\",\"target_entity_id\":\"ecological-processes\",\"statement\":\"Natural forces affect ecological processes.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r15\",\"source_entity_id\":\"human-activities\",\"relationship_type\":\"AFFECTS\",\"target_entity_id\":\"ecological-processes\",\"statement\":\"Human activities impact ecological processes.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r16\",\"source_entity_id\":\"seasonal-changes-in-temperature\",\"relationship_type\":\"AFFECTS\",\"target_entity_id\":\"ecological-processes\",\"statement\":\"Seasonal changes in temperature affect ecological processes.\",\"confidence\":0.97,\"origin\":\"SOURCE\"},{\"id\":\"r17\",\"source_entity_id\":\"precipitation\",\"relationship_type\":\"AFFECTS\",\"target_entity_id\":\"ecological-processes\",\"statement\":\"Seasonal precipitation affects ecological processes.\",\"confidence\":0.92,\"origin\":\"SOURCE\"},{\"id\":\"r18\",\"source_entity_id\":\"stream-flows\",\"relationship_type\":\"AFFECTS\",\"target_entity_id\":\"ecological-processes\",\"statement\":\"Seasonal stream flows affect ecological processes.\",\"confidence\":0.92,\"origin\":\"SOURCE\"},{\"id\":\"r19\",\"source_entity_id\":\"climate-change\",\"relationship_type\":\"AFFECTS\",\"target_entity_id\":\"ecological-processes\",\"statement\":\"Climate change affects ecological processes.\",\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"r20\",\"source_entity_id\":\"pesticide-use\",\"relationship_type\":\"AFFECTS\",\"target_entity_id\":\"ecological-processes\",\"statement\":\"Pesticide use impacts ecological processes.\",\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"r21\",\"source_entity_id\":\"chemical-use\",\"relationship_type\":\"AFFECTS\",\"target_entity_id\":\"ecological-processes\",\"statement\":\"Chemical use impacts ecological processes.\",\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"r22\",\"source_entity_id\":\"waste-generation\",\"relationship_type\":\"AFFECTS\",\"target_entity_id\":\"ecological-processes\",\"statement\":\"Waste generation impacts ecological processes.\",\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"r23\",\"source_entity_id\":\"land-use-changes\",\"relationship_type\":\"AFFECTS\",\"target_entity_id\":\"ecological-processes\",\"statement\":\"Land use changes impact ecological processes.\",\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"r24\",\"source_entity_id\":\"water-quality-management\",\"relationship_type\":\"AFFECTS\",\"target_entity_id\":\"ecological-processes\",\"statement\":\"Water quality management impacts ecological processes.\",\"confidence\":0.95,\"origin\":\"SOURCE\"},{\"id\":\"r25\",\"source_entity_id\":\"ecological-processes\",\"relationship_type\":\"MEASURED_BY\",\"target_entity_id\":\"rate-of-change\",\"statement\":\"Ecological processes are represented as rates of change.\",\"confidence\":0.96,\"origin\":\"SOURCE\"},{\"id\":\"r26\",\"source_entity_id\":\"indicator\",\"relationship_type\":\"MEASURED_BY\",\"target_entity_id\":\"remote-sensing-imagery\",\"statement\":\"Remote sensing imagery is used to obtain snapshots of indicators of ecosystem conditions over time.\",\"confidence\":0.88,\"origin\":\"SOURCE\"},{\"id\":\"r27\",\"source_entity_id\":\"terrestrial-net-primary-production\",\"relationship_type\":\"MEASURED_BY\",\"target_entity_id\":\"remote-sensing-imagery\",\"statement\":\"Terrestrial net primary production is inferred using remote sensing imagery.\",\"confidence\":0.97,\"origin\":\"SOURCE\"},{\"id\":\"r28\",\"source_entity_id\":\"normalized-difference-vegetation-index\",\"relationship_type\":\"MEASURED_BY\",\"target_entity_id\":\"remote-sensing-imagery\",\"statement\":\"The Normalized Difference Vegetation Index has been estimated using remote sensing.\",\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"r29\",\"source_entity_id\":\"net-primary-production\",\"relationship_type\":\"MEASURED_BY\",\"target_entity_id\":\"indicator\",\"statement\":\"Repeated measures over a season might provide an indicator of net primary production.\",\"confidence\":0.84,\"origin\":\"SOURCE\"},{\"id\":\"r30\",\"source_entity_id\":\"ecological-processes\",\"relationship_type\":\"AFFECTS\",\"target_entity_id\":\"air-quality\",\"statement\":\"Ecological processes provide regulation of air quality through ecological services.\",\"confidence\":0.86,\"origin\":\"SOURCE\"},{\"id\":\"r31\",\"source_entity_id\":\"ecological-processes\",\"relationship_type\":\"AFFECTS\",\"target_entity_id\":\"water-quality\",\"statement\":\"Ecological processes provide regulation of water quality through ecological services.\",\"confidence\":0.86,\"origin\":\"SOURCE\"},{\"id\":\"r32\",\"source_entity_id\":\"respiration\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"ecological-processes\",\"statement\":\"Respiration is an ecological process.\",\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"r33\",\"source_entity_id\":\"decomposition\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"ecological-processes\",\"statement\":\"Decomposition is an ecological process.\",\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"r34\",\"source_entity_id\":\"reproduction\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"ecological-processes\",\"statement\":\"Reproduction is an ecological process represented as a rate of change.\",\"confidence\":0.94,\"origin\":\"SOURCE\"},{\"id\":\"r35\",\"source_entity_id\":\"energy-flow-through-food-webs\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"ecological-processes\",\"statement\":\"Energy flow through food webs is an ecological process.\",\"confidence\":0.96,\"origin\":\"SOURCE\"},{\"id\":\"r36\",\"source_entity_id\":\"carbon-flow-through-food-webs\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"ecological-processes\",\"statement\":\"Carbon flow through food webs is an ecological process.\",\"confidence\":0.96,\"origin\":\"SOURCE\"},{\"id\":\"r37\",\"source_entity_id\":\"nutrient-flow-through-food-webs\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"ecological-processes\",\"statement\":\"Nutrient flow through food webs is an ecological process.\",\"confidence\":0.96,\"origin\":\"SOURCE\"},{\"id\":\"r38\",\"source_entity_id\":\"ecological-processes\",\"relationship_type\":\"AFFECTS\",\"target_entity_id\":\"spatial-scales\",\"statement\":\"Natural forces and human activities affect ecological processes over different spatial scales.\",\"confidence\":0.82,\"origin\":\"SOURCE\"},{\"id\":\"r39\",\"source_entity_id\":\"ecological-processes\",\"relationship_type\":\"AFFECTS\",\"target_entity_id\":\"temporal-scales\",\"statement\":\"Natural forces and human activities affect ecological processes over different temporal scales.\",\"confidence\":0.82,\"origin\":\"SOURCE\"}],\"propositions\":[{\"proposition_type\":\"COMPARISON_CONDITION\",\"statement\":\"The difficulty of measuring ecological processes is greater at the national scale than at the local scale.\",\"role_bindings\":[{\"role\":\"LEFT_OPERAND\",\"entity_id\":\"national-scale\"},{\"role\":\"RIGHT_OPERAND\",\"entity_id\":\"local-scale\"}],\"relationship_type\":\"CONTRADICTS\",\"comparison_operator\":\"GREATER_THAN\",\"confidence\":0.96,\"origin\":\"SOURCE\"}],\"missing_symbols\":[]}",
+                "type": "output_text"
+              }
+            ],
+            "id": "msg_0825dc298f020318016aa816e6f7f887d28c9587f77d302e55",
+            "phase": "final_answer",
+            "role": "assistant",
+            "status": "completed",
+            "type": "message"
+          }
+        ],
+        "parallel_tool_calls": true,
+        "presence_penalty": 0.0,
+        "previous_response_id": null,
+        "prompt": null,
+        "prompt_cache_key": null,
+        "prompt_cache_options": null,
+        "prompt_cache_retention": "24h",
+        "reasoning": {
+          "context": "all_turns",
+          "effort": "low",
+          "generate_summary": null,
+          "mode": "standard",
+          "summary": null
+        },
+        "safety_identifier": null,
+        "service_tier": "default",
+        "status": "completed",
+        "store": false,
+        "temperature": 1.0,
+        "text": {
+          "format": {
+            "description": null,
+            "name": "candidate_b_semantic_structure",
+            "schema_": {
+              "additionalProperties": false,
+              "properties": {
+                "missing_symbols": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "reason": {
+                        "type": "string"
+                      },
+                      "semantic_item": {
+                        "type": "string"
+                      },
+                      "surface_form": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "surface_form",
+                      "semantic_item",
+                      "reason"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                "propositions": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "comparison_operator": {
+                        "anyOf": [
+                          {
+                            "enum": [
+                              "GREATER_THAN"
+                            ],
+                            "type": "string"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      },
+                      "confidence": {
+                        "maximum": 1,
+                        "minimum": 0,
+                        "type": "number"
+                      },
+                      "origin": {
+                        "enum": [
+                          "SOURCE",
+                          "INFERRED"
+                        ],
+                        "type": "string"
+                      },
+                      "proposition_type": {
+                        "enum": [
+                          "COMPARISON_CONDITION",
+                          "TRANSFER_EVENT"
+                        ],
+                        "type": "string"
+                      },
+                      "relationship_type": {
+                        "enum": [
+                          "IS_A",
+                          "PART_OF",
+                          "CAUSES",
+                          "INCREASES",
+                          "DECREASES",
+                          "ENABLES",
+                          "REQUIRES",
+                          "CONSTRAINS",
+                          "PRECEDES",
+                          "TRANSFORMS_INTO",
+                          "INTERACTS_WITH",
+                          "MEASURED_BY",
+                          "EXAMPLE_OF",
+                          "CONTRADICTS",
+                          "CREATES",
+                          "INDUCES",
+                          "EXERTS_FORCE_ON",
+                          "AFFECTS",
+                          "BINDS_TO",
+                          "TRANSFERS_TO"
+                        ],
+                        "type": "string"
+                      },
+                      "role_bindings": {
+                        "items": {
+                          "additionalProperties": false,
+                          "properties": {
+                            "entity_id": {
+                              "enum": [
+                                "air",
+                                "air-quality",
+                                "biodiversity",
+                                "biological-organisms",
+                                "carbon-cycling",
+                                "carbon-flow-through-food-webs",
+                                "carbon-storage-in-forests",
+                                "carbon-transfer",
+                                "chemical-use",
+                                "climate-change",
+                                "decomposition",
+                                "ecological-processes",
+                                "ecological-services",
+                                "ecological-systems",
+                                "ecosystem-conditions",
+                                "energy-flow-through-food-webs",
+                                "fiber",
+                                "food",
+                                "food-webs",
+                                "human-activities",
+                                "hydrogen",
+                                "hydrogen-oxygen-cycling",
+                                "indicator",
+                                "land",
+                                "land-use-changes",
+                                "local-scale",
+                                "national-scale",
+                                "natural-forces",
+                                "natural-resources",
+                                "net-primary-production",
+                                "nitrogen",
+                                "normalized-difference-vegetation-index",
+                                "nutrient-cycling",
+                                "nutrient-flow-through-food-webs",
+                                "nutrients",
+                                "organic-matter",
+                                "oxygen",
+                                "pesticide-use",
+                                "phosphorus",
+                                "photosynthesis",
+                                "physical-environment",
+                                "precipitation",
+                                "primary-production",
+                                "rate-of-change",
+                                "remote-sensing-imagery",
+                                "reproduction",
+                                "respiration",
+                                "scientific-and-research-challenge",
+                                "seasonal-changes-in-temperature",
+                                "soil-formation",
+                                "spatial-scales",
+                                "stream-flows",
+                                "sun-s-energy",
+                                "temperature",
+                                "temporal-scales",
+                                "terrestrial-net-primary-production",
+                                "timber",
+                                "waste-generation",
+                                "water",
+                                "water-quality",
+                                "water-quality-management",
+                                "watershed-scales"
+                              ],
+                              "type": "string"
+                            },
+                            "role": {
+                              "enum": [
+                                "LEFT_OPERAND",
+                                "RIGHT_OPERAND",
+                                "OUTCOME",
+                                "EVENT",
+                                "OBJECT",
+                                "DESTINATION"
+                              ],
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "role",
+                            "entity_id"
+                          ],
+                          "type": "object"
+                        },
+                        "type": "array"
+                      },
+                      "statement": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "proposition_type",
+                      "statement",
+                      "role_bindings",
+                      "relationship_type",
+                      "comparison_operator",
+                      "confidence",
+                      "origin"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                "relationships": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "confidence": {
+                        "maximum": 1,
+                        "minimum": 0,
+                        "type": "number"
+                      },
+                      "id": {
+                        "type": "string"
+                      },
+                      "origin": {
+                        "enum": [
+                          "SOURCE",
+                          "INFERRED"
+                        ],
+                        "type": "string"
+                      },
+                      "relationship_type": {
+                        "enum": [
+                          "IS_A",
+                          "PART_OF",
+                          "CAUSES",
+                          "INCREASES",
+                          "DECREASES",
+                          "ENABLES",
+                          "REQUIRES",
+                          "CONSTRAINS",
+                          "PRECEDES",
+                          "TRANSFORMS_INTO",
+                          "INTERACTS_WITH",
+                          "MEASURED_BY",
+                          "EXAMPLE_OF",
+                          "CONTRADICTS",
+                          "CREATES",
+                          "INDUCES",
+                          "EXERTS_FORCE_ON",
+                          "AFFECTS",
+                          "BINDS_TO",
+                          "TRANSFERS_TO"
+                        ],
+                        "type": "string"
+                      },
+                      "source_entity_id": {
+                        "enum": [
+                          "air",
+                          "air-quality",
+                          "biodiversity",
+                          "biological-organisms",
+                          "carbon-cycling",
+                          "carbon-flow-through-food-webs",
+                          "carbon-storage-in-forests",
+                          "carbon-transfer",
+                          "chemical-use",
+                          "climate-change",
+                          "decomposition",
+                          "ecological-processes",
+                          "ecological-services",
+                          "ecological-systems",
+                          "ecosystem-conditions",
+                          "energy-flow-through-food-webs",
+                          "fiber",
+                          "food",
+                          "food-webs",
+                          "human-activities",
+                          "hydrogen",
+                          "hydrogen-oxygen-cycling",
+                          "indicator",
+                          "land",
+                          "land-use-changes",
+                          "local-scale",
+                          "national-scale",
+                          "natural-forces",
+                          "natural-resources",
+                          "net-primary-production",
+                          "nitrogen",
+                          "normalized-difference-vegetation-index",
+                          "nutrient-cycling",
+                          "nutrient-flow-through-food-webs",
+                          "nutrients",
+                          "organic-matter",
+                          "oxygen",
+                          "pesticide-use",
+                          "phosphorus",
+                          "photosynthesis",
+                          "physical-environment",
+                          "precipitation",
+                          "primary-production",
+                          "rate-of-change",
+                          "remote-sensing-imagery",
+                          "reproduction",
+                          "respiration",
+                          "scientific-and-research-challenge",
+                          "seasonal-changes-in-temperature",
+                          "soil-formation",
+                          "spatial-scales",
+                          "stream-flows",
+                          "sun-s-energy",
+                          "temperature",
+                          "temporal-scales",
+                          "terrestrial-net-primary-production",
+                          "timber",
+                          "waste-generation",
+                          "water",
+                          "water-quality",
+                          "water-quality-management",
+                          "watershed-scales"
+                        ],
+                        "type": "string"
+                      },
+                      "statement": {
+                        "type": "string"
+                      },
+                      "target_entity_id": {
+                        "enum": [
+                          "air",
+                          "air-quality",
+                          "biodiversity",
+                          "biological-organisms",
+                          "carbon-cycling",
+                          "carbon-flow-through-food-webs",
+                          "carbon-storage-in-forests",
+                          "carbon-transfer",
+                          "chemical-use",
+                          "climate-change",
+                          "decomposition",
+                          "ecological-processes",
+                          "ecological-services",
+                          "ecological-systems",
+                          "ecosystem-conditions",
+                          "energy-flow-through-food-webs",
+                          "fiber",
+                          "food",
+                          "food-webs",
+                          "human-activities",
+                          "hydrogen",
+                          "hydrogen-oxygen-cycling",
+                          "indicator",
+                          "land",
+                          "land-use-changes",
+                          "local-scale",
+                          "national-scale",
+                          "natural-forces",
+                          "natural-resources",
+                          "net-primary-production",
+                          "nitrogen",
+                          "normalized-difference-vegetation-index",
+                          "nutrient-cycling",
+                          "nutrient-flow-through-food-webs",
+                          "nutrients",
+                          "organic-matter",
+                          "oxygen",
+                          "pesticide-use",
+                          "phosphorus",
+                          "photosynthesis",
+                          "physical-environment",
+                          "precipitation",
+                          "primary-production",
+                          "rate-of-change",
+                          "remote-sensing-imagery",
+                          "reproduction",
+                          "respiration",
+                          "scientific-and-research-challenge",
+                          "seasonal-changes-in-temperature",
+                          "soil-formation",
+                          "spatial-scales",
+                          "stream-flows",
+                          "sun-s-energy",
+                          "temperature",
+                          "temporal-scales",
+                          "terrestrial-net-primary-production",
+                          "timber",
+                          "waste-generation",
+                          "water",
+                          "water-quality",
+                          "water-quality-management",
+                          "watershed-scales"
+                        ],
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "source_entity_id",
+                      "relationship_type",
+                      "target_entity_id",
+                      "statement",
+                      "confidence",
+                      "origin"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                }
+              },
+              "required": [
+                "relationships",
+                "propositions",
+                "missing_symbols"
+              ],
+              "type": "object"
+            },
+            "strict": true,
+            "type": "json_schema"
+          },
+          "verbosity": "medium"
+        },
+        "tool_choice": "auto",
+        "tool_usage": {
+          "image_gen": {
+            "input_tokens": 0,
+            "input_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            },
+            "output_tokens": 0,
+            "output_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            },
+            "total_tokens": 0
+          },
+          "web_search": {
+            "num_requests": 0
+          }
+        },
+        "tools": [],
+        "top_logprobs": 0,
+        "top_p": 0.98,
+        "truncation": "disabled",
+        "usage": {
+          "input_tokens": 6010,
+          "input_tokens_details": {
+            "cache_write_tokens": 6007,
+            "cached_tokens": 0
+          },
+          "output_tokens": 2676,
+          "output_tokens_details": {
+            "reasoning_tokens": 580
+          },
+          "total_tokens": 8686
+        },
+        "user": null
+      },
+      "stage": "SEMANTIC_STRUCTURE"
+    }
+  ],
+  "candidate_version": "spec-047-candidate-b-v1",
+  "canonical_gate": {
+    "error_type": null,
+    "exact_failure": null,
+    "output_identity_sha256": null,
+    "stage": "CANONICAL_VALIDATION",
+    "stage_version": "existing-knowledge-model-validator",
+    "status": "NOT_RUN_UPSTREAM_FAILURE",
+    "upstream_identity_sha256": null
+  },
+  "claim_evidence_binding": null,
+  "entity_inventory": {
+    "candidate_version": "spec-047-candidate-b-v1",
+    "identity_sha256": "bd2be959d8b7b4fe855a9b7e51256d0062984d47f1da77049302c9063b2d9c43",
+    "immutable": true,
+    "symbol_table": {
+      "compiler_version": "spec-047-candidate-b-v1",
+      "diagnostics": {
+        "accepted_symbol_count": 62,
+        "alias_normalizations": [],
+        "candidate_version": "spec-047-candidate-b-v1",
+        "duplicate_nomination_count": 0,
+        "entity_type_counts": {
+          "COMPONENT": 0,
+          "CONCEPT": 1,
+          "OBJECT": 16,
+          "PROCESS": 24,
+          "SYSTEM": 5,
+          "VARIABLE": 16
+        },
+        "id_strategy": "NORMALIZED_ASCII_KEBAB_NAME_WITH_HASH_SUFFIX_ON_SLUG_COLLISION",
+        "ordering": "LEXICOGRAPHIC_STABLE_ENTITY_ID",
+        "raw_nomination_count": 62,
+        "rejected_nomination_count": 0,
+        "source_document_id": "text-70e7e3d20325dd5d",
+        "strict_duplicate_policy": "FAIL_CLOSED_NO_MERGE"
+      },
+      "entities": [
+        {
+          "aliases": [],
+          "description": "Part of the physical environment and subject to quality regulation by ecological services.",
+          "entity_type": "OBJECT",
+          "id": "air",
+          "name": "Air"
+        },
+        {
+          "aliases": [],
+          "description": "Quality regulated through ecological services.",
+          "entity_type": "VARIABLE",
+          "id": "air-quality",
+          "name": "Air quality"
+        },
+        {
+          "aliases": [],
+          "description": "Property whose extent and distribution are influenced by ecological processes.",
+          "entity_type": "VARIABLE",
+          "id": "biodiversity",
+          "name": "Biodiversity"
+        },
+        {
+          "aliases": [],
+          "description": "Organisms through which carbon, nutrients, hydrogen, oxygen, and other elements cycle.",
+          "entity_type": "OBJECT",
+          "id": "biological-organisms",
+          "name": "Biological organisms"
+        },
+        {
+          "aliases": [],
+          "description": "Cycling of carbon from the physical environment through biological organisms and back into the physical environment.",
+          "entity_type": "PROCESS",
+          "id": "carbon-cycling",
+          "name": "Carbon cycling"
+        },
+        {
+          "aliases": [],
+          "description": "Ecological process involving carbon flow through food webs and represented as a rate of change.",
+          "entity_type": "PROCESS",
+          "id": "carbon-flow-through-food-webs",
+          "name": "Carbon flow through food webs"
+        },
+        {
+          "aliases": [],
+          "description": "Indicator available to address the question about ecological processes.",
+          "entity_type": "VARIABLE",
+          "id": "carbon-storage-in-forests",
+          "name": "Carbon Storage in Forests"
+        },
+        {
+          "aliases": [],
+          "description": "Transfer of carbon produced collectively by ecological processes.",
+          "entity_type": "PROCESS",
+          "id": "carbon-transfer",
+          "name": "Carbon transfer"
+        },
+        {
+          "aliases": [],
+          "description": "Human activity identified as impacting ecological processes.",
+          "entity_type": "PROCESS",
+          "id": "chemical-use",
+          "name": "Chemical use"
+        },
+        {
+          "aliases": [],
+          "description": "Large-scale event affecting ecological processes.",
+          "entity_type": "PROCESS",
+          "id": "climate-change",
+          "name": "Climate change"
+        },
+        {
+          "aliases": [],
+          "description": "Ecological process represented as a rate of change.",
+          "entity_type": "PROCESS",
+          "id": "decomposition",
+          "name": "Decomposition"
+        },
+        {
+          "aliases": [],
+          "description": "Biological, physical, and chemical processes that sustain ecological systems and influence their extent, distribution, and biodiversity.",
+          "entity_type": "PROCESS",
+          "id": "ecological-processes",
+          "name": "Ecological processes"
+        },
+        {
+          "aliases": [],
+          "description": "Services provided by ecological processes, including provision of natural resources and regulation of air and water quality.",
+          "entity_type": "SYSTEM",
+          "id": "ecological-services",
+          "name": "Ecological services"
+        },
+        {
+          "aliases": [],
+          "description": "Systems sustained by biological, physical, and chemical processes.",
+          "entity_type": "SYSTEM",
+          "id": "ecological-systems",
+          "name": "Ecological systems"
+        },
+        {
+          "aliases": [],
+          "description": "Conditions for which remote sensing imagery provides indicators over time.",
+          "entity_type": "VARIABLE",
+          "id": "ecosystem-conditions",
+          "name": "Ecosystem conditions"
+        },
+        {
+          "aliases": [],
+          "description": "Ecological process involving energy flow through food webs and represented as a rate of change.",
+          "entity_type": "PROCESS",
+          "id": "energy-flow-through-food-webs",
+          "name": "Energy flow through food webs"
+        },
+        {
+          "aliases": [],
+          "description": "Natural resource provided through ecological services.",
+          "entity_type": "OBJECT",
+          "id": "fiber",
+          "name": "Fiber"
+        },
+        {
+          "aliases": [],
+          "description": "Natural resource provided through ecological services.",
+          "entity_type": "OBJECT",
+          "id": "food",
+          "name": "Food"
+        },
+        {
+          "aliases": [],
+          "description": "Biological systems through which energy, carbon, and nutrients flow.",
+          "entity_type": "SYSTEM",
+          "id": "food-webs",
+          "name": "Food webs"
+        },
+        {
+          "aliases": [],
+          "description": "Activities that can impact ecological processes, including pesticide use, chemical use, waste generation, land use changes, and water quality management.",
+          "entity_type": "PROCESS",
+          "id": "human-activities",
+          "name": "Human activities"
+        },
+        {
+          "aliases": [],
+          "description": "Element included in hydrogen/oxygen cycling.",
+          "entity_type": "OBJECT",
+          "id": "hydrogen",
+          "name": "Hydrogen"
+        },
+        {
+          "aliases": [],
+          "description": "Cycling of hydrogen and oxygen from the physical environment through biological organisms and back into the physical environment.",
+          "entity_type": "PROCESS",
+          "id": "hydrogen-oxygen-cycling",
+          "name": "Hydrogen/oxygen cycling"
+        },
+        {
+          "aliases": [],
+          "description": "Measure used to represent or address ecological processes or ecosystem conditions.",
+          "entity_type": "VARIABLE",
+          "id": "indicator",
+          "name": "Indicator"
+        },
+        {
+          "aliases": [],
+          "description": "Part of the physical environment.",
+          "entity_type": "OBJECT",
+          "id": "land",
+          "name": "Land"
+        },
+        {
+          "aliases": [],
+          "description": "Human activity identified as impacting ecological processes.",
+          "entity_type": "PROCESS",
+          "id": "land-use-changes",
+          "name": "Land use changes"
+        },
+        {
+          "aliases": [],
+          "description": "Scale at which repeated measurement is difficult for many ecosystems.",
+          "entity_type": "VARIABLE",
+          "id": "local-scale",
+          "name": "Local scale"
+        },
+        {
+          "aliases": [],
+          "description": "Scale at which ecological processes are particularly difficult to measure and at which some indicators have or have not been developed.",
+          "entity_type": "VARIABLE",
+          "id": "national-scale",
+          "name": "National scale"
+        },
+        {
+          "aliases": [],
+          "description": "Forces that can affect ecological processes, including seasonal changes and climate change.",
+          "entity_type": "SYSTEM",
+          "id": "natural-forces",
+          "name": "Natural forces"
+        },
+        {
+          "aliases": [],
+          "description": "Resources provided through ecological services, including food, fiber, and timber.",
+          "entity_type": "OBJECT",
+          "id": "natural-resources",
+          "name": "Natural resources"
+        },
+        {
+          "aliases": [],
+          "description": "Primary production for which repeated seasonal measures might provide an indicator.",
+          "entity_type": "PROCESS",
+          "id": "net-primary-production",
+          "name": "Net primary production"
+        },
+        {
+          "aliases": [],
+          "description": "Nutrient identified in the source.",
+          "entity_type": "OBJECT",
+          "id": "nitrogen",
+          "name": "Nitrogen"
+        },
+        {
+          "aliases": [],
+          "description": "Index estimated at a national scale using remote sensing.",
+          "entity_type": "VARIABLE",
+          "id": "normalized-difference-vegetation-index",
+          "name": "Normalized Difference Vegetation Index"
+        },
+        {
+          "aliases": [],
+          "description": "Cycling of nutrients from the physical environment through biological organisms and back into the physical environment.",
+          "entity_type": "PROCESS",
+          "id": "nutrient-cycling",
+          "name": "Nutrient cycling"
+        },
+        {
+          "aliases": [],
+          "description": "Ecological process involving nutrient flow through food webs and represented as a rate of change.",
+          "entity_type": "PROCESS",
+          "id": "nutrient-flow-through-food-webs",
+          "name": "Nutrient flow through food webs"
+        },
+        {
+          "aliases": [],
+          "description": "Elements identified in the source as including nitrogen and phosphorus.",
+          "entity_type": "OBJECT",
+          "id": "nutrients",
+          "name": "Nutrients"
+        },
+        {
+          "aliases": [],
+          "description": "Matter produced through primary production and collectively by ecological processes.",
+          "entity_type": "OBJECT",
+          "id": "organic-matter",
+          "name": "Organic matter"
+        },
+        {
+          "aliases": [],
+          "description": "Element included in hydrogen/oxygen cycling.",
+          "entity_type": "OBJECT",
+          "id": "oxygen",
+          "name": "Oxygen"
+        },
+        {
+          "aliases": [],
+          "description": "Human activity identified as impacting ecological processes.",
+          "entity_type": "PROCESS",
+          "id": "pesticide-use",
+          "name": "Pesticide use"
+        },
+        {
+          "aliases": [],
+          "description": "Nutrient identified in the source.",
+          "entity_type": "OBJECT",
+          "id": "phosphorus",
+          "name": "Phosphorus"
+        },
+        {
+          "aliases": [],
+          "description": "Process through which the sun's energy is converted into organic matter in primary production.",
+          "entity_type": "PROCESS",
+          "id": "photosynthesis",
+          "name": "Photosynthesis"
+        },
+        {
+          "aliases": [],
+          "description": "Environment from which elements pass through biological organisms and to which they return; includes air, water, and land.",
+          "entity_type": "SYSTEM",
+          "id": "physical-environment",
+          "name": "Physical environment"
+        },
+        {
+          "aliases": [],
+          "description": "Environmental variable involved in seasonal changes that affect ecological processes.",
+          "entity_type": "VARIABLE",
+          "id": "precipitation",
+          "name": "Precipitation"
+        },
+        {
+          "aliases": [],
+          "description": "Production involving conversion of the sun's energy into organic matter through photosynthesis.",
+          "entity_type": "PROCESS",
+          "id": "primary-production",
+          "name": "Primary production"
+        },
+        {
+          "aliases": [],
+          "description": "Representation of ecological processes requiring repeated measurement over time.",
+          "entity_type": "VARIABLE",
+          "id": "rate-of-change",
+          "name": "Rate of change"
+        },
+        {
+          "aliases": [],
+          "description": "Imagery used to obtain snapshots of indicators of ecosystem conditions over time and to infer ecological processes.",
+          "entity_type": "OBJECT",
+          "id": "remote-sensing-imagery",
+          "name": "Remote sensing imagery"
+        },
+        {
+          "aliases": [],
+          "description": "Process enabled by ecological processes and represented as a rate of change.",
+          "entity_type": "PROCESS",
+          "id": "reproduction",
+          "name": "Reproduction"
+        },
+        {
+          "aliases": [],
+          "description": "Ecological process represented as a rate of change.",
+          "entity_type": "PROCESS",
+          "id": "respiration",
+          "name": "Respiration"
+        },
+        {
+          "aliases": [],
+          "description": "Challenge associated with developing ecological-process indicators at the national scale.",
+          "entity_type": "CONCEPT",
+          "id": "scientific-and-research-challenge",
+          "name": "Scientific and research challenge"
+        },
+        {
+          "aliases": [],
+          "description": "Small-scale natural events affecting ecological processes.",
+          "entity_type": "PROCESS",
+          "id": "seasonal-changes-in-temperature",
+          "name": "Seasonal changes in temperature"
+        },
+        {
+          "aliases": [],
+          "description": "Formation of soil driven by ecological processes.",
+          "entity_type": "PROCESS",
+          "id": "soil-formation",
+          "name": "Soil formation"
+        },
+        {
+          "aliases": [],
+          "description": "Spatial scales over which natural forces and human activities affect ecological processes.",
+          "entity_type": "VARIABLE",
+          "id": "spatial-scales",
+          "name": "Spatial scales"
+        },
+        {
+          "aliases": [],
+          "description": "Environmental flows involved in seasonal changes that affect ecological processes.",
+          "entity_type": "VARIABLE",
+          "id": "stream-flows",
+          "name": "Stream flows"
+        },
+        {
+          "aliases": [],
+          "description": "Energy converted into organic matter through photosynthesis.",
+          "entity_type": "OBJECT",
+          "id": "sun-s-energy",
+          "name": "Sun's energy"
+        },
+        {
+          "aliases": [],
+          "description": "Environmental variable involved in seasonal changes that affect ecological processes.",
+          "entity_type": "VARIABLE",
+          "id": "temperature",
+          "name": "Temperature"
+        },
+        {
+          "aliases": [],
+          "description": "Time scales over which natural forces and human activities affect ecological processes.",
+          "entity_type": "VARIABLE",
+          "id": "temporal-scales",
+          "name": "Temporal scales"
+        },
+        {
+          "aliases": [],
+          "description": "Ecological process inferred using remote sensing imagery.",
+          "entity_type": "PROCESS",
+          "id": "terrestrial-net-primary-production",
+          "name": "Terrestrial net primary production"
+        },
+        {
+          "aliases": [],
+          "description": "Natural resource provided through ecological services.",
+          "entity_type": "OBJECT",
+          "id": "timber",
+          "name": "Timber"
+        },
+        {
+          "aliases": [],
+          "description": "Human activity identified as impacting ecological processes.",
+          "entity_type": "PROCESS",
+          "id": "waste-generation",
+          "name": "Waste generation"
+        },
+        {
+          "aliases": [],
+          "description": "Part of the physical environment and subject to quality regulation by ecological services.",
+          "entity_type": "OBJECT",
+          "id": "water",
+          "name": "Water"
+        },
+        {
+          "aliases": [],
+          "description": "Quality regulated through ecological services and addressed through water quality management.",
+          "entity_type": "VARIABLE",
+          "id": "water-quality",
+          "name": "Water quality"
+        },
+        {
+          "aliases": [],
+          "description": "Human activity identified as impacting ecological processes.",
+          "entity_type": "PROCESS",
+          "id": "water-quality-management",
+          "name": "Water quality management"
+        },
+        {
+          "aliases": [],
+          "description": "Scales at which indicators for respiration, nutrient cycling, and decomposition have been developed.",
+          "entity_type": "VARIABLE",
+          "id": "watershed-scales",
+          "name": "Watershed scales"
+        }
+      ],
+      "immutable": true
+    }
+  },
+  "model": null,
+  "provider_call_ledger": {
+    "calls_started": 2,
+    "candidate_version": "spec-047-candidate-b-v1",
+    "entries": [
+      {
+        "actual_model": "gpt-5.6-luna",
+        "call_ordinal": 1,
+        "completed_at_utc": "2026-09-14T15:46:39.505850+00:00",
+        "duration_ms": 14966.006375005236,
+        "hidden_retries": 0,
+        "http_request_id": "req_b24dfa6057c947c08ab51050e163a339",
+        "prompt_sha256": "b1c00eb4547de56c62dcc18c7aec013ee1e2de4a8c1dfa45bcb475f00591f785",
+        "prompt_version": "spec-047-entity-inventory-v1",
+        "provider_response_id": "resp_0caf95808c024cd7016aa816d0c41c87d2b7290f1fd8a27e59",
+        "repair_calls": 0,
+        "requested_model": "gpt-5.6-luna",
+        "schema_sha256": "003db7546ae3ffafe7dc098bc50e1a5f223b891f6ee3160f7537214c8e9c9956",
+        "sdk_retries": 0,
+        "semantic_retries": 0,
+        "source_id": "epa-ecological-processes-2026",
+        "source_sha256": "70e7e3d20325dd5d22e9cf4484934419447907ba9f6cf5a4dfd65ddcbfa80ad5",
+        "stage": "ENTITY_INVENTORY",
+        "started_at_utc": "2026-09-14T15:46:24.539880+00:00",
+        "status": "PROVIDER_RESPONSE_RECEIVED",
+        "store": false,
+        "upstream_input_sha256": "70e7e3d20325dd5d22e9cf4484934419447907ba9f6cf5a4dfd65ddcbfa80ad5",
+        "usage": {
+          "input_tokens": 722,
+          "output_tokens": 1919,
+          "total_tokens": 2641
+        }
+      },
+      {
+        "actual_model": "gpt-5.6-luna",
+        "call_ordinal": 2,
+        "completed_at_utc": "2026-09-14T15:46:59.009791+00:00",
+        "duration_ms": 19501.94470799761,
+        "hidden_retries": 0,
+        "http_request_id": "req_19045b10ca2949f79776c7118e412fcf",
+        "prompt_sha256": "ed0a05dbfe2bc12cd55b524a41fe7b2b3668f37942bf8c087d4b606162216d6c",
+        "prompt_version": "spec-047-semantic-structure-v1",
+        "provider_response_id": "resp_0825dc298f020318016aa816dfad9c87d2ac9e45b4300fdac8",
+        "repair_calls": 0,
+        "requested_model": "gpt-5.6-luna",
+        "schema_sha256": "c89c7f51d64e5e911696f1750ac4c10961e7a3544749e9c22add42b9c0cdc17e",
+        "sdk_retries": 0,
+        "semantic_retries": 0,
+        "source_id": "epa-ecological-processes-2026",
+        "source_sha256": "70e7e3d20325dd5d22e9cf4484934419447907ba9f6cf5a4dfd65ddcbfa80ad5",
+        "stage": "SEMANTIC_STRUCTURE",
+        "started_at_utc": "2026-09-14T15:46:39.507801+00:00",
+        "status": "PROVIDER_RESPONSE_RECEIVED",
+        "store": false,
+        "upstream_input_sha256": "bd2be959d8b7b4fe855a9b7e51256d0062984d47f1da77049302c9063b2d9c43",
+        "usage": {
+          "input_tokens": 6010,
+          "output_tokens": 2676,
+          "total_tokens": 8686
+        }
+      }
+    ]
+  },
+  "semantic_structure": null,
+  "source_id": "epa-ecological-processes-2026",
+  "source_sha256": "70e7e3d20325dd5d22e9cf4484934419447907ba9f6cf5a4dfd65ddcbfa80ad5",
+  "stage_gates": [
+    {
+      "error_type": null,
+      "exact_failure": null,
+      "output_identity_sha256": "bd2be959d8b7b4fe855a9b7e51256d0062984d47f1da77049302c9063b2d9c43",
+      "stage": "ENTITY_INVENTORY",
+      "stage_version": "spec-047-entity-inventory-v1",
+      "status": "PASS",
+      "upstream_identity_sha256": "70e7e3d20325dd5d22e9cf4484934419447907ba9f6cf5a4dfd65ddcbfa80ad5"
+    },
+    {
+      "error_type": "ValidationError",
+      "exact_failure": "comparison condition requires left operand, right operand, outcome, operator, and CAUSES",
+      "output_identity_sha256": null,
+      "stage": "SEMANTIC_STRUCTURE",
+      "stage_version": "spec-047-semantic-structure-v1",
+      "status": "FAIL_CLOSED",
+      "upstream_identity_sha256": "bd2be959d8b7b4fe855a9b7e51256d0062984d47f1da77049302c9063b2d9c43"
+    },
+    {
+      "error_type": null,
+      "exact_failure": null,
+      "output_identity_sha256": null,
+      "stage": "CLAIM_EVIDENCE_BINDING",
+      "stage_version": "spec-047-claim-evidence-binding-v1",
+      "status": "NOT_RUN_UPSTREAM_FAILURE",
+      "upstream_identity_sha256": null
+    }
+  ],
+  "status": "FAIL_CLOSED"
+}

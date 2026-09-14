@@ -1,0 +1,63 @@
+{
+  "admitted_counts": null,
+  "arm": "CANDIDATE_B",
+  "detected_structure_count": 0,
+  "detected_structure_types": {},
+  "detection_stage": "SEMANTIC_STRUCTURE",
+  "error_type": "ValidationError",
+  "exact_failure": "comparison condition requires left operand, right operand, outcome, operator, and CAUSES",
+  "execution_mode": "FUTURE_LIVE",
+  "failure_origins": [
+    "RELATIONSHIP_SEMANTICS"
+  ],
+  "known_invalid_objects_admitted": 0,
+  "monetary_cost": null,
+  "proposal_counts": {
+    "claims": 0,
+    "entities": 39,
+    "propositions": 0,
+    "relationships": 0
+  },
+  "provider_calls_started": 2,
+  "provider_latency_ms": 43128.10012498812,
+  "representation_strategy_counts": {},
+  "representation_sufficiency_counts": {},
+  "source_id": "crs-legislative-process-r42843-17",
+  "source_sha256": "fe61b7c3b2a9373e7eb3b30d16b94adc2c8b5f4307327265943995550a6384b4",
+  "stage_gates": [
+    {
+      "error_type": null,
+      "exact_failure": null,
+      "output_identity_sha256": "1003f4a42af7a731d60b6b60b2e4cb896a6aaa50b8e003214f3ca5ca8ca44623",
+      "stage": "ENTITY_INVENTORY",
+      "stage_version": "spec-047-entity-inventory-v1",
+      "status": "PASS",
+      "upstream_identity_sha256": "fe61b7c3b2a9373e7eb3b30d16b94adc2c8b5f4307327265943995550a6384b4"
+    },
+    {
+      "error_type": "ValidationError",
+      "exact_failure": "comparison condition requires left operand, right operand, outcome, operator, and CAUSES",
+      "output_identity_sha256": null,
+      "stage": "SEMANTIC_STRUCTURE",
+      "stage_version": "spec-047-semantic-structure-v1",
+      "status": "FAIL_CLOSED",
+      "upstream_identity_sha256": "1003f4a42af7a731d60b6b60b2e4cb896a6aaa50b8e003214f3ca5ca8ca44623"
+    },
+    {
+      "error_type": null,
+      "exact_failure": null,
+      "output_identity_sha256": null,
+      "stage": "CLAIM_EVIDENCE_BINDING",
+      "stage_version": "spec-047-claim-evidence-binding-v1",
+      "status": "NOT_RUN_UPSTREAM_FAILURE",
+      "upstream_identity_sha256": null
+    }
+  ],
+  "status": "FAILED_CLOSED",
+  "sufficient_representation_decision_count": 0,
+  "usage": {
+    "input_tokens": 6249,
+    "output_tokens": 4041,
+    "total_tokens": 10290
+  }
+}

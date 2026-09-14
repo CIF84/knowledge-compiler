@@ -1,0 +1,245 @@
+{
+  "missing_symbols": [],
+  "propositions": [
+    {
+      "comparison_operator": "GREATER_THAN",
+      "confidence": 0.99,
+      "origin": "SOURCE",
+      "proposition_type": "COMPARISON_CONDITION",
+      "relationship_type": "AFFECTS",
+      "role_bindings": [
+        {
+          "entity_id": "house-majority-party-leader",
+          "role": "LEFT_OPERAND"
+        },
+        {
+          "entity_id": "senate-majority-leader",
+          "role": "RIGHT_OPERAND"
+        }
+      ],
+      "statement": "House majority party leaders have more tools with which to set the floor agenda than Senate majority party leaders."
+    },
+    {
+      "comparison_operator": null,
+      "confidence": 0.98,
+      "origin": "SOURCE",
+      "proposition_type": "TRANSFER_EVENT",
+      "relationship_type": "TRANSFERS_TO",
+      "role_bindings": [
+        {
+          "entity_id": "bill-report",
+          "role": "EVENT"
+        },
+        {
+          "entity_id": "bill-report",
+          "role": "OBJECT"
+        },
+        {
+          "entity_id": "parent-chamber",
+          "role": "DESTINATION"
+        }
+      ],
+      "statement": "The bill report is sent to the parent chamber."
+    }
+  ],
+  "relationships": [
+    {
+      "confidence": 0.99,
+      "id": "r1",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "standing-committee",
+      "statement": "Standing committees are committees.",
+      "target_entity_id": "committee"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r2",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "house",
+      "statement": "The House is a chamber of Congress.",
+      "target_entity_id": "chamber"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r3",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "senate",
+      "statement": "The Senate is a chamber of Congress.",
+      "target_entity_id": "chamber"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r4",
+      "origin": "SOURCE",
+      "relationship_type": "PART_OF",
+      "source_entity_id": "house",
+      "statement": "The House is one chamber of Congress.",
+      "target_entity_id": "congress"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r5",
+      "origin": "SOURCE",
+      "relationship_type": "PART_OF",
+      "source_entity_id": "senate",
+      "statement": "The Senate is one chamber of Congress.",
+      "target_entity_id": "congress"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r6",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "house-majority-party-leader",
+      "statement": "A House majority party leader is a majority party leader.",
+      "target_entity_id": "majority-party-leader"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r7",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "senate-majority-leader",
+      "statement": "The Senate majority leader is a majority party leader.",
+      "target_entity_id": "majority-party-leader"
+    },
+    {
+      "confidence": 0.98,
+      "id": "r8",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "senate-majority-leader",
+      "statement": "The Senate majority leader is a party leader.",
+      "target_entity_id": "party-leader"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r9",
+      "origin": "SOURCE",
+      "relationship_type": "EXAMPLE_OF",
+      "source_entity_id": "federal-agency",
+      "statement": "A federal agency is an example of a selected party that may provide views at a hearing.",
+      "target_entity_id": "selected-party"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r10",
+      "origin": "SOURCE",
+      "relationship_type": "EXAMPLE_OF",
+      "source_entity_id": "organized-interest",
+      "statement": "An organized interest is an example of a selected party that may provide views at a hearing.",
+      "target_entity_id": "selected-party"
+    },
+    {
+      "confidence": 0.96,
+      "id": "r11",
+      "origin": "SOURCE",
+      "relationship_type": "AFFECTS",
+      "source_entity_id": "committee-chair",
+      "statement": "The committee chair identifies which bills receive formal committee attention.",
+      "target_entity_id": "formal-committee-consideration"
+    },
+    {
+      "confidence": 0.96,
+      "id": "r12",
+      "origin": "SOURCE",
+      "relationship_type": "AFFECTS",
+      "source_entity_id": "standing-committee",
+      "statement": "Standing committees typically take the lead in developing and assessing proposed legislation.",
+      "target_entity_id": "legislative-action"
+    },
+    {
+      "confidence": 0.9,
+      "id": "r13",
+      "origin": "SOURCE",
+      "relationship_type": "ENABLES",
+      "source_entity_id": "hearing",
+      "statement": "A committee hearing provides an opportunity for selected parties to discuss a bill's strengths and weaknesses.",
+      "target_entity_id": "selected-party"
+    },
+    {
+      "confidence": 0.97,
+      "id": "r14",
+      "origin": "SOURCE",
+      "relationship_type": "PRECEDES",
+      "source_entity_id": "markup",
+      "statement": "A markup concludes when the committee agrees to report the bill.",
+      "target_entity_id": "bill-report"
+    },
+    {
+      "confidence": 0.94,
+      "id": "r15",
+      "origin": "SOURCE",
+      "relationship_type": "REQUIRES",
+      "source_entity_id": "markup",
+      "statement": "The markup concludes through the committee's agreement by majority vote to report the bill.",
+      "target_entity_id": "majority-vote"
+    },
+    {
+      "confidence": 0.98,
+      "id": "r16",
+      "origin": "SOURCE",
+      "relationship_type": "TRANSFERS_TO",
+      "source_entity_id": "bill-report",
+      "statement": "The committee reports the bill to its parent chamber.",
+      "target_entity_id": "parent-chamber"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r17",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "streamlined-floor-consideration",
+      "statement": "Streamlined floor consideration is a type of floor consideration.",
+      "target_entity_id": "floor-consideration"
+    },
+    {
+      "confidence": 0.98,
+      "id": "r18",
+      "origin": "SOURCE",
+      "relationship_type": "AFFECTS",
+      "source_entity_id": "house-majority-party-leader",
+      "statement": "House majority party leaders generally decide which bills receive floor consideration and may schedule them.",
+      "target_entity_id": "floor-consideration"
+    },
+    {
+      "confidence": 0.87,
+      "id": "r19",
+      "origin": "SOURCE",
+      "relationship_type": "CREATES",
+      "source_entity_id": "rules-committee",
+      "statement": "The Rules Committee may be asked to propose tailored parameters for a bill's floor consideration.",
+      "target_entity_id": "tailored-floor-consideration-parameters"
+    },
+    {
+      "confidence": 0.92,
+      "id": "r20",
+      "origin": "SOURCE",
+      "relationship_type": "REQUIRES",
+      "source_entity_id": "senate-motion-to-proceed",
+      "statement": "In the Senate, a bill is brought to the floor after the Senate agrees to a motion to proceed to that bill.",
+      "target_entity_id": "floor-consideration"
+    },
+    {
+      "confidence": 0.98,
+      "id": "r21",
+      "origin": "SOURCE",
+      "relationship_type": "AFFECTS",
+      "source_entity_id": "senate-majority-leader",
+      "statement": "The Senate majority leader typically offers the motion to proceed to a specific bill.",
+      "target_entity_id": "senate-motion-to-proceed"
+    },
+    {
+      "confidence": 0.96,
+      "id": "r22",
+      "origin": "SOURCE",
+      "relationship_type": "CONSTRAINS",
+      "source_entity_id": "senator",
+      "statement": "A Senator's objection prevents a unanimous consent request from being effective.",
+      "target_entity_id": "unanimous-consent-request"
+    }
+  ]
+}
