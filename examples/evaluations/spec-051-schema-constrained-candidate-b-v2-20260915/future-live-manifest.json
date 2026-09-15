@@ -1,0 +1,126 @@
+{
+  "automatic_promotion": false,
+  "candidate_version": "spec-051-candidate-b-v2",
+  "contract_sha256": "6a149b1d3bac5789652de77af2630ffea84893413e892f4606df3c718e48d148",
+  "current_authorized_provider_calls": 0,
+  "external_enrichment": 0,
+  "follow_up_calls": 0,
+  "frozen_metrics": [
+    "source_admission_rate",
+    "known_invalid_object_admission",
+    "stage_failure_distribution",
+    "spec046_origin_stage_distribution",
+    "proposition_construction_failure_count",
+    "semantic_omission_and_grounded_claim_preservation",
+    "entity_relationship_proposition_claim_counts",
+    "detected_structures",
+    "representation_decisions",
+    "provider_calls",
+    "token_usage",
+    "latency",
+    "available_monetary_cost_evidence",
+    "semantic_richness_guard"
+  ],
+  "hidden_retries": 0,
+  "maximum_calls_per_stage_per_source": 1,
+  "maximum_total_provider_calls": 27,
+  "model": "gpt-5.6-luna",
+  "non_contemporaneous_stochastic_caveat": "All three arms are non-contemporaneous stochastic runs; no causal superiority may be inferred from pass-rate alone.",
+  "owner_decision_framework": [
+    "B_V2_RECOVERS_DECOMPOSITION",
+    "B_V2_STRUCTURAL_FIX_ONLY",
+    "B_V2_TOO_SPARSE",
+    "B_V2_REGRESSION",
+    "INCONCLUSIVE"
+  ],
+  "primary_comparisons": [
+    "B_V2_VS_B_V1_ADMISSION_FAILURE_CONCENTRATION_COST",
+    "B_V2_VS_CONTROL_A_OVERALL_VIABILITY"
+  ],
+  "prompt_or_schema_adaptation": 0,
+  "provider": "OpenAI Responses API",
+  "repair_calls": 0,
+  "schema": "spec-051-proposed-v2-live-manifest-v1",
+  "sdk_retries": 0,
+  "semantic_retries": 0,
+  "semantic_richness_guard": true,
+  "source_packets": [
+    {
+      "path": "examples/evaluations/spec-041-blind-source-set-freeze-20260911/blind-source-packet.json",
+      "sha256": "ccf1c5e9fb607934f790eb06cd828bf5a1d42e4f6e4d7913722debc4269c72b0"
+    },
+    {
+      "path": "examples/evaluations/spec-044-blind-replication-source-set-freeze-20260912/blind-source-packet.json",
+      "sha256": "85f7a7be47fa827799d532ab7ca5edc03b359162894dc2ee4e72a750de28e52b"
+    }
+  ],
+  "sources": [
+    {
+      "ordinal": 1,
+      "packet_reference": "examples/evaluations/spec-041-blind-source-set-freeze-20260911/blind-source-packet.json",
+      "source_id": "usgs-divergent-plate-boundaries-1996",
+      "source_sha256": "a9539d135ff1577d7e2791d498b92f55239175565b925b24aec2ed0bf633f186"
+    },
+    {
+      "ordinal": 2,
+      "packet_reference": "examples/evaluations/spec-041-blind-source-set-freeze-20260911/blind-source-packet.json",
+      "source_id": "noaa-nesdis-jet-stream-2025",
+      "source_sha256": "256ade61be620cfaa7b1327e3c982576611dd29b6a1fb42217d86ffdc0783ca1"
+    },
+    {
+      "ordinal": 3,
+      "packet_reference": "examples/evaluations/spec-041-blind-source-set-freeze-20260911/blind-source-packet.json",
+      "source_id": "crs-legislative-process-r42843-17",
+      "source_sha256": "fe61b7c3b2a9373e7eb3b30d16b94adc2c8b5f4307327265943995550a6384b4"
+    },
+    {
+      "ordinal": 4,
+      "packet_reference": "examples/evaluations/spec-044-blind-replication-source-set-freeze-20260912/blind-source-packet.json",
+      "source_id": "nasa-solar-system-formation-2026",
+      "source_sha256": "c0cb2519673b8f3ef23c0be2856e03790f53d44971cbff09d593190ab3fa155d"
+    },
+    {
+      "ordinal": 5,
+      "packet_reference": "examples/evaluations/spec-044-blind-replication-source-set-freeze-20260912/blind-source-packet.json",
+      "source_id": "epa-ecological-processes-2026",
+      "source_sha256": "70e7e3d20325dd5d22e9cf4484934419447907ba9f6cf5a4dfd65ddcbfa80ad5"
+    },
+    {
+      "ordinal": 6,
+      "packet_reference": "examples/evaluations/spec-044-blind-replication-source-set-freeze-20260912/blind-source-packet.json",
+      "source_id": "doe-iron-platinum-atomic-structure-2017",
+      "source_sha256": "e9d2260c9980239431fc195e7dc687afea93598af4f28d774ed5e4c4317f9e1e"
+    },
+    {
+      "ordinal": 7,
+      "packet_reference": "examples/evaluations/spec-044-blind-replication-source-set-freeze-20260912/blind-source-packet.json",
+      "source_id": "nhgri-dna-fact-sheet-2020",
+      "source_sha256": "54e2147221cf186fe1b4f965422c69e815f986a7d009eddae9c01bf32ec25f89"
+    },
+    {
+      "ordinal": 8,
+      "packet_reference": "examples/evaluations/spec-044-blind-replication-source-set-freeze-20260912/blind-source-packet.json",
+      "source_id": "fhwa-traffic-bottleneck-concepts-2016",
+      "source_sha256": "1fd7e9851839f5f35cd2a231cd3ce5aea8196ec85cabd04694f681c063ea4345"
+    },
+    {
+      "ordinal": 9,
+      "packet_reference": "examples/evaluations/spec-044-blind-replication-source-set-freeze-20260912/blind-source-packet.json",
+      "source_id": "nist-measurement-uncertainty-2025",
+      "source_sha256": "b3ae508f3982dfdd89f41a1d9ca59eb1f658b1648e3fae35168feba212046730"
+    }
+  ],
+  "stage_order": [
+    "ENTITY_INVENTORY",
+    "SEMANTIC_STRUCTURE",
+    "CLAIM_EVIDENCE_BINDING"
+  ],
+  "status": "PROPOSED_NOT_AUTHORIZED",
+  "store": false,
+  "three_arm_comparison": [
+    "CONTROL_A_HISTORICAL",
+    "CANDIDATE_B_V1_HISTORICAL",
+    "CANDIDATE_B_V2_FUTURE"
+  ],
+  "upstream_failure_short_circuit": true
+}

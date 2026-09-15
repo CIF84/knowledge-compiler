@@ -1,0 +1,249 @@
+{
+  "all_rejected_before_canonical_validation": true,
+  "evidence": {
+    "path": "examples/evaluations/spec-049-stage2-proposition-contract-diagnosis-20260914/report.json",
+    "sha256": "1506c446c19d70c0ab007887cd99d1bbb115958eda72f2ea401e4dec49984deb"
+  },
+  "failed_source_count": 6,
+  "invalid_object_count": 8,
+  "provider_calls": 0,
+  "rows": [
+    {
+      "objects": [
+        {
+          "proposition": {
+            "comparison_operator": "GREATER_THAN",
+            "confidence": 0.94,
+            "origin": "SOURCE",
+            "proposition_type": "COMPARISON_CONDITION",
+            "relationship_type": "CONSTRAINS",
+            "role_bindings": [
+              {
+                "entity_id": "jet-stream-speed",
+                "role": "LEFT_OPERAND"
+              },
+              {
+                "entity_id": "jet-stream-speed",
+                "role": "RIGHT_OPERAND"
+              },
+              {
+                "entity_id": "polar-jet-stream",
+                "role": "OUTCOME"
+              }
+            ],
+            "statement": "Jet-stream speeds of 250 miles per hour or faster are greater than the average speed of about 110 miles per hour."
+          },
+          "result": "REJECTED_BEFORE_CANONICAL_VALIDATION",
+          "v2_contract_errors": [
+            "invalid subtype relationship_type",
+            "comparison operands are identical"
+          ]
+        }
+      ],
+      "source_id": "noaa-nesdis-jet-stream-2025",
+      "source_level_result": "REJECTED"
+    },
+    {
+      "objects": [
+        {
+          "proposition": {
+            "comparison_operator": "GREATER_THAN",
+            "confidence": 0.99,
+            "origin": "SOURCE",
+            "proposition_type": "COMPARISON_CONDITION",
+            "relationship_type": "AFFECTS",
+            "role_bindings": [
+              {
+                "entity_id": "house-majority-party-leader",
+                "role": "LEFT_OPERAND"
+              },
+              {
+                "entity_id": "senate-majority-leader",
+                "role": "RIGHT_OPERAND"
+              }
+            ],
+            "statement": "House majority party leaders have more tools with which to set the floor agenda than Senate majority party leaders."
+          },
+          "result": "REJECTED_BEFORE_CANONICAL_VALIDATION",
+          "v2_contract_errors": [
+            "invalid subtype role shape",
+            "invalid subtype relationship_type"
+          ]
+        }
+      ],
+      "source_id": "crs-legislative-process-r42843-17",
+      "source_level_result": "REJECTED"
+    },
+    {
+      "objects": [
+        {
+          "proposition": {
+            "comparison_operator": "GREATER_THAN",
+            "confidence": 0.96,
+            "origin": "SOURCE",
+            "proposition_type": "COMPARISON_CONDITION",
+            "relationship_type": "CONTRADICTS",
+            "role_bindings": [
+              {
+                "entity_id": "national-scale",
+                "role": "LEFT_OPERAND"
+              },
+              {
+                "entity_id": "local-scale",
+                "role": "RIGHT_OPERAND"
+              }
+            ],
+            "statement": "The difficulty of measuring ecological processes is greater at the national scale than at the local scale."
+          },
+          "result": "REJECTED_BEFORE_CANONICAL_VALIDATION",
+          "v2_contract_errors": [
+            "invalid subtype role shape",
+            "invalid subtype relationship_type"
+          ]
+        }
+      ],
+      "source_id": "epa-ecological-processes-2026",
+      "source_level_result": "REJECTED"
+    },
+    {
+      "objects": [
+        {
+          "proposition": {
+            "comparison_operator": null,
+            "confidence": 0.99,
+            "origin": "SOURCE",
+            "proposition_type": "TRANSFER_EVENT",
+            "relationship_type": "TRANSFERS_TO",
+            "role_bindings": [
+              {
+                "entity_id": "three-dimensional-atomic-coordinates",
+                "role": "OBJECT"
+              },
+              {
+                "entity_id": "first-principles-calculation",
+                "role": "DESTINATION"
+              }
+            ],
+            "statement": "Experimentally measured three-dimensional atomic coordinates are provided as direct input to first-principles calculations."
+          },
+          "result": "REJECTED_BEFORE_CANONICAL_VALIDATION",
+          "v2_contract_errors": [
+            "invalid subtype role shape"
+          ]
+        },
+        {
+          "proposition": {
+            "comparison_operator": null,
+            "confidence": 0.99,
+            "origin": "SOURCE",
+            "proposition_type": "TRANSFER_EVENT",
+            "relationship_type": "TRANSFERS_TO",
+            "role_bindings": [
+              {
+                "entity_id": "chemical-species",
+                "role": "OBJECT"
+              },
+              {
+                "entity_id": "first-principles-calculation",
+                "role": "DESTINATION"
+              }
+            ],
+            "statement": "Chemical species are provided as direct input to first-principles calculations."
+          },
+          "result": "REJECTED_BEFORE_CANONICAL_VALIDATION",
+          "v2_contract_errors": [
+            "invalid subtype role shape"
+          ]
+        }
+      ],
+      "source_id": "doe-iron-platinum-atomic-structure-2017",
+      "source_level_result": "REJECTED"
+    },
+    {
+      "objects": [
+        {
+          "proposition": {
+            "comparison_operator": null,
+            "confidence": 0.99,
+            "origin": "SOURCE",
+            "proposition_type": "TRANSFER_EVENT",
+            "relationship_type": "TRANSFERS_TO",
+            "role_bindings": [
+              {
+                "entity_id": "deoxyribonucleic-acid",
+                "role": "OBJECT"
+              },
+              {
+                "entity_id": "offspring",
+                "role": "DESTINATION"
+              }
+            ],
+            "statement": "DNA is passed from adult organisms to offspring during reproduction."
+          },
+          "result": "REJECTED_BEFORE_CANONICAL_VALIDATION",
+          "v2_contract_errors": [
+            "invalid subtype role shape"
+          ]
+        },
+        {
+          "proposition": {
+            "comparison_operator": null,
+            "confidence": 0.96,
+            "origin": "SOURCE",
+            "proposition_type": "TRANSFER_EVENT",
+            "relationship_type": "TRANSFERS_TO",
+            "role_bindings": [
+              {
+                "entity_id": "mitochondrial-dna",
+                "role": "OBJECT"
+              },
+              {
+                "entity_id": "offspring",
+                "role": "DESTINATION"
+              }
+            ],
+            "statement": "Mitochondrial DNA is inherited by offspring from the female parent."
+          },
+          "result": "REJECTED_BEFORE_CANONICAL_VALIDATION",
+          "v2_contract_errors": [
+            "invalid subtype role shape"
+          ]
+        }
+      ],
+      "source_id": "nhgri-dna-fact-sheet-2020",
+      "source_level_result": "REJECTED"
+    },
+    {
+      "objects": [
+        {
+          "proposition": {
+            "comparison_operator": "GREATER_THAN",
+            "confidence": 0.99,
+            "origin": "SOURCE",
+            "proposition_type": "COMPARISON_CONDITION",
+            "relationship_type": "CONSTRAINS",
+            "role_bindings": [
+              {
+                "entity_id": "bottleneck-congestion-proportion",
+                "role": "LEFT_OPERAND"
+              },
+              {
+                "entity_id": "poor-signal-timing-congestion-proportion",
+                "role": "RIGHT_OPERAND"
+              }
+            ],
+            "statement": "The bottleneck congestion proportion is greater than the poor signal timing congestion proportion."
+          },
+          "result": "REJECTED_BEFORE_CANONICAL_VALIDATION",
+          "v2_contract_errors": [
+            "invalid subtype role shape",
+            "invalid subtype relationship_type"
+          ]
+        }
+      ],
+      "source_id": "fhwa-traffic-bottleneck-concepts-2016",
+      "source_level_result": "REJECTED"
+    }
+  ],
+  "schema": "spec-051-historical-replay-v1"
+}

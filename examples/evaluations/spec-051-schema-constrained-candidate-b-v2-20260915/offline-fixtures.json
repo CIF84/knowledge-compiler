@@ -1,0 +1,38 @@
+{
+  "candidate_version": "spec-051-candidate-b-v2",
+  "cases": [
+    {
+      "case": "OMITTED_STANDALONE_COMPARISON_GROUNDED_CLAIM",
+      "claim_count": 1,
+      "claim_quote": "A is greater than B.",
+      "detected_structure_count": 0,
+      "model_candidate_version": "spec-051-candidate-b-v2",
+      "proposition_count": 0,
+      "provider_calls": 0,
+      "relationship_count": 0,
+      "stages_called": [
+        "ENTITY_INVENTORY",
+        "SEMANTIC_STRUCTURE",
+        "CLAIM_EVIDENCE_BINDING"
+      ],
+      "status": "PASS"
+    },
+    {
+      "case": "EXISTING_RELATIONSHIP_PLUS_CLAIM",
+      "claim_count": 1,
+      "claim_quote": "A is greater than B.",
+      "detected_structure_count": 0,
+      "model_candidate_version": "spec-051-candidate-b-v2",
+      "proposition_count": 0,
+      "provider_calls": 0,
+      "relationship_count": 1,
+      "stages_called": [
+        "ENTITY_INVENTORY",
+        "SEMANTIC_STRUCTURE",
+        "CLAIM_EVIDENCE_BINDING"
+      ],
+      "status": "PASS"
+    }
+  ],
+  "schema": "spec-051-offline-fixtures-v1"
+}

@@ -82,49 +82,50 @@ Canonical SPEC-050 evidence:
 ## Current approved work packet
 
 ```text
-specs/SPEC-051-schema-constrained-candidate-b-v2.md
+NONE
 ```
 
-Status: `APPROVED_FOR_IMPLEMENTATION`
+Status: `NONE`
 
-Authority: `OFFLINE_ONLY`
+Authority: `NONE`
 
-Human gate: `OWNER_REVIEW`
+Human gate: `NONE`
 
 Promotion: `NOT_AUTHORIZED`
 
 ## Current gate
 
-SPEC-051 is authorized to implement and freeze Candidate B v2 offline with exactly two evidence-backed changes:
+SPEC-051 is implemented and awaiting owner review. Candidate B v2 is frozen as
+`spec-051-candidate-b-v2` with exactly two evidence-backed changes:
 
-1. subtype-discriminated Stage-2 proposition schemas aligned to the existing canonical `COMPARISON_CONDITION` and `TRANSFER_EVENT` contracts;
-2. generic semantic omission: do not force source-supported meaning into topology when no canonical relationship/proposition fits; preserve such meaning through Stage-3 grounded claims.
+1. subtype-discriminated Stage-2 proposition arrays aligned to the unchanged canonical contracts;
+2. generic Stage-2 semantic omission with independent Stage-3 grounded claim preservation.
 
-No ontology expansion, canonical validator change, model/provider call, blind-corpus execution, or product/UI change is authorized.
+Canonical evidence:
 
-Candidate B v1 and Control A remain frozen historical arms.
+`examples/evaluations/spec-051-schema-constrained-candidate-b-v2-20260915/report.json`
 
-SPEC-051 must freeze a proposed later nine-source Candidate-B-v2 live manifest with a 27-call maximum ceiling, but those calls remain unauthorized.
+All six historical failed source outputs are rejected at the v2 interface; the offline claim-only and relationship-preservation fixtures pass. Control A and B v1 remain frozen historical arms.
+
+No packet is active. The proposed later nine-source manifest retains a 27-call ceiling, but those calls, blind-corpus execution, ontology expansion, production promotion, and further changes are not authorized.
 
 ## Current product question
 
 ```text
 Candidate B v1 failure diagnosis
         ↓
-invalid proposition combinations were schema-expressible
-        +
-non-topological truths were forced into proposition slots
+SPEC-051 Candidate B v2 frozen offline
         ↓
-Candidate B v2 offline
+canonical subtype arrays + generic omission
         ↓
-canonical subtype schema + semantic omission
+Stage 3 preserves independent exact grounded claims
         ↓
-Stage 3 preserves omitted truth as grounded claims
+zero provider calls; no blind execution
         ↓
 OWNER REVIEW before live execution
 ```
 
-The immediate goal is to make Candidate B v2 a clean test of decomposition itself, not to prove it better yet.
+The immediate goal is owner review of the frozen v2 contract, not live execution or promotion.
 
 ## Frozen / protected state
 
