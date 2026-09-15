@@ -8,7 +8,7 @@ This is the authoritative repository handoff for current work coordination. Agen
 
 Owner verdict: `NEW_VISUAL_BASELINE_EXPLANATORY_ARCHITECTURE_CONFIRMED`
 
-Protected four-surface model remains unchanged.
+Protected learner-facing architecture remains unchanged.
 
 ## Semantic-to-representation compiler
 
@@ -18,157 +18,149 @@ Implementation status: `IMPLEMENTED_REVIEWED`
 
 Owner verdict: `SEMANTIC_REPRESENTATION_COMPILER_CONFIRMED_WITH_COVERAGE_GAPS`
 
-## Blind extraction evidence
+## Blind extraction history
 
 SPEC-040 through SPEC-046 remain accepted historical evidence.
 
-Accepted diagnostic conclusion from SPEC-046:
-
-`FAILURE_STAGES_MAPPED_EXTRACTION_DECOMPOSITION_NEXT`
+Historical Control A: 4/9 admitted with strict fail-closed containment.
 
 ## Candidate B v1
 
-`SPEC-047 — decomposed extraction A/B harness`
-
-Implementation status: `IMPLEMENTED_REVIEWED`
-
-`SPEC-048 — decomposed extraction live A/B execution`
-
-Implementation status: `IMPLEMENTED_REVIEWED_FOR_DIAGNOSIS`
+SPEC-047/048 remain frozen historical evidence.
 
 Owner verdict: `CANDIDATE_B_V1_REJECTED_STAGE2_INTERFACE_FAILURE_DOMINATES`
 
-Accepted result:
+Historical B v1: 2/9 admitted, 19 calls, 94,574 tokens, zero known-invalid admission; six failures concentrated in Stage-2 proposition construction.
 
-- historical Control A: 4/9 admitted;
-- Candidate B v1: 2/9 admitted;
-- B v1 is a regression as implemented;
-- zero known-invalid admissions in both arms;
-- six of seven B-v1 failures concentrated in Stage-2 proposition construction.
+## Proposition diagnosis
 
-## Proposition diagnostics
+SPEC-049/050 remain accepted diagnostic evidence.
 
-`SPEC-049 — stage2 proposition contract diagnosis`
+Owner verdict from SPEC-050:
 
-Implementation status: `IMPLEMENTED_REVIEWED`
+`NO_ONTOLOGY_GAP_SCHEMA_CONSTRAINED_B_V2_WITH_SEMANTIC_OMISSION_APPROVED`
 
-Accepted finding:
+Accepted principle:
 
-- all six exact failed proposition outputs were machine-schema expressible but canonically invalid;
-- 1 was purely structurally preventable;
-- 5 mixed structural + semantic mismatches required further diagnosis.
-
-`SPEC-050 — proposition semantic coverage diagnosis`
-
-Implementation status: `IMPLEMENTED_REVIEWED`
-
-Owner verdict: `NO_ONTOLOGY_GAP_SCHEMA_CONSTRAINED_B_V2_WITH_SEMANTIC_OMISSION_APPROVED`
-
-Accepted findings:
-
-- 4 mixed cases are `CLAIM_ONLY_FIT`;
-- 1 is `EXISTING_RELATIONSHIP_FIT`;
-- 0 are `TRUE_SEMANTIC_COVERAGE_GAP`;
-- NHGRI structural-only control remains a canonical proposition fit;
-- no proposition/predicate expansion is justified;
 - not every true statement deserves topology;
-- Stage 2 should omit source-supported meaning that does not truthfully fit canonical topology, while Stage 3 preserves it as grounded claim material;
-- proposition subtype schemas should encode canonical shape directly.
+- canonical proposition shapes should be encoded in the model-facing interface;
+- source-supported non-topological meaning should be omitted from Stage-2 topology and preserved as grounded Stage-3 claims;
+- no ontology expansion is justified by current evidence.
 
-Canonical SPEC-050 evidence:
+## Candidate B v2
 
-`examples/evaluations/spec-050-proposition-semantic-coverage-diagnosis-20260914/report.json`
+`SPEC-051 — schema-constrained Candidate B v2`
+
+Implementation status: `IMPLEMENTED_REVIEWED`
+
+Owner verdict: `CANDIDATE_B_V2_FROZEN_LIVE_EVALUATION_APPROVED`
+
+Frozen candidate version: `spec-051-candidate-b-v2`
+
+Contract SHA-256:
+
+`6a149b1d3bac5789652de77af2630ffea84893413e892f4606df3c718e48d148`
+
+Accepted offline evidence:
+
+- all eight invalid historical proposition objects rejected at v2 interface;
+- valid canonical proposition variants preserved;
+- claim-only omission/preservation fixture passes without added topology;
+- existing-relationship fit fixture passes;
+- canonical validators/structure/representation remain unchanged;
+- zero model calls and zero blind executions during SPEC-051.
 
 ## Current approved work packet
 
 ```text
-NONE
+specs/SPEC-052-candidate-b-v2-live-evaluation.md
 ```
 
-Status: `NONE`
+Status: `APPROVED_FOR_IMPLEMENTATION`
 
-Authority: `NONE`
+Authority: `LIVE_CALLS_EXPLICITLY_BOUNDED`
 
-Human gate: `NONE`
+Human gate: `OWNER_REVIEW`
 
 Promotion: `NOT_AUTHORIZED`
 
 ## Current gate
 
-SPEC-051 is implemented and awaiting owner review. Candidate B v2 is frozen as
-`spec-051-candidate-b-v2` with exactly two evidence-backed changes:
+SPEC-052 is authorized to execute the exact frozen Candidate B v2 once against the exact nine frozen blind passages.
 
-1. subtype-discriminated Stage-2 proposition arrays aligned to the unchanged canonical contracts;
-2. generic Stage-2 semantic omission with independent Stage-3 grounded claim preservation.
+Provider authority:
 
-Canonical evidence:
+- OpenAI Responses API;
+- model `gpt-5.6-luna`;
+- `store=False`;
+- maximum 27 provider calls;
+- maximum one call per stage per source;
+- fixed source order;
+- Stage 1 → Stage 2 → Stage 3;
+- mandatory upstream-failure short-circuiting;
+- SDK/hidden/semantic/repair/follow-up retries/calls all zero;
+- no external retrieval/enrichment;
+- no prompt/schema/implementation adaptation after execution begins.
 
-`examples/evaluations/spec-051-schema-constrained-candidate-b-v2-20260915/report.json`
+Control A and Candidate B v1 must not be rerun.
 
-All six historical failed source outputs are rejected at the v2 interface; the offline claim-only and relationship-preservation fixtures pass. Control A and B v1 remain frozen historical arms.
-
-No packet is active. The proposed later nine-source manifest retains a 27-call ceiling, but those calls, blind-corpus execution, ontology expansion, production promotion, and further changes are not authorized.
+SPEC-052 must audit whether Stage-2 omitted non-topological meaning survives as exact grounded Stage-3 claims without creating topology.
 
 ## Current product question
 
 ```text
-Candidate B v1 failure diagnosis
+Control A historical: 4/9
+B v1 historical: 2/9 + Stage-2 proposition failure concentration
         ↓
-SPEC-051 Candidate B v2 frozen offline
+frozen B v2
+canonical proposition interface + semantic omission
         ↓
-canonical subtype arrays + generic omission
+9-source bounded live execution
         ↓
-Stage 3 preserves independent exact grounded claims
+admission + trust containment + claim preservation
++ semantic richness + cost/latency
         ↓
-zero provider calls; no blind execution
-        ↓
-OWNER REVIEW before live execution
+OWNER REVIEW
 ```
 
-The immediate goal is owner review of the frozen v2 contract, not live execution or promotion.
+The experiment asks whether B v2 recovers decomposition or whether the decomposition architecture should be abandoned.
 
 ## Frozen / protected state
 
 - BASELINE-001 through BASELINE-004;
 - SPEC-038 learner-facing baseline;
-- SPEC-039 representation compiler behavior;
-- SPEC-040 Control-A implementation/frozen identity;
-- SPEC-041/042/044/045 blind source packets, manifests, raw responses, run histories, and evidence;
-- SPEC-043 taxonomy/classifications;
-- SPEC-046 failure-stage analysis;
-- SPEC-047 Candidate-B-v1 implementation, prompts, schemas, harness, fixtures, and evidence;
-- SPEC-048 B-v1 live evidence, ledger, comparison, and taxonomy audit;
-- SPEC-049 proposition contract diagnosis;
-- SPEC-050 semantic coverage diagnosis;
+- SPEC-039 representation compiler;
+- SPEC-040 Control-A implementation/evidence;
+- SPEC-041/042/044/045 source packets and historical live evidence;
+- SPEC-043/046 failure taxonomies/analysis;
+- SPEC-047/048 Candidate-B-v1 implementation/evidence;
+- SPEC-049/050 diagnostics;
+- SPEC-051 Candidate-B-v2 implementation, prompts, schemas, contract, fixtures, report, and proposed manifest;
 - trusted semantic vocabulary;
-- canonical proposition types and semantics;
-- canonical grounding/provenance behavior;
-- strict declared-identity validation;
-- canonical proposition/KnowledgeModel validators;
+- canonical proposition types/semantics;
+- canonical grounding/provenance and validators;
 - structure detection;
 - representation strategy/renderers;
-- navigation/UI behavior;
+- navigation/UI;
 - unrelated user work.
 
 ## Explicitly forbidden
 
 Do not:
 
-- call OpenAI or another model/provider;
-- use external evidence retrieval;
-- execute B v2 on blind sources;
 - rerun Control A or B v1;
-- edit B-v1 historical behavior/evidence;
-- add proposition types or trusted predicates;
-- reinterpret canonical proposition semantics;
-- weaken/change canonical validation;
-- add deterministic semantic repair;
-- add source-specific production rules/examples;
-- force standalone comparisons into topology;
-- alter structure detection to consume claims;
-- change representation/renderers/UI/navigation;
-- promote B v2;
-- authorize future live execution automatically.
+- exceed 27 B-v2 calls;
+- retry or repair any stage;
+- alter sources/order/model;
+- alter B-v2 prompt/schema/implementation after execution starts;
+- add source-specific rules/examples;
+- add proposition types/predicates;
+- reinterpret or weaken canonical semantics/validation;
+- force omitted claims into topology;
+- change structure detection, representation, renderers, navigation, or UI;
+- retrieve external enrichment;
+- promote any extractor;
+- implement follow-up fixes automatically.
 
 ## Coordination rule
 
