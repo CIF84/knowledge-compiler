@@ -8,21 +8,7 @@ This is the authoritative repository handoff for current work coordination. Agen
 
 Owner verdict: `NEW_VISUAL_BASELINE_EXPLANATORY_ARCHITECTURE_CONFIRMED`
 
-Protected four-surface model:
-
-```text
-MY MAP
-→ remembers revealed territory
-
-WHAT DOES THIS MEAN?
-→ represents the current idea using the fitting semantic representation
-
-INSPECT / SELECTED / PREVIEW
-→ explains representation-local semantic components without changing learner location
-
-EXPLORE NEXT
-→ proposes future traversal
-```
+Protected four-surface model remains unchanged.
 
 ## Semantic-to-representation compiler
 
@@ -40,7 +26,7 @@ Accepted diagnostic conclusion from SPEC-046:
 
 `FAILURE_STAGES_MAPPED_EXTRACTION_DECOMPOSITION_NEXT`
 
-## Decomposed extraction Candidate B v1
+## Candidate B v1
 
 `SPEC-047 — decomposed extraction A/B harness`
 
@@ -52,82 +38,93 @@ Implementation status: `IMPLEMENTED_REVIEWED_FOR_DIAGNOSIS`
 
 Owner verdict: `CANDIDATE_B_V1_REJECTED_STAGE2_INTERFACE_FAILURE_DOMINATES`
 
-Accepted SPEC-048 findings:
+Accepted result:
 
-- Candidate B v1 regressed versus historical Control A: 2/9 admitted vs 4/9;
-- Candidate B used more calls/tokens while preserving zero known-invalid admissions;
-- 6 of 7 Candidate-B failures originated in Stage-2 `PROPOSITION_CONSTRUCTION`;
-- the concentration warranted proposition-interface diagnosis before abandoning decomposition entirely.
+- historical Control A: 4/9 admitted;
+- Candidate B v1: 2/9 admitted;
+- B v1 is a regression as implemented;
+- zero known-invalid admissions in both arms;
+- six of seven B-v1 failures concentrated in Stage-2 proposition construction.
 
-## Stage-2 proposition contract diagnosis
+## Proposition diagnostics
 
 `SPEC-049 — stage2 proposition contract diagnosis`
 
-Implementation status: `IMPLEMENTED_REVIEWED_FOR_FOLLOWUP_DIAGNOSIS`
+Implementation status: `IMPLEMENTED_REVIEWED`
 
-Owner interpretation: `MIXED_SIGNAL_MORE_DIAGNOSIS_REQUIRED`
+Accepted finding:
 
-Accepted objective findings:
+- all six exact failed proposition outputs were machine-schema expressible but canonically invalid;
+- 1 was purely structurally preventable;
+- 5 mixed structural + semantic mismatches required further diagnosis.
 
-- all six exact failed Stage-2 outputs were expressible under Candidate-B-v1's broad machine-readable proposition schema;
-- a stricter subtype-specific interface could reject all six before canonical validation while preserving valid canonical proposition variants;
-- 1 failure is `STRUCTURALLY_PREVENTABLE` only;
-- 5 failures are `BOTH_STRUCTURE_AND_SEMANTICS`;
-- four mixed cases involve source-supported standalone comparisons that do not fit canonical causal `COMPARISON_CONDITION` semantics;
-- at least one mixed transfer case conflicts with canonical `TRANSFER_EVENT` role semantics;
-- schema tightening alone is therefore insufficient evidence for Candidate B v2;
-- no semantic-model expansion is yet justified.
+`SPEC-050 — proposition semantic coverage diagnosis`
 
-Canonical evidence:
+Implementation status: `IMPLEMENTED_REVIEWED`
 
-`examples/evaluations/spec-049-stage2-proposition-contract-diagnosis-20260914/report.json`
+Owner verdict: `NO_ONTOLOGY_GAP_SCHEMA_CONSTRAINED_B_V2_WITH_SEMANTIC_OMISSION_APPROVED`
+
+Accepted findings:
+
+- 4 mixed cases are `CLAIM_ONLY_FIT`;
+- 1 is `EXISTING_RELATIONSHIP_FIT`;
+- 0 are `TRUE_SEMANTIC_COVERAGE_GAP`;
+- NHGRI structural-only control remains a canonical proposition fit;
+- no proposition/predicate expansion is justified;
+- not every true statement deserves topology;
+- Stage 2 should omit source-supported meaning that does not truthfully fit canonical topology, while Stage 3 preserves it as grounded claim material;
+- proposition subtype schemas should encode canonical shape directly.
+
+Canonical SPEC-050 evidence:
+
+`examples/evaluations/spec-050-proposition-semantic-coverage-diagnosis-20260914/report.json`
 
 ## Current approved work packet
 
 ```text
-NONE
+specs/SPEC-051-schema-constrained-candidate-b-v2.md
 ```
 
-Status: `NONE`
+Status: `APPROVED_FOR_IMPLEMENTATION`
 
-Authority: `NONE`
+Authority: `OFFLINE_ONLY`
 
-Human gate: `NONE`
+Human gate: `OWNER_REVIEW`
 
 Promotion: `NOT_AUTHORIZED`
 
 ## Current gate
 
-SPEC-050 is implemented and awaiting owner review. Its canonical report is:
+SPEC-051 is authorized to implement and freeze Candidate B v2 offline with exactly two evidence-backed changes:
 
-`examples/evaluations/spec-050-proposition-semantic-coverage-diagnosis-20260914/report.json`
+1. subtype-discriminated Stage-2 proposition schemas aligned to the existing canonical `COMPARISON_CONDITION` and `TRANSFER_EVENT` contracts;
+2. generic semantic omission: do not force source-supported meaning into topology when no canonical relationship/proposition fits; preserve such meaning through Stage-3 grounded claims.
 
-Objective destination findings:
+No ontology expansion, canonical validator change, model/provider call, blind-corpus execution, or product/UI change is authorized.
 
-- 4 cases are `CLAIM_ONLY_FIT`;
-- 1 case is `EXISTING_RELATIONSHIP_FIT`;
-- 0 cases are `TRUE_SEMANTIC_COVERAGE_GAP` or `AMBIGUOUS`;
-- the structural-only control remains a canonical `TRANSFER_EVENT` fit.
+Candidate B v1 and Control A remain frozen historical arms.
 
-Recommended branch: `SCHEMA_CONSTRAINED_B_V2_WITH_SEMANTIC_OMISSION`.
-
-No packet is active. No provider/model call, production change, Candidate-B-v2 implementation, semantic expansion, or promotion is authorized.
+SPEC-051 must freeze a proposed later nine-source Candidate-B-v2 live manifest with a 27-call maximum ceiling, but those calls remain unauthorized.
 
 ## Current product question
 
 ```text
-5 source-supported mixed proposition failures
+Candidate B v1 failure diagnosis
         ↓
-4 grounded-claim fits + 1 existing-relationship fit
+invalid proposition combinations were schema-expressible
+        +
+non-topological truths were forced into proposition slots
         ↓
-0 demonstrated semantic-model coverage gaps
+Candidate B v2 offline
         ↓
-SCHEMA_CONSTRAINED_B_V2_WITH_SEMANTIC_OMISSION
+canonical subtype schema + semantic omission
         ↓
-OWNER REVIEW
+Stage 3 preserves omitted truth as grounded claims
+        ↓
+OWNER REVIEW before live execution
 ```
 
-The immediate goal is owner review of the diagnosis, not Candidate-B-v2 implementation or ontology expansion.
+The immediate goal is to make Candidate B v2 a clean test of decomposition itself, not to prove it better yet.
 
 ## Frozen / protected state
 
@@ -135,17 +132,20 @@ The immediate goal is owner review of the diagnosis, not Candidate-B-v2 implemen
 - SPEC-038 learner-facing baseline;
 - SPEC-039 representation compiler behavior;
 - SPEC-040 Control-A implementation/frozen identity;
-- SPEC-041/042/044/045 source packets, manifests, raw responses, run histories, and evidence;
-- SPEC-043 taxonomy and historical classifications;
+- SPEC-041/042/044/045 blind source packets, manifests, raw responses, run histories, and evidence;
+- SPEC-043 taxonomy/classifications;
 - SPEC-046 failure-stage analysis;
-- SPEC-047 Candidate-B-v1 implementation, prompts, schemas, contracts, harness, fixtures, and evidence;
-- SPEC-048 raw provider outputs, ledger, stage gates, A/B comparison, final report, and taxonomy audit;
-- SPEC-049 diagnostic contract analysis and preserved canonical proposition semantics;
+- SPEC-047 Candidate-B-v1 implementation, prompts, schemas, harness, fixtures, and evidence;
+- SPEC-048 B-v1 live evidence, ledger, comparison, and taxonomy audit;
+- SPEC-049 proposition contract diagnosis;
+- SPEC-050 semantic coverage diagnosis;
 - trusted semantic vocabulary;
+- canonical proposition types and semantics;
 - canonical grounding/provenance behavior;
 - strict declared-identity validation;
-- canonical proposition and KnowledgeModel validation;
-- representation strategy logic and renderer coverage;
+- canonical proposition/KnowledgeModel validators;
+- structure detection;
+- representation strategy/renderers;
 - navigation/UI behavior;
 - unrelated user work.
 
@@ -154,19 +154,20 @@ The immediate goal is owner review of the diagnosis, not Candidate-B-v2 implemen
 Do not:
 
 - call OpenAI or another model/provider;
-- use external web/network retrieval;
-- rerun Control A or Candidate B;
-- implement Candidate B v2;
-- edit Candidate-B-v1 prompts/schemas;
+- use external evidence retrieval;
+- execute B v2 on blind sources;
+- rerun Control A or B v1;
+- edit B-v1 historical behavior/evidence;
 - add proposition types or trusted predicates;
 - reinterpret canonical proposition semantics;
-- change canonical validation;
-- repair preserved outputs;
-- force claims into graph topology;
-- weaken trust-boundary behavior;
+- weaken/change canonical validation;
+- add deterministic semantic repair;
+- add source-specific production rules/examples;
+- force standalone comparisons into topology;
+- alter structure detection to consume claims;
 - change representation/renderers/UI/navigation;
-- promote any extractor or baseline;
-- automatically implement the recommended next branch.
+- promote B v2;
+- authorize future live execution automatically.
 
 ## Coordination rule
 
