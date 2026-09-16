@@ -47,50 +47,58 @@ Canonical evidence:
 ## Current approved work packet
 
 ```text
-specs/SPEC-054-claim-focus-selection-experiment.md
+NONE
 ```
 
-Status: `APPROVED_FOR_IMPLEMENTATION`
+Status: `NONE`
 
-Authority: `OFFLINE_ONLY`
+Authority: `NONE`
 
-Human gate: `OWNER_REVIEW`
+Human gate: `NONE`
 
 Promotion: `NOT_AUTHORIZED`
 
 ## Current gate
 
-SPEC-054 is authorized to implement an isolated experimental claim-focus seam over the 98 already-admitted claim-only items and pass those focuses through the existing representation strategy logic offline.
+SPEC-054 is implemented and awaiting owner review.
 
-The experiment must not add strategy families, renderers, topology, extraction behavior, or learner-facing UI.
+All 98 trusted claims became deterministic experimental `CLAIM` focuses. The isolated adapter passed their unchanged source-backed statements to the existing `explanation` resolver contract without nodes, relationships, diagnostic labels, source-specific rules, or inferred structure.
 
-Every claim focus must resolve to exactly one outcome:
+Outcome distribution:
 
-- `EXISTING_NON_FALLBACK_STRATEGY`
-- `TRUTHFUL_PROSE_FALLBACK`
-- `NO_STRATEGY`
-- `INVALID_OR_UNSAFE_DECISION`
+- `EXISTING_NON_FALLBACK_STRATEGY`: 0
+- `TRUTHFUL_PROSE_FALLBACK`: 98
+- `NO_STRATEGY`: 0
+- `INVALID_OR_UNSAFE_DECISION`: 0
 
-Existing entity/relationship/proposition decisions and detected structures must remain unchanged.
+Existing entity/relationship/proposition decisions, detected structures, and admitted models regenerate identically. No topology, production behavior, strategy family, renderer, or learner-surface change was made.
+
+Mechanically supported branch: `LEARNER_SURFACE_REQUIRED_TO_DECIDE`.
+
+Recommended next step: `CLAIM_LEARNER_SURFACE_BINDING_EXPERIMENT`.
+
+Canonical evidence:
+
+`examples/evaluations/spec-054-claim-focus-selection-experiment-20260916/report.json`
+
+No packet is active. Promotion remains unauthorized.
 
 ## Current product question
 
 ```text
 98 trusted claim-only truths
         ↓
-experimental CLAIM focus eligibility
+98 deterministic CLAIM focuses
         ↓
-existing representation strategy grammar
+existing explanation resolver contract
         ↓
-non-fallback strategy?
-truthful prose fallback?
-no strategy?
-unsafe decision?
+98 CONCISE_PROSE truthful fallbacks
+0 unsafe / 0 no-strategy / 0 topology
         ↓
 OWNER REVIEW
 ```
 
-This experiment separates routing sufficiency from representation-family coverage.
+The compiler-level evidence establishes safe routing. Whether an all-prose result teaches these claims usefully requires owner judgment and, if authorized later, a bounded learner-surface binding experiment.
 
 ## Frozen / protected state
 
