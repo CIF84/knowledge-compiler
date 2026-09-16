@@ -18,34 +18,13 @@ Implementation status: `IMPLEMENTED_REVIEWED`
 
 Owner verdict: `SEMANTIC_REPRESENTATION_COMPILER_CONFIRMED_WITH_COVERAGE_GAPS`
 
-## Blind extraction history
+## Extraction history
 
-SPEC-040 through SPEC-046 remain accepted historical evidence.
+Historical Control A: 4/9 admitted.
 
-Historical Control A: 4/9 admitted with strict fail-closed containment.
+Candidate B v1: 2/9 admitted; rejected as implemented after Stage-2 proposition failure concentration.
 
-## Candidate B v1
-
-SPEC-047/048 remain frozen historical evidence.
-
-Owner verdict: `CANDIDATE_B_V1_REJECTED_STAGE2_INTERFACE_FAILURE_DOMINATES`
-
-Historical B v1: 2/9 admitted, 19 calls, 94,574 tokens, zero known-invalid admission; six failures concentrated in Stage-2 proposition construction.
-
-## Proposition diagnosis
-
-SPEC-049/050 remain accepted diagnostic evidence.
-
-Owner verdict from SPEC-050:
-
-`NO_ONTOLOGY_GAP_SCHEMA_CONSTRAINED_B_V2_WITH_SEMANTIC_OMISSION_APPROVED`
-
-Accepted principle:
-
-- not every true statement deserves topology;
-- canonical proposition shapes should be encoded in the model-facing interface;
-- source-supported non-topological meaning should be omitted from Stage-2 topology and preserved as grounded Stage-3 claims;
-- no ontology expansion is justified by current evidence.
+SPEC-049/050 established that the v1 interface over-forced non-topological truths into proposition slots and that no ontology expansion was justified.
 
 ## Candidate B v2
 
@@ -53,91 +32,100 @@ Accepted principle:
 
 Implementation status: `IMPLEMENTED_REVIEWED`
 
-Owner verdict: `CANDIDATE_B_V2_FROZEN_LIVE_EVALUATION_APPROVED`
+`SPEC-052 — Candidate B v2 live evaluation`
 
-Frozen candidate version: `spec-051-candidate-b-v2`
+Implementation status: `IMPLEMENTED_REVIEWED_FOR_DOWNSTREAM_DIAGNOSIS`
 
-Contract SHA-256:
+Owner verdict: `B_V2_EXTRACTION_RECOVERED_CLAIM_TO_REPRESENTATION_GAP_NEXT`
 
-`6a149b1d3bac5789652de77af2630ffea84893413e892f4606df3c718e48d148`
+Accepted SPEC-052 findings:
 
-Accepted offline evidence:
+- B v2 admitted 8/9 frozen blind sources;
+- B v1 admitted 2/9 and historical Control A 4/9;
+- known-invalid admission remained zero;
+- B-v1 Stage-2 proposition-construction failures fell from 6 to 1;
+- B v2 used 26 calls / 147,013 tokens, so decomposition carries substantial cost;
+- 152/152 claims were exactly grounded and admitted;
+- 98 were mechanically claim-only;
+- claim-only material created zero unintended topology;
+- zero dedicated claim-focus representation decisions were produced;
+- extraction decomposition has earned continuation, but promotion remains blocked by downstream representation coverage.
 
-- all eight invalid historical proposition objects rejected at v2 interface;
-- valid canonical proposition variants preserved;
-- claim-only omission/preservation fixture passes without added topology;
-- existing-relationship fit fixture passes;
-- canonical validators/structure/representation remain unchanged;
-- zero model calls and zero blind executions during SPEC-051.
+Canonical SPEC-052 evidence:
+
+`examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/final-report.json`
+
+Claim audit:
+
+`examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/claim-only-preservation-audit.json`
 
 ## Current approved work packet
 
 ```text
-NONE
+specs/SPEC-053-claim-to-representation-coverage-diagnosis.md
 ```
 
-Status: `NONE`
+Status: `APPROVED_FOR_IMPLEMENTATION`
 
-Authority: `NONE`
+Authority: `OFFLINE_ONLY`
 
-Human gate: `NONE`
+Human gate: `OWNER_REVIEW`
 
 Promotion: `NOT_AUTHORIZED`
 
 ## Current gate
 
-SPEC-052 is implemented and awaiting owner review. The single frozen Candidate B v2 run completed with:
+SPEC-053 is authorized to trace all 98 trusted claim-only SPEC-052 items through the existing representation pipeline and determine why dedicated claim-focus representation coverage is zero.
 
-- 8/9 admitted sources;
-- 26 provider calls and 147,013 total tokens;
-- zero retries, repairs, enrichment, or known-invalid admission;
-- one Stage-2 `PROPOSITION_CONSTRUCTION` rejection, with correct short-circuiting;
-- 152/152 parsed claims exactly grounded and admitted;
-- 98 mechanically claim-only items preserved as grounded claims;
-- zero unintended topology from claim-only material;
-- zero dedicated claim-focus representation decisions, an explicit representation-coverage limitation.
+The fixed terminal path taxonomy is:
 
-Canonical evidence:
+- `DEDICATED_REPRESENTATION`
+- `SUPPORTING_CONTENT`
+- `GENERIC_FALLBACK`
+- `NOT_CONSIDERED`
+- `FILTERED_OR_DROPPED`
+- `AMBIGUOUS`
 
-`examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/final-report.json`
+SPEC-053 must identify exactly one aggregate downstream gap class and recommend exactly one next experiment class.
 
-The mechanically supported branch remains `INCONCLUSIVE`; the product verdict and promotion remain owner-gated. No packet is active and no additional calls are authorized.
+No extraction change, model/provider call, topology conversion, representation implementation, renderer/UI change, or promotion is authorized.
 
 ## Current product question
 
 ```text
-Control A historical: 4/9
-B v1 historical: 2/9 + 6 Stage-2 proposition failures
+B v2 extraction
         ↓
-frozen B v2 live: 8/9
-1 Stage-2 proposition failure
+trusted topology + 98 claim-only truths
         ↓
-152 exact grounded claims admitted
-98 mechanically claim-only; zero unintended topology
+existing representation compiler
         ↓
-no dedicated claim-focus representation decisions
+0 dedicated claim-focus decisions
+        ↓
+WHERE does claim-only knowledge stop becoming learner-facing representation?
         ↓
 OWNER REVIEW
 ```
 
-The owner must decide whether the large admission recovery justifies continued decomposition work despite higher cost and the unresolved claim-to-representation coverage limitation.
+The goal is to locate the downstream seam, not to change it yet.
 
 ## Frozen / protected state
 
 - BASELINE-001 through BASELINE-004;
 - SPEC-038 learner-facing baseline;
-- SPEC-039 representation compiler;
-- SPEC-040 Control-A implementation/evidence;
-- SPEC-041/042/044/045 source packets and historical live evidence;
-- SPEC-043/046 failure taxonomies/analysis;
-- SPEC-047/048 Candidate-B-v1 implementation/evidence;
-- SPEC-049/050 diagnostics;
-- SPEC-051 Candidate-B-v2 implementation, prompts, schemas, contract, fixtures, report, and proposed manifest;
-- trusted semantic vocabulary;
-- canonical proposition types/semantics;
-- canonical grounding/provenance and validators;
-- structure detection;
-- representation strategy/renderers;
+- SPEC-039 representation compiler behavior;
+- SPEC-040 Control-A evidence;
+- SPEC-041/042/044/045 historical source/live evidence;
+- SPEC-043/046 taxonomies and diagnostics;
+- SPEC-047/048 Candidate-B-v1 evidence;
+- SPEC-049/050 proposition diagnostics;
+- SPEC-051 Candidate-B-v2 implementation/contract;
+- SPEC-052 complete live evidence, admitted KnowledgeModels, claim audit, structures, representation decisions, provider ledger;
+- trusted semantic vocabulary/proposition semantics;
+- grounding/provenance/validators;
+- StructureDetector;
+- representation strategy/compiler;
+- assertion-aware representation behavior;
+- renderers;
 - navigation/UI;
 - unrelated user work.
 
@@ -145,19 +133,18 @@ The owner must decide whether the large admission recovery justifies continued d
 
 Do not:
 
-- rerun Control A or B v1;
-- exceed 27 B-v2 calls;
-- retry or repair any stage;
-- alter sources/order/model;
-- alter B-v2 prompt/schema/implementation after execution starts;
-- add source-specific rules/examples;
-- add proposition types/predicates;
-- reinterpret or weaken canonical semantics/validation;
-- force omitted claims into topology;
-- change structure detection, representation, renderers, navigation, or UI;
-- retrieve external enrichment;
-- promote any extractor;
-- implement follow-up fixes automatically.
+- call OpenAI or another model/provider;
+- use external evidence retrieval;
+- rerun extraction;
+- repair historical outputs;
+- add relationships/propositions for claims;
+- modify StructureDetector;
+- implement claim-focus selection;
+- add representation strategies/families;
+- bind new learner-facing behavior;
+- change renderers/UI/navigation;
+- promote B v2 or another extractor;
+- automatically implement follow-up work.
 
 ## Coordination rule
 
