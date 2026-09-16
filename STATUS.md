@@ -10,127 +10,101 @@ Owner verdict: `NEW_VISUAL_BASELINE_EXPLANATORY_ARCHITECTURE_CONFIRMED`
 
 Protected learner-facing architecture remains unchanged.
 
-## Semantic-to-representation compiler
-
-`SPEC-039 — semantic-to-representation compiler gate`
-
-Implementation status: `IMPLEMENTED_REVIEWED`
-
-Owner verdict: `SEMANTIC_REPRESENTATION_COMPILER_CONFIRMED_WITH_COVERAGE_GAPS`
-
-## Extraction history
+## Extraction + semantic compiler state
 
 Historical Control A: 4/9 admitted.
 
-Candidate B v1: 2/9 admitted; rejected as implemented after Stage-2 proposition failure concentration.
+Candidate B v1: 2/9 admitted and rejected as implemented.
 
-SPEC-049/050 established that the v1 interface over-forced non-topological truths into proposition slots and that no ontology expansion was justified.
+Candidate B v2 (`spec-051-candidate-b-v2`): 8/9 admitted in SPEC-052 with zero known-invalid admission; extraction decomposition has earned continuation but remains unpromoted due to downstream representation coverage.
 
-## Candidate B v2
+Accepted SPEC-052 owner verdict:
 
-`SPEC-051 — schema-constrained Candidate B v2`
+`B_V2_EXTRACTION_RECOVERED_CLAIM_TO_REPRESENTATION_GAP_NEXT`
+
+## Claim-to-representation diagnosis
+
+`SPEC-053 — claim-to-representation coverage diagnosis`
 
 Implementation status: `IMPLEMENTED_REVIEWED`
 
-`SPEC-052 — Candidate B v2 live evaluation`
+Owner verdict: `CLAIM_FOCUS_GAP_CONFIRMED_SELECTION_EXPERIMENT_NEXT`
 
-Implementation status: `IMPLEMENTED_REVIEWED_FOR_DOWNSTREAM_DIAGNOSIS`
+Accepted findings:
 
-Owner verdict: `B_V2_EXTRACTION_RECOVERED_CLAIM_TO_REPRESENTATION_GAP_NEXT`
-
-Accepted SPEC-052 findings:
-
-- B v2 admitted 8/9 frozen blind sources;
-- B v1 admitted 2/9 and historical Control A 4/9;
-- known-invalid admission remained zero;
-- B-v1 Stage-2 proposition-construction failures fell from 6 to 1;
-- B v2 used 26 calls / 147,013 tokens, so decomposition carries substantial cost;
-- 152/152 claims were exactly grounded and admitted;
-- 98 were mechanically claim-only;
-- claim-only material created zero unintended topology;
-- zero dedicated claim-focus representation decisions were produced;
-- extraction decomposition has earned continuation, but promotion remains blocked by downstream representation coverage.
-
-Canonical SPEC-052 evidence:
-
-`examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/final-report.json`
-
-Claim audit:
-
-`examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/claim-only-preservation-audit.json`
-
-## Current approved work packet
-
-```text
-NONE
-```
-
-Status: `NONE`
-
-Authority: `NONE`
-
-Human gate: `NONE`
-
-Promotion: `NOT_AUTHORIZED`
-
-## Current gate
-
-SPEC-053 is implemented and awaiting owner review.
-
-All 98 exactly grounded claim-only items were traced through the frozen downstream pipeline. Every item terminates as `NOT_CONSIDERED`: claims remain present in admitted KnowledgeModels but are excluded by representation-focus enumeration before strategy resolution. None is attached as supporting content, assigned generic fallback, or given a dedicated decision.
-
-Primary diagnosis: `FOCUS_SELECTION_GAP` (`HIGH` confidence).
-
-Recommended next experiment: `CLAIM_FOCUS_SELECTION_EXPERIMENT`.
-
-Topology-only structure detection remains intentional and correct. The existing strategy resolver can truthfully produce concise prose for an explanation context, but current focus enumeration and compiler dispatch never present claims to that resolver. No behavior change or follow-up implementation is authorized.
+- all 98 mechanically claim-only SPEC-052 items remain exactly grounded in admitted KnowledgeModels;
+- 98/98 terminate as `NOT_CONSIDERED`;
+- claim focus enumeration excludes them before strategy resolution;
+- semantic compiler dispatch has no claim focus class;
+- StructureDetector remains topology-only by design and is not the defect;
+- assertion-aware claim projection is a separate seam requiring inputs SPEC-052 does not provide;
+- first blocking seam is representation focus selection.
 
 Canonical evidence:
 
 `examples/evaluations/spec-053-claim-to-representation-coverage-diagnosis-20260916/report.json`
 
-No packet is active. Promotion remains unauthorized.
+## Current approved work packet
+
+```text
+specs/SPEC-054-claim-focus-selection-experiment.md
+```
+
+Status: `APPROVED_FOR_IMPLEMENTATION`
+
+Authority: `OFFLINE_ONLY`
+
+Human gate: `OWNER_REVIEW`
+
+Promotion: `NOT_AUTHORIZED`
+
+## Current gate
+
+SPEC-054 is authorized to implement an isolated experimental claim-focus seam over the 98 already-admitted claim-only items and pass those focuses through the existing representation strategy logic offline.
+
+The experiment must not add strategy families, renderers, topology, extraction behavior, or learner-facing UI.
+
+Every claim focus must resolve to exactly one outcome:
+
+- `EXISTING_NON_FALLBACK_STRATEGY`
+- `TRUTHFUL_PROSE_FALLBACK`
+- `NO_STRATEGY`
+- `INVALID_OR_UNSAFE_DECISION`
+
+Existing entity/relationship/proposition decisions and detected structures must remain unchanged.
 
 ## Current product question
 
 ```text
-B v2 extraction
+98 trusted claim-only truths
         ↓
-trusted topology + 98 claim-only truths
+experimental CLAIM focus eligibility
         ↓
-98/98 remain in admitted KnowledgeModels
+existing representation strategy grammar
         ↓
-StructureDetector ignores claims by design
-        ↓
-focus enumeration excludes claims
-compiler dispatch has no claim class
-        ↓
-98/98 NOT_CONSIDERED
-        ↓
-CLAIM_FOCUS_SELECTION_EXPERIMENT?
+non-fallback strategy?
+truthful prose fallback?
+no strategy?
+unsafe decision?
         ↓
 OWNER REVIEW
 ```
 
-The diagnosed first blocking seam is focus selection, not topology detection, strategy-family execution, renderer binding, or learner navigation.
+This experiment separates routing sufficiency from representation-family coverage.
 
 ## Frozen / protected state
 
 - BASELINE-001 through BASELINE-004;
 - SPEC-038 learner-facing baseline;
-- SPEC-039 representation compiler behavior;
-- SPEC-040 Control-A evidence;
-- SPEC-041/042/044/045 historical source/live evidence;
-- SPEC-043/046 taxonomies and diagnostics;
-- SPEC-047/048 Candidate-B-v1 evidence;
-- SPEC-049/050 proposition diagnostics;
-- SPEC-051 Candidate-B-v2 implementation/contract;
-- SPEC-052 complete live evidence, admitted KnowledgeModels, claim audit, structures, representation decisions, provider ledger;
+- SPEC-039 existing representation strategy/compiler semantics;
+- historical extraction evidence;
+- Candidate B v1/v2 extraction implementations/evidence;
+- SPEC-052 admitted KnowledgeModels and claim audit;
+- SPEC-053 diagnosis and 98-item inventory;
 - trusted semantic vocabulary/proposition semantics;
 - grounding/provenance/validators;
 - StructureDetector;
-- representation strategy/compiler;
-- assertion-aware representation behavior;
+- existing representation strategy families;
 - renderers;
 - navigation/UI;
 - unrelated user work.
@@ -142,15 +116,16 @@ Do not:
 - call OpenAI or another model/provider;
 - use external evidence retrieval;
 - rerun extraction;
-- repair historical outputs;
-- add relationships/propositions for claims;
+- convert claims into topology;
 - modify StructureDetector;
-- implement claim-focus selection;
-- add representation strategies/families;
-- bind new learner-facing behavior;
-- change renderers/UI/navigation;
-- promote B v2 or another extractor;
-- automatically implement follow-up work.
+- add claim-specific strategy families;
+- add source-specific routing rules;
+- use diagnostic claim labels as production routing features;
+- repair unsafe decisions;
+- alter existing non-claim representation decisions;
+- implement learner-facing rendering/binding;
+- redesign UI/navigation;
+- promote B v2 or claim focus automatically.
 
 ## Coordination rule
 
