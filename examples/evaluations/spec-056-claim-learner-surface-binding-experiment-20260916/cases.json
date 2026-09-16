@@ -1,0 +1,797 @@
+{
+  "cases": [
+    {
+      "a_control": {
+        "prose": "Majority party leaders in the House have more tools to set the floor agenda than majority party leaders in the Senate.",
+        "strategy": "CONCISE_PROSE",
+        "structured_payload": null
+      },
+      "a_identity_sha256": "918e1faf4fd1839f82cf36877b3445ccf7b1b4291978652df4d76135474fd5a7",
+      "b_experiment": {
+        "prose": "Majority party leaders in the House have more tools to set the floor agenda than majority party leaders in the Senate.",
+        "strategy": "COMPARISON",
+        "structured_payload": {
+          "explicit_cue": "more tools to set the floor agenda than",
+          "quantity_excerpts": [],
+          "sides": [
+            "Majority party leaders in the House have",
+            "majority party leaders in the Senate"
+          ]
+        }
+      },
+      "b_identity_sha256": "4c14a1b790b126c432a2265e1f4d8faa7ff40606dfb21e413e127d4e05c58945",
+      "case_identity": "spec056-case-a7f04c5e16711b",
+      "character": "QUANTITATIVE_COMPARISON",
+      "claim_id": "claim-house-tools",
+      "classification_confidence": "HIGH",
+      "display_field_traces": [
+        {
+          "end_char": 118,
+          "quote": "Majority party leaders in the House have more tools to set the floor agenda than majority party leaders in the Senate.",
+          "role": "concise_prose",
+          "source": "CLAIM_TEXT",
+          "start_char": 0
+        },
+        {
+          "end_char": 40,
+          "quote": "Majority party leaders in the House have",
+          "role": "comparison_side_a",
+          "source": "CLAIM_TEXT",
+          "start_char": 0
+        },
+        {
+          "end_char": 117,
+          "quote": "majority party leaders in the Senate",
+          "role": "comparison_side_b",
+          "source": "CLAIM_TEXT",
+          "start_char": 81
+        },
+        {
+          "end_char": 80,
+          "quote": "more tools to set the floor agenda than",
+          "role": "comparison_cue",
+          "source": "CLAIM_TEXT",
+          "start_char": 41
+        }
+      ],
+      "display_fragments": [
+        "Majority party leaders in the House have",
+        "majority party leaders in the Senate",
+        "more tools to set the floor agenda than"
+      ],
+      "domain": "civics / institutional process",
+      "evidence_quotes": [
+        "majority party leaders in the House have more tools with which to set the floor agenda than do majority party leaders in the Senate"
+      ],
+      "prose": "Majority party leaders in the House have more tools to set the floor agenda than majority party leaders in the Senate.",
+      "review_index": 1,
+      "source_id": "crs-legislative-process-r42843-17",
+      "spec055_decision_id": "spec055-decision-23959a461c55b66f",
+      "strategy": "COMPARISON",
+      "structured_payload": {
+        "explicit_cue": "more tools to set the floor agenda than",
+        "quantity_excerpts": [],
+        "sides": [
+          "Majority party leaders in the House have",
+          "majority party leaders in the Senate"
+        ]
+      },
+      "truthfulness_audit": {
+        "all_display_fields_trace_to_frozen_plan": true,
+        "new_semantics_created": false,
+        "prose_unchanged": true,
+        "provenance_attached": true,
+        "topology_created": false
+      }
+    },
+    {
+      "a_control": {
+        "prose": "Indicators for respiration, nutrient cycling, and decomposition have been developed at watershed scales but not at the national scale.",
+        "strategy": "CONCISE_PROSE",
+        "structured_payload": null
+      },
+      "a_identity_sha256": "e765275ca63cacda920566a950d602ab5f403f1da53cbcc7503d90a2ab2e16f4",
+      "b_experiment": {
+        "prose": "Indicators for respiration, nutrient cycling, and decomposition have been developed at watershed scales but not at the national scale.",
+        "strategy": "COMPARISON",
+        "structured_payload": {
+          "explicit_cue": "but not",
+          "quantity_excerpts": [],
+          "sides": [
+            "Indicators for respiration, nutrient cycling, and decomposition have been developed at watershed scales",
+            "not at the national scale"
+          ]
+        }
+      },
+      "b_identity_sha256": "0e185e9b07473400b59a342f368c3d7602c4dbbfe7fc00620471f4b8887c592d",
+      "case_identity": "spec056-case-7e42e466c4c10a",
+      "character": "DESCRIPTIVE_CONTRAST",
+      "claim_id": "claim-6",
+      "classification_confidence": "HIGH",
+      "display_field_traces": [
+        {
+          "end_char": 134,
+          "quote": "Indicators for respiration, nutrient cycling, and decomposition have been developed at watershed scales but not at the national scale.",
+          "role": "concise_prose",
+          "source": "CLAIM_TEXT",
+          "start_char": 0
+        },
+        {
+          "end_char": 103,
+          "quote": "Indicators for respiration, nutrient cycling, and decomposition have been developed at watershed scales",
+          "role": "contrast_side_a",
+          "source": "CLAIM_TEXT",
+          "start_char": 0
+        },
+        {
+          "end_char": 133,
+          "quote": "not at the national scale",
+          "role": "contrast_side_b",
+          "source": "CLAIM_TEXT",
+          "start_char": 108
+        },
+        {
+          "end_char": 111,
+          "quote": "but not",
+          "role": "contrast_cue",
+          "source": "CLAIM_TEXT",
+          "start_char": 104
+        }
+      ],
+      "display_fragments": [
+        "Indicators for respiration, nutrient cycling, and decomposition have been developed at watershed scales",
+        "but not",
+        "not at the national scale"
+      ],
+      "domain": "ecology / environmental systems",
+      "evidence_quotes": [
+        "Indicators for other ecological processes, such as respiration, nutrient cycling, or decomposition have been developed for ecosystems at watershed scales, but have not been developed at the national scale."
+      ],
+      "prose": "Indicators for respiration, nutrient cycling, and decomposition have been developed at watershed scales but not at the national scale.",
+      "review_index": 2,
+      "source_id": "epa-ecological-processes-2026",
+      "spec055_decision_id": "spec055-decision-e321ecc0b2c28907",
+      "strategy": "COMPARISON",
+      "structured_payload": {
+        "explicit_cue": "but not",
+        "quantity_excerpts": [],
+        "sides": [
+          "Indicators for respiration, nutrient cycling, and decomposition have been developed at watershed scales",
+          "not at the national scale"
+        ]
+      },
+      "truthfulness_audit": {
+        "all_display_fields_trace_to_frozen_plan": true,
+        "new_semantics_created": false,
+        "prose_unchanged": true,
+        "provenance_attached": true,
+        "topology_created": false
+      }
+    },
+    {
+      "a_control": {
+        "prose": "FHWA has stated that 40 percent of all congestion nationwide is attributable to bottlenecks, while another 5 percent is attributable to poor signal timing.",
+        "strategy": "CONCISE_PROSE",
+        "structured_payload": null
+      },
+      "a_identity_sha256": "c2681f606f6e72d4d25707c9f97a3895f5950c95cabbbfa9f44c200fec539620",
+      "b_experiment": {
+        "prose": "FHWA has stated that 40 percent of all congestion nationwide is attributable to bottlenecks, while another 5 percent is attributable to poor signal timing.",
+        "strategy": "COMPARISON",
+        "structured_payload": {
+          "explicit_cue": "while",
+          "quantity_excerpts": [
+            "40 percent",
+            "another 5 percent"
+          ],
+          "sides": [
+            "FHWA has stated that 40 percent of all congestion nationwide is attributable to bottlenecks",
+            "another 5 percent is attributable to poor signal timing"
+          ]
+        }
+      },
+      "b_identity_sha256": "86e8db8a160de4f3c202c54d1599d0a2f4984f77950d91f97af67edb920682d5",
+      "case_identity": "spec056-case-cc485b6a338155",
+      "character": "QUANTITATIVE_COMPARISON",
+      "claim_id": "c1",
+      "classification_confidence": "HIGH",
+      "display_field_traces": [
+        {
+          "end_char": 155,
+          "quote": "FHWA has stated that 40 percent of all congestion nationwide is attributable to bottlenecks, while another 5 percent is attributable to poor signal timing.",
+          "role": "concise_prose",
+          "source": "CLAIM_TEXT",
+          "start_char": 0
+        },
+        {
+          "end_char": 91,
+          "quote": "FHWA has stated that 40 percent of all congestion nationwide is attributable to bottlenecks",
+          "role": "comparison_side_a",
+          "source": "CLAIM_TEXT",
+          "start_char": 0
+        },
+        {
+          "end_char": 154,
+          "quote": "another 5 percent is attributable to poor signal timing",
+          "role": "comparison_side_b",
+          "source": "CLAIM_TEXT",
+          "start_char": 99
+        },
+        {
+          "end_char": 98,
+          "quote": "while",
+          "role": "comparison_cue",
+          "source": "CLAIM_TEXT",
+          "start_char": 93
+        },
+        {
+          "end_char": 31,
+          "quote": "40 percent",
+          "role": "explicit_quantity",
+          "source": "CLAIM_TEXT",
+          "start_char": 21
+        },
+        {
+          "end_char": 116,
+          "quote": "another 5 percent",
+          "role": "explicit_quantity",
+          "source": "CLAIM_TEXT",
+          "start_char": 99
+        }
+      ],
+      "display_fragments": [
+        "40 percent",
+        "FHWA has stated that 40 percent of all congestion nationwide is attributable to bottlenecks",
+        "another 5 percent",
+        "another 5 percent is attributable to poor signal timing",
+        "while"
+      ],
+      "domain": "transportation / infrastructure systems",
+      "evidence_quotes": [
+        "For at least 15 years, FHWA has stated that 40 percent of all congestion nationwide is attributable to bottlenecks, while another 5 percent is attributable to poor signal timing, which is also a tangible problem and not a random event.(5)"
+      ],
+      "prose": "FHWA has stated that 40 percent of all congestion nationwide is attributable to bottlenecks, while another 5 percent is attributable to poor signal timing.",
+      "review_index": 3,
+      "source_id": "fhwa-traffic-bottleneck-concepts-2016",
+      "spec055_decision_id": "spec055-decision-4f11017a443b9d9d",
+      "strategy": "COMPARISON",
+      "structured_payload": {
+        "explicit_cue": "while",
+        "quantity_excerpts": [
+          "40 percent",
+          "another 5 percent"
+        ],
+        "sides": [
+          "FHWA has stated that 40 percent of all congestion nationwide is attributable to bottlenecks",
+          "another 5 percent is attributable to poor signal timing"
+        ]
+      },
+      "truthfulness_audit": {
+        "all_display_fields_trace_to_frozen_plan": true,
+        "new_semantics_created": false,
+        "prose_unchanged": true,
+        "provenance_attached": true,
+        "topology_created": false
+      }
+    },
+    {
+      "a_control": {
+        "prose": "During a markup, committee members vote on proposed amendments.",
+        "strategy": "CONCISE_PROSE",
+        "structured_payload": null
+      },
+      "a_identity_sha256": "d54e500e6f1976def10a54b4f04e417d4605b929e9af216b771c04a1925edfb0",
+      "b_experiment": {
+        "prose": "During a markup, committee members vote on proposed amendments.",
+        "strategy": "QUALIFIED_STATEMENT",
+        "structured_payload": {
+          "explicit_qualifier_or_condition": "During a markup"
+        }
+      },
+      "b_identity_sha256": "1bf7d6aa37aa1808068275a162570042c87cfd77e2b11fe7be2ab927fc2ac65d",
+      "case_identity": "spec056-case-3206998c08a64a",
+      "character": "QUALIFICATION_OR_CONDITION",
+      "claim_id": "claim-amendments",
+      "classification_confidence": "HIGH",
+      "display_field_traces": [
+        {
+          "end_char": 63,
+          "quote": "During a markup, committee members vote on proposed amendments.",
+          "role": "concise_prose",
+          "source": "CLAIM_TEXT",
+          "start_char": 0
+        },
+        {
+          "end_char": 15,
+          "quote": "During a markup",
+          "role": "qualifier",
+          "source": "CLAIM_TEXT",
+          "start_char": 0
+        }
+      ],
+      "display_fragments": [
+        "During a markup"
+      ],
+      "domain": "civics / institutional process",
+      "evidence_quotes": [
+        "at which committee members vote on any proposed amendments"
+      ],
+      "prose": "During a markup, committee members vote on proposed amendments.",
+      "review_index": 4,
+      "source_id": "crs-legislative-process-r42843-17",
+      "spec055_decision_id": "spec055-decision-9c8a9458c9e42ada",
+      "strategy": "QUALIFIED_STATEMENT",
+      "structured_payload": {
+        "explicit_qualifier_or_condition": "During a markup"
+      },
+      "truthfulness_audit": {
+        "all_display_fields_trace_to_frozen_plan": true,
+        "new_semantics_created": false,
+        "prose_unchanged": true,
+        "provenance_attached": true,
+        "topology_created": false
+      }
+    },
+    {
+      "a_control": {
+        "prose": "Swap defects occur when an individual atom or a pair of nearest-neighbor atoms switch places.",
+        "strategy": "CONCISE_PROSE",
+        "structured_payload": null
+      },
+      "a_identity_sha256": "c6e0604de1c753f8167e898d7745c94604447b22bf30eacd90ae18b26bba6b8c",
+      "b_experiment": {
+        "prose": "Swap defects occur when an individual atom or a pair of nearest-neighbor atoms switch places.",
+        "strategy": "QUALIFIED_STATEMENT",
+        "structured_payload": {
+          "explicit_qualifier_or_condition": "when an individual atom or a pair of nearest-neighbor atoms switch places"
+        }
+      },
+      "b_identity_sha256": "9ae8eb96a0739420a202189be4ddd24763fd2b870bb2c800f315e4f8b95d6bc1",
+      "case_identity": "spec056-case-26556169738358",
+      "character": "QUALIFICATION_OR_CONDITION",
+      "claim_id": "c14",
+      "classification_confidence": "HIGH",
+      "display_field_traces": [
+        {
+          "end_char": 93,
+          "quote": "Swap defects occur when an individual atom or a pair of nearest-neighbor atoms switch places.",
+          "role": "concise_prose",
+          "source": "CLAIM_TEXT",
+          "start_char": 0
+        },
+        {
+          "end_char": 92,
+          "quote": "when an individual atom or a pair of nearest-neighbor atoms switch places",
+          "role": "qualifier",
+          "source": "CLAIM_TEXT",
+          "start_char": 19
+        }
+      ],
+      "display_fragments": [
+        "when an individual atom or a pair of nearest-neighbor atoms switch places"
+      ],
+      "domain": "chemistry / materials science",
+      "evidence_quotes": [
+        "swap defects (where individual or a pair of nearest-neighbor atoms switch places)"
+      ],
+      "prose": "Swap defects occur when an individual atom or a pair of nearest-neighbor atoms switch places.",
+      "review_index": 5,
+      "source_id": "doe-iron-platinum-atomic-structure-2017",
+      "spec055_decision_id": "spec055-decision-637716de3f4d8770",
+      "strategy": "QUALIFIED_STATEMENT",
+      "structured_payload": {
+        "explicit_qualifier_or_condition": "when an individual atom or a pair of nearest-neighbor atoms switch places"
+      },
+      "truthfulness_audit": {
+        "all_display_fields_trace_to_frozen_plan": true,
+        "new_semantics_created": false,
+        "prose_unchanged": true,
+        "provenance_attached": true,
+        "topology_created": false
+      }
+    },
+    {
+      "a_control": {
+        "prose": "Ecological processes are difficult to measure directly, particularly at a national scale.",
+        "strategy": "CONCISE_PROSE",
+        "structured_payload": null
+      },
+      "a_identity_sha256": "43d7a8d45c20efdece0bf5044ae559d8377f78a787d4381e851d180036187ae8",
+      "b_experiment": {
+        "prose": "Ecological processes are difficult to measure directly, particularly at a national scale.",
+        "strategy": "QUALIFIED_STATEMENT",
+        "structured_payload": {
+          "explicit_qualifier_or_condition": "particularly"
+        }
+      },
+      "b_identity_sha256": "aba38b27584102b1159d1276be5ac4a71572313072e10d485b56bfe8c26d8105",
+      "case_identity": "spec056-case-ab5f4df3ff3de2",
+      "character": "QUALIFICATION_OR_CONDITION",
+      "claim_id": "claim-3",
+      "classification_confidence": "HIGH",
+      "display_field_traces": [
+        {
+          "end_char": 89,
+          "quote": "Ecological processes are difficult to measure directly, particularly at a national scale.",
+          "role": "concise_prose",
+          "source": "CLAIM_TEXT",
+          "start_char": 0
+        },
+        {
+          "end_char": 68,
+          "quote": "particularly",
+          "role": "qualifier",
+          "source": "CLAIM_TEXT",
+          "start_char": 56
+        }
+      ],
+      "display_fragments": [
+        "particularly"
+      ],
+      "domain": "ecology / environmental systems",
+      "evidence_quotes": [
+        "Only one indicator that meets the ROE criteria, Carbon Storage in Forests, is available to address this question because ecological processes are difficult to measure directly, particularly at a national scale."
+      ],
+      "prose": "Ecological processes are difficult to measure directly, particularly at a national scale.",
+      "review_index": 6,
+      "source_id": "epa-ecological-processes-2026",
+      "spec055_decision_id": "spec055-decision-88295b10e96bdc0d",
+      "strategy": "QUALIFIED_STATEMENT",
+      "structured_payload": {
+        "explicit_qualifier_or_condition": "particularly"
+      },
+      "truthfulness_audit": {
+        "all_display_fields_trace_to_frozen_plan": true,
+        "new_semantics_created": false,
+        "prose_unchanged": true,
+        "provenance_attached": true,
+        "topology_created": false
+      }
+    },
+    {
+      "a_control": {
+        "prose": "Scientists determined the three-dimensional position of more than 23,000 atoms in a tiny iron-platinum particle with 22 picometer precision.",
+        "strategy": "CONCISE_PROSE",
+        "structured_payload": null
+      },
+      "a_identity_sha256": "6c97ce3281fbfb25f9a66efea3d2a1c7362a8150599e5f5d38e2fbfd06e1cfea",
+      "b_experiment": {
+        "prose": "Scientists determined the three-dimensional position of more than 23,000 atoms in a tiny iron-platinum particle with 22 picometer precision.",
+        "strategy": "QUANTITATIVE_CALLOUT",
+        "structured_payload": {
+          "quantity_excerpts": [
+            "more than 23,000 atoms",
+            "22 picometer"
+          ]
+        }
+      },
+      "b_identity_sha256": "8618566f01974fc20064d96a708c39b388f0dd5d30af4872cd0649bbd36d7bac",
+      "case_identity": "spec056-case-27fe0abaa1cfcc",
+      "character": "QUANTITATIVE_FACT",
+      "claim_id": "c1",
+      "classification_confidence": "HIGH",
+      "display_field_traces": [
+        {
+          "end_char": 140,
+          "quote": "Scientists determined the three-dimensional position of more than 23,000 atoms in a tiny iron-platinum particle with 22 picometer precision.",
+          "role": "concise_prose",
+          "source": "CLAIM_TEXT",
+          "start_char": 0
+        },
+        {
+          "end_char": 78,
+          "quote": "more than 23,000 atoms",
+          "role": "explicit_quantity",
+          "source": "CLAIM_TEXT",
+          "start_char": 56
+        },
+        {
+          "end_char": 129,
+          "quote": "22 picometer",
+          "role": "explicit_quantity",
+          "source": "CLAIM_TEXT",
+          "start_char": 117
+        }
+      ],
+      "display_fragments": [
+        "22 picometer",
+        "more than 23,000 atoms"
+      ],
+      "domain": "chemistry / materials science",
+      "evidence_quotes": [
+        "Scientists determined the three-dimensional position of more than 23,000 atoms in a tiny iron-platinum particle with 22 picometer precision."
+      ],
+      "prose": "Scientists determined the three-dimensional position of more than 23,000 atoms in a tiny iron-platinum particle with 22 picometer precision.",
+      "review_index": 7,
+      "source_id": "doe-iron-platinum-atomic-structure-2017",
+      "spec055_decision_id": "spec055-decision-5a0199459e76538e",
+      "strategy": "QUANTITATIVE_CALLOUT",
+      "structured_payload": {
+        "quantity_excerpts": [
+          "more than 23,000 atoms",
+          "22 picometer"
+        ]
+      },
+      "truthfulness_audit": {
+        "all_display_fields_trace_to_frozen_plan": true,
+        "new_semantics_created": false,
+        "prose_unchanged": true,
+        "provenance_attached": true,
+        "topology_created": false
+      }
+    },
+    {
+      "a_control": {
+        "prose": "Bottlenecks and poor signal timing together are said to define recurring congestion and account for 45 percent of congestion.",
+        "strategy": "CONCISE_PROSE",
+        "structured_payload": null
+      },
+      "a_identity_sha256": "fbbe18f399c46fbd9d6f6b8dcefed5364e95f9dad172bd4d29d4bfb5a92dcaa1",
+      "b_experiment": {
+        "prose": "Bottlenecks and poor signal timing together are said to define recurring congestion and account for 45 percent of congestion.",
+        "strategy": "QUANTITATIVE_CALLOUT",
+        "structured_payload": {
+          "quantity_excerpts": [
+            "45 percent"
+          ]
+        }
+      },
+      "b_identity_sha256": "7ed41b88af06c9784e20c51522b66a023d9779904ede144712002a46d6e73e76",
+      "case_identity": "spec056-case-06d2045f8875a7",
+      "character": "QUANTITATIVE_FACT",
+      "claim_id": "c2",
+      "classification_confidence": "HIGH",
+      "display_field_traces": [
+        {
+          "end_char": 125,
+          "quote": "Bottlenecks and poor signal timing together are said to define recurring congestion and account for 45 percent of congestion.",
+          "role": "concise_prose",
+          "source": "CLAIM_TEXT",
+          "start_char": 0
+        },
+        {
+          "end_char": 110,
+          "quote": "45 percent",
+          "role": "explicit_quantity",
+          "source": "CLAIM_TEXT",
+          "start_char": 100
+        }
+      ],
+      "display_fragments": [
+        "45 percent"
+      ],
+      "domain": "transportation / infrastructure systems",
+      "evidence_quotes": [
+        "These two causes together are said to define recurring congestion and account for 45 percent of congestion."
+      ],
+      "prose": "Bottlenecks and poor signal timing together are said to define recurring congestion and account for 45 percent of congestion.",
+      "review_index": 8,
+      "source_id": "fhwa-traffic-bottleneck-concepts-2016",
+      "spec055_decision_id": "spec055-decision-10ed1410c4838696",
+      "strategy": "QUANTITATIVE_CALLOUT",
+      "structured_payload": {
+        "quantity_excerpts": [
+          "45 percent"
+        ]
+      },
+      "truthfulness_audit": {
+        "all_display_fields_trace_to_frozen_plan": true,
+        "new_semantics_created": false,
+        "prose_unchanged": true,
+        "provenance_attached": true,
+        "topology_created": false
+      }
+    },
+    {
+      "a_control": {
+        "prose": "The young planets eventually became the eight planets listed in the source.",
+        "strategy": "CONCISE_PROSE",
+        "structured_payload": null
+      },
+      "a_identity_sha256": "0d88b22c80dfbf1daa8b2df3c27c1c68f8a3e25010074de53e2225f90c3b3694",
+      "b_experiment": {
+        "prose": "The young planets eventually became the eight planets listed in the source.",
+        "strategy": "QUANTITATIVE_CALLOUT",
+        "structured_payload": {
+          "quantity_excerpts": [
+            "eight planets"
+          ]
+        }
+      },
+      "b_identity_sha256": "4d64e6fd5eabe5782ad87db41d3cd33287ecedd6bfc02cddb5abfc0a5228b771",
+      "case_identity": "spec056-case-8ae7d248669ec5",
+      "character": "QUANTITATIVE_FACT",
+      "claim_id": "c8",
+      "classification_confidence": "HIGH",
+      "display_field_traces": [
+        {
+          "end_char": 75,
+          "quote": "The young planets eventually became the eight planets listed in the source.",
+          "role": "concise_prose",
+          "source": "CLAIM_TEXT",
+          "start_char": 0
+        },
+        {
+          "end_char": 53,
+          "quote": "eight planets",
+          "role": "explicit_quantity",
+          "source": "CLAIM_TEXT",
+          "start_char": 40
+        }
+      ],
+      "display_fragments": [
+        "eight planets"
+      ],
+      "domain": "astronomy / planetary science",
+      "evidence_quotes": [
+        "These were young planets, and eventually, over a long time and through many, many collisions, our eight planets were formed – Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, and Neptune."
+      ],
+      "prose": "The young planets eventually became the eight planets listed in the source.",
+      "review_index": 9,
+      "source_id": "nasa-solar-system-formation-2026",
+      "spec055_decision_id": "spec055-decision-6f8320710d2122fe",
+      "strategy": "QUANTITATIVE_CALLOUT",
+      "structured_payload": {
+        "quantity_excerpts": [
+          "eight planets"
+        ]
+      },
+      "truthfulness_audit": {
+        "all_display_fields_trace_to_frozen_plan": true,
+        "new_semantics_created": false,
+        "prose_unchanged": true,
+        "provenance_attached": true,
+        "topology_created": false
+      }
+    },
+    {
+      "a_control": {
+        "prose": "The committee chair has the primary agenda-setting authority for each committee.",
+        "strategy": "CONCISE_PROSE",
+        "structured_payload": null
+      },
+      "a_identity_sha256": "7cb109eefac6de1460985edd9dc5e6a956337ec99c77d75f34b3f7700d1d961d",
+      "b_experiment": {
+        "prose": "The committee chair has the primary agenda-setting authority for each committee.",
+        "strategy": "CONCISE_PROSE",
+        "structured_payload": null
+      },
+      "b_identity_sha256": "1e4f48211f9b20cb29135678a892b33c845a0a162762d9b6b5f13c2a81d61781",
+      "case_identity": "spec056-case-12c53d4e37a63e",
+      "character": "CONTEXTUAL_FACT",
+      "claim_id": "claim-agenda-authority",
+      "classification_confidence": "HIGH",
+      "display_field_traces": [
+        {
+          "end_char": 80,
+          "quote": "The committee chair has the primary agenda-setting authority for each committee.",
+          "role": "concise_prose",
+          "source": "CLAIM_TEXT",
+          "start_char": 0
+        }
+      ],
+      "display_fragments": [],
+      "domain": "civics / institutional process",
+      "evidence_quotes": [
+        "The committee chair has the primary agenda-setting authority for each committee"
+      ],
+      "prose": "The committee chair has the primary agenda-setting authority for each committee.",
+      "review_index": 10,
+      "source_id": "crs-legislative-process-r42843-17",
+      "spec055_decision_id": "spec055-decision-b20f30d80ef9e5dd",
+      "strategy": "CONCISE_PROSE",
+      "structured_payload": null,
+      "truthfulness_audit": {
+        "all_display_fields_trace_to_frozen_plan": true,
+        "new_semantics_created": false,
+        "prose_unchanged": true,
+        "provenance_attached": true,
+        "topology_created": false
+      }
+    },
+    {
+      "a_control": {
+        "prose": "The research identified rich structural variety and chemical order/disorder with unprecedented three-dimensional detail, including atomic composition and grain boundaries.",
+        "strategy": "CONCISE_PROSE",
+        "structured_payload": null
+      },
+      "a_identity_sha256": "75c4c9fc4e57a25408448c9b4dfe1794fa771ea8242368a4fbc359104e7d7641",
+      "b_experiment": {
+        "prose": "The research identified rich structural variety and chemical order/disorder with unprecedented three-dimensional detail, including atomic composition and grain boundaries.",
+        "strategy": "CONCISE_PROSE",
+        "structured_payload": null
+      },
+      "b_identity_sha256": "3494e27768b5f5d5b422f7d7c2cc954ff4caba1b13f6906935eab7305c72050c",
+      "case_identity": "spec056-case-8df7513866a4bd",
+      "character": "CONTEXTUAL_FACT",
+      "claim_id": "c12",
+      "classification_confidence": "HIGH",
+      "display_field_traces": [
+        {
+          "end_char": 171,
+          "quote": "The research identified rich structural variety and chemical order/disorder with unprecedented three-dimensional detail, including atomic composition and grain boundaries.",
+          "role": "concise_prose",
+          "source": "CLAIM_TEXT",
+          "start_char": 0
+        }
+      ],
+      "display_fragments": [],
+      "domain": "chemistry / materials science",
+      "evidence_quotes": [
+        "They identified rich structural variety and chemical order/disorder with unprecedented 3D detail including atomic composition, grain boundaries, anti-phase boundaries"
+      ],
+      "prose": "The research identified rich structural variety and chemical order/disorder with unprecedented three-dimensional detail, including atomic composition and grain boundaries.",
+      "review_index": 11,
+      "source_id": "doe-iron-platinum-atomic-structure-2017",
+      "spec055_decision_id": "spec055-decision-9063023087cffccb",
+      "strategy": "CONCISE_PROSE",
+      "structured_payload": null,
+      "truthfulness_audit": {
+        "all_display_fields_trace_to_frozen_plan": true,
+        "new_semantics_created": false,
+        "prose_unchanged": true,
+        "provenance_attached": true,
+        "topology_created": false
+      }
+    },
+    {
+      "a_control": {
+        "prose": "Ecological processes provide ecological services, including natural resources and regulation of air and water quality.",
+        "strategy": "CONCISE_PROSE",
+        "structured_payload": null
+      },
+      "a_identity_sha256": "0783c5c37cc77b06f67960123ab69cb92e15bc5ec01341fd053cb66291b26960",
+      "b_experiment": {
+        "prose": "Ecological processes provide ecological services, including natural resources and regulation of air and water quality.",
+        "strategy": "CONCISE_PROSE",
+        "structured_payload": null
+      },
+      "b_identity_sha256": "81e9a93d92bf7d999a8347f696fb99c4285bdbb9c25f1450aec9e5b7f7117569",
+      "case_identity": "spec056-case-bc07271ee7f072",
+      "character": "CONTEXTUAL_FACT",
+      "claim_id": "claim-2",
+      "classification_confidence": "HIGH",
+      "display_field_traces": [
+        {
+          "end_char": 118,
+          "quote": "Ecological processes provide ecological services, including natural resources and regulation of air and water quality.",
+          "role": "concise_prose",
+          "source": "CLAIM_TEXT",
+          "start_char": 0
+        }
+      ],
+      "display_fragments": [],
+      "domain": "ecology / environmental systems",
+      "evidence_quotes": [
+        "They also play an important role in providing ecological services—for example, providing natural resources, such as food, fiber, and timber, and regulating air and water quality."
+      ],
+      "prose": "Ecological processes provide ecological services, including natural resources and regulation of air and water quality.",
+      "review_index": 12,
+      "source_id": "epa-ecological-processes-2026",
+      "spec055_decision_id": "spec055-decision-c61d22feaba206a5",
+      "strategy": "CONCISE_PROSE",
+      "structured_payload": null,
+      "truthfulness_audit": {
+        "all_display_fields_trace_to_frozen_plan": true,
+        "new_semantics_created": false,
+        "prose_unchanged": true,
+        "provenance_attached": true,
+        "topology_created": false
+      }
+    }
+  ],
+  "schema": "spec056.claim-learner-surface-review-cases.v1",
+  "selection_algorithm": {
+    "cases_per_strategy": 3,
+    "primary_rule": "Maximize source diversity by taking one candidate per source before a second candidate from any source.",
+    "source_order": "Lexicographic source ID.",
+    "strategy_order": [
+      "COMPARISON",
+      "QUALIFIED_STATEMENT",
+      "QUANTITATIVE_CALLOUT",
+      "CONCISE_PROSE"
+    ],
+    "visual_attractiveness_used": false,
+    "within_source_order": "Safety required, then confidence HIGH/MEDIUM/LOW, then claim ID."
+  }
+}

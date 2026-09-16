@@ -44,34 +44,40 @@ Canonical evidence:
 ## Current approved work packet
 
 ```text
-specs/SPEC-056-claim-learner-surface-binding-experiment.md
+NONE
 ```
 
-Status: `APPROVED_FOR_IMPLEMENTATION`
+Status: `NONE`
 
-Authority: `OFFLINE_ONLY`
+Authority: `NONE`
 
-Human gate: `OWNER_REVIEW`
+Human gate: `NONE`
 
 Promotion: `NOT_AUTHORIZED`
 
 ## Current gate
 
-SPEC-056 is authorized to bind exactly 12 deterministically selected SPEC-055 claim cases into a dedicated learner-review artifact using the existing SPEC-038 explanatory architecture.
+SPEC-056 is implemented and awaiting owner review.
 
-Required sample:
+The dedicated A/B learner-review artifact contains exactly 12 deterministic frozen SPEC-055 cases:
 
 - 3 `COMPARISON`;
 - 3 `QUALIFIED_STATEMENT`;
 - 3 `QUANTITATIVE_CALLOUT`;
 - 3 `CONCISE_PROSE` controls.
 
-Each case must support owner-visible A/B review:
+Each case supports owner-visible A/B review:
 
 - A = prose-only control;
 - B = experimental structured/visual representation + the same concise prose.
 
-No extraction, semantic/topology change, production renderer promotion, navigation redesign, or model/provider call is authorized.
+The desktop and narrow browser gates pass all 12 cases, strategy-specific rendering, exact frozen fragments, local interaction invariants, responsive layout, and console safety. No extraction, semantic/topology change, production renderer promotion, navigation redesign, external retrieval, or model/provider call occurred.
+
+Canonical evidence:
+
+`examples/evaluations/spec-056-claim-learner-surface-binding-experiment-20260916/report.json`
+
+No packet is active. The owner learner verdict is pending and promotion remains unauthorized.
 
 ## Current product question
 
@@ -82,7 +88,7 @@ A: prose only
         versus
 B: fitting structured/visual representation + concise prose
         ↓
-owner judges comprehension / text burden / truthfulness / restraint
+OWNER REVIEW
 ```
 
 This is a human learner-surface experiment. Machine gates prove integrity and interaction; they do not decide pedagogical value.

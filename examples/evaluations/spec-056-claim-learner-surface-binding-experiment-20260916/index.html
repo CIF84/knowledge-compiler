@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SPEC-056 · Claim learner-surface A/B review</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">KNOWLEDGE COMPILER · OWNER REVIEW</p>
+      <h1>Claim representation A/B</h1>
+    </div>
+    <p class="topbar-note">Same trusted claim. Two explanatory treatments.</p>
+  </header>
+
+  <main class="workspace" aria-label="SPEC-056 learner review workspace">
+    <aside class="map-pane" id="my-map" aria-label="My Map">
+      <p class="surface-label">MY MAP</p>
+      <h2>Review territory</h2>
+      <p class="quiet">The learner location is fixed. Local representation interactions never change territory.</p>
+      <ol id="case-map" class="case-map" aria-label="Twelve frozen review cases"></ol>
+      <div class="territory-status">
+        <span class="territory-dot" aria-hidden="true"></span>
+        <span id="territory-identity">SPEC-056 · fixed review territory</span>
+      </div>
+    </aside>
+
+    <section class="learning-pane" aria-label="What does this mean?">
+      <div class="case-toolbar">
+        <button id="previous-case" type="button" aria-label="Previous review case">← Previous</button>
+        <div class="case-heading">
+          <p id="case-counter" class="eyebrow"></p>
+          <h2 id="case-title"></h2>
+          <p id="case-source" class="case-source"></p>
+        </div>
+        <button id="next-case" type="button" aria-label="Next review case">Next →</button>
+      </div>
+
+      <section class="meaning-surface" id="meaning-surface">
+        <div class="meaning-header">
+          <div>
+            <p class="surface-label">WHAT DOES THIS MEAN?</p>
+            <p id="strategy-label" class="strategy-label"></p>
+          </div>
+          <div class="mode-toggle" role="group" aria-label="A/B representation mode">
+            <button id="mode-a" type="button" data-mode="A" aria-pressed="true">A · Prose</button>
+            <button id="mode-b" type="button" data-mode="B" aria-pressed="false">B · Structured + prose</button>
+          </div>
+        </div>
+        <div id="representation-host" class="representation-host" aria-live="polite"></div>
+        <div id="prose-panel" class="prose-panel">
+          <p class="prose-kicker">Trusted concise explanation</p>
+          <p id="claim-prose" class="claim-prose"></p>
+        </div>
+      </section>
+    </section>
+
+    <aside class="context-pane">
+      <section class="inspect-surface" aria-label="Inspect selected representation detail">
+        <p id="inspect-mode" class="surface-label">PREVIEW</p>
+        <h2 id="inspect-title">Representation detail</h2>
+        <p id="inspect-body" class="inspect-body">Select a meaningful visual element to inspect its exact trusted fragment.</p>
+        <details id="evidence-details">
+          <summary>Source evidence</summary>
+          <div id="evidence-list" class="evidence-list"></div>
+        </details>
+      </section>
+
+      <section class="explore-surface" aria-label="Explore Next">
+        <p class="surface-label">EXPLORE NEXT</p>
+        <h2>Continue the review</h2>
+        <p id="next-description" class="quiet"></p>
+        <button id="explore-next" type="button">Review next case →</button>
+      </section>
+
+      <section class="rubric-surface" aria-label="Owner review rubric">
+        <p class="surface-label">OWNER RUBRIC</p>
+        <ol id="rubric-list"></ol>
+      </section>
+    </aside>
+  </main>
+
+  <div id="spec056-contract" hidden
+       data-navigation-authority="FIXED_REVIEW_TERRITORY"
+       data-semantic-state-owner="FROZEN_SPEC055"
+       data-local-interaction-only="true"
+       data-production-promotion="false"></div>
+  <script src="app.js"></script>
+</body>
+</html>

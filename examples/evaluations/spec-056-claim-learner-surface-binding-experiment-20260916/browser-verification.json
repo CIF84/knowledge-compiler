@@ -1,0 +1,54 @@
+{
+  "browser": "Codex in-app browser (Chromium desktop engine)",
+  "console": {
+    "errors": [],
+    "result": "PASS",
+    "warnings": []
+  },
+  "desktop": {
+    "all_12_cases_loaded": true,
+    "all_case_machine_checks_passed": true,
+    "horizontal_overflow": false,
+    "inspect_and_explore_surface_visible": true,
+    "meaning_surface_visible": true,
+    "my_map_visible": true,
+    "result": "PASS",
+    "strategy_distribution": {
+      "COMPARISON": 3,
+      "CONCISE_PROSE": 3,
+      "QUALIFIED_STATEMENT": 3,
+      "QUANTITATIVE_CALLOUT": 3
+    },
+    "viewport_width": 1280
+  },
+  "interaction": {
+    "ab_control": "PASS",
+    "all_frozen_fragments_present": "PASS",
+    "case_navigation_resets_to_a_control": "PASS",
+    "comparison_binding": "PASS",
+    "concise_prose_has_no_fake_structure": "PASS",
+    "local_selection_preserves_case_identity": "PASS",
+    "local_selection_preserves_review_territory": "PASS",
+    "local_selection_updates_inspect": "PASS",
+    "next_previous_case_navigation": "PASS",
+    "qualified_statement_binding": "PASS",
+    "quantitative_callout_binding": "PASS"
+  },
+  "narrow": {
+    "ab_controls_visible": true,
+    "concise_prose_visible": true,
+    "horizontal_overflow": false,
+    "inspect_and_explore_surface_visible": true,
+    "meaning_surface_visible": true,
+    "my_map_visible": true,
+    "result": "PASS",
+    "single_column_workspace": true,
+    "strategy_specific_dom_visible": true,
+    "viewport": "390x844"
+  },
+  "screenshots": {
+    "captured": false,
+    "reason": "Desktop and narrow screenshots were inspected during the live Chromium gate; the available browser bridge did not expose a deterministic repository-file capture path."
+  },
+  "status": "PASS"
+}
