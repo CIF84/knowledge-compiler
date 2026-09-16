@@ -1,0 +1,142 @@
+{
+  "comparison_conditions": [],
+  "missing_symbols": [],
+  "relationships": [
+    {
+      "confidence": 0.98,
+      "id": "r1",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "anti-phase-boundary",
+      "statement": "Anti-phase boundaries are identified as defects in the atomic structure.",
+      "target_entity_id": "defect"
+    },
+    {
+      "confidence": 0.98,
+      "id": "r2",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "anti-site-point-defect",
+      "statement": "Anti-site point defects are identified as defects in the atomic structure.",
+      "target_entity_id": "defect"
+    },
+    {
+      "confidence": 0.98,
+      "id": "r3",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "swap-defect",
+      "statement": "Swap defects are identified as defects in the atomic structure.",
+      "target_entity_id": "defect"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r4",
+      "origin": "SOURCE",
+      "relationship_type": "PART_OF",
+      "source_entity_id": "iron-atom",
+      "statement": "The determined iron atoms are constituents of the iron-platinum particle.",
+      "target_entity_id": "iron-platinum-particle"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r5",
+      "origin": "SOURCE",
+      "relationship_type": "PART_OF",
+      "source_entity_id": "platinum-atom",
+      "statement": "The determined platinum atoms are constituents of the iron-platinum particle.",
+      "target_entity_id": "iron-platinum-particle"
+    },
+    {
+      "confidence": 0.97,
+      "id": "r6",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "iron-platinum-particle",
+      "statement": "The iron-platinum nanoparticle is a nanostructured material.",
+      "target_entity_id": "nanostructured-material"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r7",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "magnetic-property",
+      "statement": "Magnetic properties are material properties.",
+      "target_entity_id": "material-property"
+    },
+    {
+      "confidence": 0.96,
+      "id": "r8",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "atomic-magnetic-moment",
+      "statement": "Atomic magnetic moments are material properties calculated at the atomic level.",
+      "target_entity_id": "material-property"
+    },
+    {
+      "confidence": 0.96,
+      "id": "r9",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "local-magnetocrystalline-anisotropy",
+      "statement": "Local magnetocrystalline anisotropy is a material property calculated from the atomic coordinates and chemical species.",
+      "target_entity_id": "material-property"
+    },
+    {
+      "confidence": 0.93,
+      "id": "r10",
+      "origin": "SOURCE",
+      "relationship_type": "ENABLES",
+      "source_entity_id": "atomic-electron-tomography",
+      "statement": "Atomic electron tomography enabled scientists to determine three-dimensional atomic positions and coordinates.",
+      "target_entity_id": "atom-position-determination"
+    },
+    {
+      "confidence": 0.98,
+      "id": "r11",
+      "origin": "SOURCE",
+      "relationship_type": "MEASURED_BY",
+      "source_entity_id": "three-dimensional-atomic-coordinates",
+      "statement": "The three-dimensional atomic coordinates were experimentally measured using atomic electron tomography.",
+      "target_entity_id": "atomic-electron-tomography"
+    },
+    {
+      "confidence": 0.97,
+      "id": "r12",
+      "origin": "SOURCE",
+      "relationship_type": "REQUIRES",
+      "source_entity_id": "first-principles-calculation",
+      "statement": "The first-principles calculations used experimentally measured three-dimensional atomic coordinates as direct input.",
+      "target_entity_id": "three-dimensional-atomic-coordinates"
+    },
+    {
+      "confidence": 0.97,
+      "id": "r13",
+      "origin": "SOURCE",
+      "relationship_type": "REQUIRES",
+      "source_entity_id": "first-principles-calculation",
+      "statement": "The first-principles calculations used chemical species as direct input.",
+      "target_entity_id": "atomic-species"
+    },
+    {
+      "confidence": 0.95,
+      "id": "r14",
+      "origin": "SOURCE",
+      "relationship_type": "CREATES",
+      "source_entity_id": "first-principles-calculation",
+      "statement": "First-principles calculations calculated atomic magnetic moments.",
+      "target_entity_id": "atomic-magnetic-moment"
+    },
+    {
+      "confidence": 0.95,
+      "id": "r15",
+      "origin": "SOURCE",
+      "relationship_type": "CREATES",
+      "source_entity_id": "first-principles-calculation",
+      "statement": "First-principles calculations calculated local magnetocrystalline anisotropy.",
+      "target_entity_id": "local-magnetocrystalline-anisotropy"
+    }
+  ],
+  "transfer_events": []
+}

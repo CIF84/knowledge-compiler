@@ -1,0 +1,212 @@
+{
+  "structures": [
+    {
+      "entity_ids": [
+        "air",
+        "methane",
+        "primary-gas-mixture"
+      ],
+      "id": "structure-hierarchy-28477c068b9b9b76",
+      "metadata": {
+        "contains_cycle": false,
+        "hierarchy_relationship_type": "PART_OF",
+        "leaves": [
+          "air",
+          "methane"
+        ],
+        "roots": [
+          "primary-gas-mixture"
+        ],
+        "supporting_relationship_ids_by_edge": [
+          [
+            "r9"
+          ],
+          [
+            "r8"
+          ]
+        ]
+      },
+      "relationship_ids": [
+        "r9",
+        "r8"
+      ],
+      "relationship_types": [
+        "PART_OF",
+        "PART_OF"
+      ],
+      "structure_type": "HIERARCHY"
+    },
+    {
+      "entity_ids": [
+        "body",
+        "international-prototype-kilogram"
+      ],
+      "id": "structure-hierarchy-a5853e849c4dc060",
+      "metadata": {
+        "contains_cycle": false,
+        "hierarchy_relationship_type": "EXAMPLE_OF",
+        "leaves": [
+          "international-prototype-kilogram"
+        ],
+        "roots": [
+          "body"
+        ],
+        "supporting_relationship_ids_by_edge": [
+          [
+            "r4"
+          ]
+        ]
+      },
+      "relationship_ids": [
+        "r4"
+      ],
+      "relationship_types": [
+        "EXAMPLE_OF"
+      ],
+      "structure_type": "HIERARCHY"
+    },
+    {
+      "entity_ids": [
+        "comparison",
+        "measurement"
+      ],
+      "id": "structure-hierarchy-7f505bdf79349f8f",
+      "metadata": {
+        "contains_cycle": false,
+        "hierarchy_relationship_type": "PART_OF",
+        "leaves": [
+          "comparison"
+        ],
+        "roots": [
+          "measurement"
+        ],
+        "supporting_relationship_ids_by_edge": [
+          [
+            "r5"
+          ]
+        ]
+      },
+      "relationship_ids": [
+        "r5"
+      ],
+      "relationship_types": [
+        "PART_OF"
+      ],
+      "structure_type": "HIERARCHY"
+    },
+    {
+      "entity_ids": [
+        "mass",
+        "quantitative-property",
+        "scalar-measurand"
+      ],
+      "id": "structure-hierarchy-52cc27fe874e21b2",
+      "metadata": {
+        "contains_cycle": false,
+        "hierarchy_relationship_type": "IS_A",
+        "leaves": [
+          "mass",
+          "scalar-measurand"
+        ],
+        "roots": [
+          "quantitative-property"
+        ],
+        "supporting_relationship_ids_by_edge": [
+          [
+            "r3"
+          ],
+          [
+            "r17"
+          ]
+        ]
+      },
+      "relationship_ids": [
+        "r3",
+        "r17"
+      ],
+      "relationship_types": [
+        "IS_A",
+        "IS_A"
+      ],
+      "structure_type": "HIERARCHY"
+    },
+    {
+      "entity_ids": [
+        "measurement-uncertainty",
+        "parameter",
+        "standard-deviation",
+        "standard-measurement-uncertainty"
+      ],
+      "id": "structure-hierarchy-63ad6fb189d740c2",
+      "metadata": {
+        "contains_cycle": false,
+        "hierarchy_relationship_type": "IS_A",
+        "leaves": [
+          "standard-deviation",
+          "standard-measurement-uncertainty"
+        ],
+        "roots": [
+          "parameter"
+        ],
+        "supporting_relationship_ids_by_edge": [
+          [
+            "r14"
+          ],
+          [
+            "r15"
+          ],
+          [
+            "r16"
+          ]
+        ]
+      },
+      "relationship_ids": [
+        "r14",
+        "r15",
+        "r16"
+      ],
+      "relationship_types": [
+        "IS_A",
+        "IS_A",
+        "IS_A"
+      ],
+      "structure_type": "HIERARCHY"
+    },
+    {
+      "entity_ids": [
+        "primary-gas-mixture",
+        "quartz-crystal-resonator",
+        "standard"
+      ],
+      "id": "structure-hierarchy-dbc1a0ae67b1fcf0",
+      "metadata": {
+        "contains_cycle": false,
+        "hierarchy_relationship_type": "EXAMPLE_OF",
+        "leaves": [
+          "primary-gas-mixture",
+          "quartz-crystal-resonator"
+        ],
+        "roots": [
+          "standard"
+        ],
+        "supporting_relationship_ids_by_edge": [
+          [
+            "r7"
+          ],
+          [
+            "r6"
+          ]
+        ]
+      },
+      "relationship_ids": [
+        "r7",
+        "r6"
+      ],
+      "relationship_types": [
+        "EXAMPLE_OF",
+        "EXAMPLE_OF"
+      ],
+      "structure_type": "HIERARCHY"
+    }
+  ]
+}

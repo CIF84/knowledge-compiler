@@ -1,0 +1,65 @@
+{
+  "calls_started": 2,
+  "candidate_version": "spec-051-candidate-b-v2",
+  "entries": [
+    {
+      "actual_model": "gpt-5.6-luna",
+      "call_ordinal": 1,
+      "candidate_version": "spec-051-candidate-b-v2",
+      "completed_at_utc": "2026-09-16T08:58:22.110605+00:00",
+      "duration_ms": 46245.86916700355,
+      "hidden_retries": 0,
+      "http_request_id": "req_cc55cd0da20c4041b35605690f52e118",
+      "prompt_sha256": "b1c00eb4547de56c62dcc18c7aec013ee1e2de4a8c1dfa45bcb475f00591f785",
+      "prompt_version": "spec-047-entity-inventory-v1",
+      "provider_response_id": "resp_03d28a0b7f40c0c3016aaa5a00bdf087d2a27cbfc6d9f5c679",
+      "repair_calls": 0,
+      "requested_model": "gpt-5.6-luna",
+      "schema_sha256": "003db7546ae3ffafe7dc098bc50e1a5f223b891f6ee3160f7537214c8e9c9956",
+      "sdk_retries": 0,
+      "semantic_retries": 0,
+      "source_id": "nhgri-dna-fact-sheet-2020",
+      "source_sha256": "54e2147221cf186fe1b4f965422c69e815f986a7d009eddae9c01bf32ec25f89",
+      "stage": "ENTITY_INVENTORY",
+      "started_at_utc": "2026-09-16T08:57:35.863989+00:00",
+      "status": "PROVIDER_RESPONSE_RECEIVED",
+      "store": false,
+      "upstream_input_sha256": "54e2147221cf186fe1b4f965422c69e815f986a7d009eddae9c01bf32ec25f89",
+      "usage": {
+        "input_tokens": 710,
+        "output_tokens": 1401,
+        "total_tokens": 2111
+      }
+    },
+    {
+      "actual_model": "gpt-5.6-luna",
+      "call_ordinal": 2,
+      "candidate_version": "spec-051-candidate-b-v2",
+      "completed_at_utc": "2026-09-16T08:58:43.390397+00:00",
+      "duration_ms": 21274.379957991187,
+      "hidden_retries": 0,
+      "http_request_id": "req_c29b83ac04c64a5bb2870b7f59fd056e",
+      "prompt_sha256": "72e6b878794ac2fa45404970e2f0a931dc4c1c2efc97f64a4c7aed0ecf212299",
+      "prompt_version": "spec-051-semantic-structure-v2",
+      "provider_response_id": "resp_0319c12073ec31ed016aaa5a2e597487d2b08f5e8c82334a22",
+      "repair_calls": 0,
+      "requested_model": "gpt-5.6-luna",
+      "schema_sha256": "fc978f61656409cb66c371e0a016dfb22914fa0d888af0673c19ad3aaff5b1d4",
+      "sdk_retries": 0,
+      "semantic_retries": 0,
+      "source_id": "nhgri-dna-fact-sheet-2020",
+      "source_sha256": "54e2147221cf186fe1b4f965422c69e815f986a7d009eddae9c01bf32ec25f89",
+      "stage": "SEMANTIC_STRUCTURE",
+      "started_at_utc": "2026-09-16T08:58:22.115038+00:00",
+      "status": "PROVIDER_RESPONSE_RECEIVED",
+      "store": false,
+      "upstream_input_sha256": "f1280ac53b6b7b02aa638af045587deb58e52238589e83da9314b2e1c2483c98",
+      "usage": {
+        "input_tokens": 5898,
+        "output_tokens": 2320,
+        "total_tokens": 8218
+      }
+    }
+  ],
+  "source_id": "nhgri-dna-fact-sheet-2020"
+}

@@ -1,0 +1,160 @@
+{
+  "comparison_conditions": [],
+  "missing_symbols": [],
+  "relationships": [
+    {
+      "confidence": 0.99,
+      "id": "r1",
+      "origin": "SOURCE",
+      "relationship_type": "CREATES",
+      "source_entity_id": "measurement",
+      "statement": "Measurement produces a value that can reasonably be attributed to a quantitative property.",
+      "target_entity_id": "measurement-value"
+    },
+    {
+      "confidence": 0.98,
+      "id": "r2",
+      "origin": "SOURCE",
+      "relationship_type": "MEASURED_BY",
+      "source_entity_id": "quantitative-property",
+      "statement": "A quantitative property is the object of measurement.",
+      "target_entity_id": "measurement"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r3",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "mass",
+      "statement": "Mass is the quantitative property of the International Prototype Kilogram used as the example measurand.",
+      "target_entity_id": "quantitative-property"
+    },
+    {
+      "confidence": 0.86,
+      "id": "r4",
+      "origin": "INFERRED",
+      "relationship_type": "EXAMPLE_OF",
+      "source_entity_id": "international-prototype-kilogram",
+      "statement": "The International Prototype Kilogram is an example body whose mass is measured.",
+      "target_entity_id": "body"
+    },
+    {
+      "confidence": 0.97,
+      "id": "r5",
+      "origin": "SOURCE",
+      "relationship_type": "PART_OF",
+      "source_entity_id": "comparison",
+      "statement": "Measurement involves direct or indirect comparison with a standard.",
+      "target_entity_id": "measurement"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r6",
+      "origin": "SOURCE",
+      "relationship_type": "EXAMPLE_OF",
+      "source_entity_id": "quartz-crystal-resonator",
+      "statement": "A certified quartz crystal resonator is given as an example of a standard.",
+      "target_entity_id": "standard"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r7",
+      "origin": "SOURCE",
+      "relationship_type": "EXAMPLE_OF",
+      "source_entity_id": "primary-gas-mixture",
+      "statement": "A primary gas mixture is given as an example of a standard.",
+      "target_entity_id": "standard"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r8",
+      "origin": "SOURCE",
+      "relationship_type": "PART_OF",
+      "source_entity_id": "methane",
+      "statement": "Methane is a constituent of the example primary gas mixture.",
+      "target_entity_id": "primary-gas-mixture"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r9",
+      "origin": "SOURCE",
+      "relationship_type": "PART_OF",
+      "source_entity_id": "air",
+      "statement": "Air is a constituent of the example primary gas mixture.",
+      "target_entity_id": "primary-gas-mixture"
+    },
+    {
+      "confidence": 0.96,
+      "id": "r10",
+      "origin": "SOURCE",
+      "relationship_type": "INTERACTS_WITH",
+      "source_entity_id": "phenomenon",
+      "statement": "The phenomenon of interest interacts with a measuring instrument.",
+      "target_entity_id": "measuring-instrument"
+    },
+    {
+      "confidence": 0.96,
+      "id": "r11",
+      "origin": "SOURCE",
+      "relationship_type": "INTERACTS_WITH",
+      "source_entity_id": "body",
+      "statement": "The body of interest interacts with a measuring instrument.",
+      "target_entity_id": "measuring-instrument"
+    },
+    {
+      "confidence": 0.96,
+      "id": "r12",
+      "origin": "SOURCE",
+      "relationship_type": "INTERACTS_WITH",
+      "source_entity_id": "substance",
+      "statement": "The substance of interest interacts with a measuring instrument.",
+      "target_entity_id": "measuring-instrument"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r13",
+      "origin": "SOURCE",
+      "relationship_type": "CREATES",
+      "source_entity_id": "measuring-instrument",
+      "statement": "A measuring instrument produces an indication responsive to the property of interest.",
+      "target_entity_id": "indication"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r14",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "measurement-uncertainty",
+      "statement": "Measurement uncertainty is defined as a parameter characterizing dispersion.",
+      "target_entity_id": "parameter"
+    },
+    {
+      "confidence": 0.98,
+      "id": "r15",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "standard-deviation",
+      "statement": "A standard deviation is a parameter that may express measurement uncertainty.",
+      "target_entity_id": "parameter"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r16",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "standard-measurement-uncertainty",
+      "statement": "Standard measurement uncertainty is measurement uncertainty expressed as a standard deviation.",
+      "target_entity_id": "measurement-uncertainty"
+    },
+    {
+      "confidence": 0.95,
+      "id": "r17",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "scalar-measurand",
+      "statement": "A scalar measurand is a measurand whose property of interest can be quantified by a single real number.",
+      "target_entity_id": "quantitative-property"
+    }
+  ],
+  "transfer_events": []
+}

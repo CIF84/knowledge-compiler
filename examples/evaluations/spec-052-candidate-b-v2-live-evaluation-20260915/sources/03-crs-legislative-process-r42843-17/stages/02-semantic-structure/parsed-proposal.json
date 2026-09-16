@@ -1,0 +1,100 @@
+{
+  "comparison_conditions": [],
+  "missing_symbols": [],
+  "relationships": [
+    {
+      "confidence": 0.99,
+      "id": "r1",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "standing-committee",
+      "statement": "A standing committee is a committee.",
+      "target_entity_id": "committee"
+    },
+    {
+      "confidence": 0.98,
+      "id": "r2",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "panel-of-members",
+      "statement": "A standing committee is a panel of Members.",
+      "target_entity_id": "standing-committee"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r3",
+      "origin": "SOURCE",
+      "relationship_type": "EXAMPLE_OF",
+      "source_entity_id": "federal-agency",
+      "statement": "A federal agency is an example of a selected party that may provide views during a committee hearing.",
+      "target_entity_id": "selected-party"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r4",
+      "origin": "SOURCE",
+      "relationship_type": "EXAMPLE_OF",
+      "source_entity_id": "organized-interest",
+      "statement": "An organized interest is an example of a selected party that may provide views during a committee hearing.",
+      "target_entity_id": "selected-party"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r5",
+      "origin": "SOURCE",
+      "relationship_type": "PRECEDES",
+      "source_entity_id": "introduction-of-a-bill",
+      "statement": "Introduction of a bill precedes its referral to a committee.",
+      "target_entity_id": "bill-referral"
+    },
+    {
+      "confidence": 0.94,
+      "id": "r6",
+      "origin": "SOURCE",
+      "relationship_type": "PRECEDES",
+      "source_entity_id": "markup",
+      "statement": "A markup precedes the committee's majority vote to report a bill.",
+      "target_entity_id": "majority-vote"
+    },
+    {
+      "confidence": 0.96,
+      "id": "r7",
+      "origin": "SOURCE",
+      "relationship_type": "CAUSES",
+      "source_entity_id": "majority-vote",
+      "statement": "The committee's majority vote causes the committee to report the bill.",
+      "target_entity_id": "committee-report"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r8",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "streamlined-floor-consideration",
+      "statement": "Streamlined floor consideration is a type of floor consideration.",
+      "target_entity_id": "floor-consideration"
+    },
+    {
+      "confidence": 0.95,
+      "id": "r9",
+      "origin": "SOURCE",
+      "relationship_type": "PRECEDES",
+      "source_entity_id": "motion-to-proceed",
+      "statement": "A motion to proceed precedes the Senate's agreement to that motion.",
+      "target_entity_id": "senate-agreement-to-a-motion-to-proceed"
+    }
+  ],
+  "transfer_events": [
+    {
+      "comparison_operator": null,
+      "confidence": 0.99,
+      "destination_entity_id": "committee",
+      "event_entity_id": "bill-referral",
+      "object_entity_id": "bill",
+      "origin": "SOURCE",
+      "proposition_type": "TRANSFER_EVENT",
+      "relationship_type": "TRANSFERS_TO",
+      "statement": "A bill referral transfers a bill to the committee or committees in the chamber with jurisdiction over its elements."
+    }
+  ]
+}

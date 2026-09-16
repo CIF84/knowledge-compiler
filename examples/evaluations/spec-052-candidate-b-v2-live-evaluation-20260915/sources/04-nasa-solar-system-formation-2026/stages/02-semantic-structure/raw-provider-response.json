@@ -1,0 +1,628 @@
+{
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1789548905.0,
+  "conversation": null,
+  "created_at": 1789548888.0,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "id": "resp_003aeb81014d2284016aaa5958836887d29769475b2c211c7a",
+  "incomplete_details": null,
+  "instructions": "You perform Stage 2 semantic structure extraction for Candidate B v2.\n\nUse only the exact source and immutable frozen entity inventory. Every endpoint must\nbe one of the exact supplied entity IDs. Do not invent or substitute an identity.\nReturn only source-supported canonical relationships, COMPARISON_CONDITION instances,\nTRANSFER_EVENT instances, and missing_symbols diagnostics in the requested schema.\n\nEmit topology only when the exact source-supported meaning fits the trusted relationship\ncontract or one of the two canonical proposition forms. Otherwise omit the meaning from\nStage-2 topology. Never approximate, coerce, or choose a nearby predicate/proposition.\nStage 3 independently reads the exact source and can preserve omitted meaning as an\nexact grounded claim. Do not use missing_symbols for non-topological omission; reserve it\nfor an otherwise valid canonical semantic item lacking a required frozen identity.\n\nCOMPARISON_CONDITION means a comparison used as a causal antecedent with a distinct\nLEFT_OPERAND and RIGHT_OPERAND, an OUTCOME caused by that condition, GREATER_THAN, and\nCAUSES. A standalone comparison without a causal outcome is not this proposition.\nTRANSFER_EVENT means a PROCESS EVENT, transferred OBJECT, and non-PROCESS DESTINATION,\nwith TRANSFERS_TO and no comparison operator. Input to a calculation is not automatically\na transfer event. Emit neither proposition when these exact meanings are unsupported.\n\nDo not return entities, claims, evidence, teaching prose, or new semantic vocabulary.\nProposition IDs are assigned by trusted code; do not return them.\n\nACTIVE RELATIONSHIP CONTRACTS (source --TYPE--> target):\nIS_A [STRUCTURAL; direction=instance_to_type]\n  meaning: The source is a kind, category, or subtype of the target.\n  roles: source=instance or subtype; target=broader type or category\n  use: The source can truthfully be described as a target.\n  avoid: Do not use for parts, examples, similarity, or temporary states.\nPART_OF [STRUCTURAL; direction=part_to_whole]\n  meaning: The source is a constituent or component of the target.\n  roles: source=part or component; target=containing whole\n  use: The source exists as a component or subpart of the target.\n  avoid: Never reverse whole and part; do not use for interaction or dependency.\nEXAMPLE_OF [STRUCTURAL; direction=example_to_concept]\n  meaning: The source is an illustrative instance of the target concept.\n  roles: source=example; target=concept illustrated\n  use: The source is presented as an example of the target.\n  avoid: Do not use merely because the source is a subtype; prefer IS_A for classification.\nCAUSES [CAUSAL; direction=cause_to_effect]\n  meaning: The source brings about the target as an effect.\n  roles: source=cause; target=effect\n  use: The source is stated to produce the target outcome.\n  avoid: Do not use for chronology, association, contribution, or unspecified influence.\nAFFECTS [CAUSAL; direction=influence_to_affected]\n  meaning: The source causally influences the target without a specified direction or complete production.\n  roles: source=influence; target=affected entity, process, or variable\n  use: The source changes or influences the target, but the text does not support CAUSES, INCREASES, or DECREASES.\n  avoid: Do not use for mere association, chronology, physical force, or interaction with no stated effect.\nINCREASES [CAUSAL; direction=increaser_to_increased_variable]\n  meaning: The source causally raises the amount, rate, value, probability, or intensity of the target.\n  roles: source=causal factor; target=quantity or variable increased\n  use: The source is explicitly said to make the target greater, faster, more likely, or more intense.\n  avoid: Do not infer from nearby words such as more or faster; never use when the source says slower, lower, or less.\nDECREASES [CAUSAL; direction=decreaser_to_decreased_variable]\n  meaning: The source causally lowers the amount, rate, value, probability, or intensity of the target.\n  roles: source=causal factor; target=quantity or variable decreased\n  use: The source is explicitly said to make the target smaller, slower, less likely, or less intense.\n  avoid: Do not use for absence, prevention without a scalar target, or mere negative association.\nINDUCES [CAUSAL; direction=inducer_to_induced_effect]\n  meaning: The source produces the target through an explicitly described induction mechanism.\n  roles: source=inducing phenomenon; target=induced phenomenon\n  use: The source explicitly says induces or describes a recognized induction mechanism.\n  avoid: Do not use as a metaphor for generic causation, influence, motivation, or historical response.\nENABLES [DEPENDENCY; direction=enabler_to_enabled]\n  meaning: The source makes the target possible without necessarily causing it to occur.\n  roles: source=enabling condition or capability; target=capability or process made possible\n  use: The target could not occur, or is materially made possible, because of the source.\n  avoid: Do not use for delivery, participation, weak assistance, or an effect that actually occurred.\nREQUIRES [DEPENDENCY; direction=dependent_to_requirement]\n  meaning: The source depends on the target as a prerequisite or necessary resource.\n  roles: source=dependent; target=prerequisite or required resource\n  use: The source cannot operate or occur as described without the target.\n  avoid: Do not reverse prerequisite and dependent; do not use for optional support.\nCONSTRAINS [DEPENDENCY; direction=constraint_to_constrained]\n  meaning: The source limits the possible behavior, values, or choices of the target.\n  roles: source=constraint; target=constrained entity, process, or variable\n  use: The source imposes a limit, rule, boundary, or restriction on the target.\n  avoid: Do not use to mean unchanged, unrelated, merely different, or causally reduced.\nPRECEDES [TEMPORAL; direction=earlier_to_later]\n  meaning: The source occurs before the target in time or an explicit process sequence.\n  roles: source=earlier event or process; target=later event or process\n  use: The source explicitly occurs before, previously, first, then, or after relative to the target.\n  avoid: Do not infer causality from order; do not reverse earlier and later.\nINTERACTS_WITH [INTERACTION; symmetric]\n  meaning: The source and target directly interact, with no more precise directional semantics supported.\n  roles: source=interaction participant; target=interaction participant\n  use: The text supports direct mutual interaction but not a more precise active predicate.\n  avoid: Do not use for distant association, one-way effect, dependency, or chronology.\nBINDS_TO [INTERACTION; symmetric]\n  meaning: The source physically or chemically binds or attaches to the target.\n  roles: source=binding participant; target=binding participant\n  use: The source explicitly binds or attaches to the target.\n  avoid: Do not use for metaphorical commitment, dependency, influence, or literal physical force.\nTRANSFERS_TO [INTERACTION; direction=transferred_item_to_destination]\n  meaning: The source item, material, or information moves to the target destination or recipient.\n  roles: source=item, material, or information transferred; target=destination or recipient\n  use: The source is explicitly carried, delivered, moved, or transferred to the target.\n  avoid: Do not make the carrier the source unless the carrier itself moves to the destination; do not use for enabling.\nEXERTS_FORCE_ON [INTERACTION; direction=force_exerter_to_physical_target]\n  meaning: The source exerts a literal physical force on the target.\n  roles: source=physical force source; target=physical object receiving force\n  use: A literal physical force is explicitly exerted on the target.\n  avoid: Never use metaphorically for influence, contribution, binding, pressure, or causation.\nTRANSFORMS_INTO [TRANSFORMATION; direction=prior_state_to_resulting_state]\n  meaning: The source itself changes state or identity and becomes the target.\n  roles: source=entity or state before transformation; target=same entity or resulting material after transformation\n  use: The source itself becomes the target through a transformation.\n  avoid: Do not use when an actor causes, creates, attempts, participates in, or responds to the target.\nCREATES [TRANSFORMATION; direction=creator_to_created]\n  meaning: The source produces or brings a distinct target into existence.\n  roles: source=producer or generative process; target=newly produced entity or result\n  use: The source produces a target that is distinct from the source.\n  avoid: Do not use when the source itself becomes the target; use TRANSFORMS_INTO instead.\nMEASURED_BY [DESCRIPTIVE; direction=measurand_to_measure]\n  meaning: The source property or variable is quantified or assessed by the target metric, observation, or procedure.\n  roles: source=property or variable measured; target=metric, observation, or measurement procedure\n  use: The target is explicitly how the source is measured or quantified.\n  avoid: Do not point to something that merely responds to, correlates with, or exemplifies the source.\nCONTRADICTS [DESCRIPTIVE; symmetric]\n  meaning: The source and target assert mutually incompatible propositions.\n  roles: source=proposition or claim; target=incompatible proposition or claim\n  use: Both sides are explicit propositions that cannot simultaneously hold as stated.\n  avoid: Do not use for difference, disagreement without incompatibility, trade-off, or negative causality.",
+  "max_output_tokens": null,
+  "max_tool_calls": null,
+  "metadata": {},
+  "model": "gpt-5.6-luna",
+  "moderation": null,
+  "object": "response",
+  "output": [
+    {
+      "content": [],
+      "encrypted_content": "gAAAAABqqllpVXEkefpuNjSeydvm6cu-UbQRar-ZIP94nkgjMUH0J39Z5szEtgRgHlIHUET5eXwPYTRrWQhSWeG2GKTaysFDODCu6CvYxyZKInAqxGse8pc1Q2Ohh34MHwI9YZg_bydizOfmDjwjYuDT2HXQE6wLyt3TGUr5ABKbfVaxngKekbLe1DIR-ttuXajEMDy3t5CTNQGFUTqJznJn8aQQB_X6-k--sxTPqY9bDv5MQ5haYaScGdsAuCaozq4qqkRM-HiK7OOpUPQ-uzptpSq4bFC8vQZSonBhf6I7KRG_eg233K3jWAfXY4jNTnIaBmBJTRwVbaLwS-zztQX4NSaQswbL1IPLp7aStM-mT9tChw2XvpzH4dTsGrIqW1JoxVLO3_GpZQnuvQrZgzMxVy-KXpb0f8iGW8WPihkthSjj3kajG86f73dn-B5103WRpKwFpFWdykCU7awV6lSXNBHxAWXBW6SSAM_IoEdY-8q5678MrLMjltQt9r4pfr-ztqXK8_FUEmvI_4QxWu7ZwxZUd8DUv759gZKw98YXAe5im0-1mOhnHaD0CPf_C8Rf4OzvitIzQVqZPNKSfM73FM-5csCrHWKNmbQYJt0JK3KaHXn3gNuN18K9kpodlgQZo7KW1bMa54Gotmu--dupCRyvwPGpnsFsfof18WxhuAOI12cmOecl5szK1WK03F04t5GyoUClOc2RSeIeLH_aQ6jy2b1Ekjpd3E7pQoe2HL-ISNzR6P0wQmLMOPO95knoxKmpZn17EanlUMLAsY79Pz-zgW_Zw5FzYBrRhgrhWxwaJgRR0mXpgyBgQv5uWsdvvc2gJTnIZdHxo7hVDb6vxyt2eMCZVf323U0btEN7Jr-CXz-Pun-y-Zk7aUNKje5Atho6ssmvnl_vaH6l9IjE-OBiH_o3FWszlsRpwQKIkJGvLySUHKdxEBzz2rsGZ9rh8xYGuAvcRiQu3oKp7QGd2vpHxXty06PiHBrWBKB8HJbo2P9ER8uB4NTaY9Qz8Q5oT8c-xtuqyLC6oCjqOoABX-xlzkxIPokCfalDWfVB-IhiRxOLNp9tAMFGAqkTQLKJMY2zMcXLpNBcT5zL-iIuTrkFpZdbkipqnP8OQzuRe_xjtzTi-9oosaLouhQdV9fseFwj8K-RMFfQkWNECC_FrwflcSAMoMzycJdpQIT6SsX_lw_JMJfdCesfL89Y4Tg-Xz_X1MiMMOW7zOPzQIhd6TJd4aiTZZTDfOfpYbUoNtKFh4AL6W4BN3C_XJkXln75kVVPcXh6JQG61OtVtneiWXX6odr5Maq-pS5Dgihz5Z7TIAKLQAJddKceRHHTDKbuQcepoRta9Xtjea7JpTnGcTRvzYMtxG2qZt919MOJK7OZ7B6zkEaCitFf2ouKyzmsFWptMVmHl1UYSpbBXM5_ZEqgIOxsTvrmn4f-iy2ntaZA-5oMmXbjEHrevN3ZHQMeIsnAxsuOaqzjm5NUMi69JvwBbGzGmrO-C57jDo1a1AyeWfTlHx3hXpXHNZDNRrvfUD_z0jj-RYVjbgKzCmywKNaxE_Zce668vd8pGK5ih5ys6S8TADqQSkqh1BnJVKmLG7efC6FN3AkSviUdn8MMeC86sBnbZjs-n5PDseRmPFkVSFnrPt7ZfFFSmm392-2KArHcag9V936rUHbhVtcSGkr0rjpMtmh3fUURFvAHT-KnF6TQjbiVKPIyglzwjiuali-H_ZavhY7F-g2sONkG1OXcv1EjueMvbjP7H3TS0fKWbjCTya6nQ63WkHtcTxJbOyKBVowU9lOHqEVfTenmtMFflY-T50KLGF2M2FsJ7UJPhoKCnkaJ-R1nU8CwQuvs_AYNp1g-815PcLNISlgoqiyY6QnnX5aiReWdYUpJ292krPA4d_fJaFxyn314WOrx6AwHF8YWTrMgC5t-vWBBHIWOC80Xx-8Zfr-1mwSLyx9C6Xzuk0pkNWd4Xv7SfLZsmaroMKLCTo1sOGbDP9ZlVbH63xrYddR2f_PK_BwRO_u6yLeg3q9lyr58yl1-bVM1avedzhkTJ6B-htg-3DPAkB0H5JBGuutSNB_ZDlELJpNqZKEAsfiHw_Gbtvw3hUBIZMGV9Ecmy4SKZvloKLKC4evoe7QgINsZ0VzTNuA63IYnA22GOBwTy_em9aGBvfxYIRCRJko_opDZt-PW85T6yIw9UQh0xqlTbjStKTUF6AEmOYuN5HI2SiM7mqQtyskt7RNY3WPMoDou2Zdw8xYpDJGcH0Utlu6xR4Qh14nrloPOoUrkhFd4GXYBZMNfR7elQsGsgSCeOV3YS-S_9hdO-I6e1PyPE-zx58rKe3SVwkQK8EEjKHtBnyFnwMttFBTivQScsLQqPwwbkwMt9RyNOVfWpevC7kylplb-ZshvkGSXGfgbbKzB7KdB07i5inEBqrnZlf4VoWkONM5_WXSudN1yN-beflGuQWMRUqhw5SwUeozmfKf18yMoPoCjUUlHz_91ESpOuEOWGLdAs_0C7200XYC3LD-_BeWJ9xq0rYDgmCu6VKNu9B5iVpJk1yErh_QeZobLlA_1qXdZnjLXjDINpAauxowLQvnJtVxohdeWpK6Ze-nplcTCXnv5guYkHztI6am4_SBa2NS2ayi7ex7IUdMYOstpwE5zVEMPYCZVKjK2cy27vCUN0iOV4pMeAh3YScgpY05sH5Haz2BOJIV-K6rZOncHrw1qryJLO4rTqOUlPq8v7iL3VYxS0ny7a3FfnYWk3S0M26Y0NUXAyZVhh8m2bODDC-SZTzG7WeFKdQ8jbTRG_tz0uSFpGdW1xoCQxx5iGFq1X_mEz_1NYKVN5Wy8RxPbrGQwbVaLmdMlutLRqRdz1bCkt4QdBJil20voeWE9yhPND51Y2xe7VKiN5ArJ32jeRkbFVOx3J2ix12wBS8sInteYL2Ry-me1sraQEQUZfd0RAaxs0VvMBB_5Aa_B0ezylqdzj3VqDz6zA71CMAEH0rWDyZjJsNSHdw5WmNQtRxfyS83vSsNv-mGXHgPSG2dE9TXbQvH5ltlM3T4xlYNbrQNNnYd_sJdF3DBWLz9XFxtCt3wnQLZ1IwC_wpyDId6qhH_Sz6BNqMqqCdur70GlTJZeeLWLLZcnZt031NuW1WyQ6Oq-K7-pD4h1pwrdZQXG1oO_I9TZJ-oSUFyqITB31mQUcL8bS8BsrNRj7AKc8i9y84yQMy4GgjfcynwILCL7cbkCun2PvplW4MOkhoiiFQg34qazG1LpQ6A7-1lGogtMf8h9XDwwf5dl-iLigSHaU8-oI4idM5to2IDB6B7DhyxiuivZDWiNlwpigUiKbfVKET0InKG5Ot1X_Ra7YZdBX_t8PFD7zhja8qoQAwGuUxQqfJggW3m97yTnI3eHXeMhJxqX8-i5gr7xoQPDAL7COMfH5-kvUSNeddoNSXFxPMJ4NSvC7Fk4SXH6hBLhF0MzeV9bBUdUPelQ9TjDewZSJLkiMPAs7NKr-QQvohkOuUBk1AmQx9AG_6T4aeqyvmn45bqlpkIA7K2BGbwmoRMISigdLAXElq4UK8NbiXVv96eXN7eFU4X6k1d1S4r-um6VKWcqIS5BLGQMud9EgGb1yT9CtwloYxPxeH5MCBewjSugKnAfLz12AbnRP4c-njrKGMRGCPE6FS69R5012seZhUsCUP1tWzmLIpj1IG6XHtqRs3Q6yy_Wi0TJ619xTz1w6fD6Xs3srQTRBUiI8biidgwcjIz5Cls22dcrxyp0AiItyVIUiiw-YHTB__uvaKV5KTtMGuVhInVBRSNFDzJOs9UWjucJDuoittg7fSYtcvUOFRCM2MmPr0pZ1dD0fFMbwyZIV5ZrnaFi42qrEwKBpiJt2LyOnW9INj25wg1FEMsqJcIRsF6qKQGSAdMHzx9P9m3e67w-IlyhETtRZ8fFpX9N8AfT-J5RmqACo38hItO6rTV_tmegFuuD9z-LHgj3ika04RXU3sjQoKLWnEgv45oRo3f6Iy68nWcYdFqK3cstYO0CH3McT1SYv9DA7_Pq_YazP2q3VQcPEc5BYCqL3-A8NrZdEmUfUK5Bqftn2__f6RQOEx0l_m6L7sT_ZsfrZ26rmvlTZp2r3Cww0rL6cN68OGd8bFCTEnyC9y_m5s3qJS_JzDhMs2PsDspCg5xGP1kgO3b9gEet1r-jtO4IUysl9qlUZZG3v_wYzFAcV1qT1QknupqPdv0fLCGdLld7-J4UqyOPThvbiqgsHm90KG0wD_zvW1Hc7CP-lnFSg2v1HOifiQpT2BfYbWLy1Gv10qaTV6kVYbubTzzDcIKLW8xBE5r19tTI5L53BSqwHRfIWTT-dRaJ44Eg_Oa-7tTY9l7_0_F6xZ853bUMmonQF4Bsw_qfXZgol5MN_IYMO4Dwo6iTBq1h9dxriL8EmLlxneU0WsGswAvK7CJsqM4RsUdWf91Xl6UPSUSM_SRRBI0AhqZOoo_vm5rIwiqvREtBEFvqnA_GKMWYMPqO-Q4U2v4XFrgjknAw14xtn5I2SavLFyogkLIrmUBCei7_cjeSC6WoQOkprP7uS-c3i0XcqbIEHdPqfoHFeFsszwc=",
+      "id": "rs_003aeb81014d2284016aaa59591e2487d2be36042d72397644",
+      "status": null,
+      "summary": [],
+      "type": "reasoning"
+    },
+    {
+      "content": [
+        {
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relationships\":[{\"id\":\"r1\",\"source_entity_id\":\"sun\",\"relationship_type\":\"PART_OF\",\"target_entity_id\":\"solar-system\",\"statement\":\"The Sun is part of the solar system.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r2\",\"source_entity_id\":\"planets\",\"relationship_type\":\"PART_OF\",\"target_entity_id\":\"solar-system\",\"statement\":\"The planets are part of the solar system.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r3\",\"source_entity_id\":\"mercury\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"planets\",\"statement\":\"Mercury is one of the planets in the solar system.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r4\",\"source_entity_id\":\"venus\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"planets\",\"statement\":\"Venus is one of the planets in the solar system.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r5\",\"source_entity_id\":\"earth\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"planets\",\"statement\":\"Earth is one of the planets in the solar system.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r6\",\"source_entity_id\":\"mars\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"planets\",\"statement\":\"Mars is one of the planets in the solar system.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r7\",\"source_entity_id\":\"jupiter\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"planets\",\"statement\":\"Jupiter is one of the planets in the solar system.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r8\",\"source_entity_id\":\"saturn\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"planets\",\"statement\":\"Saturn is one of the planets in the solar system.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r9\",\"source_entity_id\":\"uranus\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"planets\",\"statement\":\"Uranus is one of the planets in the solar system.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r10\",\"source_entity_id\":\"neptune\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"planets\",\"statement\":\"Neptune is one of the planets in the solar system.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r11\",\"source_entity_id\":\"nebula\",\"relationship_type\":\"CREATES\",\"target_entity_id\":\"stars\",\"statement\":\"Stars form from nebulae.\",\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"r12\",\"source_entity_id\":\"nebula\",\"relationship_type\":\"CREATES\",\"target_entity_id\":\"planets\",\"statement\":\"Planets form from nebulae.\",\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"r13\",\"source_entity_id\":\"sticking-together\",\"relationship_type\":\"CREATES\",\"target_entity_id\":\"mass\",\"statement\":\"Material sticking together forms a large mass.\",\"confidence\":0.97,\"origin\":\"SOURCE\"},{\"id\":\"r14\",\"source_entity_id\":\"mass\",\"relationship_type\":\"CREATES\",\"target_entity_id\":\"planets\",\"statement\":\"A mass can grow large enough to form a planet.\",\"confidence\":0.94,\"origin\":\"SOURCE\"},{\"id\":\"r15\",\"source_entity_id\":\"mass\",\"relationship_type\":\"CREATES\",\"target_entity_id\":\"stars\",\"statement\":\"A mass can grow large enough to form a new star.\",\"confidence\":0.94,\"origin\":\"SOURCE\"},{\"id\":\"r16\",\"source_entity_id\":\"supernova\",\"relationship_type\":\"CAUSES\",\"target_entity_id\":\"swirling\",\"statement\":\"A supernova has enough energy to make gas and dust in nearby nebulae start swirling.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r17\",\"source_entity_id\":\"supernova\",\"relationship_type\":\"CAUSES\",\"target_entity_id\":\"spinning\",\"statement\":\"A supernova has enough energy to make gas and dust in nearby nebulae start spinning.\",\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"r18\",\"source_entity_id\":\"swirling\",\"relationship_type\":\"CAUSES\",\"target_entity_id\":\"falling-into-the-center\",\"statement\":\"The swirling caused material in the nebula to fall into its center.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r19\",\"source_entity_id\":\"spinning\",\"relationship_type\":\"CAUSES\",\"target_entity_id\":\"falling-into-the-center\",\"statement\":\"The spinning caused material in the nebula to fall into its center.\",\"confidence\":0.97,\"origin\":\"SOURCE\"},{\"id\":\"r20\",\"source_entity_id\":\"collisions\",\"relationship_type\":\"CREATES\",\"target_entity_id\":\"metal-and-rock-pieces\",\"statement\":\"Collisions among gas and dust formed little pieces of metal and rock.\",\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"r21\",\"source_entity_id\":\"collisions\",\"relationship_type\":\"CREATES\",\"target_entity_id\":\"planets\",\"statement\":\"Many collisions over a long time formed the eight planets.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r22\",\"source_entity_id\":\"planet-formation\",\"relationship_type\":\"CREATES\",\"target_entity_id\":\"planets\",\"statement\":\"Planet formation produced the eight planets.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r23\",\"source_entity_id\":\"planets\",\"relationship_type\":\"INTERACTS_WITH\",\"target_entity_id\":\"sun\",\"statement\":\"The planets move around the Sun.\",\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"r24\",\"source_entity_id\":\"moon\",\"relationship_type\":\"INTERACTS_WITH\",\"target_entity_id\":\"earth\",\"statement\":\"The Moon orbits around Earth.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r25\",\"source_entity_id\":\"star-system\",\"relationship_type\":\"INTERACTS_WITH\",\"target_entity_id\":\"galaxy\",\"statement\":\"Star systems orbit around their entire galaxy.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r26\",\"source_entity_id\":\"orbit\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"orbiting\",\"statement\":\"An orbit is the pattern made when planets go around the Sun.\",\"confidence\":0.9,\"origin\":\"SOURCE\"}],\"comparison_conditions\":[],\"transfer_events\":[],\"missing_symbols\":[]}",
+          "type": "output_text"
+        }
+      ],
+      "id": "msg_003aeb81014d2284016aaa595fce5887d2b2c4a8800c36aea7",
+      "phase": "final_answer",
+      "role": "assistant",
+      "status": "completed",
+      "type": "message"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt": null,
+  "prompt_cache_key": null,
+  "prompt_cache_options": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "low",
+    "generate_summary": null,
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "status": "completed",
+  "store": false,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "description": null,
+      "name": "candidate_b_v2_semantic_structure",
+      "schema_": {
+        "additionalProperties": false,
+        "properties": {
+          "comparison_conditions": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "comparison_operator": {
+                  "enum": [
+                    "GREATER_THAN"
+                  ],
+                  "type": "string"
+                },
+                "confidence": {
+                  "maximum": 1,
+                  "minimum": 0,
+                  "type": "number"
+                },
+                "left_operand_entity_id": {
+                  "enum": [
+                    "animals",
+                    "center-of-the-nebula",
+                    "collisions",
+                    "debris",
+                    "dust",
+                    "earth",
+                    "evolution",
+                    "falling-into-the-center",
+                    "galaxy",
+                    "gas",
+                    "jupiter",
+                    "life",
+                    "mars",
+                    "mass",
+                    "material",
+                    "mercury",
+                    "metal-and-rock-pieces",
+                    "microbes",
+                    "moon",
+                    "nebula",
+                    "neptune",
+                    "orbit",
+                    "orbiting",
+                    "other-living-things",
+                    "planet-formation",
+                    "planets",
+                    "plants",
+                    "saturn",
+                    "solar-system",
+                    "space",
+                    "spinning",
+                    "star-formation",
+                    "star-system",
+                    "stars",
+                    "sticking-together",
+                    "sun",
+                    "supernova",
+                    "swirling",
+                    "uranus",
+                    "venus"
+                  ],
+                  "type": "string"
+                },
+                "origin": {
+                  "enum": [
+                    "SOURCE",
+                    "INFERRED"
+                  ],
+                  "type": "string"
+                },
+                "outcome_entity_id": {
+                  "enum": [
+                    "animals",
+                    "center-of-the-nebula",
+                    "collisions",
+                    "debris",
+                    "dust",
+                    "earth",
+                    "evolution",
+                    "falling-into-the-center",
+                    "galaxy",
+                    "gas",
+                    "jupiter",
+                    "life",
+                    "mars",
+                    "mass",
+                    "material",
+                    "mercury",
+                    "metal-and-rock-pieces",
+                    "microbes",
+                    "moon",
+                    "nebula",
+                    "neptune",
+                    "orbit",
+                    "orbiting",
+                    "other-living-things",
+                    "planet-formation",
+                    "planets",
+                    "plants",
+                    "saturn",
+                    "solar-system",
+                    "space",
+                    "spinning",
+                    "star-formation",
+                    "star-system",
+                    "stars",
+                    "sticking-together",
+                    "sun",
+                    "supernova",
+                    "swirling",
+                    "uranus",
+                    "venus"
+                  ],
+                  "type": "string"
+                },
+                "proposition_type": {
+                  "enum": [
+                    "COMPARISON_CONDITION"
+                  ],
+                  "type": "string"
+                },
+                "relationship_type": {
+                  "enum": [
+                    "CAUSES"
+                  ],
+                  "type": "string"
+                },
+                "right_operand_entity_id": {
+                  "enum": [
+                    "animals",
+                    "center-of-the-nebula",
+                    "collisions",
+                    "debris",
+                    "dust",
+                    "earth",
+                    "evolution",
+                    "falling-into-the-center",
+                    "galaxy",
+                    "gas",
+                    "jupiter",
+                    "life",
+                    "mars",
+                    "mass",
+                    "material",
+                    "mercury",
+                    "metal-and-rock-pieces",
+                    "microbes",
+                    "moon",
+                    "nebula",
+                    "neptune",
+                    "orbit",
+                    "orbiting",
+                    "other-living-things",
+                    "planet-formation",
+                    "planets",
+                    "plants",
+                    "saturn",
+                    "solar-system",
+                    "space",
+                    "spinning",
+                    "star-formation",
+                    "star-system",
+                    "stars",
+                    "sticking-together",
+                    "sun",
+                    "supernova",
+                    "swirling",
+                    "uranus",
+                    "venus"
+                  ],
+                  "type": "string"
+                },
+                "statement": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "statement",
+                "confidence",
+                "origin",
+                "proposition_type",
+                "left_operand_entity_id",
+                "right_operand_entity_id",
+                "outcome_entity_id",
+                "relationship_type",
+                "comparison_operator"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "missing_symbols": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "reason": {
+                  "type": "string"
+                },
+                "semantic_item": {
+                  "type": "string"
+                },
+                "surface_form": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "surface_form",
+                "semantic_item",
+                "reason"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "relationships": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "confidence": {
+                  "maximum": 1,
+                  "minimum": 0,
+                  "type": "number"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "origin": {
+                  "enum": [
+                    "SOURCE",
+                    "INFERRED"
+                  ],
+                  "type": "string"
+                },
+                "relationship_type": {
+                  "enum": [
+                    "IS_A",
+                    "PART_OF",
+                    "CAUSES",
+                    "INCREASES",
+                    "DECREASES",
+                    "ENABLES",
+                    "REQUIRES",
+                    "CONSTRAINS",
+                    "PRECEDES",
+                    "TRANSFORMS_INTO",
+                    "INTERACTS_WITH",
+                    "MEASURED_BY",
+                    "EXAMPLE_OF",
+                    "CONTRADICTS",
+                    "CREATES",
+                    "INDUCES",
+                    "EXERTS_FORCE_ON",
+                    "AFFECTS",
+                    "BINDS_TO",
+                    "TRANSFERS_TO"
+                  ],
+                  "type": "string"
+                },
+                "source_entity_id": {
+                  "enum": [
+                    "animals",
+                    "center-of-the-nebula",
+                    "collisions",
+                    "debris",
+                    "dust",
+                    "earth",
+                    "evolution",
+                    "falling-into-the-center",
+                    "galaxy",
+                    "gas",
+                    "jupiter",
+                    "life",
+                    "mars",
+                    "mass",
+                    "material",
+                    "mercury",
+                    "metal-and-rock-pieces",
+                    "microbes",
+                    "moon",
+                    "nebula",
+                    "neptune",
+                    "orbit",
+                    "orbiting",
+                    "other-living-things",
+                    "planet-formation",
+                    "planets",
+                    "plants",
+                    "saturn",
+                    "solar-system",
+                    "space",
+                    "spinning",
+                    "star-formation",
+                    "star-system",
+                    "stars",
+                    "sticking-together",
+                    "sun",
+                    "supernova",
+                    "swirling",
+                    "uranus",
+                    "venus"
+                  ],
+                  "type": "string"
+                },
+                "statement": {
+                  "type": "string"
+                },
+                "target_entity_id": {
+                  "enum": [
+                    "animals",
+                    "center-of-the-nebula",
+                    "collisions",
+                    "debris",
+                    "dust",
+                    "earth",
+                    "evolution",
+                    "falling-into-the-center",
+                    "galaxy",
+                    "gas",
+                    "jupiter",
+                    "life",
+                    "mars",
+                    "mass",
+                    "material",
+                    "mercury",
+                    "metal-and-rock-pieces",
+                    "microbes",
+                    "moon",
+                    "nebula",
+                    "neptune",
+                    "orbit",
+                    "orbiting",
+                    "other-living-things",
+                    "planet-formation",
+                    "planets",
+                    "plants",
+                    "saturn",
+                    "solar-system",
+                    "space",
+                    "spinning",
+                    "star-formation",
+                    "star-system",
+                    "stars",
+                    "sticking-together",
+                    "sun",
+                    "supernova",
+                    "swirling",
+                    "uranus",
+                    "venus"
+                  ],
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "source_entity_id",
+                "relationship_type",
+                "target_entity_id",
+                "statement",
+                "confidence",
+                "origin"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "transfer_events": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "comparison_operator": {
+                  "type": "null"
+                },
+                "confidence": {
+                  "maximum": 1,
+                  "minimum": 0,
+                  "type": "number"
+                },
+                "destination_entity_id": {
+                  "enum": [
+                    "animals",
+                    "center-of-the-nebula",
+                    "debris",
+                    "dust",
+                    "earth",
+                    "galaxy",
+                    "gas",
+                    "jupiter",
+                    "life",
+                    "mars",
+                    "mass",
+                    "material",
+                    "mercury",
+                    "metal-and-rock-pieces",
+                    "microbes",
+                    "moon",
+                    "nebula",
+                    "neptune",
+                    "orbit",
+                    "other-living-things",
+                    "planets",
+                    "plants",
+                    "saturn",
+                    "solar-system",
+                    "space",
+                    "star-system",
+                    "stars",
+                    "sun",
+                    "uranus",
+                    "venus"
+                  ],
+                  "type": "string"
+                },
+                "event_entity_id": {
+                  "enum": [
+                    "collisions",
+                    "evolution",
+                    "falling-into-the-center",
+                    "orbiting",
+                    "planet-formation",
+                    "spinning",
+                    "star-formation",
+                    "sticking-together",
+                    "supernova",
+                    "swirling"
+                  ],
+                  "type": "string"
+                },
+                "object_entity_id": {
+                  "enum": [
+                    "animals",
+                    "center-of-the-nebula",
+                    "collisions",
+                    "debris",
+                    "dust",
+                    "earth",
+                    "evolution",
+                    "falling-into-the-center",
+                    "galaxy",
+                    "gas",
+                    "jupiter",
+                    "life",
+                    "mars",
+                    "mass",
+                    "material",
+                    "mercury",
+                    "metal-and-rock-pieces",
+                    "microbes",
+                    "moon",
+                    "nebula",
+                    "neptune",
+                    "orbit",
+                    "orbiting",
+                    "other-living-things",
+                    "planet-formation",
+                    "planets",
+                    "plants",
+                    "saturn",
+                    "solar-system",
+                    "space",
+                    "spinning",
+                    "star-formation",
+                    "star-system",
+                    "stars",
+                    "sticking-together",
+                    "sun",
+                    "supernova",
+                    "swirling",
+                    "uranus",
+                    "venus"
+                  ],
+                  "type": "string"
+                },
+                "origin": {
+                  "enum": [
+                    "SOURCE",
+                    "INFERRED"
+                  ],
+                  "type": "string"
+                },
+                "proposition_type": {
+                  "enum": [
+                    "TRANSFER_EVENT"
+                  ],
+                  "type": "string"
+                },
+                "relationship_type": {
+                  "enum": [
+                    "TRANSFERS_TO"
+                  ],
+                  "type": "string"
+                },
+                "statement": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "statement",
+                "confidence",
+                "origin",
+                "proposition_type",
+                "event_entity_id",
+                "object_entity_id",
+                "destination_entity_id",
+                "relationship_type",
+                "comparison_operator"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "relationships",
+          "comparison_conditions",
+          "transfer_events",
+          "missing_symbols"
+        ],
+        "type": "object"
+      },
+      "strict": true,
+      "type": "json_schema"
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 5987,
+    "input_tokens_details": {
+      "cache_write_tokens": 5984,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1810,
+    "output_tokens_details": {
+      "reasoning_tokens": 516
+    },
+    "total_tokens": 7797
+  },
+  "user": null
+}

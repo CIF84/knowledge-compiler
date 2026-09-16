@@ -1,0 +1,140 @@
+{
+  "structures": [
+    {
+      "entity_ids": [
+        "magma",
+        "fracture",
+        "rift-zone"
+      ],
+      "id": "structure-causal-path-2f885486f44b93de",
+      "metadata": {
+        "edge_count": 2,
+        "supporting_relationship_ids_by_edge": [
+          [
+            "r12"
+          ],
+          [
+            "r13"
+          ]
+        ]
+      },
+      "relationship_ids": [
+        "r12",
+        "r13"
+      ],
+      "relationship_types": [
+        "CAUSES",
+        "CAUSES"
+      ],
+      "structure_type": "CAUSAL_PATH"
+    },
+    {
+      "entity_ids": [
+        "seafloor-spreading",
+        "plate-movement",
+        "ground-crack"
+      ],
+      "id": "structure-causal-path-5aec3baeee027a3f",
+      "metadata": {
+        "edge_count": 2,
+        "supporting_relationship_ids_by_edge": [
+          [
+            "r4"
+          ],
+          [
+            "r6"
+          ]
+        ]
+      },
+      "relationship_ids": [
+        "r4",
+        "r6"
+      ],
+      "relationship_types": [
+        "CAUSES",
+        "CAUSES"
+      ],
+      "structure_type": "CAUSAL_PATH"
+    },
+    {
+      "entity_ids": [
+        "divergent-boundary",
+        "mid-atlantic-ridge"
+      ],
+      "id": "structure-hierarchy-15b022d58f921a08",
+      "metadata": {
+        "contains_cycle": false,
+        "hierarchy_relationship_type": "IS_A",
+        "leaves": [
+          "mid-atlantic-ridge"
+        ],
+        "roots": [
+          "divergent-boundary"
+        ],
+        "supporting_relationship_ids_by_edge": [
+          [
+            "r1"
+          ]
+        ]
+      },
+      "relationship_ids": [
+        "r1"
+      ],
+      "relationship_types": [
+        "IS_A"
+      ],
+      "structure_type": "HIERARCHY"
+    },
+    {
+      "entity_ids": [
+        "global-mid-ocean-ridge-system",
+        "mid-atlantic-ridge"
+      ],
+      "id": "structure-hierarchy-dab799f99647e3ac",
+      "metadata": {
+        "contains_cycle": false,
+        "hierarchy_relationship_type": "PART_OF",
+        "leaves": [
+          "mid-atlantic-ridge"
+        ],
+        "roots": [
+          "global-mid-ocean-ridge-system"
+        ],
+        "supporting_relationship_ids_by_edge": [
+          [
+            "r2"
+          ]
+        ]
+      },
+      "relationship_ids": [
+        "r2"
+      ],
+      "relationship_types": [
+        "PART_OF"
+      ],
+      "structure_type": "HIERARCHY"
+    },
+    {
+      "entity_ids": [
+        "ground-displacement",
+        "eruption"
+      ],
+      "id": "structure-process-chain-faf196e6da3d50e2",
+      "metadata": {
+        "edge_count": 1,
+        "supporting_relationship_ids_by_edge": [
+          [
+            "r8"
+          ]
+        ]
+      },
+      "relationship_ids": [
+        "r8"
+      ],
+      "relationship_types": [
+        "PRECEDES"
+      ],
+      "structure_type": "PROCESS_CHAIN"
+    }
+  ]
+}

@@ -1,0 +1,156 @@
+{
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1789548747.0,
+  "conversation": null,
+  "created_at": 1789548736.0,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "id": "resp_0ac1d5c479bfc186016aaa58bff75c87d2ba64406ec8610e4d",
+  "incomplete_details": null,
+  "instructions": "You perform Stage 1 entity inventory for a semantic compiler.\n\nRead only the exact supplied source. Return a precision-first inventory of concepts,\nobjects, processes, variables, systems, and components that later semantic statements\nneed as endpoints or proposition roles. Include source-supported process/event concepts\nwhen later meaning would need to refer to them. Do not use external knowledge.\n\nDo not assign IDs: trusted code assigns stable IDs after this stage. Each semantic thing\nmust appear once. Do not fragment one identity into variants, merge related but distinct\nthings, or use aliases except for genuine naming equivalence. Names and descriptions must\nremain source-bounded.\n\nReturn entities only. Do not return claims, evidence, relationships, propositions,\nteaching prose, diagnostics, or output outside the requested schema.",
+  "max_output_tokens": null,
+  "max_tool_calls": null,
+  "metadata": {},
+  "model": "gpt-5.6-luna",
+  "moderation": null,
+  "object": "response",
+  "output": [
+    {
+      "content": [],
+      "encrypted_content": "gAAAAABqqljLgOgIdKGvnOdeq8jg__QhnCipqfPL9-g5yCTSWDdxOJ_HiGytIQsdQV8BJ5J9NSk2DNMpiKcRyJ6_OCEMPWe4nYSURg-9merH2uNitCnYzNiP25D9Vxl_Zv_Tx4UtsfbvooWOugtYQK-H0gJHJ-eccSE434jGcGFVNB5vKTxKz_vyPB9HpFpN_a4CVKQ9B38EX0jGnrLiO67hhzZuATljTtoxjRPWS3kuP9063h72s6gZq3cmsulwMXjzX1qCu5vVoSRJRKe_ANJT8QGxEYDgAurc7RA9rnlapxTho3MhhR35u7Y_1uzpaFPTgOKTYKxTkArih-rwJQ50gz3SrO4pw6ahhCApM5zIQoJFGyEX2Tf3dw8nsNMsdq7hpTQuBSBuWcRaxAc-h_xBAQGYwiqJHrg7CmgsrNRW3V08F8szyWn8VJoo60---BQgGUqima4jmqNi_frSllyTf5FpSj19Fe8uROjEVP3jaw22alYa37iD8hU3kzwWNo1yZYf8l8WZMIo7BCLe9gGZkpAaw8CYwd3OZPoArzJj21_m5qrwY9bg9qXIjf5JanF0KCPsN6deqbj7tfqo0iHVDm7PnrvM_wrThYicKKeY-kdLjfZqhy1v9ARDpn6Ra1l_Ep8cj2EL2zxadt5Q-zwvugHKMk81xhFkE2x0HqfXAYXzgbmvNxyZCR0FGBCYTg-imDlISvcgw7prQoNpM8nmUbe-TTeqNL7UsmJ4udF8FbaPuGPPhXFAY6gwrYw4yKXj3o792BzJecGmKBmj-fM0eFXV5DhNNvrho0lIQ-J2kf12wqBWFYv4fbed5bix6jjiFle1kLTXpiJ6GlvuP7Mg5dKPV0Qw_Y5q4QFCP63JUruQlb2HU93b_Dbn4z-RI6KxN9v7cAfgUq6IDh3kv6IXzqOVEDzA-wXAhjrZPKCYwabGUQpvIO10nE75maxmqQMqZn683dpEBuWLP1_0oHVb2UlXyLQFODIfQl2wgHxW8y34Ey_ruVzEh-7xEsA6Cb9cy8IoDqmrm41TkKDOMJfp7jdiOoyiH4lX8oPm3jFzJtXY0zukr1UdtdcCd-npBpN6JKeRuyWJ1kO4rgM2pAmvDKrvkhrWjuB8AoJxKwUxNpfHGcdevKZ8Gjd-gQpzwcjUX6rqcGVEqjlY5niuQvUbpFWNQprh3EhmuT1NHMY3KPKD9H_yrUpVaLVegk0Ah9R3uEVgfxm43J7_kaTqmC7GBUKThCXgrc6fv7eDaT_SETjoViqkL14L0ql4mciuBEMjXmiym0IWO2k0eumLRJ1DUG3syqGDZ5mK4d8HCmDFPYUe0AGOVCSXJSKbI9YvQzZSVUiBLtEVQmycebnXEYVxwJU6OrRCCY3uEd_-S5HTJZ455WSUFENDJP-9NM55RPs7tmQDv8VPw8Lel07Ul5H6Yfa18YH09gTIWQhYPRW9EdyjPnUqPHhrEagJjPu2GF-Gj4t1oUmFZ5XN6GMqfJx8IcMoiTUaNwFc_gbS3kw36j0daydCJdLbSsSfRfs1etaMcJfCxQFUS0g98RLgIvljFyFhMV8dNPYo7idDMyFAGOJRR7uAVsZVI_U7rmnJZUskqPawe4tg3M4y2_a6tbs1zYFDevON1d3nb2BpW0xishhIGBEadIDszPcjj-zMSYpO1Ir5fXSYBele272MhaldhGrLfl0g4CmhOgzJIVzsZ2RuTKYHP4_T4ZTixRnVlzlnib0-6pRQJAS9njJR3L5SJYZWnVeqvnKZnidh5EMC9mdX4069LdnCyBKfUgFJDSy31QVIV75dSeQZNRYXLuOM6fMrkeFmbX2ANmRtFX-6oi50B9jYQLUlBvlGsT08X5cd649aEwYRhOqeVG6w5TxZEciTplot06u3GYfx5CfNyEp7anOsn_OMlY5OcMtd8skm5LIjWZblrP-43rLp-hoz2_Gh7hqR0hw-FqQRO5Vi11i97NPEDNMR354TlnBRLtAdTI9o_BvnZFK8lARZrgkzWb2-gIPZCHi4kmXQMFGHQU5UrQ1QhiLRE72l4Yb9QLtyKzH7OGx9pZpJnB4wSazZfEoPAnTTBN5Mm2_wEIWt_4fDrKWNstj4UsdmDlDff5goswu7Tnl2Uy0pXWXtPJXmX1C48MPHsbEs8VWPQp3kIjMs6EeUsgelwXy1mYdms0873IY-sFAL2EqCuJMBDxrAsdAY4mtVhrorrMkySyYwQsyTs4uZ24N5Z8w8VaL2POwCjJWuWyB0V07anrmdjrtWrFEyu4xlT26DgtHNRFBM548u2h4gCnNFADN4onFSV3YgzKHvKlhHBIOeb4VbjZrBG-ipYZtvS1UaUXfh8TuDkCOw-oKy8bEsm-0dbhAqKYLffHuHYAxLjuX7pVDFSbM9flPxkn79X937eRpl_e31BJSAkmL8fRZ5a6CoA5WS-XE44rWnA5fXcEs81033Owig6gNgy65_bw==",
+      "id": "rs_0ac1d5c479bfc186016aaa58c05ca087d28c6471944913f40a",
+      "status": null,
+      "summary": [],
+      "type": "reasoning"
+    },
+    {
+      "content": [
+        {
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"symbols\":[{\"name\":\"jet stream\",\"description\":\"A narrow band of strong wind and a type of air current that forms high in the atmosphere.\",\"entity_type\":\"CONCEPT\",\"aliases\":[]},{\"name\":\"wind\",\"description\":\"Moving air; the source describes a jet stream as a type of wind and air current.\",\"entity_type\":\"CONCEPT\",\"aliases\":[\"air current\"]},{\"name\":\"Earth\",\"description\":\"The planet whose atmosphere, surface, poles, equator, and jet streams are discussed.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"Sun\",\"description\":\"The source of heat that does not heat the whole Earth evenly.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"atmosphere\",\"description\":\"The gaseous region around Earth in which air masses and jet streams occur.\",\"entity_type\":\"SYSTEM\",\"aliases\":[]},{\"name\":\"troposphere\",\"description\":\"The layer of Earth's atmosphere where people live and breathe, including its mid to upper region.\",\"entity_type\":\"COMPONENT\",\"aliases\":[]},{\"name\":\"Earth's surface\",\"description\":\"The surface of Earth used as the reference for jet-stream altitude.\",\"entity_type\":\"COMPONENT\",\"aliases\":[]},{\"name\":\"polar jet stream\",\"description\":\"One of the two primary jet streams near the north and south poles.\",\"entity_type\":\"SYSTEM\",\"aliases\":[]},{\"name\":\"subtropical jet stream\",\"description\":\"One of the two primary jet streams located closer to the equator.\",\"entity_type\":\"SYSTEM\",\"aliases\":[]},{\"name\":\"north pole\",\"description\":\"The northern polar region near one of the polar jet streams.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"south pole\",\"description\":\"The southern polar region near one of the polar jet streams.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"equator\",\"description\":\"The region referenced as having warmer areas and as being nearer to the subtropical jet streams.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"warm air mass\",\"description\":\"An air mass with higher temperature that rises when it meets a cooler air mass.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"cold air mass\",\"description\":\"An air mass with lower temperature that sinks when it meets a warmer air mass.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"Arctic air\",\"description\":\"Cold air from the Arctic referenced in relation to the jet stream and storm conditions.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"air-mass meeting\",\"description\":\"The event in which warm and cold air masses meet in the atmosphere.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"name\":\"uneven solar heating\",\"description\":\"The Sun's uneven heating of Earth, associated with warmer equatorial areas and colder polar areas.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"name\":\"air rising\",\"description\":\"The upward movement of warmer air higher in the atmosphere.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"name\":\"air sinking\",\"description\":\"The downward movement of cooler air to replace warmer air.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"name\":\"air-current formation\",\"description\":\"The creation of an air current by the movement of warm and cool air masses.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"name\":\"jet-stream formation\",\"description\":\"The formation of a jet stream when warm and cold air masses meet in the atmosphere.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"name\":\"temperature difference\",\"description\":\"The difference between the temperatures of warm and cool air masses.\",\"entity_type\":\"VARIABLE\",\"aliases\":[]},{\"name\":\"jet-stream speed\",\"description\":\"The speed at which a jet stream moves, including average and higher speeds.\",\"entity_type\":\"VARIABLE\",\"aliases\":[]},{\"name\":\"jet-stream altitude\",\"description\":\"The height of a jet stream above Earth's surface.\",\"entity_type\":\"VARIABLE\",\"aliases\":[]},{\"name\":\"west-to-east direction\",\"description\":\"The general direction in which Earth's primary jet streams travel.\",\"entity_type\":\"CONCEPT\",\"aliases\":[]},{\"name\":\"northward and southward wind bulges\",\"description\":\"Bulges of winds created when jet streams move in different ways toward the north and south.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"winter\",\"description\":\"The season in which very high speeds usually occur in polar jet streams.\",\"entity_type\":\"CONCEPT\",\"aliases\":[]},{\"name\":\"airplane\",\"description\":\"An aircraft that can fly in the mid to upper troposphere and receive a boost from a jet stream.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"airplane boost\",\"description\":\"An increase in an airplane's travel advantage when it flies in the same direction as a powerful jet stream.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"name\":\"air-travel route\",\"description\":\"A route traveled by an airplane, including west-to-east and east-to-west travel along the same route.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"weather system\",\"description\":\"A system that fast-moving air currents can transport and that may remain in place when far from a jet stream.\",\"entity_type\":\"SYSTEM\",\"aliases\":[]},{\"name\":\"United States\",\"description\":\"The geographic region across which jet streams can transport weather systems.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"temperature\",\"description\":\"A property of air and weather referenced in relation to heating, air masses, and weather effects.\",\"entity_type\":\"VARIABLE\",\"aliases\":[]},{\"name\":\"precipitation\",\"description\":\"A weather outcome affected by weather systems transported by jet streams.\",\"entity_type\":\"CONCEPT\",\"aliases\":[]},{\"name\":\"heat wave\",\"description\":\"A period of heat that can result when a weather system remains in one place.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"flood\",\"description\":\"A condition that can result when a weather system remains in one place.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"storm\",\"description\":\"A weather event that tends to follow the edge of a jet stream.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"jet-stream edge\",\"description\":\"The boundary of a jet stream that storms tend to follow.\",\"entity_type\":\"COMPONENT\",\"aliases\":[]},{\"name\":\"turbulent conditions\",\"description\":\"Conditions created by the difference between cool and warm air where storms form or follow the jet-stream edge.\",\"entity_type\":\"CONCEPT\",\"aliases\":[]},{\"name\":\"thunder\",\"description\":\"An atmospheric phenomenon associated with warmer and wetter air meeting colder Arctic air near a displaced jet stream.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"lightning\",\"description\":\"An atmospheric phenomenon associated with warmer and wetter air meeting colder Arctic air near a displaced jet stream.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"tornado\",\"description\":\"A severe weather event associated with the conditions near a southward-displaced jet stream.\",\"entity_type\":\"OBJECT\",\"aliases\":[]}]}",
+          "type": "output_text"
+        }
+      ],
+      "id": "msg_0ac1d5c479bfc186016aaa58c266cc87d2b7bd0ec2f49de875",
+      "phase": "final_answer",
+      "role": "assistant",
+      "status": "completed",
+      "type": "message"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt": null,
+  "prompt_cache_key": null,
+  "prompt_cache_options": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "low",
+    "generate_summary": null,
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "status": "completed",
+  "store": false,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "description": null,
+      "name": "candidate_b_entity_inventory",
+      "schema_": {
+        "additionalProperties": false,
+        "properties": {
+          "symbols": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "aliases": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "entity_type": {
+                  "enum": [
+                    "CONCEPT",
+                    "OBJECT",
+                    "PROCESS",
+                    "VARIABLE",
+                    "SYSTEM",
+                    "COMPONENT"
+                  ],
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name",
+                "description",
+                "entity_type",
+                "aliases"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "symbols"
+        ],
+        "type": "object"
+      },
+      "strict": true,
+      "type": "json_schema"
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 730,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1555,
+    "output_tokens_details": {
+      "reasoning_tokens": 209
+    },
+    "total_tokens": 2285
+  },
+  "user": null
+}

@@ -1,0 +1,211 @@
+{
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1789548876.0,
+  "conversation": null,
+  "created_at": 1789548864.0,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "id": "resp_0371e4f3d925e21c016aaa5940db9087d2aae164e1b560d637",
+  "incomplete_details": null,
+  "instructions": "You perform Stage 3 claim and evidence binding.\n\nThe user supplies an immutable entity inventory, immutable semantic structure, and the\nexact source. You may add learner-useful claims and bind exact source evidence to the\nsupplied relationship/proposition IDs. You must not add, delete, rename, reorder, or alter\nentities, relationships, propositions, predicates, directions, role bindings, statements,\nconfidence, or origin. Return no semantic topology.\n\nEvery SOURCE claim and SOURCE semantic object must cite one or more exact, verbatim,\nuniquely occurring substrings from the supplied source. Use a complete clause or sentence\nlong enough to occur exactly once. Never paraphrase a quote or remove text from inside it.\nINFERRED claims and semantic objects must have no source evidence. Do not fabricate\nevidence or use external knowledge.\n\nReturn only claims and semantic_evidence_bindings in the requested schema.\n\nCandidate B v2 semantic omission invariant: independently preserve source-supported,\nlearner-useful meanings as exact grounded claims even when Stage 2 emitted no relationship\nor proposition for them. Do not convert a claim into topology or alter the frozen Stage-2\nstructure. A claim must cite exact, uniquely occurring source text.",
+  "max_output_tokens": null,
+  "max_tool_calls": null,
+  "metadata": {},
+  "model": "gpt-5.6-luna",
+  "moderation": null,
+  "object": "response",
+  "output": [
+    {
+      "content": [],
+      "encrypted_content": "gAAAAABqqllMR3kEQ-xlWNXO00DkKXYnH-npJbj_Au-SIGbSdWMKH0Tn0xSvH043tl2ehgQ6EgSmse6YtAPZC-5r2rjAv0r202QFj5iwbMxN3pxEkXkH2pUth4_qZXhp1m_6D1Eo8VzTylUHMcaLCo5iM4Le4Ff0PndXqdAHMTFRVwFbZWOhJ3t7qa44iWJwGIHQpvyHpi6lfexQbxk-Xp2v34cTKxuBBBxzKn8BziuurnXH9dPFXpMz2qC3r9SL1OvOVUp6gnqpa2BP-JWnhYMw7t2tUQzzHMjam8wnJBspey1W2bGsgP9ohGArkhM-4QYyxiWycT6ikHqNMuiBh6XwItKWV6nwEHkwHKSYtFw-UQ_0IjeMObcFwbj797Dnbt7k-h5yoc1hbw4fNEWNw9OpGx4lCnuPcn3dTYiFkOQshvcWnC2skD0a1VUhWrwm4zPQK1GQYwhUBKG19gOFykZ1ygrz-bJ79NJAhQ09xEUM_7wexM1HOJcadjiGgPPZf6ZOBA1gJ1KfvsnenkMJiIYj1dEtwzrbSoYdbP-GElwAe5AVaiwtdUTAKZ-1lwGZM3XltAgDnGFMS3s35lQXpdtXMUbVwWUmZXfuwgSstYcs5PUdM61SvyYgOxQURKYnGtA7Y3k7PbKBVDWAWPVFaDAxNOFIrDPUUHHLwz9_khmE8Q58qIox_hKDGwNW6m8tMTc4vwjswkijFS6sDZoA6wNxYknrSaLc5jdD3PEYg2RTiQVNnKJt0_299bQS3vEs3X9bvoD0OyM2N6jXj_P87eTmRO2QlPOtmYxBXz230cXRAAApAtF7Q3Gn3TaFx4pDdGQODk-6bDA_DLhBFabCkap4MqvVO2ZTvkA7VWMKJtonYQCpENJa-tIlnYxV8eCh4T6Vr5WgAVjd5K06ouolblrvyw4PvoxXsVRu9HHPnu1NsnBmPfgn_BdAG2kiGki_SLAt9CuMtqXF1lmUW4w4EUk50i_K1O_DQ4ixyJhsSN8G5u8f0aNIRrB82Q2niiWPyHCWGfi7UfKquoDj4eDQJH8S60b6qKW6nbPrj3dkD0xFBlJATQVOVoNDg2wFDNYYEEx_6IrCRYgdYu2O3K2vvCfxASvSaQndUrAK8nw_hJcAxK6ZO55Th46eScWfeQxZ8KmeJUJi6iWNu8-1iB7j8BTitWTIkhNbDwkRRuPrCMh2DDzPAufqbQJ0_WMVVIla0mimIIm14QCl_0gJGLuzStslBKLDQ_gGgmjjYbFFub7GJj2m_6A_SodbyaRy9NWC_RumkAwQnKbRm77PLupXwmM2dXC6WOsSDqQ8O2WzM8c58OA4D4RogdlnobFY3dN6r0-k_HULg0c6Uqy6Rt2hlvVYlxOphcwg2KMA-yALptx7pn38DzcWk8HgVuMB8rPREpk1YMq3AO41ISqjGVw1q2VSqCp9ktBnqtTvXZ2Ye0ahrIqWNOeviTAyUsfNIRs73vx9kDVqjjRCqKxJWIE0jMsLzFEARMCfRFCyvQE4Wzk1x0OKSOmo4A7BbhGIIv--2j7YFNGvWx79LCe6kj3FjI3K_ta79ETb8_8BNmzE8E6XAV4TlTlvdyfwpty3woWI9W33nC_ffWYCKfmm7Vp7inHl-fiWaT69mxnV2vyejenYiqqunLSj7glSHjiXtSsALySAdsY1BRLkxtnVNNHrltZOfRDW9PHknHFSxGio3KZ9gsLEHg12G5B5WrJaP8F4_gjs3bB6gVOLgMqvg_GbdNqHF1IGSUXNLc3ac1sXLlFOpZMq-TTDcABV9YB1oW71gb_JG9rOJ9jMAEg-I4Ovnhe567r29KdMy0Ulc0JZaa14Uv6E7dtF5pHZvHy3os_Tq8B1P-VNPBMwr1QBMtC_bkyG3LBA2E98OCjltHU3X-QkaToIhP39mJ27X1cNq9FpuRx7LlHO73rbxExZ1VFrrVMEeIKXSxN0mmXyUNpj1jj4p0_5LCHVAce_4bkh_YhpWNoD-ZRSh0ZD7t8RmV-UBlIvXxdMhzD5Q9x_9d01z7F-5T-ouLgd1Vc=",
+      "id": "rs_0371e4f3d925e21c016aaa5941726887d28973469d23725345",
+      "status": null,
+      "summary": [],
+      "type": "reasoning"
+    },
+    {
+      "content": [
+        {
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"claims\":[{\"id\":\"claim-r1\",\"statement\":\"A standing committee is a committee.\",\"evidence\":[{\"quote\":\"much of the policy expertise resides in the standing committees\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"claim-r2\",\"statement\":\"A standing committee is a panel of Members.\",\"evidence\":[{\"quote\":\"the standing committees, panels of Members who typically take the lead in developing and assessing proposed legislation within specified policy jurisdictions\"}],\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"claim-r3\",\"statement\":\"A federal agency is an example of a selected party that may provide views during a committee hearing.\",\"evidence\":[{\"quote\":\"hear from selected parties (e.g., a federal agency or organized interest) about the bill’s strengths and weaknesses\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"claim-r4\",\"statement\":\"An organized interest is an example of a selected party that may provide views during a committee hearing.\",\"evidence\":[{\"quote\":\"hear from selected parties (e.g., a federal agency or organized interest) about the bill’s strengths and weaknesses\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"claim-r5\",\"statement\":\"Introduction of a bill precedes its referral to a committee.\",\"evidence\":[{\"quote\":\"Once a Member of the House or Senate introduces a bill, it is typically referred to the committee (or committees) in that chamber with jurisdiction over its elements.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"claim-r6\",\"statement\":\"A markup precedes the committee's majority vote to report a bill.\",\"evidence\":[{\"quote\":\"The markup concludes when the committee agrees, by majority vote, to report the bill (with any recommended changes adopted in the markup) to its chamber.\"}],\"confidence\":0.94,\"origin\":\"SOURCE\"},{\"id\":\"claim-r7\",\"statement\":\"The committee's majority vote causes the committee to report the bill.\",\"evidence\":[{\"quote\":\"The markup concludes when the committee agrees, by majority vote, to report the bill (with any recommended changes adopted in the markup) to its chamber.\"}],\"confidence\":0.96,\"origin\":\"SOURCE\"},{\"id\":\"claim-r8\",\"statement\":\"Streamlined floor consideration is a type of floor consideration.\",\"evidence\":[{\"quote\":\"they schedule a bill for a type of streamlined floor consideration\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"claim-r9\",\"statement\":\"A motion to proceed precedes the Senate's agreement to that motion.\",\"evidence\":[{\"quote\":\"bills are brought to the floor only after the Senate agrees to a motion (typically offered by the majority leader) to proceed to a specific bill\"}],\"confidence\":0.95,\"origin\":\"SOURCE\"},{\"id\":\"claim-transfer\",\"statement\":\"A bill referral transfers a bill to the committee or committees in the chamber with jurisdiction over its elements.\",\"evidence\":[{\"quote\":\"Once a Member of the House or Senate introduces a bill, it is typically referred to the committee (or committees) in that chamber with jurisdiction over its elements.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"claim-party-leaders\",\"statement\":\"Congressional action on bills is typically planned and coordinated by party leaders in each chamber.\",\"evidence\":[{\"quote\":\"Congressional action on bills is typically planned and coordinated by party leaders in each chamber\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"claim-house-tools\",\"statement\":\"Majority party leaders in the House have more tools to set the floor agenda than majority party leaders in the Senate.\",\"evidence\":[{\"quote\":\"majority party leaders in the House have more tools with which to set the floor agenda than do majority party leaders in the Senate\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"claim-policy-expertise\",\"statement\":\"Much of the policy expertise resides in standing committees.\",\"evidence\":[{\"quote\":\"In both chambers, much of the policy expertise resides in the standing committees\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"claim-referral\",\"statement\":\"A bill introduced by a Member of the House or Senate is typically referred to the committee or committees in that chamber with jurisdiction over its elements.\",\"evidence\":[{\"quote\":\"Once a Member of the House or Senate introduces a bill, it is typically referred to the committee (or committees) in that chamber with jurisdiction over its elements.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"claim-formal-attention\",\"statement\":\"Committees do not formally consider each referred bill.\",\"evidence\":[{\"quote\":\"Committees do not formally consider each of these referred bills.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"claim-agenda-authority\",\"statement\":\"The committee chair has the primary agenda-setting authority for each committee.\",\"evidence\":[{\"quote\":\"The committee chair has the primary agenda-setting authority for each committee\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"claim-two-year-congress\",\"statement\":\"The committee chair identifies which bills will receive formal committee attention during the two-year Congress.\",\"evidence\":[{\"quote\":\"identifies which bills will receive formal committee attention during the course of the two-year Congress\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"claim-committee-initiation\",\"statement\":\"Committees may initiate legislative action on their own and are not limited to measures referred to them.\",\"evidence\":[{\"quote\":\"Committees are not limited, however, to consideration of measures referred to them and may initiate legislative action on their own.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"claim-hearings\",\"statement\":\"A committee may conduct hearings on a bill to provide committee members and the public an opportunity to hear from selected parties about the bill's strengths and weaknesses.\",\"evidence\":[{\"quote\":\"A committee may conduct hearings on a bill to provide committee members and the public an opportunity to hear from selected parties (e.g., a federal agency or organized interest) about the bill’s strengths and weaknesses.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"claim-markup-purpose\",\"statement\":\"A committee holds a markup if it wants to formally recommend that a bill receive consideration from its parent chamber.\",\"evidence\":[{\"quote\":\"If the committee wants to formally recommend that the bill receive consideration from its parent chamber, it will hold a markup on the bill\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"claim-amendments\",\"statement\":\"During a markup, committee members vote on proposed amendments.\",\"evidence\":[{\"quote\":\"at which committee members vote on any proposed amendments\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"claim-recommended-changes\",\"statement\":\"The committee reports the bill to its chamber with any recommended changes adopted in the markup.\",\"evidence\":[{\"quote\":\"to report the bill (with any recommended changes adopted in the markup) to its chamber\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"claim-house-floor\",\"statement\":\"In the House, majority party leaders generally decide which bills will receive floor consideration.\",\"evidence\":[{\"quote\":\"In the House, majority party leaders generally decide which bills will receive floor consideration\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"claim-rules-committee\",\"statement\":\"House majority party leaders may ask the Rules Committee to propose tailored parameters for floor consideration.\",\"evidence\":[{\"quote\":\"ask the Rules Committee to propose a set of tailored parameters for floor consideration\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"claim-senate-floor\",\"statement\":\"In the Senate, bills are brought to the floor after the Senate agrees to a motion to proceed to a specific bill or if no Senator objects to a unanimous consent request to bring it up.\",\"evidence\":[{\"quote\":\"In the Senate, bills are brought to the floor only after the Senate agrees to a motion (typically offered by the majority leader) to proceed to a specific bill or, alternatively, if no Senator objects to a unanimous consent request to bring it up.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"}],\"semantic_evidence_bindings\":[{\"semantic_object_id\":\"proposition-transfer-event-c4aaaf113b0444af\",\"evidence\":[{\"quote\":\"Once a Member of the House or Senate introduces a bill, it is typically referred to the committee (or committees) in that chamber with jurisdiction over its elements.\"}]},{\"semantic_object_id\":\"r1\",\"evidence\":[{\"quote\":\"much of the policy expertise resides in the standing committees\"}]},{\"semantic_object_id\":\"r2\",\"evidence\":[{\"quote\":\"the standing committees, panels of Members who typically take the lead in developing and assessing proposed legislation within specified policy jurisdictions\"}]},{\"semantic_object_id\":\"r3\",\"evidence\":[{\"quote\":\"hear from selected parties (e.g., a federal agency or organized interest) about the bill’s strengths and weaknesses\"}]},{\"semantic_object_id\":\"r4\",\"evidence\":[{\"quote\":\"hear from selected parties (e.g., a federal agency or organized interest) about the bill’s strengths and weaknesses\"}]},{\"semantic_object_id\":\"r5\",\"evidence\":[{\"quote\":\"Once a Member of the House or Senate introduces a bill, it is typically referred to the committee (or committees) in that chamber with jurisdiction over its elements.\"}]},{\"semantic_object_id\":\"r6\",\"evidence\":[{\"quote\":\"The markup concludes when the committee agrees, by majority vote, to report the bill (with any recommended changes adopted in the markup) to its chamber.\"}]},{\"semantic_object_id\":\"r7\",\"evidence\":[{\"quote\":\"The markup concludes when the committee agrees, by majority vote, to report the bill (with any recommended changes adopted in the markup) to its chamber.\"}]},{\"semantic_object_id\":\"r8\",\"evidence\":[{\"quote\":\"they schedule a bill for a type of streamlined floor consideration\"}]},{\"semantic_object_id\":\"r9\",\"evidence\":[{\"quote\":\"bills are brought to the floor only after the Senate agrees to a motion (typically offered by the majority leader) to proceed to a specific bill\"}]}]}",
+          "type": "output_text"
+        }
+      ],
+      "id": "msg_0371e4f3d925e21c016aaa5942b13887d29ceb1aa0dbfe6cc7",
+      "phase": "final_answer",
+      "role": "assistant",
+      "status": "completed",
+      "type": "message"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt": null,
+  "prompt_cache_key": null,
+  "prompt_cache_options": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "low",
+    "generate_summary": null,
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "status": "completed",
+  "store": false,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "description": null,
+      "name": "candidate_b_v2_claim_evidence_binding",
+      "schema_": {
+        "additionalProperties": false,
+        "properties": {
+          "claims": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "confidence": {
+                  "maximum": 1,
+                  "minimum": 0,
+                  "type": "number"
+                },
+                "evidence": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "quote": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "quote"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "origin": {
+                  "enum": [
+                    "SOURCE",
+                    "INFERRED"
+                  ],
+                  "type": "string"
+                },
+                "statement": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "statement",
+                "evidence",
+                "confidence",
+                "origin"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "semantic_evidence_bindings": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "evidence": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "quote": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "quote"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                "semantic_object_id": {
+                  "enum": [
+                    "proposition-transfer-event-c4aaaf113b0444af",
+                    "r1",
+                    "r2",
+                    "r3",
+                    "r4",
+                    "r5",
+                    "r6",
+                    "r7",
+                    "r8",
+                    "r9"
+                  ],
+                  "type": "string"
+                }
+              },
+              "required": [
+                "semantic_object_id",
+                "evidence"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "claims",
+          "semantic_evidence_bindings"
+        ],
+        "type": "object"
+      },
+      "strict": true,
+      "type": "json_schema"
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 3912,
+    "input_tokens_details": {
+      "cache_write_tokens": 3909,
+      "cached_tokens": 0
+    },
+    "output_tokens": 2215,
+    "output_tokens_details": {
+      "reasoning_tokens": 124
+    },
+    "total_tokens": 6127
+  },
+  "user": null
+}

@@ -1,0 +1,240 @@
+{
+  "missing_symbols": [],
+  "propositions": [],
+  "relationships": [
+    {
+      "confidence": 0.99,
+      "id": "r1",
+      "origin": "SOURCE",
+      "relationship_type": "PART_OF",
+      "source_entity_id": "sun",
+      "statement": "The Sun is part of the solar system.",
+      "target_entity_id": "solar-system"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r2",
+      "origin": "SOURCE",
+      "relationship_type": "PART_OF",
+      "source_entity_id": "planets",
+      "statement": "The planets are part of the solar system.",
+      "target_entity_id": "solar-system"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r3",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "mercury",
+      "statement": "Mercury is one of the planets in the solar system.",
+      "target_entity_id": "planets"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r4",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "venus",
+      "statement": "Venus is one of the planets in the solar system.",
+      "target_entity_id": "planets"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r5",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "earth",
+      "statement": "Earth is one of the planets in the solar system.",
+      "target_entity_id": "planets"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r6",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "mars",
+      "statement": "Mars is one of the planets in the solar system.",
+      "target_entity_id": "planets"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r7",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "jupiter",
+      "statement": "Jupiter is one of the planets in the solar system.",
+      "target_entity_id": "planets"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r8",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "saturn",
+      "statement": "Saturn is one of the planets in the solar system.",
+      "target_entity_id": "planets"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r9",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "uranus",
+      "statement": "Uranus is one of the planets in the solar system.",
+      "target_entity_id": "planets"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r10",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "neptune",
+      "statement": "Neptune is one of the planets in the solar system.",
+      "target_entity_id": "planets"
+    },
+    {
+      "confidence": 0.98,
+      "id": "r11",
+      "origin": "SOURCE",
+      "relationship_type": "CREATES",
+      "source_entity_id": "nebula",
+      "statement": "Stars form from nebulae.",
+      "target_entity_id": "stars"
+    },
+    {
+      "confidence": 0.98,
+      "id": "r12",
+      "origin": "SOURCE",
+      "relationship_type": "CREATES",
+      "source_entity_id": "nebula",
+      "statement": "Planets form from nebulae.",
+      "target_entity_id": "planets"
+    },
+    {
+      "confidence": 0.97,
+      "id": "r13",
+      "origin": "SOURCE",
+      "relationship_type": "CREATES",
+      "source_entity_id": "sticking-together",
+      "statement": "Material sticking together forms a large mass.",
+      "target_entity_id": "mass"
+    },
+    {
+      "confidence": 0.94,
+      "id": "r14",
+      "origin": "SOURCE",
+      "relationship_type": "CREATES",
+      "source_entity_id": "mass",
+      "statement": "A mass can grow large enough to form a planet.",
+      "target_entity_id": "planets"
+    },
+    {
+      "confidence": 0.94,
+      "id": "r15",
+      "origin": "SOURCE",
+      "relationship_type": "CREATES",
+      "source_entity_id": "mass",
+      "statement": "A mass can grow large enough to form a new star.",
+      "target_entity_id": "stars"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r16",
+      "origin": "SOURCE",
+      "relationship_type": "CAUSES",
+      "source_entity_id": "supernova",
+      "statement": "A supernova has enough energy to make gas and dust in nearby nebulae start swirling.",
+      "target_entity_id": "swirling"
+    },
+    {
+      "confidence": 0.98,
+      "id": "r17",
+      "origin": "SOURCE",
+      "relationship_type": "CAUSES",
+      "source_entity_id": "supernova",
+      "statement": "A supernova has enough energy to make gas and dust in nearby nebulae start spinning.",
+      "target_entity_id": "spinning"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r18",
+      "origin": "SOURCE",
+      "relationship_type": "CAUSES",
+      "source_entity_id": "swirling",
+      "statement": "The swirling caused material in the nebula to fall into its center.",
+      "target_entity_id": "falling-into-the-center"
+    },
+    {
+      "confidence": 0.97,
+      "id": "r19",
+      "origin": "SOURCE",
+      "relationship_type": "CAUSES",
+      "source_entity_id": "spinning",
+      "statement": "The spinning caused material in the nebula to fall into its center.",
+      "target_entity_id": "falling-into-the-center"
+    },
+    {
+      "confidence": 0.98,
+      "id": "r20",
+      "origin": "SOURCE",
+      "relationship_type": "CREATES",
+      "source_entity_id": "collisions",
+      "statement": "Collisions among gas and dust formed little pieces of metal and rock.",
+      "target_entity_id": "metal-and-rock-pieces"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r21",
+      "origin": "SOURCE",
+      "relationship_type": "CREATES",
+      "source_entity_id": "collisions",
+      "statement": "Many collisions over a long time formed the eight planets.",
+      "target_entity_id": "planets"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r22",
+      "origin": "SOURCE",
+      "relationship_type": "CREATES",
+      "source_entity_id": "planet-formation",
+      "statement": "Planet formation produced the eight planets.",
+      "target_entity_id": "planets"
+    },
+    {
+      "confidence": 0.98,
+      "id": "r23",
+      "origin": "SOURCE",
+      "relationship_type": "INTERACTS_WITH",
+      "source_entity_id": "planets",
+      "statement": "The planets move around the Sun.",
+      "target_entity_id": "sun"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r24",
+      "origin": "SOURCE",
+      "relationship_type": "INTERACTS_WITH",
+      "source_entity_id": "moon",
+      "statement": "The Moon orbits around Earth.",
+      "target_entity_id": "earth"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r25",
+      "origin": "SOURCE",
+      "relationship_type": "INTERACTS_WITH",
+      "source_entity_id": "star-system",
+      "statement": "Star systems orbit around their entire galaxy.",
+      "target_entity_id": "galaxy"
+    },
+    {
+      "confidence": 0.9,
+      "id": "r26",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "orbit",
+      "statement": "An orbit is the pattern made when planets go around the Sun.",
+      "target_entity_id": "orbiting"
+    }
+  ]
+}

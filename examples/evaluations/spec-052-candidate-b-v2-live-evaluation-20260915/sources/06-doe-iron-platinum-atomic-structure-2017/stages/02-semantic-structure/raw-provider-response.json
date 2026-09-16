@@ -1,0 +1,629 @@
+{
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1789549041.0,
+  "conversation": null,
+  "created_at": 1789549025.0,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "id": "resp_005601407ac118f3016aaa59e1932887d29465fda19b13f444",
+  "incomplete_details": null,
+  "instructions": "You perform Stage 2 semantic structure extraction for Candidate B v2.\n\nUse only the exact source and immutable frozen entity inventory. Every endpoint must\nbe one of the exact supplied entity IDs. Do not invent or substitute an identity.\nReturn only source-supported canonical relationships, COMPARISON_CONDITION instances,\nTRANSFER_EVENT instances, and missing_symbols diagnostics in the requested schema.\n\nEmit topology only when the exact source-supported meaning fits the trusted relationship\ncontract or one of the two canonical proposition forms. Otherwise omit the meaning from\nStage-2 topology. Never approximate, coerce, or choose a nearby predicate/proposition.\nStage 3 independently reads the exact source and can preserve omitted meaning as an\nexact grounded claim. Do not use missing_symbols for non-topological omission; reserve it\nfor an otherwise valid canonical semantic item lacking a required frozen identity.\n\nCOMPARISON_CONDITION means a comparison used as a causal antecedent with a distinct\nLEFT_OPERAND and RIGHT_OPERAND, an OUTCOME caused by that condition, GREATER_THAN, and\nCAUSES. A standalone comparison without a causal outcome is not this proposition.\nTRANSFER_EVENT means a PROCESS EVENT, transferred OBJECT, and non-PROCESS DESTINATION,\nwith TRANSFERS_TO and no comparison operator. Input to a calculation is not automatically\na transfer event. Emit neither proposition when these exact meanings are unsupported.\n\nDo not return entities, claims, evidence, teaching prose, or new semantic vocabulary.\nProposition IDs are assigned by trusted code; do not return them.\n\nACTIVE RELATIONSHIP CONTRACTS (source --TYPE--> target):\nIS_A [STRUCTURAL; direction=instance_to_type]\n  meaning: The source is a kind, category, or subtype of the target.\n  roles: source=instance or subtype; target=broader type or category\n  use: The source can truthfully be described as a target.\n  avoid: Do not use for parts, examples, similarity, or temporary states.\nPART_OF [STRUCTURAL; direction=part_to_whole]\n  meaning: The source is a constituent or component of the target.\n  roles: source=part or component; target=containing whole\n  use: The source exists as a component or subpart of the target.\n  avoid: Never reverse whole and part; do not use for interaction or dependency.\nEXAMPLE_OF [STRUCTURAL; direction=example_to_concept]\n  meaning: The source is an illustrative instance of the target concept.\n  roles: source=example; target=concept illustrated\n  use: The source is presented as an example of the target.\n  avoid: Do not use merely because the source is a subtype; prefer IS_A for classification.\nCAUSES [CAUSAL; direction=cause_to_effect]\n  meaning: The source brings about the target as an effect.\n  roles: source=cause; target=effect\n  use: The source is stated to produce the target outcome.\n  avoid: Do not use for chronology, association, contribution, or unspecified influence.\nAFFECTS [CAUSAL; direction=influence_to_affected]\n  meaning: The source causally influences the target without a specified direction or complete production.\n  roles: source=influence; target=affected entity, process, or variable\n  use: The source changes or influences the target, but the text does not support CAUSES, INCREASES, or DECREASES.\n  avoid: Do not use for mere association, chronology, physical force, or interaction with no stated effect.\nINCREASES [CAUSAL; direction=increaser_to_increased_variable]\n  meaning: The source causally raises the amount, rate, value, probability, or intensity of the target.\n  roles: source=causal factor; target=quantity or variable increased\n  use: The source is explicitly said to make the target greater, faster, more likely, or more intense.\n  avoid: Do not infer from nearby words such as more or faster; never use when the source says slower, lower, or less.\nDECREASES [CAUSAL; direction=decreaser_to_decreased_variable]\n  meaning: The source causally lowers the amount, rate, value, probability, or intensity of the target.\n  roles: source=causal factor; target=quantity or variable decreased\n  use: The source is explicitly said to make the target smaller, slower, less likely, or less intense.\n  avoid: Do not use for absence, prevention without a scalar target, or mere negative association.\nINDUCES [CAUSAL; direction=inducer_to_induced_effect]\n  meaning: The source produces the target through an explicitly described induction mechanism.\n  roles: source=inducing phenomenon; target=induced phenomenon\n  use: The source explicitly says induces or describes a recognized induction mechanism.\n  avoid: Do not use as a metaphor for generic causation, influence, motivation, or historical response.\nENABLES [DEPENDENCY; direction=enabler_to_enabled]\n  meaning: The source makes the target possible without necessarily causing it to occur.\n  roles: source=enabling condition or capability; target=capability or process made possible\n  use: The target could not occur, or is materially made possible, because of the source.\n  avoid: Do not use for delivery, participation, weak assistance, or an effect that actually occurred.\nREQUIRES [DEPENDENCY; direction=dependent_to_requirement]\n  meaning: The source depends on the target as a prerequisite or necessary resource.\n  roles: source=dependent; target=prerequisite or required resource\n  use: The source cannot operate or occur as described without the target.\n  avoid: Do not reverse prerequisite and dependent; do not use for optional support.\nCONSTRAINS [DEPENDENCY; direction=constraint_to_constrained]\n  meaning: The source limits the possible behavior, values, or choices of the target.\n  roles: source=constraint; target=constrained entity, process, or variable\n  use: The source imposes a limit, rule, boundary, or restriction on the target.\n  avoid: Do not use to mean unchanged, unrelated, merely different, or causally reduced.\nPRECEDES [TEMPORAL; direction=earlier_to_later]\n  meaning: The source occurs before the target in time or an explicit process sequence.\n  roles: source=earlier event or process; target=later event or process\n  use: The source explicitly occurs before, previously, first, then, or after relative to the target.\n  avoid: Do not infer causality from order; do not reverse earlier and later.\nINTERACTS_WITH [INTERACTION; symmetric]\n  meaning: The source and target directly interact, with no more precise directional semantics supported.\n  roles: source=interaction participant; target=interaction participant\n  use: The text supports direct mutual interaction but not a more precise active predicate.\n  avoid: Do not use for distant association, one-way effect, dependency, or chronology.\nBINDS_TO [INTERACTION; symmetric]\n  meaning: The source physically or chemically binds or attaches to the target.\n  roles: source=binding participant; target=binding participant\n  use: The source explicitly binds or attaches to the target.\n  avoid: Do not use for metaphorical commitment, dependency, influence, or literal physical force.\nTRANSFERS_TO [INTERACTION; direction=transferred_item_to_destination]\n  meaning: The source item, material, or information moves to the target destination or recipient.\n  roles: source=item, material, or information transferred; target=destination or recipient\n  use: The source is explicitly carried, delivered, moved, or transferred to the target.\n  avoid: Do not make the carrier the source unless the carrier itself moves to the destination; do not use for enabling.\nEXERTS_FORCE_ON [INTERACTION; direction=force_exerter_to_physical_target]\n  meaning: The source exerts a literal physical force on the target.\n  roles: source=physical force source; target=physical object receiving force\n  use: A literal physical force is explicitly exerted on the target.\n  avoid: Never use metaphorically for influence, contribution, binding, pressure, or causation.\nTRANSFORMS_INTO [TRANSFORMATION; direction=prior_state_to_resulting_state]\n  meaning: The source itself changes state or identity and becomes the target.\n  roles: source=entity or state before transformation; target=same entity or resulting material after transformation\n  use: The source itself becomes the target through a transformation.\n  avoid: Do not use when an actor causes, creates, attempts, participates in, or responds to the target.\nCREATES [TRANSFORMATION; direction=creator_to_created]\n  meaning: The source produces or brings a distinct target into existence.\n  roles: source=producer or generative process; target=newly produced entity or result\n  use: The source produces a target that is distinct from the source.\n  avoid: Do not use when the source itself becomes the target; use TRANSFORMS_INTO instead.\nMEASURED_BY [DESCRIPTIVE; direction=measurand_to_measure]\n  meaning: The source property or variable is quantified or assessed by the target metric, observation, or procedure.\n  roles: source=property or variable measured; target=metric, observation, or measurement procedure\n  use: The target is explicitly how the source is measured or quantified.\n  avoid: Do not point to something that merely responds to, correlates with, or exemplifies the source.\nCONTRADICTS [DESCRIPTIVE; symmetric]\n  meaning: The source and target assert mutually incompatible propositions.\n  roles: source=proposition or claim; target=incompatible proposition or claim\n  use: Both sides are explicit propositions that cannot simultaneously hold as stated.\n  avoid: Do not use for difference, disagreement without incompatibility, trade-off, or negative causality.",
+  "max_output_tokens": null,
+  "max_tool_calls": null,
+  "metadata": {},
+  "model": "gpt-5.6-luna",
+  "moderation": null,
+  "object": "response",
+  "output": [
+    {
+      "content": [],
+      "encrypted_content": "gAAAAABqqlnxPB_Yz0bDrXBgE3lXI_3IVhKq7Dy54KcrGusiGLHuZQd1jkT716ECl9njy20I6ZexOjwYlWXkG7La7pWhvBOS25DEaBWt60LhbXbik4kUF3bDod3LE0lTDPJ_V4zy14vLBwc76KP8Vag-Kqgf5eKU6tcxmhm8YRde0b5E9jY7-ui9XiSx_eBWl3jZm3CkYny-K0etwQv8ksoGzB3enCoNPFRIzIEqpV-F199z2CdyMNA5JL69Lu_cl2fC3xdOdckbsr9RjZxUFTZOPZGAB5NaiegGUBz1sbaNV9V3qj5nTVDebEtiL2IQK1VSUo_eof1LfOzy_z12XaD57yocyx2cPvSu9b-uoCaGgm_pkntApkdW5xbix6f6tWf0l02yfG2uCUHHmbW73qNuiHK9NFfe49AqoiJpKCu8Xw2sH3pBAlMY6k180hkqIsMjRsB1zrMGHw5msLvyfwphK3v0d-D-pn8pBzIH9f_uGT_e8qjUI7TJH4XPI_AJzL097U1-WpsQ3Mm3JcMFvSe9rkcBxnttVEttsZFQtDhlENIIION8nhW6YpNSDxxus2cOaxIf3Vyg-k0LlFPgGLe5zPqtoKchRUPe1aytvwQSzwvcwz8_IoI8CkQ5otFaKtkPoHfEWka9RJTpDj_WEA4TOV__2zOSgS9_8QwyRqKJdee9fKut3KFqQ5ijRQQqosjfSLfnYXATMK58M6i1MB3dtksVxExyi3G9v5iluaV-FcrnHUTQ-wrK-RmNBpSJs4A1ipI4g05iJsWzIB7zn4k_JCYJ6pIFzljYrXKRcCNJAINTNFzGQMspoy_8W-xDCRpe4hp_26sB7_1uneW52v3RERRILf2yzMSqQCyl56z1wm3EgTqUZ9_QcCE8AAb6uV4i109crV2llyWCujng_t8S57W7mCNO2hK3dmKok-PasvPI3csgjU5eXYPi8EIVWMGGUpG2PNtsdxddNe-I9tO1xOjAl2UHiPBgW9S2zwqQYd2vI7zYs5YkEsF6uWEdypBo8WLqQZTAwICf8ptMtBB25D2Wt3AJThVBBbXB_rVB7jMJE7WcoUJB6Z_DiXnchrjLZ_85ft3aY70vBfwc5DGDeHSFRXTuMZcSHwh3pPxT5EyYLgJ3UIVQSntWnX3u6p-74OKtgG5gemZLpjiTuVnJi1tyocFXuMJaglmeSzY6Dx11CzQh-kU3M9ZtxD33Rf4qCWOU7txNHpAyBx1zWFUaaNTnUV4l52yxBYGfiuz7xUCjKvcUaDqRONzPNsfPbaQk0-49Ctp9elqk41XMPeuNtaR5wcEwbvgNxsVpxfBRtU0WbM-ymfkYYTRduQGi6LLeVAV5XxoF_fW8XYqBqxbNA_UXm85xUCLXWADnmssZm8uOAzwGfE7areUjnFoFp3F0XEpdbWB0OXTx1gXh3iorrGoaM80uBEKw1NS5HlnTzjuBuyGAQbZjrcj3Bn4y48RggfK2Tx-98diCBklGDJlPEiAPV1Z9a-FNfVmE9MisaB3s41d-67_29SaDGxbioSE2mqivGXN0xGc1oDNVS_J6uDnNuPq6E5HhFDFUsTPUHS1a-O-LGQ96A_a3Or10_PD9BX6d9EaEp-TnEXxMBLfhnAJ-oIZ2oC7c-2fPjpnLo7h2wxbiGoTG2A2ZpIOv9453XOVtQk9Ns8_tdCjvYWRTE3rcCirtjTqMu_Sw--EwudyXs_JQxwmHDB2K4hdszltqtElDBQ6tmWWDcz_OD_YHnG3sQzSrTXr2xrE1_smo14AHZTuFTKHEdFLoRo-qsH0kSJgt8QY7NZm0p7P0akr44QP-1FDtlvk_7aZMS8D0POhBFONodisZlgqEE4IuwQXK-lS1sKIRfN3kUCNU3-q52TmgYX_s1EqCOg2fMg2bAMCsqyD2KOgaZbQa-cMpAfG_n44bmNMqvXeSdLyhC4XIHu5JvNH2a9XvF5N8vKuF3iit-bbrLW7G3BaqiJbTHGQSB07AErK25yttSr7dZW9WGu-d43pggXOnnfDljY6p4ljCGACOhTLd3YSY3Zm51NhL1WJICSHo62mRqX0SbbYcfAm5210vNFPO2yMnxTZV8hF8fpvPmPzslJNI4AHKhLL8lfrkS25UAFiotQu8fFu1m_a9qaRzLEn277sNHZ738B62spjYCRI-6uJFB1UvCJp3mIGbt9SmB52Cbmhu8r-OzjFqrNUKooWb6OE2VTsFAI2f1jLeQIJ3IoqVti9iq09otZJk775ALBQAQswy6eVgSJclAaLFNmIBgV1P-O884Zv8dRjyIqauwLorjZEa5oTveJGboYRsq2QTaqVTtJzhwGUgQCurK_nxNQeZp4cnxmZaUcDdQBqmoaXoVIgM2-dJD3hNX3bWFvCsGR3pai8dG06tacEA2znaVfLka7n42Vt54E1wdXjSoUBMP_HXu5kmBTIFXydWrbLgPy_JFZAfDjun6DqDOzG-0TcSF-tB7ZwhqU0obdNxsP54b4cevc5JxtCAuo6lqcEjFSyb21iyGZV41yWBYrztvH0I2XNp42RrlyclajToW-Na7bXAEDPKuGRCdMMz3mY7btaQlGMs0quj0SxZ3GoJcgl5byRvEjT_EzfXNQo-ieRigiKOrTJRF6K5IJDF7-CWgya2Ip9mWGCrmpzjiSMkdDAL0MZ9p_FCyhVDsOcK_wrQ0bYKuX-tMKEoW-eeKeJzmdsVRs3fXYNRXGevhZ-p7l04KXzUlZyCgZDYaFaaEckKI-rcw9csM9P7pBJbrgrOP91xNn20h37gnM_zJboJacD-0Ksn7gdFCMTkIlwVwPoBYP4HppnnjwC_etv57vwsz5IZHAYI_VHR6USzcvY5-FEaCSWI3RTc5HOkcUN5izX2a2pHZO7pQdY4k3wNMIblxKx-YUHZAaJqPBkYVJtMXjNKDlpnnDwuun_Dy2oWiQ7IowZuohHap-FZ4Ofb9FsKF9Lo5ZwOcIT5KMwDB9iB_EVNugyn1svCKF5oLZkByPeAEkiB2mRXzQ19hGVjSbY4nRMv0Q76IEr2PFtCrM5hcwYbkrk4sAQAiQzQIZDZr0K8b68gJel8Sn9AVNaMJ-kskSt4ehNahBeDXtXiaVeeT1EXFxB7KWopAflXJWatub8OcpzewrcvzrQH330-yxMP164EoQd0-JcvsWMHLbgKALXQN61wuXLcQ0389dAW8k9Bi0iyevDMeQThHukArTSHiiQurPFE0lbCfK08S7KDbLxlVNL6WXXMZbn-9FiGzTeeOnhC0Aabkha2oOK2Ijsj_0IVXsGxTmB-Rzkza56o1WYylYRL6fYkmlNx5q_G65aDMAD5yHCkeBBGePWRhuc14nqE0Go_SyKXbfWeiDT4OgksWQpTyvKJnBTlu0b6FJWESO9P7sTl7mb4xigo1D_4QOH595tkfiiILWnhPRzZkwd2Nyukrfw9janaN-XYB5gYt02tg9Vu4svQn4BHjvnjx82rzeom-oMqBLy1fY8m_Ry4ddhsYLs0aGExdTpLVebdJrvIzvWVQ8kMhRVAOQOfmntSu_TC5W73JO3a50pzyz1I0HH1jTe39hr3px3LRrHGSvSUih1B8qCocr0WsCJaEnrXtNGxgxeo1bsVZHXVwAB-u5ImMzNapHG76b6k2jqUf9u_UJHMTBed_lx0QMUvOsnFKuUJMBJ3ddR_IpWyz3PGk2jBg9IsEnZYvlCUO8fpTHMGK1BK6T9xBag5Qt459kmZr3S6MSUkJaUcLzBz-ZsdxFYJePfFP7QeWAq4EzvKFBE3IncxddL5pscGX95IA091W3LRa1JxIiPJ_K3m2oMxGqYZ-ifbGtSo5mkUbTWzMvurGgWeX7XvTqk1tmntgAjnBucNxZkVYd0KdimeSPDSajiceHph876A9-4clXBsXxHGe3bGHjyhDS6llt3WlC4jQ-Dke_UfiiawlHYgPX23E4UvVL6GPB4VCOyQgWIz3csfoS2IgipYi8QK8_T071PFS7y2JtBaoEPtE4rTb_EvAwPkuFbTBhMOnEu4rS6QnUV0hiFWrqwAhC6muyhF4D666k00BDQmH0JU77riibATBN2BHbqB9oe4MjQAAoEGtawb-6W_3qV8xOZvz6Flq0BwDe1Zl3ToUUp60f9xMSWpjovMxocWuhPGXA7cxplxD3QEfYhXanI-8A_F24uwx5rrIMyLF9wZpkxVb2fPX3qCJ2ACARSSghWvkAgw_kgtpJJYBh3pMe4GzaP9Xg8rIKTwfqVnw_-gX-JlHJOsHSzgKrggnz6QX-ZcM4eMsA6QeZZgSuT832yjQrdX0nKIfEXvu_aJL3_-ifyXJEde-vBWsdmQ44bYCSXrM-Ot8qoNQrd-ybknIddcbzBszmVKB43fiMkcI0F3VsPN2hrl6Oo8itc76Ijf86iyxFSPL1JdJQb91Q4QiR22qiwMKuZMqihbS0Ic4rgUMth3YkY-gx-iaXAOi0ephEvVOrf8MJtO9CB3gNbEj2h1e9B-QXKejOMot7s6jbXLAOG-8ZxPxIIMr3lrsVxvCPztLF3vEWH2nq7bi4mg-H9LLrROyKbIUnsfDISbiXdWQIh2dqcoktvmg6jadFinmxsBFTGvxiNwd85R4uTAAIc30C1NrSCIyZZI-zcMaAMMt1O7ULAYC24PdAPO_RcfvT388jo4tnxo9MlhqwbYTRXNI5qu2P1J8YcTUkRdGfGkiVVR8mg0DFI_L5nJ4de6AgwZiLDPgoMeoZrfjKUYqXZ3EkYhPL0PfCaqwb2k-7irJEMVyBhyvfC9VQbR54Oa7lbKfxZjNvkd22r47_vOW6cSP4veBjfcc939zDHQXHMBREXG6mL7FQVqDL3qB_NB06SDGlP3J7ksqGemhkPvrEknKJhHWJgGbCv9sA6f9H9LgXbD35vMI5tSVe39-9ud5CsJWBzwPhtLi9iiZgDKgwIPPRy_cnaUqVP9tkYLRhB3JWbnLGSFxKFKbiDZLpFeO2HQudMgXexuGdmMWrSQdBHwP8SX7_Ri6gZu2SL_9Y_gZEWLPi_8w9UwBB9IAb-qHFQjSbRMdyULZqStmVcKgbV3AWbMOvb5jGLIotEgcnAKsOipwObBRSCE0xUyE3xkgTbsERGBzSVFpsZZUistFJw4DY4HZ2W3k-sqhebq4qY6OZezxYTqCPvhI1grmzAyxDYwRMXkkLtcEk6-BgUwF-2n6V3eLlPwkWs8SW-_7untmUd9UYE6xkvrHmIiUoBAnhFtA5M=",
+      "id": "rs_005601407ac118f3016aaa59e23f8887d29a09d825b26cd52d",
+      "status": null,
+      "summary": [],
+      "type": "reasoning"
+    },
+    {
+      "content": [],
+      "encrypted_content": "gAAAAABqqlnx16tYaUUgJOPdpenIEdDVj2hbUXiOI7LcrQKd1DRpduwlQD6vU6nzkYc5vDw2f-s5KyRcEEQSv4DYgJx7cBuvA3ny1wzKWE2h10xlda4AWVFKPUD0p-ShpsFYnoBv4gdRVUHUBERNI2f3QdL8co0yVWpVa0150IopOXeZMtLb9YAx30sFJm8PyRzKjW__fOJDUfvz0y55a6PM2Yzqv97djtqbwurktNY2PqJzYI4Mf1dRWW0bDoAOU3rrJ2BfB0lvHjbpnVVOEonQbCYu2W4yEqeyGgOzYSx2oYqYn_F3PDasTFDERkmIHFq4MSOX-h1SGYpVP5RdL91XGSkhpHQaOEGGq2H82ErlSaUDBFq32ed7lUsjLEPQ8MSUjUNmkLs0XYTYSdMQxjypEC-hnk39T5clwMp38UIooQs2b0pDLG0YUDBQC0jfEQJ2LLvBZlfyUBWQQNepo52MXB7dAHgpO5AoWG-bRjwFtGb0bhOkQbG3h7SslTMmZ0thFz8xiB5NsvuRwrZ-U6SlBUBObZUeMb7yZsZMv9Hw3EFkpccaWOQAl-uXh2KIFDGg5KtT1OVWXldtVWSWbC5YSNKnfiX4UC7bCVfLfOvoGqPVWxGZVnLRlDOvhRlWx5x9L43mZEXLIsENb_n3tzJjQpf80zDKcZYxPEvMeR8AK1341uSmuJxJuRZbCTZg3eEmHdVLlwXt9ndpZyp9cH5I8SJqf1uIwWED0Azr3F4OLkl4ApZ8t58GfQyAvBG7xgx26OeJQZjS_aP-43LxAJpuL51qblalPTwICYLuC2akfrFdLUtPU_C_Ch54mxBuV4arwmb9L09jcTTemJ8QusxN7C5pY_Uch9qUmK23AKK0eB0a69PWna3aFD5yY01EpwlIPDTdrHuvSsVZ7buGI2qCYCJTbP_xg3n6groVe693FoU8SWZ9tBLBz8RVlf2UNax-a2SXE9RYiz3BGvlnRsWAmLYdzjCj7mB9zWv-P_HQ2JiJk8PiZdrw4Lo-ifbe3MFGaKNDE-slxS6RA9YVdQaS-50U9BH1d7Q86B7luAcO9UFo9QL07LvHEQjvkDIXfGdnn0DvRJwS0ig_OAV4lGLoR5wS4yBTzLCK8ZwbCxYq9bmbAxmqoB-hS9y278T_JcPs17T6vTi0DsIfVUUdmo-8pdtIcLAl3cFXARTCmXfT0amsEaFuQjY31QuGXHL0GYYxfqr-yeBA4mhN34w4Bd28IO6lJc8YEo25mcNzJf3HCRy0I8jiRRIqXmQ1LvAc8ev7nztr8CqQ114gmcB8r6UyVNEWKBdhSaCS-fYbXFu1lOM-vP64ja0Bz5SqwYdAoLsCgBqo12853TY8GRmULigcq29KkrbzhoAu3Ig2XZAYamoZv9nbkRK9KI3T92xIdYNwhbHU0CWjfJLeRUU9cYRbitXQ-aILb-XyhaFzee8xp_8IoF7mK5Ua46ZYflbv2j5vanhzWVl_jF5XbfDSXyjSsGGyDBMCnK4MnkpRwbbB181oYsKr4yk3G3_z2rXyT6ZOmemAeklZMmT5eAZzH4F1iyklzfe88xfjWqoC17wxTgYK-cmu1CrcnjeDfP9TQM4CWn64v-OFvngF4p3AxfUayiOcG-KOoJ7wcRrDaG8eMz02FyKrOLPNuKO-XJESa65IkIoSvICcmlxSeR9LB5cW6jYiSp9R9WYKizIaoyEmsmaNBehKkzxltLF2X7u9Kabii3ocU1NiuphEmeqG7Bn7JxKvZM3N4FvsAfQ8e6YIWnPRIdcu3cBt-phuucc31UOExSs53BY0CSdkYJaU1V22JaYR4QtvI0W8qcmlgvtbLQzofxN3M4jdx2KAbc0tQoPujRLVV0AXptmFj1KG_ePexjQdGEjo4B53l2PACdETCTj5Q6DBbZahOC3VIv5pyUuZwVrZkiPrdsO9wtPq8j4U09WKIeMllXGUITQYxaCLuUiKVNbFXndJGEDRGjqwxJH4F7Eutj4Elpsy05XkcgkQ3v30Wcjgb6KlzGjbehIJ7g57pUB2ZsVyAfFJuU-5nUKjQEdbx1gVyjr5ewSveA4UW5jX44s501gyeHg-2TEY9F3xAiN03YANZfx4-lK9vCKvap_T-uGFE8zEOLsuc-2kUXlTBmfbvY-Z0sIYjAhrzYzPEKMdcn8YfLrzRSqJvht_fX2hyjY4NKPZft4Nx8hvj_O81w-BsNxvUGpdVS4Oqpyu_5svV6bsOHiwOSGrc-jip8o5QPUkf-q89W1LHXGdC3cR7SMiaoOJqFSEJiYgd4Y3SZU62hdE3sqhQDcr9GTObEqRu8poluaa1nDjQMNpwQS35r7RV5-SiRhM9ks2tB1yGA7TvPo00-8OOdQ9gPF_uPpqv2M9erkMpGvqt5b87pFL9H8mgEsnvxBavlwxG6QHqeWjXNYZUYi78g-6-Ppu91NRaglOS5G9UFZaO6AKz6iHE5mbi8DoYBy5kO3GFZWRl-ul7INYdhF5vUJcsU0WVkYJi4pOolvqS0kbj29Rcc-0EUey1k1KS3AmyQ8gYEA2P7aAopKVwLZ8w9HUKwEfiujLlMPPhpsypfXlsZFNASumr1MFVwJAL-3-GHH0XlM1pfUsb5NIvCJto84XPAmWpqDWcLO7vFoOQRrWLS3iiH8COZGdkXkvUeTqvojtHGNMD7CtQX4O11ExqCs19ds7PafLzrgAlFV8WvsPc9GdeOYkJFXLbmwRzsr7wIjdHY8wwXM8iNxhVfregO0o-Me7yMjslA289wgrwYZmgBjQ-ANro3H7-QJV8lVcPSAIGuP-ixghTPVuv2SLs3G0n0J_BDFdzkEfSJt7_ppI4n4FkRZdx8n9ALx0nI991_Ywd4YuPJ_-YZGIH6ovTNZiLypj4ZDp5dkiOivOhD-DjhYAlosTyyJAyf7wErC39yD7EvscoDdGEpVSH1UZ7QJHEEEaqjoGrrfCWJASDgWgI3379bjZiQEnh20-cunTrGwKG9BhyQhSvJEQEf_JBMN7RvkcTmaL-27hoMxO3v_SrLXyuvd9fK7jgPI79_MQc3pjJaxD24Nkly0n0tDR5KjTwdI9UhfHYIk33RdYG7RVPtaDDzh0SFOqB8_vl4t0EvJTKYLU-ExH6mt6pLRvZboEyzIaqgSb8WUQ1x6N0xZxGazOpyfFgRuvmkwARrOpvHcjnewwuou2V3GAORT1weRgsKSHNfR8zTKf0b0BcDpcnkcZn09SUgSHqdca_Ri4OZ_qwRAL5LAcX7180Qx47ETQRDQNcoyqfUzwhoAyiYgojyvnTAS2jZ-sxppLNa7WvZSgxh7mSTEbGufrou2jo6HckSisix_qo_0-dzkftissUKv1Z7gGxH8Hpq7xLPw8M5FkACx9uX0O70AsL_QleWvhAba48s19oMe40NAAQjLN3wennLSTadyxCAAVcOYX-jH-_VAI24bnKIDYz0zRwCI34ufLJvERFXuOZSndn1MWAjcu9TNS1jEc9MfGPnGe7jTiBgQChCL_8Arsl4KhMPdDPz6Lo6SA5EXWHDaTB1aW9wTUc_3G9_Ldvw==",
+      "id": "rs_005601407ac118f3016aaa59e866dc87d286263ed85b635f52",
+      "status": null,
+      "summary": [],
+      "type": "reasoning"
+    },
+    {
+      "content": [
+        {
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relationships\":[{\"id\":\"r1\",\"source_entity_id\":\"anti-phase-boundary\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"defect\",\"statement\":\"Anti-phase boundaries are identified as defects in the atomic structure.\",\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"r2\",\"source_entity_id\":\"anti-site-point-defect\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"defect\",\"statement\":\"Anti-site point defects are identified as defects in the atomic structure.\",\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"r3\",\"source_entity_id\":\"swap-defect\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"defect\",\"statement\":\"Swap defects are identified as defects in the atomic structure.\",\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"r4\",\"source_entity_id\":\"iron-atom\",\"relationship_type\":\"PART_OF\",\"target_entity_id\":\"iron-platinum-particle\",\"statement\":\"The determined iron atoms are constituents of the iron-platinum particle.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r5\",\"source_entity_id\":\"platinum-atom\",\"relationship_type\":\"PART_OF\",\"target_entity_id\":\"iron-platinum-particle\",\"statement\":\"The determined platinum atoms are constituents of the iron-platinum particle.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r6\",\"source_entity_id\":\"iron-platinum-particle\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"nanostructured-material\",\"statement\":\"The iron-platinum nanoparticle is a nanostructured material.\",\"confidence\":0.97,\"origin\":\"SOURCE\"},{\"id\":\"r7\",\"source_entity_id\":\"magnetic-property\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"material-property\",\"statement\":\"Magnetic properties are material properties.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r8\",\"source_entity_id\":\"atomic-magnetic-moment\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"material-property\",\"statement\":\"Atomic magnetic moments are material properties calculated at the atomic level.\",\"confidence\":0.96,\"origin\":\"SOURCE\"},{\"id\":\"r9\",\"source_entity_id\":\"local-magnetocrystalline-anisotropy\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"material-property\",\"statement\":\"Local magnetocrystalline anisotropy is a material property calculated from the atomic coordinates and chemical species.\",\"confidence\":0.96,\"origin\":\"SOURCE\"},{\"id\":\"r10\",\"source_entity_id\":\"atomic-electron-tomography\",\"relationship_type\":\"ENABLES\",\"target_entity_id\":\"atom-position-determination\",\"statement\":\"Atomic electron tomography enabled scientists to determine three-dimensional atomic positions and coordinates.\",\"confidence\":0.93,\"origin\":\"SOURCE\"},{\"id\":\"r11\",\"source_entity_id\":\"three-dimensional-atomic-coordinates\",\"relationship_type\":\"MEASURED_BY\",\"target_entity_id\":\"atomic-electron-tomography\",\"statement\":\"The three-dimensional atomic coordinates were experimentally measured using atomic electron tomography.\",\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"r12\",\"source_entity_id\":\"first-principles-calculation\",\"relationship_type\":\"REQUIRES\",\"target_entity_id\":\"three-dimensional-atomic-coordinates\",\"statement\":\"The first-principles calculations used experimentally measured three-dimensional atomic coordinates as direct input.\",\"confidence\":0.97,\"origin\":\"SOURCE\"},{\"id\":\"r13\",\"source_entity_id\":\"first-principles-calculation\",\"relationship_type\":\"REQUIRES\",\"target_entity_id\":\"atomic-species\",\"statement\":\"The first-principles calculations used chemical species as direct input.\",\"confidence\":0.97,\"origin\":\"SOURCE\"},{\"id\":\"r14\",\"source_entity_id\":\"first-principles-calculation\",\"relationship_type\":\"CREATES\",\"target_entity_id\":\"atomic-magnetic-moment\",\"statement\":\"First-principles calculations calculated atomic magnetic moments.\",\"confidence\":0.95,\"origin\":\"SOURCE\"},{\"id\":\"r15\",\"source_entity_id\":\"first-principles-calculation\",\"relationship_type\":\"CREATES\",\"target_entity_id\":\"local-magnetocrystalline-anisotropy\",\"statement\":\"First-principles calculations calculated local magnetocrystalline anisotropy.\",\"confidence\":0.95,\"origin\":\"SOURCE\"}],\"comparison_conditions\":[],\"transfer_events\":[],\"missing_symbols\":[]}",
+          "type": "output_text"
+        }
+      ],
+      "id": "msg_005601407ac118f3016aaa59ec07e087d29242a51bb44136cb",
+      "phase": "final_answer",
+      "role": "assistant",
+      "status": "completed",
+      "type": "message"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt": null,
+  "prompt_cache_key": null,
+  "prompt_cache_options": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "low",
+    "generate_summary": null,
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "status": "completed",
+  "store": false,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "description": null,
+      "name": "candidate_b_v2_semantic_structure",
+      "schema_": {
+        "additionalProperties": false,
+        "properties": {
+          "comparison_conditions": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "comparison_operator": {
+                  "enum": [
+                    "GREATER_THAN"
+                  ],
+                  "type": "string"
+                },
+                "confidence": {
+                  "maximum": 1,
+                  "minimum": 0,
+                  "type": "number"
+                },
+                "left_operand_entity_id": {
+                  "enum": [
+                    "anti-phase-boundary",
+                    "anti-site-point-defect",
+                    "atom-position-determination",
+                    "atomic-arrangement",
+                    "atomic-composition",
+                    "atomic-electron-tomography",
+                    "atomic-magnetic-moment",
+                    "atomic-species",
+                    "atomic-structure",
+                    "chemical-disorder",
+                    "chemical-order",
+                    "chemistry",
+                    "defect",
+                    "energy-production",
+                    "energy-storage",
+                    "energy-use",
+                    "first-principles-calculation",
+                    "grain-boundary",
+                    "iron-atom",
+                    "iron-platinum-particle",
+                    "lawrence-berkeley-national-laboratory",
+                    "local-magnetocrystalline-anisotropy",
+                    "magnetic-property",
+                    "material-functionality",
+                    "material-property",
+                    "materials-science",
+                    "nanostructured-material",
+                    "nearest-neighbor-atom-pair",
+                    "oak-ridge-national-laboratory",
+                    "perfect-crystal",
+                    "physics",
+                    "picometer-precision",
+                    "platinum-atom",
+                    "structure-property-correlation",
+                    "swap-defect",
+                    "three-dimensional-atomic-coordinates",
+                    "three-dimensional-atomic-position",
+                    "three-dimensional-atomic-structure-characterization",
+                    "university-of-california-at-los-angeles"
+                  ],
+                  "type": "string"
+                },
+                "origin": {
+                  "enum": [
+                    "SOURCE",
+                    "INFERRED"
+                  ],
+                  "type": "string"
+                },
+                "outcome_entity_id": {
+                  "enum": [
+                    "anti-phase-boundary",
+                    "anti-site-point-defect",
+                    "atom-position-determination",
+                    "atomic-arrangement",
+                    "atomic-composition",
+                    "atomic-electron-tomography",
+                    "atomic-magnetic-moment",
+                    "atomic-species",
+                    "atomic-structure",
+                    "chemical-disorder",
+                    "chemical-order",
+                    "chemistry",
+                    "defect",
+                    "energy-production",
+                    "energy-storage",
+                    "energy-use",
+                    "first-principles-calculation",
+                    "grain-boundary",
+                    "iron-atom",
+                    "iron-platinum-particle",
+                    "lawrence-berkeley-national-laboratory",
+                    "local-magnetocrystalline-anisotropy",
+                    "magnetic-property",
+                    "material-functionality",
+                    "material-property",
+                    "materials-science",
+                    "nanostructured-material",
+                    "nearest-neighbor-atom-pair",
+                    "oak-ridge-national-laboratory",
+                    "perfect-crystal",
+                    "physics",
+                    "picometer-precision",
+                    "platinum-atom",
+                    "structure-property-correlation",
+                    "swap-defect",
+                    "three-dimensional-atomic-coordinates",
+                    "three-dimensional-atomic-position",
+                    "three-dimensional-atomic-structure-characterization",
+                    "university-of-california-at-los-angeles"
+                  ],
+                  "type": "string"
+                },
+                "proposition_type": {
+                  "enum": [
+                    "COMPARISON_CONDITION"
+                  ],
+                  "type": "string"
+                },
+                "relationship_type": {
+                  "enum": [
+                    "CAUSES"
+                  ],
+                  "type": "string"
+                },
+                "right_operand_entity_id": {
+                  "enum": [
+                    "anti-phase-boundary",
+                    "anti-site-point-defect",
+                    "atom-position-determination",
+                    "atomic-arrangement",
+                    "atomic-composition",
+                    "atomic-electron-tomography",
+                    "atomic-magnetic-moment",
+                    "atomic-species",
+                    "atomic-structure",
+                    "chemical-disorder",
+                    "chemical-order",
+                    "chemistry",
+                    "defect",
+                    "energy-production",
+                    "energy-storage",
+                    "energy-use",
+                    "first-principles-calculation",
+                    "grain-boundary",
+                    "iron-atom",
+                    "iron-platinum-particle",
+                    "lawrence-berkeley-national-laboratory",
+                    "local-magnetocrystalline-anisotropy",
+                    "magnetic-property",
+                    "material-functionality",
+                    "material-property",
+                    "materials-science",
+                    "nanostructured-material",
+                    "nearest-neighbor-atom-pair",
+                    "oak-ridge-national-laboratory",
+                    "perfect-crystal",
+                    "physics",
+                    "picometer-precision",
+                    "platinum-atom",
+                    "structure-property-correlation",
+                    "swap-defect",
+                    "three-dimensional-atomic-coordinates",
+                    "three-dimensional-atomic-position",
+                    "three-dimensional-atomic-structure-characterization",
+                    "university-of-california-at-los-angeles"
+                  ],
+                  "type": "string"
+                },
+                "statement": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "statement",
+                "confidence",
+                "origin",
+                "proposition_type",
+                "left_operand_entity_id",
+                "right_operand_entity_id",
+                "outcome_entity_id",
+                "relationship_type",
+                "comparison_operator"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "missing_symbols": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "reason": {
+                  "type": "string"
+                },
+                "semantic_item": {
+                  "type": "string"
+                },
+                "surface_form": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "surface_form",
+                "semantic_item",
+                "reason"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "relationships": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "confidence": {
+                  "maximum": 1,
+                  "minimum": 0,
+                  "type": "number"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "origin": {
+                  "enum": [
+                    "SOURCE",
+                    "INFERRED"
+                  ],
+                  "type": "string"
+                },
+                "relationship_type": {
+                  "enum": [
+                    "IS_A",
+                    "PART_OF",
+                    "CAUSES",
+                    "INCREASES",
+                    "DECREASES",
+                    "ENABLES",
+                    "REQUIRES",
+                    "CONSTRAINS",
+                    "PRECEDES",
+                    "TRANSFORMS_INTO",
+                    "INTERACTS_WITH",
+                    "MEASURED_BY",
+                    "EXAMPLE_OF",
+                    "CONTRADICTS",
+                    "CREATES",
+                    "INDUCES",
+                    "EXERTS_FORCE_ON",
+                    "AFFECTS",
+                    "BINDS_TO",
+                    "TRANSFERS_TO"
+                  ],
+                  "type": "string"
+                },
+                "source_entity_id": {
+                  "enum": [
+                    "anti-phase-boundary",
+                    "anti-site-point-defect",
+                    "atom-position-determination",
+                    "atomic-arrangement",
+                    "atomic-composition",
+                    "atomic-electron-tomography",
+                    "atomic-magnetic-moment",
+                    "atomic-species",
+                    "atomic-structure",
+                    "chemical-disorder",
+                    "chemical-order",
+                    "chemistry",
+                    "defect",
+                    "energy-production",
+                    "energy-storage",
+                    "energy-use",
+                    "first-principles-calculation",
+                    "grain-boundary",
+                    "iron-atom",
+                    "iron-platinum-particle",
+                    "lawrence-berkeley-national-laboratory",
+                    "local-magnetocrystalline-anisotropy",
+                    "magnetic-property",
+                    "material-functionality",
+                    "material-property",
+                    "materials-science",
+                    "nanostructured-material",
+                    "nearest-neighbor-atom-pair",
+                    "oak-ridge-national-laboratory",
+                    "perfect-crystal",
+                    "physics",
+                    "picometer-precision",
+                    "platinum-atom",
+                    "structure-property-correlation",
+                    "swap-defect",
+                    "three-dimensional-atomic-coordinates",
+                    "three-dimensional-atomic-position",
+                    "three-dimensional-atomic-structure-characterization",
+                    "university-of-california-at-los-angeles"
+                  ],
+                  "type": "string"
+                },
+                "statement": {
+                  "type": "string"
+                },
+                "target_entity_id": {
+                  "enum": [
+                    "anti-phase-boundary",
+                    "anti-site-point-defect",
+                    "atom-position-determination",
+                    "atomic-arrangement",
+                    "atomic-composition",
+                    "atomic-electron-tomography",
+                    "atomic-magnetic-moment",
+                    "atomic-species",
+                    "atomic-structure",
+                    "chemical-disorder",
+                    "chemical-order",
+                    "chemistry",
+                    "defect",
+                    "energy-production",
+                    "energy-storage",
+                    "energy-use",
+                    "first-principles-calculation",
+                    "grain-boundary",
+                    "iron-atom",
+                    "iron-platinum-particle",
+                    "lawrence-berkeley-national-laboratory",
+                    "local-magnetocrystalline-anisotropy",
+                    "magnetic-property",
+                    "material-functionality",
+                    "material-property",
+                    "materials-science",
+                    "nanostructured-material",
+                    "nearest-neighbor-atom-pair",
+                    "oak-ridge-national-laboratory",
+                    "perfect-crystal",
+                    "physics",
+                    "picometer-precision",
+                    "platinum-atom",
+                    "structure-property-correlation",
+                    "swap-defect",
+                    "three-dimensional-atomic-coordinates",
+                    "three-dimensional-atomic-position",
+                    "three-dimensional-atomic-structure-characterization",
+                    "university-of-california-at-los-angeles"
+                  ],
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "source_entity_id",
+                "relationship_type",
+                "target_entity_id",
+                "statement",
+                "confidence",
+                "origin"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "transfer_events": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "comparison_operator": {
+                  "type": "null"
+                },
+                "confidence": {
+                  "maximum": 1,
+                  "minimum": 0,
+                  "type": "number"
+                },
+                "destination_entity_id": {
+                  "enum": [
+                    "anti-phase-boundary",
+                    "anti-site-point-defect",
+                    "atomic-arrangement",
+                    "atomic-composition",
+                    "atomic-magnetic-moment",
+                    "atomic-species",
+                    "atomic-structure",
+                    "chemical-disorder",
+                    "chemical-order",
+                    "chemistry",
+                    "defect",
+                    "energy-production",
+                    "energy-storage",
+                    "energy-use",
+                    "grain-boundary",
+                    "iron-atom",
+                    "iron-platinum-particle",
+                    "lawrence-berkeley-national-laboratory",
+                    "local-magnetocrystalline-anisotropy",
+                    "magnetic-property",
+                    "material-functionality",
+                    "material-property",
+                    "materials-science",
+                    "nanostructured-material",
+                    "nearest-neighbor-atom-pair",
+                    "oak-ridge-national-laboratory",
+                    "perfect-crystal",
+                    "physics",
+                    "picometer-precision",
+                    "platinum-atom",
+                    "swap-defect",
+                    "three-dimensional-atomic-coordinates",
+                    "three-dimensional-atomic-position",
+                    "university-of-california-at-los-angeles"
+                  ],
+                  "type": "string"
+                },
+                "event_entity_id": {
+                  "enum": [
+                    "atom-position-determination",
+                    "atomic-electron-tomography",
+                    "first-principles-calculation",
+                    "structure-property-correlation",
+                    "three-dimensional-atomic-structure-characterization"
+                  ],
+                  "type": "string"
+                },
+                "object_entity_id": {
+                  "enum": [
+                    "anti-phase-boundary",
+                    "anti-site-point-defect",
+                    "atom-position-determination",
+                    "atomic-arrangement",
+                    "atomic-composition",
+                    "atomic-electron-tomography",
+                    "atomic-magnetic-moment",
+                    "atomic-species",
+                    "atomic-structure",
+                    "chemical-disorder",
+                    "chemical-order",
+                    "chemistry",
+                    "defect",
+                    "energy-production",
+                    "energy-storage",
+                    "energy-use",
+                    "first-principles-calculation",
+                    "grain-boundary",
+                    "iron-atom",
+                    "iron-platinum-particle",
+                    "lawrence-berkeley-national-laboratory",
+                    "local-magnetocrystalline-anisotropy",
+                    "magnetic-property",
+                    "material-functionality",
+                    "material-property",
+                    "materials-science",
+                    "nanostructured-material",
+                    "nearest-neighbor-atom-pair",
+                    "oak-ridge-national-laboratory",
+                    "perfect-crystal",
+                    "physics",
+                    "picometer-precision",
+                    "platinum-atom",
+                    "structure-property-correlation",
+                    "swap-defect",
+                    "three-dimensional-atomic-coordinates",
+                    "three-dimensional-atomic-position",
+                    "three-dimensional-atomic-structure-characterization",
+                    "university-of-california-at-los-angeles"
+                  ],
+                  "type": "string"
+                },
+                "origin": {
+                  "enum": [
+                    "SOURCE",
+                    "INFERRED"
+                  ],
+                  "type": "string"
+                },
+                "proposition_type": {
+                  "enum": [
+                    "TRANSFER_EVENT"
+                  ],
+                  "type": "string"
+                },
+                "relationship_type": {
+                  "enum": [
+                    "TRANSFERS_TO"
+                  ],
+                  "type": "string"
+                },
+                "statement": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "statement",
+                "confidence",
+                "origin",
+                "proposition_type",
+                "event_entity_id",
+                "object_entity_id",
+                "destination_entity_id",
+                "relationship_type",
+                "comparison_operator"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "relationships",
+          "comparison_conditions",
+          "transfer_events",
+          "missing_symbols"
+        ],
+        "type": "object"
+      },
+      "strict": true,
+      "type": "json_schema"
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 6816,
+    "input_tokens_details": {
+      "cache_write_tokens": 6813,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1695,
+    "output_tokens_details": {
+      "reasoning_tokens": 830
+    },
+    "total_tokens": 8511
+  },
+  "user": null
+}

@@ -1,0 +1,239 @@
+{
+  "comparison_conditions": [],
+  "missing_symbols": [],
+  "relationships": [
+    {
+      "confidence": 0.99,
+      "id": "r1",
+      "origin": "SOURCE",
+      "relationship_type": "PART_OF",
+      "source_entity_id": "biological-instructions",
+      "statement": "Biological instructions are contained in Deoxyribonucleic acid.",
+      "target_entity_id": "deoxyribonucleic-acid"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r2",
+      "origin": "SOURCE",
+      "relationship_type": "TRANSFERS_TO",
+      "source_entity_id": "deoxyribonucleic-acid",
+      "statement": "Deoxyribonucleic acid is passed from adult organisms to their offspring during reproduction.",
+      "target_entity_id": "offspring"
+    },
+    {
+      "confidence": 0.98,
+      "id": "r3",
+      "origin": "SOURCE",
+      "relationship_type": "PART_OF",
+      "source_entity_id": "deoxyribonucleic-acid",
+      "statement": "In eukaryotes, DNA is found inside the nucleus.",
+      "target_entity_id": "nucleus"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r4",
+      "origin": "SOURCE",
+      "relationship_type": "PART_OF",
+      "source_entity_id": "nucleus",
+      "statement": "The nucleus is a special area of the cell.",
+      "target_entity_id": "cell"
+    },
+    {
+      "confidence": 0.86,
+      "id": "r5",
+      "origin": "SOURCE",
+      "relationship_type": "ENABLES",
+      "source_entity_id": "cell-division",
+      "statement": "The compact chromosome form of DNA during cell division enables transfer to new cells.",
+      "target_entity_id": "cell"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r6",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "nuclear-dna",
+      "statement": "Nuclear DNA is DNA found in the nucleus.",
+      "target_entity_id": "deoxyribonucleic-acid"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r7",
+      "origin": "SOURCE",
+      "relationship_type": "PART_OF",
+      "source_entity_id": "nuclear-dna",
+      "statement": "An organism's genome is its complete set of nuclear DNA.",
+      "target_entity_id": "genome"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r8",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "mitochondrial-dna",
+      "statement": "Mitochondrial DNA is DNA located in mitochondria.",
+      "target_entity_id": "deoxyribonucleic-acid"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r9",
+      "origin": "SOURCE",
+      "relationship_type": "PART_OF",
+      "source_entity_id": "mitochondrial-dna",
+      "statement": "Mitochondrial DNA is located in mitochondria.",
+      "target_entity_id": "mitochondrion"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r10",
+      "origin": "SOURCE",
+      "relationship_type": "PART_OF",
+      "source_entity_id": "mitochondrion",
+      "statement": "Mitochondria are cell structures.",
+      "target_entity_id": "cell"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r11",
+      "origin": "SOURCE",
+      "relationship_type": "CAUSES",
+      "source_entity_id": "mitochondrion",
+      "statement": "Mitochondria generate the energy the cell needs to function properly.",
+      "target_entity_id": "energy"
+    },
+    {
+      "confidence": 0.98,
+      "id": "r12",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "human",
+      "statement": "Humans are complex organisms.",
+      "target_entity_id": "complex-organism"
+    },
+    {
+      "confidence": 0.95,
+      "id": "r13",
+      "origin": "SOURCE",
+      "relationship_type": "ENABLES",
+      "source_entity_id": "biological-instructions",
+      "statement": "Instructions in DNA can be used to make proteins.",
+      "target_entity_id": "protein"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r14",
+      "origin": "SOURCE",
+      "relationship_type": "PART_OF",
+      "source_entity_id": "nucleotide",
+      "statement": "Nucleotides are linked into chains to form a strand of DNA.",
+      "target_entity_id": "dna-strand"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r15",
+      "origin": "SOURCE",
+      "relationship_type": "PART_OF",
+      "source_entity_id": "phosphate-group",
+      "statement": "A phosphate group is one of the three parts of a nucleotide.",
+      "target_entity_id": "nucleotide"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r16",
+      "origin": "SOURCE",
+      "relationship_type": "PART_OF",
+      "source_entity_id": "sugar-group",
+      "statement": "A sugar group is one of the three parts of a nucleotide.",
+      "target_entity_id": "nucleotide"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r17",
+      "origin": "SOURCE",
+      "relationship_type": "PART_OF",
+      "source_entity_id": "nitrogen-base",
+      "statement": "A nitrogen base is one of the three parts of a nucleotide.",
+      "target_entity_id": "nucleotide"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r18",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "adenine",
+      "statement": "Adenine is one of the four types of nitrogen bases found in nucleotides.",
+      "target_entity_id": "nitrogen-base"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r19",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "thymine",
+      "statement": "Thymine is one of the four types of nitrogen bases found in nucleotides.",
+      "target_entity_id": "nitrogen-base"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r20",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "guanine",
+      "statement": "Guanine is one of the four types of nitrogen bases found in nucleotides.",
+      "target_entity_id": "nitrogen-base"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r21",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "cytosine",
+      "statement": "Cytosine is one of the four types of nitrogen bases found in nucleotides.",
+      "target_entity_id": "nitrogen-base"
+    },
+    {
+      "confidence": 0.96,
+      "id": "r22",
+      "origin": "SOURCE",
+      "relationship_type": "CAUSES",
+      "source_entity_id": "base-sequence",
+      "statement": "The order or sequence of bases determines the biological instructions contained in a strand of DNA.",
+      "target_entity_id": "biological-instructions"
+    }
+  ],
+  "transfer_events": [
+    {
+      "comparison_operator": null,
+      "confidence": 0.96,
+      "destination_entity_id": "offspring",
+      "event_entity_id": "sexual-reproduction",
+      "object_entity_id": "nuclear-dna",
+      "origin": "SOURCE",
+      "proposition_type": "TRANSFER_EVENT",
+      "relationship_type": "TRANSFERS_TO",
+      "statement": "During sexual reproduction, nuclear DNA is inherited by offspring from the male parent."
+    },
+    {
+      "comparison_operator": null,
+      "confidence": 0.96,
+      "destination_entity_id": "offspring",
+      "event_entity_id": "sexual-reproduction",
+      "object_entity_id": "nuclear-dna",
+      "origin": "SOURCE",
+      "proposition_type": "TRANSFER_EVENT",
+      "relationship_type": "TRANSFERS_TO",
+      "statement": "During sexual reproduction, nuclear DNA is inherited by offspring from the female parent."
+    },
+    {
+      "comparison_operator": null,
+      "confidence": 0.97,
+      "destination_entity_id": "offspring",
+      "event_entity_id": "sexual-reproduction",
+      "object_entity_id": "mitochondrial-dna",
+      "origin": "SOURCE",
+      "proposition_type": "TRANSFER_EVENT",
+      "relationship_type": "TRANSFERS_TO",
+      "statement": "During sexual reproduction, mitochondrial DNA is inherited by offspring from the female parent."
+    }
+  ]
+}

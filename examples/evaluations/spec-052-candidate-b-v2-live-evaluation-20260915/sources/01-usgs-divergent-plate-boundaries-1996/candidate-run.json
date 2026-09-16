@@ -1,0 +1,3912 @@
+{
+  "attempts": [
+    {
+      "provider_metadata": {
+        "actual_model": "gpt-5.6-luna",
+        "candidate_version": "spec-051-candidate-b-v2",
+        "duration_ms": 12774.093499989249,
+        "hidden_retries": 0,
+        "http_request_id": "req_4eb3a99a22cd4ddaa741b41074086783",
+        "prompt_sha256": "b1c00eb4547de56c62dcc18c7aec013ee1e2de4a8c1dfa45bcb475f00591f785",
+        "prompt_version": "spec-047-entity-inventory-v1",
+        "provider": "openai",
+        "provider_response_id": "resp_0df28d8172e03f29016aaa5890164887d2b4f43cef845a67dc",
+        "repair_calls": 0,
+        "requested_model": "gpt-5.6-luna",
+        "schema_name": "candidate_b_entity_inventory",
+        "schema_sha256": "003db7546ae3ffafe7dc098bc50e1a5f223b891f6ee3160f7537214c8e9c9956",
+        "sdk_retries": 0,
+        "semantic_retries": 0,
+        "stage": "ENTITY_INVENTORY",
+        "store": false,
+        "upstream_input_sha256": "a9539d135ff1577d7e2791d498b92f55239175565b925b24aec2ed0bf633f186",
+        "usage": {
+          "input_tokens": 794,
+          "output_tokens": 1483,
+          "total_tokens": 2277
+        }
+      },
+      "raw_proposal": {
+        "symbols": [
+          {
+            "aliases": [],
+            "description": "A plate boundary where plates move apart and new crust is created.",
+            "entity_type": "CONCEPT",
+            "name": "divergent boundary"
+          },
+          {
+            "aliases": [
+              "spreading ridge"
+            ],
+            "description": "A region where plates move apart and crust is formed by rising magma.",
+            "entity_type": "SYSTEM",
+            "name": "spreading center"
+          },
+          {
+            "aliases": [],
+            "description": "A large section of Earth's crust involved in movement at plate boundaries.",
+            "entity_type": "OBJECT",
+            "name": "plate"
+          },
+          {
+            "aliases": [],
+            "description": "Crust created as magma rises at a spreading center.",
+            "entity_type": "OBJECT",
+            "name": "new crust"
+          },
+          {
+            "aliases": [],
+            "description": "Crust transported away from a ridge crest by spreading.",
+            "entity_type": "OBJECT",
+            "name": "oceanic crust"
+          },
+          {
+            "aliases": [],
+            "description": "Molten material that rises from the mantle, pushes upward, and may erupt through cracks.",
+            "entity_type": "OBJECT",
+            "name": "magma"
+          },
+          {
+            "aliases": [],
+            "description": "Earth layer from which magma rises beneath spreading centers.",
+            "entity_type": "OBJECT",
+            "name": "mantle"
+          },
+          {
+            "aliases": [],
+            "description": "The crest of a ridge from which newly formed oceanic crust moves away.",
+            "entity_type": "OBJECT",
+            "name": "ridge crest"
+          },
+          {
+            "aliases": [],
+            "description": "The process by which newly formed oceanic crust moves away from a spreading ridge.",
+            "entity_type": "PROCESS",
+            "name": "seafloor spreading"
+          },
+          {
+            "aliases": [],
+            "description": "Movement of tectonic plates, including movement away from spreading centers.",
+            "entity_type": "PROCESS",
+            "name": "plate movement"
+          },
+          {
+            "aliases": [],
+            "description": "A submerged mountain range and segment of the global mid-ocean ridge system extending from the Arctic Ocean beyond southern Africa.",
+            "entity_type": "OBJECT",
+            "name": "Mid-Atlantic Ridge"
+          },
+          {
+            "aliases": [],
+            "description": "A global system of mid-ocean ridges encircling Earth.",
+            "entity_type": "SYSTEM",
+            "name": "global mid-ocean ridge system"
+          },
+          {
+            "aliases": [],
+            "description": "The rate at which spreading occurs along a spreading center, expressed in centimeters per year or kilometers per million years.",
+            "entity_type": "VARIABLE",
+            "name": "spreading rate"
+          },
+          {
+            "aliases": [],
+            "description": "The ocean that grew through seafloor spreading between Europe, Africa, and the Americas.",
+            "entity_type": "OBJECT",
+            "name": "Atlantic Ocean"
+          },
+          {
+            "aliases": [],
+            "description": "A continent bordering the Atlantic Ocean in the source description.",
+            "entity_type": "OBJECT",
+            "name": "Europe"
+          },
+          {
+            "aliases": [
+              "African continent"
+            ],
+            "description": "A continent bordering the Atlantic Ocean and containing the East African Rift Zone.",
+            "entity_type": "OBJECT",
+            "name": "Africa"
+          },
+          {
+            "aliases": [],
+            "description": "The continents bordering the Atlantic Ocean in the source description.",
+            "entity_type": "OBJECT",
+            "name": "Americas"
+          },
+          {
+            "aliases": [],
+            "description": "A volcanic country that straddles the Mid-Atlantic Ridge and exposes spreading processes on land.",
+            "entity_type": "OBJECT",
+            "name": "Iceland"
+          },
+          {
+            "aliases": [],
+            "description": "A plate on one side of the spreading center through Iceland.",
+            "entity_type": "OBJECT",
+            "name": "North American Plate"
+          },
+          {
+            "aliases": [],
+            "description": "A plate on the other side of the spreading center through Iceland.",
+            "entity_type": "OBJECT",
+            "name": "Eurasian Plate"
+          },
+          {
+            "aliases": [],
+            "description": "A volcano in northeastern Iceland around which effects of plate movement are visible.",
+            "entity_type": "OBJECT",
+            "name": "Krafla Volcano"
+          },
+          {
+            "aliases": [
+              "surface crack"
+            ],
+            "description": "A crack in the ground that may widen or newly appear around the Krafla fissure zone.",
+            "entity_type": "OBJECT",
+            "name": "ground crack"
+          },
+          {
+            "aliases": [],
+            "description": "A zone along which repeated episodes of surface cracking occurred from 1975 to 1984.",
+            "entity_type": "OBJECT",
+            "name": "Krafla fissure zone"
+          },
+          {
+            "aliases": [],
+            "description": "Surface cracking associated with spreading and plate movement.",
+            "entity_type": "PROCESS",
+            "name": "rifting"
+          },
+          {
+            "aliases": [],
+            "description": "An episode of rifting occurring along the Krafla fissure zone.",
+            "entity_type": "PROCESS",
+            "name": "rifting event"
+          },
+          {
+            "aliases": [],
+            "description": "Volcanic activity accompanying some rifting events.",
+            "entity_type": "PROCESS",
+            "name": "volcanic activity"
+          },
+          {
+            "aliases": [
+              "displacement"
+            ],
+            "description": "Movement of the ground caused by rifting.",
+            "entity_type": "PROCESS",
+            "name": "ground displacement"
+          },
+          {
+            "aliases": [],
+            "description": "An event in which magma erupts through widening cracks and may form volcanoes.",
+            "entity_type": "PROCESS",
+            "name": "eruption"
+          },
+          {
+            "aliases": [],
+            "description": "A sea formed as spreading processes tore Saudi Arabia away from the rest of Africa.",
+            "entity_type": "OBJECT",
+            "name": "Red Sea"
+          },
+          {
+            "aliases": [],
+            "description": "Landmass described as having been torn away from the rest of the African continent by spreading.",
+            "entity_type": "OBJECT",
+            "name": "Saudi Arabia"
+          },
+          {
+            "aliases": [],
+            "description": "A plate that meets the African Plate at the triple junction where the Red Sea meets the Gulf of Aden.",
+            "entity_type": "OBJECT",
+            "name": "Arabian Plate"
+          },
+          {
+            "aliases": [],
+            "description": "A plate described as actively splitting and meeting the Arabian Plate at a triple junction.",
+            "entity_type": "OBJECT",
+            "name": "African Plate"
+          },
+          {
+            "aliases": [],
+            "description": "A body of water meeting the Red Sea at a triple junction.",
+            "entity_type": "OBJECT",
+            "name": "Gulf of Aden"
+          },
+          {
+            "aliases": [],
+            "description": "A junction where the African Plate and Arabian Plate meet in the region where the Red Sea meets the Gulf of Aden.",
+            "entity_type": "SYSTEM",
+            "name": "triple junction"
+          },
+          {
+            "aliases": [],
+            "description": "A rift zone in Africa where a new spreading center may be developing.",
+            "entity_type": "OBJECT",
+            "name": "East African Rift Zone"
+          },
+          {
+            "aliases": [],
+            "description": "Crust that can stretch beyond its limits during spreading processes.",
+            "entity_type": "OBJECT",
+            "name": "continental crust"
+          },
+          {
+            "aliases": [],
+            "description": "A crack that appears on Earth's surface when continental crust stretches beyond its limits.",
+            "entity_type": "OBJECT",
+            "name": "tension crack"
+          },
+          {
+            "aliases": [],
+            "description": "A crack produced in the crust by rising magma and pressure.",
+            "entity_type": "OBJECT",
+            "name": "fracture"
+          },
+          {
+            "aliases": [],
+            "description": "A volcanic landform that can form when magma erupts through widening cracks.",
+            "entity_type": "OBJECT",
+            "name": "volcano"
+          },
+          {
+            "aliases": [],
+            "description": "A zone ultimately produced by crustal stretching, fractures, and spreading.",
+            "entity_type": "OBJECT",
+            "name": "rift zone"
+          },
+          {
+            "aliases": [],
+            "description": "The planet encircled by the global mid-ocean ridge system and containing the described crust and mantle.",
+            "entity_type": "OBJECT",
+            "name": "Earth"
+          }
+        ]
+      },
+      "raw_provider_response": {
+        "background": false,
+        "billing": {
+          "payer": "developer"
+        },
+        "completed_at": 1789548698.0,
+        "conversation": null,
+        "created_at": 1789548688.0,
+        "error": null,
+        "frequency_penalty": 0.0,
+        "id": "resp_0df28d8172e03f29016aaa5890164887d2b4f43cef845a67dc",
+        "incomplete_details": null,
+        "instructions": "You perform Stage 1 entity inventory for a semantic compiler.\n\nRead only the exact supplied source. Return a precision-first inventory of concepts,\nobjects, processes, variables, systems, and components that later semantic statements\nneed as endpoints or proposition roles. Include source-supported process/event concepts\nwhen later meaning would need to refer to them. Do not use external knowledge.\n\nDo not assign IDs: trusted code assigns stable IDs after this stage. Each semantic thing\nmust appear once. Do not fragment one identity into variants, merge related but distinct\nthings, or use aliases except for genuine naming equivalence. Names and descriptions must\nremain source-bounded.\n\nReturn entities only. Do not return claims, evidence, relationships, propositions,\nteaching prose, diagnostics, or output outside the requested schema.",
+        "max_output_tokens": null,
+        "max_tool_calls": null,
+        "metadata": {},
+        "model": "gpt-5.6-luna",
+        "moderation": null,
+        "object": "response",
+        "output": [
+          {
+            "content": [],
+            "encrypted_content": "gAAAAABqqliaAtAzrc5UqE5-EdBkQz0qFs1JifQV0zt2zPxZK-1lbead84pCPoWT31FSoAtP3S8Hj2ZbUdBap-aZp6rD9D06BKTFw15nYxbeVumePYVyP1Wm1OrHXd3Ly1t8VCfjD-fnEHDn4A8i38D8-D8YdBfoEtSkhu4RLyhKmpCdqJNhnq-IhBRwsVRJVlGPrJVfHGmDTyeNOzTIFrtiCrtFkFwM2Ynhpf2oVlx4MKy79qzVL6_kApQ33qKNtNiG20l32ceADjkHhC-w2r1EWy1XK7LRlUAFMKP67fHRycTuVD0lHIq_QljuQJKQRKLzxPSambIYqeX3z2xHi0iPV-4xwRWVpeoh1UW3NM-Oa-5l1B7sO8VCTxL3wOrx7MoM7BhFA7yoYgxM8NqI-7mGOhhFMFqFRgSuAjAchtId3bkHVKtUDOLK0V9zopACXeS44HmTgfJU9aEk98IRd5lzeZoDh5Jp-qnzv0MeApE2ofG_Pif1qypHqlnF3Tck_XDWIAi75Ohn-XHjmtYTlBshoD0yGGW9ehY9YS4P4XaEjjvm2RXfQwXwC-Wqq0n2VLqjFrRCJk0d5Mj_d320bzoNo4JtcUSFKhAp3Vd4fCG-8kLk5aBOSCq4hGFdZkJUabo6VKTKAJy2hBB1Vt57nGkDFAEnimcbqeOWiqE0Jgq_zLQMkmjH612sCxuUTqQqpROrQfL-tyZgBnztZuHqjJlEfnYbjxZixQO5luEqeyiONpOgXpdm7hc_eKEEf6yrzcK5clHcsiw2jY2Swkdl9mr8fr-vf0QYMgxEZeUO7ufUCGXt8KEdo3eL24SiF-_8nvLy2BNJeKnJPBtOe-Mt5JnAgXvm2xhCqQXVm8eO9bxRAj2LYnoZymEkS-9twu9pPrvOrp32JvG1nth8fCGqSVjmHWyVexv_jmFZYy6fI9tNDTrYoqf_uniAE80ZBMv-3_t5IGRhlSLtGijMAcl7BVevO28l7taltvJv2Pvz7SmVSYIN6CfoO-NZNltOXOBk1zfTetXqwPRfQCz7rSP3HtlIALbawy0NeFIByKx5wqimkDE5ArDo7qoy-KcPcCab3iGPy3BTiFGnNmcLmqs7oqi1bjtI1mpPdHAnLuawvATVWDxn_g9rxq3VjU11H__fjJhI1jUKoddGwyUkXPGhqHHAz8H0nLO4JOIv9igM7B_5--JvXEWl9iHdAgaLSoVYzUFxSDfzcGzK7avlDuRRLLQDWmmCA7CYLMfFwRBPoOfOnhMF3z7QXH4AKcs0OLS1yA2sUeVVG2V_UypFyKybwCKCUWqLZxKUJBpUxq6iOU6HadLOtVaG_DeV9o6zKlbxcmc9I9sPv_36379lLmP3cvb9JImFR4fBnTwGgQE7E_BlinK4RnJ6nKcV6ke_cvYeBEZyBz_iyb3P4QZsh_jk1T7tMXtdd1K8fWjfjdui92oAfjlXiT--QOj8qd_YJnMCLWKys6mJONZPom6z0glw0zc4lbR5wCU_8ZTHx4vzrKUbLNUjFKJFjlttEEfrP4Ewd-lidiWWcf5a_ISdeg_golvQeJ0BewmM9zw0c2yzJwNZupMm6Wf_LWM6JBV6ZiqyQXn-mNlcrTxVp7lashIBlE0yBjolDVe44FdiL9ys-VGJYMwKTuMnfA0QBVxfZsPI9BO7-rR3-UhWuW8VwE3UfOkEmPutUORB5KJhuc7vVH02x85ardgIBJsOBW5TRFzNQpL7ITYhEuHJxjWufb1QvtwipnByA3hAASd8VCB4zOAwE0vnyxsDMXIlWcjdpZScUUhBTcukswuJWDlPtpsQMpbABwUdkh4i22UWywuDaqQDdwQyGfbTH9WBQBFm7Fbaa6dSAme39SrDBGnPm5Cpt98FsodYop6bX4QQdRQBkNa3Wl8Pb9VXPNGP2qoQ7BrqGh8rfnden0MhkTWheeqVCJbR8U4XuA-X9Trx_CIK4_M09Y6Z0oAB_oWeEgiVFMTrLdP3mUmmbx_bu-OZLYV2BR0s5B0hu3OTDKxdckQXepM3oudL8NDWgQJCzmxInRsnXEEym6y3zIf2W0y37OKJcqT6N7I20gR7R2YZCAi4WLUyD7afmYHFlLwDLOkA-tizFo4Q_ig5jAjMYBw9CN-d033vGGlHHReURdh_bEWw0jEwpnRPYllTTm_PEnzmiyTbBSjyVbIyMN9nmF-ZF0YM0ryjR0g76Ik5ZcWyQjIJsQyd7PBr19b9HO2M6XHFHR8yrubQSmz7jO47pyoKgpSBURwkyfohzEsmnpDRUcLACvSPbAdp92OK3hT8VBk30ux6fB9EHsxAL8AkRs0UtPxvI1DcdMRPIUqiyjAQVPz1t5TAKhjbtOgQ4yMzABinhU84Ch5as2F1AzV7DSvAF5OwRwmhUn_1niikeNt8tpvUruYHIrHFRkOT-1zLz4CtMShTZNGKe1UqNPCLdHBWVUH2YtTOB2DV-R99hA==",
+            "id": "rs_0df28d8172e03f29016aaa58911c9887d2946a41a8251ab7ae",
+            "status": null,
+            "summary": [],
+            "type": "reasoning"
+          },
+          {
+            "content": [
+              {
+                "annotations": [],
+                "logprobs": [],
+                "text": "{\"symbols\":[{\"name\":\"divergent boundary\",\"description\":\"A plate boundary where plates move apart and new crust is created.\",\"entity_type\":\"CONCEPT\",\"aliases\":[]},{\"name\":\"spreading center\",\"description\":\"A region where plates move apart and crust is formed by rising magma.\",\"entity_type\":\"SYSTEM\",\"aliases\":[\"spreading ridge\"]},{\"name\":\"plate\",\"description\":\"A large section of Earth's crust involved in movement at plate boundaries.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"new crust\",\"description\":\"Crust created as magma rises at a spreading center.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"oceanic crust\",\"description\":\"Crust transported away from a ridge crest by spreading.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"magma\",\"description\":\"Molten material that rises from the mantle, pushes upward, and may erupt through cracks.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"mantle\",\"description\":\"Earth layer from which magma rises beneath spreading centers.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"ridge crest\",\"description\":\"The crest of a ridge from which newly formed oceanic crust moves away.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"seafloor spreading\",\"description\":\"The process by which newly formed oceanic crust moves away from a spreading ridge.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"name\":\"plate movement\",\"description\":\"Movement of tectonic plates, including movement away from spreading centers.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"name\":\"Mid-Atlantic Ridge\",\"description\":\"A submerged mountain range and segment of the global mid-ocean ridge system extending from the Arctic Ocean beyond southern Africa.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"global mid-ocean ridge system\",\"description\":\"A global system of mid-ocean ridges encircling Earth.\",\"entity_type\":\"SYSTEM\",\"aliases\":[]},{\"name\":\"spreading rate\",\"description\":\"The rate at which spreading occurs along a spreading center, expressed in centimeters per year or kilometers per million years.\",\"entity_type\":\"VARIABLE\",\"aliases\":[]},{\"name\":\"Atlantic Ocean\",\"description\":\"The ocean that grew through seafloor spreading between Europe, Africa, and the Americas.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"Europe\",\"description\":\"A continent bordering the Atlantic Ocean in the source description.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"Africa\",\"description\":\"A continent bordering the Atlantic Ocean and containing the East African Rift Zone.\",\"entity_type\":\"OBJECT\",\"aliases\":[\"African continent\"]},{\"name\":\"Americas\",\"description\":\"The continents bordering the Atlantic Ocean in the source description.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"Iceland\",\"description\":\"A volcanic country that straddles the Mid-Atlantic Ridge and exposes spreading processes on land.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"North American Plate\",\"description\":\"A plate on one side of the spreading center through Iceland.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"Eurasian Plate\",\"description\":\"A plate on the other side of the spreading center through Iceland.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"Krafla Volcano\",\"description\":\"A volcano in northeastern Iceland around which effects of plate movement are visible.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"ground crack\",\"description\":\"A crack in the ground that may widen or newly appear around the Krafla fissure zone.\",\"entity_type\":\"OBJECT\",\"aliases\":[\"surface crack\"]},{\"name\":\"Krafla fissure zone\",\"description\":\"A zone along which repeated episodes of surface cracking occurred from 1975 to 1984.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"rifting\",\"description\":\"Surface cracking associated with spreading and plate movement.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"name\":\"rifting event\",\"description\":\"An episode of rifting occurring along the Krafla fissure zone.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"name\":\"volcanic activity\",\"description\":\"Volcanic activity accompanying some rifting events.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"name\":\"ground displacement\",\"description\":\"Movement of the ground caused by rifting.\",\"entity_type\":\"PROCESS\",\"aliases\":[\"displacement\"]},{\"name\":\"eruption\",\"description\":\"An event in which magma erupts through widening cracks and may form volcanoes.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"name\":\"Red Sea\",\"description\":\"A sea formed as spreading processes tore Saudi Arabia away from the rest of Africa.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"Saudi Arabia\",\"description\":\"Landmass described as having been torn away from the rest of the African continent by spreading.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"Arabian Plate\",\"description\":\"A plate that meets the African Plate at the triple junction where the Red Sea meets the Gulf of Aden.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"African Plate\",\"description\":\"A plate described as actively splitting and meeting the Arabian Plate at a triple junction.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"Gulf of Aden\",\"description\":\"A body of water meeting the Red Sea at a triple junction.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"triple junction\",\"description\":\"A junction where the African Plate and Arabian Plate meet in the region where the Red Sea meets the Gulf of Aden.\",\"entity_type\":\"SYSTEM\",\"aliases\":[]},{\"name\":\"East African Rift Zone\",\"description\":\"A rift zone in Africa where a new spreading center may be developing.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"continental crust\",\"description\":\"Crust that can stretch beyond its limits during spreading processes.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"tension crack\",\"description\":\"A crack that appears on Earth's surface when continental crust stretches beyond its limits.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"fracture\",\"description\":\"A crack produced in the crust by rising magma and pressure.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"volcano\",\"description\":\"A volcanic landform that can form when magma erupts through widening cracks.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"rift zone\",\"description\":\"A zone ultimately produced by crustal stretching, fractures, and spreading.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"Earth\",\"description\":\"The planet encircled by the global mid-ocean ridge system and containing the described crust and mantle.\",\"entity_type\":\"OBJECT\",\"aliases\":[]}]}",
+                "type": "output_text"
+              }
+            ],
+            "id": "msg_0df28d8172e03f29016aaa5892f62487d2b5bdf8a1d2cfbc93",
+            "phase": "final_answer",
+            "role": "assistant",
+            "status": "completed",
+            "type": "message"
+          }
+        ],
+        "parallel_tool_calls": true,
+        "presence_penalty": 0.0,
+        "previous_response_id": null,
+        "prompt": null,
+        "prompt_cache_key": null,
+        "prompt_cache_options": null,
+        "prompt_cache_retention": "24h",
+        "reasoning": {
+          "context": "all_turns",
+          "effort": "low",
+          "generate_summary": null,
+          "mode": "standard",
+          "summary": null
+        },
+        "safety_identifier": null,
+        "service_tier": "default",
+        "status": "completed",
+        "store": false,
+        "temperature": 1.0,
+        "text": {
+          "format": {
+            "description": null,
+            "name": "candidate_b_entity_inventory",
+            "schema_": {
+              "additionalProperties": false,
+              "properties": {
+                "symbols": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "aliases": {
+                        "items": {
+                          "type": "string"
+                        },
+                        "type": "array"
+                      },
+                      "description": {
+                        "type": "string"
+                      },
+                      "entity_type": {
+                        "enum": [
+                          "CONCEPT",
+                          "OBJECT",
+                          "PROCESS",
+                          "VARIABLE",
+                          "SYSTEM",
+                          "COMPONENT"
+                        ],
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "name",
+                      "description",
+                      "entity_type",
+                      "aliases"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                }
+              },
+              "required": [
+                "symbols"
+              ],
+              "type": "object"
+            },
+            "strict": true,
+            "type": "json_schema"
+          },
+          "verbosity": "medium"
+        },
+        "tool_choice": "auto",
+        "tool_usage": {
+          "image_gen": {
+            "input_tokens": 0,
+            "input_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            },
+            "output_tokens": 0,
+            "output_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            },
+            "total_tokens": 0
+          },
+          "web_search": {
+            "num_requests": 0
+          }
+        },
+        "tools": [],
+        "top_logprobs": 0,
+        "top_p": 0.98,
+        "truncation": "disabled",
+        "usage": {
+          "input_tokens": 794,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0
+          },
+          "output_tokens": 1483,
+          "output_tokens_details": {
+            "reasoning_tokens": 194
+          },
+          "total_tokens": 2277
+        },
+        "user": null
+      },
+      "stage": "ENTITY_INVENTORY"
+    },
+    {
+      "provider_metadata": {
+        "actual_model": "gpt-5.6-luna",
+        "candidate_version": "spec-051-candidate-b-v2",
+        "duration_ms": 17471.79308300838,
+        "hidden_retries": 0,
+        "http_request_id": "req_7c61ef102e6e4cf8ba2f78022d807d49",
+        "normalization": "LOSSLESS_VARIANT_TO_CANONICAL_ROLE_BINDINGS",
+        "original_stage2_proposal": {
+          "comparison_conditions": [],
+          "missing_symbols": [],
+          "relationships": [
+            {
+              "confidence": 0.98,
+              "id": "r1",
+              "origin": "SOURCE",
+              "relationship_type": "IS_A",
+              "source_entity_id": "mid-atlantic-ridge",
+              "statement": "The Mid-Atlantic Ridge is described as one of the best-known divergent boundaries.",
+              "target_entity_id": "divergent-boundary"
+            },
+            {
+              "confidence": 1,
+              "id": "r2",
+              "origin": "SOURCE",
+              "relationship_type": "PART_OF",
+              "source_entity_id": "mid-atlantic-ridge",
+              "statement": "The Mid-Atlantic Ridge is one segment of the global mid-ocean ridge system.",
+              "target_entity_id": "global-mid-ocean-ridge-system"
+            },
+            {
+              "confidence": 0.98,
+              "id": "r3",
+              "origin": "SOURCE",
+              "relationship_type": "CAUSES",
+              "source_entity_id": "magma",
+              "statement": "Magma pushing up from the mantle creates new crust at spreading centers.",
+              "target_entity_id": "new-crust"
+            },
+            {
+              "confidence": 0.98,
+              "id": "r4",
+              "origin": "SOURCE",
+              "relationship_type": "CAUSES",
+              "source_entity_id": "seafloor-spreading",
+              "statement": "Seafloor spreading over millions of years has resulted in plate movement of thousands of kilometers.",
+              "target_entity_id": "plate-movement"
+            },
+            {
+              "confidence": 1,
+              "id": "r5",
+              "origin": "SOURCE",
+              "relationship_type": "CAUSES",
+              "source_entity_id": "seafloor-spreading",
+              "statement": "Seafloor spreading caused the Atlantic Ocean to grow from a small inlet into its present vast ocean.",
+              "target_entity_id": "atlantic-ocean"
+            },
+            {
+              "confidence": 0.94,
+              "id": "r6",
+              "origin": "SOURCE",
+              "relationship_type": "CAUSES",
+              "source_entity_id": "plate-movement",
+              "statement": "The consequences of plate movement include widening existing ground cracks and the appearance of new ones around Krafla Volcano.",
+              "target_entity_id": "ground-crack"
+            },
+            {
+              "confidence": 1,
+              "id": "r7",
+              "origin": "SOURCE",
+              "relationship_type": "CAUSES",
+              "source_entity_id": "rifting",
+              "statement": "The displacements at Krafla were caused by rifting.",
+              "target_entity_id": "ground-displacement"
+            },
+            {
+              "confidence": 0.93,
+              "id": "r8",
+              "origin": "SOURCE",
+              "relationship_type": "PRECEDES",
+              "source_entity_id": "ground-displacement",
+              "statement": "Ground rise and abrupt dropping signalled an impending eruption.",
+              "target_entity_id": "eruption"
+            },
+            {
+              "confidence": 0.97,
+              "id": "r9",
+              "origin": "SOURCE",
+              "relationship_type": "CAUSES",
+              "source_entity_id": "seafloor-spreading",
+              "statement": "Spreading processes tore Saudi Arabia away from the rest of Africa, forming the Red Sea.",
+              "target_entity_id": "red-sea"
+            },
+            {
+              "confidence": 0.99,
+              "id": "r10",
+              "origin": "SOURCE",
+              "relationship_type": "CAUSES",
+              "source_entity_id": "continental-crust",
+              "statement": "When continental crust stretches beyond its limits, tension cracks appear on Earth's surface.",
+              "target_entity_id": "tension-crack"
+            },
+            {
+              "confidence": 0.9,
+              "id": "r11",
+              "origin": "SOURCE",
+              "relationship_type": "EXERTS_FORCE_ON",
+              "source_entity_id": "magma",
+              "statement": "Rising magma puts more pressure on the crust.",
+              "target_entity_id": "continental-crust"
+            },
+            {
+              "confidence": 0.96,
+              "id": "r12",
+              "origin": "SOURCE",
+              "relationship_type": "CAUSES",
+              "source_entity_id": "magma",
+              "statement": "Magma pressure produces additional fractures in the crust.",
+              "target_entity_id": "fracture"
+            },
+            {
+              "confidence": 0.88,
+              "id": "r13",
+              "origin": "SOURCE",
+              "relationship_type": "CAUSES",
+              "source_entity_id": "fracture",
+              "statement": "Crustal fractures contribute ultimately to the formation of a rift zone.",
+              "target_entity_id": "rift-zone"
+            }
+          ],
+          "transfer_events": []
+        },
+        "prompt_sha256": "72e6b878794ac2fa45404970e2f0a931dc4c1c2efc97f64a4c7aed0ecf212299",
+        "prompt_version": "spec-051-semantic-structure-v2",
+        "provider": "openai",
+        "provider_response_id": "resp_0652a5f4cc1ca0f7016aaa589b4ea087d2aa1f1bc894e5dfe5",
+        "repair_calls": 0,
+        "requested_model": "gpt-5.6-luna",
+        "schema_name": "candidate_b_v2_semantic_structure",
+        "schema_sha256": "2ef9ab8a6e0085ca6e9dc2f4086ac104f9d8f11c154b24ab8631d5c5516221bf",
+        "sdk_retries": 0,
+        "semantic_retries": 0,
+        "stage": "SEMANTIC_STRUCTURE",
+        "store": false,
+        "upstream_input_sha256": "db3eb734378ede6b57b222f8a7690e7888c80086aa000f24974de34572f669ec",
+        "usage": {
+          "input_tokens": 6204,
+          "output_tokens": 1730,
+          "total_tokens": 7934
+        }
+      },
+      "raw_proposal": {
+        "missing_symbols": [],
+        "propositions": [],
+        "relationships": [
+          {
+            "confidence": 0.98,
+            "id": "r1",
+            "origin": "SOURCE",
+            "relationship_type": "IS_A",
+            "source_entity_id": "mid-atlantic-ridge",
+            "statement": "The Mid-Atlantic Ridge is described as one of the best-known divergent boundaries.",
+            "target_entity_id": "divergent-boundary"
+          },
+          {
+            "confidence": 1,
+            "id": "r2",
+            "origin": "SOURCE",
+            "relationship_type": "PART_OF",
+            "source_entity_id": "mid-atlantic-ridge",
+            "statement": "The Mid-Atlantic Ridge is one segment of the global mid-ocean ridge system.",
+            "target_entity_id": "global-mid-ocean-ridge-system"
+          },
+          {
+            "confidence": 0.98,
+            "id": "r3",
+            "origin": "SOURCE",
+            "relationship_type": "CAUSES",
+            "source_entity_id": "magma",
+            "statement": "Magma pushing up from the mantle creates new crust at spreading centers.",
+            "target_entity_id": "new-crust"
+          },
+          {
+            "confidence": 0.98,
+            "id": "r4",
+            "origin": "SOURCE",
+            "relationship_type": "CAUSES",
+            "source_entity_id": "seafloor-spreading",
+            "statement": "Seafloor spreading over millions of years has resulted in plate movement of thousands of kilometers.",
+            "target_entity_id": "plate-movement"
+          },
+          {
+            "confidence": 1,
+            "id": "r5",
+            "origin": "SOURCE",
+            "relationship_type": "CAUSES",
+            "source_entity_id": "seafloor-spreading",
+            "statement": "Seafloor spreading caused the Atlantic Ocean to grow from a small inlet into its present vast ocean.",
+            "target_entity_id": "atlantic-ocean"
+          },
+          {
+            "confidence": 0.94,
+            "id": "r6",
+            "origin": "SOURCE",
+            "relationship_type": "CAUSES",
+            "source_entity_id": "plate-movement",
+            "statement": "The consequences of plate movement include widening existing ground cracks and the appearance of new ones around Krafla Volcano.",
+            "target_entity_id": "ground-crack"
+          },
+          {
+            "confidence": 1,
+            "id": "r7",
+            "origin": "SOURCE",
+            "relationship_type": "CAUSES",
+            "source_entity_id": "rifting",
+            "statement": "The displacements at Krafla were caused by rifting.",
+            "target_entity_id": "ground-displacement"
+          },
+          {
+            "confidence": 0.93,
+            "id": "r8",
+            "origin": "SOURCE",
+            "relationship_type": "PRECEDES",
+            "source_entity_id": "ground-displacement",
+            "statement": "Ground rise and abrupt dropping signalled an impending eruption.",
+            "target_entity_id": "eruption"
+          },
+          {
+            "confidence": 0.97,
+            "id": "r9",
+            "origin": "SOURCE",
+            "relationship_type": "CAUSES",
+            "source_entity_id": "seafloor-spreading",
+            "statement": "Spreading processes tore Saudi Arabia away from the rest of Africa, forming the Red Sea.",
+            "target_entity_id": "red-sea"
+          },
+          {
+            "confidence": 0.99,
+            "id": "r10",
+            "origin": "SOURCE",
+            "relationship_type": "CAUSES",
+            "source_entity_id": "continental-crust",
+            "statement": "When continental crust stretches beyond its limits, tension cracks appear on Earth's surface.",
+            "target_entity_id": "tension-crack"
+          },
+          {
+            "confidence": 0.9,
+            "id": "r11",
+            "origin": "SOURCE",
+            "relationship_type": "EXERTS_FORCE_ON",
+            "source_entity_id": "magma",
+            "statement": "Rising magma puts more pressure on the crust.",
+            "target_entity_id": "continental-crust"
+          },
+          {
+            "confidence": 0.96,
+            "id": "r12",
+            "origin": "SOURCE",
+            "relationship_type": "CAUSES",
+            "source_entity_id": "magma",
+            "statement": "Magma pressure produces additional fractures in the crust.",
+            "target_entity_id": "fracture"
+          },
+          {
+            "confidence": 0.88,
+            "id": "r13",
+            "origin": "SOURCE",
+            "relationship_type": "CAUSES",
+            "source_entity_id": "fracture",
+            "statement": "Crustal fractures contribute ultimately to the formation of a rift zone.",
+            "target_entity_id": "rift-zone"
+          }
+        ]
+      },
+      "raw_provider_response": {
+        "background": false,
+        "billing": {
+          "payer": "developer"
+        },
+        "completed_at": 1789548716.0,
+        "conversation": null,
+        "created_at": 1789548699.0,
+        "error": null,
+        "frequency_penalty": 0.0,
+        "id": "resp_0652a5f4cc1ca0f7016aaa589b4ea087d2aa1f1bc894e5dfe5",
+        "incomplete_details": null,
+        "instructions": "You perform Stage 2 semantic structure extraction for Candidate B v2.\n\nUse only the exact source and immutable frozen entity inventory. Every endpoint must\nbe one of the exact supplied entity IDs. Do not invent or substitute an identity.\nReturn only source-supported canonical relationships, COMPARISON_CONDITION instances,\nTRANSFER_EVENT instances, and missing_symbols diagnostics in the requested schema.\n\nEmit topology only when the exact source-supported meaning fits the trusted relationship\ncontract or one of the two canonical proposition forms. Otherwise omit the meaning from\nStage-2 topology. Never approximate, coerce, or choose a nearby predicate/proposition.\nStage 3 independently reads the exact source and can preserve omitted meaning as an\nexact grounded claim. Do not use missing_symbols for non-topological omission; reserve it\nfor an otherwise valid canonical semantic item lacking a required frozen identity.\n\nCOMPARISON_CONDITION means a comparison used as a causal antecedent with a distinct\nLEFT_OPERAND and RIGHT_OPERAND, an OUTCOME caused by that condition, GREATER_THAN, and\nCAUSES. A standalone comparison without a causal outcome is not this proposition.\nTRANSFER_EVENT means a PROCESS EVENT, transferred OBJECT, and non-PROCESS DESTINATION,\nwith TRANSFERS_TO and no comparison operator. Input to a calculation is not automatically\na transfer event. Emit neither proposition when these exact meanings are unsupported.\n\nDo not return entities, claims, evidence, teaching prose, or new semantic vocabulary.\nProposition IDs are assigned by trusted code; do not return them.\n\nACTIVE RELATIONSHIP CONTRACTS (source --TYPE--> target):\nIS_A [STRUCTURAL; direction=instance_to_type]\n  meaning: The source is a kind, category, or subtype of the target.\n  roles: source=instance or subtype; target=broader type or category\n  use: The source can truthfully be described as a target.\n  avoid: Do not use for parts, examples, similarity, or temporary states.\nPART_OF [STRUCTURAL; direction=part_to_whole]\n  meaning: The source is a constituent or component of the target.\n  roles: source=part or component; target=containing whole\n  use: The source exists as a component or subpart of the target.\n  avoid: Never reverse whole and part; do not use for interaction or dependency.\nEXAMPLE_OF [STRUCTURAL; direction=example_to_concept]\n  meaning: The source is an illustrative instance of the target concept.\n  roles: source=example; target=concept illustrated\n  use: The source is presented as an example of the target.\n  avoid: Do not use merely because the source is a subtype; prefer IS_A for classification.\nCAUSES [CAUSAL; direction=cause_to_effect]\n  meaning: The source brings about the target as an effect.\n  roles: source=cause; target=effect\n  use: The source is stated to produce the target outcome.\n  avoid: Do not use for chronology, association, contribution, or unspecified influence.\nAFFECTS [CAUSAL; direction=influence_to_affected]\n  meaning: The source causally influences the target without a specified direction or complete production.\n  roles: source=influence; target=affected entity, process, or variable\n  use: The source changes or influences the target, but the text does not support CAUSES, INCREASES, or DECREASES.\n  avoid: Do not use for mere association, chronology, physical force, or interaction with no stated effect.\nINCREASES [CAUSAL; direction=increaser_to_increased_variable]\n  meaning: The source causally raises the amount, rate, value, probability, or intensity of the target.\n  roles: source=causal factor; target=quantity or variable increased\n  use: The source is explicitly said to make the target greater, faster, more likely, or more intense.\n  avoid: Do not infer from nearby words such as more or faster; never use when the source says slower, lower, or less.\nDECREASES [CAUSAL; direction=decreaser_to_decreased_variable]\n  meaning: The source causally lowers the amount, rate, value, probability, or intensity of the target.\n  roles: source=causal factor; target=quantity or variable decreased\n  use: The source is explicitly said to make the target smaller, slower, less likely, or less intense.\n  avoid: Do not use for absence, prevention without a scalar target, or mere negative association.\nINDUCES [CAUSAL; direction=inducer_to_induced_effect]\n  meaning: The source produces the target through an explicitly described induction mechanism.\n  roles: source=inducing phenomenon; target=induced phenomenon\n  use: The source explicitly says induces or describes a recognized induction mechanism.\n  avoid: Do not use as a metaphor for generic causation, influence, motivation, or historical response.\nENABLES [DEPENDENCY; direction=enabler_to_enabled]\n  meaning: The source makes the target possible without necessarily causing it to occur.\n  roles: source=enabling condition or capability; target=capability or process made possible\n  use: The target could not occur, or is materially made possible, because of the source.\n  avoid: Do not use for delivery, participation, weak assistance, or an effect that actually occurred.\nREQUIRES [DEPENDENCY; direction=dependent_to_requirement]\n  meaning: The source depends on the target as a prerequisite or necessary resource.\n  roles: source=dependent; target=prerequisite or required resource\n  use: The source cannot operate or occur as described without the target.\n  avoid: Do not reverse prerequisite and dependent; do not use for optional support.\nCONSTRAINS [DEPENDENCY; direction=constraint_to_constrained]\n  meaning: The source limits the possible behavior, values, or choices of the target.\n  roles: source=constraint; target=constrained entity, process, or variable\n  use: The source imposes a limit, rule, boundary, or restriction on the target.\n  avoid: Do not use to mean unchanged, unrelated, merely different, or causally reduced.\nPRECEDES [TEMPORAL; direction=earlier_to_later]\n  meaning: The source occurs before the target in time or an explicit process sequence.\n  roles: source=earlier event or process; target=later event or process\n  use: The source explicitly occurs before, previously, first, then, or after relative to the target.\n  avoid: Do not infer causality from order; do not reverse earlier and later.\nINTERACTS_WITH [INTERACTION; symmetric]\n  meaning: The source and target directly interact, with no more precise directional semantics supported.\n  roles: source=interaction participant; target=interaction participant\n  use: The text supports direct mutual interaction but not a more precise active predicate.\n  avoid: Do not use for distant association, one-way effect, dependency, or chronology.\nBINDS_TO [INTERACTION; symmetric]\n  meaning: The source physically or chemically binds or attaches to the target.\n  roles: source=binding participant; target=binding participant\n  use: The source explicitly binds or attaches to the target.\n  avoid: Do not use for metaphorical commitment, dependency, influence, or literal physical force.\nTRANSFERS_TO [INTERACTION; direction=transferred_item_to_destination]\n  meaning: The source item, material, or information moves to the target destination or recipient.\n  roles: source=item, material, or information transferred; target=destination or recipient\n  use: The source is explicitly carried, delivered, moved, or transferred to the target.\n  avoid: Do not make the carrier the source unless the carrier itself moves to the destination; do not use for enabling.\nEXERTS_FORCE_ON [INTERACTION; direction=force_exerter_to_physical_target]\n  meaning: The source exerts a literal physical force on the target.\n  roles: source=physical force source; target=physical object receiving force\n  use: A literal physical force is explicitly exerted on the target.\n  avoid: Never use metaphorically for influence, contribution, binding, pressure, or causation.\nTRANSFORMS_INTO [TRANSFORMATION; direction=prior_state_to_resulting_state]\n  meaning: The source itself changes state or identity and becomes the target.\n  roles: source=entity or state before transformation; target=same entity or resulting material after transformation\n  use: The source itself becomes the target through a transformation.\n  avoid: Do not use when an actor causes, creates, attempts, participates in, or responds to the target.\nCREATES [TRANSFORMATION; direction=creator_to_created]\n  meaning: The source produces or brings a distinct target into existence.\n  roles: source=producer or generative process; target=newly produced entity or result\n  use: The source produces a target that is distinct from the source.\n  avoid: Do not use when the source itself becomes the target; use TRANSFORMS_INTO instead.\nMEASURED_BY [DESCRIPTIVE; direction=measurand_to_measure]\n  meaning: The source property or variable is quantified or assessed by the target metric, observation, or procedure.\n  roles: source=property or variable measured; target=metric, observation, or measurement procedure\n  use: The target is explicitly how the source is measured or quantified.\n  avoid: Do not point to something that merely responds to, correlates with, or exemplifies the source.\nCONTRADICTS [DESCRIPTIVE; symmetric]\n  meaning: The source and target assert mutually incompatible propositions.\n  roles: source=proposition or claim; target=incompatible proposition or claim\n  use: Both sides are explicit propositions that cannot simultaneously hold as stated.\n  avoid: Do not use for difference, disagreement without incompatibility, trade-off, or negative causality.",
+        "max_output_tokens": null,
+        "max_tool_calls": null,
+        "metadata": {},
+        "model": "gpt-5.6-luna",
+        "moderation": null,
+        "object": "response",
+        "output": [
+          {
+            "content": [],
+            "encrypted_content": "gAAAAABqqlisYxrR80P0nzhP7VLCjMDgAanFyufjgWOwFSj6tTI8KBwtuvntDipQoeMz0QVCN596ZSY-CypKcnOGfUF1d4wBNTDs3j9jKLZZ2bKLhJr-_QOMBjlFe414ro_LAbTO3BwH7hp_T3RkSpFtYPtgWOPqTz6MmilZ2dAC-jeFY1dY-AKq-UZDtZKZAXE9AhfKrADd0CqjvKR4ZIHIzpCwHdFwjv6j0cVjVbQL7qkiF9ZIBZqPGbOVRW0ALVydx7FVlYVBKvkH_CmQuuXvbbeVRXU0j4nxkNQmrLEeHEh9MuNG4Gz2pR7rldf4mnMHoTuZ_VxjWi-HRfGicGwsWS4DjiqxWPB_84pDZFydnz1e_2pbhNot4tL9_gpIJGzsDEl75GXJ7v0VTNd9gaG2vp9aKWcKIh0qUtAzHDxgtgWe3z_6uipu9kObhucFdxy414PhJGT_P7PmoTLNDBSuHIUnOM9xviPmlbi1soBGNEfAHjdCZuYTkQTD7MrnE9k4LwHSpnia56K2wKM9yS686dpahWwP_hGtx4MfNG3_tgu-14WYi41KYswtR42XxasLbY0SpWWIVjt2PSGtA8lJg9eJI_ty26qyObUMpZ_PYZW8GwbVqKHKN8YUJTGLMK_smscLoXOF26I3UoU2qDv1m7yYM7_zBubYNKK8xeo5MonlLaRBj2MFpQ7ayJRCnabxyjmOp7Ww_mwAGeWY_vIMTWRcIm4iiUCAqAAPb6OJxz1NuRJwt2lFGREo516-qukw-1I54EVS6SAfJALXMq7LurtlX89n_wvZ1e8gVJzPuybMb-w4H30Lp-5oKsODKmh4v-nCXpNAL39sYT3MBFX8pj0OD-JRYDMGOZTI6U5BG-k48e6Ert1ZANAKq2SD1m58nhicR-m9f4bFbkD99WegOQiVpFR8zL26H7Fpx8tF9rKbnWqtSduHWlfVrCcekuh1zWHXyM419mPRL85J5_P0CCkoNGWf5VoBqO3zWnIjCdwk6lItUcObpy1zy8TUhA4UqvSh1arY6SC0hyjKi-ZaEgbfjsNxQRYXbqmLeLmNb0eYHQVTeKYVPK9c0JiX7-jcWcLOIrIaVibQXkqajlHj8zTTym7RugTVusR5VSPJa2WBsxlr0VlRcHWBCY9RRl-4Emys9hMFsca8JGJqRXai94-ejGNkMuhiGfIoh9RQal35uD5Aji95J4nIMPaBDdD58E7bvBbfGdtvmCWXEwgNBvWwQ8SAoro-zTo37hjyeisQOwax0mfuPortU2yLl7QEDLu6vh3OaIDvQ5nrULEStzBvP7Q2di2jeq_zOQiy1ALg0DiyvcYOHECc5hVdL1PXQzD7-qOoMKpDomY3c3tDtO9WvoNyw4xLzpSgTs3HB4Y4COiUjW-WDp9uy-lhGZtX3texP1kV4Ov8G_hPx-sPKt3phXe2anzci2b574cfMcLMo8Mbvq5S2S8vaGUi6zqhggTQnGJAAUP0GyhiPVH_f-uXHaGIf-XQvuKYVYxZFMpQCllj5li8CopdsxnZ_VTejFVbWkAYZukRyrLX1wNKQW2xhxW3c6KGScYSYNGxJnT-6Yx1Ay9oLFuFkWD0DIfkpTYcAOUDKVRn6yrRWXU9wG3tChBPLURgOp0rsAnWlWrBSm_sl7b_rhfa346dkVrrKSJFVpcFp4r9YErEdTX0nsAZkETXCHo6cUD25QstG1de-_vyz2zDymuSuLHTO2pBh1tDeQUICNTpzcHcQcDRFEimT3vYx_B3SDwKtoVtOK6k9181IERQX_NYvffp1DWoawn53URKvs8RdiLPWHpH4EbjEx64XIhIbwhmq4ePrq5aOIOAbWjR7SU7YtkvG5HnejBBs8XGqoRGVRKKIvxjcYqaylnXy1z_NwW_fR8WMHl1xgr8gpnpV3CbjA7hl-9L-mL_u7dvyCqf0eJqTnMnbI0gWGNlOPY34-h-dgUpbB9zHVdL4P326nlwjBCtExVrX7pBsNjlUeZezl5P9GLtSF_H3g82KMU8HHd0XjIKLFvDG_l00LxRJWUhi_lO-9qYzroNf2SzQe6_qARn-IMTxq0xByQcafE4HVdlgTG_tIea0Q8i5x7bbSNgEh7rhg5q1qQkrpDxd11nFt7hu5W3SnOAxLZlnlgtIG8v3Xra7M9w8rJj37aJAH_D28yg2P-FojMrNjallyo4d1GKB0bH6oB72K_KO55RlT6KBRWuoa2sEBe9i3h4Knv2TUkroFNBaqI5r0opFYkKWWLGJI1FiczxRWSjTypJhPEeSeCzJGRUcwi7CSjg2bN0rd0PkDLVeQBcVef2AEHCtciO0Y_2qCAy2N6sYFzuivuulBPm_SMnIDPrilUrnIsFMAVTqGF8z5reKf-L97ZvBzOETwMP7KIrW928dLRMioXmtemc7ldu3dcHlSZa5oraGB9pydim9kQJvCgDvJ9ukD1Y3iXKThj3I8LLtaDW87wKJSnQ7dhhys6sU2zaxlNmf83gav2g6BroteSi4_WLoP3OOyroYl8ouE3kpI0rKaeqa9pF-e0WyucoPqbVO26ZN2O78PlyGhWnotRxh_Jl4eoktAObiSXCF_cTVo-f3onYGRaZRsXEYkrzMYF8cDdaWZUSdF1gkehFNkEAMT4T9aRFoQp5weMTX_6tV0XrhhFqbyJPoYIUqaj1MVqVl2zsP8uxeg-h52LETHiEbldMsZyuEbAaecN69eX9WuTXB8zlxTDvS0K2trcEPUeOzRp1n18XX8JgzUHi06P2Wi7EMXu7ux3HKbFRCpIYPW3MWCGsXpM0xM4UE4dDltZZ95WSHXqQhOYTyIAEDqd7kRqj3At8CND3k5a1btfFVS7blyQVUDeyxByj8_1e6s3zhITzG4Wn4EDwfjozMkAbrUpNe1mPncH87O7fpR46MjQ6tBjZSBC8krF7z-lkbzRzM9oO6f_NYJ2E0yVf8oNnzHGEzEG7NAS2JtWDMHCnTJgU5tgFMTgBsFlKopdvqoP2JZMmUFU3vVozXKGmS0rJPGFPRzDf7wIga8Js1o4rAedJtnAj4bdleNHngjzk9lWclBl4B63_pLpO1VPryyvQIWn-hwtTll-YZtktcx5VztLtQh7qqJVxbMZVQHEecl0b56gHGPRG2i1vGdn1mjsl03FTWPEOpczCvJT5QcgAzOk8JfaAxQhb5GGsqZXXMQMI5FMtIOdmNEAfc_og1UejhpcSGXupVV_eGKS3zE1OOfWMJpScWgKr2QhyD5p8r7mqMArmEWZWdXqQZQeGBS6wP5-lpmMFn4-TM7NBMZYQhAy2BzznMjm9hprtFNG7LwykLwyAKi1lTeJoaw8j9ItG03jkxTWaPv4AncvS5M25kcnd0ea-uwjpqADkJQLk8ol1cMkta6QDI7KFIhhSqvXa3Fpp-RcQeysyxtt15JkU_8n3bIRlgma2BLLtcqFagTt1D-sL98BO0GG-LjlbOXzn17kl8Q-JiL6Y3PoTSwN9iz06OTbDZ9TFDy0bx69JvjaP6yvOt6hRntI9Y1Qj1WwftYW_6zEhzvLdCgjmF5TTxOF6GofOZrRkqZiHG1d3ehsG13G1-Hi9i4bVahH1xfkcNF5yYoW9inoyIWNgtXyuKCtKZDwAXgAHAecHt6jcZntBOtqM4Z26oqhNYg_onM-aGueuYQ4nkdC4eapoyp_WC-Sm0bsh6YwF_r7JOvpvGHHEPsXr-HzfM5dx1XJtqq3UhHsm900Q6dFVrsk6_eer1x2sivKqH-C-zjSsBWuG0KVuDogmC3TwIGmmK7n5LXKx4yDUYVpS45I-qCfrv_pccm0_Al5OOtbsxRe2eJF5y6cWcUEDbUGPvhmknF9MmPnAS7xJh4JDqOoE7W9PfYYQvsoRCOZZdK-c4vFPWZOQO2BQKO_8nS6BPU-nFI_4R4bt4lvVDYx4ScBow6Omzobab7bB9Gd0oIchwzuD9-DkCtJOYPAP8sNNf6Plpjm3F4YrEjuKYR-MAXrQo1RL5xuJygCWukDKn0xo2ZXfuVYQ5Qr0JcNcIla0c78btcjfTevBQ1rvt47ZxxeSxttde0H4_7UVdHv8BIJDqD8Vlw9OHoAgrAOEFLMzna-pfVI8so5b7LZ57erSjiqR_OB3UBnc42LN6OlXkdaOwrcG7wrn3Pi_b7eWLMgwHL6jOCyTaiYt0vC0GuTzr3iIh7nkleDjOzqmL0-YYcw50aB6o1EsePxTdX6ZHrWFWmr7X_h-LjygarX0BTdedfBcxHBMWpO1xoQ2hmrabayT2IbsCK3vWhc7IfvEAPAt7JsaiKPSmzTy6P5pPmWQeYlSmZMit3fpoWtY7ySK5aySIW6DGNK1UnBEis1yXJu7pxjjyVL3GXeVzK6Y04_a9xutLHTpxeF88hpS97pC-dWQzDKfsHSx3A4uDKdd2dbv6ApA1OtJUF7ZSKD9cDYatISuSzcGVgR4Om3AUFPrH60N25had34jFUk=",
+            "id": "rs_0652a5f4cc1ca0f7016aaa589c44b887d291ef7525f6ad253a",
+            "status": null,
+            "summary": [],
+            "type": "reasoning"
+          },
+          {
+            "content": [],
+            "encrypted_content": "gAAAAABqqlisf0UHRVBnpBgC6V2ZkgGDaXUDsNpM0eugKVuRyPcPgaYkytRmCuZeEBBEgapDFYPRu8kAGO3Mpigk9NE6OgpUkpsY6SFbDYC_dMhtCuIidP10rj_rc8qM-MXXjQGbC3G98hGEvJsluDYmMSLS3oZiI5k9lVUiXSE5KWZW38DWFyEc3_DW85vcHPJVAIZz2z8EwqDcj1xi3Z7CSfDrnmV2y6e7vyxUs463YBF5P1hp2aRBPD49xcokqwpK5Ie7xBGhAnnnSiqpWlCVcvBF1ONnYWMqEKF4XS1lNLgaEqlFnR8LPYlWaCYPcfZ8n1r3tSgPuZ8e3hjlKOOaQa6C4YHULc8RgVOyIpLflmfRAS0g5ixbH_rfrLRF4uW7HZuTjAMmIzKtYPDP82tBMQZqyK1CQOH_-PNSoZZJkzqWggbgog7SWgbVkW6fYtTrYrktLEGwyVh4RbyX1AlTzLM_hiD33sAckkTpQn0r9ohDMjr47yyAkgn4KebzMoqiLLE_rwDDfZkEue6n6wfXRUVKRDs-8n-RYjR7pwd3BOfowG8neE5WkJH2z4UlxD1_q1APLGOx-FzAVKSJ3tGEoS8w2UjAtxrdX4WjA0kY1k8JCw5bDqyw8zN20oJj566qpJJN0kAddrF-crMWTEO10VsrGaQ7l6AU4HKtHrc4l0jooNV1hiojUP1P3bIDSy06Q104o7tvqVt5PIJe5kN9Dqa8p6khRaAx4vL5mB9M74ktdYEguu6EGIUHRGI5nFOZF8h9yUjcrrx6NAwCrWWDAWxND_DAvuD1ge1hZTskmq393nggo4vSA86Bxbv7VaOcUYMieiIXmIquTPlaKONvGP2zWOMn9l7PSgbKmqVUhBpEq7MFnogFRNuKtbnufDi5nsBEQ0hP6gZSct5E5K_GYZw1oVbT_egKzg52vgp8u7wD9g8c8RjEskSX114V0mBEv_yJDZxsPJdVna_tCPAF5wRKOal2ASJeNTZZdTZd6DVhc92NcWzvT_G04X2JBSgPFfYi-KEVDumpxNikym7lWgbzs4R5jaWzOS6BHxfHv5E7Xk9xuluiiVT4LgNT71IRHCm-8fH2PmAWNnki3nFabCTIw3ZCjhh_OAbVmfZAEz3M5QbcW14kPC04-jydQGKFHSL88yXaRnr2rhOqWvMcXyHU4yG51SqNnunVk-Q8pGOd3zoQ56hrdRP1Ryn5XC68rZbuWk0dw3FeXpe0W9erzmyoOyRxZHrxnuaC4d18BmgcV4OMcuJHtBP1hn-mdvrfvX4X_9WHKi4ciiaay31glyYoOCZg1IrNjr-ELD6yItlo-lgtP-Ph2bVmv0LMH5JGs8V5zCb--VPjkiZKjMveA4DnW6iw2q6IBkL4AR5sNqIE9-NvOvcoURVzG5xgpX8Ym__08zsxf6i7P59j4xMQBgRdldCVTxYnVIRey2wV_mgORBdvQjg9eUOihFjKAN-5KBBsHDHjxaIa7a0A0BTP4enFiBKyhckzYbkHY6kxbGuxwTabp2QVhRejFFdw-mZnzDH8B2bUieC0Et157XY5RQGHSJAuQbOGQXcuvrHGfc106Rk78f001Syvm0U2bUG3NwQJ27uygdbPhoLtrP7HjBX6VWWdYDPTkVrZMF1qxH3DLPpkSE-dXNcIP_Y1631s1Xg0-xcPXoeupxOa7hN8OSBVbGYN3MBzuZljJ_bMey3Tdjx02IHs4Jmm9dh6vrDAxwjTpL-AO09UGiz3v_sMcA9BtXNUDKDkw8_vGq9UtI6nE0AIMXW2EFB4ar3WjCxQKAwlNZVG1rFiqy5PULzltVt_eVnwkUFhYgNXlhKaVmi-frEXabEPPpKyO9MrJagd9ZrvGHu6NXyKDAy0qbysUA9QAL9zKqer7ZmonUmUOgK5wBaX_YiKr5sEETKRKPyzhbXLzR-WtUx6-M45tL5U5n1VKBgPTsymiq-k3Qr3aZN3rzrmSUPxfrotvNMr7gON-NJ3BmWWzpDJxGZt14QD7KpjAsLdkDaP07wCjw5NyR8GqDjm0mFm1Oa882x1B-vX31HwucF7fgtH5g9LXMQ6Q4i5LDNa3jJF_Vpi7gXxLO_uMQbFhK8C5yUWAMuLKPY0-hbiX2Q45THxka1o1ixJIawXC2g0YSyRWv_iPqVyvw6I4SY_L3TU69zjT4V8w3orWeVk-K-ak617gIreX4WwamdBMf8FsTJFQEmG0hAydC4wSs3sP89iF9G3jZ7-Xt8owyjSh0uK9jYGbOpTglnm0yxxa34HwrVc28k0CRX5umGc4JzRC2RCtPSMYTdPK2atIXNWeJ7pEZqiORhYs0NO_Jj_vyr0PZ-EZ6e6atuFCRMnfJ1XxY7Htwuvi1OYs1TdvfWdwiROmenjINMgup0ggKWEaYtXbTEQeb9rfkV8FeDPN9vj1FsMD5K2QzpQHJmqvyiQXijKFlQ5yGR0JIcMsdX049NA2pnT0pxPMW5T9rzTz0ECNutIifhcsXhnoghHp4KxvG_f5730bsv9vTF-Tk7tey2sjwXCMRc3UlevlHZBNO3p7FcCWNkb4ByAC7bAGlDXKFyBs-4zCUNNQZ4J-zmU18Aw-YtHQavPXcq2z-ligmQWhtEo9De4eFgypGw-9-eFVojqmvkrkU9U23p74xE3LKqvIPy7I4x2pKblQjgPwn0BjDeq_dMi_jMQnt1YVLbopled-1YwEA22JVddrsn3IcwwE87kggGDM__0RgjMYTKtCfOGylh8DX79cEpCVWGpB3un5vmS6MOJRjl2-bJow4HmGTYiwdY8SCUl-ENG0UiZlcYrpr-zpyzGWZsYr7QjCNJnG8B_rmwYIN-QUw2AXLNPSYQ5qXUSOBxnaq4kyLxnCx9lkG-tG3fZfVrA5owPtbAriSfYD3BNko2u8OUD4mObRi6FuoXDRyWGvBAkcOzkuYiN_2ETTSOFDAsc330slkfkwYrT4DPEvMw0E3js9AwmF6GbZ6v0_Pgi8UCman4mL48WJ5x7z63-YWxqUf4wfnaKiTBriUt7dl_xFGwRhEzxejUdPGli_2kUREeckTvSkQcKaoa1F8I0vLxvjYEatKx9qHZmjjXclLgvhFGq-GPDvmB-327onEJ34qQISGrp5zBWkj4YP0PcLnrxa309WmTIk2wCZCc5_-cxCjICwnXFEIZBlp7pjb2fThzZY3-o0881kAMLY_oKlV2M2cECFjHO2e31Ml7r9jBEZKC7A20aE1RaGTcR5gMc5mzU4tZ9Rc0MNWE7YFZt_GaR_NVGEvdZPkJCO5kZlpwpZOqsX7qVgWStIOmklsIWeLW6WyeE_Rfjdr-GgCfUQNWy0m8SdvFqlalVR7ysPIui0-2hxiLaI6vsjhEFe3_wxcqNIg2hVZ5D0IJWgt934EfswfA4O7uMMC88tQG9Ra-c0odfjaJVWbijs2ic6DGlf4CRr_8QjnAAY3FzpuQv41E9DAeiCF2m7CWFtwF-Z-jC8DFKqRdo38rJ68mqweXC0rwUB5yrFDo9IXSREGjeEChAlWkbPpL9o8Gw_6VpdLrS5X6I9xNnWNvAISx4ZE8C2hALLjdmFZQl759A5yUnUQa4wQ6jvkKOrm52hamCdhftqfxKHiCS_Ke389icWWYG45xaqGRIhQRon-t4VIdoZv6OftFZ0_L9a9tqvWoGu-L4QjxvhkuInSj_MQb-odtZVrruzZ2KEc8W1ylDiIyVlNro9EQcXe1GniEjXK9iRRthKvKaOt1fbvyPeOF6EqjIv1eag8G569BCoryz0c-gHVaxpK9yOK6lmmacuBMP_XtRPcXtNmgVmmjoeVcD_4SDoDGK3hQ_hlPYkPNNNVPGL4cqQfqER_O0OanuBm7wdRkpA-x3Ez_mIVzwF9pX-SJRrUWlh0bl7IcRohYMIRmXoTmfvDdUp8y4c9e2jzrYhZFnAOW93kZgimMgFkkNL8Bz-N3m3rSka50vgQUBeVn6Rubsz-dMJcbvKuSQ1uTjflKAgPzuGVAqEw_Iq0exe_epoKmB2H9j1OuPePDYGRlKMobg2RaSKEolu66I2rmaCtb02Oqu5Vf_NSsr7iy0nqEqGz4homcsUU7jMYAVcl0QUr5LbsTPkXCteV9zAxOdRkdVsZNF9IZpuxMXZUpKwQF-VCZ391DJMSngcHhYRSt-_ueaXbBMNFkX7Lrzsx3JuIWN3FXiZ6lpQDRc5CaBrTN5wqi7QDTuqZq8Wxi5vmcpE_rtEIcpbBaTrxwBEfeCqbRP7CSyl_qU555ghZjQ6jKhiq7vy9_5OYfGOtglBTzysOLey8pqR7Buzo-zEJCp7rbC45VfsNRVN6iOu0NGxaXchVucAtNliKM=",
+            "id": "rs_0652a5f4cc1ca0f7016aaa58a2390487d2a86d897aca783b32",
+            "status": null,
+            "summary": [],
+            "type": "reasoning"
+          },
+          {
+            "content": [
+              {
+                "annotations": [],
+                "logprobs": [],
+                "text": "{\"relationships\":[{\"id\":\"r1\",\"source_entity_id\":\"mid-atlantic-ridge\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"divergent-boundary\",\"statement\":\"The Mid-Atlantic Ridge is described as one of the best-known divergent boundaries.\",\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"r2\",\"source_entity_id\":\"mid-atlantic-ridge\",\"relationship_type\":\"PART_OF\",\"target_entity_id\":\"global-mid-ocean-ridge-system\",\"statement\":\"The Mid-Atlantic Ridge is one segment of the global mid-ocean ridge system.\",\"confidence\":1,\"origin\":\"SOURCE\"},{\"id\":\"r3\",\"source_entity_id\":\"magma\",\"relationship_type\":\"CAUSES\",\"target_entity_id\":\"new-crust\",\"statement\":\"Magma pushing up from the mantle creates new crust at spreading centers.\",\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"r4\",\"source_entity_id\":\"seafloor-spreading\",\"relationship_type\":\"CAUSES\",\"target_entity_id\":\"plate-movement\",\"statement\":\"Seafloor spreading over millions of years has resulted in plate movement of thousands of kilometers.\",\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"r5\",\"source_entity_id\":\"seafloor-spreading\",\"relationship_type\":\"CAUSES\",\"target_entity_id\":\"atlantic-ocean\",\"statement\":\"Seafloor spreading caused the Atlantic Ocean to grow from a small inlet into its present vast ocean.\",\"confidence\":1,\"origin\":\"SOURCE\"},{\"id\":\"r6\",\"source_entity_id\":\"plate-movement\",\"relationship_type\":\"CAUSES\",\"target_entity_id\":\"ground-crack\",\"statement\":\"The consequences of plate movement include widening existing ground cracks and the appearance of new ones around Krafla Volcano.\",\"confidence\":0.94,\"origin\":\"SOURCE\"},{\"id\":\"r7\",\"source_entity_id\":\"rifting\",\"relationship_type\":\"CAUSES\",\"target_entity_id\":\"ground-displacement\",\"statement\":\"The displacements at Krafla were caused by rifting.\",\"confidence\":1,\"origin\":\"SOURCE\"},{\"id\":\"r8\",\"source_entity_id\":\"ground-displacement\",\"relationship_type\":\"PRECEDES\",\"target_entity_id\":\"eruption\",\"statement\":\"Ground rise and abrupt dropping signalled an impending eruption.\",\"confidence\":0.93,\"origin\":\"SOURCE\"},{\"id\":\"r9\",\"source_entity_id\":\"seafloor-spreading\",\"relationship_type\":\"CAUSES\",\"target_entity_id\":\"red-sea\",\"statement\":\"Spreading processes tore Saudi Arabia away from the rest of Africa, forming the Red Sea.\",\"confidence\":0.97,\"origin\":\"SOURCE\"},{\"id\":\"r10\",\"source_entity_id\":\"continental-crust\",\"relationship_type\":\"CAUSES\",\"target_entity_id\":\"tension-crack\",\"statement\":\"When continental crust stretches beyond its limits, tension cracks appear on Earth's surface.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r11\",\"source_entity_id\":\"magma\",\"relationship_type\":\"EXERTS_FORCE_ON\",\"target_entity_id\":\"continental-crust\",\"statement\":\"Rising magma puts more pressure on the crust.\",\"confidence\":0.9,\"origin\":\"SOURCE\"},{\"id\":\"r12\",\"source_entity_id\":\"magma\",\"relationship_type\":\"CAUSES\",\"target_entity_id\":\"fracture\",\"statement\":\"Magma pressure produces additional fractures in the crust.\",\"confidence\":0.96,\"origin\":\"SOURCE\"},{\"id\":\"r13\",\"source_entity_id\":\"fracture\",\"relationship_type\":\"CAUSES\",\"target_entity_id\":\"rift-zone\",\"statement\":\"Crustal fractures contribute ultimately to the formation of a rift zone.\",\"confidence\":0.88,\"origin\":\"SOURCE\"}],\"comparison_conditions\":[],\"transfer_events\":[],\"missing_symbols\":[]}",
+                "type": "output_text"
+              }
+            ],
+            "id": "msg_0652a5f4cc1ca0f7016aaa58a73a0887d28874781a3cde0a21",
+            "phase": "final_answer",
+            "role": "assistant",
+            "status": "completed",
+            "type": "message"
+          }
+        ],
+        "parallel_tool_calls": true,
+        "presence_penalty": 0.0,
+        "previous_response_id": null,
+        "prompt": null,
+        "prompt_cache_key": null,
+        "prompt_cache_options": null,
+        "prompt_cache_retention": "24h",
+        "reasoning": {
+          "context": "all_turns",
+          "effort": "low",
+          "generate_summary": null,
+          "mode": "standard",
+          "summary": null
+        },
+        "safety_identifier": null,
+        "service_tier": "default",
+        "status": "completed",
+        "store": false,
+        "temperature": 1.0,
+        "text": {
+          "format": {
+            "description": null,
+            "name": "candidate_b_v2_semantic_structure",
+            "schema_": {
+              "additionalProperties": false,
+              "properties": {
+                "comparison_conditions": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "comparison_operator": {
+                        "enum": [
+                          "GREATER_THAN"
+                        ],
+                        "type": "string"
+                      },
+                      "confidence": {
+                        "maximum": 1,
+                        "minimum": 0,
+                        "type": "number"
+                      },
+                      "left_operand_entity_id": {
+                        "enum": [
+                          "africa",
+                          "african-plate",
+                          "americas",
+                          "arabian-plate",
+                          "atlantic-ocean",
+                          "continental-crust",
+                          "divergent-boundary",
+                          "earth",
+                          "east-african-rift-zone",
+                          "eruption",
+                          "eurasian-plate",
+                          "europe",
+                          "fracture",
+                          "global-mid-ocean-ridge-system",
+                          "ground-crack",
+                          "ground-displacement",
+                          "gulf-of-aden",
+                          "iceland",
+                          "krafla-fissure-zone",
+                          "krafla-volcano",
+                          "magma",
+                          "mantle",
+                          "mid-atlantic-ridge",
+                          "new-crust",
+                          "north-american-plate",
+                          "oceanic-crust",
+                          "plate",
+                          "plate-movement",
+                          "red-sea",
+                          "ridge-crest",
+                          "rift-zone",
+                          "rifting",
+                          "rifting-event",
+                          "saudi-arabia",
+                          "seafloor-spreading",
+                          "spreading-center",
+                          "spreading-rate",
+                          "tension-crack",
+                          "triple-junction",
+                          "volcanic-activity",
+                          "volcano"
+                        ],
+                        "type": "string"
+                      },
+                      "origin": {
+                        "enum": [
+                          "SOURCE",
+                          "INFERRED"
+                        ],
+                        "type": "string"
+                      },
+                      "outcome_entity_id": {
+                        "enum": [
+                          "africa",
+                          "african-plate",
+                          "americas",
+                          "arabian-plate",
+                          "atlantic-ocean",
+                          "continental-crust",
+                          "divergent-boundary",
+                          "earth",
+                          "east-african-rift-zone",
+                          "eruption",
+                          "eurasian-plate",
+                          "europe",
+                          "fracture",
+                          "global-mid-ocean-ridge-system",
+                          "ground-crack",
+                          "ground-displacement",
+                          "gulf-of-aden",
+                          "iceland",
+                          "krafla-fissure-zone",
+                          "krafla-volcano",
+                          "magma",
+                          "mantle",
+                          "mid-atlantic-ridge",
+                          "new-crust",
+                          "north-american-plate",
+                          "oceanic-crust",
+                          "plate",
+                          "plate-movement",
+                          "red-sea",
+                          "ridge-crest",
+                          "rift-zone",
+                          "rifting",
+                          "rifting-event",
+                          "saudi-arabia",
+                          "seafloor-spreading",
+                          "spreading-center",
+                          "spreading-rate",
+                          "tension-crack",
+                          "triple-junction",
+                          "volcanic-activity",
+                          "volcano"
+                        ],
+                        "type": "string"
+                      },
+                      "proposition_type": {
+                        "enum": [
+                          "COMPARISON_CONDITION"
+                        ],
+                        "type": "string"
+                      },
+                      "relationship_type": {
+                        "enum": [
+                          "CAUSES"
+                        ],
+                        "type": "string"
+                      },
+                      "right_operand_entity_id": {
+                        "enum": [
+                          "africa",
+                          "african-plate",
+                          "americas",
+                          "arabian-plate",
+                          "atlantic-ocean",
+                          "continental-crust",
+                          "divergent-boundary",
+                          "earth",
+                          "east-african-rift-zone",
+                          "eruption",
+                          "eurasian-plate",
+                          "europe",
+                          "fracture",
+                          "global-mid-ocean-ridge-system",
+                          "ground-crack",
+                          "ground-displacement",
+                          "gulf-of-aden",
+                          "iceland",
+                          "krafla-fissure-zone",
+                          "krafla-volcano",
+                          "magma",
+                          "mantle",
+                          "mid-atlantic-ridge",
+                          "new-crust",
+                          "north-american-plate",
+                          "oceanic-crust",
+                          "plate",
+                          "plate-movement",
+                          "red-sea",
+                          "ridge-crest",
+                          "rift-zone",
+                          "rifting",
+                          "rifting-event",
+                          "saudi-arabia",
+                          "seafloor-spreading",
+                          "spreading-center",
+                          "spreading-rate",
+                          "tension-crack",
+                          "triple-junction",
+                          "volcanic-activity",
+                          "volcano"
+                        ],
+                        "type": "string"
+                      },
+                      "statement": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "statement",
+                      "confidence",
+                      "origin",
+                      "proposition_type",
+                      "left_operand_entity_id",
+                      "right_operand_entity_id",
+                      "outcome_entity_id",
+                      "relationship_type",
+                      "comparison_operator"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                "missing_symbols": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "reason": {
+                        "type": "string"
+                      },
+                      "semantic_item": {
+                        "type": "string"
+                      },
+                      "surface_form": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "surface_form",
+                      "semantic_item",
+                      "reason"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                "relationships": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "confidence": {
+                        "maximum": 1,
+                        "minimum": 0,
+                        "type": "number"
+                      },
+                      "id": {
+                        "type": "string"
+                      },
+                      "origin": {
+                        "enum": [
+                          "SOURCE",
+                          "INFERRED"
+                        ],
+                        "type": "string"
+                      },
+                      "relationship_type": {
+                        "enum": [
+                          "IS_A",
+                          "PART_OF",
+                          "CAUSES",
+                          "INCREASES",
+                          "DECREASES",
+                          "ENABLES",
+                          "REQUIRES",
+                          "CONSTRAINS",
+                          "PRECEDES",
+                          "TRANSFORMS_INTO",
+                          "INTERACTS_WITH",
+                          "MEASURED_BY",
+                          "EXAMPLE_OF",
+                          "CONTRADICTS",
+                          "CREATES",
+                          "INDUCES",
+                          "EXERTS_FORCE_ON",
+                          "AFFECTS",
+                          "BINDS_TO",
+                          "TRANSFERS_TO"
+                        ],
+                        "type": "string"
+                      },
+                      "source_entity_id": {
+                        "enum": [
+                          "africa",
+                          "african-plate",
+                          "americas",
+                          "arabian-plate",
+                          "atlantic-ocean",
+                          "continental-crust",
+                          "divergent-boundary",
+                          "earth",
+                          "east-african-rift-zone",
+                          "eruption",
+                          "eurasian-plate",
+                          "europe",
+                          "fracture",
+                          "global-mid-ocean-ridge-system",
+                          "ground-crack",
+                          "ground-displacement",
+                          "gulf-of-aden",
+                          "iceland",
+                          "krafla-fissure-zone",
+                          "krafla-volcano",
+                          "magma",
+                          "mantle",
+                          "mid-atlantic-ridge",
+                          "new-crust",
+                          "north-american-plate",
+                          "oceanic-crust",
+                          "plate",
+                          "plate-movement",
+                          "red-sea",
+                          "ridge-crest",
+                          "rift-zone",
+                          "rifting",
+                          "rifting-event",
+                          "saudi-arabia",
+                          "seafloor-spreading",
+                          "spreading-center",
+                          "spreading-rate",
+                          "tension-crack",
+                          "triple-junction",
+                          "volcanic-activity",
+                          "volcano"
+                        ],
+                        "type": "string"
+                      },
+                      "statement": {
+                        "type": "string"
+                      },
+                      "target_entity_id": {
+                        "enum": [
+                          "africa",
+                          "african-plate",
+                          "americas",
+                          "arabian-plate",
+                          "atlantic-ocean",
+                          "continental-crust",
+                          "divergent-boundary",
+                          "earth",
+                          "east-african-rift-zone",
+                          "eruption",
+                          "eurasian-plate",
+                          "europe",
+                          "fracture",
+                          "global-mid-ocean-ridge-system",
+                          "ground-crack",
+                          "ground-displacement",
+                          "gulf-of-aden",
+                          "iceland",
+                          "krafla-fissure-zone",
+                          "krafla-volcano",
+                          "magma",
+                          "mantle",
+                          "mid-atlantic-ridge",
+                          "new-crust",
+                          "north-american-plate",
+                          "oceanic-crust",
+                          "plate",
+                          "plate-movement",
+                          "red-sea",
+                          "ridge-crest",
+                          "rift-zone",
+                          "rifting",
+                          "rifting-event",
+                          "saudi-arabia",
+                          "seafloor-spreading",
+                          "spreading-center",
+                          "spreading-rate",
+                          "tension-crack",
+                          "triple-junction",
+                          "volcanic-activity",
+                          "volcano"
+                        ],
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "source_entity_id",
+                      "relationship_type",
+                      "target_entity_id",
+                      "statement",
+                      "confidence",
+                      "origin"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                "transfer_events": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "comparison_operator": {
+                        "type": "null"
+                      },
+                      "confidence": {
+                        "maximum": 1,
+                        "minimum": 0,
+                        "type": "number"
+                      },
+                      "destination_entity_id": {
+                        "enum": [
+                          "africa",
+                          "african-plate",
+                          "americas",
+                          "arabian-plate",
+                          "atlantic-ocean",
+                          "continental-crust",
+                          "divergent-boundary",
+                          "earth",
+                          "east-african-rift-zone",
+                          "eurasian-plate",
+                          "europe",
+                          "fracture",
+                          "global-mid-ocean-ridge-system",
+                          "ground-crack",
+                          "gulf-of-aden",
+                          "iceland",
+                          "krafla-fissure-zone",
+                          "krafla-volcano",
+                          "magma",
+                          "mantle",
+                          "mid-atlantic-ridge",
+                          "new-crust",
+                          "north-american-plate",
+                          "oceanic-crust",
+                          "plate",
+                          "red-sea",
+                          "ridge-crest",
+                          "rift-zone",
+                          "saudi-arabia",
+                          "spreading-center",
+                          "spreading-rate",
+                          "tension-crack",
+                          "triple-junction",
+                          "volcano"
+                        ],
+                        "type": "string"
+                      },
+                      "event_entity_id": {
+                        "enum": [
+                          "eruption",
+                          "ground-displacement",
+                          "plate-movement",
+                          "rifting",
+                          "rifting-event",
+                          "seafloor-spreading",
+                          "volcanic-activity"
+                        ],
+                        "type": "string"
+                      },
+                      "object_entity_id": {
+                        "enum": [
+                          "africa",
+                          "african-plate",
+                          "americas",
+                          "arabian-plate",
+                          "atlantic-ocean",
+                          "continental-crust",
+                          "divergent-boundary",
+                          "earth",
+                          "east-african-rift-zone",
+                          "eruption",
+                          "eurasian-plate",
+                          "europe",
+                          "fracture",
+                          "global-mid-ocean-ridge-system",
+                          "ground-crack",
+                          "ground-displacement",
+                          "gulf-of-aden",
+                          "iceland",
+                          "krafla-fissure-zone",
+                          "krafla-volcano",
+                          "magma",
+                          "mantle",
+                          "mid-atlantic-ridge",
+                          "new-crust",
+                          "north-american-plate",
+                          "oceanic-crust",
+                          "plate",
+                          "plate-movement",
+                          "red-sea",
+                          "ridge-crest",
+                          "rift-zone",
+                          "rifting",
+                          "rifting-event",
+                          "saudi-arabia",
+                          "seafloor-spreading",
+                          "spreading-center",
+                          "spreading-rate",
+                          "tension-crack",
+                          "triple-junction",
+                          "volcanic-activity",
+                          "volcano"
+                        ],
+                        "type": "string"
+                      },
+                      "origin": {
+                        "enum": [
+                          "SOURCE",
+                          "INFERRED"
+                        ],
+                        "type": "string"
+                      },
+                      "proposition_type": {
+                        "enum": [
+                          "TRANSFER_EVENT"
+                        ],
+                        "type": "string"
+                      },
+                      "relationship_type": {
+                        "enum": [
+                          "TRANSFERS_TO"
+                        ],
+                        "type": "string"
+                      },
+                      "statement": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "statement",
+                      "confidence",
+                      "origin",
+                      "proposition_type",
+                      "event_entity_id",
+                      "object_entity_id",
+                      "destination_entity_id",
+                      "relationship_type",
+                      "comparison_operator"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                }
+              },
+              "required": [
+                "relationships",
+                "comparison_conditions",
+                "transfer_events",
+                "missing_symbols"
+              ],
+              "type": "object"
+            },
+            "strict": true,
+            "type": "json_schema"
+          },
+          "verbosity": "medium"
+        },
+        "tool_choice": "auto",
+        "tool_usage": {
+          "image_gen": {
+            "input_tokens": 0,
+            "input_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            },
+            "output_tokens": 0,
+            "output_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            },
+            "total_tokens": 0
+          },
+          "web_search": {
+            "num_requests": 0
+          }
+        },
+        "tools": [],
+        "top_logprobs": 0,
+        "top_p": 0.98,
+        "truncation": "disabled",
+        "usage": {
+          "input_tokens": 6204,
+          "input_tokens_details": {
+            "cache_write_tokens": 6201,
+            "cached_tokens": 0
+          },
+          "output_tokens": 1730,
+          "output_tokens_details": {
+            "reasoning_tokens": 982
+          },
+          "total_tokens": 7934
+        },
+        "user": null
+      },
+      "stage": "SEMANTIC_STRUCTURE"
+    },
+    {
+      "provider_metadata": {
+        "actual_model": "gpt-5.6-luna",
+        "candidate_version": "spec-051-candidate-b-v2",
+        "duration_ms": 19111.585125006968,
+        "hidden_retries": 0,
+        "http_request_id": "req_7a7eeb12ccd44fe4aff15e39bcbf91c1",
+        "prompt_sha256": "a450efcc629ab3a28bb1357f5139dc343e62c4cf9772a497e7b7f1c65dedd97f",
+        "prompt_version": "spec-051-claim-evidence-binding-v2",
+        "provider": "openai",
+        "provider_response_id": "resp_0aa82fafa24c9b41016aaa58acc83887d2842259a7eb7502ea",
+        "repair_calls": 0,
+        "requested_model": "gpt-5.6-luna",
+        "schema_name": "candidate_b_v2_claim_evidence_binding",
+        "schema_sha256": "0d2d8a43292ad6f5f4851cb13203df027f1648e34e07f9dc932d3cdb36383207",
+        "sdk_retries": 0,
+        "semantic_retries": 0,
+        "stage": "CLAIM_EVIDENCE_BINDING",
+        "store": false,
+        "upstream_input_sha256": "9151b298123399b8366a11633dfbb81e86ee57c65720ab798ec32ef825cece16",
+        "usage": {
+          "input_tokens": 3628,
+          "output_tokens": 2228,
+          "total_tokens": 5856
+        }
+      },
+      "raw_proposal": {
+        "claims": [
+          {
+            "confidence": 0.98,
+            "evidence": [
+              {
+                "quote": "Perhaps the best known of the divergent boundaries is the Mid-Atlantic Ridge."
+              }
+            ],
+            "id": "c1",
+            "origin": "SOURCE",
+            "statement": "The Mid-Atlantic Ridge is described as one of the best-known divergent boundaries."
+          },
+          {
+            "confidence": 1.0,
+            "evidence": [
+              {
+                "quote": "This submerged mountain range, which extends from the Arctic Ocean to beyond the southern tip of Africa, is but one segment of the global mid-ocean ridge system that encircles the Earth."
+              }
+            ],
+            "id": "c2",
+            "origin": "SOURCE",
+            "statement": "The Mid-Atlantic Ridge is one segment of the global mid-ocean ridge system."
+          },
+          {
+            "confidence": 0.98,
+            "evidence": [
+              {
+                "quote": "Divergent boundaries occur along spreading centers where plates are moving apart and new crust is created by magma pushing up from the mantle."
+              }
+            ],
+            "id": "c3",
+            "origin": "SOURCE",
+            "statement": "Magma pushing up from the mantle creates new crust at spreading centers."
+          },
+          {
+            "confidence": 0.98,
+            "evidence": [
+              {
+                "quote": "This rate may seem slow by human standards, but because this process has been going on for millions of years, it has resulted in plate movement of thousands of kilometers."
+              }
+            ],
+            "id": "c4",
+            "origin": "SOURCE",
+            "statement": "Seafloor spreading over millions of years has resulted in plate movement of thousands of kilometers."
+          },
+          {
+            "confidence": 1.0,
+            "evidence": [
+              {
+                "quote": "Seafloor spreading over the past 100 to 200 million years has caused the Atlantic Ocean to grow from a tiny inlet of water between the continents of Europe, Africa, and the Americas into the vast ocean that exists today."
+              }
+            ],
+            "id": "c5",
+            "origin": "SOURCE",
+            "statement": "Seafloor spreading caused the Atlantic Ocean to grow from a small inlet into its present vast ocean."
+          },
+          {
+            "confidence": 0.94,
+            "evidence": [
+              {
+                "quote": "Here, existing ground cracks have widened and new ones appear every few months."
+              }
+            ],
+            "id": "c6",
+            "origin": "SOURCE",
+            "statement": "The consequences of plate movement include widening existing ground cracks and the appearance of new ones around Krafla Volcano."
+          },
+          {
+            "confidence": 0.98,
+            "evidence": [
+              {
+                "quote": "Between 1975 and 1984, the displacements caused by rifting totalled about 7 m."
+              }
+            ],
+            "id": "c7",
+            "origin": "SOURCE",
+            "statement": "The displacements at Krafla were caused by rifting."
+          },
+          {
+            "confidence": 0.93,
+            "evidence": [
+              {
+                "quote": "the ground would gradually rise 1-2 m before abruptly dropping, signalling an impending eruption."
+              }
+            ],
+            "id": "c8",
+            "origin": "SOURCE",
+            "statement": "Ground rise and abrupt dropping signalled an impending eruption."
+          },
+          {
+            "confidence": 0.97,
+            "evidence": [
+              {
+                "quote": "In East Africa, spreading processes have already torn Saudi Arabia away from the rest of the African continent, forming the Red Sea."
+              }
+            ],
+            "id": "c9",
+            "origin": "SOURCE",
+            "statement": "Spreading processes tore Saudi Arabia away from the rest of Africa, forming the Red Sea."
+          },
+          {
+            "confidence": 1.0,
+            "evidence": [
+              {
+                "quote": "When the continental crust stretches beyond its limits, tension cracks begin to appear on the Earth's surface."
+              }
+            ],
+            "id": "c10",
+            "origin": "SOURCE",
+            "statement": "When continental crust stretches beyond its limits, tension cracks appear on Earth's surface."
+          },
+          {
+            "confidence": 0.9,
+            "evidence": [
+              {
+                "quote": "The rising magma, whether or not it erupts, puts more pressure on the crust to produce additional fractures and, ultimately, the rift zone."
+              }
+            ],
+            "id": "c11",
+            "origin": "SOURCE",
+            "statement": "Rising magma puts more pressure on the crust."
+          },
+          {
+            "confidence": 0.96,
+            "evidence": [
+              {
+                "quote": "The rising magma, whether or not it erupts, puts more pressure on the crust to produce additional fractures and, ultimately, the rift zone."
+              }
+            ],
+            "id": "c12",
+            "origin": "SOURCE",
+            "statement": "Magma pressure produces additional fractures in the crust."
+          },
+          {
+            "confidence": 0.88,
+            "evidence": [
+              {
+                "quote": "The rising magma, whether or not it erupts, puts more pressure on the crust to produce additional fractures and, ultimately, the rift zone."
+              }
+            ],
+            "id": "c13",
+            "origin": "SOURCE",
+            "statement": "Crustal fractures contribute ultimately to the formation of a rift zone."
+          },
+          {
+            "confidence": 1.0,
+            "evidence": [
+              {
+                "quote": "The rate of spreading along the Mid-Atlantic Ridge averages about 2.5 centimeters per year (cm/yr), or 25 km in a million years."
+              }
+            ],
+            "id": "c14",
+            "origin": "SOURCE",
+            "statement": "The spreading rate along the Mid-Atlantic Ridge averages about 2.5 centimeters per year, or 25 kilometers in a million years."
+          },
+          {
+            "confidence": 1.0,
+            "evidence": [
+              {
+                "quote": "The volcanic country of Iceland, which straddles the Mid-Atlantic Ridge, offers scientists a natural laboratory for studying on land the processes also occurring along the submerged parts of a spreading ridge."
+              }
+            ],
+            "id": "c15",
+            "origin": "SOURCE",
+            "statement": "Iceland straddles the Mid-Atlantic Ridge and provides a natural laboratory for studying spreading processes on land."
+          },
+          {
+            "confidence": 1.0,
+            "evidence": [
+              {
+                "quote": "Iceland is splitting along the spreading center between the North American and Eurasian Plates, as North America moves westward relative to Eurasia."
+              }
+            ],
+            "id": "c16",
+            "origin": "SOURCE",
+            "statement": "Iceland is splitting along the spreading center between the North American and Eurasian Plates."
+          },
+          {
+            "confidence": 1.0,
+            "evidence": [
+              {
+                "quote": "From 1975 to 1984, numerous episodes of rifting (surface cracking) took place along the Krafla fissure zone."
+              }
+            ],
+            "id": "c17",
+            "origin": "SOURCE",
+            "statement": "Numerous episodes of rifting took place along the Krafla fissure zone from 1975 to 1984."
+          },
+          {
+            "confidence": 0.99,
+            "evidence": [
+              {
+                "quote": "Some of these rifting events were accompanied by volcanic activity;"
+              }
+            ],
+            "id": "c18",
+            "origin": "SOURCE",
+            "statement": "Some rifting events were accompanied by volcanic activity."
+          },
+          {
+            "confidence": 1.0,
+            "evidence": [
+              {
+                "quote": "The actively splitting African Plate and the Arabian Plate meet in what geologists call a triple junction, where the Red Sea meets the Gulf of Aden."
+              }
+            ],
+            "id": "c19",
+            "origin": "SOURCE",
+            "statement": "The actively splitting African Plate and Arabian Plate meet at a triple junction where the Red Sea meets the Gulf of Aden."
+          },
+          {
+            "confidence": 0.99,
+            "evidence": [
+              {
+                "quote": "A new spreading center may be developing under Africa along the East African Rift Zone."
+              }
+            ],
+            "id": "c20",
+            "origin": "SOURCE",
+            "statement": "A new spreading center may be developing under Africa along the East African Rift Zone."
+          },
+          {
+            "confidence": 1.0,
+            "evidence": [
+              {
+                "quote": "Magma rises and squeezes through the widening cracks, sometimes to erupt and form volcanoes."
+              }
+            ],
+            "id": "c21",
+            "origin": "SOURCE",
+            "statement": "Magma can squeeze through widening cracks and sometimes erupt to form volcanoes."
+          },
+          {
+            "confidence": 0.98,
+            "evidence": [
+              {
+                "quote": "Picture two giant conveyor belts, facing each other but slowly moving in opposite directions as they transport newly formed oceanic crust away from the ridge crest."
+              }
+            ],
+            "id": "c22",
+            "origin": "SOURCE",
+            "statement": "Newly formed oceanic crust is transported away from the ridge crest as plates move in opposite directions."
+          }
+        ],
+        "semantic_evidence_bindings": [
+          {
+            "evidence": [
+              {
+                "quote": "Perhaps the best known of the divergent boundaries is the Mid-Atlantic Ridge."
+              }
+            ],
+            "semantic_object_id": "r1"
+          },
+          {
+            "evidence": [
+              {
+                "quote": "This submerged mountain range, which extends from the Arctic Ocean to beyond the southern tip of Africa, is but one segment of the global mid-ocean ridge system that encircles the Earth."
+              }
+            ],
+            "semantic_object_id": "r2"
+          },
+          {
+            "evidence": [
+              {
+                "quote": "Divergent boundaries occur along spreading centers where plates are moving apart and new crust is created by magma pushing up from the mantle."
+              }
+            ],
+            "semantic_object_id": "r3"
+          },
+          {
+            "evidence": [
+              {
+                "quote": "This rate may seem slow by human standards, but because this process has been going on for millions of years, it has resulted in plate movement of thousands of kilometers."
+              }
+            ],
+            "semantic_object_id": "r4"
+          },
+          {
+            "evidence": [
+              {
+                "quote": "Seafloor spreading over the past 100 to 200 million years has caused the Atlantic Ocean to grow from a tiny inlet of water between the continents of Europe, Africa, and the Americas into the vast ocean that exists today."
+              }
+            ],
+            "semantic_object_id": "r5"
+          },
+          {
+            "evidence": [
+              {
+                "quote": "Here, existing ground cracks have widened and new ones appear every few months."
+              }
+            ],
+            "semantic_object_id": "r6"
+          },
+          {
+            "evidence": [
+              {
+                "quote": "Between 1975 and 1984, the displacements caused by rifting totalled about 7 m."
+              }
+            ],
+            "semantic_object_id": "r7"
+          },
+          {
+            "evidence": [
+              {
+                "quote": "the ground would gradually rise 1-2 m before abruptly dropping, signalling an impending eruption."
+              }
+            ],
+            "semantic_object_id": "r8"
+          },
+          {
+            "evidence": [
+              {
+                "quote": "In East Africa, spreading processes have already torn Saudi Arabia away from the rest of the African continent, forming the Red Sea."
+              }
+            ],
+            "semantic_object_id": "r9"
+          },
+          {
+            "evidence": [
+              {
+                "quote": "When the continental crust stretches beyond its limits, tension cracks begin to appear on the Earth's surface."
+              }
+            ],
+            "semantic_object_id": "r10"
+          },
+          {
+            "evidence": [
+              {
+                "quote": "The rising magma, whether or not it erupts, puts more pressure on the crust to produce additional fractures and, ultimately, the rift zone."
+              }
+            ],
+            "semantic_object_id": "r11"
+          },
+          {
+            "evidence": [
+              {
+                "quote": "The rising magma, whether or not it erupts, puts more pressure on the crust to produce additional fractures and, ultimately, the rift zone."
+              }
+            ],
+            "semantic_object_id": "r12"
+          },
+          {
+            "evidence": [
+              {
+                "quote": "The rising magma, whether or not it erupts, puts more pressure on the crust to produce additional fractures and, ultimately, the rift zone."
+              }
+            ],
+            "semantic_object_id": "r13"
+          }
+        ]
+      },
+      "raw_provider_response": {
+        "background": false,
+        "billing": {
+          "payer": "developer"
+        },
+        "completed_at": 1789548735.0,
+        "conversation": null,
+        "created_at": 1789548716.0,
+        "error": null,
+        "frequency_penalty": 0.0,
+        "id": "resp_0aa82fafa24c9b41016aaa58acc83887d2842259a7eb7502ea",
+        "incomplete_details": null,
+        "instructions": "You perform Stage 3 claim and evidence binding.\n\nThe user supplies an immutable entity inventory, immutable semantic structure, and the\nexact source. You may add learner-useful claims and bind exact source evidence to the\nsupplied relationship/proposition IDs. You must not add, delete, rename, reorder, or alter\nentities, relationships, propositions, predicates, directions, role bindings, statements,\nconfidence, or origin. Return no semantic topology.\n\nEvery SOURCE claim and SOURCE semantic object must cite one or more exact, verbatim,\nuniquely occurring substrings from the supplied source. Use a complete clause or sentence\nlong enough to occur exactly once. Never paraphrase a quote or remove text from inside it.\nINFERRED claims and semantic objects must have no source evidence. Do not fabricate\nevidence or use external knowledge.\n\nReturn only claims and semantic_evidence_bindings in the requested schema.\n\nCandidate B v2 semantic omission invariant: independently preserve source-supported,\nlearner-useful meanings as exact grounded claims even when Stage 2 emitted no relationship\nor proposition for them. Do not convert a claim into topology or alter the frozen Stage-2\nstructure. A claim must cite exact, uniquely occurring source text.",
+        "max_output_tokens": null,
+        "max_tool_calls": null,
+        "metadata": {},
+        "model": "gpt-5.6-luna",
+        "moderation": null,
+        "object": "response",
+        "output": [
+          {
+            "content": [],
+            "encrypted_content": "gAAAAABqqli_J4SosTEqn8S7oZeTnCTTb0kCmHZbUyL63xoS_dpNPqXV4OB06p_Ipx8AiqvG9nPIkKG6hx3BEkjvycs57lMYXekRhRhOtGXrwUj19C17Y-B4hYTH-nNJ-O6rU7FLVWPLmQQqZ7GCv5rUe_MgU7-y6aCywfUmR3FY7ETRn7eWSZklVKU7aDSO_qe2WkZtUosJsm2iw-LPt2g-FF0KjwHn81qVqm7uLMdOU4Wnt2j5jm7HN7aCh-4GmhyA_RwEZfBTsKI_feXkdgDUUFQ8meKJ3P40m47hS2WnRFeByqvGsWGzCE7Ft1vb4KmDo7w-6WknVErSHohOecL6w3ZVh0cy_FfCT5ylXbaPeFzSxI-1PjFZSK56CJQUbx6M4UlvIIHYkr1yMHdynzIy6DvegA6lZqKxy7_zV5xJTFhPsFOx95IhN1JU9uQXEcWa1myyQ6OO62dGuvbns4x28XWUctNB8KH-LU9Wn9jbAItkhLU9N9I8HjCalb9YQJ9PTRjy9Lfw786mMA1-4Jy4lFdtvotheGzgiGUaFoOIhwpW9reZPiO6ZYbK449QLJ76pRbMLpARdS-ASNAHXLvTokGwSfruipiEQTVBAd7KZoGpJSaC2EcfEsbtNv6JTwJaeKCekPY-cEMf98uaRI0BaoGZXlx94_0nelQCCqUjN1_JH5K4Hfz1mwMy8amKS6MkKsflUh5Pf3J9KEyyMk-KwKB-FsZqvgaIjJNzCsznDhJOZcw-dGJgvPVCvJEqNyy4EI3es7jSvFRJWV91cFQPKT2vMOgRnkgIp1UXP9mprzEoOOaNlVvS7C_BSZ9nOUZVWB585-5whSllvmHf6Tah_4-boBEoGv2pRNkCmUWwR9QWTFvynMCAIf-DhiHfTHVq3LQTCK6vY4kHUdox-g6-IKvBITP3SQzhTP4U6vMbaTkgHIbTZwPedBZk4jG-tp6YkaTN1PdFcYUATnenVvKnVa6d0u2ytvjMSTGcE8gfkGKWfxb8_4iwGPZ_QPuXD_he_QXDfiE77y-UNo6Mb2-QNv8YKlUzKkIY9d11bSboYNsD97QDrLSxFucruIYRGYkXmOXMpx-n5pm3AWgr4BBMrbMqHdnWPO21j4H4jEsJXJua6mFlN0SqwJDumM4Tqk0JvB-pwivkp4-AfiwzGzCzOgMnyHHnByGQy8sIXmn9DKq1VlilwsLdweNgi-dGDYHHOfhOgUntB1JVuh4kzJfjKimifPyxdKDLu0oqQMqVh2Lg9HwDAn6SMO3l2tJgqdwZwLyDi1aoeIktc1RTSqrxNH1rnvdih3MBxwAi4EeoOlY7sY2TcCNMuNJsDFYsC2LG8-ZRpdC49OQSdhJ1l5P_nPStaoVTwctjITqF-47k8Bt2aCBnPIZzkGGjuEHc3KLxCsL-a48TBhApFOBG8BiForH7DOrEboO48HpOSdiRs3hrHV6sWESMYj-vzKY5Qui7dqmVYkoy44napOJpYL1wF1xD9LDp8OXdLJ3rQys2TF1sst8kz9PEDRXHClpzUU3gmI53Y2UibACKGnUeBU_eyPlqI3PVc7p06d4IgViSAM24C4DlmRHNfPO8p-BYoyDgxNFiMwSqeHQdzh12jZENfIEY-jjdHtmjPS-ggoDVCJqz1vDsnDYOHonr_aJM__TonnqqChss9a-RmZLg5bSX1otAAY_SPPdG42sjwtBgQ2P2twHvh6aH8AIHFIDQOcX5yiYQX41TD56us-ZoX3LbTpgUzBQMjEaAqV0PHWeDz8D8eVKVB6Y73LQQUMhp_Ee_k0GNLI6BRCYXPtRI1NaqRNiEHUTptoOS_XyQ1RJzioCKr360rJycaMRxvaK-io_X95fQTWoU3igwF9-aUzZ6GnD6QRQw2ZT7z6UOLcjS4J_0aFoouTgAoFPU_pumBRh-S0XuRca4__tr_MyaGHTLcCnuZfBwZRMGq84bXQ7v6UKpTiww-Uc6WpSKspg8FmZ8Ek6-whfSyFNMpLfDqV2ldxFLDu1CIFj84zcSK4KxZQ6gPeUgi9dfFS2saTuPd9sN3UNAzq_-2taTo3DLTxePH9ozeD-rjRl4orTmI9EvGf_S3Z-MYIB-zpJkPH6M-IWlXOay7skFXliaMwEiDMlaYtAIMkEimt2p1YsWaFo1NsA8A4dPY1Ep57SQEiomUnZm-pgXiL0himx3eQZCiN6dwXQ0nC7RxeTRa-zsDgcuPqr6lQMI3he5TJXdltl97ErfAY0ZrXHDGxaXXk6xreuOr0lU8hCSnw==",
+            "id": "rs_0aa82fafa24c9b41016aaa58adda4c87d2b454a49675ab1422",
+            "status": null,
+            "summary": [],
+            "type": "reasoning"
+          },
+          {
+            "content": [
+              {
+                "annotations": [],
+                "logprobs": [],
+                "text": "{\"claims\":[{\"id\":\"c1\",\"statement\":\"The Mid-Atlantic Ridge is described as one of the best-known divergent boundaries.\",\"evidence\":[{\"quote\":\"Perhaps the best known of the divergent boundaries is the Mid-Atlantic Ridge.\"}],\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"c2\",\"statement\":\"The Mid-Atlantic Ridge is one segment of the global mid-ocean ridge system.\",\"evidence\":[{\"quote\":\"This submerged mountain range, which extends from the Arctic Ocean to beyond the southern tip of Africa, is but one segment of the global mid-ocean ridge system that encircles the Earth.\"}],\"confidence\":1.0,\"origin\":\"SOURCE\"},{\"id\":\"c3\",\"statement\":\"Magma pushing up from the mantle creates new crust at spreading centers.\",\"evidence\":[{\"quote\":\"Divergent boundaries occur along spreading centers where plates are moving apart and new crust is created by magma pushing up from the mantle.\"}],\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"c4\",\"statement\":\"Seafloor spreading over millions of years has resulted in plate movement of thousands of kilometers.\",\"evidence\":[{\"quote\":\"This rate may seem slow by human standards, but because this process has been going on for millions of years, it has resulted in plate movement of thousands of kilometers.\"}],\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"c5\",\"statement\":\"Seafloor spreading caused the Atlantic Ocean to grow from a small inlet into its present vast ocean.\",\"evidence\":[{\"quote\":\"Seafloor spreading over the past 100 to 200 million years has caused the Atlantic Ocean to grow from a tiny inlet of water between the continents of Europe, Africa, and the Americas into the vast ocean that exists today.\"}],\"confidence\":1.0,\"origin\":\"SOURCE\"},{\"id\":\"c6\",\"statement\":\"The consequences of plate movement include widening existing ground cracks and the appearance of new ones around Krafla Volcano.\",\"evidence\":[{\"quote\":\"Here, existing ground cracks have widened and new ones appear every few months.\"}],\"confidence\":0.94,\"origin\":\"SOURCE\"},{\"id\":\"c7\",\"statement\":\"The displacements at Krafla were caused by rifting.\",\"evidence\":[{\"quote\":\"Between 1975 and 1984, the displacements caused by rifting totalled about 7 m.\"}],\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"c8\",\"statement\":\"Ground rise and abrupt dropping signalled an impending eruption.\",\"evidence\":[{\"quote\":\"the ground would gradually rise 1-2 m before abruptly dropping, signalling an impending eruption.\"}],\"confidence\":0.93,\"origin\":\"SOURCE\"},{\"id\":\"c9\",\"statement\":\"Spreading processes tore Saudi Arabia away from the rest of Africa, forming the Red Sea.\",\"evidence\":[{\"quote\":\"In East Africa, spreading processes have already torn Saudi Arabia away from the rest of the African continent, forming the Red Sea.\"}],\"confidence\":0.97,\"origin\":\"SOURCE\"},{\"id\":\"c10\",\"statement\":\"When continental crust stretches beyond its limits, tension cracks appear on Earth's surface.\",\"evidence\":[{\"quote\":\"When the continental crust stretches beyond its limits, tension cracks begin to appear on the Earth's surface.\"}],\"confidence\":1.0,\"origin\":\"SOURCE\"},{\"id\":\"c11\",\"statement\":\"Rising magma puts more pressure on the crust.\",\"evidence\":[{\"quote\":\"The rising magma, whether or not it erupts, puts more pressure on the crust to produce additional fractures and, ultimately, the rift zone.\"}],\"confidence\":0.9,\"origin\":\"SOURCE\"},{\"id\":\"c12\",\"statement\":\"Magma pressure produces additional fractures in the crust.\",\"evidence\":[{\"quote\":\"The rising magma, whether or not it erupts, puts more pressure on the crust to produce additional fractures and, ultimately, the rift zone.\"}],\"confidence\":0.96,\"origin\":\"SOURCE\"},{\"id\":\"c13\",\"statement\":\"Crustal fractures contribute ultimately to the formation of a rift zone.\",\"evidence\":[{\"quote\":\"The rising magma, whether or not it erupts, puts more pressure on the crust to produce additional fractures and, ultimately, the rift zone.\"}],\"confidence\":0.88,\"origin\":\"SOURCE\"},{\"id\":\"c14\",\"statement\":\"The spreading rate along the Mid-Atlantic Ridge averages about 2.5 centimeters per year, or 25 kilometers in a million years.\",\"evidence\":[{\"quote\":\"The rate of spreading along the Mid-Atlantic Ridge averages about 2.5 centimeters per year (cm/yr), or 25 km in a million years.\"}],\"confidence\":1.0,\"origin\":\"SOURCE\"},{\"id\":\"c15\",\"statement\":\"Iceland straddles the Mid-Atlantic Ridge and provides a natural laboratory for studying spreading processes on land.\",\"evidence\":[{\"quote\":\"The volcanic country of Iceland, which straddles the Mid-Atlantic Ridge, offers scientists a natural laboratory for studying on land the processes also occurring along the submerged parts of a spreading ridge.\"}],\"confidence\":1.0,\"origin\":\"SOURCE\"},{\"id\":\"c16\",\"statement\":\"Iceland is splitting along the spreading center between the North American and Eurasian Plates.\",\"evidence\":[{\"quote\":\"Iceland is splitting along the spreading center between the North American and Eurasian Plates, as North America moves westward relative to Eurasia.\"}],\"confidence\":1.0,\"origin\":\"SOURCE\"},{\"id\":\"c17\",\"statement\":\"Numerous episodes of rifting took place along the Krafla fissure zone from 1975 to 1984.\",\"evidence\":[{\"quote\":\"From 1975 to 1984, numerous episodes of rifting (surface cracking) took place along the Krafla fissure zone.\"}],\"confidence\":1.0,\"origin\":\"SOURCE\"},{\"id\":\"c18\",\"statement\":\"Some rifting events were accompanied by volcanic activity.\",\"evidence\":[{\"quote\":\"Some of these rifting events were accompanied by volcanic activity;\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"c19\",\"statement\":\"The actively splitting African Plate and Arabian Plate meet at a triple junction where the Red Sea meets the Gulf of Aden.\",\"evidence\":[{\"quote\":\"The actively splitting African Plate and the Arabian Plate meet in what geologists call a triple junction, where the Red Sea meets the Gulf of Aden.\"}],\"confidence\":1.0,\"origin\":\"SOURCE\"},{\"id\":\"c20\",\"statement\":\"A new spreading center may be developing under Africa along the East African Rift Zone.\",\"evidence\":[{\"quote\":\"A new spreading center may be developing under Africa along the East African Rift Zone.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"c21\",\"statement\":\"Magma can squeeze through widening cracks and sometimes erupt to form volcanoes.\",\"evidence\":[{\"quote\":\"Magma rises and squeezes through the widening cracks, sometimes to erupt and form volcanoes.\"}],\"confidence\":1.0,\"origin\":\"SOURCE\"},{\"id\":\"c22\",\"statement\":\"Newly formed oceanic crust is transported away from the ridge crest as plates move in opposite directions.\",\"evidence\":[{\"quote\":\"Picture two giant conveyor belts, facing each other but slowly moving in opposite directions as they transport newly formed oceanic crust away from the ridge crest.\"}],\"confidence\":0.98,\"origin\":\"SOURCE\"}],\"semantic_evidence_bindings\":[{\"semantic_object_id\":\"r1\",\"evidence\":[{\"quote\":\"Perhaps the best known of the divergent boundaries is the Mid-Atlantic Ridge.\"}]},{\"semantic_object_id\":\"r2\",\"evidence\":[{\"quote\":\"This submerged mountain range, which extends from the Arctic Ocean to beyond the southern tip of Africa, is but one segment of the global mid-ocean ridge system that encircles the Earth.\"}]},{\"semantic_object_id\":\"r3\",\"evidence\":[{\"quote\":\"Divergent boundaries occur along spreading centers where plates are moving apart and new crust is created by magma pushing up from the mantle.\"}]},{\"semantic_object_id\":\"r4\",\"evidence\":[{\"quote\":\"This rate may seem slow by human standards, but because this process has been going on for millions of years, it has resulted in plate movement of thousands of kilometers.\"}]},{\"semantic_object_id\":\"r5\",\"evidence\":[{\"quote\":\"Seafloor spreading over the past 100 to 200 million years has caused the Atlantic Ocean to grow from a tiny inlet of water between the continents of Europe, Africa, and the Americas into the vast ocean that exists today.\"}]},{\"semantic_object_id\":\"r6\",\"evidence\":[{\"quote\":\"Here, existing ground cracks have widened and new ones appear every few months.\"}]},{\"semantic_object_id\":\"r7\",\"evidence\":[{\"quote\":\"Between 1975 and 1984, the displacements caused by rifting totalled about 7 m.\"}]},{\"semantic_object_id\":\"r8\",\"evidence\":[{\"quote\":\"the ground would gradually rise 1-2 m before abruptly dropping, signalling an impending eruption.\"}]},{\"semantic_object_id\":\"r9\",\"evidence\":[{\"quote\":\"In East Africa, spreading processes have already torn Saudi Arabia away from the rest of the African continent, forming the Red Sea.\"}]},{\"semantic_object_id\":\"r10\",\"evidence\":[{\"quote\":\"When the continental crust stretches beyond its limits, tension cracks begin to appear on the Earth's surface.\"}]},{\"semantic_object_id\":\"r11\",\"evidence\":[{\"quote\":\"The rising magma, whether or not it erupts, puts more pressure on the crust to produce additional fractures and, ultimately, the rift zone.\"}]},{\"semantic_object_id\":\"r12\",\"evidence\":[{\"quote\":\"The rising magma, whether or not it erupts, puts more pressure on the crust to produce additional fractures and, ultimately, the rift zone.\"}]},{\"semantic_object_id\":\"r13\",\"evidence\":[{\"quote\":\"The rising magma, whether or not it erupts, puts more pressure on the crust to produce additional fractures and, ultimately, the rift zone.\"}]}]}",
+                "type": "output_text"
+              }
+            ],
+            "id": "msg_0aa82fafa24c9b41016aaa58b0529887d2b860810384db4ecd",
+            "phase": "final_answer",
+            "role": "assistant",
+            "status": "completed",
+            "type": "message"
+          }
+        ],
+        "parallel_tool_calls": true,
+        "presence_penalty": 0.0,
+        "previous_response_id": null,
+        "prompt": null,
+        "prompt_cache_key": null,
+        "prompt_cache_options": null,
+        "prompt_cache_retention": "24h",
+        "reasoning": {
+          "context": "all_turns",
+          "effort": "low",
+          "generate_summary": null,
+          "mode": "standard",
+          "summary": null
+        },
+        "safety_identifier": null,
+        "service_tier": "default",
+        "status": "completed",
+        "store": false,
+        "temperature": 1.0,
+        "text": {
+          "format": {
+            "description": null,
+            "name": "candidate_b_v2_claim_evidence_binding",
+            "schema_": {
+              "additionalProperties": false,
+              "properties": {
+                "claims": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "confidence": {
+                        "maximum": 1,
+                        "minimum": 0,
+                        "type": "number"
+                      },
+                      "evidence": {
+                        "items": {
+                          "additionalProperties": false,
+                          "properties": {
+                            "quote": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "quote"
+                          ],
+                          "type": "object"
+                        },
+                        "type": "array"
+                      },
+                      "id": {
+                        "type": "string"
+                      },
+                      "origin": {
+                        "enum": [
+                          "SOURCE",
+                          "INFERRED"
+                        ],
+                        "type": "string"
+                      },
+                      "statement": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "statement",
+                      "evidence",
+                      "confidence",
+                      "origin"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                "semantic_evidence_bindings": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "evidence": {
+                        "items": {
+                          "additionalProperties": false,
+                          "properties": {
+                            "quote": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "quote"
+                          ],
+                          "type": "object"
+                        },
+                        "type": "array"
+                      },
+                      "semantic_object_id": {
+                        "enum": [
+                          "r1",
+                          "r10",
+                          "r11",
+                          "r12",
+                          "r13",
+                          "r2",
+                          "r3",
+                          "r4",
+                          "r5",
+                          "r6",
+                          "r7",
+                          "r8",
+                          "r9"
+                        ],
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "semantic_object_id",
+                      "evidence"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                }
+              },
+              "required": [
+                "claims",
+                "semantic_evidence_bindings"
+              ],
+              "type": "object"
+            },
+            "strict": true,
+            "type": "json_schema"
+          },
+          "verbosity": "medium"
+        },
+        "tool_choice": "auto",
+        "tool_usage": {
+          "image_gen": {
+            "input_tokens": 0,
+            "input_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            },
+            "output_tokens": 0,
+            "output_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            },
+            "total_tokens": 0
+          },
+          "web_search": {
+            "num_requests": 0
+          }
+        },
+        "tools": [],
+        "top_logprobs": 0,
+        "top_p": 0.98,
+        "truncation": "disabled",
+        "usage": {
+          "input_tokens": 3628,
+          "input_tokens_details": {
+            "cache_write_tokens": 3625,
+            "cached_tokens": 0
+          },
+          "output_tokens": 2228,
+          "output_tokens_details": {
+            "reasoning_tokens": 148
+          },
+          "total_tokens": 5856
+        },
+        "user": null
+      },
+      "stage": "CLAIM_EVIDENCE_BINDING"
+    }
+  ],
+  "candidate_version": "spec-051-candidate-b-v2",
+  "canonical_gate": {
+    "error_type": null,
+    "exact_failure": null,
+    "output_identity_sha256": "a66806d6ecf0ba39d96756e8e2956b397a10576650fedfc48a27403167a5edba",
+    "stage": "CANONICAL_VALIDATION",
+    "stage_version": "existing-knowledge-model-validator",
+    "status": "PASS",
+    "upstream_identity_sha256": "8273b0d33869031a0174278e4b7cc1210810d47db3233a10d2ebf71fe2ff495c"
+  },
+  "claim_evidence_binding": {
+    "candidate_version": "spec-051-candidate-b-v2",
+    "claims": [
+      {
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 386,
+            "quote": "Perhaps the best known of the divergent boundaries is the Mid-Atlantic Ridge.",
+            "start_char": 309
+          }
+        ],
+        "id": "c1",
+        "origin": "SOURCE",
+        "statement": "The Mid-Atlantic Ridge is described as one of the best-known divergent boundaries."
+      },
+      {
+        "confidence": 1.0,
+        "evidence": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 573,
+            "quote": "This submerged mountain range, which extends from the Arctic Ocean to beyond the southern tip of Africa, is but one segment of the global mid-ocean ridge system that encircles the Earth.",
+            "start_char": 387
+          }
+        ],
+        "id": "c2",
+        "origin": "SOURCE",
+        "statement": "The Mid-Atlantic Ridge is one segment of the global mid-ocean ridge system."
+      },
+      {
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 142,
+            "quote": "Divergent boundaries occur along spreading centers where plates are moving apart and new crust is created by magma pushing up from the mantle.",
+            "start_char": 0
+          }
+        ],
+        "id": "c3",
+        "origin": "SOURCE",
+        "statement": "Magma pushing up from the mantle creates new crust at spreading centers."
+      },
+      {
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 874,
+            "quote": "This rate may seem slow by human standards, but because this process has been going on for millions of years, it has resulted in plate movement of thousands of kilometers.",
+            "start_char": 703
+          }
+        ],
+        "id": "c4",
+        "origin": "SOURCE",
+        "statement": "Seafloor spreading over millions of years has resulted in plate movement of thousands of kilometers."
+      },
+      {
+        "confidence": 1.0,
+        "evidence": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 1095,
+            "quote": "Seafloor spreading over the past 100 to 200 million years has caused the Atlantic Ocean to grow from a tiny inlet of water between the continents of Europe, Africa, and the Americas into the vast ocean that exists today.",
+            "start_char": 875
+          }
+        ],
+        "id": "c5",
+        "origin": "SOURCE",
+        "statement": "Seafloor spreading caused the Atlantic Ocean to grow from a small inlet into its present vast ocean."
+      },
+      {
+        "confidence": 0.94,
+        "evidence": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 1647,
+            "quote": "Here, existing ground cracks have widened and new ones appear every few months.",
+            "start_char": 1568
+          }
+        ],
+        "id": "c6",
+        "origin": "SOURCE",
+        "statement": "The consequences of plate movement include widening existing ground cracks and the appearance of new ones around Krafla Volcano."
+      },
+      {
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 2001,
+            "quote": "Between 1975 and 1984, the displacements caused by rifting totalled about 7 m.",
+            "start_char": 1923
+          }
+        ],
+        "id": "c7",
+        "origin": "SOURCE",
+        "statement": "The displacements at Krafla were caused by rifting."
+      },
+      {
+        "confidence": 0.93,
+        "evidence": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 1922,
+            "quote": "the ground would gradually rise 1-2 m before abruptly dropping, signalling an impending eruption.",
+            "start_char": 1825
+          }
+        ],
+        "id": "c8",
+        "origin": "SOURCE",
+        "statement": "Ground rise and abrupt dropping signalled an impending eruption."
+      },
+      {
+        "confidence": 0.97,
+        "evidence": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 2135,
+            "quote": "In East Africa, spreading processes have already torn Saudi Arabia away from the rest of the African continent, forming the Red Sea.",
+            "start_char": 2003
+          }
+        ],
+        "id": "c9",
+        "origin": "SOURCE",
+        "statement": "Spreading processes tore Saudi Arabia away from the rest of Africa, forming the Red Sea."
+      },
+      {
+        "confidence": 1.0,
+        "evidence": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 2483,
+            "quote": "When the continental crust stretches beyond its limits, tension cracks begin to appear on the Earth's surface.",
+            "start_char": 2373
+          }
+        ],
+        "id": "c10",
+        "origin": "SOURCE",
+        "statement": "When continental crust stretches beyond its limits, tension cracks appear on Earth's surface."
+      },
+      {
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 2716,
+            "quote": "The rising magma, whether or not it erupts, puts more pressure on the crust to produce additional fractures and, ultimately, the rift zone.",
+            "start_char": 2577
+          }
+        ],
+        "id": "c11",
+        "origin": "SOURCE",
+        "statement": "Rising magma puts more pressure on the crust."
+      },
+      {
+        "confidence": 0.96,
+        "evidence": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 2716,
+            "quote": "The rising magma, whether or not it erupts, puts more pressure on the crust to produce additional fractures and, ultimately, the rift zone.",
+            "start_char": 2577
+          }
+        ],
+        "id": "c12",
+        "origin": "SOURCE",
+        "statement": "Magma pressure produces additional fractures in the crust."
+      },
+      {
+        "confidence": 0.88,
+        "evidence": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 2716,
+            "quote": "The rising magma, whether or not it erupts, puts more pressure on the crust to produce additional fractures and, ultimately, the rift zone.",
+            "start_char": 2577
+          }
+        ],
+        "id": "c13",
+        "origin": "SOURCE",
+        "statement": "Crustal fractures contribute ultimately to the formation of a rift zone."
+      },
+      {
+        "confidence": 1.0,
+        "evidence": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 702,
+            "quote": "The rate of spreading along the Mid-Atlantic Ridge averages about 2.5 centimeters per year (cm/yr), or 25 km in a million years.",
+            "start_char": 574
+          }
+        ],
+        "id": "c14",
+        "origin": "SOURCE",
+        "statement": "The spreading rate along the Mid-Atlantic Ridge averages about 2.5 centimeters per year, or 25 kilometers in a million years."
+      },
+      {
+        "confidence": 1.0,
+        "evidence": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 1306,
+            "quote": "The volcanic country of Iceland, which straddles the Mid-Atlantic Ridge, offers scientists a natural laboratory for studying on land the processes also occurring along the submerged parts of a spreading ridge.",
+            "start_char": 1097
+          }
+        ],
+        "id": "c15",
+        "origin": "SOURCE",
+        "statement": "Iceland straddles the Mid-Atlantic Ridge and provides a natural laboratory for studying spreading processes on land."
+      },
+      {
+        "confidence": 1.0,
+        "evidence": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 1455,
+            "quote": "Iceland is splitting along the spreading center between the North American and Eurasian Plates, as North America moves westward relative to Eurasia.",
+            "start_char": 1307
+          }
+        ],
+        "id": "c16",
+        "origin": "SOURCE",
+        "statement": "Iceland is splitting along the spreading center between the North American and Eurasian Plates."
+      },
+      {
+        "confidence": 1.0,
+        "evidence": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 1756,
+            "quote": "From 1975 to 1984, numerous episodes of rifting (surface cracking) took place along the Krafla fissure zone.",
+            "start_char": 1648
+          }
+        ],
+        "id": "c17",
+        "origin": "SOURCE",
+        "statement": "Numerous episodes of rifting took place along the Krafla fissure zone from 1975 to 1984."
+      },
+      {
+        "confidence": 0.99,
+        "evidence": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 1824,
+            "quote": "Some of these rifting events were accompanied by volcanic activity;",
+            "start_char": 1757
+          }
+        ],
+        "id": "c18",
+        "origin": "SOURCE",
+        "statement": "Some rifting events were accompanied by volcanic activity."
+      },
+      {
+        "confidence": 1.0,
+        "evidence": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 2284,
+            "quote": "The actively splitting African Plate and the Arabian Plate meet in what geologists call a triple junction, where the Red Sea meets the Gulf of Aden.",
+            "start_char": 2136
+          }
+        ],
+        "id": "c19",
+        "origin": "SOURCE",
+        "statement": "The actively splitting African Plate and Arabian Plate meet at a triple junction where the Red Sea meets the Gulf of Aden."
+      },
+      {
+        "confidence": 0.99,
+        "evidence": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 2372,
+            "quote": "A new spreading center may be developing under Africa along the East African Rift Zone.",
+            "start_char": 2285
+          }
+        ],
+        "id": "c20",
+        "origin": "SOURCE",
+        "statement": "A new spreading center may be developing under Africa along the East African Rift Zone."
+      },
+      {
+        "confidence": 1.0,
+        "evidence": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 2576,
+            "quote": "Magma rises and squeezes through the widening cracks, sometimes to erupt and form volcanoes.",
+            "start_char": 2484
+          }
+        ],
+        "id": "c21",
+        "origin": "SOURCE",
+        "statement": "Magma can squeeze through widening cracks and sometimes erupt to form volcanoes."
+      },
+      {
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 307,
+            "quote": "Picture two giant conveyor belts, facing each other but slowly moving in opposite directions as they transport newly formed oceanic crust away from the ridge crest.",
+            "start_char": 143
+          }
+        ],
+        "id": "c22",
+        "origin": "SOURCE",
+        "statement": "Newly formed oceanic crust is transported away from the ridge crest as plates move in opposite directions."
+      }
+    ],
+    "identity_sha256": "c8deac814688c79bb7c29a6289e25b25c76efa5b03685d32751befa414a9f51d",
+    "semantic_evidence_bindings": [
+      {
+        "evidence": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 386,
+            "quote": "Perhaps the best known of the divergent boundaries is the Mid-Atlantic Ridge.",
+            "start_char": 309
+          }
+        ],
+        "semantic_object_id": "r1"
+      },
+      {
+        "evidence": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 2483,
+            "quote": "When the continental crust stretches beyond its limits, tension cracks begin to appear on the Earth's surface.",
+            "start_char": 2373
+          }
+        ],
+        "semantic_object_id": "r10"
+      },
+      {
+        "evidence": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 2716,
+            "quote": "The rising magma, whether or not it erupts, puts more pressure on the crust to produce additional fractures and, ultimately, the rift zone.",
+            "start_char": 2577
+          }
+        ],
+        "semantic_object_id": "r11"
+      },
+      {
+        "evidence": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 2716,
+            "quote": "The rising magma, whether or not it erupts, puts more pressure on the crust to produce additional fractures and, ultimately, the rift zone.",
+            "start_char": 2577
+          }
+        ],
+        "semantic_object_id": "r12"
+      },
+      {
+        "evidence": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 2716,
+            "quote": "The rising magma, whether or not it erupts, puts more pressure on the crust to produce additional fractures and, ultimately, the rift zone.",
+            "start_char": 2577
+          }
+        ],
+        "semantic_object_id": "r13"
+      },
+      {
+        "evidence": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 573,
+            "quote": "This submerged mountain range, which extends from the Arctic Ocean to beyond the southern tip of Africa, is but one segment of the global mid-ocean ridge system that encircles the Earth.",
+            "start_char": 387
+          }
+        ],
+        "semantic_object_id": "r2"
+      },
+      {
+        "evidence": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 142,
+            "quote": "Divergent boundaries occur along spreading centers where plates are moving apart and new crust is created by magma pushing up from the mantle.",
+            "start_char": 0
+          }
+        ],
+        "semantic_object_id": "r3"
+      },
+      {
+        "evidence": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 874,
+            "quote": "This rate may seem slow by human standards, but because this process has been going on for millions of years, it has resulted in plate movement of thousands of kilometers.",
+            "start_char": 703
+          }
+        ],
+        "semantic_object_id": "r4"
+      },
+      {
+        "evidence": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 1095,
+            "quote": "Seafloor spreading over the past 100 to 200 million years has caused the Atlantic Ocean to grow from a tiny inlet of water between the continents of Europe, Africa, and the Americas into the vast ocean that exists today.",
+            "start_char": 875
+          }
+        ],
+        "semantic_object_id": "r5"
+      },
+      {
+        "evidence": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 1647,
+            "quote": "Here, existing ground cracks have widened and new ones appear every few months.",
+            "start_char": 1568
+          }
+        ],
+        "semantic_object_id": "r6"
+      },
+      {
+        "evidence": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 2001,
+            "quote": "Between 1975 and 1984, the displacements caused by rifting totalled about 7 m.",
+            "start_char": 1923
+          }
+        ],
+        "semantic_object_id": "r7"
+      },
+      {
+        "evidence": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 1922,
+            "quote": "the ground would gradually rise 1-2 m before abruptly dropping, signalling an impending eruption.",
+            "start_char": 1825
+          }
+        ],
+        "semantic_object_id": "r8"
+      },
+      {
+        "evidence": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 2135,
+            "quote": "In East Africa, spreading processes have already torn Saudi Arabia away from the rest of the African continent, forming the Red Sea.",
+            "start_char": 2003
+          }
+        ],
+        "semantic_object_id": "r9"
+      }
+    ]
+  },
+  "entity_inventory": {
+    "candidate_version": "spec-051-candidate-b-v2",
+    "identity_sha256": "db3eb734378ede6b57b222f8a7690e7888c80086aa000f24974de34572f669ec",
+    "immutable": true,
+    "symbol_table": {
+      "compiler_version": "spec-047-candidate-b-v1",
+      "diagnostics": {
+        "accepted_symbol_count": 41,
+        "alias_normalizations": [
+          {
+            "aliases": [
+              "African continent"
+            ],
+            "canonical_name": "Africa",
+            "merged_nomination_count": 1
+          },
+          {
+            "aliases": [
+              "surface crack"
+            ],
+            "canonical_name": "ground crack",
+            "merged_nomination_count": 1
+          },
+          {
+            "aliases": [
+              "displacement"
+            ],
+            "canonical_name": "ground displacement",
+            "merged_nomination_count": 1
+          },
+          {
+            "aliases": [
+              "spreading ridge"
+            ],
+            "canonical_name": "spreading center",
+            "merged_nomination_count": 1
+          }
+        ],
+        "candidate_version": "spec-047-candidate-b-v1",
+        "duplicate_nomination_count": 0,
+        "entity_type_counts": {
+          "COMPONENT": 0,
+          "CONCEPT": 1,
+          "OBJECT": 29,
+          "PROCESS": 7,
+          "SYSTEM": 3,
+          "VARIABLE": 1
+        },
+        "id_strategy": "NORMALIZED_ASCII_KEBAB_NAME_WITH_HASH_SUFFIX_ON_SLUG_COLLISION",
+        "ordering": "LEXICOGRAPHIC_STABLE_ENTITY_ID",
+        "raw_nomination_count": 41,
+        "rejected_nomination_count": 0,
+        "source_document_id": "text-a9539d135ff1577d",
+        "strict_duplicate_policy": "FAIL_CLOSED_NO_MERGE"
+      },
+      "entities": [
+        {
+          "aliases": [
+            "African continent"
+          ],
+          "description": "A continent bordering the Atlantic Ocean and containing the East African Rift Zone.",
+          "entity_type": "OBJECT",
+          "id": "africa",
+          "name": "Africa"
+        },
+        {
+          "aliases": [],
+          "description": "A plate described as actively splitting and meeting the Arabian Plate at a triple junction.",
+          "entity_type": "OBJECT",
+          "id": "african-plate",
+          "name": "African Plate"
+        },
+        {
+          "aliases": [],
+          "description": "The continents bordering the Atlantic Ocean in the source description.",
+          "entity_type": "OBJECT",
+          "id": "americas",
+          "name": "Americas"
+        },
+        {
+          "aliases": [],
+          "description": "A plate that meets the African Plate at the triple junction where the Red Sea meets the Gulf of Aden.",
+          "entity_type": "OBJECT",
+          "id": "arabian-plate",
+          "name": "Arabian Plate"
+        },
+        {
+          "aliases": [],
+          "description": "The ocean that grew through seafloor spreading between Europe, Africa, and the Americas.",
+          "entity_type": "OBJECT",
+          "id": "atlantic-ocean",
+          "name": "Atlantic Ocean"
+        },
+        {
+          "aliases": [],
+          "description": "Crust that can stretch beyond its limits during spreading processes.",
+          "entity_type": "OBJECT",
+          "id": "continental-crust",
+          "name": "continental crust"
+        },
+        {
+          "aliases": [],
+          "description": "A plate boundary where plates move apart and new crust is created.",
+          "entity_type": "CONCEPT",
+          "id": "divergent-boundary",
+          "name": "divergent boundary"
+        },
+        {
+          "aliases": [],
+          "description": "The planet encircled by the global mid-ocean ridge system and containing the described crust and mantle.",
+          "entity_type": "OBJECT",
+          "id": "earth",
+          "name": "Earth"
+        },
+        {
+          "aliases": [],
+          "description": "A rift zone in Africa where a new spreading center may be developing.",
+          "entity_type": "OBJECT",
+          "id": "east-african-rift-zone",
+          "name": "East African Rift Zone"
+        },
+        {
+          "aliases": [],
+          "description": "An event in which magma erupts through widening cracks and may form volcanoes.",
+          "entity_type": "PROCESS",
+          "id": "eruption",
+          "name": "eruption"
+        },
+        {
+          "aliases": [],
+          "description": "A plate on the other side of the spreading center through Iceland.",
+          "entity_type": "OBJECT",
+          "id": "eurasian-plate",
+          "name": "Eurasian Plate"
+        },
+        {
+          "aliases": [],
+          "description": "A continent bordering the Atlantic Ocean in the source description.",
+          "entity_type": "OBJECT",
+          "id": "europe",
+          "name": "Europe"
+        },
+        {
+          "aliases": [],
+          "description": "A crack produced in the crust by rising magma and pressure.",
+          "entity_type": "OBJECT",
+          "id": "fracture",
+          "name": "fracture"
+        },
+        {
+          "aliases": [],
+          "description": "A global system of mid-ocean ridges encircling Earth.",
+          "entity_type": "SYSTEM",
+          "id": "global-mid-ocean-ridge-system",
+          "name": "global mid-ocean ridge system"
+        },
+        {
+          "aliases": [
+            "surface crack"
+          ],
+          "description": "A crack in the ground that may widen or newly appear around the Krafla fissure zone.",
+          "entity_type": "OBJECT",
+          "id": "ground-crack",
+          "name": "ground crack"
+        },
+        {
+          "aliases": [
+            "displacement"
+          ],
+          "description": "Movement of the ground caused by rifting.",
+          "entity_type": "PROCESS",
+          "id": "ground-displacement",
+          "name": "ground displacement"
+        },
+        {
+          "aliases": [],
+          "description": "A body of water meeting the Red Sea at a triple junction.",
+          "entity_type": "OBJECT",
+          "id": "gulf-of-aden",
+          "name": "Gulf of Aden"
+        },
+        {
+          "aliases": [],
+          "description": "A volcanic country that straddles the Mid-Atlantic Ridge and exposes spreading processes on land.",
+          "entity_type": "OBJECT",
+          "id": "iceland",
+          "name": "Iceland"
+        },
+        {
+          "aliases": [],
+          "description": "A zone along which repeated episodes of surface cracking occurred from 1975 to 1984.",
+          "entity_type": "OBJECT",
+          "id": "krafla-fissure-zone",
+          "name": "Krafla fissure zone"
+        },
+        {
+          "aliases": [],
+          "description": "A volcano in northeastern Iceland around which effects of plate movement are visible.",
+          "entity_type": "OBJECT",
+          "id": "krafla-volcano",
+          "name": "Krafla Volcano"
+        },
+        {
+          "aliases": [],
+          "description": "Molten material that rises from the mantle, pushes upward, and may erupt through cracks.",
+          "entity_type": "OBJECT",
+          "id": "magma",
+          "name": "magma"
+        },
+        {
+          "aliases": [],
+          "description": "Earth layer from which magma rises beneath spreading centers.",
+          "entity_type": "OBJECT",
+          "id": "mantle",
+          "name": "mantle"
+        },
+        {
+          "aliases": [],
+          "description": "A submerged mountain range and segment of the global mid-ocean ridge system extending from the Arctic Ocean beyond southern Africa.",
+          "entity_type": "OBJECT",
+          "id": "mid-atlantic-ridge",
+          "name": "Mid-Atlantic Ridge"
+        },
+        {
+          "aliases": [],
+          "description": "Crust created as magma rises at a spreading center.",
+          "entity_type": "OBJECT",
+          "id": "new-crust",
+          "name": "new crust"
+        },
+        {
+          "aliases": [],
+          "description": "A plate on one side of the spreading center through Iceland.",
+          "entity_type": "OBJECT",
+          "id": "north-american-plate",
+          "name": "North American Plate"
+        },
+        {
+          "aliases": [],
+          "description": "Crust transported away from a ridge crest by spreading.",
+          "entity_type": "OBJECT",
+          "id": "oceanic-crust",
+          "name": "oceanic crust"
+        },
+        {
+          "aliases": [],
+          "description": "A large section of Earth's crust involved in movement at plate boundaries.",
+          "entity_type": "OBJECT",
+          "id": "plate",
+          "name": "plate"
+        },
+        {
+          "aliases": [],
+          "description": "Movement of tectonic plates, including movement away from spreading centers.",
+          "entity_type": "PROCESS",
+          "id": "plate-movement",
+          "name": "plate movement"
+        },
+        {
+          "aliases": [],
+          "description": "A sea formed as spreading processes tore Saudi Arabia away from the rest of Africa.",
+          "entity_type": "OBJECT",
+          "id": "red-sea",
+          "name": "Red Sea"
+        },
+        {
+          "aliases": [],
+          "description": "The crest of a ridge from which newly formed oceanic crust moves away.",
+          "entity_type": "OBJECT",
+          "id": "ridge-crest",
+          "name": "ridge crest"
+        },
+        {
+          "aliases": [],
+          "description": "A zone ultimately produced by crustal stretching, fractures, and spreading.",
+          "entity_type": "OBJECT",
+          "id": "rift-zone",
+          "name": "rift zone"
+        },
+        {
+          "aliases": [],
+          "description": "Surface cracking associated with spreading and plate movement.",
+          "entity_type": "PROCESS",
+          "id": "rifting",
+          "name": "rifting"
+        },
+        {
+          "aliases": [],
+          "description": "An episode of rifting occurring along the Krafla fissure zone.",
+          "entity_type": "PROCESS",
+          "id": "rifting-event",
+          "name": "rifting event"
+        },
+        {
+          "aliases": [],
+          "description": "Landmass described as having been torn away from the rest of the African continent by spreading.",
+          "entity_type": "OBJECT",
+          "id": "saudi-arabia",
+          "name": "Saudi Arabia"
+        },
+        {
+          "aliases": [],
+          "description": "The process by which newly formed oceanic crust moves away from a spreading ridge.",
+          "entity_type": "PROCESS",
+          "id": "seafloor-spreading",
+          "name": "seafloor spreading"
+        },
+        {
+          "aliases": [
+            "spreading ridge"
+          ],
+          "description": "A region where plates move apart and crust is formed by rising magma.",
+          "entity_type": "SYSTEM",
+          "id": "spreading-center",
+          "name": "spreading center"
+        },
+        {
+          "aliases": [],
+          "description": "The rate at which spreading occurs along a spreading center, expressed in centimeters per year or kilometers per million years.",
+          "entity_type": "VARIABLE",
+          "id": "spreading-rate",
+          "name": "spreading rate"
+        },
+        {
+          "aliases": [],
+          "description": "A crack that appears on Earth's surface when continental crust stretches beyond its limits.",
+          "entity_type": "OBJECT",
+          "id": "tension-crack",
+          "name": "tension crack"
+        },
+        {
+          "aliases": [],
+          "description": "A junction where the African Plate and Arabian Plate meet in the region where the Red Sea meets the Gulf of Aden.",
+          "entity_type": "SYSTEM",
+          "id": "triple-junction",
+          "name": "triple junction"
+        },
+        {
+          "aliases": [],
+          "description": "Volcanic activity accompanying some rifting events.",
+          "entity_type": "PROCESS",
+          "id": "volcanic-activity",
+          "name": "volcanic activity"
+        },
+        {
+          "aliases": [],
+          "description": "A volcanic landform that can form when magma erupts through widening cracks.",
+          "entity_type": "OBJECT",
+          "id": "volcano",
+          "name": "volcano"
+        }
+      ],
+      "immutable": true
+    }
+  },
+  "lineage": "Candidate B v1 Stage 1/3 mechanics and canonical validators; versioned v2 Stage 2 interface",
+  "model": {
+    "claims": [
+      {
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 386,
+            "quote": "Perhaps the best known of the divergent boundaries is the Mid-Atlantic Ridge.",
+            "start_char": 309
+          }
+        ],
+        "id": "c1",
+        "origin": "SOURCE",
+        "statement": "The Mid-Atlantic Ridge is described as one of the best-known divergent boundaries."
+      },
+      {
+        "confidence": 1.0,
+        "evidence": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 573,
+            "quote": "This submerged mountain range, which extends from the Arctic Ocean to beyond the southern tip of Africa, is but one segment of the global mid-ocean ridge system that encircles the Earth.",
+            "start_char": 387
+          }
+        ],
+        "id": "c2",
+        "origin": "SOURCE",
+        "statement": "The Mid-Atlantic Ridge is one segment of the global mid-ocean ridge system."
+      },
+      {
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 142,
+            "quote": "Divergent boundaries occur along spreading centers where plates are moving apart and new crust is created by magma pushing up from the mantle.",
+            "start_char": 0
+          }
+        ],
+        "id": "c3",
+        "origin": "SOURCE",
+        "statement": "Magma pushing up from the mantle creates new crust at spreading centers."
+      },
+      {
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 874,
+            "quote": "This rate may seem slow by human standards, but because this process has been going on for millions of years, it has resulted in plate movement of thousands of kilometers.",
+            "start_char": 703
+          }
+        ],
+        "id": "c4",
+        "origin": "SOURCE",
+        "statement": "Seafloor spreading over millions of years has resulted in plate movement of thousands of kilometers."
+      },
+      {
+        "confidence": 1.0,
+        "evidence": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 1095,
+            "quote": "Seafloor spreading over the past 100 to 200 million years has caused the Atlantic Ocean to grow from a tiny inlet of water between the continents of Europe, Africa, and the Americas into the vast ocean that exists today.",
+            "start_char": 875
+          }
+        ],
+        "id": "c5",
+        "origin": "SOURCE",
+        "statement": "Seafloor spreading caused the Atlantic Ocean to grow from a small inlet into its present vast ocean."
+      },
+      {
+        "confidence": 0.94,
+        "evidence": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 1647,
+            "quote": "Here, existing ground cracks have widened and new ones appear every few months.",
+            "start_char": 1568
+          }
+        ],
+        "id": "c6",
+        "origin": "SOURCE",
+        "statement": "The consequences of plate movement include widening existing ground cracks and the appearance of new ones around Krafla Volcano."
+      },
+      {
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 2001,
+            "quote": "Between 1975 and 1984, the displacements caused by rifting totalled about 7 m.",
+            "start_char": 1923
+          }
+        ],
+        "id": "c7",
+        "origin": "SOURCE",
+        "statement": "The displacements at Krafla were caused by rifting."
+      },
+      {
+        "confidence": 0.93,
+        "evidence": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 1922,
+            "quote": "the ground would gradually rise 1-2 m before abruptly dropping, signalling an impending eruption.",
+            "start_char": 1825
+          }
+        ],
+        "id": "c8",
+        "origin": "SOURCE",
+        "statement": "Ground rise and abrupt dropping signalled an impending eruption."
+      },
+      {
+        "confidence": 0.97,
+        "evidence": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 2135,
+            "quote": "In East Africa, spreading processes have already torn Saudi Arabia away from the rest of the African continent, forming the Red Sea.",
+            "start_char": 2003
+          }
+        ],
+        "id": "c9",
+        "origin": "SOURCE",
+        "statement": "Spreading processes tore Saudi Arabia away from the rest of Africa, forming the Red Sea."
+      },
+      {
+        "confidence": 1.0,
+        "evidence": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 2483,
+            "quote": "When the continental crust stretches beyond its limits, tension cracks begin to appear on the Earth's surface.",
+            "start_char": 2373
+          }
+        ],
+        "id": "c10",
+        "origin": "SOURCE",
+        "statement": "When continental crust stretches beyond its limits, tension cracks appear on Earth's surface."
+      },
+      {
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 2716,
+            "quote": "The rising magma, whether or not it erupts, puts more pressure on the crust to produce additional fractures and, ultimately, the rift zone.",
+            "start_char": 2577
+          }
+        ],
+        "id": "c11",
+        "origin": "SOURCE",
+        "statement": "Rising magma puts more pressure on the crust."
+      },
+      {
+        "confidence": 0.96,
+        "evidence": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 2716,
+            "quote": "The rising magma, whether or not it erupts, puts more pressure on the crust to produce additional fractures and, ultimately, the rift zone.",
+            "start_char": 2577
+          }
+        ],
+        "id": "c12",
+        "origin": "SOURCE",
+        "statement": "Magma pressure produces additional fractures in the crust."
+      },
+      {
+        "confidence": 0.88,
+        "evidence": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 2716,
+            "quote": "The rising magma, whether or not it erupts, puts more pressure on the crust to produce additional fractures and, ultimately, the rift zone.",
+            "start_char": 2577
+          }
+        ],
+        "id": "c13",
+        "origin": "SOURCE",
+        "statement": "Crustal fractures contribute ultimately to the formation of a rift zone."
+      },
+      {
+        "confidence": 1.0,
+        "evidence": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 702,
+            "quote": "The rate of spreading along the Mid-Atlantic Ridge averages about 2.5 centimeters per year (cm/yr), or 25 km in a million years.",
+            "start_char": 574
+          }
+        ],
+        "id": "c14",
+        "origin": "SOURCE",
+        "statement": "The spreading rate along the Mid-Atlantic Ridge averages about 2.5 centimeters per year, or 25 kilometers in a million years."
+      },
+      {
+        "confidence": 1.0,
+        "evidence": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 1306,
+            "quote": "The volcanic country of Iceland, which straddles the Mid-Atlantic Ridge, offers scientists a natural laboratory for studying on land the processes also occurring along the submerged parts of a spreading ridge.",
+            "start_char": 1097
+          }
+        ],
+        "id": "c15",
+        "origin": "SOURCE",
+        "statement": "Iceland straddles the Mid-Atlantic Ridge and provides a natural laboratory for studying spreading processes on land."
+      },
+      {
+        "confidence": 1.0,
+        "evidence": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 1455,
+            "quote": "Iceland is splitting along the spreading center between the North American and Eurasian Plates, as North America moves westward relative to Eurasia.",
+            "start_char": 1307
+          }
+        ],
+        "id": "c16",
+        "origin": "SOURCE",
+        "statement": "Iceland is splitting along the spreading center between the North American and Eurasian Plates."
+      },
+      {
+        "confidence": 1.0,
+        "evidence": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 1756,
+            "quote": "From 1975 to 1984, numerous episodes of rifting (surface cracking) took place along the Krafla fissure zone.",
+            "start_char": 1648
+          }
+        ],
+        "id": "c17",
+        "origin": "SOURCE",
+        "statement": "Numerous episodes of rifting took place along the Krafla fissure zone from 1975 to 1984."
+      },
+      {
+        "confidence": 0.99,
+        "evidence": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 1824,
+            "quote": "Some of these rifting events were accompanied by volcanic activity;",
+            "start_char": 1757
+          }
+        ],
+        "id": "c18",
+        "origin": "SOURCE",
+        "statement": "Some rifting events were accompanied by volcanic activity."
+      },
+      {
+        "confidence": 1.0,
+        "evidence": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 2284,
+            "quote": "The actively splitting African Plate and the Arabian Plate meet in what geologists call a triple junction, where the Red Sea meets the Gulf of Aden.",
+            "start_char": 2136
+          }
+        ],
+        "id": "c19",
+        "origin": "SOURCE",
+        "statement": "The actively splitting African Plate and Arabian Plate meet at a triple junction where the Red Sea meets the Gulf of Aden."
+      },
+      {
+        "confidence": 0.99,
+        "evidence": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 2372,
+            "quote": "A new spreading center may be developing under Africa along the East African Rift Zone.",
+            "start_char": 2285
+          }
+        ],
+        "id": "c20",
+        "origin": "SOURCE",
+        "statement": "A new spreading center may be developing under Africa along the East African Rift Zone."
+      },
+      {
+        "confidence": 1.0,
+        "evidence": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 2576,
+            "quote": "Magma rises and squeezes through the widening cracks, sometimes to erupt and form volcanoes.",
+            "start_char": 2484
+          }
+        ],
+        "id": "c21",
+        "origin": "SOURCE",
+        "statement": "Magma can squeeze through widening cracks and sometimes erupt to form volcanoes."
+      },
+      {
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 307,
+            "quote": "Picture two giant conveyor belts, facing each other but slowly moving in opposite directions as they transport newly formed oceanic crust away from the ridge crest.",
+            "start_char": 143
+          }
+        ],
+        "id": "c22",
+        "origin": "SOURCE",
+        "statement": "Newly formed oceanic crust is transported away from the ridge crest as plates move in opposite directions."
+      }
+    ],
+    "document": {
+      "id": "text-a9539d135ff1577d",
+      "metadata": {
+        "provenance": {
+          "authority_priority_rank": 1,
+          "canonical_url": "https://pubs.usgs.gov/gip/dynamic/understanding.html",
+          "domain_family": "geology / Earth systems",
+          "institutional_publisher": "U.S. Geological Survey",
+          "public_source_note": "Publicly accessible U.S. federal publication page; no authentication was required. The passage remains attributed to USGS and is used only as bounded evaluation input.",
+          "retrieval": {
+            "document_byte_count": 24181,
+            "document_sha256": "fc0afbd9a9b78211fbd57abfc935abe0660a29e1692e0c418de87124afc57aaa",
+            "format": "text/html",
+            "http_status": 200,
+            "timestamp_utc": "2026-09-11T19:09:27Z"
+          },
+          "selection_rule_evidence": {
+            "english_language": true,
+            "explanatory_prose": true,
+            "first_eligible_passage": "First complete 300-650-word explanatory passage in the Divergent boundaries section after deterministic removal of headings, image links, and map/figure captions.",
+            "images_or_tables_required": false,
+            "no_authentication": true,
+            "no_private_or_high_stakes_content": true,
+            "novel_domain_and_source": true,
+            "passage_character_count": 2716,
+            "passage_utf8_byte_count": 2716,
+            "passage_word_count": 438,
+            "publisher_is_stable_institution": true,
+            "semantic_answer_supplied": false
+          },
+          "source_document_date": "1996",
+          "source_document_identity": "This Dynamic Earth: The Story of Plate Tectonics, USGS General Interest Publication, DOI 10.3133/7000097",
+          "source_scope": "Divergent boundaries section: first five explanatory paragraphs after heading and figure boilerplate removal"
+        },
+        "source_id": "usgs-divergent-plate-boundaries-1996",
+        "title": "Understanding plate motions"
+      },
+      "source_type": "text",
+      "text": "Divergent boundaries occur along spreading centers where plates are moving apart and new crust is created by magma pushing up from the mantle. Picture two giant conveyor belts, facing each other but slowly moving in opposite directions as they transport newly formed oceanic crust away from the ridge crest.\n\nPerhaps the best known of the divergent boundaries is the Mid-Atlantic Ridge. This submerged mountain range, which extends from the Arctic Ocean to beyond the southern tip of Africa, is but one segment of the global mid-ocean ridge system that encircles the Earth. The rate of spreading along the Mid-Atlantic Ridge averages about 2.5 centimeters per year (cm/yr), or 25 km in a million years. This rate may seem slow by human standards, but because this process has been going on for millions of years, it has resulted in plate movement of thousands of kilometers. Seafloor spreading over the past 100 to 200 million years has caused the Atlantic Ocean to grow from a tiny inlet of water between the continents of Europe, Africa, and the Americas into the vast ocean that exists today.\n\nThe volcanic country of Iceland, which straddles the Mid-Atlantic Ridge, offers scientists a natural laboratory for studying on land the processes also occurring along the submerged parts of a spreading ridge. Iceland is splitting along the spreading center between the North American and Eurasian Plates, as North America moves westward relative to Eurasia.\n\nThe consequences of plate movement are easy to see around Krafla Volcano, in the northeastern part of Iceland. Here, existing ground cracks have widened and new ones appear every few months. From 1975 to 1984, numerous episodes of rifting (surface cracking) took place along the Krafla fissure zone. Some of these rifting events were accompanied by volcanic activity; the ground would gradually rise 1-2 m before abruptly dropping, signalling an impending eruption. Between 1975 and 1984, the displacements caused by rifting totalled about 7 m.\n\nIn East Africa, spreading processes have already torn Saudi Arabia away from the rest of the African continent, forming the Red Sea. The actively splitting African Plate and the Arabian Plate meet in what geologists call a triple junction, where the Red Sea meets the Gulf of Aden. A new spreading center may be developing under Africa along the East African Rift Zone. When the continental crust stretches beyond its limits, tension cracks begin to appear on the Earth's surface. Magma rises and squeezes through the widening cracks, sometimes to erupt and form volcanoes. The rising magma, whether or not it erupts, puts more pressure on the crust to produce additional fractures and, ultimately, the rift zone."
+    },
+    "entities": [
+      {
+        "aliases": [
+          "African continent"
+        ],
+        "description": "A continent bordering the Atlantic Ocean and containing the East African Rift Zone.",
+        "entity_type": "OBJECT",
+        "id": "africa",
+        "name": "Africa"
+      },
+      {
+        "aliases": [],
+        "description": "A plate described as actively splitting and meeting the Arabian Plate at a triple junction.",
+        "entity_type": "OBJECT",
+        "id": "african-plate",
+        "name": "African Plate"
+      },
+      {
+        "aliases": [],
+        "description": "The continents bordering the Atlantic Ocean in the source description.",
+        "entity_type": "OBJECT",
+        "id": "americas",
+        "name": "Americas"
+      },
+      {
+        "aliases": [],
+        "description": "A plate that meets the African Plate at the triple junction where the Red Sea meets the Gulf of Aden.",
+        "entity_type": "OBJECT",
+        "id": "arabian-plate",
+        "name": "Arabian Plate"
+      },
+      {
+        "aliases": [],
+        "description": "The ocean that grew through seafloor spreading between Europe, Africa, and the Americas.",
+        "entity_type": "OBJECT",
+        "id": "atlantic-ocean",
+        "name": "Atlantic Ocean"
+      },
+      {
+        "aliases": [],
+        "description": "Crust that can stretch beyond its limits during spreading processes.",
+        "entity_type": "OBJECT",
+        "id": "continental-crust",
+        "name": "continental crust"
+      },
+      {
+        "aliases": [],
+        "description": "A plate boundary where plates move apart and new crust is created.",
+        "entity_type": "CONCEPT",
+        "id": "divergent-boundary",
+        "name": "divergent boundary"
+      },
+      {
+        "aliases": [],
+        "description": "The planet encircled by the global mid-ocean ridge system and containing the described crust and mantle.",
+        "entity_type": "OBJECT",
+        "id": "earth",
+        "name": "Earth"
+      },
+      {
+        "aliases": [],
+        "description": "A rift zone in Africa where a new spreading center may be developing.",
+        "entity_type": "OBJECT",
+        "id": "east-african-rift-zone",
+        "name": "East African Rift Zone"
+      },
+      {
+        "aliases": [],
+        "description": "An event in which magma erupts through widening cracks and may form volcanoes.",
+        "entity_type": "PROCESS",
+        "id": "eruption",
+        "name": "eruption"
+      },
+      {
+        "aliases": [],
+        "description": "A plate on the other side of the spreading center through Iceland.",
+        "entity_type": "OBJECT",
+        "id": "eurasian-plate",
+        "name": "Eurasian Plate"
+      },
+      {
+        "aliases": [],
+        "description": "A continent bordering the Atlantic Ocean in the source description.",
+        "entity_type": "OBJECT",
+        "id": "europe",
+        "name": "Europe"
+      },
+      {
+        "aliases": [],
+        "description": "A crack produced in the crust by rising magma and pressure.",
+        "entity_type": "OBJECT",
+        "id": "fracture",
+        "name": "fracture"
+      },
+      {
+        "aliases": [],
+        "description": "A global system of mid-ocean ridges encircling Earth.",
+        "entity_type": "SYSTEM",
+        "id": "global-mid-ocean-ridge-system",
+        "name": "global mid-ocean ridge system"
+      },
+      {
+        "aliases": [
+          "surface crack"
+        ],
+        "description": "A crack in the ground that may widen or newly appear around the Krafla fissure zone.",
+        "entity_type": "OBJECT",
+        "id": "ground-crack",
+        "name": "ground crack"
+      },
+      {
+        "aliases": [
+          "displacement"
+        ],
+        "description": "Movement of the ground caused by rifting.",
+        "entity_type": "PROCESS",
+        "id": "ground-displacement",
+        "name": "ground displacement"
+      },
+      {
+        "aliases": [],
+        "description": "A body of water meeting the Red Sea at a triple junction.",
+        "entity_type": "OBJECT",
+        "id": "gulf-of-aden",
+        "name": "Gulf of Aden"
+      },
+      {
+        "aliases": [],
+        "description": "A volcanic country that straddles the Mid-Atlantic Ridge and exposes spreading processes on land.",
+        "entity_type": "OBJECT",
+        "id": "iceland",
+        "name": "Iceland"
+      },
+      {
+        "aliases": [],
+        "description": "A zone along which repeated episodes of surface cracking occurred from 1975 to 1984.",
+        "entity_type": "OBJECT",
+        "id": "krafla-fissure-zone",
+        "name": "Krafla fissure zone"
+      },
+      {
+        "aliases": [],
+        "description": "A volcano in northeastern Iceland around which effects of plate movement are visible.",
+        "entity_type": "OBJECT",
+        "id": "krafla-volcano",
+        "name": "Krafla Volcano"
+      },
+      {
+        "aliases": [],
+        "description": "Molten material that rises from the mantle, pushes upward, and may erupt through cracks.",
+        "entity_type": "OBJECT",
+        "id": "magma",
+        "name": "magma"
+      },
+      {
+        "aliases": [],
+        "description": "Earth layer from which magma rises beneath spreading centers.",
+        "entity_type": "OBJECT",
+        "id": "mantle",
+        "name": "mantle"
+      },
+      {
+        "aliases": [],
+        "description": "A submerged mountain range and segment of the global mid-ocean ridge system extending from the Arctic Ocean beyond southern Africa.",
+        "entity_type": "OBJECT",
+        "id": "mid-atlantic-ridge",
+        "name": "Mid-Atlantic Ridge"
+      },
+      {
+        "aliases": [],
+        "description": "Crust created as magma rises at a spreading center.",
+        "entity_type": "OBJECT",
+        "id": "new-crust",
+        "name": "new crust"
+      },
+      {
+        "aliases": [],
+        "description": "A plate on one side of the spreading center through Iceland.",
+        "entity_type": "OBJECT",
+        "id": "north-american-plate",
+        "name": "North American Plate"
+      },
+      {
+        "aliases": [],
+        "description": "Crust transported away from a ridge crest by spreading.",
+        "entity_type": "OBJECT",
+        "id": "oceanic-crust",
+        "name": "oceanic crust"
+      },
+      {
+        "aliases": [],
+        "description": "A large section of Earth's crust involved in movement at plate boundaries.",
+        "entity_type": "OBJECT",
+        "id": "plate",
+        "name": "plate"
+      },
+      {
+        "aliases": [],
+        "description": "Movement of tectonic plates, including movement away from spreading centers.",
+        "entity_type": "PROCESS",
+        "id": "plate-movement",
+        "name": "plate movement"
+      },
+      {
+        "aliases": [],
+        "description": "A sea formed as spreading processes tore Saudi Arabia away from the rest of Africa.",
+        "entity_type": "OBJECT",
+        "id": "red-sea",
+        "name": "Red Sea"
+      },
+      {
+        "aliases": [],
+        "description": "The crest of a ridge from which newly formed oceanic crust moves away.",
+        "entity_type": "OBJECT",
+        "id": "ridge-crest",
+        "name": "ridge crest"
+      },
+      {
+        "aliases": [],
+        "description": "A zone ultimately produced by crustal stretching, fractures, and spreading.",
+        "entity_type": "OBJECT",
+        "id": "rift-zone",
+        "name": "rift zone"
+      },
+      {
+        "aliases": [],
+        "description": "Surface cracking associated with spreading and plate movement.",
+        "entity_type": "PROCESS",
+        "id": "rifting",
+        "name": "rifting"
+      },
+      {
+        "aliases": [],
+        "description": "An episode of rifting occurring along the Krafla fissure zone.",
+        "entity_type": "PROCESS",
+        "id": "rifting-event",
+        "name": "rifting event"
+      },
+      {
+        "aliases": [],
+        "description": "Landmass described as having been torn away from the rest of the African continent by spreading.",
+        "entity_type": "OBJECT",
+        "id": "saudi-arabia",
+        "name": "Saudi Arabia"
+      },
+      {
+        "aliases": [],
+        "description": "The process by which newly formed oceanic crust moves away from a spreading ridge.",
+        "entity_type": "PROCESS",
+        "id": "seafloor-spreading",
+        "name": "seafloor spreading"
+      },
+      {
+        "aliases": [
+          "spreading ridge"
+        ],
+        "description": "A region where plates move apart and crust is formed by rising magma.",
+        "entity_type": "SYSTEM",
+        "id": "spreading-center",
+        "name": "spreading center"
+      },
+      {
+        "aliases": [],
+        "description": "The rate at which spreading occurs along a spreading center, expressed in centimeters per year or kilometers per million years.",
+        "entity_type": "VARIABLE",
+        "id": "spreading-rate",
+        "name": "spreading rate"
+      },
+      {
+        "aliases": [],
+        "description": "A crack that appears on Earth's surface when continental crust stretches beyond its limits.",
+        "entity_type": "OBJECT",
+        "id": "tension-crack",
+        "name": "tension crack"
+      },
+      {
+        "aliases": [],
+        "description": "A junction where the African Plate and Arabian Plate meet in the region where the Red Sea meets the Gulf of Aden.",
+        "entity_type": "SYSTEM",
+        "id": "triple-junction",
+        "name": "triple junction"
+      },
+      {
+        "aliases": [],
+        "description": "Volcanic activity accompanying some rifting events.",
+        "entity_type": "PROCESS",
+        "id": "volcanic-activity",
+        "name": "volcanic activity"
+      },
+      {
+        "aliases": [],
+        "description": "A volcanic landform that can form when magma erupts through widening cracks.",
+        "entity_type": "OBJECT",
+        "id": "volcano",
+        "name": "volcano"
+      }
+    ],
+    "metadata": {
+      "candidate_version": "spec-051-candidate-b-v2",
+      "claim_evidence_binding_sha256": "c8deac814688c79bb7c29a6289e25b25c76efa5b03685d32751befa414a9f51d",
+      "entity_inventory_sha256": "db3eb734378ede6b57b222f8a7690e7888c80086aa000f24974de34572f669ec",
+      "semantic_structure_sha256": "3638e4749edeb834bf099969ed0df122bfba83c5ed8263cfda65e23b1e94951a"
+    },
+    "relationships": [
+      {
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 386,
+            "quote": "Perhaps the best known of the divergent boundaries is the Mid-Atlantic Ridge.",
+            "start_char": 309
+          }
+        ],
+        "id": "r1",
+        "origin": "SOURCE",
+        "relationship_type": "IS_A",
+        "source_entity_id": "mid-atlantic-ridge",
+        "statement": "The Mid-Atlantic Ridge is described as one of the best-known divergent boundaries.",
+        "target_entity_id": "divergent-boundary"
+      },
+      {
+        "confidence": 1.0,
+        "evidence": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 573,
+            "quote": "This submerged mountain range, which extends from the Arctic Ocean to beyond the southern tip of Africa, is but one segment of the global mid-ocean ridge system that encircles the Earth.",
+            "start_char": 387
+          }
+        ],
+        "id": "r2",
+        "origin": "SOURCE",
+        "relationship_type": "PART_OF",
+        "source_entity_id": "mid-atlantic-ridge",
+        "statement": "The Mid-Atlantic Ridge is one segment of the global mid-ocean ridge system.",
+        "target_entity_id": "global-mid-ocean-ridge-system"
+      },
+      {
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 142,
+            "quote": "Divergent boundaries occur along spreading centers where plates are moving apart and new crust is created by magma pushing up from the mantle.",
+            "start_char": 0
+          }
+        ],
+        "id": "r3",
+        "origin": "SOURCE",
+        "relationship_type": "CAUSES",
+        "source_entity_id": "magma",
+        "statement": "Magma pushing up from the mantle creates new crust at spreading centers.",
+        "target_entity_id": "new-crust"
+      },
+      {
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 874,
+            "quote": "This rate may seem slow by human standards, but because this process has been going on for millions of years, it has resulted in plate movement of thousands of kilometers.",
+            "start_char": 703
+          }
+        ],
+        "id": "r4",
+        "origin": "SOURCE",
+        "relationship_type": "CAUSES",
+        "source_entity_id": "seafloor-spreading",
+        "statement": "Seafloor spreading over millions of years has resulted in plate movement of thousands of kilometers.",
+        "target_entity_id": "plate-movement"
+      },
+      {
+        "confidence": 1.0,
+        "evidence": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 1095,
+            "quote": "Seafloor spreading over the past 100 to 200 million years has caused the Atlantic Ocean to grow from a tiny inlet of water between the continents of Europe, Africa, and the Americas into the vast ocean that exists today.",
+            "start_char": 875
+          }
+        ],
+        "id": "r5",
+        "origin": "SOURCE",
+        "relationship_type": "CAUSES",
+        "source_entity_id": "seafloor-spreading",
+        "statement": "Seafloor spreading caused the Atlantic Ocean to grow from a small inlet into its present vast ocean.",
+        "target_entity_id": "atlantic-ocean"
+      },
+      {
+        "confidence": 0.94,
+        "evidence": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 1647,
+            "quote": "Here, existing ground cracks have widened and new ones appear every few months.",
+            "start_char": 1568
+          }
+        ],
+        "id": "r6",
+        "origin": "SOURCE",
+        "relationship_type": "CAUSES",
+        "source_entity_id": "plate-movement",
+        "statement": "The consequences of plate movement include widening existing ground cracks and the appearance of new ones around Krafla Volcano.",
+        "target_entity_id": "ground-crack"
+      },
+      {
+        "confidence": 1.0,
+        "evidence": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 2001,
+            "quote": "Between 1975 and 1984, the displacements caused by rifting totalled about 7 m.",
+            "start_char": 1923
+          }
+        ],
+        "id": "r7",
+        "origin": "SOURCE",
+        "relationship_type": "CAUSES",
+        "source_entity_id": "rifting",
+        "statement": "The displacements at Krafla were caused by rifting.",
+        "target_entity_id": "ground-displacement"
+      },
+      {
+        "confidence": 0.93,
+        "evidence": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 1922,
+            "quote": "the ground would gradually rise 1-2 m before abruptly dropping, signalling an impending eruption.",
+            "start_char": 1825
+          }
+        ],
+        "id": "r8",
+        "origin": "SOURCE",
+        "relationship_type": "PRECEDES",
+        "source_entity_id": "ground-displacement",
+        "statement": "Ground rise and abrupt dropping signalled an impending eruption.",
+        "target_entity_id": "eruption"
+      },
+      {
+        "confidence": 0.97,
+        "evidence": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 2135,
+            "quote": "In East Africa, spreading processes have already torn Saudi Arabia away from the rest of the African continent, forming the Red Sea.",
+            "start_char": 2003
+          }
+        ],
+        "id": "r9",
+        "origin": "SOURCE",
+        "relationship_type": "CAUSES",
+        "source_entity_id": "seafloor-spreading",
+        "statement": "Spreading processes tore Saudi Arabia away from the rest of Africa, forming the Red Sea.",
+        "target_entity_id": "red-sea"
+      },
+      {
+        "confidence": 0.99,
+        "evidence": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 2483,
+            "quote": "When the continental crust stretches beyond its limits, tension cracks begin to appear on the Earth's surface.",
+            "start_char": 2373
+          }
+        ],
+        "id": "r10",
+        "origin": "SOURCE",
+        "relationship_type": "CAUSES",
+        "source_entity_id": "continental-crust",
+        "statement": "When continental crust stretches beyond its limits, tension cracks appear on Earth's surface.",
+        "target_entity_id": "tension-crack"
+      },
+      {
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 2716,
+            "quote": "The rising magma, whether or not it erupts, puts more pressure on the crust to produce additional fractures and, ultimately, the rift zone.",
+            "start_char": 2577
+          }
+        ],
+        "id": "r11",
+        "origin": "SOURCE",
+        "relationship_type": "EXERTS_FORCE_ON",
+        "source_entity_id": "magma",
+        "statement": "Rising magma puts more pressure on the crust.",
+        "target_entity_id": "continental-crust"
+      },
+      {
+        "confidence": 0.96,
+        "evidence": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 2716,
+            "quote": "The rising magma, whether or not it erupts, puts more pressure on the crust to produce additional fractures and, ultimately, the rift zone.",
+            "start_char": 2577
+          }
+        ],
+        "id": "r12",
+        "origin": "SOURCE",
+        "relationship_type": "CAUSES",
+        "source_entity_id": "magma",
+        "statement": "Magma pressure produces additional fractures in the crust.",
+        "target_entity_id": "fracture"
+      },
+      {
+        "confidence": 0.88,
+        "evidence": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 2716,
+            "quote": "The rising magma, whether or not it erupts, puts more pressure on the crust to produce additional fractures and, ultimately, the rift zone.",
+            "start_char": 2577
+          }
+        ],
+        "id": "r13",
+        "origin": "SOURCE",
+        "relationship_type": "CAUSES",
+        "source_entity_id": "fracture",
+        "statement": "Crustal fractures contribute ultimately to the formation of a rift zone.",
+        "target_entity_id": "rift-zone"
+      }
+    ]
+  },
+  "provider_call_ledger": {
+    "calls_started": 3,
+    "candidate_version": "spec-051-candidate-b-v2",
+    "entries": [
+      {
+        "actual_model": "gpt-5.6-luna",
+        "call_ordinal": 1,
+        "candidate_version": "spec-051-candidate-b-v2",
+        "completed_at_utc": "2026-09-16T08:51:39.037376+00:00",
+        "duration_ms": 12774.093499989249,
+        "hidden_retries": 0,
+        "http_request_id": "req_4eb3a99a22cd4ddaa741b41074086783",
+        "prompt_sha256": "b1c00eb4547de56c62dcc18c7aec013ee1e2de4a8c1dfa45bcb475f00591f785",
+        "prompt_version": "spec-047-entity-inventory-v1",
+        "provider_response_id": "resp_0df28d8172e03f29016aaa5890164887d2b4f43cef845a67dc",
+        "repair_calls": 0,
+        "requested_model": "gpt-5.6-luna",
+        "schema_sha256": "003db7546ae3ffafe7dc098bc50e1a5f223b891f6ee3160f7537214c8e9c9956",
+        "sdk_retries": 0,
+        "semantic_retries": 0,
+        "source_id": "usgs-divergent-plate-boundaries-1996",
+        "source_sha256": "a9539d135ff1577d7e2791d498b92f55239175565b925b24aec2ed0bf633f186",
+        "stage": "ENTITY_INVENTORY",
+        "started_at_utc": "2026-09-16T08:51:26.262364+00:00",
+        "status": "PROVIDER_RESPONSE_RECEIVED",
+        "store": false,
+        "upstream_input_sha256": "a9539d135ff1577d7e2791d498b92f55239175565b925b24aec2ed0bf633f186",
+        "usage": {
+          "input_tokens": 794,
+          "output_tokens": 1483,
+          "total_tokens": 2277
+        }
+      },
+      {
+        "actual_model": "gpt-5.6-luna",
+        "call_ordinal": 2,
+        "candidate_version": "spec-051-candidate-b-v2",
+        "completed_at_utc": "2026-09-16T08:51:56.511617+00:00",
+        "duration_ms": 17471.79308300838,
+        "hidden_retries": 0,
+        "http_request_id": "req_7c61ef102e6e4cf8ba2f78022d807d49",
+        "prompt_sha256": "72e6b878794ac2fa45404970e2f0a931dc4c1c2efc97f64a4c7aed0ecf212299",
+        "prompt_version": "spec-051-semantic-structure-v2",
+        "provider_response_id": "resp_0652a5f4cc1ca0f7016aaa589b4ea087d2aa1f1bc894e5dfe5",
+        "repair_calls": 0,
+        "requested_model": "gpt-5.6-luna",
+        "schema_sha256": "2ef9ab8a6e0085ca6e9dc2f4086ac104f9d8f11c154b24ab8631d5c5516221bf",
+        "sdk_retries": 0,
+        "semantic_retries": 0,
+        "source_id": "usgs-divergent-plate-boundaries-1996",
+        "source_sha256": "a9539d135ff1577d7e2791d498b92f55239175565b925b24aec2ed0bf633f186",
+        "stage": "SEMANTIC_STRUCTURE",
+        "started_at_utc": "2026-09-16T08:51:39.039328+00:00",
+        "status": "PROVIDER_RESPONSE_RECEIVED",
+        "store": false,
+        "upstream_input_sha256": "db3eb734378ede6b57b222f8a7690e7888c80086aa000f24974de34572f669ec",
+        "usage": {
+          "input_tokens": 6204,
+          "output_tokens": 1730,
+          "total_tokens": 7934
+        }
+      },
+      {
+        "actual_model": "gpt-5.6-luna",
+        "call_ordinal": 3,
+        "candidate_version": "spec-051-candidate-b-v2",
+        "completed_at_utc": "2026-09-16T08:52:15.625975+00:00",
+        "duration_ms": 19111.585125006968,
+        "hidden_retries": 0,
+        "http_request_id": "req_7a7eeb12ccd44fe4aff15e39bcbf91c1",
+        "prompt_sha256": "a450efcc629ab3a28bb1357f5139dc343e62c4cf9772a497e7b7f1c65dedd97f",
+        "prompt_version": "spec-051-claim-evidence-binding-v2",
+        "provider_response_id": "resp_0aa82fafa24c9b41016aaa58acc83887d2842259a7eb7502ea",
+        "repair_calls": 0,
+        "requested_model": "gpt-5.6-luna",
+        "schema_sha256": "0d2d8a43292ad6f5f4851cb13203df027f1648e34e07f9dc932d3cdb36383207",
+        "sdk_retries": 0,
+        "semantic_retries": 0,
+        "source_id": "usgs-divergent-plate-boundaries-1996",
+        "source_sha256": "a9539d135ff1577d7e2791d498b92f55239175565b925b24aec2ed0bf633f186",
+        "stage": "CLAIM_EVIDENCE_BINDING",
+        "started_at_utc": "2026-09-16T08:51:56.513760+00:00",
+        "status": "PROVIDER_RESPONSE_RECEIVED",
+        "store": false,
+        "upstream_input_sha256": "9151b298123399b8366a11633dfbb81e86ee57c65720ab798ec32ef825cece16",
+        "usage": {
+          "input_tokens": 3628,
+          "output_tokens": 2228,
+          "total_tokens": 5856
+        }
+      }
+    ]
+  },
+  "semantic_structure": {
+    "candidate_version": "spec-051-candidate-b-v2",
+    "identity_sha256": "3638e4749edeb834bf099969ed0df122bfba83c5ed8263cfda65e23b1e94951a",
+    "missing_symbols": [],
+    "propositions": [],
+    "relationships": [
+      {
+        "confidence": 0.98,
+        "id": "r1",
+        "origin": "SOURCE",
+        "relationship_type": "IS_A",
+        "source_entity_id": "mid-atlantic-ridge",
+        "statement": "The Mid-Atlantic Ridge is described as one of the best-known divergent boundaries.",
+        "target_entity_id": "divergent-boundary"
+      },
+      {
+        "confidence": 1.0,
+        "id": "r2",
+        "origin": "SOURCE",
+        "relationship_type": "PART_OF",
+        "source_entity_id": "mid-atlantic-ridge",
+        "statement": "The Mid-Atlantic Ridge is one segment of the global mid-ocean ridge system.",
+        "target_entity_id": "global-mid-ocean-ridge-system"
+      },
+      {
+        "confidence": 0.98,
+        "id": "r3",
+        "origin": "SOURCE",
+        "relationship_type": "CAUSES",
+        "source_entity_id": "magma",
+        "statement": "Magma pushing up from the mantle creates new crust at spreading centers.",
+        "target_entity_id": "new-crust"
+      },
+      {
+        "confidence": 0.98,
+        "id": "r4",
+        "origin": "SOURCE",
+        "relationship_type": "CAUSES",
+        "source_entity_id": "seafloor-spreading",
+        "statement": "Seafloor spreading over millions of years has resulted in plate movement of thousands of kilometers.",
+        "target_entity_id": "plate-movement"
+      },
+      {
+        "confidence": 1.0,
+        "id": "r5",
+        "origin": "SOURCE",
+        "relationship_type": "CAUSES",
+        "source_entity_id": "seafloor-spreading",
+        "statement": "Seafloor spreading caused the Atlantic Ocean to grow from a small inlet into its present vast ocean.",
+        "target_entity_id": "atlantic-ocean"
+      },
+      {
+        "confidence": 0.94,
+        "id": "r6",
+        "origin": "SOURCE",
+        "relationship_type": "CAUSES",
+        "source_entity_id": "plate-movement",
+        "statement": "The consequences of plate movement include widening existing ground cracks and the appearance of new ones around Krafla Volcano.",
+        "target_entity_id": "ground-crack"
+      },
+      {
+        "confidence": 1.0,
+        "id": "r7",
+        "origin": "SOURCE",
+        "relationship_type": "CAUSES",
+        "source_entity_id": "rifting",
+        "statement": "The displacements at Krafla were caused by rifting.",
+        "target_entity_id": "ground-displacement"
+      },
+      {
+        "confidence": 0.93,
+        "id": "r8",
+        "origin": "SOURCE",
+        "relationship_type": "PRECEDES",
+        "source_entity_id": "ground-displacement",
+        "statement": "Ground rise and abrupt dropping signalled an impending eruption.",
+        "target_entity_id": "eruption"
+      },
+      {
+        "confidence": 0.97,
+        "id": "r9",
+        "origin": "SOURCE",
+        "relationship_type": "CAUSES",
+        "source_entity_id": "seafloor-spreading",
+        "statement": "Spreading processes tore Saudi Arabia away from the rest of Africa, forming the Red Sea.",
+        "target_entity_id": "red-sea"
+      },
+      {
+        "confidence": 0.99,
+        "id": "r10",
+        "origin": "SOURCE",
+        "relationship_type": "CAUSES",
+        "source_entity_id": "continental-crust",
+        "statement": "When continental crust stretches beyond its limits, tension cracks appear on Earth's surface.",
+        "target_entity_id": "tension-crack"
+      },
+      {
+        "confidence": 0.9,
+        "id": "r11",
+        "origin": "SOURCE",
+        "relationship_type": "EXERTS_FORCE_ON",
+        "source_entity_id": "magma",
+        "statement": "Rising magma puts more pressure on the crust.",
+        "target_entity_id": "continental-crust"
+      },
+      {
+        "confidence": 0.96,
+        "id": "r12",
+        "origin": "SOURCE",
+        "relationship_type": "CAUSES",
+        "source_entity_id": "magma",
+        "statement": "Magma pressure produces additional fractures in the crust.",
+        "target_entity_id": "fracture"
+      },
+      {
+        "confidence": 0.88,
+        "id": "r13",
+        "origin": "SOURCE",
+        "relationship_type": "CAUSES",
+        "source_entity_id": "fracture",
+        "statement": "Crustal fractures contribute ultimately to the formation of a rift zone.",
+        "target_entity_id": "rift-zone"
+      }
+    ]
+  },
+  "source_id": "usgs-divergent-plate-boundaries-1996",
+  "source_sha256": "a9539d135ff1577d7e2791d498b92f55239175565b925b24aec2ed0bf633f186",
+  "stage_gates": [
+    {
+      "error_type": null,
+      "exact_failure": null,
+      "output_identity_sha256": "db3eb734378ede6b57b222f8a7690e7888c80086aa000f24974de34572f669ec",
+      "stage": "ENTITY_INVENTORY",
+      "stage_version": "spec-047-entity-inventory-v1",
+      "status": "PASS",
+      "upstream_identity_sha256": "a9539d135ff1577d7e2791d498b92f55239175565b925b24aec2ed0bf633f186"
+    },
+    {
+      "error_type": null,
+      "exact_failure": null,
+      "output_identity_sha256": "3638e4749edeb834bf099969ed0df122bfba83c5ed8263cfda65e23b1e94951a",
+      "stage": "SEMANTIC_STRUCTURE",
+      "stage_version": "spec-051-semantic-structure-v2",
+      "status": "PASS",
+      "upstream_identity_sha256": "db3eb734378ede6b57b222f8a7690e7888c80086aa000f24974de34572f669ec"
+    },
+    {
+      "error_type": null,
+      "exact_failure": null,
+      "output_identity_sha256": "c8deac814688c79bb7c29a6289e25b25c76efa5b03685d32751befa414a9f51d",
+      "stage": "CLAIM_EVIDENCE_BINDING",
+      "stage_version": "spec-051-claim-evidence-binding-v2",
+      "status": "PASS",
+      "upstream_identity_sha256": "9151b298123399b8366a11633dfbb81e86ee57c65720ab798ec32ef825cece16"
+    }
+  ],
+  "status": "PASS"
+}

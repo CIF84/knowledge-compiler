@@ -1,0 +1,629 @@
+{
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1789549190.0,
+  "conversation": null,
+  "created_at": 1789549177.0,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "id": "resp_0202413a97defcd8016aaa5a796d0487d2a4e6e2c626dcd0b5",
+  "incomplete_details": null,
+  "instructions": "You perform Stage 2 semantic structure extraction for Candidate B v2.\n\nUse only the exact source and immutable frozen entity inventory. Every endpoint must\nbe one of the exact supplied entity IDs. Do not invent or substitute an identity.\nReturn only source-supported canonical relationships, COMPARISON_CONDITION instances,\nTRANSFER_EVENT instances, and missing_symbols diagnostics in the requested schema.\n\nEmit topology only when the exact source-supported meaning fits the trusted relationship\ncontract or one of the two canonical proposition forms. Otherwise omit the meaning from\nStage-2 topology. Never approximate, coerce, or choose a nearby predicate/proposition.\nStage 3 independently reads the exact source and can preserve omitted meaning as an\nexact grounded claim. Do not use missing_symbols for non-topological omission; reserve it\nfor an otherwise valid canonical semantic item lacking a required frozen identity.\n\nCOMPARISON_CONDITION means a comparison used as a causal antecedent with a distinct\nLEFT_OPERAND and RIGHT_OPERAND, an OUTCOME caused by that condition, GREATER_THAN, and\nCAUSES. A standalone comparison without a causal outcome is not this proposition.\nTRANSFER_EVENT means a PROCESS EVENT, transferred OBJECT, and non-PROCESS DESTINATION,\nwith TRANSFERS_TO and no comparison operator. Input to a calculation is not automatically\na transfer event. Emit neither proposition when these exact meanings are unsupported.\n\nDo not return entities, claims, evidence, teaching prose, or new semantic vocabulary.\nProposition IDs are assigned by trusted code; do not return them.\n\nACTIVE RELATIONSHIP CONTRACTS (source --TYPE--> target):\nIS_A [STRUCTURAL; direction=instance_to_type]\n  meaning: The source is a kind, category, or subtype of the target.\n  roles: source=instance or subtype; target=broader type or category\n  use: The source can truthfully be described as a target.\n  avoid: Do not use for parts, examples, similarity, or temporary states.\nPART_OF [STRUCTURAL; direction=part_to_whole]\n  meaning: The source is a constituent or component of the target.\n  roles: source=part or component; target=containing whole\n  use: The source exists as a component or subpart of the target.\n  avoid: Never reverse whole and part; do not use for interaction or dependency.\nEXAMPLE_OF [STRUCTURAL; direction=example_to_concept]\n  meaning: The source is an illustrative instance of the target concept.\n  roles: source=example; target=concept illustrated\n  use: The source is presented as an example of the target.\n  avoid: Do not use merely because the source is a subtype; prefer IS_A for classification.\nCAUSES [CAUSAL; direction=cause_to_effect]\n  meaning: The source brings about the target as an effect.\n  roles: source=cause; target=effect\n  use: The source is stated to produce the target outcome.\n  avoid: Do not use for chronology, association, contribution, or unspecified influence.\nAFFECTS [CAUSAL; direction=influence_to_affected]\n  meaning: The source causally influences the target without a specified direction or complete production.\n  roles: source=influence; target=affected entity, process, or variable\n  use: The source changes or influences the target, but the text does not support CAUSES, INCREASES, or DECREASES.\n  avoid: Do not use for mere association, chronology, physical force, or interaction with no stated effect.\nINCREASES [CAUSAL; direction=increaser_to_increased_variable]\n  meaning: The source causally raises the amount, rate, value, probability, or intensity of the target.\n  roles: source=causal factor; target=quantity or variable increased\n  use: The source is explicitly said to make the target greater, faster, more likely, or more intense.\n  avoid: Do not infer from nearby words such as more or faster; never use when the source says slower, lower, or less.\nDECREASES [CAUSAL; direction=decreaser_to_decreased_variable]\n  meaning: The source causally lowers the amount, rate, value, probability, or intensity of the target.\n  roles: source=causal factor; target=quantity or variable decreased\n  use: The source is explicitly said to make the target smaller, slower, less likely, or less intense.\n  avoid: Do not use for absence, prevention without a scalar target, or mere negative association.\nINDUCES [CAUSAL; direction=inducer_to_induced_effect]\n  meaning: The source produces the target through an explicitly described induction mechanism.\n  roles: source=inducing phenomenon; target=induced phenomenon\n  use: The source explicitly says induces or describes a recognized induction mechanism.\n  avoid: Do not use as a metaphor for generic causation, influence, motivation, or historical response.\nENABLES [DEPENDENCY; direction=enabler_to_enabled]\n  meaning: The source makes the target possible without necessarily causing it to occur.\n  roles: source=enabling condition or capability; target=capability or process made possible\n  use: The target could not occur, or is materially made possible, because of the source.\n  avoid: Do not use for delivery, participation, weak assistance, or an effect that actually occurred.\nREQUIRES [DEPENDENCY; direction=dependent_to_requirement]\n  meaning: The source depends on the target as a prerequisite or necessary resource.\n  roles: source=dependent; target=prerequisite or required resource\n  use: The source cannot operate or occur as described without the target.\n  avoid: Do not reverse prerequisite and dependent; do not use for optional support.\nCONSTRAINS [DEPENDENCY; direction=constraint_to_constrained]\n  meaning: The source limits the possible behavior, values, or choices of the target.\n  roles: source=constraint; target=constrained entity, process, or variable\n  use: The source imposes a limit, rule, boundary, or restriction on the target.\n  avoid: Do not use to mean unchanged, unrelated, merely different, or causally reduced.\nPRECEDES [TEMPORAL; direction=earlier_to_later]\n  meaning: The source occurs before the target in time or an explicit process sequence.\n  roles: source=earlier event or process; target=later event or process\n  use: The source explicitly occurs before, previously, first, then, or after relative to the target.\n  avoid: Do not infer causality from order; do not reverse earlier and later.\nINTERACTS_WITH [INTERACTION; symmetric]\n  meaning: The source and target directly interact, with no more precise directional semantics supported.\n  roles: source=interaction participant; target=interaction participant\n  use: The text supports direct mutual interaction but not a more precise active predicate.\n  avoid: Do not use for distant association, one-way effect, dependency, or chronology.\nBINDS_TO [INTERACTION; symmetric]\n  meaning: The source physically or chemically binds or attaches to the target.\n  roles: source=binding participant; target=binding participant\n  use: The source explicitly binds or attaches to the target.\n  avoid: Do not use for metaphorical commitment, dependency, influence, or literal physical force.\nTRANSFERS_TO [INTERACTION; direction=transferred_item_to_destination]\n  meaning: The source item, material, or information moves to the target destination or recipient.\n  roles: source=item, material, or information transferred; target=destination or recipient\n  use: The source is explicitly carried, delivered, moved, or transferred to the target.\n  avoid: Do not make the carrier the source unless the carrier itself moves to the destination; do not use for enabling.\nEXERTS_FORCE_ON [INTERACTION; direction=force_exerter_to_physical_target]\n  meaning: The source exerts a literal physical force on the target.\n  roles: source=physical force source; target=physical object receiving force\n  use: A literal physical force is explicitly exerted on the target.\n  avoid: Never use metaphorically for influence, contribution, binding, pressure, or causation.\nTRANSFORMS_INTO [TRANSFORMATION; direction=prior_state_to_resulting_state]\n  meaning: The source itself changes state or identity and becomes the target.\n  roles: source=entity or state before transformation; target=same entity or resulting material after transformation\n  use: The source itself becomes the target through a transformation.\n  avoid: Do not use when an actor causes, creates, attempts, participates in, or responds to the target.\nCREATES [TRANSFORMATION; direction=creator_to_created]\n  meaning: The source produces or brings a distinct target into existence.\n  roles: source=producer or generative process; target=newly produced entity or result\n  use: The source produces a target that is distinct from the source.\n  avoid: Do not use when the source itself becomes the target; use TRANSFORMS_INTO instead.\nMEASURED_BY [DESCRIPTIVE; direction=measurand_to_measure]\n  meaning: The source property or variable is quantified or assessed by the target metric, observation, or procedure.\n  roles: source=property or variable measured; target=metric, observation, or measurement procedure\n  use: The target is explicitly how the source is measured or quantified.\n  avoid: Do not point to something that merely responds to, correlates with, or exemplifies the source.\nCONTRADICTS [DESCRIPTIVE; symmetric]\n  meaning: The source and target assert mutually incompatible propositions.\n  roles: source=proposition or claim; target=incompatible proposition or claim\n  use: Both sides are explicit propositions that cannot simultaneously hold as stated.\n  avoid: Do not use for difference, disagreement without incompatibility, trade-off, or negative causality.",
+  "max_output_tokens": null,
+  "max_tool_calls": null,
+  "metadata": {},
+  "model": "gpt-5.6-luna",
+  "moderation": null,
+  "object": "response",
+  "output": [
+    {
+      "content": [],
+      "encrypted_content": "gAAAAABqqlqGTu7ozrwMn7uXJjyeVivP6JHTo6L_hEBo5KnI7Rne1RyRSQJPv5ythUCwTYfEMhYnrAixvV_m0eZYB0ptapE-ATTjwctGu2rZsE2g3b67-Ou1j-Xt6JC_xBfUlbL7oFFBIA_o6ZkWuXCbL69BpYWe6Kg5GF3kVw1fkeNUn-TFjXnvoSfzfwAhXktHmDQdsPwpHCLLcfYWiE-zNoCObk2xpQ4Q6biEVtOLxtdkbaXWPwAO0Khq9ZjHlBkzDmNYkg75LIxeB3XhzIUKYBgOtUoRnLzWfqMCkiHl5i4maFvNhJAANSlErT83wnd0O4bDWxY2u7hp9TgfHPmHn09aLUKU03f38vS25E8-TaoIR0e_k--QXBpcZUhMonxFaTZBx3NGFMSom1tpbjcngFTPmziAv3iuunlfhQLiX4AnapNmY0I4hOckg6EiuPbb6a5vvW32dxkJbi0GrMqepBt0YlPgsMrb0i-lS5KAm8FVX8AxP-2MDoqWaRi2oYPtFs7wWFuhg17k4P63y509u877I7M61Z3nMnxsAPFV6NU7tXiNPc1onttiYdKl-pOMwiC1Fzp2ckPm5onwg7OFNYW17B4DhzDmmKXkcLuO4wH9gihm53HgxIQflE8K0MLZ6sE4Xnnsj3xnH3rDWU1t8dbHuDbqC78aLb-GgwQA3qXRfEIFu5R5BCGgxUxU9yNSVUGtk11ojDfuhQTsfv132AoZHGqs3ufFkYwyMU3u8CegGtxrYlxoiWjGb36x_-I742Zr8t_5Ms9ySprUVMzkuE3o3volqL9-gvB_oCpYGyyYOdANViK7ZVxNbEJDdoqbulmYNuzBQ-_RZqYqA57eGdTiebm6WtXKGDpkLTiZ5IjLBFmV6r0aVLWDr_5P78UlHJWI6h7ezDQPFejin0gUC2Lgp1z3gliXOad172JHPYyEqOqPkuIyxqfUwnW_9nsWDPmGLVvqsuNHt52QE790FUXCjGkxnVYL4za_izIippbgRzdilQ_tFPjTf8XtbvGMpibLbpB979rsiwU9qo0C3OXJznQtDi63lBVXhPnbjJRXfm9aZ150t-q9n_m9M01-4BEVfRjrYyA32GXC1I5uGA1DwZYXAcneQnM0DfXr0LrjVGP0x9cUmMSUsGS_ncnKxGO5k-_Ly7RXP0E6_gxI9IFP6wJt34sS-m6UpxmE9X8sQHN7hc3OrWQ_MHg8k8_k8eZ-sM4IOd7TQ41sVTIWyBXkNHkHgzV1uhmKqCbEzDfsB8xDXgOVIyurPVwFQ7AEIrUHSAjDy0KECgnpqIA5J18PrxENbGqODQLD9EKpR3ULqclfxZHPNDLjXS3irKVoFLOBB4LbihM90JqG4M0WqP5onCUR0PMTtYS9qw4HUm3zAy6zHRB0-VxiLe14Pw6qHiLOoWtW-JXoTk9Y6k5Nv95OK8TytzRyXD-N_orYkPJsU2j7oZH_OnpcbZVp0TxxU4oMrhweqimB3wv-085ZIvWzMlgXSaTBjOJhRZscUkS3qilCm_PewEO3SLLk7iZm99_vZ6oOS9Z8-ZlTnWvUXbS7CVQixGhonGn8FLCu7TkZKG9MuMifPx1lPKw2QwJSb974XCreoClDiiirpNAbqy5sB8p5RQjNLCPp7r5cvRqLEgSIX1RF62xsQQbQkCaTe3sT4XmjN2-N7OFgsXHKGluaO6g9bjT4BegQOEx2WoPTxo_IEGReDUMcVwSvgMSV5EboGSs9bE20ohKC-mbGcsSvDltbvEhqING5Vx8n0szTlE1M9WhjiEhtjpq0kPXe0gXMYj-6TFJtrHT-ANd9Mud4-YG-GlblQqWMcifB7gxAD8wsaBlvyE_olnG4i1EGV_bmzbY8Df226Xi6SeuPwDRFewat-ajVDeCL8BR-GjbOprjQOIP0owgucxnP14QF8AJ0YdjNQbQIijXhOhPIPrx_q2YqYqQ21rC0Kcz3oguvYrLkhhmaInEvpN79pWNAtGcKyd6-0aU1qSys_914-pyr6LG6HvFlKwPEr-ONIBG3l_Tf_xw4_DSRlG3pD-2zy0KhrC4OwB2noxcJ5gXBG0TbmRHRhpQpARgQhsIMiE0hqirdG9sQn82hklG2IuXfMcX3PT7b9iKKJL81OKo9vEEZYUBlwBcatHmF7oSffnhcOrn0Se31ecliC-V5ww6Lv7_5K8fTJKD0b9q0H9aC0LH20KViHN42Fda8UNqGGj7jQWppdeGkUoLD3ZsAXY0sPBJq2kp6THuF5L335LcT5OVU5mw52690REP7vAvchRyl5YNeKONNVrHTdPVvDSmj4cONotihk3b-judC-8Dv9GBoGAgtnSx7uWpr2fGJA2EBuQeMcaa7Ce0a8FbiBAEXJO-aFUZMJBtEt2QQaeuh_o8iMJe-vBSXFbnSw8EJdwhgy7jvTmQL_QbVywOVZcf5ibtlH3huhIH56RdMiNqfm1TajDdLnoMS_evpMOmy1tuP6DLBx4kPCQP6TEmMufjRD92jIWOikuObIcIFEqR2eG3ciDmDSEoCiAa2n1hwUeNmlVtfmgtJkwKPjZwj75ongPRmE-48F7Hnc4EitWbe1XbZiS7v6gGg5CLcvpg2emFzi79DsWwrWnT5w47RJCDctsXQ8sbdMbz2YpzYLhgq69beqQfDIr49vSGJaF-HKWLTUt07LiYHPj79DyhzJfoeAu-ZFRvglXw3qEfPAgF3mlWg71qSe6LApsMJ2l5vsvxkwWfYgSvi658hcdfRqP_yqhU7VZCm9HyTKdrLHc_yfeSIFC7gOQXPUaMOzJ4y4fdFKDCMKKWyIsXBIUhGc0HIshP4voz--JNT7UdfTNFbUl0xR7ewFQED1aeDGKYXy9LUWrmpmSxNicFHqlZBON6V2MB4PYH5hjPEzYPgZTg8-OS-qpCYWWhR_7t02LkkJjeGb0z3HWPoRFVFvk_fSLGoSBzRjUmx1W6ipwXefTEVbJj1e7xeZh2lemt1k74hyofYZ6vlU_awX2tDi4qTJtj4vkRa60FZh2xq-WxGMDNhXyERA2_1d2QGAZCh5TrddPWs_d9z1JNEf_xa9nDlSWbWrWeT21gGua67376w0sfQtgleGNRZ-CyZ6a-wcGoSCRh_ejuCRmKVirLe373BOFJBcb3KMC_lMVkufwi38HV-ZOjP-FdK6T9LfVxicdYelAD2HSnTxVOqYgu-ECmPfP05JpV0YQaMyAM9KAEv8-DKRi8O5lKs2gBB3fhgEZIYtJ15WvnAcLPBn0a7klZikK8ETlO-umT6KmBuAMsuEWPeeq1GbiB7lVMVr5vNY3LS592lEBH1yGKEpdNPfMuuf5qXxsXEuUnwVllu-gkiZfG3WIz7v0-hv-cEyOT3qyVtRGg09CwmVmj2GnkxIZWnojPsvUAkyhSF1g5hDWgRe-7dT8KLyGFceOWXJsEnw_aefdEY2YF4YXTvpkv74sv2d1W6XwbUaUtCGEaU0LGjjyyJFdQMoESZHPlXx0O7-WRz-AmSWpYsa9gtjmIPOjlwz5SyB2x6UglTdVN_KR5ERSWWk5SxvofXTQndahO33GlayoZWN_q-0CuVv5e_TcLCwWFlJS0CrsBfbVyAB2kv97Lw1-rZeSkRiUkifqb_Ucs_wh8SShOjFfaGjybxi2whB7m7xRPQcdwblSmlt4czYIicIdYbSez6aeCXtg9FPdZr8a_MErFqNgiScbPXzIsagoB8DNeT3Zi-i7fK31OT239iDvS6zyG-JKzPmwz_Gi1sQmuEkUvW2-eCQpMfKwqKZzCglNHT1lqDfgPA8JcoS3Uu5JcY7HdqE8xdHcCuAIA-8QQPt0c7CHQmaKIHEA-s4hAfPvtUZULDbTK1krozPuFnBgcq9OI0uIm2BsEWYvjjD0Xs0EclEqwlxIO3gpGVNe_VD0lQJCpdAetjLR48m5CtcOWCpyHkjZ0QaG8Quu8_aV1S_MdWqQx6ctjazzq3kwEjmr6ZfeOIQp6geddhYrVUAuxi3A63pDc9VXAcB2zyMG-6Wr_LJIHEHqXlC1_HjsuHMS2pFREheW9bF1xNg_957VOqXOU3UPUwKl2KVZ_w-o7xYN7Qgbois0ThhIEFgeE1pOhdq1JBIkZxCcTMgYDBnsvsIXR-1ZcYGy5YvomdGYH_klI8tz4JWlT_UNUkUokqs2jopTrYbZtv9cQxaEs7qGxXsrzsV8JSGZG6VXw1LoC7r6tkDLIZ_MXd_QR-gLL0ydrE2HxleRSc7lFIqyeyb3FWWsB9lnSFys2k03hCHgf6EoTpD1Vneg3e1ps0rGRHbniRaDKaRBRm51vSUrFBa8yrt-t9DH3t9lmcN0fHba4FdVGvaxZeqSExA3rktoAy7IdYnpHpNxNG8HuVz_lLdiKWkZ1IdudGxFL6r1LtnHNzljA4w961IVnXPzOd2odzPzke-PWv2NKbFPYGUAcKVTeKHiIaao45sayDiOJTVyJe7RA5K2A8WIgf8_YoSGPdQEXUT5R5n9_BL33weFUz1PG_-rFVpocBsympWHrIbaZg_nkA2fmssg4wtCKvPZ1IdScBeBxbjc0HX84Z3Q9Coxk8JJEBd2y-bYsHskghnXCS47L5Lb0LDBhCSg7T_YEH7DRxvsAF4nzvww3PbgVqjnVclCW5tYwka_nqAiOJ9fIvomwk1HAXTP7krv3NAHrQ57y3LPq8HNnN8FJ8qVVYo1dA9896FSbezTUDJf8kj88ZFmJhsnuR--gfiLORqmuPweT2E_BYyx-A6HbteWdBE06kfrW74Ij-SW4IFk1cNMMSEUjFYysjicS52wf8vGMOlXM_HIa4Y7NPM9BgZG9ITq8YXlUiMZAHMK5LerHQp8KZhj1A1iRKmGO0XElzpl53laKaU8C9dIHmDGH9rqLBUQiptReKDxqpXCFkqTWcsRvjtHmC2KgwO_0sBtQgwfjANqEudgp0lUXfK8bzCf6GcLXJNsvety8QmtmT4pM0pgjUFTiVS9U15lUQpOSH9N6YeEKDDka1QpKG4n0y0ZUt3TEI1PrXwTL88qmbIsHt0RqZsDmwf9F8NwZE4t9XyvvMzKP9PNRt",
+      "id": "rs_0202413a97defcd8016aaa5a7a151887d2a10af2c6ec3ba66c",
+      "status": null,
+      "summary": [],
+      "type": "reasoning"
+    },
+    {
+      "content": [],
+      "encrypted_content": "gAAAAABqqlqGtsM38A1wcm43Qi6IXJw01vb9l3w2qUE283VwgSIvz7vT9k9DNUUy9hVH7QTCnDfevBU-6PVGgP1pASmEEOy2RGGTJ8Gqqb3FGDsk9rZmk-cDxNT8whnqTELh4XAIuZi_m5XGzJ55rqeJxsdGr03Xo4FfuV6_yM6Obl1aTRBK_h0AknjsZbGCbdxKPbNfYlGvm11qBl3IYF8icB9CVtdCUQ0eNmRinYt3vdVVTs9MuUdPmHf231u264fSd7Ucf-0N7x6vK_KowuhymrnpAebvXkavg59B34grzECW_xS978l4FGA14R4fdgF7xGkQRA6qR6PkYXV3y2u8I1TL8IfkW6oHZF2JjgfyV_cxby67SWecp5VcBf7YBe_TAHf6c-qFl5QWZQMUTiv4VFSoIFg-t-AFZskB550NShJLxDbLZ59um1kVLYY1P64mGz7i7OlyTad1ILWhATjciPS-46U7Hhvfkly-gmcteptJuXOTNg21qZF-CSm0OwL9OV2R6QUul89WOz0gkWXo3WzfIatDGexjUHK-iAINN-M-njDs9ESJVWdz9fAqrovrDO-iNN4E9Q-PSy6UHYUP22b__ZWqZ64OmHXRD5qh4gRqZL5H5ZK-D8d9aQWm84oBl3jGKfzoNWxLeHzu-OhPJtpDbdpRQ_s31IBFlRoVEaA8rxW9NZJwIkd3rAAwTLWmiGYg3f-TpyoAU6MDSfEmznajrQqcnFBXwEksdxAOzQBWfQWXJF66MANYodXFBaTE_PxjzTQ706Iq-1s_uaNU20-J6-Ld8M_29u0wOHuRcFTtv8EV285saPueUY6UCetnpxnfASBCT4AVeQMpUkxG_R0YmpbzQXRBycJsvNXVs2Ed8qNafxZC5M9-69FlShSc0CB9xFU5PRvTSqYuuB-gRaoJs1x-qxUNriQ2R0nRnoAw86LrLETrRj7PTaabfmNzDRVJ_v8FKdr6rw6NxZXBtdw36u89eBHjOztSjOG-i621jYTOYfeAVtt3kQhGj8DR3-ogjNB0tMsBRVxMOxVgJVIA5_csCFAME_N7PajJIz1_qL10us2HzfUKQXd-izodJUaxUlm9wSl7MQX_BZ4qfVxIloCYdVXLESzxNjmrcIXoHLb3SbXBGvHFYqZv4tgNKRY6WYeo62NhAClRu8rwm6mNaNMfa1tfozEf8LA_6rxDV97VzSJv4AZ_vdxCeRxWZpWtG_qMh4a_ZliPfK4TyOH54RILkXTqCpfD5fmGcQ6JX8rXpNTAqh4VAzDAjSbhCTrQiz9j4p1EgxSZybWLFVqJNCtHJZcUeYL8bI737lcjMZCJXhxsW34j93ijWzar1Wm40lWwjGWYa2l9pqXLqXbHAD9OV7G5oBRuWS1uHDNkkzUQBsQlfwmocTTthwrXZW04d76eJLsvn7vccZO-B_BBpeU8DSczLuHuwEs1vkaj0v8FHGgkfnwKXc9voxIUJV9UW-qCXgyyldtj2_f6D2ADzY4imjlPXh2FnEPWdyR65ShPSSs2jxt9WO6o0zmgoJu6Hu-tyNH-HUZy4XaGRMo6HDz8-_PLPW19dvFDnciTadhj1BaHYiqaRfdXHUcknqoezo0BtGuV2fEX-Kz5aYXY8fp_Ulnfq6RLHF4aFp8HZjrGvZdczhe95_8AZIoFRcydlPgyZZHgWeQuPe8UiGOVz3R0Tjw07mTIEqsXrU3JrqxWfdsZvkN69EQIvnp05P3vZhSQE60cXItvlGNdfrVLbEtrbetOHEfx4O4OgXcfmp5_gFgewmvAEKgkMN649x2fMe5ul29Sp7kJY0upthQvi6jyX6U7M2VOPfuRLmCEv95unkJ53VDl1dfofzRLZDyr259S3wltHcrG1XR72Kk-M4A5OMjzidBCYUFvRZ5h8Xv8qBi6CkQMefEFA-HxCIjSSMdP6v9q6iB2YsKFxaQmNdRhBU-YZz61uwf1_iw2U0RmSbm5helOnf8mnIlbn0PrrTRtG9_T1D4lz7tgncM4nFxQmOAW4PSdlWJcNu8vDHfxIWLfNoy3OBH51gBqWkwddKSAnF-1De0qcGxkeE7XvCVzKKdo6DXUKu--lvvVgpXzCF_Zwk1GV3F7H-b1OTM4Jsb-OZMTfMOeqAbCngadsAaXuNHRKOOazaBx4hc5VDZ59lrp2sTPGqVO_3V4JOTy_7gRkD1WdtGRzARJhpOmg5SG48_uTNJX8AgVMXNhKkLWXiwdNCnbQkRL9XD6g-F47w3nLwjBLlXO3HT9i7LJck1NQe9yahIzUADYzK2XNTYmCaOGMzrCnZW6oI_lXKZenXOFDwDPHJ_wSqDSUaJ-QU1tiDniwhH8a6nsL8C4-t0u-hYn_owivocYB28L5dYGWrbN2_W-MGk0Ih3nPVMjNwYxoo2mFfdjKdOQ8G-zoDrBy1Oa_c-yP4e6vFaG1Vi40B3xDU1m05g6VNvmN0Sv45KsYMqQKFsG9MDq1vhA6Cuhy2R4CLtTqVePzZpGG_pNzty0Ur79jBviQv5jbeMZcLOjo_2OVS6n8d7ZbxFureKlztSUwnDX4G3IOXG7PfirazAT9ByUwI2XZlzFT8vmel3qE7WBJ0zhEsW6AAmHd3mdP9HnVkEjk2DwPWmrvoMDbNte0uNRr2rrP6d1a1yIOxCbQnwObU-eCmDp3FCAgB_HPN_bRsXtdeDUBu0W2yUCr2M9fPZBmdiHxaWLl4HwyUZcPTEnMwSQ3hoHTReK29V3HcD2QYWvo0_Try5VAwTqsh3EoEgH1pkRUKSe6TBss5n--41hNfI_A_pJAqW0DlCax2reBGwxShSSpcWQq4qhRpKeOLoVpvBNLzvVhyj26MjQp6yt3B0z8vcgNkXrqjBcGYCmsNsA8_Sm6TCPwtUvCXHebKhV5kKUND6OZu2wfqjdjqt_7K2hUBULnL5CyqeF8GyTJR2mYdtE0ZQujFJAaXl6NCLApRLNpxA9gAiOfrOHf6lJkOzjhfnN4iCZyNLvlzCL3MkZQy9G8ORbHX_9uYX94S45vbVVhelOu_3EeV5puroEfYl0_M-pOzv4JjZyusL_F85EK4N_GIO7w26Ntk9MBuLK7e03U8oz8RQZ6JtER4e71qDspx554un1kxuTC2uJx2Y58BVAb1XfIRrEaeguFyJ4kw8yrUHNyp8tENQpj-DFuN6c0xmDj1lcHpqv-ndcDUSr1HZaJby8T0EHF_Hhq9O2gQDvysdk01If7aK5xYdrTvJpbVZleKSRth9EA3IV45-418LUCPec_UODtlxausUnvRQ8RK5oRbyRq37S9I7jQ8g_o0vIK0_34MkEnDtJDfo4IMn2-6CwdfW3FrnMuGpjz5-8ZrCCrpicbcvBShmuDkxI4QbUBlT0WImP9Sn4TRYDLAY-mkSaq6yoiczp4nu1EMuhl4evIraCd6P-i7FnL88PTqTEpzWontr7BFQ=",
+      "id": "rs_0202413a97defcd8016aaa5a7ef62c87d2ad16d96877941a20",
+      "status": null,
+      "summary": [],
+      "type": "reasoning"
+    },
+    {
+      "content": [
+        {
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relationships\":[{\"id\":\"r1\",\"source_entity_id\":\"measurement\",\"relationship_type\":\"CREATES\",\"target_entity_id\":\"measurement-value\",\"statement\":\"Measurement produces a value that can reasonably be attributed to a quantitative property.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r2\",\"source_entity_id\":\"quantitative-property\",\"relationship_type\":\"MEASURED_BY\",\"target_entity_id\":\"measurement\",\"statement\":\"A quantitative property is the object of measurement.\",\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"r3\",\"source_entity_id\":\"mass\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"quantitative-property\",\"statement\":\"Mass is the quantitative property of the International Prototype Kilogram used as the example measurand.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r4\",\"source_entity_id\":\"international-prototype-kilogram\",\"relationship_type\":\"EXAMPLE_OF\",\"target_entity_id\":\"body\",\"statement\":\"The International Prototype Kilogram is an example body whose mass is measured.\",\"confidence\":0.86,\"origin\":\"INFERRED\"},{\"id\":\"r5\",\"source_entity_id\":\"comparison\",\"relationship_type\":\"PART_OF\",\"target_entity_id\":\"measurement\",\"statement\":\"Measurement involves direct or indirect comparison with a standard.\",\"confidence\":0.97,\"origin\":\"SOURCE\"},{\"id\":\"r6\",\"source_entity_id\":\"quartz-crystal-resonator\",\"relationship_type\":\"EXAMPLE_OF\",\"target_entity_id\":\"standard\",\"statement\":\"A certified quartz crystal resonator is given as an example of a standard.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r7\",\"source_entity_id\":\"primary-gas-mixture\",\"relationship_type\":\"EXAMPLE_OF\",\"target_entity_id\":\"standard\",\"statement\":\"A primary gas mixture is given as an example of a standard.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r8\",\"source_entity_id\":\"methane\",\"relationship_type\":\"PART_OF\",\"target_entity_id\":\"primary-gas-mixture\",\"statement\":\"Methane is a constituent of the example primary gas mixture.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r9\",\"source_entity_id\":\"air\",\"relationship_type\":\"PART_OF\",\"target_entity_id\":\"primary-gas-mixture\",\"statement\":\"Air is a constituent of the example primary gas mixture.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r10\",\"source_entity_id\":\"phenomenon\",\"relationship_type\":\"INTERACTS_WITH\",\"target_entity_id\":\"measuring-instrument\",\"statement\":\"The phenomenon of interest interacts with a measuring instrument.\",\"confidence\":0.96,\"origin\":\"SOURCE\"},{\"id\":\"r11\",\"source_entity_id\":\"body\",\"relationship_type\":\"INTERACTS_WITH\",\"target_entity_id\":\"measuring-instrument\",\"statement\":\"The body of interest interacts with a measuring instrument.\",\"confidence\":0.96,\"origin\":\"SOURCE\"},{\"id\":\"r12\",\"source_entity_id\":\"substance\",\"relationship_type\":\"INTERACTS_WITH\",\"target_entity_id\":\"measuring-instrument\",\"statement\":\"The substance of interest interacts with a measuring instrument.\",\"confidence\":0.96,\"origin\":\"SOURCE\"},{\"id\":\"r13\",\"source_entity_id\":\"measuring-instrument\",\"relationship_type\":\"CREATES\",\"target_entity_id\":\"indication\",\"statement\":\"A measuring instrument produces an indication responsive to the property of interest.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r14\",\"source_entity_id\":\"measurement-uncertainty\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"parameter\",\"statement\":\"Measurement uncertainty is defined as a parameter characterizing dispersion.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r15\",\"source_entity_id\":\"standard-deviation\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"parameter\",\"statement\":\"A standard deviation is a parameter that may express measurement uncertainty.\",\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"r16\",\"source_entity_id\":\"standard-measurement-uncertainty\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"measurement-uncertainty\",\"statement\":\"Standard measurement uncertainty is measurement uncertainty expressed as a standard deviation.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r17\",\"source_entity_id\":\"scalar-measurand\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"quantitative-property\",\"statement\":\"A scalar measurand is a measurand whose property of interest can be quantified by a single real number.\",\"confidence\":0.95,\"origin\":\"SOURCE\"}],\"comparison_conditions\":[],\"transfer_events\":[],\"missing_symbols\":[]}",
+          "type": "output_text"
+        }
+      ],
+      "id": "msg_0202413a97defcd8016aaa5a81d97487d28a6173cf10ab4706",
+      "phase": "final_answer",
+      "role": "assistant",
+      "status": "completed",
+      "type": "message"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt": null,
+  "prompt_cache_key": null,
+  "prompt_cache_options": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "low",
+    "generate_summary": null,
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "status": "completed",
+  "store": false,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "description": null,
+      "name": "candidate_b_v2_semantic_structure",
+      "schema_": {
+        "additionalProperties": false,
+        "properties": {
+          "comparison_conditions": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "comparison_operator": {
+                  "enum": [
+                    "GREATER_THAN"
+                  ],
+                  "type": "string"
+                },
+                "confidence": {
+                  "maximum": 1,
+                  "minimum": 0,
+                  "type": "number"
+                },
+                "left_operand_entity_id": {
+                  "enum": [
+                    "air",
+                    "body",
+                    "calibration",
+                    "comparison",
+                    "coverage-probability",
+                    "dispersion",
+                    "half-width",
+                    "incomplete-knowledge",
+                    "indication",
+                    "international-prototype-kilogram",
+                    "interval",
+                    "mass",
+                    "measurement",
+                    "measurement-result",
+                    "measurement-uncertainty",
+                    "measurement-value",
+                    "measuring-instrument",
+                    "methane",
+                    "numerical-magnitude",
+                    "parameter",
+                    "phenomenon",
+                    "possible-value",
+                    "primary-gas-mixture",
+                    "probability-distribution",
+                    "quantitative-property",
+                    "quantity-value",
+                    "quartz-crystal-resonator",
+                    "range-of-possible-values",
+                    "real-number",
+                    "reference",
+                    "relevant-standard",
+                    "scalar-measurand",
+                    "scatter",
+                    "specified-multiple",
+                    "standard",
+                    "standard-deviation",
+                    "standard-measurement-uncertainty",
+                    "state-of-knowledge",
+                    "substance"
+                  ],
+                  "type": "string"
+                },
+                "origin": {
+                  "enum": [
+                    "SOURCE",
+                    "INFERRED"
+                  ],
+                  "type": "string"
+                },
+                "outcome_entity_id": {
+                  "enum": [
+                    "air",
+                    "body",
+                    "calibration",
+                    "comparison",
+                    "coverage-probability",
+                    "dispersion",
+                    "half-width",
+                    "incomplete-knowledge",
+                    "indication",
+                    "international-prototype-kilogram",
+                    "interval",
+                    "mass",
+                    "measurement",
+                    "measurement-result",
+                    "measurement-uncertainty",
+                    "measurement-value",
+                    "measuring-instrument",
+                    "methane",
+                    "numerical-magnitude",
+                    "parameter",
+                    "phenomenon",
+                    "possible-value",
+                    "primary-gas-mixture",
+                    "probability-distribution",
+                    "quantitative-property",
+                    "quantity-value",
+                    "quartz-crystal-resonator",
+                    "range-of-possible-values",
+                    "real-number",
+                    "reference",
+                    "relevant-standard",
+                    "scalar-measurand",
+                    "scatter",
+                    "specified-multiple",
+                    "standard",
+                    "standard-deviation",
+                    "standard-measurement-uncertainty",
+                    "state-of-knowledge",
+                    "substance"
+                  ],
+                  "type": "string"
+                },
+                "proposition_type": {
+                  "enum": [
+                    "COMPARISON_CONDITION"
+                  ],
+                  "type": "string"
+                },
+                "relationship_type": {
+                  "enum": [
+                    "CAUSES"
+                  ],
+                  "type": "string"
+                },
+                "right_operand_entity_id": {
+                  "enum": [
+                    "air",
+                    "body",
+                    "calibration",
+                    "comparison",
+                    "coverage-probability",
+                    "dispersion",
+                    "half-width",
+                    "incomplete-knowledge",
+                    "indication",
+                    "international-prototype-kilogram",
+                    "interval",
+                    "mass",
+                    "measurement",
+                    "measurement-result",
+                    "measurement-uncertainty",
+                    "measurement-value",
+                    "measuring-instrument",
+                    "methane",
+                    "numerical-magnitude",
+                    "parameter",
+                    "phenomenon",
+                    "possible-value",
+                    "primary-gas-mixture",
+                    "probability-distribution",
+                    "quantitative-property",
+                    "quantity-value",
+                    "quartz-crystal-resonator",
+                    "range-of-possible-values",
+                    "real-number",
+                    "reference",
+                    "relevant-standard",
+                    "scalar-measurand",
+                    "scatter",
+                    "specified-multiple",
+                    "standard",
+                    "standard-deviation",
+                    "standard-measurement-uncertainty",
+                    "state-of-knowledge",
+                    "substance"
+                  ],
+                  "type": "string"
+                },
+                "statement": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "statement",
+                "confidence",
+                "origin",
+                "proposition_type",
+                "left_operand_entity_id",
+                "right_operand_entity_id",
+                "outcome_entity_id",
+                "relationship_type",
+                "comparison_operator"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "missing_symbols": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "reason": {
+                  "type": "string"
+                },
+                "semantic_item": {
+                  "type": "string"
+                },
+                "surface_form": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "surface_form",
+                "semantic_item",
+                "reason"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "relationships": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "confidence": {
+                  "maximum": 1,
+                  "minimum": 0,
+                  "type": "number"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "origin": {
+                  "enum": [
+                    "SOURCE",
+                    "INFERRED"
+                  ],
+                  "type": "string"
+                },
+                "relationship_type": {
+                  "enum": [
+                    "IS_A",
+                    "PART_OF",
+                    "CAUSES",
+                    "INCREASES",
+                    "DECREASES",
+                    "ENABLES",
+                    "REQUIRES",
+                    "CONSTRAINS",
+                    "PRECEDES",
+                    "TRANSFORMS_INTO",
+                    "INTERACTS_WITH",
+                    "MEASURED_BY",
+                    "EXAMPLE_OF",
+                    "CONTRADICTS",
+                    "CREATES",
+                    "INDUCES",
+                    "EXERTS_FORCE_ON",
+                    "AFFECTS",
+                    "BINDS_TO",
+                    "TRANSFERS_TO"
+                  ],
+                  "type": "string"
+                },
+                "source_entity_id": {
+                  "enum": [
+                    "air",
+                    "body",
+                    "calibration",
+                    "comparison",
+                    "coverage-probability",
+                    "dispersion",
+                    "half-width",
+                    "incomplete-knowledge",
+                    "indication",
+                    "international-prototype-kilogram",
+                    "interval",
+                    "mass",
+                    "measurement",
+                    "measurement-result",
+                    "measurement-uncertainty",
+                    "measurement-value",
+                    "measuring-instrument",
+                    "methane",
+                    "numerical-magnitude",
+                    "parameter",
+                    "phenomenon",
+                    "possible-value",
+                    "primary-gas-mixture",
+                    "probability-distribution",
+                    "quantitative-property",
+                    "quantity-value",
+                    "quartz-crystal-resonator",
+                    "range-of-possible-values",
+                    "real-number",
+                    "reference",
+                    "relevant-standard",
+                    "scalar-measurand",
+                    "scatter",
+                    "specified-multiple",
+                    "standard",
+                    "standard-deviation",
+                    "standard-measurement-uncertainty",
+                    "state-of-knowledge",
+                    "substance"
+                  ],
+                  "type": "string"
+                },
+                "statement": {
+                  "type": "string"
+                },
+                "target_entity_id": {
+                  "enum": [
+                    "air",
+                    "body",
+                    "calibration",
+                    "comparison",
+                    "coverage-probability",
+                    "dispersion",
+                    "half-width",
+                    "incomplete-knowledge",
+                    "indication",
+                    "international-prototype-kilogram",
+                    "interval",
+                    "mass",
+                    "measurement",
+                    "measurement-result",
+                    "measurement-uncertainty",
+                    "measurement-value",
+                    "measuring-instrument",
+                    "methane",
+                    "numerical-magnitude",
+                    "parameter",
+                    "phenomenon",
+                    "possible-value",
+                    "primary-gas-mixture",
+                    "probability-distribution",
+                    "quantitative-property",
+                    "quantity-value",
+                    "quartz-crystal-resonator",
+                    "range-of-possible-values",
+                    "real-number",
+                    "reference",
+                    "relevant-standard",
+                    "scalar-measurand",
+                    "scatter",
+                    "specified-multiple",
+                    "standard",
+                    "standard-deviation",
+                    "standard-measurement-uncertainty",
+                    "state-of-knowledge",
+                    "substance"
+                  ],
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "source_entity_id",
+                "relationship_type",
+                "target_entity_id",
+                "statement",
+                "confidence",
+                "origin"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "transfer_events": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "comparison_operator": {
+                  "type": "null"
+                },
+                "confidence": {
+                  "maximum": 1,
+                  "minimum": 0,
+                  "type": "number"
+                },
+                "destination_entity_id": {
+                  "enum": [
+                    "air",
+                    "body",
+                    "coverage-probability",
+                    "dispersion",
+                    "half-width",
+                    "incomplete-knowledge",
+                    "indication",
+                    "international-prototype-kilogram",
+                    "interval",
+                    "mass",
+                    "measurement-result",
+                    "measurement-uncertainty",
+                    "measurement-value",
+                    "measuring-instrument",
+                    "methane",
+                    "numerical-magnitude",
+                    "parameter",
+                    "phenomenon",
+                    "possible-value",
+                    "primary-gas-mixture",
+                    "probability-distribution",
+                    "quantitative-property",
+                    "quantity-value",
+                    "quartz-crystal-resonator",
+                    "range-of-possible-values",
+                    "real-number",
+                    "reference",
+                    "relevant-standard",
+                    "scalar-measurand",
+                    "scatter",
+                    "specified-multiple",
+                    "standard",
+                    "standard-deviation",
+                    "standard-measurement-uncertainty",
+                    "state-of-knowledge",
+                    "substance"
+                  ],
+                  "type": "string"
+                },
+                "event_entity_id": {
+                  "enum": [
+                    "calibration",
+                    "comparison",
+                    "measurement"
+                  ],
+                  "type": "string"
+                },
+                "object_entity_id": {
+                  "enum": [
+                    "air",
+                    "body",
+                    "calibration",
+                    "comparison",
+                    "coverage-probability",
+                    "dispersion",
+                    "half-width",
+                    "incomplete-knowledge",
+                    "indication",
+                    "international-prototype-kilogram",
+                    "interval",
+                    "mass",
+                    "measurement",
+                    "measurement-result",
+                    "measurement-uncertainty",
+                    "measurement-value",
+                    "measuring-instrument",
+                    "methane",
+                    "numerical-magnitude",
+                    "parameter",
+                    "phenomenon",
+                    "possible-value",
+                    "primary-gas-mixture",
+                    "probability-distribution",
+                    "quantitative-property",
+                    "quantity-value",
+                    "quartz-crystal-resonator",
+                    "range-of-possible-values",
+                    "real-number",
+                    "reference",
+                    "relevant-standard",
+                    "scalar-measurand",
+                    "scatter",
+                    "specified-multiple",
+                    "standard",
+                    "standard-deviation",
+                    "standard-measurement-uncertainty",
+                    "state-of-knowledge",
+                    "substance"
+                  ],
+                  "type": "string"
+                },
+                "origin": {
+                  "enum": [
+                    "SOURCE",
+                    "INFERRED"
+                  ],
+                  "type": "string"
+                },
+                "proposition_type": {
+                  "enum": [
+                    "TRANSFER_EVENT"
+                  ],
+                  "type": "string"
+                },
+                "relationship_type": {
+                  "enum": [
+                    "TRANSFERS_TO"
+                  ],
+                  "type": "string"
+                },
+                "statement": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "statement",
+                "confidence",
+                "origin",
+                "proposition_type",
+                "event_entity_id",
+                "object_entity_id",
+                "destination_entity_id",
+                "relationship_type",
+                "comparison_operator"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "relationships",
+          "comparison_conditions",
+          "transfer_events",
+          "missing_symbols"
+        ],
+        "type": "object"
+      },
+      "strict": true,
+      "type": "json_schema"
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 5655,
+    "input_tokens_details": {
+      "cache_write_tokens": 5652,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1753,
+    "output_tokens_details": {
+      "reasoning_tokens": 827
+    },
+    "total_tokens": 7408
+  },
+  "user": null
+}

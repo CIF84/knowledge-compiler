@@ -73,57 +73,54 @@ Accepted offline evidence:
 ## Current approved work packet
 
 ```text
-specs/SPEC-052-candidate-b-v2-live-evaluation.md
+NONE
 ```
 
-Status: `APPROVED_FOR_IMPLEMENTATION`
+Status: `NONE`
 
-Authority: `LIVE_CALLS_EXPLICITLY_BOUNDED`
+Authority: `NONE`
 
-Human gate: `OWNER_REVIEW`
+Human gate: `NONE`
 
 Promotion: `NOT_AUTHORIZED`
 
 ## Current gate
 
-SPEC-052 is authorized to execute the exact frozen Candidate B v2 once against the exact nine frozen blind passages.
+SPEC-052 is implemented and awaiting owner review. The single frozen Candidate B v2 run completed with:
 
-Provider authority:
+- 8/9 admitted sources;
+- 26 provider calls and 147,013 total tokens;
+- zero retries, repairs, enrichment, or known-invalid admission;
+- one Stage-2 `PROPOSITION_CONSTRUCTION` rejection, with correct short-circuiting;
+- 152/152 parsed claims exactly grounded and admitted;
+- 98 mechanically claim-only items preserved as grounded claims;
+- zero unintended topology from claim-only material;
+- zero dedicated claim-focus representation decisions, an explicit representation-coverage limitation.
 
-- OpenAI Responses API;
-- model `gpt-5.6-luna`;
-- `store=False`;
-- maximum 27 provider calls;
-- maximum one call per stage per source;
-- fixed source order;
-- Stage 1 → Stage 2 → Stage 3;
-- mandatory upstream-failure short-circuiting;
-- SDK/hidden/semantic/repair/follow-up retries/calls all zero;
-- no external retrieval/enrichment;
-- no prompt/schema/implementation adaptation after execution begins.
+Canonical evidence:
 
-Control A and Candidate B v1 must not be rerun.
+`examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/final-report.json`
 
-SPEC-052 must audit whether Stage-2 omitted non-topological meaning survives as exact grounded Stage-3 claims without creating topology.
+The mechanically supported branch remains `INCONCLUSIVE`; the product verdict and promotion remain owner-gated. No packet is active and no additional calls are authorized.
 
 ## Current product question
 
 ```text
 Control A historical: 4/9
-B v1 historical: 2/9 + Stage-2 proposition failure concentration
+B v1 historical: 2/9 + 6 Stage-2 proposition failures
         ↓
-frozen B v2
-canonical proposition interface + semantic omission
+frozen B v2 live: 8/9
+1 Stage-2 proposition failure
         ↓
-9-source bounded live execution
+152 exact grounded claims admitted
+98 mechanically claim-only; zero unintended topology
         ↓
-admission + trust containment + claim preservation
-+ semantic richness + cost/latency
+no dedicated claim-focus representation decisions
         ↓
 OWNER REVIEW
 ```
 
-The experiment asks whether B v2 recovers decomposition or whether the decomposition architecture should be abandoned.
+The owner must decide whether the large admission recovery justifies continued decomposition work despite higher cost and the unresolved claim-to-representation coverage limitation.
 
 ## Frozen / protected state
 

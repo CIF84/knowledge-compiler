@@ -1,0 +1,193 @@
+{
+  "admitted_counts": {
+    "claims": 7,
+    "entities": 62,
+    "propositions": 6,
+    "relationships": 21
+  },
+  "arm": "CANDIDATE_B",
+  "candidate_version": "spec-051-candidate-b-v2",
+  "detected_structure_count": 20,
+  "detected_structure_types": {
+    "CAUSAL_PATH": 20
+  },
+  "detection_stage": null,
+  "error_type": null,
+  "exact_failure": null,
+  "execution_mode": "FUTURE_LIVE",
+  "failure_classification": {
+    "detection_stage": null,
+    "error_type": null,
+    "exact_failure": null,
+    "origin_taxonomy": null
+  },
+  "failure_origins": [],
+  "known_invalid_objects_admitted": 0,
+  "monetary_cost": null,
+  "proposal_counts": {
+    "claims": 7,
+    "entities": 62,
+    "propositions": 6,
+    "relationships": 21
+  },
+  "provider_calls_started": 3,
+  "provider_latency_ms": 90482.486081979,
+  "representation_strategy_counts": {
+    "CAUSAL_MECHANISM": 13,
+    "CONCISE_PROSE": 55,
+    "FOCUSED_RELATIONSHIP": 21
+  },
+  "representation_sufficiency_counts": {
+    "INSUFFICIENT_SUPPORTED_STRUCTURE": 55,
+    "SUFFICIENT_TRUSTED_STRUCTURE": 34
+  },
+  "semantic_omission_audit": {
+    "assertion_aware_projection": "NOT_AUTOMATICALLY_RUN: existing builder requires a separately admitted grounded-assertion packet; claims remain in KnowledgeModel without minting assertion input",
+    "claim_only_by_exact_statement_and_distinct_id_count": 7,
+    "claims": [
+      {
+        "admitted_evidence_exact": true,
+        "admitted_in_knowledge_model": true,
+        "claim_id": "claim-1",
+        "exact_unique_source_quotes": true,
+        "grounding_policy_satisfied_mechanically": true,
+        "not_a_stage2_topology_id": true,
+        "not_identical_to_stage2_topology_statement": true,
+        "origin": "SOURCE",
+        "quotes": [
+          "Ecological systems are sustained by a number of biological, physical, and chemical processes, including primary production (conversion of the sun's energy into organic matter through photosynthesis), and the associated cycling of carbon, nutrients (nitrogen, phosphorus), hydrogen/oxygen, and other elements from the physical environment (air, water, land) through biological organisms and back into the physical environment."
+        ],
+        "statement": "Ecological systems are sustained by biological, physical, and chemical processes."
+      },
+      {
+        "admitted_evidence_exact": true,
+        "admitted_in_knowledge_model": true,
+        "claim_id": "claim-2",
+        "exact_unique_source_quotes": true,
+        "grounding_policy_satisfied_mechanically": true,
+        "not_a_stage2_topology_id": true,
+        "not_identical_to_stage2_topology_statement": true,
+        "origin": "SOURCE",
+        "quotes": [
+          "They also play an important role in providing ecological services—for example, providing natural resources, such as food, fiber, and timber, and regulating air and water quality."
+        ],
+        "statement": "Ecological processes provide ecological services, including natural resources and regulation of air and water quality."
+      },
+      {
+        "admitted_evidence_exact": true,
+        "admitted_in_knowledge_model": true,
+        "claim_id": "claim-3",
+        "exact_unique_source_quotes": true,
+        "grounding_policy_satisfied_mechanically": true,
+        "not_a_stage2_topology_id": true,
+        "not_identical_to_stage2_topology_statement": true,
+        "origin": "SOURCE",
+        "quotes": [
+          "Only one indicator that meets the ROE criteria, Carbon Storage in Forests, is available to address this question because ecological processes are difficult to measure directly, particularly at a national scale."
+        ],
+        "statement": "Ecological processes are difficult to measure directly, particularly at a national scale."
+      },
+      {
+        "admitted_evidence_exact": true,
+        "admitted_in_knowledge_model": true,
+        "claim_id": "claim-4",
+        "exact_unique_source_quotes": true,
+        "grounding_policy_satisfied_mechanically": true,
+        "not_a_stage2_topology_id": true,
+        "not_identical_to_stage2_topology_statement": true,
+        "origin": "SOURCE",
+        "quotes": [
+          "For example, remote sensing imagery has been used to obtain \"snapshots\" of indicators of ecosystem conditions over time, and to infer ecological processes such as terrestrial net primary production."
+        ],
+        "statement": "Remote sensing imagery can provide snapshots of ecosystem conditions over time and help infer ecological processes."
+      },
+      {
+        "admitted_evidence_exact": true,
+        "admitted_in_knowledge_model": true,
+        "claim_id": "claim-5",
+        "exact_unique_source_quotes": true,
+        "grounding_policy_satisfied_mechanically": true,
+        "not_a_stage2_topology_id": true,
+        "not_identical_to_stage2_topology_statement": true,
+        "origin": "SOURCE",
+        "quotes": [
+          "Repeated measures over a season might provide an indicator of net primary production."
+        ],
+        "statement": "Repeated measures over a season might provide an indicator of net primary production."
+      },
+      {
+        "admitted_evidence_exact": true,
+        "admitted_in_knowledge_model": true,
+        "claim_id": "claim-6",
+        "exact_unique_source_quotes": true,
+        "grounding_policy_satisfied_mechanically": true,
+        "not_a_stage2_topology_id": true,
+        "not_identical_to_stage2_topology_statement": true,
+        "origin": "SOURCE",
+        "quotes": [
+          "Indicators for other ecological processes, such as respiration, nutrient cycling, or decomposition have been developed for ecosystems at watershed scales, but have not been developed at the national scale."
+        ],
+        "statement": "Indicators for respiration, nutrient cycling, and decomposition have been developed at watershed scales but not at the national scale."
+      },
+      {
+        "admitted_evidence_exact": true,
+        "admitted_in_knowledge_model": true,
+        "claim_id": "claim-7",
+        "exact_unique_source_quotes": true,
+        "grounding_policy_satisfied_mechanically": true,
+        "not_a_stage2_topology_id": true,
+        "not_identical_to_stage2_topology_statement": true,
+        "origin": "SOURCE",
+        "quotes": [
+          "Developing these indicators at the national scale represents a significant scientific and research challenge."
+        ],
+        "statement": "Developing ecological-process indicators at the national scale is a significant scientific and research challenge."
+      }
+    ],
+    "existing_explanatory_representation": "Representation decisions are compiled from admitted canonical foci; claim-only material is not promoted into topology or assumed to be rendered.",
+    "parsed_response_available": true,
+    "semantic_overlap_limitation": "Exact statement/ID audit is mechanical; paraphrased semantic overlap is not judged automatically.",
+    "stage3_gate_status": "PASS",
+    "stage3_ran": true,
+    "structure_detection_consumes_claims": false,
+    "unintended_topology_count_if_admitted": 0
+  },
+  "source_id": "epa-ecological-processes-2026",
+  "source_sha256": "70e7e3d20325dd5d22e9cf4484934419447907ba9f6cf5a4dfd65ddcbfa80ad5",
+  "stage_gates": [
+    {
+      "error_type": null,
+      "exact_failure": null,
+      "output_identity_sha256": "c29ab593dab297dadbbe7c9b90ab91661c8225961f3fc8320fa815321b9135cc",
+      "stage": "ENTITY_INVENTORY",
+      "stage_version": "spec-047-entity-inventory-v1",
+      "status": "PASS",
+      "upstream_identity_sha256": "70e7e3d20325dd5d22e9cf4484934419447907ba9f6cf5a4dfd65ddcbfa80ad5"
+    },
+    {
+      "error_type": null,
+      "exact_failure": null,
+      "output_identity_sha256": "d18a51cb02e25bf6710da096cd4b620617f9cf0fe2072ab70a318fefc030f6c4",
+      "stage": "SEMANTIC_STRUCTURE",
+      "stage_version": "spec-051-semantic-structure-v2",
+      "status": "PASS",
+      "upstream_identity_sha256": "c29ab593dab297dadbbe7c9b90ab91661c8225961f3fc8320fa815321b9135cc"
+    },
+    {
+      "error_type": null,
+      "exact_failure": null,
+      "output_identity_sha256": "88f7433a9aa9367b86155df79dd9052264c4a92ac3d1facbd6ba45bd7d805bc9",
+      "stage": "CLAIM_EVIDENCE_BINDING",
+      "stage_version": "spec-051-claim-evidence-binding-v2",
+      "status": "PASS",
+      "upstream_identity_sha256": "60b7696909e527f4c58857c30d46d6aa1c56e5f33c8cbf86ec3ce7b08d27ff94"
+    }
+  ],
+  "status": "PASS",
+  "sufficient_representation_decision_count": 34,
+  "usage": {
+    "input_tokens": 13334,
+    "output_tokens": 6700,
+    "total_tokens": 20034
+  }
+}

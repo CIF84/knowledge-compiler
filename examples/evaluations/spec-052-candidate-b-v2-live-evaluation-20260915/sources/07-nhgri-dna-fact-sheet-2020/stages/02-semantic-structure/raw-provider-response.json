@@ -1,0 +1,622 @@
+{
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1789549123.0,
+  "conversation": null,
+  "created_at": 1789549102.0,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "id": "resp_0319c12073ec31ed016aaa5a2e597487d2b08f5e8c82334a22",
+  "incomplete_details": null,
+  "instructions": "You perform Stage 2 semantic structure extraction for Candidate B v2.\n\nUse only the exact source and immutable frozen entity inventory. Every endpoint must\nbe one of the exact supplied entity IDs. Do not invent or substitute an identity.\nReturn only source-supported canonical relationships, COMPARISON_CONDITION instances,\nTRANSFER_EVENT instances, and missing_symbols diagnostics in the requested schema.\n\nEmit topology only when the exact source-supported meaning fits the trusted relationship\ncontract or one of the two canonical proposition forms. Otherwise omit the meaning from\nStage-2 topology. Never approximate, coerce, or choose a nearby predicate/proposition.\nStage 3 independently reads the exact source and can preserve omitted meaning as an\nexact grounded claim. Do not use missing_symbols for non-topological omission; reserve it\nfor an otherwise valid canonical semantic item lacking a required frozen identity.\n\nCOMPARISON_CONDITION means a comparison used as a causal antecedent with a distinct\nLEFT_OPERAND and RIGHT_OPERAND, an OUTCOME caused by that condition, GREATER_THAN, and\nCAUSES. A standalone comparison without a causal outcome is not this proposition.\nTRANSFER_EVENT means a PROCESS EVENT, transferred OBJECT, and non-PROCESS DESTINATION,\nwith TRANSFERS_TO and no comparison operator. Input to a calculation is not automatically\na transfer event. Emit neither proposition when these exact meanings are unsupported.\n\nDo not return entities, claims, evidence, teaching prose, or new semantic vocabulary.\nProposition IDs are assigned by trusted code; do not return them.\n\nACTIVE RELATIONSHIP CONTRACTS (source --TYPE--> target):\nIS_A [STRUCTURAL; direction=instance_to_type]\n  meaning: The source is a kind, category, or subtype of the target.\n  roles: source=instance or subtype; target=broader type or category\n  use: The source can truthfully be described as a target.\n  avoid: Do not use for parts, examples, similarity, or temporary states.\nPART_OF [STRUCTURAL; direction=part_to_whole]\n  meaning: The source is a constituent or component of the target.\n  roles: source=part or component; target=containing whole\n  use: The source exists as a component or subpart of the target.\n  avoid: Never reverse whole and part; do not use for interaction or dependency.\nEXAMPLE_OF [STRUCTURAL; direction=example_to_concept]\n  meaning: The source is an illustrative instance of the target concept.\n  roles: source=example; target=concept illustrated\n  use: The source is presented as an example of the target.\n  avoid: Do not use merely because the source is a subtype; prefer IS_A for classification.\nCAUSES [CAUSAL; direction=cause_to_effect]\n  meaning: The source brings about the target as an effect.\n  roles: source=cause; target=effect\n  use: The source is stated to produce the target outcome.\n  avoid: Do not use for chronology, association, contribution, or unspecified influence.\nAFFECTS [CAUSAL; direction=influence_to_affected]\n  meaning: The source causally influences the target without a specified direction or complete production.\n  roles: source=influence; target=affected entity, process, or variable\n  use: The source changes or influences the target, but the text does not support CAUSES, INCREASES, or DECREASES.\n  avoid: Do not use for mere association, chronology, physical force, or interaction with no stated effect.\nINCREASES [CAUSAL; direction=increaser_to_increased_variable]\n  meaning: The source causally raises the amount, rate, value, probability, or intensity of the target.\n  roles: source=causal factor; target=quantity or variable increased\n  use: The source is explicitly said to make the target greater, faster, more likely, or more intense.\n  avoid: Do not infer from nearby words such as more or faster; never use when the source says slower, lower, or less.\nDECREASES [CAUSAL; direction=decreaser_to_decreased_variable]\n  meaning: The source causally lowers the amount, rate, value, probability, or intensity of the target.\n  roles: source=causal factor; target=quantity or variable decreased\n  use: The source is explicitly said to make the target smaller, slower, less likely, or less intense.\n  avoid: Do not use for absence, prevention without a scalar target, or mere negative association.\nINDUCES [CAUSAL; direction=inducer_to_induced_effect]\n  meaning: The source produces the target through an explicitly described induction mechanism.\n  roles: source=inducing phenomenon; target=induced phenomenon\n  use: The source explicitly says induces or describes a recognized induction mechanism.\n  avoid: Do not use as a metaphor for generic causation, influence, motivation, or historical response.\nENABLES [DEPENDENCY; direction=enabler_to_enabled]\n  meaning: The source makes the target possible without necessarily causing it to occur.\n  roles: source=enabling condition or capability; target=capability or process made possible\n  use: The target could not occur, or is materially made possible, because of the source.\n  avoid: Do not use for delivery, participation, weak assistance, or an effect that actually occurred.\nREQUIRES [DEPENDENCY; direction=dependent_to_requirement]\n  meaning: The source depends on the target as a prerequisite or necessary resource.\n  roles: source=dependent; target=prerequisite or required resource\n  use: The source cannot operate or occur as described without the target.\n  avoid: Do not reverse prerequisite and dependent; do not use for optional support.\nCONSTRAINS [DEPENDENCY; direction=constraint_to_constrained]\n  meaning: The source limits the possible behavior, values, or choices of the target.\n  roles: source=constraint; target=constrained entity, process, or variable\n  use: The source imposes a limit, rule, boundary, or restriction on the target.\n  avoid: Do not use to mean unchanged, unrelated, merely different, or causally reduced.\nPRECEDES [TEMPORAL; direction=earlier_to_later]\n  meaning: The source occurs before the target in time or an explicit process sequence.\n  roles: source=earlier event or process; target=later event or process\n  use: The source explicitly occurs before, previously, first, then, or after relative to the target.\n  avoid: Do not infer causality from order; do not reverse earlier and later.\nINTERACTS_WITH [INTERACTION; symmetric]\n  meaning: The source and target directly interact, with no more precise directional semantics supported.\n  roles: source=interaction participant; target=interaction participant\n  use: The text supports direct mutual interaction but not a more precise active predicate.\n  avoid: Do not use for distant association, one-way effect, dependency, or chronology.\nBINDS_TO [INTERACTION; symmetric]\n  meaning: The source physically or chemically binds or attaches to the target.\n  roles: source=binding participant; target=binding participant\n  use: The source explicitly binds or attaches to the target.\n  avoid: Do not use for metaphorical commitment, dependency, influence, or literal physical force.\nTRANSFERS_TO [INTERACTION; direction=transferred_item_to_destination]\n  meaning: The source item, material, or information moves to the target destination or recipient.\n  roles: source=item, material, or information transferred; target=destination or recipient\n  use: The source is explicitly carried, delivered, moved, or transferred to the target.\n  avoid: Do not make the carrier the source unless the carrier itself moves to the destination; do not use for enabling.\nEXERTS_FORCE_ON [INTERACTION; direction=force_exerter_to_physical_target]\n  meaning: The source exerts a literal physical force on the target.\n  roles: source=physical force source; target=physical object receiving force\n  use: A literal physical force is explicitly exerted on the target.\n  avoid: Never use metaphorically for influence, contribution, binding, pressure, or causation.\nTRANSFORMS_INTO [TRANSFORMATION; direction=prior_state_to_resulting_state]\n  meaning: The source itself changes state or identity and becomes the target.\n  roles: source=entity or state before transformation; target=same entity or resulting material after transformation\n  use: The source itself becomes the target through a transformation.\n  avoid: Do not use when an actor causes, creates, attempts, participates in, or responds to the target.\nCREATES [TRANSFORMATION; direction=creator_to_created]\n  meaning: The source produces or brings a distinct target into existence.\n  roles: source=producer or generative process; target=newly produced entity or result\n  use: The source produces a target that is distinct from the source.\n  avoid: Do not use when the source itself becomes the target; use TRANSFORMS_INTO instead.\nMEASURED_BY [DESCRIPTIVE; direction=measurand_to_measure]\n  meaning: The source property or variable is quantified or assessed by the target metric, observation, or procedure.\n  roles: source=property or variable measured; target=metric, observation, or measurement procedure\n  use: The target is explicitly how the source is measured or quantified.\n  avoid: Do not point to something that merely responds to, correlates with, or exemplifies the source.\nCONTRADICTS [DESCRIPTIVE; symmetric]\n  meaning: The source and target assert mutually incompatible propositions.\n  roles: source=proposition or claim; target=incompatible proposition or claim\n  use: Both sides are explicit propositions that cannot simultaneously hold as stated.\n  avoid: Do not use for difference, disagreement without incompatibility, trade-off, or negative causality.",
+  "max_output_tokens": null,
+  "max_tool_calls": null,
+  "metadata": {},
+  "model": "gpt-5.6-luna",
+  "moderation": null,
+  "object": "response",
+  "output": [
+    {
+      "content": [],
+      "encrypted_content": "gAAAAABqqlpDzOgIJZ_OeycxyikNABp2ywbvS9ZgCRRLpvHgJn4FHUM71uOicef8tMco9tpELskEiHokAZjKmSDiHCfkbmCC1hbupa0xMSbXH0AJR_F2nUMW5Eb-8xzFtacOsAqk3KamHKR0Kp_tiF-ngROxFDB6RwYJbQsHyEaHgCCWmR1PBhBClmtt1XT21bodLH-xB1yC-0Qe1FR_U5hmjXkmg7obPqRUNSk4-GqwaEgt8Eq8ryKHzUf06vDAW_yJPlE6jQ4Amzg1G0WsSQbETg9G8W1WWn8BTL7876OTzDUIjpt3qDp52xVb36wG7yYUN_CuGJAHDLXSO60MvVYY1qCRlzU-oomVUkxJgW4GiGwuunbLGoy2n2rclAx4d0KkGdMR_AqFPLEZ4X6MqkOA0j6o42_OHAQXENGkAykiW5lp7j-ve_0YyrFYUqrRtnHnqHZd2oAXnE4Q1uuQCRHJ6cWwzUMMVMjR4Jj1wX0eS5llUn5ahOlgelPu-Xd5CdqzwGM5ciBPyq3a9_XDdIq1mHEeewo79bWgQnM5wg7S-m8vftgBxY0bU07LWGVJIY_EQmNQ4-0HqZrJz0WlIDqjPnYlERZfWQZMXxs97iQlgjI6PQFyhVq_3o_mQjs-rpZyW3HjwChCJKpexRhu156zBWDrMBk1mZCybOMtpAYyXf9OXiaZ8cCK0iX6Ao6RrvluijmpCLG_rmmLLUMIIXWjLOLWHuTAtHIxXkzx2uqraBfMh-35g4Y0F56M9TLWJky_UCRmaUUuWbVNtO-YNrXqWB3qssHjRuIWOYvnmmRtixoJNBGjnDBfIl1867dmagXK5Z3fq1efPIAgsDBd3rip_C4BV4vqr4DMwFroUrGeIDmC6L5dOUgqmFaEAkC04hThjD81f2hV-S20ROIj3fkkTySeRDeeTJMZL2N3txt1fCYkCqxsiGKPYPOqJD0KGPI8r8668eT5F-7ocoAXi9gsp2Bwlz_rjynIIR-n-CMNRwGi-XjkIQ2fq_VPUIL30NygZtQlmXosssbHG4432LqhhHKoxfuq6bHBni8VO8miYBTjtb92K_OwJIA34OA5kK6fnzOdN9hRrQ0CRp_9utQUDKO0far-tGrR6oLsNgbxwLgm_iUngvw3Wbb3OevM0hHALKZMHTOcNurCXiIzHYxKqnAp289QJ0eoJm1fcEp_NmYRg4ARuALxbAPhv5Qlg3Dy2b4C9j0YgHZ2DzH1mcsZ5WDrOdOVPolMEZOl2k_3u-RQE4FOVxXCyf7qucqkfl98aRoxDGxvpkaXutFOLgpOdn2NbMQwP3IB-9_bgFyt7uqq0CsUlS73Bp59PpkrMxHeheWfyUJxS-pCKLP4nSuIoAvKKW1bSghQUWTLyE2MQowsRpvi2PAgLs3wWHwAl7waM0ZpieCTgx-YkBefY98epBQDX8SC1apwXEb3Jreb-AIq-I8VAW7h1Tpp_vcN0TkIonrwTyzQbkEA7pgjkAADltM6jF6AlnY57QNjL9m85cc_qQE55sGO65_eXpVTHukT7QCvJBr5y8Fbf8vJJBkWSIqa78cXr-zoyNNY0jUx5SSPHlD3u94AXL5c-YpQNTyTNNh1yjVr8YjRHxzU9StExaBXuX-uDk3K5AeNiGBv1ATpnEdwMlvQbAcXdt5CW8gzlHDLLA4pzhoIO_bSy_CUixWmOuYBRwX20lAc7T6BiO6a7CxjLjpojB0P210xWXtv0FADlORELKrBkBv3MJjXBNG0ucsL1G--EcUD9OBxnRsspXFXY9o9cYLekphpt1rvj-lxODlzmKstQUOgesqYNG6vwmCC6pGTfT8js36Fr9-0M8vx5IPJxEmMbHlfa0wPfsd5uysJh1XzRho5rEPHTQBkLEgoEhTu0doRGWIHRBPHnb8L98Idc0M6x_568YDvio1dEnWj9XZs0hI7c1ZkeeNRGbhZ6I-SWP6aqYO2SuhP1C1sX0BNgnw6E9ADwBq1cTM2Hc0LD8OF9UAaiCWQcEw7Vj4hA_3xRYtMVLlfaHML-HNNtd3yqTp3U80iUMQNP3LOeG6Kz5lJ7pDpoz7KjeRglGoYWJb2MiNTsTvkFQvva1u41QnFhGEE4OocSpiw3MDbMhXsh-YwPy7Bhaqx1IC0iML_L2YxNvzaHUnmZDwt-5efAxvAgFBCnAMkeETu2oyU9tyhw6KrjQQxppXJ19WXDBA3VIjLhOG-pmDxS-q-v--hTyeQSmSadP1kTbQsjR7p6MkR_cFSSsA1zYVs8MONCARCOA-uub5KZtr4gdJLTIGNN9ABS6RIDxfgciQypa3oMYD0TpsgxUe_tNCZLNV6RRhzaDJp3t0TSu-plJ-y8TU-sHdbei2TvP7GEqqPK9xbOLwS3U3B7zoRokS01J1MA4Jtl75gXLj3IoGJRDFhb7CP6ba362PPdtjCpvBIWiCUvpX5GZOJrNCpUpmkGoEBd63nA04LGKXC1bTDjGbEXuWnCYV3-XH4X_-6WoqYJFlGL8PyPKVDI3kK4u1bbCtmUN-LV_w0ZiT1CNVwGynw6jLpDv_PiKtEPOtRMKf1whYm0UP1R4opavtosWUEy3gt80AgjQ6_t5VbpXSdCWCsA_yWQvZv7tna7t_pS9w4Q5kOxw_B8SJdfhkhuzleV4LXO_7hC9For7psC1gF9kv7qAcSlc11DiBUq_z5lWULpQ51RGzd-hqXF-ljgHJcEchF2YytmnkS_RKCBzmc-5w9i-gPWPAKf0pgn3BhMrUThIcoM2_sQgDP6OE6S3J03Ejnk80Acvah0uZhl9EV-MwLPp_sWRnx_PwtVQH4BGsdm2Ks4-G21YGRw-5J-Hq7rEAg_pEdhlR1lVes5U6olazqKMeM26Njm_pXMyA0pFicgi71ubLMZm2-y9QPjsg8sh_cpSicg-K18K5hmMJgWp74Os9tOzMqvVaRTMM3AYawFD9Nnlhk_cFRAH3XhZFQ8xwy29NbrC9WvyuE9kOvLCtUY3j6KfZ0q-v6-TX8mJZXPqJYoxKVS-_vyXbvqIRWVXWU3sZBPmfcXdoX_YrPdixDQPS_tWapW1h1q2_mCeG9q4AoPFyrMaZ-CzhM9yCW1JYNgssLshPaNaoZc9c_fRlpY3ed0DBE2hOFfIbSyxUCzHhfRN3pWFIiFiX6ILEmQCY_mpk1-cuq7V6vOf__AgKnaysPoHtNDRCNCnq-m3-V-rDKZtJuJm-gLMTcAsF0K5ekE4C7JzZXS09m9ybgT6uZsOuixa-blvOAT_yCZd061pDyy-lRIhq2exFZbylqVxXtJ4XPxWYUPuDYP1tcps9beAsTBMk3stsqdZZdAkJjahnfBPIxpmxwaWZiZInjzVkLAnlSbh1ZY-E2X9xiG_2H7BEC1e4kELhH-alIOU55B2_dmPxDWEz2m1zwAOqC-nrY29U4mjVExV_fkg6ZHnUDruqPZkcmFtziwm99vhGBx1_y1Sn00ZC7dOWXmGkwpMuQstOLaXgxHwj351KEcCMnBLl6QVX0zPEFyxnB6sIDm8UCWtpczNJTtu5RCcq1KuZ6xolD9kzl0dJLRzDA0MxwtUN9nDIEu-oicEKBIhHwnLEfuWUmuLPUcxOcNEpGtRR1mn0oCHxuptyJaQYEmoNDAf6I6X4qlnFaRG8OttMbXT-mOEn0X0188dl4jQB2dVTKso3bUOjsPZwryg3ebrJX4DmmTMWxlUPlRm17-1guNxhIIzd1CF5fVzwDWt8Wp1BGRSBet_rfSttcHvER4R_pHj-TeR1h_tynk6KyPXx7Fb6TNLLtln8oIvA0n7rfBjAp2BSeUXseyZ5vN_TstqsIiYMAc5O2wZLocOksWai7xk3wcoTSlDgru0AZ2dn28KKRx0bhm3REVic_hMVhMY8b5L-JISIfS-ixhwfbrwVKI_jRKWYzoYZq1KZf37BxCK9KVCnc7dMsz5rfFJZbu7KhAmUVGO_aA9wdMP0SkHRSnMwEiBPp7DrUzU0piRG7p4EJbMkLDkJhDvclMWHhessU1hq-hguN2WJLkVa7fkiPgyTraNnN01Gpa1_EtuzVaRD48iKuXJryRWaUrnsVqtiRxdT6vfLT1GOHnuoVTIzEhyPFFMyIbYuKB6FhdEPka56XFcFQbcplY2pJJiSLM6yfifm53BCG2VaaedSwHUwVEw6T8Tt2EpLQbePlp0mLl3870qF_XNA6hkziDE1oKA8FPA6hsTnuQ8vKosy4jc8sGVWvY3k6007GBslgkuLPm5nIwrC6ByZ1h-Vevt8kSJ6b-Nqb98WN824YOZvYNEOABeq17W_-OoePm0gG2BAH6-Ka5JHeiU7nCERgYbge3EszxxpIOaqoL53RIfjlD6s063uL0ZRi0xYToROYIKxvvMJekDV_9Q_W_NIlRClP-G47l-P81VgcLVqX17kAG9Mo8VGTjoGIdkk2rnzMwu6rHr1BH4nO9cmpr_CCTeDOOoxfxZ6Mj3RY_luk7XLe0QJN6OPhojy1mciWw9sTU6xRujL8LdFnmkcN71D8pzLdcYdxak27jBkZ6QaeLrBBeyZpdBOQXfd2bUgtcc-cSF_P2T0MgMAUWyVm0qQwHkxFEqKIk41Ma30iNz2mI_f4JiXPqXPoxKpSfjSx4USpiKLUs_2tGyazmS0cc7O4v9z-ytnk5UwUKaIjrBdA2wRVHV3Sydhm-0_Oo1a-gtn_KHV4iDKFGbvK7VdpAIWPCI5F2Eo_AvqSF7rYcP9htYLM0A47FkG7HCYBPSPHlU4As6okXmDSroai6bG1U-9ZU1BPnFa7bnDuNvbabbGAQmZo4QuBCuPlNWvRL045NrKNmeV-KG0JdAKQjoWwE7JcFHkDFHIuaMa3_axnnf1M_GjFRfsqZoSUKyii",
+      "id": "rs_0319c12073ec31ed016aaa5a2ed84887d292f4274e7665d49d",
+      "status": null,
+      "summary": [],
+      "type": "reasoning"
+    },
+    {
+      "content": [],
+      "encrypted_content": "gAAAAABqqlpD31mbK9xLs90-lP44CSvOP3-C5QocgAyCdFRyxaTAa1RTyRwQ1B20hckrN7AqcEzlwwpaE-gpaOHl861nulvfnsbmB7rryxGtgmBRVs4-I4DOhjFYVBmdiuTylC08wKG_3Uxa8RbJor6nfSmWmErYgefejWyiM-fR2IRG3DwddHoNx8dAN4BLAlg9z8LvWg6a5J64rIgSXkghYImBZmQEWakWFh8n4KW7pyWa_yh0B24NaiHbdFemxpEGPOaPeusvnj2tXkE5V6hszJk-T8T-y0WfdQdIvH8lVG1159aTQcg7nfcBnF7ZY3Cwky2H3goEVrWYymxk0cIrkxAGppBgmux1HNaan07anL8MS-sEgITWYROzU-TKrWz5TTwU4K9D2jlThClGOQxOVx51lwjMshomkprcgXD2pchFjQZxXyZLpZj3AsSKVkTniB2PN1mPDUP5Cy1N6OjGWiQf_DK-NlQkqOizgXsoUxElOkWF5cY3GgbceLHK6hDX8xcqL-opQPy8wnydN7RcPLhJTiXC_6don6NkkoLq-q-XYc6_AMvFJEw30f3Z4CLoGzFBB5qUAWrk3N01TnUF6ad4glko4QXIKGxPdofEmzR9qJ3jXSEsXjClSf93u5HqrDbMSXTHeEIBwNGerb0L5LF__99jyKST9JA7iH_VETMkU5YZxZjgm_8g1vG9ytMYMKe39ZNtZz3RDlOq0cd6yx8a5uA01Rq0hcQBQqNb1UzC3-q61neSlYpCpgJov867BBxteyDnlpH2JnRfEE3QSAg3wrEl5oUtoo5ZzCbU89SBgciG0I6rVIqh-epQUhg-uzR9QIdviSwJKzoMpw0geo5S8qnr4OpuCuoL6Bz3SknPr-vmqPRxIck2OG5CY0mZuRAFW_o1CXwbE4Ca_2LL2dgZ8dEeeBC94hCNLvYGFqVumkhumi9CaQlcFT3URVLYTAzM7J22fm4TqmTP4Ff55e-KVylidueGkoTOSgIWlB4KtQJxEcLqVcGEcgjR4-N5Js4D1IUzMY0PtVKwntroAtNKc-Qkw8nv4n0lIjSP_V_2qPi9S8hIgxMzDNLfb109XPFBDSmqrdwq7YynQvdBEtsbJPFq34IHvyeQEJEnuLSGyTgpQQ4Vei8l7Poe2YEVYj8fUqVB4PVybF1cIqZ2XbXanGUIiV9-84s2GlpZIJxlhD6sevcoMUQXO7EgCd6nsTBwAGKiuvbPWx8Yb2eruzyipemoLUN71Jpb62ABIYx9cpDsYQTRync9AdU6APoW62w2olUiXntFLot1G5vGXe6H62oI2S21MQmL9zY3zWcdmjjmv-nRBQx42Lm8QI7q_gNzkx7xxDgq91KtWf08O3hTRIOX6TSIo7jqW7kuGU9xbGDmPGRyVsMMdKMwM_nscOy2ZepPHhrR7VuZOcgp3N0KoDjNMFHgyz4Z3S2wmdA7Rlxeqx3YNGFolsd-DnuNHxWaSjBEnJYfCbPe8AeqJ1619mXTPIvbgD1AmFMngFcWQC6AuhFgi0zGc39LH1Ckzy8FLHv14KR7OjNqMS9QKRM1rtSxdX1Ysx3e9879givVyYj5j98BBsWR8AfiwJEdY1KjwNQy8DF5z1aghTkPZs9-j7PvKwnScux63eq4WAA3LOU0z39bQwYThkpElx8ATV89yB2I3CvD_X7mBxgEEgxzgamO2qgw3ysWnx7NOnUIzW92PJxdD_S0aKCX4EX8hCKbce45ex8FYM4879RvvxPDM-bsdWbeP9j4VUvhWSofAf6S961Wmzc0BNRY61AWBPD8bJ9RAT4-vdTd6snosQx9U8XmaCWYq3rCs7xLN0c40VOyic2QijFBRn7RKmetNpdVb4JlDOddFcaKS_JZQmIo2JA_phTdEK_Kpg4tDmXlMiWz7JVXcCakB0Fe5sNC5I7XXq2EfLyv9LZFzhOTEYfZ29OLWkku-SNBq_HpoIHd_KTUeaAgX4uuV10oaa21t2WvoWxI_cNec4srIAJb1hAEU2W_D9JXIp2GdeYwNoHPKHgFaxu1DPbJoIAwURoDsY8eYWHv_k3W76vRA0YxOqdlBHlXOhucJ5xqGMSXQYYxPI6rWxKFHIweK3va-qfTD_CXEO1nRkiNMxiNm3fPQI8lQVnQV0q2DAZ8zOGQRbUVtL7zjd3ZrFnG86iYAIQQB1FsbFoC55AIJTEo_u8tsD65Zjsw2js4G-Sg7_I2LKSNoUtIIU3mrqPPyTy_7HTOOTfHr1AejuW9FqcgzXLVR1yVTFf118zByrawkM5ekoI3fmbAjJ7Gy9aWiOFWnSAOOvV0rK1Mk2TevWXpMBgboLJQjQscbTlQmfHC6Pnvih6HrEB8gUvTlBwuRQYUXO22YgSb4qjwIK2Deo1tjRmtSk_0ZXrABtiNeyIZms9rTc9IZMiD7rK_UGgEgA0c7HZ3pVdksPoxZ_IDlPy2RDIxYOrrm3lXhxllNs1QOZOw88jfz91l8UlTinJZAr3YY8QsqhtOixgh5VRSjSPrya4d8E1U5qh11Dku0YswPq0w33xm4r8LEqrmpBfjDSPlt7gbk3ZSvrLnLVGxO7NeNGcH_NiPvgiWY-g66Ria7-eTtlOSl1pPTirn6hrEManc_8_bE_y9kq310zcWucwv5wlDif8INjeKc4j6lpjNQYLJ2fojdhRN4tb3NRPNMRXufKyH3g2BXgUon_Lir0_mukQXib6aMHhNBEBV7hz3dHro_clfM5zL1uk1NF_YJijPYwup7k9k8Ed5jFY1wkfWVVYk0VXQSE-5PDjVJY_0zzlWVYNqWp0epJJY6PxK608G-14ylKGbw2YuVGin5S03Mjphlujf6u8Y7O5_itzUKuxTQE57z1jCqQ8L8oK5X7PRhugt-SVAelFlmyTpj3ciNbdgeyS0bjzux_AHhTeH_BsojlKLt1xO-1DRb2YoKjgpQ_Sx_-8FYjwVTdYaczhQ5R8Wc3hOo-kflugouAYzG_9ZOyZ3MPxwPCcMsj4WvidVrzZ_BQ18FkePd8S2ZVXk6hWIiYgwKGXkFo45Z4dSoM81aKoq2hn6j8eahwC-QtJAGIQ-jofCxDn2i2TDZ7sAIVU3r7d-K8wpaPu2vQjWAMc7MIR1-tvdVZPypevk3xZKfknSAmooXF2fNim9lAuTxeejhBA09gnVuesQa9U3atAXQE5bqsOVGfnu3nIAkBHoE28ncXV-bep3rETNUyTqxZqwj4gZIuJNK3B-AjBFOj5Id0imBc09Fsz-20pRQDfhDPhK9kgsTkhIlzpXpXzDWQ8S97sWpM8STJhg_3Njohdqwk0wYMO-fGzKSOa8lJfytiAuCkZN7_4j7x4qR9VGz054AoBYQ_14l4S847XVY0UeofBuPPIUNrEIN8WWHDtdaDUDf4Y9szWxKbKx2lIJX7a1m37QvFRF0w8UMsPzab9trVjUqJFPJi7s0YfactLU4uWtODagTsLxoSeXlJG2P6MNox8d6LMhd7m_JZTv0vU0Z88DhdEUQr38ndHJRvNvK9JIhKHdf8i4_6RL-aVzN6gjdm5P480Naibz7ia5n_8ghZswlmuKrzVyFBAbHBwDYh-FxuSkYR0VZuMTIRy4LdxS088A83Vp5A==",
+      "id": "rs_0319c12073ec31ed016aaa5a35640087d2904254f206139efb",
+      "status": null,
+      "summary": [],
+      "type": "reasoning"
+    },
+    {
+      "content": [
+        {
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relationships\":[{\"id\":\"r1\",\"source_entity_id\":\"biological-instructions\",\"relationship_type\":\"PART_OF\",\"target_entity_id\":\"deoxyribonucleic-acid\",\"statement\":\"Biological instructions are contained in Deoxyribonucleic acid.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r2\",\"source_entity_id\":\"deoxyribonucleic-acid\",\"relationship_type\":\"TRANSFERS_TO\",\"target_entity_id\":\"offspring\",\"statement\":\"Deoxyribonucleic acid is passed from adult organisms to their offspring during reproduction.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r3\",\"source_entity_id\":\"deoxyribonucleic-acid\",\"relationship_type\":\"PART_OF\",\"target_entity_id\":\"nucleus\",\"statement\":\"In eukaryotes, DNA is found inside the nucleus.\",\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"r4\",\"source_entity_id\":\"nucleus\",\"relationship_type\":\"PART_OF\",\"target_entity_id\":\"cell\",\"statement\":\"The nucleus is a special area of the cell.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r5\",\"source_entity_id\":\"cell-division\",\"relationship_type\":\"ENABLES\",\"target_entity_id\":\"cell\",\"statement\":\"The compact chromosome form of DNA during cell division enables transfer to new cells.\",\"confidence\":0.86,\"origin\":\"SOURCE\"},{\"id\":\"r6\",\"source_entity_id\":\"nuclear-dna\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"deoxyribonucleic-acid\",\"statement\":\"Nuclear DNA is DNA found in the nucleus.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r7\",\"source_entity_id\":\"nuclear-dna\",\"relationship_type\":\"PART_OF\",\"target_entity_id\":\"genome\",\"statement\":\"An organism's genome is its complete set of nuclear DNA.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r8\",\"source_entity_id\":\"mitochondrial-dna\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"deoxyribonucleic-acid\",\"statement\":\"Mitochondrial DNA is DNA located in mitochondria.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r9\",\"source_entity_id\":\"mitochondrial-dna\",\"relationship_type\":\"PART_OF\",\"target_entity_id\":\"mitochondrion\",\"statement\":\"Mitochondrial DNA is located in mitochondria.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r10\",\"source_entity_id\":\"mitochondrion\",\"relationship_type\":\"PART_OF\",\"target_entity_id\":\"cell\",\"statement\":\"Mitochondria are cell structures.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r11\",\"source_entity_id\":\"mitochondrion\",\"relationship_type\":\"CAUSES\",\"target_entity_id\":\"energy\",\"statement\":\"Mitochondria generate the energy the cell needs to function properly.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r12\",\"source_entity_id\":\"human\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"complex-organism\",\"statement\":\"Humans are complex organisms.\",\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"r13\",\"source_entity_id\":\"biological-instructions\",\"relationship_type\":\"ENABLES\",\"target_entity_id\":\"protein\",\"statement\":\"Instructions in DNA can be used to make proteins.\",\"confidence\":0.95,\"origin\":\"SOURCE\"},{\"id\":\"r14\",\"source_entity_id\":\"nucleotide\",\"relationship_type\":\"PART_OF\",\"target_entity_id\":\"dna-strand\",\"statement\":\"Nucleotides are linked into chains to form a strand of DNA.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r15\",\"source_entity_id\":\"phosphate-group\",\"relationship_type\":\"PART_OF\",\"target_entity_id\":\"nucleotide\",\"statement\":\"A phosphate group is one of the three parts of a nucleotide.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r16\",\"source_entity_id\":\"sugar-group\",\"relationship_type\":\"PART_OF\",\"target_entity_id\":\"nucleotide\",\"statement\":\"A sugar group is one of the three parts of a nucleotide.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r17\",\"source_entity_id\":\"nitrogen-base\",\"relationship_type\":\"PART_OF\",\"target_entity_id\":\"nucleotide\",\"statement\":\"A nitrogen base is one of the three parts of a nucleotide.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r18\",\"source_entity_id\":\"adenine\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"nitrogen-base\",\"statement\":\"Adenine is one of the four types of nitrogen bases found in nucleotides.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r19\",\"source_entity_id\":\"thymine\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"nitrogen-base\",\"statement\":\"Thymine is one of the four types of nitrogen bases found in nucleotides.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r20\",\"source_entity_id\":\"guanine\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"nitrogen-base\",\"statement\":\"Guanine is one of the four types of nitrogen bases found in nucleotides.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r21\",\"source_entity_id\":\"cytosine\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"nitrogen-base\",\"statement\":\"Cytosine is one of the four types of nitrogen bases found in nucleotides.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r22\",\"source_entity_id\":\"base-sequence\",\"relationship_type\":\"CAUSES\",\"target_entity_id\":\"biological-instructions\",\"statement\":\"The order or sequence of bases determines the biological instructions contained in a strand of DNA.\",\"confidence\":0.96,\"origin\":\"SOURCE\"}],\"comparison_conditions\":[],\"transfer_events\":[{\"statement\":\"During sexual reproduction, nuclear DNA is inherited by offspring from the male parent.\",\"confidence\":0.96,\"origin\":\"SOURCE\",\"proposition_type\":\"TRANSFER_EVENT\",\"event_entity_id\":\"sexual-reproduction\",\"object_entity_id\":\"nuclear-dna\",\"destination_entity_id\":\"offspring\",\"relationship_type\":\"TRANSFERS_TO\",\"comparison_operator\":null},{\"statement\":\"During sexual reproduction, nuclear DNA is inherited by offspring from the female parent.\",\"confidence\":0.96,\"origin\":\"SOURCE\",\"proposition_type\":\"TRANSFER_EVENT\",\"event_entity_id\":\"sexual-reproduction\",\"object_entity_id\":\"nuclear-dna\",\"destination_entity_id\":\"offspring\",\"relationship_type\":\"TRANSFERS_TO\",\"comparison_operator\":null},{\"statement\":\"During sexual reproduction, mitochondrial DNA is inherited by offspring from the female parent.\",\"confidence\":0.97,\"origin\":\"SOURCE\",\"proposition_type\":\"TRANSFER_EVENT\",\"event_entity_id\":\"sexual-reproduction\",\"object_entity_id\":\"mitochondrial-dna\",\"destination_entity_id\":\"offspring\",\"relationship_type\":\"TRANSFERS_TO\",\"comparison_operator\":null}],\"missing_symbols\":[]}",
+          "type": "output_text"
+        }
+      ],
+      "id": "msg_0319c12073ec31ed016aaa5a399e9487d293963cca4951d6f6",
+      "phase": "final_answer",
+      "role": "assistant",
+      "status": "completed",
+      "type": "message"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt": null,
+  "prompt_cache_key": null,
+  "prompt_cache_options": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "low",
+    "generate_summary": null,
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "status": "completed",
+  "store": false,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "description": null,
+      "name": "candidate_b_v2_semantic_structure",
+      "schema_": {
+        "additionalProperties": false,
+        "properties": {
+          "comparison_conditions": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "comparison_operator": {
+                  "enum": [
+                    "GREATER_THAN"
+                  ],
+                  "type": "string"
+                },
+                "confidence": {
+                  "maximum": 1,
+                  "minimum": 0,
+                  "type": "number"
+                },
+                "left_operand_entity_id": {
+                  "enum": [
+                    "adenine",
+                    "adult-organism",
+                    "base-sequence",
+                    "biological-instructions",
+                    "cell",
+                    "cell-cycle",
+                    "cell-division",
+                    "chromosome",
+                    "complex-organism",
+                    "cytosine",
+                    "deoxyribonucleic-acid",
+                    "dna-molecule",
+                    "dna-replication",
+                    "dna-strand",
+                    "egg-cell",
+                    "energy",
+                    "eukaryote",
+                    "female-parent",
+                    "fertilization",
+                    "gene",
+                    "genome",
+                    "guanine",
+                    "human",
+                    "male-parent",
+                    "mitochondrial-dna",
+                    "mitochondrion",
+                    "nitrogen-base",
+                    "nuclear-dna",
+                    "nucleotide",
+                    "nucleus",
+                    "offspring",
+                    "phosphate-group",
+                    "protein",
+                    "sexual-reproduction",
+                    "species",
+                    "sperm-cell",
+                    "sugar-group",
+                    "thymine"
+                  ],
+                  "type": "string"
+                },
+                "origin": {
+                  "enum": [
+                    "SOURCE",
+                    "INFERRED"
+                  ],
+                  "type": "string"
+                },
+                "outcome_entity_id": {
+                  "enum": [
+                    "adenine",
+                    "adult-organism",
+                    "base-sequence",
+                    "biological-instructions",
+                    "cell",
+                    "cell-cycle",
+                    "cell-division",
+                    "chromosome",
+                    "complex-organism",
+                    "cytosine",
+                    "deoxyribonucleic-acid",
+                    "dna-molecule",
+                    "dna-replication",
+                    "dna-strand",
+                    "egg-cell",
+                    "energy",
+                    "eukaryote",
+                    "female-parent",
+                    "fertilization",
+                    "gene",
+                    "genome",
+                    "guanine",
+                    "human",
+                    "male-parent",
+                    "mitochondrial-dna",
+                    "mitochondrion",
+                    "nitrogen-base",
+                    "nuclear-dna",
+                    "nucleotide",
+                    "nucleus",
+                    "offspring",
+                    "phosphate-group",
+                    "protein",
+                    "sexual-reproduction",
+                    "species",
+                    "sperm-cell",
+                    "sugar-group",
+                    "thymine"
+                  ],
+                  "type": "string"
+                },
+                "proposition_type": {
+                  "enum": [
+                    "COMPARISON_CONDITION"
+                  ],
+                  "type": "string"
+                },
+                "relationship_type": {
+                  "enum": [
+                    "CAUSES"
+                  ],
+                  "type": "string"
+                },
+                "right_operand_entity_id": {
+                  "enum": [
+                    "adenine",
+                    "adult-organism",
+                    "base-sequence",
+                    "biological-instructions",
+                    "cell",
+                    "cell-cycle",
+                    "cell-division",
+                    "chromosome",
+                    "complex-organism",
+                    "cytosine",
+                    "deoxyribonucleic-acid",
+                    "dna-molecule",
+                    "dna-replication",
+                    "dna-strand",
+                    "egg-cell",
+                    "energy",
+                    "eukaryote",
+                    "female-parent",
+                    "fertilization",
+                    "gene",
+                    "genome",
+                    "guanine",
+                    "human",
+                    "male-parent",
+                    "mitochondrial-dna",
+                    "mitochondrion",
+                    "nitrogen-base",
+                    "nuclear-dna",
+                    "nucleotide",
+                    "nucleus",
+                    "offspring",
+                    "phosphate-group",
+                    "protein",
+                    "sexual-reproduction",
+                    "species",
+                    "sperm-cell",
+                    "sugar-group",
+                    "thymine"
+                  ],
+                  "type": "string"
+                },
+                "statement": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "statement",
+                "confidence",
+                "origin",
+                "proposition_type",
+                "left_operand_entity_id",
+                "right_operand_entity_id",
+                "outcome_entity_id",
+                "relationship_type",
+                "comparison_operator"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "missing_symbols": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "reason": {
+                  "type": "string"
+                },
+                "semantic_item": {
+                  "type": "string"
+                },
+                "surface_form": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "surface_form",
+                "semantic_item",
+                "reason"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "relationships": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "confidence": {
+                  "maximum": 1,
+                  "minimum": 0,
+                  "type": "number"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "origin": {
+                  "enum": [
+                    "SOURCE",
+                    "INFERRED"
+                  ],
+                  "type": "string"
+                },
+                "relationship_type": {
+                  "enum": [
+                    "IS_A",
+                    "PART_OF",
+                    "CAUSES",
+                    "INCREASES",
+                    "DECREASES",
+                    "ENABLES",
+                    "REQUIRES",
+                    "CONSTRAINS",
+                    "PRECEDES",
+                    "TRANSFORMS_INTO",
+                    "INTERACTS_WITH",
+                    "MEASURED_BY",
+                    "EXAMPLE_OF",
+                    "CONTRADICTS",
+                    "CREATES",
+                    "INDUCES",
+                    "EXERTS_FORCE_ON",
+                    "AFFECTS",
+                    "BINDS_TO",
+                    "TRANSFERS_TO"
+                  ],
+                  "type": "string"
+                },
+                "source_entity_id": {
+                  "enum": [
+                    "adenine",
+                    "adult-organism",
+                    "base-sequence",
+                    "biological-instructions",
+                    "cell",
+                    "cell-cycle",
+                    "cell-division",
+                    "chromosome",
+                    "complex-organism",
+                    "cytosine",
+                    "deoxyribonucleic-acid",
+                    "dna-molecule",
+                    "dna-replication",
+                    "dna-strand",
+                    "egg-cell",
+                    "energy",
+                    "eukaryote",
+                    "female-parent",
+                    "fertilization",
+                    "gene",
+                    "genome",
+                    "guanine",
+                    "human",
+                    "male-parent",
+                    "mitochondrial-dna",
+                    "mitochondrion",
+                    "nitrogen-base",
+                    "nuclear-dna",
+                    "nucleotide",
+                    "nucleus",
+                    "offspring",
+                    "phosphate-group",
+                    "protein",
+                    "sexual-reproduction",
+                    "species",
+                    "sperm-cell",
+                    "sugar-group",
+                    "thymine"
+                  ],
+                  "type": "string"
+                },
+                "statement": {
+                  "type": "string"
+                },
+                "target_entity_id": {
+                  "enum": [
+                    "adenine",
+                    "adult-organism",
+                    "base-sequence",
+                    "biological-instructions",
+                    "cell",
+                    "cell-cycle",
+                    "cell-division",
+                    "chromosome",
+                    "complex-organism",
+                    "cytosine",
+                    "deoxyribonucleic-acid",
+                    "dna-molecule",
+                    "dna-replication",
+                    "dna-strand",
+                    "egg-cell",
+                    "energy",
+                    "eukaryote",
+                    "female-parent",
+                    "fertilization",
+                    "gene",
+                    "genome",
+                    "guanine",
+                    "human",
+                    "male-parent",
+                    "mitochondrial-dna",
+                    "mitochondrion",
+                    "nitrogen-base",
+                    "nuclear-dna",
+                    "nucleotide",
+                    "nucleus",
+                    "offspring",
+                    "phosphate-group",
+                    "protein",
+                    "sexual-reproduction",
+                    "species",
+                    "sperm-cell",
+                    "sugar-group",
+                    "thymine"
+                  ],
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "source_entity_id",
+                "relationship_type",
+                "target_entity_id",
+                "statement",
+                "confidence",
+                "origin"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "transfer_events": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "comparison_operator": {
+                  "type": "null"
+                },
+                "confidence": {
+                  "maximum": 1,
+                  "minimum": 0,
+                  "type": "number"
+                },
+                "destination_entity_id": {
+                  "enum": [
+                    "adenine",
+                    "adult-organism",
+                    "base-sequence",
+                    "biological-instructions",
+                    "cell",
+                    "chromosome",
+                    "complex-organism",
+                    "cytosine",
+                    "deoxyribonucleic-acid",
+                    "dna-molecule",
+                    "dna-strand",
+                    "egg-cell",
+                    "energy",
+                    "eukaryote",
+                    "female-parent",
+                    "gene",
+                    "genome",
+                    "guanine",
+                    "human",
+                    "male-parent",
+                    "mitochondrial-dna",
+                    "mitochondrion",
+                    "nitrogen-base",
+                    "nuclear-dna",
+                    "nucleotide",
+                    "nucleus",
+                    "offspring",
+                    "phosphate-group",
+                    "protein",
+                    "species",
+                    "sperm-cell",
+                    "sugar-group",
+                    "thymine"
+                  ],
+                  "type": "string"
+                },
+                "event_entity_id": {
+                  "enum": [
+                    "cell-cycle",
+                    "cell-division",
+                    "dna-replication",
+                    "fertilization",
+                    "sexual-reproduction"
+                  ],
+                  "type": "string"
+                },
+                "object_entity_id": {
+                  "enum": [
+                    "adenine",
+                    "adult-organism",
+                    "base-sequence",
+                    "biological-instructions",
+                    "cell",
+                    "cell-cycle",
+                    "cell-division",
+                    "chromosome",
+                    "complex-organism",
+                    "cytosine",
+                    "deoxyribonucleic-acid",
+                    "dna-molecule",
+                    "dna-replication",
+                    "dna-strand",
+                    "egg-cell",
+                    "energy",
+                    "eukaryote",
+                    "female-parent",
+                    "fertilization",
+                    "gene",
+                    "genome",
+                    "guanine",
+                    "human",
+                    "male-parent",
+                    "mitochondrial-dna",
+                    "mitochondrion",
+                    "nitrogen-base",
+                    "nuclear-dna",
+                    "nucleotide",
+                    "nucleus",
+                    "offspring",
+                    "phosphate-group",
+                    "protein",
+                    "sexual-reproduction",
+                    "species",
+                    "sperm-cell",
+                    "sugar-group",
+                    "thymine"
+                  ],
+                  "type": "string"
+                },
+                "origin": {
+                  "enum": [
+                    "SOURCE",
+                    "INFERRED"
+                  ],
+                  "type": "string"
+                },
+                "proposition_type": {
+                  "enum": [
+                    "TRANSFER_EVENT"
+                  ],
+                  "type": "string"
+                },
+                "relationship_type": {
+                  "enum": [
+                    "TRANSFERS_TO"
+                  ],
+                  "type": "string"
+                },
+                "statement": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "statement",
+                "confidence",
+                "origin",
+                "proposition_type",
+                "event_entity_id",
+                "object_entity_id",
+                "destination_entity_id",
+                "relationship_type",
+                "comparison_operator"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "relationships",
+          "comparison_conditions",
+          "transfer_events",
+          "missing_symbols"
+        ],
+        "type": "object"
+      },
+      "strict": true,
+      "type": "json_schema"
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 5898,
+    "input_tokens_details": {
+      "cache_write_tokens": 5895,
+      "cached_tokens": 0
+    },
+    "output_tokens": 2320,
+    "output_tokens_details": {
+      "reasoning_tokens": 897
+    },
+    "total_tokens": 8218
+  },
+  "user": null
+}

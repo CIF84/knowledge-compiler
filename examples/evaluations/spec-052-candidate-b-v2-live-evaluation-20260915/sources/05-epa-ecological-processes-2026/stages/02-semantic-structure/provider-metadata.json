@@ -1,0 +1,289 @@
+{
+  "actual_model": "gpt-5.6-luna",
+  "candidate_version": "spec-051-candidate-b-v2",
+  "duration_ms": 57388.54516600259,
+  "hidden_retries": 0,
+  "http_request_id": "req_ecf0b618626845d9aed5ea26943c437b",
+  "normalization": "LOSSLESS_VARIANT_TO_CANONICAL_ROLE_BINDINGS",
+  "original_stage2_proposal": {
+    "comparison_conditions": [],
+    "missing_symbols": [],
+    "relationships": [
+      {
+        "confidence": 0.98,
+        "id": "r1",
+        "origin": "SOURCE",
+        "relationship_type": "CAUSES",
+        "source_entity_id": "primary-production",
+        "statement": "Primary production converts the sun's energy into organic matter.",
+        "target_entity_id": "organic-matter"
+      },
+      {
+        "confidence": 0.98,
+        "id": "r2",
+        "origin": "SOURCE",
+        "relationship_type": "CAUSES",
+        "source_entity_id": "ecological-processes",
+        "statement": "Ecological processes drive soil formation.",
+        "target_entity_id": "soil-formation"
+      },
+      {
+        "confidence": 0.98,
+        "id": "r3",
+        "origin": "SOURCE",
+        "relationship_type": "ENABLES",
+        "source_entity_id": "ecological-processes",
+        "statement": "Ecological processes enable organisms to reproduce.",
+        "target_entity_id": "reproduction"
+      },
+      {
+        "confidence": 0.95,
+        "id": "r4",
+        "origin": "SOURCE",
+        "relationship_type": "AFFECTS",
+        "source_entity_id": "ecological-processes",
+        "statement": "Ecological processes influence the extent, distribution, and biodiversity of systems.",
+        "target_entity_id": "biodiversity"
+      },
+      {
+        "confidence": 0.98,
+        "id": "r5",
+        "origin": "SOURCE",
+        "relationship_type": "AFFECTS",
+        "source_entity_id": "natural-forces",
+        "statement": "Natural forces affect ecological processes.",
+        "target_entity_id": "ecological-processes"
+      },
+      {
+        "confidence": 0.98,
+        "id": "r6",
+        "origin": "SOURCE",
+        "relationship_type": "AFFECTS",
+        "source_entity_id": "human-activities",
+        "statement": "Human activities impact the rates of ecological processes.",
+        "target_entity_id": "rates-of-ecological-processes"
+      },
+      {
+        "confidence": 0.98,
+        "id": "r7",
+        "origin": "SOURCE",
+        "relationship_type": "AFFECTS",
+        "source_entity_id": "human-activities",
+        "statement": "Human activities impact the types of ecological processes.",
+        "target_entity_id": "types-of-ecological-processes"
+      },
+      {
+        "confidence": 0.98,
+        "id": "r8",
+        "origin": "SOURCE",
+        "relationship_type": "AFFECTS",
+        "source_entity_id": "human-activities",
+        "statement": "Human activities impact the timing of ecological processes.",
+        "target_entity_id": "timing-of-ecological-processes"
+      },
+      {
+        "confidence": 0.98,
+        "id": "r9",
+        "origin": "SOURCE",
+        "relationship_type": "AFFECTS",
+        "source_entity_id": "seasonal-changes-in-temperature",
+        "statement": "Seasonal changes in temperature affect ecological processes.",
+        "target_entity_id": "ecological-processes"
+      },
+      {
+        "confidence": 0.98,
+        "id": "r10",
+        "origin": "SOURCE",
+        "relationship_type": "AFFECTS",
+        "source_entity_id": "seasonal-changes-in-precipitation",
+        "statement": "Seasonal changes in precipitation affect ecological processes.",
+        "target_entity_id": "ecological-processes"
+      },
+      {
+        "confidence": 0.98,
+        "id": "r11",
+        "origin": "SOURCE",
+        "relationship_type": "AFFECTS",
+        "source_entity_id": "seasonal-changes-in-stream-flows",
+        "statement": "Seasonal changes in stream flows affect ecological processes.",
+        "target_entity_id": "ecological-processes"
+      },
+      {
+        "confidence": 0.98,
+        "id": "r12",
+        "origin": "SOURCE",
+        "relationship_type": "AFFECTS",
+        "source_entity_id": "climate-change",
+        "statement": "Climate change affects ecological processes.",
+        "target_entity_id": "ecological-processes"
+      },
+      {
+        "confidence": 0.98,
+        "id": "r13",
+        "origin": "SOURCE",
+        "relationship_type": "AFFECTS",
+        "source_entity_id": "pesticide-use",
+        "statement": "Pesticide use impacts ecological processes.",
+        "target_entity_id": "ecological-processes"
+      },
+      {
+        "confidence": 0.98,
+        "id": "r14",
+        "origin": "SOURCE",
+        "relationship_type": "AFFECTS",
+        "source_entity_id": "chemical-use",
+        "statement": "Chemical use impacts ecological processes.",
+        "target_entity_id": "ecological-processes"
+      },
+      {
+        "confidence": 0.98,
+        "id": "r15",
+        "origin": "SOURCE",
+        "relationship_type": "AFFECTS",
+        "source_entity_id": "waste-generation",
+        "statement": "Waste generation impacts ecological processes.",
+        "target_entity_id": "ecological-processes"
+      },
+      {
+        "confidence": 0.98,
+        "id": "r16",
+        "origin": "SOURCE",
+        "relationship_type": "AFFECTS",
+        "source_entity_id": "land-use-changes",
+        "statement": "Land use changes impact ecological processes.",
+        "target_entity_id": "ecological-processes"
+      },
+      {
+        "confidence": 0.98,
+        "id": "r17",
+        "origin": "SOURCE",
+        "relationship_type": "AFFECTS",
+        "source_entity_id": "water-quality-management",
+        "statement": "Water quality management impacts ecological processes.",
+        "target_entity_id": "ecological-processes"
+      },
+      {
+        "confidence": 0.9,
+        "id": "r18",
+        "origin": "SOURCE",
+        "relationship_type": "MEASURED_BY",
+        "source_entity_id": "ecological-processes",
+        "statement": "Ecological processes are represented as rates of change.",
+        "target_entity_id": "rate-of-change"
+      },
+      {
+        "confidence": 0.95,
+        "id": "r19",
+        "origin": "SOURCE",
+        "relationship_type": "REQUIRES",
+        "source_entity_id": "rate-of-change",
+        "statement": "Representing ecological processes as rates of change requires repeated measurement over time.",
+        "target_entity_id": "repeated-measurement-over-time"
+      },
+      {
+        "confidence": 0.9,
+        "id": "r20",
+        "origin": "SOURCE",
+        "relationship_type": "MEASURED_BY",
+        "source_entity_id": "ecosystem-conditions",
+        "statement": "Remote sensing imagery provides snapshots of indicators of ecosystem conditions over time.",
+        "target_entity_id": "remote-sensing-imagery"
+      },
+      {
+        "confidence": 0.98,
+        "id": "r21",
+        "origin": "SOURCE",
+        "relationship_type": "MEASURED_BY",
+        "source_entity_id": "normalized-difference-vegetation-index",
+        "statement": "The Normalized Difference Vegetation Index has been estimated using remote sensing.",
+        "target_entity_id": "remote-sensing-imagery"
+      }
+    ],
+    "transfer_events": [
+      {
+        "comparison_operator": null,
+        "confidence": 0.94,
+        "destination_entity_id": "biological-organisms",
+        "event_entity_id": "carbon-cycling",
+        "object_entity_id": "carbon",
+        "origin": "SOURCE",
+        "proposition_type": "TRANSFER_EVENT",
+        "relationship_type": "TRANSFERS_TO",
+        "statement": "Carbon cycling transfers carbon from the physical environment through biological organisms and back into the physical environment."
+      },
+      {
+        "comparison_operator": null,
+        "confidence": 0.94,
+        "destination_entity_id": "physical-environment",
+        "event_entity_id": "carbon-cycling",
+        "object_entity_id": "carbon",
+        "origin": "SOURCE",
+        "proposition_type": "TRANSFER_EVENT",
+        "relationship_type": "TRANSFERS_TO",
+        "statement": "Carbon cycling transfers carbon from biological organisms back into the physical environment."
+      },
+      {
+        "comparison_operator": null,
+        "confidence": 0.94,
+        "destination_entity_id": "biological-organisms",
+        "event_entity_id": "nutrient-cycling",
+        "object_entity_id": "nutrients",
+        "origin": "SOURCE",
+        "proposition_type": "TRANSFER_EVENT",
+        "relationship_type": "TRANSFERS_TO",
+        "statement": "Nutrient cycling transfers nutrients from the physical environment through biological organisms and back into the physical environment."
+      },
+      {
+        "comparison_operator": null,
+        "confidence": 0.94,
+        "destination_entity_id": "physical-environment",
+        "event_entity_id": "nutrient-cycling",
+        "object_entity_id": "nutrients",
+        "origin": "SOURCE",
+        "proposition_type": "TRANSFER_EVENT",
+        "relationship_type": "TRANSFERS_TO",
+        "statement": "Nutrient cycling transfers nutrients from biological organisms back into the physical environment."
+      },
+      {
+        "comparison_operator": null,
+        "confidence": 0.9,
+        "destination_entity_id": "biological-organisms",
+        "event_entity_id": "hydrogen-oxygen-cycling",
+        "object_entity_id": "hydrogen",
+        "origin": "SOURCE",
+        "proposition_type": "TRANSFER_EVENT",
+        "relationship_type": "TRANSFERS_TO",
+        "statement": "Hydrogen/oxygen cycling transfers hydrogen from the physical environment through biological organisms."
+      },
+      {
+        "comparison_operator": null,
+        "confidence": 0.9,
+        "destination_entity_id": "biological-organisms",
+        "event_entity_id": "hydrogen-oxygen-cycling",
+        "object_entity_id": "oxygen",
+        "origin": "SOURCE",
+        "proposition_type": "TRANSFER_EVENT",
+        "relationship_type": "TRANSFERS_TO",
+        "statement": "Hydrogen/oxygen cycling transfers oxygen from the physical environment through biological organisms."
+      }
+    ]
+  },
+  "prompt_sha256": "72e6b878794ac2fa45404970e2f0a931dc4c1c2efc97f64a4c7aed0ecf212299",
+  "prompt_version": "spec-051-semantic-structure-v2",
+  "provider": "openai",
+  "provider_response_id": "resp_0be221af38367d11016aaa5987ff3087d2ae5221182fe47dda",
+  "repair_calls": 0,
+  "requested_model": "gpt-5.6-luna",
+  "schema_name": "candidate_b_v2_semantic_structure",
+  "schema_sha256": "fdfe59f17acd97657c9305cc7ac21027fa6373bdb7d7b922d2f15443a592da9d",
+  "sdk_retries": 0,
+  "semantic_retries": 0,
+  "stage": "SEMANTIC_STRUCTURE",
+  "store": false,
+  "upstream_input_sha256": "c29ab593dab297dadbbe7c9b90ab91661c8225961f3fc8320fa815321b9135cc",
+  "usage": {
+    "input_tokens": 7380,
+    "output_tokens": 2271,
+    "total_tokens": 9651
+  }
+}

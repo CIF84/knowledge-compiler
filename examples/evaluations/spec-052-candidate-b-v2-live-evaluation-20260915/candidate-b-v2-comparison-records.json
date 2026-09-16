@@ -1,0 +1,651 @@
+{
+  "records": [
+    {
+      "admitted_counts": {
+        "claims": 22,
+        "entities": 41,
+        "propositions": 0,
+        "relationships": 13
+      },
+      "arm": "CANDIDATE_B_V2",
+      "detected_structure_count": 5,
+      "detected_structure_types": {
+        "CAUSAL_PATH": 2,
+        "HIERARCHY": 2,
+        "PROCESS_CHAIN": 1
+      },
+      "execution_mode": "LIVE_FROZEN_SPEC052",
+      "failure_origins": [],
+      "known_invalid_objects_admitted": 0,
+      "monetary_cost": null,
+      "proposal_counts": {
+        "claims": 22,
+        "entities": 41,
+        "propositions": 0,
+        "relationships": 13
+      },
+      "provider_calls_started": 3,
+      "provider_latency_ms": 49357.471708004596,
+      "representation_strategy_counts": {
+        "CAUSAL_MECHANISM": 6,
+        "CONCISE_PROSE": 30,
+        "FOCUSED_RELATIONSHIP": 13,
+        "HIERARCHY_COMPOSITION": 3,
+        "PROCESS_SEQUENCE": 2
+      },
+      "representation_sufficiency_counts": {
+        "INSUFFICIENT_SUPPORTED_STRUCTURE": 30,
+        "SUFFICIENT_TRUSTED_STRUCTURE": 24
+      },
+      "source_id": "usgs-divergent-plate-boundaries-1996",
+      "source_sha256": "a9539d135ff1577d7e2791d498b92f55239175565b925b24aec2ed0bf633f186",
+      "stage_gates": [
+        {
+          "error_type": null,
+          "exact_failure": null,
+          "output_identity_sha256": "db3eb734378ede6b57b222f8a7690e7888c80086aa000f24974de34572f669ec",
+          "stage": "ENTITY_INVENTORY",
+          "stage_version": "spec-047-entity-inventory-v1",
+          "status": "PASS",
+          "upstream_identity_sha256": "a9539d135ff1577d7e2791d498b92f55239175565b925b24aec2ed0bf633f186"
+        },
+        {
+          "error_type": null,
+          "exact_failure": null,
+          "output_identity_sha256": "3638e4749edeb834bf099969ed0df122bfba83c5ed8263cfda65e23b1e94951a",
+          "stage": "SEMANTIC_STRUCTURE",
+          "stage_version": "spec-051-semantic-structure-v2",
+          "status": "PASS",
+          "upstream_identity_sha256": "db3eb734378ede6b57b222f8a7690e7888c80086aa000f24974de34572f669ec"
+        },
+        {
+          "error_type": null,
+          "exact_failure": null,
+          "output_identity_sha256": "c8deac814688c79bb7c29a6289e25b25c76efa5b03685d32751befa414a9f51d",
+          "stage": "CLAIM_EVIDENCE_BINDING",
+          "stage_version": "spec-051-claim-evidence-binding-v2",
+          "status": "PASS",
+          "upstream_identity_sha256": "9151b298123399b8366a11633dfbb81e86ee57c65720ab798ec32ef825cece16"
+        }
+      ],
+      "status": "PASS",
+      "sufficient_representation_decision_count": 24,
+      "usage": {
+        "input_tokens": 10626,
+        "output_tokens": 5441,
+        "total_tokens": 16067
+      }
+    },
+    {
+      "admitted_counts": {
+        "claims": 39,
+        "entities": 42,
+        "propositions": 0,
+        "relationships": 30
+      },
+      "arm": "CANDIDATE_B_V2",
+      "detected_structure_count": 10,
+      "detected_structure_types": {
+        "CAUSAL_PATH": 6,
+        "HIERARCHY": 4
+      },
+      "execution_mode": "LIVE_FROZEN_SPEC052",
+      "failure_origins": [],
+      "known_invalid_objects_admitted": 0,
+      "monetary_cost": null,
+      "proposal_counts": {
+        "claims": 39,
+        "entities": 42,
+        "propositions": 0,
+        "relationships": 30
+      },
+      "provider_calls_started": 3,
+      "provider_latency_ms": 61054.04470898793,
+      "representation_strategy_counts": {
+        "CAUSAL_MECHANISM": 11,
+        "CONCISE_PROSE": 21,
+        "FOCUSED_RELATIONSHIP": 30,
+        "HIERARCHY_COMPOSITION": 10
+      },
+      "representation_sufficiency_counts": {
+        "INSUFFICIENT_SUPPORTED_STRUCTURE": 21,
+        "SUFFICIENT_TRUSTED_STRUCTURE": 51
+      },
+      "source_id": "noaa-nesdis-jet-stream-2025",
+      "source_sha256": "256ade61be620cfaa7b1327e3c982576611dd29b6a1fb42217d86ffdc0783ca1",
+      "stage_gates": [
+        {
+          "error_type": null,
+          "exact_failure": null,
+          "output_identity_sha256": "2f453f74fdb094140d9bf7880bf9323415142f2c6c135f5c5914a2f5b3c732d1",
+          "stage": "ENTITY_INVENTORY",
+          "stage_version": "spec-047-entity-inventory-v1",
+          "status": "PASS",
+          "upstream_identity_sha256": "256ade61be620cfaa7b1327e3c982576611dd29b6a1fb42217d86ffdc0783ca1"
+        },
+        {
+          "error_type": null,
+          "exact_failure": null,
+          "output_identity_sha256": "d2d481c653f568cb831958161b42c77f08e29a3aaaeeb3b80875f76beaeb5024",
+          "stage": "SEMANTIC_STRUCTURE",
+          "stage_version": "spec-051-semantic-structure-v2",
+          "status": "PASS",
+          "upstream_identity_sha256": "2f453f74fdb094140d9bf7880bf9323415142f2c6c135f5c5914a2f5b3c732d1"
+        },
+        {
+          "error_type": null,
+          "exact_failure": null,
+          "output_identity_sha256": "1268838acc2545e6dbf263a17d57fa1ea0436e12c4a1211493c4c3d1f3036927",
+          "stage": "CLAIM_EVIDENCE_BINDING",
+          "stage_version": "spec-051-claim-evidence-binding-v2",
+          "status": "PASS",
+          "upstream_identity_sha256": "9381188640e0cab396d3fc9d644a39e9b29aca1d06923a438247a876b565b71a"
+        }
+      ],
+      "status": "PASS",
+      "sufficient_representation_decision_count": 51,
+      "usage": {
+        "input_tokens": 11240,
+        "output_tokens": 7599,
+        "total_tokens": 18839
+      }
+    },
+    {
+      "admitted_counts": {
+        "claims": 25,
+        "entities": 42,
+        "propositions": 1,
+        "relationships": 9
+      },
+      "arm": "CANDIDATE_B_V2",
+      "detected_structure_count": 6,
+      "detected_structure_types": {
+        "HIERARCHY": 3,
+        "PROCESS_CHAIN": 3
+      },
+      "execution_mode": "LIVE_FROZEN_SPEC052",
+      "failure_origins": [],
+      "known_invalid_objects_admitted": 0,
+      "monetary_cost": null,
+      "proposal_counts": {
+        "claims": 25,
+        "entities": 42,
+        "propositions": 1,
+        "relationships": 9
+      },
+      "provider_calls_started": 3,
+      "provider_latency_ms": 79853.21220799233,
+      "representation_strategy_counts": {
+        "CONCISE_PROSE": 29,
+        "FOCUSED_RELATIONSHIP": 9,
+        "HIERARCHY_COMPOSITION": 8,
+        "PROCESS_SEQUENCE": 6
+      },
+      "representation_sufficiency_counts": {
+        "INSUFFICIENT_SUPPORTED_STRUCTURE": 29,
+        "SUFFICIENT_TRUSTED_STRUCTURE": 23
+      },
+      "source_id": "crs-legislative-process-r42843-17",
+      "source_sha256": "fe61b7c3b2a9373e7eb3b30d16b94adc2c8b5f4307327265943995550a6384b4",
+      "stage_gates": [
+        {
+          "error_type": null,
+          "exact_failure": null,
+          "output_identity_sha256": "81147f5038f214bd6a03d807f4ddfbd43dc4216c2c03fa97c9ad80a99277f95a",
+          "stage": "ENTITY_INVENTORY",
+          "stage_version": "spec-047-entity-inventory-v1",
+          "status": "PASS",
+          "upstream_identity_sha256": "fe61b7c3b2a9373e7eb3b30d16b94adc2c8b5f4307327265943995550a6384b4"
+        },
+        {
+          "error_type": null,
+          "exact_failure": null,
+          "output_identity_sha256": "4c1ac969ae515adc6b951ca5c6d5beb30555624e17962b7fb69d79d67596b726",
+          "stage": "SEMANTIC_STRUCTURE",
+          "stage_version": "spec-051-semantic-structure-v2",
+          "status": "PASS",
+          "upstream_identity_sha256": "81147f5038f214bd6a03d807f4ddfbd43dc4216c2c03fa97c9ad80a99277f95a"
+        },
+        {
+          "error_type": null,
+          "exact_failure": null,
+          "output_identity_sha256": "29a009b06724a48efc8f477da1741faef930c38ff1e3349de4d80c686f428329",
+          "stage": "CLAIM_EVIDENCE_BINDING",
+          "stage_version": "spec-051-claim-evidence-binding-v2",
+          "status": "PASS",
+          "upstream_identity_sha256": "37bdd7c9aa3a4daee8d0b9e7d8f1754e4883e7130f283ca5b5926c0da54770a8"
+        }
+      ],
+      "status": "PASS",
+      "sufficient_representation_decision_count": 23,
+      "usage": {
+        "input_tokens": 11264,
+        "output_tokens": 4784,
+        "total_tokens": 16048
+      }
+    },
+    {
+      "admitted_counts": {
+        "claims": 11,
+        "entities": 40,
+        "propositions": 0,
+        "relationships": 26
+      },
+      "arm": "CANDIDATE_B_V2",
+      "detected_structure_count": 5,
+      "detected_structure_types": {
+        "CAUSAL_PATH": 2,
+        "HIERARCHY": 3
+      },
+      "execution_mode": "LIVE_FROZEN_SPEC052",
+      "failure_origins": [],
+      "known_invalid_objects_admitted": 0,
+      "monetary_cost": null,
+      "proposal_counts": {
+        "claims": 11,
+        "entities": 40,
+        "propositions": 0,
+        "relationships": 26
+      },
+      "provider_calls_started": 3,
+      "provider_latency_ms": 44613.09700101265,
+      "representation_strategy_counts": {
+        "CAUSAL_MECHANISM": 4,
+        "CONCISE_PROSE": 23,
+        "FOCUSED_RELATIONSHIP": 26,
+        "HIERARCHY_COMPOSITION": 13
+      },
+      "representation_sufficiency_counts": {
+        "INSUFFICIENT_SUPPORTED_STRUCTURE": 23,
+        "SUFFICIENT_TRUSTED_STRUCTURE": 43
+      },
+      "source_id": "nasa-solar-system-formation-2026",
+      "source_sha256": "c0cb2519673b8f3ef23c0be2856e03790f53d44971cbff09d593190ab3fa155d",
+      "stage_gates": [
+        {
+          "error_type": null,
+          "exact_failure": null,
+          "output_identity_sha256": "2fc347d43537fdc2f5c2f01845500723cc3ff5c59e56eebc33554960da3b897b",
+          "stage": "ENTITY_INVENTORY",
+          "stage_version": "spec-047-entity-inventory-v1",
+          "status": "PASS",
+          "upstream_identity_sha256": "c0cb2519673b8f3ef23c0be2856e03790f53d44971cbff09d593190ab3fa155d"
+        },
+        {
+          "error_type": null,
+          "exact_failure": null,
+          "output_identity_sha256": "eecf1eea8817e30c07176ee66ff64c0ccacdfff460bc7cc4024dd6e457cea831",
+          "stage": "SEMANTIC_STRUCTURE",
+          "stage_version": "spec-051-semantic-structure-v2",
+          "status": "PASS",
+          "upstream_identity_sha256": "2fc347d43537fdc2f5c2f01845500723cc3ff5c59e56eebc33554960da3b897b"
+        },
+        {
+          "error_type": null,
+          "exact_failure": null,
+          "output_identity_sha256": "0b00429876660fa3f6093061047f2e146ee93b24fb871c28c7795af0ca99039c",
+          "stage": "CLAIM_EVIDENCE_BINDING",
+          "stage_version": "spec-051-claim-evidence-binding-v2",
+          "status": "PASS",
+          "upstream_identity_sha256": "b8d2a422559846859a4c7efde8e410ba3a0a2c350250412f174488ca74ab5651"
+        }
+      ],
+      "status": "PASS",
+      "sufficient_representation_decision_count": 43,
+      "usage": {
+        "input_tokens": 11212,
+        "output_tokens": 5308,
+        "total_tokens": 16520
+      }
+    },
+    {
+      "admitted_counts": {
+        "claims": 7,
+        "entities": 62,
+        "propositions": 6,
+        "relationships": 21
+      },
+      "arm": "CANDIDATE_B_V2",
+      "detected_structure_count": 20,
+      "detected_structure_types": {
+        "CAUSAL_PATH": 20
+      },
+      "execution_mode": "LIVE_FROZEN_SPEC052",
+      "failure_origins": [],
+      "known_invalid_objects_admitted": 0,
+      "monetary_cost": null,
+      "proposal_counts": {
+        "claims": 7,
+        "entities": 62,
+        "propositions": 6,
+        "relationships": 21
+      },
+      "provider_calls_started": 3,
+      "provider_latency_ms": 90482.486081979,
+      "representation_strategy_counts": {
+        "CAUSAL_MECHANISM": 13,
+        "CONCISE_PROSE": 55,
+        "FOCUSED_RELATIONSHIP": 21
+      },
+      "representation_sufficiency_counts": {
+        "INSUFFICIENT_SUPPORTED_STRUCTURE": 55,
+        "SUFFICIENT_TRUSTED_STRUCTURE": 34
+      },
+      "source_id": "epa-ecological-processes-2026",
+      "source_sha256": "70e7e3d20325dd5d22e9cf4484934419447907ba9f6cf5a4dfd65ddcbfa80ad5",
+      "stage_gates": [
+        {
+          "error_type": null,
+          "exact_failure": null,
+          "output_identity_sha256": "c29ab593dab297dadbbe7c9b90ab91661c8225961f3fc8320fa815321b9135cc",
+          "stage": "ENTITY_INVENTORY",
+          "stage_version": "spec-047-entity-inventory-v1",
+          "status": "PASS",
+          "upstream_identity_sha256": "70e7e3d20325dd5d22e9cf4484934419447907ba9f6cf5a4dfd65ddcbfa80ad5"
+        },
+        {
+          "error_type": null,
+          "exact_failure": null,
+          "output_identity_sha256": "d18a51cb02e25bf6710da096cd4b620617f9cf0fe2072ab70a318fefc030f6c4",
+          "stage": "SEMANTIC_STRUCTURE",
+          "stage_version": "spec-051-semantic-structure-v2",
+          "status": "PASS",
+          "upstream_identity_sha256": "c29ab593dab297dadbbe7c9b90ab91661c8225961f3fc8320fa815321b9135cc"
+        },
+        {
+          "error_type": null,
+          "exact_failure": null,
+          "output_identity_sha256": "88f7433a9aa9367b86155df79dd9052264c4a92ac3d1facbd6ba45bd7d805bc9",
+          "stage": "CLAIM_EVIDENCE_BINDING",
+          "stage_version": "spec-051-claim-evidence-binding-v2",
+          "status": "PASS",
+          "upstream_identity_sha256": "60b7696909e527f4c58857c30d46d6aa1c56e5f33c8cbf86ec3ce7b08d27ff94"
+        }
+      ],
+      "status": "PASS",
+      "sufficient_representation_decision_count": 34,
+      "usage": {
+        "input_tokens": 13334,
+        "output_tokens": 6700,
+        "total_tokens": 20034
+      }
+    },
+    {
+      "admitted_counts": {
+        "claims": 19,
+        "entities": 39,
+        "propositions": 0,
+        "relationships": 15
+      },
+      "arm": "CANDIDATE_B_V2",
+      "detected_structure_count": 4,
+      "detected_structure_types": {
+        "HIERARCHY": 4
+      },
+      "execution_mode": "LIVE_FROZEN_SPEC052",
+      "failure_origins": [],
+      "known_invalid_objects_admitted": 0,
+      "monetary_cost": null,
+      "proposal_counts": {
+        "claims": 19,
+        "entities": 39,
+        "propositions": 0,
+        "relationships": 15
+      },
+      "provider_calls_started": 3,
+      "provider_latency_ms": 43347.93025002,
+      "representation_strategy_counts": {
+        "CONCISE_PROSE": 27,
+        "FOCUSED_RELATIONSHIP": 15,
+        "HIERARCHY_COMPOSITION": 12
+      },
+      "representation_sufficiency_counts": {
+        "INSUFFICIENT_SUPPORTED_STRUCTURE": 27,
+        "SUFFICIENT_TRUSTED_STRUCTURE": 27
+      },
+      "source_id": "doe-iron-platinum-atomic-structure-2017",
+      "source_sha256": "e9d2260c9980239431fc195e7dc687afea93598af4f28d774ed5e4c4317f9e1e",
+      "stage_gates": [
+        {
+          "error_type": null,
+          "exact_failure": null,
+          "output_identity_sha256": "3ecb2ed5fefa5f36077e04e851bbf0981a3ff00d14f05a660aa33959f93b4c2b",
+          "stage": "ENTITY_INVENTORY",
+          "stage_version": "spec-047-entity-inventory-v1",
+          "status": "PASS",
+          "upstream_identity_sha256": "e9d2260c9980239431fc195e7dc687afea93598af4f28d774ed5e4c4317f9e1e"
+        },
+        {
+          "error_type": null,
+          "exact_failure": null,
+          "output_identity_sha256": "124c3af002ae53a363bb79d04e715fa2c3beed3c0cf3d77280af27a839391eae",
+          "stage": "SEMANTIC_STRUCTURE",
+          "stage_version": "spec-051-semantic-structure-v2",
+          "status": "PASS",
+          "upstream_identity_sha256": "3ecb2ed5fefa5f36077e04e851bbf0981a3ff00d14f05a660aa33959f93b4c2b"
+        },
+        {
+          "error_type": null,
+          "exact_failure": null,
+          "output_identity_sha256": "e0124a838d8d30e84f92758870682aa9c2351247d3e99600cfac5ee9702e3ef9",
+          "stage": "CLAIM_EVIDENCE_BINDING",
+          "stage_version": "spec-051-claim-evidence-binding-v2",
+          "status": "PASS",
+          "upstream_identity_sha256": "39827d4b249e7406b4849d821e71a79afd08f5617586fbbe8cb7def009df64f4"
+        }
+      ],
+      "status": "PASS",
+      "sufficient_representation_decision_count": 27,
+      "usage": {
+        "input_tokens": 11788,
+        "output_tokens": 5132,
+        "total_tokens": 16920
+      }
+    },
+    {
+      "admitted_counts": null,
+      "arm": "CANDIDATE_B_V2",
+      "detected_structure_count": 0,
+      "detected_structure_types": {},
+      "execution_mode": "LIVE_FROZEN_SPEC052",
+      "failure_origins": [
+        "PROPOSITION_CONSTRUCTION"
+      ],
+      "known_invalid_objects_admitted": 0,
+      "monetary_cost": null,
+      "proposal_counts": {
+        "claims": 0,
+        "entities": 38,
+        "propositions": 0,
+        "relationships": 0
+      },
+      "provider_calls_started": 2,
+      "provider_latency_ms": 67520.24912499473,
+      "representation_strategy_counts": {},
+      "representation_sufficiency_counts": {},
+      "source_id": "nhgri-dna-fact-sheet-2020",
+      "source_sha256": "54e2147221cf186fe1b4f965422c69e815f986a7d009eddae9c01bf32ec25f89",
+      "stage_gates": [
+        {
+          "error_type": null,
+          "exact_failure": null,
+          "output_identity_sha256": "f1280ac53b6b7b02aa638af045587deb58e52238589e83da9314b2e1c2483c98",
+          "stage": "ENTITY_INVENTORY",
+          "stage_version": "spec-047-entity-inventory-v1",
+          "status": "PASS",
+          "upstream_identity_sha256": "54e2147221cf186fe1b4f965422c69e815f986a7d009eddae9c01bf32ec25f89"
+        },
+        {
+          "error_type": "StageExecutionError",
+          "exact_failure": "Candidate-B-v2 Stage-2 contract rejected output: Stage 2 semantic object IDs must be unique",
+          "output_identity_sha256": null,
+          "stage": "SEMANTIC_STRUCTURE",
+          "stage_version": "spec-051-semantic-structure-v2",
+          "status": "FAIL_CLOSED",
+          "upstream_identity_sha256": "f1280ac53b6b7b02aa638af045587deb58e52238589e83da9314b2e1c2483c98"
+        },
+        {
+          "error_type": null,
+          "exact_failure": null,
+          "output_identity_sha256": null,
+          "stage": "CLAIM_EVIDENCE_BINDING",
+          "stage_version": "spec-051-claim-evidence-binding-v2",
+          "status": "NOT_RUN_UPSTREAM_FAILURE",
+          "upstream_identity_sha256": null
+        }
+      ],
+      "status": "FAILED_CLOSED",
+      "sufficient_representation_decision_count": 0,
+      "usage": {
+        "input_tokens": 6608,
+        "output_tokens": 3721,
+        "total_tokens": 10329
+      }
+    },
+    {
+      "admitted_counts": {
+        "claims": 16,
+        "entities": 41,
+        "propositions": 1,
+        "relationships": 18
+      },
+      "arm": "CANDIDATE_B_V2",
+      "detected_structure_count": 8,
+      "detected_structure_types": {
+        "HIERARCHY": 8
+      },
+      "execution_mode": "LIVE_FROZEN_SPEC052",
+      "failure_origins": [],
+      "known_invalid_objects_admitted": 0,
+      "monetary_cost": null,
+      "proposal_counts": {
+        "claims": 16,
+        "entities": 41,
+        "propositions": 1,
+        "relationships": 18
+      },
+      "provider_calls_started": 3,
+      "provider_latency_ms": 44575.23533399217,
+      "representation_strategy_counts": {
+        "COMPARE_CONTRAST": 1,
+        "CONCISE_PROSE": 20,
+        "FOCUSED_RELATIONSHIP": 18,
+        "HIERARCHY_COMPOSITION": 21
+      },
+      "representation_sufficiency_counts": {
+        "INSUFFICIENT_SUPPORTED_STRUCTURE": 20,
+        "SUFFICIENT_TRUSTED_STRUCTURE": 40
+      },
+      "source_id": "fhwa-traffic-bottleneck-concepts-2016",
+      "source_sha256": "1fd7e9851839f5f35cd2a231cd3ce5aea8196ec85cabd04694f681c063ea4345",
+      "stage_gates": [
+        {
+          "error_type": null,
+          "exact_failure": null,
+          "output_identity_sha256": "57a5cefa5f802e0056bb4b755268f18b463d87d63fc845a829a64ecd81574ab2",
+          "stage": "ENTITY_INVENTORY",
+          "stage_version": "spec-047-entity-inventory-v1",
+          "status": "PASS",
+          "upstream_identity_sha256": "1fd7e9851839f5f35cd2a231cd3ce5aea8196ec85cabd04694f681c063ea4345"
+        },
+        {
+          "error_type": null,
+          "exact_failure": null,
+          "output_identity_sha256": "47585ff0d73cc03196599b0e3c729892f55dbf17cfdd5d0282105095bad4d3c0",
+          "stage": "SEMANTIC_STRUCTURE",
+          "stage_version": "spec-051-semantic-structure-v2",
+          "status": "PASS",
+          "upstream_identity_sha256": "57a5cefa5f802e0056bb4b755268f18b463d87d63fc845a829a64ecd81574ab2"
+        },
+        {
+          "error_type": null,
+          "exact_failure": null,
+          "output_identity_sha256": "0cfe39c5ab63970a120f9b037d3f9c0350a7478760ca972d888d63608be83d2d",
+          "stage": "CLAIM_EVIDENCE_BINDING",
+          "stage_version": "spec-051-claim-evidence-binding-v2",
+          "status": "PASS",
+          "upstream_identity_sha256": "b12351d74a3268c742ae831df301910af7cec060090eb9fd9d61c316e4dc1671"
+        }
+      ],
+      "status": "PASS",
+      "sufficient_representation_decision_count": 40,
+      "usage": {
+        "input_tokens": 11763,
+        "output_tokens": 5397,
+        "total_tokens": 17160
+      }
+    },
+    {
+      "admitted_counts": {
+        "claims": 13,
+        "entities": 39,
+        "propositions": 0,
+        "relationships": 17
+      },
+      "arm": "CANDIDATE_B_V2",
+      "detected_structure_count": 6,
+      "detected_structure_types": {
+        "HIERARCHY": 6
+      },
+      "execution_mode": "LIVE_FROZEN_SPEC052",
+      "failure_origins": [],
+      "known_invalid_objects_admitted": 0,
+      "monetary_cost": null,
+      "proposal_counts": {
+        "claims": 13,
+        "entities": 39,
+        "propositions": 0,
+        "relationships": 17
+      },
+      "provider_calls_started": 3,
+      "provider_latency_ms": 35285.0002500345,
+      "representation_strategy_counts": {
+        "CONCISE_PROSE": 23,
+        "FOCUSED_RELATIONSHIP": 17,
+        "HIERARCHY_COMPOSITION": 16
+      },
+      "representation_sufficiency_counts": {
+        "INSUFFICIENT_SUPPORTED_STRUCTURE": 23,
+        "SUFFICIENT_TRUSTED_STRUCTURE": 33
+      },
+      "source_id": "nist-measurement-uncertainty-2025",
+      "source_sha256": "b3ae508f3982dfdd89f41a1d9ca59eb1f658b1648e3fae35168feba212046730",
+      "stage_gates": [
+        {
+          "error_type": null,
+          "exact_failure": null,
+          "output_identity_sha256": "04d9eeb7ac7f09390c2d93998dc9241de161af20249fcda03e62a2c0876b6872",
+          "stage": "ENTITY_INVENTORY",
+          "stage_version": "spec-047-entity-inventory-v1",
+          "status": "PASS",
+          "upstream_identity_sha256": "b3ae508f3982dfdd89f41a1d9ca59eb1f658b1648e3fae35168feba212046730"
+        },
+        {
+          "error_type": null,
+          "exact_failure": null,
+          "output_identity_sha256": "77ce1996802c24d673d171159243588d7a619d65895ea5b4d72af20ed40b45a3",
+          "stage": "SEMANTIC_STRUCTURE",
+          "stage_version": "spec-051-semantic-structure-v2",
+          "status": "PASS",
+          "upstream_identity_sha256": "04d9eeb7ac7f09390c2d93998dc9241de161af20249fcda03e62a2c0876b6872"
+        },
+        {
+          "error_type": null,
+          "exact_failure": null,
+          "output_identity_sha256": "235dc988783cb69e2c4a6385944dc8874e2010c21fdfaee82b772efee177b325",
+          "stage": "CLAIM_EVIDENCE_BINDING",
+          "stage_version": "spec-051-claim-evidence-binding-v2",
+          "status": "PASS",
+          "upstream_identity_sha256": "6b3ac4a8efef94032cb7a3d22eea04cd3349aec43b263db65c10aadf10ef1aea"
+        }
+      ],
+      "status": "PASS",
+      "sufficient_representation_decision_count": 33,
+      "usage": {
+        "input_tokens": 9827,
+        "output_tokens": 5269,
+        "total_tokens": 15096
+      }
+    }
+  ]
+}

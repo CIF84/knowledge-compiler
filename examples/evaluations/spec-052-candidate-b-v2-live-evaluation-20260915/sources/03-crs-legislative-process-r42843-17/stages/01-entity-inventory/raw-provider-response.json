@@ -1,0 +1,156 @@
+{
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1789548853.0,
+  "conversation": null,
+  "created_at": 1789548798.0,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "id": "resp_0d72e3f810c8e950016aaa58fe3f6087d28423768a35ae5042",
+  "incomplete_details": null,
+  "instructions": "You perform Stage 1 entity inventory for a semantic compiler.\n\nRead only the exact supplied source. Return a precision-first inventory of concepts,\nobjects, processes, variables, systems, and components that later semantic statements\nneed as endpoints or proposition roles. Include source-supported process/event concepts\nwhen later meaning would need to refer to them. Do not use external knowledge.\n\nDo not assign IDs: trusted code assigns stable IDs after this stage. Each semantic thing\nmust appear once. Do not fragment one identity into variants, merge related but distinct\nthings, or use aliases except for genuine naming equivalence. Names and descriptions must\nremain source-bounded.\n\nReturn entities only. Do not return claims, evidence, relationships, propositions,\nteaching prose, diagnostics, or output outside the requested schema.",
+  "max_output_tokens": null,
+  "max_tool_calls": null,
+  "metadata": {},
+  "model": "gpt-5.6-luna",
+  "moderation": null,
+  "object": "response",
+  "output": [
+    {
+      "content": [],
+      "encrypted_content": "gAAAAABqqlk1V474hi7dCX34lw0IAsBUuL_rSnkRffRVkMR5KaR1s55CI6qujGng4UiPj4Wz1YWrcCTA9814SC1BSFBhgLXUucXs9EgitKuRgIxXZ6TAgh30YgrPRkqbGPMXYU87VEZLiKzyOHv1JR6L8I-llhrKGEOnpB4VBsKcjnEOstOZaEHKXcuLwyF2iR2QhyC4GQvrie8UqY07F06Gf16sHIu60RWIBEGmErku9Cjbpxx33tqQ_T503Tp78MZJJT7lhOM-hzxdxJGbvrlXK0cxR-XaEjR6Pc4A52M3opvbrNoSMzpFFplJDZJb04HWrvzTwV-27ZtuYZudZ6U2VrX20lxy3kZ2awb8metthti-ICMBBQ0nbGRDAaKGBUClqrJjVaudNPsJncsKPmPq5jKPgvZBhWxYCZhSOLpkFywUWgBsEIjNcAYkh2RK7lPKQqc64NvrpS0-AOqs8L0vX4wtvGC3SdL7cfASwDM20e6UZU70I67wik7YjHFzbMonL2V3MdEb0CyIjO0fS_EKv0Vye8zZi7Rl1MYDMf88-5xPz6xlrIbeSlTP7X_hqHW6WicbknyVXKVcrChQVX9l_FUWrSvpm9to6n7ZXGzyGJahwGctWriRRVa1utCBrTuu7gzQtYBEgFbktGZHAVP_1uw4TXVs_qUNpknXffROWQlTAtvtyZXgBumjSFeldz-5sV4CWZoZYPL5b9NuIa0EnQMg2-CRmUwdk3zeHfJaPyuA1PCMKhN3OiA038N7DHqM3TclZ7tz98vHSsGpjCgLTet3scyavrBVOWgVImRxNl9AZzojBJqGKiM2AKNso-TBeQbciUjf-Q0MlGbDXSQ1ZCQvv9-OSZsTascHgRt0G-RUvWrucU5Mwp7oe6-DravVBi3VPUQdC_EfI0NKmiV2OJn5WIEIEoYdK-kch11iRSrecYH2xDewmBFH_MpcPn3dv35dEh82D0Pph6lhneg70HE0Td_sW8_i_GkHs9eNnMKAeDORQtvMBJVAMEHjrUdgX4FxIBZQanm_aEZLfBNiBTZoQ3Fq9TUkjhUbyTcSzx1qGhC3GgcFBksmmpXXCZvxVlh3TatLyINDEpBvnRfir82BsqLKC3TaQZD0n6yy36yZxumlw4aVSW8Mu2c5uwFmU81MNU76uJVnKWfd_nmYIqmHPent--duBPGVt7oP4pmF4UPLDxFVKGe8ZljZH4HAgLqNiplwRFfy9vA3fjfvNZK_Fm_vCe31KaeMESntooIgX4pR3CxJ8rurXIKOIdQNMByh9LM3yPAaXX9MtO6yTYpSZu_9Uy2YTzPOXC0r1tp8rk81QUnvX8dGqRTNA0JAdkc1I9loseYX9EyCVUs970ll0HsOR4aak2Ax2Y-SfA-hWpLgrgGCp8xJ_e1rngkYLxDKtkrCGNLz4UMPvg01IAFo_lKxxdRNG1L1-7TCXi7cfdJgcKzuyMnPZ5VNfZmeaIzk_y3u",
+      "id": "rs_0d72e3f810c8e950016aaa59001ce887d28dd98a61f5df1e64",
+      "status": null,
+      "summary": [],
+      "type": "reasoning"
+    },
+    {
+      "content": [
+        {
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"symbols\":[{\"name\":\"Congressional action on bills\",\"description\":\"Action concerning bills in Congress.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"name\":\"bill\",\"description\":\"A proposed legislative measure introduced by a Member of the House or Senate.\",\"entity_type\":\"OBJECT\",\"aliases\":[\"bills\"]},{\"name\":\"party leader\",\"description\":\"A leader of a party in a congressional chamber who plans and coordinates action on bills.\",\"entity_type\":\"COMPONENT\",\"aliases\":[\"party leaders\"]},{\"name\":\"majority party leader in the House\",\"description\":\"A majority party leader in the House with tools for setting the floor agenda.\",\"entity_type\":\"COMPONENT\",\"aliases\":[\"majority party leaders in the House\"]},{\"name\":\"majority party leader in the Senate\",\"description\":\"A majority party leader in the Senate who may offer a motion to proceed to a specific bill.\",\"entity_type\":\"COMPONENT\",\"aliases\":[\"majority party leaders in the Senate\"]},{\"name\":\"House\",\"description\":\"A congressional chamber in which Members introduce bills and bills may receive floor consideration.\",\"entity_type\":\"SYSTEM\",\"aliases\":[\"House of Representatives\"]},{\"name\":\"Senate\",\"description\":\"A congressional chamber in which Members introduce bills and bills may receive floor consideration.\",\"entity_type\":\"SYSTEM\",\"aliases\":[]},{\"name\":\"floor agenda\",\"description\":\"The agenda for consideration of bills on a chamber floor.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"standing committee\",\"description\":\"A committee composed of Members that holds policy expertise and operates within specified policy jurisdictions.\",\"entity_type\":\"COMPONENT\",\"aliases\":[\"standing committees\"]},{\"name\":\"committee\",\"description\":\"A congressional committee to which a bill is referred or that may initiate legislative action.\",\"entity_type\":\"COMPONENT\",\"aliases\":[\"committees\"]},{\"name\":\"panel of Members\",\"description\":\"A panel of Members forming a standing committee.\",\"entity_type\":\"COMPONENT\",\"aliases\":[\"panels of Members\"]},{\"name\":\"Member\",\"description\":\"A Member of the House or Senate who may introduce a bill or participate in committee action.\",\"entity_type\":\"COMPONENT\",\"aliases\":[\"Members\"]},{\"name\":\"policy expertise\",\"description\":\"Expertise residing in standing committees concerning policy.\",\"entity_type\":\"CONCEPT\",\"aliases\":[]},{\"name\":\"policy jurisdiction\",\"description\":\"A specified policy area within which a committee develops and assesses proposed legislation.\",\"entity_type\":\"CONCEPT\",\"aliases\":[\"policy jurisdictions\"]},{\"name\":\"introduction of a bill\",\"description\":\"The act by which a Member of the House or Senate introduces a bill.\",\"entity_type\":\"PROCESS\",\"aliases\":[\"introduces a bill\"]},{\"name\":\"bill referral\",\"description\":\"Referral of an introduced bill to the committee or committees in a chamber with jurisdiction over its elements.\",\"entity_type\":\"PROCESS\",\"aliases\":[\"referred to the committee\"]},{\"name\":\"committee chair\",\"description\":\"The chair of a committee with primary agenda-setting authority for that committee.\",\"entity_type\":\"COMPONENT\",\"aliases\":[\"committee chairs\"]},{\"name\":\"committee agenda-setting authority\",\"description\":\"The primary authority to identify which bills receive formal committee attention.\",\"entity_type\":\"CONCEPT\",\"aliases\":[]},{\"name\":\"two-year Congress\",\"description\":\"The two-year period during which a committee identifies bills for formal attention.\",\"entity_type\":\"SYSTEM\",\"aliases\":[]},{\"name\":\"formal committee attention\",\"description\":\"Formal consideration of a bill by a committee.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"name\":\"legislative action\",\"description\":\"Action on legislation that a committee may initiate on its own or undertake after referral.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"name\":\"committee hearing\",\"description\":\"A committee event providing Members and the public an opportunity to hear from selected parties about a bill's strengths and weaknesses.\",\"entity_type\":\"PROCESS\",\"aliases\":[\"hearings\"]},{\"name\":\"selected party\",\"description\":\"A party, such as a federal agency or organized interest, from which committee members and the public may hear during a hearing.\",\"entity_type\":\"COMPONENT\",\"aliases\":[\"selected parties\"]},{\"name\":\"federal agency\",\"description\":\"An example of a selected party that may provide views about a bill during a hearing.\",\"entity_type\":\"SYSTEM\",\"aliases\":[]},{\"name\":\"organized interest\",\"description\":\"An example of a selected party that may provide views about a bill during a hearing.\",\"entity_type\":\"COMPONENT\",\"aliases\":[]},{\"name\":\"bill strength\",\"description\":\"A strength of a bill discussed during a committee hearing.\",\"entity_type\":\"CONCEPT\",\"aliases\":[\"strengths\"]},{\"name\":\"bill weakness\",\"description\":\"A weakness of a bill discussed during a committee hearing.\",\"entity_type\":\"CONCEPT\",\"aliases\":[\"weaknesses\"]},{\"name\":\"markup\",\"description\":\"A committee proceeding on a bill during which committee members vote on proposed amendments.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"name\":\"proposed amendment\",\"description\":\"An amendment proposed for a bill and subject to voting by committee members during a markup.\",\"entity_type\":\"OBJECT\",\"aliases\":[\"proposed amendments\"]},{\"name\":\"committee member\",\"description\":\"A Member participating in committee action and voting on proposed amendments.\",\"entity_type\":\"COMPONENT\",\"aliases\":[\"committee members\"]},{\"name\":\"majority vote\",\"description\":\"The vote by which a committee agrees to report a bill after a markup.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"name\":\"committee report\",\"description\":\"A committee's report of a bill, including any recommended changes adopted in the markup, to its chamber.\",\"entity_type\":\"OBJECT\",\"aliases\":[\"report the bill\"]},{\"name\":\"recommended change\",\"description\":\"A change to a bill adopted in the markup and included in the committee's report.\",\"entity_type\":\"OBJECT\",\"aliases\":[\"recommended changes\"]},{\"name\":\"floor consideration\",\"description\":\"Consideration of a bill on the floor of a congressional chamber.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"name\":\"streamlined floor consideration\",\"description\":\"A type of floor consideration used for a bill in the House.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"name\":\"Rules Committee\",\"description\":\"The committee that House majority party leaders may ask to propose tailored parameters for floor consideration.\",\"entity_type\":\"COMPONENT\",\"aliases\":[]},{\"name\":\"tailored parameters for floor consideration\",\"description\":\"Parameters proposed for the House floor consideration of a bill.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"motion to proceed\",\"description\":\"A Senate motion to proceed to a specific bill.\",\"entity_type\":\"OBJECT\",\"aliases\":[\"motion to proceed to a specific bill\"]},{\"name\":\"Senate agreement to a motion to proceed\",\"description\":\"The Senate's agreement to a motion to proceed to a specific bill.\",\"entity_type\":\"PROCESS\",\"aliases\":[]},{\"name\":\"unanimous consent request\",\"description\":\"A request to bring a bill to the Senate floor when no Senator objects.\",\"entity_type\":\"OBJECT\",\"aliases\":[]},{\"name\":\"Senator\",\"description\":\"A Member of the Senate who may object to a unanimous consent request.\",\"entity_type\":\"COMPONENT\",\"aliases\":[\"Senators\"]},{\"name\":\"objection\",\"description\":\"An objection by a Senator to a unanimous consent request to bring a bill to the Senate floor.\",\"entity_type\":\"PROCESS\",\"aliases\":[\"objects\"]}]}",
+          "type": "output_text"
+        }
+      ],
+      "id": "msg_0d72e3f810c8e950016aaa5901da5887d28ab5dcbdf8d44a04",
+      "phase": "final_answer",
+      "role": "assistant",
+      "status": "completed",
+      "type": "message"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt": null,
+  "prompt_cache_key": null,
+  "prompt_cache_options": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "low",
+    "generate_summary": null,
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "status": "completed",
+  "store": false,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "description": null,
+      "name": "candidate_b_entity_inventory",
+      "schema_": {
+        "additionalProperties": false,
+        "properties": {
+          "symbols": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "aliases": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "entity_type": {
+                  "enum": [
+                    "CONCEPT",
+                    "OBJECT",
+                    "PROCESS",
+                    "VARIABLE",
+                    "SYSTEM",
+                    "COMPONENT"
+                  ],
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name",
+                "description",
+                "entity_type",
+                "aliases"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "symbols"
+        ],
+        "type": "object"
+      },
+      "strict": true,
+      "type": "json_schema"
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 637,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1464,
+    "output_tokens_details": {
+      "reasoning_tokens": 45
+    },
+    "total_tokens": 2101
+  },
+  "user": null
+}

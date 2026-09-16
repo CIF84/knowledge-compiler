@@ -1,0 +1,292 @@
+{
+  "structures": [
+    {
+      "entity_ids": [
+        "bad-weather",
+        "nonrecurring-congestion",
+        "special-event",
+        "traffic-incident",
+        "work-zone"
+      ],
+      "id": "structure-hierarchy-d244dc996861b435",
+      "metadata": {
+        "contains_cycle": false,
+        "hierarchy_relationship_type": "EXAMPLE_OF",
+        "leaves": [
+          "bad-weather",
+          "special-event",
+          "traffic-incident",
+          "work-zone"
+        ],
+        "roots": [
+          "nonrecurring-congestion"
+        ],
+        "supporting_relationship_ids_by_edge": [
+          [
+            "r15"
+          ],
+          [
+            "r14"
+          ],
+          [
+            "r17"
+          ],
+          [
+            "r16"
+          ]
+        ]
+      },
+      "relationship_ids": [
+        "r15",
+        "r14",
+        "r17",
+        "r16"
+      ],
+      "relationship_types": [
+        "EXAMPLE_OF",
+        "EXAMPLE_OF",
+        "EXAMPLE_OF",
+        "EXAMPLE_OF"
+      ],
+      "structure_type": "HIERARCHY"
+    },
+    {
+      "entity_ids": [
+        "bottleneck",
+        "rubbernecking",
+        "sun-glare",
+        "vertical-climb",
+        "weaving-condition"
+      ],
+      "id": "structure-hierarchy-30b9e2a3f0958158",
+      "metadata": {
+        "contains_cycle": false,
+        "hierarchy_relationship_type": "EXAMPLE_OF",
+        "leaves": [
+          "rubbernecking",
+          "sun-glare",
+          "vertical-climb",
+          "weaving-condition"
+        ],
+        "roots": [
+          "bottleneck"
+        ],
+        "supporting_relationship_ids_by_edge": [
+          [
+            "r12"
+          ],
+          [
+            "r11"
+          ],
+          [
+            "r13"
+          ],
+          [
+            "r10"
+          ]
+        ]
+      },
+      "relationship_ids": [
+        "r12",
+        "r11",
+        "r13",
+        "r10"
+      ],
+      "relationship_types": [
+        "EXAMPLE_OF",
+        "EXAMPLE_OF",
+        "EXAMPLE_OF",
+        "EXAMPLE_OF"
+      ],
+      "structure_type": "HIERARCHY"
+    },
+    {
+      "entity_ids": [
+        "congestion",
+        "nonrecurring-congestion"
+      ],
+      "id": "structure-hierarchy-ff1c03cda2fd6fe0",
+      "metadata": {
+        "contains_cycle": false,
+        "hierarchy_relationship_type": "IS_A",
+        "leaves": [
+          "nonrecurring-congestion"
+        ],
+        "roots": [
+          "congestion"
+        ],
+        "supporting_relationship_ids_by_edge": [
+          [
+            "r6"
+          ]
+        ]
+      },
+      "relationship_ids": [
+        "r6"
+      ],
+      "relationship_types": [
+        "IS_A"
+      ],
+      "structure_type": "HIERARCHY"
+    },
+    {
+      "entity_ids": [
+        "congestion-study",
+        "i-95-corridor-coalition"
+      ],
+      "id": "structure-hierarchy-0617f5373eee09a5",
+      "metadata": {
+        "contains_cycle": false,
+        "hierarchy_relationship_type": "PART_OF",
+        "leaves": [
+          "congestion-study"
+        ],
+        "roots": [
+          "i-95-corridor-coalition"
+        ],
+        "supporting_relationship_ids_by_edge": [
+          [
+            "r18"
+          ]
+        ]
+      },
+      "relationship_ids": [
+        "r18"
+      ],
+      "relationship_types": [
+        "PART_OF"
+      ],
+      "structure_type": "HIERARCHY"
+    },
+    {
+      "entity_ids": [
+        "free-flow",
+        "synchronized-flow",
+        "traffic",
+        "wide-moving-jam"
+      ],
+      "id": "structure-hierarchy-2bc10c6f6457d86b",
+      "metadata": {
+        "contains_cycle": false,
+        "hierarchy_relationship_type": "PART_OF",
+        "leaves": [
+          "free-flow",
+          "synchronized-flow",
+          "wide-moving-jam"
+        ],
+        "roots": [
+          "traffic"
+        ],
+        "supporting_relationship_ids_by_edge": [
+          [
+            "r3"
+          ],
+          [
+            "r4"
+          ],
+          [
+            "r5"
+          ]
+        ]
+      },
+      "relationship_ids": [
+        "r3",
+        "r4",
+        "r5"
+      ],
+      "relationship_types": [
+        "PART_OF",
+        "PART_OF",
+        "PART_OF"
+      ],
+      "structure_type": "HIERARCHY"
+    },
+    {
+      "entity_ids": [
+        "lane-drop",
+        "physical-bottleneck-cause"
+      ],
+      "id": "structure-hierarchy-e3b44ca247676e74",
+      "metadata": {
+        "contains_cycle": false,
+        "hierarchy_relationship_type": "EXAMPLE_OF",
+        "leaves": [
+          "lane-drop"
+        ],
+        "roots": [
+          "physical-bottleneck-cause"
+        ],
+        "supporting_relationship_ids_by_edge": [
+          [
+            "r8"
+          ]
+        ]
+      },
+      "relationship_ids": [
+        "r8"
+      ],
+      "relationship_types": [
+        "EXAMPLE_OF"
+      ],
+      "structure_type": "HIERARCHY"
+    },
+    {
+      "entity_ids": [
+        "operationally-deficient-roadway-design",
+        "physical-bottleneck-cause"
+      ],
+      "id": "structure-hierarchy-4200b11e8f2e87ef",
+      "metadata": {
+        "contains_cycle": false,
+        "hierarchy_relationship_type": "IS_A",
+        "leaves": [
+          "operationally-deficient-roadway-design"
+        ],
+        "roots": [
+          "physical-bottleneck-cause"
+        ],
+        "supporting_relationship_ids_by_edge": [
+          [
+            "r9"
+          ]
+        ]
+      },
+      "relationship_ids": [
+        "r9"
+      ],
+      "relationship_types": [
+        "IS_A"
+      ],
+      "structure_type": "HIERARCHY"
+    },
+    {
+      "entity_ids": [
+        "systemic-congestion",
+        "wide-moving-jam"
+      ],
+      "id": "structure-hierarchy-e8ef727e9bb7ac3a",
+      "metadata": {
+        "contains_cycle": false,
+        "hierarchy_relationship_type": "IS_A",
+        "leaves": [
+          "wide-moving-jam"
+        ],
+        "roots": [
+          "systemic-congestion"
+        ],
+        "supporting_relationship_ids_by_edge": [
+          [
+            "r7"
+          ]
+        ]
+      },
+      "relationship_ids": [
+        "r7"
+      ],
+      "relationship_types": [
+        "IS_A"
+      ],
+      "structure_type": "HIERARCHY"
+    }
+  ]
+}

@@ -1,0 +1,276 @@
+{
+  "missing_symbols": [],
+  "propositions": [],
+  "relationships": [
+    {
+      "confidence": 0.99,
+      "id": "r1",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "jet-stream",
+      "statement": "A jet stream is a type of wind.",
+      "target_entity_id": "wind"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r2",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "polar-jet-stream",
+      "statement": "A polar jet stream is a type of jet stream.",
+      "target_entity_id": "jet-stream"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r3",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "subtropical-jet-stream",
+      "statement": "A subtropical jet stream is a type of jet stream.",
+      "target_entity_id": "jet-stream"
+    },
+    {
+      "confidence": 0.98,
+      "id": "r4",
+      "origin": "SOURCE",
+      "relationship_type": "PART_OF",
+      "source_entity_id": "jet-stream",
+      "statement": "Jet streams occur in the atmosphere.",
+      "target_entity_id": "atmosphere"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r5",
+      "origin": "SOURCE",
+      "relationship_type": "PART_OF",
+      "source_entity_id": "troposphere",
+      "statement": "The troposphere is a layer of Earth's atmosphere.",
+      "target_entity_id": "atmosphere"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r6",
+      "origin": "SOURCE",
+      "relationship_type": "PART_OF",
+      "source_entity_id": "earth-s-surface",
+      "statement": "Earth's surface is part of Earth.",
+      "target_entity_id": "earth"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r7",
+      "origin": "SOURCE",
+      "relationship_type": "CAUSES",
+      "source_entity_id": "air-mass-meeting",
+      "statement": "Jet streams form when warm and cold air masses meet in the atmosphere.",
+      "target_entity_id": "jet-stream-formation"
+    },
+    {
+      "confidence": 0.98,
+      "id": "r8",
+      "origin": "SOURCE",
+      "relationship_type": "CAUSES",
+      "source_entity_id": "air-mass-meeting",
+      "statement": "When warmer air masses meet cooler air masses, the warmer air rises.",
+      "target_entity_id": "air-rising"
+    },
+    {
+      "confidence": 0.98,
+      "id": "r9",
+      "origin": "SOURCE",
+      "relationship_type": "CAUSES",
+      "source_entity_id": "air-mass-meeting",
+      "statement": "When warmer air masses meet cooler air masses, the cooler air sinks to replace the warm air.",
+      "target_entity_id": "air-sinking"
+    },
+    {
+      "confidence": 0.9,
+      "id": "r10",
+      "origin": "SOURCE",
+      "relationship_type": "CAUSES",
+      "source_entity_id": "air-rising",
+      "statement": "The upward movement of warmer air contributes to the creation of an air current.",
+      "target_entity_id": "air-current-formation"
+    },
+    {
+      "confidence": 0.9,
+      "id": "r11",
+      "origin": "SOURCE",
+      "relationship_type": "CAUSES",
+      "source_entity_id": "air-sinking",
+      "statement": "The downward movement of cooler air contributes to the creation of an air current.",
+      "target_entity_id": "air-current-formation"
+    },
+    {
+      "confidence": 0.98,
+      "id": "r12",
+      "origin": "SOURCE",
+      "relationship_type": "CREATES",
+      "source_entity_id": "air-current-formation",
+      "statement": "The movement of warm and cool air creates an air current, or wind.",
+      "target_entity_id": "wind"
+    },
+    {
+      "confidence": 0.95,
+      "id": "r13",
+      "origin": "SOURCE",
+      "relationship_type": "CREATES",
+      "source_entity_id": "jet-stream-formation",
+      "statement": "Jet-stream formation produces a jet stream.",
+      "target_entity_id": "jet-stream"
+    },
+    {
+      "confidence": 0.96,
+      "id": "r14",
+      "origin": "SOURCE",
+      "relationship_type": "CAUSES",
+      "source_entity_id": "uneven-solar-heating",
+      "statement": "Uneven solar heating produces warmer equatorial areas and colder polar areas, creating a temperature difference.",
+      "target_entity_id": "temperature-difference"
+    },
+    {
+      "confidence": 0.98,
+      "id": "r15",
+      "origin": "SOURCE",
+      "relationship_type": "INCREASES",
+      "source_entity_id": "temperature-difference",
+      "statement": "Dramatic temperature differences between warm and cool air masses can increase jet-stream speed.",
+      "target_entity_id": "jet-stream-speed"
+    },
+    {
+      "confidence": 0.9,
+      "id": "r16",
+      "origin": "SOURCE",
+      "relationship_type": "INTERACTS_WITH",
+      "source_entity_id": "polar-jet-stream",
+      "statement": "Very high speeds in polar jet streams usually occur in winter.",
+      "target_entity_id": "winter"
+    },
+    {
+      "confidence": 0.98,
+      "id": "r17",
+      "origin": "SOURCE",
+      "relationship_type": "PART_OF",
+      "source_entity_id": "jet-stream",
+      "statement": "Jet streams are located in the mid to upper troposphere.",
+      "target_entity_id": "troposphere"
+    },
+    {
+      "confidence": 0.98,
+      "id": "r18",
+      "origin": "SOURCE",
+      "relationship_type": "INTERACTS_WITH",
+      "source_entity_id": "airplane",
+      "statement": "An airplane can fly in a powerful jet stream.",
+      "target_entity_id": "jet-stream"
+    },
+    {
+      "confidence": 0.97,
+      "id": "r19",
+      "origin": "SOURCE",
+      "relationship_type": "CAUSES",
+      "source_entity_id": "jet-stream",
+      "statement": "A powerful jet stream can give an airplane a boost when it travels in the same direction.",
+      "target_entity_id": "airplane-boost"
+    },
+    {
+      "confidence": 0.97,
+      "id": "r20",
+      "origin": "SOURCE",
+      "relationship_type": "AFFECTS",
+      "source_entity_id": "jet-stream",
+      "statement": "Fast-moving air currents in a jet stream transport weather systems across the United States.",
+      "target_entity_id": "weather-system"
+    },
+    {
+      "confidence": 0.96,
+      "id": "r21",
+      "origin": "SOURCE",
+      "relationship_type": "AFFECTS",
+      "source_entity_id": "jet-stream",
+      "statement": "Jet streams affect temperature as they transport weather systems.",
+      "target_entity_id": "temperature"
+    },
+    {
+      "confidence": 0.96,
+      "id": "r22",
+      "origin": "SOURCE",
+      "relationship_type": "AFFECTS",
+      "source_entity_id": "jet-stream",
+      "statement": "Jet streams affect precipitation as they transport weather systems.",
+      "target_entity_id": "precipitation"
+    },
+    {
+      "confidence": 0.97,
+      "id": "r23",
+      "origin": "SOURCE",
+      "relationship_type": "AFFECTS",
+      "source_entity_id": "jet-stream",
+      "statement": "Jet streams typically move storms from west to east.",
+      "target_entity_id": "storm"
+    },
+    {
+      "confidence": 0.97,
+      "id": "r24",
+      "origin": "SOURCE",
+      "relationship_type": "AFFECTS",
+      "source_entity_id": "jet-stream-edge",
+      "statement": "Storms tend to follow the edge of the jet stream.",
+      "target_entity_id": "storm"
+    },
+    {
+      "confidence": 0.98,
+      "id": "r25",
+      "origin": "SOURCE",
+      "relationship_type": "CAUSES",
+      "source_entity_id": "temperature-difference",
+      "statement": "The difference between cool and warm air creates turbulent conditions for storms.",
+      "target_entity_id": "turbulent-conditions"
+    },
+    {
+      "confidence": 0.98,
+      "id": "r26",
+      "origin": "SOURCE",
+      "relationship_type": "CAUSES",
+      "source_entity_id": "weather-system",
+      "statement": "A weather system that remains in one place can cause a heat wave.",
+      "target_entity_id": "heat-wave"
+    },
+    {
+      "confidence": 0.98,
+      "id": "r27",
+      "origin": "SOURCE",
+      "relationship_type": "CAUSES",
+      "source_entity_id": "weather-system",
+      "statement": "A weather system that remains in one place can cause a flood.",
+      "target_entity_id": "flood"
+    },
+    {
+      "confidence": 0.9,
+      "id": "r28",
+      "origin": "SOURCE",
+      "relationship_type": "PART_OF",
+      "source_entity_id": "polar-jet-stream",
+      "statement": "A polar jet stream is located near the north pole or south pole.",
+      "target_entity_id": "north-pole"
+    },
+    {
+      "confidence": 0.9,
+      "id": "r29",
+      "origin": "SOURCE",
+      "relationship_type": "PART_OF",
+      "source_entity_id": "polar-jet-stream",
+      "statement": "A polar jet stream is located near the north pole or south pole.",
+      "target_entity_id": "south-pole"
+    },
+    {
+      "confidence": 0.95,
+      "id": "r30",
+      "origin": "SOURCE",
+      "relationship_type": "INTERACTS_WITH",
+      "source_entity_id": "subtropical-jet-stream",
+      "statement": "Subtropical jet streams are located closer to the equator.",
+      "target_entity_id": "equator"
+    }
+  ]
+}

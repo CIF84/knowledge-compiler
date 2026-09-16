@@ -1,0 +1,650 @@
+{
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1789548768.0,
+  "conversation": null,
+  "created_at": 1789548747.0,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "id": "resp_0f7e236d714ed571016aaa58cba5ec87d288e47b2d01fe1078",
+  "incomplete_details": null,
+  "instructions": "You perform Stage 2 semantic structure extraction for Candidate B v2.\n\nUse only the exact source and immutable frozen entity inventory. Every endpoint must\nbe one of the exact supplied entity IDs. Do not invent or substitute an identity.\nReturn only source-supported canonical relationships, COMPARISON_CONDITION instances,\nTRANSFER_EVENT instances, and missing_symbols diagnostics in the requested schema.\n\nEmit topology only when the exact source-supported meaning fits the trusted relationship\ncontract or one of the two canonical proposition forms. Otherwise omit the meaning from\nStage-2 topology. Never approximate, coerce, or choose a nearby predicate/proposition.\nStage 3 independently reads the exact source and can preserve omitted meaning as an\nexact grounded claim. Do not use missing_symbols for non-topological omission; reserve it\nfor an otherwise valid canonical semantic item lacking a required frozen identity.\n\nCOMPARISON_CONDITION means a comparison used as a causal antecedent with a distinct\nLEFT_OPERAND and RIGHT_OPERAND, an OUTCOME caused by that condition, GREATER_THAN, and\nCAUSES. A standalone comparison without a causal outcome is not this proposition.\nTRANSFER_EVENT means a PROCESS EVENT, transferred OBJECT, and non-PROCESS DESTINATION,\nwith TRANSFERS_TO and no comparison operator. Input to a calculation is not automatically\na transfer event. Emit neither proposition when these exact meanings are unsupported.\n\nDo not return entities, claims, evidence, teaching prose, or new semantic vocabulary.\nProposition IDs are assigned by trusted code; do not return them.\n\nACTIVE RELATIONSHIP CONTRACTS (source --TYPE--> target):\nIS_A [STRUCTURAL; direction=instance_to_type]\n  meaning: The source is a kind, category, or subtype of the target.\n  roles: source=instance or subtype; target=broader type or category\n  use: The source can truthfully be described as a target.\n  avoid: Do not use for parts, examples, similarity, or temporary states.\nPART_OF [STRUCTURAL; direction=part_to_whole]\n  meaning: The source is a constituent or component of the target.\n  roles: source=part or component; target=containing whole\n  use: The source exists as a component or subpart of the target.\n  avoid: Never reverse whole and part; do not use for interaction or dependency.\nEXAMPLE_OF [STRUCTURAL; direction=example_to_concept]\n  meaning: The source is an illustrative instance of the target concept.\n  roles: source=example; target=concept illustrated\n  use: The source is presented as an example of the target.\n  avoid: Do not use merely because the source is a subtype; prefer IS_A for classification.\nCAUSES [CAUSAL; direction=cause_to_effect]\n  meaning: The source brings about the target as an effect.\n  roles: source=cause; target=effect\n  use: The source is stated to produce the target outcome.\n  avoid: Do not use for chronology, association, contribution, or unspecified influence.\nAFFECTS [CAUSAL; direction=influence_to_affected]\n  meaning: The source causally influences the target without a specified direction or complete production.\n  roles: source=influence; target=affected entity, process, or variable\n  use: The source changes or influences the target, but the text does not support CAUSES, INCREASES, or DECREASES.\n  avoid: Do not use for mere association, chronology, physical force, or interaction with no stated effect.\nINCREASES [CAUSAL; direction=increaser_to_increased_variable]\n  meaning: The source causally raises the amount, rate, value, probability, or intensity of the target.\n  roles: source=causal factor; target=quantity or variable increased\n  use: The source is explicitly said to make the target greater, faster, more likely, or more intense.\n  avoid: Do not infer from nearby words such as more or faster; never use when the source says slower, lower, or less.\nDECREASES [CAUSAL; direction=decreaser_to_decreased_variable]\n  meaning: The source causally lowers the amount, rate, value, probability, or intensity of the target.\n  roles: source=causal factor; target=quantity or variable decreased\n  use: The source is explicitly said to make the target smaller, slower, less likely, or less intense.\n  avoid: Do not use for absence, prevention without a scalar target, or mere negative association.\nINDUCES [CAUSAL; direction=inducer_to_induced_effect]\n  meaning: The source produces the target through an explicitly described induction mechanism.\n  roles: source=inducing phenomenon; target=induced phenomenon\n  use: The source explicitly says induces or describes a recognized induction mechanism.\n  avoid: Do not use as a metaphor for generic causation, influence, motivation, or historical response.\nENABLES [DEPENDENCY; direction=enabler_to_enabled]\n  meaning: The source makes the target possible without necessarily causing it to occur.\n  roles: source=enabling condition or capability; target=capability or process made possible\n  use: The target could not occur, or is materially made possible, because of the source.\n  avoid: Do not use for delivery, participation, weak assistance, or an effect that actually occurred.\nREQUIRES [DEPENDENCY; direction=dependent_to_requirement]\n  meaning: The source depends on the target as a prerequisite or necessary resource.\n  roles: source=dependent; target=prerequisite or required resource\n  use: The source cannot operate or occur as described without the target.\n  avoid: Do not reverse prerequisite and dependent; do not use for optional support.\nCONSTRAINS [DEPENDENCY; direction=constraint_to_constrained]\n  meaning: The source limits the possible behavior, values, or choices of the target.\n  roles: source=constraint; target=constrained entity, process, or variable\n  use: The source imposes a limit, rule, boundary, or restriction on the target.\n  avoid: Do not use to mean unchanged, unrelated, merely different, or causally reduced.\nPRECEDES [TEMPORAL; direction=earlier_to_later]\n  meaning: The source occurs before the target in time or an explicit process sequence.\n  roles: source=earlier event or process; target=later event or process\n  use: The source explicitly occurs before, previously, first, then, or after relative to the target.\n  avoid: Do not infer causality from order; do not reverse earlier and later.\nINTERACTS_WITH [INTERACTION; symmetric]\n  meaning: The source and target directly interact, with no more precise directional semantics supported.\n  roles: source=interaction participant; target=interaction participant\n  use: The text supports direct mutual interaction but not a more precise active predicate.\n  avoid: Do not use for distant association, one-way effect, dependency, or chronology.\nBINDS_TO [INTERACTION; symmetric]\n  meaning: The source physically or chemically binds or attaches to the target.\n  roles: source=binding participant; target=binding participant\n  use: The source explicitly binds or attaches to the target.\n  avoid: Do not use for metaphorical commitment, dependency, influence, or literal physical force.\nTRANSFERS_TO [INTERACTION; direction=transferred_item_to_destination]\n  meaning: The source item, material, or information moves to the target destination or recipient.\n  roles: source=item, material, or information transferred; target=destination or recipient\n  use: The source is explicitly carried, delivered, moved, or transferred to the target.\n  avoid: Do not make the carrier the source unless the carrier itself moves to the destination; do not use for enabling.\nEXERTS_FORCE_ON [INTERACTION; direction=force_exerter_to_physical_target]\n  meaning: The source exerts a literal physical force on the target.\n  roles: source=physical force source; target=physical object receiving force\n  use: A literal physical force is explicitly exerted on the target.\n  avoid: Never use metaphorically for influence, contribution, binding, pressure, or causation.\nTRANSFORMS_INTO [TRANSFORMATION; direction=prior_state_to_resulting_state]\n  meaning: The source itself changes state or identity and becomes the target.\n  roles: source=entity or state before transformation; target=same entity or resulting material after transformation\n  use: The source itself becomes the target through a transformation.\n  avoid: Do not use when an actor causes, creates, attempts, participates in, or responds to the target.\nCREATES [TRANSFORMATION; direction=creator_to_created]\n  meaning: The source produces or brings a distinct target into existence.\n  roles: source=producer or generative process; target=newly produced entity or result\n  use: The source produces a target that is distinct from the source.\n  avoid: Do not use when the source itself becomes the target; use TRANSFORMS_INTO instead.\nMEASURED_BY [DESCRIPTIVE; direction=measurand_to_measure]\n  meaning: The source property or variable is quantified or assessed by the target metric, observation, or procedure.\n  roles: source=property or variable measured; target=metric, observation, or measurement procedure\n  use: The target is explicitly how the source is measured or quantified.\n  avoid: Do not point to something that merely responds to, correlates with, or exemplifies the source.\nCONTRADICTS [DESCRIPTIVE; symmetric]\n  meaning: The source and target assert mutually incompatible propositions.\n  roles: source=proposition or claim; target=incompatible proposition or claim\n  use: Both sides are explicit propositions that cannot simultaneously hold as stated.\n  avoid: Do not use for difference, disagreement without incompatibility, trade-off, or negative causality.",
+  "max_output_tokens": null,
+  "max_tool_calls": null,
+  "metadata": {},
+  "model": "gpt-5.6-luna",
+  "moderation": null,
+  "object": "response",
+  "output": [
+    {
+      "content": [],
+      "encrypted_content": "gAAAAABqqljgKPZ8c-J62ay5CtS4bvrMdhIAISQgUpeAb6gwcQZyClfVvBX8aF3krdb8T0u9GpLOEk9zNjAGDvTTOL9f3HRVSCx4EHoyyf0vLcZ1Rx7rlOi0Mz0EdgWkMSuDuq4eNdnmKCSu7TW5Lskqo9QWonIOa8V_t-MJ_3HXglbCpzB-ktTO2OOTBK4NcW_Kt1WHD9o4KEVGQMoUP9bGVO0kKCl2MMmwOssrdRMFXGSG07aM61-xUnQLq7cfcHAMpW-mwpwdGGbv3VQXYnVI9N451bmYVeUHWlcvz61D9bqYZlc4mj2o4eILb6C4I6Z4eiO6mhOKJ6aCVJkmlEhkSmxxFNKlzjunW-h8duevm5r5DQGxWHvPrgU1dmjVVOIX4Pbgr_jXMuZqssnlh03KpNoVha7BhxAVYZzIEU6zqv0oT8mYMWQ2UtMzO8PaEvOvn5mvOC3INQ3U3gwr4UrhxZfbk_q25q9UojrJrXM5BeGc2pyVqxAORz_XvzFfW69TNbZDZATY8159gFWhOPDIRLXrS7GgZoMNU1eDiN2TyuZ1U6yZorJL-eES7Z5VUcbVsjQ7uIEeGj4UwzWNl88s3gNnEzxRVK0bt6amkyBjufUoOuCo6R4BT-oYSI9r44TLP1KQPA3KIMmnFy1pucVfiYKzf7pgFfwnvGvQ-gO5i1dXsmvKKiQO0TDiovEJIozI3MJlF1mSVLmJIN84qAr2OduJAsv1nWZf5phQulnfRpItbcw3Cjj6jR-9JsnSu_dxr-HiuvPkW51Lr8uDHNfLEoeDIjQyvGcOAQz2tkdscPQM06kC6wojreInyg2JoZ6-ktTFIp2RxceXmnR64h12OrAUE3jomdgKaDytMyK_RH9haChociGzJ_qUMi8gXrpvNQECFOLYxloDErWJTtHZazl8lL5ewLqoiPZWbht8_MRv0IQSYftrL0OzV5CbE0oFe4OQ5QNC_AK_tih3bfYY-vnJGlC-xpblitsyzvWMg_upx3HKjLrYGajLE7oiaU6hXUKVZnWCf4yDJl6XirgfNimLv-bRHGuso_LxUlgoyEjGe_ucAd4nmkmRHrM2B7ZCFgw95DXruZ2rIgpwWJLByQblvGF5gHXE4fQcqjzRGjqO5XLbCIhQ2NKkIRmFwn_6mCeAi5_oInNstWCd0eA391jL1uF5rCfJUp6Qd_F9hxfGqKd6msV8dkcY3ZyVx2dOflJNHsc8s0_IU-Z9J02kPbApDaJUKjPHZAHJfcfyub4HBzx1EDiv_i3gaGkptCQAQ8USwyLfQiTbWRTrS4yUakuHcCuJJ00l4qD_qtGCSWKYLlO0YIDaVQFN0RoULExp0ZIKDdbtfGWpZvwqo_JmFs_CFrgRDGWJNlQ82Z73Wm9Mm-wApniXATZ3KyEPNS_gQN89DHqIMKQ-7TpaVYXyogfSore7vfc8KmPcV63ulnMjeQCsTaw1cFhzwvancOQoUtxJI763_Xr57ZzzusOHE0SVqU7QS9czj0YMXq5mrn8kGois3CPH63_MUuq-xp2MHlhNb--ChvoQ4d7c-1Fet6bEMdtBWJPEE2V_PIW828JGKNtJ37UgaUiKCvoQrn4uOHWDkEU9ZhGBjV-eRRmiYiVxI3kDxUwR_WDYTGuRkfmTn6S6Kct7qL6fXMlB8XHBCWGhE9Rlfs3daE5uEDPgUeBbilCmtzKkMIZSwBZ5qQCrKv7y2lsm-XniLvnBRDURgLIEb_Qfvwb0R4cJZlcIDZ1kuiMk38QH2zMKd1_bWn1rA37BjURY7jZ3619-ATLGadPg6lVI-sdn1XFPUEsEhTf9UbPB2_s4YvWfnXahzNBNQFUGq1Yp5ZQyBnLpO03xBsGoeOzsHZJ5zaXKxHIHcsKKqhF-8grrU1EmpYXtrSQvnGGmPwBw2RoK36BinZ3bovBQcSutAML9l3O3AsucwinamgrSqbo2PQSFQhTnA-X9fbedhzLSie4HpkuDsvB6daZ_9rCy4xpEyNDbQJCZP_H444qGCZMtSJxmBSl8qnJr_SBO99-0Trv1mSR7VGMXg4yMXYF-hNaqgqrni6c0SB6GyOtYLkCBQo9RksTRemaeUTiK-keGr4Lpp4SBsOFmLuImn1yn3nNu6wbzLxOgbwG4xWRlSt5THWMV58NfJRkAsuVTjFyjb7dLoaEiBkDV5I3G3SU6AVY0QxrJOvUfk0UsyZxcpy2tzZP6tdU48_nb_gqb-aE1m7z-h9scdZD7cKMnmsYnSbgmrmVGu8LeMMZEzIztmOU0tMmdTQwxtlh-wSIMLI6sX71iMr2O7yvWEyqfXc4EameQwrZsVL0Kkmmryi7uoAmcmao4SOtfsliitiCV-mEf2OfC78IRwSkUBCwrBeSFId2IIRtts1YnIupW3D9npQB3yNazf9_3OMQaEXDVjxHersn85j4ol4fYtC63q0aqrUNNlzHBdCm2KgWxevoM667kmWKxQf3tpdR31PStkxA7YXoOnwJ-2u1KPOt3EGv_SY1yLa_4ESy3khJu1AnvZUvuxG3Z8pCRsqZ3bADiwDhw9D8nb5NdTogByLC4FXPUa2V1hznCIEyyosk_gY2n-XTkn92uO_XIIlcYwclEZiDepgbj1BiBwn8v7o8xMXDn6yf4zMnZtL6K-1JYDmt7mDJ2D1CMHQBF4s71tXqdzUwoOwNIgXS3NvUBxK03CFsU4kJsXCHGsINFXmJJomt1PYJDJryEK0n4pAb059TaYIGOeDUL3-mCA71KAbvCLYci-1Rrw5J1-O60Q5wU7ndXGABFeC_PsX1GYEzO139TqB4CZCV0i0ATWzpkwKHxOcopiduArPY6EqVC7JZptqwfUD8z39yurxXZeIXcBQ4SGtAvi7Nnmr4T3n4f4CUzrLPndCLim3hrYXJUkYqWnikSteqcLOPLxI0qyPhsrf6UBgAigmpKQrJ2zjvkIdPHn80KjjIdW-T5y1Bs6ucCJObf-mO_eZs6NOIh3qSzjVWrxjkAb7rhLZljyb4kErHw_X-OmQx_fyHxyw3IUnTJ0QjsUleghWDBl7TUgngCXVD4hK_iqXsn2SmF-8hVfy8jYYfc8kyvZZ0RcpHIXvy0JwtT-3MMtezNseQj6JesrM6G2ykjR0szpcM1I4H4AY_GPHsj4XyMshFljoq1WuW97PkKAVtEUaAMXnwvc0crnROTODQ0-Zx87Kwx0WzOl6HaymL5vTi4fxytLBo0h9JD2zQ_wysxOL_IsTXYb6qQcPi4DFyN00NcYY8ayGTr48FSJ3ND0yhOPL1tR6iUPsTnNAYQa4gMLKyIohDaEwKoxy7t_3sASwuikuXvve0pBQNMwhuY3mQ1O8zDVfGS_um3BfE-Sla1lotSB2m8vmWpTwm8q1gBXEgvHRYWMCX0tR6bvFMfnuuVykre6-vIk6TSJpGCGPCJNTnjVYy0gN3FvMwXi0ieaWQPbzRpjKbhlxoMM5FhNI5nUOYUTu-4xcCSUT6KAUlH9vLF2_th0i_NMrSSC9ZKTamk5FWX36X4n4AwHNKkISvrWd3cVlbKEFEff3sfm8Y4as-1hBjDVK25GBuBYjXyciL2zf2d4-uBnNE1mwtWeOZ7QJgqENgedU7zXoT7WP3it63Y0M3dQP98eOntk-5HaDClPTiwv6DP3SNOy2ZSWqlMSmSe3H9FDYiFOn9y4hSSRWvuX4cf7By74DG4NDtN45L8FWPojHycG5zKFe-GgpPBphSqHqzWnXaDqw1p7TBRg-p-wsMwECbUPCklCggOHEsLLOLCXfLLFzwVdQVbAnfhHExfz0pFRJP90ws1PfBzfPhYxGLBUm1PKlufENw00_RhGBiTS1vXRHA2RpBcz6_-RvE7gO2J4hRgBQlVlTbMBGtUFueKxh_5FGCPoeRz5ymaFcvPHoE2u2chWxfMVD0l7dowcVrC162WQl51tULCQJ2RUUIjJpu3jln3NnI_MH2epZSpiVDzL6d8ACWnr0AHKH6T4BhKK6aftnWRSg_dPoWdzN9vXtqODJEBZgXXQ4xCIM9GbpozFXS9AD9son4vbNfolTzDKr7R5S7CfTMLfSvhgPsuX7xS7r32P4rXou09mURIylMK_Q3v1H_PVAEnx6dwGaNbfQVX5BigAuyB34LZSZKh_Ip_PCHz0zvtCZ4BtDfkWjDW8_RZE1eLiXP-tRJKwGQjK4GOxUlVpNpfY_j8PhxI441yioT44uNXU_CdprOR3kra3_DyrCiMv5noV9FlU3eEGf1HKyeQcLKXo9RcLptM2aZpF8wrx-PPKGmMNiyJvf-V0-3Kav9dfNquzzR25LS3ingrNlN1dJjnlotl1nv8hwH1Uz9PXYJKck3QB0d6MMaPVrufXxHKTd9xRjBlqTBxc2ZfQypT6Md-v9dVtCtV5yA0fPeWcQpkNRAhhzhOEeHDd6W_C2NozPf53w8tMaAMzY3Gb9iO0kwuTerw_DSNOuCV22LZ3S9rk90CtnADJWvfkXSh7Vh7geyvDnLQTbN7sC2gpmEm2LrdUmpmScW6Cq0VBWBHAfU_o-KrEFJk0EwK0dNVhCkVE2j3n2kmjJAai2kPrQVGovzHvTVvi0r2viP3KfMDPTtxvxAwutoOmOcCs3z9HzB6wblpWCSq3ou0HCRLYyBbYv62uF2qU1br42syunnMnYXykHbdaB6hvO6kN7RKxaIH",
+      "id": "rs_0f7e236d714ed571016aaa58cc94b487d2a9c5cbc3276477f5",
+      "status": null,
+      "summary": [],
+      "type": "reasoning"
+    },
+    {
+      "content": [],
+      "encrypted_content": "gAAAAABqqljgumK3w2a03buUHUK4D5D3qlvGgOtMKrH2kG-IE1aGN9rH_FGdXiVQTq8_UUDWOrHFD938KF0Z3SdO1xdMb5sCcvkHs3PCG0xSuhFQkbj32sr38bNeDHHMthPAw5UfUWwjMO9UqKZgquiZE5TL5XT-VqN5daGPCYWjHOlfxJuKmT5N6oXk9zPoIgQ1y8Jmyxit0tryfUJrElR37qdBxDglo1UH-1_k6xBpJFjJ1zNwdylRsqq4O73zMMtVPcGhLsYmAkktthlzFYJHeOFMYK1aHJChKbtmYWb8k5WGUhIiOFrchtzCXy7ng4YYRgTlHR-zeKl1FEcMe4co6rMhyF0zZrvYXAlzgTNj-Ifnwt051VCjSFpBXD4VXGnfdm0ntnLlotJzCf9RZ6MxisHl3gPGOcdf1ogPTsNlX0bJkyE-RlnS6zj3P3YcQd8q1DlIvhmkjXpryGjktB4E0w_bq31ew3RA72YAxei7GH_vmHXsFQxJfRpmZo-YT9AKcpw-2gIS96OQ3ulC-_09uac7F-DkxnQAfOS2qa-8nyGZ3U7dvqwlqpsLvaIjU_B_KQ8QwrdTDkSpJMLChsVYbXriUdc3yPEgrOhY_P9-ZwUX0mc7UneBdSdq5f3-hYnZZc3aOuzUWFKk0rCu_LWYN9J8iuNaq6ZMo3Z31hVNQXsLa95wJVgNjF1_6kZoWb91M9XQiVH2BcFXnM56PqDEyOSb1LxMMKAlEQ4PrqfbpWg4amg57Ng956r_9MWSjhWF8AlQn3qpsD6JgopeH8L0CUaTUuFdWEnZ4_OQEHPIjvb1ozKzY7TEeUybSNxkjhr9W3p5fQ4zMyeP4mfVn3qYwr5yZJP1WxfJeZclIURNpa1pwcdE-b5mwFNDCEG9be5I59KILsfFr_36ImSwOhAPiC9qXzXWT2rXqjuuUJYge9LCKRzQXM_sBQwV5KiXqg3Y7Tl8q7o0fUORo1IRSA64ZABWCefb3ei8Qfl6Npubf3pFRdCn_eN_viRuCQUuiZM9DR1X8eRXgOd2w-Czy86ONfaNy3ZmSQ76iPFFzMcIf1A4AgpaQ0Qw1XlGZz7kwfHN4z-wetAp5tD7y04R-2BP7-9hPBBgqGulSuQHdM4cfPGJ1ZeT1KwbN7lCjwmdUGFV-Cg4_-XAdvUdoCkPU1cx8PvwrCrJuvKxOZvkIQfPi0HLYfZN2Xyb7vktt0zbWAeiojR8ALv-1ltuTkfuAf1bgCJznFvQQfVveBOuYR80TXpY2RsBl6XWD7mAsgMA7vzZJWoxP-zENMFW-mZWRWdXDYm5qhHWm7hskaX6B1slM5_iJFiZkQ28PS_0VV4OcvthiWtLFTKDQO7D8rmVs61R6gCVtAqx0xIvhQCJG546otsFLpB-b8slBwwbUQt_YNsPIJNCuGeLMOsswMkQIqDVbVICd59QEc3oYVv2WrSYPZdXp1DiyAmIbbHC7AV2bpg-D44d-ODttksFz-Ph4VhwCxfdL0-LPC-Zq5VaKOnmeMsB2_-HBrw3YWw3H-itggAZCZvw7PfGT5q9NMkN2XMn7EYF-zRZ1DHyrlGwGucLqHpo5X67UmcBjC8Va3YhUy8L2ipATLW9EONGgSZAVdav9XMmjOeE5bL9ueTzUoHTdLwD9ZIwuThKWpI8yxTewNDgMsDuCDTAt-o9XQxR0plZAzf2r8K2bNAW-l-WaKHWUKbIm7MhPO2qOQ6zPAnmn0J9KC37-bb7mHh5iRbyNj7VM9gxdvBZ9YGATI6O9oooMl8UI5JCsQtXaok0jzyo9xipN68wXDifBDD2Y7xAP747-FjP0W7gP0BuI4ToJeJvIi9xuGSZLYOYLKu3qHvXrEPiZCL7_X_XinA9wPrI7ZGLxFy82lV2U2WcGGQ1yy5k_52fhYXYHxVQ4PmisdLsnhkm9UsOXoi4KoLICA5tsQ9JZFpKXnUnNflCayC9oBM0vAOBPIbqgx9pFqrT_wD-mOkGtSD_dKlVpZjdrDdkGEE2V0TRCp2cgMKhWLGbsoUrFRYRSViTGZzp3f71f8SJuyECbnOyTApfC1wh5ZMDxRCfaxT-Dq9Bxz6gsN30AF5jrAugyIr_DaPP_SYDxRtWku7DZfeK7jX77mvApYSuYW70mmJ1x2c8dYQEgmcfcMH_fbe0NJzvKKAtNUlTBP2LdE6dEHesQHF5uqxdzkUM_ihdxURHmcD7QVEPWMCRTr1AU8FruSw8wpFNUbzuqUHq9erkLHUk8iQL5QM_YjQOvQPNPfObgH9L4PgTbeniU6_omviBcwn4HC-8mnqAGTCrcahjPzsu3NLazyNUh9IRJkDYXggJBlUCkzCeO58GzwL0hTq0qzHlg54DuhnMnYB3KicyalSFgfWKOzLObQRmKmgY9Vs5nd55TQeYzbsj0Oxu7V6BIZFl-JD-SKZc3_M5czznewhEd_mL6xPj5Y6LggoYwOlIxsoNUbh2rUfwPI0E8FbSpTKX6YVF1iNyeUasXwjdA9hwAbV3x2XkRtfFl6fFNyZFJq-AIqEGbVivXCxzsupeY-e-fvB1I9Bcs3_3Q6un2Z1Iq_PhtlhKsAFbU1_0y_L0b9ph3Kix66eS_nIvm-2hUKLf2C_3uu_NSLBHM4t2sF7_O7N2RcDNGUaWVkefF_0XCDHosRecZ0xfeGnalAVLjdU9XhC79TKdtWzRQzYudwYXz2RR3fPMIyD8mQB2IHtUZgVsI3fosAVYjmr8_jIM6wBjlzAWRJjK_kqgAPi0P646T-03Xm99nDEX1U8DE0M8wuNJ4vLzoJJg27LxzNmLNwGomvpE2oEMnLugF7T8BYzKEB82lQmg8TLDnDUF8-cG-46uGHT1AJIuTwSohMyg0-TY-q--smUOCXXBhJh9NNE-yt2uAczCqLxP1qUy1oGofNZ6jmo1edvZwBPBbHbgZeIs4FvD_8lMIrTMrLtpdnytSHMlpUtXF2HEw3lPZhfWvkGZia0DlKwol5LBSD_5TFhuepiyzDkMIiLSDuhws3eUQA1EzojESKHfhiIwn-tnI7mRYroBF6JBLDwGA-aYNtM7pXqMfPijf9yqnXA1sH50k5Vpwiy_vhVLEXVTJthVxKedF31Sv92u7b7NQ8hQMRl-UF-lkU3qeORVhzcVrv9xygnQud678iYvUmX4d49qrSwfGx-EmyBzauTikUtmzMY4NTv6RW7bzIuU62GFf5lKnoflC6WOU3izHlin49SqohZ0kaRVvQN-cN-Yv0MbzMDlCmUItjVobVys2TeXZC9z9N9S8xscPSNfYddt2TOyRYyd-eUJi5hFTqYu6i03nhK2eH024PxgGBDkufUBpb_NA_TuNefZoa67B9j03By7NpfIzRvtZpdNJZAgX3V0RRW0OTIsk6V4Bk2AO3MD1CW7QRwSwmE6DssWrtmk-VBax_weOjDz2MNUNrqPvM8EGCUKrwXypXgHlj3NjFzqaE6624c_t32aaHl4d0_ekjPPnR8h2_VfNMWjOURFbt49moRG_aLqy7WDfTDJaGTCry0S083ABTae2A1wkmjkgD_8U1JJbNaNek-BvnPiMUCM3chTe1FrSgOrkoSnZu2uVWc5P0dIT3egYoE38fTGEX3QG654FXM2ajykbcU2_ru0bShHnkYjMP4X6GirtVJ_qtPkpQtG4ITeYTWFF-0Lm7AZgDWI8S_7UhAVGKYpvuWf2tK45ZrynBFozp1KAB6cQO_WmJbOu-0JfAfwVyE60s959ndPcRpxQCp6E7roS7BNZsWhCJlQFGclvP3W182RE-uZw1wzlXDOmPjbtAaiP3_YIjDeQhrJ2XKrGi7max0tsoTgQ0S_DKtIGd4lfDd-kkJbIhdqzh4p9UTPMUhDXncdzdTKopAO4xlT64oy1NFLzqNLUoEiOrHy473f7bPxhewm2XjazOBoRBrdMUubIo4Pdyzg0gaNUmTyd65FeCBEMdyLcPevhNgbkTpMecnNBfjrf7WhIjO9NnOlBPwJY2ftn0Vdgm6gFZ7SKPjNjwb1l6NZo5hA0P9ejiX1vlqLG1wVhzJj3UDuoShGDA0th8LyuPZzM_BBSS1Qnsf2ap1XvDCAOHjz68afpWqFRuNvZgJOADV8v5Hi8kF1SvxYbRS95fHkf5h7J5hS8QxoZZDszlon3GfxcX0rjwNhr0OZVk6L88XkFEplXQ4Ei8bTxOj6E0CELceLJngnFXQJpqyGjmVYRPz5b9BLl-CuSwW4XQX4zExHSlhNeeVmbnfcTwR7ScQeNin6fnRzHyLbx9Fg3IXKdEoq2wPNnvYtJAZ49Z8Yaxp-b3_IS9rG2yuJEf9ZEkFa4LDZgb3W2I2YZ5_VOHvzMY3HafTaG4IEwOlaEtNM1KjyR2QMIDoqu-oitS3WrfkW5__aXe0DrWPjQzoDCjneHniEkugEtlcbEMscJDyg7CV4P3nctbhWub6sljmETETUEC8AFXoN0lj0bIMvVrFQG6to8RfiSAawLr_UuNQBObE4f62m5ibAmeGlsmhgAoeNtPfYwOhaQNmLGcxfzfgDhancwGVEWKmMdLvy2ndCyfKhZTJ_kIANFIUmtxj-MklF5PSKfqpLIaZLjhBqgyFiPWZL8WxSurs2Ji7vtcV6oEi3bX5lgCSnQH0GwQlSfqmwBA==",
+      "id": "rs_0f7e236d714ed571016aaa58d1e29487d2bae8de9a31e34bce",
+      "status": null,
+      "summary": [],
+      "type": "reasoning"
+    },
+    {
+      "content": [
+        {
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relationships\":[{\"id\":\"r1\",\"source_entity_id\":\"jet-stream\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"wind\",\"statement\":\"A jet stream is a type of wind.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r2\",\"source_entity_id\":\"polar-jet-stream\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"jet-stream\",\"statement\":\"A polar jet stream is a type of jet stream.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r3\",\"source_entity_id\":\"subtropical-jet-stream\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"jet-stream\",\"statement\":\"A subtropical jet stream is a type of jet stream.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r4\",\"source_entity_id\":\"jet-stream\",\"relationship_type\":\"PART_OF\",\"target_entity_id\":\"atmosphere\",\"statement\":\"Jet streams occur in the atmosphere.\",\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"r5\",\"source_entity_id\":\"troposphere\",\"relationship_type\":\"PART_OF\",\"target_entity_id\":\"atmosphere\",\"statement\":\"The troposphere is a layer of Earth's atmosphere.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r6\",\"source_entity_id\":\"earth-s-surface\",\"relationship_type\":\"PART_OF\",\"target_entity_id\":\"earth\",\"statement\":\"Earth's surface is part of Earth.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r7\",\"source_entity_id\":\"air-mass-meeting\",\"relationship_type\":\"CAUSES\",\"target_entity_id\":\"jet-stream-formation\",\"statement\":\"Jet streams form when warm and cold air masses meet in the atmosphere.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r8\",\"source_entity_id\":\"air-mass-meeting\",\"relationship_type\":\"CAUSES\",\"target_entity_id\":\"air-rising\",\"statement\":\"When warmer air masses meet cooler air masses, the warmer air rises.\",\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"r9\",\"source_entity_id\":\"air-mass-meeting\",\"relationship_type\":\"CAUSES\",\"target_entity_id\":\"air-sinking\",\"statement\":\"When warmer air masses meet cooler air masses, the cooler air sinks to replace the warm air.\",\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"r10\",\"source_entity_id\":\"air-rising\",\"relationship_type\":\"CAUSES\",\"target_entity_id\":\"air-current-formation\",\"statement\":\"The upward movement of warmer air contributes to the creation of an air current.\",\"confidence\":0.9,\"origin\":\"SOURCE\"},{\"id\":\"r11\",\"source_entity_id\":\"air-sinking\",\"relationship_type\":\"CAUSES\",\"target_entity_id\":\"air-current-formation\",\"statement\":\"The downward movement of cooler air contributes to the creation of an air current.\",\"confidence\":0.9,\"origin\":\"SOURCE\"},{\"id\":\"r12\",\"source_entity_id\":\"air-current-formation\",\"relationship_type\":\"CREATES\",\"target_entity_id\":\"wind\",\"statement\":\"The movement of warm and cool air creates an air current, or wind.\",\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"r13\",\"source_entity_id\":\"jet-stream-formation\",\"relationship_type\":\"CREATES\",\"target_entity_id\":\"jet-stream\",\"statement\":\"Jet-stream formation produces a jet stream.\",\"confidence\":0.95,\"origin\":\"SOURCE\"},{\"id\":\"r14\",\"source_entity_id\":\"uneven-solar-heating\",\"relationship_type\":\"CAUSES\",\"target_entity_id\":\"temperature-difference\",\"statement\":\"Uneven solar heating produces warmer equatorial areas and colder polar areas, creating a temperature difference.\",\"confidence\":0.96,\"origin\":\"SOURCE\"},{\"id\":\"r15\",\"source_entity_id\":\"temperature-difference\",\"relationship_type\":\"INCREASES\",\"target_entity_id\":\"jet-stream-speed\",\"statement\":\"Dramatic temperature differences between warm and cool air masses can increase jet-stream speed.\",\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"r16\",\"source_entity_id\":\"polar-jet-stream\",\"relationship_type\":\"INTERACTS_WITH\",\"target_entity_id\":\"winter\",\"statement\":\"Very high speeds in polar jet streams usually occur in winter.\",\"confidence\":0.9,\"origin\":\"SOURCE\"},{\"id\":\"r17\",\"source_entity_id\":\"jet-stream\",\"relationship_type\":\"PART_OF\",\"target_entity_id\":\"troposphere\",\"statement\":\"Jet streams are located in the mid to upper troposphere.\",\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"r18\",\"source_entity_id\":\"airplane\",\"relationship_type\":\"INTERACTS_WITH\",\"target_entity_id\":\"jet-stream\",\"statement\":\"An airplane can fly in a powerful jet stream.\",\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"r19\",\"source_entity_id\":\"jet-stream\",\"relationship_type\":\"CAUSES\",\"target_entity_id\":\"airplane-boost\",\"statement\":\"A powerful jet stream can give an airplane a boost when it travels in the same direction.\",\"confidence\":0.97,\"origin\":\"SOURCE\"},{\"id\":\"r20\",\"source_entity_id\":\"jet-stream\",\"relationship_type\":\"AFFECTS\",\"target_entity_id\":\"weather-system\",\"statement\":\"Fast-moving air currents in a jet stream transport weather systems across the United States.\",\"confidence\":0.97,\"origin\":\"SOURCE\"},{\"id\":\"r21\",\"source_entity_id\":\"jet-stream\",\"relationship_type\":\"AFFECTS\",\"target_entity_id\":\"temperature\",\"statement\":\"Jet streams affect temperature as they transport weather systems.\",\"confidence\":0.96,\"origin\":\"SOURCE\"},{\"id\":\"r22\",\"source_entity_id\":\"jet-stream\",\"relationship_type\":\"AFFECTS\",\"target_entity_id\":\"precipitation\",\"statement\":\"Jet streams affect precipitation as they transport weather systems.\",\"confidence\":0.96,\"origin\":\"SOURCE\"},{\"id\":\"r23\",\"source_entity_id\":\"jet-stream\",\"relationship_type\":\"AFFECTS\",\"target_entity_id\":\"storm\",\"statement\":\"Jet streams typically move storms from west to east.\",\"confidence\":0.97,\"origin\":\"SOURCE\"},{\"id\":\"r24\",\"source_entity_id\":\"jet-stream-edge\",\"relationship_type\":\"AFFECTS\",\"target_entity_id\":\"storm\",\"statement\":\"Storms tend to follow the edge of the jet stream.\",\"confidence\":0.97,\"origin\":\"SOURCE\"},{\"id\":\"r25\",\"source_entity_id\":\"temperature-difference\",\"relationship_type\":\"CAUSES\",\"target_entity_id\":\"turbulent-conditions\",\"statement\":\"The difference between cool and warm air creates turbulent conditions for storms.\",\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"r26\",\"source_entity_id\":\"weather-system\",\"relationship_type\":\"CAUSES\",\"target_entity_id\":\"heat-wave\",\"statement\":\"A weather system that remains in one place can cause a heat wave.\",\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"r27\",\"source_entity_id\":\"weather-system\",\"relationship_type\":\"CAUSES\",\"target_entity_id\":\"flood\",\"statement\":\"A weather system that remains in one place can cause a flood.\",\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"r28\",\"source_entity_id\":\"polar-jet-stream\",\"relationship_type\":\"PART_OF\",\"target_entity_id\":\"north-pole\",\"statement\":\"A polar jet stream is located near the north pole or south pole.\",\"confidence\":0.9,\"origin\":\"SOURCE\"},{\"id\":\"r29\",\"source_entity_id\":\"polar-jet-stream\",\"relationship_type\":\"PART_OF\",\"target_entity_id\":\"south-pole\",\"statement\":\"A polar jet stream is located near the north pole or south pole.\",\"confidence\":0.9,\"origin\":\"SOURCE\"},{\"id\":\"r30\",\"source_entity_id\":\"subtropical-jet-stream\",\"relationship_type\":\"INTERACTS_WITH\",\"target_entity_id\":\"equator\",\"statement\":\"Subtropical jet streams are located closer to the equator.\",\"confidence\":0.95,\"origin\":\"SOURCE\"}],\"comparison_conditions\":[],\"transfer_events\":[],\"missing_symbols\":[]}",
+          "type": "output_text"
+        }
+      ],
+      "id": "msg_0f7e236d714ed571016aaa58d739e087d2882494dac65297ff",
+      "phase": "final_answer",
+      "role": "assistant",
+      "status": "completed",
+      "type": "message"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt": null,
+  "prompt_cache_key": null,
+  "prompt_cache_options": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "low",
+    "generate_summary": null,
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "status": "completed",
+  "store": false,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "description": null,
+      "name": "candidate_b_v2_semantic_structure",
+      "schema_": {
+        "additionalProperties": false,
+        "properties": {
+          "comparison_conditions": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "comparison_operator": {
+                  "enum": [
+                    "GREATER_THAN"
+                  ],
+                  "type": "string"
+                },
+                "confidence": {
+                  "maximum": 1,
+                  "minimum": 0,
+                  "type": "number"
+                },
+                "left_operand_entity_id": {
+                  "enum": [
+                    "air-current-formation",
+                    "air-mass-meeting",
+                    "air-rising",
+                    "air-sinking",
+                    "air-travel-route",
+                    "airplane",
+                    "airplane-boost",
+                    "arctic-air",
+                    "atmosphere",
+                    "cold-air-mass",
+                    "earth",
+                    "earth-s-surface",
+                    "equator",
+                    "flood",
+                    "heat-wave",
+                    "jet-stream",
+                    "jet-stream-altitude",
+                    "jet-stream-edge",
+                    "jet-stream-formation",
+                    "jet-stream-speed",
+                    "lightning",
+                    "north-pole",
+                    "northward-and-southward-wind-bulges",
+                    "polar-jet-stream",
+                    "precipitation",
+                    "south-pole",
+                    "storm",
+                    "subtropical-jet-stream",
+                    "sun",
+                    "temperature",
+                    "temperature-difference",
+                    "thunder",
+                    "tornado",
+                    "troposphere",
+                    "turbulent-conditions",
+                    "uneven-solar-heating",
+                    "united-states",
+                    "warm-air-mass",
+                    "weather-system",
+                    "west-to-east-direction",
+                    "wind",
+                    "winter"
+                  ],
+                  "type": "string"
+                },
+                "origin": {
+                  "enum": [
+                    "SOURCE",
+                    "INFERRED"
+                  ],
+                  "type": "string"
+                },
+                "outcome_entity_id": {
+                  "enum": [
+                    "air-current-formation",
+                    "air-mass-meeting",
+                    "air-rising",
+                    "air-sinking",
+                    "air-travel-route",
+                    "airplane",
+                    "airplane-boost",
+                    "arctic-air",
+                    "atmosphere",
+                    "cold-air-mass",
+                    "earth",
+                    "earth-s-surface",
+                    "equator",
+                    "flood",
+                    "heat-wave",
+                    "jet-stream",
+                    "jet-stream-altitude",
+                    "jet-stream-edge",
+                    "jet-stream-formation",
+                    "jet-stream-speed",
+                    "lightning",
+                    "north-pole",
+                    "northward-and-southward-wind-bulges",
+                    "polar-jet-stream",
+                    "precipitation",
+                    "south-pole",
+                    "storm",
+                    "subtropical-jet-stream",
+                    "sun",
+                    "temperature",
+                    "temperature-difference",
+                    "thunder",
+                    "tornado",
+                    "troposphere",
+                    "turbulent-conditions",
+                    "uneven-solar-heating",
+                    "united-states",
+                    "warm-air-mass",
+                    "weather-system",
+                    "west-to-east-direction",
+                    "wind",
+                    "winter"
+                  ],
+                  "type": "string"
+                },
+                "proposition_type": {
+                  "enum": [
+                    "COMPARISON_CONDITION"
+                  ],
+                  "type": "string"
+                },
+                "relationship_type": {
+                  "enum": [
+                    "CAUSES"
+                  ],
+                  "type": "string"
+                },
+                "right_operand_entity_id": {
+                  "enum": [
+                    "air-current-formation",
+                    "air-mass-meeting",
+                    "air-rising",
+                    "air-sinking",
+                    "air-travel-route",
+                    "airplane",
+                    "airplane-boost",
+                    "arctic-air",
+                    "atmosphere",
+                    "cold-air-mass",
+                    "earth",
+                    "earth-s-surface",
+                    "equator",
+                    "flood",
+                    "heat-wave",
+                    "jet-stream",
+                    "jet-stream-altitude",
+                    "jet-stream-edge",
+                    "jet-stream-formation",
+                    "jet-stream-speed",
+                    "lightning",
+                    "north-pole",
+                    "northward-and-southward-wind-bulges",
+                    "polar-jet-stream",
+                    "precipitation",
+                    "south-pole",
+                    "storm",
+                    "subtropical-jet-stream",
+                    "sun",
+                    "temperature",
+                    "temperature-difference",
+                    "thunder",
+                    "tornado",
+                    "troposphere",
+                    "turbulent-conditions",
+                    "uneven-solar-heating",
+                    "united-states",
+                    "warm-air-mass",
+                    "weather-system",
+                    "west-to-east-direction",
+                    "wind",
+                    "winter"
+                  ],
+                  "type": "string"
+                },
+                "statement": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "statement",
+                "confidence",
+                "origin",
+                "proposition_type",
+                "left_operand_entity_id",
+                "right_operand_entity_id",
+                "outcome_entity_id",
+                "relationship_type",
+                "comparison_operator"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "missing_symbols": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "reason": {
+                  "type": "string"
+                },
+                "semantic_item": {
+                  "type": "string"
+                },
+                "surface_form": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "surface_form",
+                "semantic_item",
+                "reason"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "relationships": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "confidence": {
+                  "maximum": 1,
+                  "minimum": 0,
+                  "type": "number"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "origin": {
+                  "enum": [
+                    "SOURCE",
+                    "INFERRED"
+                  ],
+                  "type": "string"
+                },
+                "relationship_type": {
+                  "enum": [
+                    "IS_A",
+                    "PART_OF",
+                    "CAUSES",
+                    "INCREASES",
+                    "DECREASES",
+                    "ENABLES",
+                    "REQUIRES",
+                    "CONSTRAINS",
+                    "PRECEDES",
+                    "TRANSFORMS_INTO",
+                    "INTERACTS_WITH",
+                    "MEASURED_BY",
+                    "EXAMPLE_OF",
+                    "CONTRADICTS",
+                    "CREATES",
+                    "INDUCES",
+                    "EXERTS_FORCE_ON",
+                    "AFFECTS",
+                    "BINDS_TO",
+                    "TRANSFERS_TO"
+                  ],
+                  "type": "string"
+                },
+                "source_entity_id": {
+                  "enum": [
+                    "air-current-formation",
+                    "air-mass-meeting",
+                    "air-rising",
+                    "air-sinking",
+                    "air-travel-route",
+                    "airplane",
+                    "airplane-boost",
+                    "arctic-air",
+                    "atmosphere",
+                    "cold-air-mass",
+                    "earth",
+                    "earth-s-surface",
+                    "equator",
+                    "flood",
+                    "heat-wave",
+                    "jet-stream",
+                    "jet-stream-altitude",
+                    "jet-stream-edge",
+                    "jet-stream-formation",
+                    "jet-stream-speed",
+                    "lightning",
+                    "north-pole",
+                    "northward-and-southward-wind-bulges",
+                    "polar-jet-stream",
+                    "precipitation",
+                    "south-pole",
+                    "storm",
+                    "subtropical-jet-stream",
+                    "sun",
+                    "temperature",
+                    "temperature-difference",
+                    "thunder",
+                    "tornado",
+                    "troposphere",
+                    "turbulent-conditions",
+                    "uneven-solar-heating",
+                    "united-states",
+                    "warm-air-mass",
+                    "weather-system",
+                    "west-to-east-direction",
+                    "wind",
+                    "winter"
+                  ],
+                  "type": "string"
+                },
+                "statement": {
+                  "type": "string"
+                },
+                "target_entity_id": {
+                  "enum": [
+                    "air-current-formation",
+                    "air-mass-meeting",
+                    "air-rising",
+                    "air-sinking",
+                    "air-travel-route",
+                    "airplane",
+                    "airplane-boost",
+                    "arctic-air",
+                    "atmosphere",
+                    "cold-air-mass",
+                    "earth",
+                    "earth-s-surface",
+                    "equator",
+                    "flood",
+                    "heat-wave",
+                    "jet-stream",
+                    "jet-stream-altitude",
+                    "jet-stream-edge",
+                    "jet-stream-formation",
+                    "jet-stream-speed",
+                    "lightning",
+                    "north-pole",
+                    "northward-and-southward-wind-bulges",
+                    "polar-jet-stream",
+                    "precipitation",
+                    "south-pole",
+                    "storm",
+                    "subtropical-jet-stream",
+                    "sun",
+                    "temperature",
+                    "temperature-difference",
+                    "thunder",
+                    "tornado",
+                    "troposphere",
+                    "turbulent-conditions",
+                    "uneven-solar-heating",
+                    "united-states",
+                    "warm-air-mass",
+                    "weather-system",
+                    "west-to-east-direction",
+                    "wind",
+                    "winter"
+                  ],
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "source_entity_id",
+                "relationship_type",
+                "target_entity_id",
+                "statement",
+                "confidence",
+                "origin"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "transfer_events": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "comparison_operator": {
+                  "type": "null"
+                },
+                "confidence": {
+                  "maximum": 1,
+                  "minimum": 0,
+                  "type": "number"
+                },
+                "destination_entity_id": {
+                  "enum": [
+                    "air-travel-route",
+                    "airplane",
+                    "arctic-air",
+                    "atmosphere",
+                    "cold-air-mass",
+                    "earth",
+                    "earth-s-surface",
+                    "equator",
+                    "flood",
+                    "heat-wave",
+                    "jet-stream",
+                    "jet-stream-altitude",
+                    "jet-stream-edge",
+                    "jet-stream-speed",
+                    "lightning",
+                    "north-pole",
+                    "northward-and-southward-wind-bulges",
+                    "polar-jet-stream",
+                    "precipitation",
+                    "south-pole",
+                    "storm",
+                    "subtropical-jet-stream",
+                    "sun",
+                    "temperature",
+                    "temperature-difference",
+                    "thunder",
+                    "tornado",
+                    "troposphere",
+                    "turbulent-conditions",
+                    "united-states",
+                    "warm-air-mass",
+                    "weather-system",
+                    "west-to-east-direction",
+                    "wind",
+                    "winter"
+                  ],
+                  "type": "string"
+                },
+                "event_entity_id": {
+                  "enum": [
+                    "air-current-formation",
+                    "air-mass-meeting",
+                    "air-rising",
+                    "air-sinking",
+                    "airplane-boost",
+                    "jet-stream-formation",
+                    "uneven-solar-heating"
+                  ],
+                  "type": "string"
+                },
+                "object_entity_id": {
+                  "enum": [
+                    "air-current-formation",
+                    "air-mass-meeting",
+                    "air-rising",
+                    "air-sinking",
+                    "air-travel-route",
+                    "airplane",
+                    "airplane-boost",
+                    "arctic-air",
+                    "atmosphere",
+                    "cold-air-mass",
+                    "earth",
+                    "earth-s-surface",
+                    "equator",
+                    "flood",
+                    "heat-wave",
+                    "jet-stream",
+                    "jet-stream-altitude",
+                    "jet-stream-edge",
+                    "jet-stream-formation",
+                    "jet-stream-speed",
+                    "lightning",
+                    "north-pole",
+                    "northward-and-southward-wind-bulges",
+                    "polar-jet-stream",
+                    "precipitation",
+                    "south-pole",
+                    "storm",
+                    "subtropical-jet-stream",
+                    "sun",
+                    "temperature",
+                    "temperature-difference",
+                    "thunder",
+                    "tornado",
+                    "troposphere",
+                    "turbulent-conditions",
+                    "uneven-solar-heating",
+                    "united-states",
+                    "warm-air-mass",
+                    "weather-system",
+                    "west-to-east-direction",
+                    "wind",
+                    "winter"
+                  ],
+                  "type": "string"
+                },
+                "origin": {
+                  "enum": [
+                    "SOURCE",
+                    "INFERRED"
+                  ],
+                  "type": "string"
+                },
+                "proposition_type": {
+                  "enum": [
+                    "TRANSFER_EVENT"
+                  ],
+                  "type": "string"
+                },
+                "relationship_type": {
+                  "enum": [
+                    "TRANSFERS_TO"
+                  ],
+                  "type": "string"
+                },
+                "statement": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "statement",
+                "confidence",
+                "origin",
+                "proposition_type",
+                "event_entity_id",
+                "object_entity_id",
+                "destination_entity_id",
+                "relationship_type",
+                "comparison_operator"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "relationships",
+          "comparison_conditions",
+          "transfer_events",
+          "missing_symbols"
+        ],
+        "type": "object"
+      },
+      "strict": true,
+      "type": "json_schema"
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 6058,
+    "input_tokens_details": {
+      "cache_write_tokens": 6055,
+      "cached_tokens": 0
+    },
+    "output_tokens": 2629,
+    "output_tokens_details": {
+      "reasoning_tokens": 1034
+    },
+    "total_tokens": 8687
+  },
+  "user": null
+}

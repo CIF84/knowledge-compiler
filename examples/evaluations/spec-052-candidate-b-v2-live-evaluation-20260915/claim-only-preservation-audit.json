@@ -1,0 +1,174 @@
+{
+  "findings": {
+    "all_mechanical_claim_only_material_preserved_as_grounded_claims": true,
+    "all_parsed_claims_exactly_grounded_and_admitted": true,
+    "assertion_aware_projection_executed": false,
+    "claim_only_material_created_no_topology": true,
+    "existing_representation_compiler_created_dedicated_claim_focus": false
+  },
+  "method": "A claim is mechanically claim-only when its ID is not a Stage-2 semantic-object ID and its statement is not identical to a Stage-2 topology statement. This intentionally does not claim to detect paraphrased semantic overlap.",
+  "representation_decision_semantic_classes": {
+    "canonical": 149,
+    "concept": 346,
+    "proposition": 8
+  },
+  "representation_limitation": "The existing representation compiler generated decisions only for concept, canonical relationship, and proposition foci. It has no claim focus in this pipeline. The 98 mechanically claim-only items are preserved in admitted KnowledgeModels with exact evidence, but this run does not demonstrate that they are directly surfaced by current representation decisions. The assertion-aware builder requires a separately admitted GroundedAssertionSet, which SPEC-052 did not authorize minting from these claims.",
+  "schema": "spec-052-claim-only-preservation-audit-v1",
+  "sources": [
+    {
+      "admitted_claims": 22,
+      "dedicated_claim_focus_decisions": 0,
+      "grounded_admitted_claim_only_count": 9,
+      "grounding_policy_satisfied": 22,
+      "mechanical_claim_only_count": 9,
+      "parsed_claims": 22,
+      "representation_decision_count": 54,
+      "representation_decision_semantic_classes": {
+        "canonical": 13,
+        "concept": 41
+      },
+      "source_id": "usgs-divergent-plate-boundaries-1996",
+      "stage3_ran": true,
+      "unintended_topology_count": 0
+    },
+    {
+      "admitted_claims": 39,
+      "dedicated_claim_focus_decisions": 0,
+      "grounded_admitted_claim_only_count": 9,
+      "grounding_policy_satisfied": 39,
+      "mechanical_claim_only_count": 9,
+      "parsed_claims": 39,
+      "representation_decision_count": 72,
+      "representation_decision_semantic_classes": {
+        "canonical": 30,
+        "concept": 42
+      },
+      "source_id": "noaa-nesdis-jet-stream-2025",
+      "stage3_ran": true,
+      "unintended_topology_count": 0
+    },
+    {
+      "admitted_claims": 25,
+      "dedicated_claim_focus_decisions": 0,
+      "grounded_admitted_claim_only_count": 15,
+      "grounding_policy_satisfied": 25,
+      "mechanical_claim_only_count": 15,
+      "parsed_claims": 25,
+      "representation_decision_count": 52,
+      "representation_decision_semantic_classes": {
+        "canonical": 9,
+        "concept": 42,
+        "proposition": 1
+      },
+      "source_id": "crs-legislative-process-r42843-17",
+      "stage3_ran": true,
+      "unintended_topology_count": 0
+    },
+    {
+      "admitted_claims": 11,
+      "dedicated_claim_focus_decisions": 0,
+      "grounded_admitted_claim_only_count": 11,
+      "grounding_policy_satisfied": 11,
+      "mechanical_claim_only_count": 11,
+      "parsed_claims": 11,
+      "representation_decision_count": 66,
+      "representation_decision_semantic_classes": {
+        "canonical": 26,
+        "concept": 40
+      },
+      "source_id": "nasa-solar-system-formation-2026",
+      "stage3_ran": true,
+      "unintended_topology_count": 0
+    },
+    {
+      "admitted_claims": 7,
+      "dedicated_claim_focus_decisions": 0,
+      "grounded_admitted_claim_only_count": 7,
+      "grounding_policy_satisfied": 7,
+      "mechanical_claim_only_count": 7,
+      "parsed_claims": 7,
+      "representation_decision_count": 89,
+      "representation_decision_semantic_classes": {
+        "canonical": 21,
+        "concept": 62,
+        "proposition": 6
+      },
+      "source_id": "epa-ecological-processes-2026",
+      "stage3_ran": true,
+      "unintended_topology_count": 0
+    },
+    {
+      "admitted_claims": 19,
+      "dedicated_claim_focus_decisions": 0,
+      "grounded_admitted_claim_only_count": 19,
+      "grounding_policy_satisfied": 19,
+      "mechanical_claim_only_count": 19,
+      "parsed_claims": 19,
+      "representation_decision_count": 54,
+      "representation_decision_semantic_classes": {
+        "canonical": 15,
+        "concept": 39
+      },
+      "source_id": "doe-iron-platinum-atomic-structure-2017",
+      "stage3_ran": true,
+      "unintended_topology_count": 0
+    },
+    {
+      "admitted_claims": 0,
+      "dedicated_claim_focus_decisions": 0,
+      "grounded_admitted_claim_only_count": 0,
+      "grounding_policy_satisfied": 0,
+      "mechanical_claim_only_count": 0,
+      "parsed_claims": 0,
+      "representation_decision_count": 0,
+      "representation_decision_semantic_classes": {},
+      "source_id": "nhgri-dna-fact-sheet-2020",
+      "stage3_ran": false,
+      "unintended_topology_count": 0
+    },
+    {
+      "admitted_claims": 16,
+      "dedicated_claim_focus_decisions": 0,
+      "grounded_admitted_claim_only_count": 16,
+      "grounding_policy_satisfied": 16,
+      "mechanical_claim_only_count": 16,
+      "parsed_claims": 16,
+      "representation_decision_count": 60,
+      "representation_decision_semantic_classes": {
+        "canonical": 18,
+        "concept": 41,
+        "proposition": 1
+      },
+      "source_id": "fhwa-traffic-bottleneck-concepts-2016",
+      "stage3_ran": true,
+      "unintended_topology_count": 0
+    },
+    {
+      "admitted_claims": 13,
+      "dedicated_claim_focus_decisions": 0,
+      "grounded_admitted_claim_only_count": 12,
+      "grounding_policy_satisfied": 13,
+      "mechanical_claim_only_count": 12,
+      "parsed_claims": 13,
+      "representation_decision_count": 56,
+      "representation_decision_semantic_classes": {
+        "canonical": 17,
+        "concept": 39
+      },
+      "source_id": "nist-measurement-uncertainty-2025",
+      "stage3_ran": true,
+      "unintended_topology_count": 0
+    }
+  ],
+  "status": "PASS_WITH_REPRESENTATION_COVERAGE_LIMITATION",
+  "totals": {
+    "admitted_claims": 152,
+    "dedicated_claim_focus_decisions": 0,
+    "grounded_admitted_claim_only_count": 98,
+    "grounding_policy_satisfied": 152,
+    "mechanical_claim_only_count": 98,
+    "parsed_claims": 152,
+    "representation_decision_count": 503,
+    "unintended_topology_count": 0
+  }
+}

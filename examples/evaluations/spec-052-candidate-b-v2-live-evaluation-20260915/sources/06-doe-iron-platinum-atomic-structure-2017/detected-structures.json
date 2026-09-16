@@ -1,0 +1,155 @@
+{
+  "structures": [
+    {
+      "entity_ids": [
+        "anti-phase-boundary",
+        "anti-site-point-defect",
+        "defect",
+        "swap-defect"
+      ],
+      "id": "structure-hierarchy-b88dd84a15fa9f2e",
+      "metadata": {
+        "contains_cycle": false,
+        "hierarchy_relationship_type": "IS_A",
+        "leaves": [
+          "anti-phase-boundary",
+          "anti-site-point-defect",
+          "swap-defect"
+        ],
+        "roots": [
+          "defect"
+        ],
+        "supporting_relationship_ids_by_edge": [
+          [
+            "r1"
+          ],
+          [
+            "r2"
+          ],
+          [
+            "r3"
+          ]
+        ]
+      },
+      "relationship_ids": [
+        "r1",
+        "r2",
+        "r3"
+      ],
+      "relationship_types": [
+        "IS_A",
+        "IS_A",
+        "IS_A"
+      ],
+      "structure_type": "HIERARCHY"
+    },
+    {
+      "entity_ids": [
+        "atomic-magnetic-moment",
+        "local-magnetocrystalline-anisotropy",
+        "magnetic-property",
+        "material-property"
+      ],
+      "id": "structure-hierarchy-1b3d3bd3e6a4c270",
+      "metadata": {
+        "contains_cycle": false,
+        "hierarchy_relationship_type": "IS_A",
+        "leaves": [
+          "atomic-magnetic-moment",
+          "local-magnetocrystalline-anisotropy",
+          "magnetic-property"
+        ],
+        "roots": [
+          "material-property"
+        ],
+        "supporting_relationship_ids_by_edge": [
+          [
+            "r8"
+          ],
+          [
+            "r9"
+          ],
+          [
+            "r7"
+          ]
+        ]
+      },
+      "relationship_ids": [
+        "r8",
+        "r9",
+        "r7"
+      ],
+      "relationship_types": [
+        "IS_A",
+        "IS_A",
+        "IS_A"
+      ],
+      "structure_type": "HIERARCHY"
+    },
+    {
+      "entity_ids": [
+        "iron-atom",
+        "iron-platinum-particle",
+        "platinum-atom"
+      ],
+      "id": "structure-hierarchy-ea739d0bb9353767",
+      "metadata": {
+        "contains_cycle": false,
+        "hierarchy_relationship_type": "PART_OF",
+        "leaves": [
+          "iron-atom",
+          "platinum-atom"
+        ],
+        "roots": [
+          "iron-platinum-particle"
+        ],
+        "supporting_relationship_ids_by_edge": [
+          [
+            "r4"
+          ],
+          [
+            "r5"
+          ]
+        ]
+      },
+      "relationship_ids": [
+        "r4",
+        "r5"
+      ],
+      "relationship_types": [
+        "PART_OF",
+        "PART_OF"
+      ],
+      "structure_type": "HIERARCHY"
+    },
+    {
+      "entity_ids": [
+        "iron-platinum-particle",
+        "nanostructured-material"
+      ],
+      "id": "structure-hierarchy-1c7814a08bc36703",
+      "metadata": {
+        "contains_cycle": false,
+        "hierarchy_relationship_type": "IS_A",
+        "leaves": [
+          "iron-platinum-particle"
+        ],
+        "roots": [
+          "nanostructured-material"
+        ],
+        "supporting_relationship_ids_by_edge": [
+          [
+            "r6"
+          ]
+        ]
+      },
+      "relationship_ids": [
+        "r6"
+      ],
+      "relationship_types": [
+        "IS_A"
+      ],
+      "structure_type": "HIERARCHY"
+    }
+  ]
+}

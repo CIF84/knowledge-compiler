@@ -1,0 +1,231 @@
+{
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1789548796.0,
+  "conversation": null,
+  "created_at": 1789548769.0,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "id": "resp_0549c8fc724d840d016aaa58e104f087d29e43499ac5523242",
+  "incomplete_details": null,
+  "instructions": "You perform Stage 3 claim and evidence binding.\n\nThe user supplies an immutable entity inventory, immutable semantic structure, and the\nexact source. You may add learner-useful claims and bind exact source evidence to the\nsupplied relationship/proposition IDs. You must not add, delete, rename, reorder, or alter\nentities, relationships, propositions, predicates, directions, role bindings, statements,\nconfidence, or origin. Return no semantic topology.\n\nEvery SOURCE claim and SOURCE semantic object must cite one or more exact, verbatim,\nuniquely occurring substrings from the supplied source. Use a complete clause or sentence\nlong enough to occur exactly once. Never paraphrase a quote or remove text from inside it.\nINFERRED claims and semantic objects must have no source evidence. Do not fabricate\nevidence or use external knowledge.\n\nReturn only claims and semantic_evidence_bindings in the requested schema.\n\nCandidate B v2 semantic omission invariant: independently preserve source-supported,\nlearner-useful meanings as exact grounded claims even when Stage 2 emitted no relationship\nor proposition for them. Do not convert a claim into topology or alter the frozen Stage-2\nstructure. A claim must cite exact, uniquely occurring source text.",
+  "max_output_tokens": null,
+  "max_tool_calls": null,
+  "metadata": {},
+  "model": "gpt-5.6-luna",
+  "moderation": null,
+  "object": "response",
+  "output": [
+    {
+      "content": [],
+      "encrypted_content": "gAAAAABqqlj8Kka8nHb5mwrK9VWE6VIM7vJCMfKetzQBSCIuEZYEnz8fM3XOwHxjvwKlW_jGoVKRqny-z4U9QMiMwiVVxnA_mjwXlqnh-L6cy3HW1dji64U7OdX2D4bRi095gvCHtHkotU5TthoM4Ntm-woop1-3ttX1xY3NpwFetKyC3HO-AaGtsyUyJmu2qNqnGrZnwj8GfR8Sh73PgH49ZEVUZxi_LcsFC3bm7xHHJsmJsw78yNgl9g_QidWmazfvlMKx6DhKELcMMCw3BNGCZxSyLh65SL9Dyq1_P_LGeUpejdgB9FHzeC5D8UJJtU5Q68exaxiSsGPM-2TVpWiSvwq10X9X9NpaCl2KxI4ofAhQjejlYOEAa68EHm4piaBhnFzMlXtHxVPn-FRgebU5bPEA9JUeJ1nxNUeQN3wFwRiG1gfpss0R3GaEj-NZrmx93DLImMr7F_Ae31yqg8KiUVSfbQ1AbOEL8scksS08Xi-GIQW8QR6VuXSc6-Z3GUrEk9aGD-pIiTmDor79Sq0YBTQUCntNB89vNAbWJGnc2ZW03YsQ3vgTt-T_U5ANgp8aL2DShuPoPmQpM0p6fG1X39HezsY3pHVeJu8zni7iceJM_tPEkY6_C8nQqXqq3OTvnjZiMjU5YBWvYsjdsiNLyV0DwyuV1f_qrs_tegqAb0FJNOTlnHsWahBF7ZTzvw3F3YZRHafY-3faFISIOazbcV1D27d8bDb_rCKlKq_bsPRXHpz_xGqJoxUJyjfMgl5txaYN6st13Z4KOXfYhd5sw7DLX0_sa8H8toFZZMb9F87s9CE-nl0QMwQLB-E4SapbG_UUb0EU1JPxoc5GaIdNWmagGchId1whY8W_wUcqI37tziI8uHOnGq0lnCl7FzUxbbLE0CrHNVx3YJg8HGOregACiQs9s1aGDyrgJjidR-fSfetNlV33RMKCwNQkvUDzZAG-tb2CGuhXYsnkYP3nG39WIAzYt5-bXi-Q03brCZnGH_g1GA4aNoDbYHnX6xp7WUNf_oQuu_HUynyl2Y-t3D94s5uzoDc0NsGKkFTgMOLQ2Jigny4SG4Taoo8tL0QURpQH9yNJa9CWJoPwRTMnDSn4ET7YNcEwotMDuZ_-9PlkpI4RmuNhqP1Pck4vyf08D9ejrKCkWITEpj6ejAETRwgH_ZCrBJw78uoZXRE-d_Ek6UCVJU037p9NS7YNifVopGhh547_Q_uz9BH3GjPcdsH1P-YCrHQCxXEOnsvbK8U_uHjdo0CWpUgKcSJWcK86lt9oDy9LFkbGZN0VArJRZxwxY4w1hp7V-cDprhX-s6LCi8idwKEJ2y-jV_8j-xnB3_c17fGe0DJ2BAvSc5BuqyJGRZNrJ3d5jX2AYDrjmsgfAAkSqtnLDz4zIjWjQTgE-9wl69DduvRhqTeKCdAAb0EM4VIIcoj5cGzfl0JLWiK0Qr86gb3XvYpjx-eeeDg7rDTQwz9Dp56NQu1mlyFkmCPD4CaIpvkAf7LZa9zcfvrwS4_bYJemaG2vkmGONvHwEkqASazbNsVMgawhsBH_4qcATFFFVmjdLcL_FcYxbcxXDOuGBbVQdogIjc_HqHeCDsuuvQ6EsCCdwOBGTSGBSuOUafwKyDDmkRRg7iUU_lOl0_DuIy0ZyGmUOoVsaqZMvmeHCRU5TcaLRj-_EkGbfcB0PAcWT_gPhHv7PERMgB_g5AQWFRB8EB3JLY6lESMZBJuPtXrdkJUHGMrkJXI9cq4kDlTta2P1uyqQobyWKbs1s7B1VQQUiHUwBUkl1Dn6KvXJw3T424dz4tN6lfTODMM8ij5zn2iYPbQ2H0UOc0XxhqgHu6F20yctN3IdHIvIBTLMQbhwFkuKJBPAnXwQbmMckYDyMOZF2oJBjcya5wrj-ez2zZ1UrkfapBFHASSjuY4HDyDbVpd-QEOwR3l669dZQpU_U4kUPxBDQPt6I-o5zNkCw_ZM_EEte7t5hjsJSwtciImhFoi9dD9ZgXXLhaN4wLBwjp8oa5I_Aox2BicIvHNrtwfrKKraST32klghJWxveHFoysyvvjQUyFhvUeW-hDquHzxyxatlAiRSc5dEmFq24LAvWmm6B0YYR4KHQrmvvQUJ4pG5x9CaupHHaMFQzWt63lsjq10W2h-KPy-GKZ5nlDxma9zhdgGiEfEwAOW1DwmOTD1ImfQt4OBsn4Qcs_YEbqhdLjtmH0omJc_mc69ZXlI=",
+      "id": "rs_0549c8fc724d840d016aaa58e17ee087d290643c515ee8af62",
+      "status": null,
+      "summary": [],
+      "type": "reasoning"
+    },
+    {
+      "content": [
+        {
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"claims\":[{\"id\":\"c1\",\"statement\":\"A jet stream is a type of wind.\",\"evidence\":[{\"quote\":\"A jet stream is a type of air current that forms high in the atmosphere.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"c2\",\"statement\":\"A polar jet stream is a type of jet stream.\",\"evidence\":[{\"quote\":\"Earth has four primary jet streams: two polar jet streams, near the north and south poles, and two subtropical jet streams closer to the equator.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"c3\",\"statement\":\"A subtropical jet stream is a type of jet stream.\",\"evidence\":[{\"quote\":\"Earth has four primary jet streams: two polar jet streams, near the north and south poles, and two subtropical jet streams closer to the equator.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"c4\",\"statement\":\"Jet streams occur in the atmosphere.\",\"evidence\":[{\"quote\":\"A jet stream is a type of air current that forms high in the atmosphere.\"}],\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"c5\",\"statement\":\"The troposphere is a layer of Earth's atmosphere.\",\"evidence\":[{\"quote\":\"the layer of Earth’s atmosphere where we live and breathe.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"c6\",\"statement\":\"Earth's surface is part of Earth.\",\"evidence\":[{\"quote\":\"Jet streams are located about five to nine miles above Earth’s surface\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"c7\",\"statement\":\"Jet streams form when warm and cold air masses meet in the atmosphere.\",\"evidence\":[{\"quote\":\"Jet streams form when warm air masses meet cold air masses in the atmosphere.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"c8\",\"statement\":\"When warmer air masses meet cooler air masses, the warmer air rises.\",\"evidence\":[{\"quote\":\"the warmer air rises up higher in the atmosphere while cooler air sinks down to replace the warm air.\"}],\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"c9\",\"statement\":\"When warmer air masses meet cooler air masses, the cooler air sinks to replace the warm air.\",\"evidence\":[{\"quote\":\"the warmer air rises up higher in the atmosphere while cooler air sinks down to replace the warm air.\"}],\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"c10\",\"statement\":\"The upward movement of warmer air contributes to the creation of an air current.\",\"evidence\":[{\"quote\":\"the warmer air rises up higher in the atmosphere while cooler air sinks down to replace the warm air. This movement creates an air current, or wind.\"}],\"confidence\":0.9,\"origin\":\"SOURCE\"},{\"id\":\"c11\",\"statement\":\"The downward movement of cooler air contributes to the creation of an air current.\",\"evidence\":[{\"quote\":\"the warmer air rises up higher in the atmosphere while cooler air sinks down to replace the warm air. This movement creates an air current, or wind.\"}],\"confidence\":0.9,\"origin\":\"SOURCE\"},{\"id\":\"c12\",\"statement\":\"The movement of warm and cool air creates an air current, or wind.\",\"evidence\":[{\"quote\":\"This movement creates an air current, or wind.\"}],\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"c13\",\"statement\":\"Jet-stream formation produces a jet stream.\",\"evidence\":[{\"quote\":\"Jet streams form when warm air masses meet cold air masses in the atmosphere.\"}],\"confidence\":0.95,\"origin\":\"SOURCE\"},{\"id\":\"c14\",\"statement\":\"Uneven solar heating produces warmer equatorial areas and colder polar areas, creating a temperature difference.\",\"evidence\":[{\"quote\":\"The Sun doesn’t heat the whole Earth evenly. That’s why areas near the equator are hot and areas near the poles are cold.\"}],\"confidence\":0.96,\"origin\":\"SOURCE\"},{\"id\":\"c15\",\"statement\":\"Dramatic temperature differences between warm and cool air masses can increase jet-stream speed.\",\"evidence\":[{\"quote\":\"dramatic temperature differences between the warm and cool air masses can cause jet streams to move at much higher speeds\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"c16\",\"statement\":\"Very high speeds in polar jet streams usually occur in winter.\",\"evidence\":[{\"quote\":\"Speeds this high usually happen in polar jet streams in the winter time.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"c17\",\"statement\":\"Jet streams are located in the mid to upper troposphere.\",\"evidence\":[{\"quote\":\"Jet streams are located about five to nine miles above Earth’s surface in the mid to upper troposphere\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"c18\",\"statement\":\"An airplane can fly in a powerful jet stream.\",\"evidence\":[{\"quote\":\"if an airplane flies in a powerful jet stream\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"c19\",\"statement\":\"A powerful jet stream can give an airplane a boost when it travels in the same direction.\",\"evidence\":[{\"quote\":\"if an airplane flies in a powerful jet stream and they are traveling in the same direction, the airplane can get a boost.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"c20\",\"statement\":\"Fast-moving air currents in a jet stream transport weather systems across the United States.\",\"evidence\":[{\"quote\":\"The fast-moving air currents in a jet stream can transport weather systems across the United States\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"c21\",\"statement\":\"Jet streams affect temperature as they transport weather systems.\",\"evidence\":[{\"quote\":\"transport weather systems across the United States, affecting temperature and precipitation.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"c22\",\"statement\":\"Jet streams affect precipitation as they transport weather systems.\",\"evidence\":[{\"quote\":\"transport weather systems across the United States, affecting temperature and precipitation.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"c23\",\"statement\":\"Jet streams typically move storms from west to east.\",\"evidence\":[{\"quote\":\"Jet streams typically move storms and other weather systems from west to east.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"c24\",\"statement\":\"Storms tend to follow the edge of the jet stream.\",\"evidence\":[{\"quote\":\"Storms tend to follow the edge of the jet stream\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"c25\",\"statement\":\"The difference between cool and warm air creates turbulent conditions for storms.\",\"evidence\":[{\"quote\":\"where the difference between cool and warm air creates the turbulent conditions for storms.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"c26\",\"statement\":\"A weather system that remains in one place can cause a heat wave.\",\"evidence\":[{\"quote\":\"if a weather system is far away from a jet stream, it might stay in one place, causing heat waves or floods.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"c27\",\"statement\":\"A weather system that remains in one place can cause a flood.\",\"evidence\":[{\"quote\":\"if a weather system is far away from a jet stream, it might stay in one place, causing heat waves or floods.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"c28\",\"statement\":\"A polar jet stream is located near the north pole or south pole.\",\"evidence\":[{\"quote\":\"two polar jet streams, near the north and south poles\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"c29\",\"statement\":\"A polar jet stream is located near the north pole or south pole.\",\"evidence\":[{\"quote\":\"two polar jet streams, near the north and south poles\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"c30\",\"statement\":\"Subtropical jet streams are located closer to the equator.\",\"evidence\":[{\"quote\":\"two subtropical jet streams closer to the equator.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"c31\",\"statement\":\"Jet streams are narrow bands of strong wind that generally blow from west to east all across the globe.\",\"evidence\":[{\"quote\":\"Jet streams are narrow bands of strong wind that generally blow from west to east all across the globe.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"c32\",\"statement\":\"Earth has four primary jet streams.\",\"evidence\":[{\"quote\":\"Earth has four primary jet streams: two polar jet streams, near the north and south poles, and two subtropical jet streams closer to the equator.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"c33\",\"statement\":\"On average, jet streams move at about 110 miles per hour.\",\"evidence\":[{\"quote\":\"On average, jet streams move at about 110 miles per hour.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"c34\",\"statement\":\"Some jet streams move at 250 miles per hour or faster.\",\"evidence\":[{\"quote\":\"250 miles per hour or faster.\"}],\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"c35\",\"statement\":\"Jet streams are located about five to nine miles above Earth's surface.\",\"evidence\":[{\"quote\":\"Jet streams are located about five to nine miles above Earth’s surface\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"c36\",\"statement\":\"An airplane flying west to east can generally make a route faster than an airplane traveling the same route east to west.\",\"evidence\":[{\"quote\":\"an airplane flying a route from west to east can generally make the trip faster than an airplane traveling the same route east to west.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"c37\",\"statement\":\"Jet streams can create bulges of winds to the north and south.\",\"evidence\":[{\"quote\":\"jet streams can move in different ways, creating bulges of winds to the north and south.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"c38\",\"statement\":\"Farther south displacement of a jet stream makes the air warmer and wetter where colder Arctic air meets it.\",\"evidence\":[{\"quote\":\"The farther south the jet stream is pushed, the warmer and wetter the air will be where the colder Arctic air meets up with it.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"c39\",\"statement\":\"When colder Arctic air meets warmer, wetter air near a southward-displaced jet stream, there is more thunder, lightning, and tornadoes.\",\"evidence\":[{\"quote\":\"That makes for more thunder and lightning, and more tornadoes.\"}],\"confidence\":0.99,\"origin\":\"SOURCE\"}],\"semantic_evidence_bindings\":[{\"semantic_object_id\":\"r1\",\"evidence\":[{\"quote\":\"A jet stream is a type of air current that forms high in the atmosphere.\"}]},{\"semantic_object_id\":\"r2\",\"evidence\":[{\"quote\":\"Earth has four primary jet streams: two polar jet streams, near the north and south poles, and two subtropical jet streams closer to the equator.\"}]},{\"semantic_object_id\":\"r3\",\"evidence\":[{\"quote\":\"Earth has four primary jet streams: two polar jet streams, near the north and south poles, and two subtropical jet streams closer to the equator.\"}]},{\"semantic_object_id\":\"r4\",\"evidence\":[{\"quote\":\"A jet stream is a type of air current that forms high in the atmosphere.\"}]},{\"semantic_object_id\":\"r5\",\"evidence\":[{\"quote\":\"the layer of Earth’s atmosphere where we live and breathe.\"}]},{\"semantic_object_id\":\"r6\",\"evidence\":[{\"quote\":\"Jet streams are located about five to nine miles above Earth’s surface\"}]},{\"semantic_object_id\":\"r7\",\"evidence\":[{\"quote\":\"Jet streams form when warm air masses meet cold air masses in the atmosphere.\"}]},{\"semantic_object_id\":\"r8\",\"evidence\":[{\"quote\":\"the warmer air rises up higher in the atmosphere while cooler air sinks down to replace the warm air.\"}]},{\"semantic_object_id\":\"r9\",\"evidence\":[{\"quote\":\"the warmer air rises up higher in the atmosphere while cooler air sinks down to replace the warm air.\"}]},{\"semantic_object_id\":\"r10\",\"evidence\":[{\"quote\":\"the warmer air rises up higher in the atmosphere while cooler air sinks down to replace the warm air. This movement creates an air current, or wind.\"}]},{\"semantic_object_id\":\"r11\",\"evidence\":[{\"quote\":\"the warmer air rises up higher in the atmosphere while cooler air sinks down to replace the warm air. This movement creates an air current, or wind.\"}]},{\"semantic_object_id\":\"r12\",\"evidence\":[{\"quote\":\"This movement creates an air current, or wind.\"}]},{\"semantic_object_id\":\"r13\",\"evidence\":[{\"quote\":\"Jet streams form when warm air masses meet cold air masses in the atmosphere.\"}]},{\"semantic_object_id\":\"r14\",\"evidence\":[{\"quote\":\"The Sun doesn’t heat the whole Earth evenly. That’s why areas near the equator are hot and areas near the poles are cold.\"}]},{\"semantic_object_id\":\"r15\",\"evidence\":[{\"quote\":\"dramatic temperature differences between the warm and cool air masses can cause jet streams to move at much higher speeds\"}]},{\"semantic_object_id\":\"r16\",\"evidence\":[{\"quote\":\"Speeds this high usually happen in polar jet streams in the winter time.\"}]},{\"semantic_object_id\":\"r17\",\"evidence\":[{\"quote\":\"Jet streams are located about five to nine miles above Earth’s surface in the mid to upper troposphere\"}]},{\"semantic_object_id\":\"r18\",\"evidence\":[{\"quote\":\"if an airplane flies in a powerful jet stream\"}]},{\"semantic_object_id\":\"r19\",\"evidence\":[{\"quote\":\"if an airplane flies in a powerful jet stream and they are traveling in the same direction, the airplane can get a boost.\"}]},{\"semantic_object_id\":\"r20\",\"evidence\":[{\"quote\":\"The fast-moving air currents in a jet stream can transport weather systems across the United States\"}]},{\"semantic_object_id\":\"r21\",\"evidence\":[{\"quote\":\"transport weather systems across the United States, affecting temperature and precipitation.\"}]},{\"semantic_object_id\":\"r22\",\"evidence\":[{\"quote\":\"transport weather systems across the United States, affecting temperature and precipitation.\"}]},{\"semantic_object_id\":\"r23\",\"evidence\":[{\"quote\":\"Jet streams typically move storms and other weather systems from west to east.\"}]},{\"semantic_object_id\":\"r24\",\"evidence\":[{\"quote\":\"Storms tend to follow the edge of the jet stream\"}]},{\"semantic_object_id\":\"r25\",\"evidence\":[{\"quote\":\"where the difference between cool and warm air creates the turbulent conditions for storms.\"}]},{\"semantic_object_id\":\"r26\",\"evidence\":[{\"quote\":\"if a weather system is far away from a jet stream, it might stay in one place, causing heat waves or floods.\"}]},{\"semantic_object_id\":\"r27\",\"evidence\":[{\"quote\":\"if a weather system is far away from a jet stream, it might stay in one place, causing heat waves or floods.\"}]},{\"semantic_object_id\":\"r28\",\"evidence\":[{\"quote\":\"two polar jet streams, near the north and south poles\"}]},{\"semantic_object_id\":\"r29\",\"evidence\":[{\"quote\":\"two polar jet streams, near the north and south poles\"}]},{\"semantic_object_id\":\"r30\",\"evidence\":[{\"quote\":\"two subtropical jet streams closer to the equator.\"}]}]}",
+          "type": "output_text"
+        }
+      ],
+      "id": "msg_0549c8fc724d840d016aaa58e3d90087d2a04c7308a625eab4",
+      "phase": "final_answer",
+      "role": "assistant",
+      "status": "completed",
+      "type": "message"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt": null,
+  "prompt_cache_key": null,
+  "prompt_cache_options": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "low",
+    "generate_summary": null,
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "status": "completed",
+  "store": false,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "description": null,
+      "name": "candidate_b_v2_claim_evidence_binding",
+      "schema_": {
+        "additionalProperties": false,
+        "properties": {
+          "claims": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "confidence": {
+                  "maximum": 1,
+                  "minimum": 0,
+                  "type": "number"
+                },
+                "evidence": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "quote": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "quote"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "origin": {
+                  "enum": [
+                    "SOURCE",
+                    "INFERRED"
+                  ],
+                  "type": "string"
+                },
+                "statement": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "statement",
+                "evidence",
+                "confidence",
+                "origin"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "semantic_evidence_bindings": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "evidence": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "quote": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "quote"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                "semantic_object_id": {
+                  "enum": [
+                    "r1",
+                    "r10",
+                    "r11",
+                    "r12",
+                    "r13",
+                    "r14",
+                    "r15",
+                    "r16",
+                    "r17",
+                    "r18",
+                    "r19",
+                    "r2",
+                    "r20",
+                    "r21",
+                    "r22",
+                    "r23",
+                    "r24",
+                    "r25",
+                    "r26",
+                    "r27",
+                    "r28",
+                    "r29",
+                    "r3",
+                    "r30",
+                    "r4",
+                    "r5",
+                    "r6",
+                    "r7",
+                    "r8",
+                    "r9"
+                  ],
+                  "type": "string"
+                }
+              },
+              "required": [
+                "semantic_object_id",
+                "evidence"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "claims",
+          "semantic_evidence_bindings"
+        ],
+        "type": "object"
+      },
+      "strict": true,
+      "type": "json_schema"
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 4452,
+    "input_tokens_details": {
+      "cache_write_tokens": 4449,
+      "cached_tokens": 0
+    },
+    "output_tokens": 3415,
+    "output_tokens_details": {
+      "reasoning_tokens": 155
+    },
+    "total_tokens": 7867
+  },
+  "user": null
+}

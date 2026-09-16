@@ -1,0 +1,78 @@
+{
+  "admitted_counts": null,
+  "arm": "CANDIDATE_B",
+  "candidate_version": "spec-051-candidate-b-v2",
+  "detected_structure_count": 0,
+  "detected_structure_types": {},
+  "detection_stage": "SEMANTIC_STRUCTURE",
+  "error_type": "StageExecutionError",
+  "exact_failure": "Candidate-B-v2 Stage-2 contract rejected output: Stage 2 semantic object IDs must be unique",
+  "execution_mode": "FUTURE_LIVE",
+  "failure_classification": {
+    "detection_stage": "SEMANTIC_STRUCTURE",
+    "error_type": "StageExecutionError",
+    "exact_failure": "Candidate-B-v2 Stage-2 contract rejected output: Stage 2 semantic object IDs must be unique",
+    "origin_taxonomy": "OTHER"
+  },
+  "failure_origins": [
+    "RELATIONSHIP_SEMANTICS"
+  ],
+  "known_invalid_objects_admitted": 0,
+  "monetary_cost": null,
+  "proposal_counts": {
+    "claims": 0,
+    "entities": 38,
+    "propositions": 0,
+    "relationships": 0
+  },
+  "provider_calls_started": 2,
+  "provider_latency_ms": 67520.24912499473,
+  "representation_strategy_counts": {},
+  "representation_sufficiency_counts": {},
+  "semantic_omission_audit": {
+    "claim_only_by_exact_statement_and_distinct_id_count": 0,
+    "claims": [],
+    "parsed_response_available": false,
+    "reason": "UPSTREAM_SHORT_CIRCUIT",
+    "stage3_ran": false,
+    "unintended_topology_count_if_admitted": null
+  },
+  "source_id": "nhgri-dna-fact-sheet-2020",
+  "source_sha256": "54e2147221cf186fe1b4f965422c69e815f986a7d009eddae9c01bf32ec25f89",
+  "stage_gates": [
+    {
+      "error_type": null,
+      "exact_failure": null,
+      "output_identity_sha256": "f1280ac53b6b7b02aa638af045587deb58e52238589e83da9314b2e1c2483c98",
+      "stage": "ENTITY_INVENTORY",
+      "stage_version": "spec-047-entity-inventory-v1",
+      "status": "PASS",
+      "upstream_identity_sha256": "54e2147221cf186fe1b4f965422c69e815f986a7d009eddae9c01bf32ec25f89"
+    },
+    {
+      "error_type": "StageExecutionError",
+      "exact_failure": "Candidate-B-v2 Stage-2 contract rejected output: Stage 2 semantic object IDs must be unique",
+      "output_identity_sha256": null,
+      "stage": "SEMANTIC_STRUCTURE",
+      "stage_version": "spec-051-semantic-structure-v2",
+      "status": "FAIL_CLOSED",
+      "upstream_identity_sha256": "f1280ac53b6b7b02aa638af045587deb58e52238589e83da9314b2e1c2483c98"
+    },
+    {
+      "error_type": null,
+      "exact_failure": null,
+      "output_identity_sha256": null,
+      "stage": "CLAIM_EVIDENCE_BINDING",
+      "stage_version": "spec-051-claim-evidence-binding-v2",
+      "status": "NOT_RUN_UPSTREAM_FAILURE",
+      "upstream_identity_sha256": null
+    }
+  ],
+  "status": "FAILED_CLOSED",
+  "sufficient_representation_decision_count": 0,
+  "usage": {
+    "input_tokens": 6608,
+    "output_tokens": 3721,
+    "total_tokens": 10329
+  }
+}

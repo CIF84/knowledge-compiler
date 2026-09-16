@@ -1,0 +1,203 @@
+{
+  "structures": [
+    {
+      "entity_ids": [
+        "supernova",
+        "spinning",
+        "falling-into-the-center"
+      ],
+      "id": "structure-causal-path-54bccdc6d8a20349",
+      "metadata": {
+        "edge_count": 2,
+        "supporting_relationship_ids_by_edge": [
+          [
+            "r17"
+          ],
+          [
+            "r19"
+          ]
+        ]
+      },
+      "relationship_ids": [
+        "r17",
+        "r19"
+      ],
+      "relationship_types": [
+        "CAUSES",
+        "CAUSES"
+      ],
+      "structure_type": "CAUSAL_PATH"
+    },
+    {
+      "entity_ids": [
+        "supernova",
+        "swirling",
+        "falling-into-the-center"
+      ],
+      "id": "structure-causal-path-28812a7c0aa8da85",
+      "metadata": {
+        "edge_count": 2,
+        "supporting_relationship_ids_by_edge": [
+          [
+            "r16"
+          ],
+          [
+            "r18"
+          ]
+        ]
+      },
+      "relationship_ids": [
+        "r16",
+        "r18"
+      ],
+      "relationship_types": [
+        "CAUSES",
+        "CAUSES"
+      ],
+      "structure_type": "CAUSAL_PATH"
+    },
+    {
+      "entity_ids": [
+        "earth",
+        "jupiter",
+        "mars",
+        "mercury",
+        "neptune",
+        "planets",
+        "saturn",
+        "uranus",
+        "venus"
+      ],
+      "id": "structure-hierarchy-ad84b4bf6c055fde",
+      "metadata": {
+        "contains_cycle": false,
+        "hierarchy_relationship_type": "IS_A",
+        "leaves": [
+          "earth",
+          "jupiter",
+          "mars",
+          "mercury",
+          "neptune",
+          "saturn",
+          "uranus",
+          "venus"
+        ],
+        "roots": [
+          "planets"
+        ],
+        "supporting_relationship_ids_by_edge": [
+          [
+            "r5"
+          ],
+          [
+            "r7"
+          ],
+          [
+            "r6"
+          ],
+          [
+            "r3"
+          ],
+          [
+            "r10"
+          ],
+          [
+            "r8"
+          ],
+          [
+            "r9"
+          ],
+          [
+            "r4"
+          ]
+        ]
+      },
+      "relationship_ids": [
+        "r5",
+        "r7",
+        "r6",
+        "r3",
+        "r10",
+        "r8",
+        "r9",
+        "r4"
+      ],
+      "relationship_types": [
+        "IS_A",
+        "IS_A",
+        "IS_A",
+        "IS_A",
+        "IS_A",
+        "IS_A",
+        "IS_A",
+        "IS_A"
+      ],
+      "structure_type": "HIERARCHY"
+    },
+    {
+      "entity_ids": [
+        "orbit",
+        "orbiting"
+      ],
+      "id": "structure-hierarchy-17748627abcbb925",
+      "metadata": {
+        "contains_cycle": false,
+        "hierarchy_relationship_type": "IS_A",
+        "leaves": [
+          "orbit"
+        ],
+        "roots": [
+          "orbiting"
+        ],
+        "supporting_relationship_ids_by_edge": [
+          [
+            "r26"
+          ]
+        ]
+      },
+      "relationship_ids": [
+        "r26"
+      ],
+      "relationship_types": [
+        "IS_A"
+      ],
+      "structure_type": "HIERARCHY"
+    },
+    {
+      "entity_ids": [
+        "planets",
+        "solar-system",
+        "sun"
+      ],
+      "id": "structure-hierarchy-4d6f002163ecc6f1",
+      "metadata": {
+        "contains_cycle": false,
+        "hierarchy_relationship_type": "PART_OF",
+        "leaves": [
+          "planets",
+          "sun"
+        ],
+        "roots": [
+          "solar-system"
+        ],
+        "supporting_relationship_ids_by_edge": [
+          [
+            "r2"
+          ],
+          [
+            "r1"
+          ]
+        ]
+      },
+      "relationship_ids": [
+        "r2",
+        "r1"
+      ],
+      "relationship_types": [
+        "PART_OF",
+        "PART_OF"
+      ],
+      "structure_type": "HIERARCHY"
+    }
+  ]
+}

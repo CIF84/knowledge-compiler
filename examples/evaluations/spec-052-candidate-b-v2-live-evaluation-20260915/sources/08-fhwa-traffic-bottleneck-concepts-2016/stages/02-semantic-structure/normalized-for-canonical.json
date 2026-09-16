@@ -1,0 +1,191 @@
+{
+  "missing_symbols": [],
+  "propositions": [
+    {
+      "comparison_operator": "GREATER_THAN",
+      "confidence": 0.99,
+      "origin": "SOURCE",
+      "proposition_type": "COMPARISON_CONDITION",
+      "relationship_type": "CAUSES",
+      "role_bindings": [
+        {
+          "entity_id": "traffic-demand",
+          "role": "LEFT_OPERAND"
+        },
+        {
+          "entity_id": "roadway-capacity",
+          "role": "RIGHT_OPERAND"
+        },
+        {
+          "entity_id": "traffic-overburden",
+          "role": "OUTCOME"
+        }
+      ],
+      "statement": "Traffic demand exceeding available roadway capacity causes traffic overburden."
+    }
+  ],
+  "relationships": [
+    {
+      "confidence": 0.99,
+      "id": "r1",
+      "origin": "SOURCE",
+      "relationship_type": "CAUSES",
+      "source_entity_id": "bottleneck",
+      "statement": "Bottlenecks result in the formation of queues upstream of the bottleneck.",
+      "target_entity_id": "queue"
+    },
+    {
+      "confidence": 0.86,
+      "id": "r2",
+      "origin": "SOURCE",
+      "relationship_type": "CAUSES",
+      "source_entity_id": "bottleneck",
+      "statement": "Bottlenecks result in free-flowing traffic downstream of the bottleneck.",
+      "target_entity_id": "free-flow"
+    },
+    {
+      "confidence": 0.98,
+      "id": "r3",
+      "origin": "SOURCE",
+      "relationship_type": "PART_OF",
+      "source_entity_id": "free-flow",
+      "statement": "Free-flow is one of the three traffic phases categorized by Kerner's theory.",
+      "target_entity_id": "traffic"
+    },
+    {
+      "confidence": 0.98,
+      "id": "r4",
+      "origin": "SOURCE",
+      "relationship_type": "PART_OF",
+      "source_entity_id": "synchronized-flow",
+      "statement": "Synchronized flow is one of the three traffic phases categorized by Kerner's theory.",
+      "target_entity_id": "traffic"
+    },
+    {
+      "confidence": 0.98,
+      "id": "r5",
+      "origin": "SOURCE",
+      "relationship_type": "PART_OF",
+      "source_entity_id": "wide-moving-jam",
+      "statement": "Wide-moving jams are one of the three traffic phases categorized by Kerner's theory.",
+      "target_entity_id": "traffic"
+    },
+    {
+      "confidence": 0.96,
+      "id": "r6",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "nonrecurring-congestion",
+      "statement": "All congestion other than recurring congestion is considered nonrecurring congestion.",
+      "target_entity_id": "congestion"
+    },
+    {
+      "confidence": 0.97,
+      "id": "r7",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "wide-moving-jam",
+      "statement": "Wide-moving jams are described as more or less systemic congestion.",
+      "target_entity_id": "systemic-congestion"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r8",
+      "origin": "SOURCE",
+      "relationship_type": "EXAMPLE_OF",
+      "source_entity_id": "lane-drop",
+      "statement": "A lane drop is given as an example of a physical bottleneck cause.",
+      "target_entity_id": "physical-bottleneck-cause"
+    },
+    {
+      "confidence": 0.98,
+      "id": "r9",
+      "origin": "SOURCE",
+      "relationship_type": "IS_A",
+      "source_entity_id": "operationally-deficient-roadway-design",
+      "statement": "An operationally deficient roadway design is identified as a physical bottleneck cause.",
+      "target_entity_id": "physical-bottleneck-cause"
+    },
+    {
+      "confidence": 0.96,
+      "id": "r10",
+      "origin": "SOURCE",
+      "relationship_type": "EXAMPLE_OF",
+      "source_entity_id": "weaving-condition",
+      "statement": "A weaving condition is given as an example of a cause of a bottleneck.",
+      "target_entity_id": "bottleneck"
+    },
+    {
+      "confidence": 0.96,
+      "id": "r11",
+      "origin": "SOURCE",
+      "relationship_type": "EXAMPLE_OF",
+      "source_entity_id": "sun-glare",
+      "statement": "Sun glare is given as an example of a cause of a bottleneck.",
+      "target_entity_id": "bottleneck"
+    },
+    {
+      "confidence": 0.96,
+      "id": "r12",
+      "origin": "SOURCE",
+      "relationship_type": "EXAMPLE_OF",
+      "source_entity_id": "rubbernecking",
+      "statement": "Rubbernecking is given as an example of a cause of a bottleneck.",
+      "target_entity_id": "bottleneck"
+    },
+    {
+      "confidence": 0.96,
+      "id": "r13",
+      "origin": "SOURCE",
+      "relationship_type": "EXAMPLE_OF",
+      "source_entity_id": "vertical-climb",
+      "statement": "A vertical climb is given as an example of a cause of a bottleneck.",
+      "target_entity_id": "bottleneck"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r14",
+      "origin": "SOURCE",
+      "relationship_type": "EXAMPLE_OF",
+      "source_entity_id": "special-event",
+      "statement": "Special events are given as examples of nonrecurring congestion.",
+      "target_entity_id": "nonrecurring-congestion"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r15",
+      "origin": "SOURCE",
+      "relationship_type": "EXAMPLE_OF",
+      "source_entity_id": "bad-weather",
+      "statement": "Bad weather is given as an example of nonrecurring congestion.",
+      "target_entity_id": "nonrecurring-congestion"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r16",
+      "origin": "SOURCE",
+      "relationship_type": "EXAMPLE_OF",
+      "source_entity_id": "work-zone",
+      "statement": "Work zones are given as examples of nonrecurring congestion.",
+      "target_entity_id": "nonrecurring-congestion"
+    },
+    {
+      "confidence": 0.99,
+      "id": "r17",
+      "origin": "SOURCE",
+      "relationship_type": "EXAMPLE_OF",
+      "source_entity_id": "traffic-incident",
+      "statement": "Traffic incidents are given as examples of nonrecurring congestion.",
+      "target_entity_id": "nonrecurring-congestion"
+    },
+    {
+      "confidence": 0.88,
+      "id": "r18",
+      "origin": "SOURCE",
+      "relationship_type": "PART_OF",
+      "source_entity_id": "congestion-study",
+      "statement": "The congestion study was undertaken mostly for, or used data mostly from, the I-95 Corridor Coalition.",
+      "target_entity_id": "i-95-corridor-coalition"
+    }
+  ]
+}

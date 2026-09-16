@@ -1,0 +1,642 @@
+{
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1789548864.0,
+  "conversation": null,
+  "created_at": 1789548853.0,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "id": "resp_0c387bff048f7e3a016aaa5935e23087d2afc13461d194c9ac",
+  "incomplete_details": null,
+  "instructions": "You perform Stage 2 semantic structure extraction for Candidate B v2.\n\nUse only the exact source and immutable frozen entity inventory. Every endpoint must\nbe one of the exact supplied entity IDs. Do not invent or substitute an identity.\nReturn only source-supported canonical relationships, COMPARISON_CONDITION instances,\nTRANSFER_EVENT instances, and missing_symbols diagnostics in the requested schema.\n\nEmit topology only when the exact source-supported meaning fits the trusted relationship\ncontract or one of the two canonical proposition forms. Otherwise omit the meaning from\nStage-2 topology. Never approximate, coerce, or choose a nearby predicate/proposition.\nStage 3 independently reads the exact source and can preserve omitted meaning as an\nexact grounded claim. Do not use missing_symbols for non-topological omission; reserve it\nfor an otherwise valid canonical semantic item lacking a required frozen identity.\n\nCOMPARISON_CONDITION means a comparison used as a causal antecedent with a distinct\nLEFT_OPERAND and RIGHT_OPERAND, an OUTCOME caused by that condition, GREATER_THAN, and\nCAUSES. A standalone comparison without a causal outcome is not this proposition.\nTRANSFER_EVENT means a PROCESS EVENT, transferred OBJECT, and non-PROCESS DESTINATION,\nwith TRANSFERS_TO and no comparison operator. Input to a calculation is not automatically\na transfer event. Emit neither proposition when these exact meanings are unsupported.\n\nDo not return entities, claims, evidence, teaching prose, or new semantic vocabulary.\nProposition IDs are assigned by trusted code; do not return them.\n\nACTIVE RELATIONSHIP CONTRACTS (source --TYPE--> target):\nIS_A [STRUCTURAL; direction=instance_to_type]\n  meaning: The source is a kind, category, or subtype of the target.\n  roles: source=instance or subtype; target=broader type or category\n  use: The source can truthfully be described as a target.\n  avoid: Do not use for parts, examples, similarity, or temporary states.\nPART_OF [STRUCTURAL; direction=part_to_whole]\n  meaning: The source is a constituent or component of the target.\n  roles: source=part or component; target=containing whole\n  use: The source exists as a component or subpart of the target.\n  avoid: Never reverse whole and part; do not use for interaction or dependency.\nEXAMPLE_OF [STRUCTURAL; direction=example_to_concept]\n  meaning: The source is an illustrative instance of the target concept.\n  roles: source=example; target=concept illustrated\n  use: The source is presented as an example of the target.\n  avoid: Do not use merely because the source is a subtype; prefer IS_A for classification.\nCAUSES [CAUSAL; direction=cause_to_effect]\n  meaning: The source brings about the target as an effect.\n  roles: source=cause; target=effect\n  use: The source is stated to produce the target outcome.\n  avoid: Do not use for chronology, association, contribution, or unspecified influence.\nAFFECTS [CAUSAL; direction=influence_to_affected]\n  meaning: The source causally influences the target without a specified direction or complete production.\n  roles: source=influence; target=affected entity, process, or variable\n  use: The source changes or influences the target, but the text does not support CAUSES, INCREASES, or DECREASES.\n  avoid: Do not use for mere association, chronology, physical force, or interaction with no stated effect.\nINCREASES [CAUSAL; direction=increaser_to_increased_variable]\n  meaning: The source causally raises the amount, rate, value, probability, or intensity of the target.\n  roles: source=causal factor; target=quantity or variable increased\n  use: The source is explicitly said to make the target greater, faster, more likely, or more intense.\n  avoid: Do not infer from nearby words such as more or faster; never use when the source says slower, lower, or less.\nDECREASES [CAUSAL; direction=decreaser_to_decreased_variable]\n  meaning: The source causally lowers the amount, rate, value, probability, or intensity of the target.\n  roles: source=causal factor; target=quantity or variable decreased\n  use: The source is explicitly said to make the target smaller, slower, less likely, or less intense.\n  avoid: Do not use for absence, prevention without a scalar target, or mere negative association.\nINDUCES [CAUSAL; direction=inducer_to_induced_effect]\n  meaning: The source produces the target through an explicitly described induction mechanism.\n  roles: source=inducing phenomenon; target=induced phenomenon\n  use: The source explicitly says induces or describes a recognized induction mechanism.\n  avoid: Do not use as a metaphor for generic causation, influence, motivation, or historical response.\nENABLES [DEPENDENCY; direction=enabler_to_enabled]\n  meaning: The source makes the target possible without necessarily causing it to occur.\n  roles: source=enabling condition or capability; target=capability or process made possible\n  use: The target could not occur, or is materially made possible, because of the source.\n  avoid: Do not use for delivery, participation, weak assistance, or an effect that actually occurred.\nREQUIRES [DEPENDENCY; direction=dependent_to_requirement]\n  meaning: The source depends on the target as a prerequisite or necessary resource.\n  roles: source=dependent; target=prerequisite or required resource\n  use: The source cannot operate or occur as described without the target.\n  avoid: Do not reverse prerequisite and dependent; do not use for optional support.\nCONSTRAINS [DEPENDENCY; direction=constraint_to_constrained]\n  meaning: The source limits the possible behavior, values, or choices of the target.\n  roles: source=constraint; target=constrained entity, process, or variable\n  use: The source imposes a limit, rule, boundary, or restriction on the target.\n  avoid: Do not use to mean unchanged, unrelated, merely different, or causally reduced.\nPRECEDES [TEMPORAL; direction=earlier_to_later]\n  meaning: The source occurs before the target in time or an explicit process sequence.\n  roles: source=earlier event or process; target=later event or process\n  use: The source explicitly occurs before, previously, first, then, or after relative to the target.\n  avoid: Do not infer causality from order; do not reverse earlier and later.\nINTERACTS_WITH [INTERACTION; symmetric]\n  meaning: The source and target directly interact, with no more precise directional semantics supported.\n  roles: source=interaction participant; target=interaction participant\n  use: The text supports direct mutual interaction but not a more precise active predicate.\n  avoid: Do not use for distant association, one-way effect, dependency, or chronology.\nBINDS_TO [INTERACTION; symmetric]\n  meaning: The source physically or chemically binds or attaches to the target.\n  roles: source=binding participant; target=binding participant\n  use: The source explicitly binds or attaches to the target.\n  avoid: Do not use for metaphorical commitment, dependency, influence, or literal physical force.\nTRANSFERS_TO [INTERACTION; direction=transferred_item_to_destination]\n  meaning: The source item, material, or information moves to the target destination or recipient.\n  roles: source=item, material, or information transferred; target=destination or recipient\n  use: The source is explicitly carried, delivered, moved, or transferred to the target.\n  avoid: Do not make the carrier the source unless the carrier itself moves to the destination; do not use for enabling.\nEXERTS_FORCE_ON [INTERACTION; direction=force_exerter_to_physical_target]\n  meaning: The source exerts a literal physical force on the target.\n  roles: source=physical force source; target=physical object receiving force\n  use: A literal physical force is explicitly exerted on the target.\n  avoid: Never use metaphorically for influence, contribution, binding, pressure, or causation.\nTRANSFORMS_INTO [TRANSFORMATION; direction=prior_state_to_resulting_state]\n  meaning: The source itself changes state or identity and becomes the target.\n  roles: source=entity or state before transformation; target=same entity or resulting material after transformation\n  use: The source itself becomes the target through a transformation.\n  avoid: Do not use when an actor causes, creates, attempts, participates in, or responds to the target.\nCREATES [TRANSFORMATION; direction=creator_to_created]\n  meaning: The source produces or brings a distinct target into existence.\n  roles: source=producer or generative process; target=newly produced entity or result\n  use: The source produces a target that is distinct from the source.\n  avoid: Do not use when the source itself becomes the target; use TRANSFORMS_INTO instead.\nMEASURED_BY [DESCRIPTIVE; direction=measurand_to_measure]\n  meaning: The source property or variable is quantified or assessed by the target metric, observation, or procedure.\n  roles: source=property or variable measured; target=metric, observation, or measurement procedure\n  use: The target is explicitly how the source is measured or quantified.\n  avoid: Do not point to something that merely responds to, correlates with, or exemplifies the source.\nCONTRADICTS [DESCRIPTIVE; symmetric]\n  meaning: The source and target assert mutually incompatible propositions.\n  roles: source=proposition or claim; target=incompatible proposition or claim\n  use: Both sides are explicit propositions that cannot simultaneously hold as stated.\n  avoid: Do not use for difference, disagreement without incompatibility, trade-off, or negative causality.",
+  "max_output_tokens": null,
+  "max_tool_calls": null,
+  "metadata": {},
+  "model": "gpt-5.6-luna",
+  "moderation": null,
+  "object": "response",
+  "output": [
+    {
+      "content": [],
+      "encrypted_content": "gAAAAABqqllAWc7hoEzIzB0Sk0h9pX0MyBp1cLZYu40kfqj-aulyybbGtoKc5RAMAzXg8eIl2XnBzag-QgIVEnyCmowVrDg4oKmk1WCGj-mEj-PoVuu6Gk8wj-a6BozzaNTbnmQlpn6OGAc7gGdkZKTh0l2Jq6KS4pteaNOHtaAsevllkqM9S_iHuFmsruWYEvRUTuSig9iExog6hYw4nVcSmwUvE1O0FNjFYfMMPH8Vn4i3UpijNFm5oo64s-i7Y-eiDdL_oIUErWuzXtjoJzoVD-KvwVgQos2dbZnIPJe-NYHocFvZuk4pspGVOy0peMQNzCPKAVApJunMAZ0wuQxeNSpoCHRQX-t3ifaOmov0VhpyjmAmm50ghwNJaL8MzVJHcAfYoI8ZkLHSSetm44loQSbap2xgqur1e_qg8OKb4cHW0JZRy--E4KDtXh7VS_9bo6tbI-Bz2EYmchFf7doJkYowPEkBsa7N2NJHRMz9OXnTEfTG_1g2SybVJNuSlNNAzIJfqIPkl0xdw3IOcbR18WvTxaLcMDkqMHVOqk7FEFXQ6jgSPe7xlyY3_ox6R5ZOGk1smI63wReOEmDIwsxT9S51eFFvvMxlOm677OzrvJKoBbTjC5BQn-vm8qakwv4l_wFgO0znlSlhNQogaZL6yt5i-nVtSLYhkEGs8qye2XjW2Pf6LrE5qPVfbpMR5C6fuYMqbm69JeejX_SdE81QBo0iDuGCpNFsm9dhMVhnx3qV6-Ok8GFxoMk9ggfKO1ao_2Rv8aW4SpIjusA950bx5XPqs2VVYhnf-r_L4SbZJnjun3gWRiWuDGwpRSY_LY9nEflXBkIHzbEKSZXK6kyTaKp68Ef-fAbropoXHfXHBCHCMl8Bw9c2t41iqrTW48xh56Yh3YgdLFNJI0qaq8yTChMJ1gG1xh90R3KYQNoOPdQRlzvzrMV9hiOSmR8C6yCKJ9VazQ22GYnXVgBXtYMbI7s-KCowP7hRG-skhOwix6m2PDs7L17TjXEFOHhq5fchC2oKJWjBpgJfY7UP5joYOr76L85jeZj-z5Zfd60eLRFGTNsDG_5ocvdP3uoZ2PX0-N82duJgXp_-qiyU-3DzKh3daOLNLq0Qxlxukl7rK2VCEhRrEdaIW2hraMwsnat4n_c2tq3zbxI5aKekqSdsKkZahZy3Pm4XO9KxZl1_sl7L79unw5fUuy7iEVHxkpmrwzpO8vNj-5CsKdbmFI7mgpaflSW_LSYIGnPBcsc4pXNaP-qVtorF95Eyf6GBMAasmP81lkOqLsggUHSYpkfnELip1XAtT-fynJKt7MbPfrGRlITHQQOOKPJWRyOcgDjnTCyKEJWdKLIYzTT0SdndToDXIjaHpNG1D8qtiiFBoMVVFlN4THh_tgvN8GJtxWYME-JS7ZOkDKwDkW1pzf-kJuY7GO5P2GmQv4efz-H_eNJij0pFECsW3W4hiHTn10Z1O422qquLrNEoQ-lofdDoeTCPTBmxkdqFac3A3KwkEdo5iQ9WrXmF4O_lreShyvAnEYsBhUa6SUQUx-2lRGpYR7ly5ECK8si3Vz-aB-JV9TaMHrf3PircKtyXji9YbbPK3VWqPLCZOImrUZw9J8cCN0nG28w_ZEOqPz6bj_kOhJVRZY9LGcMQ3Nt5jvn37FSrzTrtDTqn8oySbX3GtqqcLmU9E_Q58mBLBoN4f7VfQ1Ys6yAMvxMhsDZRZlpCZKldWjbXM1GVY5IT3QEZ3KlXlRXk-fbmbOGibvVub9DGALk_QP5EOKb58V3_0Lhm0kDMDw0ZmPaAUCOmE5FhegigpyrA6wRpau0xblPpHv7LzoByC_XsRCRv6oq9ZXAhu1UajFWSRVrokd9DeM46DG8z0BHSjvqty7sAwHe5gcROvswBJ5dx0AXf2GOwXrZPFdyY2vSdWDsbm8NnNxKRw9IgbR7Ou3tVZXLkt0dy_-7mrf9FsCzPzgHagiM14yXwyq5YjOb99nWy2krF0SQnumo4HBTaQg6Jq0M82VAW_jg3Gw71_1t3iVd4g3laFeqNfXb0ZYNVqoevXphUqKX4dKCPZbYcy3RcBTnxgSx6F45QqEbEYWkzKHSoZgbxktb3nCHqMXY-AfvsyEgRDnTqDQ6qYnKCfCPswGhFvTMrwZ1biMTupb-U5PKWB4_Y3NcHE2lsEOxkNXXZ8l3Oz1fw5Vh4DxgQastPYk8XOIZZMDE31LbUgJb4wsSx5Qo0sfu-ae4NLQbdFGYa2CZxkq-Fbcdx0V6gS0Ut3xK2WMEzTsjqhpNyMbm6I3de8YQ9dj77awsc9NhuCp3ZErxMJSrcI2ubTOvM5eFVUdSOKo7lwPB8QNm3HzkdGx9Qm7l8TD3jiOAu1TuNldWE6OMfI7umq9eRl3S8ImxJ4fbRf87nd6G4l5ElLgVy4O6JuDj2gu-J73hAuSmIICg_ZPv1VKGxgmOrLPemV0uxCUqykSWOgvg43kX2qj8t-hpDXhleQAvzFu74G9K7sMPJIXLa6pM-KMrEevmmsLDNpjF4JRrF_2oa-6u9M7_wNV1WvGi3AN44jAwytU2WuIPR6DylUq4i2e8su8nW-zVXSZel_qqmEZ6GnizZ0cGWWrv-lkvImAmRLrX4SkTpgNUMiWmEq2CVO1p_QwdR3_PYcBzluBkkwdnirQMamwaXhHdu36X38mgDuN1mcCZpBHGy41yji9GRSThFiHwM_kMOgUmbgzTrzqC0Nngwr6cwOsvRqC__C8TLuoSCHDlUCD24R5INFIG9BHERQ18iV26u1rtpjxNqZJU6epHLeKabwbCDJU4F1w8zeLeikJhV42bOaBSK5ZbsPhunb4wbtHnW-QDsyfvr9WqeQQwZtcLjtDFd1dSSeHvNyTLZ4YCuDCFu2twND3gR2gX7j153eBIo6uNdar8GNIgX3dRyW7POJYH-2aO2lxXFlzFzLJcwsSYbr70wt6FcNpvgZZx-T4zpmG4bMlayZnV6lyNt9vf8gP-HsUMEl38Josubsvo23f6TCd5yeF_RR1KNnfOn5aJ9afkc1RSkF2xy7FqoYlkIB3MgV1DqYBchAYiN0IAzap04-5s3c6Pq56nDidHAXrt2KIrFXvl2teSHE6B9Sx1dHJER1pGiK-3WHPcISKHojf10L98THtGb15xoNfl-jWrEL4yNrbFQacOXL-dQAofKX4CKMftP2Q3J1AOsLMBVaNebzamu_AVBX_QbkAvWWEfv6DjiTFrGCTbAbkbmBmqWoePUHZK_39T8N5w52KvcDsc5XNasJQr64J90oVxQ5x2zG5DRYUG4JEYcKDqJrDoq4PvJm6ROp5wlM4TBeYlwSVLeC4Ha2BIooMPHq44YojPX7U78daeTXTJnIwjxeHPGgvlI_KA2WR9XgOWgAj_gwws71VvT7VoSgsw_NcJGWKKv0zGTuPD1xfm_lE4vR8wbPyE1jflbFv3bN3NYRCHOKYYtc1zIDYSHus0MoWHAr68BBknyz_e68kB9DhzCaNEnsrJphCsGgiEchXzLBWiH62iZU1WrdZQu77i4ruLOO0S4PtNDYjYt_o5ITjaWKcEx6AY2sRJB6YkhmDodbkQ1J8y8N_8go9__svVAOsY4L4Zgeb1R8LFKBHJDCfk5qZuZoxetnoq4xuR11Nh5XzaW_jLMx2R-02RwBQFvRtUSP21T4zAWLpnPbc6ErvubLOUUPyg8gk7bpin0E0anDiPjEw1oS0aw3Jv9eC6IqgscatXfKEqQz0py8xQVkDuLU3FxirA5j0P_Uf2-Ke0IDwkkEo8KK_rHLqvHjgBaffOK_D9audXHJGb6wbAMSOLT7wHU2RBWGSMSKWDrDwsN8zaNhrNLLenpOUNdd7Do1NmY4nr2FYryOO2GBS3tbOhYKVT6Ox0IbknIF92StpnzVb3WabhZeuvUuUGBAmUR9dHpKCTn8tN19JpdprxKzTLmLEAKqx5wBLIYhomQbscH_HJj2UNrfJ3TpUNqD16ilBLS-AVHTyza4abj8Uum-2jaOFEkhyodrHO8W1L7VIOINYk6zLf4PArb-xEL-7oZfq5Y4XvZEtR2_sj_JsvjwHRn_A52znQIiCoErNLWFjyID5_yXI5Tk-M782buqLlrFaDF9LH_X1TOZR5Tv2CAIo1bmJ9A9pO3CC_pIhvCxQTK3roBI2nAGJMro108urWkBRoDyo7R2DbmbAuuKR-cq-tWL78-FlqqvoKZZZfN-qvmohYzwe0kDo8V-3KZGSwXkeHdQi0SDPeKWfHBFPB_rW_fsYcQlFGyJYW8t_uY6rn6r4aau9dOIMEF_HAOlLdv4rUEN_S6QijgtAAZjocrIisbgIikmlsyK96s1yuKVRUNi02COd6qo39yEehd0GoHshLnAOWYM7MjQiHPSqa09og4_xjehM_ELuI0adepiTg_aCvW9v9EEPqDZQo7uoMSI4FCt_ed47OZ4SwdEUVFgSJWy3LD-0RKtBnTLNN7PEZ6XuwRKf27IY4SybK-QPvu0LK14eqVP4cVpftbzUF59mwB8s6feXFct-fRng6vOJ03WXv2o08BvyK-KnAapmPjeBdJxqSNtqznrdxxQ84qtMRsLPKVMrO5iWtWyyeD11znJZE6ebkXnwwzGZoqpKW64N13nxNzCvw_V2omA4bJob6Zlktdt5TbRadZz71FXPZrtf154Vz0qgTBFcR-JuVO_pn2lIIuSikc-2KMqMjmmly86Pnl52uEWmE9TuZqqY75Af4lAmO9nCstGv_Zg35eY-O0fgvOm7gDpMV3S3G4lshS4ao7W9dEPnLru75Db8OD-sCoZ0sgBNgd26iqsFi1Rwf74gMcHdDM7lHhhneiPumgGYSnQqs=",
+      "id": "rs_0c387bff048f7e3a016aaa59364d6087d2a2a567e45ddb81d3",
+      "status": null,
+      "summary": [],
+      "type": "reasoning"
+    },
+    {
+      "content": [
+        {
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relationships\":[{\"id\":\"r1\",\"source_entity_id\":\"standing-committee\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"committee\",\"statement\":\"A standing committee is a committee.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r2\",\"source_entity_id\":\"panel-of-members\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"standing-committee\",\"statement\":\"A standing committee is a panel of Members.\",\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"r3\",\"source_entity_id\":\"federal-agency\",\"relationship_type\":\"EXAMPLE_OF\",\"target_entity_id\":\"selected-party\",\"statement\":\"A federal agency is an example of a selected party that may provide views during a committee hearing.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r4\",\"source_entity_id\":\"organized-interest\",\"relationship_type\":\"EXAMPLE_OF\",\"target_entity_id\":\"selected-party\",\"statement\":\"An organized interest is an example of a selected party that may provide views during a committee hearing.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r5\",\"source_entity_id\":\"introduction-of-a-bill\",\"relationship_type\":\"PRECEDES\",\"target_entity_id\":\"bill-referral\",\"statement\":\"Introduction of a bill precedes its referral to a committee.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r6\",\"source_entity_id\":\"markup\",\"relationship_type\":\"PRECEDES\",\"target_entity_id\":\"majority-vote\",\"statement\":\"A markup precedes the committee's majority vote to report a bill.\",\"confidence\":0.94,\"origin\":\"SOURCE\"},{\"id\":\"r7\",\"source_entity_id\":\"majority-vote\",\"relationship_type\":\"CAUSES\",\"target_entity_id\":\"committee-report\",\"statement\":\"The committee's majority vote causes the committee to report the bill.\",\"confidence\":0.96,\"origin\":\"SOURCE\"},{\"id\":\"r8\",\"source_entity_id\":\"streamlined-floor-consideration\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"floor-consideration\",\"statement\":\"Streamlined floor consideration is a type of floor consideration.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r9\",\"source_entity_id\":\"motion-to-proceed\",\"relationship_type\":\"PRECEDES\",\"target_entity_id\":\"senate-agreement-to-a-motion-to-proceed\",\"statement\":\"A motion to proceed precedes the Senate's agreement to that motion.\",\"confidence\":0.95,\"origin\":\"SOURCE\"}],\"comparison_conditions\":[],\"transfer_events\":[{\"statement\":\"A bill referral transfers a bill to the committee or committees in the chamber with jurisdiction over its elements.\",\"confidence\":0.99,\"origin\":\"SOURCE\",\"proposition_type\":\"TRANSFER_EVENT\",\"event_entity_id\":\"bill-referral\",\"object_entity_id\":\"bill\",\"destination_entity_id\":\"committee\",\"relationship_type\":\"TRANSFERS_TO\",\"comparison_operator\":null}],\"missing_symbols\":[]}",
+          "type": "output_text"
+        }
+      ],
+      "id": "msg_0c387bff048f7e3a016aaa593c9be487d293a8ddfd92d5dd52",
+      "phase": "final_answer",
+      "role": "assistant",
+      "status": "completed",
+      "type": "message"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt": null,
+  "prompt_cache_key": null,
+  "prompt_cache_options": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "low",
+    "generate_summary": null,
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "status": "completed",
+  "store": false,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "description": null,
+      "name": "candidate_b_v2_semantic_structure",
+      "schema_": {
+        "additionalProperties": false,
+        "properties": {
+          "comparison_conditions": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "comparison_operator": {
+                  "enum": [
+                    "GREATER_THAN"
+                  ],
+                  "type": "string"
+                },
+                "confidence": {
+                  "maximum": 1,
+                  "minimum": 0,
+                  "type": "number"
+                },
+                "left_operand_entity_id": {
+                  "enum": [
+                    "bill",
+                    "bill-referral",
+                    "bill-strength",
+                    "bill-weakness",
+                    "committee",
+                    "committee-agenda-setting-authority",
+                    "committee-chair",
+                    "committee-hearing",
+                    "committee-member",
+                    "committee-report",
+                    "congressional-action-on-bills",
+                    "federal-agency",
+                    "floor-agenda",
+                    "floor-consideration",
+                    "formal-committee-attention",
+                    "house",
+                    "introduction-of-a-bill",
+                    "legislative-action",
+                    "majority-party-leader-in-the-house",
+                    "majority-party-leader-in-the-senate",
+                    "majority-vote",
+                    "markup",
+                    "member",
+                    "motion-to-proceed",
+                    "objection",
+                    "organized-interest",
+                    "panel-of-members",
+                    "party-leader",
+                    "policy-expertise",
+                    "policy-jurisdiction",
+                    "proposed-amendment",
+                    "recommended-change",
+                    "rules-committee",
+                    "selected-party",
+                    "senate",
+                    "senate-agreement-to-a-motion-to-proceed",
+                    "senator",
+                    "standing-committee",
+                    "streamlined-floor-consideration",
+                    "tailored-parameters-for-floor-consideration",
+                    "two-year-congress",
+                    "unanimous-consent-request"
+                  ],
+                  "type": "string"
+                },
+                "origin": {
+                  "enum": [
+                    "SOURCE",
+                    "INFERRED"
+                  ],
+                  "type": "string"
+                },
+                "outcome_entity_id": {
+                  "enum": [
+                    "bill",
+                    "bill-referral",
+                    "bill-strength",
+                    "bill-weakness",
+                    "committee",
+                    "committee-agenda-setting-authority",
+                    "committee-chair",
+                    "committee-hearing",
+                    "committee-member",
+                    "committee-report",
+                    "congressional-action-on-bills",
+                    "federal-agency",
+                    "floor-agenda",
+                    "floor-consideration",
+                    "formal-committee-attention",
+                    "house",
+                    "introduction-of-a-bill",
+                    "legislative-action",
+                    "majority-party-leader-in-the-house",
+                    "majority-party-leader-in-the-senate",
+                    "majority-vote",
+                    "markup",
+                    "member",
+                    "motion-to-proceed",
+                    "objection",
+                    "organized-interest",
+                    "panel-of-members",
+                    "party-leader",
+                    "policy-expertise",
+                    "policy-jurisdiction",
+                    "proposed-amendment",
+                    "recommended-change",
+                    "rules-committee",
+                    "selected-party",
+                    "senate",
+                    "senate-agreement-to-a-motion-to-proceed",
+                    "senator",
+                    "standing-committee",
+                    "streamlined-floor-consideration",
+                    "tailored-parameters-for-floor-consideration",
+                    "two-year-congress",
+                    "unanimous-consent-request"
+                  ],
+                  "type": "string"
+                },
+                "proposition_type": {
+                  "enum": [
+                    "COMPARISON_CONDITION"
+                  ],
+                  "type": "string"
+                },
+                "relationship_type": {
+                  "enum": [
+                    "CAUSES"
+                  ],
+                  "type": "string"
+                },
+                "right_operand_entity_id": {
+                  "enum": [
+                    "bill",
+                    "bill-referral",
+                    "bill-strength",
+                    "bill-weakness",
+                    "committee",
+                    "committee-agenda-setting-authority",
+                    "committee-chair",
+                    "committee-hearing",
+                    "committee-member",
+                    "committee-report",
+                    "congressional-action-on-bills",
+                    "federal-agency",
+                    "floor-agenda",
+                    "floor-consideration",
+                    "formal-committee-attention",
+                    "house",
+                    "introduction-of-a-bill",
+                    "legislative-action",
+                    "majority-party-leader-in-the-house",
+                    "majority-party-leader-in-the-senate",
+                    "majority-vote",
+                    "markup",
+                    "member",
+                    "motion-to-proceed",
+                    "objection",
+                    "organized-interest",
+                    "panel-of-members",
+                    "party-leader",
+                    "policy-expertise",
+                    "policy-jurisdiction",
+                    "proposed-amendment",
+                    "recommended-change",
+                    "rules-committee",
+                    "selected-party",
+                    "senate",
+                    "senate-agreement-to-a-motion-to-proceed",
+                    "senator",
+                    "standing-committee",
+                    "streamlined-floor-consideration",
+                    "tailored-parameters-for-floor-consideration",
+                    "two-year-congress",
+                    "unanimous-consent-request"
+                  ],
+                  "type": "string"
+                },
+                "statement": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "statement",
+                "confidence",
+                "origin",
+                "proposition_type",
+                "left_operand_entity_id",
+                "right_operand_entity_id",
+                "outcome_entity_id",
+                "relationship_type",
+                "comparison_operator"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "missing_symbols": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "reason": {
+                  "type": "string"
+                },
+                "semantic_item": {
+                  "type": "string"
+                },
+                "surface_form": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "surface_form",
+                "semantic_item",
+                "reason"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "relationships": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "confidence": {
+                  "maximum": 1,
+                  "minimum": 0,
+                  "type": "number"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "origin": {
+                  "enum": [
+                    "SOURCE",
+                    "INFERRED"
+                  ],
+                  "type": "string"
+                },
+                "relationship_type": {
+                  "enum": [
+                    "IS_A",
+                    "PART_OF",
+                    "CAUSES",
+                    "INCREASES",
+                    "DECREASES",
+                    "ENABLES",
+                    "REQUIRES",
+                    "CONSTRAINS",
+                    "PRECEDES",
+                    "TRANSFORMS_INTO",
+                    "INTERACTS_WITH",
+                    "MEASURED_BY",
+                    "EXAMPLE_OF",
+                    "CONTRADICTS",
+                    "CREATES",
+                    "INDUCES",
+                    "EXERTS_FORCE_ON",
+                    "AFFECTS",
+                    "BINDS_TO",
+                    "TRANSFERS_TO"
+                  ],
+                  "type": "string"
+                },
+                "source_entity_id": {
+                  "enum": [
+                    "bill",
+                    "bill-referral",
+                    "bill-strength",
+                    "bill-weakness",
+                    "committee",
+                    "committee-agenda-setting-authority",
+                    "committee-chair",
+                    "committee-hearing",
+                    "committee-member",
+                    "committee-report",
+                    "congressional-action-on-bills",
+                    "federal-agency",
+                    "floor-agenda",
+                    "floor-consideration",
+                    "formal-committee-attention",
+                    "house",
+                    "introduction-of-a-bill",
+                    "legislative-action",
+                    "majority-party-leader-in-the-house",
+                    "majority-party-leader-in-the-senate",
+                    "majority-vote",
+                    "markup",
+                    "member",
+                    "motion-to-proceed",
+                    "objection",
+                    "organized-interest",
+                    "panel-of-members",
+                    "party-leader",
+                    "policy-expertise",
+                    "policy-jurisdiction",
+                    "proposed-amendment",
+                    "recommended-change",
+                    "rules-committee",
+                    "selected-party",
+                    "senate",
+                    "senate-agreement-to-a-motion-to-proceed",
+                    "senator",
+                    "standing-committee",
+                    "streamlined-floor-consideration",
+                    "tailored-parameters-for-floor-consideration",
+                    "two-year-congress",
+                    "unanimous-consent-request"
+                  ],
+                  "type": "string"
+                },
+                "statement": {
+                  "type": "string"
+                },
+                "target_entity_id": {
+                  "enum": [
+                    "bill",
+                    "bill-referral",
+                    "bill-strength",
+                    "bill-weakness",
+                    "committee",
+                    "committee-agenda-setting-authority",
+                    "committee-chair",
+                    "committee-hearing",
+                    "committee-member",
+                    "committee-report",
+                    "congressional-action-on-bills",
+                    "federal-agency",
+                    "floor-agenda",
+                    "floor-consideration",
+                    "formal-committee-attention",
+                    "house",
+                    "introduction-of-a-bill",
+                    "legislative-action",
+                    "majority-party-leader-in-the-house",
+                    "majority-party-leader-in-the-senate",
+                    "majority-vote",
+                    "markup",
+                    "member",
+                    "motion-to-proceed",
+                    "objection",
+                    "organized-interest",
+                    "panel-of-members",
+                    "party-leader",
+                    "policy-expertise",
+                    "policy-jurisdiction",
+                    "proposed-amendment",
+                    "recommended-change",
+                    "rules-committee",
+                    "selected-party",
+                    "senate",
+                    "senate-agreement-to-a-motion-to-proceed",
+                    "senator",
+                    "standing-committee",
+                    "streamlined-floor-consideration",
+                    "tailored-parameters-for-floor-consideration",
+                    "two-year-congress",
+                    "unanimous-consent-request"
+                  ],
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "source_entity_id",
+                "relationship_type",
+                "target_entity_id",
+                "statement",
+                "confidence",
+                "origin"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "transfer_events": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "comparison_operator": {
+                  "type": "null"
+                },
+                "confidence": {
+                  "maximum": 1,
+                  "minimum": 0,
+                  "type": "number"
+                },
+                "destination_entity_id": {
+                  "enum": [
+                    "bill",
+                    "bill-strength",
+                    "bill-weakness",
+                    "committee",
+                    "committee-agenda-setting-authority",
+                    "committee-chair",
+                    "committee-member",
+                    "committee-report",
+                    "federal-agency",
+                    "floor-agenda",
+                    "house",
+                    "majority-party-leader-in-the-house",
+                    "majority-party-leader-in-the-senate",
+                    "member",
+                    "motion-to-proceed",
+                    "organized-interest",
+                    "panel-of-members",
+                    "party-leader",
+                    "policy-expertise",
+                    "policy-jurisdiction",
+                    "proposed-amendment",
+                    "recommended-change",
+                    "rules-committee",
+                    "selected-party",
+                    "senate",
+                    "senator",
+                    "standing-committee",
+                    "tailored-parameters-for-floor-consideration",
+                    "two-year-congress",
+                    "unanimous-consent-request"
+                  ],
+                  "type": "string"
+                },
+                "event_entity_id": {
+                  "enum": [
+                    "bill-referral",
+                    "committee-hearing",
+                    "congressional-action-on-bills",
+                    "floor-consideration",
+                    "formal-committee-attention",
+                    "introduction-of-a-bill",
+                    "legislative-action",
+                    "majority-vote",
+                    "markup",
+                    "objection",
+                    "senate-agreement-to-a-motion-to-proceed",
+                    "streamlined-floor-consideration"
+                  ],
+                  "type": "string"
+                },
+                "object_entity_id": {
+                  "enum": [
+                    "bill",
+                    "bill-referral",
+                    "bill-strength",
+                    "bill-weakness",
+                    "committee",
+                    "committee-agenda-setting-authority",
+                    "committee-chair",
+                    "committee-hearing",
+                    "committee-member",
+                    "committee-report",
+                    "congressional-action-on-bills",
+                    "federal-agency",
+                    "floor-agenda",
+                    "floor-consideration",
+                    "formal-committee-attention",
+                    "house",
+                    "introduction-of-a-bill",
+                    "legislative-action",
+                    "majority-party-leader-in-the-house",
+                    "majority-party-leader-in-the-senate",
+                    "majority-vote",
+                    "markup",
+                    "member",
+                    "motion-to-proceed",
+                    "objection",
+                    "organized-interest",
+                    "panel-of-members",
+                    "party-leader",
+                    "policy-expertise",
+                    "policy-jurisdiction",
+                    "proposed-amendment",
+                    "recommended-change",
+                    "rules-committee",
+                    "selected-party",
+                    "senate",
+                    "senate-agreement-to-a-motion-to-proceed",
+                    "senator",
+                    "standing-committee",
+                    "streamlined-floor-consideration",
+                    "tailored-parameters-for-floor-consideration",
+                    "two-year-congress",
+                    "unanimous-consent-request"
+                  ],
+                  "type": "string"
+                },
+                "origin": {
+                  "enum": [
+                    "SOURCE",
+                    "INFERRED"
+                  ],
+                  "type": "string"
+                },
+                "proposition_type": {
+                  "enum": [
+                    "TRANSFER_EVENT"
+                  ],
+                  "type": "string"
+                },
+                "relationship_type": {
+                  "enum": [
+                    "TRANSFERS_TO"
+                  ],
+                  "type": "string"
+                },
+                "statement": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "statement",
+                "confidence",
+                "origin",
+                "proposition_type",
+                "event_entity_id",
+                "object_entity_id",
+                "destination_entity_id",
+                "relationship_type",
+                "comparison_operator"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "relationships",
+          "comparison_conditions",
+          "transfer_events",
+          "missing_symbols"
+        ],
+        "type": "object"
+      },
+      "strict": true,
+      "type": "json_schema"
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 6715,
+    "input_tokens_details": {
+      "cache_write_tokens": 6712,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1105,
+    "output_tokens_details": {
+      "reasoning_tokens": 516
+    },
+    "total_tokens": 7820
+  },
+  "user": null
+}

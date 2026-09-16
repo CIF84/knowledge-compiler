@@ -1,0 +1,304 @@
+{
+  "symbols": [
+    {
+      "aliases": [],
+      "description": "Action concerning bills in Congress.",
+      "entity_type": "PROCESS",
+      "name": "Congressional action on bills"
+    },
+    {
+      "aliases": [
+        "bills"
+      ],
+      "description": "A proposed legislative measure introduced by a Member of the House or Senate.",
+      "entity_type": "OBJECT",
+      "name": "bill"
+    },
+    {
+      "aliases": [
+        "party leaders"
+      ],
+      "description": "A leader of a party in a congressional chamber who plans and coordinates action on bills.",
+      "entity_type": "COMPONENT",
+      "name": "party leader"
+    },
+    {
+      "aliases": [
+        "majority party leaders in the House"
+      ],
+      "description": "A majority party leader in the House with tools for setting the floor agenda.",
+      "entity_type": "COMPONENT",
+      "name": "majority party leader in the House"
+    },
+    {
+      "aliases": [
+        "majority party leaders in the Senate"
+      ],
+      "description": "A majority party leader in the Senate who may offer a motion to proceed to a specific bill.",
+      "entity_type": "COMPONENT",
+      "name": "majority party leader in the Senate"
+    },
+    {
+      "aliases": [
+        "House of Representatives"
+      ],
+      "description": "A congressional chamber in which Members introduce bills and bills may receive floor consideration.",
+      "entity_type": "SYSTEM",
+      "name": "House"
+    },
+    {
+      "aliases": [],
+      "description": "A congressional chamber in which Members introduce bills and bills may receive floor consideration.",
+      "entity_type": "SYSTEM",
+      "name": "Senate"
+    },
+    {
+      "aliases": [],
+      "description": "The agenda for consideration of bills on a chamber floor.",
+      "entity_type": "OBJECT",
+      "name": "floor agenda"
+    },
+    {
+      "aliases": [
+        "standing committees"
+      ],
+      "description": "A committee composed of Members that holds policy expertise and operates within specified policy jurisdictions.",
+      "entity_type": "COMPONENT",
+      "name": "standing committee"
+    },
+    {
+      "aliases": [
+        "committees"
+      ],
+      "description": "A congressional committee to which a bill is referred or that may initiate legislative action.",
+      "entity_type": "COMPONENT",
+      "name": "committee"
+    },
+    {
+      "aliases": [
+        "panels of Members"
+      ],
+      "description": "A panel of Members forming a standing committee.",
+      "entity_type": "COMPONENT",
+      "name": "panel of Members"
+    },
+    {
+      "aliases": [
+        "Members"
+      ],
+      "description": "A Member of the House or Senate who may introduce a bill or participate in committee action.",
+      "entity_type": "COMPONENT",
+      "name": "Member"
+    },
+    {
+      "aliases": [],
+      "description": "Expertise residing in standing committees concerning policy.",
+      "entity_type": "CONCEPT",
+      "name": "policy expertise"
+    },
+    {
+      "aliases": [
+        "policy jurisdictions"
+      ],
+      "description": "A specified policy area within which a committee develops and assesses proposed legislation.",
+      "entity_type": "CONCEPT",
+      "name": "policy jurisdiction"
+    },
+    {
+      "aliases": [
+        "introduces a bill"
+      ],
+      "description": "The act by which a Member of the House or Senate introduces a bill.",
+      "entity_type": "PROCESS",
+      "name": "introduction of a bill"
+    },
+    {
+      "aliases": [
+        "referred to the committee"
+      ],
+      "description": "Referral of an introduced bill to the committee or committees in a chamber with jurisdiction over its elements.",
+      "entity_type": "PROCESS",
+      "name": "bill referral"
+    },
+    {
+      "aliases": [
+        "committee chairs"
+      ],
+      "description": "The chair of a committee with primary agenda-setting authority for that committee.",
+      "entity_type": "COMPONENT",
+      "name": "committee chair"
+    },
+    {
+      "aliases": [],
+      "description": "The primary authority to identify which bills receive formal committee attention.",
+      "entity_type": "CONCEPT",
+      "name": "committee agenda-setting authority"
+    },
+    {
+      "aliases": [],
+      "description": "The two-year period during which a committee identifies bills for formal attention.",
+      "entity_type": "SYSTEM",
+      "name": "two-year Congress"
+    },
+    {
+      "aliases": [],
+      "description": "Formal consideration of a bill by a committee.",
+      "entity_type": "PROCESS",
+      "name": "formal committee attention"
+    },
+    {
+      "aliases": [],
+      "description": "Action on legislation that a committee may initiate on its own or undertake after referral.",
+      "entity_type": "PROCESS",
+      "name": "legislative action"
+    },
+    {
+      "aliases": [
+        "hearings"
+      ],
+      "description": "A committee event providing Members and the public an opportunity to hear from selected parties about a bill's strengths and weaknesses.",
+      "entity_type": "PROCESS",
+      "name": "committee hearing"
+    },
+    {
+      "aliases": [
+        "selected parties"
+      ],
+      "description": "A party, such as a federal agency or organized interest, from which committee members and the public may hear during a hearing.",
+      "entity_type": "COMPONENT",
+      "name": "selected party"
+    },
+    {
+      "aliases": [],
+      "description": "An example of a selected party that may provide views about a bill during a hearing.",
+      "entity_type": "SYSTEM",
+      "name": "federal agency"
+    },
+    {
+      "aliases": [],
+      "description": "An example of a selected party that may provide views about a bill during a hearing.",
+      "entity_type": "COMPONENT",
+      "name": "organized interest"
+    },
+    {
+      "aliases": [
+        "strengths"
+      ],
+      "description": "A strength of a bill discussed during a committee hearing.",
+      "entity_type": "CONCEPT",
+      "name": "bill strength"
+    },
+    {
+      "aliases": [
+        "weaknesses"
+      ],
+      "description": "A weakness of a bill discussed during a committee hearing.",
+      "entity_type": "CONCEPT",
+      "name": "bill weakness"
+    },
+    {
+      "aliases": [],
+      "description": "A committee proceeding on a bill during which committee members vote on proposed amendments.",
+      "entity_type": "PROCESS",
+      "name": "markup"
+    },
+    {
+      "aliases": [
+        "proposed amendments"
+      ],
+      "description": "An amendment proposed for a bill and subject to voting by committee members during a markup.",
+      "entity_type": "OBJECT",
+      "name": "proposed amendment"
+    },
+    {
+      "aliases": [
+        "committee members"
+      ],
+      "description": "A Member participating in committee action and voting on proposed amendments.",
+      "entity_type": "COMPONENT",
+      "name": "committee member"
+    },
+    {
+      "aliases": [],
+      "description": "The vote by which a committee agrees to report a bill after a markup.",
+      "entity_type": "PROCESS",
+      "name": "majority vote"
+    },
+    {
+      "aliases": [
+        "report the bill"
+      ],
+      "description": "A committee's report of a bill, including any recommended changes adopted in the markup, to its chamber.",
+      "entity_type": "OBJECT",
+      "name": "committee report"
+    },
+    {
+      "aliases": [
+        "recommended changes"
+      ],
+      "description": "A change to a bill adopted in the markup and included in the committee's report.",
+      "entity_type": "OBJECT",
+      "name": "recommended change"
+    },
+    {
+      "aliases": [],
+      "description": "Consideration of a bill on the floor of a congressional chamber.",
+      "entity_type": "PROCESS",
+      "name": "floor consideration"
+    },
+    {
+      "aliases": [],
+      "description": "A type of floor consideration used for a bill in the House.",
+      "entity_type": "PROCESS",
+      "name": "streamlined floor consideration"
+    },
+    {
+      "aliases": [],
+      "description": "The committee that House majority party leaders may ask to propose tailored parameters for floor consideration.",
+      "entity_type": "COMPONENT",
+      "name": "Rules Committee"
+    },
+    {
+      "aliases": [],
+      "description": "Parameters proposed for the House floor consideration of a bill.",
+      "entity_type": "OBJECT",
+      "name": "tailored parameters for floor consideration"
+    },
+    {
+      "aliases": [
+        "motion to proceed to a specific bill"
+      ],
+      "description": "A Senate motion to proceed to a specific bill.",
+      "entity_type": "OBJECT",
+      "name": "motion to proceed"
+    },
+    {
+      "aliases": [],
+      "description": "The Senate's agreement to a motion to proceed to a specific bill.",
+      "entity_type": "PROCESS",
+      "name": "Senate agreement to a motion to proceed"
+    },
+    {
+      "aliases": [],
+      "description": "A request to bring a bill to the Senate floor when no Senator objects.",
+      "entity_type": "OBJECT",
+      "name": "unanimous consent request"
+    },
+    {
+      "aliases": [
+        "Senators"
+      ],
+      "description": "A Member of the Senate who may object to a unanimous consent request.",
+      "entity_type": "COMPONENT",
+      "name": "Senator"
+    },
+    {
+      "aliases": [
+        "objects"
+      ],
+      "description": "An objection by a Senator to a unanimous consent request to bring a bill to the Senate floor.",
+      "entity_type": "PROCESS",
+      "name": "objection"
+    }
+  ]
+}

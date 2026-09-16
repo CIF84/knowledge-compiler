@@ -1,0 +1,643 @@
+{
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1789548716.0,
+  "conversation": null,
+  "created_at": 1789548699.0,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "id": "resp_0652a5f4cc1ca0f7016aaa589b4ea087d2aa1f1bc894e5dfe5",
+  "incomplete_details": null,
+  "instructions": "You perform Stage 2 semantic structure extraction for Candidate B v2.\n\nUse only the exact source and immutable frozen entity inventory. Every endpoint must\nbe one of the exact supplied entity IDs. Do not invent or substitute an identity.\nReturn only source-supported canonical relationships, COMPARISON_CONDITION instances,\nTRANSFER_EVENT instances, and missing_symbols diagnostics in the requested schema.\n\nEmit topology only when the exact source-supported meaning fits the trusted relationship\ncontract or one of the two canonical proposition forms. Otherwise omit the meaning from\nStage-2 topology. Never approximate, coerce, or choose a nearby predicate/proposition.\nStage 3 independently reads the exact source and can preserve omitted meaning as an\nexact grounded claim. Do not use missing_symbols for non-topological omission; reserve it\nfor an otherwise valid canonical semantic item lacking a required frozen identity.\n\nCOMPARISON_CONDITION means a comparison used as a causal antecedent with a distinct\nLEFT_OPERAND and RIGHT_OPERAND, an OUTCOME caused by that condition, GREATER_THAN, and\nCAUSES. A standalone comparison without a causal outcome is not this proposition.\nTRANSFER_EVENT means a PROCESS EVENT, transferred OBJECT, and non-PROCESS DESTINATION,\nwith TRANSFERS_TO and no comparison operator. Input to a calculation is not automatically\na transfer event. Emit neither proposition when these exact meanings are unsupported.\n\nDo not return entities, claims, evidence, teaching prose, or new semantic vocabulary.\nProposition IDs are assigned by trusted code; do not return them.\n\nACTIVE RELATIONSHIP CONTRACTS (source --TYPE--> target):\nIS_A [STRUCTURAL; direction=instance_to_type]\n  meaning: The source is a kind, category, or subtype of the target.\n  roles: source=instance or subtype; target=broader type or category\n  use: The source can truthfully be described as a target.\n  avoid: Do not use for parts, examples, similarity, or temporary states.\nPART_OF [STRUCTURAL; direction=part_to_whole]\n  meaning: The source is a constituent or component of the target.\n  roles: source=part or component; target=containing whole\n  use: The source exists as a component or subpart of the target.\n  avoid: Never reverse whole and part; do not use for interaction or dependency.\nEXAMPLE_OF [STRUCTURAL; direction=example_to_concept]\n  meaning: The source is an illustrative instance of the target concept.\n  roles: source=example; target=concept illustrated\n  use: The source is presented as an example of the target.\n  avoid: Do not use merely because the source is a subtype; prefer IS_A for classification.\nCAUSES [CAUSAL; direction=cause_to_effect]\n  meaning: The source brings about the target as an effect.\n  roles: source=cause; target=effect\n  use: The source is stated to produce the target outcome.\n  avoid: Do not use for chronology, association, contribution, or unspecified influence.\nAFFECTS [CAUSAL; direction=influence_to_affected]\n  meaning: The source causally influences the target without a specified direction or complete production.\n  roles: source=influence; target=affected entity, process, or variable\n  use: The source changes or influences the target, but the text does not support CAUSES, INCREASES, or DECREASES.\n  avoid: Do not use for mere association, chronology, physical force, or interaction with no stated effect.\nINCREASES [CAUSAL; direction=increaser_to_increased_variable]\n  meaning: The source causally raises the amount, rate, value, probability, or intensity of the target.\n  roles: source=causal factor; target=quantity or variable increased\n  use: The source is explicitly said to make the target greater, faster, more likely, or more intense.\n  avoid: Do not infer from nearby words such as more or faster; never use when the source says slower, lower, or less.\nDECREASES [CAUSAL; direction=decreaser_to_decreased_variable]\n  meaning: The source causally lowers the amount, rate, value, probability, or intensity of the target.\n  roles: source=causal factor; target=quantity or variable decreased\n  use: The source is explicitly said to make the target smaller, slower, less likely, or less intense.\n  avoid: Do not use for absence, prevention without a scalar target, or mere negative association.\nINDUCES [CAUSAL; direction=inducer_to_induced_effect]\n  meaning: The source produces the target through an explicitly described induction mechanism.\n  roles: source=inducing phenomenon; target=induced phenomenon\n  use: The source explicitly says induces or describes a recognized induction mechanism.\n  avoid: Do not use as a metaphor for generic causation, influence, motivation, or historical response.\nENABLES [DEPENDENCY; direction=enabler_to_enabled]\n  meaning: The source makes the target possible without necessarily causing it to occur.\n  roles: source=enabling condition or capability; target=capability or process made possible\n  use: The target could not occur, or is materially made possible, because of the source.\n  avoid: Do not use for delivery, participation, weak assistance, or an effect that actually occurred.\nREQUIRES [DEPENDENCY; direction=dependent_to_requirement]\n  meaning: The source depends on the target as a prerequisite or necessary resource.\n  roles: source=dependent; target=prerequisite or required resource\n  use: The source cannot operate or occur as described without the target.\n  avoid: Do not reverse prerequisite and dependent; do not use for optional support.\nCONSTRAINS [DEPENDENCY; direction=constraint_to_constrained]\n  meaning: The source limits the possible behavior, values, or choices of the target.\n  roles: source=constraint; target=constrained entity, process, or variable\n  use: The source imposes a limit, rule, boundary, or restriction on the target.\n  avoid: Do not use to mean unchanged, unrelated, merely different, or causally reduced.\nPRECEDES [TEMPORAL; direction=earlier_to_later]\n  meaning: The source occurs before the target in time or an explicit process sequence.\n  roles: source=earlier event or process; target=later event or process\n  use: The source explicitly occurs before, previously, first, then, or after relative to the target.\n  avoid: Do not infer causality from order; do not reverse earlier and later.\nINTERACTS_WITH [INTERACTION; symmetric]\n  meaning: The source and target directly interact, with no more precise directional semantics supported.\n  roles: source=interaction participant; target=interaction participant\n  use: The text supports direct mutual interaction but not a more precise active predicate.\n  avoid: Do not use for distant association, one-way effect, dependency, or chronology.\nBINDS_TO [INTERACTION; symmetric]\n  meaning: The source physically or chemically binds or attaches to the target.\n  roles: source=binding participant; target=binding participant\n  use: The source explicitly binds or attaches to the target.\n  avoid: Do not use for metaphorical commitment, dependency, influence, or literal physical force.\nTRANSFERS_TO [INTERACTION; direction=transferred_item_to_destination]\n  meaning: The source item, material, or information moves to the target destination or recipient.\n  roles: source=item, material, or information transferred; target=destination or recipient\n  use: The source is explicitly carried, delivered, moved, or transferred to the target.\n  avoid: Do not make the carrier the source unless the carrier itself moves to the destination; do not use for enabling.\nEXERTS_FORCE_ON [INTERACTION; direction=force_exerter_to_physical_target]\n  meaning: The source exerts a literal physical force on the target.\n  roles: source=physical force source; target=physical object receiving force\n  use: A literal physical force is explicitly exerted on the target.\n  avoid: Never use metaphorically for influence, contribution, binding, pressure, or causation.\nTRANSFORMS_INTO [TRANSFORMATION; direction=prior_state_to_resulting_state]\n  meaning: The source itself changes state or identity and becomes the target.\n  roles: source=entity or state before transformation; target=same entity or resulting material after transformation\n  use: The source itself becomes the target through a transformation.\n  avoid: Do not use when an actor causes, creates, attempts, participates in, or responds to the target.\nCREATES [TRANSFORMATION; direction=creator_to_created]\n  meaning: The source produces or brings a distinct target into existence.\n  roles: source=producer or generative process; target=newly produced entity or result\n  use: The source produces a target that is distinct from the source.\n  avoid: Do not use when the source itself becomes the target; use TRANSFORMS_INTO instead.\nMEASURED_BY [DESCRIPTIVE; direction=measurand_to_measure]\n  meaning: The source property or variable is quantified or assessed by the target metric, observation, or procedure.\n  roles: source=property or variable measured; target=metric, observation, or measurement procedure\n  use: The target is explicitly how the source is measured or quantified.\n  avoid: Do not point to something that merely responds to, correlates with, or exemplifies the source.\nCONTRADICTS [DESCRIPTIVE; symmetric]\n  meaning: The source and target assert mutually incompatible propositions.\n  roles: source=proposition or claim; target=incompatible proposition or claim\n  use: Both sides are explicit propositions that cannot simultaneously hold as stated.\n  avoid: Do not use for difference, disagreement without incompatibility, trade-off, or negative causality.",
+  "max_output_tokens": null,
+  "max_tool_calls": null,
+  "metadata": {},
+  "model": "gpt-5.6-luna",
+  "moderation": null,
+  "object": "response",
+  "output": [
+    {
+      "content": [],
+      "encrypted_content": "gAAAAABqqlisYxrR80P0nzhP7VLCjMDgAanFyufjgWOwFSj6tTI8KBwtuvntDipQoeMz0QVCN596ZSY-CypKcnOGfUF1d4wBNTDs3j9jKLZZ2bKLhJr-_QOMBjlFe414ro_LAbTO3BwH7hp_T3RkSpFtYPtgWOPqTz6MmilZ2dAC-jeFY1dY-AKq-UZDtZKZAXE9AhfKrADd0CqjvKR4ZIHIzpCwHdFwjv6j0cVjVbQL7qkiF9ZIBZqPGbOVRW0ALVydx7FVlYVBKvkH_CmQuuXvbbeVRXU0j4nxkNQmrLEeHEh9MuNG4Gz2pR7rldf4mnMHoTuZ_VxjWi-HRfGicGwsWS4DjiqxWPB_84pDZFydnz1e_2pbhNot4tL9_gpIJGzsDEl75GXJ7v0VTNd9gaG2vp9aKWcKIh0qUtAzHDxgtgWe3z_6uipu9kObhucFdxy414PhJGT_P7PmoTLNDBSuHIUnOM9xviPmlbi1soBGNEfAHjdCZuYTkQTD7MrnE9k4LwHSpnia56K2wKM9yS686dpahWwP_hGtx4MfNG3_tgu-14WYi41KYswtR42XxasLbY0SpWWIVjt2PSGtA8lJg9eJI_ty26qyObUMpZ_PYZW8GwbVqKHKN8YUJTGLMK_smscLoXOF26I3UoU2qDv1m7yYM7_zBubYNKK8xeo5MonlLaRBj2MFpQ7ayJRCnabxyjmOp7Ww_mwAGeWY_vIMTWRcIm4iiUCAqAAPb6OJxz1NuRJwt2lFGREo516-qukw-1I54EVS6SAfJALXMq7LurtlX89n_wvZ1e8gVJzPuybMb-w4H30Lp-5oKsODKmh4v-nCXpNAL39sYT3MBFX8pj0OD-JRYDMGOZTI6U5BG-k48e6Ert1ZANAKq2SD1m58nhicR-m9f4bFbkD99WegOQiVpFR8zL26H7Fpx8tF9rKbnWqtSduHWlfVrCcekuh1zWHXyM419mPRL85J5_P0CCkoNGWf5VoBqO3zWnIjCdwk6lItUcObpy1zy8TUhA4UqvSh1arY6SC0hyjKi-ZaEgbfjsNxQRYXbqmLeLmNb0eYHQVTeKYVPK9c0JiX7-jcWcLOIrIaVibQXkqajlHj8zTTym7RugTVusR5VSPJa2WBsxlr0VlRcHWBCY9RRl-4Emys9hMFsca8JGJqRXai94-ejGNkMuhiGfIoh9RQal35uD5Aji95J4nIMPaBDdD58E7bvBbfGdtvmCWXEwgNBvWwQ8SAoro-zTo37hjyeisQOwax0mfuPortU2yLl7QEDLu6vh3OaIDvQ5nrULEStzBvP7Q2di2jeq_zOQiy1ALg0DiyvcYOHECc5hVdL1PXQzD7-qOoMKpDomY3c3tDtO9WvoNyw4xLzpSgTs3HB4Y4COiUjW-WDp9uy-lhGZtX3texP1kV4Ov8G_hPx-sPKt3phXe2anzci2b574cfMcLMo8Mbvq5S2S8vaGUi6zqhggTQnGJAAUP0GyhiPVH_f-uXHaGIf-XQvuKYVYxZFMpQCllj5li8CopdsxnZ_VTejFVbWkAYZukRyrLX1wNKQW2xhxW3c6KGScYSYNGxJnT-6Yx1Ay9oLFuFkWD0DIfkpTYcAOUDKVRn6yrRWXU9wG3tChBPLURgOp0rsAnWlWrBSm_sl7b_rhfa346dkVrrKSJFVpcFp4r9YErEdTX0nsAZkETXCHo6cUD25QstG1de-_vyz2zDymuSuLHTO2pBh1tDeQUICNTpzcHcQcDRFEimT3vYx_B3SDwKtoVtOK6k9181IERQX_NYvffp1DWoawn53URKvs8RdiLPWHpH4EbjEx64XIhIbwhmq4ePrq5aOIOAbWjR7SU7YtkvG5HnejBBs8XGqoRGVRKKIvxjcYqaylnXy1z_NwW_fR8WMHl1xgr8gpnpV3CbjA7hl-9L-mL_u7dvyCqf0eJqTnMnbI0gWGNlOPY34-h-dgUpbB9zHVdL4P326nlwjBCtExVrX7pBsNjlUeZezl5P9GLtSF_H3g82KMU8HHd0XjIKLFvDG_l00LxRJWUhi_lO-9qYzroNf2SzQe6_qARn-IMTxq0xByQcafE4HVdlgTG_tIea0Q8i5x7bbSNgEh7rhg5q1qQkrpDxd11nFt7hu5W3SnOAxLZlnlgtIG8v3Xra7M9w8rJj37aJAH_D28yg2P-FojMrNjallyo4d1GKB0bH6oB72K_KO55RlT6KBRWuoa2sEBe9i3h4Knv2TUkroFNBaqI5r0opFYkKWWLGJI1FiczxRWSjTypJhPEeSeCzJGRUcwi7CSjg2bN0rd0PkDLVeQBcVef2AEHCtciO0Y_2qCAy2N6sYFzuivuulBPm_SMnIDPrilUrnIsFMAVTqGF8z5reKf-L97ZvBzOETwMP7KIrW928dLRMioXmtemc7ldu3dcHlSZa5oraGB9pydim9kQJvCgDvJ9ukD1Y3iXKThj3I8LLtaDW87wKJSnQ7dhhys6sU2zaxlNmf83gav2g6BroteSi4_WLoP3OOyroYl8ouE3kpI0rKaeqa9pF-e0WyucoPqbVO26ZN2O78PlyGhWnotRxh_Jl4eoktAObiSXCF_cTVo-f3onYGRaZRsXEYkrzMYF8cDdaWZUSdF1gkehFNkEAMT4T9aRFoQp5weMTX_6tV0XrhhFqbyJPoYIUqaj1MVqVl2zsP8uxeg-h52LETHiEbldMsZyuEbAaecN69eX9WuTXB8zlxTDvS0K2trcEPUeOzRp1n18XX8JgzUHi06P2Wi7EMXu7ux3HKbFRCpIYPW3MWCGsXpM0xM4UE4dDltZZ95WSHXqQhOYTyIAEDqd7kRqj3At8CND3k5a1btfFVS7blyQVUDeyxByj8_1e6s3zhITzG4Wn4EDwfjozMkAbrUpNe1mPncH87O7fpR46MjQ6tBjZSBC8krF7z-lkbzRzM9oO6f_NYJ2E0yVf8oNnzHGEzEG7NAS2JtWDMHCnTJgU5tgFMTgBsFlKopdvqoP2JZMmUFU3vVozXKGmS0rJPGFPRzDf7wIga8Js1o4rAedJtnAj4bdleNHngjzk9lWclBl4B63_pLpO1VPryyvQIWn-hwtTll-YZtktcx5VztLtQh7qqJVxbMZVQHEecl0b56gHGPRG2i1vGdn1mjsl03FTWPEOpczCvJT5QcgAzOk8JfaAxQhb5GGsqZXXMQMI5FMtIOdmNEAfc_og1UejhpcSGXupVV_eGKS3zE1OOfWMJpScWgKr2QhyD5p8r7mqMArmEWZWdXqQZQeGBS6wP5-lpmMFn4-TM7NBMZYQhAy2BzznMjm9hprtFNG7LwykLwyAKi1lTeJoaw8j9ItG03jkxTWaPv4AncvS5M25kcnd0ea-uwjpqADkJQLk8ol1cMkta6QDI7KFIhhSqvXa3Fpp-RcQeysyxtt15JkU_8n3bIRlgma2BLLtcqFagTt1D-sL98BO0GG-LjlbOXzn17kl8Q-JiL6Y3PoTSwN9iz06OTbDZ9TFDy0bx69JvjaP6yvOt6hRntI9Y1Qj1WwftYW_6zEhzvLdCgjmF5TTxOF6GofOZrRkqZiHG1d3ehsG13G1-Hi9i4bVahH1xfkcNF5yYoW9inoyIWNgtXyuKCtKZDwAXgAHAecHt6jcZntBOtqM4Z26oqhNYg_onM-aGueuYQ4nkdC4eapoyp_WC-Sm0bsh6YwF_r7JOvpvGHHEPsXr-HzfM5dx1XJtqq3UhHsm900Q6dFVrsk6_eer1x2sivKqH-C-zjSsBWuG0KVuDogmC3TwIGmmK7n5LXKx4yDUYVpS45I-qCfrv_pccm0_Al5OOtbsxRe2eJF5y6cWcUEDbUGPvhmknF9MmPnAS7xJh4JDqOoE7W9PfYYQvsoRCOZZdK-c4vFPWZOQO2BQKO_8nS6BPU-nFI_4R4bt4lvVDYx4ScBow6Omzobab7bB9Gd0oIchwzuD9-DkCtJOYPAP8sNNf6Plpjm3F4YrEjuKYR-MAXrQo1RL5xuJygCWukDKn0xo2ZXfuVYQ5Qr0JcNcIla0c78btcjfTevBQ1rvt47ZxxeSxttde0H4_7UVdHv8BIJDqD8Vlw9OHoAgrAOEFLMzna-pfVI8so5b7LZ57erSjiqR_OB3UBnc42LN6OlXkdaOwrcG7wrn3Pi_b7eWLMgwHL6jOCyTaiYt0vC0GuTzr3iIh7nkleDjOzqmL0-YYcw50aB6o1EsePxTdX6ZHrWFWmr7X_h-LjygarX0BTdedfBcxHBMWpO1xoQ2hmrabayT2IbsCK3vWhc7IfvEAPAt7JsaiKPSmzTy6P5pPmWQeYlSmZMit3fpoWtY7ySK5aySIW6DGNK1UnBEis1yXJu7pxjjyVL3GXeVzK6Y04_a9xutLHTpxeF88hpS97pC-dWQzDKfsHSx3A4uDKdd2dbv6ApA1OtJUF7ZSKD9cDYatISuSzcGVgR4Om3AUFPrH60N25had34jFUk=",
+      "id": "rs_0652a5f4cc1ca0f7016aaa589c44b887d291ef7525f6ad253a",
+      "status": null,
+      "summary": [],
+      "type": "reasoning"
+    },
+    {
+      "content": [],
+      "encrypted_content": "gAAAAABqqlisf0UHRVBnpBgC6V2ZkgGDaXUDsNpM0eugKVuRyPcPgaYkytRmCuZeEBBEgapDFYPRu8kAGO3Mpigk9NE6OgpUkpsY6SFbDYC_dMhtCuIidP10rj_rc8qM-MXXjQGbC3G98hGEvJsluDYmMSLS3oZiI5k9lVUiXSE5KWZW38DWFyEc3_DW85vcHPJVAIZz2z8EwqDcj1xi3Z7CSfDrnmV2y6e7vyxUs463YBF5P1hp2aRBPD49xcokqwpK5Ie7xBGhAnnnSiqpWlCVcvBF1ONnYWMqEKF4XS1lNLgaEqlFnR8LPYlWaCYPcfZ8n1r3tSgPuZ8e3hjlKOOaQa6C4YHULc8RgVOyIpLflmfRAS0g5ixbH_rfrLRF4uW7HZuTjAMmIzKtYPDP82tBMQZqyK1CQOH_-PNSoZZJkzqWggbgog7SWgbVkW6fYtTrYrktLEGwyVh4RbyX1AlTzLM_hiD33sAckkTpQn0r9ohDMjr47yyAkgn4KebzMoqiLLE_rwDDfZkEue6n6wfXRUVKRDs-8n-RYjR7pwd3BOfowG8neE5WkJH2z4UlxD1_q1APLGOx-FzAVKSJ3tGEoS8w2UjAtxrdX4WjA0kY1k8JCw5bDqyw8zN20oJj566qpJJN0kAddrF-crMWTEO10VsrGaQ7l6AU4HKtHrc4l0jooNV1hiojUP1P3bIDSy06Q104o7tvqVt5PIJe5kN9Dqa8p6khRaAx4vL5mB9M74ktdYEguu6EGIUHRGI5nFOZF8h9yUjcrrx6NAwCrWWDAWxND_DAvuD1ge1hZTskmq393nggo4vSA86Bxbv7VaOcUYMieiIXmIquTPlaKONvGP2zWOMn9l7PSgbKmqVUhBpEq7MFnogFRNuKtbnufDi5nsBEQ0hP6gZSct5E5K_GYZw1oVbT_egKzg52vgp8u7wD9g8c8RjEskSX114V0mBEv_yJDZxsPJdVna_tCPAF5wRKOal2ASJeNTZZdTZd6DVhc92NcWzvT_G04X2JBSgPFfYi-KEVDumpxNikym7lWgbzs4R5jaWzOS6BHxfHv5E7Xk9xuluiiVT4LgNT71IRHCm-8fH2PmAWNnki3nFabCTIw3ZCjhh_OAbVmfZAEz3M5QbcW14kPC04-jydQGKFHSL88yXaRnr2rhOqWvMcXyHU4yG51SqNnunVk-Q8pGOd3zoQ56hrdRP1Ryn5XC68rZbuWk0dw3FeXpe0W9erzmyoOyRxZHrxnuaC4d18BmgcV4OMcuJHtBP1hn-mdvrfvX4X_9WHKi4ciiaay31glyYoOCZg1IrNjr-ELD6yItlo-lgtP-Ph2bVmv0LMH5JGs8V5zCb--VPjkiZKjMveA4DnW6iw2q6IBkL4AR5sNqIE9-NvOvcoURVzG5xgpX8Ym__08zsxf6i7P59j4xMQBgRdldCVTxYnVIRey2wV_mgORBdvQjg9eUOihFjKAN-5KBBsHDHjxaIa7a0A0BTP4enFiBKyhckzYbkHY6kxbGuxwTabp2QVhRejFFdw-mZnzDH8B2bUieC0Et157XY5RQGHSJAuQbOGQXcuvrHGfc106Rk78f001Syvm0U2bUG3NwQJ27uygdbPhoLtrP7HjBX6VWWdYDPTkVrZMF1qxH3DLPpkSE-dXNcIP_Y1631s1Xg0-xcPXoeupxOa7hN8OSBVbGYN3MBzuZljJ_bMey3Tdjx02IHs4Jmm9dh6vrDAxwjTpL-AO09UGiz3v_sMcA9BtXNUDKDkw8_vGq9UtI6nE0AIMXW2EFB4ar3WjCxQKAwlNZVG1rFiqy5PULzltVt_eVnwkUFhYgNXlhKaVmi-frEXabEPPpKyO9MrJagd9ZrvGHu6NXyKDAy0qbysUA9QAL9zKqer7ZmonUmUOgK5wBaX_YiKr5sEETKRKPyzhbXLzR-WtUx6-M45tL5U5n1VKBgPTsymiq-k3Qr3aZN3rzrmSUPxfrotvNMr7gON-NJ3BmWWzpDJxGZt14QD7KpjAsLdkDaP07wCjw5NyR8GqDjm0mFm1Oa882x1B-vX31HwucF7fgtH5g9LXMQ6Q4i5LDNa3jJF_Vpi7gXxLO_uMQbFhK8C5yUWAMuLKPY0-hbiX2Q45THxka1o1ixJIawXC2g0YSyRWv_iPqVyvw6I4SY_L3TU69zjT4V8w3orWeVk-K-ak617gIreX4WwamdBMf8FsTJFQEmG0hAydC4wSs3sP89iF9G3jZ7-Xt8owyjSh0uK9jYGbOpTglnm0yxxa34HwrVc28k0CRX5umGc4JzRC2RCtPSMYTdPK2atIXNWeJ7pEZqiORhYs0NO_Jj_vyr0PZ-EZ6e6atuFCRMnfJ1XxY7Htwuvi1OYs1TdvfWdwiROmenjINMgup0ggKWEaYtXbTEQeb9rfkV8FeDPN9vj1FsMD5K2QzpQHJmqvyiQXijKFlQ5yGR0JIcMsdX049NA2pnT0pxPMW5T9rzTz0ECNutIifhcsXhnoghHp4KxvG_f5730bsv9vTF-Tk7tey2sjwXCMRc3UlevlHZBNO3p7FcCWNkb4ByAC7bAGlDXKFyBs-4zCUNNQZ4J-zmU18Aw-YtHQavPXcq2z-ligmQWhtEo9De4eFgypGw-9-eFVojqmvkrkU9U23p74xE3LKqvIPy7I4x2pKblQjgPwn0BjDeq_dMi_jMQnt1YVLbopled-1YwEA22JVddrsn3IcwwE87kggGDM__0RgjMYTKtCfOGylh8DX79cEpCVWGpB3un5vmS6MOJRjl2-bJow4HmGTYiwdY8SCUl-ENG0UiZlcYrpr-zpyzGWZsYr7QjCNJnG8B_rmwYIN-QUw2AXLNPSYQ5qXUSOBxnaq4kyLxnCx9lkG-tG3fZfVrA5owPtbAriSfYD3BNko2u8OUD4mObRi6FuoXDRyWGvBAkcOzkuYiN_2ETTSOFDAsc330slkfkwYrT4DPEvMw0E3js9AwmF6GbZ6v0_Pgi8UCman4mL48WJ5x7z63-YWxqUf4wfnaKiTBriUt7dl_xFGwRhEzxejUdPGli_2kUREeckTvSkQcKaoa1F8I0vLxvjYEatKx9qHZmjjXclLgvhFGq-GPDvmB-327onEJ34qQISGrp5zBWkj4YP0PcLnrxa309WmTIk2wCZCc5_-cxCjICwnXFEIZBlp7pjb2fThzZY3-o0881kAMLY_oKlV2M2cECFjHO2e31Ml7r9jBEZKC7A20aE1RaGTcR5gMc5mzU4tZ9Rc0MNWE7YFZt_GaR_NVGEvdZPkJCO5kZlpwpZOqsX7qVgWStIOmklsIWeLW6WyeE_Rfjdr-GgCfUQNWy0m8SdvFqlalVR7ysPIui0-2hxiLaI6vsjhEFe3_wxcqNIg2hVZ5D0IJWgt934EfswfA4O7uMMC88tQG9Ra-c0odfjaJVWbijs2ic6DGlf4CRr_8QjnAAY3FzpuQv41E9DAeiCF2m7CWFtwF-Z-jC8DFKqRdo38rJ68mqweXC0rwUB5yrFDo9IXSREGjeEChAlWkbPpL9o8Gw_6VpdLrS5X6I9xNnWNvAISx4ZE8C2hALLjdmFZQl759A5yUnUQa4wQ6jvkKOrm52hamCdhftqfxKHiCS_Ke389icWWYG45xaqGRIhQRon-t4VIdoZv6OftFZ0_L9a9tqvWoGu-L4QjxvhkuInSj_MQb-odtZVrruzZ2KEc8W1ylDiIyVlNro9EQcXe1GniEjXK9iRRthKvKaOt1fbvyPeOF6EqjIv1eag8G569BCoryz0c-gHVaxpK9yOK6lmmacuBMP_XtRPcXtNmgVmmjoeVcD_4SDoDGK3hQ_hlPYkPNNNVPGL4cqQfqER_O0OanuBm7wdRkpA-x3Ez_mIVzwF9pX-SJRrUWlh0bl7IcRohYMIRmXoTmfvDdUp8y4c9e2jzrYhZFnAOW93kZgimMgFkkNL8Bz-N3m3rSka50vgQUBeVn6Rubsz-dMJcbvKuSQ1uTjflKAgPzuGVAqEw_Iq0exe_epoKmB2H9j1OuPePDYGRlKMobg2RaSKEolu66I2rmaCtb02Oqu5Vf_NSsr7iy0nqEqGz4homcsUU7jMYAVcl0QUr5LbsTPkXCteV9zAxOdRkdVsZNF9IZpuxMXZUpKwQF-VCZ391DJMSngcHhYRSt-_ueaXbBMNFkX7Lrzsx3JuIWN3FXiZ6lpQDRc5CaBrTN5wqi7QDTuqZq8Wxi5vmcpE_rtEIcpbBaTrxwBEfeCqbRP7CSyl_qU555ghZjQ6jKhiq7vy9_5OYfGOtglBTzysOLey8pqR7Buzo-zEJCp7rbC45VfsNRVN6iOu0NGxaXchVucAtNliKM=",
+      "id": "rs_0652a5f4cc1ca0f7016aaa58a2390487d2a86d897aca783b32",
+      "status": null,
+      "summary": [],
+      "type": "reasoning"
+    },
+    {
+      "content": [
+        {
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relationships\":[{\"id\":\"r1\",\"source_entity_id\":\"mid-atlantic-ridge\",\"relationship_type\":\"IS_A\",\"target_entity_id\":\"divergent-boundary\",\"statement\":\"The Mid-Atlantic Ridge is described as one of the best-known divergent boundaries.\",\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"r2\",\"source_entity_id\":\"mid-atlantic-ridge\",\"relationship_type\":\"PART_OF\",\"target_entity_id\":\"global-mid-ocean-ridge-system\",\"statement\":\"The Mid-Atlantic Ridge is one segment of the global mid-ocean ridge system.\",\"confidence\":1,\"origin\":\"SOURCE\"},{\"id\":\"r3\",\"source_entity_id\":\"magma\",\"relationship_type\":\"CAUSES\",\"target_entity_id\":\"new-crust\",\"statement\":\"Magma pushing up from the mantle creates new crust at spreading centers.\",\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"r4\",\"source_entity_id\":\"seafloor-spreading\",\"relationship_type\":\"CAUSES\",\"target_entity_id\":\"plate-movement\",\"statement\":\"Seafloor spreading over millions of years has resulted in plate movement of thousands of kilometers.\",\"confidence\":0.98,\"origin\":\"SOURCE\"},{\"id\":\"r5\",\"source_entity_id\":\"seafloor-spreading\",\"relationship_type\":\"CAUSES\",\"target_entity_id\":\"atlantic-ocean\",\"statement\":\"Seafloor spreading caused the Atlantic Ocean to grow from a small inlet into its present vast ocean.\",\"confidence\":1,\"origin\":\"SOURCE\"},{\"id\":\"r6\",\"source_entity_id\":\"plate-movement\",\"relationship_type\":\"CAUSES\",\"target_entity_id\":\"ground-crack\",\"statement\":\"The consequences of plate movement include widening existing ground cracks and the appearance of new ones around Krafla Volcano.\",\"confidence\":0.94,\"origin\":\"SOURCE\"},{\"id\":\"r7\",\"source_entity_id\":\"rifting\",\"relationship_type\":\"CAUSES\",\"target_entity_id\":\"ground-displacement\",\"statement\":\"The displacements at Krafla were caused by rifting.\",\"confidence\":1,\"origin\":\"SOURCE\"},{\"id\":\"r8\",\"source_entity_id\":\"ground-displacement\",\"relationship_type\":\"PRECEDES\",\"target_entity_id\":\"eruption\",\"statement\":\"Ground rise and abrupt dropping signalled an impending eruption.\",\"confidence\":0.93,\"origin\":\"SOURCE\"},{\"id\":\"r9\",\"source_entity_id\":\"seafloor-spreading\",\"relationship_type\":\"CAUSES\",\"target_entity_id\":\"red-sea\",\"statement\":\"Spreading processes tore Saudi Arabia away from the rest of Africa, forming the Red Sea.\",\"confidence\":0.97,\"origin\":\"SOURCE\"},{\"id\":\"r10\",\"source_entity_id\":\"continental-crust\",\"relationship_type\":\"CAUSES\",\"target_entity_id\":\"tension-crack\",\"statement\":\"When continental crust stretches beyond its limits, tension cracks appear on Earth's surface.\",\"confidence\":0.99,\"origin\":\"SOURCE\"},{\"id\":\"r11\",\"source_entity_id\":\"magma\",\"relationship_type\":\"EXERTS_FORCE_ON\",\"target_entity_id\":\"continental-crust\",\"statement\":\"Rising magma puts more pressure on the crust.\",\"confidence\":0.9,\"origin\":\"SOURCE\"},{\"id\":\"r12\",\"source_entity_id\":\"magma\",\"relationship_type\":\"CAUSES\",\"target_entity_id\":\"fracture\",\"statement\":\"Magma pressure produces additional fractures in the crust.\",\"confidence\":0.96,\"origin\":\"SOURCE\"},{\"id\":\"r13\",\"source_entity_id\":\"fracture\",\"relationship_type\":\"CAUSES\",\"target_entity_id\":\"rift-zone\",\"statement\":\"Crustal fractures contribute ultimately to the formation of a rift zone.\",\"confidence\":0.88,\"origin\":\"SOURCE\"}],\"comparison_conditions\":[],\"transfer_events\":[],\"missing_symbols\":[]}",
+          "type": "output_text"
+        }
+      ],
+      "id": "msg_0652a5f4cc1ca0f7016aaa58a73a0887d28874781a3cde0a21",
+      "phase": "final_answer",
+      "role": "assistant",
+      "status": "completed",
+      "type": "message"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt": null,
+  "prompt_cache_key": null,
+  "prompt_cache_options": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "low",
+    "generate_summary": null,
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "status": "completed",
+  "store": false,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "description": null,
+      "name": "candidate_b_v2_semantic_structure",
+      "schema_": {
+        "additionalProperties": false,
+        "properties": {
+          "comparison_conditions": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "comparison_operator": {
+                  "enum": [
+                    "GREATER_THAN"
+                  ],
+                  "type": "string"
+                },
+                "confidence": {
+                  "maximum": 1,
+                  "minimum": 0,
+                  "type": "number"
+                },
+                "left_operand_entity_id": {
+                  "enum": [
+                    "africa",
+                    "african-plate",
+                    "americas",
+                    "arabian-plate",
+                    "atlantic-ocean",
+                    "continental-crust",
+                    "divergent-boundary",
+                    "earth",
+                    "east-african-rift-zone",
+                    "eruption",
+                    "eurasian-plate",
+                    "europe",
+                    "fracture",
+                    "global-mid-ocean-ridge-system",
+                    "ground-crack",
+                    "ground-displacement",
+                    "gulf-of-aden",
+                    "iceland",
+                    "krafla-fissure-zone",
+                    "krafla-volcano",
+                    "magma",
+                    "mantle",
+                    "mid-atlantic-ridge",
+                    "new-crust",
+                    "north-american-plate",
+                    "oceanic-crust",
+                    "plate",
+                    "plate-movement",
+                    "red-sea",
+                    "ridge-crest",
+                    "rift-zone",
+                    "rifting",
+                    "rifting-event",
+                    "saudi-arabia",
+                    "seafloor-spreading",
+                    "spreading-center",
+                    "spreading-rate",
+                    "tension-crack",
+                    "triple-junction",
+                    "volcanic-activity",
+                    "volcano"
+                  ],
+                  "type": "string"
+                },
+                "origin": {
+                  "enum": [
+                    "SOURCE",
+                    "INFERRED"
+                  ],
+                  "type": "string"
+                },
+                "outcome_entity_id": {
+                  "enum": [
+                    "africa",
+                    "african-plate",
+                    "americas",
+                    "arabian-plate",
+                    "atlantic-ocean",
+                    "continental-crust",
+                    "divergent-boundary",
+                    "earth",
+                    "east-african-rift-zone",
+                    "eruption",
+                    "eurasian-plate",
+                    "europe",
+                    "fracture",
+                    "global-mid-ocean-ridge-system",
+                    "ground-crack",
+                    "ground-displacement",
+                    "gulf-of-aden",
+                    "iceland",
+                    "krafla-fissure-zone",
+                    "krafla-volcano",
+                    "magma",
+                    "mantle",
+                    "mid-atlantic-ridge",
+                    "new-crust",
+                    "north-american-plate",
+                    "oceanic-crust",
+                    "plate",
+                    "plate-movement",
+                    "red-sea",
+                    "ridge-crest",
+                    "rift-zone",
+                    "rifting",
+                    "rifting-event",
+                    "saudi-arabia",
+                    "seafloor-spreading",
+                    "spreading-center",
+                    "spreading-rate",
+                    "tension-crack",
+                    "triple-junction",
+                    "volcanic-activity",
+                    "volcano"
+                  ],
+                  "type": "string"
+                },
+                "proposition_type": {
+                  "enum": [
+                    "COMPARISON_CONDITION"
+                  ],
+                  "type": "string"
+                },
+                "relationship_type": {
+                  "enum": [
+                    "CAUSES"
+                  ],
+                  "type": "string"
+                },
+                "right_operand_entity_id": {
+                  "enum": [
+                    "africa",
+                    "african-plate",
+                    "americas",
+                    "arabian-plate",
+                    "atlantic-ocean",
+                    "continental-crust",
+                    "divergent-boundary",
+                    "earth",
+                    "east-african-rift-zone",
+                    "eruption",
+                    "eurasian-plate",
+                    "europe",
+                    "fracture",
+                    "global-mid-ocean-ridge-system",
+                    "ground-crack",
+                    "ground-displacement",
+                    "gulf-of-aden",
+                    "iceland",
+                    "krafla-fissure-zone",
+                    "krafla-volcano",
+                    "magma",
+                    "mantle",
+                    "mid-atlantic-ridge",
+                    "new-crust",
+                    "north-american-plate",
+                    "oceanic-crust",
+                    "plate",
+                    "plate-movement",
+                    "red-sea",
+                    "ridge-crest",
+                    "rift-zone",
+                    "rifting",
+                    "rifting-event",
+                    "saudi-arabia",
+                    "seafloor-spreading",
+                    "spreading-center",
+                    "spreading-rate",
+                    "tension-crack",
+                    "triple-junction",
+                    "volcanic-activity",
+                    "volcano"
+                  ],
+                  "type": "string"
+                },
+                "statement": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "statement",
+                "confidence",
+                "origin",
+                "proposition_type",
+                "left_operand_entity_id",
+                "right_operand_entity_id",
+                "outcome_entity_id",
+                "relationship_type",
+                "comparison_operator"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "missing_symbols": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "reason": {
+                  "type": "string"
+                },
+                "semantic_item": {
+                  "type": "string"
+                },
+                "surface_form": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "surface_form",
+                "semantic_item",
+                "reason"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "relationships": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "confidence": {
+                  "maximum": 1,
+                  "minimum": 0,
+                  "type": "number"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "origin": {
+                  "enum": [
+                    "SOURCE",
+                    "INFERRED"
+                  ],
+                  "type": "string"
+                },
+                "relationship_type": {
+                  "enum": [
+                    "IS_A",
+                    "PART_OF",
+                    "CAUSES",
+                    "INCREASES",
+                    "DECREASES",
+                    "ENABLES",
+                    "REQUIRES",
+                    "CONSTRAINS",
+                    "PRECEDES",
+                    "TRANSFORMS_INTO",
+                    "INTERACTS_WITH",
+                    "MEASURED_BY",
+                    "EXAMPLE_OF",
+                    "CONTRADICTS",
+                    "CREATES",
+                    "INDUCES",
+                    "EXERTS_FORCE_ON",
+                    "AFFECTS",
+                    "BINDS_TO",
+                    "TRANSFERS_TO"
+                  ],
+                  "type": "string"
+                },
+                "source_entity_id": {
+                  "enum": [
+                    "africa",
+                    "african-plate",
+                    "americas",
+                    "arabian-plate",
+                    "atlantic-ocean",
+                    "continental-crust",
+                    "divergent-boundary",
+                    "earth",
+                    "east-african-rift-zone",
+                    "eruption",
+                    "eurasian-plate",
+                    "europe",
+                    "fracture",
+                    "global-mid-ocean-ridge-system",
+                    "ground-crack",
+                    "ground-displacement",
+                    "gulf-of-aden",
+                    "iceland",
+                    "krafla-fissure-zone",
+                    "krafla-volcano",
+                    "magma",
+                    "mantle",
+                    "mid-atlantic-ridge",
+                    "new-crust",
+                    "north-american-plate",
+                    "oceanic-crust",
+                    "plate",
+                    "plate-movement",
+                    "red-sea",
+                    "ridge-crest",
+                    "rift-zone",
+                    "rifting",
+                    "rifting-event",
+                    "saudi-arabia",
+                    "seafloor-spreading",
+                    "spreading-center",
+                    "spreading-rate",
+                    "tension-crack",
+                    "triple-junction",
+                    "volcanic-activity",
+                    "volcano"
+                  ],
+                  "type": "string"
+                },
+                "statement": {
+                  "type": "string"
+                },
+                "target_entity_id": {
+                  "enum": [
+                    "africa",
+                    "african-plate",
+                    "americas",
+                    "arabian-plate",
+                    "atlantic-ocean",
+                    "continental-crust",
+                    "divergent-boundary",
+                    "earth",
+                    "east-african-rift-zone",
+                    "eruption",
+                    "eurasian-plate",
+                    "europe",
+                    "fracture",
+                    "global-mid-ocean-ridge-system",
+                    "ground-crack",
+                    "ground-displacement",
+                    "gulf-of-aden",
+                    "iceland",
+                    "krafla-fissure-zone",
+                    "krafla-volcano",
+                    "magma",
+                    "mantle",
+                    "mid-atlantic-ridge",
+                    "new-crust",
+                    "north-american-plate",
+                    "oceanic-crust",
+                    "plate",
+                    "plate-movement",
+                    "red-sea",
+                    "ridge-crest",
+                    "rift-zone",
+                    "rifting",
+                    "rifting-event",
+                    "saudi-arabia",
+                    "seafloor-spreading",
+                    "spreading-center",
+                    "spreading-rate",
+                    "tension-crack",
+                    "triple-junction",
+                    "volcanic-activity",
+                    "volcano"
+                  ],
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "source_entity_id",
+                "relationship_type",
+                "target_entity_id",
+                "statement",
+                "confidence",
+                "origin"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "transfer_events": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "comparison_operator": {
+                  "type": "null"
+                },
+                "confidence": {
+                  "maximum": 1,
+                  "minimum": 0,
+                  "type": "number"
+                },
+                "destination_entity_id": {
+                  "enum": [
+                    "africa",
+                    "african-plate",
+                    "americas",
+                    "arabian-plate",
+                    "atlantic-ocean",
+                    "continental-crust",
+                    "divergent-boundary",
+                    "earth",
+                    "east-african-rift-zone",
+                    "eurasian-plate",
+                    "europe",
+                    "fracture",
+                    "global-mid-ocean-ridge-system",
+                    "ground-crack",
+                    "gulf-of-aden",
+                    "iceland",
+                    "krafla-fissure-zone",
+                    "krafla-volcano",
+                    "magma",
+                    "mantle",
+                    "mid-atlantic-ridge",
+                    "new-crust",
+                    "north-american-plate",
+                    "oceanic-crust",
+                    "plate",
+                    "red-sea",
+                    "ridge-crest",
+                    "rift-zone",
+                    "saudi-arabia",
+                    "spreading-center",
+                    "spreading-rate",
+                    "tension-crack",
+                    "triple-junction",
+                    "volcano"
+                  ],
+                  "type": "string"
+                },
+                "event_entity_id": {
+                  "enum": [
+                    "eruption",
+                    "ground-displacement",
+                    "plate-movement",
+                    "rifting",
+                    "rifting-event",
+                    "seafloor-spreading",
+                    "volcanic-activity"
+                  ],
+                  "type": "string"
+                },
+                "object_entity_id": {
+                  "enum": [
+                    "africa",
+                    "african-plate",
+                    "americas",
+                    "arabian-plate",
+                    "atlantic-ocean",
+                    "continental-crust",
+                    "divergent-boundary",
+                    "earth",
+                    "east-african-rift-zone",
+                    "eruption",
+                    "eurasian-plate",
+                    "europe",
+                    "fracture",
+                    "global-mid-ocean-ridge-system",
+                    "ground-crack",
+                    "ground-displacement",
+                    "gulf-of-aden",
+                    "iceland",
+                    "krafla-fissure-zone",
+                    "krafla-volcano",
+                    "magma",
+                    "mantle",
+                    "mid-atlantic-ridge",
+                    "new-crust",
+                    "north-american-plate",
+                    "oceanic-crust",
+                    "plate",
+                    "plate-movement",
+                    "red-sea",
+                    "ridge-crest",
+                    "rift-zone",
+                    "rifting",
+                    "rifting-event",
+                    "saudi-arabia",
+                    "seafloor-spreading",
+                    "spreading-center",
+                    "spreading-rate",
+                    "tension-crack",
+                    "triple-junction",
+                    "volcanic-activity",
+                    "volcano"
+                  ],
+                  "type": "string"
+                },
+                "origin": {
+                  "enum": [
+                    "SOURCE",
+                    "INFERRED"
+                  ],
+                  "type": "string"
+                },
+                "proposition_type": {
+                  "enum": [
+                    "TRANSFER_EVENT"
+                  ],
+                  "type": "string"
+                },
+                "relationship_type": {
+                  "enum": [
+                    "TRANSFERS_TO"
+                  ],
+                  "type": "string"
+                },
+                "statement": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "statement",
+                "confidence",
+                "origin",
+                "proposition_type",
+                "event_entity_id",
+                "object_entity_id",
+                "destination_entity_id",
+                "relationship_type",
+                "comparison_operator"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "relationships",
+          "comparison_conditions",
+          "transfer_events",
+          "missing_symbols"
+        ],
+        "type": "object"
+      },
+      "strict": true,
+      "type": "json_schema"
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 6204,
+    "input_tokens_details": {
+      "cache_write_tokens": 6201,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1730,
+    "output_tokens_details": {
+      "reasoning_tokens": 982
+    },
+    "total_tokens": 7934
+  },
+  "user": null
+}

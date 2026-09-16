@@ -1,0 +1,126 @@
+{
+  "actual_model": "gpt-5.6-luna",
+  "candidate_version": "spec-051-candidate-b-v2",
+  "duration_ms": 11084.671165997861,
+  "hidden_retries": 0,
+  "http_request_id": "req_11d22e5e0f3b44fcb37cd303d7b88444",
+  "normalization": "LOSSLESS_VARIANT_TO_CANONICAL_ROLE_BINDINGS",
+  "original_stage2_proposal": {
+    "comparison_conditions": [],
+    "missing_symbols": [],
+    "relationships": [
+      {
+        "confidence": 0.99,
+        "id": "r1",
+        "origin": "SOURCE",
+        "relationship_type": "IS_A",
+        "source_entity_id": "standing-committee",
+        "statement": "A standing committee is a committee.",
+        "target_entity_id": "committee"
+      },
+      {
+        "confidence": 0.98,
+        "id": "r2",
+        "origin": "SOURCE",
+        "relationship_type": "IS_A",
+        "source_entity_id": "panel-of-members",
+        "statement": "A standing committee is a panel of Members.",
+        "target_entity_id": "standing-committee"
+      },
+      {
+        "confidence": 0.99,
+        "id": "r3",
+        "origin": "SOURCE",
+        "relationship_type": "EXAMPLE_OF",
+        "source_entity_id": "federal-agency",
+        "statement": "A federal agency is an example of a selected party that may provide views during a committee hearing.",
+        "target_entity_id": "selected-party"
+      },
+      {
+        "confidence": 0.99,
+        "id": "r4",
+        "origin": "SOURCE",
+        "relationship_type": "EXAMPLE_OF",
+        "source_entity_id": "organized-interest",
+        "statement": "An organized interest is an example of a selected party that may provide views during a committee hearing.",
+        "target_entity_id": "selected-party"
+      },
+      {
+        "confidence": 0.99,
+        "id": "r5",
+        "origin": "SOURCE",
+        "relationship_type": "PRECEDES",
+        "source_entity_id": "introduction-of-a-bill",
+        "statement": "Introduction of a bill precedes its referral to a committee.",
+        "target_entity_id": "bill-referral"
+      },
+      {
+        "confidence": 0.94,
+        "id": "r6",
+        "origin": "SOURCE",
+        "relationship_type": "PRECEDES",
+        "source_entity_id": "markup",
+        "statement": "A markup precedes the committee's majority vote to report a bill.",
+        "target_entity_id": "majority-vote"
+      },
+      {
+        "confidence": 0.96,
+        "id": "r7",
+        "origin": "SOURCE",
+        "relationship_type": "CAUSES",
+        "source_entity_id": "majority-vote",
+        "statement": "The committee's majority vote causes the committee to report the bill.",
+        "target_entity_id": "committee-report"
+      },
+      {
+        "confidence": 0.99,
+        "id": "r8",
+        "origin": "SOURCE",
+        "relationship_type": "IS_A",
+        "source_entity_id": "streamlined-floor-consideration",
+        "statement": "Streamlined floor consideration is a type of floor consideration.",
+        "target_entity_id": "floor-consideration"
+      },
+      {
+        "confidence": 0.95,
+        "id": "r9",
+        "origin": "SOURCE",
+        "relationship_type": "PRECEDES",
+        "source_entity_id": "motion-to-proceed",
+        "statement": "A motion to proceed precedes the Senate's agreement to that motion.",
+        "target_entity_id": "senate-agreement-to-a-motion-to-proceed"
+      }
+    ],
+    "transfer_events": [
+      {
+        "comparison_operator": null,
+        "confidence": 0.99,
+        "destination_entity_id": "committee",
+        "event_entity_id": "bill-referral",
+        "object_entity_id": "bill",
+        "origin": "SOURCE",
+        "proposition_type": "TRANSFER_EVENT",
+        "relationship_type": "TRANSFERS_TO",
+        "statement": "A bill referral transfers a bill to the committee or committees in the chamber with jurisdiction over its elements."
+      }
+    ]
+  },
+  "prompt_sha256": "72e6b878794ac2fa45404970e2f0a931dc4c1c2efc97f64a4c7aed0ecf212299",
+  "prompt_version": "spec-051-semantic-structure-v2",
+  "provider": "openai",
+  "provider_response_id": "resp_0c387bff048f7e3a016aaa5935e23087d2afc13461d194c9ac",
+  "repair_calls": 0,
+  "requested_model": "gpt-5.6-luna",
+  "schema_name": "candidate_b_v2_semantic_structure",
+  "schema_sha256": "671a97898ef1eec1927d4db00258f05ee91a808401393b97f09f3c90503b6d7b",
+  "sdk_retries": 0,
+  "semantic_retries": 0,
+  "stage": "SEMANTIC_STRUCTURE",
+  "store": false,
+  "upstream_input_sha256": "81147f5038f214bd6a03d807f4ddfbd43dc4216c2c03fa97c9ad80a99277f95a",
+  "usage": {
+    "input_tokens": 6715,
+    "output_tokens": 1105,
+    "total_tokens": 7820
+  }
+}

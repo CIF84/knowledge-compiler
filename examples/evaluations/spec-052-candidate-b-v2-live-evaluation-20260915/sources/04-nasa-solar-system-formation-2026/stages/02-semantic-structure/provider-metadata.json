@@ -1,0 +1,267 @@
+{
+  "actual_model": "gpt-5.6-luna",
+  "candidate_version": "spec-051-candidate-b-v2",
+  "duration_ms": 16909.77808399475,
+  "hidden_retries": 0,
+  "http_request_id": "req_3fab3405fd4e46128ec6a26732db63e2",
+  "normalization": "LOSSLESS_VARIANT_TO_CANONICAL_ROLE_BINDINGS",
+  "original_stage2_proposal": {
+    "comparison_conditions": [],
+    "missing_symbols": [],
+    "relationships": [
+      {
+        "confidence": 0.99,
+        "id": "r1",
+        "origin": "SOURCE",
+        "relationship_type": "PART_OF",
+        "source_entity_id": "sun",
+        "statement": "The Sun is part of the solar system.",
+        "target_entity_id": "solar-system"
+      },
+      {
+        "confidence": 0.99,
+        "id": "r2",
+        "origin": "SOURCE",
+        "relationship_type": "PART_OF",
+        "source_entity_id": "planets",
+        "statement": "The planets are part of the solar system.",
+        "target_entity_id": "solar-system"
+      },
+      {
+        "confidence": 0.99,
+        "id": "r3",
+        "origin": "SOURCE",
+        "relationship_type": "IS_A",
+        "source_entity_id": "mercury",
+        "statement": "Mercury is one of the planets in the solar system.",
+        "target_entity_id": "planets"
+      },
+      {
+        "confidence": 0.99,
+        "id": "r4",
+        "origin": "SOURCE",
+        "relationship_type": "IS_A",
+        "source_entity_id": "venus",
+        "statement": "Venus is one of the planets in the solar system.",
+        "target_entity_id": "planets"
+      },
+      {
+        "confidence": 0.99,
+        "id": "r5",
+        "origin": "SOURCE",
+        "relationship_type": "IS_A",
+        "source_entity_id": "earth",
+        "statement": "Earth is one of the planets in the solar system.",
+        "target_entity_id": "planets"
+      },
+      {
+        "confidence": 0.99,
+        "id": "r6",
+        "origin": "SOURCE",
+        "relationship_type": "IS_A",
+        "source_entity_id": "mars",
+        "statement": "Mars is one of the planets in the solar system.",
+        "target_entity_id": "planets"
+      },
+      {
+        "confidence": 0.99,
+        "id": "r7",
+        "origin": "SOURCE",
+        "relationship_type": "IS_A",
+        "source_entity_id": "jupiter",
+        "statement": "Jupiter is one of the planets in the solar system.",
+        "target_entity_id": "planets"
+      },
+      {
+        "confidence": 0.99,
+        "id": "r8",
+        "origin": "SOURCE",
+        "relationship_type": "IS_A",
+        "source_entity_id": "saturn",
+        "statement": "Saturn is one of the planets in the solar system.",
+        "target_entity_id": "planets"
+      },
+      {
+        "confidence": 0.99,
+        "id": "r9",
+        "origin": "SOURCE",
+        "relationship_type": "IS_A",
+        "source_entity_id": "uranus",
+        "statement": "Uranus is one of the planets in the solar system.",
+        "target_entity_id": "planets"
+      },
+      {
+        "confidence": 0.99,
+        "id": "r10",
+        "origin": "SOURCE",
+        "relationship_type": "IS_A",
+        "source_entity_id": "neptune",
+        "statement": "Neptune is one of the planets in the solar system.",
+        "target_entity_id": "planets"
+      },
+      {
+        "confidence": 0.98,
+        "id": "r11",
+        "origin": "SOURCE",
+        "relationship_type": "CREATES",
+        "source_entity_id": "nebula",
+        "statement": "Stars form from nebulae.",
+        "target_entity_id": "stars"
+      },
+      {
+        "confidence": 0.98,
+        "id": "r12",
+        "origin": "SOURCE",
+        "relationship_type": "CREATES",
+        "source_entity_id": "nebula",
+        "statement": "Planets form from nebulae.",
+        "target_entity_id": "planets"
+      },
+      {
+        "confidence": 0.97,
+        "id": "r13",
+        "origin": "SOURCE",
+        "relationship_type": "CREATES",
+        "source_entity_id": "sticking-together",
+        "statement": "Material sticking together forms a large mass.",
+        "target_entity_id": "mass"
+      },
+      {
+        "confidence": 0.94,
+        "id": "r14",
+        "origin": "SOURCE",
+        "relationship_type": "CREATES",
+        "source_entity_id": "mass",
+        "statement": "A mass can grow large enough to form a planet.",
+        "target_entity_id": "planets"
+      },
+      {
+        "confidence": 0.94,
+        "id": "r15",
+        "origin": "SOURCE",
+        "relationship_type": "CREATES",
+        "source_entity_id": "mass",
+        "statement": "A mass can grow large enough to form a new star.",
+        "target_entity_id": "stars"
+      },
+      {
+        "confidence": 0.99,
+        "id": "r16",
+        "origin": "SOURCE",
+        "relationship_type": "CAUSES",
+        "source_entity_id": "supernova",
+        "statement": "A supernova has enough energy to make gas and dust in nearby nebulae start swirling.",
+        "target_entity_id": "swirling"
+      },
+      {
+        "confidence": 0.98,
+        "id": "r17",
+        "origin": "SOURCE",
+        "relationship_type": "CAUSES",
+        "source_entity_id": "supernova",
+        "statement": "A supernova has enough energy to make gas and dust in nearby nebulae start spinning.",
+        "target_entity_id": "spinning"
+      },
+      {
+        "confidence": 0.99,
+        "id": "r18",
+        "origin": "SOURCE",
+        "relationship_type": "CAUSES",
+        "source_entity_id": "swirling",
+        "statement": "The swirling caused material in the nebula to fall into its center.",
+        "target_entity_id": "falling-into-the-center"
+      },
+      {
+        "confidence": 0.97,
+        "id": "r19",
+        "origin": "SOURCE",
+        "relationship_type": "CAUSES",
+        "source_entity_id": "spinning",
+        "statement": "The spinning caused material in the nebula to fall into its center.",
+        "target_entity_id": "falling-into-the-center"
+      },
+      {
+        "confidence": 0.98,
+        "id": "r20",
+        "origin": "SOURCE",
+        "relationship_type": "CREATES",
+        "source_entity_id": "collisions",
+        "statement": "Collisions among gas and dust formed little pieces of metal and rock.",
+        "target_entity_id": "metal-and-rock-pieces"
+      },
+      {
+        "confidence": 0.99,
+        "id": "r21",
+        "origin": "SOURCE",
+        "relationship_type": "CREATES",
+        "source_entity_id": "collisions",
+        "statement": "Many collisions over a long time formed the eight planets.",
+        "target_entity_id": "planets"
+      },
+      {
+        "confidence": 0.99,
+        "id": "r22",
+        "origin": "SOURCE",
+        "relationship_type": "CREATES",
+        "source_entity_id": "planet-formation",
+        "statement": "Planet formation produced the eight planets.",
+        "target_entity_id": "planets"
+      },
+      {
+        "confidence": 0.98,
+        "id": "r23",
+        "origin": "SOURCE",
+        "relationship_type": "INTERACTS_WITH",
+        "source_entity_id": "planets",
+        "statement": "The planets move around the Sun.",
+        "target_entity_id": "sun"
+      },
+      {
+        "confidence": 0.99,
+        "id": "r24",
+        "origin": "SOURCE",
+        "relationship_type": "INTERACTS_WITH",
+        "source_entity_id": "moon",
+        "statement": "The Moon orbits around Earth.",
+        "target_entity_id": "earth"
+      },
+      {
+        "confidence": 0.99,
+        "id": "r25",
+        "origin": "SOURCE",
+        "relationship_type": "INTERACTS_WITH",
+        "source_entity_id": "star-system",
+        "statement": "Star systems orbit around their entire galaxy.",
+        "target_entity_id": "galaxy"
+      },
+      {
+        "confidence": 0.9,
+        "id": "r26",
+        "origin": "SOURCE",
+        "relationship_type": "IS_A",
+        "source_entity_id": "orbit",
+        "statement": "An orbit is the pattern made when planets go around the Sun.",
+        "target_entity_id": "orbiting"
+      }
+    ],
+    "transfer_events": []
+  },
+  "prompt_sha256": "72e6b878794ac2fa45404970e2f0a931dc4c1c2efc97f64a4c7aed0ecf212299",
+  "prompt_version": "spec-051-semantic-structure-v2",
+  "provider": "openai",
+  "provider_response_id": "resp_003aeb81014d2284016aaa5958836887d29769475b2c211c7a",
+  "repair_calls": 0,
+  "requested_model": "gpt-5.6-luna",
+  "schema_name": "candidate_b_v2_semantic_structure",
+  "schema_sha256": "ef55d0de97d4594add60f21b2954375dfe4c85b1a8760fffa2925f1e3d287d61",
+  "sdk_retries": 0,
+  "semantic_retries": 0,
+  "stage": "SEMANTIC_STRUCTURE",
+  "store": false,
+  "upstream_input_sha256": "2fc347d43537fdc2f5c2f01845500723cc3ff5c59e56eebc33554960da3b897b",
+  "usage": {
+    "input_tokens": 5987,
+    "output_tokens": 1810,
+    "total_tokens": 7797
+  }
+}

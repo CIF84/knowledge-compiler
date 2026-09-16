@@ -1,0 +1,26 @@
+{
+  "authoritative_spec046_origin": "PROPOSITION_CONSTRUCTION",
+  "candidate_behavior_changed": false,
+  "detection_stage": "SEMANTIC_STRUCTURE",
+  "duplicate_transfer_role_identity": [
+    "sexual-reproduction",
+    "nuclear-dna",
+    "offspring"
+  ],
+  "exact_failure": "Candidate-B-v2 Stage-2 contract rejected output: Stage 2 semantic object IDs must be unique",
+  "generated_classifier_origin": "OTHER",
+  "preserved_initial_artifacts": [
+    "run-report.json",
+    "sources/07-nhgri-dna-fact-sheet-2020/initial-failure-classification.json",
+    "sources/07-nhgri-dna-fact-sheet-2020/stages/02-semantic-structure/parsed-proposal.json",
+    "sources/07-nhgri-dna-fact-sheet-2020/stages/02-semantic-structure/raw-provider-response.json"
+  ],
+  "prompt_schema_or_validator_changed": false,
+  "provider_output_changed": false,
+  "rationale": "The v2 proposal contains two TRANSFER_EVENT objects with the same EVENT, OBJECT, and DESTINATION role identities but different statements about male/female inheritance. Canonical proposition IDs derive from proposition type and role identities, so the two objects collide. This is malformed typed-proposition semantic composition under the frozen SPEC-046 PROPOSITION_CONSTRUCTION definition, not relationship semantics or an unclassified failure.",
+  "retry_or_repair_performed": false,
+  "schema": "spec-052-post-run-failure-taxonomy-audit-v1",
+  "source_id": "nhgri-dna-fact-sheet-2020",
+  "status": "PASS_WITH_TRANSPARENT_CLASSIFICATION_CORRECTION",
+  "transfer_event_count": 3
+}

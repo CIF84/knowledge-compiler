@@ -1,0 +1,170 @@
+{
+  "structures": [
+    {
+      "entity_ids": [
+        "committee",
+        "panel-of-members",
+        "standing-committee"
+      ],
+      "id": "structure-hierarchy-98be1f321c75080c",
+      "metadata": {
+        "contains_cycle": false,
+        "hierarchy_relationship_type": "IS_A",
+        "leaves": [
+          "panel-of-members"
+        ],
+        "roots": [
+          "committee"
+        ],
+        "supporting_relationship_ids_by_edge": [
+          [
+            "r2"
+          ],
+          [
+            "r1"
+          ]
+        ]
+      },
+      "relationship_ids": [
+        "r2",
+        "r1"
+      ],
+      "relationship_types": [
+        "IS_A",
+        "IS_A"
+      ],
+      "structure_type": "HIERARCHY"
+    },
+    {
+      "entity_ids": [
+        "federal-agency",
+        "organized-interest",
+        "selected-party"
+      ],
+      "id": "structure-hierarchy-aa15457c0db8b1cd",
+      "metadata": {
+        "contains_cycle": false,
+        "hierarchy_relationship_type": "EXAMPLE_OF",
+        "leaves": [
+          "federal-agency",
+          "organized-interest"
+        ],
+        "roots": [
+          "selected-party"
+        ],
+        "supporting_relationship_ids_by_edge": [
+          [
+            "r3"
+          ],
+          [
+            "r4"
+          ]
+        ]
+      },
+      "relationship_ids": [
+        "r3",
+        "r4"
+      ],
+      "relationship_types": [
+        "EXAMPLE_OF",
+        "EXAMPLE_OF"
+      ],
+      "structure_type": "HIERARCHY"
+    },
+    {
+      "entity_ids": [
+        "floor-consideration",
+        "streamlined-floor-consideration"
+      ],
+      "id": "structure-hierarchy-b33fcc3fb281b7dd",
+      "metadata": {
+        "contains_cycle": false,
+        "hierarchy_relationship_type": "IS_A",
+        "leaves": [
+          "streamlined-floor-consideration"
+        ],
+        "roots": [
+          "floor-consideration"
+        ],
+        "supporting_relationship_ids_by_edge": [
+          [
+            "r8"
+          ]
+        ]
+      },
+      "relationship_ids": [
+        "r8"
+      ],
+      "relationship_types": [
+        "IS_A"
+      ],
+      "structure_type": "HIERARCHY"
+    },
+    {
+      "entity_ids": [
+        "introduction-of-a-bill",
+        "bill-referral"
+      ],
+      "id": "structure-process-chain-6af6f1ff867459e4",
+      "metadata": {
+        "edge_count": 1,
+        "supporting_relationship_ids_by_edge": [
+          [
+            "r5"
+          ]
+        ]
+      },
+      "relationship_ids": [
+        "r5"
+      ],
+      "relationship_types": [
+        "PRECEDES"
+      ],
+      "structure_type": "PROCESS_CHAIN"
+    },
+    {
+      "entity_ids": [
+        "markup",
+        "majority-vote"
+      ],
+      "id": "structure-process-chain-715c86447f6c8a95",
+      "metadata": {
+        "edge_count": 1,
+        "supporting_relationship_ids_by_edge": [
+          [
+            "r6"
+          ]
+        ]
+      },
+      "relationship_ids": [
+        "r6"
+      ],
+      "relationship_types": [
+        "PRECEDES"
+      ],
+      "structure_type": "PROCESS_CHAIN"
+    },
+    {
+      "entity_ids": [
+        "motion-to-proceed",
+        "senate-agreement-to-a-motion-to-proceed"
+      ],
+      "id": "structure-process-chain-0e18aeb42c9af3d4",
+      "metadata": {
+        "edge_count": 1,
+        "supporting_relationship_ids_by_edge": [
+          [
+            "r9"
+          ]
+        ]
+      },
+      "relationship_ids": [
+        "r9"
+      ],
+      "relationship_types": [
+        "PRECEDES"
+      ],
+      "structure_type": "PROCESS_CHAIN"
+    }
+  ]
+}

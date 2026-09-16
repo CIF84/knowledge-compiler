@@ -1,0 +1,319 @@
+{
+  "structures": [
+    {
+      "entity_ids": [
+        "air-mass-meeting",
+        "air-rising",
+        "air-current-formation"
+      ],
+      "id": "structure-causal-path-396d0d71ce99750e",
+      "metadata": {
+        "edge_count": 2,
+        "supporting_relationship_ids_by_edge": [
+          [
+            "r8"
+          ],
+          [
+            "r10"
+          ]
+        ]
+      },
+      "relationship_ids": [
+        "r8",
+        "r10"
+      ],
+      "relationship_types": [
+        "CAUSES",
+        "CAUSES"
+      ],
+      "structure_type": "CAUSAL_PATH"
+    },
+    {
+      "entity_ids": [
+        "air-mass-meeting",
+        "air-sinking",
+        "air-current-formation"
+      ],
+      "id": "structure-causal-path-0d2344aa248d8033",
+      "metadata": {
+        "edge_count": 2,
+        "supporting_relationship_ids_by_edge": [
+          [
+            "r9"
+          ],
+          [
+            "r11"
+          ]
+        ]
+      },
+      "relationship_ids": [
+        "r9",
+        "r11"
+      ],
+      "relationship_types": [
+        "CAUSES",
+        "CAUSES"
+      ],
+      "structure_type": "CAUSAL_PATH"
+    },
+    {
+      "entity_ids": [
+        "jet-stream",
+        "weather-system",
+        "flood"
+      ],
+      "id": "structure-causal-path-c8ce489fc4f03909",
+      "metadata": {
+        "edge_count": 2,
+        "supporting_relationship_ids_by_edge": [
+          [
+            "r20"
+          ],
+          [
+            "r27"
+          ]
+        ]
+      },
+      "relationship_ids": [
+        "r20",
+        "r27"
+      ],
+      "relationship_types": [
+        "AFFECTS",
+        "CAUSES"
+      ],
+      "structure_type": "CAUSAL_PATH"
+    },
+    {
+      "entity_ids": [
+        "jet-stream",
+        "weather-system",
+        "heat-wave"
+      ],
+      "id": "structure-causal-path-ba6e29a356b35c42",
+      "metadata": {
+        "edge_count": 2,
+        "supporting_relationship_ids_by_edge": [
+          [
+            "r20"
+          ],
+          [
+            "r26"
+          ]
+        ]
+      },
+      "relationship_ids": [
+        "r20",
+        "r26"
+      ],
+      "relationship_types": [
+        "AFFECTS",
+        "CAUSES"
+      ],
+      "structure_type": "CAUSAL_PATH"
+    },
+    {
+      "entity_ids": [
+        "uneven-solar-heating",
+        "temperature-difference",
+        "jet-stream-speed"
+      ],
+      "id": "structure-causal-path-224d992690bdf599",
+      "metadata": {
+        "edge_count": 2,
+        "supporting_relationship_ids_by_edge": [
+          [
+            "r14"
+          ],
+          [
+            "r15"
+          ]
+        ]
+      },
+      "relationship_ids": [
+        "r14",
+        "r15"
+      ],
+      "relationship_types": [
+        "CAUSES",
+        "INCREASES"
+      ],
+      "structure_type": "CAUSAL_PATH"
+    },
+    {
+      "entity_ids": [
+        "uneven-solar-heating",
+        "temperature-difference",
+        "turbulent-conditions"
+      ],
+      "id": "structure-causal-path-219dcfe84489788f",
+      "metadata": {
+        "edge_count": 2,
+        "supporting_relationship_ids_by_edge": [
+          [
+            "r14"
+          ],
+          [
+            "r25"
+          ]
+        ]
+      },
+      "relationship_ids": [
+        "r14",
+        "r25"
+      ],
+      "relationship_types": [
+        "CAUSES",
+        "CAUSES"
+      ],
+      "structure_type": "CAUSAL_PATH"
+    },
+    {
+      "entity_ids": [
+        "atmosphere",
+        "jet-stream",
+        "troposphere"
+      ],
+      "id": "structure-hierarchy-cd1f9a27d53df529",
+      "metadata": {
+        "contains_cycle": false,
+        "hierarchy_relationship_type": "PART_OF",
+        "leaves": [
+          "jet-stream"
+        ],
+        "roots": [
+          "atmosphere"
+        ],
+        "supporting_relationship_ids_by_edge": [
+          [
+            "r4"
+          ],
+          [
+            "r17"
+          ],
+          [
+            "r5"
+          ]
+        ]
+      },
+      "relationship_ids": [
+        "r4",
+        "r17",
+        "r5"
+      ],
+      "relationship_types": [
+        "PART_OF",
+        "PART_OF",
+        "PART_OF"
+      ],
+      "structure_type": "HIERARCHY"
+    },
+    {
+      "entity_ids": [
+        "earth",
+        "earth-s-surface"
+      ],
+      "id": "structure-hierarchy-69139bc90efaae39",
+      "metadata": {
+        "contains_cycle": false,
+        "hierarchy_relationship_type": "PART_OF",
+        "leaves": [
+          "earth-s-surface"
+        ],
+        "roots": [
+          "earth"
+        ],
+        "supporting_relationship_ids_by_edge": [
+          [
+            "r6"
+          ]
+        ]
+      },
+      "relationship_ids": [
+        "r6"
+      ],
+      "relationship_types": [
+        "PART_OF"
+      ],
+      "structure_type": "HIERARCHY"
+    },
+    {
+      "entity_ids": [
+        "jet-stream",
+        "polar-jet-stream",
+        "subtropical-jet-stream",
+        "wind"
+      ],
+      "id": "structure-hierarchy-d620ddef927442dd",
+      "metadata": {
+        "contains_cycle": false,
+        "hierarchy_relationship_type": "IS_A",
+        "leaves": [
+          "polar-jet-stream",
+          "subtropical-jet-stream"
+        ],
+        "roots": [
+          "wind"
+        ],
+        "supporting_relationship_ids_by_edge": [
+          [
+            "r1"
+          ],
+          [
+            "r2"
+          ],
+          [
+            "r3"
+          ]
+        ]
+      },
+      "relationship_ids": [
+        "r1",
+        "r2",
+        "r3"
+      ],
+      "relationship_types": [
+        "IS_A",
+        "IS_A",
+        "IS_A"
+      ],
+      "structure_type": "HIERARCHY"
+    },
+    {
+      "entity_ids": [
+        "north-pole",
+        "polar-jet-stream",
+        "south-pole"
+      ],
+      "id": "structure-hierarchy-6002bf4c59285b26",
+      "metadata": {
+        "contains_cycle": false,
+        "hierarchy_relationship_type": "PART_OF",
+        "leaves": [
+          "polar-jet-stream"
+        ],
+        "roots": [
+          "north-pole",
+          "south-pole"
+        ],
+        "supporting_relationship_ids_by_edge": [
+          [
+            "r28"
+          ],
+          [
+            "r29"
+          ]
+        ]
+      },
+      "relationship_ids": [
+        "r28",
+        "r29"
+      ],
+      "relationship_types": [
+        "PART_OF",
+        "PART_OF"
+      ],
+      "structure_type": "HIERARCHY"
+    }
+  ]
+}
