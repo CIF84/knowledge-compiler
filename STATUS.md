@@ -62,33 +62,34 @@ Claim audit:
 ## Current approved work packet
 
 ```text
-specs/SPEC-053-claim-to-representation-coverage-diagnosis.md
+NONE
 ```
 
-Status: `APPROVED_FOR_IMPLEMENTATION`
+Status: `NONE`
 
-Authority: `OFFLINE_ONLY`
+Authority: `NONE`
 
-Human gate: `OWNER_REVIEW`
+Human gate: `NONE`
 
 Promotion: `NOT_AUTHORIZED`
 
 ## Current gate
 
-SPEC-053 is authorized to trace all 98 trusted claim-only SPEC-052 items through the existing representation pipeline and determine why dedicated claim-focus representation coverage is zero.
+SPEC-053 is implemented and awaiting owner review.
 
-The fixed terminal path taxonomy is:
+All 98 exactly grounded claim-only items were traced through the frozen downstream pipeline. Every item terminates as `NOT_CONSIDERED`: claims remain present in admitted KnowledgeModels but are excluded by representation-focus enumeration before strategy resolution. None is attached as supporting content, assigned generic fallback, or given a dedicated decision.
 
-- `DEDICATED_REPRESENTATION`
-- `SUPPORTING_CONTENT`
-- `GENERIC_FALLBACK`
-- `NOT_CONSIDERED`
-- `FILTERED_OR_DROPPED`
-- `AMBIGUOUS`
+Primary diagnosis: `FOCUS_SELECTION_GAP` (`HIGH` confidence).
 
-SPEC-053 must identify exactly one aggregate downstream gap class and recommend exactly one next experiment class.
+Recommended next experiment: `CLAIM_FOCUS_SELECTION_EXPERIMENT`.
 
-No extraction change, model/provider call, topology conversion, representation implementation, renderer/UI change, or promotion is authorized.
+Topology-only structure detection remains intentional and correct. The existing strategy resolver can truthfully produce concise prose for an explanation context, but current focus enumeration and compiler dispatch never present claims to that resolver. No behavior change or follow-up implementation is authorized.
+
+Canonical evidence:
+
+`examples/evaluations/spec-053-claim-to-representation-coverage-diagnosis-20260916/report.json`
+
+No packet is active. Promotion remains unauthorized.
 
 ## Current product question
 
@@ -97,16 +98,21 @@ B v2 extraction
         ↓
 trusted topology + 98 claim-only truths
         ↓
-existing representation compiler
+98/98 remain in admitted KnowledgeModels
         ↓
-0 dedicated claim-focus decisions
+StructureDetector ignores claims by design
         ↓
-WHERE does claim-only knowledge stop becoming learner-facing representation?
+focus enumeration excludes claims
+compiler dispatch has no claim class
+        ↓
+98/98 NOT_CONSIDERED
+        ↓
+CLAIM_FOCUS_SELECTION_EXPERIMENT?
         ↓
 OWNER REVIEW
 ```
 
-The goal is to locate the downstream seam, not to change it yet.
+The diagnosed first blocking seam is focus selection, not topology detection, strategy-family execution, renderer binding, or learner navigation.
 
 ## Frozen / protected state
 
