@@ -10,111 +10,103 @@ Owner verdict: `NEW_VISUAL_BASELINE_EXPLANATORY_ARCHITECTURE_CONFIRMED`
 
 Protected learner-facing architecture remains unchanged.
 
-## Extraction + semantic compiler state
+## Extraction state
 
-Historical Control A: 4/9 admitted.
+Candidate B v2 (`spec-051-candidate-b-v2`) admitted 8/9 blind sources in SPEC-052 with zero known-invalid admission. Extraction decomposition has earned continuation but remains unpromoted pending downstream representation work.
 
-Candidate B v1: 2/9 admitted and rejected as implemented.
-
-Candidate B v2 (`spec-051-candidate-b-v2`): 8/9 admitted in SPEC-052 with zero known-invalid admission; extraction decomposition has earned continuation but remains unpromoted due to downstream representation coverage.
-
-Accepted SPEC-052 owner verdict:
-
-`B_V2_EXTRACTION_RECOVERED_CLAIM_TO_REPRESENTATION_GAP_NEXT`
-
-## Claim-to-representation diagnosis
+## Claim pipeline evidence
 
 `SPEC-053 — claim-to-representation coverage diagnosis`
 
-Implementation status: `IMPLEMENTED_REVIEWED`
-
 Owner verdict: `CLAIM_FOCUS_GAP_CONFIRMED_SELECTION_EXPERIMENT_NEXT`
 
-Accepted findings:
+`SPEC-054 — claim focus selection experiment`
 
-- all 98 mechanically claim-only SPEC-052 items remain exactly grounded in admitted KnowledgeModels;
-- 98/98 terminate as `NOT_CONSIDERED`;
-- claim focus enumeration excludes them before strategy resolution;
-- semantic compiler dispatch has no claim focus class;
-- StructureDetector remains topology-only by design and is not the defect;
-- assertion-aware claim projection is a separate seam requiring inputs SPEC-052 does not provide;
-- first blocking seam is representation focus selection.
+Implementation status: `IMPLEMENTED_REVIEWED`
 
-Canonical evidence:
+Owner verdict: `CLAIM_FOCUS_ROUTING_CONFIRMED_REPRESENTATION_SEMANTICS_NEXT`
 
-`examples/evaluations/spec-053-claim-to-representation-coverage-diagnosis-20260916/report.json`
+Accepted SPEC-054 findings:
 
-## Current approved work packet
-
-```text
-NONE
-```
-
-Status: `NONE`
-
-Authority: `NONE`
-
-Human gate: `NONE`
-
-Promotion: `NOT_AUTHORIZED`
-
-## Current gate
-
-SPEC-054 is implemented and awaiting owner review.
-
-All 98 trusted claims became deterministic experimental `CLAIM` focuses. The isolated adapter passed their unchanged source-backed statements to the existing `explanation` resolver contract without nodes, relationships, diagnostic labels, source-specific rules, or inferred structure.
-
-Outcome distribution:
-
-- `EXISTING_NON_FALLBACK_STRATEGY`: 0
-- `TRUTHFUL_PROSE_FALLBACK`: 98
-- `NO_STRATEGY`: 0
-- `INVALID_OR_UNSAFE_DECISION`: 0
-
-Existing entity/relationship/proposition decisions, detected structures, and admitted models regenerate identically. No topology, production behavior, strategy family, renderer, or learner-surface change was made.
-
-Mechanically supported branch: `LEARNER_SURFACE_REQUIRED_TO_DECIDE`.
-
-Recommended next step: `CLAIM_LEARNER_SURFACE_BINDING_EXPERIMENT`.
+- 98/98 trusted claim-only items became deterministic `CLAIM` focuses;
+- 98/98 received safe existing representation decisions;
+- all 98 resolved to `TRUTHFUL_PROSE_FALLBACK` / `CONCISE_PROSE`;
+- zero no-strategy or unsafe decisions;
+- zero topology creation or KnowledgeModel mutation;
+- existing models, detected structures, and non-claim representation decisions remained identical;
+- routing is therefore confirmed safe;
+- universal prose does not establish that prose is the best explanatory form for every claim;
+- prose is expected to remain part of richer explanation rather than be replaced by visuals.
 
 Canonical evidence:
 
 `examples/evaluations/spec-054-claim-focus-selection-experiment-20260916/report.json`
 
-No packet is active. Promotion remains unauthorized.
+## Current approved work packet
+
+```text
+specs/SPEC-055-claim-representation-strategy-experiment.md
+```
+
+Status: `APPROVED_FOR_IMPLEMENTATION`
+
+Authority: `OFFLINE_ONLY`
+
+Human gate: `OWNER_REVIEW`
+
+Promotion: `NOT_AUTHORIZED`
+
+## Current gate
+
+SPEC-055 is authorized to test whether the 98 trusted non-topological claims contain enough explicit representation semantics to select richer explanatory plans while preserving concise prose.
+
+Experimental representation characters are non-canonical presentation metadata only:
+
+- `QUANTITATIVE_COMPARISON`
+- `DESCRIPTIVE_CONTRAST`
+- `QUALIFICATION_OR_CONDITION`
+- `DEFINITION_OR_DESCRIPTION`
+- `QUANTITATIVE_FACT`
+- `CONTEXTUAL_FACT`
+- `AMBIGUOUS`
+
+Experimental richer forms may include `COMPARISON`, `QUALIFIED_STATEMENT`, and `QUANTITATIVE_CALLOUT`, but no production renderer or learner-surface binding may be added.
+
+Representation metadata must never become KnowledgeModel semantics or topology.
 
 ## Current product question
 
 ```text
-98 trusted claim-only truths
+trusted non-topological claim
         ↓
-98 deterministic CLAIM focuses
+what representation character is explicit in the truth?
         ↓
-existing explanation resolver contract
+visual / structured explanatory form
+        +
+concise source-faithful prose
         ↓
-98 CONCISE_PROSE truthful fallbacks
-0 unsafe / 0 no-strategy / 0 topology
+(no topology mutation)
         ↓
 OWNER REVIEW
 ```
 
-The compiler-level evidence establishes safe routing. Whether an all-prose result teaches these claims usefully requires owner judgment and, if authorized later, a bounded learner-surface binding experiment.
+The experiment asks whether claim-like knowledge can support representation diversity before we invest in learner-facing rendering.
 
 ## Frozen / protected state
 
 - BASELINE-001 through BASELINE-004;
 - SPEC-038 learner-facing baseline;
-- SPEC-039 existing representation strategy/compiler semantics;
-- historical extraction evidence;
-- Candidate B v1/v2 extraction implementations/evidence;
+- Candidate B v2 extraction/evidence;
 - SPEC-052 admitted KnowledgeModels and claim audit;
-- SPEC-053 diagnosis and 98-item inventory;
-- trusted semantic vocabulary/proposition semantics;
+- SPEC-053 diagnosis;
+- SPEC-054 claim-focus implementation/evidence;
+- trusted semantic vocabulary/propositions;
 - grounding/provenance/validators;
 - StructureDetector;
-- existing representation strategy families;
-- renderers;
+- existing production representation strategy semantics;
+- existing production renderers;
 - navigation/UI;
+- historical experiment evidence;
 - unrelated user work.
 
 ## Explicitly forbidden
@@ -124,16 +116,16 @@ Do not:
 - call OpenAI or another model/provider;
 - use external evidence retrieval;
 - rerun extraction;
-- convert claims into topology;
+- convert representation characters into trusted semantics;
+- create relationships/propositions from claims;
 - modify StructureDetector;
-- add claim-specific strategy families;
-- add source-specific routing rules;
-- use diagnostic claim labels as production routing features;
-- repair unsafe decisions;
-- alter existing non-claim representation decisions;
-- implement learner-facing rendering/binding;
-- redesign UI/navigation;
-- promote B v2 or claim focus automatically.
+- route by domain/source identity;
+- use SPEC-053 diagnostic labels as hidden routing answers;
+- invent operands/values/conditions;
+- add production renderers;
+- bind learner-facing UI;
+- redesign navigation/UI;
+- promote experimental strategy forms automatically.
 
 ## Coordination rule
 
