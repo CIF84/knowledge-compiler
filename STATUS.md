@@ -18,80 +18,80 @@ Candidate B v2 (`spec-051-candidate-b-v2`) admitted 8/9 blind sources in SPEC-05
 
 SPEC-053 confirmed the claim focus-selection gap.
 
-SPEC-054 confirmed safe claim-focus routing: 98/98 claims reached the existing resolver and safely fell back to concise prose.
+SPEC-054 confirmed safe claim-focus routing.
 
-`SPEC-055 — claim representation strategy experiment`
+SPEC-055 confirmed representation semantics: 53/98 claims safely supported richer-than-prose experimental plans without semantic/topology mutation.
+
+`SPEC-056 — claim learner-surface binding experiment`
 
 Implementation status: `IMPLEMENTED_REVIEWED`
 
-Owner verdict: `REPRESENTATION_SEMANTICS_CONFIRMED_LEARNER_SURFACE_BINDING_NEXT`
+Owner verdict: `VISUALIZATION_REQUIRES_COGNITIVE_UTILITY_GATE`
 
-Accepted SPEC-055 findings:
+Accepted SPEC-056 findings:
 
-- 98 trusted claim-only items received traceable non-canonical representation characters;
-- 53/98 safely support richer-than-prose plans;
-- final strategies: 7 `COMPARISON`, 33 `QUALIFIED_STATEMENT`, 13 `QUANTITATIVE_CALLOUT`, 45 `CONCISE_PROSE`;
-- every richer plan retains unchanged concise prose;
-- all richer display fields trace to trusted claim text;
-- zero semantic/topology mutation or unsafe final plans;
-- existing non-claim decisions and detected structures remain unchanged;
-- representation diversity is supported offline, but learner value is untested.
-
-Canonical evidence:
-
-`examples/evaluations/spec-055-claim-representation-strategy-experiment-20260916/report.json`
-
-## Current approved work packet
-
-```text
-NONE
-```
-
-Status: `NONE`
-
-Authority: `NONE`
-
-Human gate: `NONE`
-
-Promotion: `NOT_AUTHORIZED`
-
-## Current gate
-
-SPEC-056 is implemented and awaiting owner review.
-
-The dedicated A/B learner-review artifact contains exactly 12 deterministic frozen SPEC-055 cases:
-
-- 3 `COMPARISON`;
-- 3 `QUALIFIED_STATEMENT`;
-- 3 `QUANTITATIVE_CALLOUT`;
-- 3 `CONCISE_PROSE` controls.
-
-Each case supports owner-visible A/B review:
-
-- A = prose-only control;
-- B = experimental structured/visual representation + the same concise prose.
-
-The desktop and narrow browser gates pass all 12 cases, strategy-specific rendering, exact frozen fragments, local interaction invariants, responsive layout, and console safety. No extraction, semantic/topology change, production renderer promotion, navigation redesign, external retrieval, or model/provider call occurred.
+- representability is not sufficient evidence that visualization helps;
+- prose is a first-class positive representation choice;
+- reviewed `QUALIFIED_STATEMENT` visuals mostly added complexity or decomposed grammar rather than reducing cognitive work;
+- reviewed `QUANTITATIVE_CALLOUT` treatment often emphasized a number without externalizing meaningful structure;
+- comparisons remain promising where visual form externalizes magnitude/difference/contrast;
+- multi-node relationship/topology representations remain valuable where diagrams externalize structure otherwise held in working memory;
+- a representation must earn its complexity by reducing cognitive work.
 
 Canonical evidence:
 
 `examples/evaluations/spec-056-claim-learner-surface-binding-experiment-20260916/report.json`
 
-No packet is active. The owner learner verdict is pending and promotion remains unauthorized.
+## Current approved work packet
+
+```text
+specs/SPEC-057-cognitive-utility-gate-experiment.md
+```
+
+Status: `APPROVED_FOR_IMPLEMENTATION`
+
+Authority: `OFFLINE_ONLY`
+
+Human gate: `OWNER_REVIEW`
+
+Promotion: `NOT_AUTHORIZED`
+
+## Current gate
+
+SPEC-057 is authorized to test a conservative cognitive-utility gate between representation-semantic eligibility and richer representation selection.
+
+The experiment must evaluate:
+
+- all 53 richer SPEC-055 claim candidates;
+- all 45 prose controls;
+- a deterministic bounded sample of accepted structural positive controls;
+- the exact 12 SPEC-056 owner-review cases as a post-hoc audit subset.
+
+Utility outcomes:
+
+- `STRONG_EXTERNALIZATION_VALUE`;
+- `POSSIBLE_EXTERNALIZATION_VALUE`;
+- `LOW_EXTERNALIZATION_VALUE`;
+- `UNSAFE_OR_UNSUPPORTED`.
+
+Only strong externalization value retains richer automatic representation. Possible/low/unsafe cases return to `CONCISE_PROSE` experimentally.
+
+No learner-facing rendering changes are authorized.
 
 ## Current product question
 
 ```text
-same trusted claim
-        ↓
-A: prose only
-        versus
-B: fitting structured/visual representation + concise prose
-        ↓
-OWNER REVIEW
+trusted knowledge
+      ↓
+representable structure?
+      ↓ yes
+would externalizing it reduce cognitive work?
+      ├─ no / uncertain → prose
+      ↓ yes
+richer representation + concise prose
 ```
 
-This is a human learner-surface experiment. Machine gates prove integrity and interaction; they do not decide pedagogical value.
+The experiment asks whether representation complexity can be selected by cognitive utility rather than representability alone.
 
 ## Frozen / protected state
 
@@ -99,8 +99,9 @@ This is a human learner-surface experiment. Machine gates prove integrity and in
 - SPEC-038 learner-facing architecture/baseline;
 - Candidate B v2 extraction/evidence;
 - SPEC-052 admitted KnowledgeModels;
-- SPEC-053/054 claim focus evidence;
-- SPEC-055 classifications/plans and report;
+- SPEC-053/054 claim-focus evidence;
+- SPEC-055 classifications/plans;
+- SPEC-056 learner-review artifact/evidence;
 - trusted semantic vocabulary/propositions;
 - grounding/provenance/validators;
 - StructureDetector;
@@ -119,12 +120,13 @@ Do not:
 - alter KnowledgeModel semantics;
 - create topology from claims;
 - modify StructureDetector;
-- change SPEC-055 plan semantics;
-- invent display semantics;
+- modify SPEC-055 or SPEC-056 evidence;
+- use source/domain identity as a utility signal;
+- encode owner comments as case-specific routing rules;
+- add/polish learner-facing renderers;
+- redesign navigation/UI;
 - promote experimental strategies/renderers;
-- redesign navigation/My Map/Explore Next;
-- add unrelated product features;
-- automatically assign the owner learner verdict.
+- automatically claim pedagogical effectiveness.
 
 ## Coordination rule
 
