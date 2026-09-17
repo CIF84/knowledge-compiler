@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SPEC-059 · Semantic typography owner review</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">KNOWLEDGE COMPILER · OWNER REVIEW</p>
+      <h1>Can prose reveal the important fragment without becoming a diagram?</h1>
+    </div>
+    <p class="topbar-note">Eighteen frozen cases. Neutral A/B/C review. No learner verdict is inferred.</p>
+  </header>
+
+  <main class="workspace" aria-label="SPEC-059 semantic typography owner-review workspace">
+    <aside class="case-pane" aria-label="Fixed review cases">
+      <p class="surface-label">REVIEW TERRITORY</p>
+      <h2>18 frozen cases</h2>
+      <p class="quiet">Quantities, comparisons, qualifications, and restraint controls.</p>
+      <ol id="case-list" class="case-list"></ol>
+      <div class="legend">
+        <span><i class="quantitative"></i> quantity</span>
+        <span><i class="comparison"></i> comparison</span>
+        <span><i class="qualification"></i> scope</span>
+        <span><i class="control"></i> control</span>
+      </div>
+    </aside>
+
+    <section class="review-pane">
+      <div class="case-toolbar">
+        <button id="previous-case" type="button" aria-label="Previous review case">← Previous</button>
+        <div class="case-heading">
+          <p id="case-counter" class="eyebrow"></p>
+          <h2 id="case-title"></h2>
+          <p id="case-source" class="case-source"></p>
+        </div>
+        <button id="next-case" type="button" aria-label="Next review case">Next →</button>
+      </div>
+
+      <section class="treatment-surface" aria-label="A B C treatment comparison">
+        <div class="treatment-header">
+          <div>
+            <p class="surface-label">TREATMENT</p>
+            <p id="treatment-label" class="treatment-label"></p>
+          </div>
+          <div class="mode-toggle" role="group" aria-label="A B C treatment mode">
+            <button id="mode-a" type="button" data-mode="A" aria-pressed="true">A · Plain</button>
+            <button id="mode-b" type="button" data-mode="B" aria-pressed="false">B · Enriched</button>
+            <button id="mode-c" type="button" data-mode="C" aria-pressed="false">C · Reference</button>
+          </div>
+        </div>
+        <div id="treatment-host" class="treatment-host" aria-live="polite"></div>
+        <p id="treatment-note" class="treatment-note"></p>
+      </section>
+
+      <section class="identity-strip" aria-label="Frozen treatment identity">
+        <p><strong>A</strong> exact trusted prose</p>
+        <p><strong>B</strong> exact same prose, inline semantic typography only</p>
+        <p><strong>C</strong> frozen richer reference, or explicitly unavailable</p>
+      </section>
+    </section>
+
+    <aside class="rubric-pane" aria-label="Owner review rubric">
+      <p class="surface-label">NEUTRAL OWNER RUBRIC</p>
+      <h2>What to judge</h2>
+      <ol id="rubric-list"></ol>
+      <details>
+        <summary>Frozen provenance</summary>
+        <div id="provenance-list" class="provenance-list"></div>
+      </details>
+      <div class="review-state">
+        <span aria-hidden="true"></span>
+        OWNER VERDICT · PENDING
+      </div>
+    </aside>
+  </main>
+
+  <div id="spec059-contract" hidden
+       data-authority="OFFLINE_ONLY"
+       data-semantic-owner="FROZEN_SPEC055_SPEC057_SPEC058"
+       data-production-promotion="false"
+       data-visual-grammar-selection="false"
+       data-human-verdict="PENDING"></div>
+  <script src="app.js"></script>
+</body>
+</html>

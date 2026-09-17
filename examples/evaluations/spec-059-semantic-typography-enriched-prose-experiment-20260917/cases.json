@@ -1,0 +1,1765 @@
+{
+  "cases": [
+    {
+      "case_identity": "spec059-case-248d7faea57f76",
+      "case_kind": "CLAIM",
+      "claim_id": "c1",
+      "focus_identity": {
+        "claim_id": "c1",
+        "document_id": "text-e9d2260c99802394",
+        "model_path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/06-doe-iron-platinum-atomic-structure-2017/admitted-knowledge-model.json",
+        "model_sha256": "29b475ec6742e1f7d49e9e5f29bbcd8a9c967d678a7d53f6ae58ae44f28acb7e",
+        "semantic_class": "CLAIM",
+        "source_id": "doe-iron-platinum-atomic-structure-2017",
+        "source_sha256": "e9d2260c9980239431fc195e7dc687afea93598af4f28d774ed5e4c4317f9e1e"
+      },
+      "frozen_display_field_traces": [
+        {
+          "end_char": 140,
+          "quote": "Scientists determined the three-dimensional position of more than 23,000 atoms in a tiny iron-platinum particle with 22 picometer precision.",
+          "role": "concise_prose",
+          "source": "CLAIM_TEXT",
+          "start_char": 0
+        },
+        {
+          "end_char": 78,
+          "quote": "more than 23,000 atoms",
+          "role": "explicit_quantity",
+          "source": "CLAIM_TEXT",
+          "start_char": 56
+        },
+        {
+          "end_char": 129,
+          "quote": "22 picometer",
+          "role": "explicit_quantity",
+          "source": "CLAIM_TEXT",
+          "start_char": 117
+        }
+      ],
+      "gate_decision": "CONCISE_PROSE",
+      "group": "QUANTITATIVE_FACT",
+      "prior_strategy": "QUANTITATIVE_CALLOUT",
+      "provenance": [
+        {
+          "document_id": "text-e9d2260c99802394",
+          "end_char": 185,
+          "quote": "Scientists determined the three-dimensional position of more than 23,000 atoms in a tiny iron-platinum particle with 22 picometer precision.",
+          "start_char": 45
+        }
+      ],
+      "review_index": 1,
+      "source_id": "doe-iron-platinum-atomic-structure-2017",
+      "title": "c1",
+      "treatment_a": {
+        "emphasis_spans": [],
+        "identity_sha256": "26cf37c156c131196639e86d80e5218e8fc705530ba439137b1b19471f00f13c",
+        "mode": "A",
+        "text": "Scientists determined the three-dimensional position of more than 23,000 atoms in a tiny iron-platinum particle with 22 picometer precision.",
+        "treatment": "PLAIN_PROSE"
+      },
+      "treatment_b": {
+        "emphasis_spans": [
+          {
+            "end_char": 78,
+            "role": "QUANTITY",
+            "start_char": 56,
+            "text": "more than 23,000 atoms",
+            "trace_source": "FROZEN_STRUCTURED_PAYLOAD"
+          },
+          {
+            "end_char": 129,
+            "role": "QUANTITY",
+            "start_char": 117,
+            "text": "22 picometer",
+            "trace_source": "FROZEN_STRUCTURED_PAYLOAD"
+          }
+        ],
+        "identity_sha256": "90cc82faff119d53ebad6c28853712aa4da5e93f5c4ec2742f1d801048ca96b7",
+        "mode": "B",
+        "text": "Scientists determined the three-dimensional position of more than 23,000 atoms in a tiny iron-platinum particle with 22 picometer precision.",
+        "treatment": "ENRICHED_PROSE"
+      },
+      "treatment_c": {
+        "availability": "AVAILABLE",
+        "identity_sha256": "456d4423156ff757d8e4b0e07b93dd32af451dc872fc8e5ccedb4df3819e1545",
+        "mode": "C",
+        "origin": "SPEC057_FROZEN_STRUCTURED_PAYLOAD",
+        "payload": {
+          "quantity_excerpts": [
+            "more than 23,000 atoms",
+            "22 picometer"
+          ]
+        },
+        "strategy_dom": "QUANTITATIVE_CALLOUT",
+        "treatment": "RICHER_REFERENCE"
+      },
+      "trusted_prose": "Scientists determined the three-dimensional position of more than 23,000 atoms in a tiny iron-platinum particle with 22 picometer precision.",
+      "trusted_prose_sha256": "83155162a8460dc6b1c03e46b1b15af2905f0d4b639ce5cfdd909224eec53f61",
+      "truthfulness_audit": {
+        "a_b_text_identical": true,
+        "all_spans_exact": true,
+        "prose_rewrite": false,
+        "richer_payload_byte_equivalent_to_spec057": true,
+        "semantic_or_topology_change": false
+      },
+      "utility_outcome": "UNSAFE_OR_UNSUPPORTED"
+    },
+    {
+      "case_identity": "spec059-case-35243a77c6eefc",
+      "case_kind": "CLAIM",
+      "claim_id": "c2",
+      "focus_identity": {
+        "claim_id": "c2",
+        "document_id": "text-1fd7e9851839f5f3",
+        "model_path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/08-fhwa-traffic-bottleneck-concepts-2016/admitted-knowledge-model.json",
+        "model_sha256": "848e195da43d6ff3f070c20780ea05e8b8ef9d4d8535d326aaacb7964f31cabd",
+        "semantic_class": "CLAIM",
+        "source_id": "fhwa-traffic-bottleneck-concepts-2016",
+        "source_sha256": "1fd7e9851839f5f35cd2a231cd3ce5aea8196ec85cabd04694f681c063ea4345"
+      },
+      "frozen_display_field_traces": [
+        {
+          "end_char": 125,
+          "quote": "Bottlenecks and poor signal timing together are said to define recurring congestion and account for 45 percent of congestion.",
+          "role": "concise_prose",
+          "source": "CLAIM_TEXT",
+          "start_char": 0
+        },
+        {
+          "end_char": 110,
+          "quote": "45 percent",
+          "role": "explicit_quantity",
+          "source": "CLAIM_TEXT",
+          "start_char": 100
+        }
+      ],
+      "gate_decision": "CONCISE_PROSE",
+      "group": "QUANTITATIVE_FACT",
+      "prior_strategy": "QUANTITATIVE_CALLOUT",
+      "provenance": [
+        {
+          "document_id": "text-1fd7e9851839f5f3",
+          "end_char": 346,
+          "quote": "These two causes together are said to define recurring congestion and account for 45 percent of congestion.",
+          "start_char": 239
+        }
+      ],
+      "review_index": 2,
+      "source_id": "fhwa-traffic-bottleneck-concepts-2016",
+      "title": "c2",
+      "treatment_a": {
+        "emphasis_spans": [],
+        "identity_sha256": "e7becb1f8b4a535614dfe228da814775e8763cf9859526fde459b62d5afbc192",
+        "mode": "A",
+        "text": "Bottlenecks and poor signal timing together are said to define recurring congestion and account for 45 percent of congestion.",
+        "treatment": "PLAIN_PROSE"
+      },
+      "treatment_b": {
+        "emphasis_spans": [
+          {
+            "end_char": 110,
+            "role": "QUANTITY",
+            "start_char": 100,
+            "text": "45 percent",
+            "trace_source": "FROZEN_STRUCTURED_PAYLOAD"
+          }
+        ],
+        "identity_sha256": "2d7842bf2f4fd09553fc24228894cd3b3fd5d2a67da54d0525fc2f138f2294d2",
+        "mode": "B",
+        "text": "Bottlenecks and poor signal timing together are said to define recurring congestion and account for 45 percent of congestion.",
+        "treatment": "ENRICHED_PROSE"
+      },
+      "treatment_c": {
+        "availability": "AVAILABLE",
+        "identity_sha256": "7e57ee60ef0d19f241008b36cc08d77a405cda95b725770f4fbcaab562adf52d",
+        "mode": "C",
+        "origin": "SPEC057_FROZEN_STRUCTURED_PAYLOAD",
+        "payload": {
+          "quantity_excerpts": [
+            "45 percent"
+          ]
+        },
+        "strategy_dom": "QUANTITATIVE_CALLOUT",
+        "treatment": "RICHER_REFERENCE"
+      },
+      "trusted_prose": "Bottlenecks and poor signal timing together are said to define recurring congestion and account for 45 percent of congestion.",
+      "trusted_prose_sha256": "5699a7da396a5dba282394e02a5dab9f9fb6659ee9d630fe95b9b3cfacfcc1c9",
+      "truthfulness_audit": {
+        "a_b_text_identical": true,
+        "all_spans_exact": true,
+        "prose_rewrite": false,
+        "richer_payload_byte_equivalent_to_spec057": true,
+        "semantic_or_topology_change": false
+      },
+      "utility_outcome": "LOW_EXTERNALIZATION_VALUE"
+    },
+    {
+      "case_identity": "spec059-case-3548df4af1e7b1",
+      "case_kind": "CLAIM",
+      "claim_id": "c8",
+      "focus_identity": {
+        "claim_id": "c8",
+        "document_id": "text-c0cb2519673b8f3e",
+        "model_path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/04-nasa-solar-system-formation-2026/admitted-knowledge-model.json",
+        "model_sha256": "d0a28afecf69d8edc55783eb41b4de78c72d81ef6007ac8121a003946b06b198",
+        "semantic_class": "CLAIM",
+        "source_id": "nasa-solar-system-formation-2026",
+        "source_sha256": "c0cb2519673b8f3ef23c0be2856e03790f53d44971cbff09d593190ab3fa155d"
+      },
+      "frozen_display_field_traces": [
+        {
+          "end_char": 75,
+          "quote": "The young planets eventually became the eight planets listed in the source.",
+          "role": "concise_prose",
+          "source": "CLAIM_TEXT",
+          "start_char": 0
+        },
+        {
+          "end_char": 53,
+          "quote": "eight planets",
+          "role": "explicit_quantity",
+          "source": "CLAIM_TEXT",
+          "start_char": 40
+        }
+      ],
+      "gate_decision": "CONCISE_PROSE",
+      "group": "QUANTITATIVE_FACT",
+      "prior_strategy": "QUANTITATIVE_CALLOUT",
+      "provenance": [
+        {
+          "document_id": "text-c0cb2519673b8f3e",
+          "end_char": 1729,
+          "quote": "These were young planets, and eventually, over a long time and through many, many collisions, our eight planets were formed – Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, and Neptune.",
+          "start_char": 1537
+        }
+      ],
+      "review_index": 3,
+      "source_id": "nasa-solar-system-formation-2026",
+      "title": "c8",
+      "treatment_a": {
+        "emphasis_spans": [],
+        "identity_sha256": "e7512f9eb194d2365c9765690a9653a99634afdb1102f7ea2a40264a2818910e",
+        "mode": "A",
+        "text": "The young planets eventually became the eight planets listed in the source.",
+        "treatment": "PLAIN_PROSE"
+      },
+      "treatment_b": {
+        "emphasis_spans": [
+          {
+            "end_char": 53,
+            "role": "QUANTITY",
+            "start_char": 40,
+            "text": "eight planets",
+            "trace_source": "FROZEN_STRUCTURED_PAYLOAD"
+          }
+        ],
+        "identity_sha256": "65bca3be8d5399489de788324228b4bb9115e9953e04f314b1250723209cb596",
+        "mode": "B",
+        "text": "The young planets eventually became the eight planets listed in the source.",
+        "treatment": "ENRICHED_PROSE"
+      },
+      "treatment_c": {
+        "availability": "AVAILABLE",
+        "identity_sha256": "8793f3eb0c37fa8d11b5bd08652fbf52435cedab38fc6e41fc478a8e3ec12d8d",
+        "mode": "C",
+        "origin": "SPEC057_FROZEN_STRUCTURED_PAYLOAD",
+        "payload": {
+          "quantity_excerpts": [
+            "eight planets"
+          ]
+        },
+        "strategy_dom": "QUANTITATIVE_CALLOUT",
+        "treatment": "RICHER_REFERENCE"
+      },
+      "trusted_prose": "The young planets eventually became the eight planets listed in the source.",
+      "trusted_prose_sha256": "a37d5f23952dac87024d68e63a2224f6daba1bbdad0352b83e8bd1c8dbe8230a",
+      "truthfulness_audit": {
+        "a_b_text_identical": true,
+        "all_spans_exact": true,
+        "prose_rewrite": false,
+        "richer_payload_byte_equivalent_to_spec057": true,
+        "semantic_or_topology_change": false
+      },
+      "utility_outcome": "LOW_EXTERNALIZATION_VALUE"
+    },
+    {
+      "case_identity": "spec059-case-23160826e8e809",
+      "case_kind": "CLAIM",
+      "claim_id": "c3",
+      "focus_identity": {
+        "claim_id": "c3",
+        "document_id": "text-b3ae508f3982dfdd",
+        "model_path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/09-nist-measurement-uncertainty-2025/admitted-knowledge-model.json",
+        "model_sha256": "bcb26ebe0881750b63fadf8e7756f18c4ec0ccb170e7563828763150978dcae1",
+        "semantic_class": "CLAIM",
+        "source_id": "nist-measurement-uncertainty-2025",
+        "source_sha256": "b3ae508f3982dfdd89f41a1d9ca59eb1f658b1648e3fae35168feba212046730"
+      },
+      "frozen_display_field_traces": [
+        {
+          "end_char": 57,
+          "quote": "The mass of the International Prototype Kilogram is 1 kg.",
+          "role": "concise_prose",
+          "source": "CLAIM_TEXT",
+          "start_char": 0
+        },
+        {
+          "end_char": 56,
+          "quote": "1 kg",
+          "role": "explicit_quantity",
+          "source": "CLAIM_TEXT",
+          "start_char": 52
+        }
+      ],
+      "gate_decision": "CONCISE_PROSE",
+      "group": "QUANTITATIVE_FACT",
+      "prior_strategy": "QUANTITATIVE_CALLOUT",
+      "provenance": [
+        {
+          "document_id": "text-b3ae508f3982dfdd",
+          "end_char": 380,
+          "quote": "the mass of the International Prototype Kilogram is 1 kg.",
+          "start_char": 323
+        }
+      ],
+      "review_index": 4,
+      "source_id": "nist-measurement-uncertainty-2025",
+      "title": "c3",
+      "treatment_a": {
+        "emphasis_spans": [],
+        "identity_sha256": "a5604aeac8589fafbe32834b949052fa68c266c81146c4f1cb63cdb8a4129b89",
+        "mode": "A",
+        "text": "The mass of the International Prototype Kilogram is 1 kg.",
+        "treatment": "PLAIN_PROSE"
+      },
+      "treatment_b": {
+        "emphasis_spans": [
+          {
+            "end_char": 56,
+            "role": "QUANTITY",
+            "start_char": 52,
+            "text": "1 kg",
+            "trace_source": "FROZEN_STRUCTURED_PAYLOAD"
+          }
+        ],
+        "identity_sha256": "8758aa2bceb294516d7c231fd17e208d1a31573808ecfea494fae433f46044ea",
+        "mode": "B",
+        "text": "The mass of the International Prototype Kilogram is 1 kg.",
+        "treatment": "ENRICHED_PROSE"
+      },
+      "treatment_c": {
+        "availability": "AVAILABLE",
+        "identity_sha256": "80138b9ae3c3cd45bd1cefbb57efeaffe5d3dbf95bb81e5d577b0fcc39136db1",
+        "mode": "C",
+        "origin": "SPEC057_FROZEN_STRUCTURED_PAYLOAD",
+        "payload": {
+          "quantity_excerpts": [
+            "1 kg"
+          ]
+        },
+        "strategy_dom": "QUANTITATIVE_CALLOUT",
+        "treatment": "RICHER_REFERENCE"
+      },
+      "trusted_prose": "The mass of the International Prototype Kilogram is 1 kg.",
+      "trusted_prose_sha256": "edaa3684894267f696884b8b5e8096578171e118ccfb916f6f6daf4b11b5c006",
+      "truthfulness_audit": {
+        "a_b_text_identical": true,
+        "all_spans_exact": true,
+        "prose_rewrite": false,
+        "richer_payload_byte_equivalent_to_spec057": true,
+        "semantic_or_topology_change": false
+      },
+      "utility_outcome": "LOW_EXTERNALIZATION_VALUE"
+    },
+    {
+      "case_identity": "spec059-case-f66277f91f8a6d",
+      "case_kind": "CLAIM",
+      "claim_id": "c32",
+      "focus_identity": {
+        "claim_id": "c32",
+        "document_id": "text-256ade61be620cfa",
+        "model_path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/02-noaa-nesdis-jet-stream-2025/admitted-knowledge-model.json",
+        "model_sha256": "0c1e5b46d692727ca526f74307de2c0b358a1ea79dab98143f19271872a61a62",
+        "semantic_class": "CLAIM",
+        "source_id": "noaa-nesdis-jet-stream-2025",
+        "source_sha256": "256ade61be620cfaa7b1327e3c982576611dd29b6a1fb42217d86ffdc0783ca1"
+      },
+      "frozen_display_field_traces": [
+        {
+          "end_char": 35,
+          "quote": "Earth has four primary jet streams.",
+          "role": "concise_prose",
+          "source": "CLAIM_TEXT",
+          "start_char": 0
+        },
+        {
+          "end_char": 14,
+          "quote": "four",
+          "role": "explicit_quantity",
+          "source": "CLAIM_TEXT",
+          "start_char": 10
+        }
+      ],
+      "gate_decision": "CONCISE_PROSE",
+      "group": "QUANTITATIVE_FACT",
+      "prior_strategy": "QUANTITATIVE_CALLOUT",
+      "provenance": [
+        {
+          "document_id": "text-256ade61be620cfa",
+          "end_char": 249,
+          "quote": "Earth has four primary jet streams: two polar jet streams, near the north and south poles, and two subtropical jet streams closer to the equator.",
+          "start_char": 104
+        }
+      ],
+      "review_index": 5,
+      "source_id": "noaa-nesdis-jet-stream-2025",
+      "title": "c32",
+      "treatment_a": {
+        "emphasis_spans": [],
+        "identity_sha256": "9bfa421f8e7bc111ca3bfaac2d935370995f0b0d5de129e7387b1cdec0bb8f24",
+        "mode": "A",
+        "text": "Earth has four primary jet streams.",
+        "treatment": "PLAIN_PROSE"
+      },
+      "treatment_b": {
+        "emphasis_spans": [
+          {
+            "end_char": 14,
+            "role": "QUANTITY",
+            "start_char": 10,
+            "text": "four",
+            "trace_source": "FROZEN_STRUCTURED_PAYLOAD"
+          }
+        ],
+        "identity_sha256": "2ebb0626bc55065e9f3ea321fcc9d46bc79c42c342a37678771ba86e68463807",
+        "mode": "B",
+        "text": "Earth has four primary jet streams.",
+        "treatment": "ENRICHED_PROSE"
+      },
+      "treatment_c": {
+        "availability": "AVAILABLE",
+        "identity_sha256": "dc3f0e459974430fe8616f2225021709fc392eb072d2442f27b6c1c1ec3a1f5b",
+        "mode": "C",
+        "origin": "SPEC057_FROZEN_STRUCTURED_PAYLOAD",
+        "payload": {
+          "quantity_excerpts": [
+            "four"
+          ]
+        },
+        "strategy_dom": "QUANTITATIVE_CALLOUT",
+        "treatment": "RICHER_REFERENCE"
+      },
+      "trusted_prose": "Earth has four primary jet streams.",
+      "trusted_prose_sha256": "8b81a7e5fe29cec9f6f059814354f52eb2b9fe00ce777d51b04a4aec3268486c",
+      "truthfulness_audit": {
+        "a_b_text_identical": true,
+        "all_spans_exact": true,
+        "prose_rewrite": false,
+        "richer_payload_byte_equivalent_to_spec057": true,
+        "semantic_or_topology_change": false
+      },
+      "utility_outcome": "LOW_EXTERNALIZATION_VALUE"
+    },
+    {
+      "case_identity": "spec059-case-c6760cf0c1cfd2",
+      "case_kind": "CLAIM",
+      "claim_id": "c14",
+      "focus_identity": {
+        "claim_id": "c14",
+        "document_id": "text-a9539d135ff1577d",
+        "model_path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/01-usgs-divergent-plate-boundaries-1996/admitted-knowledge-model.json",
+        "model_sha256": "fa2494dab670a698a8f730a0501c997984467839906f5c7b702e50ad6fd61261",
+        "semantic_class": "CLAIM",
+        "source_id": "usgs-divergent-plate-boundaries-1996",
+        "source_sha256": "a9539d135ff1577d7e2791d498b92f55239175565b925b24aec2ed0bf633f186"
+      },
+      "frozen_display_field_traces": [
+        {
+          "end_char": 125,
+          "quote": "The spreading rate along the Mid-Atlantic Ridge averages about 2.5 centimeters per year, or 25 kilometers in a million years.",
+          "role": "concise_prose",
+          "source": "CLAIM_TEXT",
+          "start_char": 0
+        },
+        {
+          "end_char": 78,
+          "quote": "about 2.5 centimeters",
+          "role": "explicit_quantity",
+          "source": "CLAIM_TEXT",
+          "start_char": 57
+        },
+        {
+          "end_char": 105,
+          "quote": "25 kilometers",
+          "role": "explicit_quantity",
+          "source": "CLAIM_TEXT",
+          "start_char": 92
+        },
+        {
+          "end_char": 124,
+          "quote": "million years",
+          "role": "explicit_quantity",
+          "source": "CLAIM_TEXT",
+          "start_char": 111
+        }
+      ],
+      "gate_decision": "CONCISE_PROSE",
+      "group": "QUANTITATIVE_FACT",
+      "prior_strategy": "QUANTITATIVE_CALLOUT",
+      "provenance": [
+        {
+          "document_id": "text-a9539d135ff1577d",
+          "end_char": 702,
+          "quote": "The rate of spreading along the Mid-Atlantic Ridge averages about 2.5 centimeters per year (cm/yr), or 25 km in a million years.",
+          "start_char": 574
+        }
+      ],
+      "review_index": 6,
+      "source_id": "usgs-divergent-plate-boundaries-1996",
+      "title": "c14",
+      "treatment_a": {
+        "emphasis_spans": [],
+        "identity_sha256": "4cba005e16404c21b58b210c87a908349eda4ce471f508b72c8e25e4a98436b9",
+        "mode": "A",
+        "text": "The spreading rate along the Mid-Atlantic Ridge averages about 2.5 centimeters per year, or 25 kilometers in a million years.",
+        "treatment": "PLAIN_PROSE"
+      },
+      "treatment_b": {
+        "emphasis_spans": [
+          {
+            "end_char": 78,
+            "role": "QUANTITY",
+            "start_char": 57,
+            "text": "about 2.5 centimeters",
+            "trace_source": "FROZEN_STRUCTURED_PAYLOAD"
+          },
+          {
+            "end_char": 105,
+            "role": "QUANTITY",
+            "start_char": 92,
+            "text": "25 kilometers",
+            "trace_source": "FROZEN_STRUCTURED_PAYLOAD"
+          },
+          {
+            "end_char": 124,
+            "role": "QUANTITY",
+            "start_char": 111,
+            "text": "million years",
+            "trace_source": "FROZEN_STRUCTURED_PAYLOAD"
+          }
+        ],
+        "identity_sha256": "7fbc51d4e71c9e45cfc2a039f29edcee4e570b4a5afd66a18946b93db88adcda",
+        "mode": "B",
+        "text": "The spreading rate along the Mid-Atlantic Ridge averages about 2.5 centimeters per year, or 25 kilometers in a million years.",
+        "treatment": "ENRICHED_PROSE"
+      },
+      "treatment_c": {
+        "availability": "AVAILABLE",
+        "identity_sha256": "bdfd016d252ccd4fef6030852ff53f8ba3bdeefff97ed051d1170c1404795ad5",
+        "mode": "C",
+        "origin": "SPEC057_FROZEN_STRUCTURED_PAYLOAD",
+        "payload": {
+          "quantity_excerpts": [
+            "about 2.5 centimeters",
+            "25 kilometers",
+            "million years"
+          ]
+        },
+        "strategy_dom": "QUANTITATIVE_CALLOUT",
+        "treatment": "RICHER_REFERENCE"
+      },
+      "trusted_prose": "The spreading rate along the Mid-Atlantic Ridge averages about 2.5 centimeters per year, or 25 kilometers in a million years.",
+      "trusted_prose_sha256": "c88498e7e43542f0e5f9256095e3d169a4de7a8ce81a1b766b545ca15f3e5d0d",
+      "truthfulness_audit": {
+        "a_b_text_identical": true,
+        "all_spans_exact": true,
+        "prose_rewrite": false,
+        "richer_payload_byte_equivalent_to_spec057": true,
+        "semantic_or_topology_change": false
+      },
+      "utility_outcome": "UNSAFE_OR_UNSUPPORTED"
+    },
+    {
+      "case_identity": "spec059-case-df5265b0291c91",
+      "case_kind": "CLAIM",
+      "claim_id": "claim-house-tools",
+      "focus_identity": {
+        "claim_id": "claim-house-tools",
+        "document_id": "text-fe61b7c3b2a9373e",
+        "model_path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/03-crs-legislative-process-r42843-17/admitted-knowledge-model.json",
+        "model_sha256": "67366dc7c5dfd120d4ee974e02c0568f8e221675e0843dd35469bf41105fdeb4",
+        "semantic_class": "CLAIM",
+        "source_id": "crs-legislative-process-r42843-17",
+        "source_sha256": "fe61b7c3b2a9373e7eb3b30d16b94adc2c8b5f4307327265943995550a6384b4"
+      },
+      "frozen_display_field_traces": [
+        {
+          "end_char": 118,
+          "quote": "Majority party leaders in the House have more tools to set the floor agenda than majority party leaders in the Senate.",
+          "role": "concise_prose",
+          "source": "CLAIM_TEXT",
+          "start_char": 0
+        },
+        {
+          "end_char": 40,
+          "quote": "Majority party leaders in the House have",
+          "role": "comparison_side_a",
+          "source": "CLAIM_TEXT",
+          "start_char": 0
+        },
+        {
+          "end_char": 117,
+          "quote": "majority party leaders in the Senate",
+          "role": "comparison_side_b",
+          "source": "CLAIM_TEXT",
+          "start_char": 81
+        },
+        {
+          "end_char": 80,
+          "quote": "more tools to set the floor agenda than",
+          "role": "comparison_cue",
+          "source": "CLAIM_TEXT",
+          "start_char": 41
+        }
+      ],
+      "gate_decision": "COMPARISON",
+      "group": "COMPARISON_CONTRAST",
+      "prior_strategy": "COMPARISON",
+      "provenance": [
+        {
+          "document_id": "text-fe61b7c3b2a9373e",
+          "end_char": 268,
+          "quote": "majority party leaders in the House have more tools with which to set the floor agenda than do majority party leaders in the Senate",
+          "start_char": 137
+        }
+      ],
+      "review_index": 7,
+      "source_id": "crs-legislative-process-r42843-17",
+      "title": "claim-house-tools",
+      "treatment_a": {
+        "emphasis_spans": [],
+        "identity_sha256": "51e02b1f607894f282224865e2f4bb86bbea7a1718974e7eabdffeb959ba1171",
+        "mode": "A",
+        "text": "Majority party leaders in the House have more tools to set the floor agenda than majority party leaders in the Senate.",
+        "treatment": "PLAIN_PROSE"
+      },
+      "treatment_b": {
+        "emphasis_spans": [
+          {
+            "end_char": 40,
+            "role": "COMPARISON_OPERAND",
+            "start_char": 0,
+            "text": "Majority party leaders in the House have",
+            "trace_source": "FROZEN_STRUCTURED_PAYLOAD"
+          },
+          {
+            "end_char": 80,
+            "role": "CONTRAST",
+            "start_char": 41,
+            "text": "more tools to set the floor agenda than",
+            "trace_source": "FROZEN_STRUCTURED_PAYLOAD"
+          },
+          {
+            "end_char": 117,
+            "role": "COMPARISON_OPERAND",
+            "start_char": 81,
+            "text": "majority party leaders in the Senate",
+            "trace_source": "FROZEN_STRUCTURED_PAYLOAD"
+          }
+        ],
+        "identity_sha256": "f1bf91036afda970ab0fbd26dfd4881667a76050f8b8214bf4f3c35ed8fd9f16",
+        "mode": "B",
+        "text": "Majority party leaders in the House have more tools to set the floor agenda than majority party leaders in the Senate.",
+        "treatment": "ENRICHED_PROSE"
+      },
+      "treatment_c": {
+        "availability": "AVAILABLE",
+        "identity_sha256": "266a8c59d5b1bb0d660445caa3b1fd55213b7eb4c90a0c436dae04d879fe5e69",
+        "mode": "C",
+        "origin": "SPEC057_FROZEN_STRUCTURED_PAYLOAD",
+        "payload": {
+          "explicit_cue": "more tools to set the floor agenda than",
+          "quantity_excerpts": [],
+          "sides": [
+            "Majority party leaders in the House have",
+            "majority party leaders in the Senate"
+          ]
+        },
+        "strategy_dom": "COMPARISON",
+        "treatment": "RICHER_REFERENCE"
+      },
+      "trusted_prose": "Majority party leaders in the House have more tools to set the floor agenda than majority party leaders in the Senate.",
+      "trusted_prose_sha256": "f2e1872f1304cc9bf775956070688386866774ce3c7d4f76fef94897bcaed26e",
+      "truthfulness_audit": {
+        "a_b_text_identical": true,
+        "all_spans_exact": true,
+        "prose_rewrite": false,
+        "richer_payload_byte_equivalent_to_spec057": true,
+        "semantic_or_topology_change": false
+      },
+      "utility_outcome": "STRONG_EXTERNALIZATION_VALUE"
+    },
+    {
+      "case_identity": "spec059-case-48b7277b64b436",
+      "case_kind": "CLAIM",
+      "claim_id": "claim-6",
+      "focus_identity": {
+        "claim_id": "claim-6",
+        "document_id": "text-70e7e3d20325dd5d",
+        "model_path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/05-epa-ecological-processes-2026/admitted-knowledge-model.json",
+        "model_sha256": "077318e713e10c02ce188fca1d0e247801d975d5ab7b1b1951183b14d6ad60d1",
+        "semantic_class": "CLAIM",
+        "source_id": "epa-ecological-processes-2026",
+        "source_sha256": "70e7e3d20325dd5d22e9cf4484934419447907ba9f6cf5a4dfd65ddcbfa80ad5"
+      },
+      "frozen_display_field_traces": [
+        {
+          "end_char": 134,
+          "quote": "Indicators for respiration, nutrient cycling, and decomposition have been developed at watershed scales but not at the national scale.",
+          "role": "concise_prose",
+          "source": "CLAIM_TEXT",
+          "start_char": 0
+        },
+        {
+          "end_char": 103,
+          "quote": "Indicators for respiration, nutrient cycling, and decomposition have been developed at watershed scales",
+          "role": "contrast_side_a",
+          "source": "CLAIM_TEXT",
+          "start_char": 0
+        },
+        {
+          "end_char": 133,
+          "quote": "not at the national scale",
+          "role": "contrast_side_b",
+          "source": "CLAIM_TEXT",
+          "start_char": 108
+        },
+        {
+          "end_char": 111,
+          "quote": "but not",
+          "role": "contrast_cue",
+          "source": "CLAIM_TEXT",
+          "start_char": 104
+        }
+      ],
+      "gate_decision": "COMPARISON",
+      "group": "COMPARISON_CONTRAST",
+      "prior_strategy": "COMPARISON",
+      "provenance": [
+        {
+          "document_id": "text-70e7e3d20325dd5d",
+          "end_char": 2618,
+          "quote": "Indicators for other ecological processes, such as respiration, nutrient cycling, or decomposition have been developed for ecosystems at watershed scales, but have not been developed at the national scale.",
+          "start_char": 2413
+        }
+      ],
+      "review_index": 8,
+      "source_id": "epa-ecological-processes-2026",
+      "title": "claim-6",
+      "treatment_a": {
+        "emphasis_spans": [],
+        "identity_sha256": "ec84405903613471ca6afae974401b21b1296ac966fb9b30f26e43fc35959315",
+        "mode": "A",
+        "text": "Indicators for respiration, nutrient cycling, and decomposition have been developed at watershed scales but not at the national scale.",
+        "treatment": "PLAIN_PROSE"
+      },
+      "treatment_b": {
+        "emphasis_spans": [
+          {
+            "end_char": 103,
+            "role": "COMPARISON_OPERAND",
+            "start_char": 0,
+            "text": "Indicators for respiration, nutrient cycling, and decomposition have been developed at watershed scales",
+            "trace_source": "FROZEN_STRUCTURED_PAYLOAD"
+          },
+          {
+            "end_char": 133,
+            "role": "COMPARISON_OPERAND",
+            "start_char": 108,
+            "text": "not at the national scale",
+            "trace_source": "FROZEN_STRUCTURED_PAYLOAD"
+          }
+        ],
+        "identity_sha256": "e6165b6a230d9ca23579a506cf91836a869d49101b913eaf1144ba2298888c19",
+        "mode": "B",
+        "text": "Indicators for respiration, nutrient cycling, and decomposition have been developed at watershed scales but not at the national scale.",
+        "treatment": "ENRICHED_PROSE"
+      },
+      "treatment_c": {
+        "availability": "AVAILABLE",
+        "identity_sha256": "8b1a3ab4e8359e9255e62a37e37b8d76bf6cf6e47a6a2d662578e3313add3238",
+        "mode": "C",
+        "origin": "SPEC057_FROZEN_STRUCTURED_PAYLOAD",
+        "payload": {
+          "explicit_cue": "but not",
+          "quantity_excerpts": [],
+          "sides": [
+            "Indicators for respiration, nutrient cycling, and decomposition have been developed at watershed scales",
+            "not at the national scale"
+          ]
+        },
+        "strategy_dom": "COMPARISON",
+        "treatment": "RICHER_REFERENCE"
+      },
+      "trusted_prose": "Indicators for respiration, nutrient cycling, and decomposition have been developed at watershed scales but not at the national scale.",
+      "trusted_prose_sha256": "e8c902eb44f7dca7266f5dac0c6c1bad5c6af9adc5f0642f4d1ef7166266d620",
+      "truthfulness_audit": {
+        "a_b_text_identical": true,
+        "all_spans_exact": true,
+        "prose_rewrite": false,
+        "richer_payload_byte_equivalent_to_spec057": true,
+        "semantic_or_topology_change": false
+      },
+      "utility_outcome": "STRONG_EXTERNALIZATION_VALUE"
+    },
+    {
+      "case_identity": "spec059-case-ec29b2ab9b1f39",
+      "case_kind": "CLAIM",
+      "claim_id": "c1",
+      "focus_identity": {
+        "claim_id": "c1",
+        "document_id": "text-1fd7e9851839f5f3",
+        "model_path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/08-fhwa-traffic-bottleneck-concepts-2016/admitted-knowledge-model.json",
+        "model_sha256": "848e195da43d6ff3f070c20780ea05e8b8ef9d4d8535d326aaacb7964f31cabd",
+        "semantic_class": "CLAIM",
+        "source_id": "fhwa-traffic-bottleneck-concepts-2016",
+        "source_sha256": "1fd7e9851839f5f35cd2a231cd3ce5aea8196ec85cabd04694f681c063ea4345"
+      },
+      "frozen_display_field_traces": [
+        {
+          "end_char": 155,
+          "quote": "FHWA has stated that 40 percent of all congestion nationwide is attributable to bottlenecks, while another 5 percent is attributable to poor signal timing.",
+          "role": "concise_prose",
+          "source": "CLAIM_TEXT",
+          "start_char": 0
+        },
+        {
+          "end_char": 91,
+          "quote": "FHWA has stated that 40 percent of all congestion nationwide is attributable to bottlenecks",
+          "role": "comparison_side_a",
+          "source": "CLAIM_TEXT",
+          "start_char": 0
+        },
+        {
+          "end_char": 154,
+          "quote": "another 5 percent is attributable to poor signal timing",
+          "role": "comparison_side_b",
+          "source": "CLAIM_TEXT",
+          "start_char": 99
+        },
+        {
+          "end_char": 98,
+          "quote": "while",
+          "role": "comparison_cue",
+          "source": "CLAIM_TEXT",
+          "start_char": 93
+        },
+        {
+          "end_char": 31,
+          "quote": "40 percent",
+          "role": "explicit_quantity",
+          "source": "CLAIM_TEXT",
+          "start_char": 21
+        },
+        {
+          "end_char": 116,
+          "quote": "another 5 percent",
+          "role": "explicit_quantity",
+          "source": "CLAIM_TEXT",
+          "start_char": 99
+        }
+      ],
+      "gate_decision": "COMPARISON",
+      "group": "COMPARISON_CONTRAST",
+      "prior_strategy": "COMPARISON",
+      "provenance": [
+        {
+          "document_id": "text-1fd7e9851839f5f3",
+          "end_char": 238,
+          "quote": "For at least 15 years, FHWA has stated that 40 percent of all congestion nationwide is attributable to bottlenecks, while another 5 percent is attributable to poor signal timing, which is also a tangible problem and not a random event.(5)",
+          "start_char": 0
+        }
+      ],
+      "review_index": 9,
+      "source_id": "fhwa-traffic-bottleneck-concepts-2016",
+      "title": "c1",
+      "treatment_a": {
+        "emphasis_spans": [],
+        "identity_sha256": "7d7124ec3cfc2acc0c87c214b4913cf5bea42d1f452eedd0266101dd2b1171c3",
+        "mode": "A",
+        "text": "FHWA has stated that 40 percent of all congestion nationwide is attributable to bottlenecks, while another 5 percent is attributable to poor signal timing.",
+        "treatment": "PLAIN_PROSE"
+      },
+      "treatment_b": {
+        "emphasis_spans": [
+          {
+            "end_char": 91,
+            "role": "COMPARISON_OPERAND",
+            "start_char": 0,
+            "text": "FHWA has stated that 40 percent of all congestion nationwide is attributable to bottlenecks",
+            "trace_source": "FROZEN_STRUCTURED_PAYLOAD"
+          },
+          {
+            "end_char": 98,
+            "role": "CONTRAST",
+            "start_char": 93,
+            "text": "while",
+            "trace_source": "FROZEN_STRUCTURED_PAYLOAD"
+          },
+          {
+            "end_char": 154,
+            "role": "COMPARISON_OPERAND",
+            "start_char": 99,
+            "text": "another 5 percent is attributable to poor signal timing",
+            "trace_source": "FROZEN_STRUCTURED_PAYLOAD"
+          }
+        ],
+        "identity_sha256": "339abec8447c15b0dad5e848867017638235307cf44c2b386e02f9250177035a",
+        "mode": "B",
+        "text": "FHWA has stated that 40 percent of all congestion nationwide is attributable to bottlenecks, while another 5 percent is attributable to poor signal timing.",
+        "treatment": "ENRICHED_PROSE"
+      },
+      "treatment_c": {
+        "availability": "AVAILABLE",
+        "identity_sha256": "8cbb29780db3f24e8175e0c46297c8876f4530ede85732d17655e74313f5bd2a",
+        "mode": "C",
+        "origin": "SPEC057_FROZEN_STRUCTURED_PAYLOAD",
+        "payload": {
+          "explicit_cue": "while",
+          "quantity_excerpts": [
+            "40 percent",
+            "another 5 percent"
+          ],
+          "sides": [
+            "FHWA has stated that 40 percent of all congestion nationwide is attributable to bottlenecks",
+            "another 5 percent is attributable to poor signal timing"
+          ]
+        },
+        "strategy_dom": "COMPARISON",
+        "treatment": "RICHER_REFERENCE"
+      },
+      "trusted_prose": "FHWA has stated that 40 percent of all congestion nationwide is attributable to bottlenecks, while another 5 percent is attributable to poor signal timing.",
+      "trusted_prose_sha256": "038fa0e2367f27223b1016b2490cb922ea54a8a2f955a2521f59fb9cecc46ea9",
+      "truthfulness_audit": {
+        "a_b_text_identical": true,
+        "all_spans_exact": true,
+        "prose_rewrite": false,
+        "richer_payload_byte_equivalent_to_spec057": true,
+        "semantic_or_topology_change": false
+      },
+      "utility_outcome": "STRONG_EXTERNALIZATION_VALUE"
+    },
+    {
+      "case_identity": "spec059-case-518f359c6d4e70",
+      "case_kind": "CLAIM",
+      "claim_id": "c36",
+      "focus_identity": {
+        "claim_id": "c36",
+        "document_id": "text-256ade61be620cfa",
+        "model_path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/02-noaa-nesdis-jet-stream-2025/admitted-knowledge-model.json",
+        "model_sha256": "0c1e5b46d692727ca526f74307de2c0b358a1ea79dab98143f19271872a61a62",
+        "semantic_class": "CLAIM",
+        "source_id": "noaa-nesdis-jet-stream-2025",
+        "source_sha256": "256ade61be620cfaa7b1327e3c982576611dd29b6a1fb42217d86ffdc0783ca1"
+      },
+      "frozen_display_field_traces": [
+        {
+          "end_char": 121,
+          "quote": "An airplane flying west to east can generally make a route faster than an airplane traveling the same route east to west.",
+          "role": "concise_prose",
+          "source": "CLAIM_TEXT",
+          "start_char": 0
+        },
+        {
+          "end_char": 58,
+          "quote": "An airplane flying west to east can generally make a route",
+          "role": "comparison_side_a",
+          "source": "CLAIM_TEXT",
+          "start_char": 0
+        },
+        {
+          "end_char": 120,
+          "quote": "an airplane traveling the same route east to west",
+          "role": "comparison_side_b",
+          "source": "CLAIM_TEXT",
+          "start_char": 71
+        },
+        {
+          "end_char": 70,
+          "quote": "faster than",
+          "role": "comparison_cue",
+          "source": "CLAIM_TEXT",
+          "start_char": 59
+        }
+      ],
+      "gate_decision": "COMPARISON",
+      "group": "COMPARISON_CONTRAST",
+      "prior_strategy": "COMPARISON",
+      "provenance": [
+        {
+          "document_id": "text-256ade61be620cfa",
+          "end_char": 1513,
+          "quote": "an airplane flying a route from west to east can generally make the trip faster than an airplane traveling the same route east to west.",
+          "start_char": 1378
+        }
+      ],
+      "review_index": 10,
+      "source_id": "noaa-nesdis-jet-stream-2025",
+      "title": "c36",
+      "treatment_a": {
+        "emphasis_spans": [],
+        "identity_sha256": "5dbcb70c4c86889b66584c5a4602e3a2479ab9d529f566a13248a75966932741",
+        "mode": "A",
+        "text": "An airplane flying west to east can generally make a route faster than an airplane traveling the same route east to west.",
+        "treatment": "PLAIN_PROSE"
+      },
+      "treatment_b": {
+        "emphasis_spans": [
+          {
+            "end_char": 58,
+            "role": "COMPARISON_OPERAND",
+            "start_char": 0,
+            "text": "An airplane flying west to east can generally make a route",
+            "trace_source": "FROZEN_STRUCTURED_PAYLOAD"
+          },
+          {
+            "end_char": 70,
+            "role": "CONTRAST",
+            "start_char": 59,
+            "text": "faster than",
+            "trace_source": "FROZEN_STRUCTURED_PAYLOAD"
+          },
+          {
+            "end_char": 120,
+            "role": "COMPARISON_OPERAND",
+            "start_char": 71,
+            "text": "an airplane traveling the same route east to west",
+            "trace_source": "FROZEN_STRUCTURED_PAYLOAD"
+          }
+        ],
+        "identity_sha256": "347ff3bbb5616e965d727b6d0db52effb54c0debb82eb2b1c257beab3aeac06d",
+        "mode": "B",
+        "text": "An airplane flying west to east can generally make a route faster than an airplane traveling the same route east to west.",
+        "treatment": "ENRICHED_PROSE"
+      },
+      "treatment_c": {
+        "availability": "AVAILABLE",
+        "identity_sha256": "e20255ceb849a9a3889bd7247e1871be3b2b5cba7a5d0e62e10795230c813f6c",
+        "mode": "C",
+        "origin": "SPEC057_FROZEN_STRUCTURED_PAYLOAD",
+        "payload": {
+          "explicit_cue": "faster than",
+          "quantity_excerpts": [],
+          "sides": [
+            "An airplane flying west to east can generally make a route",
+            "an airplane traveling the same route east to west"
+          ]
+        },
+        "strategy_dom": "COMPARISON",
+        "treatment": "RICHER_REFERENCE"
+      },
+      "trusted_prose": "An airplane flying west to east can generally make a route faster than an airplane traveling the same route east to west.",
+      "trusted_prose_sha256": "f18632c24d1de5de2b08cab11c373b318b8083bf886df6653b285df2831ac071",
+      "truthfulness_audit": {
+        "a_b_text_identical": true,
+        "all_spans_exact": true,
+        "prose_rewrite": false,
+        "richer_payload_byte_equivalent_to_spec057": true,
+        "semantic_or_topology_change": false
+      },
+      "utility_outcome": "STRONG_EXTERNALIZATION_VALUE"
+    },
+    {
+      "case_identity": "spec059-case-18d3aec4f89a1e",
+      "case_kind": "CLAIM",
+      "claim_id": "claim-amendments",
+      "focus_identity": {
+        "claim_id": "claim-amendments",
+        "document_id": "text-fe61b7c3b2a9373e",
+        "model_path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/03-crs-legislative-process-r42843-17/admitted-knowledge-model.json",
+        "model_sha256": "67366dc7c5dfd120d4ee974e02c0568f8e221675e0843dd35469bf41105fdeb4",
+        "semantic_class": "CLAIM",
+        "source_id": "crs-legislative-process-r42843-17",
+        "source_sha256": "fe61b7c3b2a9373e7eb3b30d16b94adc2c8b5f4307327265943995550a6384b4"
+      },
+      "frozen_display_field_traces": [
+        {
+          "end_char": 63,
+          "quote": "During a markup, committee members vote on proposed amendments.",
+          "role": "concise_prose",
+          "source": "CLAIM_TEXT",
+          "start_char": 0
+        },
+        {
+          "end_char": 15,
+          "quote": "During a markup",
+          "role": "qualifier",
+          "source": "CLAIM_TEXT",
+          "start_char": 0
+        }
+      ],
+      "gate_decision": "CONCISE_PROSE",
+      "group": "QUALIFICATION_SCOPE",
+      "prior_strategy": "QUALIFIED_STATEMENT",
+      "provenance": [
+        {
+          "document_id": "text-fe61b7c3b2a9373e",
+          "end_char": 1469,
+          "quote": "at which committee members vote on any proposed amendments",
+          "start_char": 1411
+        }
+      ],
+      "review_index": 11,
+      "source_id": "crs-legislative-process-r42843-17",
+      "title": "claim-amendments",
+      "treatment_a": {
+        "emphasis_spans": [],
+        "identity_sha256": "52c80cc16ce4f675b7d3f88eeaf76407e0c83fa575784d76869614a1b0e76c6c",
+        "mode": "A",
+        "text": "During a markup, committee members vote on proposed amendments.",
+        "treatment": "PLAIN_PROSE"
+      },
+      "treatment_b": {
+        "emphasis_spans": [
+          {
+            "end_char": 15,
+            "role": "CONDITION_OR_SCOPE",
+            "start_char": 0,
+            "text": "During a markup",
+            "trace_source": "FROZEN_STRUCTURED_PAYLOAD"
+          }
+        ],
+        "identity_sha256": "ea7179a94021c7265d117b793a10ba742abf129f2db10be1e057ca1241a5bad5",
+        "mode": "B",
+        "text": "During a markup, committee members vote on proposed amendments.",
+        "treatment": "ENRICHED_PROSE"
+      },
+      "treatment_c": {
+        "availability": "AVAILABLE",
+        "identity_sha256": "4c208754f566a4841acf184b924156c306846634f9e5134465158b15bedf1eca",
+        "mode": "C",
+        "origin": "SPEC057_FROZEN_STRUCTURED_PAYLOAD",
+        "payload": {
+          "explicit_qualifier_or_condition": "During a markup"
+        },
+        "strategy_dom": "QUALIFIED_STATEMENT",
+        "treatment": "RICHER_REFERENCE"
+      },
+      "trusted_prose": "During a markup, committee members vote on proposed amendments.",
+      "trusted_prose_sha256": "e2c60b4aaf516647c114f2d50b9fc60b0bfbe721a4905c42f191bec02dad8526",
+      "truthfulness_audit": {
+        "a_b_text_identical": true,
+        "all_spans_exact": true,
+        "prose_rewrite": false,
+        "richer_payload_byte_equivalent_to_spec057": true,
+        "semantic_or_topology_change": false
+      },
+      "utility_outcome": "LOW_EXTERNALIZATION_VALUE"
+    },
+    {
+      "case_identity": "spec059-case-675674e59b3954",
+      "case_kind": "CLAIM",
+      "claim_id": "c14",
+      "focus_identity": {
+        "claim_id": "c14",
+        "document_id": "text-e9d2260c99802394",
+        "model_path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/06-doe-iron-platinum-atomic-structure-2017/admitted-knowledge-model.json",
+        "model_sha256": "29b475ec6742e1f7d49e9e5f29bbcd8a9c967d678a7d53f6ae58ae44f28acb7e",
+        "semantic_class": "CLAIM",
+        "source_id": "doe-iron-platinum-atomic-structure-2017",
+        "source_sha256": "e9d2260c9980239431fc195e7dc687afea93598af4f28d774ed5e4c4317f9e1e"
+      },
+      "frozen_display_field_traces": [
+        {
+          "end_char": 93,
+          "quote": "Swap defects occur when an individual atom or a pair of nearest-neighbor atoms switch places.",
+          "role": "concise_prose",
+          "source": "CLAIM_TEXT",
+          "start_char": 0
+        },
+        {
+          "end_char": 92,
+          "quote": "when an individual atom or a pair of nearest-neighbor atoms switch places",
+          "role": "qualifier",
+          "source": "CLAIM_TEXT",
+          "start_char": 19
+        }
+      ],
+      "gate_decision": "CONCISE_PROSE",
+      "group": "QUALIFICATION_SCOPE",
+      "prior_strategy": "QUALIFIED_STATEMENT",
+      "provenance": [
+        {
+          "document_id": "text-e9d2260c99802394",
+          "end_char": 1895,
+          "quote": "swap defects (where individual or a pair of nearest-neighbor atoms switch places)",
+          "start_char": 1814
+        }
+      ],
+      "review_index": 12,
+      "source_id": "doe-iron-platinum-atomic-structure-2017",
+      "title": "c14",
+      "treatment_a": {
+        "emphasis_spans": [],
+        "identity_sha256": "b7d235148c5b35161b303f59a15ccdd5301068e36480c9a724b5f00c1448088d",
+        "mode": "A",
+        "text": "Swap defects occur when an individual atom or a pair of nearest-neighbor atoms switch places.",
+        "treatment": "PLAIN_PROSE"
+      },
+      "treatment_b": {
+        "emphasis_spans": [
+          {
+            "end_char": 92,
+            "role": "CONDITION_OR_SCOPE",
+            "start_char": 19,
+            "text": "when an individual atom or a pair of nearest-neighbor atoms switch places",
+            "trace_source": "FROZEN_STRUCTURED_PAYLOAD"
+          }
+        ],
+        "identity_sha256": "4e3c08bf79a5dc1900d4a04b9c9186d19d196756da3207ea099f0b19e8330a78",
+        "mode": "B",
+        "text": "Swap defects occur when an individual atom or a pair of nearest-neighbor atoms switch places.",
+        "treatment": "ENRICHED_PROSE"
+      },
+      "treatment_c": {
+        "availability": "AVAILABLE",
+        "identity_sha256": "eb7c951bec881dc4be7e2a5df3cf69a9f24cfbcd237292097ac1c4ab4ced5e6b",
+        "mode": "C",
+        "origin": "SPEC057_FROZEN_STRUCTURED_PAYLOAD",
+        "payload": {
+          "explicit_qualifier_or_condition": "when an individual atom or a pair of nearest-neighbor atoms switch places"
+        },
+        "strategy_dom": "QUALIFIED_STATEMENT",
+        "treatment": "RICHER_REFERENCE"
+      },
+      "trusted_prose": "Swap defects occur when an individual atom or a pair of nearest-neighbor atoms switch places.",
+      "trusted_prose_sha256": "16a4e842105b57e5d6d412d9b210391be11ee5382c388778797c9afe0d82a0d7",
+      "truthfulness_audit": {
+        "a_b_text_identical": true,
+        "all_spans_exact": true,
+        "prose_rewrite": false,
+        "richer_payload_byte_equivalent_to_spec057": true,
+        "semantic_or_topology_change": false
+      },
+      "utility_outcome": "LOW_EXTERNALIZATION_VALUE"
+    },
+    {
+      "case_identity": "spec059-case-5bd6d0d3e09745",
+      "case_kind": "CLAIM",
+      "claim_id": "claim-3",
+      "focus_identity": {
+        "claim_id": "claim-3",
+        "document_id": "text-70e7e3d20325dd5d",
+        "model_path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/05-epa-ecological-processes-2026/admitted-knowledge-model.json",
+        "model_sha256": "077318e713e10c02ce188fca1d0e247801d975d5ab7b1b1951183b14d6ad60d1",
+        "semantic_class": "CLAIM",
+        "source_id": "epa-ecological-processes-2026",
+        "source_sha256": "70e7e3d20325dd5d22e9cf4484934419447907ba9f6cf5a4dfd65ddcbfa80ad5"
+      },
+      "frozen_display_field_traces": [
+        {
+          "end_char": 89,
+          "quote": "Ecological processes are difficult to measure directly, particularly at a national scale.",
+          "role": "concise_prose",
+          "source": "CLAIM_TEXT",
+          "start_char": 0
+        },
+        {
+          "end_char": 68,
+          "quote": "particularly",
+          "role": "qualifier",
+          "source": "CLAIM_TEXT",
+          "start_char": 56
+        }
+      ],
+      "gate_decision": "CONCISE_PROSE",
+      "group": "QUALIFICATION_SCOPE",
+      "prior_strategy": "QUALIFIED_STATEMENT",
+      "provenance": [
+        {
+          "document_id": "text-70e7e3d20325dd5d",
+          "end_char": 1679,
+          "quote": "Only one indicator that meets the ROE criteria, Carbon Storage in Forests, is available to address this question because ecological processes are difficult to measure directly, particularly at a national scale.",
+          "start_char": 1469
+        }
+      ],
+      "review_index": 13,
+      "source_id": "epa-ecological-processes-2026",
+      "title": "claim-3",
+      "treatment_a": {
+        "emphasis_spans": [],
+        "identity_sha256": "5b2ef1eb16f8620b29e65d416f83d91abbf626e45ec37a64e04302f250ebec48",
+        "mode": "A",
+        "text": "Ecological processes are difficult to measure directly, particularly at a national scale.",
+        "treatment": "PLAIN_PROSE"
+      },
+      "treatment_b": {
+        "emphasis_spans": [
+          {
+            "end_char": 68,
+            "role": "CONDITION_OR_SCOPE",
+            "start_char": 56,
+            "text": "particularly",
+            "trace_source": "FROZEN_STRUCTURED_PAYLOAD"
+          }
+        ],
+        "identity_sha256": "d3850b4e342fa3c84957fb6e68888a175525e9ccf750bee3c994f4c54ef64ce5",
+        "mode": "B",
+        "text": "Ecological processes are difficult to measure directly, particularly at a national scale.",
+        "treatment": "ENRICHED_PROSE"
+      },
+      "treatment_c": {
+        "availability": "AVAILABLE",
+        "identity_sha256": "a0e6e9cf92b76b0ba574f1a92cbd02fbb190b9008d6391ada497240adc4c0154",
+        "mode": "C",
+        "origin": "SPEC057_FROZEN_STRUCTURED_PAYLOAD",
+        "payload": {
+          "explicit_qualifier_or_condition": "particularly"
+        },
+        "strategy_dom": "QUALIFIED_STATEMENT",
+        "treatment": "RICHER_REFERENCE"
+      },
+      "trusted_prose": "Ecological processes are difficult to measure directly, particularly at a national scale.",
+      "trusted_prose_sha256": "96e6e0b98cabf538f951e61f34cf5bc9e0f00911125e71888d0ee68328b8c7fb",
+      "truthfulness_audit": {
+        "a_b_text_identical": true,
+        "all_spans_exact": true,
+        "prose_rewrite": false,
+        "richer_payload_byte_equivalent_to_spec057": true,
+        "semantic_or_topology_change": false
+      },
+      "utility_outcome": "LOW_EXTERNALIZATION_VALUE"
+    },
+    {
+      "case_identity": "spec059-case-db482848f64ed7",
+      "case_kind": "CLAIM",
+      "claim_id": "c10",
+      "focus_identity": {
+        "claim_id": "c10",
+        "document_id": "text-1fd7e9851839f5f3",
+        "model_path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/08-fhwa-traffic-bottleneck-concepts-2016/admitted-knowledge-model.json",
+        "model_sha256": "848e195da43d6ff3f070c20780ea05e8b8ef9d4d8535d326aaacb7964f31cabd",
+        "semantic_class": "CLAIM",
+        "source_id": "fhwa-traffic-bottleneck-concepts-2016",
+        "source_sha256": "1fd7e9851839f5f35cd2a231cd3ce5aea8196ec85cabd04694f681c063ea4345"
+      },
+      "frozen_display_field_traces": [
+        {
+          "end_char": 69,
+          "quote": "A road does not necessarily have to narrow for a bottleneck to exist.",
+          "role": "concise_prose",
+          "source": "CLAIM_TEXT",
+          "start_char": 0
+        },
+        {
+          "end_char": 35,
+          "quote": "does not necessarily have to",
+          "role": "qualifier",
+          "source": "CLAIM_TEXT",
+          "start_char": 7
+        }
+      ],
+      "gate_decision": "CONCISE_PROSE",
+      "group": "QUALIFICATION_SCOPE",
+      "prior_strategy": "QUALIFIED_STATEMENT",
+      "provenance": [
+        {
+          "document_id": "text-1fd7e9851839f5f3",
+          "end_char": 2161,
+          "quote": "However, a road does not necessarily have to narrow for a bottleneck to exist (e.g., bottlenecks caused by a weaving condition, sun glare, rubbernecking, or a vertical climb).",
+          "start_char": 1986
+        }
+      ],
+      "review_index": 14,
+      "source_id": "fhwa-traffic-bottleneck-concepts-2016",
+      "title": "c10",
+      "treatment_a": {
+        "emphasis_spans": [],
+        "identity_sha256": "915ee292dcb0ef6639d99cb77e53aceddf5572c765d3ad8624ead17cbd3b616c",
+        "mode": "A",
+        "text": "A road does not necessarily have to narrow for a bottleneck to exist.",
+        "treatment": "PLAIN_PROSE"
+      },
+      "treatment_b": {
+        "emphasis_spans": [
+          {
+            "end_char": 35,
+            "role": "CONDITION_OR_SCOPE",
+            "start_char": 7,
+            "text": "does not necessarily have to",
+            "trace_source": "FROZEN_STRUCTURED_PAYLOAD"
+          }
+        ],
+        "identity_sha256": "15b523152e04a50ec519536b621ef28065cb990f48abc1705f015eedd7690646",
+        "mode": "B",
+        "text": "A road does not necessarily have to narrow for a bottleneck to exist.",
+        "treatment": "ENRICHED_PROSE"
+      },
+      "treatment_c": {
+        "availability": "AVAILABLE",
+        "identity_sha256": "3e3580f34cba566210f40ea5b083239cd06e61422c269e187e60c46fe8822c05",
+        "mode": "C",
+        "origin": "SPEC057_FROZEN_STRUCTURED_PAYLOAD",
+        "payload": {
+          "explicit_qualifier_or_condition": "does not necessarily have to"
+        },
+        "strategy_dom": "QUALIFIED_STATEMENT",
+        "treatment": "RICHER_REFERENCE"
+      },
+      "trusted_prose": "A road does not necessarily have to narrow for a bottleneck to exist.",
+      "trusted_prose_sha256": "fe9ab330ce530beb4c91a9802740bf75910d32734391be21a36348456fb9a74a",
+      "truthfulness_audit": {
+        "a_b_text_identical": true,
+        "all_spans_exact": true,
+        "prose_rewrite": false,
+        "richer_payload_byte_equivalent_to_spec057": true,
+        "semantic_or_topology_change": false
+      },
+      "utility_outcome": "LOW_EXTERNALIZATION_VALUE"
+    },
+    {
+      "case_identity": "spec059-case-022c1a6be9cec3",
+      "case_kind": "CLAIM",
+      "claim_id": "claim-agenda-authority",
+      "focus_identity": {
+        "claim_id": "claim-agenda-authority",
+        "document_id": "text-fe61b7c3b2a9373e",
+        "model_path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/03-crs-legislative-process-r42843-17/admitted-knowledge-model.json",
+        "model_sha256": "67366dc7c5dfd120d4ee974e02c0568f8e221675e0843dd35469bf41105fdeb4",
+        "semantic_class": "CLAIM",
+        "source_id": "crs-legislative-process-r42843-17",
+        "source_sha256": "fe61b7c3b2a9373e7eb3b30d16b94adc2c8b5f4307327265943995550a6384b4"
+      },
+      "frozen_display_field_traces": [
+        {
+          "end_char": 80,
+          "quote": "The committee chair has the primary agenda-setting authority for each committee.",
+          "role": "concise_prose",
+          "source": "CLAIM_TEXT",
+          "start_char": 0
+        }
+      ],
+      "gate_decision": "CONCISE_PROSE",
+      "group": "LOW_COMPLEXITY_PROSE_CONTROL",
+      "prior_strategy": "CONCISE_PROSE",
+      "provenance": [
+        {
+          "document_id": "text-fe61b7c3b2a9373e",
+          "end_char": 800,
+          "quote": "The committee chair has the primary agenda-setting authority for each committee",
+          "start_char": 721
+        }
+      ],
+      "review_index": 15,
+      "source_id": "crs-legislative-process-r42843-17",
+      "title": "claim-agenda-authority",
+      "treatment_a": {
+        "emphasis_spans": [],
+        "identity_sha256": "596bb8761b462e902208b305daa2dd6656fd97c1faff7e56f8f81654c1270156",
+        "mode": "A",
+        "text": "The committee chair has the primary agenda-setting authority for each committee.",
+        "treatment": "PLAIN_PROSE"
+      },
+      "treatment_b": {
+        "emphasis_spans": [],
+        "identity_sha256": "778480df003e0b9f30bf3046873c4f8ee34595642ee8cfe0def9f88c40858116",
+        "mode": "B",
+        "text": "The committee chair has the primary agenda-setting authority for each committee.",
+        "treatment": "ENRICHED_PROSE"
+      },
+      "treatment_c": {
+        "availability": "NO_FROZEN_RICHER_REFERENCE",
+        "identity_sha256": "6aab6fbdd927eed1abbd3f5279aa717ad5af70c71a705d296d425f7ccf671742",
+        "mode": "C",
+        "origin": null,
+        "payload": null,
+        "strategy_dom": null,
+        "treatment": "RICHER_REFERENCE"
+      },
+      "trusted_prose": "The committee chair has the primary agenda-setting authority for each committee.",
+      "trusted_prose_sha256": "208c87253e9849c202cc3183f10329417188954f8981115c991f7f1bd92fb188",
+      "truthfulness_audit": {
+        "a_b_text_identical": true,
+        "all_spans_exact": true,
+        "prose_rewrite": false,
+        "richer_payload_byte_equivalent_to_spec057": true,
+        "semantic_or_topology_change": false
+      },
+      "utility_outcome": "LOW_EXTERNALIZATION_VALUE"
+    },
+    {
+      "case_identity": "spec059-case-318a801a4b49eb",
+      "case_kind": "CLAIM",
+      "claim_id": "c11",
+      "focus_identity": {
+        "claim_id": "c11",
+        "document_id": "text-e9d2260c99802394",
+        "model_path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/06-doe-iron-platinum-atomic-structure-2017/admitted-knowledge-model.json",
+        "model_sha256": "29b475ec6742e1f7d49e9e5f29bbcd8a9c967d678a7d53f6ae58ae44f28acb7e",
+        "semantic_class": "CLAIM",
+        "source_id": "doe-iron-platinum-atomic-structure-2017",
+        "source_sha256": "e9d2260c9980239431fc195e7dc687afea93598af4f28d774ed5e4c4317f9e1e"
+      },
+      "frozen_display_field_traces": [
+        {
+          "end_char": 185,
+          "quote": "Atomic electron tomography is an imaging technique used to correlate three-dimensional atomic arrangements and chemical order/disorder with material properties at the single-atom level.",
+          "role": "concise_prose",
+          "source": "CLAIM_TEXT",
+          "start_char": 0
+        }
+      ],
+      "gate_decision": "CONCISE_PROSE",
+      "group": "LOW_COMPLEXITY_PROSE_CONTROL",
+      "prior_strategy": "CONCISE_PROSE",
+      "provenance": [
+        {
+          "document_id": "text-e9d2260c99802394",
+          "end_char": 1537,
+          "quote": "They used an imaging technique called atomic electron tomography to correlate 3D atomic arrangements and chemical order/disorder with material properties at the single-atom level.",
+          "start_char": 1358
+        }
+      ],
+      "review_index": 16,
+      "source_id": "doe-iron-platinum-atomic-structure-2017",
+      "title": "c11",
+      "treatment_a": {
+        "emphasis_spans": [],
+        "identity_sha256": "52dff5c417a05c20feec89e817dd4de1214faf3128ec7d90b7ac10daf5566025",
+        "mode": "A",
+        "text": "Atomic electron tomography is an imaging technique used to correlate three-dimensional atomic arrangements and chemical order/disorder with material properties at the single-atom level.",
+        "treatment": "PLAIN_PROSE"
+      },
+      "treatment_b": {
+        "emphasis_spans": [],
+        "identity_sha256": "37440dcee2ca5d9ba9db54a8929831f4d8d80e24e9d19461b4b545aa40b623bd",
+        "mode": "B",
+        "text": "Atomic electron tomography is an imaging technique used to correlate three-dimensional atomic arrangements and chemical order/disorder with material properties at the single-atom level.",
+        "treatment": "ENRICHED_PROSE"
+      },
+      "treatment_c": {
+        "availability": "NO_FROZEN_RICHER_REFERENCE",
+        "identity_sha256": "6aab6fbdd927eed1abbd3f5279aa717ad5af70c71a705d296d425f7ccf671742",
+        "mode": "C",
+        "origin": null,
+        "payload": null,
+        "strategy_dom": null,
+        "treatment": "RICHER_REFERENCE"
+      },
+      "trusted_prose": "Atomic electron tomography is an imaging technique used to correlate three-dimensional atomic arrangements and chemical order/disorder with material properties at the single-atom level.",
+      "trusted_prose_sha256": "b089cb8d50fb2afef87a26b08fdfc5b6e636bc20c6ff60da1347517215db37a6",
+      "truthfulness_audit": {
+        "a_b_text_identical": true,
+        "all_spans_exact": true,
+        "prose_rewrite": false,
+        "richer_payload_byte_equivalent_to_spec057": true,
+        "semantic_or_topology_change": false
+      },
+      "utility_outcome": "LOW_EXTERNALIZATION_VALUE"
+    },
+    {
+      "case_identity": "spec059-case-623af2a9539b2a",
+      "case_kind": "STRUCTURAL_CONTROL",
+      "claim_id": "double_slit_focused_relationship",
+      "focus_identity": {
+        "claim_id": "double_slit_focused_relationship",
+        "source_id": "electromagnetism",
+        "spec058_case_identity": "spec058-case-19393bc6c3e695"
+      },
+      "gate_decision": "CONCISE_PROSE",
+      "group": "LOW_COMPLEXITY_PROSE_CONTROL",
+      "prior_strategy": "FOCUSED_RELATIONSHIP",
+      "provenance": {
+        "evidence_quotes": [
+          "a beam of light is directed through two narrow, closely spaced slits, producing an interference pattern of light and dark bands on a screen."
+        ],
+        "evidence_source_ids": [
+          "text-9e978db999ee6713"
+        ],
+        "spec038_case": "double_slit_focused_relationship"
+      },
+      "review_index": 17,
+      "source_id": "electromagnetism",
+      "title": "double slit focused relationship",
+      "treatment_a": {
+        "emphasis_spans": [],
+        "identity_sha256": "ff0bf39499281664f976f679028d3dd22bd9adc2f81febcc6e6ad65a7549b074",
+        "mode": "A",
+        "text": "The source brings about the target as an effect.",
+        "treatment": "PLAIN_PROSE"
+      },
+      "treatment_b": {
+        "emphasis_spans": [],
+        "identity_sha256": "f27633e26028651c1b79c1dc162819155de8d1a2fe26a772636ba7ffd41fa46f",
+        "mode": "B",
+        "text": "The source brings about the target as an effect.",
+        "treatment": "ENRICHED_PROSE"
+      },
+      "treatment_c": {
+        "availability": "AVAILABLE",
+        "identity_sha256": "f7dd74cf9d3a9132c07cc00e1fadba24c771b3b043fd25133b66e2e10c0b21b1",
+        "mode": "C",
+        "origin": "SPEC058_FROZEN_SUPPRESSED_REFERENCE",
+        "payload": {
+          "nodes": [
+            {
+              "description": "Experiment in which particles or waves passing through two slits produce an interference pattern.",
+              "entity_id": "double-slit-experiment",
+              "label": "double-slit experiment",
+              "role": "relationship-source",
+              "role_label": "source",
+              "x": 210,
+              "y": 190
+            },
+            {
+              "description": "Pattern of alternating light and dark bands produced by wave interference and reproduced by quantum particles statistically.",
+              "entity_id": "interference-pattern",
+              "label": "interference pattern",
+              "role": "relationship-target",
+              "role_label": "target",
+              "x": 790,
+              "y": 190
+            }
+          ],
+          "relationships": [
+            {
+              "direction": "cause_to_effect",
+              "label_x": 500,
+              "label_y": 190,
+              "meaning": "The source brings about the target as an effect.",
+              "path": "M 288 190 L 712 190",
+              "relationship_ids": [
+                "relationship-05b19ee4b6d50060"
+              ],
+              "relationship_type": "CAUSES",
+              "source_entity_id": "double-slit-experiment",
+              "source_label": "double-slit experiment",
+              "target_entity_id": "interference-pattern",
+              "target_label": "interference pattern"
+            }
+          ],
+          "spatial_grammar": "focused-connection"
+        },
+        "strategy_dom": "FOCUSED_RELATIONSHIP",
+        "treatment": "RICHER_REFERENCE"
+      },
+      "trusted_prose": "The source brings about the target as an effect.",
+      "trusted_prose_sha256": "310a5606e5289fa63d2a68def9a30473c053e57dc566405aa89bf75cb39641ba",
+      "truthfulness_audit": {
+        "a_b_text_identical": true,
+        "all_spans_exact": true,
+        "prose_rewrite": false,
+        "richer_payload_byte_equivalent_to_spec058": true,
+        "semantic_or_topology_change": false
+      },
+      "utility_outcome": "POSSIBLE_EXTERNALIZATION_VALUE"
+    },
+    {
+      "case_identity": "spec059-case-00039228f6f41b",
+      "case_kind": "CLAIM",
+      "claim_id": "claim-committee-initiation",
+      "focus_identity": {
+        "claim_id": "claim-committee-initiation",
+        "document_id": "text-fe61b7c3b2a9373e",
+        "model_path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/03-crs-legislative-process-r42843-17/admitted-knowledge-model.json",
+        "model_sha256": "67366dc7c5dfd120d4ee974e02c0568f8e221675e0843dd35469bf41105fdeb4",
+        "semantic_class": "CLAIM",
+        "source_id": "crs-legislative-process-r42843-17",
+        "source_sha256": "fe61b7c3b2a9373e7eb3b30d16b94adc2c8b5f4307327265943995550a6384b4"
+      },
+      "frozen_display_field_traces": [
+        {
+          "end_char": 105,
+          "quote": "Committees may initiate legislative action on their own and are not limited to measures referred to them.",
+          "role": "concise_prose",
+          "source": "CLAIM_TEXT",
+          "start_char": 0
+        },
+        {
+          "end_char": 14,
+          "quote": "may",
+          "role": "qualifier",
+          "source": "CLAIM_TEXT",
+          "start_char": 11
+        }
+      ],
+      "gate_decision": "CONCISE_PROSE",
+      "group": "LOW_COMPLEXITY_PROSE_CONTROL",
+      "prior_strategy": "QUALIFIED_STATEMENT",
+      "provenance": [
+        {
+          "document_id": "text-fe61b7c3b2a9373e",
+          "end_char": 1045,
+          "quote": "Committees are not limited, however, to consideration of measures referred to them and may initiate legislative action on their own.",
+          "start_char": 913
+        }
+      ],
+      "review_index": 18,
+      "source_id": "crs-legislative-process-r42843-17",
+      "title": "claim-committee-initiation",
+      "treatment_a": {
+        "emphasis_spans": [],
+        "identity_sha256": "59b283cb477ee80ff11ef92da20283dec5fe7b837c69be7371fc886782fdb576",
+        "mode": "A",
+        "text": "Committees may initiate legislative action on their own and are not limited to measures referred to them.",
+        "treatment": "PLAIN_PROSE"
+      },
+      "treatment_b": {
+        "emphasis_spans": [],
+        "identity_sha256": "99f5512514ceb13858f3f70bf6ee5b3f41cec863b2e017b114296b213bb5e64c",
+        "mode": "B",
+        "text": "Committees may initiate legislative action on their own and are not limited to measures referred to them.",
+        "treatment": "ENRICHED_PROSE"
+      },
+      "treatment_c": {
+        "availability": "AVAILABLE",
+        "identity_sha256": "beebe78cf4bc1fa7efb142cb6f30a9e2346e6722bbf3601f1e9f30b8a79bde81",
+        "mode": "C",
+        "origin": "SPEC057_FROZEN_STRUCTURED_PAYLOAD",
+        "payload": {
+          "explicit_qualifier_or_condition": "may"
+        },
+        "strategy_dom": "QUALIFIED_STATEMENT",
+        "treatment": "RICHER_REFERENCE"
+      },
+      "trusted_prose": "Committees may initiate legislative action on their own and are not limited to measures referred to them.",
+      "trusted_prose_sha256": "184f0ca2ea20a8298ca7327a38c7c9a5be8cf7ada3ad8fac280a8fbd556f86e5",
+      "truthfulness_audit": {
+        "a_b_text_identical": true,
+        "all_spans_exact": true,
+        "prose_rewrite": false,
+        "richer_payload_byte_equivalent_to_spec057": true,
+        "semantic_or_topology_change": false
+      },
+      "utility_outcome": "LOW_EXTERNALIZATION_VALUE"
+    }
+  ],
+  "schema": "spec059.semantic-typography-review-cases.v1",
+  "selection_algorithm": {
+    "comparison_contrasts": "From frozen SPEC-057 retained COMPARISON survivors, take one claim per lexicographically ordered source before any second claim.",
+    "emphasis_policy": {
+      "COMPARISON_CONTRAST": "Exact sides become COMPARISON_OPERAND spans and the exact explicit_cue becomes a CONTRAST span only when it does not overlap an operand; overlap fails closed to operand-only emphasis.",
+      "LOW_COMPLEXITY_PROSE_CONTROL": "No emphasis; restraint controls remain identical.",
+      "QUALIFICATION_SCOPE": "The exact explicit_qualifier_or_condition becomes one CONDITION_OR_SCOPE span.",
+      "QUANTITATIVE_FACT": "Exact quantity_excerpts become QUANTITY spans.",
+      "fail_closed": "A missing, repeated, non-exact, or overlapping fragment rejects generation rather than inferring a replacement.",
+      "owner_feedback_used_as_case_routing": false,
+      "source_or_domain_identity_used": false
+    },
+    "group_counts": {
+      "COMPARISON_CONTRAST": 4,
+      "LOW_COMPLEXITY_PROSE_CONTROL": 4,
+      "QUALIFICATION_SCOPE": 4,
+      "QUANTITATIVE_FACT": 6
+    },
+    "group_order": [
+      "QUANTITATIVE_FACT",
+      "COMPARISON_CONTRAST",
+      "QUALIFICATION_SCOPE",
+      "LOW_COMPLEXITY_PROSE_CONTROL"
+    ],
+    "low_complexity_controls": "Reuse the four frozen SPEC-058 PROSE_LOW_COMPLEXITY_CONTROL cases in their frozen review order, including the simple focused relationship.",
+    "qualification_scope": "From frozen SPEC-057 suppressed QUALIFIED_STATEMENT candidates, take one claim per lexicographically ordered source before any second claim.",
+    "quantitative_facts": "From frozen SPEC-057 QUANTITATIVE_CALLOUT candidates, take the lexicographically first claim per lexicographically ordered source; six sources yield exactly six cases."
+  }
+}

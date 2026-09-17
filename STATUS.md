@@ -70,22 +70,22 @@ Structural topology/mechanism/composition remains the strongest validated visual
 ## Current approved work packet
 
 ```text
-specs/SPEC-059-semantic-typography-enriched-prose-experiment.md
+NONE
 ```
 
-Status: `APPROVED_FOR_IMPLEMENTATION`
+Status: `NONE`
 
-Authority: `OFFLINE_ONLY`
+Authority: `NONE`
 
-Human gate: `OWNER_REVIEW`
+Human gate: `NONE`
 
 Promotion: `NOT_AUTHORIZED`
 
 ## Current gate
 
-SPEC-059 is authorized to test semantically enriched prose as a bounded middle representation layer.
+SPEC-059 is implemented and awaiting owner review.
 
-The experiment must build exactly 18 deterministic A/B/C review cases:
+The deterministic A/B/C artifact contains exactly 18 frozen cases:
 
 - 6 quantitative facts;
 - 4 comparisons/contrasts;
@@ -98,9 +98,15 @@ Treatments:
 - B = exact same prose with only source-traceable semantic typography;
 - C = frozen richer reference where one legitimately exists, otherwise explicitly unavailable.
 
-The B treatment must preserve sentence order, punctuation, wording, and meaning. Emphasis must remain inline and source-traceable. It must not become detached cards, giant-number callouts, diagrams, or inferred semantics.
+The B treatment preserves sentence order, punctuation, wording, and meaning. All 24 emphasis spans remain inline, exact, and source-traceable; the four low-complexity controls remain un-emphasized. C preserves 16 frozen richer references and explicitly reports two unavailable references without manufacturing replacements.
 
-No learner benefit may be assigned mechanically.
+Desktop and 390×844 browser gates pass all 18 cases, A/B/C switching, text and span identity, responsive layout, and console safety.
+
+Canonical evidence:
+
+`examples/evaluations/spec-059-semantic-typography-enriched-prose-experiment-20260917/report.json`
+
+No packet is active. No learner benefit has been assigned mechanically; promotion remains unauthorized and the owner verdict is pending.
 
 ## Current product question
 
