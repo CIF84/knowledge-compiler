@@ -45,38 +45,47 @@ Canonical evidence:
 ## Current approved work packet
 
 ```text
-specs/SPEC-057-cognitive-utility-gate-experiment.md
+NONE
 ```
 
-Status: `APPROVED_FOR_IMPLEMENTATION`
+Status: `NONE`
 
-Authority: `OFFLINE_ONLY`
+Authority: `NONE`
 
-Human gate: `OWNER_REVIEW`
+Human gate: `NONE`
 
 Promotion: `NOT_AUTHORIZED`
 
 ## Current gate
 
-SPEC-057 is authorized to test a conservative cognitive-utility gate between representation-semantic eligibility and richer representation selection.
+SPEC-057 is implemented and awaiting owner review.
 
-The experiment must evaluate:
+The offline gate evaluated:
 
 - all 53 richer SPEC-055 claim candidates;
 - all 45 prose controls;
-- a deterministic bounded sample of accepted structural positive controls;
+- four deterministic accepted structural controls;
 - the exact 12 SPEC-056 owner-review cases as a post-hoc audit subset.
 
-Utility outcomes:
+Results:
 
-- `STRONG_EXTERNALIZATION_VALUE`;
-- `POSSIBLE_EXTERNALIZATION_VALUE`;
-- `LOW_EXTERNALIZATION_VALUE`;
-- `UNSAFE_OR_UNSUPPORTED`.
+- 7/53 richer claim candidates retained `COMPARISON`;
+- 46/53 richer claim candidates returned to `CONCISE_PROSE`;
+- all 45 prose controls remained prose;
+- all 33 qualifier-only treatments and all 13 quantitative callouts were suppressed;
+- the economics system, software composition, and reciprocal mechanism survived as strong structural controls;
+- the simple focused relationship remained only possible value and returned to prose automatically;
+- the exact SPEC-056 audit was directionally aligned across all 12 cases, without using owner comments as routing labels.
 
-Only strong externalization value retains richer automatic representation. Possible/low/unsafe cases return to `CONCISE_PROSE` experimentally.
+Mechanically supported branch: `COGNITIVE_UTILITY_GATE_SUPPORTED`.
 
-No learner-facing rendering changes are authorized.
+Recommended next step: `UTILITY_GATED_LEARNER_SURFACE_AB_EXPERIMENT`.
+
+Canonical evidence:
+
+`examples/evaluations/spec-057-cognitive-utility-gate-experiment-20260917/report.json`
+
+No packet is active. The owner verdict remains pending, no learner-facing rendering changed, and promotion remains unauthorized.
 
 ## Current product question
 
@@ -86,9 +95,11 @@ trusted knowledge
 representable structure?
       ↓ yes
 would externalizing it reduce cognitive work?
-      ├─ no / uncertain → prose
+      ├─ no / uncertain → prose (91/98 claims)
       ↓ yes
-richer representation + concise prose
+comparison + concise prose (7/98 claims)
+      ↓
+OWNER REVIEW
 ```
 
 The experiment asks whether representation complexity can be selected by cognitive utility rather than representability alone.
