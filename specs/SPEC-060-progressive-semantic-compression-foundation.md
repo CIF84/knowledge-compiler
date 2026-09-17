@@ -7,22 +7,18 @@ Promotion: `NOT_AUTHORIZED`
 
 ## Purpose
 
-Commit Knowledge Compiler to a new bounded trajectory: **progressive, provenance-preserving semantic compression**, while explicitly not committing to the full long-term product ambition.
+Commit Knowledge Compiler to a bounded new trajectory: **progressive, provenance-preserving semantic compression**, without committing to the full long-term product ambition.
 
-This packet has two deliverables:
+Deliver two things:
 
-1. capture the updated project vision/mission and architectural principles in canonical repository documentation;
-2. run the first upstream experiment on the missing stage: `SOURCE / TRUSTED INFORMATION → ESSENTIAL INFORMATION`, before any visualization.
+1. canonical project vision/mission documentation;
+2. the first upstream experiment on `SOURCE / TRUSTED INFORMATION → ESSENTIAL INFORMATION`, before visualization.
 
-The experiment must test whether trusted source-derived information can be reduced into a substantially denser representation while preserving semantic payload, epistemic qualifications, and provenance.
-
-## Updated project vision
+## Updated vision
 
 > **Knowledge Compiler transforms source material into trustworthy, cognition-efficient representations of knowledge at variable resolution.**
 
-It should eventually allow the same grounded knowledge substrate to support multiple learner goals and media outputs without repeatedly re-summarizing or destructively transforming the source.
-
-Conceptual long-term pipeline:
+Long-term direction:
 
 ```text
 SOURCE
@@ -35,163 +31,106 @@ GOAL-PRESERVING SEMANTIC COMPRESSION
 VARIABLE-RESOLUTION INFORMATION
         ↓
 IS FURTHER COGNITIVE GAIN AVAILABLE?
-        │
-        ├─ NO → concise / enriched language
-        │
+        ├─ NO  → concise / enriched language
         └─ YES → structural / perceptual representation
-                    ↓
-              appropriate visual grammar
+                         ↓
+                  visual grammar
 ```
 
-This is a direction, not a commitment that all stages or media will be solved.
+This is a direction, not a claim that all stages/media are solved.
 
-## Updated mission
+## Mission
 
-Build and validate the smallest trustworthy compiler architecture that can:
+Build the smallest trustworthy compiler architecture that can:
 
-1. extract grounded knowledge from source material;
-2. preserve claims, relationships, evidence, scope, uncertainty, qualifications, and provenance;
-3. expose that knowledge at progressively compressed resolutions;
-4. make compression a reversible/view-layer operation over a richer semantic substrate rather than destructive chained summarization;
-5. use prose when prose is already cognitively efficient;
-6. use perceptual/structural representation only when it earns its complexity by reducing cognitive work;
-7. eventually support different learner goals, prior knowledge, time budgets, and output media from the same grounded knowledge substrate.
+1. extract grounded knowledge;
+2. preserve claims, relationships, evidence, scope, uncertainty, qualifications and provenance;
+3. expose the same knowledge at progressively compressed resolutions;
+4. make compression a reversible/view-layer operation over a richer semantic substrate, not destructive chained summarization;
+5. use prose when prose is cognitively efficient;
+6. use structural/perceptual representation only when it reduces cognitive work;
+7. eventually support different goals, prior knowledge, time budgets and output media from one grounded substrate.
 
-## Non-goals / ambition boundary
+## Ambition boundary
 
-This trajectory does **not** currently claim that Knowledge Compiler can:
+Do not claim current ability to optimally teach arbitrary learners, identify universally essential information, compile arbitrary multimodal video, choose the optimal visual grammar, prove learning improvement, or generate perfect personalized courses/presentations. Podcast/video ingestion, personalization, presentations, revision material and multimodal educational outputs are possible applications, not current commitments.
 
-- optimally teach arbitrary learners;
-- identify universally essential information independent of goal;
-- reliably compile arbitrary multimodal video;
-- automatically choose the optimal visual grammar for every concept;
-- prove improved learning outcomes without human evaluation;
-- generate a perfect personalized course/presentation from arbitrary media;
-- compete primarily as a generic summarizer, slide generator, or visual-generation tool.
-
-Those are possible future applications, not current product commitments.
-
-## Core architectural principle
+## Core principle
 
 > **Compression is a view over knowledge, not destruction of knowledge.**
 
-Do not build a lossy chain such as:
-
-```text
-source → summary → shorter summary → visual
-```
+Do not build `source → summary → shorter summary → visual`.
 
 Prefer:
 
 ```text
-                       SOURCE
-                          ↓
-                 GROUNDED KNOWLEDGE
-                          ↓
-                 COMPRESSION POLICY
-                  /       |       \
-             detailed   concise   recall
-                  \       |       /
-                   REPRESENTATION POLICY
-                    /      |      \
-                 prose  enriched  visual
+SOURCE → GROUNDED KNOWLEDGE → COMPRESSION POLICY → multiple resolutions
+                              ↓
+                       REPRESENTATION POLICY
+                       prose / enriched / visual
 ```
 
-Every compressed representation must remain traceable to richer trusted information and ultimately to evidence/source.
+Every compressed view must remain traceable to richer trusted information and evidence/source.
 
-## Terminology refinement
+## Essentiality is goal-relative
 
-Avoid treating `ESSENTIAL` as universal.
+Conceptually:
 
-Essentiality is potentially relative to:
+`essential(information, learner_goal, prior_knowledge, desired_resolution)`
 
-```text
-essential(information, learner_goal, prior_knowledge, desired_resolution)
-```
+SPEC-060 does not implement personalization. Freeze this neutral goal:
 
-SPEC-060 does not implement learner personalization. For this experiment, use a frozen neutral goal:
+> Preserve the information necessary to accurately understand the source's core explanatory content, including material qualifications and epistemic status, while removing rhetorical, repetitive and linguistically redundant expression.
 
-> **Preserve the information necessary to accurately understand the source's core explanatory content, including material qualifications and epistemic status, while removing rhetorical/repetitive/linguistically redundant expression.**
+Call this **goal-preserving semantic compression**.
 
-Call the operation **goal-preserving semantic compression**.
+## Evidence entering SPEC-060
 
-## Why this packet now
-
-SPEC-053–059 moved downstream from trusted claims toward representation and UI.
-
-Owner review established:
-
-- structural representations are strongly useful when topology/mechanism is the idea;
-- visualizability alone does not justify visualization;
-- simple claims often need only prose;
-- enriched prose is conceptually plausible but token/category emphasis is too lexical;
-- useful emphasis must preserve meaning-bearing fragments, not merely highlight numbers/qualifiers;
-- comparisons and relations may require richer representation when linear emphasis would consume most of the statement;
-- the more fundamental missing stage is semantic compression before representation selection.
-
-SPEC-060 deliberately moves upstream.
-
-## SPEC-059 owner verdict
-
-Record the owner review as:
+Record SPEC-059 owner verdict:
 
 `ENRICHED_PROSE_CONCEPT_SUPPORTED_SELECTION_MODEL_REQUIRES_REFINEMENT`
 
 Accepted findings:
 
-- B was rarely better than A under the SPEC-059 lexical/category emphasis policy;
-- useful emphasis must select contextual meaning-bearing fragments rather than tokens merely because they are quantities/qualifiers;
-- case 01 suggests useful compression when fragments such as `more than 23,000 atoms` and `22 picometer precision` jointly expose the scale/precision relationship;
-- comparison cases 07–10 often justify C because B would highlight almost all or almost none of the sentence;
-- simple claims 11–18 generally favor plain prose;
-- case 17 indicates that even a simple two-node relation may justify structure when the relation itself is the explanatory content;
-- node count is therefore not a sufficient cognitive-utility criterion;
-- visual grammar quality remains a separate unresolved problem.
+- B was rarely better than A under lexical/category emphasis;
+- useful emphasis selects contextual meaning-bearing fragments, not tokens merely because they are quantities/qualifiers;
+- case 01 suggests useful compression in the joint fragments `more than 23,000 atoms` and `22 picometer precision`;
+- comparison cases often justify richer representation when emphasis would cover almost all or almost none of the sentence;
+- simple claims generally favor prose;
+- even a two-node relation can justify structure when the relation itself is the idea;
+- node count is not a sufficient utility criterion;
+- visual-grammar quality remains separately unresolved.
 
-Do not encode these observations as source/case-specific production rules.
+Do not encode these as case/source-specific production rules.
+
+SPEC-053–059 moved downstream from trusted claims toward representation/UI. SPEC-060 deliberately moves upstream.
 
 ## Experiment question
 
-> **Can the compiler produce a substantially smaller essential-information representation of trusted source-derived material while preserving the information required for accurate understanding, including relationships, scope, qualifications, uncertainty, and provenance?**
+> **Can the compiler produce a substantially smaller essential-information representation of trusted source-derived material while preserving accurate meaning, relationships, scope, qualifications, uncertainty and provenance?**
 
-This experiment is representation-neutral. Do not build diagrams or learner UI beyond a bounded review artifact needed to inspect source vs compressed information.
+No visualization experiment is authorized here.
 
 ## Frozen corpus
 
-Use **exactly 6** deterministic sources/cases drawn from already frozen/admitted repository evidence.
+Use exactly **6 deterministic cases** from already frozen/admitted repository evidence. Require no provider/network calls. Maximize diversity and cover across the set:
 
-Selection must maximize diversity across domains and information character while requiring no provider/network calls.
+- process/mechanism-rich information;
+- structural/relational information;
+- quantitative information;
+- material qualification/scope/uncertainty;
+- repetition/rhetorical framing where frozen material permits;
+- at least four domains if available.
 
-Required character coverage across the six cases:
+Publish deterministic selection logic and identities. Do not cherry-pick expected successes.
 
-- at least one process/mechanism-rich source;
-- at least one structural/relational source;
-- at least one quantitative source;
-- at least one source with material qualification/scope/uncertainty;
-- at least one source whose original language contains repetition/rhetorical framing beyond the core information;
-- at least four distinct domains if frozen evidence permits.
+Prefer the richest frozen trustworthy source-derived material available, not a previously compressed one-line claim when richer admitted material exists.
 
-Do not cherry-pick cases based on expected compression success. Publish deterministic selection logic and identities.
-
-## Inputs
-
-Prefer the richest already frozen trustworthy textual/evidence representation available for each selected case, not a previously compressed one-line claim when richer admitted source-derived material exists.
-
-For each case preserve identities for:
-
-- frozen source/source fragment;
-- admitted KnowledgeModel;
-- claims/propositions/relationships;
-- evidence/provenance;
-- any qualifications/uncertainty metadata available.
-
-Do not retrieve source text from the network.
+Preserve identities for source fragment, admitted model, claims/propositions/relationships, evidence/provenance and qualifications/uncertainty where available. No network retrieval.
 
 ## Experimental intermediate representation
 
-Introduce an isolated experimental `EssentialInformationModel` (name may vary slightly if repository conventions require) that is **not** a production semantic vocabulary change.
-
-It should represent information units with enough structure to audit compression, for example:
+Create an isolated experimental `EssentialInformationModel` (minor naming adaptation allowed) without changing production semantic vocabulary. It must support auditability, approximately:
 
 ```text
 EssentialInformationModel
@@ -206,89 +145,47 @@ EssentialInformationModel
     epistemic_status
     qualification_links[]
   omitted_fragments[]
-    source_range / upstream identity
+    upstream_identity/range
     omission_reason
   compression_metrics
 ```
 
-Allowed semantic roles should remain broad and evidence-derived, e.g.:
-
-- `CORE_FACT`
-- `MECHANISM`
-- `RELATIONSHIP`
-- `QUANTITATIVE_FACT`
-- `SCOPE_OR_CONDITION`
-- `QUALIFICATION_OR_UNCERTAINTY`
-- `CONTEXT_REQUIRED_FOR_MEANING`
-
-Do not invent new domain semantics.
+Broad evidence-derived roles only, such as `CORE_FACT`, `MECHANISM`, `RELATIONSHIP`, `QUANTITATIVE_FACT`, `SCOPE_OR_CONDITION`, `QUALIFICATION_OR_UNCERTAINTY`, `CONTEXT_REQUIRED_FOR_MEANING`. Do not invent domain semantics.
 
 ## Compression policy
 
-The experimental compiler may:
+May remove rhetorical transitions and demonstrable repetition, normalize verbose wording into shorter faithful language, faithfully combine grounded information, reorganize it into dense meaning-bearing units, and preserve source terminology when paraphrase risks drift.
 
-- remove rhetorical transitions;
-- remove duplicated/repeated statements when semantic identity is demonstrable;
-- normalize verbose wording into shorter faithful language;
-- combine information only when all combined content remains explicitly grounded;
-- reorganize information into information-dense units;
-- preserve semantic roles separately when doing so reduces linguistic overhead;
-- preserve source-backed terminology where paraphrase risks semantic drift.
+Must preserve:
 
-It must preserve:
-
-- all core claims required by the frozen neutral goal;
+- core claims required by the frozen goal;
 - material relationships/mechanisms;
-- quantitative values and units;
+- values and units;
 - scope/conditions;
 - uncertainty/epistemic status;
 - causal vs correlational status;
 - exceptions/material qualifications;
-- temporal context where meaning depends on it;
-- source/evidence provenance.
+- temporal context where material;
+- evidence/provenance.
 
-Under uncertainty, retain information rather than compress it away.
+Under uncertainty, retain rather than remove.
 
-## Explicitly forbidden compression
+Forbidden: strengthening association into causation; deleting uncertainty/conditions/units to save words; ambiguous entity collapse; unsupported abstractions; inferred learner goals; source/domain-specific compression rules; optimization for word count alone.
 
-Do not:
+## Three non-destructive resolutions
 
-- convert association into causation;
-- remove uncertainty or qualification to save words;
-- remove a unit/object from a quantity;
-- remove a condition that changes applicability;
-- collapse distinct actors/entities into an ambiguous pronoun;
-- invent abstractions unsupported by frozen evidence;
-- infer learner goals beyond the frozen neutral goal;
-- use source/domain-specific hand-written compression rules;
-- use model/provider calls;
-- optimize only for character/word count.
-
-## Progressive resolutions
-
-For each of the six cases generate **three non-destructive views** from the same frozen grounded substrate:
+Generate all three independently from the same grounded substrate:
 
 ### R0 — `SOURCE_RICH`
-
-The richest frozen trustworthy source-derived text/evidence view used by the experiment.
+Richest frozen trustworthy source-derived view used by the experiment.
 
 ### R1 — `ESSENTIAL_EXPLANATION`
-
-A concise coherent language representation preserving all information necessary under the frozen neutral goal.
+Concise coherent language preserving all information necessary under the frozen neutral goal.
 
 ### R2 — `ESSENTIAL_UNITS`
+Denser structured text containing minimal meaning-bearing units/roles. Labels, bullets and line breaks are allowed; diagrams, arrows, charts, visual topology and perceptual grammar are not.
 
-A denser structured-text representation of the same preserved information, organized into minimal meaning-bearing units/roles.
-
-R2 is **not** a diagram. It may use labels/line breaks/bullets as information organization, but no visual topology, charts, cards-as-diagrams, arrows, or perceptual grammar.
-
-The point is to test semantic compression before visualization.
-
-## Non-destructive requirement
-
-R1 and R2 must be independently generated/views over the same grounded input/intermediate model, not generated by summarizing the previous compressed level.
-
-Required conceptual invariant:
+Required invariant:
 
 ```text
 R0 ─┐
@@ -296,38 +193,25 @@ R0 ─┐
     └→ grounded semantic substrate → R2
 ```
 
-Forbidden:
+R2 must not be a summary of already-lossy R1 alone.
 
-```text
-R0 → R1 → R2
-```
+## Metrics
 
-if R2 depends only on the already lossy R1 text.
+Per case report:
 
-## Compression metrics
-
-For each case report at minimum:
-
-- R0 word count / character count;
-- R1 word count / character count;
-- R2 word count / character count;
-- compression ratios R1:R0 and R2:R0;
-- number of grounded semantic units before/after where mechanically definable;
-- preserved core claim count;
-- preserved relationship count;
-- preserved quantitative fact count;
-- preserved qualification/uncertainty count;
-- omitted/redundant fragment count;
-- unsupported/new information count (must be zero for admission);
+- R0/R1/R2 words and characters;
+- R1:R0 and R2:R0 compression ratios;
+- grounded semantic-unit counts where mechanically definable;
+- preserved core claims, relationships, quantitative facts and qualifications/uncertainties;
+- omitted/redundant fragments;
+- unsupported/new information (must be zero for admission);
 - provenance coverage.
 
-Do not interpret maximum compression as maximum quality.
+Maximum compression is not maximum quality.
 
 ## Semantic preservation audit
 
-Build an offline audit comparing each compressed view against frozen grounded information.
-
-At minimum classify each required upstream semantic item as:
+Classify every required upstream semantic item as one of:
 
 - `PRESERVED_EXPLICITLY`
 - `PRESERVED_BY_FAITHFUL_COMBINATION`
@@ -337,188 +221,105 @@ At minimum classify each required upstream semantic item as:
 - `UNSUPPORTED_ADDITION`
 - `UNRESOLVED`
 
-A case fails closed if it contains:
+Fail closed on material omission, semantic change, unsupported addition, or unresolved loss affecting accurate understanding.
 
-- `OMITTED_MATERIAL_INFORMATION`;
-- `SEMANTICALLY_CHANGED`;
-- `UNSUPPORTED_ADDITION`;
-- unresolved loss affecting accurate understanding.
+Explicitly audit uncertainty, observational vs causal status, material attribution, conditions/scope, exceptions, temporal boundaries, precision and units. A shorter representation that strengthens certainty/causality fails.
 
-## Epistemic preservation audit
+## Owner-review artifact
 
-Explicitly audit whether compression preserves:
+Create a simple deterministic six-case review surface switching among R0, R1, R2 and preservation/provenance audit. This is evaluation UI, not product redesign. Keep presentation neutral.
 
-- uncertainty language;
-- observational vs causal status;
-- source attribution where material;
-- conditions/scope;
-- exceptions;
-- temporal boundaries;
-- measurement precision/units.
+Rubric:
 
-A shorter representation that strengthens certainty or causality is a failure even if its factual nouns/numbers remain correct.
+1. Meaning preservation — anything necessary missing?
+2. Noise reduction — linguistic/rhetorical material removed without loss?
+3. Epistemic fidelity — uncertainty, scope and causal status unchanged?
+4. Information density — more useful information per unit of attention?
+5. Coherence — is R1 understandable without reconstructing missing context?
+6. Unit quality — does R2 expose meaning-bearing rather than lexical fragments?
+7. Overcompression — where does useful meaning begin disappearing?
+8. Recoverability — can compressed information trace to richer evidence/source?
 
-## Review artifact
+Do not auto-score or infer owner verdict.
 
-Create a simple deterministic owner-review artifact for all six cases.
+## Canonical project vision document
 
-It should make it easy to switch among:
+Create/update the appropriate existing canonical vision document; if none clearly exists, create `docs/PROJECT-VISION.md`.
 
-- R0 source-rich;
-- R1 essential explanation;
-- R2 essential units;
-- preservation/provenance audit.
+It must durably capture:
 
-This is an evaluation surface, not a product redesign.
+- the Vision and Mission above;
+- architecture separation: ingestion → grounded extraction → goal-preserving compression → representation selection → learner-facing resolution/media;
+- principles: meaning before medium; compression before visualization; non-destructive compression; provenance at every resolution; prose first-class; visuals earn complexity; form follows cognitive work; future learner/task context may select resolution; one grounded substrate can support multiple outputs; fail closed on unsupported inference;
+- ambition boundary distinguishing current validated direction from possible future podcast/video, personalization, presentation, revision and multimodal applications.
 
-Avoid visual polish that could bias the owner toward the more compressed treatment. Keep typography/layout neutral and comparable.
+Do not present future ambition as implemented capability.
 
-## Owner-review rubric
+## Required evidence
 
-Expose neutral questions:
-
-1. **Meaning preservation** — Is anything necessary to understand the idea missing?
-2. **Noise reduction** — Was linguistic/rhetorical material removed without loss?
-3. **Epistemic fidelity** — Are uncertainty, scope and causal status unchanged?
-4. **Information density** — Does the compressed form carry more useful information per unit of attention?
-5. **Coherence** — Is R1 still natural enough to understand without reconstructing omitted context?
-6. **Unit quality** — Does R2 expose meaningful information units rather than lexical fragments?
-7. **Overcompression** — At what resolution, if any, does useful meaning begin to disappear?
-8. **Recoverability** — Can compressed information be traced back to richer evidence/source?
-
-Do not auto-score or infer the human verdict.
-
-## Project vision documentation deliverable
-
-Create or update a canonical repository document for the project vision. Prefer an existing appropriate vision/architecture document if one clearly exists; otherwise create:
-
-`docs/PROJECT-VISION.md`
-
-It must capture, concisely but durably:
-
-### Vision
-
-Knowledge Compiler transforms source material into trustworthy, cognition-efficient representations of knowledge at variable resolution.
-
-### Mission
-
-Build a provenance-preserving semantic compiler that separates:
-
-1. ingestion;
-2. grounded knowledge extraction;
-3. goal-preserving semantic compression;
-4. representation selection;
-5. learner-facing resolution/media.
-
-### Product principles
-
-- meaning before medium;
-- compression before visualization;
-- compression is non-destructive;
-- provenance survives every resolution;
-- prose is a first-class representation;
-- visuals must earn their complexity;
-- representation form follows cognitive work;
-- learner/task context may eventually select resolution;
-- one grounded substrate should eventually support multiple outputs/media;
-- fail closed when compression would require unsupported inference.
-
-### Ambition boundary
-
-Clearly distinguish validated/current direction from possible future applications such as podcast/video ingestion, personalized learning, presentations, revision material, and multimodal educational outputs.
-
-Do not present future ambitions as implemented capability.
-
-## Required outputs
-
-Create:
-
-`examples/evaluations/spec-060-progressive-semantic-compression-foundation-20260917/`
-
-Include at minimum:
+Create `examples/evaluations/spec-060-progressive-semantic-compression-foundation-20260917/` containing at minimum:
 
 - `report.json`;
-- six-case frozen selection manifest;
-- R0/R1/R2 artifacts per case;
-- `EssentialInformationModel` artifacts per case;
+- frozen six-case manifest and selection logic;
+- R0/R1/R2 per case;
+- EssentialInformationModel per case;
 - compression metrics;
-- semantic-preservation audit;
-- epistemic-preservation audit;
+- semantic + epistemic preservation audits;
 - provenance/recoverability audit;
 - deterministic regeneration evidence;
-- browser review artifact and gate results;
+- browser review artifact/gates;
 - zero-call/zero-retrieval statement;
-- project-vision document identity/hash;
-- owner-review command;
-- owner verdict `PENDING`.
+- project-vision identity/hash;
+- owner-review command and verdict `PENDING`.
 
-## Mechanical decision branches
-
-Choose exactly one:
-
-### `SEMANTIC_COMPRESSION_SAFE_FOR_OWNER_REVIEW`
-
-All admitted compressed views preserve required meaning/epistemic status/provenance with measurable reduction in linguistic representation cost.
-
-### `COMPRESSION_CAUSES_MATERIAL_INFORMATION_LOSS`
-
-One or more compressed views remove information required by the frozen neutral goal.
-
-### `COMPRESSION_CAUSES_SEMANTIC_DRIFT`
-
-Compression changes meaning, certainty, causality, scope, or attribution.
-
-### `FROZEN_SUBSTRATE_INSUFFICIENT_FOR_COMPRESSION`
-
-The existing grounded representation does not contain enough information to safely distinguish redundancy from required context.
-
-### `INCONCLUSIVE`
-
-Mixed evidence prevents a clean mechanical branch.
-
-Do not mechanically claim learning improvement.
-
-## Recommended next-step vocabulary
+## Mechanical branch
 
 Choose exactly one:
 
-- `OWNER_REVIEW_REQUIRED`
-- `SEMANTIC_COMPRESSION_POLICY_REFINEMENT`
-- `VARIABLE_RESOLUTION_EXPERIMENT`
-- `MORE_DIAGNOSIS_REQUIRED`
+- `SEMANTIC_COMPRESSION_SAFE_FOR_OWNER_REVIEW` — admitted views preserve required meaning/epistemic status/provenance with measurable linguistic reduction.
+- `COMPRESSION_CAUSES_MATERIAL_INFORMATION_LOSS`
+- `COMPRESSION_CAUSES_SEMANTIC_DRIFT`
+- `FROZEN_SUBSTRATE_INSUFFICIENT_FOR_COMPRESSION`
+- `INCONCLUSIVE`
 
-No follow-up implementation is authorized.
+Do not claim learning improvement mechanically.
+
+Recommended next step: choose exactly one of `OWNER_REVIEW_REQUIRED`, `SEMANTIC_COMPRESSION_POLICY_REFINEMENT`, `VARIABLE_RESOLUTION_EXPERIMENT`, `MORE_DIAGNOSIS_REQUIRED`. No follow-up implementation authorized.
 
 ## Protected state
 
-Do not modify:
+Do not modify Candidate B v2 extraction/evidence; SPEC-052 admitted models; trusted semantic vocabulary/propositions; grounding/provenance/validators; StructureDetector; SPEC-055–059 evidence/artifacts; SPEC-057 utility decisions; production representation strategies/renderers; accepted SPEC-038 baseline; My Map/navigation/Explore Next; historical evidence.
 
-- Candidate B v2 extraction/evidence;
-- SPEC-052 admitted KnowledgeModels;
-- trusted semantic vocabulary/propositions;
-- grounding/provenance/validators;
-- StructureDetector;
-- SPEC-055 through SPEC-059 evidence/artifacts;
-- SPEC-057 utility decisions;
-- production representation strategies/renderers;
-- accepted SPEC-038 baseline;
-- My Map/navigation/Explore Next behavior;
-- historical evaluation evidence.
-
-Prefer isolated experimental compression code and artifacts.
+Prefer isolated experimental compression code/artifacts.
 
 ## Explicitly forbidden
 
-Do not:
+Do not call a model/provider; retrieve external sources; rerun extraction; modify KnowledgeModel semantics; create unsupported relationships/topology; implement learner personalization, podcast/video ingestion, presentation generation or visual-grammar selection; promote enriched prose/compression/renderers; redesign production UI; use owner feedback as source-specific rules; assign the pedagogical verdict; implement follow-up product changes.
 
-- call OpenAI or another model/provider;
-- retrieve external sources;
-- rerun extraction;
-- modify KnowledgeModel semantics;
-- create unsupported relationships/topology;
-- implement learner personalization;
-- implement podcast/video ingestion;
-- implement presentation generation;
-- implement visual grammar selection;
-- promote enriched prose;
-- redesign production UI;
+## Validation
+
+At minimum:
+
+- focused SPEC-060 tests;
+- semantic + epistemic preservation tests;
+- provenance/recoverability tests;
+- R0/R1/R2 independent-generation invariant;
+- compression metrics validation;
+- browser gate desktop + 390×844, clean console;
+- SPEC-038 and SPEC-055–059 regressions;
+- control-plane tests;
+- full offline suite;
+- deterministic regeneration;
+- JSON validation;
+- protected-state hashes;
+- secret safety;
+- `git diff --check`;
+- zero provider/model/network calls.
+
+## Completion
+
+On completion set SPEC-060 `IMPLEMENTED_AWAITING_REVIEW`, clear `STATUS.md` to `NONE`, commit/push per protocol, report corpus distribution, compression metrics, preservation results, browser/validation results, project-vision path/hash and owner-review command, then stop at `OWNER_REVIEW`.
+
+## Owner review question
+
+> **Can Knowledge Compiler reduce trusted source-derived material into progressively denser information views while preserving everything necessary for accurate understanding and retaining a recoverable path back to richer evidence?**
