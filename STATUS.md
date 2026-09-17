@@ -48,33 +48,39 @@ Canonical evidence:
 ## Current approved work packet
 
 ```text
-specs/SPEC-058-utility-gated-learner-surface-ab-experiment.md
+NONE
 ```
 
-Status: `APPROVED_FOR_IMPLEMENTATION`
+Status: `NONE`
 
-Authority: `OFFLINE_ONLY`
+Authority: `NONE`
 
-Human gate: `OWNER_REVIEW`
+Human gate: `NONE`
 
 Promotion: `NOT_AUTHORIZED`
 
 ## Current gate
 
-SPEC-058 is authorized to build a bounded 16-case learner-facing A/B review artifact that pressure-tests both sides of the SPEC-057 gate.
+SPEC-058 is implemented and awaiting owner review.
 
-Required groups:
+The deterministic learner-facing A/B artifact contains:
 
 - 4 retained claim comparison visuals;
 - 4 retained structural visual cases;
 - 4 suppressed richer candidates (2 qualifier, 2 quantitative callout);
 - 4 prose/low-complexity controls.
 
-For retained cases, compare prose/text control against the utility-gated selected visual + prose.
+Retained cases compare prose/text control against the utility-gated selected visual plus unchanged trusted prose.
 
-For suppressed cases, compare utility-gated selected prose against the preserved suppressed richer candidate + prose.
+Suppressed and restraint cases compare utility-gated selected prose against an exactly frozen, clearly labeled counterfactual where one exists. Pure prose controls acquire no fake structure.
 
-The experiment must keep machine evidence separate from the human learner verdict.
+The desktop and 390×844 browser gates pass all 16 cases, A/B treatment identities, frozen fragments, accepted structural nodes/relationships/paths, local-interaction invariants, responsive layout, and console safety.
+
+Canonical evidence:
+
+`examples/evaluations/spec-058-utility-gated-learner-surface-ab-experiment-20260917/report.json`
+
+No packet is active. Machine evidence remains separate from the pending human learner verdict; promotion remains unauthorized.
 
 ## Current product question
 

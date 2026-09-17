@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SPEC-058 · Utility-gated learner review</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">KNOWLEDGE COMPILER · OWNER REVIEW</p>
+      <h1>Does complexity earn its place?</h1>
+    </div>
+    <p class="topbar-note">Sixteen frozen decisions. Neutral A/B review. No learner verdict is inferred.</p>
+  </header>
+
+  <main class="workspace" aria-label="SPEC-058 utility-gated learner review workspace">
+    <aside class="map-pane" id="my-map" aria-label="My Map">
+      <p class="surface-label">MY MAP</p>
+      <h2>Fixed review territory</h2>
+      <p class="quiet">Four groups pressure-test both sides of the frozen utility gate.</p>
+      <ol id="case-map" class="case-map" aria-label="Sixteen frozen review cases"></ol>
+      <div class="map-legend" aria-label="Review group legend">
+        <span><i class="retained"></i> retained</span>
+        <span><i class="suppressed"></i> suppressed / restraint</span>
+      </div>
+      <div class="territory-status">
+        <span class="territory-dot" aria-hidden="true"></span>
+        <span id="territory-identity">SPEC-058 · fixed review territory</span>
+      </div>
+    </aside>
+
+    <section class="learning-pane" aria-label="What does this mean?">
+      <div class="case-toolbar">
+        <button id="previous-case" type="button" aria-label="Previous review case">← Previous</button>
+        <div class="case-heading">
+          <p id="case-counter" class="eyebrow"></p>
+          <h2 id="case-title"></h2>
+          <p id="case-source" class="case-source"></p>
+        </div>
+        <button id="next-case" type="button" aria-label="Next review case">Next →</button>
+      </div>
+
+      <section class="meaning-surface" id="meaning-surface">
+        <div class="meaning-header">
+          <div>
+            <p class="surface-label">WHAT DOES THIS MEAN?</p>
+            <p id="gate-label" class="gate-label"></p>
+            <p id="strategy-label" class="strategy-label"></p>
+          </div>
+          <div class="mode-toggle" role="group" aria-label="A/B representation mode">
+            <button id="mode-a" type="button" data-mode="A" aria-pressed="true">A</button>
+            <button id="mode-b" type="button" data-mode="B" aria-pressed="false">B</button>
+          </div>
+        </div>
+        <div id="representation-host" class="representation-host" aria-live="polite"></div>
+        <div id="prose-panel" class="prose-panel">
+          <p class="prose-kicker">Trusted concise explanation</p>
+          <p id="case-prose" class="case-prose"></p>
+        </div>
+      </section>
+    </section>
+
+    <aside class="context-pane">
+      <section class="inspect-surface" aria-label="Inspect selected representation detail">
+        <p id="inspect-mode" class="surface-label">PREVIEW</p>
+        <h2 id="inspect-title">Representation detail</h2>
+        <p id="inspect-body" class="inspect-body"></p>
+        <details id="evidence-details">
+          <summary>Frozen provenance</summary>
+          <div id="evidence-list" class="evidence-list"></div>
+        </details>
+      </section>
+
+      <section class="explore-surface" aria-label="Explore Next">
+        <p class="surface-label">EXPLORE NEXT</p>
+        <h2>Continue the fixed review</h2>
+        <p id="next-description" class="quiet"></p>
+        <button id="explore-next" type="button">Review next case →</button>
+      </section>
+
+      <section class="rubric-surface" aria-label="Owner review rubric">
+        <p class="surface-label">NEUTRAL OWNER RUBRIC</p>
+        <ol id="rubric-list"></ol>
+      </section>
+    </aside>
+  </main>
+
+  <div id="spec058-contract" hidden
+       data-navigation-authority="FIXED_REVIEW_TERRITORY"
+       data-semantic-state-owner="FROZEN_SPEC038_SPEC055_SPEC057"
+       data-gate-decisions="FROZEN_SPEC057"
+       data-local-interaction-only="true"
+       data-production-promotion="false"
+       data-human-verdict="PENDING"></div>
+  <script src="app.js"></script>
+</body>
+</html>

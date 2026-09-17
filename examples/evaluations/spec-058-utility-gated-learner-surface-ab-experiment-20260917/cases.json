@@ -1,0 +1,2306 @@
+{
+  "cases": [
+    {
+      "case_identity": "spec058-case-2a75c956c64d46",
+      "case_kind": "CLAIM",
+      "claim_id": "claim-house-tools",
+      "display_field_traces": [
+        {
+          "end_char": 118,
+          "quote": "Majority party leaders in the House have more tools to set the floor agenda than majority party leaders in the Senate.",
+          "role": "concise_prose",
+          "source": "CLAIM_TEXT",
+          "start_char": 0
+        },
+        {
+          "end_char": 40,
+          "quote": "Majority party leaders in the House have",
+          "role": "comparison_side_a",
+          "source": "CLAIM_TEXT",
+          "start_char": 0
+        },
+        {
+          "end_char": 117,
+          "quote": "majority party leaders in the Senate",
+          "role": "comparison_side_b",
+          "source": "CLAIM_TEXT",
+          "start_char": 81
+        },
+        {
+          "end_char": 80,
+          "quote": "more tools to set the floor agenda than",
+          "role": "comparison_cue",
+          "source": "CLAIM_TEXT",
+          "start_char": 41
+        }
+      ],
+      "display_fragments": [
+        "Majority party leaders in the House have",
+        "majority party leaders in the Senate",
+        "more tools to set the floor agenda than"
+      ],
+      "gate_decision": "COMPARISON",
+      "group": "RETAINED_CLAIM_VISUAL",
+      "prior_strategy": "COMPARISON",
+      "prose": "Majority party leaders in the House have more tools to set the floor agenda than majority party leaders in the Senate.",
+      "provenance": [
+        {
+          "document_id": "text-fe61b7c3b2a9373e",
+          "end_char": 268,
+          "quote": "majority party leaders in the House have more tools with which to set the floor agenda than do majority party leaders in the Senate",
+          "start_char": 137
+        }
+      ],
+      "review_index": 1,
+      "selected_mode": "B",
+      "source_id": "crs-legislative-process-r42843-17",
+      "structured_payload": {
+        "explicit_cue": "more tools to set the floor agenda than",
+        "quantity_excerpts": [],
+        "sides": [
+          "Majority party leaders in the House have",
+          "majority party leaders in the Senate"
+        ]
+      },
+      "title": "claim-house-tools",
+      "treatment_a": {
+        "identity_sha256": "e1dc926f94f8c60cc800943a4c12b57475c275e4bdfd0fb16643d91bbdd70b4f",
+        "label": "TEXT CONTROL",
+        "mode": "A",
+        "payload": null,
+        "selected_by_gate": false,
+        "strategy_dom": "PROSE_CONTROL"
+      },
+      "treatment_b": {
+        "identity_sha256": "2fb0b72796b8168bffbd9f46d7b18b76cc0b29043bf67cbc8d9373a587b86f01",
+        "label": "SELECTED BY GATE",
+        "mode": "B",
+        "payload": {
+          "explicit_cue": "more tools to set the floor agenda than",
+          "quantity_excerpts": [],
+          "sides": [
+            "Majority party leaders in the House have",
+            "majority party leaders in the Senate"
+          ]
+        },
+        "selected_by_gate": true,
+        "strategy_dom": "COMPARISON"
+      },
+      "truthfulness_audit": {
+        "all_display_fragments_trace_to_frozen_payload": true,
+        "payload_byte_equivalent_to_spec057": true,
+        "prose_unchanged": true,
+        "semantic_or_topology_change": false
+      },
+      "utility_outcome": "STRONG_EXTERNALIZATION_VALUE"
+    },
+    {
+      "case_identity": "spec058-case-3a15dfad2c0fe3",
+      "case_kind": "CLAIM",
+      "claim_id": "claim-6",
+      "display_field_traces": [
+        {
+          "end_char": 134,
+          "quote": "Indicators for respiration, nutrient cycling, and decomposition have been developed at watershed scales but not at the national scale.",
+          "role": "concise_prose",
+          "source": "CLAIM_TEXT",
+          "start_char": 0
+        },
+        {
+          "end_char": 103,
+          "quote": "Indicators for respiration, nutrient cycling, and decomposition have been developed at watershed scales",
+          "role": "contrast_side_a",
+          "source": "CLAIM_TEXT",
+          "start_char": 0
+        },
+        {
+          "end_char": 133,
+          "quote": "not at the national scale",
+          "role": "contrast_side_b",
+          "source": "CLAIM_TEXT",
+          "start_char": 108
+        },
+        {
+          "end_char": 111,
+          "quote": "but not",
+          "role": "contrast_cue",
+          "source": "CLAIM_TEXT",
+          "start_char": 104
+        }
+      ],
+      "display_fragments": [
+        "Indicators for respiration, nutrient cycling, and decomposition have been developed at watershed scales",
+        "but not",
+        "not at the national scale"
+      ],
+      "gate_decision": "COMPARISON",
+      "group": "RETAINED_CLAIM_VISUAL",
+      "prior_strategy": "COMPARISON",
+      "prose": "Indicators for respiration, nutrient cycling, and decomposition have been developed at watershed scales but not at the national scale.",
+      "provenance": [
+        {
+          "document_id": "text-70e7e3d20325dd5d",
+          "end_char": 2618,
+          "quote": "Indicators for other ecological processes, such as respiration, nutrient cycling, or decomposition have been developed for ecosystems at watershed scales, but have not been developed at the national scale.",
+          "start_char": 2413
+        }
+      ],
+      "review_index": 2,
+      "selected_mode": "B",
+      "source_id": "epa-ecological-processes-2026",
+      "structured_payload": {
+        "explicit_cue": "but not",
+        "quantity_excerpts": [],
+        "sides": [
+          "Indicators for respiration, nutrient cycling, and decomposition have been developed at watershed scales",
+          "not at the national scale"
+        ]
+      },
+      "title": "claim-6",
+      "treatment_a": {
+        "identity_sha256": "e1dc926f94f8c60cc800943a4c12b57475c275e4bdfd0fb16643d91bbdd70b4f",
+        "label": "TEXT CONTROL",
+        "mode": "A",
+        "payload": null,
+        "selected_by_gate": false,
+        "strategy_dom": "PROSE_CONTROL"
+      },
+      "treatment_b": {
+        "identity_sha256": "4d691372a8b925a6f6b252fb46c6a1273b6f026e06afbc5e38d3c0d942301a80",
+        "label": "SELECTED BY GATE",
+        "mode": "B",
+        "payload": {
+          "explicit_cue": "but not",
+          "quantity_excerpts": [],
+          "sides": [
+            "Indicators for respiration, nutrient cycling, and decomposition have been developed at watershed scales",
+            "not at the national scale"
+          ]
+        },
+        "selected_by_gate": true,
+        "strategy_dom": "COMPARISON"
+      },
+      "truthfulness_audit": {
+        "all_display_fragments_trace_to_frozen_payload": true,
+        "payload_byte_equivalent_to_spec057": true,
+        "prose_unchanged": true,
+        "semantic_or_topology_change": false
+      },
+      "utility_outcome": "STRONG_EXTERNALIZATION_VALUE"
+    },
+    {
+      "case_identity": "spec058-case-23c693f82c9e6a",
+      "case_kind": "CLAIM",
+      "claim_id": "c1",
+      "display_field_traces": [
+        {
+          "end_char": 155,
+          "quote": "FHWA has stated that 40 percent of all congestion nationwide is attributable to bottlenecks, while another 5 percent is attributable to poor signal timing.",
+          "role": "concise_prose",
+          "source": "CLAIM_TEXT",
+          "start_char": 0
+        },
+        {
+          "end_char": 91,
+          "quote": "FHWA has stated that 40 percent of all congestion nationwide is attributable to bottlenecks",
+          "role": "comparison_side_a",
+          "source": "CLAIM_TEXT",
+          "start_char": 0
+        },
+        {
+          "end_char": 154,
+          "quote": "another 5 percent is attributable to poor signal timing",
+          "role": "comparison_side_b",
+          "source": "CLAIM_TEXT",
+          "start_char": 99
+        },
+        {
+          "end_char": 98,
+          "quote": "while",
+          "role": "comparison_cue",
+          "source": "CLAIM_TEXT",
+          "start_char": 93
+        },
+        {
+          "end_char": 31,
+          "quote": "40 percent",
+          "role": "explicit_quantity",
+          "source": "CLAIM_TEXT",
+          "start_char": 21
+        },
+        {
+          "end_char": 116,
+          "quote": "another 5 percent",
+          "role": "explicit_quantity",
+          "source": "CLAIM_TEXT",
+          "start_char": 99
+        }
+      ],
+      "display_fragments": [
+        "40 percent",
+        "FHWA has stated that 40 percent of all congestion nationwide is attributable to bottlenecks",
+        "another 5 percent",
+        "another 5 percent is attributable to poor signal timing",
+        "while"
+      ],
+      "gate_decision": "COMPARISON",
+      "group": "RETAINED_CLAIM_VISUAL",
+      "prior_strategy": "COMPARISON",
+      "prose": "FHWA has stated that 40 percent of all congestion nationwide is attributable to bottlenecks, while another 5 percent is attributable to poor signal timing.",
+      "provenance": [
+        {
+          "document_id": "text-1fd7e9851839f5f3",
+          "end_char": 238,
+          "quote": "For at least 15 years, FHWA has stated that 40 percent of all congestion nationwide is attributable to bottlenecks, while another 5 percent is attributable to poor signal timing, which is also a tangible problem and not a random event.(5)",
+          "start_char": 0
+        }
+      ],
+      "review_index": 3,
+      "selected_mode": "B",
+      "source_id": "fhwa-traffic-bottleneck-concepts-2016",
+      "structured_payload": {
+        "explicit_cue": "while",
+        "quantity_excerpts": [
+          "40 percent",
+          "another 5 percent"
+        ],
+        "sides": [
+          "FHWA has stated that 40 percent of all congestion nationwide is attributable to bottlenecks",
+          "another 5 percent is attributable to poor signal timing"
+        ]
+      },
+      "title": "c1",
+      "treatment_a": {
+        "identity_sha256": "e1dc926f94f8c60cc800943a4c12b57475c275e4bdfd0fb16643d91bbdd70b4f",
+        "label": "TEXT CONTROL",
+        "mode": "A",
+        "payload": null,
+        "selected_by_gate": false,
+        "strategy_dom": "PROSE_CONTROL"
+      },
+      "treatment_b": {
+        "identity_sha256": "1b757f7c3598569b033084bfea1ec174e8f28783ec6bcebca39e3bea51c61054",
+        "label": "SELECTED BY GATE",
+        "mode": "B",
+        "payload": {
+          "explicit_cue": "while",
+          "quantity_excerpts": [
+            "40 percent",
+            "another 5 percent"
+          ],
+          "sides": [
+            "FHWA has stated that 40 percent of all congestion nationwide is attributable to bottlenecks",
+            "another 5 percent is attributable to poor signal timing"
+          ]
+        },
+        "selected_by_gate": true,
+        "strategy_dom": "COMPARISON"
+      },
+      "truthfulness_audit": {
+        "all_display_fragments_trace_to_frozen_payload": true,
+        "payload_byte_equivalent_to_spec057": true,
+        "prose_unchanged": true,
+        "semantic_or_topology_change": false
+      },
+      "utility_outcome": "STRONG_EXTERNALIZATION_VALUE"
+    },
+    {
+      "case_identity": "spec058-case-494f648bcb2746",
+      "case_kind": "CLAIM",
+      "claim_id": "c36",
+      "display_field_traces": [
+        {
+          "end_char": 121,
+          "quote": "An airplane flying west to east can generally make a route faster than an airplane traveling the same route east to west.",
+          "role": "concise_prose",
+          "source": "CLAIM_TEXT",
+          "start_char": 0
+        },
+        {
+          "end_char": 58,
+          "quote": "An airplane flying west to east can generally make a route",
+          "role": "comparison_side_a",
+          "source": "CLAIM_TEXT",
+          "start_char": 0
+        },
+        {
+          "end_char": 120,
+          "quote": "an airplane traveling the same route east to west",
+          "role": "comparison_side_b",
+          "source": "CLAIM_TEXT",
+          "start_char": 71
+        },
+        {
+          "end_char": 70,
+          "quote": "faster than",
+          "role": "comparison_cue",
+          "source": "CLAIM_TEXT",
+          "start_char": 59
+        }
+      ],
+      "display_fragments": [
+        "An airplane flying west to east can generally make a route",
+        "an airplane traveling the same route east to west",
+        "faster than"
+      ],
+      "gate_decision": "COMPARISON",
+      "group": "RETAINED_CLAIM_VISUAL",
+      "prior_strategy": "COMPARISON",
+      "prose": "An airplane flying west to east can generally make a route faster than an airplane traveling the same route east to west.",
+      "provenance": [
+        {
+          "document_id": "text-256ade61be620cfa",
+          "end_char": 1513,
+          "quote": "an airplane flying a route from west to east can generally make the trip faster than an airplane traveling the same route east to west.",
+          "start_char": 1378
+        }
+      ],
+      "review_index": 4,
+      "selected_mode": "B",
+      "source_id": "noaa-nesdis-jet-stream-2025",
+      "structured_payload": {
+        "explicit_cue": "faster than",
+        "quantity_excerpts": [],
+        "sides": [
+          "An airplane flying west to east can generally make a route",
+          "an airplane traveling the same route east to west"
+        ]
+      },
+      "title": "c36",
+      "treatment_a": {
+        "identity_sha256": "e1dc926f94f8c60cc800943a4c12b57475c275e4bdfd0fb16643d91bbdd70b4f",
+        "label": "TEXT CONTROL",
+        "mode": "A",
+        "payload": null,
+        "selected_by_gate": false,
+        "strategy_dom": "PROSE_CONTROL"
+      },
+      "treatment_b": {
+        "identity_sha256": "0b60c7824ee435ccc7b101c1ff1e5dd81df886e0a09e140135b75a90f39a005d",
+        "label": "SELECTED BY GATE",
+        "mode": "B",
+        "payload": {
+          "explicit_cue": "faster than",
+          "quantity_excerpts": [],
+          "sides": [
+            "An airplane flying west to east can generally make a route",
+            "an airplane traveling the same route east to west"
+          ]
+        },
+        "selected_by_gate": true,
+        "strategy_dom": "COMPARISON"
+      },
+      "truthfulness_audit": {
+        "all_display_fragments_trace_to_frozen_payload": true,
+        "payload_byte_equivalent_to_spec057": true,
+        "prose_unchanged": true,
+        "semantic_or_topology_change": false
+      },
+      "utility_outcome": "STRONG_EXTERNALIZATION_VALUE"
+    },
+    {
+      "case_identity": "spec058-case-8215511b99ff1a",
+      "case_kind": "STRUCTURAL",
+      "claim_id": "economics_market_system",
+      "display_fragments": [
+        "CAUSES",
+        "DECREASES",
+        "INCREASES",
+        "market price",
+        "quantity demanded",
+        "quantity supplied",
+        "reduction in supply",
+        "shortage",
+        "upward pressure on price"
+      ],
+      "gate_decision": "CAUSAL_MECHANISM",
+      "group": "RETAINED_STRUCTURAL_VISUAL",
+      "prior_strategy": "CAUSAL_MECHANISM",
+      "prose": "The price that coordinates buyers' and sellers' plans.",
+      "provenance": {
+        "evidence_quotes": [
+          "The higher price decreases quantity demanded and increases quantity supplied until the shortage narrows.",
+          "When demand is less elastic, a similar reduction in supply can cause a larger price increase",
+          "When the price rises, buyers usually demand a smaller quantity",
+          "a shortage puts upward pressure on price.",
+          "while sellers usually supply a larger quantity."
+        ],
+        "evidence_source_ids": [
+          "text-e6c889f45171a12a"
+        ],
+        "spec038_case": "economics_market_system"
+      },
+      "review_index": 5,
+      "selected_mode": "B",
+      "source_id": "economics",
+      "structured_payload": {
+        "nodes": [
+          {
+            "description": "The price that coordinates buyers' and sellers' plans.",
+            "entity_id": "market-price",
+            "label": "market price",
+            "role": "causal-state",
+            "role_label": "system state",
+            "x": 650,
+            "y": 350
+          },
+          {
+            "description": "The quantity buyers demand at a given price.",
+            "entity_id": "quantity-demanded",
+            "label": "quantity demanded",
+            "role": "causal-state",
+            "role_label": "system state",
+            "x": 500,
+            "y": 545
+          },
+          {
+            "description": "The quantity sellers supply at a given price.",
+            "entity_id": "quantity-supplied",
+            "label": "quantity supplied",
+            "role": "causal-state",
+            "role_label": "system state",
+            "x": 800,
+            "y": 545
+          },
+          {
+            "description": "A market condition in which quantity demanded exceeds quantity supplied.",
+            "entity_id": "shortage",
+            "label": "shortage",
+            "role": "causal-state",
+            "role_label": "system state",
+            "x": 220,
+            "y": 105
+          },
+          {
+            "description": "A decrease in the amount of supply available in the market.",
+            "entity_id": "supply-reduction",
+            "label": "reduction in supply",
+            "role": "causal-state",
+            "role_label": "system state",
+            "x": 760,
+            "y": 105
+          },
+          {
+            "description": "Pressure that tends to raise the market price.",
+            "entity_id": "upward-price-pressure",
+            "label": "upward pressure on price",
+            "role": "causal-state",
+            "role_label": "system state",
+            "x": 260,
+            "y": 315
+          }
+        ],
+        "relationships": [
+          {
+            "direction": "decreaser_to_decreased_variable",
+            "label_x": 535,
+            "label_y": 448,
+            "meaning": "The source causally lowers the amount, rate, value, probability, or intensity of the target.",
+            "path": "M 602 412 L 548 483",
+            "relationship_ids": [
+              "rel-higher-price-decreases-demanded",
+              "rel-price-decreases-demanded"
+            ],
+            "relationship_type": "DECREASES",
+            "source_entity_id": "market-price",
+            "source_label": "market price",
+            "target_entity_id": "quantity-demanded",
+            "target_label": "quantity demanded"
+          },
+          {
+            "direction": "increaser_to_increased_variable",
+            "label_x": 760,
+            "label_y": 448,
+            "meaning": "The source causally raises the amount, rate, value, probability, or intensity of the target.",
+            "path": "M 698 412 L 752 483",
+            "relationship_ids": [
+              "rel-higher-price-increases-supplied",
+              "rel-price-increases-supplied"
+            ],
+            "relationship_type": "INCREASES",
+            "source_entity_id": "market-price",
+            "source_label": "market price",
+            "target_entity_id": "quantity-supplied",
+            "target_label": "quantity supplied"
+          },
+          {
+            "direction": "cause_to_effect",
+            "label_x": 225,
+            "label_y": 205,
+            "meaning": "The source brings about the target as an effect.",
+            "path": "M 235 182 L 245 238",
+            "relationship_ids": [
+              "rel-shortage-upward-pressure"
+            ],
+            "relationship_type": "CAUSES",
+            "source_entity_id": "shortage",
+            "source_label": "shortage",
+            "target_entity_id": "upward-price-pressure",
+            "target_label": "upward pressure on price"
+          },
+          {
+            "direction": "cause_to_effect",
+            "label_x": 760,
+            "label_y": 225,
+            "meaning": "The source brings about the target as an effect.",
+            "path": "M 728 176 L 682 279",
+            "relationship_ids": [
+              "rel-supply-reduction-price-increase"
+            ],
+            "relationship_type": "CAUSES",
+            "source_entity_id": "supply-reduction",
+            "source_label": "reduction in supply",
+            "target_entity_id": "market-price",
+            "target_label": "market price"
+          },
+          {
+            "direction": "increaser_to_increased_variable",
+            "label_x": 455,
+            "label_y": 330,
+            "meaning": "The source causally raises the amount, rate, value, probability, or intensity of the target.",
+            "path": "M 338 322 L 572 343",
+            "relationship_ids": [
+              "rel-upward-pressure-price"
+            ],
+            "relationship_type": "INCREASES",
+            "source_entity_id": "upward-price-pressure",
+            "source_label": "upward pressure on price",
+            "target_entity_id": "market-price",
+            "target_label": "market price"
+          }
+        ],
+        "spatial_grammar": "causal-system",
+        "text_control": [
+          {
+            "explanation": "The source causally lowers the amount, rate, value, probability, or intensity of the target.",
+            "label": "market price → quantity demanded"
+          },
+          {
+            "explanation": "The source causally raises the amount, rate, value, probability, or intensity of the target.",
+            "label": "market price → quantity supplied"
+          },
+          {
+            "explanation": "The source brings about the target as an effect.",
+            "label": "shortage → upward pressure on price"
+          },
+          {
+            "explanation": "The source brings about the target as an effect.",
+            "label": "reduction in supply → market price"
+          },
+          {
+            "explanation": "The source causally raises the amount, rate, value, probability, or intensity of the target.",
+            "label": "upward pressure on price → market price"
+          },
+          {
+            "explanation": "The price that coordinates buyers' and sellers' plans.",
+            "label": "market price"
+          },
+          {
+            "explanation": "The quantity buyers demand at a given price.",
+            "label": "quantity demanded"
+          },
+          {
+            "explanation": "The quantity sellers supply at a given price.",
+            "label": "quantity supplied"
+          },
+          {
+            "explanation": "A market condition in which quantity demanded exceeds quantity supplied.",
+            "label": "shortage"
+          },
+          {
+            "explanation": "A decrease in the amount of supply available in the market.",
+            "label": "reduction in supply"
+          },
+          {
+            "explanation": "Pressure that tends to raise the market price.",
+            "label": "upward pressure on price"
+          }
+        ]
+      },
+      "title": "economics market system",
+      "treatment_a": {
+        "identity_sha256": "4fe2f31390787d4e190f1750b7b0c75e497003b66bb0317d0d75ebfe9f1b816d",
+        "label": "TEXT CONTROL",
+        "mode": "A",
+        "payload": [
+          {
+            "explanation": "The source causally lowers the amount, rate, value, probability, or intensity of the target.",
+            "label": "market price → quantity demanded"
+          },
+          {
+            "explanation": "The source causally raises the amount, rate, value, probability, or intensity of the target.",
+            "label": "market price → quantity supplied"
+          },
+          {
+            "explanation": "The source brings about the target as an effect.",
+            "label": "shortage → upward pressure on price"
+          },
+          {
+            "explanation": "The source brings about the target as an effect.",
+            "label": "reduction in supply → market price"
+          },
+          {
+            "explanation": "The source causally raises the amount, rate, value, probability, or intensity of the target.",
+            "label": "upward pressure on price → market price"
+          },
+          {
+            "explanation": "The price that coordinates buyers' and sellers' plans.",
+            "label": "market price"
+          },
+          {
+            "explanation": "The quantity buyers demand at a given price.",
+            "label": "quantity demanded"
+          },
+          {
+            "explanation": "The quantity sellers supply at a given price.",
+            "label": "quantity supplied"
+          },
+          {
+            "explanation": "A market condition in which quantity demanded exceeds quantity supplied.",
+            "label": "shortage"
+          },
+          {
+            "explanation": "A decrease in the amount of supply available in the market.",
+            "label": "reduction in supply"
+          },
+          {
+            "explanation": "Pressure that tends to raise the market price.",
+            "label": "upward pressure on price"
+          }
+        ],
+        "selected_by_gate": false,
+        "strategy_dom": "TEXT_CONTROL"
+      },
+      "treatment_b": {
+        "identity_sha256": "a45501f1356faaf9ebd41a163ddf6b046ed9c1c941eda5c1cf12a00b30b614a6",
+        "label": "SELECTED BY GATE",
+        "mode": "B",
+        "payload": {
+          "nodes": [
+            {
+              "description": "The price that coordinates buyers' and sellers' plans.",
+              "entity_id": "market-price",
+              "label": "market price",
+              "role": "causal-state",
+              "role_label": "system state",
+              "x": 650,
+              "y": 350
+            },
+            {
+              "description": "The quantity buyers demand at a given price.",
+              "entity_id": "quantity-demanded",
+              "label": "quantity demanded",
+              "role": "causal-state",
+              "role_label": "system state",
+              "x": 500,
+              "y": 545
+            },
+            {
+              "description": "The quantity sellers supply at a given price.",
+              "entity_id": "quantity-supplied",
+              "label": "quantity supplied",
+              "role": "causal-state",
+              "role_label": "system state",
+              "x": 800,
+              "y": 545
+            },
+            {
+              "description": "A market condition in which quantity demanded exceeds quantity supplied.",
+              "entity_id": "shortage",
+              "label": "shortage",
+              "role": "causal-state",
+              "role_label": "system state",
+              "x": 220,
+              "y": 105
+            },
+            {
+              "description": "A decrease in the amount of supply available in the market.",
+              "entity_id": "supply-reduction",
+              "label": "reduction in supply",
+              "role": "causal-state",
+              "role_label": "system state",
+              "x": 760,
+              "y": 105
+            },
+            {
+              "description": "Pressure that tends to raise the market price.",
+              "entity_id": "upward-price-pressure",
+              "label": "upward pressure on price",
+              "role": "causal-state",
+              "role_label": "system state",
+              "x": 260,
+              "y": 315
+            }
+          ],
+          "relationships": [
+            {
+              "direction": "decreaser_to_decreased_variable",
+              "label_x": 535,
+              "label_y": 448,
+              "meaning": "The source causally lowers the amount, rate, value, probability, or intensity of the target.",
+              "path": "M 602 412 L 548 483",
+              "relationship_ids": [
+                "rel-higher-price-decreases-demanded",
+                "rel-price-decreases-demanded"
+              ],
+              "relationship_type": "DECREASES",
+              "source_entity_id": "market-price",
+              "source_label": "market price",
+              "target_entity_id": "quantity-demanded",
+              "target_label": "quantity demanded"
+            },
+            {
+              "direction": "increaser_to_increased_variable",
+              "label_x": 760,
+              "label_y": 448,
+              "meaning": "The source causally raises the amount, rate, value, probability, or intensity of the target.",
+              "path": "M 698 412 L 752 483",
+              "relationship_ids": [
+                "rel-higher-price-increases-supplied",
+                "rel-price-increases-supplied"
+              ],
+              "relationship_type": "INCREASES",
+              "source_entity_id": "market-price",
+              "source_label": "market price",
+              "target_entity_id": "quantity-supplied",
+              "target_label": "quantity supplied"
+            },
+            {
+              "direction": "cause_to_effect",
+              "label_x": 225,
+              "label_y": 205,
+              "meaning": "The source brings about the target as an effect.",
+              "path": "M 235 182 L 245 238",
+              "relationship_ids": [
+                "rel-shortage-upward-pressure"
+              ],
+              "relationship_type": "CAUSES",
+              "source_entity_id": "shortage",
+              "source_label": "shortage",
+              "target_entity_id": "upward-price-pressure",
+              "target_label": "upward pressure on price"
+            },
+            {
+              "direction": "cause_to_effect",
+              "label_x": 760,
+              "label_y": 225,
+              "meaning": "The source brings about the target as an effect.",
+              "path": "M 728 176 L 682 279",
+              "relationship_ids": [
+                "rel-supply-reduction-price-increase"
+              ],
+              "relationship_type": "CAUSES",
+              "source_entity_id": "supply-reduction",
+              "source_label": "reduction in supply",
+              "target_entity_id": "market-price",
+              "target_label": "market price"
+            },
+            {
+              "direction": "increaser_to_increased_variable",
+              "label_x": 455,
+              "label_y": 330,
+              "meaning": "The source causally raises the amount, rate, value, probability, or intensity of the target.",
+              "path": "M 338 322 L 572 343",
+              "relationship_ids": [
+                "rel-upward-pressure-price"
+              ],
+              "relationship_type": "INCREASES",
+              "source_entity_id": "upward-price-pressure",
+              "source_label": "upward pressure on price",
+              "target_entity_id": "market-price",
+              "target_label": "market price"
+            }
+          ],
+          "spatial_grammar": "causal-system"
+        },
+        "selected_by_gate": true,
+        "strategy_dom": "CAUSAL_MECHANISM"
+      },
+      "truthfulness_audit": {
+        "accepted_coordinates_and_paths_reused": true,
+        "nodes_and_relationships_byte_equivalent_to_spec038": true,
+        "prose_is_exact_frozen_focus_explanation": true,
+        "semantic_or_topology_change": false
+      },
+      "utility_decision_origin": "SPEC057_FROZEN_DECISION",
+      "utility_outcome": "STRONG_EXTERNALIZATION_VALUE"
+    },
+    {
+      "case_identity": "spec058-case-f1735a51661834",
+      "case_kind": "STRUCTURAL",
+      "claim_id": "software_composition",
+      "display_fragments": [
+        "API component",
+        "PART_OF",
+        "database",
+        "modular order-processing service",
+        "order component",
+        "payment component"
+      ],
+      "gate_decision": "HIERARCHY_COMPOSITION",
+      "group": "RETAINED_STRUCTURAL_VISUAL",
+      "prior_strategy": "HIERARCHY_COMPOSITION",
+      "prose": "A service organized into separate API, order, payment, and database components.",
+      "provenance": {
+        "evidence_quotes": [
+          "A modular order-processing service separates the API component, order component, payment component, and database."
+        ],
+        "evidence_source_ids": [
+          "text-49b42a4f08a99742"
+        ],
+        "spec038_case": "software_composition"
+      },
+      "review_index": 6,
+      "selected_mode": "B",
+      "source_id": "software_architecture",
+      "structured_payload": {
+        "nodes": [
+          {
+            "description": "The component through which the order-processing service exposes or receives API calls.",
+            "entity_id": "api-component",
+            "label": "API component",
+            "role": "hierarchy-member",
+            "role_label": "part / member",
+            "x": 125,
+            "y": 485
+          },
+          {
+            "description": "Shared infrastructure used to store durable state for the order and payment components.",
+            "entity_id": "database",
+            "label": "database",
+            "role": "hierarchy-member",
+            "role_label": "part / member",
+            "x": 375,
+            "y": 485
+          },
+          {
+            "description": "A service organized into separate API, order, payment, and database components.",
+            "entity_id": "modular-order-processing-service",
+            "label": "modular order-processing service",
+            "role": "hierarchy-root",
+            "role_label": "whole / kind",
+            "x": 500,
+            "y": 105
+          },
+          {
+            "description": "A component responsible for order-related processing.",
+            "entity_id": "order-component",
+            "label": "order component",
+            "role": "hierarchy-member",
+            "role_label": "part / member",
+            "x": 625,
+            "y": 485
+          },
+          {
+            "description": "A component responsible for payment-related processing and purchase authorization.",
+            "entity_id": "payment-component",
+            "label": "payment component",
+            "role": "hierarchy-member",
+            "role_label": "part / member",
+            "x": 875,
+            "y": 485
+          }
+        ],
+        "relationships": [
+          {
+            "direction": "part_to_whole",
+            "label_x": 312,
+            "label_y": 319,
+            "meaning": "The source is a constituent or component of the target.",
+            "path": "M 180 429 L 445 161",
+            "relationship_ids": [
+              "rel-1"
+            ],
+            "relationship_type": "PART_OF",
+            "source_entity_id": "api-component",
+            "source_label": "API component",
+            "target_entity_id": "modular-order-processing-service",
+            "target_label": "modular order-processing service"
+          },
+          {
+            "direction": "part_to_whole",
+            "label_x": 438,
+            "label_y": 271,
+            "meaning": "The source is a constituent or component of the target.",
+            "path": "M 399 411 L 476 179",
+            "relationship_ids": [
+              "rel-4"
+            ],
+            "relationship_type": "PART_OF",
+            "source_entity_id": "database",
+            "source_label": "database",
+            "target_entity_id": "modular-order-processing-service",
+            "target_label": "modular order-processing service"
+          },
+          {
+            "direction": "part_to_whole",
+            "label_x": 562,
+            "label_y": 319,
+            "meaning": "The source is a constituent or component of the target.",
+            "path": "M 601 411 L 524 179",
+            "relationship_ids": [
+              "rel-2"
+            ],
+            "relationship_type": "PART_OF",
+            "source_entity_id": "order-component",
+            "source_label": "order component",
+            "target_entity_id": "modular-order-processing-service",
+            "target_label": "modular order-processing service"
+          },
+          {
+            "direction": "part_to_whole",
+            "label_x": 688,
+            "label_y": 271,
+            "meaning": "The source is a constituent or component of the target.",
+            "path": "M 820 429 L 555 161",
+            "relationship_ids": [
+              "rel-3"
+            ],
+            "relationship_type": "PART_OF",
+            "source_entity_id": "payment-component",
+            "source_label": "payment component",
+            "target_entity_id": "modular-order-processing-service",
+            "target_label": "modular order-processing service"
+          }
+        ],
+        "spatial_grammar": "hierarchy-composition",
+        "text_control": [
+          {
+            "explanation": "The source is a constituent or component of the target.",
+            "label": "API component → modular order-processing service"
+          },
+          {
+            "explanation": "The source is a constituent or component of the target.",
+            "label": "order component → modular order-processing service"
+          },
+          {
+            "explanation": "The source is a constituent or component of the target.",
+            "label": "payment component → modular order-processing service"
+          },
+          {
+            "explanation": "The source is a constituent or component of the target.",
+            "label": "database → modular order-processing service"
+          },
+          {
+            "explanation": "The component through which the order-processing service exposes or receives API calls.",
+            "label": "API component"
+          },
+          {
+            "explanation": "Shared infrastructure used to store durable state for the order and payment components.",
+            "label": "database"
+          },
+          {
+            "explanation": "A service organized into separate API, order, payment, and database components.",
+            "label": "modular order-processing service"
+          },
+          {
+            "explanation": "A component responsible for order-related processing.",
+            "label": "order component"
+          },
+          {
+            "explanation": "A component responsible for payment-related processing and purchase authorization.",
+            "label": "payment component"
+          }
+        ]
+      },
+      "title": "software composition",
+      "treatment_a": {
+        "identity_sha256": "e5aeb222a9471152506983a812f45a22edbfbeb08172554181027fbafb0ff66a",
+        "label": "TEXT CONTROL",
+        "mode": "A",
+        "payload": [
+          {
+            "explanation": "The source is a constituent or component of the target.",
+            "label": "API component → modular order-processing service"
+          },
+          {
+            "explanation": "The source is a constituent or component of the target.",
+            "label": "order component → modular order-processing service"
+          },
+          {
+            "explanation": "The source is a constituent or component of the target.",
+            "label": "payment component → modular order-processing service"
+          },
+          {
+            "explanation": "The source is a constituent or component of the target.",
+            "label": "database → modular order-processing service"
+          },
+          {
+            "explanation": "The component through which the order-processing service exposes or receives API calls.",
+            "label": "API component"
+          },
+          {
+            "explanation": "Shared infrastructure used to store durable state for the order and payment components.",
+            "label": "database"
+          },
+          {
+            "explanation": "A service organized into separate API, order, payment, and database components.",
+            "label": "modular order-processing service"
+          },
+          {
+            "explanation": "A component responsible for order-related processing.",
+            "label": "order component"
+          },
+          {
+            "explanation": "A component responsible for payment-related processing and purchase authorization.",
+            "label": "payment component"
+          }
+        ],
+        "selected_by_gate": false,
+        "strategy_dom": "TEXT_CONTROL"
+      },
+      "treatment_b": {
+        "identity_sha256": "95fa033efec8ad0c98a1a1171a6070c5a133f1d0e8a1aa937af59e20056f452b",
+        "label": "SELECTED BY GATE",
+        "mode": "B",
+        "payload": {
+          "nodes": [
+            {
+              "description": "The component through which the order-processing service exposes or receives API calls.",
+              "entity_id": "api-component",
+              "label": "API component",
+              "role": "hierarchy-member",
+              "role_label": "part / member",
+              "x": 125,
+              "y": 485
+            },
+            {
+              "description": "Shared infrastructure used to store durable state for the order and payment components.",
+              "entity_id": "database",
+              "label": "database",
+              "role": "hierarchy-member",
+              "role_label": "part / member",
+              "x": 375,
+              "y": 485
+            },
+            {
+              "description": "A service organized into separate API, order, payment, and database components.",
+              "entity_id": "modular-order-processing-service",
+              "label": "modular order-processing service",
+              "role": "hierarchy-root",
+              "role_label": "whole / kind",
+              "x": 500,
+              "y": 105
+            },
+            {
+              "description": "A component responsible for order-related processing.",
+              "entity_id": "order-component",
+              "label": "order component",
+              "role": "hierarchy-member",
+              "role_label": "part / member",
+              "x": 625,
+              "y": 485
+            },
+            {
+              "description": "A component responsible for payment-related processing and purchase authorization.",
+              "entity_id": "payment-component",
+              "label": "payment component",
+              "role": "hierarchy-member",
+              "role_label": "part / member",
+              "x": 875,
+              "y": 485
+            }
+          ],
+          "relationships": [
+            {
+              "direction": "part_to_whole",
+              "label_x": 312,
+              "label_y": 319,
+              "meaning": "The source is a constituent or component of the target.",
+              "path": "M 180 429 L 445 161",
+              "relationship_ids": [
+                "rel-1"
+              ],
+              "relationship_type": "PART_OF",
+              "source_entity_id": "api-component",
+              "source_label": "API component",
+              "target_entity_id": "modular-order-processing-service",
+              "target_label": "modular order-processing service"
+            },
+            {
+              "direction": "part_to_whole",
+              "label_x": 438,
+              "label_y": 271,
+              "meaning": "The source is a constituent or component of the target.",
+              "path": "M 399 411 L 476 179",
+              "relationship_ids": [
+                "rel-4"
+              ],
+              "relationship_type": "PART_OF",
+              "source_entity_id": "database",
+              "source_label": "database",
+              "target_entity_id": "modular-order-processing-service",
+              "target_label": "modular order-processing service"
+            },
+            {
+              "direction": "part_to_whole",
+              "label_x": 562,
+              "label_y": 319,
+              "meaning": "The source is a constituent or component of the target.",
+              "path": "M 601 411 L 524 179",
+              "relationship_ids": [
+                "rel-2"
+              ],
+              "relationship_type": "PART_OF",
+              "source_entity_id": "order-component",
+              "source_label": "order component",
+              "target_entity_id": "modular-order-processing-service",
+              "target_label": "modular order-processing service"
+            },
+            {
+              "direction": "part_to_whole",
+              "label_x": 688,
+              "label_y": 271,
+              "meaning": "The source is a constituent or component of the target.",
+              "path": "M 820 429 L 555 161",
+              "relationship_ids": [
+                "rel-3"
+              ],
+              "relationship_type": "PART_OF",
+              "source_entity_id": "payment-component",
+              "source_label": "payment component",
+              "target_entity_id": "modular-order-processing-service",
+              "target_label": "modular order-processing service"
+            }
+          ],
+          "spatial_grammar": "hierarchy-composition"
+        },
+        "selected_by_gate": true,
+        "strategy_dom": "HIERARCHY_COMPOSITION"
+      },
+      "truthfulness_audit": {
+        "accepted_coordinates_and_paths_reused": true,
+        "nodes_and_relationships_byte_equivalent_to_spec038": true,
+        "prose_is_exact_frozen_focus_explanation": true,
+        "semantic_or_topology_change": false
+      },
+      "utility_decision_origin": "SPEC057_FROZEN_DECISION",
+      "utility_outcome": "STRONG_EXTERNALIZATION_VALUE"
+    },
+    {
+      "case_identity": "spec058-case-2bc92afd2c7b7c",
+      "case_kind": "STRUCTURAL",
+      "claim_id": "field_reciprocal_mechanism",
+      "display_fragments": [
+        "Electric field",
+        "INDUCES",
+        "Magnetic field"
+      ],
+      "gate_decision": "RECIPROCAL_MECHANISM",
+      "group": "RETAINED_STRUCTURAL_VISUAL",
+      "prior_strategy": "RECIPROCAL_MECHANISM",
+      "prose": "A field created by electric charge that exerts force on another charge; changing electric fields can induce magnetic fields.",
+      "provenance": {
+        "evidence_quotes": [
+          "A changing electric field induces a magnetic field.",
+          "A changing magnetic field induces an electric field."
+        ],
+        "evidence_source_ids": [
+          "text-38d7213d9f084e3e"
+        ],
+        "spec038_case": "field_reciprocal_mechanism"
+      },
+      "review_index": 7,
+      "selected_mode": "B",
+      "source_id": "electromagnetism",
+      "structured_payload": {
+        "nodes": [
+          {
+            "description": "A field created by electric charge that exerts force on another charge; changing electric fields can induce magnetic fields.",
+            "entity_id": "electric-field",
+            "label": "Electric field",
+            "role": "cycle-endpoint",
+            "role_label": "coupled field",
+            "x": 230,
+            "y": 210
+          },
+          {
+            "description": "A field created by a moving charge or electric current; changing magnetic fields induce electric fields.",
+            "entity_id": "magnetic-field",
+            "label": "Magnetic field",
+            "role": "cycle-endpoint",
+            "role_label": "coupled field",
+            "x": 770,
+            "y": 210
+          }
+        ],
+        "relationships": [
+          {
+            "direction": "inducer_to_induced_effect",
+            "label_x": 500,
+            "label_y": 100,
+            "meaning": "The source produces the target through an explicitly described induction mechanism.",
+            "path": "M 335 210 Q 500 65 665 210",
+            "relationship_ids": [
+              "changing-electric-field-induces-magnetic-field"
+            ],
+            "relationship_type": "INDUCES",
+            "source_entity_id": "electric-field",
+            "source_label": "Electric field",
+            "target_entity_id": "magnetic-field",
+            "target_label": "Magnetic field"
+          },
+          {
+            "direction": "inducer_to_induced_effect",
+            "label_x": 500,
+            "label_y": 320,
+            "meaning": "The source produces the target through an explicitly described induction mechanism.",
+            "path": "M 665 210 Q 500 355 335 210",
+            "relationship_ids": [
+              "changing-magnetic-field-induces-electric-field"
+            ],
+            "relationship_type": "INDUCES",
+            "source_entity_id": "magnetic-field",
+            "source_label": "Magnetic field",
+            "target_entity_id": "electric-field",
+            "target_label": "Electric field"
+          }
+        ],
+        "spatial_grammar": "reciprocal-cycle",
+        "text_control": [
+          {
+            "explanation": "The source produces the target through an explicitly described induction mechanism.",
+            "label": "Electric field → Magnetic field"
+          },
+          {
+            "explanation": "The source produces the target through an explicitly described induction mechanism.",
+            "label": "Magnetic field → Electric field"
+          },
+          {
+            "explanation": "A field created by electric charge that exerts force on another charge; changing electric fields can induce magnetic fields.",
+            "label": "Electric field"
+          },
+          {
+            "explanation": "A field created by a moving charge or electric current; changing magnetic fields induce electric fields.",
+            "label": "Magnetic field"
+          }
+        ]
+      },
+      "title": "field reciprocal mechanism",
+      "treatment_a": {
+        "identity_sha256": "d83e7156d5e5940c986a72c67de3fa846437d16be25311f723b2419c113ff1cf",
+        "label": "TEXT CONTROL",
+        "mode": "A",
+        "payload": [
+          {
+            "explanation": "The source produces the target through an explicitly described induction mechanism.",
+            "label": "Electric field → Magnetic field"
+          },
+          {
+            "explanation": "The source produces the target through an explicitly described induction mechanism.",
+            "label": "Magnetic field → Electric field"
+          },
+          {
+            "explanation": "A field created by electric charge that exerts force on another charge; changing electric fields can induce magnetic fields.",
+            "label": "Electric field"
+          },
+          {
+            "explanation": "A field created by a moving charge or electric current; changing magnetic fields induce electric fields.",
+            "label": "Magnetic field"
+          }
+        ],
+        "selected_by_gate": false,
+        "strategy_dom": "TEXT_CONTROL"
+      },
+      "treatment_b": {
+        "identity_sha256": "4ca4810cfa629541968a1b3bcb18060edf24ebc6842115c97f5c1bce831ed499",
+        "label": "SELECTED BY GATE",
+        "mode": "B",
+        "payload": {
+          "nodes": [
+            {
+              "description": "A field created by electric charge that exerts force on another charge; changing electric fields can induce magnetic fields.",
+              "entity_id": "electric-field",
+              "label": "Electric field",
+              "role": "cycle-endpoint",
+              "role_label": "coupled field",
+              "x": 230,
+              "y": 210
+            },
+            {
+              "description": "A field created by a moving charge or electric current; changing magnetic fields induce electric fields.",
+              "entity_id": "magnetic-field",
+              "label": "Magnetic field",
+              "role": "cycle-endpoint",
+              "role_label": "coupled field",
+              "x": 770,
+              "y": 210
+            }
+          ],
+          "relationships": [
+            {
+              "direction": "inducer_to_induced_effect",
+              "label_x": 500,
+              "label_y": 100,
+              "meaning": "The source produces the target through an explicitly described induction mechanism.",
+              "path": "M 335 210 Q 500 65 665 210",
+              "relationship_ids": [
+                "changing-electric-field-induces-magnetic-field"
+              ],
+              "relationship_type": "INDUCES",
+              "source_entity_id": "electric-field",
+              "source_label": "Electric field",
+              "target_entity_id": "magnetic-field",
+              "target_label": "Magnetic field"
+            },
+            {
+              "direction": "inducer_to_induced_effect",
+              "label_x": 500,
+              "label_y": 320,
+              "meaning": "The source produces the target through an explicitly described induction mechanism.",
+              "path": "M 665 210 Q 500 355 335 210",
+              "relationship_ids": [
+                "changing-magnetic-field-induces-electric-field"
+              ],
+              "relationship_type": "INDUCES",
+              "source_entity_id": "magnetic-field",
+              "source_label": "Magnetic field",
+              "target_entity_id": "electric-field",
+              "target_label": "Electric field"
+            }
+          ],
+          "spatial_grammar": "reciprocal-cycle"
+        },
+        "selected_by_gate": true,
+        "strategy_dom": "RECIPROCAL_MECHANISM"
+      },
+      "truthfulness_audit": {
+        "accepted_coordinates_and_paths_reused": true,
+        "nodes_and_relationships_byte_equivalent_to_spec038": true,
+        "prose_is_exact_frozen_focus_explanation": true,
+        "semantic_or_topology_change": false
+      },
+      "utility_decision_origin": "SPEC057_FROZEN_DECISION",
+      "utility_outcome": "STRONG_EXTERNALIZATION_VALUE"
+    },
+    {
+      "case_identity": "spec058-case-cf337de5535953",
+      "case_kind": "STRUCTURAL",
+      "claim_id": "history_printing_dependency",
+      "display_fragments": [
+        "ENABLES",
+        "Movable metal type",
+        "Press",
+        "Printed books",
+        "Printing"
+      ],
+      "gate_decision": "DEPENDENCY_STRUCTURE",
+      "group": "RETAINED_STRUCTURAL_VISUAL",
+      "prior_strategy": "DEPENDENCY_STRUCTURE",
+      "prose": "The process of producing books and other printed material from prepared type.",
+      "provenance": {
+        "evidence_quotes": [
+          "Johannes Gutenberg combined movable metal type with a press in Europe during the mid-fifteenth century.",
+          "Printing enabled many copies to be produced from one prepared set of type"
+        ],
+        "evidence_source_ids": [
+          "text-070a252acc409f55"
+        ],
+        "spec038_case": "history_printing_dependency"
+      },
+      "review_index": 8,
+      "selected_mode": "B",
+      "source_id": "history",
+      "structured_payload": {
+        "nodes": [
+          {
+            "description": "Reusable metal type combined with a press for printing in Europe.",
+            "entity_id": "movable-metal-type",
+            "label": "Movable metal type",
+            "role": "dependency-stage",
+            "role_label": "dependency",
+            "x": 383,
+            "y": 105
+          },
+          {
+            "description": "A press combined with movable metal type in Gutenberg's printing process.",
+            "entity_id": "press",
+            "label": "Press",
+            "role": "dependency-stage",
+            "role_label": "dependency",
+            "x": 617,
+            "y": 105
+          },
+          {
+            "description": "Books produced through printing, including cheaper and more numerous copies.",
+            "entity_id": "printed-books",
+            "label": "Printed books",
+            "role": "dependency-stage",
+            "role_label": "dependency",
+            "x": 500,
+            "y": 535
+          },
+          {
+            "description": "The process of producing books and other printed material from prepared type.",
+            "entity_id": "printing",
+            "label": "Printing",
+            "role": "dependency-stage",
+            "role_label": "dependency",
+            "x": 500,
+            "y": 320
+          }
+        ],
+        "relationships": [
+          {
+            "direction": "enabler_to_enabled",
+            "label_x": 442,
+            "label_y": 212,
+            "meaning": "The source makes the target possible without necessarily causing it to occur.",
+            "path": "M 420 174 L 463 251",
+            "relationship_ids": [
+              "rel-type-enables-printing"
+            ],
+            "relationship_type": "ENABLES",
+            "source_entity_id": "movable-metal-type",
+            "source_label": "Movable metal type",
+            "target_entity_id": "printing",
+            "target_label": "Printing"
+          },
+          {
+            "direction": "enabler_to_enabled",
+            "label_x": 558,
+            "label_y": 212,
+            "meaning": "The source makes the target possible without necessarily causing it to occur.",
+            "path": "M 580 174 L 537 251",
+            "relationship_ids": [
+              "rel-press-enables-printing"
+            ],
+            "relationship_type": "ENABLES",
+            "source_entity_id": "press",
+            "source_label": "Press",
+            "target_entity_id": "printing",
+            "target_label": "Printing"
+          },
+          {
+            "direction": "enabler_to_enabled",
+            "label_x": 500,
+            "label_y": 428,
+            "meaning": "The source makes the target possible without necessarily causing it to occur.",
+            "path": "M 500 398 L 500 457",
+            "relationship_ids": [
+              "rel-printing-enables-copies"
+            ],
+            "relationship_type": "ENABLES",
+            "source_entity_id": "printing",
+            "source_label": "Printing",
+            "target_entity_id": "printed-books",
+            "target_label": "Printed books"
+          }
+        ],
+        "spatial_grammar": "dependency-flow",
+        "text_control": [
+          {
+            "explanation": "The source makes the target possible without necessarily causing it to occur.",
+            "label": "Press → Printing"
+          },
+          {
+            "explanation": "The source makes the target possible without necessarily causing it to occur.",
+            "label": "Printing → Printed books"
+          },
+          {
+            "explanation": "The source makes the target possible without necessarily causing it to occur.",
+            "label": "Movable metal type → Printing"
+          },
+          {
+            "explanation": "Reusable metal type combined with a press for printing in Europe.",
+            "label": "Movable metal type"
+          },
+          {
+            "explanation": "A press combined with movable metal type in Gutenberg's printing process.",
+            "label": "Press"
+          },
+          {
+            "explanation": "Books produced through printing, including cheaper and more numerous copies.",
+            "label": "Printed books"
+          },
+          {
+            "explanation": "The process of producing books and other printed material from prepared type.",
+            "label": "Printing"
+          }
+        ]
+      },
+      "title": "history printing dependency",
+      "treatment_a": {
+        "identity_sha256": "3c0e911da410fb623a7d653e76fd1fd032d4af3d84e913f2f63285b9404f06be",
+        "label": "TEXT CONTROL",
+        "mode": "A",
+        "payload": [
+          {
+            "explanation": "The source makes the target possible without necessarily causing it to occur.",
+            "label": "Press → Printing"
+          },
+          {
+            "explanation": "The source makes the target possible without necessarily causing it to occur.",
+            "label": "Printing → Printed books"
+          },
+          {
+            "explanation": "The source makes the target possible without necessarily causing it to occur.",
+            "label": "Movable metal type → Printing"
+          },
+          {
+            "explanation": "Reusable metal type combined with a press for printing in Europe.",
+            "label": "Movable metal type"
+          },
+          {
+            "explanation": "A press combined with movable metal type in Gutenberg's printing process.",
+            "label": "Press"
+          },
+          {
+            "explanation": "Books produced through printing, including cheaper and more numerous copies.",
+            "label": "Printed books"
+          },
+          {
+            "explanation": "The process of producing books and other printed material from prepared type.",
+            "label": "Printing"
+          }
+        ],
+        "selected_by_gate": false,
+        "strategy_dom": "TEXT_CONTROL"
+      },
+      "treatment_b": {
+        "identity_sha256": "6b6aec45385df5cc64a77b687aaf73f662e6a3c65da24df4efe5e3bef69e492a",
+        "label": "SELECTED BY GATE",
+        "mode": "B",
+        "payload": {
+          "nodes": [
+            {
+              "description": "Reusable metal type combined with a press for printing in Europe.",
+              "entity_id": "movable-metal-type",
+              "label": "Movable metal type",
+              "role": "dependency-stage",
+              "role_label": "dependency",
+              "x": 383,
+              "y": 105
+            },
+            {
+              "description": "A press combined with movable metal type in Gutenberg's printing process.",
+              "entity_id": "press",
+              "label": "Press",
+              "role": "dependency-stage",
+              "role_label": "dependency",
+              "x": 617,
+              "y": 105
+            },
+            {
+              "description": "Books produced through printing, including cheaper and more numerous copies.",
+              "entity_id": "printed-books",
+              "label": "Printed books",
+              "role": "dependency-stage",
+              "role_label": "dependency",
+              "x": 500,
+              "y": 535
+            },
+            {
+              "description": "The process of producing books and other printed material from prepared type.",
+              "entity_id": "printing",
+              "label": "Printing",
+              "role": "dependency-stage",
+              "role_label": "dependency",
+              "x": 500,
+              "y": 320
+            }
+          ],
+          "relationships": [
+            {
+              "direction": "enabler_to_enabled",
+              "label_x": 442,
+              "label_y": 212,
+              "meaning": "The source makes the target possible without necessarily causing it to occur.",
+              "path": "M 420 174 L 463 251",
+              "relationship_ids": [
+                "rel-type-enables-printing"
+              ],
+              "relationship_type": "ENABLES",
+              "source_entity_id": "movable-metal-type",
+              "source_label": "Movable metal type",
+              "target_entity_id": "printing",
+              "target_label": "Printing"
+            },
+            {
+              "direction": "enabler_to_enabled",
+              "label_x": 558,
+              "label_y": 212,
+              "meaning": "The source makes the target possible without necessarily causing it to occur.",
+              "path": "M 580 174 L 537 251",
+              "relationship_ids": [
+                "rel-press-enables-printing"
+              ],
+              "relationship_type": "ENABLES",
+              "source_entity_id": "press",
+              "source_label": "Press",
+              "target_entity_id": "printing",
+              "target_label": "Printing"
+            },
+            {
+              "direction": "enabler_to_enabled",
+              "label_x": 500,
+              "label_y": 428,
+              "meaning": "The source makes the target possible without necessarily causing it to occur.",
+              "path": "M 500 398 L 500 457",
+              "relationship_ids": [
+                "rel-printing-enables-copies"
+              ],
+              "relationship_type": "ENABLES",
+              "source_entity_id": "printing",
+              "source_label": "Printing",
+              "target_entity_id": "printed-books",
+              "target_label": "Printed books"
+            }
+          ],
+          "spatial_grammar": "dependency-flow"
+        },
+        "selected_by_gate": true,
+        "strategy_dom": "DEPENDENCY_STRUCTURE"
+      },
+      "truthfulness_audit": {
+        "accepted_coordinates_and_paths_reused": true,
+        "nodes_and_relationships_byte_equivalent_to_spec038": true,
+        "prose_is_exact_frozen_focus_explanation": true,
+        "semantic_or_topology_change": false
+      },
+      "utility_decision_origin": "SPEC057_CONTRACT_APPLIED_TO_FROZEN_SPEC038_ACCEPTED_CONTROL",
+      "utility_outcome": "STRONG_EXTERNALIZATION_VALUE"
+    },
+    {
+      "case_identity": "spec058-case-c8f166b92f9344",
+      "case_kind": "CLAIM",
+      "claim_id": "claim-amendments",
+      "display_field_traces": [
+        {
+          "end_char": 63,
+          "quote": "During a markup, committee members vote on proposed amendments.",
+          "role": "concise_prose",
+          "source": "CLAIM_TEXT",
+          "start_char": 0
+        },
+        {
+          "end_char": 15,
+          "quote": "During a markup",
+          "role": "qualifier",
+          "source": "CLAIM_TEXT",
+          "start_char": 0
+        }
+      ],
+      "display_fragments": [
+        "During a markup"
+      ],
+      "gate_decision": "CONCISE_PROSE",
+      "group": "SUPPRESSED_RICHER_CANDIDATE",
+      "prior_strategy": "QUALIFIED_STATEMENT",
+      "prose": "During a markup, committee members vote on proposed amendments.",
+      "provenance": [
+        {
+          "document_id": "text-fe61b7c3b2a9373e",
+          "end_char": 1469,
+          "quote": "at which committee members vote on any proposed amendments",
+          "start_char": 1411
+        }
+      ],
+      "review_index": 9,
+      "selected_mode": "A",
+      "source_id": "crs-legislative-process-r42843-17",
+      "structured_payload": {
+        "explicit_qualifier_or_condition": "During a markup"
+      },
+      "title": "claim-amendments",
+      "treatment_a": {
+        "identity_sha256": "419a3d18b5828e461dff9f01b4fc5c33ce25d91b2989852de23745b36b8cde27",
+        "label": "SELECTED BY GATE · PROSE",
+        "mode": "A",
+        "payload": null,
+        "selected_by_gate": true,
+        "strategy_dom": "PROSE_CONTROL"
+      },
+      "treatment_b": {
+        "identity_sha256": "b8f3591cf397931bee3d53c13732104b82d40573337d1825d5ec0a7c9879ea25",
+        "label": "SUPPRESSED BY GATE · HISTORICAL CANDIDATE",
+        "mode": "B",
+        "payload": {
+          "explicit_qualifier_or_condition": "During a markup"
+        },
+        "selected_by_gate": false,
+        "strategy_dom": "QUALIFIED_STATEMENT"
+      },
+      "truthfulness_audit": {
+        "all_display_fragments_trace_to_frozen_payload": true,
+        "payload_byte_equivalent_to_spec057": true,
+        "prose_unchanged": true,
+        "semantic_or_topology_change": false
+      },
+      "utility_outcome": "LOW_EXTERNALIZATION_VALUE"
+    },
+    {
+      "case_identity": "spec058-case-fb6abb6d3b17ed",
+      "case_kind": "CLAIM",
+      "claim_id": "c14",
+      "display_field_traces": [
+        {
+          "end_char": 93,
+          "quote": "Swap defects occur when an individual atom or a pair of nearest-neighbor atoms switch places.",
+          "role": "concise_prose",
+          "source": "CLAIM_TEXT",
+          "start_char": 0
+        },
+        {
+          "end_char": 92,
+          "quote": "when an individual atom or a pair of nearest-neighbor atoms switch places",
+          "role": "qualifier",
+          "source": "CLAIM_TEXT",
+          "start_char": 19
+        }
+      ],
+      "display_fragments": [
+        "when an individual atom or a pair of nearest-neighbor atoms switch places"
+      ],
+      "gate_decision": "CONCISE_PROSE",
+      "group": "SUPPRESSED_RICHER_CANDIDATE",
+      "prior_strategy": "QUALIFIED_STATEMENT",
+      "prose": "Swap defects occur when an individual atom or a pair of nearest-neighbor atoms switch places.",
+      "provenance": [
+        {
+          "document_id": "text-e9d2260c99802394",
+          "end_char": 1895,
+          "quote": "swap defects (where individual or a pair of nearest-neighbor atoms switch places)",
+          "start_char": 1814
+        }
+      ],
+      "review_index": 10,
+      "selected_mode": "A",
+      "source_id": "doe-iron-platinum-atomic-structure-2017",
+      "structured_payload": {
+        "explicit_qualifier_or_condition": "when an individual atom or a pair of nearest-neighbor atoms switch places"
+      },
+      "title": "c14",
+      "treatment_a": {
+        "identity_sha256": "419a3d18b5828e461dff9f01b4fc5c33ce25d91b2989852de23745b36b8cde27",
+        "label": "SELECTED BY GATE · PROSE",
+        "mode": "A",
+        "payload": null,
+        "selected_by_gate": true,
+        "strategy_dom": "PROSE_CONTROL"
+      },
+      "treatment_b": {
+        "identity_sha256": "292096b679b37ad8b154b60fb4f80de8d5237087e9e72c66b13326517699a590",
+        "label": "SUPPRESSED BY GATE · HISTORICAL CANDIDATE",
+        "mode": "B",
+        "payload": {
+          "explicit_qualifier_or_condition": "when an individual atom or a pair of nearest-neighbor atoms switch places"
+        },
+        "selected_by_gate": false,
+        "strategy_dom": "QUALIFIED_STATEMENT"
+      },
+      "truthfulness_audit": {
+        "all_display_fragments_trace_to_frozen_payload": true,
+        "payload_byte_equivalent_to_spec057": true,
+        "prose_unchanged": true,
+        "semantic_or_topology_change": false
+      },
+      "utility_outcome": "LOW_EXTERNALIZATION_VALUE"
+    },
+    {
+      "case_identity": "spec058-case-701e45750a09b9",
+      "case_kind": "CLAIM",
+      "claim_id": "c1",
+      "display_field_traces": [
+        {
+          "end_char": 140,
+          "quote": "Scientists determined the three-dimensional position of more than 23,000 atoms in a tiny iron-platinum particle with 22 picometer precision.",
+          "role": "concise_prose",
+          "source": "CLAIM_TEXT",
+          "start_char": 0
+        },
+        {
+          "end_char": 78,
+          "quote": "more than 23,000 atoms",
+          "role": "explicit_quantity",
+          "source": "CLAIM_TEXT",
+          "start_char": 56
+        },
+        {
+          "end_char": 129,
+          "quote": "22 picometer",
+          "role": "explicit_quantity",
+          "source": "CLAIM_TEXT",
+          "start_char": 117
+        }
+      ],
+      "display_fragments": [
+        "22 picometer",
+        "more than 23,000 atoms"
+      ],
+      "gate_decision": "CONCISE_PROSE",
+      "group": "SUPPRESSED_RICHER_CANDIDATE",
+      "prior_strategy": "QUANTITATIVE_CALLOUT",
+      "prose": "Scientists determined the three-dimensional position of more than 23,000 atoms in a tiny iron-platinum particle with 22 picometer precision.",
+      "provenance": [
+        {
+          "document_id": "text-e9d2260c99802394",
+          "end_char": 185,
+          "quote": "Scientists determined the three-dimensional position of more than 23,000 atoms in a tiny iron-platinum particle with 22 picometer precision.",
+          "start_char": 45
+        }
+      ],
+      "review_index": 11,
+      "selected_mode": "A",
+      "source_id": "doe-iron-platinum-atomic-structure-2017",
+      "structured_payload": {
+        "quantity_excerpts": [
+          "more than 23,000 atoms",
+          "22 picometer"
+        ]
+      },
+      "title": "c1",
+      "treatment_a": {
+        "identity_sha256": "419a3d18b5828e461dff9f01b4fc5c33ce25d91b2989852de23745b36b8cde27",
+        "label": "SELECTED BY GATE · PROSE",
+        "mode": "A",
+        "payload": null,
+        "selected_by_gate": true,
+        "strategy_dom": "PROSE_CONTROL"
+      },
+      "treatment_b": {
+        "identity_sha256": "bd1fb758506c6a98e0dae94f75429c88a61e7957d9a266f8fbf182ed7947a9f0",
+        "label": "SUPPRESSED BY GATE · HISTORICAL CANDIDATE",
+        "mode": "B",
+        "payload": {
+          "quantity_excerpts": [
+            "more than 23,000 atoms",
+            "22 picometer"
+          ]
+        },
+        "selected_by_gate": false,
+        "strategy_dom": "QUANTITATIVE_CALLOUT"
+      },
+      "truthfulness_audit": {
+        "all_display_fragments_trace_to_frozen_payload": true,
+        "payload_byte_equivalent_to_spec057": true,
+        "prose_unchanged": true,
+        "semantic_or_topology_change": false
+      },
+      "utility_outcome": "UNSAFE_OR_UNSUPPORTED"
+    },
+    {
+      "case_identity": "spec058-case-96501853563cbc",
+      "case_kind": "CLAIM",
+      "claim_id": "c2",
+      "display_field_traces": [
+        {
+          "end_char": 125,
+          "quote": "Bottlenecks and poor signal timing together are said to define recurring congestion and account for 45 percent of congestion.",
+          "role": "concise_prose",
+          "source": "CLAIM_TEXT",
+          "start_char": 0
+        },
+        {
+          "end_char": 110,
+          "quote": "45 percent",
+          "role": "explicit_quantity",
+          "source": "CLAIM_TEXT",
+          "start_char": 100
+        }
+      ],
+      "display_fragments": [
+        "45 percent"
+      ],
+      "gate_decision": "CONCISE_PROSE",
+      "group": "SUPPRESSED_RICHER_CANDIDATE",
+      "prior_strategy": "QUANTITATIVE_CALLOUT",
+      "prose": "Bottlenecks and poor signal timing together are said to define recurring congestion and account for 45 percent of congestion.",
+      "provenance": [
+        {
+          "document_id": "text-1fd7e9851839f5f3",
+          "end_char": 346,
+          "quote": "These two causes together are said to define recurring congestion and account for 45 percent of congestion.",
+          "start_char": 239
+        }
+      ],
+      "review_index": 12,
+      "selected_mode": "A",
+      "source_id": "fhwa-traffic-bottleneck-concepts-2016",
+      "structured_payload": {
+        "quantity_excerpts": [
+          "45 percent"
+        ]
+      },
+      "title": "c2",
+      "treatment_a": {
+        "identity_sha256": "419a3d18b5828e461dff9f01b4fc5c33ce25d91b2989852de23745b36b8cde27",
+        "label": "SELECTED BY GATE · PROSE",
+        "mode": "A",
+        "payload": null,
+        "selected_by_gate": true,
+        "strategy_dom": "PROSE_CONTROL"
+      },
+      "treatment_b": {
+        "identity_sha256": "a10146ec796df9537bb1d370475ce477045e692d2e68846032f13acf30243dbd",
+        "label": "SUPPRESSED BY GATE · HISTORICAL CANDIDATE",
+        "mode": "B",
+        "payload": {
+          "quantity_excerpts": [
+            "45 percent"
+          ]
+        },
+        "selected_by_gate": false,
+        "strategy_dom": "QUANTITATIVE_CALLOUT"
+      },
+      "truthfulness_audit": {
+        "all_display_fragments_trace_to_frozen_payload": true,
+        "payload_byte_equivalent_to_spec057": true,
+        "prose_unchanged": true,
+        "semantic_or_topology_change": false
+      },
+      "utility_outcome": "LOW_EXTERNALIZATION_VALUE"
+    },
+    {
+      "case_identity": "spec058-case-eb5e4b190b8843",
+      "case_kind": "CLAIM",
+      "claim_id": "claim-agenda-authority",
+      "display_field_traces": [
+        {
+          "end_char": 80,
+          "quote": "The committee chair has the primary agenda-setting authority for each committee.",
+          "role": "concise_prose",
+          "source": "CLAIM_TEXT",
+          "start_char": 0
+        }
+      ],
+      "display_fragments": [],
+      "gate_decision": "CONCISE_PROSE",
+      "group": "PROSE_LOW_COMPLEXITY_CONTROL",
+      "prior_strategy": "CONCISE_PROSE",
+      "prose": "The committee chair has the primary agenda-setting authority for each committee.",
+      "provenance": [
+        {
+          "document_id": "text-fe61b7c3b2a9373e",
+          "end_char": 800,
+          "quote": "The committee chair has the primary agenda-setting authority for each committee",
+          "start_char": 721
+        }
+      ],
+      "review_index": 13,
+      "selected_mode": "A",
+      "source_id": "crs-legislative-process-r42843-17",
+      "structured_payload": null,
+      "title": "claim-agenda-authority",
+      "treatment_a": {
+        "identity_sha256": "419a3d18b5828e461dff9f01b4fc5c33ce25d91b2989852de23745b36b8cde27",
+        "label": "SELECTED BY GATE · PROSE",
+        "mode": "A",
+        "payload": null,
+        "selected_by_gate": true,
+        "strategy_dom": "PROSE_CONTROL"
+      },
+      "treatment_b": {
+        "identity_sha256": "7465b6a1dd87c6b82262a1ae472bcc0a85536933b4deb0e20ba742d5aed985a8",
+        "label": "PROSE CONTROL · NO RICHER CANDIDATE",
+        "mode": "B",
+        "payload": null,
+        "selected_by_gate": true,
+        "strategy_dom": "CONCISE_PROSE"
+      },
+      "truthfulness_audit": {
+        "all_display_fragments_trace_to_frozen_payload": true,
+        "payload_byte_equivalent_to_spec057": true,
+        "prose_unchanged": true,
+        "semantic_or_topology_change": false
+      },
+      "utility_outcome": "LOW_EXTERNALIZATION_VALUE"
+    },
+    {
+      "case_identity": "spec058-case-486de3261088f4",
+      "case_kind": "CLAIM",
+      "claim_id": "c11",
+      "display_field_traces": [
+        {
+          "end_char": 185,
+          "quote": "Atomic electron tomography is an imaging technique used to correlate three-dimensional atomic arrangements and chemical order/disorder with material properties at the single-atom level.",
+          "role": "concise_prose",
+          "source": "CLAIM_TEXT",
+          "start_char": 0
+        }
+      ],
+      "display_fragments": [],
+      "gate_decision": "CONCISE_PROSE",
+      "group": "PROSE_LOW_COMPLEXITY_CONTROL",
+      "prior_strategy": "CONCISE_PROSE",
+      "prose": "Atomic electron tomography is an imaging technique used to correlate three-dimensional atomic arrangements and chemical order/disorder with material properties at the single-atom level.",
+      "provenance": [
+        {
+          "document_id": "text-e9d2260c99802394",
+          "end_char": 1537,
+          "quote": "They used an imaging technique called atomic electron tomography to correlate 3D atomic arrangements and chemical order/disorder with material properties at the single-atom level.",
+          "start_char": 1358
+        }
+      ],
+      "review_index": 14,
+      "selected_mode": "A",
+      "source_id": "doe-iron-platinum-atomic-structure-2017",
+      "structured_payload": null,
+      "title": "c11",
+      "treatment_a": {
+        "identity_sha256": "419a3d18b5828e461dff9f01b4fc5c33ce25d91b2989852de23745b36b8cde27",
+        "label": "SELECTED BY GATE · PROSE",
+        "mode": "A",
+        "payload": null,
+        "selected_by_gate": true,
+        "strategy_dom": "PROSE_CONTROL"
+      },
+      "treatment_b": {
+        "identity_sha256": "7465b6a1dd87c6b82262a1ae472bcc0a85536933b4deb0e20ba742d5aed985a8",
+        "label": "PROSE CONTROL · NO RICHER CANDIDATE",
+        "mode": "B",
+        "payload": null,
+        "selected_by_gate": true,
+        "strategy_dom": "CONCISE_PROSE"
+      },
+      "truthfulness_audit": {
+        "all_display_fragments_trace_to_frozen_payload": true,
+        "payload_byte_equivalent_to_spec057": true,
+        "prose_unchanged": true,
+        "semantic_or_topology_change": false
+      },
+      "utility_outcome": "LOW_EXTERNALIZATION_VALUE"
+    },
+    {
+      "case_identity": "spec058-case-19393bc6c3e695",
+      "case_kind": "STRUCTURAL",
+      "claim_id": "double_slit_focused_relationship",
+      "display_fragments": [
+        "CAUSES",
+        "double-slit experiment",
+        "interference pattern"
+      ],
+      "gate_decision": "CONCISE_PROSE",
+      "group": "PROSE_LOW_COMPLEXITY_CONTROL",
+      "prior_strategy": "FOCUSED_RELATIONSHIP",
+      "prose": "The source brings about the target as an effect.",
+      "provenance": {
+        "evidence_quotes": [
+          "a beam of light is directed through two narrow, closely spaced slits, producing an interference pattern of light and dark bands on a screen."
+        ],
+        "evidence_source_ids": [
+          "text-9e978db999ee6713"
+        ],
+        "spec038_case": "double_slit_focused_relationship"
+      },
+      "review_index": 15,
+      "selected_mode": "A",
+      "source_id": "electromagnetism",
+      "structured_payload": {
+        "nodes": [
+          {
+            "description": "Experiment in which particles or waves passing through two slits produce an interference pattern.",
+            "entity_id": "double-slit-experiment",
+            "label": "double-slit experiment",
+            "role": "relationship-source",
+            "role_label": "source",
+            "x": 210,
+            "y": 190
+          },
+          {
+            "description": "Pattern of alternating light and dark bands produced by wave interference and reproduced by quantum particles statistically.",
+            "entity_id": "interference-pattern",
+            "label": "interference pattern",
+            "role": "relationship-target",
+            "role_label": "target",
+            "x": 790,
+            "y": 190
+          }
+        ],
+        "relationships": [
+          {
+            "direction": "cause_to_effect",
+            "label_x": 500,
+            "label_y": 190,
+            "meaning": "The source brings about the target as an effect.",
+            "path": "M 288 190 L 712 190",
+            "relationship_ids": [
+              "relationship-05b19ee4b6d50060"
+            ],
+            "relationship_type": "CAUSES",
+            "source_entity_id": "double-slit-experiment",
+            "source_label": "double-slit experiment",
+            "target_entity_id": "interference-pattern",
+            "target_label": "interference pattern"
+          }
+        ],
+        "spatial_grammar": "focused-connection",
+        "text_control": [
+          {
+            "explanation": "The source brings about the target as an effect.",
+            "label": "double-slit experiment → interference pattern"
+          },
+          {
+            "explanation": "Experiment in which particles or waves passing through two slits produce an interference pattern.",
+            "label": "double-slit experiment"
+          },
+          {
+            "explanation": "Pattern of alternating light and dark bands produced by wave interference and reproduced by quantum particles statistically.",
+            "label": "interference pattern"
+          }
+        ]
+      },
+      "title": "double slit focused relationship",
+      "treatment_a": {
+        "identity_sha256": "1260315a12d0e8e6c33ff255c80176c50205577628b53990a990d42f8cf8eec2",
+        "label": "SELECTED BY GATE · PROSE",
+        "mode": "A",
+        "payload": [
+          {
+            "explanation": "The source brings about the target as an effect.",
+            "label": "double-slit experiment → interference pattern"
+          },
+          {
+            "explanation": "Experiment in which particles or waves passing through two slits produce an interference pattern.",
+            "label": "double-slit experiment"
+          },
+          {
+            "explanation": "Pattern of alternating light and dark bands produced by wave interference and reproduced by quantum particles statistically.",
+            "label": "interference pattern"
+          }
+        ],
+        "selected_by_gate": true,
+        "strategy_dom": "TEXT_CONTROL"
+      },
+      "treatment_b": {
+        "identity_sha256": "74cf8093aff6318bb8ba59057e074627f2e34ea5b24b3cf734034b385777ab64",
+        "label": "SUPPRESSED BY GATE · FROZEN STRUCTURAL CANDIDATE",
+        "mode": "B",
+        "payload": {
+          "nodes": [
+            {
+              "description": "Experiment in which particles or waves passing through two slits produce an interference pattern.",
+              "entity_id": "double-slit-experiment",
+              "label": "double-slit experiment",
+              "role": "relationship-source",
+              "role_label": "source",
+              "x": 210,
+              "y": 190
+            },
+            {
+              "description": "Pattern of alternating light and dark bands produced by wave interference and reproduced by quantum particles statistically.",
+              "entity_id": "interference-pattern",
+              "label": "interference pattern",
+              "role": "relationship-target",
+              "role_label": "target",
+              "x": 790,
+              "y": 190
+            }
+          ],
+          "relationships": [
+            {
+              "direction": "cause_to_effect",
+              "label_x": 500,
+              "label_y": 190,
+              "meaning": "The source brings about the target as an effect.",
+              "path": "M 288 190 L 712 190",
+              "relationship_ids": [
+                "relationship-05b19ee4b6d50060"
+              ],
+              "relationship_type": "CAUSES",
+              "source_entity_id": "double-slit-experiment",
+              "source_label": "double-slit experiment",
+              "target_entity_id": "interference-pattern",
+              "target_label": "interference pattern"
+            }
+          ],
+          "spatial_grammar": "focused-connection"
+        },
+        "selected_by_gate": false,
+        "strategy_dom": "FOCUSED_RELATIONSHIP"
+      },
+      "truthfulness_audit": {
+        "accepted_coordinates_and_paths_reused": true,
+        "nodes_and_relationships_byte_equivalent_to_spec038": true,
+        "prose_is_exact_frozen_focus_explanation": true,
+        "semantic_or_topology_change": false
+      },
+      "utility_decision_origin": "SPEC057_FROZEN_DECISION",
+      "utility_outcome": "POSSIBLE_EXTERNALIZATION_VALUE"
+    },
+    {
+      "case_identity": "spec058-case-b373f9dcb2ccf5",
+      "case_kind": "CLAIM",
+      "claim_id": "claim-committee-initiation",
+      "display_field_traces": [
+        {
+          "end_char": 105,
+          "quote": "Committees may initiate legislative action on their own and are not limited to measures referred to them.",
+          "role": "concise_prose",
+          "source": "CLAIM_TEXT",
+          "start_char": 0
+        },
+        {
+          "end_char": 14,
+          "quote": "may",
+          "role": "qualifier",
+          "source": "CLAIM_TEXT",
+          "start_char": 11
+        }
+      ],
+      "display_fragments": [
+        "may"
+      ],
+      "gate_decision": "CONCISE_PROSE",
+      "group": "PROSE_LOW_COMPLEXITY_CONTROL",
+      "prior_strategy": "QUALIFIED_STATEMENT",
+      "prose": "Committees may initiate legislative action on their own and are not limited to measures referred to them.",
+      "provenance": [
+        {
+          "document_id": "text-fe61b7c3b2a9373e",
+          "end_char": 1045,
+          "quote": "Committees are not limited, however, to consideration of measures referred to them and may initiate legislative action on their own.",
+          "start_char": 913
+        }
+      ],
+      "review_index": 16,
+      "selected_mode": "A",
+      "source_id": "crs-legislative-process-r42843-17",
+      "structured_payload": {
+        "explicit_qualifier_or_condition": "may"
+      },
+      "title": "claim-committee-initiation",
+      "treatment_a": {
+        "identity_sha256": "419a3d18b5828e461dff9f01b4fc5c33ce25d91b2989852de23745b36b8cde27",
+        "label": "SELECTED BY GATE · PROSE",
+        "mode": "A",
+        "payload": null,
+        "selected_by_gate": true,
+        "strategy_dom": "PROSE_CONTROL"
+      },
+      "treatment_b": {
+        "identity_sha256": "69d99688f66b399563a0bbb196d06f8a11ba1825df9d432b2d5b11bdb983eb70",
+        "label": "SUPPRESSED BY GATE · HISTORICAL CANDIDATE",
+        "mode": "B",
+        "payload": {
+          "explicit_qualifier_or_condition": "may"
+        },
+        "selected_by_gate": false,
+        "strategy_dom": "QUALIFIED_STATEMENT"
+      },
+      "truthfulness_audit": {
+        "all_display_fragments_trace_to_frozen_payload": true,
+        "payload_byte_equivalent_to_spec057": true,
+        "prose_unchanged": true,
+        "semantic_or_topology_change": false
+      },
+      "utility_outcome": "LOW_EXTERNALIZATION_VALUE"
+    }
+  ],
+  "schema": "spec058.utility-gated-learner-review-cases.v1",
+  "selection_algorithm": {
+    "cases_per_group": 4,
+    "group_order": [
+      "RETAINED_CLAIM_VISUAL",
+      "RETAINED_STRUCTURAL_VISUAL",
+      "SUPPRESSED_RICHER_CANDIDATE",
+      "PROSE_LOW_COMPLEXITY_CONTROL"
+    ],
+    "owner_feedback_used_as_routing_input": false,
+    "restraint_controls": "Take two diverse original prose controls, the frozen possible-value focused relationship, and the lexicographically first remaining low/possible richer claim candidate.",
+    "retained_claims": "Take one retained comparison per lexicographically ordered source before a second; within source order by claim ID.",
+    "retained_structures": "Use the three frozen strong SPEC-057 controls, then the strongest remaining accepted SPEC-038 case satisfying the frozen SPEC-057 strong rule, ordered by relationship count, node count, case ID.",
+    "suppressed_candidates": "For qualifier and quantitative candidates independently, take one per lexicographically ordered source before a second.",
+    "visual_attractiveness_used": false
+  }
+}

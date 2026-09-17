@@ -1,0 +1,60 @@
+{
+  "browser": "Codex in-app browser (Chromium desktop engine)",
+  "console": {
+    "errors": [],
+    "result": "PASS",
+    "warnings": []
+  },
+  "desktop": {
+    "all_16_cases_loaded": true,
+    "all_case_machine_checks_passed": true,
+    "group_distribution": {
+      "PROSE_LOW_COMPLEXITY_CONTROL": 4,
+      "RETAINED_CLAIM_VISUAL": 4,
+      "RETAINED_STRUCTURAL_VISUAL": 4,
+      "SUPPRESSED_RICHER_CANDIDATE": 4
+    },
+    "horizontal_overflow": false,
+    "inspect_and_explore_surface_visible": true,
+    "meaning_surface_visible": true,
+    "my_map_visible": true,
+    "prose_restraint_control": "PASS",
+    "result": "PASS",
+    "retained_comparison_rendering": "PASS",
+    "retained_structural_rendering": "PASS",
+    "suppressed_candidate_labeling_and_rendering": "PASS",
+    "viewport_width": 1280
+  },
+  "interaction": {
+    "ab_toggle_all_16_cases": "PASS",
+    "case_navigation": "PASS",
+    "local_selection_preserves_case_identity": "PASS",
+    "local_selection_preserves_review_territory": "PASS",
+    "local_selection_preserves_semantic_owner": "PASS",
+    "local_selection_preserves_treatment_identity": "PASS",
+    "local_selection_updates_inspect": "PASS",
+    "prose_controls_have_no_fake_structure": "PASS",
+    "retained_claim_fragments_frozen": "PASS",
+    "retained_structural_nodes_relationships_and_paths_frozen": "PASS",
+    "suppressed_candidates_frozen_and_unpolished": "PASS"
+  },
+  "narrow": {
+    "ab_controls_visible": true,
+    "all_case_machine_checks_passed": true,
+    "document_client_width": 375,
+    "horizontal_overflow": false,
+    "inspect_and_explore_surface_visible": true,
+    "meaning_surface_visible": true,
+    "my_map_visible": true,
+    "result": "PASS",
+    "single_column_workspace": true,
+    "structural_diagram_visible": true,
+    "trusted_prose_visible": true,
+    "viewport": "390x844"
+  },
+  "screenshots": {
+    "captured": false,
+    "reason": "Desktop and 390x844 screenshots were inspected during the live Chromium gate; the available browser bridge did not expose a deterministic repository-file capture path."
+  },
+  "status": "PASS"
+}
