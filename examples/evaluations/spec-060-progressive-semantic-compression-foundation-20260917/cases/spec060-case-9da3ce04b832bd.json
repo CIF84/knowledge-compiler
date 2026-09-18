@@ -1,0 +1,1263 @@
+{
+  "admission": {
+    "admitted_for_owner_review": true,
+    "machine_learning_or_pedagogical_verdict": "NOT_ASSIGNED"
+  },
+  "case_identity": "spec060-case-9da3ce04b832bd",
+  "epistemic_preservation_audit": {
+    "attribution_preserved": true,
+    "causal_vs_associational_status_preserved": true,
+    "epistemic_status_distribution": {
+      "ASSERTED_SOURCE_CLAIM": 19,
+      "QUALIFIED_OR_UNCERTAIN": 1
+    },
+    "precision_preserved_where_selected": true,
+    "qualification_links_preserved_verbatim": true,
+    "strengthened_certainty_or_causality_count": 0,
+    "temporal_scope_preserved_where_selected": true,
+    "units_with_explicit_qualification_links": 10,
+    "values_and_units_preserved_verbatim": true
+  },
+  "essential_information_model": {
+    "compression_metrics": {
+      "grounded_semantic_unit_count": 20,
+      "r0": {
+        "characters": 2716,
+        "sha256": "a9539d135ff1577d7e2791d498b92f55239175565b925b24aec2ed0bf633f186",
+        "words": 440
+      },
+      "r1": {
+        "characters": 2460,
+        "sha256": "78dffabda67f701adae84c7ac71cda58d05a7e492b457eab2b161cc1172cdd4c",
+        "words": 397
+      },
+      "r1_to_r0_character_ratio": 0.9057,
+      "r1_to_r0_word_ratio": 0.9023,
+      "r2": {
+        "characters": 1714,
+        "sha256": "d833566dc5abd09ff489173e081a735530f41433d97ff228272ef9dff92bfdce",
+        "words": 268
+      },
+      "r2_to_r0_character_ratio": 0.6311,
+      "r2_to_r0_word_ratio": 0.6091
+    },
+    "goal": "Preserve the information necessary to accurately understand the source's core explanatory content, including material qualifications and epistemic status, while removing rhetorical, repetitive and linguistically redundant expression.",
+    "omitted_fragments": [
+      {
+        "omission_reason": "DETAIL_OR_LINGUISTIC_CONTEXT_RETAINED_IN_R0",
+        "text": "Perhaps the best known of the divergent boundaries is the Mid-Atlantic Ridge.",
+        "upstream_identity": {
+          "end_char": 386,
+          "sha256": "19d9f57a30e1fc09466b130b411c4b43b5eba83d8e223b39b3baefb5931d147c",
+          "start_char": 309
+        }
+      },
+      {
+        "omission_reason": "DETAIL_OR_LINGUISTIC_CONTEXT_RETAINED_IN_R0",
+        "text": "The consequences of plate movement are easy to see around Krafla Volcano, in the northeastern part of Iceland. Here, existing ground cracks have widened and new ones appear every few months.",
+        "upstream_identity": {
+          "end_char": 1647,
+          "sha256": "4f8609f611494d098a0c589d1184dd005786764b2f0a43b69df1d2ff7025b178",
+          "start_char": 1457
+        }
+      }
+    ],
+    "schema": "spec060.essential-information-model.v1",
+    "source_identity": {
+      "model_sha256": "fa2494dab670a698a8f730a0501c997984467839906f5c7b702e50ad6fd61261",
+      "required_item_ids": [
+        "c2",
+        "c3",
+        "c4",
+        "c5",
+        "c7",
+        "c8",
+        "c9",
+        "c10",
+        "c11",
+        "c12",
+        "c13",
+        "c14",
+        "c15",
+        "c16",
+        "c17",
+        "c18",
+        "c19",
+        "c20",
+        "c21",
+        "c22"
+      ],
+      "source_id": "usgs-divergent-plate-boundaries-1996",
+      "source_sha256": "a9539d135ff1577d7e2791d498b92f55239175565b925b24aec2ed0bf633f186"
+    },
+    "units": [
+      {
+        "concise_text": "The Mid-Atlantic Ridge is one segment of the global mid-ocean ridge system.",
+        "epistemic_status": "ASSERTED_SOURCE_CLAIM",
+        "id": "unit-3da0cd311bdbe2",
+        "preserved_from": [
+          {
+            "id": "c2",
+            "semantic_class": "CLAIM"
+          },
+          {
+            "id": "r2",
+            "semantic_class": "RELATIONSHIP"
+          }
+        ],
+        "qualification_links": [],
+        "semantic_role": "CORE_FACT",
+        "support": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 573,
+            "model_path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/01-usgs-divergent-plate-boundaries-1996/admitted-knowledge-model.json",
+            "model_sha256": "fa2494dab670a698a8f730a0501c997984467839906f5c7b702e50ad6fd61261",
+            "quote": "This submerged mountain range, which extends from the Arctic Ocean to beyond the southern tip of Africa, is but one segment of the global mid-ocean ridge system that encircles the Earth.",
+            "source_id": "usgs-divergent-plate-boundaries-1996",
+            "start_char": 387
+          }
+        ]
+      },
+      {
+        "concise_text": "Magma pushing up from the mantle creates new crust at spreading centers.",
+        "epistemic_status": "ASSERTED_SOURCE_CLAIM",
+        "id": "unit-0b89c0f7c8b017",
+        "preserved_from": [
+          {
+            "id": "c3",
+            "semantic_class": "CLAIM"
+          },
+          {
+            "id": "r3",
+            "semantic_class": "RELATIONSHIP"
+          }
+        ],
+        "qualification_links": [],
+        "semantic_role": "CORE_FACT",
+        "support": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 142,
+            "model_path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/01-usgs-divergent-plate-boundaries-1996/admitted-knowledge-model.json",
+            "model_sha256": "fa2494dab670a698a8f730a0501c997984467839906f5c7b702e50ad6fd61261",
+            "quote": "Divergent boundaries occur along spreading centers where plates are moving apart and new crust is created by magma pushing up from the mantle.",
+            "source_id": "usgs-divergent-plate-boundaries-1996",
+            "start_char": 0
+          }
+        ]
+      },
+      {
+        "concise_text": "Seafloor spreading over millions of years has resulted in plate movement of thousands of kilometers.",
+        "epistemic_status": "ASSERTED_SOURCE_CLAIM",
+        "id": "unit-5f1b56c32f4f30",
+        "preserved_from": [
+          {
+            "id": "c4",
+            "semantic_class": "CLAIM"
+          },
+          {
+            "id": "r4",
+            "semantic_class": "RELATIONSHIP"
+          }
+        ],
+        "qualification_links": [],
+        "semantic_role": "CORE_FACT",
+        "support": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 874,
+            "model_path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/01-usgs-divergent-plate-boundaries-1996/admitted-knowledge-model.json",
+            "model_sha256": "fa2494dab670a698a8f730a0501c997984467839906f5c7b702e50ad6fd61261",
+            "quote": "This rate may seem slow by human standards, but because this process has been going on for millions of years, it has resulted in plate movement of thousands of kilometers.",
+            "source_id": "usgs-divergent-plate-boundaries-1996",
+            "start_char": 703
+          }
+        ]
+      },
+      {
+        "concise_text": "Seafloor spreading caused the Atlantic Ocean to grow from a small inlet into its present vast ocean.",
+        "epistemic_status": "ASSERTED_SOURCE_CLAIM",
+        "id": "unit-50d54b2c241af4",
+        "preserved_from": [
+          {
+            "id": "c5",
+            "semantic_class": "CLAIM"
+          },
+          {
+            "id": "r5",
+            "semantic_class": "RELATIONSHIP"
+          }
+        ],
+        "qualification_links": [],
+        "semantic_role": "CORE_FACT",
+        "support": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 1095,
+            "model_path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/01-usgs-divergent-plate-boundaries-1996/admitted-knowledge-model.json",
+            "model_sha256": "fa2494dab670a698a8f730a0501c997984467839906f5c7b702e50ad6fd61261",
+            "quote": "Seafloor spreading over the past 100 to 200 million years has caused the Atlantic Ocean to grow from a tiny inlet of water between the continents of Europe, Africa, and the Americas into the vast ocean that exists today.",
+            "source_id": "usgs-divergent-plate-boundaries-1996",
+            "start_char": 875
+          }
+        ]
+      },
+      {
+        "concise_text": "The displacements at Krafla were caused by rifting.",
+        "epistemic_status": "ASSERTED_SOURCE_CLAIM",
+        "id": "unit-6f0d881e9f9455",
+        "preserved_from": [
+          {
+            "id": "c7",
+            "semantic_class": "CLAIM"
+          },
+          {
+            "id": "r7",
+            "semantic_class": "RELATIONSHIP"
+          }
+        ],
+        "qualification_links": [
+          {
+            "cue": "if",
+            "end_char": 46,
+            "start_char": 44
+          }
+        ],
+        "semantic_role": "QUALIFICATION_OR_UNCERTAINTY",
+        "support": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 2001,
+            "model_path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/01-usgs-divergent-plate-boundaries-1996/admitted-knowledge-model.json",
+            "model_sha256": "fa2494dab670a698a8f730a0501c997984467839906f5c7b702e50ad6fd61261",
+            "quote": "Between 1975 and 1984, the displacements caused by rifting totalled about 7 m.",
+            "source_id": "usgs-divergent-plate-boundaries-1996",
+            "start_char": 1923
+          }
+        ]
+      },
+      {
+        "concise_text": "Ground rise and abrupt dropping signalled an impending eruption.",
+        "epistemic_status": "ASSERTED_SOURCE_CLAIM",
+        "id": "unit-50f3e92a15aa32",
+        "preserved_from": [
+          {
+            "id": "c8",
+            "semantic_class": "CLAIM"
+          },
+          {
+            "id": "r8",
+            "semantic_class": "RELATIONSHIP"
+          }
+        ],
+        "qualification_links": [],
+        "semantic_role": "CORE_FACT",
+        "support": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 1922,
+            "model_path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/01-usgs-divergent-plate-boundaries-1996/admitted-knowledge-model.json",
+            "model_sha256": "fa2494dab670a698a8f730a0501c997984467839906f5c7b702e50ad6fd61261",
+            "quote": "the ground would gradually rise 1-2 m before abruptly dropping, signalling an impending eruption.",
+            "source_id": "usgs-divergent-plate-boundaries-1996",
+            "start_char": 1825
+          }
+        ]
+      },
+      {
+        "concise_text": "Spreading processes tore Saudi Arabia away from the rest of Africa, forming the Red Sea.",
+        "epistemic_status": "ASSERTED_SOURCE_CLAIM",
+        "id": "unit-808e93852389e3",
+        "preserved_from": [
+          {
+            "id": "c9",
+            "semantic_class": "CLAIM"
+          },
+          {
+            "id": "r9",
+            "semantic_class": "RELATIONSHIP"
+          }
+        ],
+        "qualification_links": [],
+        "semantic_role": "CORE_FACT",
+        "support": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 2135,
+            "model_path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/01-usgs-divergent-plate-boundaries-1996/admitted-knowledge-model.json",
+            "model_sha256": "fa2494dab670a698a8f730a0501c997984467839906f5c7b702e50ad6fd61261",
+            "quote": "In East Africa, spreading processes have already torn Saudi Arabia away from the rest of the African continent, forming the Red Sea.",
+            "source_id": "usgs-divergent-plate-boundaries-1996",
+            "start_char": 2003
+          }
+        ]
+      },
+      {
+        "concise_text": "When continental crust stretches beyond its limits, tension cracks appear on Earth's surface.",
+        "epistemic_status": "ASSERTED_SOURCE_CLAIM",
+        "id": "unit-55a7987ccd119f",
+        "preserved_from": [
+          {
+            "id": "c10",
+            "semantic_class": "CLAIM"
+          },
+          {
+            "id": "r10",
+            "semantic_class": "RELATIONSHIP"
+          }
+        ],
+        "qualification_links": [
+          {
+            "cue": "When",
+            "end_char": 4,
+            "start_char": 0
+          }
+        ],
+        "semantic_role": "QUALIFICATION_OR_UNCERTAINTY",
+        "support": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 2483,
+            "model_path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/01-usgs-divergent-plate-boundaries-1996/admitted-knowledge-model.json",
+            "model_sha256": "fa2494dab670a698a8f730a0501c997984467839906f5c7b702e50ad6fd61261",
+            "quote": "When the continental crust stretches beyond its limits, tension cracks begin to appear on the Earth's surface.",
+            "source_id": "usgs-divergent-plate-boundaries-1996",
+            "start_char": 2373
+          }
+        ]
+      },
+      {
+        "concise_text": "Rising magma puts more pressure on the crust.",
+        "epistemic_status": "ASSERTED_SOURCE_CLAIM",
+        "id": "unit-abc3c943d58770",
+        "preserved_from": [
+          {
+            "id": "c11",
+            "semantic_class": "CLAIM"
+          },
+          {
+            "id": "r11",
+            "semantic_class": "RELATIONSHIP"
+          }
+        ],
+        "qualification_links": [],
+        "semantic_role": "CORE_FACT",
+        "support": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 2716,
+            "model_path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/01-usgs-divergent-plate-boundaries-1996/admitted-knowledge-model.json",
+            "model_sha256": "fa2494dab670a698a8f730a0501c997984467839906f5c7b702e50ad6fd61261",
+            "quote": "The rising magma, whether or not it erupts, puts more pressure on the crust to produce additional fractures and, ultimately, the rift zone.",
+            "source_id": "usgs-divergent-plate-boundaries-1996",
+            "start_char": 2577
+          }
+        ]
+      },
+      {
+        "concise_text": "Magma pressure produces additional fractures in the crust.",
+        "epistemic_status": "ASSERTED_SOURCE_CLAIM",
+        "id": "unit-709cd8723d73d3",
+        "preserved_from": [
+          {
+            "id": "c12",
+            "semantic_class": "CLAIM"
+          },
+          {
+            "id": "r12",
+            "semantic_class": "RELATIONSHIP"
+          }
+        ],
+        "qualification_links": [],
+        "semantic_role": "CORE_FACT",
+        "support": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 2716,
+            "model_path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/01-usgs-divergent-plate-boundaries-1996/admitted-knowledge-model.json",
+            "model_sha256": "fa2494dab670a698a8f730a0501c997984467839906f5c7b702e50ad6fd61261",
+            "quote": "The rising magma, whether or not it erupts, puts more pressure on the crust to produce additional fractures and, ultimately, the rift zone.",
+            "source_id": "usgs-divergent-plate-boundaries-1996",
+            "start_char": 2577
+          }
+        ]
+      },
+      {
+        "concise_text": "Crustal fractures contribute ultimately to the formation of a rift zone.",
+        "epistemic_status": "ASSERTED_SOURCE_CLAIM",
+        "id": "unit-58f74ccc51d0ea",
+        "preserved_from": [
+          {
+            "id": "c13",
+            "semantic_class": "CLAIM"
+          },
+          {
+            "id": "r13",
+            "semantic_class": "RELATIONSHIP"
+          }
+        ],
+        "qualification_links": [
+          {
+            "cue": "if",
+            "end_char": 65,
+            "start_char": 63
+          }
+        ],
+        "semantic_role": "QUALIFICATION_OR_UNCERTAINTY",
+        "support": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 2716,
+            "model_path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/01-usgs-divergent-plate-boundaries-1996/admitted-knowledge-model.json",
+            "model_sha256": "fa2494dab670a698a8f730a0501c997984467839906f5c7b702e50ad6fd61261",
+            "quote": "The rising magma, whether or not it erupts, puts more pressure on the crust to produce additional fractures and, ultimately, the rift zone.",
+            "source_id": "usgs-divergent-plate-boundaries-1996",
+            "start_char": 2577
+          }
+        ]
+      },
+      {
+        "concise_text": "The spreading rate along the Mid-Atlantic Ridge averages about 2.5 centimeters per year, or 25 kilometers in a million years.",
+        "epistemic_status": "ASSERTED_SOURCE_CLAIM",
+        "id": "unit-92bc75d6a843ff",
+        "preserved_from": [
+          {
+            "id": "c14",
+            "semantic_class": "CLAIM"
+          }
+        ],
+        "qualification_links": [
+          {
+            "cue": "about",
+            "end_char": 62,
+            "start_char": 57
+          }
+        ],
+        "semantic_role": "QUANTITATIVE_FACT",
+        "support": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 702,
+            "model_path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/01-usgs-divergent-plate-boundaries-1996/admitted-knowledge-model.json",
+            "model_sha256": "fa2494dab670a698a8f730a0501c997984467839906f5c7b702e50ad6fd61261",
+            "quote": "The rate of spreading along the Mid-Atlantic Ridge averages about 2.5 centimeters per year (cm/yr), or 25 km in a million years.",
+            "source_id": "usgs-divergent-plate-boundaries-1996",
+            "start_char": 574
+          }
+        ]
+      },
+      {
+        "concise_text": "Iceland straddles the Mid-Atlantic Ridge and provides a natural laboratory for studying spreading processes on land.",
+        "epistemic_status": "ASSERTED_SOURCE_CLAIM",
+        "id": "unit-e2988480b2c37d",
+        "preserved_from": [
+          {
+            "id": "c15",
+            "semantic_class": "CLAIM"
+          }
+        ],
+        "qualification_links": [],
+        "semantic_role": "CORE_FACT",
+        "support": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 1306,
+            "model_path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/01-usgs-divergent-plate-boundaries-1996/admitted-knowledge-model.json",
+            "model_sha256": "fa2494dab670a698a8f730a0501c997984467839906f5c7b702e50ad6fd61261",
+            "quote": "The volcanic country of Iceland, which straddles the Mid-Atlantic Ridge, offers scientists a natural laboratory for studying on land the processes also occurring along the submerged parts of a spreading ridge.",
+            "source_id": "usgs-divergent-plate-boundaries-1996",
+            "start_char": 1097
+          }
+        ]
+      },
+      {
+        "concise_text": "Iceland is splitting along the spreading center between the North American and Eurasian Plates.",
+        "epistemic_status": "ASSERTED_SOURCE_CLAIM",
+        "id": "unit-bc85b0fe938e6b",
+        "preserved_from": [
+          {
+            "id": "c16",
+            "semantic_class": "CLAIM"
+          }
+        ],
+        "qualification_links": [
+          {
+            "cue": "can",
+            "end_char": 74,
+            "start_char": 71
+          }
+        ],
+        "semantic_role": "QUALIFICATION_OR_UNCERTAINTY",
+        "support": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 1455,
+            "model_path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/01-usgs-divergent-plate-boundaries-1996/admitted-knowledge-model.json",
+            "model_sha256": "fa2494dab670a698a8f730a0501c997984467839906f5c7b702e50ad6fd61261",
+            "quote": "Iceland is splitting along the spreading center between the North American and Eurasian Plates, as North America moves westward relative to Eurasia.",
+            "source_id": "usgs-divergent-plate-boundaries-1996",
+            "start_char": 1307
+          }
+        ]
+      },
+      {
+        "concise_text": "Numerous episodes of rifting took place along the Krafla fissure zone from 1975 to 1984.",
+        "epistemic_status": "ASSERTED_SOURCE_CLAIM",
+        "id": "unit-7b600475d8860c",
+        "preserved_from": [
+          {
+            "id": "c17",
+            "semantic_class": "CLAIM"
+          }
+        ],
+        "qualification_links": [
+          {
+            "cue": "if",
+            "end_char": 24,
+            "start_char": 22
+          }
+        ],
+        "semantic_role": "QUALIFICATION_OR_UNCERTAINTY",
+        "support": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 1756,
+            "model_path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/01-usgs-divergent-plate-boundaries-1996/admitted-knowledge-model.json",
+            "model_sha256": "fa2494dab670a698a8f730a0501c997984467839906f5c7b702e50ad6fd61261",
+            "quote": "From 1975 to 1984, numerous episodes of rifting (surface cracking) took place along the Krafla fissure zone.",
+            "source_id": "usgs-divergent-plate-boundaries-1996",
+            "start_char": 1648
+          }
+        ]
+      },
+      {
+        "concise_text": "Some rifting events were accompanied by volcanic activity.",
+        "epistemic_status": "ASSERTED_SOURCE_CLAIM",
+        "id": "unit-a29945b25773f9",
+        "preserved_from": [
+          {
+            "id": "c18",
+            "semantic_class": "CLAIM"
+          }
+        ],
+        "qualification_links": [
+          {
+            "cue": "can",
+            "end_char": 46,
+            "start_char": 43
+          },
+          {
+            "cue": "if",
+            "end_char": 8,
+            "start_char": 6
+          }
+        ],
+        "semantic_role": "QUALIFICATION_OR_UNCERTAINTY",
+        "support": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 1824,
+            "model_path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/01-usgs-divergent-plate-boundaries-1996/admitted-knowledge-model.json",
+            "model_sha256": "fa2494dab670a698a8f730a0501c997984467839906f5c7b702e50ad6fd61261",
+            "quote": "Some of these rifting events were accompanied by volcanic activity;",
+            "source_id": "usgs-divergent-plate-boundaries-1996",
+            "start_char": 1757
+          }
+        ]
+      },
+      {
+        "concise_text": "The actively splitting African Plate and Arabian Plate meet at a triple junction where the Red Sea meets the Gulf of Aden.",
+        "epistemic_status": "ASSERTED_SOURCE_CLAIM",
+        "id": "unit-2e96e66acbc6b3",
+        "preserved_from": [
+          {
+            "id": "c19",
+            "semantic_class": "CLAIM"
+          }
+        ],
+        "qualification_links": [
+          {
+            "cue": "can",
+            "end_char": 30,
+            "start_char": 27
+          }
+        ],
+        "semantic_role": "QUALIFICATION_OR_UNCERTAINTY",
+        "support": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 2284,
+            "model_path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/01-usgs-divergent-plate-boundaries-1996/admitted-knowledge-model.json",
+            "model_sha256": "fa2494dab670a698a8f730a0501c997984467839906f5c7b702e50ad6fd61261",
+            "quote": "The actively splitting African Plate and the Arabian Plate meet in what geologists call a triple junction, where the Red Sea meets the Gulf of Aden.",
+            "source_id": "usgs-divergent-plate-boundaries-1996",
+            "start_char": 2136
+          }
+        ]
+      },
+      {
+        "concise_text": "A new spreading center may be developing under Africa along the East African Rift Zone.",
+        "epistemic_status": "QUALIFIED_OR_UNCERTAIN",
+        "id": "unit-94a936ed5ce0b5",
+        "preserved_from": [
+          {
+            "id": "c20",
+            "semantic_class": "CLAIM"
+          }
+        ],
+        "qualification_links": [
+          {
+            "cue": "may",
+            "end_char": 26,
+            "start_char": 23
+          },
+          {
+            "cue": "can",
+            "end_char": 76,
+            "start_char": 73
+          },
+          {
+            "cue": "if",
+            "end_char": 80,
+            "start_char": 78
+          }
+        ],
+        "semantic_role": "QUALIFICATION_OR_UNCERTAINTY",
+        "support": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 2372,
+            "model_path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/01-usgs-divergent-plate-boundaries-1996/admitted-knowledge-model.json",
+            "model_sha256": "fa2494dab670a698a8f730a0501c997984467839906f5c7b702e50ad6fd61261",
+            "quote": "A new spreading center may be developing under Africa along the East African Rift Zone.",
+            "source_id": "usgs-divergent-plate-boundaries-1996",
+            "start_char": 2285
+          }
+        ]
+      },
+      {
+        "concise_text": "Magma can squeeze through widening cracks and sometimes erupt to form volcanoes.",
+        "epistemic_status": "ASSERTED_SOURCE_CLAIM",
+        "id": "unit-239c6eb8d11e15",
+        "preserved_from": [
+          {
+            "id": "c21",
+            "semantic_class": "CLAIM"
+          }
+        ],
+        "qualification_links": [
+          {
+            "cue": "can",
+            "end_char": 9,
+            "start_char": 6
+          }
+        ],
+        "semantic_role": "QUALIFICATION_OR_UNCERTAINTY",
+        "support": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 2576,
+            "model_path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/01-usgs-divergent-plate-boundaries-1996/admitted-knowledge-model.json",
+            "model_sha256": "fa2494dab670a698a8f730a0501c997984467839906f5c7b702e50ad6fd61261",
+            "quote": "Magma rises and squeezes through the widening cracks, sometimes to erupt and form volcanoes.",
+            "source_id": "usgs-divergent-plate-boundaries-1996",
+            "start_char": 2484
+          }
+        ]
+      },
+      {
+        "concise_text": "Newly formed oceanic crust is transported away from the ridge crest as plates move in opposite directions.",
+        "epistemic_status": "ASSERTED_SOURCE_CLAIM",
+        "id": "unit-d807ca8f106631",
+        "preserved_from": [
+          {
+            "id": "c22",
+            "semantic_class": "CLAIM"
+          }
+        ],
+        "qualification_links": [],
+        "semantic_role": "CORE_FACT",
+        "support": [
+          {
+            "document_id": "text-a9539d135ff1577d",
+            "end_char": 307,
+            "model_path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/01-usgs-divergent-plate-boundaries-1996/admitted-knowledge-model.json",
+            "model_sha256": "fa2494dab670a698a8f730a0501c997984467839906f5c7b702e50ad6fd61261",
+            "quote": "Picture two giant conveyor belts, facing each other but slowly moving in opposite directions as they transport newly formed oceanic crust away from the ridge crest.",
+            "source_id": "usgs-divergent-plate-boundaries-1996",
+            "start_char": 143
+          }
+        ]
+      }
+    ]
+  },
+  "independent_generation_audit": {
+    "destructive_chaining": false,
+    "r0_derived_directly_from_grounded_substrate": true,
+    "r1_derived_directly_from_grounded_substrate": true,
+    "r1_is_not_input_to_r2": true,
+    "r2_derived_directly_from_grounded_substrate": true,
+    "r2_is_not_input_to_r1": true
+  },
+  "provenance_recoverability_audit": {
+    "all_support_quotes_exact_source_ranges": true,
+    "coverage_ratio": 1.0,
+    "recoverable_to_r0": true,
+    "unit_count": 20,
+    "units_with_source_and_model_identity": 20,
+    "units_with_support": 20
+  },
+  "review_index": 1,
+  "role_distribution": {
+    "CORE_FACT": 10,
+    "QUALIFICATION_OR_UNCERTAINTY": 9,
+    "QUANTITATIVE_FACT": 1
+  },
+  "schema": "spec060.progressive-semantic-compression-case.v1",
+  "selection": {
+    "coverage": [
+      "PROCESS_MECHANISM",
+      "QUANTITATIVE_FACT",
+      "TEMPORAL_SCOPE",
+      "QUALIFICATION_UNCERTAINTY"
+    ],
+    "frozen_corpus_order": 1,
+    "required_item_ids": [
+      "c2",
+      "c3",
+      "c4",
+      "c5",
+      "c7",
+      "c8",
+      "c9",
+      "c10",
+      "c11",
+      "c12",
+      "c13",
+      "c14",
+      "c15",
+      "c16",
+      "c17",
+      "c18",
+      "c19",
+      "c20",
+      "c21",
+      "c22"
+    ],
+    "source_or_domain_specific_rule": false
+  },
+  "semantic_preservation_audit": {
+    "contextual_item_disposition": [
+      {
+        "material_under_frozen_goal": false,
+        "reason": "Secondary detail remains recoverable in R0 and is outside the frozen essentiality plan.",
+        "semantic_class": "CLAIM",
+        "statement": "The Mid-Atlantic Ridge is described as one of the best-known divergent boundaries.",
+        "status": "OMITTED_AS_DEMONSTRABLY_REDUNDANT",
+        "upstream_id": "c1"
+      },
+      {
+        "material_under_frozen_goal": false,
+        "reason": "Secondary detail remains recoverable in R0 and is outside the frozen essentiality plan.",
+        "semantic_class": "CLAIM",
+        "statement": "The consequences of plate movement include widening existing ground cracks and the appearance of new ones around Krafla Volcano.",
+        "status": "OMITTED_AS_DEMONSTRABLY_REDUNDANT",
+        "upstream_id": "c6"
+      },
+      {
+        "material_under_frozen_goal": false,
+        "reason": "Secondary detail remains recoverable in R0 and is outside the frozen essentiality plan.",
+        "semantic_class": "RELATIONSHIP",
+        "statement": "The Mid-Atlantic Ridge is described as one of the best-known divergent boundaries.",
+        "status": "OMITTED_AS_DEMONSTRABLY_REDUNDANT",
+        "upstream_id": "r1"
+      },
+      {
+        "material_under_frozen_goal": false,
+        "reason": "Secondary detail remains recoverable in R0 and is outside the frozen essentiality plan.",
+        "semantic_class": "RELATIONSHIP",
+        "statement": "The consequences of plate movement include widening existing ground cracks and the appearance of new ones around Krafla Volcano.",
+        "status": "OMITTED_AS_DEMONSTRABLY_REDUNDANT",
+        "upstream_id": "r6"
+      }
+    ],
+    "forbidden_required_status_count": 0,
+    "material_omission_count": 0,
+    "required_item_count": 31,
+    "required_items": [
+      {
+        "material": true,
+        "r1_status": "PRESERVED_EXPLICITLY",
+        "r2_status": "PRESERVED_EXPLICITLY",
+        "semantic_class": "CLAIM",
+        "statement": "The Mid-Atlantic Ridge is one segment of the global mid-ocean ridge system.",
+        "upstream_id": "c2"
+      },
+      {
+        "material": true,
+        "r1_status": "PRESERVED_EXPLICITLY",
+        "r2_status": "PRESERVED_EXPLICITLY",
+        "semantic_class": "CLAIM",
+        "statement": "Magma pushing up from the mantle creates new crust at spreading centers.",
+        "upstream_id": "c3"
+      },
+      {
+        "material": true,
+        "r1_status": "PRESERVED_EXPLICITLY",
+        "r2_status": "PRESERVED_EXPLICITLY",
+        "semantic_class": "CLAIM",
+        "statement": "Seafloor spreading over millions of years has resulted in plate movement of thousands of kilometers.",
+        "upstream_id": "c4"
+      },
+      {
+        "material": true,
+        "r1_status": "PRESERVED_EXPLICITLY",
+        "r2_status": "PRESERVED_EXPLICITLY",
+        "semantic_class": "CLAIM",
+        "statement": "Seafloor spreading caused the Atlantic Ocean to grow from a small inlet into its present vast ocean.",
+        "upstream_id": "c5"
+      },
+      {
+        "material": true,
+        "r1_status": "PRESERVED_EXPLICITLY",
+        "r2_status": "PRESERVED_EXPLICITLY",
+        "semantic_class": "CLAIM",
+        "statement": "The displacements at Krafla were caused by rifting.",
+        "upstream_id": "c7"
+      },
+      {
+        "material": true,
+        "r1_status": "PRESERVED_EXPLICITLY",
+        "r2_status": "PRESERVED_EXPLICITLY",
+        "semantic_class": "CLAIM",
+        "statement": "Ground rise and abrupt dropping signalled an impending eruption.",
+        "upstream_id": "c8"
+      },
+      {
+        "material": true,
+        "r1_status": "PRESERVED_EXPLICITLY",
+        "r2_status": "PRESERVED_EXPLICITLY",
+        "semantic_class": "CLAIM",
+        "statement": "Spreading processes tore Saudi Arabia away from the rest of Africa, forming the Red Sea.",
+        "upstream_id": "c9"
+      },
+      {
+        "material": true,
+        "r1_status": "PRESERVED_EXPLICITLY",
+        "r2_status": "PRESERVED_EXPLICITLY",
+        "semantic_class": "CLAIM",
+        "statement": "When continental crust stretches beyond its limits, tension cracks appear on Earth's surface.",
+        "upstream_id": "c10"
+      },
+      {
+        "material": true,
+        "r1_status": "PRESERVED_EXPLICITLY",
+        "r2_status": "PRESERVED_EXPLICITLY",
+        "semantic_class": "CLAIM",
+        "statement": "Rising magma puts more pressure on the crust.",
+        "upstream_id": "c11"
+      },
+      {
+        "material": true,
+        "r1_status": "PRESERVED_EXPLICITLY",
+        "r2_status": "PRESERVED_EXPLICITLY",
+        "semantic_class": "CLAIM",
+        "statement": "Magma pressure produces additional fractures in the crust.",
+        "upstream_id": "c12"
+      },
+      {
+        "material": true,
+        "r1_status": "PRESERVED_EXPLICITLY",
+        "r2_status": "PRESERVED_EXPLICITLY",
+        "semantic_class": "CLAIM",
+        "statement": "Crustal fractures contribute ultimately to the formation of a rift zone.",
+        "upstream_id": "c13"
+      },
+      {
+        "material": true,
+        "r1_status": "PRESERVED_EXPLICITLY",
+        "r2_status": "PRESERVED_EXPLICITLY",
+        "semantic_class": "CLAIM",
+        "statement": "The spreading rate along the Mid-Atlantic Ridge averages about 2.5 centimeters per year, or 25 kilometers in a million years.",
+        "upstream_id": "c14"
+      },
+      {
+        "material": true,
+        "r1_status": "PRESERVED_EXPLICITLY",
+        "r2_status": "PRESERVED_EXPLICITLY",
+        "semantic_class": "CLAIM",
+        "statement": "Iceland straddles the Mid-Atlantic Ridge and provides a natural laboratory for studying spreading processes on land.",
+        "upstream_id": "c15"
+      },
+      {
+        "material": true,
+        "r1_status": "PRESERVED_EXPLICITLY",
+        "r2_status": "PRESERVED_EXPLICITLY",
+        "semantic_class": "CLAIM",
+        "statement": "Iceland is splitting along the spreading center between the North American and Eurasian Plates.",
+        "upstream_id": "c16"
+      },
+      {
+        "material": true,
+        "r1_status": "PRESERVED_EXPLICITLY",
+        "r2_status": "PRESERVED_EXPLICITLY",
+        "semantic_class": "CLAIM",
+        "statement": "Numerous episodes of rifting took place along the Krafla fissure zone from 1975 to 1984.",
+        "upstream_id": "c17"
+      },
+      {
+        "material": true,
+        "r1_status": "PRESERVED_EXPLICITLY",
+        "r2_status": "PRESERVED_EXPLICITLY",
+        "semantic_class": "CLAIM",
+        "statement": "Some rifting events were accompanied by volcanic activity.",
+        "upstream_id": "c18"
+      },
+      {
+        "material": true,
+        "r1_status": "PRESERVED_EXPLICITLY",
+        "r2_status": "PRESERVED_EXPLICITLY",
+        "semantic_class": "CLAIM",
+        "statement": "The actively splitting African Plate and Arabian Plate meet at a triple junction where the Red Sea meets the Gulf of Aden.",
+        "upstream_id": "c19"
+      },
+      {
+        "material": true,
+        "r1_status": "PRESERVED_EXPLICITLY",
+        "r2_status": "PRESERVED_EXPLICITLY",
+        "semantic_class": "CLAIM",
+        "statement": "A new spreading center may be developing under Africa along the East African Rift Zone.",
+        "upstream_id": "c20"
+      },
+      {
+        "material": true,
+        "r1_status": "PRESERVED_EXPLICITLY",
+        "r2_status": "PRESERVED_EXPLICITLY",
+        "semantic_class": "CLAIM",
+        "statement": "Magma can squeeze through widening cracks and sometimes erupt to form volcanoes.",
+        "upstream_id": "c21"
+      },
+      {
+        "material": true,
+        "r1_status": "PRESERVED_EXPLICITLY",
+        "r2_status": "PRESERVED_EXPLICITLY",
+        "semantic_class": "CLAIM",
+        "statement": "Newly formed oceanic crust is transported away from the ridge crest as plates move in opposite directions.",
+        "upstream_id": "c22"
+      },
+      {
+        "material": true,
+        "r1_status": "PRESERVED_EXPLICITLY",
+        "r2_status": "PRESERVED_BY_FAITHFUL_COMBINATION",
+        "semantic_class": "RELATIONSHIP",
+        "statement": "The Mid-Atlantic Ridge is one segment of the global mid-ocean ridge system.",
+        "upstream_id": "r2"
+      },
+      {
+        "material": true,
+        "r1_status": "PRESERVED_EXPLICITLY",
+        "r2_status": "PRESERVED_BY_FAITHFUL_COMBINATION",
+        "semantic_class": "RELATIONSHIP",
+        "statement": "Magma pushing up from the mantle creates new crust at spreading centers.",
+        "upstream_id": "r3"
+      },
+      {
+        "material": true,
+        "r1_status": "PRESERVED_EXPLICITLY",
+        "r2_status": "PRESERVED_BY_FAITHFUL_COMBINATION",
+        "semantic_class": "RELATIONSHIP",
+        "statement": "Seafloor spreading over millions of years has resulted in plate movement of thousands of kilometers.",
+        "upstream_id": "r4"
+      },
+      {
+        "material": true,
+        "r1_status": "PRESERVED_EXPLICITLY",
+        "r2_status": "PRESERVED_BY_FAITHFUL_COMBINATION",
+        "semantic_class": "RELATIONSHIP",
+        "statement": "Seafloor spreading caused the Atlantic Ocean to grow from a small inlet into its present vast ocean.",
+        "upstream_id": "r5"
+      },
+      {
+        "material": true,
+        "r1_status": "PRESERVED_EXPLICITLY",
+        "r2_status": "PRESERVED_BY_FAITHFUL_COMBINATION",
+        "semantic_class": "RELATIONSHIP",
+        "statement": "The displacements at Krafla were caused by rifting.",
+        "upstream_id": "r7"
+      },
+      {
+        "material": true,
+        "r1_status": "PRESERVED_EXPLICITLY",
+        "r2_status": "PRESERVED_BY_FAITHFUL_COMBINATION",
+        "semantic_class": "RELATIONSHIP",
+        "statement": "Ground rise and abrupt dropping signalled an impending eruption.",
+        "upstream_id": "r8"
+      },
+      {
+        "material": true,
+        "r1_status": "PRESERVED_EXPLICITLY",
+        "r2_status": "PRESERVED_BY_FAITHFUL_COMBINATION",
+        "semantic_class": "RELATIONSHIP",
+        "statement": "Spreading processes tore Saudi Arabia away from the rest of Africa, forming the Red Sea.",
+        "upstream_id": "r9"
+      },
+      {
+        "material": true,
+        "r1_status": "PRESERVED_EXPLICITLY",
+        "r2_status": "PRESERVED_BY_FAITHFUL_COMBINATION",
+        "semantic_class": "RELATIONSHIP",
+        "statement": "When continental crust stretches beyond its limits, tension cracks appear on Earth's surface.",
+        "upstream_id": "r10"
+      },
+      {
+        "material": true,
+        "r1_status": "PRESERVED_EXPLICITLY",
+        "r2_status": "PRESERVED_BY_FAITHFUL_COMBINATION",
+        "semantic_class": "RELATIONSHIP",
+        "statement": "Rising magma puts more pressure on the crust.",
+        "upstream_id": "r11"
+      },
+      {
+        "material": true,
+        "r1_status": "PRESERVED_EXPLICITLY",
+        "r2_status": "PRESERVED_BY_FAITHFUL_COMBINATION",
+        "semantic_class": "RELATIONSHIP",
+        "statement": "Magma pressure produces additional fractures in the crust.",
+        "upstream_id": "r12"
+      },
+      {
+        "material": true,
+        "r1_status": "PRESERVED_EXPLICITLY",
+        "r2_status": "PRESERVED_BY_FAITHFUL_COMBINATION",
+        "semantic_class": "RELATIONSHIP",
+        "statement": "Crustal fractures contribute ultimately to the formation of a rift zone.",
+        "upstream_id": "r13"
+      }
+    ],
+    "semantic_change_count": 0,
+    "unsupported_new_information_count": 0
+  },
+  "source_identity": {
+    "canonical_url": "https://pubs.usgs.gov/gip/dynamic/understanding.html",
+    "document_id": "text-a9539d135ff1577d",
+    "domain": "geology / Earth systems",
+    "institutional_publisher": "U.S. Geological Survey",
+    "model_path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/01-usgs-divergent-plate-boundaries-1996/admitted-knowledge-model.json",
+    "model_sha256": "fa2494dab670a698a8f730a0501c997984467839906f5c7b702e50ad6fd61261",
+    "source_id": "usgs-divergent-plate-boundaries-1996",
+    "source_sha256": "a9539d135ff1577d7e2791d498b92f55239175565b925b24aec2ed0bf633f186",
+    "title": "Understanding plate motions"
+  },
+  "views": {
+    "R0": {
+      "depends_on": [],
+      "direct_input": "FROZEN_ADMITTED_DOCUMENT_TEXT",
+      "identity_sha256": "a9539d135ff1577d7e2791d498b92f55239175565b925b24aec2ed0bf633f186",
+      "resolution": "SOURCE_RICH",
+      "text": "Divergent boundaries occur along spreading centers where plates are moving apart and new crust is created by magma pushing up from the mantle. Picture two giant conveyor belts, facing each other but slowly moving in opposite directions as they transport newly formed oceanic crust away from the ridge crest.\n\nPerhaps the best known of the divergent boundaries is the Mid-Atlantic Ridge. This submerged mountain range, which extends from the Arctic Ocean to beyond the southern tip of Africa, is but one segment of the global mid-ocean ridge system that encircles the Earth. The rate of spreading along the Mid-Atlantic Ridge averages about 2.5 centimeters per year (cm/yr), or 25 km in a million years. This rate may seem slow by human standards, but because this process has been going on for millions of years, it has resulted in plate movement of thousands of kilometers. Seafloor spreading over the past 100 to 200 million years has caused the Atlantic Ocean to grow from a tiny inlet of water between the continents of Europe, Africa, and the Americas into the vast ocean that exists today.\n\nThe volcanic country of Iceland, which straddles the Mid-Atlantic Ridge, offers scientists a natural laboratory for studying on land the processes also occurring along the submerged parts of a spreading ridge. Iceland is splitting along the spreading center between the North American and Eurasian Plates, as North America moves westward relative to Eurasia.\n\nThe consequences of plate movement are easy to see around Krafla Volcano, in the northeastern part of Iceland. Here, existing ground cracks have widened and new ones appear every few months. From 1975 to 1984, numerous episodes of rifting (surface cracking) took place along the Krafla fissure zone. Some of these rifting events were accompanied by volcanic activity; the ground would gradually rise 1-2 m before abruptly dropping, signalling an impending eruption. Between 1975 and 1984, the displacements caused by rifting totalled about 7 m.\n\nIn East Africa, spreading processes have already torn Saudi Arabia away from the rest of the African continent, forming the Red Sea. The actively splitting African Plate and the Arabian Plate meet in what geologists call a triple junction, where the Red Sea meets the Gulf of Aden. A new spreading center may be developing under Africa along the East African Rift Zone. When the continental crust stretches beyond its limits, tension cracks begin to appear on the Earth's surface. Magma rises and squeezes through the widening cracks, sometimes to erupt and form volcanoes. The rising magma, whether or not it erupts, puts more pressure on the crust to produce additional fractures and, ultimately, the rift zone."
+    },
+    "R1": {
+      "depends_on": [],
+      "direct_input": "FROZEN_SOURCE_TEXT_AND_REQUIRED_EVIDENCE_RANGES",
+      "identity_sha256": "78dffabda67f701adae84c7ac71cda58d05a7e492b457eab2b161cc1172cdd4c",
+      "resolution": "ESSENTIAL_EXPLANATION",
+      "segments": [
+        {
+          "end_char": 142,
+          "start_char": 0,
+          "support_ids": [
+            "c3"
+          ],
+          "text": "Divergent boundaries occur along spreading centers where plates are moving apart and new crust is created by magma pushing up from the mantle.",
+          "text_sha256": "faa130e9a6bbaae9e7ea3618c04f51917848f2637f940f09c5aa090bbee0c227"
+        },
+        {
+          "end_char": 307,
+          "start_char": 143,
+          "support_ids": [
+            "c22"
+          ],
+          "text": "Picture two giant conveyor belts, facing each other but slowly moving in opposite directions as they transport newly formed oceanic crust away from the ridge crest.",
+          "text_sha256": "ea194243c2e4d3a58e59ede078adb5d78e29159238727f4a6673f7007b507f9f"
+        },
+        {
+          "end_char": 573,
+          "start_char": 387,
+          "support_ids": [
+            "c2"
+          ],
+          "text": "This submerged mountain range, which extends from the Arctic Ocean to beyond the southern tip of Africa, is but one segment of the global mid-ocean ridge system that encircles the Earth.",
+          "text_sha256": "41ddce2d2630cb71d5df759f1322a8a89f26e79570c0d79053ffe6dfa0e689e9"
+        },
+        {
+          "end_char": 702,
+          "start_char": 574,
+          "support_ids": [
+            "c14"
+          ],
+          "text": "The rate of spreading along the Mid-Atlantic Ridge averages about 2.5 centimeters per year (cm/yr), or 25 km in a million years.",
+          "text_sha256": "68a92d7e69a020caef4416879e546dfbd942f0a14c89105201e0fcf335af434b"
+        },
+        {
+          "end_char": 874,
+          "start_char": 703,
+          "support_ids": [
+            "c4"
+          ],
+          "text": "This rate may seem slow by human standards, but because this process has been going on for millions of years, it has resulted in plate movement of thousands of kilometers.",
+          "text_sha256": "6122e9c1264f67c1dbc8fcdadb5404d63d5c49cb59979b553388f7999f9f8207"
+        },
+        {
+          "end_char": 1095,
+          "start_char": 875,
+          "support_ids": [
+            "c5"
+          ],
+          "text": "Seafloor spreading over the past 100 to 200 million years has caused the Atlantic Ocean to grow from a tiny inlet of water between the continents of Europe, Africa, and the Americas into the vast ocean that exists today.",
+          "text_sha256": "795c8aefe1d21ca9482630d16dea4ccde92487c483fbb194e9783d5e89f93a1a"
+        },
+        {
+          "end_char": 1306,
+          "start_char": 1097,
+          "support_ids": [
+            "c15"
+          ],
+          "text": "The volcanic country of Iceland, which straddles the Mid-Atlantic Ridge, offers scientists a natural laboratory for studying on land the processes also occurring along the submerged parts of a spreading ridge.",
+          "text_sha256": "358c29e4069bafb2059aabb0ee916125a0d2bd628cc14c590743d312588f9bac"
+        },
+        {
+          "end_char": 1455,
+          "start_char": 1307,
+          "support_ids": [
+            "c16"
+          ],
+          "text": "Iceland is splitting along the spreading center between the North American and Eurasian Plates, as North America moves westward relative to Eurasia.",
+          "text_sha256": "c6f07b5e3d38ca8dc5692dd3c38d405944c38377de685681ce4d571615dc640a"
+        },
+        {
+          "end_char": 1756,
+          "start_char": 1648,
+          "support_ids": [
+            "c17"
+          ],
+          "text": "From 1975 to 1984, numerous episodes of rifting (surface cracking) took place along the Krafla fissure zone.",
+          "text_sha256": "939f3cda1f61491b2bc23108f770cfebae97d6a88bf7f09c0c340523074b7eb5"
+        },
+        {
+          "end_char": 1824,
+          "start_char": 1757,
+          "support_ids": [
+            "c18"
+          ],
+          "text": "Some of these rifting events were accompanied by volcanic activity;",
+          "text_sha256": "2a53aa7aa54bb638a665ad1f6d3e56968105f051188acfb4a1357b9df97d95b8"
+        },
+        {
+          "end_char": 1922,
+          "start_char": 1825,
+          "support_ids": [
+            "c8"
+          ],
+          "text": "the ground would gradually rise 1-2 m before abruptly dropping, signalling an impending eruption.",
+          "text_sha256": "a92ed37dd864514be5d22003d24ef21cd7706f65c2a1bcf1d6af76955920d4f2"
+        },
+        {
+          "end_char": 2001,
+          "start_char": 1923,
+          "support_ids": [
+            "c7"
+          ],
+          "text": "Between 1975 and 1984, the displacements caused by rifting totalled about 7 m.",
+          "text_sha256": "b50c9775eeb97cfabba5373f6401a0dca0f6e6d1e9c1c7cdf098248210499772"
+        },
+        {
+          "end_char": 2135,
+          "start_char": 2003,
+          "support_ids": [
+            "c9"
+          ],
+          "text": "In East Africa, spreading processes have already torn Saudi Arabia away from the rest of the African continent, forming the Red Sea.",
+          "text_sha256": "0649c8ee0f1d9e2bd8053804140edddf371ee14d98630aeab0ccf9f3b61f7007"
+        },
+        {
+          "end_char": 2284,
+          "start_char": 2136,
+          "support_ids": [
+            "c19"
+          ],
+          "text": "The actively splitting African Plate and the Arabian Plate meet in what geologists call a triple junction, where the Red Sea meets the Gulf of Aden.",
+          "text_sha256": "ff294e0ec549c64f2aacb0578762bc5a7d2bc2748f4d909bf8f8ff6af94b2461"
+        },
+        {
+          "end_char": 2372,
+          "start_char": 2285,
+          "support_ids": [
+            "c20"
+          ],
+          "text": "A new spreading center may be developing under Africa along the East African Rift Zone.",
+          "text_sha256": "8d507bf5f9646b4e7689ca45c095a22dc67660988841561ada20d4427efba582"
+        },
+        {
+          "end_char": 2483,
+          "start_char": 2373,
+          "support_ids": [
+            "c10"
+          ],
+          "text": "When the continental crust stretches beyond its limits, tension cracks begin to appear on the Earth's surface.",
+          "text_sha256": "8e3a471de6f18ab2154d134d7bbf7a9167470546ce069f10da855086aa04c63b"
+        },
+        {
+          "end_char": 2576,
+          "start_char": 2484,
+          "support_ids": [
+            "c21"
+          ],
+          "text": "Magma rises and squeezes through the widening cracks, sometimes to erupt and form volcanoes.",
+          "text_sha256": "3603f51026eec29f0cd6f93e30fb0cac473bde10beaa06ab15f3183b59d702ab"
+        },
+        {
+          "end_char": 2716,
+          "start_char": 2577,
+          "support_ids": [
+            "c11",
+            "c12",
+            "c13"
+          ],
+          "text": "The rising magma, whether or not it erupts, puts more pressure on the crust to produce additional fractures and, ultimately, the rift zone.",
+          "text_sha256": "adddea6d018161d747c1eb5a46298d513aaf812c84179ae45b7b9fa500bc2c84"
+        }
+      ],
+      "text": "Divergent boundaries occur along spreading centers where plates are moving apart and new crust is created by magma pushing up from the mantle.\n\nPicture two giant conveyor belts, facing each other but slowly moving in opposite directions as they transport newly formed oceanic crust away from the ridge crest.\n\nThis submerged mountain range, which extends from the Arctic Ocean to beyond the southern tip of Africa, is but one segment of the global mid-ocean ridge system that encircles the Earth.\n\nThe rate of spreading along the Mid-Atlantic Ridge averages about 2.5 centimeters per year (cm/yr), or 25 km in a million years.\n\nThis rate may seem slow by human standards, but because this process has been going on for millions of years, it has resulted in plate movement of thousands of kilometers.\n\nSeafloor spreading over the past 100 to 200 million years has caused the Atlantic Ocean to grow from a tiny inlet of water between the continents of Europe, Africa, and the Americas into the vast ocean that exists today.\n\nThe volcanic country of Iceland, which straddles the Mid-Atlantic Ridge, offers scientists a natural laboratory for studying on land the processes also occurring along the submerged parts of a spreading ridge.\n\nIceland is splitting along the spreading center between the North American and Eurasian Plates, as North America moves westward relative to Eurasia.\n\nFrom 1975 to 1984, numerous episodes of rifting (surface cracking) took place along the Krafla fissure zone.\n\nSome of these rifting events were accompanied by volcanic activity;\n\nthe ground would gradually rise 1-2 m before abruptly dropping, signalling an impending eruption.\n\nBetween 1975 and 1984, the displacements caused by rifting totalled about 7 m.\n\nIn East Africa, spreading processes have already torn Saudi Arabia away from the rest of the African continent, forming the Red Sea.\n\nThe actively splitting African Plate and the Arabian Plate meet in what geologists call a triple junction, where the Red Sea meets the Gulf of Aden.\n\nA new spreading center may be developing under Africa along the East African Rift Zone.\n\nWhen the continental crust stretches beyond its limits, tension cracks begin to appear on the Earth's surface.\n\nMagma rises and squeezes through the widening cracks, sometimes to erupt and form volcanoes.\n\nThe rising magma, whether or not it erupts, puts more pressure on the crust to produce additional fractures and, ultimately, the rift zone."
+    },
+    "R2": {
+      "depends_on": [],
+      "direct_input": "FROZEN_ADMITTED_SEMANTIC_ITEMS_AND_EVIDENCE",
+      "identity_sha256": "d833566dc5abd09ff489173e081a735530f41433d97ff228272ef9dff92bfdce",
+      "resolution": "ESSENTIAL_UNITS",
+      "text": "The Mid-Atlantic Ridge is one segment of the global mid-ocean ridge system.\nMagma pushing up from the mantle creates new crust at spreading centers.\nSeafloor spreading over millions of years has resulted in plate movement of thousands of kilometers.\nSeafloor spreading caused the Atlantic Ocean to grow from a small inlet into its present vast ocean.\nThe displacements at Krafla were caused by rifting.\nGround rise and abrupt dropping signalled an impending eruption.\nSpreading processes tore Saudi Arabia away from the rest of Africa, forming the Red Sea.\nWhen continental crust stretches beyond its limits, tension cracks appear on Earth's surface.\nRising magma puts more pressure on the crust.\nMagma pressure produces additional fractures in the crust.\nCrustal fractures contribute ultimately to the formation of a rift zone.\nThe spreading rate along the Mid-Atlantic Ridge averages about 2.5 centimeters per year, or 25 kilometers in a million years.\nIceland straddles the Mid-Atlantic Ridge and provides a natural laboratory for studying spreading processes on land.\nIceland is splitting along the spreading center between the North American and Eurasian Plates.\nNumerous episodes of rifting took place along the Krafla fissure zone from 1975 to 1984.\nSome rifting events were accompanied by volcanic activity.\nThe actively splitting African Plate and Arabian Plate meet at a triple junction where the Red Sea meets the Gulf of Aden.\nA new spreading center may be developing under Africa along the East African Rift Zone.\nMagma can squeeze through widening cracks and sometimes erupt to form volcanoes.\nNewly formed oceanic crust is transported away from the ridge crest as plates move in opposite directions.",
+      "unit_ids": [
+        "unit-3da0cd311bdbe2",
+        "unit-0b89c0f7c8b017",
+        "unit-5f1b56c32f4f30",
+        "unit-50d54b2c241af4",
+        "unit-6f0d881e9f9455",
+        "unit-50f3e92a15aa32",
+        "unit-808e93852389e3",
+        "unit-55a7987ccd119f",
+        "unit-abc3c943d58770",
+        "unit-709cd8723d73d3",
+        "unit-58f74ccc51d0ea",
+        "unit-92bc75d6a843ff",
+        "unit-e2988480b2c37d",
+        "unit-bc85b0fe938e6b",
+        "unit-7b600475d8860c",
+        "unit-a29945b25773f9",
+        "unit-2e96e66acbc6b3",
+        "unit-94a936ed5ce0b5",
+        "unit-239c6eb8d11e15",
+        "unit-d807ca8f106631"
+      ]
+    }
+  }
+}

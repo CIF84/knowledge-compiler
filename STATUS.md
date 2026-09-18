@@ -67,30 +67,49 @@ This commits the project to the direction, not the full product ambition. Podcas
 ## Current approved work packet
 
 ```text
-specs/SPEC-060-progressive-semantic-compression-foundation.md
+NONE
 ```
 
-Status: `APPROVED_FOR_IMPLEMENTATION`
+Status: `NONE`
 
-Authority: `OFFLINE_ONLY`
+Authority: `NONE`
 
-Human gate: `OWNER_REVIEW`
+Human gate: `NONE`
 
 Promotion: `NOT_AUTHORIZED`
 
 ## Current gate
 
-SPEC-060 must:
+SPEC-060 is implemented and awaiting owner review.
 
-1. create/update canonical project vision/mission documentation;
-2. freeze six diverse cases from existing trusted repository evidence;
-3. create an isolated experimental essential-information model;
-4. generate three independent non-destructive views from the same grounded substrate: R0 source-rich, R1 essential explanation, R2 essential units;
-5. measure compression while auditing semantic, epistemic and provenance preservation;
-6. create a neutral six-case owner-review artifact;
-7. stop at owner review.
+The deterministic six-case corpus spans geology, meteorology, civics,
+astronomy, ecology and materials science. Each case exposes R0 source-rich,
+R1 essential-explanation and R2 essential-unit views generated independently
+from the same frozen admitted substrate. The experiment records complete
+semantic, epistemic, omission and provenance/recoverability audits.
 
-No visualization experiment is part of SPEC-060.
+All six R1 and R2 views are mechanically smaller than R0. The mean word ratios
+are 0.8271 for R1:R0 and 0.6783 for R2:R0. Across 149 required semantic items,
+the mechanical audits report zero material omissions, semantic changes,
+unsupported additions or strengthened certainty/causality, with 100%
+provenance coverage. These results admit the artifact to owner review; they do
+not establish learning improvement or assign the human verdict.
+
+Desktop and 390×844 browser gates pass the six cases, independent-view
+identity, resolution switching, provenance tracing, navigation, responsive
+layout and clean-console checks. No visualization, semantic production change,
+personalization or promotion was performed.
+
+Canonical evidence:
+
+`examples/evaluations/spec-060-progressive-semantic-compression-foundation-20260917/report.json`
+
+Canonical vision/mission:
+
+`docs/PROJECT-VISION.md`
+
+No packet is active. Promotion remains unauthorized and the owner verdict is
+pending.
 
 ## Current product question
 

@@ -1,0 +1,1203 @@
+{
+  "admission": {
+    "admitted_for_owner_review": true,
+    "machine_learning_or_pedagogical_verdict": "NOT_ASSIGNED"
+  },
+  "case_identity": "spec060-case-efdb84ed4aff60",
+  "epistemic_preservation_audit": {
+    "attribution_preserved": true,
+    "causal_vs_associational_status_preserved": true,
+    "epistemic_status_distribution": {
+      "ASSERTED_SOURCE_CLAIM": 19,
+      "QUALIFIED_OR_UNCERTAIN": 1
+    },
+    "precision_preserved_where_selected": true,
+    "qualification_links_preserved_verbatim": true,
+    "strengthened_certainty_or_causality_count": 0,
+    "temporal_scope_preserved_where_selected": true,
+    "units_with_explicit_qualification_links": 3,
+    "values_and_units_preserved_verbatim": true
+  },
+  "essential_information_model": {
+    "compression_metrics": {
+      "grounded_semantic_unit_count": 20,
+      "r0": {
+        "characters": 2490,
+        "sha256": "c0cb2519673b8f3ef23c0be2856e03790f53d44971cbff09d593190ab3fa155d",
+        "words": 459
+      },
+      "r1": {
+        "characters": 1759,
+        "sha256": "beae4102a4ff45ddb4046e74c6674cdf5979f947e56fd61e63e686c879dce8bd",
+        "words": 320
+      },
+      "r1_to_r0_character_ratio": 0.7064,
+      "r1_to_r0_word_ratio": 0.6972,
+      "r2": {
+        "characters": 1176,
+        "sha256": "6baf87e1cf4512a3274a60258adf043c004897447e88be40b5eacc91ee6750da",
+        "words": 214
+      },
+      "r2_to_r0_character_ratio": 0.4723,
+      "r2_to_r0_word_ratio": 0.4662
+    },
+    "goal": "Preserve the information necessary to accurately understand the source's core explanatory content, including material qualifications and epistemic status, while removing rhetorical, repetitive and linguistically redundant expression.",
+    "omitted_fragments": [
+      {
+        "omission_reason": "DETAIL_OR_LINGUISTIC_CONTEXT_RETAINED_IN_R0",
+        "text": "All of the plants and animals and microbes and other living things on Earth have evolved here. So, for us to understand where life as we know it came from, we need to understand where our planet came from.",
+        "upstream_identity": {
+          "end_char": 260,
+          "sha256": "dbd4a830342aa45b3b63684b258e332ab9fa760111a0c3a772aeece2980cf90e",
+          "start_char": 55
+        }
+      },
+      {
+        "omission_reason": "DETAIL_OR_LINGUISTIC_CONTEXT_RETAINED_IN_R0",
+        "text": "In time, the mass can grow large enough to form a planet or even a new star.",
+        "upstream_identity": {
+          "end_char": 848,
+          "sha256": "8d4ddc4f2af9434258bc744f0700e482a5137842aff8bb5af6d404562f50225f",
+          "start_char": 772
+        }
+      },
+      {
+        "omission_reason": "DETAIL_OR_LINGUISTIC_CONTEXT_RETAINED_IN_R0",
+        "text": "Those small pieces then collided with each other, forming larger pieces, which then collided with each other to form even larger ones.",
+        "upstream_identity": {
+          "end_char": 1536,
+          "sha256": "3d9dcf635d5bce68a95caef9500665b5acb1b74b9af265a6b787923376d2712b",
+          "start_char": 1402
+        }
+      },
+      {
+        "omission_reason": "DETAIL_OR_LINGUISTIC_CONTEXT_RETAINED_IN_R0",
+        "text": "Well, when the planets were first forming from that cloud in space, the cloud itself was spinning in the same direction as the orbits of the planets today, with the Sun forming in the middle and also spinning in the same direction.",
+        "upstream_identity": {
+          "end_char": 2044,
+          "sha256": "76aad83e7ce02c86b4cc5974857fed43404c26e8690c6aea3f64c64cedebe7df",
+          "start_char": 1813
+        }
+      },
+      {
+        "omission_reason": "RHETORICAL_OR_EVALUATIVE_FRAMING",
+        "text": "So, orbits are really important for us to learn about if we want to know where we came from.",
+        "upstream_identity": {
+          "end_char": 2490,
+          "sha256": "998035badc64c68c97d51c20309e00d7522f67d3142d40d6613322ccf77572cb",
+          "start_char": 2398
+        }
+      }
+    ],
+    "schema": "spec060.essential-information-model.v1",
+    "source_identity": {
+      "model_sha256": "d0a28afecf69d8edc55783eb41b4de78c72d81ef6007ac8121a003946b06b198",
+      "required_item_ids": [
+        "c1",
+        "c3",
+        "c4",
+        "c5",
+        "c6",
+        "c7",
+        "c8",
+        "c9",
+        "c10",
+        "r11",
+        "r12",
+        "r13",
+        "r16",
+        "r18",
+        "r20",
+        "r21",
+        "r23",
+        "r24",
+        "r25",
+        "r26"
+      ],
+      "source_id": "nasa-solar-system-formation-2026",
+      "source_sha256": "c0cb2519673b8f3ef23c0be2856e03790f53d44971cbff09d593190ab3fa155d"
+    },
+    "units": [
+      {
+        "concise_text": "Earth is the only world known to have life.",
+        "epistemic_status": "ASSERTED_SOURCE_CLAIM",
+        "id": "unit-4140e6bd7157ee",
+        "preserved_from": [
+          {
+            "id": "c1",
+            "semantic_class": "CLAIM"
+          }
+        ],
+        "qualification_links": [
+          {
+            "cue": "only",
+            "end_char": 17,
+            "start_char": 13
+          },
+          {
+            "cue": "if",
+            "end_char": 41,
+            "start_char": 39
+          }
+        ],
+        "semantic_role": "QUALIFICATION_OR_UNCERTAINTY",
+        "support": [
+          {
+            "document_id": "text-c0cb2519673b8f3e",
+            "end_char": 54,
+            "model_path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/04-nasa-solar-system-formation-2026/admitted-knowledge-model.json",
+            "model_sha256": "d0a28afecf69d8edc55783eb41b4de78c72d81ef6007ac8121a003946b06b198",
+            "quote": "Earth is the only world that we know of that has life.",
+            "source_id": "nasa-solar-system-formation-2026",
+            "start_char": 0
+          }
+        ]
+      },
+      {
+        "concise_text": "The Sun, planets, and other contents of the solar system formed from a large cloud of gas and dust in space.",
+        "epistemic_status": "ASSERTED_SOURCE_CLAIM",
+        "id": "unit-ff96c1f7817884",
+        "preserved_from": [
+          {
+            "id": "c3",
+            "semantic_class": "CLAIM"
+          }
+        ],
+        "qualification_links": [],
+        "semantic_role": "CORE_FACT",
+        "support": [
+          {
+            "document_id": "text-c0cb2519673b8f3e",
+            "end_char": 393,
+            "model_path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/04-nasa-solar-system-formation-2026/admitted-knowledge-model.json",
+            "model_sha256": "d0a28afecf69d8edc55783eb41b4de78c72d81ef6007ac8121a003946b06b198",
+            "quote": "The Sun and the planets and all of the other stuff in our solar system all formed from a really big cloud of gas and dust in space.",
+            "source_id": "nasa-solar-system-formation-2026",
+            "start_char": 262
+          }
+        ]
+      },
+      {
+        "concise_text": "A nebula is a cloud of gas and dust in space, and nebulae is the plural term.",
+        "epistemic_status": "ASSERTED_SOURCE_CLAIM",
+        "id": "unit-33027db2a151cb",
+        "preserved_from": [
+          {
+            "id": "c4",
+            "semantic_class": "CLAIM"
+          }
+        ],
+        "qualification_links": [],
+        "semantic_role": "CORE_FACT",
+        "support": [
+          {
+            "document_id": "text-c0cb2519673b8f3e",
+            "end_char": 477,
+            "model_path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/04-nasa-solar-system-formation-2026/admitted-knowledge-model.json",
+            "model_sha256": "d0a28afecf69d8edc55783eb41b4de78c72d81ef6007ac8121a003946b06b198",
+            "quote": "We call such a cloud a “nebula” and more than one of them we refer to as “nebulae.”",
+            "source_id": "nasa-solar-system-formation-2026",
+            "start_char": 394
+          }
+        ]
+      },
+      {
+        "concise_text": "Nebulae are massive clouds of dust and debris containing the ingredients to form stars and planets.",
+        "epistemic_status": "ASSERTED_SOURCE_CLAIM",
+        "id": "unit-fba78e9e7e5027",
+        "preserved_from": [
+          {
+            "id": "c5",
+            "semantic_class": "CLAIM"
+          }
+        ],
+        "qualification_links": [],
+        "semantic_role": "CORE_FACT",
+        "support": [
+          {
+            "document_id": "text-c0cb2519673b8f3e",
+            "end_char": 686,
+            "model_path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/04-nasa-solar-system-formation-2026/admitted-knowledge-model.json",
+            "model_sha256": "d0a28afecf69d8edc55783eb41b4de78c72d81ef6007ac8121a003946b06b198",
+            "quote": "Nebulae are massive clouds of dust and debris in space and have all the ingredients to form stars and planets.",
+            "source_id": "nasa-solar-system-formation-2026",
+            "start_char": 576
+          }
+        ]
+      },
+      {
+        "concise_text": "The solar system may have formed from a large nebula after a nearby star exploded.",
+        "epistemic_status": "QUALIFIED_OR_UNCERTAIN",
+        "id": "unit-6779356055eb6c",
+        "preserved_from": [
+          {
+            "id": "c6",
+            "semantic_class": "CLAIM"
+          }
+        ],
+        "qualification_links": [
+          {
+            "cue": "may",
+            "end_char": 20,
+            "start_char": 17
+          }
+        ],
+        "semantic_role": "QUALIFICATION_OR_UNCERTAINTY",
+        "support": [
+          {
+            "document_id": "text-c0cb2519673b8f3e",
+            "end_char": 964,
+            "model_path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/04-nasa-solar-system-formation-2026/admitted-knowledge-model.json",
+            "model_sha256": "d0a28afecf69d8edc55783eb41b4de78c72d81ef6007ac8121a003946b06b198",
+            "quote": "We currently think that our solar system formed from a large nebula, perhaps after the explosion of a nearby star.",
+            "source_id": "nasa-solar-system-formation-2026",
+            "start_char": 850
+          }
+        ]
+      },
+      {
+        "concise_text": "A supernova is an explosion of a big star.",
+        "epistemic_status": "ASSERTED_SOURCE_CLAIM",
+        "id": "unit-633f780eb7bf9d",
+        "preserved_from": [
+          {
+            "id": "c7",
+            "semantic_class": "CLAIM"
+          }
+        ],
+        "qualification_links": [],
+        "semantic_role": "CORE_FACT",
+        "support": [
+          {
+            "document_id": "text-c0cb2519673b8f3e",
+            "end_char": 1021,
+            "model_path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/04-nasa-solar-system-formation-2026/admitted-knowledge-model.json",
+            "model_sha256": "d0a28afecf69d8edc55783eb41b4de78c72d81ef6007ac8121a003946b06b198",
+            "quote": "Some big stars can explode, something called a supernova",
+            "source_id": "nasa-solar-system-formation-2026",
+            "start_char": 965
+          }
+        ]
+      },
+      {
+        "concise_text": "The young planets eventually became the eight planets listed in the source.",
+        "epistemic_status": "ASSERTED_SOURCE_CLAIM",
+        "id": "unit-fdf6274c33eb20",
+        "preserved_from": [
+          {
+            "id": "c8",
+            "semantic_class": "CLAIM"
+          }
+        ],
+        "qualification_links": [],
+        "semantic_role": "CORE_FACT",
+        "support": [
+          {
+            "document_id": "text-c0cb2519673b8f3e",
+            "end_char": 1729,
+            "model_path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/04-nasa-solar-system-formation-2026/admitted-knowledge-model.json",
+            "model_sha256": "d0a28afecf69d8edc55783eb41b4de78c72d81ef6007ac8121a003946b06b198",
+            "quote": "These were young planets, and eventually, over a long time and through many, many collisions, our eight planets were formed – Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, and Neptune.",
+            "source_id": "nasa-solar-system-formation-2026",
+            "start_char": 1537
+          }
+        ]
+      },
+      {
+        "concise_text": "The Moon must be in orbit around a planet to be a moon.",
+        "epistemic_status": "ASSERTED_SOURCE_CLAIM",
+        "id": "unit-5186a03e8a06f8",
+        "preserved_from": [
+          {
+            "id": "c9",
+            "semantic_class": "CLAIM"
+          }
+        ],
+        "qualification_links": [],
+        "semantic_role": "CORE_FACT",
+        "support": [
+          {
+            "document_id": "text-c0cb2519673b8f3e",
+            "end_char": 2249,
+            "model_path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/04-nasa-solar-system-formation-2026/admitted-knowledge-model.json",
+            "model_sha256": "d0a28afecf69d8edc55783eb41b4de78c72d81ef6007ac8121a003946b06b198",
+            "quote": "For something to be a moon, it needs to be in orbit around a planet.",
+            "source_id": "nasa-solar-system-formation-2026",
+            "start_char": 2181
+          }
+        ]
+      },
+      {
+        "concise_text": "A planet has to be orbiting a star.",
+        "epistemic_status": "ASSERTED_SOURCE_CLAIM",
+        "id": "unit-b9d5668f08d87a",
+        "preserved_from": [
+          {
+            "id": "c10",
+            "semantic_class": "CLAIM"
+          }
+        ],
+        "qualification_links": [],
+        "semantic_role": "CORE_FACT",
+        "support": [
+          {
+            "document_id": "text-c0cb2519673b8f3e",
+            "end_char": 2323,
+            "model_path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/04-nasa-solar-system-formation-2026/admitted-knowledge-model.json",
+            "model_sha256": "d0a28afecf69d8edc55783eb41b4de78c72d81ef6007ac8121a003946b06b198",
+            "quote": "One thing that makes a planet is that a planet has to be orbiting a star.",
+            "source_id": "nasa-solar-system-formation-2026",
+            "start_char": 2250
+          }
+        ]
+      },
+      {
+        "concise_text": "Stars form from nebulae.",
+        "epistemic_status": "ASSERTED_SOURCE_CLAIM",
+        "id": "unit-64631966eef259",
+        "preserved_from": [
+          {
+            "id": "r11",
+            "semantic_class": "RELATIONSHIP"
+          }
+        ],
+        "qualification_links": [],
+        "semantic_role": "MECHANISM",
+        "support": [
+          {
+            "document_id": "text-c0cb2519673b8f3e",
+            "end_char": 575,
+            "model_path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/04-nasa-solar-system-formation-2026/admitted-knowledge-model.json",
+            "model_sha256": "d0a28afecf69d8edc55783eb41b4de78c72d81ef6007ac8121a003946b06b198",
+            "quote": "There are nebulae all around our galaxy, and it’s from these nebulae that stars and planets form.",
+            "source_id": "nasa-solar-system-formation-2026",
+            "start_char": 478
+          }
+        ]
+      },
+      {
+        "concise_text": "Planets form from nebulae.",
+        "epistemic_status": "ASSERTED_SOURCE_CLAIM",
+        "id": "unit-0d49899c133a51",
+        "preserved_from": [
+          {
+            "id": "r12",
+            "semantic_class": "RELATIONSHIP"
+          }
+        ],
+        "qualification_links": [],
+        "semantic_role": "MECHANISM",
+        "support": [
+          {
+            "document_id": "text-c0cb2519673b8f3e",
+            "end_char": 575,
+            "model_path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/04-nasa-solar-system-formation-2026/admitted-knowledge-model.json",
+            "model_sha256": "d0a28afecf69d8edc55783eb41b4de78c72d81ef6007ac8121a003946b06b198",
+            "quote": "There are nebulae all around our galaxy, and it’s from these nebulae that stars and planets form.",
+            "source_id": "nasa-solar-system-formation-2026",
+            "start_char": 478
+          }
+        ]
+      },
+      {
+        "concise_text": "Material sticking together forms a large mass.",
+        "epistemic_status": "ASSERTED_SOURCE_CLAIM",
+        "id": "unit-16c8a559e7be14",
+        "preserved_from": [
+          {
+            "id": "r13",
+            "semantic_class": "RELATIONSHIP"
+          }
+        ],
+        "qualification_links": [],
+        "semantic_role": "MECHANISM",
+        "support": [
+          {
+            "document_id": "text-c0cb2519673b8f3e",
+            "end_char": 771,
+            "model_path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/04-nasa-solar-system-formation-2026/admitted-knowledge-model.json",
+            "model_sha256": "d0a28afecf69d8edc55783eb41b4de78c72d81ef6007ac8121a003946b06b198",
+            "quote": "When enough material is available, it begins to stick together forming a large mass.",
+            "source_id": "nasa-solar-system-formation-2026",
+            "start_char": 687
+          }
+        ]
+      },
+      {
+        "concise_text": "A supernova has enough energy to make gas and dust in nearby nebulae start swirling.",
+        "epistemic_status": "ASSERTED_SOURCE_CLAIM",
+        "id": "unit-3a1d9eb210d536",
+        "preserved_from": [
+          {
+            "id": "r16",
+            "semantic_class": "RELATIONSHIP"
+          }
+        ],
+        "qualification_links": [],
+        "semantic_role": "MECHANISM",
+        "support": [
+          {
+            "document_id": "text-c0cb2519673b8f3e",
+            "end_char": 1137,
+            "model_path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/04-nasa-solar-system-formation-2026/admitted-knowledge-model.json",
+            "model_sha256": "d0a28afecf69d8edc55783eb41b4de78c72d81ef6007ac8121a003946b06b198",
+            "quote": "Some big stars can explode, something called a supernova, and that explosion has enough energy to make the gas and dust in nearby nebulae start swirling and spinning about.",
+            "source_id": "nasa-solar-system-formation-2026",
+            "start_char": 965
+          }
+        ]
+      },
+      {
+        "concise_text": "The swirling caused material in the nebula to fall into its center.",
+        "epistemic_status": "ASSERTED_SOURCE_CLAIM",
+        "id": "unit-ca58f7a3a14fe4",
+        "preserved_from": [
+          {
+            "id": "r18",
+            "semantic_class": "RELATIONSHIP"
+          }
+        ],
+        "qualification_links": [],
+        "semantic_role": "MECHANISM",
+        "support": [
+          {
+            "document_id": "text-c0cb2519673b8f3e",
+            "end_char": 1268,
+            "model_path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/04-nasa-solar-system-formation-2026/admitted-knowledge-model.json",
+            "model_sha256": "d0a28afecf69d8edc55783eb41b4de78c72d81ef6007ac8121a003946b06b198",
+            "quote": "As this happened, it caused a lot of the material in the nebula to fall into its center, and that’s where the Sun started forming.",
+            "source_id": "nasa-solar-system-formation-2026",
+            "start_char": 1138
+          }
+        ]
+      },
+      {
+        "concise_text": "Collisions among gas and dust formed little pieces of metal and rock.",
+        "epistemic_status": "ASSERTED_SOURCE_CLAIM",
+        "id": "unit-606214c38a0177",
+        "preserved_from": [
+          {
+            "id": "r20",
+            "semantic_class": "RELATIONSHIP"
+          }
+        ],
+        "qualification_links": [],
+        "semantic_role": "MECHANISM",
+        "support": [
+          {
+            "document_id": "text-c0cb2519673b8f3e",
+            "end_char": 1401,
+            "model_path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/04-nasa-solar-system-formation-2026/admitted-knowledge-model.json",
+            "model_sha256": "d0a28afecf69d8edc55783eb41b4de78c72d81ef6007ac8121a003946b06b198",
+            "quote": "Meanwhile, the rest of the gas and dust in the nebula began colliding and sticking together, making little pieces of metal and rock.",
+            "source_id": "nasa-solar-system-formation-2026",
+            "start_char": 1269
+          }
+        ]
+      },
+      {
+        "concise_text": "Many collisions over a long time formed the eight planets.",
+        "epistemic_status": "ASSERTED_SOURCE_CLAIM",
+        "id": "unit-1c4a347383d8fd",
+        "preserved_from": [
+          {
+            "id": "r21",
+            "semantic_class": "RELATIONSHIP"
+          }
+        ],
+        "qualification_links": [],
+        "semantic_role": "MECHANISM",
+        "support": [
+          {
+            "document_id": "text-c0cb2519673b8f3e",
+            "end_char": 1729,
+            "model_path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/04-nasa-solar-system-formation-2026/admitted-knowledge-model.json",
+            "model_sha256": "d0a28afecf69d8edc55783eb41b4de78c72d81ef6007ac8121a003946b06b198",
+            "quote": "These were young planets, and eventually, over a long time and through many, many collisions, our eight planets were formed – Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, and Neptune.",
+            "source_id": "nasa-solar-system-formation-2026",
+            "start_char": 1537
+          }
+        ]
+      },
+      {
+        "concise_text": "The planets move around the Sun.",
+        "epistemic_status": "ASSERTED_SOURCE_CLAIM",
+        "id": "unit-2b4c7ac9950942",
+        "preserved_from": [
+          {
+            "id": "r23",
+            "semantic_class": "RELATIONSHIP"
+          }
+        ],
+        "qualification_links": [],
+        "semantic_role": "RELATIONSHIP",
+        "support": [
+          {
+            "document_id": "text-c0cb2519673b8f3e",
+            "end_char": 2124,
+            "model_path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/04-nasa-solar-system-formation-2026/admitted-knowledge-model.json",
+            "model_sha256": "d0a28afecf69d8edc55783eb41b4de78c72d81ef6007ac8121a003946b06b198",
+            "quote": "That’s why we see the planets moving around the Sun the way that they do today!",
+            "source_id": "nasa-solar-system-formation-2026",
+            "start_char": 2045
+          }
+        ]
+      },
+      {
+        "concise_text": "The Moon orbits around Earth.",
+        "epistemic_status": "ASSERTED_SOURCE_CLAIM",
+        "id": "unit-d2fd83341304f8",
+        "preserved_from": [
+          {
+            "id": "r24",
+            "semantic_class": "RELATIONSHIP"
+          }
+        ],
+        "qualification_links": [],
+        "semantic_role": "RELATIONSHIP",
+        "support": [
+          {
+            "document_id": "text-c0cb2519673b8f3e",
+            "end_char": 2180,
+            "model_path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/04-nasa-solar-system-formation-2026/admitted-knowledge-model.json",
+            "model_sha256": "d0a28afecf69d8edc55783eb41b4de78c72d81ef6007ac8121a003946b06b198",
+            "quote": "You might also know that the Moon orbits around Earth.",
+            "source_id": "nasa-solar-system-formation-2026",
+            "start_char": 2126
+          }
+        ]
+      },
+      {
+        "concise_text": "Star systems orbit around their entire galaxy.",
+        "epistemic_status": "ASSERTED_SOURCE_CLAIM",
+        "id": "unit-29d1bf6c4e2c5f",
+        "preserved_from": [
+          {
+            "id": "r25",
+            "semantic_class": "RELATIONSHIP"
+          }
+        ],
+        "qualification_links": [],
+        "semantic_role": "RELATIONSHIP",
+        "support": [
+          {
+            "document_id": "text-c0cb2519673b8f3e",
+            "end_char": 2397,
+            "model_path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/04-nasa-solar-system-formation-2026/admitted-knowledge-model.json",
+            "model_sha256": "d0a28afecf69d8edc55783eb41b4de78c72d81ef6007ac8121a003946b06b198",
+            "quote": "But star systems also have orbits. They orbit around their entire galaxy.",
+            "source_id": "nasa-solar-system-formation-2026",
+            "start_char": 2324
+          }
+        ]
+      },
+      {
+        "concise_text": "An orbit is the pattern made when planets go around the Sun.",
+        "epistemic_status": "ASSERTED_SOURCE_CLAIM",
+        "id": "unit-ff04215c7ec1d4",
+        "preserved_from": [
+          {
+            "id": "r26",
+            "semantic_class": "RELATIONSHIP"
+          }
+        ],
+        "qualification_links": [
+          {
+            "cue": "when",
+            "end_char": 33,
+            "start_char": 29
+          }
+        ],
+        "semantic_role": "QUALIFICATION_OR_UNCERTAINTY",
+        "support": [
+          {
+            "document_id": "text-c0cb2519673b8f3e",
+            "end_char": 1812,
+            "model_path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/04-nasa-solar-system-formation-2026/admitted-knowledge-model.json",
+            "model_sha256": "d0a28afecf69d8edc55783eb41b4de78c72d81ef6007ac8121a003946b06b198",
+            "quote": "We call the pattern that the planets make when they go around the Sun an “orbit.”",
+            "source_id": "nasa-solar-system-formation-2026",
+            "start_char": 1731
+          }
+        ]
+      }
+    ]
+  },
+  "independent_generation_audit": {
+    "destructive_chaining": false,
+    "r0_derived_directly_from_grounded_substrate": true,
+    "r1_derived_directly_from_grounded_substrate": true,
+    "r1_is_not_input_to_r2": true,
+    "r2_derived_directly_from_grounded_substrate": true,
+    "r2_is_not_input_to_r1": true
+  },
+  "provenance_recoverability_audit": {
+    "all_support_quotes_exact_source_ranges": true,
+    "coverage_ratio": 1.0,
+    "recoverable_to_r0": true,
+    "unit_count": 20,
+    "units_with_source_and_model_identity": 20,
+    "units_with_support": 20
+  },
+  "review_index": 4,
+  "role_distribution": {
+    "CORE_FACT": 7,
+    "MECHANISM": 7,
+    "QUALIFICATION_OR_UNCERTAINTY": 3,
+    "RELATIONSHIP": 3
+  },
+  "schema": "spec060.progressive-semantic-compression-case.v1",
+  "selection": {
+    "coverage": [
+      "FORMATION_MECHANISM",
+      "STRUCTURAL_RELATIONSHIP",
+      "QUALIFICATION_UNCERTAINTY",
+      "TEMPORAL_PROCESS"
+    ],
+    "frozen_corpus_order": 4,
+    "required_item_ids": [
+      "c1",
+      "c3",
+      "c4",
+      "c5",
+      "c6",
+      "c7",
+      "c8",
+      "c9",
+      "c10",
+      "r11",
+      "r12",
+      "r13",
+      "r16",
+      "r18",
+      "r20",
+      "r21",
+      "r23",
+      "r24",
+      "r25",
+      "r26"
+    ],
+    "source_or_domain_specific_rule": false
+  },
+  "semantic_preservation_audit": {
+    "contextual_item_disposition": [
+      {
+        "material_under_frozen_goal": false,
+        "reason": "Secondary detail remains recoverable in R0 and is outside the frozen essentiality plan.",
+        "semantic_class": "CLAIM",
+        "statement": "Plants, animals, microbes, and other living things on Earth have evolved there.",
+        "status": "OMITTED_AS_DEMONSTRABLY_REDUNDANT",
+        "upstream_id": "c2"
+      },
+      {
+        "material_under_frozen_goal": false,
+        "reason": "Evaluative or rhetorical framing is outside the frozen neutral goal.",
+        "semantic_class": "CLAIM",
+        "statement": "Orbits are important for understanding where humans came from.",
+        "status": "OMITTED_AS_DEMONSTRABLY_REDUNDANT",
+        "upstream_id": "c11"
+      },
+      {
+        "material_under_frozen_goal": false,
+        "reason": "Secondary detail remains recoverable in R0 and is outside the frozen essentiality plan.",
+        "semantic_class": "RELATIONSHIP",
+        "statement": "The Sun is part of the solar system.",
+        "status": "OMITTED_AS_DEMONSTRABLY_REDUNDANT",
+        "upstream_id": "r1"
+      },
+      {
+        "material_under_frozen_goal": false,
+        "reason": "Secondary detail remains recoverable in R0 and is outside the frozen essentiality plan.",
+        "semantic_class": "RELATIONSHIP",
+        "statement": "The planets are part of the solar system.",
+        "status": "OMITTED_AS_DEMONSTRABLY_REDUNDANT",
+        "upstream_id": "r2"
+      },
+      {
+        "material_under_frozen_goal": false,
+        "reason": "Secondary detail remains recoverable in R0 and is outside the frozen essentiality plan.",
+        "semantic_class": "RELATIONSHIP",
+        "statement": "Mercury is one of the planets in the solar system.",
+        "status": "OMITTED_AS_DEMONSTRABLY_REDUNDANT",
+        "upstream_id": "r3"
+      },
+      {
+        "material_under_frozen_goal": false,
+        "reason": "Secondary detail remains recoverable in R0 and is outside the frozen essentiality plan.",
+        "semantic_class": "RELATIONSHIP",
+        "statement": "Venus is one of the planets in the solar system.",
+        "status": "OMITTED_AS_DEMONSTRABLY_REDUNDANT",
+        "upstream_id": "r4"
+      },
+      {
+        "material_under_frozen_goal": false,
+        "reason": "Secondary detail remains recoverable in R0 and is outside the frozen essentiality plan.",
+        "semantic_class": "RELATIONSHIP",
+        "statement": "Earth is one of the planets in the solar system.",
+        "status": "OMITTED_AS_DEMONSTRABLY_REDUNDANT",
+        "upstream_id": "r5"
+      },
+      {
+        "material_under_frozen_goal": false,
+        "reason": "Secondary detail remains recoverable in R0 and is outside the frozen essentiality plan.",
+        "semantic_class": "RELATIONSHIP",
+        "statement": "Mars is one of the planets in the solar system.",
+        "status": "OMITTED_AS_DEMONSTRABLY_REDUNDANT",
+        "upstream_id": "r6"
+      },
+      {
+        "material_under_frozen_goal": false,
+        "reason": "Secondary detail remains recoverable in R0 and is outside the frozen essentiality plan.",
+        "semantic_class": "RELATIONSHIP",
+        "statement": "Jupiter is one of the planets in the solar system.",
+        "status": "OMITTED_AS_DEMONSTRABLY_REDUNDANT",
+        "upstream_id": "r7"
+      },
+      {
+        "material_under_frozen_goal": false,
+        "reason": "Secondary detail remains recoverable in R0 and is outside the frozen essentiality plan.",
+        "semantic_class": "RELATIONSHIP",
+        "statement": "Saturn is one of the planets in the solar system.",
+        "status": "OMITTED_AS_DEMONSTRABLY_REDUNDANT",
+        "upstream_id": "r8"
+      },
+      {
+        "material_under_frozen_goal": false,
+        "reason": "Secondary detail remains recoverable in R0 and is outside the frozen essentiality plan.",
+        "semantic_class": "RELATIONSHIP",
+        "statement": "Uranus is one of the planets in the solar system.",
+        "status": "OMITTED_AS_DEMONSTRABLY_REDUNDANT",
+        "upstream_id": "r9"
+      },
+      {
+        "material_under_frozen_goal": false,
+        "reason": "Secondary detail remains recoverable in R0 and is outside the frozen essentiality plan.",
+        "semantic_class": "RELATIONSHIP",
+        "statement": "Neptune is one of the planets in the solar system.",
+        "status": "OMITTED_AS_DEMONSTRABLY_REDUNDANT",
+        "upstream_id": "r10"
+      },
+      {
+        "material_under_frozen_goal": false,
+        "reason": "Secondary detail remains recoverable in R0 and is outside the frozen essentiality plan.",
+        "semantic_class": "RELATIONSHIP",
+        "statement": "A mass can grow large enough to form a planet.",
+        "status": "OMITTED_AS_DEMONSTRABLY_REDUNDANT",
+        "upstream_id": "r14"
+      },
+      {
+        "material_under_frozen_goal": false,
+        "reason": "Secondary detail remains recoverable in R0 and is outside the frozen essentiality plan.",
+        "semantic_class": "RELATIONSHIP",
+        "statement": "A mass can grow large enough to form a new star.",
+        "status": "OMITTED_AS_DEMONSTRABLY_REDUNDANT",
+        "upstream_id": "r15"
+      },
+      {
+        "material_under_frozen_goal": false,
+        "reason": "Secondary detail remains recoverable in R0 and is outside the frozen essentiality plan.",
+        "semantic_class": "RELATIONSHIP",
+        "statement": "A supernova has enough energy to make gas and dust in nearby nebulae start spinning.",
+        "status": "OMITTED_AS_DEMONSTRABLY_REDUNDANT",
+        "upstream_id": "r17"
+      },
+      {
+        "material_under_frozen_goal": false,
+        "reason": "Secondary detail remains recoverable in R0 and is outside the frozen essentiality plan.",
+        "semantic_class": "RELATIONSHIP",
+        "statement": "The spinning caused material in the nebula to fall into its center.",
+        "status": "OMITTED_AS_DEMONSTRABLY_REDUNDANT",
+        "upstream_id": "r19"
+      },
+      {
+        "material_under_frozen_goal": false,
+        "reason": "Secondary detail remains recoverable in R0 and is outside the frozen essentiality plan.",
+        "semantic_class": "RELATIONSHIP",
+        "statement": "Planet formation produced the eight planets.",
+        "status": "OMITTED_AS_DEMONSTRABLY_REDUNDANT",
+        "upstream_id": "r22"
+      }
+    ],
+    "forbidden_required_status_count": 0,
+    "material_omission_count": 0,
+    "required_item_count": 20,
+    "required_items": [
+      {
+        "material": true,
+        "r1_status": "PRESERVED_EXPLICITLY",
+        "r2_status": "PRESERVED_EXPLICITLY",
+        "semantic_class": "CLAIM",
+        "statement": "Earth is the only world known to have life.",
+        "upstream_id": "c1"
+      },
+      {
+        "material": true,
+        "r1_status": "PRESERVED_EXPLICITLY",
+        "r2_status": "PRESERVED_EXPLICITLY",
+        "semantic_class": "CLAIM",
+        "statement": "The Sun, planets, and other contents of the solar system formed from a large cloud of gas and dust in space.",
+        "upstream_id": "c3"
+      },
+      {
+        "material": true,
+        "r1_status": "PRESERVED_EXPLICITLY",
+        "r2_status": "PRESERVED_EXPLICITLY",
+        "semantic_class": "CLAIM",
+        "statement": "A nebula is a cloud of gas and dust in space, and nebulae is the plural term.",
+        "upstream_id": "c4"
+      },
+      {
+        "material": true,
+        "r1_status": "PRESERVED_EXPLICITLY",
+        "r2_status": "PRESERVED_EXPLICITLY",
+        "semantic_class": "CLAIM",
+        "statement": "Nebulae are massive clouds of dust and debris containing the ingredients to form stars and planets.",
+        "upstream_id": "c5"
+      },
+      {
+        "material": true,
+        "r1_status": "PRESERVED_EXPLICITLY",
+        "r2_status": "PRESERVED_EXPLICITLY",
+        "semantic_class": "CLAIM",
+        "statement": "The solar system may have formed from a large nebula after a nearby star exploded.",
+        "upstream_id": "c6"
+      },
+      {
+        "material": true,
+        "r1_status": "PRESERVED_EXPLICITLY",
+        "r2_status": "PRESERVED_EXPLICITLY",
+        "semantic_class": "CLAIM",
+        "statement": "A supernova is an explosion of a big star.",
+        "upstream_id": "c7"
+      },
+      {
+        "material": true,
+        "r1_status": "PRESERVED_EXPLICITLY",
+        "r2_status": "PRESERVED_EXPLICITLY",
+        "semantic_class": "CLAIM",
+        "statement": "The young planets eventually became the eight planets listed in the source.",
+        "upstream_id": "c8"
+      },
+      {
+        "material": true,
+        "r1_status": "PRESERVED_EXPLICITLY",
+        "r2_status": "PRESERVED_EXPLICITLY",
+        "semantic_class": "CLAIM",
+        "statement": "The Moon must be in orbit around a planet to be a moon.",
+        "upstream_id": "c9"
+      },
+      {
+        "material": true,
+        "r1_status": "PRESERVED_EXPLICITLY",
+        "r2_status": "PRESERVED_EXPLICITLY",
+        "semantic_class": "CLAIM",
+        "statement": "A planet has to be orbiting a star.",
+        "upstream_id": "c10"
+      },
+      {
+        "material": true,
+        "r1_status": "PRESERVED_EXPLICITLY",
+        "r2_status": "PRESERVED_EXPLICITLY",
+        "semantic_class": "RELATIONSHIP",
+        "statement": "Stars form from nebulae.",
+        "upstream_id": "r11"
+      },
+      {
+        "material": true,
+        "r1_status": "PRESERVED_EXPLICITLY",
+        "r2_status": "PRESERVED_EXPLICITLY",
+        "semantic_class": "RELATIONSHIP",
+        "statement": "Planets form from nebulae.",
+        "upstream_id": "r12"
+      },
+      {
+        "material": true,
+        "r1_status": "PRESERVED_EXPLICITLY",
+        "r2_status": "PRESERVED_EXPLICITLY",
+        "semantic_class": "RELATIONSHIP",
+        "statement": "Material sticking together forms a large mass.",
+        "upstream_id": "r13"
+      },
+      {
+        "material": true,
+        "r1_status": "PRESERVED_EXPLICITLY",
+        "r2_status": "PRESERVED_EXPLICITLY",
+        "semantic_class": "RELATIONSHIP",
+        "statement": "A supernova has enough energy to make gas and dust in nearby nebulae start swirling.",
+        "upstream_id": "r16"
+      },
+      {
+        "material": true,
+        "r1_status": "PRESERVED_EXPLICITLY",
+        "r2_status": "PRESERVED_EXPLICITLY",
+        "semantic_class": "RELATIONSHIP",
+        "statement": "The swirling caused material in the nebula to fall into its center.",
+        "upstream_id": "r18"
+      },
+      {
+        "material": true,
+        "r1_status": "PRESERVED_EXPLICITLY",
+        "r2_status": "PRESERVED_EXPLICITLY",
+        "semantic_class": "RELATIONSHIP",
+        "statement": "Collisions among gas and dust formed little pieces of metal and rock.",
+        "upstream_id": "r20"
+      },
+      {
+        "material": true,
+        "r1_status": "PRESERVED_EXPLICITLY",
+        "r2_status": "PRESERVED_EXPLICITLY",
+        "semantic_class": "RELATIONSHIP",
+        "statement": "Many collisions over a long time formed the eight planets.",
+        "upstream_id": "r21"
+      },
+      {
+        "material": true,
+        "r1_status": "PRESERVED_EXPLICITLY",
+        "r2_status": "PRESERVED_EXPLICITLY",
+        "semantic_class": "RELATIONSHIP",
+        "statement": "The planets move around the Sun.",
+        "upstream_id": "r23"
+      },
+      {
+        "material": true,
+        "r1_status": "PRESERVED_EXPLICITLY",
+        "r2_status": "PRESERVED_EXPLICITLY",
+        "semantic_class": "RELATIONSHIP",
+        "statement": "The Moon orbits around Earth.",
+        "upstream_id": "r24"
+      },
+      {
+        "material": true,
+        "r1_status": "PRESERVED_EXPLICITLY",
+        "r2_status": "PRESERVED_EXPLICITLY",
+        "semantic_class": "RELATIONSHIP",
+        "statement": "Star systems orbit around their entire galaxy.",
+        "upstream_id": "r25"
+      },
+      {
+        "material": true,
+        "r1_status": "PRESERVED_EXPLICITLY",
+        "r2_status": "PRESERVED_EXPLICITLY",
+        "semantic_class": "RELATIONSHIP",
+        "statement": "An orbit is the pattern made when planets go around the Sun.",
+        "upstream_id": "r26"
+      }
+    ],
+    "semantic_change_count": 0,
+    "unsupported_new_information_count": 0
+  },
+  "source_identity": {
+    "canonical_url": "https://science.nasa.gov/astrobiology/learning-resources/alp/how-did-our-solar-system-form/",
+    "document_id": "text-c0cb2519673b8f3e",
+    "domain": "astronomy / planetary science",
+    "institutional_publisher": "National Aeronautics and Space Administration",
+    "model_path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/04-nasa-solar-system-formation-2026/admitted-knowledge-model.json",
+    "model_sha256": "d0a28afecf69d8edc55783eb41b4de78c72d81ef6007ac8121a003946b06b198",
+    "source_id": "nasa-solar-system-formation-2026",
+    "source_sha256": "c0cb2519673b8f3ef23c0be2856e03790f53d44971cbff09d593190ab3fa155d",
+    "title": "How did our Solar System form?"
+  },
+  "views": {
+    "R0": {
+      "depends_on": [],
+      "direct_input": "FROZEN_ADMITTED_DOCUMENT_TEXT",
+      "identity_sha256": "c0cb2519673b8f3ef23c0be2856e03790f53d44971cbff09d593190ab3fa155d",
+      "resolution": "SOURCE_RICH",
+      "text": "Earth is the only world that we know of that has life. All of the plants and animals and microbes and other living things on Earth have evolved here. So, for us to understand where life as we know it came from, we need to understand where our planet came from.\n\nThe Sun and the planets and all of the other stuff in our solar system all formed from a really big cloud of gas and dust in space. We call such a cloud a “nebula” and more than one of them we refer to as “nebulae.” There are nebulae all around our galaxy, and it’s from these nebulae that stars and planets form. Nebulae are massive clouds of dust and debris in space and have all the ingredients to form stars and planets. When enough material is available, it begins to stick together forming a large mass. In time, the mass can grow large enough to form a planet or even a new star.\n\nWe currently think that our solar system formed from a large nebula, perhaps after the explosion of a nearby star. Some big stars can explode, something called a supernova, and that explosion has enough energy to make the gas and dust in nearby nebulae start swirling and spinning about. As this happened, it caused a lot of the material in the nebula to fall into its center, and that’s where the Sun started forming. Meanwhile, the rest of the gas and dust in the nebula began colliding and sticking together, making little pieces of metal and rock. Those small pieces then collided with each other, forming larger pieces, which then collided with each other to form even larger ones. These were young planets, and eventually, over a long time and through many, many collisions, our eight planets were formed – Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, and Neptune.\n\nWe call the pattern that the planets make when they go around the Sun an “orbit.” Well, when the planets were first forming from that cloud in space, the cloud itself was spinning in the same direction as the orbits of the planets today, with the Sun forming in the middle and also spinning in the same direction. That’s why we see the planets moving around the Sun the way that they do today!\n\nYou might also know that the Moon orbits around Earth. For something to be a moon, it needs to be in orbit around a planet. One thing that makes a planet is that a planet has to be orbiting a star. But star systems also have orbits. They orbit around their entire galaxy. So, orbits are really important for us to learn about if we want to know where we came from."
+    },
+    "R1": {
+      "depends_on": [],
+      "direct_input": "FROZEN_SOURCE_TEXT_AND_REQUIRED_EVIDENCE_RANGES",
+      "identity_sha256": "beae4102a4ff45ddb4046e74c6674cdf5979f947e56fd61e63e686c879dce8bd",
+      "resolution": "ESSENTIAL_EXPLANATION",
+      "segments": [
+        {
+          "end_char": 54,
+          "start_char": 0,
+          "support_ids": [
+            "c1"
+          ],
+          "text": "Earth is the only world that we know of that has life.",
+          "text_sha256": "8e1ef6b926c6de0135fc99e9a2dbb77de54f75577f0119f1dbd20ab1581ba3ad"
+        },
+        {
+          "end_char": 393,
+          "start_char": 262,
+          "support_ids": [
+            "c3"
+          ],
+          "text": "The Sun and the planets and all of the other stuff in our solar system all formed from a really big cloud of gas and dust in space.",
+          "text_sha256": "c3070adfdec0cefb0099e549dc6d916da4a7f46f5f7b5b1d7920acc46f4e57e5"
+        },
+        {
+          "end_char": 477,
+          "start_char": 394,
+          "support_ids": [
+            "c4"
+          ],
+          "text": "We call such a cloud a “nebula” and more than one of them we refer to as “nebulae.”",
+          "text_sha256": "7f649176c050bcc39c41fef289d55a96b7d952582d909273303d29611fcc553f"
+        },
+        {
+          "end_char": 575,
+          "start_char": 478,
+          "support_ids": [
+            "r11",
+            "r12"
+          ],
+          "text": "There are nebulae all around our galaxy, and it’s from these nebulae that stars and planets form.",
+          "text_sha256": "2d2a81bd1cfd39545e945bc44e1ac2beb58bd7099b30f87954fc165ced748caa"
+        },
+        {
+          "end_char": 686,
+          "start_char": 576,
+          "support_ids": [
+            "c5"
+          ],
+          "text": "Nebulae are massive clouds of dust and debris in space and have all the ingredients to form stars and planets.",
+          "text_sha256": "40f2b4cf95827ff34bec2e5c49517e6e41b75d5758f3f8bc336202bd6b6474a4"
+        },
+        {
+          "end_char": 771,
+          "start_char": 687,
+          "support_ids": [
+            "r13"
+          ],
+          "text": "When enough material is available, it begins to stick together forming a large mass.",
+          "text_sha256": "45f46389072759b35cf2b9819dcc36b26220458506048ce6419335386e451fd0"
+        },
+        {
+          "end_char": 964,
+          "start_char": 850,
+          "support_ids": [
+            "c6"
+          ],
+          "text": "We currently think that our solar system formed from a large nebula, perhaps after the explosion of a nearby star.",
+          "text_sha256": "1253b2d828e47b9a7956e7a3ecf567f348e65d756c7d4d348b8d363b6985e531"
+        },
+        {
+          "end_char": 1137,
+          "start_char": 965,
+          "support_ids": [
+            "c7",
+            "r16"
+          ],
+          "text": "Some big stars can explode, something called a supernova, and that explosion has enough energy to make the gas and dust in nearby nebulae start swirling and spinning about.",
+          "text_sha256": "3e4a624caac9c54c24d6cb9b84f7b3f34c8f64b01e474762a19831074f1d95e1"
+        },
+        {
+          "end_char": 1268,
+          "start_char": 1138,
+          "support_ids": [
+            "r18"
+          ],
+          "text": "As this happened, it caused a lot of the material in the nebula to fall into its center, and that’s where the Sun started forming.",
+          "text_sha256": "80f41320f2fc62137bfd03f5c77d4edf0a4c2d9d82c38ef894dbbd79680ef789"
+        },
+        {
+          "end_char": 1401,
+          "start_char": 1269,
+          "support_ids": [
+            "r20"
+          ],
+          "text": "Meanwhile, the rest of the gas and dust in the nebula began colliding and sticking together, making little pieces of metal and rock.",
+          "text_sha256": "2993258527092a95f00047dd16e91640b90da7b03715354ba2b2882258c06cd6"
+        },
+        {
+          "end_char": 1729,
+          "start_char": 1537,
+          "support_ids": [
+            "c8",
+            "r21"
+          ],
+          "text": "These were young planets, and eventually, over a long time and through many, many collisions, our eight planets were formed – Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, and Neptune.",
+          "text_sha256": "8bb090a71649b19fd63218d2942621de802b02e882da1220211c9aa6ee6bfa5f"
+        },
+        {
+          "end_char": 1812,
+          "start_char": 1731,
+          "support_ids": [
+            "r26"
+          ],
+          "text": "We call the pattern that the planets make when they go around the Sun an “orbit.”",
+          "text_sha256": "e3bd250b01ce9d0bc2ceb328758d3d6cb7938402d7881a4c297a47b0b9559f16"
+        },
+        {
+          "end_char": 2124,
+          "start_char": 2045,
+          "support_ids": [
+            "r23"
+          ],
+          "text": "That’s why we see the planets moving around the Sun the way that they do today!",
+          "text_sha256": "11d9efd46d924e7714dc444232268f8fb8ee283f57285961b24d6ae29d253f7e"
+        },
+        {
+          "end_char": 2180,
+          "start_char": 2126,
+          "support_ids": [
+            "r24"
+          ],
+          "text": "You might also know that the Moon orbits around Earth.",
+          "text_sha256": "b200615e929d2af028cf385f57cc4410c4ce9e6ec0546c76f99204507522bb97"
+        },
+        {
+          "end_char": 2249,
+          "start_char": 2181,
+          "support_ids": [
+            "c9"
+          ],
+          "text": "For something to be a moon, it needs to be in orbit around a planet.",
+          "text_sha256": "273dde562a40238c873f166b265dd40e71b7a5d72c419f233977ec58a8574722"
+        },
+        {
+          "end_char": 2323,
+          "start_char": 2250,
+          "support_ids": [
+            "c10"
+          ],
+          "text": "One thing that makes a planet is that a planet has to be orbiting a star.",
+          "text_sha256": "1823cb1bea2799d29b31243eea8185f69e69126dae52b70aca879807ee366e8d"
+        },
+        {
+          "end_char": 2397,
+          "start_char": 2324,
+          "support_ids": [
+            "r25"
+          ],
+          "text": "But star systems also have orbits. They orbit around their entire galaxy.",
+          "text_sha256": "9dd4c78db5f26b9b01d600c6e357540d89fbe8346c260c6356a2bbd4a2268ac7"
+        }
+      ],
+      "text": "Earth is the only world that we know of that has life.\n\nThe Sun and the planets and all of the other stuff in our solar system all formed from a really big cloud of gas and dust in space.\n\nWe call such a cloud a “nebula” and more than one of them we refer to as “nebulae.”\n\nThere are nebulae all around our galaxy, and it’s from these nebulae that stars and planets form.\n\nNebulae are massive clouds of dust and debris in space and have all the ingredients to form stars and planets.\n\nWhen enough material is available, it begins to stick together forming a large mass.\n\nWe currently think that our solar system formed from a large nebula, perhaps after the explosion of a nearby star.\n\nSome big stars can explode, something called a supernova, and that explosion has enough energy to make the gas and dust in nearby nebulae start swirling and spinning about.\n\nAs this happened, it caused a lot of the material in the nebula to fall into its center, and that’s where the Sun started forming.\n\nMeanwhile, the rest of the gas and dust in the nebula began colliding and sticking together, making little pieces of metal and rock.\n\nThese were young planets, and eventually, over a long time and through many, many collisions, our eight planets were formed – Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, and Neptune.\n\nWe call the pattern that the planets make when they go around the Sun an “orbit.”\n\nThat’s why we see the planets moving around the Sun the way that they do today!\n\nYou might also know that the Moon orbits around Earth.\n\nFor something to be a moon, it needs to be in orbit around a planet.\n\nOne thing that makes a planet is that a planet has to be orbiting a star.\n\nBut star systems also have orbits. They orbit around their entire galaxy."
+    },
+    "R2": {
+      "depends_on": [],
+      "direct_input": "FROZEN_ADMITTED_SEMANTIC_ITEMS_AND_EVIDENCE",
+      "identity_sha256": "6baf87e1cf4512a3274a60258adf043c004897447e88be40b5eacc91ee6750da",
+      "resolution": "ESSENTIAL_UNITS",
+      "text": "Earth is the only world known to have life.\nThe Sun, planets, and other contents of the solar system formed from a large cloud of gas and dust in space.\nA nebula is a cloud of gas and dust in space, and nebulae is the plural term.\nNebulae are massive clouds of dust and debris containing the ingredients to form stars and planets.\nThe solar system may have formed from a large nebula after a nearby star exploded.\nA supernova is an explosion of a big star.\nThe young planets eventually became the eight planets listed in the source.\nThe Moon must be in orbit around a planet to be a moon.\nA planet has to be orbiting a star.\nStars form from nebulae.\nPlanets form from nebulae.\nMaterial sticking together forms a large mass.\nA supernova has enough energy to make gas and dust in nearby nebulae start swirling.\nThe swirling caused material in the nebula to fall into its center.\nCollisions among gas and dust formed little pieces of metal and rock.\nMany collisions over a long time formed the eight planets.\nThe planets move around the Sun.\nThe Moon orbits around Earth.\nStar systems orbit around their entire galaxy.\nAn orbit is the pattern made when planets go around the Sun.",
+      "unit_ids": [
+        "unit-4140e6bd7157ee",
+        "unit-ff96c1f7817884",
+        "unit-33027db2a151cb",
+        "unit-fba78e9e7e5027",
+        "unit-6779356055eb6c",
+        "unit-633f780eb7bf9d",
+        "unit-fdf6274c33eb20",
+        "unit-5186a03e8a06f8",
+        "unit-b9d5668f08d87a",
+        "unit-64631966eef259",
+        "unit-0d49899c133a51",
+        "unit-16c8a559e7be14",
+        "unit-3a1d9eb210d536",
+        "unit-ca58f7a3a14fe4",
+        "unit-606214c38a0177",
+        "unit-1c4a347383d8fd",
+        "unit-2b4c7ac9950942",
+        "unit-d2fd83341304f8",
+        "unit-29d1bf6c4e2c5f",
+        "unit-ff04215c7ec1d4"
+      ]
+    }
+  }
+}

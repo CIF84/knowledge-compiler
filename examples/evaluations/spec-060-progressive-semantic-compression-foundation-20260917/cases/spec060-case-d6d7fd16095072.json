@@ -1,0 +1,1036 @@
+{
+  "admission": {
+    "admitted_for_owner_review": true,
+    "machine_learning_or_pedagogical_verdict": "NOT_ASSIGNED"
+  },
+  "case_identity": "spec060-case-d6d7fd16095072",
+  "epistemic_preservation_audit": {
+    "attribution_preserved": true,
+    "causal_vs_associational_status_preserved": true,
+    "epistemic_status_distribution": {
+      "ASSERTED_SOURCE_CLAIM": 12,
+      "ATTRIBUTED_SOURCE_CLAIM": 2,
+      "OBSERVATIONAL_OR_ASSOCIATIONAL": 1
+    },
+    "precision_preserved_where_selected": true,
+    "qualification_links_preserved_verbatim": true,
+    "strengthened_certainty_or_causality_count": 0,
+    "temporal_scope_preserved_where_selected": true,
+    "units_with_explicit_qualification_links": 7,
+    "values_and_units_preserved_verbatim": true
+  },
+  "essential_information_model": {
+    "compression_metrics": {
+      "grounded_semantic_unit_count": 15,
+      "r0": {
+        "characters": 2664,
+        "sha256": "e9d2260c9980239431fc195e7dc687afea93598af4f28d774ed5e4c4317f9e1e",
+        "words": 385
+      },
+      "r1": {
+        "characters": 1937,
+        "sha256": "81ef3089ceed01432750e474ef267419a07c929d63b607e9b3deb185422b040a",
+        "words": 278
+      },
+      "r1_to_r0_character_ratio": 0.7271,
+      "r1_to_r0_word_ratio": 0.7221,
+      "r2": {
+        "characters": 1979,
+        "sha256": "39f4770a2a3b154b9533c8e10a4efc258ad6ddadb035ce8f7ebeeb69ca3bf666",
+        "words": 273
+      },
+      "r2_to_r0_character_ratio": 0.7429,
+      "r2_to_r0_word_ratio": 0.7091
+    },
+    "goal": "Preserve the information necessary to accurately understand the source's core explanatory content, including material qualifications and epistemic status, while removing rhetorical, repetitive and linguistically redundant expression.",
+    "omitted_fragments": [
+      {
+        "omission_reason": "DETAIL_OR_LINGUISTIC_CONTEXT_RETAINED_IN_R0",
+        "text": "It was a big challenge and a small particle.",
+        "upstream_identity": {
+          "end_char": 44,
+          "sha256": "4b105a987363abf902c40e20ad3403e10912a10425e6580f551951a287f35195",
+          "start_char": 0
+        }
+      },
+      {
+        "omission_reason": "RHETORICAL_OR_EVALUATIVE_FRAMING",
+        "text": "This work makes major advances in characterizing materials. It also expands our understanding of how a material's structure and behavior are related in defected materials. Further, scientists expect this approach to find broad use in materials science, physics, chemistry, and other fields.\n\nThe ability to correlate the 3D arrangements of atoms and defects with a material's properties and functionality is vital in designing new and improved materials for a myriad of applications.",
+        "upstream_identity": {
+          "end_char": 1224,
+          "sha256": "8edacc1d94b5a71a82d119a1b725832f18406aacccd033f77f9b59fd9090c6db",
+          "start_char": 741
+        }
+      },
+      {
+        "omission_reason": "DETAIL_OR_LINGUISTIC_CONTEXT_RETAINED_IN_R0",
+        "text": ", anti-site point defects and",
+        "upstream_identity": {
+          "end_char": 1813,
+          "sha256": "8d3bcfdbc3ea1f95ac2242d6a6da041a5c11d1845f04693999576852d6021e3c",
+          "start_char": 1784
+        }
+      },
+      {
+        "omission_reason": "DETAIL_OR_LINGUISTIC_CONTEXT_RETAINED_IN_R0",
+        "text": ".",
+        "upstream_identity": {
+          "end_char": 1896,
+          "sha256": "cdb4ee2aea69cc6a83331bbe96dc2caa9a299d21329efb0336fc02a82e1839a8",
+          "start_char": 1895
+        }
+      },
+      {
+        "omission_reason": "DETAIL_OR_LINGUISTIC_CONTEXT_RETAINED_IN_R0",
+        "text": "such as atomic magnetic moments and local magnetocrystalline anisotropy.",
+        "upstream_identity": {
+          "end_char": 2310,
+          "sha256": "b509e8b3db5c791becb5c21168d40f3b42bbb0cd5f8aa2d6aec54b6ee67eeb3e",
+          "start_char": 2238
+        }
+      },
+      {
+        "omission_reason": "RHETORICAL_OR_EVALUATIVE_FRAMING",
+        "text": "that could transform our understanding of structure-property relationships at the most fundamental level.",
+        "upstream_identity": {
+          "end_char": 2664,
+          "sha256": "7c609bc941d7d8975d1c1b1d5325779ad4c0c372920470e93e6e0e7a5d877cff",
+          "start_char": 2559
+        }
+      }
+    ],
+    "schema": "spec060.essential-information-model.v1",
+    "source_identity": {
+      "model_sha256": "29b475ec6742e1f7d49e9e5f29bbcd8a9c967d678a7d53f6ae58ae44f28acb7e",
+      "required_item_ids": [
+        "c1",
+        "c2",
+        "c3",
+        "c4",
+        "c5",
+        "c6",
+        "c10",
+        "c11",
+        "c12",
+        "c13",
+        "c14",
+        "c15",
+        "c16",
+        "c17",
+        "c18"
+      ],
+      "source_id": "doe-iron-platinum-atomic-structure-2017",
+      "source_sha256": "e9d2260c9980239431fc195e7dc687afea93598af4f28d774ed5e4c4317f9e1e"
+    },
+    "units": [
+      {
+        "concise_text": "Scientists determined the three-dimensional position of more than 23,000 atoms in a tiny iron-platinum particle with 22 picometer precision.",
+        "epistemic_status": "ATTRIBUTED_SOURCE_CLAIM",
+        "id": "unit-b956298d492988",
+        "preserved_from": [
+          {
+            "id": "c1",
+            "semantic_class": "CLAIM"
+          }
+        ],
+        "qualification_links": [
+          {
+            "cue": "more than",
+            "end_char": 65,
+            "start_char": 56
+          }
+        ],
+        "semantic_role": "QUANTITATIVE_FACT",
+        "support": [
+          {
+            "document_id": "text-e9d2260c99802394",
+            "end_char": 185,
+            "model_path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/06-doe-iron-platinum-atomic-structure-2017/admitted-knowledge-model.json",
+            "model_sha256": "29b475ec6742e1f7d49e9e5f29bbcd8a9c967d678a7d53f6ae58ae44f28acb7e",
+            "quote": "Scientists determined the three-dimensional position of more than 23,000 atoms in a tiny iron-platinum particle with 22 picometer precision.",
+            "source_id": "doe-iron-platinum-atomic-structure-2017",
+            "start_char": 45
+          }
+        ]
+      },
+      {
+        "concise_text": "The observed chemical order/disorder and defects in the atomic structure were correlated with magnetic properties at the single-atom level.",
+        "epistemic_status": "OBSERVATIONAL_OR_ASSOCIATIONAL",
+        "id": "unit-fa0f796acc9570",
+        "preserved_from": [
+          {
+            "id": "c2",
+            "semantic_class": "CLAIM"
+          }
+        ],
+        "qualification_links": [],
+        "semantic_role": "CORE_FACT",
+        "support": [
+          {
+            "document_id": "text-e9d2260c99802394",
+            "end_char": 325,
+            "model_path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/06-doe-iron-platinum-atomic-structure-2017/admitted-knowledge-model.json",
+            "model_sha256": "29b475ec6742e1f7d49e9e5f29bbcd8a9c967d678a7d53f6ae58ae44f28acb7e",
+            "quote": "They correlated the observed chemical order/disorder and defects in the atomic structure with magnetic properties at the single-atom level.",
+            "source_id": "doe-iron-platinum-atomic-structure-2017",
+            "start_char": 186
+          }
+        ]
+      },
+      {
+        "concise_text": "The data can support modeling and design of new materials whose atomic composition is tailored to obtain desired properties.",
+        "epistemic_status": "ASSERTED_SOURCE_CLAIM",
+        "id": "unit-e47600323c0988",
+        "preserved_from": [
+          {
+            "id": "c3",
+            "semantic_class": "CLAIM"
+          }
+        ],
+        "qualification_links": [
+          {
+            "cue": "can",
+            "end_char": 12,
+            "start_char": 9
+          }
+        ],
+        "semantic_role": "QUALIFICATION_OR_UNCERTAINTY",
+        "support": [
+          {
+            "document_id": "text-e9d2260c99802394",
+            "end_char": 461,
+            "model_path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/06-doe-iron-platinum-atomic-structure-2017/admitted-knowledge-model.json",
+            "model_sha256": "29b475ec6742e1f7d49e9e5f29bbcd8a9c967d678a7d53f6ae58ae44f28acb7e",
+            "quote": "This data can serve scientists to model and design new materials whose atomic composition is tailored to obtain the desired properties.",
+            "source_id": "doe-iron-platinum-atomic-structure-2017",
+            "start_char": 326
+          }
+        ]
+      },
+      {
+        "concise_text": "Perfect crystals are rare in nature.",
+        "epistemic_status": "ASSERTED_SOURCE_CLAIM",
+        "id": "unit-e6dd76e3b7c482",
+        "preserved_from": [
+          {
+            "id": "c4",
+            "semantic_class": "CLAIM"
+          }
+        ],
+        "qualification_links": [],
+        "semantic_role": "CORE_FACT",
+        "support": [
+          {
+            "document_id": "text-e9d2260c99802394",
+            "end_char": 499,
+            "model_path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/06-doe-iron-platinum-atomic-structure-2017/admitted-knowledge-model.json",
+            "model_sha256": "29b475ec6742e1f7d49e9e5f29bbcd8a9c967d678a7d53f6ae58ae44f28acb7e",
+            "quote": "Perfect crystals are rare in nature.",
+            "source_id": "doe-iron-platinum-atomic-structure-2017",
+            "start_char": 463
+          }
+        ]
+      },
+      {
+        "concise_text": "Much of modern science and technology relies on materials with defects and disorder.",
+        "epistemic_status": "ASSERTED_SOURCE_CLAIM",
+        "id": "unit-7cb27665445190",
+        "preserved_from": [
+          {
+            "id": "c5",
+            "semantic_class": "CLAIM"
+          }
+        ],
+        "qualification_links": [],
+        "semantic_role": "CORE_FACT",
+        "support": [
+          {
+            "document_id": "text-e9d2260c99802394",
+            "end_char": 586,
+            "model_path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/06-doe-iron-platinum-atomic-structure-2017/admitted-knowledge-model.json",
+            "model_sha256": "29b475ec6742e1f7d49e9e5f29bbcd8a9c967d678a7d53f6ae58ae44f28acb7e",
+            "quote": "Much of our modern science and technology rely on materials with defects and disorder.",
+            "source_id": "doe-iron-platinum-atomic-structure-2017",
+            "start_char": 500
+          }
+        ]
+      },
+      {
+        "concise_text": "Understanding disorder and its effect on material properties is critical to designing improved materials for energy production, storage, and use.",
+        "epistemic_status": "ASSERTED_SOURCE_CLAIM",
+        "id": "unit-cbaf447b8a7f93",
+        "preserved_from": [
+          {
+            "id": "c6",
+            "semantic_class": "CLAIM"
+          }
+        ],
+        "qualification_links": [],
+        "semantic_role": "CORE_FACT",
+        "support": [
+          {
+            "document_id": "text-e9d2260c99802394",
+            "end_char": 740,
+            "model_path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/06-doe-iron-platinum-atomic-structure-2017/admitted-knowledge-model.json",
+            "model_sha256": "29b475ec6742e1f7d49e9e5f29bbcd8a9c967d678a7d53f6ae58ae44f28acb7e",
+            "quote": "Understanding the disorder – and its effect on material properties – are critical to designing improved materials for energy production, storage and use.",
+            "source_id": "doe-iron-platinum-atomic-structure-2017",
+            "start_char": 587
+          }
+        ]
+      },
+      {
+        "concise_text": "Scientists determined the three-dimensional coordinates of 6,569 iron atoms and 16,627 platinum atoms in an iron-platinum nanoparticle.",
+        "epistemic_status": "ATTRIBUTED_SOURCE_CLAIM",
+        "id": "unit-ad5690568c98a9",
+        "preserved_from": [
+          {
+            "id": "c10",
+            "semantic_class": "CLAIM"
+          }
+        ],
+        "qualification_links": [],
+        "semantic_role": "QUANTITATIVE_FACT",
+        "support": [
+          {
+            "document_id": "text-e9d2260c99802394",
+            "end_char": 1357,
+            "model_path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/06-doe-iron-platinum-atomic-structure-2017/admitted-knowledge-model.json",
+            "model_sha256": "29b475ec6742e1f7d49e9e5f29bbcd8a9c967d678a7d53f6ae58ae44f28acb7e",
+            "quote": "In this research, scientists determined the 3D coordinates of 6,569 iron and 16,627 platinum atoms in an iron-platinum nanoparticle.",
+            "source_id": "doe-iron-platinum-atomic-structure-2017",
+            "start_char": 1225
+          }
+        ]
+      },
+      {
+        "concise_text": "Atomic electron tomography is an imaging technique used to correlate three-dimensional atomic arrangements and chemical order/disorder with material properties at the single-atom level.",
+        "epistemic_status": "ASSERTED_SOURCE_CLAIM",
+        "id": "unit-15b83894d9c6e1",
+        "preserved_from": [
+          {
+            "id": "c11",
+            "semantic_class": "CLAIM"
+          }
+        ],
+        "qualification_links": [],
+        "semantic_role": "CORE_FACT",
+        "support": [
+          {
+            "document_id": "text-e9d2260c99802394",
+            "end_char": 1537,
+            "model_path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/06-doe-iron-platinum-atomic-structure-2017/admitted-knowledge-model.json",
+            "model_sha256": "29b475ec6742e1f7d49e9e5f29bbcd8a9c967d678a7d53f6ae58ae44f28acb7e",
+            "quote": "They used an imaging technique called atomic electron tomography to correlate 3D atomic arrangements and chemical order/disorder with material properties at the single-atom level.",
+            "source_id": "doe-iron-platinum-atomic-structure-2017",
+            "start_char": 1358
+          }
+        ]
+      },
+      {
+        "concise_text": "The research identified rich structural variety and chemical order/disorder with unprecedented three-dimensional detail, including atomic composition and grain boundaries.",
+        "epistemic_status": "ASSERTED_SOURCE_CLAIM",
+        "id": "unit-be5ea225310fde",
+        "preserved_from": [
+          {
+            "id": "c12",
+            "semantic_class": "CLAIM"
+          }
+        ],
+        "qualification_links": [
+          {
+            "cue": "if",
+            "end_char": 20,
+            "start_char": 18
+          }
+        ],
+        "semantic_role": "QUALIFICATION_OR_UNCERTAINTY",
+        "support": [
+          {
+            "document_id": "text-e9d2260c99802394",
+            "end_char": 1704,
+            "model_path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/06-doe-iron-platinum-atomic-structure-2017/admitted-knowledge-model.json",
+            "model_sha256": "29b475ec6742e1f7d49e9e5f29bbcd8a9c967d678a7d53f6ae58ae44f28acb7e",
+            "quote": "They identified rich structural variety and chemical order/disorder with unprecedented 3D detail including atomic composition, grain boundaries, anti-phase boundaries",
+            "source_id": "doe-iron-platinum-atomic-structure-2017",
+            "start_char": 1538
+          }
+        ]
+      },
+      {
+        "concise_text": "Anti-phase boundaries are regions where atoms are arranged in the opposite order of the perfect parent crystal.",
+        "epistemic_status": "ASSERTED_SOURCE_CLAIM",
+        "id": "unit-f86496e7129e72",
+        "preserved_from": [
+          {
+            "id": "c13",
+            "semantic_class": "CLAIM"
+          }
+        ],
+        "qualification_links": [],
+        "semantic_role": "CORE_FACT",
+        "support": [
+          {
+            "document_id": "text-e9d2260c99802394",
+            "end_char": 1784,
+            "model_path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/06-doe-iron-platinum-atomic-structure-2017/admitted-knowledge-model.json",
+            "model_sha256": "29b475ec6742e1f7d49e9e5f29bbcd8a9c967d678a7d53f6ae58ae44f28acb7e",
+            "quote": "anti-phase boundaries (where atoms are arranged in the opposite order of the perfect, parent crystal)",
+            "source_id": "doe-iron-platinum-atomic-structure-2017",
+            "start_char": 1683
+          }
+        ]
+      },
+      {
+        "concise_text": "Swap defects occur when an individual atom or a pair of nearest-neighbor atoms switch places.",
+        "epistemic_status": "ASSERTED_SOURCE_CLAIM",
+        "id": "unit-47b6f9d3e555a1",
+        "preserved_from": [
+          {
+            "id": "c14",
+            "semantic_class": "CLAIM"
+          }
+        ],
+        "qualification_links": [
+          {
+            "cue": "when",
+            "end_char": 23,
+            "start_char": 19
+          }
+        ],
+        "semantic_role": "QUALIFICATION_OR_UNCERTAINTY",
+        "support": [
+          {
+            "document_id": "text-e9d2260c99802394",
+            "end_char": 1895,
+            "model_path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/06-doe-iron-platinum-atomic-structure-2017/admitted-knowledge-model.json",
+            "model_sha256": "29b475ec6742e1f7d49e9e5f29bbcd8a9c967d678a7d53f6ae58ae44f28acb7e",
+            "quote": "swap defects (where individual or a pair of nearest-neighbor atoms switch places)",
+            "source_id": "doe-iron-platinum-atomic-structure-2017",
+            "start_char": 1814
+          }
+        ]
+      },
+      {
+        "concise_text": "Scientists from the University of California at Los Angeles, Lawrence Berkeley National Laboratory, and Oak Ridge National Laboratory conducted the research.",
+        "epistemic_status": "ASSERTED_SOURCE_CLAIM",
+        "id": "unit-4b2ba01085ec98",
+        "preserved_from": [
+          {
+            "id": "c15",
+            "semantic_class": "CLAIM"
+          }
+        ],
+        "qualification_links": [
+          {
+            "cue": "if",
+            "end_char": 39,
+            "start_char": 37
+          }
+        ],
+        "semantic_role": "QUALIFICATION_OR_UNCERTAINTY",
+        "support": [
+          {
+            "document_id": "text-e9d2260c99802394",
+            "end_char": 2052,
+            "model_path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/06-doe-iron-platinum-atomic-structure-2017/admitted-knowledge-model.json",
+            "model_sha256": "29b475ec6742e1f7d49e9e5f29bbcd8a9c967d678a7d53f6ae58ae44f28acb7e",
+            "quote": "A team of scientists from the University of California at Los Angeles, Lawrence Berkeley National Laboratory and Oak Ridge National Laboratory demonstrated",
+            "source_id": "doe-iron-platinum-atomic-structure-2017",
+            "start_char": 1897
+          }
+        ]
+      },
+      {
+        "concise_text": "Experimentally measured three-dimensional atomic coordinates and chemical species with 22 picometer precision can be used as direct input for first-principles calculations of material properties.",
+        "epistemic_status": "ASSERTED_SOURCE_CLAIM",
+        "id": "unit-d3061e23a6c5bb",
+        "preserved_from": [
+          {
+            "id": "c16",
+            "semantic_class": "CLAIM"
+          }
+        ],
+        "qualification_links": [
+          {
+            "cue": "can",
+            "end_char": 113,
+            "start_char": 110
+          }
+        ],
+        "semantic_role": "QUANTITATIVE_FACT",
+        "support": [
+          {
+            "document_id": "text-e9d2260c99802394",
+            "end_char": 2237,
+            "model_path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/06-doe-iron-platinum-atomic-structure-2017/admitted-knowledge-model.json",
+            "model_sha256": "29b475ec6742e1f7d49e9e5f29bbcd8a9c967d678a7d53f6ae58ae44f28acb7e",
+            "quote": "demonstrated that experimentally measured 3D atomic coordinates and chemical species with 22 picometer precision can be used as direct input for first-principles calculations of material properties",
+            "source_id": "doe-iron-platinum-atomic-structure-2017",
+            "start_char": 2040
+          }
+        ]
+      },
+      {
+        "concise_text": "The approach can determine three-dimensional atomic arrangements and chemical order/disorder in a wide range of nanostructured materials with high precision.",
+        "epistemic_status": "ASSERTED_SOURCE_CLAIM",
+        "id": "unit-613974db7b1371",
+        "preserved_from": [
+          {
+            "id": "c17",
+            "semantic_class": "CLAIM"
+          }
+        ],
+        "qualification_links": [
+          {
+            "cue": "can",
+            "end_char": 16,
+            "start_char": 13
+          }
+        ],
+        "semantic_role": "QUALIFICATION_OR_UNCERTAINTY",
+        "support": [
+          {
+            "document_id": "text-e9d2260c99802394",
+            "end_char": 2466,
+            "model_path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/06-doe-iron-platinum-atomic-structure-2017/admitted-knowledge-model.json",
+            "model_sha256": "29b475ec6742e1f7d49e9e5f29bbcd8a9c967d678a7d53f6ae58ae44f28acb7e",
+            "quote": "This work opens the door to determining 3D atomic arrangements and chemical order/disorder of a wide range of nanostructured materials with high precision.",
+            "source_id": "doe-iron-platinum-atomic-structure-2017",
+            "start_char": 2311
+          }
+        ]
+      },
+      {
+        "concise_text": "The work gives researchers the ability to study material properties at the single-atom level.",
+        "epistemic_status": "ASSERTED_SOURCE_CLAIM",
+        "id": "unit-8b7cecc89e05bb",
+        "preserved_from": [
+          {
+            "id": "c18",
+            "semantic_class": "CLAIM"
+          }
+        ],
+        "qualification_links": [],
+        "semantic_role": "CORE_FACT",
+        "support": [
+          {
+            "document_id": "text-e9d2260c99802394",
+            "end_char": 2558,
+            "model_path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/06-doe-iron-platinum-atomic-structure-2017/admitted-knowledge-model.json",
+            "model_sha256": "29b475ec6742e1f7d49e9e5f29bbcd8a9c967d678a7d53f6ae58ae44f28acb7e",
+            "quote": "It also gives researchers the ability to study material properties on the single-atom level",
+            "source_id": "doe-iron-platinum-atomic-structure-2017",
+            "start_char": 2467
+          }
+        ]
+      }
+    ]
+  },
+  "independent_generation_audit": {
+    "destructive_chaining": false,
+    "r0_derived_directly_from_grounded_substrate": true,
+    "r1_derived_directly_from_grounded_substrate": true,
+    "r1_is_not_input_to_r2": true,
+    "r2_derived_directly_from_grounded_substrate": true,
+    "r2_is_not_input_to_r1": true
+  },
+  "provenance_recoverability_audit": {
+    "all_support_quotes_exact_source_ranges": true,
+    "coverage_ratio": 1.0,
+    "recoverable_to_r0": true,
+    "unit_count": 15,
+    "units_with_source_and_model_identity": 15,
+    "units_with_support": 15
+  },
+  "review_index": 6,
+  "role_distribution": {
+    "CORE_FACT": 7,
+    "QUALIFICATION_OR_UNCERTAINTY": 5,
+    "QUANTITATIVE_FACT": 3
+  },
+  "schema": "spec060.progressive-semantic-compression-case.v1",
+  "selection": {
+    "coverage": [
+      "OBSERVATIONAL_ASSOCIATION",
+      "QUANTITATIVE_FACT",
+      "MEASUREMENT_PRECISION",
+      "MATERIAL_QUALIFICATION",
+      "RHETORICAL_REPETITION"
+    ],
+    "frozen_corpus_order": 6,
+    "required_item_ids": [
+      "c1",
+      "c2",
+      "c3",
+      "c4",
+      "c5",
+      "c6",
+      "c10",
+      "c11",
+      "c12",
+      "c13",
+      "c14",
+      "c15",
+      "c16",
+      "c17",
+      "c18"
+    ],
+    "source_or_domain_specific_rule": false
+  },
+  "semantic_preservation_audit": {
+    "contextual_item_disposition": [
+      {
+        "material_under_frozen_goal": false,
+        "reason": "Evaluative or rhetorical framing is outside the frozen neutral goal.",
+        "semantic_class": "CLAIM",
+        "statement": "The work makes major advances in characterizing materials.",
+        "status": "OMITTED_AS_DEMONSTRABLY_REDUNDANT",
+        "upstream_id": "c7"
+      },
+      {
+        "material_under_frozen_goal": false,
+        "reason": "Evaluative or rhetorical framing is outside the frozen neutral goal.",
+        "semantic_class": "CLAIM",
+        "statement": "The approach is expected to find broad use in materials science, physics, chemistry, and other fields.",
+        "status": "OMITTED_AS_DEMONSTRABLY_REDUNDANT",
+        "upstream_id": "c8"
+      },
+      {
+        "material_under_frozen_goal": false,
+        "reason": "Evaluative or rhetorical framing is outside the frozen neutral goal.",
+        "semantic_class": "CLAIM",
+        "statement": "The ability to correlate three-dimensional arrangements of atoms and defects with material properties and functionality is vital in designing new and improved materials.",
+        "status": "OMITTED_AS_DEMONSTRABLY_REDUNDANT",
+        "upstream_id": "c9"
+      },
+      {
+        "material_under_frozen_goal": false,
+        "reason": "Evaluative or rhetorical framing is outside the frozen neutral goal.",
+        "semantic_class": "CLAIM",
+        "statement": "The work could transform understanding of structure-property relationships at the most fundamental level.",
+        "status": "OMITTED_AS_DEMONSTRABLY_REDUNDANT",
+        "upstream_id": "c19"
+      },
+      {
+        "material_under_frozen_goal": false,
+        "reason": "Secondary detail remains recoverable in R0 and is outside the frozen essentiality plan.",
+        "semantic_class": "RELATIONSHIP",
+        "statement": "Anti-phase boundaries are identified as defects in the atomic structure.",
+        "status": "OMITTED_AS_DEMONSTRABLY_REDUNDANT",
+        "upstream_id": "r1"
+      },
+      {
+        "material_under_frozen_goal": false,
+        "reason": "Secondary detail remains recoverable in R0 and is outside the frozen essentiality plan.",
+        "semantic_class": "RELATIONSHIP",
+        "statement": "Anti-site point defects are identified as defects in the atomic structure.",
+        "status": "OMITTED_AS_DEMONSTRABLY_REDUNDANT",
+        "upstream_id": "r2"
+      },
+      {
+        "material_under_frozen_goal": false,
+        "reason": "Secondary detail remains recoverable in R0 and is outside the frozen essentiality plan.",
+        "semantic_class": "RELATIONSHIP",
+        "statement": "Swap defects are identified as defects in the atomic structure.",
+        "status": "OMITTED_AS_DEMONSTRABLY_REDUNDANT",
+        "upstream_id": "r3"
+      },
+      {
+        "material_under_frozen_goal": false,
+        "reason": "Secondary detail remains recoverable in R0 and is outside the frozen essentiality plan.",
+        "semantic_class": "RELATIONSHIP",
+        "statement": "The determined iron atoms are constituents of the iron-platinum particle.",
+        "status": "OMITTED_AS_DEMONSTRABLY_REDUNDANT",
+        "upstream_id": "r4"
+      },
+      {
+        "material_under_frozen_goal": false,
+        "reason": "Secondary detail remains recoverable in R0 and is outside the frozen essentiality plan.",
+        "semantic_class": "RELATIONSHIP",
+        "statement": "The determined platinum atoms are constituents of the iron-platinum particle.",
+        "status": "OMITTED_AS_DEMONSTRABLY_REDUNDANT",
+        "upstream_id": "r5"
+      },
+      {
+        "material_under_frozen_goal": false,
+        "reason": "Secondary detail remains recoverable in R0 and is outside the frozen essentiality plan.",
+        "semantic_class": "RELATIONSHIP",
+        "statement": "The iron-platinum nanoparticle is a nanostructured material.",
+        "status": "OMITTED_AS_DEMONSTRABLY_REDUNDANT",
+        "upstream_id": "r6"
+      },
+      {
+        "material_under_frozen_goal": false,
+        "reason": "Secondary detail remains recoverable in R0 and is outside the frozen essentiality plan.",
+        "semantic_class": "RELATIONSHIP",
+        "statement": "Magnetic properties are material properties.",
+        "status": "OMITTED_AS_DEMONSTRABLY_REDUNDANT",
+        "upstream_id": "r7"
+      },
+      {
+        "material_under_frozen_goal": false,
+        "reason": "Secondary detail remains recoverable in R0 and is outside the frozen essentiality plan.",
+        "semantic_class": "RELATIONSHIP",
+        "statement": "Atomic magnetic moments are material properties calculated at the atomic level.",
+        "status": "OMITTED_AS_DEMONSTRABLY_REDUNDANT",
+        "upstream_id": "r8"
+      },
+      {
+        "material_under_frozen_goal": false,
+        "reason": "Secondary detail remains recoverable in R0 and is outside the frozen essentiality plan.",
+        "semantic_class": "RELATIONSHIP",
+        "statement": "Local magnetocrystalline anisotropy is a material property calculated from the atomic coordinates and chemical species.",
+        "status": "OMITTED_AS_DEMONSTRABLY_REDUNDANT",
+        "upstream_id": "r9"
+      },
+      {
+        "material_under_frozen_goal": false,
+        "reason": "Secondary detail remains recoverable in R0 and is outside the frozen essentiality plan.",
+        "semantic_class": "RELATIONSHIP",
+        "statement": "Atomic electron tomography enabled scientists to determine three-dimensional atomic positions and coordinates.",
+        "status": "OMITTED_AS_DEMONSTRABLY_REDUNDANT",
+        "upstream_id": "r10"
+      },
+      {
+        "material_under_frozen_goal": false,
+        "reason": "Secondary detail remains recoverable in R0 and is outside the frozen essentiality plan.",
+        "semantic_class": "RELATIONSHIP",
+        "statement": "The three-dimensional atomic coordinates were experimentally measured using atomic electron tomography.",
+        "status": "OMITTED_AS_DEMONSTRABLY_REDUNDANT",
+        "upstream_id": "r11"
+      },
+      {
+        "material_under_frozen_goal": false,
+        "reason": "Secondary detail remains recoverable in R0 and is outside the frozen essentiality plan.",
+        "semantic_class": "RELATIONSHIP",
+        "statement": "The first-principles calculations used experimentally measured three-dimensional atomic coordinates as direct input.",
+        "status": "OMITTED_AS_DEMONSTRABLY_REDUNDANT",
+        "upstream_id": "r12"
+      },
+      {
+        "material_under_frozen_goal": false,
+        "reason": "Secondary detail remains recoverable in R0 and is outside the frozen essentiality plan.",
+        "semantic_class": "RELATIONSHIP",
+        "statement": "The first-principles calculations used chemical species as direct input.",
+        "status": "OMITTED_AS_DEMONSTRABLY_REDUNDANT",
+        "upstream_id": "r13"
+      },
+      {
+        "material_under_frozen_goal": false,
+        "reason": "Secondary detail remains recoverable in R0 and is outside the frozen essentiality plan.",
+        "semantic_class": "RELATIONSHIP",
+        "statement": "First-principles calculations calculated atomic magnetic moments.",
+        "status": "OMITTED_AS_DEMONSTRABLY_REDUNDANT",
+        "upstream_id": "r14"
+      },
+      {
+        "material_under_frozen_goal": false,
+        "reason": "Secondary detail remains recoverable in R0 and is outside the frozen essentiality plan.",
+        "semantic_class": "RELATIONSHIP",
+        "statement": "First-principles calculations calculated local magnetocrystalline anisotropy.",
+        "status": "OMITTED_AS_DEMONSTRABLY_REDUNDANT",
+        "upstream_id": "r15"
+      }
+    ],
+    "forbidden_required_status_count": 0,
+    "material_omission_count": 0,
+    "required_item_count": 15,
+    "required_items": [
+      {
+        "material": true,
+        "r1_status": "PRESERVED_EXPLICITLY",
+        "r2_status": "PRESERVED_EXPLICITLY",
+        "semantic_class": "CLAIM",
+        "statement": "Scientists determined the three-dimensional position of more than 23,000 atoms in a tiny iron-platinum particle with 22 picometer precision.",
+        "upstream_id": "c1"
+      },
+      {
+        "material": true,
+        "r1_status": "PRESERVED_EXPLICITLY",
+        "r2_status": "PRESERVED_EXPLICITLY",
+        "semantic_class": "CLAIM",
+        "statement": "The observed chemical order/disorder and defects in the atomic structure were correlated with magnetic properties at the single-atom level.",
+        "upstream_id": "c2"
+      },
+      {
+        "material": true,
+        "r1_status": "PRESERVED_EXPLICITLY",
+        "r2_status": "PRESERVED_EXPLICITLY",
+        "semantic_class": "CLAIM",
+        "statement": "The data can support modeling and design of new materials whose atomic composition is tailored to obtain desired properties.",
+        "upstream_id": "c3"
+      },
+      {
+        "material": true,
+        "r1_status": "PRESERVED_EXPLICITLY",
+        "r2_status": "PRESERVED_EXPLICITLY",
+        "semantic_class": "CLAIM",
+        "statement": "Perfect crystals are rare in nature.",
+        "upstream_id": "c4"
+      },
+      {
+        "material": true,
+        "r1_status": "PRESERVED_EXPLICITLY",
+        "r2_status": "PRESERVED_EXPLICITLY",
+        "semantic_class": "CLAIM",
+        "statement": "Much of modern science and technology relies on materials with defects and disorder.",
+        "upstream_id": "c5"
+      },
+      {
+        "material": true,
+        "r1_status": "PRESERVED_EXPLICITLY",
+        "r2_status": "PRESERVED_EXPLICITLY",
+        "semantic_class": "CLAIM",
+        "statement": "Understanding disorder and its effect on material properties is critical to designing improved materials for energy production, storage, and use.",
+        "upstream_id": "c6"
+      },
+      {
+        "material": true,
+        "r1_status": "PRESERVED_EXPLICITLY",
+        "r2_status": "PRESERVED_EXPLICITLY",
+        "semantic_class": "CLAIM",
+        "statement": "Scientists determined the three-dimensional coordinates of 6,569 iron atoms and 16,627 platinum atoms in an iron-platinum nanoparticle.",
+        "upstream_id": "c10"
+      },
+      {
+        "material": true,
+        "r1_status": "PRESERVED_EXPLICITLY",
+        "r2_status": "PRESERVED_EXPLICITLY",
+        "semantic_class": "CLAIM",
+        "statement": "Atomic electron tomography is an imaging technique used to correlate three-dimensional atomic arrangements and chemical order/disorder with material properties at the single-atom level.",
+        "upstream_id": "c11"
+      },
+      {
+        "material": true,
+        "r1_status": "PRESERVED_EXPLICITLY",
+        "r2_status": "PRESERVED_EXPLICITLY",
+        "semantic_class": "CLAIM",
+        "statement": "The research identified rich structural variety and chemical order/disorder with unprecedented three-dimensional detail, including atomic composition and grain boundaries.",
+        "upstream_id": "c12"
+      },
+      {
+        "material": true,
+        "r1_status": "PRESERVED_EXPLICITLY",
+        "r2_status": "PRESERVED_EXPLICITLY",
+        "semantic_class": "CLAIM",
+        "statement": "Anti-phase boundaries are regions where atoms are arranged in the opposite order of the perfect parent crystal.",
+        "upstream_id": "c13"
+      },
+      {
+        "material": true,
+        "r1_status": "PRESERVED_EXPLICITLY",
+        "r2_status": "PRESERVED_EXPLICITLY",
+        "semantic_class": "CLAIM",
+        "statement": "Swap defects occur when an individual atom or a pair of nearest-neighbor atoms switch places.",
+        "upstream_id": "c14"
+      },
+      {
+        "material": true,
+        "r1_status": "PRESERVED_EXPLICITLY",
+        "r2_status": "PRESERVED_EXPLICITLY",
+        "semantic_class": "CLAIM",
+        "statement": "Scientists from the University of California at Los Angeles, Lawrence Berkeley National Laboratory, and Oak Ridge National Laboratory conducted the research.",
+        "upstream_id": "c15"
+      },
+      {
+        "material": true,
+        "r1_status": "PRESERVED_EXPLICITLY",
+        "r2_status": "PRESERVED_EXPLICITLY",
+        "semantic_class": "CLAIM",
+        "statement": "Experimentally measured three-dimensional atomic coordinates and chemical species with 22 picometer precision can be used as direct input for first-principles calculations of material properties.",
+        "upstream_id": "c16"
+      },
+      {
+        "material": true,
+        "r1_status": "PRESERVED_EXPLICITLY",
+        "r2_status": "PRESERVED_EXPLICITLY",
+        "semantic_class": "CLAIM",
+        "statement": "The approach can determine three-dimensional atomic arrangements and chemical order/disorder in a wide range of nanostructured materials with high precision.",
+        "upstream_id": "c17"
+      },
+      {
+        "material": true,
+        "r1_status": "PRESERVED_EXPLICITLY",
+        "r2_status": "PRESERVED_EXPLICITLY",
+        "semantic_class": "CLAIM",
+        "statement": "The work gives researchers the ability to study material properties at the single-atom level.",
+        "upstream_id": "c18"
+      }
+    ],
+    "semantic_change_count": 0,
+    "unsupported_new_information_count": 0
+  },
+  "source_identity": {
+    "canonical_url": "https://www.energy.gov/science/bes/articles/deciphering-material-properties-single-atom-level",
+    "document_id": "text-e9d2260c99802394",
+    "domain": "chemistry / materials science",
+    "institutional_publisher": "U.S. Department of Energy, Office of Science",
+    "model_path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/06-doe-iron-platinum-atomic-structure-2017/admitted-knowledge-model.json",
+    "model_sha256": "29b475ec6742e1f7d49e9e5f29bbcd8a9c967d678a7d53f6ae58ae44f28acb7e",
+    "source_id": "doe-iron-platinum-atomic-structure-2017",
+    "source_sha256": "e9d2260c9980239431fc195e7dc687afea93598af4f28d774ed5e4c4317f9e1e",
+    "title": "Deciphering Material Properties at the Single-Atom Level"
+  },
+  "views": {
+    "R0": {
+      "depends_on": [],
+      "direct_input": "FROZEN_ADMITTED_DOCUMENT_TEXT",
+      "identity_sha256": "e9d2260c9980239431fc195e7dc687afea93598af4f28d774ed5e4c4317f9e1e",
+      "resolution": "SOURCE_RICH",
+      "text": "It was a big challenge and a small particle. Scientists determined the three-dimensional position of more than 23,000 atoms in a tiny iron-platinum particle with 22 picometer precision. They correlated the observed chemical order/disorder and defects in the atomic structure with magnetic properties at the single-atom level. This data can serve scientists to model and design new materials whose atomic composition is tailored to obtain the desired properties.\n\nPerfect crystals are rare in nature. Much of our modern science and technology rely on materials with defects and disorder. Understanding the disorder – and its effect on material properties – are critical to designing improved materials for energy production, storage and use. This work makes major advances in characterizing materials. It also expands our understanding of how a material's structure and behavior are related in defected materials. Further, scientists expect this approach to find broad use in materials science, physics, chemistry, and other fields.\n\nThe ability to correlate the 3D arrangements of atoms and defects with a material's properties and functionality is vital in designing new and improved materials for a myriad of applications. In this research, scientists determined the 3D coordinates of 6,569 iron and 16,627 platinum atoms in an iron-platinum nanoparticle. They used an imaging technique called atomic electron tomography to correlate 3D atomic arrangements and chemical order/disorder with material properties at the single-atom level. They identified rich structural variety and chemical order/disorder with unprecedented 3D detail including atomic composition, grain boundaries, anti-phase boundaries (where atoms are arranged in the opposite order of the perfect, parent crystal), anti-site point defects and swap defects (where individual or a pair of nearest-neighbor atoms switch places). A team of scientists from the University of California at Los Angeles, Lawrence Berkeley National Laboratory and Oak Ridge National Laboratory demonstrated that experimentally measured 3D atomic coordinates and chemical species with 22 picometer precision can be used as direct input for first-principles calculations of material properties such as atomic magnetic moments and local magnetocrystalline anisotropy. This work opens the door to determining 3D atomic arrangements and chemical order/disorder of a wide range of nanostructured materials with high precision. It also gives researchers the ability to study material properties on the single-atom level that could transform our understanding of structure-property relationships at the most fundamental level."
+    },
+    "R1": {
+      "depends_on": [],
+      "direct_input": "FROZEN_SOURCE_TEXT_AND_REQUIRED_EVIDENCE_RANGES",
+      "identity_sha256": "81ef3089ceed01432750e474ef267419a07c929d63b607e9b3deb185422b040a",
+      "resolution": "ESSENTIAL_EXPLANATION",
+      "segments": [
+        {
+          "end_char": 185,
+          "start_char": 45,
+          "support_ids": [
+            "c1"
+          ],
+          "text": "Scientists determined the three-dimensional position of more than 23,000 atoms in a tiny iron-platinum particle with 22 picometer precision.",
+          "text_sha256": "83155162a8460dc6b1c03e46b1b15af2905f0d4b639ce5cfdd909224eec53f61"
+        },
+        {
+          "end_char": 325,
+          "start_char": 186,
+          "support_ids": [
+            "c2"
+          ],
+          "text": "They correlated the observed chemical order/disorder and defects in the atomic structure with magnetic properties at the single-atom level.",
+          "text_sha256": "425f5ec7c1be0bc515318bbed55659ff912e05954807533c66430c73ea2e5381"
+        },
+        {
+          "end_char": 461,
+          "start_char": 326,
+          "support_ids": [
+            "c3"
+          ],
+          "text": "This data can serve scientists to model and design new materials whose atomic composition is tailored to obtain the desired properties.",
+          "text_sha256": "54470c2ea4f389fdcfd0e0a9a2d29fa6f1449a32f0d844597974912367f57b3c"
+        },
+        {
+          "end_char": 499,
+          "start_char": 463,
+          "support_ids": [
+            "c4"
+          ],
+          "text": "Perfect crystals are rare in nature.",
+          "text_sha256": "af02edb43b600f98a6d3d78d67bc123c679f4d5c10db5cf57cfe835c5ca45fcb"
+        },
+        {
+          "end_char": 586,
+          "start_char": 500,
+          "support_ids": [
+            "c5"
+          ],
+          "text": "Much of our modern science and technology rely on materials with defects and disorder.",
+          "text_sha256": "5bf8fb6ba471c45244df808eeae54a4abcfdcf03513cc6495f467f2c72faacbc"
+        },
+        {
+          "end_char": 740,
+          "start_char": 587,
+          "support_ids": [
+            "c6"
+          ],
+          "text": "Understanding the disorder – and its effect on material properties – are critical to designing improved materials for energy production, storage and use.",
+          "text_sha256": "a3a44220d6b8bf78cadf2b5c4d9547844cb4a58eff038313bd68efbc89e92d77"
+        },
+        {
+          "end_char": 1357,
+          "start_char": 1225,
+          "support_ids": [
+            "c10"
+          ],
+          "text": "In this research, scientists determined the 3D coordinates of 6,569 iron and 16,627 platinum atoms in an iron-platinum nanoparticle.",
+          "text_sha256": "129d30b4810167635b4dfb5119b55676c85d8663ce5c0673df06f813ecdb818f"
+        },
+        {
+          "end_char": 1537,
+          "start_char": 1358,
+          "support_ids": [
+            "c11"
+          ],
+          "text": "They used an imaging technique called atomic electron tomography to correlate 3D atomic arrangements and chemical order/disorder with material properties at the single-atom level.",
+          "text_sha256": "1c65be354213021f3aed32dcc649fa2854661d73b92156d827dec965bf0c40fe"
+        },
+        {
+          "end_char": 1784,
+          "start_char": 1538,
+          "support_ids": [
+            "c12",
+            "c13"
+          ],
+          "text": "They identified rich structural variety and chemical order/disorder with unprecedented 3D detail including atomic composition, grain boundaries, anti-phase boundaries (where atoms are arranged in the opposite order of the perfect, parent crystal)",
+          "text_sha256": "97920ac487ffe834b8a83b425a5a14afab75fcda13984c90efe1249c6dae2c65"
+        },
+        {
+          "end_char": 1895,
+          "start_char": 1814,
+          "support_ids": [
+            "c14"
+          ],
+          "text": "swap defects (where individual or a pair of nearest-neighbor atoms switch places)",
+          "text_sha256": "1504eadbf762f89a9f86d5087f3dccfc0f9dbc8d4423b9eee8bcaf62fd8df23f"
+        },
+        {
+          "end_char": 2237,
+          "start_char": 1897,
+          "support_ids": [
+            "c15",
+            "c16"
+          ],
+          "text": "A team of scientists from the University of California at Los Angeles, Lawrence Berkeley National Laboratory and Oak Ridge National Laboratory demonstrated that experimentally measured 3D atomic coordinates and chemical species with 22 picometer precision can be used as direct input for first-principles calculations of material properties",
+          "text_sha256": "e8e78b2920761652f3267fb8a3861a55c0159bd16cf414f8d796225a12815a73"
+        },
+        {
+          "end_char": 2466,
+          "start_char": 2311,
+          "support_ids": [
+            "c17"
+          ],
+          "text": "This work opens the door to determining 3D atomic arrangements and chemical order/disorder of a wide range of nanostructured materials with high precision.",
+          "text_sha256": "a75a5352690fe123f47fdfcf033afd0a6707c737e298f0fd944b60420a9ba1db"
+        },
+        {
+          "end_char": 2558,
+          "start_char": 2467,
+          "support_ids": [
+            "c18"
+          ],
+          "text": "It also gives researchers the ability to study material properties on the single-atom level",
+          "text_sha256": "720f5ac1e2067b97616f6c56bc4090a0bc7bc416a2f3fd1d6fb8a99f57019939"
+        }
+      ],
+      "text": "Scientists determined the three-dimensional position of more than 23,000 atoms in a tiny iron-platinum particle with 22 picometer precision.\n\nThey correlated the observed chemical order/disorder and defects in the atomic structure with magnetic properties at the single-atom level.\n\nThis data can serve scientists to model and design new materials whose atomic composition is tailored to obtain the desired properties.\n\nPerfect crystals are rare in nature.\n\nMuch of our modern science and technology rely on materials with defects and disorder.\n\nUnderstanding the disorder – and its effect on material properties – are critical to designing improved materials for energy production, storage and use.\n\nIn this research, scientists determined the 3D coordinates of 6,569 iron and 16,627 platinum atoms in an iron-platinum nanoparticle.\n\nThey used an imaging technique called atomic electron tomography to correlate 3D atomic arrangements and chemical order/disorder with material properties at the single-atom level.\n\nThey identified rich structural variety and chemical order/disorder with unprecedented 3D detail including atomic composition, grain boundaries, anti-phase boundaries (where atoms are arranged in the opposite order of the perfect, parent crystal)\n\nswap defects (where individual or a pair of nearest-neighbor atoms switch places)\n\nA team of scientists from the University of California at Los Angeles, Lawrence Berkeley National Laboratory and Oak Ridge National Laboratory demonstrated that experimentally measured 3D atomic coordinates and chemical species with 22 picometer precision can be used as direct input for first-principles calculations of material properties\n\nThis work opens the door to determining 3D atomic arrangements and chemical order/disorder of a wide range of nanostructured materials with high precision.\n\nIt also gives researchers the ability to study material properties on the single-atom level"
+    },
+    "R2": {
+      "depends_on": [],
+      "direct_input": "FROZEN_ADMITTED_SEMANTIC_ITEMS_AND_EVIDENCE",
+      "identity_sha256": "39f4770a2a3b154b9533c8e10a4efc258ad6ddadb035ce8f7ebeeb69ca3bf666",
+      "resolution": "ESSENTIAL_UNITS",
+      "text": "Scientists determined the three-dimensional position of more than 23,000 atoms in a tiny iron-platinum particle with 22 picometer precision.\nThe observed chemical order/disorder and defects in the atomic structure were correlated with magnetic properties at the single-atom level.\nThe data can support modeling and design of new materials whose atomic composition is tailored to obtain desired properties.\nPerfect crystals are rare in nature.\nMuch of modern science and technology relies on materials with defects and disorder.\nUnderstanding disorder and its effect on material properties is critical to designing improved materials for energy production, storage, and use.\nScientists determined the three-dimensional coordinates of 6,569 iron atoms and 16,627 platinum atoms in an iron-platinum nanoparticle.\nAtomic electron tomography is an imaging technique used to correlate three-dimensional atomic arrangements and chemical order/disorder with material properties at the single-atom level.\nThe research identified rich structural variety and chemical order/disorder with unprecedented three-dimensional detail, including atomic composition and grain boundaries.\nAnti-phase boundaries are regions where atoms are arranged in the opposite order of the perfect parent crystal.\nSwap defects occur when an individual atom or a pair of nearest-neighbor atoms switch places.\nScientists from the University of California at Los Angeles, Lawrence Berkeley National Laboratory, and Oak Ridge National Laboratory conducted the research.\nExperimentally measured three-dimensional atomic coordinates and chemical species with 22 picometer precision can be used as direct input for first-principles calculations of material properties.\nThe approach can determine three-dimensional atomic arrangements and chemical order/disorder in a wide range of nanostructured materials with high precision.\nThe work gives researchers the ability to study material properties at the single-atom level.",
+      "unit_ids": [
+        "unit-b956298d492988",
+        "unit-fa0f796acc9570",
+        "unit-e47600323c0988",
+        "unit-e6dd76e3b7c482",
+        "unit-7cb27665445190",
+        "unit-cbaf447b8a7f93",
+        "unit-ad5690568c98a9",
+        "unit-15b83894d9c6e1",
+        "unit-be5ea225310fde",
+        "unit-f86496e7129e72",
+        "unit-47b6f9d3e555a1",
+        "unit-4b2ba01085ec98",
+        "unit-d3061e23a6c5bb",
+        "unit-613974db7b1371",
+        "unit-8b7cecc89e05bb"
+      ]
+    }
+  }
+}

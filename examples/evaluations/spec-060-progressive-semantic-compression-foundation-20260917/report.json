@@ -1,0 +1,455 @@
+{
+  "artifact_identities": [
+    {
+      "path": "index.html",
+      "sha256": "219f3f698b65045e494ac7cc07f050ac29cd221547f303329b6619c89cdc5a01"
+    },
+    {
+      "path": "styles.css",
+      "sha256": "a2e663be8a2047c2d6055a44ed571ada6feff7ffb51558e0cd67ae0c0d74ea45"
+    },
+    {
+      "path": "app.js",
+      "sha256": "c980387f923f6c3b5d6063d63d151cc9a8c712dd9da40a92b70f5f01501181ca"
+    },
+    {
+      "path": "manifest.json",
+      "sha256": "e82df7f87cf50c0aafb34425c3753e8a45b95c0a455b852963d1162b2b72e57c"
+    },
+    {
+      "path": "cases.json",
+      "sha256": "bab94772ea82b39f6dd946347c6939192930a736dbe8623e29886d6979315734"
+    },
+    {
+      "path": "owner-review-rubric.json",
+      "sha256": "e651ca9842daeebd0c94f489841de05123227a8008874cc0e70129f428a3f3b3"
+    },
+    {
+      "path": "browser-verification.json",
+      "sha256": "1a4cfab6eaf2f6ee3bc19b178d4e91956b1e863fc943da40a95df01cb924337f"
+    },
+    {
+      "path": "cases/spec060-case-9da3ce04b832bd.json",
+      "sha256": "2b7a8ecaf3230e2a7dc45186a57989351108c728e30f916c2dbf3542cc8c40da"
+    },
+    {
+      "path": "cases/spec060-case-e3fb394518e3cb.json",
+      "sha256": "64299f9d255b0c96da82578c956e8fec36f65f9ebbb7409e976f53c7ef2c2208"
+    },
+    {
+      "path": "cases/spec060-case-bb3ad76276d14b.json",
+      "sha256": "31e60b24d2b50a671fedecd6f5dbd6f25ba18eb9ac4cadf60cf66b01de5e486b"
+    },
+    {
+      "path": "cases/spec060-case-efdb84ed4aff60.json",
+      "sha256": "2b9af506142d8b4393b27fd9718e9cde659a5d18365ad4fcb47222378d917355"
+    },
+    {
+      "path": "cases/spec060-case-3d0bee3683ed4a.json",
+      "sha256": "fc0c86d7e3ce566a41d08482f9fb6cb1336ed7ead0049cd219bc0281882e047b"
+    },
+    {
+      "path": "cases/spec060-case-d6d7fd16095072.json",
+      "sha256": "5b076ab89b83e1e7a57cf85b257cb5f51e24e7b4c89d61c1a1a946745323d30d"
+    }
+  ],
+  "authority": "OFFLINE_ONLY",
+  "browser_gate": {
+    "browser": "Codex in-app browser (Chromium desktop engine)",
+    "console": {
+      "errors": [],
+      "result": "PASS",
+      "warnings": []
+    },
+    "desktop": {
+      "all_6_cases_loaded": true,
+      "all_case_machine_checks_passed": true,
+      "horizontal_overflow": false,
+      "provenance_recoverability": "PASS",
+      "r0_r1_r2_audit_switching": "PASS",
+      "result": "PASS",
+      "view_identity_and_lineage": "PASS",
+      "viewport": "1280x720"
+    },
+    "interaction": {
+      "audit_trace_selection": "PASS",
+      "case_navigation": "PASS",
+      "independent_view_identities_preserved": "PASS",
+      "resolution_toggle_all_6_cases": "PASS"
+    },
+    "narrow": {
+      "all_case_machine_checks_passed": true,
+      "audit_view_usable": true,
+      "case_navigation_visible": true,
+      "essential_explanation_usable": true,
+      "essential_units_usable": true,
+      "horizontal_overflow": false,
+      "resolution_controls_visible": true,
+      "result": "PASS",
+      "single_column_workspace": true,
+      "source_rich_view_usable": true,
+      "viewport": "390x844"
+    },
+    "screenshots": {
+      "captured": false,
+      "reason": "Desktop and 390x844 layouts were inspected through the Chromium browser gate; the browser bridge did not expose a deterministic repository-file capture path."
+    },
+    "status": "PASS"
+  },
+  "compression_metrics": {
+    "all_r1_views_smaller_than_r0": true,
+    "all_r2_content_views_smaller_than_r1": true,
+    "all_r2_views_smaller_than_r0": true,
+    "maximum_compression_treated_as_maximum_quality": false,
+    "mean_r1_to_r0_word_ratio": 0.8271,
+    "mean_r2_to_r0_word_ratio": 0.6783,
+    "per_case": [
+      {
+        "case_identity": "spec060-case-9da3ce04b832bd",
+        "grounded_semantic_unit_count": 20,
+        "r0": {
+          "characters": 2716,
+          "sha256": "a9539d135ff1577d7e2791d498b92f55239175565b925b24aec2ed0bf633f186",
+          "words": 440
+        },
+        "r1": {
+          "characters": 2460,
+          "sha256": "78dffabda67f701adae84c7ac71cda58d05a7e492b457eab2b161cc1172cdd4c",
+          "words": 397
+        },
+        "r1_to_r0_character_ratio": 0.9057,
+        "r1_to_r0_word_ratio": 0.9023,
+        "r2": {
+          "characters": 1714,
+          "sha256": "d833566dc5abd09ff489173e081a735530f41433d97ff228272ef9dff92bfdce",
+          "words": 268
+        },
+        "r2_to_r0_character_ratio": 0.6311,
+        "r2_to_r0_word_ratio": 0.6091,
+        "source_id": "usgs-divergent-plate-boundaries-1996"
+      },
+      {
+        "case_identity": "spec060-case-e3fb394518e3cb",
+        "grounded_semantic_unit_count": 27,
+        "r0": {
+          "characters": 2350,
+          "sha256": "256ade61be620cfaa7b1327e3c982576611dd29b6a1fb42217d86ffdc0783ca1",
+          "words": 415
+        },
+        "r1": {
+          "characters": 2087,
+          "sha256": "204e36343a57f3ac3ab826a305230062e928b9a3cc33078446ab00c3c68d79f6",
+          "words": 369
+        },
+        "r1_to_r0_character_ratio": 0.8881,
+        "r1_to_r0_word_ratio": 0.8892,
+        "r2": {
+          "characters": 2046,
+          "sha256": "d13496c403bb87538ad954e2e718deb369804cfe2b78ad1c8373389aaaa84499",
+          "words": 349
+        },
+        "r2_to_r0_character_ratio": 0.8706,
+        "r2_to_r0_word_ratio": 0.841,
+        "source_id": "noaa-nesdis-jet-stream-2025"
+      },
+      {
+        "case_identity": "spec060-case-bb3ad76276d14b",
+        "grounded_semantic_unit_count": 15,
+        "r0": {
+          "characters": 2152,
+          "sha256": "fe61b7c3b2a9373e7eb3b30d16b94adc2c8b5f4307327265943995550a6384b4",
+          "words": 341
+        },
+        "r1": {
+          "characters": 1822,
+          "sha256": "6585a00e5eb80abfed9ab6a37006aae93072a2a380719cd923148458b39882a9",
+          "words": 292
+        },
+        "r1_to_r0_character_ratio": 0.8467,
+        "r1_to_r0_word_ratio": 0.8563,
+        "r2": {
+          "characters": 1649,
+          "sha256": "d455578c5de7b1bf564113d8bef294198b851b26fcbfbb1e0429756f448d72c1",
+          "words": 262
+        },
+        "r2_to_r0_character_ratio": 0.7663,
+        "r2_to_r0_word_ratio": 0.7683,
+        "source_id": "crs-legislative-process-r42843-17"
+      },
+      {
+        "case_identity": "spec060-case-efdb84ed4aff60",
+        "grounded_semantic_unit_count": 20,
+        "r0": {
+          "characters": 2490,
+          "sha256": "c0cb2519673b8f3ef23c0be2856e03790f53d44971cbff09d593190ab3fa155d",
+          "words": 459
+        },
+        "r1": {
+          "characters": 1759,
+          "sha256": "beae4102a4ff45ddb4046e74c6674cdf5979f947e56fd61e63e686c879dce8bd",
+          "words": 320
+        },
+        "r1_to_r0_character_ratio": 0.7064,
+        "r1_to_r0_word_ratio": 0.6972,
+        "r2": {
+          "characters": 1176,
+          "sha256": "6baf87e1cf4512a3274a60258adf043c004897447e88be40b5eacc91ee6750da",
+          "words": 214
+        },
+        "r2_to_r0_character_ratio": 0.4723,
+        "r2_to_r0_word_ratio": 0.4662,
+        "source_id": "nasa-solar-system-formation-2026"
+      },
+      {
+        "case_identity": "spec060-case-3d0bee3683ed4a",
+        "grounded_semantic_unit_count": 23,
+        "r0": {
+          "characters": 2728,
+          "sha256": "70e7e3d20325dd5d22e9cf4484934419447907ba9f6cf5a4dfd65ddcbfa80ad5",
+          "words": 383
+        },
+        "r1": {
+          "characters": 2484,
+          "sha256": "592d805cb3a925a02d88c0aa1389469517507f88d7205a9430e319bd46be603a",
+          "words": 343
+        },
+        "r1_to_r0_character_ratio": 0.9106,
+        "r1_to_r0_word_ratio": 0.8956,
+        "r2": {
+          "characters": 2008,
+          "sha256": "52a29edad1d1945ccf24bd022786eba53cd053a80995c0b58d82cc5269b8dcbf",
+          "words": 259
+        },
+        "r2_to_r0_character_ratio": 0.7361,
+        "r2_to_r0_word_ratio": 0.6762,
+        "source_id": "epa-ecological-processes-2026"
+      },
+      {
+        "case_identity": "spec060-case-d6d7fd16095072",
+        "grounded_semantic_unit_count": 15,
+        "r0": {
+          "characters": 2664,
+          "sha256": "e9d2260c9980239431fc195e7dc687afea93598af4f28d774ed5e4c4317f9e1e",
+          "words": 385
+        },
+        "r1": {
+          "characters": 1937,
+          "sha256": "81ef3089ceed01432750e474ef267419a07c929d63b607e9b3deb185422b040a",
+          "words": 278
+        },
+        "r1_to_r0_character_ratio": 0.7271,
+        "r1_to_r0_word_ratio": 0.7221,
+        "r2": {
+          "characters": 1979,
+          "sha256": "39f4770a2a3b154b9533c8e10a4efc258ad6ddadb035ce8f7ebeeb69ca3bf666",
+          "words": 273
+        },
+        "r2_to_r0_character_ratio": 0.7429,
+        "r2_to_r0_word_ratio": 0.7091,
+        "source_id": "doe-iron-platinum-atomic-structure-2017"
+      }
+    ],
+    "semantic_role_labels_excluded_from_content_metrics": true
+  },
+  "corpus": {
+    "case_count": 6,
+    "domain_count": 6,
+    "domains": [
+      "geology / Earth systems",
+      "meteorology / atmospheric systems",
+      "civics / institutional process",
+      "astronomy / planetary science",
+      "ecology / environmental systems",
+      "chemistry / materials science"
+    ],
+    "manifest": "manifest.json",
+    "selection_algorithm": {
+      "cherry_pick_expected_success": false,
+      "diversity": "The first six eligible sources occupy six distinct frozen domains, therefore maximizing domain diversity for a six-case sample.",
+      "eligible": "Admitted SPEC-052 KnowledgeModels with committed source identity, document text, semantic items, and exact evidence ranges.",
+      "ordering": "Frozen SPEC-052 source-directory ordinal, ascending.",
+      "required_coverage": [
+        "COMPARISON",
+        "CONDITIONAL_EFFECT",
+        "FORMATION_MECHANISM",
+        "INSTITUTIONAL_PROCESS",
+        "MATERIAL_QUALIFICATION",
+        "MEASUREMENT_LIMIT",
+        "MEASUREMENT_PRECISION",
+        "OBSERVATIONAL_ASSOCIATION",
+        "PROCESS_MECHANISM",
+        "QUALIFICATION_UNCERTAINTY",
+        "QUANTITATIVE_FACT",
+        "RHETORICAL_REPETITION",
+        "SCOPE_CONDITION",
+        "STRUCTURAL_RELATIONSHIP",
+        "SYSTEM_MECHANISM",
+        "TEMPORAL_PROCESS",
+        "TEMPORAL_SCOPE",
+        "TRANSFER_RELATIONSHIP"
+      ],
+      "selection": "Take the first six eligible admitted sources. No success prediction, compression score, owner preference, source identity, or domain rule is used to rank them."
+    }
+  },
+  "decision_branch": "SEMANTIC_COMPRESSION_SAFE_FOR_OWNER_REVIEW",
+  "deterministic_regeneration": "PASS",
+  "deviations": [],
+  "evaluation_questions": {
+    "core_claims_and_relationships_preserved": "YES FOR FROZEN REQUIRED SET",
+    "learning_improvement_established": "NO — OWNER REVIEW REQUIRED",
+    "provenance_recoverable": "YES",
+    "substantially_smaller_views_generated": "YES — ratios reported without quality inference",
+    "unsupported_new_information": 0,
+    "values_units_scope_and_uncertainty_preserved": "YES FOR FROZEN REQUIRED SET"
+  },
+  "evidence_identities": [
+    {
+      "path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/final-report.json",
+      "sha256": "5e73b73b1080230b8068ab2046ba82f635ee65bfaaaf63c05e0db15e12d75d08"
+    },
+    {
+      "path": "examples/evaluations/spec-059-semantic-typography-enriched-prose-experiment-20260917/report.json",
+      "sha256": "4507785572c16c2e50b0c1a7c301391bfca8b20cef8b94eb5cba1e9b12ea2cda"
+    },
+    {
+      "path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/01-usgs-divergent-plate-boundaries-1996/admitted-knowledge-model.json",
+      "sha256": "fa2494dab670a698a8f730a0501c997984467839906f5c7b702e50ad6fd61261"
+    },
+    {
+      "path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/01-usgs-divergent-plate-boundaries-1996/source-identity.json",
+      "sha256": "53212d9b0acf6ea795edf5f978193455188adbad2815d21ecefc4a5fd18dc83b"
+    },
+    {
+      "path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/02-noaa-nesdis-jet-stream-2025/admitted-knowledge-model.json",
+      "sha256": "0c1e5b46d692727ca526f74307de2c0b358a1ea79dab98143f19271872a61a62"
+    },
+    {
+      "path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/02-noaa-nesdis-jet-stream-2025/source-identity.json",
+      "sha256": "ea70487e2656e2226eae46f48cc1f9176b8530acc0e42767aba3d3b6cb8b7fb1"
+    },
+    {
+      "path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/03-crs-legislative-process-r42843-17/admitted-knowledge-model.json",
+      "sha256": "67366dc7c5dfd120d4ee974e02c0568f8e221675e0843dd35469bf41105fdeb4"
+    },
+    {
+      "path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/03-crs-legislative-process-r42843-17/source-identity.json",
+      "sha256": "3fd4862abb2b0aebd2bcd5b503022e900fe235bb07961bcde702a6fe83acf7c2"
+    },
+    {
+      "path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/04-nasa-solar-system-formation-2026/admitted-knowledge-model.json",
+      "sha256": "d0a28afecf69d8edc55783eb41b4de78c72d81ef6007ac8121a003946b06b198"
+    },
+    {
+      "path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/04-nasa-solar-system-formation-2026/source-identity.json",
+      "sha256": "0d50ebe9beecd5a9b14a04d88e5130329f082093789b02a8b44f21f3b8165d1b"
+    },
+    {
+      "path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/05-epa-ecological-processes-2026/admitted-knowledge-model.json",
+      "sha256": "077318e713e10c02ce188fca1d0e247801d975d5ab7b1b1951183b14d6ad60d1"
+    },
+    {
+      "path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/05-epa-ecological-processes-2026/source-identity.json",
+      "sha256": "2dda3ae4ffa5c076eb066a85b0872226b013ca1dc01ebb6a96abb95098dbcc25"
+    },
+    {
+      "path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/06-doe-iron-platinum-atomic-structure-2017/admitted-knowledge-model.json",
+      "sha256": "29b475ec6742e1f7d49e9e5f29bbcd8a9c967d678a7d53f6ae58ae44f28acb7e"
+    },
+    {
+      "path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/06-doe-iron-platinum-atomic-structure-2017/source-identity.json",
+      "sha256": "459b403edc905ae71fee648886c55e9a682c0948bfffcf7b4cd7e2677ebb60f5"
+    }
+  ],
+  "execution_integrity": {
+    "external_network_or_source_retrievals": 0,
+    "extraction_reruns": 0,
+    "human_verdict_assignments": 0,
+    "personalization_implementations": 0,
+    "production_promotions": 0,
+    "provider_model_calls": 0,
+    "semantic_changes": 0,
+    "visualization_implementations": 0
+  },
+  "implementation_identities": [
+    {
+      "path": "src/knowledge_compiler/spec060_semantic_compression_evaluation.py",
+      "sha256": "9e3039b621e158452edc2adbd13e8349f55c576a030f895dddfe058997c147c9"
+    },
+    {
+      "path": "src/knowledge_compiler/spec060_semantic_compression_assets/index.html",
+      "sha256": "219f3f698b65045e494ac7cc07f050ac29cd221547f303329b6619c89cdc5a01"
+    },
+    {
+      "path": "src/knowledge_compiler/spec060_semantic_compression_assets/styles.css",
+      "sha256": "a2e663be8a2047c2d6055a44ed571ada6feff7ffb51558e0cd67ae0c0d74ea45"
+    },
+    {
+      "path": "src/knowledge_compiler/spec060_semantic_compression_assets/app.js",
+      "sha256": "c980387f923f6c3b5d6063d63d151cc9a8c712dd9da40a92b70f5f01501181ca"
+    },
+    {
+      "path": "docs/PROJECT-VISION.md",
+      "sha256": "f40aaf3ed79deab6ab729dc7f47e218f1cd691a80061da15614e65d04e8b22b4"
+    }
+  ],
+  "owner_review": {
+    "command": ".venv/bin/python -m http.server 8060 --directory examples/evaluations/spec-060-progressive-semantic-compression-foundation-20260917",
+    "promotion": "NOT_AUTHORIZED",
+    "rubric": "owner-review-rubric.json",
+    "state": "OWNER_REVIEW",
+    "url": "http://127.0.0.1:8060/",
+    "verdict": "PENDING"
+  },
+  "preservation_summary": {
+    "all_support_quotes_exact": true,
+    "all_views_independently_generated": true,
+    "forbidden_required_statuses": 0,
+    "material_omissions": 0,
+    "provenance_coverage_ratio": 1.0,
+    "required_semantic_items": 149,
+    "semantic_changes": 0,
+    "strengthened_certainty_or_causality": 0,
+    "unsupported_additions": 0
+  },
+  "protected_state": {
+    "candidate_b_v2_or_spec052_changes": 0,
+    "grounding_provenance_or_validator_changes": 0,
+    "knowledge_model_changes": 0,
+    "personalization_work": 0,
+    "production_navigation_or_ui_changes": 0,
+    "production_strategy_or_renderer_changes": 0,
+    "promotion_actions": 0,
+    "semantic_vocabulary_or_proposition_changes": 0,
+    "spec055_through_spec059_artifact_changes": 0,
+    "structure_detector_changes": 0,
+    "visualization_work": 0
+  },
+  "recommended_next_step": "OWNER_REVIEW_REQUIRED",
+  "schema": "spec060.progressive-semantic-compression-report.v1",
+  "status": "IMPLEMENTED_AWAITING_REVIEW",
+  "validation": {
+    "browser_desktop_and_390x844": "PASS",
+    "compression_metrics_validation": "PASS",
+    "control_plane_tests": "PASS",
+    "deterministic_regeneration": "PASS",
+    "focused_spec060_tests": "PASS",
+    "full_offline_suite": "PASS",
+    "git_diff_check": "PASS",
+    "independent_generation_invariant": "PASS",
+    "json_validation": "PASS",
+    "protected_state_hash_and_diff_audit": "PASS",
+    "provenance_and_recoverability_tests": "PASS",
+    "provider_model_network_call_audit": "PASS: zero calls",
+    "secret_safety": "PASS",
+    "semantic_and_epistemic_preservation_tests": "PASS",
+    "spec038_and_spec055_through_spec059_regressions": "PASS"
+  },
+  "vision_and_mission": {
+    "core_principle": "Compression is a view over knowledge, not destruction of knowledge.",
+    "future_ambition_presented_as_current_capability": false,
+    "mission_document": "docs/PROJECT-VISION.md",
+    "mission_document_sha256": "f40aaf3ed79deab6ab729dc7f47e218f1cd691a80061da15614e65d04e8b22b4",
+    "vision": "Knowledge Compiler transforms source material into trustworthy, cognition-efficient representations of knowledge at variable resolution."
+  },
+  "zero_call_zero_retrieval_statement": "No provider/model call, external source retrieval, or extraction rerun occurred."
+}

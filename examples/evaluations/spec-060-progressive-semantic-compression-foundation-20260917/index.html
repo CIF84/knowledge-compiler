@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SPEC-060 · Progressive semantic compression review</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">KNOWLEDGE COMPILER · OWNER REVIEW</p>
+      <h1>How far can information cost fall before meaning is lost?</h1>
+    </div>
+    <p class="topbar-note">Six frozen sources. Three independent resolutions. No learner verdict is inferred.</p>
+  </header>
+
+  <main class="workspace" aria-label="SPEC-060 progressive semantic compression review workspace">
+    <aside class="case-pane" aria-label="Frozen compression cases">
+      <p class="surface-label">FROZEN CORPUS</p>
+      <h2>Six domains</h2>
+      <p class="quiet">Each view derives from the same admitted grounded substrate.</p>
+      <ol id="case-list" class="case-list"></ol>
+      <div class="lineage-note">
+        <strong>NON-DESTRUCTIVE</strong>
+        <span>R0, R1, and R2 are peers—not a summary chain.</span>
+      </div>
+    </aside>
+
+    <section class="review-pane">
+      <div class="case-toolbar">
+        <button id="previous-case" type="button" aria-label="Previous review case">← Previous</button>
+        <div class="case-heading">
+          <p id="case-counter" class="eyebrow"></p>
+          <h2 id="case-title"></h2>
+          <p id="case-domain" class="case-domain"></p>
+        </div>
+        <button id="next-case" type="button" aria-label="Next review case">Next →</button>
+      </div>
+
+      <section class="resolution-surface" aria-label="Resolution review surface">
+        <div class="resolution-header">
+          <div>
+            <p class="surface-label">RESOLUTION</p>
+            <p id="resolution-label" class="resolution-label"></p>
+          </div>
+          <div class="mode-toggle" role="group" aria-label="Resolution mode">
+            <button id="mode-r0" type="button" aria-pressed="true">R0 · Source-rich</button>
+            <button id="mode-r1" type="button" aria-pressed="false">R1 · Explanation</button>
+            <button id="mode-r2" type="button" aria-pressed="false">R2 · Units</button>
+            <button id="mode-audit" type="button" aria-pressed="false">Audit</button>
+          </div>
+        </div>
+        <div id="resolution-host" class="resolution-host" aria-live="polite"></div>
+        <div id="metric-strip" class="metric-strip"></div>
+      </section>
+    </section>
+
+    <aside class="audit-pane" aria-label="Provenance and owner-review audit">
+      <section>
+        <p class="surface-label">RECOVERABILITY</p>
+        <h2 id="audit-title">Select an essential unit</h2>
+        <p id="audit-body" class="audit-body">R2 units retain exact evidence and source/model identity.</p>
+        <div id="support-list" class="support-list"></div>
+      </section>
+      <section class="rubric-section">
+        <p class="surface-label">NEUTRAL OWNER RUBRIC</p>
+        <ol id="rubric-list"></ol>
+      </section>
+      <div class="review-state"><span></span> OWNER VERDICT · PENDING</div>
+    </aside>
+  </main>
+
+  <div id="spec060-contract" hidden
+       data-authority="OFFLINE_ONLY"
+       data-view-lineage="INDEPENDENT_FROM_GROUNDED_SUBSTRATE"
+       data-visualization-work="false"
+       data-personalization="false"
+       data-production-promotion="false"
+       data-human-verdict="PENDING"></div>
+  <script src="app.js"></script>
+</body>
+</html>
