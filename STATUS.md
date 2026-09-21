@@ -14,9 +14,7 @@ Candidate B v2 (`spec-051-candidate-b-v2`) admitted 8/9 blind sources in SPEC-05
 
 ## Representation evidence
 
-SPEC-056 established that representability alone does not justify visualization.
-
-SPEC-057 established the cognitive-utility gate:
+SPEC-057 established:
 
 > **A representation must earn its complexity by externalizing cognitive work the learner would otherwise perform mentally.**
 
@@ -24,108 +22,100 @@ SPEC-058 owner verdict: `UTILITY_GATE_CONFIRMED_REPRESENTATION_FORM_REMAINS_UNRE
 
 SPEC-059 owner verdict: `ENRICHED_PROSE_CONCEPT_SUPPORTED_SELECTION_MODEL_REQUIRES_REFINEMENT`.
 
-Accepted SPEC-059 findings:
-
-- lexical/category emphasis was rarely better than plain prose;
-- useful emphasis must preserve contextual meaning-bearing fragments rather than isolated quantities/qualifiers;
-- comparisons often require richer representation when emphasis would cover almost all or none of a sentence;
-- simple claims generally favor prose;
-- even a two-node relation can justify structure when the relation itself is the explanatory content;
-- node count is not a sufficient utility criterion;
-- visual-grammar quality remains unresolved.
-
-## New committed direction
-
-Knowledge Compiler now treats representation as downstream of **progressive semantic compression**.
+## Progressive semantic compression direction
 
 > **Knowledge Compiler transforms source material into trustworthy, cognition-efficient representations of knowledge at variable resolution.**
 
-Core architectural principle:
+Core principle:
 
 > **Compression is a view over knowledge, not destruction of knowledge.**
 
-Current conceptual pipeline:
+SPEC-060 established mechanically that six frozen sources can be represented at smaller R1/R2 resolutions with zero detected loss under the current semantic/epistemic audits and 100% provenance coverage.
+
+Owner review of case 01 exposed a missing preservation dimension.
+
+SPEC-060 owner verdict:
+
+`SEMANTIC_CONTENT_PRESERVED_EXPLANATORY_STRUCTURE_NOT_PRESERVED`
+
+Accepted owner findings:
+
+- R1 mostly shortened/broke apart source prose and did not materially improve cognitive processing;
+- R2 exposed information types but disrupted the natural chain of thought;
+- R0's paragraphs sometimes acted as useful containers of coherent meaning;
+- paragraph boundaries are evidence, not a universal semantic unit;
+- the source carried useful explanatory traversal in addition to domain facts;
+- preserving modeled facts while losing mechanism → example → consequence → observation/generalization flow increases reconstruction burden;
+- raw word-count compression is not a sufficient objective;
+- some linguistic/discourse material is useful because it tells the learner how pieces of domain knowledge fit into an explanation.
+
+Canonical refinement:
+
+> **Semantic preservation is necessary but not sufficient; useful explanatory structure is itself information that compression should preserve.**
+
+> **Preserve useful explanatory work already present in the source before compressing its language.**
+
+## Current conceptual pipeline
 
 ```text
 SOURCE
   ↓
 GROUNDED / TRUSTED KNOWLEDGE
   ↓
+EXPLANATORY STRUCTURE
+  ├─ meaning blocks
+  ├─ explanatory functions
+  └─ traversal / discourse relations
+  ↓
 GOAL-PRESERVING SEMANTIC COMPRESSION
   ↓
 VARIABLE-RESOLUTION INFORMATION
   ↓
 FURTHER COGNITIVE GAIN?
-  ├─ no  → concise/enriched language
+  ├─ no  → language
   └─ yes → structural/perceptual representation
                ↓
           visual grammar
 ```
 
-This commits the project to the direction, not the full product ambition. Podcast/video ingestion, learner personalization, presentation generation and arbitrary multimodal compilation remain possible future applications, not current capabilities or authorized work.
-
 ## Current approved work packet
 
 ```text
-NONE
+specs/SPEC-061-explanatory-structure-preservation-experiment.md
 ```
 
-Status: `NONE`
+Status: `APPROVED_FOR_IMPLEMENTATION`
 
-Authority: `NONE`
+Authority: `OFFLINE_ONLY`
 
-Human gate: `NONE`
+Human gate: `OWNER_REVIEW`
 
 Promotion: `NOT_AUTHORIZED`
 
 ## Current gate
 
-SPEC-060 is implemented and awaiting owner review.
+SPEC-061 is authorized to test whether the compiler can recover latent explanatory meaning blocks, their functions, and their traversal from the same six frozen SPEC-060 sources, then compress within those blocks without flattening the explanation into atomic facts.
 
-The deterministic six-case corpus spans geology, meteorology, civics,
-astronomy, ecology and materials science. Each case exposes R0 source-rich,
-R1 essential-explanation and R2 essential-unit views generated independently
-from the same frozen admitted substrate. The experiment records complete
-semantic, epistemic, omission and provenance/recoverability audits.
+Case 01 is a diagnostic anchor only. The owner's observed mechanism → Mid-Atlantic Ridge example → timescale/consequence → Iceland/Krafla → Red Sea/generalization path must be used only for post-hoc alignment audit, never as implementation truth or a hard-coded rule.
 
-All six R1 and R2 views are mechanically smaller than R0. The mean word ratios
-are 0.8271 for R1:R0 and 0.6783 for R2:R0. Across 149 required semantic items,
-the mechanical audits report zero material omissions, semantic changes,
-unsupported additions or strengthened certainty/causality, with 100%
-provenance coverage. These results admit the artifact to owner review; they do
-not establish learning improvement or assign the human verdict.
+Cases 02–06 remain blind with respect to owner pedagogical verdict.
 
-Desktop and 390×844 browser gates pass the six cases, independent-view
-identity, resolution switching, provenance tracing, navigation, responsive
-layout and clean-console checks. No visualization, semantic production change,
-personalization or promotion was performed.
-
-Canonical evidence:
-
-`examples/evaluations/spec-060-progressive-semantic-compression-foundation-20260917/report.json`
-
-Canonical vision/mission:
-
-`docs/PROJECT-VISION.md`
-
-No packet is active. Promotion remains unauthorized and the owner verdict is
-pending.
+No visualization, production semantic changes, model calls, retrieval, personalization, or promotion are authorized.
 
 ## Current product question
 
 ```text
-trusted source-derived material
-        ↓
-remove rhetorical/repetitive/linguistic overhead
-without removing meaning
-        ↓
-R0 source-rich
-R1 essential explanation
-R2 essential units
-        ↓
-How far can representation cost fall
-before useful semantic information is lost?
-        ↓
+trusted explanation
+      ↓
+domain semantics + explanatory structure
+      ↓
+meaning blocks + functions + traversal
+      ↓
+compress language inside preserved structure
+      ↓
+Does representational cost fall
+without increasing reconstruction burden?
+      ↓
 OWNER REVIEW
 ```
 
@@ -135,7 +125,7 @@ OWNER REVIEW
 - SPEC-038 learner-facing architecture/baseline;
 - Candidate B v2 extraction/evidence;
 - SPEC-052 admitted KnowledgeModels;
-- SPEC-055–059 evidence/artifacts;
+- SPEC-055–060 evidence/artifacts;
 - SPEC-057 cognitive-utility decisions;
 - trusted semantic vocabulary/propositions;
 - grounding/provenance/validators;
@@ -147,7 +137,7 @@ OWNER REVIEW
 
 ## Explicitly forbidden
 
-Do not call a model/provider; retrieve external sources; rerun extraction; modify KnowledgeModel semantics; create unsupported topology; implement learner personalization, podcast/video ingestion, presentation generation or visual-grammar selection; promote compression/enriched prose/renderers; redesign production UI; encode owner feedback as case-specific rules; assign the human pedagogical verdict; implement follow-up product changes.
+Do not call a model/provider; retrieve external sources; rerun extraction; modify production KnowledgeModel semantics; add discourse relations to the production semantic registry; hard-code case-01 owner structure; equate paragraphs with meaning blocks; optimize only for word count; implement personalization, podcast/video ingestion, presentation generation, visualization or visual-grammar selection; promote experimental work; redesign production UI; assign the human pedagogical verdict; implement follow-up product changes.
 
 ## Coordination rule
 
