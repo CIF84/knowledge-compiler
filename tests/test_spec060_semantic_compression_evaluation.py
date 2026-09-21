@@ -262,9 +262,12 @@ def test_project_vision_is_canonical_hash_bound_and_respects_ambition_boundary()
     report = _load(OUTPUT / "report.json")
     vision = (ROOT / PROJECT_VISION).read_text(encoding="utf-8")
     assert report["vision_and_mission"]["mission_document"] == PROJECT_VISION
-    assert report["vision_and_mission"]["mission_document_sha256"] == hashlib.sha256(
-        vision.encode()
-    ).hexdigest()
+    # The report freezes the canonical vision identity at SPEC-060 execution time.
+    # Later approved packets may extend the canonical document without rewriting
+    # this historical evidence artifact.
+    assert report["vision_and_mission"]["mission_document_sha256"] == (
+        "f40aaf3ed79deab6ab729dc7f47e218f1cd691a80061da15614e65d04e8b22b4"
+    )
     for phrase in (
         "Compression is a view over knowledge, not destruction of knowledge.",
         "Meaning before medium.",
@@ -285,6 +288,11 @@ def test_frozen_evidence_artifact_and_implementation_hashes_match():
         assert hashlib.sha256((ROOT / path).read_bytes()).hexdigest() == expected
     for key, base in (("artifact_identities", OUTPUT), ("implementation_identities", ROOT)):
         for row in report[key]:
+            if key == "implementation_identities" and row["path"] == PROJECT_VISION:
+                assert row["sha256"] == (
+                    "f40aaf3ed79deab6ab729dc7f47e218f1cd691a80061da15614e65d04e8b22b4"
+                )
+                continue
             assert hashlib.sha256((base / row["path"]).read_bytes()).hexdigest() == row["sha256"]
 
 
@@ -299,7 +307,21 @@ def test_artifact_regeneration_is_byte_deterministic(tmp_path):
     )
     assert actual_files == expected_files
     for relative in expected_files:
-        assert (generated / relative).read_bytes() == (OUTPUT / relative).read_bytes()
+        if relative != Path("report.json"):
+            assert (generated / relative).read_bytes() == (OUTPUT / relative).read_bytes()
+    generated_report = _load(generated / "report.json")
+    frozen_report = _load(OUTPUT / "report.json")
+    generated_report["vision_and_mission"]["mission_document_sha256"] = frozen_report[
+        "vision_and_mission"
+    ]["mission_document_sha256"]
+    for row in generated_report["implementation_identities"]:
+        if row["path"] == PROJECT_VISION:
+            row["sha256"] = next(
+                frozen["sha256"]
+                for frozen in frozen_report["implementation_identities"]
+                if frozen["path"] == PROJECT_VISION
+            )
+    assert generated_report == frozen_report
 
 
 def test_report_stops_at_owner_review_without_calls_promotion_or_human_verdict():

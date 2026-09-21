@@ -27,6 +27,9 @@ text / document / possible future audio or video
 GROUNDED EXTRACTION
 trusted claims / relationships / evidence / provenance
         ↓
+EXPLANATORY STRUCTURE
+meaning blocks / explanatory functions / supported traversal
+        ↓
 GOAL-PRESERVING SEMANTIC COMPRESSION
 multiple non-destructive resolutions over one richer substrate
         ↓
@@ -41,11 +44,16 @@ The central rule is:
 
 > **Compression is a view over knowledge, not destruction of knowledge.**
 
-The architecture therefore does not treat `source → summary → shorter summary → visual` as a trustworthy pipeline. Each resolution and representation must derive from the grounded substrate, retain provenance, and remain recoverable to richer trusted information.
+Its preservation boundary is broader than modeled domain facts:
+
+> **Semantic preservation is necessary but not sufficient; useful explanatory structure is itself information that compression should preserve.**
+
+The architecture therefore does not treat `source → summary → shorter summary → visual` as a trustworthy pipeline. Each resolution and representation must derive from the grounded substrate, preserve useful explanatory work already present in the source, retain provenance, and remain recoverable to richer trusted information.
 
 ## Principles
 
 - **Meaning before medium.** Establish grounded meaning before deciding how to present it.
+- **Explanatory structure is information.** Preserve coherent meaning blocks, their functions, and supported traversal before compressing language inside them.
 - **Compression before visualization.** First remove rhetorical, repetitive, and linguistic overhead without removing necessary meaning; only then ask whether another representation reduces cognitive work.
 - **Non-destructive compression.** A compressed view never replaces or mutates its richer semantic substrate.
 - **Provenance at every resolution.** Every retained unit must trace back to trusted evidence and source identity.
@@ -58,7 +66,7 @@ The architecture therefore does not treat `source → summary → shorter summar
 
 ## Current validated direction
 
-The repository currently contains grounded extraction, semantic admission, deterministic representation experiments, a cognitive-utility gate, and evidence that plain prose, semantically enriched prose, and structural representation each have legitimate but different roles. Progressive semantic compression is now being evaluated as the experimental layer between grounded knowledge and representation selection.
+The repository currently contains grounded extraction, semantic admission, deterministic representation experiments, a cognitive-utility gate, and evidence that plain prose, semantically enriched prose, and structural representation each have legitimate but different roles. Progressive semantic compression is being evaluated between grounded knowledge and representation selection, with explanatory structure treated as a distinct experimental preservation layer rather than inferred from word-count reduction.
 
 Current work does not establish optimal teaching, universal essentiality, personalized learning paths, arbitrary multimodal ingestion, or an optimal visual grammar. Human review remains necessary for cognitive and pedagogical judgments.
 

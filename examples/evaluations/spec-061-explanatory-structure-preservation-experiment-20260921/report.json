@@ -1,0 +1,848 @@
+{
+  "artifact_identities": [
+    {
+      "path": "index.html",
+      "sha256": "76dee0cfbbe272b9d24daa88a77f3a6f19ff1283ed418ffc90f5c4e6490e5a74"
+    },
+    {
+      "path": "styles.css",
+      "sha256": "e1a114c0dcf0a225c05680a7e61819824848e7b76bdce2cd37bc40ad41db21df"
+    },
+    {
+      "path": "app.js",
+      "sha256": "06003cf8a5feace4914576cda44174b8bb65655d451812b093008479ff64808d"
+    },
+    {
+      "path": "manifest.json",
+      "sha256": "1236b160ceb38ea2a5502a0e5f8cd5eebe0d52a58c9bb1f2038a254f931218db"
+    },
+    {
+      "path": "cases.json",
+      "sha256": "184f2ec8a8064d093465c8d57dece95b4edd67d68b80f0483e3f10087e14c606"
+    },
+    {
+      "path": "block-manifest.json",
+      "sha256": "85334ddc416e80be7a505d1b27df1604536769e6d2afea3afd44d232be760fb7"
+    },
+    {
+      "path": "function-manifest.json",
+      "sha256": "a5b1046891ebc5a65280caa53241457d1eb4152d097a9b6ae35c522b01b09db5"
+    },
+    {
+      "path": "traversal-manifest.json",
+      "sha256": "0b454d656a81abda84ad79bd9cbfc5c722428182fc6738d82f78ac5e12afed14"
+    },
+    {
+      "path": "paragraph-mapping.json",
+      "sha256": "3358b4314a31f281a06ff5dd8fb4def12fc69f63d915cf032fab2427d64ad75c"
+    },
+    {
+      "path": "owner-review-rubric.json",
+      "sha256": "13130060a3acffb4b116821397b995e3c36acbc0922a1613ba9e26091b40b6f6"
+    },
+    {
+      "path": "browser-verification.json",
+      "sha256": "10b9db608160b9796ac7b866e22933ed87bdd079364375da8c0cfea8eb4c55ab"
+    },
+    {
+      "path": "models/spec061-case-1bba1fe545d235.json",
+      "sha256": "f583b91245f1b332c92ac4bd9a6bf6c62e0e1fe6fd793e3688ba556dab7e919b"
+    },
+    {
+      "path": "models/spec061-case-ba7e27485ef686.json",
+      "sha256": "8d51a44ae08491808a65fd665a8f0439e10fa9e93f1b97e64bea9b83014c6b5f"
+    },
+    {
+      "path": "models/spec061-case-1579b4cd8a3f38.json",
+      "sha256": "c4b5a2e04be030e8c9146279b966e26a7b246bf8f7fc4d65a930a43eeba081bb"
+    },
+    {
+      "path": "models/spec061-case-cc1201ba6318eb.json",
+      "sha256": "bdb25b0f8f54ceeb380e423aba5c24f6fa86c6558858a85a95636aecb5244b65"
+    },
+    {
+      "path": "models/spec061-case-79167a25825ca2.json",
+      "sha256": "6a49bd9ec5e711cc9d222f6f79742f6d7833a303712c57a9a3a872731234b255"
+    },
+    {
+      "path": "models/spec061-case-4fa3e9d7018bce.json",
+      "sha256": "e785608c9c8b8344ad216da53a76cb39585db2cd6ba60cd49cf13c3a427fa4ee"
+    }
+  ],
+  "authority": "OFFLINE_ONLY",
+  "blind_case_policy": {
+    "case_specific_repairs": 0,
+    "cases_02_through_06_owner_verdict": "NOT_OBSERVED",
+    "output_adapted_after_owner_pattern_comparison": false
+  },
+  "block_function_traversal_distribution": {
+    "aggregate_functions": {
+      "CANONICAL_EXAMPLE": 2,
+      "CONSEQUENCE": 4,
+      "CORE_IDEA": 2,
+      "EVIDENCE_OR_OBSERVATION": 2,
+      "MECHANISM": 10,
+      "ORIENTATION": 4,
+      "QUALIFICATION_OR_LIMIT": 11,
+      "SCALE_OR_TIMESCALE": 8,
+      "SECONDARY_EXAMPLE": 3
+    },
+    "aggregate_relations": {
+      "CONTINUES": 4,
+      "CONTRASTS_WITH": 2,
+      "ELABORATES": 7,
+      "EXEMPLIFIES": 5,
+      "GROUNDS": 2,
+      "LEADS_TO": 4,
+      "QUALIFIES": 8,
+      "SCALES_TO": 8
+    },
+    "per_case": [
+      {
+        "block_count": 7,
+        "blocks_spanning_multiple_paragraphs": 0,
+        "case_identity": "spec061-case-1bba1fe545d235",
+        "function_distribution": {
+          "CANONICAL_EXAMPLE": 1,
+          "CONSEQUENCE": 1,
+          "EVIDENCE_OR_OBSERVATION": 1,
+          "MECHANISM": 2,
+          "SCALE_OR_TIMESCALE": 2
+        },
+        "paragraphs_split_across_blocks": 2,
+        "relation_distribution": {
+          "CONTINUES": 1,
+          "EXEMPLIFIES": 1,
+          "GROUNDS": 1,
+          "LEADS_TO": 1,
+          "SCALES_TO": 2
+        },
+        "source_id": "usgs-divergent-plate-boundaries-1996"
+      },
+      {
+        "block_count": 12,
+        "blocks_spanning_multiple_paragraphs": 1,
+        "case_identity": "spec061-case-ba7e27485ef686",
+        "function_distribution": {
+          "CONSEQUENCE": 1,
+          "MECHANISM": 3,
+          "ORIENTATION": 1,
+          "QUALIFICATION_OR_LIMIT": 5,
+          "SCALE_OR_TIMESCALE": 1,
+          "SECONDARY_EXAMPLE": 1
+        },
+        "paragraphs_split_across_blocks": 3,
+        "relation_distribution": {
+          "CONTINUES": 1,
+          "CONTRASTS_WITH": 2,
+          "ELABORATES": 2,
+          "EXEMPLIFIES": 1,
+          "LEADS_TO": 1,
+          "QUALIFIES": 3,
+          "SCALES_TO": 1
+        },
+        "source_id": "noaa-nesdis-jet-stream-2025"
+      },
+      {
+        "block_count": 4,
+        "blocks_spanning_multiple_paragraphs": 1,
+        "case_identity": "spec061-case-1579b4cd8a3f38",
+        "function_distribution": {
+          "QUALIFICATION_OR_LIMIT": 3,
+          "SECONDARY_EXAMPLE": 1
+        },
+        "paragraphs_split_across_blocks": 1,
+        "relation_distribution": {
+          "EXEMPLIFIES": 1,
+          "QUALIFIES": 2
+        },
+        "source_id": "crs-legislative-process-r42843-17"
+      },
+      {
+        "block_count": 5,
+        "blocks_spanning_multiple_paragraphs": 1,
+        "case_identity": "spec061-case-cc1201ba6318eb",
+        "function_distribution": {
+          "MECHANISM": 2,
+          "ORIENTATION": 1,
+          "QUALIFICATION_OR_LIMIT": 2
+        },
+        "paragraphs_split_across_blocks": 1,
+        "relation_distribution": {
+          "CONTINUES": 1,
+          "ELABORATES": 1,
+          "QUALIFIES": 2
+        },
+        "source_id": "nasa-solar-system-formation-2026"
+      },
+      {
+        "block_count": 11,
+        "blocks_spanning_multiple_paragraphs": 0,
+        "case_identity": "spec061-case-79167a25825ca2",
+        "function_distribution": {
+          "CANONICAL_EXAMPLE": 1,
+          "CONSEQUENCE": 2,
+          "MECHANISM": 2,
+          "ORIENTATION": 1,
+          "QUALIFICATION_OR_LIMIT": 1,
+          "SCALE_OR_TIMESCALE": 4
+        },
+        "paragraphs_split_across_blocks": 3,
+        "relation_distribution": {
+          "ELABORATES": 2,
+          "EXEMPLIFIES": 1,
+          "LEADS_TO": 2,
+          "QUALIFIES": 1,
+          "SCALES_TO": 4
+        },
+        "source_id": "epa-ecological-processes-2026"
+      },
+      {
+        "block_count": 7,
+        "blocks_spanning_multiple_paragraphs": 0,
+        "case_identity": "spec061-case-4fa3e9d7018bce",
+        "function_distribution": {
+          "CORE_IDEA": 2,
+          "EVIDENCE_OR_OBSERVATION": 1,
+          "MECHANISM": 1,
+          "ORIENTATION": 1,
+          "SCALE_OR_TIMESCALE": 1,
+          "SECONDARY_EXAMPLE": 1
+        },
+        "paragraphs_split_across_blocks": 3,
+        "relation_distribution": {
+          "CONTINUES": 1,
+          "ELABORATES": 2,
+          "EXEMPLIFIES": 1,
+          "GROUNDS": 1,
+          "SCALES_TO": 1
+        },
+        "source_id": "doe-iron-platinum-atomic-structure-2017"
+      }
+    ]
+  },
+  "browser_gate": {
+    "browser": "Codex in-app browser (Chromium desktop engine)",
+    "console": {
+      "errors": [],
+      "result": "PASS",
+      "warnings": []
+    },
+    "desktop": {
+      "all_6_cases_loaded": true,
+      "all_case_machine_checks_passed": true,
+      "block_and_traversal_legibility": "PASS",
+      "e0_e1_e2_audit_switching": "PASS",
+      "horizontal_overflow": false,
+      "paragraph_overlay": "PASS",
+      "result": "PASS",
+      "viewport": "1280x720"
+    },
+    "interaction": {
+      "block_trace_selection": "PASS",
+      "case_navigation": "PASS",
+      "independent_view_identities_preserved": "PASS",
+      "resolution_toggle_all_6_cases": "PASS"
+    },
+    "narrow": {
+      "all_case_machine_checks_passed": true,
+      "horizontal_overflow": false,
+      "paragraph_overlay_usable": true,
+      "resolution_controls_visible": true,
+      "result": "PASS",
+      "single_column_workspace": true,
+      "viewport": "390x844"
+    },
+    "screenshots": {
+      "captured": false,
+      "reason": "Desktop and 390x844 layouts were inspected through the Chromium browser gate; no deterministic repository-file capture path was exposed."
+    },
+    "status": "PASS"
+  },
+  "canonical_refinement": "Semantic preservation is necessary but not sufficient; useful explanatory structure is itself information that compression should preserve.",
+  "case01_owner_pattern_alignment": {
+    "aligned_stage_count": 5,
+    "audit_timing": "POST_HOC_AFTER_GENERIC_OUTPUT_FROZEN",
+    "classification": "ALIGNED",
+    "expected_stage_count": 5,
+    "output_changed_after_comparison": false,
+    "owner_approval_inferred": false,
+    "owner_pattern_used_as_detector_input": false,
+    "stages": [
+      {
+        "anchors": [
+          "plates",
+          "magma",
+          "crust"
+        ],
+        "block_ids": [
+          "block-fb5012e7926c05"
+        ],
+        "functions": [
+          "MECHANISM"
+        ],
+        "stage": "MECHANISM",
+        "status": "ALIGNED"
+      },
+      {
+        "anchors": [
+          "mid atlantic ridge"
+        ],
+        "block_ids": [
+          "block-ed5af58fa08db8"
+        ],
+        "functions": [
+          "CANONICAL_EXAMPLE"
+        ],
+        "stage": "CANONICAL_EXAMPLE",
+        "status": "ALIGNED"
+      },
+      {
+        "anchors": [
+          "rate",
+          "million years",
+          "atlantic ocean"
+        ],
+        "block_ids": [
+          "block-f8ce1db1c3f8dc"
+        ],
+        "functions": [
+          "SCALE_OR_TIMESCALE"
+        ],
+        "stage": "SCALE_AND_CONSEQUENCE",
+        "status": "ALIGNED"
+      },
+      {
+        "anchors": [
+          "iceland",
+          "krafla"
+        ],
+        "block_ids": [
+          "block-7cf697ba8479f5",
+          "block-5ca9b963586f05"
+        ],
+        "functions": [
+          "CONSEQUENCE",
+          "EVIDENCE_OR_OBSERVATION"
+        ],
+        "stage": "OBSERVATIONAL_EXAMPLE",
+        "status": "ALIGNED"
+      },
+      {
+        "anchors": [
+          "red sea",
+          "africa"
+        ],
+        "block_ids": [
+          "block-5f8e8c7c1efc1a",
+          "block-c5f8ac89b9aa1c"
+        ],
+        "functions": [
+          "MECHANISM",
+          "SCALE_OR_TIMESCALE"
+        ],
+        "stage": "FURTHER_EXAMPLE_OR_GENERALIZATION",
+        "status": "ALIGNED"
+      }
+    ]
+  },
+  "compression_metrics": {
+    "mean_e1_to_e0_word_ratio": 0.94,
+    "mean_e2_to_e0_word_ratio": 0.826,
+    "per_case": [
+      {
+        "block_count": 7,
+        "blocks_spanning_multiple_paragraphs": 0,
+        "case_identity": "spec061-case-1bba1fe545d235",
+        "e0": {
+          "characters": 2716,
+          "sha256": "a9539d135ff1577d7e2791d498b92f55239175565b925b24aec2ed0bf633f186",
+          "words": 440
+        },
+        "e1": {
+          "characters": 2638,
+          "sha256": "24152c14b323be0ecced84f56e17962de3c13b8eef66cddce1029ea34acb7646",
+          "words": 427
+        },
+        "e1_to_e0_character_ratio": 0.9713,
+        "e1_to_e0_word_ratio": 0.9705,
+        "e2": {
+          "characters": 2107,
+          "sha256": "301a58f8d1e366b649a4bb62fb270c1bacf194940bd396e2f38f6b99e8f60458",
+          "words": 329
+        },
+        "e2_to_e0_character_ratio": 0.7758,
+        "e2_to_e0_word_ratio": 0.7477,
+        "explicit_traversal_links_preserved": 6,
+        "function_distribution": {
+          "CANONICAL_EXAMPLE": 1,
+          "CONSEQUENCE": 1,
+          "EVIDENCE_OR_OBSERVATION": 1,
+          "MECHANISM": 2,
+          "SCALE_OR_TIMESCALE": 2
+        },
+        "paragraph_count": 5,
+        "paragraphs_split_across_blocks": 2,
+        "reconstruction_burden_diagnostics": {
+          "atomized_required_items": 0,
+          "blocks_with_explicit_function": 7,
+          "ordered_transitions_exposed": 6,
+          "paragraph_boundaries_treated_as_identity": 0,
+          "pseudo_scientific_score_assigned": false
+        },
+        "relation_distribution": {
+          "CONTINUES": 1,
+          "EXEMPLIFIES": 1,
+          "GROUNDS": 1,
+          "LEADS_TO": 1,
+          "SCALES_TO": 2
+        },
+        "required_cross_block_relations_implicit": 1,
+        "sentence_count": 20,
+        "source_id": "usgs-divergent-plate-boundaries-1996",
+        "source_order_reordering_count": 0,
+        "unassigned_material_count": 0
+      },
+      {
+        "block_count": 12,
+        "blocks_spanning_multiple_paragraphs": 1,
+        "case_identity": "spec061-case-ba7e27485ef686",
+        "e0": {
+          "characters": 2350,
+          "sha256": "256ade61be620cfaa7b1327e3c982576611dd29b6a1fb42217d86ffdc0783ca1",
+          "words": 415
+        },
+        "e1": {
+          "characters": 2352,
+          "sha256": "28d8b5084b982cb3e04b767bc78d4ff6c1b4a1d6777c4b81b9ea964e508ecdd1",
+          "words": 415
+        },
+        "e1_to_e0_character_ratio": 1.0009,
+        "e1_to_e0_word_ratio": 1.0,
+        "e2": {
+          "characters": 2574,
+          "sha256": "ac5aa0cb42c122329ef2e2b23b24b726309969babf4cc7136bf6820373cf065c",
+          "words": 424
+        },
+        "e2_to_e0_character_ratio": 1.0953,
+        "e2_to_e0_word_ratio": 1.0217,
+        "explicit_traversal_links_preserved": 11,
+        "function_distribution": {
+          "CONSEQUENCE": 1,
+          "MECHANISM": 3,
+          "ORIENTATION": 1,
+          "QUALIFICATION_OR_LIMIT": 5,
+          "SCALE_OR_TIMESCALE": 1,
+          "SECONDARY_EXAMPLE": 1
+        },
+        "paragraph_count": 10,
+        "paragraphs_split_across_blocks": 3,
+        "reconstruction_burden_diagnostics": {
+          "atomized_required_items": 0,
+          "blocks_with_explicit_function": 12,
+          "ordered_transitions_exposed": 11,
+          "paragraph_boundaries_treated_as_identity": 0,
+          "pseudo_scientific_score_assigned": false
+        },
+        "relation_distribution": {
+          "CONTINUES": 1,
+          "CONTRASTS_WITH": 2,
+          "ELABORATES": 2,
+          "EXEMPLIFIES": 1,
+          "LEADS_TO": 1,
+          "QUALIFIES": 3,
+          "SCALES_TO": 1
+        },
+        "required_cross_block_relations_implicit": 1,
+        "sentence_count": 22,
+        "source_id": "noaa-nesdis-jet-stream-2025",
+        "source_order_reordering_count": 0,
+        "unassigned_material_count": 0
+      },
+      {
+        "block_count": 4,
+        "blocks_spanning_multiple_paragraphs": 1,
+        "case_identity": "spec061-case-1579b4cd8a3f38",
+        "e0": {
+          "characters": 2152,
+          "sha256": "fe61b7c3b2a9373e7eb3b30d16b94adc2c8b5f4307327265943995550a6384b4",
+          "words": 341
+        },
+        "e1": {
+          "characters": 2152,
+          "sha256": "4e415adcf0d9fe6681eea259a3b5766a2de3163bc03f070b215f7a0fdf33ae83",
+          "words": 341
+        },
+        "e1_to_e0_character_ratio": 1.0,
+        "e1_to_e0_word_ratio": 1.0,
+        "e2": {
+          "characters": 1828,
+          "sha256": "0b56e61f25d3f11c1b0f77c381b40f8423c105d3257141933497a71e7ccc7165",
+          "words": 287
+        },
+        "e2_to_e0_character_ratio": 0.8494,
+        "e2_to_e0_word_ratio": 0.8416,
+        "explicit_traversal_links_preserved": 3,
+        "function_distribution": {
+          "QUALIFICATION_OR_LIMIT": 3,
+          "SECONDARY_EXAMPLE": 1
+        },
+        "paragraph_count": 4,
+        "paragraphs_split_across_blocks": 1,
+        "reconstruction_burden_diagnostics": {
+          "atomized_required_items": 0,
+          "blocks_with_explicit_function": 4,
+          "ordered_transitions_exposed": 3,
+          "paragraph_boundaries_treated_as_identity": 0,
+          "pseudo_scientific_score_assigned": false
+        },
+        "relation_distribution": {
+          "EXEMPLIFIES": 1,
+          "QUALIFIES": 2
+        },
+        "required_cross_block_relations_implicit": 0,
+        "sentence_count": 11,
+        "source_id": "crs-legislative-process-r42843-17",
+        "source_order_reordering_count": 0,
+        "unassigned_material_count": 0
+      },
+      {
+        "block_count": 5,
+        "blocks_spanning_multiple_paragraphs": 1,
+        "case_identity": "spec061-case-cc1201ba6318eb",
+        "e0": {
+          "characters": 2490,
+          "sha256": "c0cb2519673b8f3ef23c0be2856e03790f53d44971cbff09d593190ab3fa155d",
+          "words": 459
+        },
+        "e1": {
+          "characters": 1824,
+          "sha256": "e8d2f6ce891a4fd02d4c06daeb265d0e670566c93d7ae96ec698098a86ddac82",
+          "words": 337
+        },
+        "e1_to_e0_character_ratio": 0.7325,
+        "e1_to_e0_word_ratio": 0.7342,
+        "e2": {
+          "characters": 1372,
+          "sha256": "9be59ed2667e8493b94afc1cddd8cd9b1e2fdc2338aca03c5deaab5ea8c2baaa",
+          "words": 241
+        },
+        "e2_to_e0_character_ratio": 0.551,
+        "e2_to_e0_word_ratio": 0.5251,
+        "explicit_traversal_links_preserved": 4,
+        "function_distribution": {
+          "MECHANISM": 2,
+          "ORIENTATION": 1,
+          "QUALIFICATION_OR_LIMIT": 2
+        },
+        "paragraph_count": 5,
+        "paragraphs_split_across_blocks": 1,
+        "reconstruction_burden_diagnostics": {
+          "atomized_required_items": 0,
+          "blocks_with_explicit_function": 5,
+          "ordered_transitions_exposed": 4,
+          "paragraph_boundaries_treated_as_identity": 0,
+          "pseudo_scientific_score_assigned": false
+        },
+        "relation_distribution": {
+          "CONTINUES": 1,
+          "ELABORATES": 1,
+          "QUALIFIES": 2
+        },
+        "required_cross_block_relations_implicit": 1,
+        "sentence_count": 24,
+        "source_id": "nasa-solar-system-formation-2026",
+        "source_order_reordering_count": 0,
+        "unassigned_material_count": 0
+      },
+      {
+        "block_count": 11,
+        "blocks_spanning_multiple_paragraphs": 0,
+        "case_identity": "spec061-case-79167a25825ca2",
+        "e0": {
+          "characters": 2728,
+          "sha256": "70e7e3d20325dd5d22e9cf4484934419447907ba9f6cf5a4dfd65ddcbfa80ad5",
+          "words": 383
+        },
+        "e1": {
+          "characters": 2732,
+          "sha256": "bc15fb51aa3ffc61b269940fdc079b24353c5fa5f8a227a0d5b92158f775703f",
+          "words": 383
+        },
+        "e1_to_e0_character_ratio": 1.0015,
+        "e1_to_e0_word_ratio": 1.0,
+        "e2": {
+          "characters": 2464,
+          "sha256": "38cb79c60219dd5448570b5977cc55a36c20e201a73fb3372ab9286959fe8aa4",
+          "words": 329
+        },
+        "e2_to_e0_character_ratio": 0.9032,
+        "e2_to_e0_word_ratio": 0.859,
+        "explicit_traversal_links_preserved": 10,
+        "function_distribution": {
+          "CANONICAL_EXAMPLE": 1,
+          "CONSEQUENCE": 2,
+          "MECHANISM": 2,
+          "ORIENTATION": 1,
+          "QUALIFICATION_OR_LIMIT": 1,
+          "SCALE_OR_TIMESCALE": 4
+        },
+        "paragraph_count": 7,
+        "paragraphs_split_across_blocks": 3,
+        "reconstruction_burden_diagnostics": {
+          "atomized_required_items": 0,
+          "blocks_with_explicit_function": 11,
+          "ordered_transitions_exposed": 10,
+          "paragraph_boundaries_treated_as_identity": 0,
+          "pseudo_scientific_score_assigned": false
+        },
+        "relation_distribution": {
+          "ELABORATES": 2,
+          "EXEMPLIFIES": 1,
+          "LEADS_TO": 2,
+          "QUALIFIES": 1,
+          "SCALES_TO": 4
+        },
+        "required_cross_block_relations_implicit": 0,
+        "sentence_count": 15,
+        "source_id": "epa-ecological-processes-2026",
+        "source_order_reordering_count": 0,
+        "unassigned_material_count": 0
+      },
+      {
+        "block_count": 7,
+        "blocks_spanning_multiple_paragraphs": 0,
+        "case_identity": "spec061-case-4fa3e9d7018bce",
+        "e0": {
+          "characters": 2664,
+          "sha256": "e9d2260c9980239431fc195e7dc687afea93598af4f28d774ed5e4c4317f9e1e",
+          "words": 385
+        },
+        "e1": {
+          "characters": 2496,
+          "sha256": "646cd8d613a450b967dbaa2e6b35f36802c422b9b514985505ec512f051ff275",
+          "words": 360
+        },
+        "e1_to_e0_character_ratio": 0.9369,
+        "e1_to_e0_word_ratio": 0.9351,
+        "e2": {
+          "characters": 2611,
+          "sha256": "bff14d66f3c67ba25e8c071601f721db4adc4e1b3a86a0bd68b9d0fb5d8fb9ee",
+          "words": 370
+        },
+        "e2_to_e0_character_ratio": 0.9801,
+        "e2_to_e0_word_ratio": 0.961,
+        "explicit_traversal_links_preserved": 6,
+        "function_distribution": {
+          "CORE_IDEA": 2,
+          "EVIDENCE_OR_OBSERVATION": 1,
+          "MECHANISM": 1,
+          "ORIENTATION": 1,
+          "SCALE_OR_TIMESCALE": 1,
+          "SECONDARY_EXAMPLE": 1
+        },
+        "paragraph_count": 3,
+        "paragraphs_split_across_blocks": 3,
+        "reconstruction_burden_diagnostics": {
+          "atomized_required_items": 0,
+          "blocks_with_explicit_function": 7,
+          "ordered_transitions_exposed": 6,
+          "paragraph_boundaries_treated_as_identity": 0,
+          "pseudo_scientific_score_assigned": false
+        },
+        "relation_distribution": {
+          "CONTINUES": 1,
+          "ELABORATES": 2,
+          "EXEMPLIFIES": 1,
+          "GROUNDS": 1,
+          "SCALES_TO": 1
+        },
+        "required_cross_block_relations_implicit": 1,
+        "sentence_count": 17,
+        "source_id": "doe-iron-platinum-atomic-structure-2017",
+        "source_order_reordering_count": 0,
+        "unassigned_material_count": 0
+      }
+    ],
+    "pseudo_scientific_reconstruction_score_assigned": false,
+    "word_count_is_diagnostic_not_objective": true
+  },
+  "corpus": {
+    "case_count": 6,
+    "domain_count": 6,
+    "domains": [
+      "geology / Earth systems",
+      "meteorology / atmospheric systems",
+      "civics / institutional process",
+      "astronomy / planetary science",
+      "ecology / environmental systems",
+      "chemistry / materials science"
+    ],
+    "exact_spec060_case_order": true,
+    "manifest": "manifest.json"
+  },
+  "decision_branch": "INCONCLUSIVE",
+  "deterministic_regeneration": "PASS",
+  "deviations": [],
+  "execution_integrity": {
+    "case01_hardcoded_detection_rules": 0,
+    "external_network_or_source_retrievals": 0,
+    "extraction_reruns": 0,
+    "human_verdict_assignments": 0,
+    "paragraph_equals_block_assumptions": 0,
+    "production_semantic_changes": 0,
+    "provider_model_calls": 0,
+    "visualization_implementations": 0
+  },
+  "frozen_input_identities": [
+    {
+      "path": "examples/evaluations/spec-060-progressive-semantic-compression-foundation-20260917/cases.json",
+      "sha256": "bab94772ea82b39f6dd946347c6939192930a736dbe8623e29886d6979315734"
+    },
+    {
+      "path": "examples/evaluations/spec-060-progressive-semantic-compression-foundation-20260917/report.json",
+      "sha256": "638ed225274d7f6ffefee7f042bcdbfd0de4bef2f046961da0003d7f4c4e3f24"
+    },
+    {
+      "path": "examples/evaluations/spec-060-progressive-semantic-compression-foundation-20260917/manifest.json",
+      "sha256": "e82df7f87cf50c0aafb34425c3753e8a45b95c0a455b852963d1162b2b72e57c"
+    },
+    {
+      "path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/final-report.json",
+      "sha256": "5e73b73b1080230b8068ab2046ba82f635ee65bfaaaf63c05e0db15e12d75d08"
+    },
+    {
+      "path": "examples/evaluations/spec-059-semantic-typography-enriched-prose-experiment-20260917/report.json",
+      "sha256": "4507785572c16c2e50b0c1a7c301391bfca8b20cef8b94eb5cba1e9b12ea2cda"
+    },
+    {
+      "path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/01-usgs-divergent-plate-boundaries-1996/admitted-knowledge-model.json",
+      "sha256": "fa2494dab670a698a8f730a0501c997984467839906f5c7b702e50ad6fd61261"
+    },
+    {
+      "path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/01-usgs-divergent-plate-boundaries-1996/source-identity.json",
+      "sha256": "53212d9b0acf6ea795edf5f978193455188adbad2815d21ecefc4a5fd18dc83b"
+    },
+    {
+      "path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/02-noaa-nesdis-jet-stream-2025/admitted-knowledge-model.json",
+      "sha256": "0c1e5b46d692727ca526f74307de2c0b358a1ea79dab98143f19271872a61a62"
+    },
+    {
+      "path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/02-noaa-nesdis-jet-stream-2025/source-identity.json",
+      "sha256": "ea70487e2656e2226eae46f48cc1f9176b8530acc0e42767aba3d3b6cb8b7fb1"
+    },
+    {
+      "path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/03-crs-legislative-process-r42843-17/admitted-knowledge-model.json",
+      "sha256": "67366dc7c5dfd120d4ee974e02c0568f8e221675e0843dd35469bf41105fdeb4"
+    },
+    {
+      "path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/03-crs-legislative-process-r42843-17/source-identity.json",
+      "sha256": "3fd4862abb2b0aebd2bcd5b503022e900fe235bb07961bcde702a6fe83acf7c2"
+    },
+    {
+      "path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/04-nasa-solar-system-formation-2026/admitted-knowledge-model.json",
+      "sha256": "d0a28afecf69d8edc55783eb41b4de78c72d81ef6007ac8121a003946b06b198"
+    },
+    {
+      "path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/04-nasa-solar-system-formation-2026/source-identity.json",
+      "sha256": "0d50ebe9beecd5a9b14a04d88e5130329f082093789b02a8b44f21f3b8165d1b"
+    },
+    {
+      "path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/05-epa-ecological-processes-2026/admitted-knowledge-model.json",
+      "sha256": "077318e713e10c02ce188fca1d0e247801d975d5ab7b1b1951183b14d6ad60d1"
+    },
+    {
+      "path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/05-epa-ecological-processes-2026/source-identity.json",
+      "sha256": "2dda3ae4ffa5c076eb066a85b0872226b013ca1dc01ebb6a96abb95098dbcc25"
+    },
+    {
+      "path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/06-doe-iron-platinum-atomic-structure-2017/admitted-knowledge-model.json",
+      "sha256": "29b475ec6742e1f7d49e9e5f29bbcd8a9c967d678a7d53f6ae58ae44f28acb7e"
+    },
+    {
+      "path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/06-doe-iron-platinum-atomic-structure-2017/source-identity.json",
+      "sha256": "459b403edc905ae71fee648886c55e9a682c0948bfffcf7b4cd7e2677ebb60f5"
+    }
+  ],
+  "implementation_identities": [
+    {
+      "path": "src/knowledge_compiler/spec061_explanatory_structure_evaluation.py",
+      "sha256": "b287baf8d9813e1bf266f88bd7cdeb533364b5529731b042f1db24ecee781e28"
+    },
+    {
+      "path": "src/knowledge_compiler/spec061_explanatory_structure_assets/index.html",
+      "sha256": "76dee0cfbbe272b9d24daa88a77f3a6f19ff1283ed418ffc90f5c4e6490e5a74"
+    },
+    {
+      "path": "src/knowledge_compiler/spec061_explanatory_structure_assets/styles.css",
+      "sha256": "e1a114c0dcf0a225c05680a7e61819824848e7b76bdce2cd37bc40ad41db21df"
+    },
+    {
+      "path": "src/knowledge_compiler/spec061_explanatory_structure_assets/app.js",
+      "sha256": "06003cf8a5feace4914576cda44174b8bb65655d451812b093008479ff64808d"
+    },
+    {
+      "path": "docs/PROJECT-VISION.md",
+      "sha256": "0db41162d9db31a5aee8b3879e41af3615995d58054b153d54eb2732f92d3aa8"
+    }
+  ],
+  "owner_review": {
+    "command": ".venv/bin/python -m http.server 8061 --directory examples/evaluations/spec-061-explanatory-structure-preservation-experiment-20260921",
+    "promotion": "NOT_AUTHORIZED",
+    "rubric": "owner-review-rubric.json",
+    "state": "OWNER_REVIEW",
+    "url": "http://127.0.0.1:8061/",
+    "verdict": "PENDING"
+  },
+  "preservation_summary": {
+    "all_source_sentences_assigned_once": true,
+    "all_views_independently_generated": true,
+    "explanatory_forbidden_statuses": 0,
+    "provenance_coverage_ratio": 1.0,
+    "required_semantic_items": 149,
+    "semantic_forbidden_statuses": 0,
+    "strengthened_certainty_or_causality": 0,
+    "unsupported_structure_added": 0
+  },
+  "project_vision": {
+    "path": "docs/PROJECT-VISION.md",
+    "pipeline_places_explanatory_structure_before_compression": true,
+    "product_ambition_expanded": false,
+    "sha256": "0db41162d9db31a5aee8b3879e41af3615995d58054b153d54eb2732f92d3aa8"
+  },
+  "protected_state": {
+    "grounding_provenance_or_validator_changes": 0,
+    "navigation_or_explore_next_changes": 0,
+    "production_semantic_vocabulary_or_proposition_changes": 0,
+    "production_strategy_renderer_or_ui_changes": 0,
+    "promotion_actions": 0,
+    "spec038_baseline_changes": 0,
+    "spec052_or_candidate_b_v2_changes": 0,
+    "spec055_through_spec060_artifact_changes": 0,
+    "structure_detector_changes": 0,
+    "visualization_work": 0
+  },
+  "recommended_next_step": "OWNER_REVIEW_REQUIRED",
+  "schema": "spec061.explanatory-structure-report.v1",
+  "spec060_owner_verdict": "SEMANTIC_CONTENT_PRESERVED_EXPLANATORY_STRUCTURE_NOT_PRESERVED",
+  "status": "IMPLEMENTED_AWAITING_REVIEW",
+  "validation": {
+    "block_source_range_and_provenance_checks": "PASS",
+    "browser_desktop_and_390x844": "PASS",
+    "case01_no_hardcoding_check": "PASS",
+    "control_plane_tests": "PASS",
+    "deterministic_regeneration": "PASS",
+    "focused_spec061_tests": "PASS",
+    "frozen_input_identity_verification": "PASS",
+    "full_offline_suite": "PASS",
+    "git_diff_check": "PASS",
+    "json_validation": "PASS",
+    "protected_state_hash_and_diff_audit": "PASS",
+    "provider_model_network_call_audit": "PASS: zero calls",
+    "secret_safety": "PASS",
+    "spec038_057_058_059_regressions": "PASS",
+    "spec060_semantic_epistemic_regression": "PASS",
+    "traversal_support_checks": "PASS"
+  },
+  "zero_call_zero_retrieval_statement": "No provider/model call, external source retrieval, or extraction rerun occurred."
+}

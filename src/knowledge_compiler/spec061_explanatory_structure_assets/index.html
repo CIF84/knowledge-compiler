@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SPEC-061 · Explanatory structure review</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="masthead">
+    <div>
+      <p class="eyebrow">Knowledge Compiler · Owner review</p>
+      <h1>Does compression preserve the path of an explanation?</h1>
+    </div>
+    <p class="masthead-note">Six frozen sources. Generic offline detection. Human verdict pending.</p>
+  </header>
+
+  <main class="workspace" aria-label="SPEC-061 explanatory structure review workspace">
+    <aside class="corpus-panel">
+      <p class="eyebrow">Frozen corpus</p>
+      <h2>Six blind structures</h2>
+      <p>Case 01 is compared with owner evidence only after generic output is frozen. Cases 02–06 remain blind.</p>
+      <ol id="case-list" class="case-list"></ol>
+      <div class="principle">
+        <strong>Block ≠ paragraph</strong>
+        <span>Paragraph boundaries are evidence, never identity.</span>
+      </div>
+    </aside>
+
+    <section class="review-panel">
+      <nav class="case-nav" aria-label="Case navigation">
+        <button id="previous-case" type="button" aria-label="Previous review case">← Previous</button>
+        <div>
+          <p id="case-counter" class="eyebrow"></p>
+          <h2 id="case-title"></h2>
+          <p id="case-domain" class="case-domain"></p>
+        </div>
+        <button id="next-case" type="button" aria-label="Next review case">Next →</button>
+      </nav>
+
+      <section class="resolution-panel" aria-label="Resolution review surface">
+        <div class="resolution-heading">
+          <div>
+            <p class="eyebrow">Resolution</p>
+            <p id="resolution-label" class="resolution-label"></p>
+          </div>
+          <div class="mode-controls" aria-label="Resolution mode">
+            <button id="mode-e0" type="button">E0 · Source-rich</button>
+            <button id="mode-e1" type="button">E1 · Blocks</button>
+            <button id="mode-e2" type="button">E2 · Outline</button>
+            <button id="mode-audit" type="button">Audit</button>
+          </div>
+        </div>
+        <div id="resolution-host" class="resolution-host"></div>
+        <div id="metric-strip" class="metric-strip"></div>
+      </section>
+    </section>
+
+    <aside class="audit-panel">
+      <p class="eyebrow">Trace and owner rubric</p>
+      <h2 id="audit-title">Select a block</h2>
+      <p id="audit-body">Choose an E1 or E2 block to inspect exact source support and paragraph mapping.</p>
+      <div id="support-list" class="support-list"></div>
+      <div class="rubric">
+        <p class="eyebrow">Neutral owner rubric</p>
+        <ol id="rubric-list"></ol>
+      </div>
+      <p class="pending">Owner verdict · Pending</p>
+    </aside>
+  </main>
+
+  <div id="spec061-contract" hidden
+       data-authority="OFFLINE_ONLY"
+       data-view-lineage="PEER_VIEWS_FROM_FROZEN_SUBSTRATE"
+       data-paragraph-equals-block="false"
+       data-case01-hardcoding="false"
+       data-visualization-work="false"
+       data-production-promotion="false"
+       data-human-verdict="PENDING"></div>
+  <script src="app.js"></script>
+</body>
+</html>

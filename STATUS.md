@@ -81,26 +81,51 @@ FURTHER COGNITIVE GAIN?
 ## Current approved work packet
 
 ```text
-specs/SPEC-061-explanatory-structure-preservation-experiment.md
+NONE
 ```
 
-Status: `APPROVED_FOR_IMPLEMENTATION`
+Status: `NONE`
 
-Authority: `OFFLINE_ONLY`
+Authority: `NONE`
 
-Human gate: `OWNER_REVIEW`
+Human gate: `NONE`
 
 Promotion: `NOT_AUTHORIZED`
 
 ## Current gate
 
-SPEC-061 is authorized to test whether the compiler can recover latent explanatory meaning blocks, their functions, and their traversal from the same six frozen SPEC-060 sources, then compress within those blocks without flattening the explanation into atomic facts.
+SPEC-061 is implemented and awaiting owner review.
 
-Case 01 is a diagnostic anchor only. The owner's observed mechanism → Mid-Atlantic Ridge example → timescale/consequence → Iceland/Krafla → Red Sea/generalization path must be used only for post-hoc alignment audit, never as implementation truth or a hard-coded rule.
+The generic offline detector recovered meaning blocks, domain-neutral
+explanatory functions and supported source-order traversal across the exact six
+frozen SPEC-060 sources. Paragraph boundaries were used as weighted evidence,
+not block identity: the corpus contains both paragraphs split across blocks and
+blocks spanning multiple paragraphs.
 
-Cases 02–06 remain blind with respect to owner pedagogical verdict.
+All 149 frozen required semantic identities remain preserved in E1 and E2,
+with zero semantic, epistemic or explanatory forbidden outcomes and 100%
+provenance coverage. The case-01 output was frozen before the post-hoc owner
+pattern comparison and mechanically classified `ALIGNED`; this does not imply
+owner approval. Cases 02–06 remain blind with respect to owner pedagogical
+verdict.
 
-No visualization, production semantic changes, model calls, retrieval, personalization, or promotion are authorized.
+The mechanical branch is `INCONCLUSIVE`. E1 averages 0.9400 of E0 word count
+and E2 averages 0.8260, but three E1 cases do not reduce word count and one E2
+outline is slightly larger than E0 after explanatory labels are counted. Word
+count remains diagnostic rather than the optimization target.
+
+Desktop and 390×844 browser gates pass all six cases, peer-view identity,
+block/traversal rendering, evidence tracing, paragraph overlays, navigation,
+responsive layout and clean-console checks. No model/provider call, retrieval,
+production semantic change, visualization, personalization or promotion was
+performed.
+
+Canonical evidence:
+
+`examples/evaluations/spec-061-explanatory-structure-preservation-experiment-20260921/report.json`
+
+No packet is active. Promotion remains unauthorized and the owner verdict is
+pending.
 
 ## Current product question
 
