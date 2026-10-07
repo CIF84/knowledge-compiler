@@ -1,0 +1,62 @@
+[
+  {
+    "empirically_validated": false,
+    "mitigation": "Independent source evidence and frozen negative controls; optional blinded D design.",
+    "risk": "correlated generator/judge errors",
+    "unresolved": "Two agreements are not truth; dependence cannot be measured offline."
+  },
+  {
+    "empirically_validated": false,
+    "mitigation": "Predeclare generator and judge identities; alternate family only with new approval.",
+    "risk": "shared-model family bias",
+    "unresolved": "No model-diversity comparison executed; same-family bias remains."
+  },
+  {
+    "empirically_validated": false,
+    "mitigation": "Bound notes, hide generator rationale/confidence and labels; compare verbose near misses.",
+    "risk": "verbosity/plausibility bias",
+    "unresolved": "A fluent false abstraction may still fool the judge."
+  },
+  {
+    "empirically_validated": false,
+    "mitigation": "Freeze ordering; later separately approved counterbalanced ordering study.",
+    "risk": "evidence ordering",
+    "unresolved": "No repeated calls/order sweep now; order invariance unmeasured."
+  },
+  {
+    "empirically_validated": false,
+    "mitigation": "No confidence field; UNCERTAIN fails closed; all flags required independently.",
+    "risk": "false certainty",
+    "unresolved": "ENTAILED can still be wrong; schema is not semantic proof."
+  },
+  {
+    "empirically_validated": false,
+    "mitigation": "Serialize evidence as inert data; no tools or transport; audit exact IDs and schema.",
+    "risk": "prompt injection/content contamination",
+    "unresolved": "Instruction hierarchy is mitigation, not guaranteed model isolation."
+  },
+  {
+    "empirically_validated": false,
+    "mitigation": "Ask for evidence licensing every member, principle and relation scope; no rewriting.",
+    "risk": "abstraction agreement rather than verification",
+    "unresolved": "Novel shared mechanisms still require semantic interpretation."
+  },
+  {
+    "empirically_validated": false,
+    "mitigation": "Audit exhaustiveness against original candidate and substrate; unresolved decomposition fails closed.",
+    "risk": "decomposition omission / hidden conjunction",
+    "unresolved": "Checking each supplied atom cannot prove that all commitments were supplied."
+  },
+  {
+    "empirically_validated": false,
+    "mitigation": "Fixed batch of four, per-item evidence and independent IDs, exact completeness gate.",
+    "risk": "batch cross-contamination",
+    "unresolved": "Context effects and correlated errors remain; no majority or partial batch admission."
+  },
+  {
+    "empirically_validated": false,
+    "mitigation": "Labels separated and hashed before evaluation; evidence/rationales exposed for independent review.",
+    "risk": "fixture truth contamination",
+    "unresolved": "Authored, non-blind gold is not independent domain adjudication; owner audit required before later execution."
+  }
+]

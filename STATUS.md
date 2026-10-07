@@ -176,22 +176,24 @@ ADMIT / REJECT / UNCERTAIN
 ## Current approved work packet
 
 ```text
-specs/SPEC-066-semantic-validation-boundary-experiment.md
+NONE
 ```
 
-Status: `APPROVED_FOR_IMPLEMENTATION`
+Status: `NONE`
 
-Authority: `OFFLINE_ONLY`
+Authority: `NONE`
 
-Human gate: `OWNER_REVIEW`
+Human gate: `NONE`
 
 Promotion: `NOT_AUTHORIZED`
 
 ## Current gate
 
-SPEC-066 is authorized to build and evaluate an offline semantic-validation boundary over a frozen domain-diverse fixture corpus.
+SPEC-066 is implemented offline and stopped at `OWNER_REVIEW`; owner verdict is `PENDING`. No active approved packet remains.
 
-It must compare deterministic restricted proof with deterministic decomposition, explicitly reconcile all four SPEC-065 semantic-validation gaps, freeze atomic-commitment and semantic-verdict contracts, and design—but not execute—a bounded semantic-judge contract if model-level judgment remains necessary.
+Frozen evidence: `examples/evaluations/spec-066-semantic-validation-boundary-20261007/`. The 92-case, eight-domain corpus yields zero false admissions under both protocols. A admits 8/92; B admits 16/92 through exact explicit conjunctions only. All four novel-language gaps and natural-language exhaustive decomposition remain unresolved.
+
+Mechanical branch: `SEMANTIC_JUDGE_REQUIRED_LIVE_CONTRACT_READY` means the design packet is ready for separate review, not execution. Future manifests require independent label review, frozen validated exhaustive atomization, provider compatibility and new explicit live authority. Review `owner-review.md`, the capability/four-gap matrices, risk register and budgets. No judge or SPEC-065 synthesis was executed.
 
 Primary trust metric: false admissions.
 
@@ -235,7 +237,7 @@ without mistaking plausibility for truth?
 
 ## Explicitly forbidden
 
-SPEC-065 offline harness implementation is complete; stop at owner review and do not continue without a new approved packet. The proposed future manifest grants no authority. Do not call a model/provider; retrieve external sources; rerun extraction; modify production KnowledgeModel semantics; add discourse relations to the production semantic registry; hard-code expected abstractions; equate grouping with abstraction; optimize only for word count; implement personalization, podcast/video ingestion, presentation generation, visualization or visual-grammar selection; promote experimental work; redesign production UI; assign a human cognitive or pedagogical verdict; implement follow-up product changes.
+SPEC-066 offline implementation is complete; stop at owner review and do not continue without a new approved packet. Proposed future manifests grant no authority. Do not call a model/provider; execute SPEC-065 live synthesis or semantic judging; retrieve external sources; rerun extraction; modify production KnowledgeModel semantics; add discourse relations to the production semantic registry; hard-code expected abstractions; equate grouping with abstraction; optimize only for word count; implement personalization, podcast/video ingestion, presentation generation, visualization or visual-grammar selection; promote experimental work; redesign production UI; assign a human cognitive or pedagogical verdict; implement follow-up product changes.
 
 ## Coordination rule
 

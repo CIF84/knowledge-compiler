@@ -1,0 +1,32 @@
+{
+  "D": {
+    "agreement_rule": "Disagreement/UNCERTAIN fails closed; agreement is evidence of agreement, not truth. No majority vote.",
+    "authorized": false,
+    "calls": 0,
+    "diversity": "Independent prompts/models may reduce some shared biases but must be evaluated against gold; different model names do not establish independence.",
+    "later_option": "Independently blinded second judgment on first-judge ENTAILED or predeclared risk strata, only with separately frozen budget/prompt/model/source identities."
+  },
+  "executed_holistic_judgments": 0,
+  "failure_modes": [
+    "plausible-summary bias",
+    "missed qualification",
+    "hidden conjunction",
+    "partial entailment",
+    "scope collapse",
+    "causal strengthening"
+  ],
+  "hidden_conjunction_controls": [
+    "case-011",
+    "case-023",
+    "case-035",
+    "case-046",
+    "case-058",
+    "case-069",
+    "case-080",
+    "case-091"
+  ],
+  "hypothetical_contract": "holistic-control-prompt.txt",
+  "interpretation": "Explicit decomposition exposes partial proof and admits exact conjunctions. Natural-language decomposition and holistic-vs-judge superiority remain untested; no superiority claim.",
+  "observed_B": "All eight mixed explicit conjunctions fail closed even though their first component is exactly entailed.",
+  "safe_coverage_gain": 8
+}

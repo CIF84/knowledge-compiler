@@ -1,0 +1,91 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "attribution": {
+      "type": "string"
+    },
+    "candidate_text": {
+      "type": "string"
+    },
+    "causal_force": {
+      "type": "string"
+    },
+    "commitment_id": {
+      "type": "string"
+    },
+    "condition": {
+      "type": "string"
+    },
+    "decomposition_status": {
+      "enum": [
+        "DECLARED_EXPLICIT",
+        "UNRESOLVED"
+      ],
+      "type": "string"
+    },
+    "modality_uncertainty": {
+      "type": "string"
+    },
+    "object_value": {
+      "type": "string"
+    },
+    "predicate_relation": {
+      "type": "string"
+    },
+    "quantity": {
+      "type": "string"
+    },
+    "required_preservation_flags": {
+      "items": {
+        "enum": [
+          "scope_preserved",
+          "epistemic_force_preserved",
+          "causal_force_preserved",
+          "entities_preserved",
+          "quantities_units_preserved",
+          "temporal_context_preserved",
+          "relation_projection_valid"
+        ],
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "spatial_domain_scope": {
+      "type": "string"
+    },
+    "subject_entity_references": {
+      "type": "string"
+    },
+    "supporting_evidence_ids": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "temporal_scope": {
+      "type": "string"
+    },
+    "unit": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "commitment_id",
+    "candidate_text",
+    "subject_entity_references",
+    "predicate_relation",
+    "object_value",
+    "quantity",
+    "unit",
+    "temporal_scope",
+    "spatial_domain_scope",
+    "condition",
+    "modality_uncertainty",
+    "causal_force",
+    "attribution",
+    "supporting_evidence_ids",
+    "decomposition_status",
+    "required_preservation_flags"
+  ],
+  "type": "object"
+}

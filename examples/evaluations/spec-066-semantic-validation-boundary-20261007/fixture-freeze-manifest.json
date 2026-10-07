@@ -1,0 +1,342 @@
+{
+  "corpus_canonical_sha256": "f965d1762cb4d188303d2464e2a28e0ce229765881a3e912013bb667a8c661d2",
+  "definitions_file_sha256": "32f4cbf05f6f18e464dd956b1446767532ecbc45e9bc5e06a844046934d039ff",
+  "definitions_sha256": "d98f0404e4fffae0c5a98a6d0f15a4da1a86f6706938a5e950c0e574e2b9535c",
+  "freeze_order": "Write corpus and labels, verify hashes, THEN evaluate stripped packets.",
+  "labels_canonical_sha256": "d47e1f2f6f56f425270d560046457173434523e716ba208b4ca384eedb533db4",
+  "limit": "Not a blinded benchmark or proof of generalization. Independent label/decomposition review required before live judge authorization.",
+  "sources": [
+    {
+      "document_id": "text-a9539d135ff1577d",
+      "domain": "geology",
+      "path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/01-usgs-divergent-plate-boundaries-1996/admitted-knowledge-model.json",
+      "provenance": {
+        "authority_priority_rank": 1,
+        "canonical_url": "https://pubs.usgs.gov/gip/dynamic/understanding.html",
+        "domain_family": "geology / Earth systems",
+        "institutional_publisher": "U.S. Geological Survey",
+        "public_source_note": "Publicly accessible U.S. federal publication page; no authentication was required. The passage remains attributed to USGS and is used only as bounded evaluation input.",
+        "retrieval": {
+          "document_byte_count": 24181,
+          "document_sha256": "fc0afbd9a9b78211fbd57abfc935abe0660a29e1692e0c418de87124afc57aaa",
+          "format": "text/html",
+          "http_status": 200,
+          "timestamp_utc": "2026-09-11T19:09:27Z"
+        },
+        "selection_rule_evidence": {
+          "english_language": true,
+          "explanatory_prose": true,
+          "first_eligible_passage": "First complete 300-650-word explanatory passage in the Divergent boundaries section after deterministic removal of headings, image links, and map/figure captions.",
+          "images_or_tables_required": false,
+          "no_authentication": true,
+          "no_private_or_high_stakes_content": true,
+          "novel_domain_and_source": true,
+          "passage_character_count": 2716,
+          "passage_utf8_byte_count": 2716,
+          "passage_word_count": 438,
+          "publisher_is_stable_institution": true,
+          "semantic_answer_supplied": false
+        },
+        "source_document_date": "1996",
+        "source_document_identity": "This Dynamic Earth: The Story of Plate Tectonics, USGS General Interest Publication, DOI 10.3133/7000097",
+        "source_scope": "Divergent boundaries section: first five explanatory paragraphs after heading and figure boilerplate removal"
+      },
+      "sha256": "fa2494dab670a698a8f730a0501c997984467839906f5c7b702e50ad6fd61261"
+    },
+    {
+      "document_id": "text-256ade61be620cfa",
+      "domain": "meteorology",
+      "path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/02-noaa-nesdis-jet-stream-2025/admitted-knowledge-model.json",
+      "provenance": {
+        "authority_priority_rank": 1,
+        "canonical_url": "https://www.nesdis.noaa.gov/about/k-12-education/atmosphere/what-the-jet-stream",
+        "domain_family": "meteorology / atmospheric systems",
+        "institutional_publisher": "NOAA National Environmental Satellite, Data, and Information Service",
+        "public_source_note": "Publicly accessible U.S. federal science page; no authentication was required. The page credits NASA/JPL-Caltech and NOAA program funding, and the passage remains attributed to the publishing agencies.",
+        "retrieval": {
+          "document_byte_count": 88628,
+          "document_sha256": "41c9167a24b0824819d90a324ad3eedf1eea0c531196ed76efe3858e568d6de1",
+          "format": "text/html; charset=utf-8",
+          "http_status": 200,
+          "timestamp_utc": "2026-09-11T19:09:28Z"
+        },
+        "selection_rule_evidence": {
+          "english_language": true,
+          "explanatory_prose": true,
+          "first_eligible_passage": "First complete 300-650-word explanatory passage in page order after deterministic removal of headings, media controls, images, credits, and paragraphs that explicitly describe figures.",
+          "images_or_tables_required": false,
+          "no_authentication": true,
+          "no_private_or_high_stakes_content": true,
+          "novel_domain_and_source": true,
+          "passage_character_count": 2350,
+          "passage_utf8_byte_count": 2368,
+          "passage_word_count": 417,
+          "publisher_is_stable_institution": true,
+          "semantic_answer_supplied": false
+        },
+        "source_document_date": "2025-08-31",
+        "source_document_identity": "NOAA NESDIS K-12 Atmosphere page, publication date August 31, 2025",
+        "source_scope": "Opening explanation through the first three weather-effect paragraphs, excluding figure-dependent content"
+      },
+      "sha256": "0c1e5b46d692727ca526f74307de2c0b358a1ea79dab98143f19271872a61a62"
+    },
+    {
+      "document_id": "text-fe61b7c3b2a9373e",
+      "domain": "civics",
+      "path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/03-crs-legislative-process-r42843-17/admitted-knowledge-model.json",
+      "provenance": {
+        "authority_priority_rank": 1,
+        "canonical_url": "https://www.congress.gov/crs_external_products/R/PDF/R42843/R42843.17.pdf",
+        "domain_family": "civics / institutional process",
+        "institutional_publisher": "Congressional Research Service",
+        "public_source_note": "Publicly accessible U.S. federal congressional publication; no authentication was required for the retrieved PDF. The passage remains attributed to CRS and is used only as bounded evaluation input.",
+        "retrieval": {
+          "document_byte_count": 1000334,
+          "document_sha256": "e108e4020676e2b6cfabd730ad4e073874628a4c24f2550c435e40c67b4b3960",
+          "format": "application/pdf; 15 pages",
+          "http_status": 200,
+          "timestamp_utc": "2026-09-11T19:09:29Z"
+        },
+        "selection_rule_evidence": {
+          "english_language": true,
+          "explanatory_prose": true,
+          "first_eligible_passage": "First complete 300-650-word institutional-process passage in the report summary after deterministic removal of publication headers, section labels, line-wrap artifacts, and report-navigation boilerplate.",
+          "images_or_tables_required": false,
+          "no_authentication": true,
+          "no_private_or_high_stakes_content": true,
+          "novel_domain_and_source": true,
+          "passage_character_count": 2152,
+          "passage_utf8_byte_count": 2154,
+          "passage_word_count": 340,
+          "publisher_is_stable_institution": true,
+          "semantic_answer_supplied": false
+        },
+        "source_document_date": "2020-11-24",
+        "source_document_identity": "CRS Report R42843, version 17, Updated November 24, 2020",
+        "source_scope": "Summary passage from congressional action through floor scheduling, with non-explanatory report cross-reference boilerplate removed"
+      },
+      "sha256": "67366dc7c5dfd120d4ee974e02c0568f8e221675e0843dd35469bf41105fdeb4"
+    },
+    {
+      "document_id": "text-c0cb2519673b8f3e",
+      "domain": "astronomy",
+      "path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/04-nasa-solar-system-formation-2026/admitted-knowledge-model.json",
+      "provenance": {
+        "authority_priority_rank": 1,
+        "canonical_url": "https://science.nasa.gov/astrobiology/learning-resources/alp/how-did-our-solar-system-form/",
+        "domain_stratum": "astronomy / planetary science",
+        "institutional_publisher": "National Aeronautics and Space Administration",
+        "ordinal": 1,
+        "passage_character_count": 2490,
+        "passage_utf8_byte_count": 2510,
+        "passage_word_count": 460,
+        "public_source_provenance_note": "Publicly accessible U.S. federal science page retrieved without authentication. NASA attribution and the canonical URL are retained; no licensing inference is made beyond public accessibility.",
+        "rejected_candidates": [
+          {
+            "candidate": "Same page, first K–2 explanatory passage",
+            "failed_rule": "182 words is below the 300-word minimum"
+          },
+          {
+            "candidate": "Same page, first grade 3–5 explanatory passage",
+            "failed_rule": "222 words is below the 300-word minimum"
+          }
+        ],
+        "retrieval": {
+          "document_byte_count": 369605,
+          "document_sha256": "99f22213aaa511e89ed04584244326d938a5cf81669cbe6cb7af2cdaf3ed4840",
+          "format": "text/html",
+          "http_status": 200,
+          "timestamp_utc": "2026-09-12T06:51:26.242108Z"
+        },
+        "revision_or_date": {
+          "modified": "2026-05-13T19:57:23-04:00",
+          "published": "2026-05-13T16:55:13-04:00"
+        },
+        "selection_rule_evidence": {
+          "english_language": true,
+          "explanatory_prose": true,
+          "first_eligible_passage": "First complete 300–650-word audience-level explanatory passage in page order after deterministic removal of headings and lesson-resource metadata; earlier K–2 and grade 3–5 explanations were below the lower bound.",
+          "images_or_tables_required": false,
+          "no_authentication": true,
+          "no_private_or_high_stakes_content": true,
+          "novel_domain_and_source": true,
+          "publisher_is_stable_institution": true,
+          "semantic_shape_not_used_for_selection": true,
+          "source_scope": "Grade 6–8 / adult building-learner explanation, preserving all five paragraphs in order."
+        },
+        "semantic_or_representation_answer_key_included": false
+      },
+      "sha256": "d0a28afecf69d8edc55783eb41b4de78c72d81ef6007ac8121a003946b06b198"
+    },
+    {
+      "document_id": "text-70e7e3d20325dd5d",
+      "domain": "ecology",
+      "path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/05-epa-ecological-processes-2026/admitted-knowledge-model.json",
+      "provenance": {
+        "authority_priority_rank": 1,
+        "canonical_url": "https://www.epa.gov/report-environment/ecological-processes",
+        "domain_stratum": "ecology / environmental systems",
+        "institutional_publisher": "U.S. Environmental Protection Agency",
+        "ordinal": 2,
+        "passage_character_count": 2728,
+        "passage_utf8_byte_count": 2734,
+        "passage_word_count": 379,
+        "public_source_provenance_note": "Publicly accessible U.S. federal environmental-reporting page retrieved without authentication. EPA attribution and the canonical URL are retained; no licensing inference is made beyond public accessibility.",
+        "rejected_candidates": [],
+        "retrieval": {
+          "document_byte_count": 68968,
+          "document_sha256": "b2270a627774c5a9e72adc6f2e32ad781566b8264d498e14c245467be37fae25",
+          "format": "text/html",
+          "http_status": 200,
+          "timestamp_utc": "2026-09-12T06:51:28.110736Z"
+        },
+        "revision_or_date": {
+          "modified": "2026-02-03",
+          "published": "2017-11-02T16:56:45-04:00"
+        },
+        "selection_rule_evidence": {
+          "english_language": true,
+          "explanatory_prose": true,
+          "first_eligible_passage": "First consecutive explanatory body paragraphs in page order whose cumulative length reaches 300 words, spanning the importance, stressor, and national-indicator explanation after headings and navigation are removed.",
+          "images_or_tables_required": false,
+          "no_authentication": true,
+          "no_private_or_high_stakes_content": true,
+          "novel_domain_and_source": true,
+          "publisher_is_stable_institution": true,
+          "semantic_shape_not_used_for_selection": true,
+          "source_scope": "Opening explanatory prose through the final paragraph explaining national-scale indicator difficulty."
+        },
+        "semantic_or_representation_answer_key_included": false
+      },
+      "sha256": "077318e713e10c02ce188fca1d0e247801d975d5ab7b1b1951183b14d6ad60d1"
+    },
+    {
+      "document_id": "text-e9d2260c99802394",
+      "domain": "materials science",
+      "path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/06-doe-iron-platinum-atomic-structure-2017/admitted-knowledge-model.json",
+      "provenance": {
+        "authority_priority_rank": 1,
+        "canonical_url": "https://www.energy.gov/science/bes/articles/deciphering-material-properties-single-atom-level",
+        "domain_stratum": "chemistry / materials science",
+        "institutional_publisher": "U.S. Department of Energy, Office of Science",
+        "ordinal": 3,
+        "passage_character_count": 2664,
+        "passage_utf8_byte_count": 2668,
+        "passage_word_count": 380,
+        "public_source_provenance_note": "Publicly accessible U.S. federal science page retrieved without authentication. DOE attribution and the canonical URL are retained; no licensing inference is made beyond public accessibility.",
+        "rejected_candidates": [],
+        "retrieval": {
+          "document_byte_count": 122816,
+          "document_sha256": "0b78586235008ebae97f759a2fb38182fcf335fdf5131cb72444e538994d8129",
+          "format": "text/html",
+          "http_status": 200,
+          "timestamp_utc": "2026-09-12T06:51:27.864050Z"
+        },
+        "revision_or_date": {
+          "modified": "2026-05-14T20:11:49-04:00",
+          "published": "2017-04-20T13:20:00-04:00"
+        },
+        "selection_rule_evidence": {
+          "english_language": true,
+          "explanatory_prose": true,
+          "first_eligible_passage": "First three explanatory body sections in page order (The Science, The Impact, and Summary), whose cumulative length is the first to reach 300 words after headings and media boilerplate are removed.",
+          "images_or_tables_required": false,
+          "no_authentication": true,
+          "no_private_or_high_stakes_content": true,
+          "novel_domain_and_source": true,
+          "publisher_is_stable_institution": true,
+          "semantic_shape_not_used_for_selection": true,
+          "source_scope": "The Science, The Impact, and Summary prose in their published order."
+        },
+        "semantic_or_representation_answer_key_included": false
+      },
+      "sha256": "29b475ec6742e1f7d49e9e5f29bbcd8a9c967d678a7d53f6ae58ae44f28acb7e"
+    },
+    {
+      "document_id": "text-1fd7e9851839f5f3",
+      "domain": "transportation",
+      "path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/08-fhwa-traffic-bottleneck-concepts-2016/admitted-knowledge-model.json",
+      "provenance": {
+        "authority_priority_rank": 1,
+        "canonical_url": "https://www.fhwa.dot.gov/publications/research/operations/16064/004.cfm",
+        "domain_stratum": "transportation / infrastructure systems",
+        "institutional_publisher": "Federal Highway Administration",
+        "ordinal": 5,
+        "passage_character_count": 3068,
+        "passage_utf8_byte_count": 3078,
+        "passage_word_count": 476,
+        "public_source_provenance_note": "Publicly accessible archived U.S. federal transportation publication retrieved without authentication. FHWA attribution, publication number, and canonical URL are retained; no licensing inference is made beyond public accessibility.",
+        "rejected_candidates": [],
+        "retrieval": {
+          "document_byte_count": 38844,
+          "document_sha256": "7d1ee533b2b4ddba834d178b8ee425011bbcfdfcdceb4e9beed41a920314dc34",
+          "format": "text/html",
+          "http_status": 200,
+          "timestamp_utc": "2026-09-12T06:51:29.003082Z"
+        },
+        "revision_or_date": {
+          "page_modified": "2016-12-27",
+          "publication": "2016-11",
+          "publication_number": "FHWA-HRT-16-064"
+        },
+        "selection_rule_evidence": {
+          "english_language": true,
+          "explanatory_prose": true,
+          "first_eligible_passage": "First complete 300–650-word explanatory passage under Definition of Bottlenecks after deterministic removal of headings and page boilerplate.",
+          "images_or_tables_required": false,
+          "no_authentication": true,
+          "no_private_or_high_stakes_content": true,
+          "novel_domain_and_source": true,
+          "publisher_is_stable_institution": true,
+          "semantic_shape_not_used_for_selection": true,
+          "source_scope": "The two published paragraphs in Definition of Bottlenecks, preserving citation markers and paragraph order."
+        },
+        "semantic_or_representation_answer_key_included": false
+      },
+      "sha256": "848e195da43d6ff3f070c20780ea05e8b8ef9d4d8535d326aaacb7964f31cabd"
+    },
+    {
+      "document_id": "text-b3ae508f3982dfdd",
+      "domain": "measurement methodology",
+      "path": "examples/evaluations/spec-052-candidate-b-v2-live-evaluation-20260915/sources/09-nist-measurement-uncertainty-2025/admitted-knowledge-model.json",
+      "provenance": {
+        "authority_priority_rank": 1,
+        "canonical_url": "https://www.nist.gov/itl/sed/topic-areas/measurement-uncertainty",
+        "domain_stratum": "statistics / measurement methodology",
+        "institutional_publisher": "National Institute of Standards and Technology",
+        "ordinal": 6,
+        "passage_character_count": 2242,
+        "passage_utf8_byte_count": 2242,
+        "passage_word_count": 334,
+        "public_source_provenance_note": "Publicly accessible U.S. federal measurement-science page retrieved without authentication. NIST attribution and the canonical URL are retained; no licensing inference is made beyond public accessibility.",
+        "rejected_candidates": [],
+        "retrieval": {
+          "document_byte_count": 85638,
+          "document_sha256": "0a7b7f9aac39a78af2c51044b979d2519bf9b8006328854694a33cebe903b242",
+          "format": "text/html",
+          "http_status": 200,
+          "timestamp_utc": "2026-09-12T06:51:26.293544Z"
+        },
+        "revision_or_date": {
+          "created": "2010-09-29",
+          "modified": "2025-03-17"
+        },
+        "selection_rule_evidence": {
+          "english_language": true,
+          "explanatory_prose": true,
+          "first_eligible_passage": "First consecutive explanatory paragraphs under Introduction whose cumulative length reaches 300 words after deterministic removal of the opening epigraph and page boilerplate.",
+          "images_or_tables_required": false,
+          "no_authentication": true,
+          "no_private_or_high_stakes_content": true,
+          "novel_domain_and_source": true,
+          "publisher_is_stable_institution": true,
+          "semantic_shape_not_used_for_selection": true,
+          "source_scope": "First seven Introduction paragraphs, from the definition of measurement through the probability-distribution account of uncertainty."
+        },
+        "semantic_or_representation_answer_key_included": false
+      },
+      "sha256": "bcb26ebe0881750b63fadf8e7756f18c4ec0ccb170e7563828763150978dcae1"
+    }
+  ],
+  "truth_scope": "Frozen evidence-relative authored labels, not externally verified facts; no owner comments or model output used as gold."
+}

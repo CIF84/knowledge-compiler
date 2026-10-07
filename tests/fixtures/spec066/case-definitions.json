@@ -1,0 +1,114 @@
+[
+  {
+    "source": "01-usgs-divergent-plate-boundaries-1996", "domain": "geology",
+    "anchors": ["c3", "c5", "c9", "c14", "c20"],
+    "paraphrase": "At spreading centers, mantle magma makes new crust.",
+    "synthesis": "Spreading created new crust and enlarged the Atlantic; spreading also formed the Red Sea.",
+    "abstraction": "Spreading is a common process underlying Atlantic enlargement and Red Sea formation.",
+    "negatives": [
+      ["unsupported abstraction", "All ocean basins formed by the same spreading process.", "UNCERTAIN", "scope_preserved", "The named examples do not license a claim about every ocean basin."],
+      ["lost qualification", "A new spreading center is developing under Africa along the East African Rift Zone.", "UNCERTAIN", "epistemic_force_preserved", "The evidence says may, not is."],
+      ["quantity/unit drift", "The Mid-Atlantic Ridge spreads at about 2.5 meters per year.", "CONTRADICTED", "quantities_units_preserved", "The source gives centimeters per year, not meters."],
+      ["invalid relation projection due to changed scope", "Spreading processes create all oceans and all continental fractures.", "UNCERTAIN", "relation_projection_valid", "A common process label does not widen the endpoints to all oceans and fractures."]
+    ],
+    "uncertain": "The spreading center under Africa will become an ocean in ten million years."
+  },
+  {
+    "source": "02-noaa-nesdis-jet-stream-2025", "domain": "meteorology",
+    "anchors": ["c7", "c8", "c9", "c12", "c19", "c33", "c35"],
+    "paraphrase": "Jet streams arise where warm air meets cold air in the atmosphere.",
+    "synthesis": "When warm and cool air meet, warm air rises and cool air sinks to replace it.",
+    "abstraction": "Opposing vertical movements of warm and cool air participate in creating an air current.",
+    "negatives": [
+      ["overgeneralization", "Every meeting of warm and cold air produces an equally powerful jet stream.", "UNCERTAIN", "scope_preserved", "The evidence supplies neither every-meeting scope nor equal power."],
+      ["lost qualification", "An airplane gets a jet-stream boost regardless of its travel direction.", "UNCERTAIN", "scope_preserved", "The boost is conditional on traveling in the same direction."],
+      ["entity/referent substitution", "The cooler air rises while the warmer air sinks to replace it.", "CONTRADICTED", "entities_preserved", "The warm and cool referents have been exchanged."],
+      ["quantity/unit drift", "Jet streams average about 110 kilometers per hour.", "CONTRADICTED", "quantities_units_preserved", "The source specifies miles per hour."]
+    ],
+    "uncertain": "The next jet stream over this location will move at 110 miles per hour."
+  },
+  {
+    "source": "03-crs-legislative-process-r42843-17", "domain": "civics",
+    "anchors": ["claim-referral", "claim-hearings", "claim-amendments", "claim-recommended-changes", "claim-two-year-congress"],
+    "paraphrase": "Introduced bills are usually referred to the chamber's committees with relevant jurisdiction.",
+    "synthesis": "Committee review may include hearings, and markup includes votes on proposed amendments before reporting with adopted changes.",
+    "abstraction": "Committee review can gather views and revise proposed legislation before reporting it to the chamber.",
+    "negatives": [
+      ["unsupported abstraction", "Committee review guarantees that each reported bill has bipartisan support.", "UNCERTAIN", "scope_preserved", "No bipartisan guarantee is provided."],
+      ["lost qualification", "Every introduced bill is referred to exactly one committee.", "UNCERTAIN", "scope_preserved", "Typically and committee or committees have both been lost."],
+      ["temporal/scope drift", "A committee chair selects formal attention over a four-year Congress.", "CONTRADICTED", "temporal_context_preserved", "The frozen source specifies a two-year Congress."],
+      ["implicit dependency invented", "A committee reports a bill before considering any amendments at markup.", "UNCERTAIN", "temporal_context_preserved", "The frozen account describes reporting with changes adopted in markup, not this inverted order."]
+    ],
+    "uncertain": "The next introduced bill will be reported by its committee."
+  },
+  {
+    "source": "04-nasa-solar-system-formation-2026", "domain": "astronomy",
+    "anchors": ["c1", "c3", "c5", "c6", "c9", "c10"],
+    "paraphrase": "Among worlds known to us, Earth alone is known to host life.",
+    "synthesis": "The solar system formed from gas and dust; such clouds contain ingredients for stars and planets.",
+    "abstraction": "Orbital dependence helps distinguish the source's categories: moons require a planet to orbit, and planets require a star to orbit.",
+    "negatives": [
+      ["overgeneralization", "Every nebula forms a solar system identical to ours.", "UNCERTAIN", "scope_preserved", "Ingredients for formation do not guarantee identical outcomes."],
+      ["strengthened certainty", "A nearby star's explosion definitely triggered formation of our solar system.", "UNCERTAIN", "epistemic_force_preserved", "The source says currently think and perhaps."],
+      ["entity/referent substitution", "For something to be a moon it needs to orbit a star rather than a planet.", "CONTRADICTED", "entities_preserved", "The defining orbit target is a planet."],
+      ["contradiction", "Earth is not a world known to have life.", "CONTRADICTED", null, "Directly negates the frozen known-life assertion; the entity itself is not substituted."]
+    ],
+    "uncertain": "There is no life anywhere outside Earth."
+  },
+  {
+    "source": "05-epa-ecological-processes-2026", "domain": "ecology",
+    "anchors": ["claim-1", "claim-2", "claim-3", "claim-4", "claim-5", "claim-6", "claim-7"],
+    "paraphrase": "Biological, physical and chemical processes sustain ecological systems.",
+    "synthesis": "Ecological processes sustain systems and provide resources and air/water-quality regulation, yet direct national-scale measurement is difficult.",
+    "abstraction": "Scale is a measurement boundary: watershed process indicators exist, but their national-scale development remains a research challenge.",
+    "negatives": [
+      ["unsupported abstraction", "Remote sensing directly measures every ecological process at national scale.", "UNCERTAIN", "scope_preserved", "Snapshots and inference do not establish universal direct measurement."],
+      ["strengthened certainty", "Repeated measures over a season always provide an indicator of net primary production.", "UNCERTAIN", "epistemic_force_preserved", "Might is not always."],
+      ["temporal/scope drift", "Respiration, nutrient cycling and decomposition indicators have been developed at the national scale.", "CONTRADICTED", "scope_preserved", "The evidence explicitly denies national-scale development."],
+      ["invalid relation projection due to changed scope", "All ecological services can be directly measured by the existing watershed indicators.", "UNCERTAIN", "relation_projection_valid", "Indicators for selected processes do not project to every service or direct measurement."]
+    ],
+    "uncertain": "A national decomposition indicator will be available next year."
+  },
+  {
+    "source": "06-doe-iron-platinum-atomic-structure-2017", "domain": "materials science",
+    "anchors": ["c1", "c2", "c3", "c8", "c9", "c10", "c11"],
+    "paraphrase": "Atomic structural order and defects were associated with magnetic properties at the level of individual atoms.",
+    "synthesis": "Scientists mapped more than 23,000 atomic positions with 22 picometer precision and correlated structural order and defects with magnetic properties.",
+    "abstraction": "Linking atomic arrangements to properties supplies a basis for designing materials with desired properties.",
+    "negatives": [
+      ["unsupported abstraction", "The atomic arrangement alone completely determines every material property.", "UNCERTAIN", "scope_preserved", "Correlations and design relevance do not prove complete determination."],
+      ["correlation → causation drift", "The observed atomic defects caused the measured magnetic properties.", "UNCERTAIN", "causal_force_preserved", "The frozen research account reports correlation, not this causal finding."],
+      ["quantity/unit drift", "The atomic positions were measured with 22 nanometer precision.", "CONTRADICTED", "quantities_units_preserved", "Picometers were replaced by nanometers."],
+      ["entity/referent substitution", "Scientists mapped 16,627 iron atoms and 6,569 platinum atoms.", "CONTRADICTED", "entities_preserved", "The two element counts are exchanged."]
+    ],
+    "uncertain": "The measured defects are the sole cause of magnetic behavior in every nanoparticle."
+  },
+  {
+    "source": "08-fhwa-traffic-bottleneck-concepts-2016", "domain": "transportation",
+    "anchors": ["c1", "c2", "c10", "c11", "c13", "c15"],
+    "paraphrase": "A roadway need not become narrower for a bottleneck to occur.",
+    "synthesis": "FHWA attributes 40 percent of nationwide congestion to bottlenecks and another 5 percent to poor signal timing; together these are said to account for 45 percent.",
+    "abstraction": "Recurring bottleneck delay is a joint-condition phenomenon: design deficiency and traffic overburden are both required in the source's account.",
+    "negatives": [
+      ["unsupported abstraction", "Every delay anywhere on a corridor is caused by a bottleneck at one location.", "UNCERTAIN", "scope_preserved", "Local bottleneck scope cannot be widened to all delay."],
+      ["implicit dependency invented", "At a recurring bottleneck, deficient design alone suffices for delay regardless of demand.", "CONTRADICTED", "scope_preserved", "The source expressly requires both deficiency and overburden."],
+      ["quantity/unit drift", "FHWA attributes 45 percent of congestion to bottlenecks alone.", "CONTRADICTED", "quantities_units_preserved", "45 percent is the combined figure, not the bottleneck-only figure."],
+      ["invalid relation projection due to changed scope", "All road design causes pervasive corridor congestion even without traffic overburden.", "UNCERTAIN", "relation_projection_valid", "The endpoint and conditional scope of the physical bottleneck relation have changed."]
+    ],
+    "uncertain": "Removing this bottleneck will reduce next year's nationwide congestion by exactly 40 percent."
+  },
+  {
+    "source": "09-nist-measurement-uncertainty-2025", "domain": "measurement methodology",
+    "anchors": ["c1", "c2", "c3", "c6", "c9", "c10", "c11", "c12"],
+    "paraphrase": "Measurement uncertainty reflects incomplete knowledge of the quantity being measured.",
+    "synthesis": "Uncertainty expresses incomplete knowledge of a measurand, and a distribution over its possible values represents that knowledge state.",
+    "abstraction": "Measurement uncertainty is a way to characterize limited knowledge, not a claim that a single reported value is certainly exact.",
+    "negatives": [
+      ["unsupported abstraction", "Any uncertainty interval guarantees that the true value is its midpoint.", "UNCERTAIN", "epistemic_force_preserved", "No midpoint guarantee follows from interval or distribution language."],
+      ["lost qualification", "For every measurand, uncertainty must be a standard deviation.", "UNCERTAIN", "scope_preserved", "The source's scalar example admits alternatives; it is not a universal must."],
+      ["quantity/unit drift", "The International Prototype Kilogram has mass 1 gram.", "CONTRADICTED", "quantities_units_preserved", "The frozen example gives 1 kg."],
+      ["implicit dependency invented", "Calibration makes instrument indications meaningful only if uncertainty is zero.", "UNCERTAIN", "scope_preserved", "The zero-uncertainty dependency is absent from the frozen calibration condition."]
+    ],
+    "uncertain": "This unreported instrument has uncertainty exactly 0.01 kg."
+  }
+]

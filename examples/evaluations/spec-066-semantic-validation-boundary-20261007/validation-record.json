@@ -1,0 +1,33 @@
+{
+  "spec": "SPEC-066",
+  "focused_and_regression": {
+    "command": ".venv/bin/pytest tests/test_spec066_semantic_boundary.py tests/test_spec065_synthesis_harness.py tests/test_spec064_abstraction_diagnostic.py tests/test_control_plane.py",
+    "passed": 125,
+    "failed": 0
+  },
+  "complete_offline": {
+    "command": ".venv/bin/pytest",
+    "passed": 902,
+    "failed": 0
+  },
+  "deterministic_regeneration": "PASS: independent directory; every generated file, including self-consistent report/receipt, matches frozen output; validation record excluded as separately recorded actual commands",
+  "label_freeze": "PASS: labels and corpus serialized and hash-checked before A/B evaluation; development draft and evidence/category corrections preserved separately",
+  "no_hardcoding": "PASS: fixture/domain/label metadata excluded from validator packets; unseen text/entities and renamed evidence/commitment IDs preserve generic behavior",
+  "semantic_slot_smuggling": "PASS: exact text cannot license unvalidated interpreted metadata",
+  "adversarial_boundary": "PASS: mixed conjunction, omission, forged authority, evidence, binding, missing/duplicate verdicts, uncertainty, and failed flags fail closed",
+  "capability_and_four_gap_consistency": "PASS: all four novel-language gaps remain unresolved, with positive/negative evidence and zero admissions",
+  "protected_state": {
+    "files": 2090,
+    "aggregate_sha256": "e5cc84f7f70ffe9a2454b9072148153a69680ab2351749f4d3b2f46d1f88df09",
+    "status": "PASS"
+  },
+  "schema_json_and_local_trace_sanity": "PASS",
+  "secret_safety": "PASS: no credential access or secrets in staged artifacts",
+  "diff_check": "PASS",
+  "control_plane": "PASS: active NONE; SPEC-066 IMPLEMENTED_AWAITING_REVIEW / OFFLINE_ONLY / OWNER_REVIEW / NOT_AUTHORIZED",
+  "zero_calls": "PASS: socket connect/create_connection and OpenAI constructor blocked during complete generation, with synthetic credentials present; zero attempts",
+  "repository_network_exception": "Git fetch/push only, separately authorized repository lifecycle; no experiment network calls",
+  "provider_model_compatibility": "UNVERIFIED; local SDK request shape inspection is not provider model validation",
+  "production_or_dependency_changes": false,
+  "owner_verdict": "PENDING"
+}

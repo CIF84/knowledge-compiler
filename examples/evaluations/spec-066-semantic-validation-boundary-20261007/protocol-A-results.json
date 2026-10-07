@@ -1,0 +1,3003 @@
+{
+  "fixture_ids": [
+    "case-001",
+    "case-002",
+    "case-003",
+    "case-004",
+    "case-005",
+    "case-006",
+    "case-007",
+    "case-008",
+    "case-009",
+    "case-010",
+    "case-011",
+    "case-012",
+    "case-013",
+    "case-014",
+    "case-015",
+    "case-016",
+    "case-017",
+    "case-018",
+    "case-019",
+    "case-020",
+    "case-021",
+    "case-022",
+    "case-023",
+    "case-024",
+    "case-025",
+    "case-026",
+    "case-027",
+    "case-028",
+    "case-029",
+    "case-030",
+    "case-031",
+    "case-032",
+    "case-033",
+    "case-034",
+    "case-035",
+    "case-036",
+    "case-037",
+    "case-038",
+    "case-039",
+    "case-040",
+    "case-041",
+    "case-042",
+    "case-043",
+    "case-044",
+    "case-045",
+    "case-046",
+    "case-047",
+    "case-048",
+    "case-049",
+    "case-050",
+    "case-051",
+    "case-052",
+    "case-053",
+    "case-054",
+    "case-055",
+    "case-056",
+    "case-057",
+    "case-058",
+    "case-059",
+    "case-060",
+    "case-061",
+    "case-062",
+    "case-063",
+    "case-064",
+    "case-065",
+    "case-066",
+    "case-067",
+    "case-068",
+    "case-069",
+    "case-070",
+    "case-071",
+    "case-072",
+    "case-073",
+    "case-074",
+    "case-075",
+    "case-076",
+    "case-077",
+    "case-078",
+    "case-079",
+    "case-080",
+    "case-081",
+    "case-082",
+    "case-083",
+    "case-084",
+    "case-085",
+    "case-086",
+    "case-087",
+    "case-088",
+    "case-089",
+    "case-090",
+    "case-091",
+    "case-092"
+  ],
+  "metrics": {
+    "admission_rate": 0.08695652173913043,
+    "admitted": 8,
+    "cases": 92,
+    "category_results": {
+      "contradiction": {
+        "admitted": 0,
+        "count": 1,
+        "false_admissions": 0,
+        "false_rejections_including_uncertain": 0,
+        "uncertain": 1
+      },
+      "correlation → causation drift": {
+        "admitted": 0,
+        "count": 1,
+        "false_admissions": 0,
+        "false_rejections_including_uncertain": 0,
+        "uncertain": 1
+      },
+      "entity/referent substitution": {
+        "admitted": 0,
+        "count": 3,
+        "false_admissions": 0,
+        "false_rejections_including_uncertain": 0,
+        "uncertain": 3
+      },
+      "evidence insufficient / genuinely uncertain": {
+        "admitted": 0,
+        "count": 8,
+        "false_admissions": 0,
+        "false_rejections_including_uncertain": 0,
+        "uncertain": 8
+      },
+      "exact entailment": {
+        "admitted": 8,
+        "count": 16,
+        "false_admissions": 0,
+        "false_rejections_including_uncertain": 8,
+        "uncertain": 8
+      },
+      "faithful paraphrase": {
+        "admitted": 0,
+        "count": 8,
+        "false_admissions": 0,
+        "false_rejections_including_uncertain": 8,
+        "uncertain": 8
+      },
+      "faithful synthesis of multiple commitments": {
+        "admitted": 0,
+        "count": 8,
+        "false_admissions": 0,
+        "false_rejections_including_uncertain": 8,
+        "uncertain": 8
+      },
+      "implicit dependency invented": {
+        "admitted": 0,
+        "count": 3,
+        "false_admissions": 0,
+        "false_rejections_including_uncertain": 0,
+        "uncertain": 3
+      },
+      "implicit dependency preserved": {
+        "admitted": 0,
+        "count": 2,
+        "false_admissions": 0,
+        "false_rejections_including_uncertain": 2,
+        "uncertain": 2
+      },
+      "invalid relation projection due to changed scope": {
+        "admitted": 0,
+        "count": 3,
+        "false_admissions": 0,
+        "false_rejections_including_uncertain": 0,
+        "uncertain": 3
+      },
+      "lost qualification": {
+        "admitted": 0,
+        "count": 4,
+        "false_admissions": 0,
+        "false_rejections_including_uncertain": 0,
+        "uncertain": 4
+      },
+      "overgeneralization": {
+        "admitted": 0,
+        "count": 2,
+        "false_admissions": 0,
+        "false_rejections_including_uncertain": 0,
+        "uncertain": 2
+      },
+      "quantity/unit drift": {
+        "admitted": 0,
+        "count": 5,
+        "false_admissions": 0,
+        "false_rejections_including_uncertain": 0,
+        "uncertain": 5
+      },
+      "strengthened certainty": {
+        "admitted": 0,
+        "count": 2,
+        "false_admissions": 0,
+        "false_rejections_including_uncertain": 0,
+        "uncertain": 2
+      },
+      "temporal/scope drift": {
+        "admitted": 0,
+        "count": 2,
+        "false_admissions": 0,
+        "false_rejections_including_uncertain": 0,
+        "uncertain": 2
+      },
+      "unsupported abstraction": {
+        "admitted": 0,
+        "count": 14,
+        "false_admissions": 0,
+        "false_rejections_including_uncertain": 0,
+        "uncertain": 14
+      },
+      "valid explanatory abstraction": {
+        "admitted": 0,
+        "count": 8,
+        "false_admissions": 0,
+        "false_rejections_including_uncertain": 8,
+        "uncertain": 8
+      },
+      "valid relation projection onto compressed endpoints": {
+        "admitted": 0,
+        "count": 2,
+        "false_admissions": 0,
+        "false_rejections_including_uncertain": 2,
+        "uncertain": 2
+      }
+    },
+    "coverage": 0.08695652173913043,
+    "coverage_definition": "Decisive evidence-backed verdicts / all fixtures, not known-label lookup.",
+    "drift_detection": {
+      "correlation → causation drift": {
+        "blocked": 1,
+        "count": 1,
+        "specific_diagnoses": 0
+      },
+      "entity/referent substitution": {
+        "blocked": 3,
+        "count": 3,
+        "specific_diagnoses": 0
+      },
+      "invalid relation projection due to changed scope": {
+        "blocked": 3,
+        "count": 3,
+        "specific_diagnoses": 0
+      },
+      "quantity/unit drift": {
+        "blocked": 5,
+        "count": 5,
+        "specific_diagnoses": 0
+      },
+      "temporal/scope drift": {
+        "blocked": 2,
+        "count": 2,
+        "specific_diagnoses": 0
+      }
+    },
+    "explicit_contradiction_rate": 0,
+    "false_admission_count": 0,
+    "false_admission_rate_among_admissions": 0.0,
+    "false_admission_rate_among_nonadmissible": 0.0,
+    "false_rejection_count_including_uncertain": 36,
+    "false_rejection_rate_among_entailed": 0.8181818181818182,
+    "gold_entailed": 44,
+    "gold_nonadmissible": 48,
+    "preservation_flag_accuracy": {
+      "causal_force_preserved": {
+        "accuracy": 0.17777777777777778,
+        "correct_count": 8,
+        "explicit_fail_detection_count": 0,
+        "gold_fail_count": 1,
+        "known_gold_count": 45,
+        "note": "Unproved negatives are blocked, not specifically diagnosed by heuristics."
+      },
+      "entities_preserved": {
+        "accuracy": 0.1702127659574468,
+        "correct_count": 8,
+        "explicit_fail_detection_count": 0,
+        "gold_fail_count": 3,
+        "known_gold_count": 47,
+        "note": "Unproved negatives are blocked, not specifically diagnosed by heuristics."
+      },
+      "epistemic_force_preserved": {
+        "accuracy": 0.16666666666666666,
+        "correct_count": 8,
+        "explicit_fail_detection_count": 0,
+        "gold_fail_count": 4,
+        "known_gold_count": 48,
+        "note": "Unproved negatives are blocked, not specifically diagnosed by heuristics."
+      },
+      "quantities_units_preserved": {
+        "accuracy": 0.16326530612244897,
+        "correct_count": 8,
+        "explicit_fail_detection_count": 0,
+        "gold_fail_count": 5,
+        "known_gold_count": 49,
+        "note": "Unproved negatives are blocked, not specifically diagnosed by heuristics."
+      },
+      "relation_projection_valid": {
+        "accuracy": 0.1702127659574468,
+        "correct_count": 8,
+        "explicit_fail_detection_count": 0,
+        "gold_fail_count": 3,
+        "known_gold_count": 47,
+        "note": "Unproved negatives are blocked, not specifically diagnosed by heuristics."
+      },
+      "scope_preserved": {
+        "accuracy": 0.12307692307692308,
+        "correct_count": 8,
+        "explicit_fail_detection_count": 0,
+        "gold_fail_count": 21,
+        "known_gold_count": 65,
+        "note": "Unproved negatives are blocked, not specifically diagnosed by heuristics."
+      },
+      "temporal_context_preserved": {
+        "accuracy": 0.17391304347826086,
+        "correct_count": 8,
+        "explicit_fail_detection_count": 0,
+        "gold_fail_count": 2,
+        "known_gold_count": 46,
+        "note": "Unproved negatives are blocked, not specifically diagnosed by heuristics."
+      }
+    },
+    "primary_trust_failure": "FALSE_ADMISSION",
+    "rejection_rate": 0.9130434782608695,
+    "relation_projection_accuracy": {
+      "case_count": 5,
+      "correct_admission_decisions": 3,
+      "decision_accuracy": 0.6,
+      "explicit_scope_diagnoses": 0,
+      "invalid_projections_blocked": 3,
+      "note": "All projected relations remain uncertain. Correct blocking is not proof of projection validity or diagnosis.",
+      "semantic_flag_accuracy": 0,
+      "valid_projections_admitted": 0
+    },
+    "uncertain_rate": 0.9130434782608695
+  },
+  "results": [
+    {
+      "admission": "ADMIT",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "PASS",
+          "commitment_id": "case-001:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "PASS",
+          "epistemic_force_preserved": "PASS",
+          "input_sha256": "420bb66d9b03f439dfbed9058110eba67d87a9d721245556409cca435516c323",
+          "notes": "Exact frozen proof carrier only; natural-language semantic slots remain unresolved.",
+          "quantities_units_preserved": "PASS",
+          "reason_code": "EXACT_FROZEN_WITNESS",
+          "relation_projection_valid": "PASS",
+          "scope_preserved": "PASS",
+          "supporting_evidence_ids": [
+            "text-a9539d135ff1577d:c3:0"
+          ],
+          "temporal_context_preserved": "PASS",
+          "verdict": "ENTAILED"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "420bb66d9b03f439dfbed9058110eba67d87a9d721245556409cca435516c323",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "ENTAILED"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-002:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "26a3d319fd247f0fc55f962e4d3121fa53fd54126a0dd2deda81f480bec0486a",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        },
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-002:a2",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "26a3d319fd247f0fc55f962e4d3121fa53fd54126a0dd2deda81f480bec0486a",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "EXPLICIT_GRAMMAR_ONLY",
+      "input_sha256": "26a3d319fd247f0fc55f962e4d3121fa53fd54126a0dd2deda81f480bec0486a",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-003:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "2abed533135afb8b5ac0196b61ff85fbefde7d0b35ece62e885182a028b6502d",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "2abed533135afb8b5ac0196b61ff85fbefde7d0b35ece62e885182a028b6502d",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-004:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "ed93fcf0fd0dc1480ff439a17659d53ad63d84ee5a3756ac4cfa2177b4ff867a",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "ed93fcf0fd0dc1480ff439a17659d53ad63d84ee5a3756ac4cfa2177b4ff867a",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-005:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "f915ee798039c7460d379e90a5d46d91cbb4f1a3b23570bb0441bcbedb97bdab",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "f915ee798039c7460d379e90a5d46d91cbb4f1a3b23570bb0441bcbedb97bdab",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-006:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "15baf55d024fa05c957fb91f9659fc9c60e410d70d6f81178dc128767a382d94",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "15baf55d024fa05c957fb91f9659fc9c60e410d70d6f81178dc128767a382d94",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-007:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "8ed11949441d810f2d795752e670d94be498154348e6ca167e5770387df55e82",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "8ed11949441d810f2d795752e670d94be498154348e6ca167e5770387df55e82",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-008:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "0f740ec93d876983b5fa47a5aefba592fdff1ef7b37e7f226bcf30161269f397",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "0f740ec93d876983b5fa47a5aefba592fdff1ef7b37e7f226bcf30161269f397",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-009:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "8b9039b3263066486e6df947729ab072bba39020649ff918cf8c6be11a4c994f",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "8b9039b3263066486e6df947729ab072bba39020649ff918cf8c6be11a4c994f",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-010:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "90e0558eda80062686ecff31de65bd690e4b602aa074b29ab52ede180f59a32a",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "90e0558eda80062686ecff31de65bd690e4b602aa074b29ab52ede180f59a32a",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-011:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "a7e0c4e7631798a86b0c51200cb73747bfefab979b15ea0805221b13a2bba438",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        },
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-011:a2",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "a7e0c4e7631798a86b0c51200cb73747bfefab979b15ea0805221b13a2bba438",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "EXPLICIT_GRAMMAR_ONLY",
+      "input_sha256": "a7e0c4e7631798a86b0c51200cb73747bfefab979b15ea0805221b13a2bba438",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-012:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "b14715672b18d598baa10105f6ba8b9151044c0ff63b287e6697045cb6f05e1b",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "b14715672b18d598baa10105f6ba8b9151044c0ff63b287e6697045cb6f05e1b",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "ADMIT",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "PASS",
+          "commitment_id": "case-013:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "PASS",
+          "epistemic_force_preserved": "PASS",
+          "input_sha256": "2bed5662e4bb4c19d325058543ff89b9653a885ac1698fa2ef2636885f11cbba",
+          "notes": "Exact frozen proof carrier only; natural-language semantic slots remain unresolved.",
+          "quantities_units_preserved": "PASS",
+          "reason_code": "EXACT_FROZEN_WITNESS",
+          "relation_projection_valid": "PASS",
+          "scope_preserved": "PASS",
+          "supporting_evidence_ids": [
+            "text-256ade61be620cfa:c7:0"
+          ],
+          "temporal_context_preserved": "PASS",
+          "verdict": "ENTAILED"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "2bed5662e4bb4c19d325058543ff89b9653a885ac1698fa2ef2636885f11cbba",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "ENTAILED"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-014:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "934c73da9b9067cc8450e26f5e3b71a9c496bcb6d3b75fed24d64606860ba1c8",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        },
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-014:a2",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "934c73da9b9067cc8450e26f5e3b71a9c496bcb6d3b75fed24d64606860ba1c8",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "EXPLICIT_GRAMMAR_ONLY",
+      "input_sha256": "934c73da9b9067cc8450e26f5e3b71a9c496bcb6d3b75fed24d64606860ba1c8",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-015:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "ba52696c9f84833c2ae7d8ef085b6390b27cde3689389900725f0b98fb033ce0",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "ba52696c9f84833c2ae7d8ef085b6390b27cde3689389900725f0b98fb033ce0",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-016:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "50baa1224c417847db29d42fb8372215dba3649db13103cb5f42e6ffad8a8283",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "50baa1224c417847db29d42fb8372215dba3649db13103cb5f42e6ffad8a8283",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-017:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "c8657a586f5bc2d7e2a71ab9e3f8bab32cc99a2d01a0ef331735ec8b73259956",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "c8657a586f5bc2d7e2a71ab9e3f8bab32cc99a2d01a0ef331735ec8b73259956",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-018:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "1eebe7e76dffb394aa20642971a8e263b97390778d9e4630f44b93e59a491512",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "1eebe7e76dffb394aa20642971a8e263b97390778d9e4630f44b93e59a491512",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-019:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "54e38a49e44c48bfe075ec4cd01fca9c955fab8e1354fe7e70027b009489c359",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "54e38a49e44c48bfe075ec4cd01fca9c955fab8e1354fe7e70027b009489c359",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-020:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "86df66da09a026a84531a96020d1490aa8c827f17525ecb538b94060f7d10daf",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "86df66da09a026a84531a96020d1490aa8c827f17525ecb538b94060f7d10daf",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-021:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "caeb8949902f86e05e84ce53d57afda44982d6bb20da31d3f3ae428f088b40ab",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "caeb8949902f86e05e84ce53d57afda44982d6bb20da31d3f3ae428f088b40ab",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-022:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "f464a2a8fb898af0b0211ee143405d4380d008f169a1bb169675c0a1715140bd",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "f464a2a8fb898af0b0211ee143405d4380d008f169a1bb169675c0a1715140bd",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-023:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "bfd490fd9f35e067d0fe568963b87eb78505974d5dd1a96d957f0a085f764b36",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        },
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-023:a2",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "bfd490fd9f35e067d0fe568963b87eb78505974d5dd1a96d957f0a085f764b36",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "EXPLICIT_GRAMMAR_ONLY",
+      "input_sha256": "bfd490fd9f35e067d0fe568963b87eb78505974d5dd1a96d957f0a085f764b36",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-024:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "c1f7e46da6499e292c89f884c44849b1466df859b9d30245852ec1e2078834ab",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "c1f7e46da6499e292c89f884c44849b1466df859b9d30245852ec1e2078834ab",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "ADMIT",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "PASS",
+          "commitment_id": "case-025:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "PASS",
+          "epistemic_force_preserved": "PASS",
+          "input_sha256": "76825df4440053bcc08dd46088abd4451d226594310d07bfad5b1331ced5709e",
+          "notes": "Exact frozen proof carrier only; natural-language semantic slots remain unresolved.",
+          "quantities_units_preserved": "PASS",
+          "reason_code": "EXACT_FROZEN_WITNESS",
+          "relation_projection_valid": "PASS",
+          "scope_preserved": "PASS",
+          "supporting_evidence_ids": [
+            "text-fe61b7c3b2a9373e:claim-referral:0"
+          ],
+          "temporal_context_preserved": "PASS",
+          "verdict": "ENTAILED"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "76825df4440053bcc08dd46088abd4451d226594310d07bfad5b1331ced5709e",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "ENTAILED"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-026:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "beadccea27fb27f8c51f5947639274e215b481cec4a45cc994902f2282cbab0f",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        },
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-026:a2",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "beadccea27fb27f8c51f5947639274e215b481cec4a45cc994902f2282cbab0f",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "EXPLICIT_GRAMMAR_ONLY",
+      "input_sha256": "beadccea27fb27f8c51f5947639274e215b481cec4a45cc994902f2282cbab0f",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-027:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "8355585c408912d90ccfcc485df7e97d46eb0838f9d0caebb99eb1a02b88192a",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "8355585c408912d90ccfcc485df7e97d46eb0838f9d0caebb99eb1a02b88192a",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-028:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "ccca0182d16e2a3f647e2f811bb51a2bb15b8301b009a5a139d2a4e66ba98f9e",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "ccca0182d16e2a3f647e2f811bb51a2bb15b8301b009a5a139d2a4e66ba98f9e",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-029:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "c70dd33a76a0be0927e161c0584a778c9a5d903a66c61050dd2821e42bf6dfd6",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "c70dd33a76a0be0927e161c0584a778c9a5d903a66c61050dd2821e42bf6dfd6",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-030:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "80a4fd39694da4c98b78ab65a36189b023ee286c94c7c20de9926dab78622749",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "80a4fd39694da4c98b78ab65a36189b023ee286c94c7c20de9926dab78622749",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-031:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "d54e3024327d4ba075533973e8abd252c6c2f2939fa0b20b54fb87668871f8ba",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "d54e3024327d4ba075533973e8abd252c6c2f2939fa0b20b54fb87668871f8ba",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-032:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "a05202d90b7a059edff01454cca64fccf1cde7aed7fc7d7fb8f3270e3fcdf3c1",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "a05202d90b7a059edff01454cca64fccf1cde7aed7fc7d7fb8f3270e3fcdf3c1",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-033:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "3cc258a7f50f13ae781f9f1c0b05a6364ff40d6fd1df8c5eeaa9671caed6e1b3",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "3cc258a7f50f13ae781f9f1c0b05a6364ff40d6fd1df8c5eeaa9671caed6e1b3",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-034:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "e66872be0650225a60552c64e70713fc0e073d1c75679fef9ec524dc357b7a2e",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "e66872be0650225a60552c64e70713fc0e073d1c75679fef9ec524dc357b7a2e",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-035:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "1bfe19fa147a26a40a6c5179072197badf2a421e390145f24be83a59ad14e58f",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        },
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-035:a2",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "1bfe19fa147a26a40a6c5179072197badf2a421e390145f24be83a59ad14e58f",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "EXPLICIT_GRAMMAR_ONLY",
+      "input_sha256": "1bfe19fa147a26a40a6c5179072197badf2a421e390145f24be83a59ad14e58f",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "ADMIT",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "PASS",
+          "commitment_id": "case-036:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "PASS",
+          "epistemic_force_preserved": "PASS",
+          "input_sha256": "572f5fdd09b82a16a97a11fb1a51ff716727fb1acabc75b20797e534175af4a6",
+          "notes": "Exact frozen proof carrier only; natural-language semantic slots remain unresolved.",
+          "quantities_units_preserved": "PASS",
+          "reason_code": "EXACT_FROZEN_WITNESS",
+          "relation_projection_valid": "PASS",
+          "scope_preserved": "PASS",
+          "supporting_evidence_ids": [
+            "text-c0cb2519673b8f3e:c1:0"
+          ],
+          "temporal_context_preserved": "PASS",
+          "verdict": "ENTAILED"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "572f5fdd09b82a16a97a11fb1a51ff716727fb1acabc75b20797e534175af4a6",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "ENTAILED"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-037:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "df3d0a7e47ded68c8478fad226f645b39ccde38376a4dc3520a3ef2819a594ca",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        },
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-037:a2",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "df3d0a7e47ded68c8478fad226f645b39ccde38376a4dc3520a3ef2819a594ca",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "EXPLICIT_GRAMMAR_ONLY",
+      "input_sha256": "df3d0a7e47ded68c8478fad226f645b39ccde38376a4dc3520a3ef2819a594ca",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-038:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "fa4cc15671f11ce632036c9b1c6b29ee644dd12c53bf6d3d53a8bc704a777d77",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "fa4cc15671f11ce632036c9b1c6b29ee644dd12c53bf6d3d53a8bc704a777d77",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-039:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "ad085c6ef5d670901b376e80cc81c7b0ff1cf15d60e3e6933a7c8fd5044c2338",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "ad085c6ef5d670901b376e80cc81c7b0ff1cf15d60e3e6933a7c8fd5044c2338",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-040:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "48024d6518f60dd39bc8ce856c32df36fbbe5a8834a4be962e9b2d033d0c6f27",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "48024d6518f60dd39bc8ce856c32df36fbbe5a8834a4be962e9b2d033d0c6f27",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-041:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "f1731117ca36e48121a0701634f9809ac2f7de3141c3d381d3a84e0cc950cd14",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "f1731117ca36e48121a0701634f9809ac2f7de3141c3d381d3a84e0cc950cd14",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-042:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "565760756287ce6fa61a1d646cf2d2adb92c6820c7f8663a8e7ec4d39243b419",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "565760756287ce6fa61a1d646cf2d2adb92c6820c7f8663a8e7ec4d39243b419",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-043:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "c8c62e1ce2ba6d8167ac0a7fc6232f878872e62b8a23fe9a9da8657060e805d0",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "c8c62e1ce2ba6d8167ac0a7fc6232f878872e62b8a23fe9a9da8657060e805d0",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-044:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "542e79cda25098133f9fb332819d5848f80ebd551f3420f0c3b13b21ec03ca46",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "542e79cda25098133f9fb332819d5848f80ebd551f3420f0c3b13b21ec03ca46",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-045:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "724031b0e0576198dc083580f015334a6ac50b87c24e3d473a25da904df2d6ee",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "724031b0e0576198dc083580f015334a6ac50b87c24e3d473a25da904df2d6ee",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-046:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "7107e79d71225e340fe80a6eb60e80f75f097e8d340273b8c99fe6d4d59c6707",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        },
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-046:a2",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "7107e79d71225e340fe80a6eb60e80f75f097e8d340273b8c99fe6d4d59c6707",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "EXPLICIT_GRAMMAR_ONLY",
+      "input_sha256": "7107e79d71225e340fe80a6eb60e80f75f097e8d340273b8c99fe6d4d59c6707",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-047:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "3c27cc384734effdcf7a849452462a7b4aeca08b6146279df0f9b39c113ba36b",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "3c27cc384734effdcf7a849452462a7b4aeca08b6146279df0f9b39c113ba36b",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "ADMIT",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "PASS",
+          "commitment_id": "case-048:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "PASS",
+          "epistemic_force_preserved": "PASS",
+          "input_sha256": "ea7aa200cbd9452db1954fcc02653df46860e3675e35b7b3663ceda5a048f725",
+          "notes": "Exact frozen proof carrier only; natural-language semantic slots remain unresolved.",
+          "quantities_units_preserved": "PASS",
+          "reason_code": "EXACT_FROZEN_WITNESS",
+          "relation_projection_valid": "PASS",
+          "scope_preserved": "PASS",
+          "supporting_evidence_ids": [
+            "text-70e7e3d20325dd5d:claim-1:0"
+          ],
+          "temporal_context_preserved": "PASS",
+          "verdict": "ENTAILED"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "ea7aa200cbd9452db1954fcc02653df46860e3675e35b7b3663ceda5a048f725",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "ENTAILED"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-049:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "e9a84ec4b8e5d876168d2b319157b758f3d97b50759fb0f59d5527b1c76fde22",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        },
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-049:a2",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "e9a84ec4b8e5d876168d2b319157b758f3d97b50759fb0f59d5527b1c76fde22",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "EXPLICIT_GRAMMAR_ONLY",
+      "input_sha256": "e9a84ec4b8e5d876168d2b319157b758f3d97b50759fb0f59d5527b1c76fde22",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-050:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "d720d35f15ffb7a3fd1f8c6760f38bdd917fe15d42c2fef8d2f45f2b318c490e",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "d720d35f15ffb7a3fd1f8c6760f38bdd917fe15d42c2fef8d2f45f2b318c490e",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-051:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "a69de1f0a342b2f8ca1129ba597d47919e1ec72aec8b27c9beefede273740d4e",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "a69de1f0a342b2f8ca1129ba597d47919e1ec72aec8b27c9beefede273740d4e",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-052:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "8f519470c2ab1c7d90f59448326efbf0d741a86de18ec5cbf783bc63ce2b2ca3",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "8f519470c2ab1c7d90f59448326efbf0d741a86de18ec5cbf783bc63ce2b2ca3",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-053:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "461a40042e5cffd4321270710fbd6464d25bfa45fd85aa85c1f11f8d0321c0cd",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "461a40042e5cffd4321270710fbd6464d25bfa45fd85aa85c1f11f8d0321c0cd",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-054:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "2219720b8c09b17f4f2756d532d2eeb9d1de1e541c3e78f531851952d438003e",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "2219720b8c09b17f4f2756d532d2eeb9d1de1e541c3e78f531851952d438003e",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-055:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "5ae4253357e2fa28f5d7f6f4572e62875bc43d4e4bf28f2957eb48b2c38819cf",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "5ae4253357e2fa28f5d7f6f4572e62875bc43d4e4bf28f2957eb48b2c38819cf",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-056:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "0247be6cae18094db99f655633c60c32d1e480aa9a922b5f1a0acd8d7666c0f0",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "0247be6cae18094db99f655633c60c32d1e480aa9a922b5f1a0acd8d7666c0f0",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-057:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "a7e5933bb2c29e8f1cdbc662a7db6f9170410dac70829e2ad2d022299a2b8f4f",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "a7e5933bb2c29e8f1cdbc662a7db6f9170410dac70829e2ad2d022299a2b8f4f",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-058:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "989f927397b3b1b0c49a54bdc441ced0d2f3633a5d95c83cd8a7276a12caf07f",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        },
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-058:a2",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "989f927397b3b1b0c49a54bdc441ced0d2f3633a5d95c83cd8a7276a12caf07f",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "EXPLICIT_GRAMMAR_ONLY",
+      "input_sha256": "989f927397b3b1b0c49a54bdc441ced0d2f3633a5d95c83cd8a7276a12caf07f",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "ADMIT",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "PASS",
+          "commitment_id": "case-059:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "PASS",
+          "epistemic_force_preserved": "PASS",
+          "input_sha256": "27d83e9aa0cb34aebe7565561e08467942abcb22393776b6ae6fba12089dc790",
+          "notes": "Exact frozen proof carrier only; natural-language semantic slots remain unresolved.",
+          "quantities_units_preserved": "PASS",
+          "reason_code": "EXACT_FROZEN_WITNESS",
+          "relation_projection_valid": "PASS",
+          "scope_preserved": "PASS",
+          "supporting_evidence_ids": [
+            "text-e9d2260c99802394:c1:0"
+          ],
+          "temporal_context_preserved": "PASS",
+          "verdict": "ENTAILED"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "27d83e9aa0cb34aebe7565561e08467942abcb22393776b6ae6fba12089dc790",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "ENTAILED"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-060:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "749cf5da8e67afc5f891e2a7069e911a099946ad8d2a27ae35133bbe36c671ba",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        },
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-060:a2",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "749cf5da8e67afc5f891e2a7069e911a099946ad8d2a27ae35133bbe36c671ba",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "EXPLICIT_GRAMMAR_ONLY",
+      "input_sha256": "749cf5da8e67afc5f891e2a7069e911a099946ad8d2a27ae35133bbe36c671ba",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-061:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "2483515d24da745be4ad37780d0a2224dcab404851ed2c3a7b60cfff6059253d",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "2483515d24da745be4ad37780d0a2224dcab404851ed2c3a7b60cfff6059253d",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-062:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "c73c7e66d81e5c934c52b586f82e8e5cb626d8aa23741ad457226e358618446b",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "c73c7e66d81e5c934c52b586f82e8e5cb626d8aa23741ad457226e358618446b",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-063:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "6da8c0c5f68cd08c0b55cb2e56ec7f71958ad9727231727fd7cfe17302e40ee7",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "6da8c0c5f68cd08c0b55cb2e56ec7f71958ad9727231727fd7cfe17302e40ee7",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-064:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "98dd4d6e0cf3c75bcd428ae12faf1b5048787e6de6b0a85cb17dc0b65760b089",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "98dd4d6e0cf3c75bcd428ae12faf1b5048787e6de6b0a85cb17dc0b65760b089",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-065:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "11add82ea7a1a2fbf7f84a41464d7b156576d521ba753583ca13f77a3bc9fb7b",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "11add82ea7a1a2fbf7f84a41464d7b156576d521ba753583ca13f77a3bc9fb7b",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-066:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "da402b143f10a95953be7a143f7c6d511560309f98bdb95b44959ea863a64de6",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "da402b143f10a95953be7a143f7c6d511560309f98bdb95b44959ea863a64de6",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-067:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "8348a34ca466e3357828766feed57d30501fea710be52733e9d22c6740905e99",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "8348a34ca466e3357828766feed57d30501fea710be52733e9d22c6740905e99",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-068:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "ec7d95e1bcdf47bc8b0c7e714aad0115c438919a97c377d395bc1bdec62f532c",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "ec7d95e1bcdf47bc8b0c7e714aad0115c438919a97c377d395bc1bdec62f532c",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-069:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "4290416608fd32b7f6d3800d615244c9191684b9251ced1a53b472bd525b7eff",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        },
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-069:a2",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "4290416608fd32b7f6d3800d615244c9191684b9251ced1a53b472bd525b7eff",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "EXPLICIT_GRAMMAR_ONLY",
+      "input_sha256": "4290416608fd32b7f6d3800d615244c9191684b9251ced1a53b472bd525b7eff",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "ADMIT",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "PASS",
+          "commitment_id": "case-070:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "PASS",
+          "epistemic_force_preserved": "PASS",
+          "input_sha256": "d59d5c9d55704b08db3b2db01fd26ffd7796f241c277f2610a4ba44be5f78479",
+          "notes": "Exact frozen proof carrier only; natural-language semantic slots remain unresolved.",
+          "quantities_units_preserved": "PASS",
+          "reason_code": "EXACT_FROZEN_WITNESS",
+          "relation_projection_valid": "PASS",
+          "scope_preserved": "PASS",
+          "supporting_evidence_ids": [
+            "text-1fd7e9851839f5f3:c1:0"
+          ],
+          "temporal_context_preserved": "PASS",
+          "verdict": "ENTAILED"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "d59d5c9d55704b08db3b2db01fd26ffd7796f241c277f2610a4ba44be5f78479",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "ENTAILED"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-071:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "6392dccd0c6361108e04614d351cf84459d456f8646c827c92cf1789f9faf50c",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        },
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-071:a2",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "6392dccd0c6361108e04614d351cf84459d456f8646c827c92cf1789f9faf50c",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "EXPLICIT_GRAMMAR_ONLY",
+      "input_sha256": "6392dccd0c6361108e04614d351cf84459d456f8646c827c92cf1789f9faf50c",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-072:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "91ba2fac440eb3af546c473d3ebeece590fe2b790af12f823d8fb2b3091c688a",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "91ba2fac440eb3af546c473d3ebeece590fe2b790af12f823d8fb2b3091c688a",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-073:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "e617892d3b2e72cf7604b1ae28418c64f5d63f35af9a3f983c49af3f453b0221",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "e617892d3b2e72cf7604b1ae28418c64f5d63f35af9a3f983c49af3f453b0221",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-074:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "7244e08a994c681ebb73b5d88744ed705e5e2e8bcea6e74e78931a32d0d13088",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "7244e08a994c681ebb73b5d88744ed705e5e2e8bcea6e74e78931a32d0d13088",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-075:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "e978498896c3323a665d9e898ca8b4fc265f65e11b26670ddab0c21f38b8b085",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "e978498896c3323a665d9e898ca8b4fc265f65e11b26670ddab0c21f38b8b085",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-076:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "6b26f0cf7b1c700c05efe34a777730bfd8eefefca6a4d45ae76f6ee42ede3cc3",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "6b26f0cf7b1c700c05efe34a777730bfd8eefefca6a4d45ae76f6ee42ede3cc3",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-077:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "85d8fe0800dc7694254d6215ff4c0ef2dbf75273fd38682ac71c8015130e9163",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "85d8fe0800dc7694254d6215ff4c0ef2dbf75273fd38682ac71c8015130e9163",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-078:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "82819938835cc4218a55f4132be3221e4678ab7997fea8f1cc47bc613b34fad5",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "82819938835cc4218a55f4132be3221e4678ab7997fea8f1cc47bc613b34fad5",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-079:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "2a14d1c60e718c66621a2fb49fa70835812dadd544e109702b6fd70e7305d4e8",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "2a14d1c60e718c66621a2fb49fa70835812dadd544e109702b6fd70e7305d4e8",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-080:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "af2ceac5287871c7328e9f84ccf2a3255427f2c38147fba8c3bfbf5f1e9a8977",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        },
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-080:a2",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "af2ceac5287871c7328e9f84ccf2a3255427f2c38147fba8c3bfbf5f1e9a8977",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "EXPLICIT_GRAMMAR_ONLY",
+      "input_sha256": "af2ceac5287871c7328e9f84ccf2a3255427f2c38147fba8c3bfbf5f1e9a8977",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "ADMIT",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "PASS",
+          "commitment_id": "case-081:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "PASS",
+          "epistemic_force_preserved": "PASS",
+          "input_sha256": "5e89a95cd4825ef57b4cfd62f64777464074d94b05f48f8bb937f2b7b7977ba6",
+          "notes": "Exact frozen proof carrier only; natural-language semantic slots remain unresolved.",
+          "quantities_units_preserved": "PASS",
+          "reason_code": "EXACT_FROZEN_WITNESS",
+          "relation_projection_valid": "PASS",
+          "scope_preserved": "PASS",
+          "supporting_evidence_ids": [
+            "text-b3ae508f3982dfdd:c1:0"
+          ],
+          "temporal_context_preserved": "PASS",
+          "verdict": "ENTAILED"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "5e89a95cd4825ef57b4cfd62f64777464074d94b05f48f8bb937f2b7b7977ba6",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "ENTAILED"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-082:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "63020ff4e9c0a35cb58a81cd680284942e86dc8ad6d1f319f8118875213eda60",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        },
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-082:a2",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "63020ff4e9c0a35cb58a81cd680284942e86dc8ad6d1f319f8118875213eda60",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "EXPLICIT_GRAMMAR_ONLY",
+      "input_sha256": "63020ff4e9c0a35cb58a81cd680284942e86dc8ad6d1f319f8118875213eda60",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-083:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "3559dc030e8e7dde164068d18238fc2d52e6225bf82c1af72842854152ab4efa",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "3559dc030e8e7dde164068d18238fc2d52e6225bf82c1af72842854152ab4efa",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-084:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "4d7a033669dcf90278352f0032316f04ffdc5af169f4e40df83b74ee078a4348",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "4d7a033669dcf90278352f0032316f04ffdc5af169f4e40df83b74ee078a4348",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-085:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "4dc5712ec19c7fed129645c727aa46e6ed57e146e6ab856b27ee91fda5a64c94",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "4dc5712ec19c7fed129645c727aa46e6ed57e146e6ab856b27ee91fda5a64c94",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-086:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "438119f861ddbca5eb34bb642e9ee7af5cac969383c40d276f5c70124d175751",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "438119f861ddbca5eb34bb642e9ee7af5cac969383c40d276f5c70124d175751",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-087:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "8f8a0591fd736516f406f5b19205ff66a03e234f245c8a2d5c89169955c87dd6",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "8f8a0591fd736516f406f5b19205ff66a03e234f245c8a2d5c89169955c87dd6",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-088:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "f11fa06de17baa83aecfd5ff0f9c7f8c6ec92b9e786206524215119ba4f2cdf3",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "f11fa06de17baa83aecfd5ff0f9c7f8c6ec92b9e786206524215119ba4f2cdf3",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-089:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "aa864f54b70124f8eb41ab7a385200dd09aed83f55fe7089660378ed5c73f455",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "aa864f54b70124f8eb41ab7a385200dd09aed83f55fe7089660378ed5c73f455",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-090:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "ffaf43f13e4b64516e389321208d51eb4d562d40e0f771d9bb5054433347d2e7",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "ffaf43f13e4b64516e389321208d51eb4d562d40e0f771d9bb5054433347d2e7",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-091:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "e4dcd4144e4d0bf0a08994bfd5288bea0a0d61c7c5ce70aaae88e87006cee64f",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        },
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-091:a2",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "e4dcd4144e4d0bf0a08994bfd5288bea0a0d61c7c5ce70aaae88e87006cee64f",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "EXPLICIT_GRAMMAR_ONLY",
+      "input_sha256": "e4dcd4144e4d0bf0a08994bfd5288bea0a0d61c7c5ce70aaae88e87006cee64f",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "atomic_or_carrier_results": [
+        {
+          "causal_force_preserved": "UNRESOLVED",
+          "commitment_id": "case-092:a1",
+          "contradicting_evidence_ids": [],
+          "entities_preserved": "UNRESOLVED",
+          "epistemic_force_preserved": "UNRESOLVED",
+          "input_sha256": "e5c51155345be0b91f154c49e87898b255ceddcf89dc3b61cb33ecf4f01fc3ac",
+          "notes": "No natural-language entailment or atom completeness inferred.",
+          "quantities_units_preserved": "UNRESOLVED",
+          "reason_code": "SEMANTIC_JUDGMENT_REQUIRED",
+          "relation_projection_valid": "UNRESOLVED",
+          "scope_preserved": "UNRESOLVED",
+          "supporting_evidence_ids": [],
+          "temporal_context_preserved": "UNRESOLVED",
+          "verdict": "UNCERTAIN"
+        }
+      ],
+      "decomposition": "NATURAL_LANGUAGE_UNRESOLVED",
+      "input_sha256": "e5c51155345be0b91f154c49e87898b255ceddcf89dc3b61cb33ecf4f01fc3ac",
+      "note": "Exact carriers can be certified without interpreting their slots; this is not a general atomic entailment engine.",
+      "protocol": "A",
+      "verdict": "UNCERTAIN"
+    }
+  ]
+}

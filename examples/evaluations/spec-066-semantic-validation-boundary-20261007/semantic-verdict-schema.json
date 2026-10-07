@@ -1,0 +1,125 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "causal_force_preserved": {
+      "enum": [
+        "PASS",
+        "FAIL",
+        "UNRESOLVED",
+        "NOT_APPLICABLE"
+      ],
+      "type": "string"
+    },
+    "commitment_id": {
+      "type": "string"
+    },
+    "contradicting_evidence_ids": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "entities_preserved": {
+      "enum": [
+        "PASS",
+        "FAIL",
+        "UNRESOLVED",
+        "NOT_APPLICABLE"
+      ],
+      "type": "string"
+    },
+    "epistemic_force_preserved": {
+      "enum": [
+        "PASS",
+        "FAIL",
+        "UNRESOLVED",
+        "NOT_APPLICABLE"
+      ],
+      "type": "string"
+    },
+    "input_sha256": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "quantities_units_preserved": {
+      "enum": [
+        "PASS",
+        "FAIL",
+        "UNRESOLVED",
+        "NOT_APPLICABLE"
+      ],
+      "type": "string"
+    },
+    "reason_code": {
+      "enum": [
+        "EXACT_FROZEN_WITNESS",
+        "EXPLICIT_CONJUNCTION",
+        "SEMANTIC_JUDGMENT_REQUIRED",
+        "INSUFFICIENT_EVIDENCE",
+        "CONTRADICTION",
+        "PRESERVATION_DRIFT"
+      ],
+      "type": "string"
+    },
+    "relation_projection_valid": {
+      "enum": [
+        "PASS",
+        "FAIL",
+        "UNRESOLVED",
+        "NOT_APPLICABLE"
+      ],
+      "type": "string"
+    },
+    "scope_preserved": {
+      "enum": [
+        "PASS",
+        "FAIL",
+        "UNRESOLVED",
+        "NOT_APPLICABLE"
+      ],
+      "type": "string"
+    },
+    "supporting_evidence_ids": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "temporal_context_preserved": {
+      "enum": [
+        "PASS",
+        "FAIL",
+        "UNRESOLVED",
+        "NOT_APPLICABLE"
+      ],
+      "type": "string"
+    },
+    "verdict": {
+      "enum": [
+        "ENTAILED",
+        "CONTRADICTED",
+        "UNCERTAIN"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "commitment_id",
+    "input_sha256",
+    "verdict",
+    "supporting_evidence_ids",
+    "contradicting_evidence_ids",
+    "scope_preserved",
+    "epistemic_force_preserved",
+    "causal_force_preserved",
+    "entities_preserved",
+    "quantities_units_preserved",
+    "temporal_context_preserved",
+    "relation_projection_valid",
+    "reason_code",
+    "notes"
+  ],
+  "type": "object"
+}

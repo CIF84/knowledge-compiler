@@ -69,6 +69,8 @@ The architecture therefore does not treat `source → summary → shorter summar
 
 The current division-of-labor hypothesis is that **deterministic machinery is the trust/admission layer**, while generative intelligence may propose bounded semantic synthesis and explanatory abstraction where deterministic transformation fails. Generated output is never canonical merely because a model produced it. Novel semantic claims that deterministic checks cannot establish remain explicit validation gaps and fail closed; model-assisted synthesis is not yet validated. Representation and UI remain downstream and paused until synthesis and abstraction are validated.
 
+Deterministic validation has a semantic-entailment boundary: abstractive candidate generation and semantic admission are separate trust problems. If semantic judgment is required, it must be a bounded, auditable trust component—not proof by model confidence or agreement. Uncertain semantic validation fails closed. Semantic judging itself has not yet been validated.
+
 ## Principles
 
 - **Meaning before medium.** Establish grounded meaning before deciding how to present it.
