@@ -173,49 +173,80 @@ ADMIT / REJECT / UNCERTAIN
 
 `UNCERTAIN` fails closed.
 
+## SPEC-066 owner verdict
+
+`SEMANTIC_JUDGMENT_REQUIRED_LIVE_JUDGE_VALIDATION_NEXT`
+
+Accepted evidence:
+- 92 frozen fixtures across eight domains;
+- zero false admissions under deterministic protocols;
+- Protocol A resolved 8/92 and Protocol B 16/92;
+- all four genuinely semantic SPEC-065 gaps remain unresolved;
+- projected synthesis judging would require 423 precision-first or 111 bounded-batch calls;
+- atomization and same-family generator/judge correlated-error risks remain unresolved.
+
+Canonical trust architecture under test:
+
+```text
+generative candidate
+      ↓
+deterministic validation
+      ↓
+semantic judgment
+      ↓
+ADMIT / REJECT / UNCERTAIN
+```
+
+`UNCERTAIN` fails closed. Model confidence is not proof.
+
 ## Current approved work packet
 
 ```text
-NONE
+specs/SPEC-067-semantic-judge-live-evaluation.md
 ```
 
-Status: `NONE`
+Status: `APPROVED_FOR_IMPLEMENTATION`
 
-Authority: `NONE`
+Authority: `LIVE_MODEL_CALLS_BOUNDED`
 
-Human gate: `NONE`
+Human gate: `OWNER_REVIEW`
 
 Promotion: `NOT_AUTHORIZED`
 
 ## Current gate
 
-SPEC-066 is implemented offline and stopped at `OWNER_REVIEW`; owner verdict is `PENDING`. No active approved packet remains.
+SPEC-067 is authorized to evaluate the semantic judge itself against a frozen stratified 48-fixture subset of the SPEC-066 corpus.
 
-Frozen evidence: `examples/evaluations/spec-066-semantic-validation-boundary-20261007/`. The 92-case, eight-domain corpus yields zero false admissions under both protocols. A admits 8/92; B admits 16/92 through exact explicit conjunctions only. All four novel-language gaps and natural-language exhaustive decomposition remain unresolved.
+Exact live authority:
+- model: `gpt-6.1-sol`;
+- reasoning effort: `high`;
+- `store=False`;
+- J1 precision-first: 48 calls, one fixture per call;
+- J2 bounded-batch: 12 calls, four fixtures per call;
+- maximum total: 60 calls;
+- zero retries, repairs, follow-ups, synthesis calls, or adaptive prompt changes.
 
-Mechanical branch: `SEMANTIC_JUDGE_REQUIRED_LIVE_CONTRACT_READY` means the design packet is ready for separate review, not execution. Future manifests require independent label review, frozen validated exhaustive atomization, provider compatibility and new explicit live authority. Review `owner-review.md`, the capability/four-gap matrices, risk register and budgets. No judge or SPEC-065 synthesis was executed.
+The 48-fixture selection, J2 batches, order-sensitivity subset, prompt/schema identities, and call order must be frozen before the first provider call.
 
-Primary trust metric: false admissions.
+Primary trust metric: false admission. Any permissive failure is material evidence against automatic semantic admission.
 
-The experiment must not hide semantic interpretation behind lexical heuristics. Every validation capability must be classified as deterministic proof, restricted proof, semantic judgment required, or not currently validatable.
+SPEC-067 does not authorize SPEC-065 synthesis generation. Same-family generator/judge correlated error cannot be resolved by this experiment and must remain explicit.
 
-No model/provider calls, source retrieval, SPEC-065 live synthesis, semantic-judge execution, production changes, UI work, promotion, or follow-up activation are authorized.
+If the exact provider/model/request contract is unavailable, stop fail-closed without substitution.
 
 ## Current product question
 
 ```text
-abstractive candidate
+known difficult semantic fixture
       ↓
-decompose into atomic commitments
-      ↓
-deterministic checks where provable
-      ↓
-semantic judgment where genuinely required?
+semantic judge
       ↓
 ENTAILED / CONTRADICTED / UNCERTAIN
       ↓
-Can we build a conservative admission boundary
-without mistaking plausibility for truth?
+compare against frozen truth
+      ↓
+Does the judge avoid false admission?
+And does 4-item batching preserve that conservatism?
 ```
 
 ## Frozen / protected state
