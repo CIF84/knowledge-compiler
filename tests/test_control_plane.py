@@ -129,7 +129,9 @@ def test_nonapproved_packet_cannot_be_active(tmp_path):
 
 def test_repository_status_has_an_explicit_valid_pointer_state():
     repository = Path(__file__).parents[1]
-    assert validate_control_plane(repository).packet is None
+    state = validate_control_plane(repository)
+    if state.packet is not None:
+        assert state.control.status == "APPROVED_FOR_IMPLEMENTATION"
 
 
 def test_ops003_records_a_well_formed_awaiting_review_control_header():

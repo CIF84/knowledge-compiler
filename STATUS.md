@@ -133,14 +133,14 @@ Canonical doctrine:
 ## Current approved work packet
 
 ```text
-NONE
+specs/SPEC-064-progressive-compression-and-conceptual-abstraction-diagnostic.md
 ```
 
-Status: `NONE`
+Status: `APPROVED_FOR_IMPLEMENTATION`
 
-Authority: `NONE`
+Authority: `OFFLINE_ONLY`
 
-Human gate: `NONE`
+Human gate: `OWNER_AND_CHATGPT_REVIEW`
 
 Promotion: `NOT_AUTHORIZED`
 
@@ -156,13 +156,15 @@ Durable outcome:
 
 `debriefs/DEBRIEF-063-schema-to-cognitive-representation-compilation.md`
 
-A proposed, unapproved architecture-reset packet is available at:
+The approved architecture-reset packet is available at:
 
 `specs/SPEC-064-progressive-compression-and-conceptual-abstraction-diagnostic.md`
 
-SPEC-064 is `DRAFT`. It proposes a text/ASCII-only diagnostic over the same three frozen sources using `R0 SOURCE → R1 ESSENTIAL PROSE → R2 SYNTHESIZED KNOWLEDGE → R3 CONCEPTUAL ARCHITECTURE`. It is not active and does not authorize implementation or model/provider calls.
+SPEC-064 is `APPROVED_FOR_IMPLEMENTATION` with `OFFLINE_ONLY` authority. It specifies a text/ASCII-only diagnostic over the same three frozen sources using `R0 SOURCE → R1 ESSENTIAL PROSE → R2 SYNTHESIZED KNOWLEDGE → R3 CONCEPTUAL ARCHITECTURE`.
 
-No packet is active. SPEC-064 requires owner and ChatGPT review before activation. Promotion remains unauthorized.
+Preservation permits a frozen commitment, qualification, explanatory dependency, or implication to be `EXPLICIT`, truthfully `SUBSUMED`, or `STRUCTURALLY_ENCODED` with exact backwards trace. Compressed learner views need not restate every source unit independently. Validated R1→R2→R3 transformations may compose, while the same frozen grounded substrate remains authoritative and independently available for validation and recovery at every stage.
+
+This handoff authorizes revision and activation only and stops before implementation. No SPEC-064 experiment has been executed. A subsequent run may execute the bounded offline packet; model/provider calls, retrieval, production changes, and promotion remain unauthorized.
 
 ## Current product question
 
@@ -178,7 +180,7 @@ R3 CONCEPTUAL ARCHITECTURE
 Can fewer, stronger conceptual handles reduce reconstruction
 without losing semantics, implications, context, or provenance?
   ↓
-OWNER + CHATGPT AUTHORIZATION REVIEW
+OWNER + CHATGPT REVIEW AFTER OFFLINE DIAGNOSTIC
 ```
 
 ## Frozen / protected state
@@ -200,7 +202,7 @@ OWNER + CHATGPT AUTHORIZATION REVIEW
 
 ## Explicitly forbidden
 
-Do not implement SPEC-064 without explicit owner and ChatGPT authorization. Do not call a model/provider; retrieve external sources; rerun extraction; modify production KnowledgeModel semantics; add discourse relations to the production semantic registry; hard-code expected abstractions; equate grouping with abstraction; optimize only for word count; implement personalization, podcast/video ingestion, presentation generation, visualization or visual-grammar selection; promote experimental work; redesign production UI; assign a human cognitive or pedagogical verdict; implement follow-up product changes.
+Do not execute SPEC-064 during the revision/activation handoff. Subsequent execution is bounded by the active approved packet. Do not call a model/provider; retrieve external sources; rerun extraction; modify production KnowledgeModel semantics; add discourse relations to the production semantic registry; hard-code expected abstractions; equate grouping with abstraction; optimize only for word count; implement personalization, podcast/video ingestion, presentation generation, visualization or visual-grammar selection; promote experimental work; redesign production UI; assign a human cognitive or pedagogical verdict; implement follow-up product changes.
 
 ## Coordination rule
 

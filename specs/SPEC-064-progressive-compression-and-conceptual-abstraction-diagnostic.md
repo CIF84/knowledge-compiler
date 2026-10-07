@@ -1,15 +1,15 @@
 # SPEC-064 — Progressive Compression and Conceptual Abstraction Diagnostic
 
-Status: `DRAFT`
+Status: `APPROVED_FOR_IMPLEMENTATION`
 Authority: `OFFLINE_ONLY`
 Human gate: `OWNER_AND_CHATGPT_REVIEW`
 Promotion: `NOT_AUTHORIZED`
 
 ## Authorization state
 
-This document is a proposed architecture-reset packet. It is not an active work packet and does not authorize implementation, evaluation execution, model/provider calls, source retrieval, or production changes.
+This architecture-reset packet is approved for bounded offline implementation under the matching `STATUS.md` pointer and control header. Model/provider calls, source retrieval, and production changes remain unauthorized.
 
-Activation requires explicit owner and ChatGPT approval plus a matching `STATUS.md` pointer and control header.
+The revision and activation handoff ends before implementation. Activation records authority for a subsequent execution run; it does not expand the scope of the current documentation-only handoff.
 
 ## Purpose
 
@@ -88,7 +88,9 @@ R2 SYNTHESIZED KNOWLEDGE
 R3 CONCEPTUAL ARCHITECTURE
 ```
 
-Every stage must derive from the same frozen grounded substrate. The ladder must not be implemented as destructive chained summarization. Each stage must remain backwards-recoverable to the richer frozen layer and exact evidence.
+R1→R2→R3 transformations may compose using validated artifacts from the preceding resolution. The same frozen grounded substrate remains authoritative and independently available for validation and recovery at every stage. No compressed stage may become the sole source of truth for the next.
+
+Validate each composed transformation against that substrate, including its coverage and exact backwards trace. Composition is permitted; destructive chained summarization that loses the authoritative substrate or recovery paths is forbidden.
 
 ## Distinct compiler operations
 
@@ -134,7 +136,7 @@ Schema formation must not be credited with abstraction merely because it places 
 
 ## Required treatments
 
-Generate all four peer resolutions independently from the frozen substrate.
+Generate all four resolutions with the same frozen grounded substrate as their authority. R2 may use validated R1 artifacts, and R3 may use validated R2 artifacts; each must independently validate and recover against the frozen substrate. Record the preceding-resolution artifact identities used by every composed transformation.
 
 ### R0 — `SOURCE`
 
@@ -142,7 +144,7 @@ Exact frozen source text for the diagnostic scope. No rewriting.
 
 ### R1 — `ESSENTIAL_PROSE`
 
-Compact grounded prose that removes linguistic redundancy while retaining every material semantic commitment, qualification, implication, explanatory dependency, and provenance link.
+Compact grounded prose that removes linguistic redundancy while preserving every material semantic commitment, qualification, implication, explanatory dependency, and provenance link under the preservation contract below. Preservation does not require independent restatement of each source unit.
 
 ### R2 — `SYNTHESIZED_KNOWLEDGE`
 
@@ -222,8 +224,9 @@ For R0, R1, R2, and R3, report per case and in aggregate:
 
 - word count;
 - character count;
-- explicit semantic-unit count;
-- material implication count;
+- explicit learner-facing semantic-unit count, separate from the number of frozen commitments covered;
+- frozen commitment coverage by `EXPLICIT`, `SUBSUMED`, and structurally encoded status;
+- material implication count, separating explicit presence from subsumed/structurally encoded preservation;
 - qualification/epistemic-status preservation;
 - explanatory-context preservation;
 - redundancy removed, with a deterministic definition and trace;
@@ -235,7 +238,7 @@ For R0, R1, R2, and R3, report per case and in aggregate:
 - unsupported inference count;
 - material omission count.
 
-Compression ratios are evidence, not automatic success. A shorter stage fails if it loses, strengthens, detaches, or obscures required information.
+Compression ratios are evidence, not automatic success. A shorter stage fails preservation for genuine omission, semantic drift, unsupported strengthening, or loss of recoverability. Truthful subsumption or structural encoding with exact backwards trace does not fail merely because the source item is no longer independently restated.
 
 ## Preservation contract
 
@@ -249,7 +252,17 @@ Across all stages preserve:
 - exact evidence and source identity;
 - backwards recoverability to the richer frozen stage and source.
 
-Fail closed on any material omission, unsupported synthesis, invented abstraction, strengthened causality/certainty, provenance break, or irrecoverable detail.
+Preservation is distinct from explicit presence. For each frozen semantic commitment, qualification, explanatory dependency, and material implication, record exactly one preservation mode:
+
+- `EXPLICIT`: directly expressed in the resolution;
+- `SUBSUMED`: truthfully carried by an identified synthesized or abstracted unit;
+- `STRUCTURALLY_ENCODED`: truthfully carried by an identified supported relationship or structure in the resolution.
+
+Every mode must have an exact backwards trace to the frozen item and its evidence. For `SUBSUMED` and `STRUCTURALLY_ENCODED`, also identify the carrying unit or structure and explain how it preserves the item's meaning, scope, epistemic force, qualifications, and necessary dependency. A recovery link alone does not establish truthful subsumption; the carrying representation must support the commitment without drift or strengthening.
+
+The compressed learner view need not restate every source semantic unit independently. Multiple frozen items may be preserved through one validated synthesis or abstraction, while detailed recovery remains available through the audit trace.
+
+Fail preservation only for genuine omission, semantic drift, unsupported strengthening, or loss of recoverability. Unsupported synthesis or invented abstraction is semantic drift; a provenance break is loss of recoverability. Fail closed on those outcomes, while accepting validated subsumption and structural encoding.
 
 ## Deterministic-versus-bounded-generation decision gate
 
@@ -288,6 +301,8 @@ Create an isolated evaluation directory containing at minimum:
 - grouping-versus-abstraction classifications;
 - schema-formation audit;
 - semantic/epistemic preservation audit;
+- per-item preservation-mode and exact backwards-trace ledger;
+- composed-transformation artifact identities and independent substrate-validation results;
 - implication/explanatory-context preservation audit;
 - provenance/backwards-recovery audit;
 - deterministic-versus-bounded-generation decision artifact;
@@ -370,7 +385,9 @@ At minimum:
 - focused SPEC-064 tests;
 - SPEC-060 through SPEC-063 regression tests;
 - semantic, epistemic, qualification, implication, explanatory-context, and provenance preservation;
+- truthful `EXPLICIT`/`SUBSUMED`/`STRUCTURALLY_ENCODED` coverage without requiring independent restatement of every source unit;
 - backwards-recovery checks at every stage;
+- composed-stage lineage checks and independent access to the authoritative frozen substrate at every stage;
 - no-domain-routing/no-hardcoding checks;
 - grouping-versus-abstraction negative controls;
 - deterministic regeneration;
@@ -392,8 +409,8 @@ On implementation completion:
 - stop at owner review;
 - do not promote or infer the human verdict.
 
-## Decision required before implementation
+## Activation handoff
 
-Owner and ChatGPT must review whether this diagnostic cleanly isolates the compiler layers, whether the preservation contract is feasible without conflating recovery with primary-view clutter, and whether the deterministic decision gate is sufficiently bounded.
+The owner has authorized revision and activation of this packet with preservation distinct from explicit presence and validated composition across resolutions. All other boundaries and decision gates remain in force.
 
-Until that review is complete, SPEC-064 remains a draft and must not be executed.
+Stop after publishing this activation. Implementation and experiment execution belong to a subsequent execution run under the approved control plane.
