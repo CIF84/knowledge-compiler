@@ -1,0 +1,32 @@
+{
+  "dependencies_changed": false,
+  "implementation": {
+    "path": "src/knowledge_compiler/spec065_synthesis_harness.py",
+    "sha256": "d13f28ca152a5345c3d87a114b02f481247ec83a604250969454f7c4b396096c"
+  },
+  "provider_support": {
+    "existing_adapter_reused": false,
+    "high_effort_type_supported": true,
+    "model": "gpt-6.1-sol",
+    "provider_contract_verified": false,
+    "reason": "Existing extractor fixes reasoning low; proposal freezes a separate high-effort request shape. SDK accepts string model identifiers but does not prove remote model availability/support. Online verification forbidden; no substitution or transmission.",
+    "reasoning_effort": "high",
+    "required_request_fields_supported": true,
+    "sdk_version": "2.54.0",
+    "status": "LOCAL_SHAPE_ONLY_PROVIDER_UNVERIFIED_FAIL_CLOSED"
+  },
+  "trusted_dependencies": [
+    {
+      "path": "src/knowledge_compiler/models.py",
+      "sha256": "671b5ad6fddc6edb5912bd5b3596fac56f5ba2d6351795af662a56002f6a244e"
+    },
+    {
+      "path": "src/knowledge_compiler/spec064_abstraction_diagnostic.py",
+      "sha256": "e58da94bb70c4507af0d415966a8960571368c94dc5acb0125616832d289df46"
+    },
+    {
+      "path": "src/knowledge_compiler/control_plane.py",
+      "sha256": "d43bc5847898413fdbdc68256f8a1cee9b733b36d1a87bb0cacd225457b09bc9"
+    }
+  ]
+}

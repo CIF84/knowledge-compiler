@@ -1,0 +1,213 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "context": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "evidence_ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "id": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "text",
+          "evidence_ids"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "dependencies": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "evidence_ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "id": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "text",
+          "evidence_ids"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "input_sha256": {
+      "type": "string"
+    },
+    "schema_version": {
+      "enum": [
+        "spec065.response.v1"
+      ],
+      "type": "string"
+    },
+    "stage": {
+      "enum": [
+        "A"
+      ],
+      "type": "string"
+    },
+    "units": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "candidate_id": {
+            "type": "string"
+          },
+          "constraints": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "epistemic_status": {
+                  "type": "string"
+                },
+                "qualifications": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "cue": {
+                        "type": "string"
+                      },
+                      "end_char": {
+                        "minimum": 0,
+                        "type": "integer"
+                      },
+                      "start_char": {
+                        "minimum": 0,
+                        "type": "integer"
+                      }
+                    },
+                    "required": [
+                      "cue",
+                      "start_char",
+                      "end_char"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                "semantic_id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "semantic_id",
+                "epistemic_status",
+                "qualifications"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "evidence_ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "implication_ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "no_new_meaning": {
+            "enum": [
+              true
+            ],
+            "type": "boolean"
+          },
+          "proof": {
+            "additionalProperties": false,
+            "properties": {
+              "end_char": {
+                "minimum": 0,
+                "type": "integer"
+              },
+              "kind": {
+                "enum": [
+                  "EXACT_STATEMENTS",
+                  "EXACT_SOURCE_SPAN",
+                  "UNPROVEN"
+                ],
+                "type": "string"
+              },
+              "start_char": {
+                "minimum": 0,
+                "type": "integer"
+              }
+            },
+            "required": [
+              "kind",
+              "start_char",
+              "end_char"
+            ],
+            "type": "object"
+          },
+          "recovery_ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "semantic_ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "statement": {
+            "type": "string"
+          },
+          "synthesis_rationale": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "candidate_id",
+          "statement",
+          "semantic_ids",
+          "implication_ids",
+          "constraints",
+          "synthesis_rationale",
+          "evidence_ids",
+          "recovery_ids",
+          "no_new_meaning",
+          "proof"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "schema_version",
+    "input_sha256",
+    "stage",
+    "units",
+    "context",
+    "dependencies"
+  ],
+  "type": "object"
+}

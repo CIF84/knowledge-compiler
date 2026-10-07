@@ -1,0 +1,180 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "abstractions": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "abstraction_id": {
+            "type": "string"
+          },
+          "abstraction_type": {
+            "enum": [
+              "SHARED_MECHANISM",
+              "GENERAL_RULE",
+              "COMMON_DEPENDENCY",
+              "CAUSAL_PRINCIPLE",
+              "CONTRASTING_CASES",
+              "CONSTRAINT_OR_BOUNDARY",
+              "PROCESS_PATTERN",
+              "UNRESOLVED"
+            ],
+            "type": "string"
+          },
+          "common_principle": {
+            "type": "string"
+          },
+          "definition": {
+            "type": "string"
+          },
+          "evidence_ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "handle": {
+            "type": "string"
+          },
+          "implication_ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "member_unit_ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "principle_id": {
+            "type": "string"
+          },
+          "proof": {
+            "enum": [
+              "CONTROLLED_RULE_AND_INSTANCES",
+              "UNPROVEN"
+            ],
+            "type": "string"
+          },
+          "recovery_ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "semantic_ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "why_explanatory": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "abstraction_id",
+          "handle",
+          "definition",
+          "member_unit_ids",
+          "semantic_ids",
+          "abstraction_type",
+          "common_principle",
+          "principle_id",
+          "evidence_ids",
+          "implication_ids",
+          "why_explanatory",
+          "recovery_ids",
+          "proof"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "context": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "evidence_ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "id": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "text",
+          "evidence_ids"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "dependencies": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "evidence_ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "id": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "text",
+          "evidence_ids"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "input_sha256": {
+      "type": "string"
+    },
+    "irreducible_unit_ids": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "schema_version": {
+      "enum": [
+        "spec065.response.v1"
+      ],
+      "type": "string"
+    },
+    "stage": {
+      "enum": [
+        "B"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema_version",
+    "input_sha256",
+    "stage",
+    "abstractions",
+    "irreducible_unit_ids",
+    "context",
+    "dependencies"
+  ],
+  "type": "object"
+}

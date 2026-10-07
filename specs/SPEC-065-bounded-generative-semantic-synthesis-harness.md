@@ -1,6 +1,6 @@
 # SPEC-065 — Bounded Generative Semantic Synthesis Harness
 
-Status: `APPROVED_FOR_IMPLEMENTATION`
+Status: `IMPLEMENTED_AWAITING_REVIEW`
 Authority: `OFFLINE_ONLY`
 Human gate: `OWNER_REVIEW`
 Promotion: `NOT_AUTHORIZED`
@@ -499,3 +499,27 @@ On completion:
 ## Owner review question
 
 > **Is this harness strict enough to let a generative model attempt the semantic synthesis deterministic code could not perform, while keeping trust, provenance, recoverability, and admission outside the model?**
+
+## Offline implementation handoff — 2026-10-07
+
+Mechanical result: `VALIDATION_BOUNDARY_INSUFFICIENT`.
+
+Recommended next step: `SEMANTIC_VALIDATION_BOUNDARY_EXPERIMENT` (recommendation only; no follow-up packet is active or authorized).
+
+The isolated harness, closed A/B/C schemas, versioned prompts, immutable input packages, capability matrix, four semantic-validation-gap classes, 30 authored fixture attempts and staged dry-run histories are frozen at:
+
+`examples/evaluations/spec-065-bounded-generative-semantic-synthesis-harness-20261007/`
+
+Four restricted-proof fixtures admit and 26 adversarial/failure fixtures reject as expected, covering all seven failure categories. Positive abstractions use a defined controlled-language rule/instance proof with an explicit mechanism operator; they do not prove natural-language abstraction for the real corpus. Novel synthesis, explanatory applicability, entity/quantity/dependency interpretation and compressed-endpoint relation projection remain `SEMANTIC_VALIDATION_GAP` and fail closed. Rejected parents never reach downstream stages; admission receipts replay against the authoritative substrate.
+
+The future manifest proposes exactly `gpt-6.1-sol`, reasoning `high`, `store=False`, `max_output_tokens=32768`, no sampling parameters, at most nine stage-major conditional calls and zero retries/repairs/follow-ups. It is **not authorized**. Local SDK 2.54.0 supports the request shape and high-effort type, but exact remote model/effort/output-limit support cannot be verified offline. No model substitution or credential access was performed; future execution must stop without explicit verification and new authority.
+
+Validation: 36 focused tests, 72 focused/control-plane/SPEC-064 regression tests, and 849 complete offline tests pass. Independent artifact regeneration is byte-identical. All 2,060 protected historical implementation/evidence files remain unchanged. JSON/schema, local-link, secret-safety, and zero-call instrumentation gates pass. No dependency changes, live candidates, source transmissions, model/provider/source-network calls, production/UI changes or promotion. Only repository Git synchronization uses network access under repository protocol.
+
+Machine report: `report.json`. Detailed boundaries: `validator-capability-matrix.json`, `semantic-validation-gaps.json`, `owner-review.md`. Exact prompt/schema/implementation and future-call identities are recorded in their manifests. `validation-record.json` preserves offline gate results.
+
+Active packet cleared to `NONE`. Owner verdict: `PENDING`. Stop at `OWNER_REVIEW`; do not execute the future manifest.
+
+```bash
+open examples/evaluations/spec-065-bounded-generative-semantic-synthesis-harness-20261007/owner-review.md
+```

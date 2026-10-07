@@ -1,0 +1,24 @@
+{
+  "complete_offline": {
+    "command": ".venv/bin/pytest",
+    "passed": 849
+  },
+  "dependencies_changed": false,
+  "development_test_failure": "One test expected the hyphenated phrase 'no-new-meaning', while frozen prompts used 'no new meaning'. Corrected the spelling assertion; no admission rule was weakened or live prompt repaired.",
+  "fixture_outcomes": {
+    "admitted": 4,
+    "matched": 30,
+    "positive_scope": "authored synthetic controls only",
+    "rejected": 26
+  },
+  "focused": {
+    "command": ".venv/bin/pytest tests/test_spec065_synthesis_harness.py",
+    "passed": 36
+  },
+  "focused_control_plane_and_spec064_regression": {
+    "command": ".venv/bin/pytest tests/test_spec065_synthesis_harness.py tests/test_control_plane.py tests/test_spec064_abstraction_diagnostic.py",
+    "passed": 72
+  },
+  "schema_json_text_links_secret_safety": "PASS",
+  "zero_call_instrumentation": "socket connect/create_connection and OpenAI constructor blocked while regenerating; no attempts"
+}

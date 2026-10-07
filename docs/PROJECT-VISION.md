@@ -67,6 +67,8 @@ Compression can reduce different kinds of burden. Linguistic compression reduces
 
 The architecture therefore does not treat `source → summary → shorter summary → visual` as a trustworthy pipeline. Each resolution and representation must derive from the grounded substrate, preserve useful explanatory work already present in the source, retain provenance, and remain recoverable to richer trusted information.
 
+The current division-of-labor hypothesis is that **deterministic machinery is the trust/admission layer**, while generative intelligence may propose bounded semantic synthesis and explanatory abstraction where deterministic transformation fails. Generated output is never canonical merely because a model produced it. Novel semantic claims that deterministic checks cannot establish remain explicit validation gaps and fail closed; model-assisted synthesis is not yet validated. Representation and UI remain downstream and paused until synthesis and abstraction are validated.
+
 ## Principles
 
 - **Meaning before medium.** Establish grounded meaning before deciding how to present it.

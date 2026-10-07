@@ -151,35 +151,38 @@ This remains unvalidated until a bounded live experiment succeeds.
 ## Current approved work packet
 
 ```text
-specs/SPEC-065-bounded-generative-semantic-synthesis-harness.md
+NONE
 ```
 
-Status: `APPROVED_FOR_IMPLEMENTATION`
+Status: `NONE`
 
-Authority: `OFFLINE_ONLY`
+Authority: `NONE`
 
-Human gate: `OWNER_REVIEW`
+Human gate: `NONE`
 
 Promotion: `NOT_AUTHORIZED`
 
 ## Current gate
 
-SPEC-065 is authorized to implement and freeze the offline harness, schemas, prompts, fixtures, validators, capability-gap inventory, and proposed future execution manifest for a bounded generative semantic-synthesis experiment.
+SPEC-065 offline implementation is `IMPLEMENTED_AWAITING_REVIEW`.
 
-It must make **zero model/provider calls**.
+Mechanical result: `VALIDATION_BOUNDARY_INSUFFICIENT`.
 
-The proposed future contract is staged:
-- Stage A: semantic synthesis;
-- Stage B: explanatory abstraction;
-- Stage C: conceptual architecture.
+Recommended next step: `SEMANTIC_VALIDATION_BOUNDARY_EXPERIMENT` — recommendation only, not an approved follow-up.
 
-Each stage is fail-closed and downstream stages may consume only admitted prior-stage output plus the frozen authoritative substrate.
+The A/B/C harness, strict schemas, versioned prompts, frozen three-source packages, capability/gap inventory, 30 authored fixtures and future max-nine-call manifest are complete. Four restricted-proof fixtures admit; 26 reject across all seven failure categories. Novel natural-language synthesis/abstraction and compressed-endpoint relation projection remain semantic-validation gaps and fail closed. Downstream stages require replay-admitted parents and retain the independent authoritative substrate.
 
-The harness must explicitly distinguish checks that are genuinely deterministic from semantic judgments that cannot be proven without another judge. Such limits must be recorded as `SEMANTIC_VALIDATION_GAP`, not hidden behind heuristics.
+Proposed model: `gpt-6.1-sol` / `high`, `store=False`; zero retries, repairs or follow-ups. Exact remote compatibility remains unverified under offline authority. No model/provider/source-network calls, source transmissions or live candidates were generated. The proposed nine-call ledger has zero attempts and grants no authority.
 
-Proposed future maximum call budget: 9 calls (3 sources × up to 3 stages), zero retries/follow-ups.
+Validation: 36 focused, 72 focused/control-plane/SPEC-064 regression, and 849 full offline tests pass. Regeneration is byte-identical; all 2,060 protected historical files remain unchanged.
 
-No source transmission or live execution is authorized.
+Evidence: `examples/evaluations/spec-065-bounded-generative-semantic-synthesis-harness-20261007/report.json` and `owner-review.md`.
+
+Current stop: `OWNER_REVIEW`. Owner verdict: `PENDING`. Promotion: `NOT_AUTHORIZED`. Active pointer: `NONE`; no source transmission, live execution, new judge or follow-up is approved.
+
+```bash
+open examples/evaluations/spec-065-bounded-generative-semantic-synthesis-harness-20261007/owner-review.md
+```
 
 ## Current product question
 
@@ -215,7 +218,7 @@ that deterministic transformation could not?
 
 ## Explicitly forbidden
 
-SPEC-064 implementation is complete; stop at owner review and do not continue without a new approved packet. Do not call a model/provider; retrieve external sources; rerun extraction; modify production KnowledgeModel semantics; add discourse relations to the production semantic registry; hard-code expected abstractions; equate grouping with abstraction; optimize only for word count; implement personalization, podcast/video ingestion, presentation generation, visualization or visual-grammar selection; promote experimental work; redesign production UI; assign a human cognitive or pedagogical verdict; implement follow-up product changes.
+SPEC-065 offline harness implementation is complete; stop at owner review and do not continue without a new approved packet. The proposed future manifest grants no authority. Do not call a model/provider; retrieve external sources; rerun extraction; modify production KnowledgeModel semantics; add discourse relations to the production semantic registry; hard-code expected abstractions; equate grouping with abstraction; optimize only for word count; implement personalization, podcast/video ingestion, presentation generation, visualization or visual-grammar selection; promote experimental work; redesign production UI; assign a human cognitive or pedagogical verdict; implement follow-up product changes.
 
 ## Coordination rule
 
