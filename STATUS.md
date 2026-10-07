@@ -148,55 +148,72 @@ Canonical division-of-labor hypothesis:
 
 This remains unvalidated until a bounded live experiment succeeds.
 
+## SPEC-065 owner verdict
+
+`DETERMINISTIC_TRUST_BOUNDARY_CONFIRMED_SEMANTIC_ENTAILMENT_GAP_NEXT`
+
+Accepted findings:
+- restricted deterministic proof can validate identity, provenance, schema, exact/restricted coverage, quantities and frozen structural assertions;
+- 30/30 adversarial fixtures behaved as expected under those restricted proofs;
+- genuinely novel synthesis/paraphrase, shared mechanism/abstraction, implicit semantic substitutions/dependencies, and relation projection onto compressed endpoints cannot be proven by lexical/structural checks;
+- pretending those checks establish entailment would create a false trust boundary;
+- live synthesis remains unauthorized until semantic admission is addressed.
+
+Canonical architecture under investigation:
+
+```text
+generator candidate
+      ↓
+deterministic validation
+      ↓
+semantic entailment validation
+      ↓
+ADMIT / REJECT / UNCERTAIN
+```
+
+`UNCERTAIN` fails closed.
+
 ## Current approved work packet
 
 ```text
-NONE
+specs/SPEC-066-semantic-validation-boundary-experiment.md
 ```
 
-Status: `NONE`
+Status: `APPROVED_FOR_IMPLEMENTATION`
 
-Authority: `NONE`
+Authority: `OFFLINE_ONLY`
 
-Human gate: `NONE`
+Human gate: `OWNER_REVIEW`
 
 Promotion: `NOT_AUTHORIZED`
 
 ## Current gate
 
-SPEC-065 offline implementation is `IMPLEMENTED_AWAITING_REVIEW`.
+SPEC-066 is authorized to build and evaluate an offline semantic-validation boundary over a frozen domain-diverse fixture corpus.
 
-Mechanical result: `VALIDATION_BOUNDARY_INSUFFICIENT`.
+It must compare deterministic restricted proof with deterministic decomposition, explicitly reconcile all four SPEC-065 semantic-validation gaps, freeze atomic-commitment and semantic-verdict contracts, and design—but not execute—a bounded semantic-judge contract if model-level judgment remains necessary.
 
-Recommended next step: `SEMANTIC_VALIDATION_BOUNDARY_EXPERIMENT` — recommendation only, not an approved follow-up.
+Primary trust metric: false admissions.
 
-The A/B/C harness, strict schemas, versioned prompts, frozen three-source packages, capability/gap inventory, 30 authored fixtures and future max-nine-call manifest are complete. Four restricted-proof fixtures admit; 26 reject across all seven failure categories. Novel natural-language synthesis/abstraction and compressed-endpoint relation projection remain semantic-validation gaps and fail closed. Downstream stages require replay-admitted parents and retain the independent authoritative substrate.
+The experiment must not hide semantic interpretation behind lexical heuristics. Every validation capability must be classified as deterministic proof, restricted proof, semantic judgment required, or not currently validatable.
 
-Proposed model: `gpt-6.1-sol` / `high`, `store=False`; zero retries, repairs or follow-ups. Exact remote compatibility remains unverified under offline authority. No model/provider/source-network calls, source transmissions or live candidates were generated. The proposed nine-call ledger has zero attempts and grants no authority.
-
-Validation: 36 focused, 72 focused/control-plane/SPEC-064 regression, and 849 full offline tests pass. Regeneration is byte-identical; all 2,060 protected historical files remain unchanged.
-
-Evidence: `examples/evaluations/spec-065-bounded-generative-semantic-synthesis-harness-20261007/report.json` and `owner-review.md`.
-
-Current stop: `OWNER_REVIEW`. Owner verdict: `PENDING`. Promotion: `NOT_AUTHORIZED`. Active pointer: `NONE`; no source transmission, live execution, new judge or follow-up is approved.
-
-```bash
-open examples/evaluations/spec-065-bounded-generative-semantic-synthesis-harness-20261007/owner-review.md
-```
+No model/provider calls, source retrieval, SPEC-065 live synthesis, semantic-judge execution, production changes, UI work, promotion, or follow-up activation are authorized.
 
 ## Current product question
 
 ```text
-frozen trusted substrate
-        ↓
-bounded generative candidate
-        ↓
-deterministic trust/admission boundary
-        ↓
-admit or fail closed
-        ↓
-Can generative synthesis provide the abstraction
-that deterministic transformation could not?
+abstractive candidate
+      ↓
+decompose into atomic commitments
+      ↓
+deterministic checks where provable
+      ↓
+semantic judgment where genuinely required?
+      ↓
+ENTAILED / CONTRADICTED / UNCERTAIN
+      ↓
+Can we build a conservative admission boundary
+without mistaking plausibility for truth?
 ```
 
 ## Frozen / protected state
