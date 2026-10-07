@@ -1,13 +1,13 @@
 # SPEC-064 — Progressive Compression and Conceptual Abstraction Diagnostic
 
-Status: `APPROVED_FOR_IMPLEMENTATION`
+Status: `IMPLEMENTED_AWAITING_REVIEW`
 Authority: `OFFLINE_ONLY`
 Human gate: `OWNER_AND_CHATGPT_REVIEW`
 Promotion: `NOT_AUTHORIZED`
 
 ## Authorization state
 
-This architecture-reset packet is approved for bounded offline implementation under the matching `STATUS.md` pointer and control header. Model/provider calls, source retrieval, and production changes remain unauthorized.
+The approved bounded offline implementation is complete. The active pointer is cleared; this packet now awaits owner and ChatGPT review. Model/provider calls, source retrieval, production changes, and promotion remain unauthorized.
 
 The revision and activation handoff ends before implementation. Activation records authority for a subsequent execution run; it does not expand the scope of the current documentation-only handoff.
 
@@ -414,3 +414,27 @@ On implementation completion:
 The owner has authorized revision and activation of this packet with preservation distinct from explicit presence and validated composition across resolutions. All other boundaries and decision gates remain in force.
 
 Stop after publishing this activation. Implementation and experiment execution belong to a subsequent execution run under the approved control plane.
+
+## Implementation handoff — 2026-10-07
+
+Mechanical branch: `GROUPING_REMAINS_NON_ABSTRACTIVE`.
+
+Architecture finding: `BOUNDED_MODEL_CANDIDATE_REQUIRES_SEPARATE_AUTHORIZATION`.
+
+The three-case text/ASCII ladder and exact recovery audits are frozen at:
+
+`examples/evaluations/spec-064-progressive-abstraction-diagnostic-20261007/`
+
+Durable report: `diagnostic-report.md`; machine report: `report.json`.
+
+All 141 semantic commitments and 54 material implications remain recoverable at every resolution. Three handles are supported groups and two are labels; zero earn abstraction credit. R1 reduces aggregate words from 1,315 to 1,275; R2 retains 1,315 words and 63 visible carriers; R3 increases reading cost to 1,576 words. These are machine findings, not the owner verdict.
+
+Validation: 23 focused SPEC-064 tests, 108 focused/regression/control-plane tests, and 813 complete offline tests pass. Independent regeneration is byte-identical; all 2,016 protected historical implementation/evidence files remain unchanged. All 36 deliberate safety violations fail closed. No model calls, retrieval, dependency changes, production/UI changes, schema repairs or promotion.
+
+Owner verdict: `PENDING`. Stop at `OWNER_REVIEW` (owner + ChatGPT); no subsequent packet is active.
+
+Review command:
+
+```bash
+open examples/evaluations/spec-064-progressive-abstraction-diagnostic-20261007/owner-review.md
+```

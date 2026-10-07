@@ -1,0 +1,38 @@
+{
+  "case_evidence": [
+    {
+      "case_index": 1,
+      "explanatory_abstractions": 0,
+      "r1_to_r2_carrier_reduction": 3,
+      "r1_word_reduction": 40,
+      "r3_word_reduction_from_source": -82
+    },
+    {
+      "case_index": 2,
+      "explanatory_abstractions": 0,
+      "r1_to_r2_carrier_reduction": 1,
+      "r1_word_reduction": 0,
+      "r3_word_reduction_from_source": -68
+    },
+    {
+      "case_index": 3,
+      "explanatory_abstractions": 0,
+      "r1_to_r2_carrier_reduction": 2,
+      "r1_word_reduction": 0,
+      "r3_word_reduction_from_source": -111
+    }
+  ],
+  "deterministic_candidates_frozen_before_gate": true,
+  "finding": "BOUNDED_MODEL_CANDIDATE_REQUIRES_SEPARATE_AUTHORIZATION",
+  "frozen_candidate_sha256s": [
+    "1ca1128c88dbd283171501c33313a260c2297a7ee6b2e473bb47fbca366c987b",
+    "fdc44f24671fa420ef1ef1183acc9a2ecc0acb492976a6db67de96a7d2506140",
+    "04be1723832382174d3e4ff04a38b444dd335e8e62027160d01520d1357186da"
+  ],
+  "human_verdict": "PENDING",
+  "mechanical_branch": "GROUPING_REMAINS_NON_ABSTRACTIVE",
+  "model_call_authorized": false,
+  "reason": "Assess exact duplicate collapse, source-assertion integration, and source-explicit rule/member coverage separately. Unit packaging and preserved edge paths alone do not establish conceptual abstraction.",
+  "scope": "Evidence concerns this frozen bounded deterministic rule set, not impossibility for all deterministic algorithms.",
+  "substrate_insufficiency_proven": false
+}

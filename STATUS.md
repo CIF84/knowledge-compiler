@@ -133,14 +133,14 @@ Canonical doctrine:
 ## Current approved work packet
 
 ```text
-specs/SPEC-064-progressive-compression-and-conceptual-abstraction-diagnostic.md
+NONE
 ```
 
-Status: `APPROVED_FOR_IMPLEMENTATION`
+Status: `NONE`
 
-Authority: `OFFLINE_ONLY`
+Authority: `NONE`
 
-Human gate: `OWNER_AND_CHATGPT_REVIEW`
+Human gate: `NONE`
 
 Promotion: `NOT_AUTHORIZED`
 
@@ -156,15 +156,25 @@ Durable outcome:
 
 `debriefs/DEBRIEF-063-schema-to-cognitive-representation-compilation.md`
 
-The approved architecture-reset packet is available at:
+The completed architecture-reset packet is available at:
 
 `specs/SPEC-064-progressive-compression-and-conceptual-abstraction-diagnostic.md`
 
-SPEC-064 is `APPROVED_FOR_IMPLEMENTATION` with `OFFLINE_ONLY` authority. It specifies a text/ASCII-only diagnostic over the same three frozen sources using `R0 SOURCE → R1 ESSENTIAL PROSE → R2 SYNTHESIZED KNOWLEDGE → R3 CONCEPTUAL ARCHITECTURE`.
+SPEC-064 is `IMPLEMENTED_AWAITING_REVIEW`. Its text/ASCII-only diagnostic over the same three frozen sources has completed using `R0 SOURCE → R1 ESSENTIAL PROSE → R2 SYNTHESIZED KNOWLEDGE → R3 CONCEPTUAL ARCHITECTURE`.
 
 Preservation permits a frozen commitment, qualification, explanatory dependency, or implication to be `EXPLICIT`, truthfully `SUBSUMED`, or `STRUCTURALLY_ENCODED` with exact backwards trace. Compressed learner views need not restate every source unit independently. Validated R1→R2→R3 transformations may compose, while the same frozen grounded substrate remains authoritative and independently available for validation and recovery at every stage.
 
-This handoff authorizes revision and activation only and stops before implementation. No SPEC-064 experiment has been executed. A subsequent run may execute the bounded offline packet; model/provider calls, retrieval, production changes, and promotion remain unauthorized.
+Mechanical branch: `GROUPING_REMAINS_NON_ABSTRACTIVE`. Architecture finding: `BOUNDED_MODEL_CANDIDATE_REQUIRES_SEPARATE_AUTHORIZATION`. All 141 semantic commitments and 54 material implications remain recoverable at every stage; zero explanatory abstractions were earned. Aggregate R0/R1/R2/R3 word counts are 1,315 / 1,275 / 1,315 / 1,576. Supported grouping has not demonstrated conceptual compression.
+
+Evidence: `examples/evaluations/spec-064-progressive-abstraction-diagnostic-20261007/diagnostic-report.md` and `report.json`. All 813 offline tests pass, deterministic regeneration is byte-identical, and the 2,016-file protected tree remains unchanged.
+
+Current stop: `OWNER_REVIEW` with owner + ChatGPT review required. Human verdict: `PENDING`. No promotion, model/provider calls, retrieval, production changes, follow-up execution or new packet is authorized. The active pointer is `NONE`.
+
+Review command:
+
+```bash
+open examples/evaluations/spec-064-progressive-abstraction-diagnostic-20261007/owner-review.md
+```
 
 ## Current product question
 
@@ -202,7 +212,7 @@ OWNER + CHATGPT REVIEW AFTER OFFLINE DIAGNOSTIC
 
 ## Explicitly forbidden
 
-Do not execute SPEC-064 during the revision/activation handoff. Subsequent execution is bounded by the active approved packet. Do not call a model/provider; retrieve external sources; rerun extraction; modify production KnowledgeModel semantics; add discourse relations to the production semantic registry; hard-code expected abstractions; equate grouping with abstraction; optimize only for word count; implement personalization, podcast/video ingestion, presentation generation, visualization or visual-grammar selection; promote experimental work; redesign production UI; assign a human cognitive or pedagogical verdict; implement follow-up product changes.
+SPEC-064 implementation is complete; stop at owner review and do not continue without a new approved packet. Do not call a model/provider; retrieve external sources; rerun extraction; modify production KnowledgeModel semantics; add discourse relations to the production semantic registry; hard-code expected abstractions; equate grouping with abstraction; optimize only for word count; implement personalization, podcast/video ingestion, presentation generation, visualization or visual-grammar selection; promote experimental work; redesign production UI; assign a human cognitive or pedagogical verdict; implement follow-up product changes.
 
 ## Coordination rule
 

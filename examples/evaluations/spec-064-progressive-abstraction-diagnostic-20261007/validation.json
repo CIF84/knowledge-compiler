@@ -1,0 +1,21 @@
+{
+  "browser_gate": "NOT_APPLICABLE: contract requires plain text/Markdown, not a browser surface",
+  "complete_offline": {
+    "command": ".venv/bin/pytest",
+    "passed": 813
+  },
+  "development_failures_resolved": [
+    "System Python lacked the editable package; used the existing .venv without dependency changes.",
+    "Initial source ledger lacked cross-sentence evidence carriers; added source-order/full-assertion validation, without changing frozen inputs.",
+    "One test incorrectly required every R2 commitment to be SUBSUMED; exact source/admitted equality legitimately permits EXPLICIT. Corrected test, not preservation rules.",
+    "A test indentation error interrupted collection; corrected and reran focused/full suites."
+  ],
+  "focused_spec064": {
+    "command": ".venv/bin/pytest tests/test_spec064_abstraction_diagnostic.py",
+    "passed": 23
+  },
+  "focused_with_spec060_through_spec063_and_control_plane": {
+    "command": ".venv/bin/pytest tests/test_spec064_abstraction_diagnostic.py tests/test_spec060_semantic_compression_evaluation.py tests/test_spec061_explanatory_structure_evaluation.py tests/test_spec062_conceptual_schema_evaluation.py tests/test_spec063_cognitive_representation_evaluation.py tests/test_control_plane.py",
+    "passed": 108
+  }
+}
