@@ -97,57 +97,65 @@ Key findings:
 - traversal describes how an explanation is presented; schema describes how knowledge is organized;
 - visualization remains downstream.
 
+## SPEC-062 owner verdict
+
+`CONCEPTUAL_SCHEMA_SUPPORTED_RAW_SCHEMA_NOT_COGNITIVELY_USEFUL`
+
+Additional finding: `S1_S2_DISTINCTION_NOT_PERCEPTIBLE`.
+
+Owner review rejected S1/S2 as learner representations. The surfaces exposed compiler machinery—schema enums, block counts, repeated facts, chunk IDs, and relation ledgers—rather than making conceptual organization perceptible. The raw schema may remain a useful intermediate representation, but IR is not UI.
+
+Canonical lesson:
+
+> **Every internal abstraction must cross a separate cognitive-utility boundary before learner exposure.**
+
+Do not modify the frozen SPEC-062 schema in response to this verdict. The next experiment isolates projection only.
+
 ## Current approved work packet
 
 ```text
-NONE
+specs/SPEC-063-schema-to-cognitive-representation-compilation.md
 ```
 
-Status: `NONE`
+Status: `APPROVED_FOR_IMPLEMENTATION`
 
-Authority: `NONE`
+Authority: `OFFLINE_ONLY`
 
-Human gate: `NONE`
+Human gate: `OWNER_REVIEW`
 
 Promotion: `NOT_AUTHORIZED`
 
 ## Current gate
 
-SPEC-062 is implemented and awaiting owner review.
+SPEC-063 is authorized to compile the exact frozen SPEC-062 schemas for Geology, Astronomy, and Meteorology into learner-facing cognitive representations.
 
-The isolated generic offline inducer organized all 244 frozen semantic items and all 46 SPEC-061 explanatory blocks into 52 total conceptual chunks and 10 independent top-level units across the six cases. Per-case top-level-unit ratios are `0.2857`, `0.1667`, `0.2500`, `0.2000`, `0.0909`, and `0.4286`; lower ratios are diagnostic and are not treated as automatic cognitive success.
+The schema, chunk membership, hierarchy, edges, implications, semantics, explanatory structures, and provenance are frozen. No repair or regeneration of SPEC-062 is authorized.
 
-All 95 identified material implications remain explicit or schema-preserved, including the astronomy `r14` and `r15` accumulation-to-planet/star implications. Semantic, epistemic, explanatory, membership, schema-edge, implication, and provenance audits report zero forbidden outcomes and full recoverability. The geology, astronomy, and meteorology comparisons ran only after generic outputs were frozen and did not alter them.
+The experiment must compare:
+- P0 — frozen explanatory prose baseline;
+- P1 — frozen raw schema control;
+- P2 — new cognitive representation compiled from the frozen schema.
 
-The mechanical branch is `CONCEPTUAL_SCHEMA_SAFE_FOR_OWNER_REVIEW`. Desktop and 390×844 browser gates pass all six cases, peer-view identity, fact/edge preservation, trace selection, responsive layout, no-diagram checks, and clean-console checks. No model/provider call, retrieval, extraction rerun, production change, visualization, personalization, promotion, or human verdict assignment occurred.
+P2 may use only a bounded, deterministic representation grammar derived from frozen schema properties. It must represent conceptual organization rather than compiler metadata, retain prose where prose is efficient, keep all detail recoverable, and fail closed rather than invent unsupported structure.
 
-The initial owner-review shell depended on browser `fetch()` calls and could render empty when reviewed as a local artifact. This evaluation-surface defect has been repaired with a deterministic embedded copy of the frozen six-case packet and rubric, loaded before the application with visible fail-closed error reporting. All 40 frozen experimental payload files retain aggregate identity `7c05b8fbea3711f91438c050312c42a2b92fb7d843cf697518def114d6cd619e`; no semantic, schema, compression, or verdict state changed. The repaired browser gate explicitly confirms six case buttons are present and selectable, every case exposes S0/S1/S2/Audit, and evidence tracing works at desktop and 390×844.
-
-Canonical evidence:
-
-`examples/evaluations/spec-062-conceptual-chunking-schema-induction-20261007/report.json`
-
-Review-surface repair evidence:
-
-`examples/evaluations/spec-062-conceptual-chunking-schema-induction-20261007/artifact-repair-audit.json`
-
-No packet is active. Promotion remains unauthorized and the owner verdict is pending.
+No model/provider calls, retrieval, extraction reruns, schema changes, domain/case routing, personalization, production promotion, or follow-up work are authorized.
 
 ## Current product question
 
 ```text
-same grounded information
-      ↓
-S0 explanatory baseline
-      ↕
-S1 conceptual schema
-      ↕
-S2 schema + traversal
-      ↓
-Are fewer supported conceptual units
-easier to think with before deleting facts
-or drawing a diagram?
-      ↓
+frozen conceptual schema (IR)
+          ↓
+cognitive representation compiler
+          ↓
+learner-facing perceptual organization
+          +
+concise explanatory prose
+          +
+recoverable detail
+          ↓
+Does the learner perceive the organization
+without having to interpret compiler machinery?
+          ↓
 OWNER REVIEW
 ```
 
