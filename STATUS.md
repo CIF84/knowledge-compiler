@@ -202,51 +202,56 @@ ADMIT / REJECT / UNCERTAIN
 ## Current approved work packet
 
 ```text
-specs/SPEC-067-semantic-judge-live-evaluation.md
+NONE
 ```
 
-Status: `APPROVED_FOR_IMPLEMENTATION`
+Status: `NONE`
 
-Authority: `LIVE_CALLS_EXPLICITLY_BOUNDED`
+Authority: `NONE`
 
-Human gate: `OWNER_REVIEW`
+Human gate: `NONE`
 
 Promotion: `NOT_AUTHORIZED`
 
 ## Current gate
 
-SPEC-067 is authorized to evaluate the semantic judge itself against a frozen stratified 48-fixture subset of the SPEC-066 corpus.
+`OWNER_REVIEW` — SPEC-067 stopped fail-closed at offline preflight.
 
-Exact live authority:
-- model: `gpt-6.1-sol`;
-- reasoning effort: `high`;
-- `store=False`;
-- J1 precision-first: 48 calls, one fixture per call;
-- J2 bounded-batch: 12 calls, four fixtures per call;
-- maximum total: 60 calls;
-- zero retries, repairs, follow-ups, synthesis calls, or adaptive prompt changes.
+Mechanical branch: `FIXTURE_OR_PREFLIGHT_INVALID`.
+Recommended next step: `FIXTURE_REDESIGN_REQUIRED` (not activated).
+Owner verdict: `PENDING`. No promotion.
 
-The 48-fixture selection, J2 batches, order-sensitivity subset, prompt/schema identities, and call order must be frozen before the first provider call.
+The frozen precision-first prompt requires a previously validated atomic
+commitment, and the SPEC-066 executable receipt gate requires independent
+exhaustive decomposition admission. The corpus retains 76 unresolved opaque
+carriers plus 16 two-component AND fixtures. The deterministic 48-fixture
+selection contains 49 declared carriers, including the two-component negative
+control `case-023`. No independently validated atomic admission was established.
 
-Primary trust metric: false admission. Any permissive failure is material evidence against automatic semantic admission.
+No fixture transmission or provider/model request occurred: 0 of 60 slots
+attempted. No retry, repair, atom collapse, whole-fixture replacement, prompt
+change, or validator weakening was performed. Remote provider compatibility and
+all live J1/J2 metrics remain unmeasured. Credential availability does not
+resolve this contract conflict.
 
-SPEC-067 does not authorize SPEC-065 synthesis generation. Same-family generator/judge correlated error cannot be resolved by this experiment and must remain explicit.
+Frozen identities, proposed non-executable manifests, protected-state hashes,
+the unattempted ledger, and review findings are preserved in:
+`examples/evaluations/spec-067-semantic-judge-live-evaluation-20261007/owner-review.md`.
 
-If the exact provider/model/request contract is unavailable, stop fail-closed without substitution.
+Owner/architecture review must resolve the fixture-versus-validated-atom boundary
+before a new executable packet is authorized. Same-family generator/judge
+correlated error remains unresolved. No follow-up work is active.
 
 ## Current product question
 
 ```text
-known difficult semantic fixture
+frozen semantic fixture / declared carriers
       ↓
-semantic judge
+independently validated exhaustive atom boundary?
       ↓
-ENTAILED / CONTRADICTED / UNCERTAIN
+NO — stop before transmission
       ↓
-compare against frozen truth
-      ↓
-Does the judge avoid false admission?
-And does 4-item batching preserve that conservatism?
+owner/architecture review of the execution contract
 ```
 
 ## Frozen / protected state
@@ -268,9 +273,12 @@ And does 4-item batching preserve that conservatism?
 
 ## Explicitly forbidden
 
-SPEC-067 grants only the explicitly bounded semantic-judge authority stated above. Do not exceed 60 calls; call any model other than exact `gpt-6.1-sol` High; retry failed calls; repair malformed outputs with another call; adapt prompts/batches after observing results; execute SPEC-065 live synthesis; generate product R1/R2/R3; retrieve external sources; rerun extraction; alter fixture labels; expose expected labels to the judge; add another judge/model; modify production KnowledgeModel semantics, validators, representation/UI, navigation, My Map, or Explore Next; promote experimental work; assign the human cognitive/pedagogical verdict; or activate follow-up execution.
-
-Semantic judging is authorized **only** for the frozen SPEC-067 J1/J2 fixture evaluation under the exact call budget and contract in the active packet. All other provider/model calls remain unauthorized.
+There is no active approved work packet. Do not execute semantic judging or
+SPEC-065 synthesis, retrieve sources, rerun extraction, alter frozen fixtures or
+labels, weaken validators, replace the atomic judgment contract, change
+production semantics/representation/UI/navigation, promote experimental work,
+assign the human verdict, or activate follow-up execution. A proposed manifest
+is not execution authority.
 
 ## Coordination rule
 

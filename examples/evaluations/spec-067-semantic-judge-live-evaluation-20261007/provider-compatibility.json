@@ -1,0 +1,21 @@
+{
+  "documentation": [
+    "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+    "https://developers.openai.com/api/docs/guides/structured-outputs",
+    "https://developers.openai.com/api/docs/guides/conversation-state"
+  ],
+  "note": "Documentation/local SDK shape were inspected. No catalog or model request made because atomic preflight failed; documentation is not account compatibility proof.",
+  "remote_verified": false,
+  "sdk_shape": {
+    "existing_adapter_reused": false,
+    "high_effort_type_supported": true,
+    "model": "gpt-6.1-sol",
+    "provider_contract_verified": false,
+    "reason": "Existing extractor fixes reasoning low; proposal freezes a separate high-effort request shape. SDK accepts string model identifiers but does not prove remote model availability/support. Online verification forbidden; no substitution or transmission.",
+    "reasoning_effort": "high",
+    "required_request_fields_supported": true,
+    "sdk_version": "2.54.0",
+    "status": "LOCAL_SHAPE_ONLY_PROVIDER_UNVERIFIED_FAIL_CLOSED"
+  },
+  "status": "NOT_REACHED_EARLIER_PREFLIGHT_FAILURE"
+}

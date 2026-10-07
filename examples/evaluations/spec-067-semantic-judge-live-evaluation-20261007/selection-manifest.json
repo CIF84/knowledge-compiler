@@ -1,0 +1,294 @@
+{
+  "algorithm": "Round-robin categories, unused domains first within each category.\n\nOnly category/domain coverage participates; expected verdicts never do.\nThis is a frozen diagnostic proposal, not an executable atomic contract.\n",
+  "fixtures": [
+    {
+      "category": "exact entailment",
+      "domain": "geology",
+      "fixture_id": "case-001",
+      "packet_sha256": "420bb66d9b03f439dfbed9058110eba67d87a9d721245556409cca435516c323"
+    },
+    {
+      "category": "faithful paraphrase",
+      "domain": "geology",
+      "fixture_id": "case-003",
+      "packet_sha256": "2abed533135afb8b5ac0196b61ff85fbefde7d0b35ece62e885182a028b6502d"
+    },
+    {
+      "category": "faithful synthesis of multiple commitments",
+      "domain": "geology",
+      "fixture_id": "case-004",
+      "packet_sha256": "ed93fcf0fd0dc1480ff439a17659d53ad63d84ee5a3756ac4cfa2177b4ff867a"
+    },
+    {
+      "category": "valid explanatory abstraction",
+      "domain": "geology",
+      "fixture_id": "case-005",
+      "packet_sha256": "f915ee798039c7460d379e90a5d46d91cbb4f1a3b23570bb0441bcbedb97bdab"
+    },
+    {
+      "category": "unsupported abstraction",
+      "domain": "geology",
+      "fixture_id": "case-006",
+      "packet_sha256": "15baf55d024fa05c957fb91f9659fc9c60e410d70d6f81178dc128767a382d94"
+    },
+    {
+      "category": "lost qualification",
+      "domain": "geology",
+      "fixture_id": "case-007",
+      "packet_sha256": "8ed11949441d810f2d795752e670d94be498154348e6ca167e5770387df55e82"
+    },
+    {
+      "category": "quantity/unit drift",
+      "domain": "geology",
+      "fixture_id": "case-008",
+      "packet_sha256": "0f740ec93d876983b5fa47a5aefba592fdff1ef7b37e7f226bcf30161269f397"
+    },
+    {
+      "category": "invalid relation projection due to changed scope",
+      "domain": "geology",
+      "fixture_id": "case-009",
+      "packet_sha256": "8b9039b3263066486e6df947729ab072bba39020649ff918cf8c6be11a4c994f"
+    },
+    {
+      "category": "evidence insufficient / genuinely uncertain",
+      "domain": "geology",
+      "fixture_id": "case-010",
+      "packet_sha256": "90e0558eda80062686ecff31de65bd690e4b602aa074b29ab52ede180f59a32a"
+    },
+    {
+      "category": "valid relation projection onto compressed endpoints",
+      "domain": "geology",
+      "fixture_id": "case-012",
+      "packet_sha256": "b14715672b18d598baa10105f6ba8b9151044c0ff63b287e6697045cb6f05e1b"
+    },
+    {
+      "category": "exact entailment",
+      "domain": "meteorology",
+      "fixture_id": "case-013",
+      "packet_sha256": "2bed5662e4bb4c19d325058543ff89b9653a885ac1698fa2ef2636885f11cbba"
+    },
+    {
+      "category": "faithful paraphrase",
+      "domain": "meteorology",
+      "fixture_id": "case-015",
+      "packet_sha256": "ba52696c9f84833c2ae7d8ef085b6390b27cde3689389900725f0b98fb033ce0"
+    },
+    {
+      "category": "faithful synthesis of multiple commitments",
+      "domain": "meteorology",
+      "fixture_id": "case-016",
+      "packet_sha256": "50baa1224c417847db29d42fb8372215dba3649db13103cb5f42e6ffad8a8283"
+    },
+    {
+      "category": "valid explanatory abstraction",
+      "domain": "meteorology",
+      "fixture_id": "case-017",
+      "packet_sha256": "c8657a586f5bc2d7e2a71ab9e3f8bab32cc99a2d01a0ef331735ec8b73259956"
+    },
+    {
+      "category": "overgeneralization",
+      "domain": "meteorology",
+      "fixture_id": "case-018",
+      "packet_sha256": "1eebe7e76dffb394aa20642971a8e263b97390778d9e4630f44b93e59a491512"
+    },
+    {
+      "category": "lost qualification",
+      "domain": "meteorology",
+      "fixture_id": "case-019",
+      "packet_sha256": "54e38a49e44c48bfe075ec4cd01fca9c955fab8e1354fe7e70027b009489c359"
+    },
+    {
+      "category": "entity/referent substitution",
+      "domain": "meteorology",
+      "fixture_id": "case-020",
+      "packet_sha256": "86df66da09a026a84531a96020d1490aa8c827f17525ecb538b94060f7d10daf"
+    },
+    {
+      "category": "quantity/unit drift",
+      "domain": "meteorology",
+      "fixture_id": "case-021",
+      "packet_sha256": "caeb8949902f86e05e84ce53d57afda44982d6bb20da31d3f3ae428f088b40ab"
+    },
+    {
+      "category": "evidence insufficient / genuinely uncertain",
+      "domain": "meteorology",
+      "fixture_id": "case-022",
+      "packet_sha256": "f464a2a8fb898af0b0211ee143405d4380d008f169a1bb169675c0a1715140bd"
+    },
+    {
+      "category": "unsupported abstraction",
+      "domain": "meteorology",
+      "fixture_id": "case-023",
+      "packet_sha256": "bfd490fd9f35e067d0fe568963b87eb78505974d5dd1a96d957f0a085f764b36"
+    },
+    {
+      "category": "implicit dependency preserved",
+      "domain": "meteorology",
+      "fixture_id": "case-024",
+      "packet_sha256": "c1f7e46da6499e292c89f884c44849b1466df859b9d30245852ec1e2078834ab"
+    },
+    {
+      "category": "exact entailment",
+      "domain": "civics",
+      "fixture_id": "case-025",
+      "packet_sha256": "76825df4440053bcc08dd46088abd4451d226594310d07bfad5b1331ced5709e"
+    },
+    {
+      "category": "faithful paraphrase",
+      "domain": "civics",
+      "fixture_id": "case-027",
+      "packet_sha256": "8355585c408912d90ccfcc485df7e97d46eb0838f9d0caebb99eb1a02b88192a"
+    },
+    {
+      "category": "faithful synthesis of multiple commitments",
+      "domain": "civics",
+      "fixture_id": "case-028",
+      "packet_sha256": "ccca0182d16e2a3f647e2f811bb51a2bb15b8301b009a5a139d2a4e66ba98f9e"
+    },
+    {
+      "category": "valid explanatory abstraction",
+      "domain": "civics",
+      "fixture_id": "case-029",
+      "packet_sha256": "c70dd33a76a0be0927e161c0584a778c9a5d903a66c61050dd2821e42bf6dfd6"
+    },
+    {
+      "category": "unsupported abstraction",
+      "domain": "civics",
+      "fixture_id": "case-030",
+      "packet_sha256": "80a4fd39694da4c98b78ab65a36189b023ee286c94c7c20de9926dab78622749"
+    },
+    {
+      "category": "lost qualification",
+      "domain": "civics",
+      "fixture_id": "case-031",
+      "packet_sha256": "d54e3024327d4ba075533973e8abd252c6c2f2939fa0b20b54fb87668871f8ba"
+    },
+    {
+      "category": "temporal/scope drift",
+      "domain": "civics",
+      "fixture_id": "case-032",
+      "packet_sha256": "a05202d90b7a059edff01454cca64fccf1cde7aed7fc7d7fb8f3270e3fcdf3c1"
+    },
+    {
+      "category": "implicit dependency invented",
+      "domain": "civics",
+      "fixture_id": "case-033",
+      "packet_sha256": "3cc258a7f50f13ae781f9f1c0b05a6364ff40d6fd1df8c5eeaa9671caed6e1b3"
+    },
+    {
+      "category": "evidence insufficient / genuinely uncertain",
+      "domain": "civics",
+      "fixture_id": "case-034",
+      "packet_sha256": "e66872be0650225a60552c64e70713fc0e073d1c75679fef9ec524dc357b7a2e"
+    },
+    {
+      "category": "exact entailment",
+      "domain": "astronomy",
+      "fixture_id": "case-036",
+      "packet_sha256": "572f5fdd09b82a16a97a11fb1a51ff716727fb1acabc75b20797e534175af4a6"
+    },
+    {
+      "category": "faithful paraphrase",
+      "domain": "astronomy",
+      "fixture_id": "case-038",
+      "packet_sha256": "fa4cc15671f11ce632036c9b1c6b29ee644dd12c53bf6d3d53a8bc704a777d77"
+    },
+    {
+      "category": "faithful synthesis of multiple commitments",
+      "domain": "astronomy",
+      "fixture_id": "case-039",
+      "packet_sha256": "ad085c6ef5d670901b376e80cc81c7b0ff1cf15d60e3e6933a7c8fd5044c2338"
+    },
+    {
+      "category": "overgeneralization",
+      "domain": "astronomy",
+      "fixture_id": "case-041",
+      "packet_sha256": "f1731117ca36e48121a0701634f9809ac2f7de3141c3d381d3a84e0cc950cd14"
+    },
+    {
+      "category": "strengthened certainty",
+      "domain": "astronomy",
+      "fixture_id": "case-042",
+      "packet_sha256": "565760756287ce6fa61a1d646cf2d2adb92c6820c7f8663a8e7ec4d39243b419"
+    },
+    {
+      "category": "entity/referent substitution",
+      "domain": "astronomy",
+      "fixture_id": "case-043",
+      "packet_sha256": "c8c62e1ce2ba6d8167ac0a7fc6232f878872e62b8a23fe9a9da8657060e805d0"
+    },
+    {
+      "category": "contradiction",
+      "domain": "astronomy",
+      "fixture_id": "case-044",
+      "packet_sha256": "542e79cda25098133f9fb332819d5848f80ebd551f3420f0c3b13b21ec03ca46"
+    },
+    {
+      "category": "implicit dependency preserved",
+      "domain": "astronomy",
+      "fixture_id": "case-047",
+      "packet_sha256": "3c27cc384734effdcf7a849452462a7b4aeca08b6146279df0f9b39c113ba36b"
+    },
+    {
+      "category": "strengthened certainty",
+      "domain": "ecology",
+      "fixture_id": "case-054",
+      "packet_sha256": "2219720b8c09b17f4f2756d532d2eeb9d1de1e541c3e78f531851952d438003e"
+    },
+    {
+      "category": "temporal/scope drift",
+      "domain": "ecology",
+      "fixture_id": "case-055",
+      "packet_sha256": "5ae4253357e2fa28f5d7f6f4572e62875bc43d4e4bf28f2957eb48b2c38819cf"
+    },
+    {
+      "category": "invalid relation projection due to changed scope",
+      "domain": "ecology",
+      "fixture_id": "case-056",
+      "packet_sha256": "0247be6cae18094db99f655633c60c32d1e480aa9a922b5f1a0acd8d7666c0f0"
+    },
+    {
+      "category": "correlation → causation drift",
+      "domain": "materials science",
+      "fixture_id": "case-065",
+      "packet_sha256": "11add82ea7a1a2fbf7f84a41464d7b156576d521ba753583ca13f77a3bc9fb7b"
+    },
+    {
+      "category": "quantity/unit drift",
+      "domain": "materials science",
+      "fixture_id": "case-066",
+      "packet_sha256": "da402b143f10a95953be7a143f7c6d511560309f98bdb95b44959ea863a64de6"
+    },
+    {
+      "category": "entity/referent substitution",
+      "domain": "materials science",
+      "fixture_id": "case-067",
+      "packet_sha256": "8348a34ca466e3357828766feed57d30501fea710be52733e9d22c6740905e99"
+    },
+    {
+      "category": "implicit dependency invented",
+      "domain": "transportation",
+      "fixture_id": "case-076",
+      "packet_sha256": "6b26f0cf7b1c700c05efe34a777730bfd8eefefca6a4d45ae76f6ee42ede3cc3"
+    },
+    {
+      "category": "invalid relation projection due to changed scope",
+      "domain": "transportation",
+      "fixture_id": "case-078",
+      "packet_sha256": "82819938835cc4218a55f4132be3221e4678ab7997fea8f1cc47bc613b34fad5"
+    },
+    {
+      "category": "implicit dependency invented",
+      "domain": "measurement methodology",
+      "fixture_id": "case-089",
+      "packet_sha256": "aa864f54b70124f8eb41ab7a385200dd09aed83f55fe7089660378ed5c73f455"
+    },
+    {
+      "category": "valid relation projection onto compressed endpoints",
+      "domain": "measurement methodology",
+      "fixture_id": "case-092",
+      "packet_sha256": "e5c51155345be0b91f154c49e87898b255ceddcf89dc3b61cb33ecf4f01fc3ac"
+    }
+  ],
+  "state": "FROZEN_NONEXECUTABLE_PROPOSAL"
+}

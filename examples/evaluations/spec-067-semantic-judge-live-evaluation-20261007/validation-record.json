@@ -1,0 +1,35 @@
+{
+  "preflight_result": "FIXTURE_OR_PREFLIGHT_INVALID",
+  "live_calls": 0,
+  "fixture_transmissions": 0,
+  "focused_tests": {
+    "command": ".venv/bin/pytest -q tests/test_spec067_judge_preflight.py tests/test_spec066_semantic_boundary.py tests/test_control_plane.py",
+    "tests": 168,
+    "result": "PASS",
+    "earlier_development_run": {
+      "result": "2_TEST_ASSERTION_FAILURES",
+      "details": [
+        "Over-broad text inspection matched the docstring phrase expected verdicts, not label access.",
+        "Frozen admission-policy wording differed from the test's quoted phrase. Test updated to actual immutable wording."
+      ],
+      "production_or_frozen_contract_changes": false
+    }
+  },
+  "full_offline_suite": {
+    "command": ".venv/bin/pytest -q",
+    "tests": 1004,
+    "result": "PASS"
+  },
+  "deterministic_regeneration": "PASS_BYTE_IDENTICAL_GENERATED_ARTIFACTS",
+  "git_diff_check": "PASS_AFTER_REMOVING_MARKDOWN_HARD_BREAK_TRAILING_SPACES",
+  "all_generated_json": "PASS",
+  "control_plane": "PASS_AFTER_CLOSURE",
+  "frozen_prompt_schema_identity": "PASS",
+  "protected_files": 2120,
+  "protected_aggregate_sha256": "15ae7c95db3998a1dc3d4ec34f1816432c0d4b06045edaabb1a085e56851cd04",
+  "ledger_reconciliation": "60_UNATTEMPTED_SLOTS_NO_RAW_RESPONSES",
+  "budget_retry_guard": "NO_PROVIDER_TRANSPORT_PREFLIGHT_REJECTION_TESTED",
+  "project_vision_update": "NOT_APPLIED_NO_LIVE_EXECUTION; no claim of semantic-judge performance or production safety",
+  "owner_verdict": "PENDING",
+  "promotion": "NOT_AUTHORIZED"
+}
