@@ -30,6 +30,9 @@ trusted claims / relationships / evidence / provenance
 EXPLANATORY STRUCTURE
 meaning blocks / explanatory functions / supported traversal
         ↓
+CONCEPTUAL ORGANIZATION
+supported chunks / schema / necessary implications
+        ↓
 GOAL-PRESERVING SEMANTIC COMPRESSION
 multiple non-destructive resolutions over one richer substrate
         ↓
@@ -48,13 +51,17 @@ Its preservation boundary is broader than modeled domain facts:
 
 > **Semantic preservation is necessary but not sufficient; useful explanatory structure is itself information that compression should preserve.**
 
+Compression can reduce different kinds of burden. Linguistic compression reduces expression, chunk compression reduces the number of independent units, and structural compression reduces relational organization the learner must reconstruct. These are distinct operations and must be evaluated independently. Explanatory traversal preserves how an explanation is followed; conceptual schema externalizes how its knowledge is organized. A trustworthy compiler should preserve both when each is supported.
+
 The architecture therefore does not treat `source → summary → shorter summary → visual` as a trustworthy pipeline. Each resolution and representation must derive from the grounded substrate, preserve useful explanatory work already present in the source, retain provenance, and remain recoverable to richer trusted information.
 
 ## Principles
 
 - **Meaning before medium.** Establish grounded meaning before deciding how to present it.
 - **Explanatory structure is information.** Preserve coherent meaning blocks, their functions, and supported traversal before compressing language inside them.
-- **Compression before visualization.** First remove rhetorical, repetitive, and linguistic overhead without removing necessary meaning; only then ask whether another representation reduces cognitive work.
+- **Schema and traversal are complementary.** Organize supported chunks and implications without erasing the path through which the explanation becomes intelligible.
+- **Reduce avoidable reconstruction.** Preserve useful explanatory work from the source while externalizing organization the learner would otherwise have to rebuild mentally.
+- **Compression before visualization.** First preserve semantics, explanatory traversal, and supported conceptual organization; visualization remains downstream of schema and representation selection.
 - **Non-destructive compression.** A compressed view never replaces or mutates its richer semantic substrate.
 - **Provenance at every resolution.** Every retained unit must trace back to trusted evidence and source identity.
 - **Prose is first-class.** Prose is an intentional representation when it is already cognition-efficient, not a fallback.
@@ -66,7 +73,7 @@ The architecture therefore does not treat `source → summary → shorter summar
 
 ## Current validated direction
 
-The repository currently contains grounded extraction, semantic admission, deterministic representation experiments, a cognitive-utility gate, and evidence that plain prose, semantically enriched prose, and structural representation each have legitimate but different roles. Progressive semantic compression is being evaluated between grounded knowledge and representation selection, with explanatory structure treated as a distinct experimental preservation layer rather than inferred from word-count reduction.
+The repository currently contains grounded extraction, semantic admission, deterministic representation experiments, a cognitive-utility gate, and evidence that plain prose, semantically enriched prose, and structural representation each have legitimate but different roles. Progressive semantic compression is being evaluated between grounded knowledge and representation selection. Explanatory traversal and conceptual schema are distinct experimental layers: one preserves how meaning is followed, while the other tests whether supported knowledge can be organized into fewer coherent units without deleting facts or optimizing word count.
 
 Current work does not establish optimal teaching, universal essentiality, personalized learning paths, arbitrary multimodal ingestion, or an optimal visual grammar. Human review remains necessary for cognitive and pedagogical judgments.
 

@@ -67,6 +67,11 @@ EXPLANATORY STRUCTURE
   ├─ explanatory functions
   └─ traversal / discourse relations
   ↓
+CONCEPTUAL ORGANIZATION
+  ├─ supported chunks
+  ├─ schema / hierarchy
+  └─ necessary implications
+  ↓
 GOAL-PRESERVING SEMANTIC COMPRESSION
   ↓
 VARIABLE-RESOLUTION INFORMATION
@@ -95,41 +100,47 @@ Key findings:
 ## Current approved work packet
 
 ```text
-specs/SPEC-062-conceptual-chunking-schema-induction.md
+NONE
 ```
 
-Status: `APPROVED_FOR_IMPLEMENTATION`
+Status: `NONE`
 
-Authority: `OFFLINE_ONLY`
+Authority: `NONE`
 
-Human gate: `OWNER_REVIEW`
+Human gate: `NONE`
 
 Promotion: `NOT_AUTHORIZED`
 
 ## Current gate
 
-SPEC-062 is authorized to test conceptual chunking and schema induction over the exact frozen six-source SPEC-061 substrate.
+SPEC-062 is implemented and awaiting owner review.
 
-The experiment must preserve every frozen semantic item, qualification, explanatory block, material implication, and provenance identity. It must not optimize word count or delete facts. The primary question is whether supported hierarchy can reduce the number of independent top-level units and externalize organization the learner would otherwise construct mentally.
+The isolated generic offline inducer organized all 244 frozen semantic items and all 46 SPEC-061 explanatory blocks into 52 total conceptual chunks and 10 independent top-level units across the six cases. Per-case top-level-unit ratios are `0.2857`, `0.1667`, `0.2500`, `0.2000`, `0.0909`, and `0.4286`; lower ratios are diagnostic and are not treated as automatic cognitive success.
 
-Geology, astronomy, and meteorology owner observations are post-hoc diagnostic anchors only and must not be hard-coded. Other owner-unreviewed cases remain blind.
+All 95 identified material implications remain explicit or schema-preserved, including the astronomy `r14` and `r15` accumulation-to-planet/star implications. Semantic, epistemic, explanatory, membership, schema-edge, implication, and provenance audits report zero forbidden outcomes and full recoverability. The geology, astronomy, and meteorology comparisons ran only after generic outputs were frozen and did not alter them.
 
-No model/provider calls, retrieval, extraction reruns, production semantic changes, diagrams, personalization, promotion, or follow-up product work are authorized.
+The mechanical branch is `CONCEPTUAL_SCHEMA_SAFE_FOR_OWNER_REVIEW`. Desktop and 390×844 browser gates pass all six cases, peer-view identity, fact/edge preservation, trace selection, responsive layout, no-diagram checks, and clean-console checks. No model/provider call, retrieval, extraction rerun, production change, visualization, personalization, promotion, or human verdict assignment occurred.
+
+Canonical evidence:
+
+`examples/evaluations/spec-062-conceptual-chunking-schema-induction-20261007/report.json`
+
+No packet is active. Promotion remains unauthorized and the owner verdict is pending.
 
 ## Current product question
 
 ```text
-grounded semantics
-      +
-explanatory structure
+same grounded information
       ↓
-conceptual chunks
+S0 explanatory baseline
+      ↕
+S1 conceptual schema
+      ↕
+S2 schema + traversal
       ↓
-supported schema / hierarchy
-      ↓
-fewer independent top-level units?
-      ↓
-same facts + implications + provenance
+Are fewer supported conceptual units
+easier to think with before deleting facts
+or drawing a diagram?
       ↓
 OWNER REVIEW
 ```

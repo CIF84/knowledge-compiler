@@ -1,0 +1,89 @@
+:root {
+  color-scheme: light;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #17201e;
+  background: #f4f3ee;
+  --ink-soft: #58625f;
+  --line: #d5d8d2;
+  --paper: #fffef9;
+  --accent: #315d52;
+  --accent-soft: #e3ece7;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 0; }
+button { font: inherit; color: inherit; }
+.masthead { display: flex; justify-content: space-between; gap: 2rem; align-items: end; padding: 1.4rem 2rem; border-bottom: 1px solid var(--line); background: var(--paper); }
+.masthead h1 { margin: .2rem 0 0; max-width: 800px; font: 600 clamp(1.45rem, 2.6vw, 2.25rem)/1.1 Georgia, serif; }
+.masthead > p { max-width: 300px; margin: 0; color: var(--ink-soft); }
+.eyebrow { margin: 0; color: var(--accent); font-size: .72rem; font-weight: 750; letter-spacing: .11em; text-transform: uppercase; }
+.workspace { display: grid; grid-template-columns: minmax(210px, 260px) minmax(480px, 1fr) minmax(240px, 310px); min-height: calc(100vh - 105px); }
+.corpus-panel, .trace-panel { padding: 1.3rem; background: #eeeee8; }
+.corpus-panel { border-right: 1px solid var(--line); }
+.trace-panel { border-left: 1px solid var(--line); }
+.corpus-panel h2, .trace-panel h2 { margin: .35rem 0; font-size: 1.05rem; }
+.corpus-panel > p:not(.eyebrow), .trace-panel > p:not(.eyebrow) { color: var(--ink-soft); line-height: 1.45; }
+.case-list { margin: 1.2rem 0; padding: 0; list-style: none; counter-reset: cases; }
+.case-list li { counter-increment: cases; }
+.case-list button { width: 100%; padding: .7rem .6rem; border: 0; border-bottom: 1px solid var(--line); background: transparent; text-align: left; cursor: pointer; }
+.case-list button::before { content: counter(cases, decimal-leading-zero) "  "; color: var(--ink-soft); font-size: .72rem; }
+.case-list button[aria-current="true"] { background: var(--accent-soft); color: #143f35; font-weight: 700; }
+.principle { margin-top: 1.5rem; padding: .9rem; border: 1px solid var(--line); background: var(--paper); }
+.principle span { display: block; margin-top: .35rem; color: var(--ink-soft); font-size: .82rem; line-height: 1.4; }
+.review-panel { min-width: 0; padding: 1.3rem 1.5rem 3rem; }
+.case-nav { display: grid; grid-template-columns: auto 1fr auto; gap: 1rem; align-items: center; padding-bottom: 1rem; border-bottom: 1px solid var(--line); }
+.case-nav div { text-align: center; }
+.case-nav h2 { margin: .2rem 0; font-family: Georgia, serif; }
+.case-nav p { margin: 0; color: var(--ink-soft); }
+.case-nav button, .mode-controls button { padding: .48rem .68rem; border: 1px solid var(--line); border-radius: 3px; background: var(--paper); cursor: pointer; }
+.resolution-heading { display: flex; justify-content: space-between; align-items: end; gap: 1rem; margin: 1.2rem 0; }
+.resolution-label { margin: .2rem 0 0; font-weight: 700; }
+.mode-controls { display: flex; flex-wrap: wrap; gap: .35rem; justify-content: end; }
+.mode-controls button[aria-pressed="true"] { border-color: var(--accent); background: var(--accent); color: white; }
+.resolution-host { min-width: 0; padding: 1.4rem; border: 1px solid var(--line); background: var(--paper); }
+.baseline-prose { margin: 0; white-space: pre-wrap; line-height: 1.65; }
+.chunk { margin: 0 0 .75rem; border: 1px solid var(--line); border-left: 4px solid var(--accent); background: white; }
+.chunk.level-2 { margin-left: 1.2rem; border-left-width: 2px; }
+.chunk > button { width: 100%; padding: .75rem .9rem; border: 0; background: transparent; text-align: left; cursor: pointer; }
+.chunk-role { display: block; color: var(--accent); font-size: .7rem; font-weight: 750; letter-spacing: .08em; text-transform: uppercase; }
+.chunk h3 { margin: .2rem 0 0; font: 600 1rem/1.3 Georgia, serif; }
+.fact-list { margin: .2rem 1rem .9rem 2.25rem; padding: 0; line-height: 1.5; }
+.fact-list li { margin: .3rem 0; }
+.relation-list { margin-top: 1.5rem; padding-top: 1rem; border-top: 2px solid var(--line); }
+.relation-row { display: grid; grid-template-columns: minmax(90px, 150px) 1fr; gap: .8rem; padding: .45rem 0; border-bottom: 1px solid var(--line); font-size: .86rem; }
+.relation-row strong { color: var(--accent); }
+.audit-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .7rem; }
+.audit-card { padding: .9rem; border: 1px solid var(--line); background: white; }
+.audit-card strong { color: var(--accent); font-size: .74rem; letter-spacing: .06em; }
+.audit-card p { margin: .4rem 0 0; line-height: 1.45; }
+.metric-strip { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .55rem; margin-top: .7rem; }
+.metric { padding: .65rem; border: 1px solid var(--line); background: #eeeee8; color: var(--ink-soft); font-size: .72rem; }
+.metric strong { display: block; color: #17201e; font-size: 1.05rem; }
+.trace-list { max-height: 42vh; overflow: auto; }
+.trace-list blockquote { margin: .7rem 0 .2rem; padding: .6rem .75rem; border-left: 3px solid var(--accent); background: var(--paper); font: .86rem/1.45 Georgia, serif; }
+.trace-list p { margin: .15rem 0 .7rem; color: var(--ink-soft); font-size: .75rem; }
+.rubric { margin-top: 1.2rem; padding-top: 1rem; border-top: 1px solid var(--line); }
+.rubric ol { padding-left: 1.2rem; font-size: .78rem; line-height: 1.45; }
+.rubric li { margin: .45rem 0; }
+.pending { padding: .65rem; border: 1px solid #baa66d; background: #fff9df; color: #594b23 !important; font-weight: 700; text-align: center; }
+
+@media (max-width: 900px) {
+  .masthead { display: block; padding: 1rem; }
+  .masthead > p { margin-top: .6rem; max-width: none; }
+  .workspace { display: block; min-height: 0; }
+  .corpus-panel, .trace-panel { border: 0; border-bottom: 1px solid var(--line); padding: 1rem; }
+  .case-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); margin: .7rem 0; }
+  .review-panel { padding: 1rem; }
+  .resolution-heading { display: block; }
+  .mode-controls { justify-content: start; margin-top: .7rem; }
+  .trace-list { max-height: none; }
+}
+
+@media (max-width: 480px) {
+  .case-list, .audit-grid, .metric-strip { grid-template-columns: 1fr; }
+  .case-nav { grid-template-columns: 1fr 1fr; }
+  .case-nav div { grid-column: 1 / -1; grid-row: 1; }
+  .resolution-host { padding: .8rem; }
+  .chunk.level-2 { margin-left: .55rem; }
+  .relation-row { grid-template-columns: 1fr; gap: .15rem; }
+}

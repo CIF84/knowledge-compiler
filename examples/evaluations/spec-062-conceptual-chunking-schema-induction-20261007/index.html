@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SPEC-062 · Conceptual schema review</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="masthead">
+    <div>
+      <p class="eyebrow">Knowledge Compiler · Owner review</p>
+      <h1>Can the same facts become fewer coherent conceptual units?</h1>
+    </div>
+    <p>Six frozen sources · no deleted facts · no diagrams · verdict pending</p>
+  </header>
+
+  <main class="workspace" aria-label="SPEC-062 conceptual schema review workspace">
+    <aside class="corpus-panel">
+      <p class="eyebrow">Frozen corpus</p>
+      <h2>Six source-grounded cases</h2>
+      <p>Choose a case, then compare three peer views generated from the same frozen substrate.</p>
+      <ol id="case-list" class="case-list"></ol>
+      <div class="principle">
+        <strong>Zero semantic deletion</strong>
+        <span>Organization may change. Facts, qualifications, blocks, implications, and provenance may not.</span>
+      </div>
+    </aside>
+
+    <section class="review-panel">
+      <nav class="case-nav" aria-label="Case navigation">
+        <button id="previous-case" type="button">← Previous</button>
+        <div>
+          <p id="case-counter" class="eyebrow"></p>
+          <h2 id="case-title"></h2>
+          <p id="case-domain"></p>
+        </div>
+        <button id="next-case" type="button">Next →</button>
+      </nav>
+
+      <section class="resolution-panel" aria-label="Peer view comparison">
+        <div class="resolution-heading">
+          <div>
+            <p class="eyebrow">Peer view</p>
+            <p id="resolution-label" class="resolution-label"></p>
+          </div>
+          <div class="mode-controls" aria-label="View mode">
+            <button id="mode-s0" type="button">S0 · Baseline</button>
+            <button id="mode-s1" type="button">S1 · Schema</button>
+            <button id="mode-s2" type="button">S2 · Schema + path</button>
+            <button id="mode-audit" type="button">Audit</button>
+          </div>
+        </div>
+        <div id="resolution-host" class="resolution-host"></div>
+        <div id="metric-strip" class="metric-strip"></div>
+      </section>
+    </section>
+
+    <aside class="trace-panel">
+      <p class="eyebrow">Evidence trace</p>
+      <h2 id="trace-title">Select a chunk</h2>
+      <p id="trace-body">In S1 or S2, choose a chunk to inspect its membership evidence and exact source support.</p>
+      <div id="trace-list" class="trace-list"></div>
+      <div class="rubric">
+        <p class="eyebrow">Neutral owner rubric</p>
+        <ol id="rubric-list"></ol>
+      </div>
+      <p class="pending">Owner verdict · Pending</p>
+    </aside>
+  </main>
+
+  <div id="spec062-contract" hidden
+       data-authority="OFFLINE_ONLY"
+       data-view-lineage="PEER_VIEWS_FROM_FROZEN_SUBSTRATE"
+       data-owner-anchor-induction="false"
+       data-fact-deletion="false"
+       data-word-count-objective="false"
+       data-diagram-work="false"
+       data-production-promotion="false"
+       data-human-verdict="PENDING"></div>
+  <script src="app.js"></script>
+</body>
+</html>
