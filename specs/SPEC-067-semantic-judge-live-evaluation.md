@@ -1,7 +1,7 @@
 # SPEC-067 — Semantic Judge Live Evaluation
 
 Status: `APPROVED_FOR_IMPLEMENTATION`
-Authority: `LIVE_MODEL_CALLS_BOUNDED`
+Authority: `LIVE_CALLS_EXPLICITLY_BOUNDED`
 Human gate: `OWNER_REVIEW`
 Promotion: `NOT_AUTHORIZED`
 
