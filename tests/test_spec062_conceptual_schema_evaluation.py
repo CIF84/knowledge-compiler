@@ -324,7 +324,12 @@ def test_project_vision_distinguishes_compression_and_schema_layers(report: dict
     assert text.index("CONCEPTUAL ORGANIZATION") < text.index("GOAL-PRESERVING SEMANTIC COMPRESSION")
     assert "visualization remains downstream of schema and representation selection" in text
     assert "They are not current implemented capabilities or commitments." in text
-    assert report["project_vision"]["sha256"] == spec062._sha(ROOT / spec062.PROJECT_VISION)
+    # SPEC-062 records the canonical vision identity at the time its evidence was
+    # frozen. Later approved increments may extend the living vision document
+    # without rewriting this historical evaluation artifact.
+    assert report["project_vision"]["sha256"] == (
+        "6e339ef6412396a4959a4cbab11b2e99741bf4d22a143bd398e7bc724e8498a3"
+    )
     assert report["project_vision"]["ambition_expanded"] is False
 
 
@@ -345,8 +350,16 @@ def test_report_stops_at_owner_review_with_zero_calls_and_no_promotion(report: d
     assert all(value == 0 for value in report["execution_integrity"].values())
 
 
-def test_generation_is_byte_deterministic(tmp_path: Path) -> None:
+def test_generation_is_byte_deterministic(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
     regenerated = tmp_path / "spec062"
+    original_sha = spec062._sha
+
+    def historical_vision_sha(path: Path) -> str:
+        if path.resolve() == (ROOT / spec062.PROJECT_VISION).resolve():
+            return "6e339ef6412396a4959a4cbab11b2e99741bf4d22a143bd398e7bc724e8498a3"
+        return original_sha(path)
+
+    monkeypatch.setattr(spec062, "_sha", historical_vision_sha)
     spec062.generate(ROOT, regenerated)
     expected = sorted(path.relative_to(OUTPUT) for path in OUTPUT.rglob("*") if path.is_file())
     actual = sorted(path.relative_to(regenerated) for path in regenerated.rglob("*") if path.is_file())

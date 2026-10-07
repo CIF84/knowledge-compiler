@@ -114,48 +114,45 @@ Do not modify the frozen SPEC-062 schema in response to this verdict. The next e
 ## Current approved work packet
 
 ```text
-specs/SPEC-063-schema-to-cognitive-representation-compilation.md
+NONE
 ```
 
-Status: `APPROVED_FOR_IMPLEMENTATION`
+Status: `NONE`
 
-Authority: `OFFLINE_ONLY`
+Authority: `NONE`
 
-Human gate: `OWNER_REVIEW`
+Human gate: `NONE`
 
 Promotion: `NOT_AUTHORIZED`
 
 ## Current gate
 
-SPEC-063 is authorized to compile the exact frozen SPEC-062 schemas for Geology, Astronomy, and Meteorology into learner-facing cognitive representations.
+SPEC-063 is implemented and awaiting owner review.
 
-The schema, chunk membership, hierarchy, edges, implications, semantics, explanatory structures, and provenance are frozen. No repair or regeneration of SPEC-062 is authorized.
+The isolated deterministic compiler projected the exact frozen SPEC-062 schemas for Geology, Astronomy, and Meteorology into three bounded learner-facing forms: `BRANCHING`, `CAUSAL_OR_DEPENDENCY_CHAIN`, and `HIERARCHY`. P0 preserves the frozen SPEC-061 prose baseline, P1 preserves the frozen SPEC-062 raw schema control, and P2 is independently compiled from the frozen schema.
 
-The experiment must compare:
-- P0 — frozen explanatory prose baseline;
-- P1 — frozen raw schema control;
-- P2 — new cognitive representation compiled from the frozen schema.
+All 141 frozen semantic items and all 54 material implications remain recoverable with full provenance coverage, zero schema mutations, and zero unsupported inferences. Raw compiler IDs, enum labels, hashes, relation ledgers, and block counts are absent from P2 learner content. The exact 47-file SPEC-062 evaluation tree retains aggregate identity `8604d68cee8b472292489820ae57e482ae94786d659b38328197a58b02a61df8`.
 
-P2 may use only a bounded, deterministic representation grammar derived from frozen schema properties. It must represent conceptual organization rather than compiler metadata, retain prose where prose is efficient, keep all detail recoverable, and fail closed rather than invent unsupported structure.
+The mechanical branch is `COGNITIVE_REPRESENTATION_SAFE_FOR_OWNER_REVIEW`. Desktop and 390×844 browser gates pass all three cases, P0/P1/P2/Audit loading, case selection, P1/P2 distinction, detail/evidence interaction, responsive layout, horizontal-overflow, and clean-console checks. No model/provider call, retrieval, extraction rerun, schema repair, domain/case routing, personalization, production change, promotion, or human-verdict assignment occurred.
 
-No model/provider calls, retrieval, extraction reruns, schema changes, domain/case routing, personalization, production promotion, or follow-up work are authorized.
+Canonical evidence:
+
+`examples/evaluations/spec-063-schema-to-cognitive-representation-20261007/report.json`
+
+No packet is active. Promotion remains unauthorized and the owner verdict is pending.
 
 ## Current product question
 
 ```text
-frozen conceptual schema (IR)
-          ↓
-cognitive representation compiler
-          ↓
-learner-facing perceptual organization
-          +
-concise explanatory prose
-          +
-recoverable detail
-          ↓
-Does the learner perceive the organization
-without having to interpret compiler machinery?
-          ↓
+P0 frozen explanatory prose
+             ↕
+P1 frozen raw schema
+             ↕
+P2 compiled cognitive representation
+             ↓
+Can a trusted machine schema become a learner representation
+whose organization is perceptible without exposing its machinery?
+             ↓
 OWNER REVIEW
 ```
 

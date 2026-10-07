@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SPEC-063 · Cognitive representation review</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="masthead">
+    <div>
+      <p class="eyebrow">Knowledge Compiler · Owner review</p>
+      <h1>Does compilation turn a trusted schema into a useful learner representation?</h1>
+    </div>
+    <p>Three frozen schemas · peer controls · verdict pending</p>
+  </header>
+
+  <main class="workspace" aria-label="SPEC-063 cognitive representation review workspace">
+    <aside class="corpus-panel">
+      <p class="eyebrow">Frozen diagnostic corpus</p>
+      <h2>Three schema inputs</h2>
+      <p>Choose a source, then compare the frozen prose, frozen raw schema, and independently compiled learner view.</p>
+      <ol id="case-list" class="case-list"></ol>
+      <div class="principle">
+        <strong>Represent the organization</strong>
+        <span>P2 hides compiler metadata while keeping every fact, implication, and evidence trail recoverable.</span>
+      </div>
+    </aside>
+
+    <section class="review-panel">
+      <nav class="case-nav" aria-label="Case navigation">
+        <button id="previous-case" type="button">← Previous</button>
+        <div>
+          <p id="case-counter" class="eyebrow"></p>
+          <h2 id="case-title"></h2>
+          <p id="case-domain"></p>
+        </div>
+        <button id="next-case" type="button">Next →</button>
+      </nav>
+
+      <section class="resolution-panel" aria-label="Peer treatment comparison">
+        <div class="resolution-heading">
+          <div>
+            <p class="eyebrow">Peer treatment</p>
+            <p id="resolution-label" class="resolution-label"></p>
+          </div>
+          <div class="mode-controls" aria-label="Treatment mode">
+            <button id="mode-p0" type="button">P0 · Prose</button>
+            <button id="mode-p1" type="button">P1 · Raw schema</button>
+            <button id="mode-p2" type="button">P2 · Learner view</button>
+            <button id="mode-audit" type="button">Audit</button>
+          </div>
+        </div>
+        <div id="resolution-host" class="resolution-host"></div>
+        <div id="metric-strip" class="metric-strip"></div>
+      </section>
+    </section>
+
+    <aside class="trace-panel">
+      <p class="eyebrow">Supporting detail</p>
+      <h2 id="trace-title">Choose a learner unit</h2>
+      <p id="trace-body">In P2, select a grounded unit to recover its detailed statements and exact source evidence.</p>
+      <div id="trace-list" class="trace-list"></div>
+      <div class="rubric">
+        <p class="eyebrow">Neutral owner rubric</p>
+        <ol id="rubric-list"></ol>
+      </div>
+      <p class="pending">Owner verdict · Pending</p>
+    </aside>
+  </main>
+
+  <div id="spec063-contract" hidden
+       data-authority="OFFLINE_ONLY"
+       data-spec062-schema-mutated="false"
+       data-domain-source-case-routing="false"
+       data-production-promotion="false"
+       data-human-verdict="PENDING"></div>
+  <script src="review-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

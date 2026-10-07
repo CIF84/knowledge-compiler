@@ -1,0 +1,101 @@
+{
+  "bounded_families": [
+    "HIERARCHY",
+    "BRANCHING",
+    "SEQUENCE_OR_PROCESS",
+    "CAUSAL_OR_DEPENDENCY_CHAIN",
+    "COMPARISON",
+    "PROSE_WITH_STRUCTURE"
+  ],
+  "cases": [
+    {
+      "case_identity": "spec063-case-04bc8f34772d3e",
+      "compiler_identity": "spec063.bounded-cognitive-representation-compiler.v1",
+      "domain_source_case_routing": false,
+      "owner_anchor_input": false,
+      "schema_features": {
+        "branch_role_variety": 3,
+        "contrast_relation_count": 0,
+        "cross_chunk_required_relation_count": 5,
+        "directed_relation_count": 14,
+        "leaf_role_distribution": {
+          "CONSEQUENCE": 1,
+          "EVIDENCE_OR_OBSERVATION": 1,
+          "EXAMPLE_OR_MANIFESTATION": 1,
+          "MECHANISM": 2,
+          "SCALE_OR_TIMESCALE": 1
+        },
+        "maximum_child_count": 6,
+        "required_relation_count": 16,
+        "schema_depth": 2,
+        "top_level_count": 2,
+        "traversal_count": 6
+      },
+      "selected_grammar": "BRANCHING",
+      "selection_evidence": [
+        "bounded sibling set under a supported parent",
+        "multiple branch-role kinds"
+      ]
+    },
+    {
+      "case_identity": "spec063-case-89c6d3ba1ef533",
+      "compiler_identity": "spec063.bounded-cognitive-representation-compiler.v1",
+      "domain_source_case_routing": false,
+      "owner_anchor_input": false,
+      "schema_features": {
+        "branch_role_variety": 0,
+        "contrast_relation_count": 0,
+        "cross_chunk_required_relation_count": 2,
+        "directed_relation_count": 12,
+        "leaf_role_distribution": {
+          "MECHANISM": 2,
+          "ORIENTATION": 1,
+          "QUALIFICATION_OR_LIMIT": 2
+        },
+        "maximum_child_count": 5,
+        "required_relation_count": 14,
+        "schema_depth": 2,
+        "top_level_count": 1,
+        "traversal_count": 4
+      },
+      "selected_grammar": "CAUSAL_OR_DEPENDENCY_CHAIN",
+      "selection_evidence": [
+        "one supported root",
+        "multiple required directed relations",
+        "no example/evidence/consequence branch-role mixture"
+      ]
+    },
+    {
+      "case_identity": "spec063-case-356e19bba22103",
+      "compiler_identity": "spec063.bounded-cognitive-representation-compiler.v1",
+      "domain_source_case_routing": false,
+      "owner_anchor_input": false,
+      "schema_features": {
+        "branch_role_variety": 2,
+        "contrast_relation_count": 0,
+        "cross_chunk_required_relation_count": 6,
+        "directed_relation_count": 20,
+        "leaf_role_distribution": {
+          "CONSEQUENCE": 1,
+          "EXAMPLE_OR_MANIFESTATION": 1,
+          "MECHANISM": 3,
+          "ORIENTATION": 1,
+          "QUALIFICATION_OR_LIMIT": 4,
+          "SCALE_OR_TIMESCALE": 1
+        },
+        "maximum_child_count": 11,
+        "required_relation_count": 24,
+        "schema_depth": 2,
+        "top_level_count": 2,
+        "traversal_count": 11
+      },
+      "selected_grammar": "HIERARCHY",
+      "selection_evidence": [
+        "wide supported parent/child structure",
+        "nesting externalizes many sibling units without inventing new groups"
+      ]
+    }
+  ],
+  "domain_source_case_routing": false,
+  "schema": "spec063.grammar-selection-decisions.v1"
+}

@@ -47,6 +47,18 @@ The central rule is:
 
 > **Compression is a view over knowledge, not destruction of knowledge.**
 
+The learner-exposure boundary is equally explicit:
+
+> **Intermediate representation is not learner representation. Internal schema must be compiled through a separate cognitive-utility boundary before exposure.**
+
+```text
+grounded semantics
+→ explanatory structure
+→ conceptual schema (IR)
+→ cognitive representation compiler
+→ learner representation
+```
+
 Its preservation boundary is broader than modeled domain facts:
 
 > **Semantic preservation is necessary but not sufficient; useful explanatory structure is itself information that compression should preserve.**
