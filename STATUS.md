@@ -78,68 +78,58 @@ FURTHER COGNITIVE GAIN?
           visual grammar
 ```
 
+## SPEC-061 owner verdict
+
+`EXPLANATORY_STRUCTURE_SUPPORTED_HIERARCHY_AND_CHUNKING_INCOMPLETE`
+
+Owner review established that SPEC-061 is a meaningful improvement over SPEC-060: block-preserving explanation can preserve natural thought flow and useful compression. Remaining gaps are hierarchical conceptual chunking and preservation of necessary implications/edges.
+
+Key findings:
+- geology: one shared spreading mechanism should organize multiple example/manifestation branches rather than a flat chain;
+- astronomy: endpoint facts survived but E2 weakened a crucial implication from accumulated mass to eventual star/planet formation;
+- meteorology: information density may be irreducible linguistically, while the number of independent conceptual units remains cognitively expensive;
+- linguistic compression, chunk compression, and structural compression are distinct;
+- traversal describes how an explanation is presented; schema describes how knowledge is organized;
+- visualization remains downstream.
+
 ## Current approved work packet
 
 ```text
-NONE
+specs/SPEC-062-conceptual-chunking-schema-induction.md
 ```
 
-Status: `NONE`
+Status: `APPROVED_FOR_IMPLEMENTATION`
 
-Authority: `NONE`
+Authority: `OFFLINE_ONLY`
 
-Human gate: `NONE`
+Human gate: `OWNER_REVIEW`
 
 Promotion: `NOT_AUTHORIZED`
 
 ## Current gate
 
-SPEC-061 is implemented and awaiting owner review.
+SPEC-062 is authorized to test conceptual chunking and schema induction over the exact frozen six-source SPEC-061 substrate.
 
-The generic offline detector recovered meaning blocks, domain-neutral
-explanatory functions and supported source-order traversal across the exact six
-frozen SPEC-060 sources. Paragraph boundaries were used as weighted evidence,
-not block identity: the corpus contains both paragraphs split across blocks and
-blocks spanning multiple paragraphs.
+The experiment must preserve every frozen semantic item, qualification, explanatory block, material implication, and provenance identity. It must not optimize word count or delete facts. The primary question is whether supported hierarchy can reduce the number of independent top-level units and externalize organization the learner would otherwise construct mentally.
 
-All 149 frozen required semantic identities remain preserved in E1 and E2,
-with zero semantic, epistemic or explanatory forbidden outcomes and 100%
-provenance coverage. The case-01 output was frozen before the post-hoc owner
-pattern comparison and mechanically classified `ALIGNED`; this does not imply
-owner approval. Cases 02–06 remain blind with respect to owner pedagogical
-verdict.
+Geology, astronomy, and meteorology owner observations are post-hoc diagnostic anchors only and must not be hard-coded. Other owner-unreviewed cases remain blind.
 
-The mechanical branch is `INCONCLUSIVE`. E1 averages 0.9400 of E0 word count
-and E2 averages 0.8260, but three E1 cases do not reduce word count and one E2
-outline is slightly larger than E0 after explanatory labels are counted. Word
-count remains diagnostic rather than the optimization target.
-
-Desktop and 390×844 browser gates pass all six cases, peer-view identity,
-block/traversal rendering, evidence tracing, paragraph overlays, navigation,
-responsive layout and clean-console checks. No model/provider call, retrieval,
-production semantic change, visualization, personalization or promotion was
-performed.
-
-Canonical evidence:
-
-`examples/evaluations/spec-061-explanatory-structure-preservation-experiment-20260921/report.json`
-
-No packet is active. Promotion remains unauthorized and the owner verdict is
-pending.
+No model/provider calls, retrieval, extraction reruns, production semantic changes, diagrams, personalization, promotion, or follow-up product work are authorized.
 
 ## Current product question
 
 ```text
-trusted explanation
+grounded semantics
+      +
+explanatory structure
       ↓
-domain semantics + explanatory structure
+conceptual chunks
       ↓
-meaning blocks + functions + traversal
+supported schema / hierarchy
       ↓
-compress language inside preserved structure
+fewer independent top-level units?
       ↓
-Does representational cost fall
-without increasing reconstruction burden?
+same facts + implications + provenance
       ↓
 OWNER REVIEW
 ```
