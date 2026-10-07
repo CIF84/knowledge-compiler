@@ -207,7 +207,7 @@ specs/SPEC-067-semantic-judge-live-evaluation.md
 
 Status: `APPROVED_FOR_IMPLEMENTATION`
 
-Authority: `LIVE_MODEL_CALLS_BOUNDED`
+Authority: `LIVE_CALLS_EXPLICITLY_BOUNDED`
 
 Human gate: `OWNER_REVIEW`
 
@@ -268,7 +268,9 @@ And does 4-item batching preserve that conservatism?
 
 ## Explicitly forbidden
 
-SPEC-066 offline implementation is complete; stop at owner review and do not continue without a new approved packet. Proposed future manifests grant no authority. Do not call a model/provider; execute SPEC-065 live synthesis or semantic judging; retrieve external sources; rerun extraction; modify production KnowledgeModel semantics; add discourse relations to the production semantic registry; hard-code expected abstractions; equate grouping with abstraction; optimize only for word count; implement personalization, podcast/video ingestion, presentation generation, visualization or visual-grammar selection; promote experimental work; redesign production UI; assign a human cognitive or pedagogical verdict; implement follow-up product changes.
+SPEC-067 grants only the explicitly bounded semantic-judge authority stated above. Do not exceed 60 calls; call any model other than exact `gpt-6.1-sol` High; retry failed calls; repair malformed outputs with another call; adapt prompts/batches after observing results; execute SPEC-065 live synthesis; generate product R1/R2/R3; retrieve external sources; rerun extraction; alter fixture labels; expose expected labels to the judge; add another judge/model; modify production KnowledgeModel semantics, validators, representation/UI, navigation, My Map, or Explore Next; promote experimental work; assign the human cognitive/pedagogical verdict; or activate follow-up execution.
+
+Semantic judging is authorized **only** for the frozen SPEC-067 J1/J2 fixture evaluation under the exact call budget and contract in the active packet. All other provider/model calls remain unauthorized.
 
 ## Coordination rule
 
