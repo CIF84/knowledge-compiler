@@ -1,9 +1,22 @@
 # SPEC-063 — Schema-to-Cognitive-Representation Compilation Experiment
 
-Status: `IMPLEMENTED_AWAITING_REVIEW`
+Status: `COMPLETED`
 Authority: `OFFLINE_ONLY`
 Human gate: `OWNER_REVIEW`
 Promotion: `NOT_AUTHORIZED`
+
+## Final verdict
+
+`REPRESENTATION_COMPILATION_BLOCKED_BY_INSUFFICIENT_CONCEPTUAL_ABSTRACTION`
+
+Owner review is complete. All three P2 treatments were materially insufficient as learner representations. They reorganized or decorated largely uncompressed semantic material without producing a cognitively useful compressed knowledge architecture; too much text and information still required direct reading, and the conceptual schema remained the primary failure.
+
+Accepted findings:
+
+- `GROUPING_IS_NOT_ABSTRACTION`
+- `REPRESENTATION_WORK_PAUSED_PENDING_CORE_COMPILER_ARCHITECTURE`
+
+SPEC-063 is closed without promotion. Its implementation and evaluation evidence remain frozen. See `debriefs/DEBRIEF-063-schema-to-cognitive-representation-compilation.md` for the durable outcome and proposed next diagnostic boundary.
 
 ## Purpose
 

@@ -79,6 +79,8 @@ The architecture therefore does not treat `source → summary → shorter summar
 - **Prose is first-class.** Prose is an intentional representation when it is already cognition-efficient, not a fallback.
 - **Visuals must earn their complexity.** Structural or perceptual form is warranted only when it externalizes cognitive work the learner would otherwise perform mentally.
 - **Form follows cognitive work.** Representation choice depends on the work inherent in the knowledge, not on source or domain identity.
+- **UI tests the compiler; it does not compensate for it.** Experimental surfaces should expose whether compression and abstraction are strong enough, not hide weak compiler output behind layout, interaction, or visual polish.
+- **Validate abstraction before representation.** Learner-facing representation work remains paused until the core compression, synthesis, conceptual-abstraction, and schema-formation architecture is validated.
 - **Future context may select resolution.** Learner goals, prior knowledge, task, and time budget may eventually influence resolution, but current experiments use explicit frozen goals rather than personalization.
 - **One substrate, multiple outputs.** A single grounded knowledge substrate should be capable of supporting several independently generated resolutions and media.
 - **Fail closed on unsupported inference.** Compression must retain uncertain or qualified material when omission or reformulation could strengthen, distort, or detach it from evidence.

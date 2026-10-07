@@ -229,7 +229,11 @@ def test_project_vision_adds_only_the_required_representation_boundary(report: d
 → conceptual schema (IR)
 → cognitive representation compiler
 → learner representation""" in text
-    assert report["project_vision"]["sha256"] == spec063._sha(ROOT / spec063.PROJECT_VISION)
+    # SPEC-063 retains the vision identity frozen with its completed evidence.
+    # Later approved doctrine updates must not rewrite that historical packet.
+    assert report["project_vision"]["sha256"] == (
+        "2db3a175de328aee82dad1b463196a8660374bcdecbdbd8ab1e76c5a43257555"
+    )
     assert report["project_vision"]["ambition_expanded"] is False
 
 
@@ -253,8 +257,16 @@ def test_report_stops_at_owner_review_with_zero_calls_and_no_promotion(report: d
     }
 
 
-def test_regeneration_is_byte_deterministic(tmp_path: Path) -> None:
+def test_regeneration_is_byte_deterministic(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
     regenerated = tmp_path / "spec063"
+    original_sha = spec063._sha
+
+    def historical_vision_sha(path: Path) -> str:
+        if path.resolve() == (ROOT / spec063.PROJECT_VISION).resolve():
+            return "2db3a175de328aee82dad1b463196a8660374bcdecbdbd8ab1e76c5a43257555"
+        return original_sha(path)
+
+    monkeypatch.setattr(spec063, "_sha", historical_vision_sha)
     spec063.generate(ROOT, regenerated)
     expected = {path.relative_to(OUTPUT): path.read_bytes() for path in OUTPUT.rglob("*") if path.is_file()}
     actual = {path.relative_to(regenerated): path.read_bytes() for path in regenerated.rglob("*") if path.is_file()}

@@ -111,6 +111,25 @@ Canonical lesson:
 
 Do not modify the frozen SPEC-062 schema in response to this verdict. The next experiment isolates projection only.
 
+## SPEC-063 owner verdict
+
+`REPRESENTATION_COMPILATION_BLOCKED_BY_INSUFFICIENT_CONCEPTUAL_ABSTRACTION`
+
+Accepted findings:
+
+- `GROUPING_IS_NOT_ABSTRACTION`
+- `REPRESENTATION_WORK_PAUSED_PENDING_CORE_COMPILER_ARCHITECTURE`
+
+All three P2 treatments were materially insufficient as learner representations. They reorganized or decorated largely uncompressed semantic material, leaving too much text and information for direct reading and failing to produce a cognitively useful compressed knowledge architecture. The primary failure remains in schema, synthesis, and conceptual abstraction rather than learner-facing visual grammar.
+
+SPEC-063 is closed without promotion. Its evidence remains frozen.
+
+Canonical doctrine:
+
+> **UI exists to test the compiler, not to compensate for it.**
+
+> **Representation work remains paused until the core compression and abstraction architecture is validated.**
+
 ## Current approved work packet
 
 ```text
@@ -127,33 +146,39 @@ Promotion: `NOT_AUTHORIZED`
 
 ## Current gate
 
-SPEC-063 is implemented and awaiting owner review.
-
-The isolated deterministic compiler projected the exact frozen SPEC-062 schemas for Geology, Astronomy, and Meteorology into three bounded learner-facing forms: `BRANCHING`, `CAUSAL_OR_DEPENDENCY_CHAIN`, and `HIERARCHY`. P0 preserves the frozen SPEC-061 prose baseline, P1 preserves the frozen SPEC-062 raw schema control, and P2 is independently compiled from the frozen schema.
-
-All 141 frozen semantic items and all 54 material implications remain recoverable with full provenance coverage, zero schema mutations, and zero unsupported inferences. Raw compiler IDs, enum labels, hashes, relation ledgers, and block counts are absent from P2 learner content. The exact 47-file SPEC-062 evaluation tree retains aggregate identity `8604d68cee8b472292489820ae57e482ae94786d659b38328197a58b02a61df8`.
-
-The mechanical branch is `COGNITIVE_REPRESENTATION_SAFE_FOR_OWNER_REVIEW`. Desktop and 390×844 browser gates pass all three cases, P0/P1/P2/Audit loading, case selection, P1/P2 distinction, detail/evidence interaction, responsive layout, horizontal-overflow, and clean-console checks. No model/provider call, retrieval, extraction rerun, schema repair, domain/case routing, personalization, production change, promotion, or human-verdict assignment occurred.
+SPEC-063 owner review is complete. Its negative cognitive verdict does not invalidate the integrity of its frozen machine evidence: 141/141 semantic items and 54/54 material implications remained recoverable with full provenance, zero schema mutations, and zero unsupported inferences. It establishes that preservation plus perceptual grouping did not produce adequate conceptual abstraction.
 
 Canonical evidence:
 
 `examples/evaluations/spec-063-schema-to-cognitive-representation-20261007/report.json`
 
-No packet is active. Promotion remains unauthorized and the owner verdict is pending.
+Durable outcome:
+
+`debriefs/DEBRIEF-063-schema-to-cognitive-representation-compilation.md`
+
+A proposed, unapproved architecture-reset packet is available at:
+
+`specs/SPEC-064-progressive-compression-and-conceptual-abstraction-diagnostic.md`
+
+SPEC-064 is `DRAFT`. It proposes a text/ASCII-only diagnostic over the same three frozen sources using `R0 SOURCE → R1 ESSENTIAL PROSE → R2 SYNTHESIZED KNOWLEDGE → R3 CONCEPTUAL ARCHITECTURE`. It is not active and does not authorize implementation or model/provider calls.
+
+No packet is active. SPEC-064 requires owner and ChatGPT review before activation. Promotion remains unauthorized.
 
 ## Current product question
 
 ```text
-P0 frozen explanatory prose
-             ↕
-P1 frozen raw schema
-             ↕
-P2 compiled cognitive representation
-             ↓
-Can a trusted machine schema become a learner representation
-whose organization is perceptible without exposing its machinery?
-             ↓
-OWNER REVIEW
+R0 SOURCE
+  ↓ linguistic compression
+R1 ESSENTIAL PROSE
+  ↓ semantic synthesis
+R2 SYNTHESIZED KNOWLEDGE
+  ↓ conceptual abstraction + schema formation
+R3 CONCEPTUAL ARCHITECTURE
+  ↓
+Can fewer, stronger conceptual handles reduce reconstruction
+without losing semantics, implications, context, or provenance?
+  ↓
+OWNER + CHATGPT AUTHORIZATION REVIEW
 ```
 
 ## Frozen / protected state
@@ -163,6 +188,7 @@ OWNER REVIEW
 - Candidate B v2 extraction/evidence;
 - SPEC-052 admitted KnowledgeModels;
 - SPEC-055–060 evidence/artifacts;
+- SPEC-061 through SPEC-063 evidence/artifacts and owner verdicts;
 - SPEC-057 cognitive-utility decisions;
 - trusted semantic vocabulary/propositions;
 - grounding/provenance/validators;
@@ -174,7 +200,7 @@ OWNER REVIEW
 
 ## Explicitly forbidden
 
-Do not call a model/provider; retrieve external sources; rerun extraction; modify production KnowledgeModel semantics; add discourse relations to the production semantic registry; hard-code case-01 owner structure; equate paragraphs with meaning blocks; optimize only for word count; implement personalization, podcast/video ingestion, presentation generation, visualization or visual-grammar selection; promote experimental work; redesign production UI; assign the human pedagogical verdict; implement follow-up product changes.
+Do not implement SPEC-064 without explicit owner and ChatGPT authorization. Do not call a model/provider; retrieve external sources; rerun extraction; modify production KnowledgeModel semantics; add discourse relations to the production semantic registry; hard-code expected abstractions; equate grouping with abstraction; optimize only for word count; implement personalization, podcast/video ingestion, presentation generation, visualization or visual-grammar selection; promote experimental work; redesign production UI; assign a human cognitive or pedagogical verdict; implement follow-up product changes.
 
 ## Coordination rule
 
