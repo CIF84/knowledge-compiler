@@ -130,67 +130,70 @@ Canonical doctrine:
 
 > **Representation work remains paused until the core compression and abstraction architecture is validated.**
 
+## SPEC-064 owner verdict
+
+`DETERMINISTIC_PRESERVATION_CONFIRMED_SEMANTIC_ABSTRACTION_REQUIRES_GENERATIVE_CANDIDATE`
+
+Accepted evidence:
+- deterministic machinery preserved all 141 semantic commitments and 54 implications with full backwards recovery;
+- R0/R1/R2/R3 aggregate words were 1,315 / 1,275 / 1,315 / 1,576;
+- carriers were 66 / 69 / 63 / 63;
+- only three supported groups and two labels were produced;
+- zero explanatory abstractions were earned;
+- deterministic transformation is strong at trust/preservation but did not demonstrate semantic synthesis or conceptual abstraction.
+
+Canonical division-of-labor hypothesis:
+
+> **Generative intelligence proposes semantic synthesis and abstraction; deterministic compiler machinery validates trust boundaries and decides admission.**
+
+This remains unvalidated until a bounded live experiment succeeds.
+
 ## Current approved work packet
 
 ```text
-NONE
+specs/SPEC-065-bounded-generative-semantic-synthesis-harness.md
 ```
 
-Status: `NONE`
+Status: `APPROVED_FOR_IMPLEMENTATION`
 
-Authority: `NONE`
+Authority: `OFFLINE_ONLY`
 
-Human gate: `NONE`
+Human gate: `OWNER_REVIEW`
 
 Promotion: `NOT_AUTHORIZED`
 
 ## Current gate
 
-SPEC-063 owner review is complete. Its negative cognitive verdict does not invalidate the integrity of its frozen machine evidence: 141/141 semantic items and 54/54 material implications remained recoverable with full provenance, zero schema mutations, and zero unsupported inferences. It establishes that preservation plus perceptual grouping did not produce adequate conceptual abstraction.
+SPEC-065 is authorized to implement and freeze the offline harness, schemas, prompts, fixtures, validators, capability-gap inventory, and proposed future execution manifest for a bounded generative semantic-synthesis experiment.
 
-Canonical evidence:
+It must make **zero model/provider calls**.
 
-`examples/evaluations/spec-063-schema-to-cognitive-representation-20261007/report.json`
+The proposed future contract is staged:
+- Stage A: semantic synthesis;
+- Stage B: explanatory abstraction;
+- Stage C: conceptual architecture.
 
-Durable outcome:
+Each stage is fail-closed and downstream stages may consume only admitted prior-stage output plus the frozen authoritative substrate.
 
-`debriefs/DEBRIEF-063-schema-to-cognitive-representation-compilation.md`
+The harness must explicitly distinguish checks that are genuinely deterministic from semantic judgments that cannot be proven without another judge. Such limits must be recorded as `SEMANTIC_VALIDATION_GAP`, not hidden behind heuristics.
 
-The completed architecture-reset packet is available at:
+Proposed future maximum call budget: 9 calls (3 sources × up to 3 stages), zero retries/follow-ups.
 
-`specs/SPEC-064-progressive-compression-and-conceptual-abstraction-diagnostic.md`
-
-SPEC-064 is `IMPLEMENTED_AWAITING_REVIEW`. Its text/ASCII-only diagnostic over the same three frozen sources has completed using `R0 SOURCE → R1 ESSENTIAL PROSE → R2 SYNTHESIZED KNOWLEDGE → R3 CONCEPTUAL ARCHITECTURE`.
-
-Preservation permits a frozen commitment, qualification, explanatory dependency, or implication to be `EXPLICIT`, truthfully `SUBSUMED`, or `STRUCTURALLY_ENCODED` with exact backwards trace. Compressed learner views need not restate every source unit independently. Validated R1→R2→R3 transformations may compose, while the same frozen grounded substrate remains authoritative and independently available for validation and recovery at every stage.
-
-Mechanical branch: `GROUPING_REMAINS_NON_ABSTRACTIVE`. Architecture finding: `BOUNDED_MODEL_CANDIDATE_REQUIRES_SEPARATE_AUTHORIZATION`. All 141 semantic commitments and 54 material implications remain recoverable at every stage; zero explanatory abstractions were earned. Aggregate R0/R1/R2/R3 word counts are 1,315 / 1,275 / 1,315 / 1,576. Supported grouping has not demonstrated conceptual compression.
-
-Evidence: `examples/evaluations/spec-064-progressive-abstraction-diagnostic-20261007/diagnostic-report.md` and `report.json`. All 813 offline tests pass, deterministic regeneration is byte-identical, and the 2,016-file protected tree remains unchanged.
-
-Current stop: `OWNER_REVIEW` with owner + ChatGPT review required. Human verdict: `PENDING`. No promotion, model/provider calls, retrieval, production changes, follow-up execution or new packet is authorized. The active pointer is `NONE`.
-
-Review command:
-
-```bash
-open examples/evaluations/spec-064-progressive-abstraction-diagnostic-20261007/owner-review.md
-```
+No source transmission or live execution is authorized.
 
 ## Current product question
 
 ```text
-R0 SOURCE
-  ↓ linguistic compression
-R1 ESSENTIAL PROSE
-  ↓ semantic synthesis
-R2 SYNTHESIZED KNOWLEDGE
-  ↓ conceptual abstraction + schema formation
-R3 CONCEPTUAL ARCHITECTURE
-  ↓
-Can fewer, stronger conceptual handles reduce reconstruction
-without losing semantics, implications, context, or provenance?
-  ↓
-OWNER + CHATGPT REVIEW AFTER OFFLINE DIAGNOSTIC
+frozen trusted substrate
+        ↓
+bounded generative candidate
+        ↓
+deterministic trust/admission boundary
+        ↓
+admit or fail closed
+        ↓
+Can generative synthesis provide the abstraction
+that deterministic transformation could not?
 ```
 
 ## Frozen / protected state
