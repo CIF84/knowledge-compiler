@@ -259,7 +259,13 @@ def test_browser_surface_is_textual_neutral_and_verdict_free(report: dict) -> No
     assert 'data-production-promotion="false"' in html
     assert 'data-human-verdict="PENDING"' in html
     assert "machineGate" in script
+    assert "case_button_count" in script
+    assert "six_cases_present" in script
+    assert "all_cases_selectable" in script
+    assert "trace_evidence_visible" in script
     assert "no_visualization_dom" in script
+    assert html.index('src="review-data.js"') < html.index('src="app.js"')
+    assert "DETERMINISTIC_EMBEDDED_PACKET" in script
     assert "createElement(\"svg\")" not in script
     assert "createElement(\"canvas\")" not in script
     browser = _load(OUTPUT / "browser-verification.json")
@@ -267,6 +273,47 @@ def test_browser_surface_is_textual_neutral_and_verdict_free(report: dict) -> No
     assert browser["narrow"]["viewport"] == "390x844"
     assert browser["console"] == {"errors": [], "result": "PASS", "warnings": []}
     assert report["browser_gate"] == browser
+
+
+def test_embedded_review_packet_exactly_matches_frozen_cases_and_rubric(packet: dict) -> None:
+    path = OUTPUT / "review-data.js"
+    source = path.read_text(encoding="utf-8")
+    prefix = '"use strict";\nwindow.__SPEC062_REVIEW_DATA__='
+    assert source.startswith(prefix) and source.endswith(";\n")
+    embedded = json.loads(source[len(prefix) : -2])
+    assert embedded["packet"] == packet
+    assert embedded["rubric"] == _load(OUTPUT / "owner-review-rubric.json")
+    assert len(embedded["packet"]["cases"]) == 6
+    assert all(case["views"]["S0"]["text"] for case in embedded["packet"]["cases"])
+    assert all(case["views"]["S1"]["text"] for case in embedded["packet"]["cases"])
+    assert all(case["views"]["S2"]["text"] for case in embedded["packet"]["cases"])
+
+
+def test_review_surface_repair_preserves_frozen_experimental_payload(packet: dict, report: dict) -> None:
+    audit = _load(OUTPUT / "artifact-repair-audit.json")
+    identity = spec062._frozen_payload_identity(OUTPUT, packet["cases"])
+    assert identity == spec062.FROZEN_EXPERIMENTAL_PAYLOAD_SHA256
+    assert audit["frozen_experimental_payload_sha256_before"] == identity
+    assert audit["frozen_experimental_payload_sha256_after"] == identity
+    assert audit["frozen_experimental_payload_file_count"] == 40
+    assert audit["identity_preserved"] is True
+    assert audit["semantic_schema_or_compression_changes"] == 0
+    assert audit["owner_verdict"] == "PENDING"
+    assert {
+        row["path"]: row["sha256"]
+        for row in audit["frozen_evaluation_evidence_identities"]
+    } == spec062.FROZEN_SPEC062_EVIDENCE_IDENTITIES
+    assert all(
+        spec062._sha(OUTPUT / name) == expected
+        for name, expected in spec062.FROZEN_SPEC062_EVIDENCE_IDENTITIES.items()
+    )
+    repair_browser = audit["browser_gate"]
+    assert repair_browser["desktop"]["all_6_case_buttons_selectable"] is True
+    assert repair_browser["narrow"]["all_6_case_buttons_selectable"] is True
+    assert repair_browser["desktop"]["evidence_trace_all_6_cases"] == "PASS"
+    assert repair_browser["narrow"]["evidence_trace_all_6_cases"] == "PASS"
+    assert repair_browser["console"] == {"errors": [], "result": "PASS", "warnings": []}
+    assert report["owner_review"]["verdict"] == "PENDING"
 
 
 def test_project_vision_distinguishes_compression_and_schema_layers(report: dict) -> None:

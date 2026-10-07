@@ -1,0 +1,70 @@
+{
+  "browser_gate": {
+    "artifact_loading": {
+      "deterministic_embedded_packet": "PASS",
+      "direct_file_dependency_audit": "PASS: no fetch required",
+      "http_server_review": "PASS",
+      "silent_empty_shell_prevented": true
+    },
+    "browser": "Codex in-app browser (Chromium desktop engine)",
+    "console": {
+      "errors": [],
+      "result": "PASS",
+      "warnings": []
+    },
+    "desktop": {
+      "all_6_case_buttons_selectable": true,
+      "all_6_cases_loaded": true,
+      "evidence_trace_all_6_cases": "PASS",
+      "horizontal_overflow": false,
+      "result": "PASS",
+      "s0_s1_s2_audit_switching": "PASS",
+      "viewport": "1280x720"
+    },
+    "narrow": {
+      "all_6_case_buttons_selectable": true,
+      "all_6_cases_loaded": true,
+      "evidence_trace_all_6_cases": "PASS",
+      "horizontal_overflow": false,
+      "result": "PASS",
+      "s0_s1_s2_audit_switching": "PASS",
+      "single_column_workspace": true,
+      "viewport": "390x844"
+    },
+    "status": "PASS"
+  },
+  "classification": "EVALUATION_SURFACE_DEFECT_REPAIR",
+  "defect": "Direct file review could not satisfy fetch()-only case loading.",
+  "frozen_evaluation_evidence_identities": [
+    {
+      "path": "report.json",
+      "sha256": "34d55c21f21d18478bc5455cf24b33850bae8572d8d14c5a6746c9fd60061fb3"
+    },
+    {
+      "path": "browser-verification.json",
+      "sha256": "bac01b84e36d42f9cb5d44e730fc5cd74e14145e72725d3dc25ed31b8d63315a"
+    }
+  ],
+  "frozen_experimental_payload_file_count": 40,
+  "frozen_experimental_payload_sha256_after": "7c05b8fbea3711f91438c050312c42a2b92fb7d843cf697518def114d6cd619e",
+  "frozen_experimental_payload_sha256_before": "7c05b8fbea3711f91438c050312c42a2b92fb7d843cf697518def114d6cd619e",
+  "identity_preserved": true,
+  "owner_verdict": "PENDING",
+  "repair": "Deterministic embedded review data with visible fail-closed loading errors.",
+  "repaired_surface_identities": [
+    {
+      "path": "index.html",
+      "sha256": "5919726fa178306ac4ffe95b5cb4a29824236dcd004ff84adf45454963b22d1f"
+    },
+    {
+      "path": "app.js",
+      "sha256": "842315a0679db436ca7a96a8a16788beba19972c4c51430c0fc69ab7170373d9"
+    },
+    {
+      "path": "review-data.js",
+      "sha256": "a4f3a277c93743fc3f3d85b945f04e6076c8781580f559ff6cd46595b06630a4"
+    }
+  ],
+  "schema": "spec062.artifact-repair-audit.v1",
+  "semantic_schema_or_compression_changes": 0
+}

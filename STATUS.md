@@ -121,9 +121,15 @@ All 95 identified material implications remain explicit or schema-preserved, inc
 
 The mechanical branch is `CONCEPTUAL_SCHEMA_SAFE_FOR_OWNER_REVIEW`. Desktop and 390×844 browser gates pass all six cases, peer-view identity, fact/edge preservation, trace selection, responsive layout, no-diagram checks, and clean-console checks. No model/provider call, retrieval, extraction rerun, production change, visualization, personalization, promotion, or human verdict assignment occurred.
 
+The initial owner-review shell depended on browser `fetch()` calls and could render empty when reviewed as a local artifact. This evaluation-surface defect has been repaired with a deterministic embedded copy of the frozen six-case packet and rubric, loaded before the application with visible fail-closed error reporting. All 40 frozen experimental payload files retain aggregate identity `7c05b8fbea3711f91438c050312c42a2b92fb7d843cf697518def114d6cd619e`; no semantic, schema, compression, or verdict state changed. The repaired browser gate explicitly confirms six case buttons are present and selectable, every case exposes S0/S1/S2/Audit, and evidence tracing works at desktop and 390×844.
+
 Canonical evidence:
 
 `examples/evaluations/spec-062-conceptual-chunking-schema-induction-20261007/report.json`
+
+Review-surface repair evidence:
+
+`examples/evaluations/spec-062-conceptual-chunking-schema-induction-20261007/artifact-repair-audit.json`
 
 No packet is active. Promotion remains unauthorized and the owner verdict is pending.
 

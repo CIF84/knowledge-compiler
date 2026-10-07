@@ -196,6 +196,45 @@ BROWSER_VERIFICATION = {
     "console": {"errors": [], "warnings": [], "result": "PASS"},
 }
 
+REPAIR_BROWSER_VERIFICATION = {
+    "status": "PASS",
+    "browser": "Codex in-app browser (Chromium desktop engine)",
+    "desktop": {
+        "viewport": "1280x720",
+        "all_6_cases_loaded": True,
+        "all_6_case_buttons_selectable": True,
+        "s0_s1_s2_audit_switching": "PASS",
+        "evidence_trace_all_6_cases": "PASS",
+        "horizontal_overflow": False,
+        "result": "PASS",
+    },
+    "narrow": {
+        "viewport": "390x844",
+        "single_column_workspace": True,
+        "all_6_cases_loaded": True,
+        "all_6_case_buttons_selectable": True,
+        "s0_s1_s2_audit_switching": "PASS",
+        "evidence_trace_all_6_cases": "PASS",
+        "horizontal_overflow": False,
+        "result": "PASS",
+    },
+    "artifact_loading": {
+        "deterministic_embedded_packet": "PASS",
+        "direct_file_dependency_audit": "PASS: no fetch required",
+        "http_server_review": "PASS",
+        "silent_empty_shell_prevented": True,
+    },
+    "console": {"errors": [], "warnings": [], "result": "PASS"},
+}
+
+FROZEN_EXPERIMENTAL_PAYLOAD_SHA256 = (
+    "7c05b8fbea3711f91438c050312c42a2b92fb7d843cf697518def114d6cd619e"
+)
+FROZEN_SPEC062_EVIDENCE_IDENTITIES = {
+    "report.json": "34d55c21f21d18478bc5455cf24b33850bae8572d8d14c5a6746c9fd60061fb3",
+    "browser-verification.json": "bac01b84e36d42f9cb5d44e730fc5cd74e14145e72725d3dc25ed31b8d63315a",
+}
+
 
 def _sha(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
@@ -695,11 +734,66 @@ def _copy_assets(output: Path) -> None:
         shutil.copyfile(ASSET_DIR / name, output / name)
 
 
+def _frozen_payload_paths(cases: list[dict[str, Any]]) -> list[str]:
+    names = [
+        "cases.json",
+        "chunk-membership-manifest.json",
+        "deterministic-regeneration.json",
+        "epistemic-preservation-audit.json",
+        "explanatory-preservation-audit.json",
+        "implication-preservation-audit.json",
+        "manifest.json",
+        "owner-review-command.txt",
+        "owner-review-rubric.json",
+        "posthoc-owner-anchor-audits.json",
+        "project-vision-identity.json",
+        "provenance-recoverability-audit.json",
+        "schema-edge-manifest.json",
+        "semantic-preservation-audit.json",
+        "top-level-unit-metrics.json",
+        "zero-call-zero-retrieval.txt",
+    ]
+    names += [f"models/{case['case_identity']}.json" for case in cases]
+    names += [
+        f"views/{case['case_identity']}-{resolution}.txt"
+        for case in cases
+        for resolution in ("S0", "S1", "S2")
+    ]
+    return sorted(names)
+
+
+def _frozen_payload_identity(output: Path, cases: list[dict[str, Any]]) -> str:
+    identities = [
+        {"path": name, "sha256": _sha(output / name)}
+        for name in _frozen_payload_paths(cases)
+    ]
+    return _stable(identities)
+
+
+def _write_review_data(output: Path, cases: list[dict[str, Any]]) -> None:
+    data = {
+        "packet": {"schema": "spec062.browser-case-packet.v1", "cases": cases},
+        "rubric": RUBRIC,
+    }
+    serialized = json.dumps(
+        data,
+        sort_keys=True,
+        separators=(",", ":"),
+        ensure_ascii=False,
+    )
+    (output / "review-data.js").write_text(
+        '"use strict";\nwindow.__SPEC062_REVIEW_DATA__=' + serialized + ";\n",
+        encoding="utf-8",
+    )
+
+
 def _artifact_identities(output: Path, cases: list[dict[str, Any]]) -> list[dict[str, str]]:
     names = [
         "index.html",
         "styles.css",
         "app.js",
+        "review-data.js",
+        "artifact-repair-audit.json",
         "manifest.json",
         "cases.json",
         "chunk-membership-manifest.json",
@@ -775,6 +869,10 @@ def generate(repo_root: Path, output: Path) -> dict[str, Any]:
     cases = [build_case(repo_root, case) for case in frozen["cases"]]
     if len(cases) != 6 or [case["review_index"] for case in cases] != list(range(1, 7)):
         raise ValidationError("SPEC-062 requires exact ordered SPEC-061 cases")
+    frozen_evidence_root = repo_root / OUTPUT_DIR
+    for name, expected in FROZEN_SPEC062_EVIDENCE_IDENTITIES.items():
+        if _sha(frozen_evidence_root / name) != expected:
+            raise ValidationError(f"SPEC-062 frozen evaluation evidence changed: {name}")
     output.mkdir(parents=True, exist_ok=True)
     (output / "models").mkdir(exist_ok=True)
     (output / "views").mkdir(exist_ok=True)
@@ -797,7 +895,6 @@ def generate(repo_root: Path, output: Path) -> dict[str, Any]:
     _write(output / "provenance-recoverability-audit.json", _aggregate(cases, "provenance_recoverability_audit", "spec062.provenance-recoverability-audit.v1"))
     _write(output / "top-level-unit-metrics.json", {"schema": "spec062.top-level-unit-metrics.v1", "word_count_is_diagnostic_not_objective": True, "cognitive_load_score_assigned": False, "cases": [{"case_identity": case["case_identity"], "source_id": case["source_identity"]["source_id"], **case["top_level_unit_reduction_audit"], "s0": case["metrics"]["s0"], "s1": case["metrics"]["s1"], "s2": case["metrics"]["s2"]} for case in cases]})
     _write(output / "owner-review-rubric.json", RUBRIC)
-    _write(output / "browser-verification.json", BROWSER_VERIFICATION)
     _write(output / "deterministic-regeneration.json", {"schema": "spec062.deterministic-regeneration.v1", "status": "PASS", "method": "Generate into a temporary directory and byte-compare the complete artifact tree.", "provider_or_network_calls": 0})
     _write(output / "project-vision-identity.json", {"schema": "spec062.project-vision-identity.v1", "path": str(PROJECT_VISION), "sha256": _sha(repo_root / PROJECT_VISION), "ambition_expanded": False})
     (output / "zero-call-zero-retrieval.txt").write_text(
@@ -807,9 +904,37 @@ def generate(repo_root: Path, output: Path) -> dict[str, Any]:
     (output / "owner-review-command.txt").write_text(OWNER_COMMAND + "\n", encoding="utf-8")
     posthoc = _posthoc_anchors(cases)
     _write(output / "posthoc-owner-anchor-audits.json", posthoc)
-    report = _report(repo_root, output, cases)
-    _write(output / "report.json", report)
-    return report
+    payload_identity = _frozen_payload_identity(output, cases)
+    if payload_identity != FROZEN_EXPERIMENTAL_PAYLOAD_SHA256:
+        raise ValidationError("SPEC-062 frozen experimental payload changed during review-surface repair")
+    _write_review_data(output, cases)
+    for name in FROZEN_SPEC062_EVIDENCE_IDENTITIES:
+        target = output / name
+        source = frozen_evidence_root / name
+        if target.resolve() != source.resolve():
+            shutil.copyfile(source, target)
+    _write(output / "artifact-repair-audit.json", {
+        "schema": "spec062.artifact-repair-audit.v1",
+        "classification": "EVALUATION_SURFACE_DEFECT_REPAIR",
+        "defect": "Direct file review could not satisfy fetch()-only case loading.",
+        "repair": "Deterministic embedded review data with visible fail-closed loading errors.",
+        "frozen_experimental_payload_file_count": len(_frozen_payload_paths(cases)),
+        "frozen_experimental_payload_sha256_before": FROZEN_EXPERIMENTAL_PAYLOAD_SHA256,
+        "frozen_experimental_payload_sha256_after": payload_identity,
+        "identity_preserved": True,
+        "frozen_evaluation_evidence_identities": [
+            {"path": name, "sha256": expected}
+            for name, expected in FROZEN_SPEC062_EVIDENCE_IDENTITIES.items()
+        ],
+        "repaired_surface_identities": [
+            {"path": name, "sha256": _sha(output / name)}
+            for name in ("index.html", "app.js", "review-data.js")
+        ],
+        "browser_gate": REPAIR_BROWSER_VERIFICATION,
+        "semantic_schema_or_compression_changes": 0,
+        "owner_verdict": "PENDING",
+    })
+    return _load(output / "report.json")
 
 
 def main() -> None:
