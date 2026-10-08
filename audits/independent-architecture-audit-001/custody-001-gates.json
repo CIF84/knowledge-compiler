@@ -1,0 +1,19 @@
+{
+  "focused_control_plane_and_bench_regression": {"command": ".venv/bin/pytest tests/test_custody001.py tests/test_bench001.py tests/test_control_plane.py", "passed": 65, "failed": 0, "warnings": 0},
+  "full_offline_suite": {"command": ".venv/bin/pytest", "passed": 1191, "failed": 1, "seconds": 18.86, "failure": "tests/test_audit001_dossier.py::test_deterministic_reproduction_and_all_historical_bytes", "diagnostic": "At index 377361 diff: b'3' != b'5'; tests/test_audit001_dossier.py:24 compares frozen dossier with regeneration from mutable STATUS.md", "pre_existing": true, "owner_accepted_non_blocking": true, "test_or_historical_evidence_repaired_skipped_or_waived": false},
+  "deterministic_regeneration": "PASS",
+  "source_family_completeness": "FAMILY_COMPLETENESS_UNRESOLVED",
+  "sanitized_manifest": "IDENTITY_ONLY_NOT_A_COMPLETE_OR_RELEASED_EXPORT",
+  "historical_evidence_preservation": "PASS_ALL_CANONICAL_INPUT_FILES_EXCEPT_AUTHORIZED_STATUS_AND_CONTRACT_HEADER_CLOSURE",
+  "candidate_material_import_or_inspection": false,
+  "provider_model_calls": 0,
+  "benchmark_source_retrievals": 0,
+  "selector_authority_or_zip_released": false,
+  "bench_owner_verdict_recorded_without_rewriting_frozen_bench_result": true,
+  "bench001_freeze_regeneration": "PASS",
+  "control_plane_closure": "PASS_NONE_WITH_INACTIVE_METADATA_AND_OWNER_REVIEW_GATE",
+  "sanitized_identity_inventory_scope_check": "PASS_NO_ARM_OR_ARCHITECTURE_OR_PERFORMANCE_OR_LEARNER_CONTENT",
+  "secret_safety": "PASS_NO_CREDENTIAL_VALUES_READ_OR_EXPORTED",
+  "git_diff_check": "PASS",
+  "unrelated_user_files_preserved": {".DS_Store": "8b30a0051e964b6172885361d8a0ff6d7ea244db9ddc45f11f4584da6e55cc00", "audits/.DS_Store": "8ff6060753227eb2dd944e8ec18ecfcee0622c847c6e3f0130a22a4aeb3110a7", "audits/independent-architecture-audit-001/.DS_Store": "87328dd7217c49239520a3de02427d1a630f9e7264b2379ca67248bc6e05bcac", "audits/independent-architecture-audit-001/benchmark-readiness-v1/.DS_Store": "c118665c9dcfb5771fd4d0de4464c1f3dde3a85c4a206768883afe561489b919", "examples/.DS_Store": "6bd94ae2a81d8c0a81b221aa7260d97bdce217b0a3e4cf7208aa05111056b596", "examples/evaluations/.DS_Store": "a1e09f14ee4d93c4fdbd072ca6a12a7699734042f9357087934f46b6cde5200b"}
+}

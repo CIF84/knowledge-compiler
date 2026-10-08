@@ -268,12 +268,23 @@ Promotion: `NOT_AUTHORIZED`
 
 ## Current gate
 
-`OWNER_REVIEW` — BENCH-001 source-blind harness is implemented and frozen; no active
-execution authority remains. Mechanical readiness is `INCONCLUSIVE`, with next step
+BENCH-001 source-blind harness is implemented and frozen. Mechanical readiness remains
+`INCONCLUSIVE`, with its recorded next step
 `MORE_READINESS_DIAGNOSIS`, because the canonical pre-existing AUDIT-001 regeneration
 test fails after control-plane STATUS changes. Frozen AUDIT-001 evidence is unchanged.
 See `audits/independent-architecture-audit-001/benchmark-readiness-v1/readiness-report.json`
-for gates, limits and the preserved failure. Owner verdict is `PENDING`.
+for gates, limits and the preserved failure. Owner verdict:
+`BENCHMARK_HARNESS_ACCEPTED_PREEXISTING_AUDIT_HASH_FAILURE_NON_BLOCKING`.
+
+`OWNER_REVIEW` — CUSTODY-001 stopped fail-closed at `FAMILY_COMPLETENESS_UNRESOLVED`.
+The recovered electromagnetism family has identifiable response artifacts, but its
+original input source/passage and lineage are not established. The mixed response
+cannot be exported wholesale as source-only material, and later fixtures are not
+an established replacement. The incomplete identity inventory is not clearance.
+No selector-v1.1 authority, continuation ZIP or continuation prompt was issued.
+See `audits/independent-architecture-audit-001/custody-001-report.json`.
+No active approved packet remains; source selection, retrieval, candidate inspection,
+adjudication, model/provider calls and benchmark execution remain unauthorized here.
 
 Frozen benchmark arms:
 - S — source control;
