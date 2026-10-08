@@ -199,59 +199,71 @@ ADMIT / REJECT / UNCERTAIN
 
 `UNCERTAIN` fails closed. Model confidence is not proof.
 
+## SPEC-067 owner verdict
+
+`LIVE_JUDGE_NOT_TESTED_ATOMIC_EXECUTION_CONTRACT_REQUIRES_REPAIR`
+
+Accepted evidence:
+- zero provider/model calls and zero fixture transmissions occurred;
+- semantic-judge quality remains unmeasured;
+- the frozen 92-fixture corpus contains 76 opaque carriers and 16 explicit two-component AND fixtures;
+- the proposed 48-fixture subset contained 49 declared carriers;
+- J1 requires one independently validated atomic commitment per call;
+- fixture identity is not atomic-judgment identity;
+- one valid conjunct must never license an unsupported conjunct;
+- silently collapsing a fixture into one atom or expanding the frozen call manifest would weaken/violate the trust contract.
+
+Canonical rule:
+
+> **Fixture is the evaluation container; atomic commitment is the semantic judgment unit.**
+
 ## Current approved work packet
 
 ```text
-NONE
+specs/SPEC-068-atomic-judgment-contract-repair.md
 ```
 
-Status: `NONE`
+Status: `APPROVED_FOR_IMPLEMENTATION`
 
-Authority: `NONE`
+Authority: `OFFLINE_ONLY`
 
-Human gate: `NONE`
+Human gate: `OWNER_REVIEW`
 
 Promotion: `NOT_AUTHORIZED`
 
 ## Current gate
 
-`OWNER_REVIEW` — SPEC-067 stopped fail-closed at offline preflight.
+SPEC-068 is authorized to audit the full frozen SPEC-066 corpus and establish an explicit fixture→atom→fixture-aggregation contract.
 
-Mechanical branch: `FIXTURE_OR_PREFLIGHT_INVALID`.
-Recommended next step: `FIXTURE_REDESIGN_REQUIRED` (not activated).
-Owner verdict: `PENDING`. No promotion.
+It must not assume opaque natural-language carriers are atomic.
 
-The frozen precision-first prompt requires a previously validated atomic
-commitment, and the SPEC-066 executable receipt gate requires independent
-exhaustive decomposition admission. The corpus retains 76 unresolved opaque
-carriers plus 16 two-component AND fixtures. The deterministic 48-fixture
-selection contains 49 declared carriers, including the two-component negative
-control `case-023`. No independently validated atomic admission was established.
+Only `EXPLICIT_ATOMIC` and `EXPLICIT_COMPOSITE_DECOMPOSABLE` fixtures with safely derivable atom-level truth may enter a proposed future live subset.
 
-No fixture transmission or provider/model request occurred: 0 of 60 slots
-attempted. No retry, repair, atom collapse, whole-fixture replacement, prompt
-change, or validator weakening was performed. Remote provider compatibility and
-all live J1/J2 metrics remain unmeasured. Credential availability does not
-resolve this contract conflict.
+The packet must:
+- reconcile all 92 fixtures;
+- preserve every conjunct;
+- freeze atom IDs and fixture membership;
+- prove atom-level expected-label derivation;
+- define fail-closed fixture aggregation;
+- retain mixed-validity composite controls where supported;
+- measure category/domain coverage lost through conservative exclusion;
+- recalculate future J1/J2 manifests and call budgets from atoms rather than fixtures.
 
-Frozen identities, proposed non-executable manifests, protected-state hashes,
-the unattempted ledger, and review findings are preserved in:
-`examples/evaluations/spec-067-semantic-judge-live-evaluation-20261007/owner-review.md`.
-
-Owner/architecture review must resolve the fixture-versus-validated-atom boundary
-before a new executable packet is authorized. Same-family generator/judge
-correlated error remains unresolved. No follow-up work is active.
+No model/provider calls, semantic judging, atomization by model, source retrieval, fixture repair, synthesis, or follow-up live execution are authorized.
 
 ## Current product question
 
 ```text
-frozen semantic fixture / declared carriers
-      ↓
-independently validated exhaustive atom boundary?
-      ↓
-NO — stop before transmission
-      ↓
-owner/architecture review of the execution contract
+fixture
+  ↓
+independently validated atom(s)
+  ↓
+one atom = one semantic judgment
+  ↓
+fail-closed fixture aggregation
+  ↓
+Can a representative live judge experiment
+be executed without pretending unresolved text is atomic?
 ```
 
 ## Frozen / protected state
