@@ -252,70 +252,64 @@ Canonical benchmark question:
 
 > **What is the minimum machinery required to reproduce the learner value that motivated Knowledge Compiler, without unacceptable fidelity loss?**
 
+## CUSTODY-001 owner verdict
+
+`FAMILY_COMPLETENESS_UNRESOLVED_DUE_TO_OVERCONSTRAINED_LINEAGE_REQUIREMENT`
+
+Accepted findings:
+- CUSTODY-001 correctly stopped under its frozen contract;
+- the recovered electromagnetism artifact is historical evidence of substantial electromagnetism content/representation exposure, but its original input source/passage and lineage are unknown;
+- that missing lineage must not be reconstructed or fabricated;
+- requiring complete original-source lineage for every exclusion family was stronger than necessary for contamination screening;
+- known uncertainty should become a conservative exclusion constraint rather than invented certainty or an automatic global stop;
+- remaining historical exclusion families must be audited independently rather than skipped after the first unresolved family.
+
 ## Current approved work packet
 
 ```text
-NONE
+specs/CUSTODY-002-evidence-bounded-contamination-export.md
 ```
 
-Status: `NONE`
+Status: `APPROVED_FOR_IMPLEMENTATION`
 
-Authority: `NONE`
+Authority: `OFFLINE_ONLY`
 
-Human gate: `NONE`
+Human gate: `OWNER_REVIEW`
 
 Promotion: `NOT_AUTHORIZED`
 
 ## Current gate
 
-BENCH-001 source-blind harness is implemented and frozen. Mechanical readiness remains
-`INCONCLUSIVE`, with its recorded next step
-`MORE_READINESS_DIAGNOSIS`, because the canonical pre-existing AUDIT-001 regeneration
-test fails after control-plane STATUS changes. Frozen AUDIT-001 evidence is unchanged.
-See `audits/independent-architecture-audit-001/benchmark-readiness-v1/readiness-report.json`
-for gates, limits and the preserved failure. Owner verdict:
-`BENCHMARK_HARNESS_ACCEPTED_PREEXISTING_AUDIT_HASH_FAILURE_NON_BLOCKING`.
+CUSTODY-002 is authorized to audit all five historical exclusion families independently and build an evidence-bounded, sanitized contamination export if safe.
 
-`OWNER_REVIEW` — CUSTODY-001 stopped fail-closed at `FAMILY_COMPLETENESS_UNRESOLVED`.
-The recovered electromagnetism family has identifiable response artifacts, but its
-original input source/passage and lineage are not established. The mixed response
-cannot be exported wholesale as source-only material, and later fixtures are not
-an established replacement. The incomplete identity inventory is not clearance.
-No selector-v1.1 authority, continuation ZIP or continuation prompt was issued.
-See `audits/independent-architecture-audit-001/custody-001-report.json`.
-No active approved packet remains; source selection, retrieval, candidate inspection,
-adjudication, model/provider calls and benchmark execution remain unauthorized here.
+Family statuses:
+- `COMPLETE_EXACT`;
+- `COMPLETE_WITH_KNOWN_LINEAGE_LIMITATION`;
+- `PARTIAL`;
+- `UNRESOLVED`.
 
-Frozen benchmark arms:
-- S — source control;
-- A — one-call direct explanation;
-- B — two-call plan then explain;
-- C0 — current compiler behavior;
-- C+ — competitive semantic compiler with up to three typed extraction stages plus source-aware explanatory composition.
+Only the first two permit selector continuation.
 
-Future five-source maximum: 40 model calls. No judge, retry, repair or enrichment calls.
+For recovered electromagnetism, original input source/passsage/lineage must remain explicitly UNKNOWN. The selector export may contain conservative content fingerprints/blacklist information derived mechanically from the recovered artifact, but must not expose its learner/representation architecture.
 
-BENCH-001 freezes prompts/schemas, common model policy, executables/dependencies, neutral
-renderer, budgets, failure semantics, metrics, independent handoffs and review templates.
+If all five families are safe, CUSTODY-002 may package a narrow selector-v1.1 authority for the same independent selector: adjudicate its three quarantined v1 candidates and extend only neuroscience/mechanism and hydrology/process with pre-frozen D3–D6 lists.
 
-Preferred offline common-model candidate: `gpt-6.1-sol` / high / `store=False`; no silent substitution. Remote provider support may remain unverified until a later execution packet.
-
-No benchmark source retrieval/selection, model/provider calls, benchmark output generation,
-learner/fidelity review, atomization/semantic-judge continuation, architecture promotion,
-benchmark winner selection or follow-up activation is authorized.
+No selector candidate material may be imported or inspected here. No source retrieval/selection, contamination adjudication, model/provider calls or benchmark execution are authorized.
 
 ## Current product question
 
 ```text
-S   source
-A   source → direct explanation
-B   source → explanation plan → explanation
-C0  source → current compiler
-C+  source → semantic compiler → source-aware composer
-        ↓
-blind learner value + independent fidelity + system cost
-        ↓
-Which extra machinery, if any, earns its existence?
+historical evidence
+      ↓
+exact source exclusions where known
+      +
+conservative fingerprints where lineage is known-unknown
+      ↓
+sanitized contamination package
+      ↓
+same independent selector
+      ↓
+five-source freeze or explicit missingness
 ```
 
 ## Frozen / protected state
