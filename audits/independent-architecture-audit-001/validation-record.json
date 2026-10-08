@@ -1,0 +1,60 @@
+{
+  "packet": "AUDIT-001",
+  "result": "PREPARATION_COMPLETE_OWNER_REVIEW_PENDING",
+  "authority": "OFFLINE_ONLY",
+  "freeze_commit": "9af8366b49ee83bd280d7e06c9e0673fd3164cb1",
+  "focused_gate": {
+    "command": ".venv/bin/pytest tests/test_audit001_dossier.py tests/test_control_plane.py",
+    "expected_tests": 23,
+    "result": "PASS"
+  },
+  "full_offline_gate": {
+    "command": ".venv/bin/pytest",
+    "expected_tests": 1140,
+    "result": "PASS"
+  },
+  "deterministic_regeneration": "PASS",
+  "protected_historical_byte_identity": "PASS",
+  "pdf_rtf_original_hashes": "PASS",
+  "manifest_and_local_links": "PASS",
+  "initial_surface_literal_asset_references": "PASS",
+  "initial_package_hypothesis_exclusion": "PASS",
+  "exact_evidence_excerpts_and_category_separation": "PASS",
+  "control_plane_closure": "PASS",
+  "secret_scan": "PASS",
+  "git_diff_check": {
+    "full_staged_command": "git diff --cached --check",
+    "full_staged_result": "EXISTING_ORIGINAL_RTF_WHITESPACE_PRESERVED",
+    "original_rtf_trailing_whitespace_lines": [12, 68, 117, 229, 252, 288, 391, 579, 621, 675, 687, 712, 737, 739],
+    "authored_files_command": "git diff --cached --check -- . ':(exclude)audits/electromagnetism.rtf'",
+    "authored_files_result": "PASS",
+    "reason": "Owner requires both original artifacts byte-identical without cleanup. Full check was run and findings preserved; the narrow exception does not suppress checks on authored files or weaken source hash validation."
+  },
+  "source_retrieval_calls": 0,
+  "provider_model_calls": 0,
+  "benchmark_outputs_generated": 0,
+  "architecture_audit_performed": false,
+  "architecture_recommendation": null,
+  "dependency_changes": 0,
+  "production_behavior_changes": 0,
+  "promotion": "NOT_AUTHORIZED",
+  "human_verdict": "PENDING",
+  "network_scope": "Only authorized Git fetch/push coordination; no evaluation/provider/source-retrieval network activity.",
+  "preflight_unrelated_user_file_hashes": {
+    ".DS_Store": "18bc72d61a2b8e3ac6cbef7b95831ade78369c20e0a608c7a0682b2b1ff94189",
+    "examples/.DS_Store": "6bd94ae2a81d8c0a81b221aa7260d97bdce217b0a3e4cf7208aa05111056b596",
+    "examples/evaluations/.DS_Store": "3cf5c36ff8fd7f706fb564816a4c15d6791e4c4713ea9e2052c8c6e410d28a26"
+  },
+  "observed_finish_unrelated_user_file_hashes": {
+    ".DS_Store": "6529131aea3b50f1bc84f37426b0d6067d168ea18c7735043036882e64833430",
+    "examples/.DS_Store": "6bd94ae2a81d8c0a81b221aa7260d97bdce217b0a3e4cf7208aa05111056b596",
+    "examples/evaluations/.DS_Store": "a1e09f14ee4d93c4fdbd072ca6a12a7699734042f9357087934f46b6cde5200b"
+  },
+  "unrelated_user_file_handling": "No writes by this workflow. Root and examples/evaluations .DS_Store hashes changed during the run; writer not independently identified. All three remain untracked, untouched by this workflow and excluded from staging. No attempted restoration or reinterpretation.",
+  "limitations": [
+    "Passing tests establish packaging/integrity, not a product or architecture verdict.",
+    "Original input/model/prompt/usage and raw contemporaneous learner responses were not recovered.",
+    "Recorded owner findings are formative qualitative evidence, not a controlled learning trial.",
+    "The initial dossier uses exact selected excerpts rather than proposal-bearing raw reports; the master manifest and repository preserve originals for later trace requests."
+  ]
+}

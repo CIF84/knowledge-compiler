@@ -1,0 +1,28 @@
+{
+  "category": "HISTORICAL_EVIDENCE",
+  "provenance": "OWNER_RECOVERED_HISTORICAL_ARTIFACT",
+  "pdf": {
+    "path": "audits/electromagnetism.pdf",
+    "sha256": "33cf1338f57bcd95ac23418be99f5a28c9eea0f560ea7e38fa5d780abbb1b10f",
+    "canonical_visual": true,
+    "pages": 16,
+    "visually_inspected_pages": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
+    "methods": ["pdfinfo metadata", "pypdf read-only text", "pdftoppm read-only page renders and visual inspection"],
+    "limitations": ["pypdf reported wrong object-offset warnings; no repair saved", "diagram wrapping/page splits and literal formula markup preserved", "TextEdit/Quartz export metadata dates recovery export, not independently verified experiment origin"],
+    "modified": false
+  },
+  "rtf": {
+    "path": "audits/electromagnetism.rtf",
+    "sha256": "6a75e4f5878773769f370c2ad468422fa6beea015ffc601de02de53ba5d4e2a3",
+    "machine_readable_companion": true,
+    "method": "/usr/bin/textutil -convert txt -stdout; complete read-only inspection",
+    "modified": false
+  },
+  "history_search": {
+    "freeze_commit": "9af8366b49ee83bd280d7e06c9e0673fd3164cb1",
+    "artifact_path_history_found": false,
+    "limit": "No earlier pathname entries found by git log --all; this does not invalidate owner-recovered originals. Later electromagnetism fixtures are not identified as original prompt/input."
+  },
+  "effectiveness": "No direct learner outcome inside recovered files; owner-reported experience separately preserved.",
+  "reconstructed_prototype_generated": false
+}

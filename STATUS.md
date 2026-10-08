@@ -238,35 +238,36 @@ Canonical audit rule:
 ## Current approved work packet
 
 ```text
-specs/AUDIT-001-independent-architecture-audit-preparation.md
+NONE
 ```
 
-Status: `APPROVED_FOR_IMPLEMENTATION`
+Status: `NONE`
 
-Authority: `OFFLINE_ONLY`
+Authority: `NONE`
 
-Human gate: `OWNER_REVIEW`
+Human gate: `NONE`
 
 Promotion: `NOT_AUTHORIZED`
 
 ## Current gate
 
-AUDIT-001 is authorized only to prepare a neutral, reproducible dossier and blind-product-benchmark protocol for an **independent fresh-context architecture audit**.
+AUDIT-001 preparation is `IMPLEMENTED_AWAITING_REVIEW`; stop at `OWNER_REVIEW`.
 
-It must reconstruct:
-- the original thesis and prototype evidence if repository-resident;
-- the evidence timeline through SPEC-068;
-- architecture inventory;
-- demonstrated learner-value vs trust/research-value ledger;
-- complexity/economics ledger;
-- neutral candidate architecture space;
-- five-source blind benchmark protocol;
-- independent auditor brief;
-- frozen audit manifest.
+The dossier is `audits/independent-architecture-audit-001/00-read-first.md`.
+The initial auditor package is `audits/independent-architecture-audit-001/initial-auditor-package.zip`.
+Owner-recovered `audits/electromagnetism.pdf` and `.rtf` are preserved unchanged as
+primary historical evidence. PDF is canonical visual evidence, RTF its companion.
 
-AUDIT-001 must not conduct the audit, choose an architecture, retrieve benchmark sources, generate benchmark outputs, run model comparisons, create SPEC-069, or continue atomization work.
+The owner's anti-anchoring amendment supersedes the predefined architecture scaffold
+and benchmark-arm menu: both are custodian-only and excluded from the initial package.
+The future fresh auditor must derive competing architectures independently and freeze
+diagnosis/recommendation before current-team hypotheses may be revealed.
 
-The actual audit must be performed later in a fresh reasoning context that did not design Knowledge Compiler.
+No independent audit, architecture recommendation, benchmark retrieval/execution,
+model/provider call, promotion or follow-up activation occurred. Full-source hashes,
+exact evidence extracts, protected-state hashes and the handoff are in the audit directory.
+Do not give a fresh auditor the entire directory/repository: use only the initial ZIP
+after owner approval. No independent audit is authorized in this implementation context.
 
 ## Current product question
 
