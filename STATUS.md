@@ -217,65 +217,69 @@ Canonical rule:
 
 > **Fixture is the evaluation container; atomic commitment is the semantic judgment unit.**
 
+## Architecture audit gate
+
+SPEC-068 owner verdict:
+
+`ATOMIC_TRUST_CONTRACT_VALID_BUT_ARCHITECTURE_AUDIT_REQUIRED_BEFORE_FURTHER_COMPLEXITY`
+
+Accepted evidence:
+- the safe atomic subset retained all eight domains but only 2/18 semantic categories;
+- no representative semantic-judge experiment can be run from the current safely atomized corpus;
+- the locally obvious next step would be bounded atomization;
+- owner and ChatGPT explicitly pause that path before adding another semantic/model layer;
+- the original product thesis demonstrated promising learner value with a much simpler frontier-model transformation, while recent architecture has accumulated substantial trust/research complexity without comparable demonstrated learner progress;
+- sunk implementation effort is not evidence that the current architecture should survive.
+
+Canonical audit rule:
+
+> **Start from the product thesis, not from the current architecture. Add components only when evidence demonstrates that they are necessary to deliver learner value at acceptable trust, complexity, cost and time.**
+
 ## Current approved work packet
 
 ```text
-NONE
+specs/AUDIT-001-independent-architecture-audit-preparation.md
 ```
 
-Status: `NONE`
+Status: `APPROVED_FOR_IMPLEMENTATION`
 
-Authority: `NONE`
+Authority: `OFFLINE_ONLY`
 
-Human gate: `NONE`
+Human gate: `OWNER_REVIEW`
 
 Promotion: `NOT_AUTHORIZED`
 
 ## Current gate
 
-`OWNER_REVIEW` — SPEC-068 offline implementation/evaluation complete.
+AUDIT-001 is authorized only to prepare a neutral, reproducible dossier and blind-product-benchmark protocol for an **independent fresh-context architecture audit**.
 
-Mechanical branch: `ATOMIC_SUBSET_TOO_NARROW`.
-Recommended next step: `BOUNDED_ATOMIZATION_EXPERIMENT` (not activated).
-Owner verdict: `PENDING`. No promotion.
+It must reconstruct:
+- the original thesis and prototype evidence if repository-resident;
+- the evidence timeline through SPEC-068;
+- architecture inventory;
+- demonstrated learner-value vs trust/research-value ledger;
+- complexity/economics ledger;
+- neutral candidate architecture space;
+- five-source blind benchmark protocol;
+- independent auditor brief;
+- frozen audit manifest.
 
-All 92 frozen fixtures reconcile: 0 explicit atomic, 16 explicit composite
-decomposable, 76 opaque unresolved, 0 malformed. The 16 native composites supply
-32 components with exact origins and safely derived truth: 24 ENTAILED and
-8 UNCERTAIN. Opaque carriers remain excluded; no natural-language semantic
-irreducibility or heuristic atomization is claimed.
+AUDIT-001 must not conduct the audit, choose an architecture, retrieve benchmark sources, generate benchmark outputs, run model comparisons, create SPEC-069, or continue atomization work.
 
-Eight mixed-validity composite controls, including case-023, fail closed when
-one atom is uncertain or omitted. Receipt aggregation requires all atoms,
-preservation flags, evidence references and binding identities to pass.
-
-The safe pool retains all eight domains but only 2/18 parent-fixture categories.
-All novel faithful-positive classes and subtle drift categories are lost. No
-representative subset for the broad semantic-judge evaluation exists. Proposed
-narrow-control manifests contain 32 one-atom J1 calls and eight four-atom J2
-batches (40 maximum), with no sibling batch collisions. They are not authorized
-for execution and do not inherit SPEC-067's 60-call budget.
-
-Zero model/provider/evaluation-network calls, judging, synthesis or retrieval
-occurred. Frozen SPEC-066/067 evidence and production behavior are unchanged.
-No follow-up packet is active.
-
-Detailed evidence and the offline review command:
-`examples/evaluations/spec-068-atomic-judgment-contract-repair-20261008/owner-review.md`.
+The actual audit must be performed later in a fresh reasoning context that did not design Knowledge Compiler.
 
 ## Current product question
 
 ```text
-92 frozen fixtures
-  ↓
-16 native composites → 32 admitted native components
-76 opaque carriers → excluded, unresolved
-  ↓
-safe fixture/atom/aggregation contract
-  ↓
-2/18 categories retained; novel faithful positives missing
-  ↓
-owner review of the next atomization boundary
+ORIGINAL PRODUCT THESIS
+        ↓
+68 SPECs of evidence
+        ↓
+learner value + trust + complexity + economics
+        ↓
+independent fresh-context audit
+        ↓
+CONTINUE / SIMPLIFY / RESET / PIVOT / STOP
 ```
 
 ## Frozen / protected state
