@@ -235,52 +235,68 @@ Canonical audit rule:
 
 > **Start from the product thesis, not from the current architecture. Add components only when evidence demonstrates that they are necessary to deliver learner value at acceptable trust, complexity, cost and time.**
 
+## Independent audit outcome
+
+IA-001 v1.0 was completed in a fresh GPT-6 Astra Extra High context using only the frozen initial auditor package. The auditor verified the package, visually inspected the original 16-page electromagnetism prototype, examined no additional project context, and froze its diagnosis before exposure to current-team hypotheses.
+
+Independent diagnosis:
+- bounded reliability gains and engineering learning are demonstrated;
+- improved learning outcomes over the original prototype are not demonstrated;
+- the provisional minimum research candidate is direct source-bounded explanation with source recovery and independent fidelity review;
+- stronger planning/semantic architectures must earn their extra complexity empirically;
+- strongest counterargument: a persistent trustworthy knowledge workspace may justify semantic infrastructure if a better explanatory composer makes that investment useful.
+
+The auditor independently froze five candidate architectures and the discriminating benchmark design `IA-001-BENCH-v1`.
+
+Canonical benchmark question:
+
+> **What is the minimum machinery required to reproduce the learner value that motivated Knowledge Compiler, without unacceptable fidelity loss?**
+
 ## Current approved work packet
 
 ```text
-NONE
+specs/BENCH-001-ia001-benchmark-execution-readiness.md
 ```
 
-Status: `NONE`
+Status: `APPROVED_FOR_IMPLEMENTATION`
 
-Authority: `NONE`
+Authority: `OFFLINE_ONLY`
 
-Human gate: `NONE`
+Human gate: `OWNER_REVIEW`
 
 Promotion: `NOT_AUTHORIZED`
 
 ## Current gate
 
-AUDIT-001 preparation is `IMPLEMENTED_AWAITING_REVIEW`; stop at `OWNER_REVIEW`.
+BENCH-001 is authorized to make the frozen independent benchmark executable **before any benchmark source is selected or exposed**.
 
-The dossier is `audits/independent-architecture-audit-001/00-read-first.md`.
-The initial auditor package is `audits/independent-architecture-audit-001/initial-auditor-package.zip`.
-Owner-recovered `audits/electromagnetism.pdf` and `.rtf` are preserved unchanged as
-primary historical evidence. PDF is canonical visual evidence, RTF its companion.
+Frozen benchmark arms:
+- S — source control;
+- A — one-call direct explanation;
+- B — two-call plan then explain;
+- C0 — current compiler behavior;
+- C+ — competitive semantic compiler with up to three typed extraction stages plus source-aware explanatory composition.
 
-The owner's anti-anchoring amendment supersedes the predefined architecture scaffold
-and benchmark-arm menu: both are custodian-only and excluded from the initial package.
-The future fresh auditor must derive competing architectures independently and freeze
-diagnosis/recommendation before current-team hypotheses may be revealed.
+Future five-source maximum: 40 model calls. No judge, retry, repair or enrichment calls.
 
-No independent audit, architecture recommendation, benchmark retrieval/execution,
-model/provider call, promotion or follow-up activation occurred. Full-source hashes,
-exact evidence extracts, protected-state hashes and the handoff are in the audit directory.
-Do not give a fresh auditor the entire directory/repository: use only the initial ZIP
-after owner approval. No independent audit is authorized in this implementation context.
+BENCH-001 must freeze prompts/schemas, common model policy, executables/dependencies, neutral renderer, budgets, failure semantics, metrics, source-selector handoff, fidelity-review contract, blinding/custody tooling and learner-review templates.
+
+Preferred offline common-model candidate: `gpt-6.1-sol` / high / `store=False`; no silent substitution. Remote provider support may remain unverified until a later execution packet.
+
+No benchmark source retrieval/selection, model/provider calls, benchmark output generation, learner/fidelity review, atomization/semantic-judge continuation, architecture promotion or benchmark winner selection is authorized.
 
 ## Current product question
 
 ```text
-ORIGINAL PRODUCT THESIS
+S   source
+A   source → direct explanation
+B   source → explanation plan → explanation
+C0  source → current compiler
+C+  source → semantic compiler → source-aware composer
         ↓
-68 SPECs of evidence
+blind learner value + independent fidelity + system cost
         ↓
-learner value + trust + complexity + economics
-        ↓
-independent fresh-context audit
-        ↓
-CONTINUE / SIMPLIFY / RESET / PIVOT / STOP
+Which extra machinery, if any, earns its existence?
 ```
 
 ## Frozen / protected state
