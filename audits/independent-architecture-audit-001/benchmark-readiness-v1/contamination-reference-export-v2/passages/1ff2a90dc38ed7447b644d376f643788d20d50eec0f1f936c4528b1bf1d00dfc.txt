@@ -1,0 +1,28 @@
+The customer request precedes order validation.
+Order validation precedes inventory reservation.
+Inventory reservation precedes payment authorization.
+Payment authorization precedes the shipment request.
+The shipment request precedes notification dispatch.
+Notification dispatch precedes order completion.
+The customer request requires the API gateway as its entry component.
+Order validation requires the authentication service.
+The authentication service requires the identity store.
+Order validation requires the order service.
+The order service requires the order database.
+Inventory reservation requires the inventory service.
+The inventory service requires the inventory database.
+Payment authorization requires the payment service.
+The payment service requires the payment provider.
+The payment service requires the fraud service.
+The shipment request requires the shipping adapter.
+Notification dispatch requires the notification service.
+The notification service requires the email provider.
+The notification service requires the message broker.
+The order service requires the message broker.
+The inventory service requires the message broker.
+Payment authorization is measured by the observability collector.
+The shipment request is measured by the observability collector.
+Notification dispatch is measured by the observability collector.
+The observability collector requires the metrics store.
+The order service creates audit-log records.
+The payment service creates audit-log records.

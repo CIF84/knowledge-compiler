@@ -1,0 +1,59 @@
+{
+  "packet": "CUSTODY-002",
+  "source_export_gate": "PASS",
+  "source_export_result": "SANITIZED_CONTAMINATION_EXPORT_READY",
+  "recommended_next_step": "RETURN_V1_1_PACKAGE_TO_SAME_SELECTOR",
+  "human_gate": "OWNER_REVIEW",
+  "owner_verdict": "PENDING",
+  "promotion": "NOT_AUTHORIZED",
+  "focused_command": ".venv/bin/pytest tests/test_custody002.py tests/test_custody001.py tests/test_control_plane.py",
+  "focused_result": {"passed": 43, "failed": 0},
+  "initial_focused_run": {
+    "passed": 41,
+    "failed": 2,
+    "failures": [
+      "New test wrongly required the literal word architecture in source prose; corrected to a synthetic source-only leakage-control assertion. No exported text or validation rule was weakened.",
+      "Historical CUSTODY-001 lifecycle test accepts only its own active pointer or NONE; passes after required CUSTODY-002 closure, with the previously recorded BENCH owner verdict preserved in STATUS. Historical test unchanged."
+    ]
+  },
+  "full_offline_command": ".venv/bin/pytest",
+  "full_offline_result": {"passed": 1212, "failed": 2, "seconds": 24.45},
+  "intermediate_full_offline_result": {"passed": 1212, "failed": 2, "seconds": 23.05},
+  "first_full_offline_result": {"passed": 1212, "failed": 2, "seconds": 23.35},
+  "full_offline_failures": [
+    {
+      "test": "tests/test_audit001_dossier.py::test_deterministic_reproduction_and_all_historical_bytes",
+      "classification": "PREEXISTING_OWNER_ACCEPTED_NON_BLOCKING",
+      "cause": "Historical dossier regeneration hashes mutable STATUS.md; original dossier unchanged.",
+      "repair_performed": false
+    },
+    {
+      "test": "tests/test_bench001.py::test_deterministic_freeze_protected_state_templates_and_call_budget",
+      "classification": "NEW_COLLISION_WITH_HISTORICAL_OPEN_ENDED_ENUMERATOR_NOT_WAIVED",
+      "cause": "Required contamination-reference-export-v2/README.md is captured by BENCH-001's recursive Markdown scan, extending its regenerated lock. Actual historical lock and benchmark files remain byte-identical.",
+      "repair_performed": false,
+      "owner_resolution_required_before_future_benchmark_execution": true
+    }
+  ],
+  "full_offline_log": "custody-002-full-offline-suite.txt",
+  "deterministic_regeneration_command": ".venv/bin/python tools/custody002_prepare.py --check",
+  "deterministic_regeneration": "PASS",
+  "complete_package_regeneration": "PASS",
+  "exact_normalized_hashes_and_source_excerpt_parent_ranges": "PASS",
+  "five_independent_family_audits": "PASS",
+  "unsafe_missing_duplicate_family_negative_tests": "PASS",
+  "fingerprint_unknown_original_input_and_broad_blacklist": "PASS",
+  "standalone_verifier_and_corruption_fail_closed": "PASS",
+  "source_only_allowlist_and_leakage_injection_tests": "PASS",
+  "historical_bytes_including_baselines_and_benchmark_freeze": "PASS",
+  "control_plane": {"result": "PASS", "active_packet": null},
+  "diff_check": "PASS",
+  "source_byte_policy": "Repository-only .gitattributes rule applies -text -diff only to the new source passage copies; immutable quantum trailing spaces retained, exact hashes checked. Terminal-padding whitespace removed from failure log, not source texts.",
+  "secret_scan": "PASS",
+  "unrelated_changes": "Six startup untracked .DS_Store files remain outside staged work; hashes unchanged. No preexisting tracked edits.",
+  "network_model_provider": "Zero experimental network, model/provider calls, source retrieval/selection or selector-candidate reads; Git fetch/push only for authorized canonical coordination.",
+  "package_path": "audits/independent-architecture-audit-001/benchmark-readiness-v1/source-selector-continuation-v1.1.zip",
+  "package_sha256": "b4116ca663de52c67ab1334d657b9996d458fef929e130137997bc0bc8e8911d",
+  "sanitization_deviation": "Exact context-bearing repository paths/pointers stay in private custody report. Public source-only manifest supplies content-addressed carrier and field locators with an exact private mapping, preventing architecture-bearing filenames or block-path structure from reaching the selector.",
+  "stop": "OWNER_REVIEW; source-export readiness only, not a full-suite pass or benchmark-readiness verdict"
+}

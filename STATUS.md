@@ -267,34 +267,52 @@ Accepted findings:
 ## Current approved work packet
 
 ```text
-specs/CUSTODY-002-evidence-bounded-contamination-export.md
+NONE
 ```
 
-Status: `APPROVED_FOR_IMPLEMENTATION`
+Status: `NONE`
 
-Authority: `OFFLINE_ONLY`
+Authority: `NONE`
 
-Human gate: `OWNER_REVIEW`
+Human gate: `NONE`
 
 Promotion: `NOT_AUTHORIZED`
 
 ## Current gate
 
-CUSTODY-002 is authorized to audit all five historical exclusion families independently and build an evidence-bounded, sanitized contamination export if safe.
+CUSTODY-002 is `IMPLEMENTED_AWAITING_REVIEW`, stopped at `OWNER_REVIEW`.
+Mechanical contamination-export branch: `SANITIZED_CONTAMINATION_EXPORT_READY`.
+Recommended next step: `RETURN_V1_1_PACKAGE_TO_SAME_SELECTOR`.
+Owner verdict: `PENDING`. Promotion: `NOT_AUTHORIZED`.
 
-Family statuses:
-- `COMPLETE_EXACT`;
-- `COMPLETE_WITH_KNOWN_LINEAGE_LIMITATION`;
-- `PARTIAL`;
-- `UNRESOLVED`.
+All five families were audited independently. Recovered electromagnetism, golden
+fixtures and quantum/economics/software controls are
+`COMPLETE_WITH_KNOWN_LINEAGE_LIMITATION`; the nine-source corpus and SPEC-060–068
+source/derivative family are `COMPLETE_EXACT` within the documented source-input
+enumeration boundary. Recovered electromagnetism input source, passage and lineage
+remain `UNKNOWN`. Only order-free content fingerprints and a conservative subject
+blacklist leave custody; neither recovered response is exported.
 
-Only the first two permit selector continuation.
+Detailed source-path provenance and validation remain outside the selector ZIP:
+`audits/independent-architecture-audit-001/custody-002-report.json`.
+The sanitized source-only export and narrow same-selector authority are packaged at:
+`audits/independent-architecture-audit-001/benchmark-readiness-v1/source-selector-continuation-v1.1.zip`.
+No selector candidates were read, no contamination was adjudicated here, and no
+model/provider calls or source retrieval/selection occurred.
 
-For recovered electromagnetism, original input source/passsage/lineage must remain explicitly UNKNOWN. The selector export may contain conservative content fingerprints/blacklist information derived mechanically from the recovered artifact, but must not expose its learner/representation architecture.
+BENCH-001 owner verdict remains
+`BENCHMARK_HARNESS_ACCEPTED_PREEXISTING_AUDIT_HASH_FAILURE_NON_BLOCKING`;
+its original readiness report remains mechanically `INCONCLUSIVE`, unchanged.
+The accepted AUDIT-001 mutable-STATUS hash failure is not repaired. Separately,
+BENCH-001's open-ended Markdown enumeration includes the required new export README
+when regenerating its historical lock. That new mechanical collision is reported,
+not waived or repaired; frozen benchmark artifacts remain byte-identical. Export
+readiness is not a claim that all repository gates pass or that benchmark execution
+is ready. Owner review must resolve that collision before future benchmark execution.
 
-If all five families are safe, CUSTODY-002 may package a narrow selector-v1.1 authority for the same independent selector: adjudicate its three quarantined v1 candidates and extend only neuroscience/mechanism and hydrology/process with pre-frozen D3–D6 lists.
-
-No selector candidate material may be imported or inspected here. No source retrieval/selection, contamination adjudication, model/provider calls or benchmark execution are authorized.
+The only possible continuation is the same independent selector using the sanitized
+ZIP under its narrow authority; no selector action, benchmark execution or follow-up
+activation is performed by this repository run.
 
 ## Current product question
 

@@ -1,0 +1,5 @@
+A modular order-processing service separates the API component, order component, payment component, and database. The API component calls the order component through its published interface. The order component requires the payment component to authorize a purchase, and both components require the database to store durable state.
+
+Dependency direction is constrained: the payment component must not call the API component. This separation prevents transport details from becoming part of payment logic. Published interfaces enable components to change internally without forcing callers to change, while direct access to another component's private data increases coupling.
+
+The database is shared infrastructure, so a schema change can still affect both order and payment components. Keeping database access behind component interfaces decreases that coupling but adds implementation work and may make cross-component queries slower.

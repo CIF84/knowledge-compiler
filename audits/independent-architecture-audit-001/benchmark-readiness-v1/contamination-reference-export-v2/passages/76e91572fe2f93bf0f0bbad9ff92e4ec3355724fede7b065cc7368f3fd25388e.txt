@@ -1,0 +1,5 @@
+The order-processing service contains an order-processing workflow for each submitted order. The workflow begins when the API accepts an order request. The API parses the payload before it validates the required customer and item fields. After validation succeeds, the workflow creates an order command and transfers the command to the order component.
+
+The order component checks inventory before it requests payment authorization. Payment authorization must succeed before the order component stores the confirmed order. Storing the confirmed order completes the workflow and produces an order identifier for the API response.
+
+If validation fails, the API returns an error instead of creating or transferring an order command. If payment authorization fails, the order component does not store a confirmed order.

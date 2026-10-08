@@ -1,0 +1,154 @@
+Command: .venv/bin/pytest
+Exit status: 1
+..................................F..................................... [  5%]
+..............F......................................................... [ 11%]
+........................................................................ [ 17%]
+........................................................................ [ 23%]
+........................................................................ [ 29%]
+........................................................................ [ 35%]
+........................................................................ [ 41%]
+........................................................................ [ 47%]
+........................................................................ [ 53%]
+........................................................................ [ 59%]
+........................................................................ [ 65%]
+........................................................................ [ 71%]
+........................................................................ [ 77%]
+........................................................................ [ 83%]
+........................................................................ [ 88%]
+........................................................................ [ 94%]
+..............................................................           [100%]
+=================================== FAILURES ===================================
+___________ test_deterministic_reproduction_and_all_historical_bytes ___________
+
+generated = {'audits/independent-architecture-audit-001/evidence-extracts.json': b'{\n  "freeze_commit": "9af8366b49ee83bd280d7e06.../knowledge_compiler/structures.pyPK\x05\x06\x00\x00\x00\x00\xaf\x00\xaf\x00\xc3^\x00\x00\xe0\xb0\xb5\x00\x00\x00', ...}
+
+    def test_deterministic_reproduction_and_all_historical_bytes(generated):
+        assert generated == audit.build(ROOT)
+        for name, data in generated.items():
+>           assert (ROOT / name).read_bytes() == data
+E           assert b'{\n  "freez...acts.v1"\n}\n' == b'{\n  "freez...acts.v1"\n}\n'
+E
+E             At index 377361 diff: b'3' != b'6'
+E             Use -v to get more diff
+
+tests/test_audit001_dossier.py:24: AssertionError
+_____ test_deterministic_freeze_protected_state_templates_and_call_budget ______
+
+    def test_deterministic_freeze_protected_state_templates_and_call_budget():
+        one=freeze.build(ROOT);assert one==freeze.build(ROOT)
+>       for name,data in one.items():assert (ROOT/freeze.OUT/name).read_bytes()==data
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       assert b'{\n  "bench...ENCH-v1"\n}\n' == b'{\n  "bench...ENCH-v1"\n}\n'
+E
+E         At index 1251 diff: b'u' != b'o'
+E         Use -v to get more diff
+
+tests/test_bench001.py:244: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_audit001_dossier.py::test_deterministic_reproduction_and_all_historical_bytes
+FAILED tests/test_bench001.py::test_deterministic_freeze_protected_state_templates_and_call_budget
+2 failed, 1212 passed in 23.35s
+
+Final-state rerun after source-identity correction and executable-hash recording:
+Command: .venv/bin/pytest
+Exit status: 1
+..................................F..................................... [  5%]
+..............F......................................................... [ 11%]
+........................................................................ [ 17%]
+........................................................................ [ 23%]
+........................................................................ [ 29%]
+........................................................................ [ 35%]
+........................................................................ [ 41%]
+........................................................................ [ 47%]
+........................................................................ [ 53%]
+........................................................................ [ 59%]
+........................................................................ [ 65%]
+........................................................................ [ 71%]
+........................................................................ [ 77%]
+........................................................................ [ 83%]
+........................................................................ [ 88%]
+........................................................................ [ 94%]
+..............................................................           [100%]
+=================================== FAILURES ===================================
+___________ test_deterministic_reproduction_and_all_historical_bytes ___________
+
+generated = {'audits/independent-architecture-audit-001/evidence-extracts.json': b'{\n  "freeze_commit": "9af8366b49ee83bd280d7e06.../knowledge_compiler/structures.pyPK\x05\x06\x00\x00\x00\x00\xaf\x00\xaf\x00\xc3^\x00\x00\xe0\xb0\xb5\x00\x00\x00', ...}
+
+    def test_deterministic_reproduction_and_all_historical_bytes(generated):
+        assert generated == audit.build(ROOT)
+        for name, data in generated.items():
+>           assert (ROOT / name).read_bytes() == data
+E           assert b'{\n  "freez...acts.v1"\n}\n' == b'{\n  "freez...acts.v1"\n}\n'
+E
+E             At index 377361 diff: b'3' != b'6'
+E             Use -v to get more diff
+
+tests/test_audit001_dossier.py:24: AssertionError
+_____ test_deterministic_freeze_protected_state_templates_and_call_budget ______
+
+    def test_deterministic_freeze_protected_state_templates_and_call_budget():
+        one=freeze.build(ROOT);assert one==freeze.build(ROOT)
+>       for name,data in one.items():assert (ROOT/freeze.OUT/name).read_bytes()==data
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       assert b'{\n  "bench...ENCH-v1"\n}\n' == b'{\n  "bench...ENCH-v1"\n}\n'
+E
+E         At index 1251 diff: b'u' != b'o'
+E         Use -v to get more diff
+
+tests/test_bench001.py:244: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_audit001_dossier.py::test_deterministic_reproduction_and_all_historical_bytes
+FAILED tests/test_bench001.py::test_deterministic_freeze_protected_state_templates_and_call_budget
+2 failed, 1212 passed in 23.05s
+
+Final rerun with scoped exact-source Git attributes and whitespace-preservation assertion:
+Command: .venv/bin/pytest
+Exit status: 1
+..................................F..................................... [  5%]
+..............F......................................................... [ 11%]
+........................................................................ [ 17%]
+........................................................................ [ 23%]
+........................................................................ [ 29%]
+........................................................................ [ 35%]
+........................................................................ [ 41%]
+........................................................................ [ 47%]
+........................................................................ [ 53%]
+........................................................................ [ 59%]
+........................................................................ [ 65%]
+........................................................................ [ 71%]
+........................................................................ [ 77%]
+........................................................................ [ 83%]
+........................................................................ [ 88%]
+........................................................................ [ 94%]
+..............................................................           [100%]
+=================================== FAILURES ===================================
+___________ test_deterministic_reproduction_and_all_historical_bytes ___________
+
+generated = {'audits/independent-architecture-audit-001/evidence-extracts.json': b'{\n  "freeze_commit": "9af8366b49ee83bd280d7e06.../knowledge_compiler/structures.pyPK\x05\x06\x00\x00\x00\x00\xaf\x00\xaf\x00\xc3^\x00\x00\xe0\xb0\xb5\x00\x00\x00', ...}
+
+    def test_deterministic_reproduction_and_all_historical_bytes(generated):
+        assert generated == audit.build(ROOT)
+        for name, data in generated.items():
+>           assert (ROOT / name).read_bytes() == data
+E           assert b'{\n  "freez...acts.v1"\n}\n' == b'{\n  "freez...acts.v1"\n}\n'
+E
+E             At index 377361 diff: b'3' != b'6'
+E             Use -v to get more diff
+
+tests/test_audit001_dossier.py:24: AssertionError
+_____ test_deterministic_freeze_protected_state_templates_and_call_budget ______
+
+    def test_deterministic_freeze_protected_state_templates_and_call_budget():
+        one=freeze.build(ROOT);assert one==freeze.build(ROOT)
+>       for name,data in one.items():assert (ROOT/freeze.OUT/name).read_bytes()==data
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       assert b'{\n  "bench...ENCH-v1"\n}\n' == b'{\n  "bench...ENCH-v1"\n}\n'
+E
+E         At index 1251 diff: b'u' != b'o'
+E         Use -v to get more diff
+
+tests/test_bench001.py:244: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_audit001_dossier.py::test_deterministic_reproduction_and_all_historical_bytes
+FAILED tests/test_bench001.py::test_deterministic_freeze_protected_state_templates_and_call_budget
+2 failed, 1212 passed in 24.45s
