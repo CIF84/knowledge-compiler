@@ -1,0 +1,181 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "essential_qualifications": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "anchors": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "quote": {
+                  "minLength": 1,
+                  "type": "string"
+                }
+              },
+              "required": [
+                "quote"
+              ],
+              "type": "object"
+            },
+            "minItems": 1,
+            "type": "array"
+          },
+          "text": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "required": [
+          "text",
+          "anchors"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "examples_contrasts": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "anchors": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "quote": {
+                  "minLength": 1,
+                  "type": "string"
+                }
+              },
+              "required": [
+                "quote"
+              ],
+              "type": "object"
+            },
+            "minItems": 1,
+            "type": "array"
+          },
+          "text": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "required": [
+          "text",
+          "anchors"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "organizing_principle": {
+      "additionalProperties": false,
+      "properties": {
+        "anchors": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "quote": {
+                "minLength": 1,
+                "type": "string"
+              }
+            },
+            "required": [
+              "quote"
+            ],
+            "type": "object"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "text": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "text",
+        "anchors"
+      ],
+      "type": "object"
+    },
+    "overview_detail_mapping": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "anchors": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "quote": {
+                  "minLength": 1,
+                  "type": "string"
+                }
+              },
+              "required": [
+                "quote"
+              ],
+              "type": "object"
+            },
+            "minItems": 1,
+            "type": "array"
+          },
+          "text": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "required": [
+          "text",
+          "anchors"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "relationships_dependencies": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "anchors": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "quote": {
+                  "minLength": 1,
+                  "type": "string"
+                }
+              },
+              "required": [
+                "quote"
+              ],
+              "type": "object"
+            },
+            "minItems": 1,
+            "type": "array"
+          },
+          "text": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "required": [
+          "text",
+          "anchors"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "organizing_principle",
+    "relationships_dependencies",
+    "examples_contrasts",
+    "essential_qualifications",
+    "overview_detail_mapping"
+  ],
+  "type": "object"
+}

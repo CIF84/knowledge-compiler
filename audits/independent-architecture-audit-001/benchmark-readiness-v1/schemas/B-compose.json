@@ -1,0 +1,275 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "detail": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "anchors": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "quote": {
+                  "minLength": 1,
+                  "type": "string"
+                }
+              },
+              "required": [
+                "quote"
+              ],
+              "type": "object"
+            },
+            "minItems": 1,
+            "type": "array"
+          },
+          "text": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "required": [
+          "text",
+          "anchors"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "organizing_idea": {
+      "additionalProperties": false,
+      "properties": {
+        "anchors": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "quote": {
+                "minLength": 1,
+                "type": "string"
+              }
+            },
+            "required": [
+              "quote"
+            ],
+            "type": "object"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "text": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "text",
+        "anchors"
+      ],
+      "type": "object"
+    },
+    "overview": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "anchors": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "quote": {
+                  "minLength": 1,
+                  "type": "string"
+                }
+              },
+              "required": [
+                "quote"
+              ],
+              "type": "object"
+            },
+            "minItems": 1,
+            "type": "array"
+          },
+          "text": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "required": [
+          "text",
+          "anchors"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "qualifications": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "anchors": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "quote": {
+                  "minLength": 1,
+                  "type": "string"
+                }
+              },
+              "required": [
+                "quote"
+              ],
+              "type": "object"
+            },
+            "minItems": 1,
+            "type": "array"
+          },
+          "text": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "required": [
+          "text",
+          "anchors"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "structures": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "caption": {
+            "additionalProperties": false,
+            "properties": {
+              "anchors": {
+                "items": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "quote": {
+                      "minLength": 1,
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "quote"
+                  ],
+                  "type": "object"
+                },
+                "minItems": 1,
+                "type": "array"
+              },
+              "text": {
+                "minLength": 1,
+                "type": "string"
+              }
+            },
+            "required": [
+              "text",
+              "anchors"
+            ],
+            "type": "object"
+          },
+          "kind": {
+            "enum": [
+              "HIERARCHY",
+              "PROCESS",
+              "CAUSAL",
+              "COMPARISON",
+              "TABLE",
+              "ASCII"
+            ],
+            "type": "string"
+          },
+          "rows": {
+            "items": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "anchors": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "quote": {
+                          "minLength": 1,
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "quote"
+                      ],
+                      "type": "object"
+                    },
+                    "minItems": 1,
+                    "type": "array"
+                  },
+                  "text": {
+                    "minLength": 1,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "text",
+                  "anchors"
+                ],
+                "type": "object"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "minItems": 1,
+            "type": "array"
+          }
+        },
+        "required": [
+          "kind",
+          "caption",
+          "rows"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "title": {
+      "additionalProperties": false,
+      "properties": {
+        "anchors": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "quote": {
+                "minLength": 1,
+                "type": "string"
+              }
+            },
+            "required": [
+              "quote"
+            ],
+            "type": "object"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "text": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "text",
+        "anchors"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "title",
+    "organizing_idea",
+    "overview",
+    "detail",
+    "qualifications",
+    "structures"
+  ],
+  "type": "object"
+}

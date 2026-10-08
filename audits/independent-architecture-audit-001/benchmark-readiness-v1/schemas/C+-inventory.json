@@ -1,0 +1,47 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "symbols": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "aliases": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "description": {
+            "type": "string"
+          },
+          "entity_type": {
+            "enum": [
+              "CONCEPT",
+              "OBJECT",
+              "PROCESS",
+              "VARIABLE",
+              "SYSTEM",
+              "COMPONENT"
+            ],
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "description",
+          "entity_type",
+          "aliases"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "symbols"
+  ],
+  "type": "object"
+}

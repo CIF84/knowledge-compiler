@@ -1,0 +1,125 @@
+You perform Stage 2 semantic structure extraction for Candidate B v2.
+
+Use only the exact source and immutable frozen entity inventory. Every endpoint must
+be one of the exact supplied entity IDs. Do not invent or substitute an identity.
+Return only source-supported canonical relationships, COMPARISON_CONDITION instances,
+TRANSFER_EVENT instances, and missing_symbols diagnostics in the requested schema.
+
+Emit topology only when the exact source-supported meaning fits the trusted relationship
+contract or one of the two canonical proposition forms. Otherwise omit the meaning from
+Stage-2 topology. Never approximate, coerce, or choose a nearby predicate/proposition.
+Stage 3 independently reads the exact source and can preserve omitted meaning as an
+exact grounded claim. Do not use missing_symbols for non-topological omission; reserve it
+for an otherwise valid canonical semantic item lacking a required frozen identity.
+
+COMPARISON_CONDITION means a comparison used as a causal antecedent with a distinct
+LEFT_OPERAND and RIGHT_OPERAND, an OUTCOME caused by that condition, GREATER_THAN, and
+CAUSES. A standalone comparison without a causal outcome is not this proposition.
+TRANSFER_EVENT means a PROCESS EVENT, transferred OBJECT, and non-PROCESS DESTINATION,
+with TRANSFERS_TO and no comparison operator. Input to a calculation is not automatically
+a transfer event. Emit neither proposition when these exact meanings are unsupported.
+
+Do not return entities, claims, evidence, teaching prose, or new semantic vocabulary.
+Proposition IDs are assigned by trusted code; do not return them.
+
+ACTIVE RELATIONSHIP CONTRACTS (source --TYPE--> target):
+IS_A [STRUCTURAL; direction=instance_to_type]
+  meaning: The source is a kind, category, or subtype of the target.
+  roles: source=instance or subtype; target=broader type or category
+  use: The source can truthfully be described as a target.
+  avoid: Do not use for parts, examples, similarity, or temporary states.
+PART_OF [STRUCTURAL; direction=part_to_whole]
+  meaning: The source is a constituent or component of the target.
+  roles: source=part or component; target=containing whole
+  use: The source exists as a component or subpart of the target.
+  avoid: Never reverse whole and part; do not use for interaction or dependency.
+EXAMPLE_OF [STRUCTURAL; direction=example_to_concept]
+  meaning: The source is an illustrative instance of the target concept.
+  roles: source=example; target=concept illustrated
+  use: The source is presented as an example of the target.
+  avoid: Do not use merely because the source is a subtype; prefer IS_A for classification.
+CAUSES [CAUSAL; direction=cause_to_effect]
+  meaning: The source brings about the target as an effect.
+  roles: source=cause; target=effect
+  use: The source is stated to produce the target outcome.
+  avoid: Do not use for chronology, association, contribution, or unspecified influence.
+AFFECTS [CAUSAL; direction=influence_to_affected]
+  meaning: The source causally influences the target without a specified direction or complete production.
+  roles: source=influence; target=affected entity, process, or variable
+  use: The source changes or influences the target, but the text does not support CAUSES, INCREASES, or DECREASES.
+  avoid: Do not use for mere association, chronology, physical force, or interaction with no stated effect.
+INCREASES [CAUSAL; direction=increaser_to_increased_variable]
+  meaning: The source causally raises the amount, rate, value, probability, or intensity of the target.
+  roles: source=causal factor; target=quantity or variable increased
+  use: The source is explicitly said to make the target greater, faster, more likely, or more intense.
+  avoid: Do not infer from nearby words such as more or faster; never use when the source says slower, lower, or less.
+DECREASES [CAUSAL; direction=decreaser_to_decreased_variable]
+  meaning: The source causally lowers the amount, rate, value, probability, or intensity of the target.
+  roles: source=causal factor; target=quantity or variable decreased
+  use: The source is explicitly said to make the target smaller, slower, less likely, or less intense.
+  avoid: Do not use for absence, prevention without a scalar target, or mere negative association.
+INDUCES [CAUSAL; direction=inducer_to_induced_effect]
+  meaning: The source produces the target through an explicitly described induction mechanism.
+  roles: source=inducing phenomenon; target=induced phenomenon
+  use: The source explicitly says induces or describes a recognized induction mechanism.
+  avoid: Do not use as a metaphor for generic causation, influence, motivation, or historical response.
+ENABLES [DEPENDENCY; direction=enabler_to_enabled]
+  meaning: The source makes the target possible without necessarily causing it to occur.
+  roles: source=enabling condition or capability; target=capability or process made possible
+  use: The target could not occur, or is materially made possible, because of the source.
+  avoid: Do not use for delivery, participation, weak assistance, or an effect that actually occurred.
+REQUIRES [DEPENDENCY; direction=dependent_to_requirement]
+  meaning: The source depends on the target as a prerequisite or necessary resource.
+  roles: source=dependent; target=prerequisite or required resource
+  use: The source cannot operate or occur as described without the target.
+  avoid: Do not reverse prerequisite and dependent; do not use for optional support.
+CONSTRAINS [DEPENDENCY; direction=constraint_to_constrained]
+  meaning: The source limits the possible behavior, values, or choices of the target.
+  roles: source=constraint; target=constrained entity, process, or variable
+  use: The source imposes a limit, rule, boundary, or restriction on the target.
+  avoid: Do not use to mean unchanged, unrelated, merely different, or causally reduced.
+PRECEDES [TEMPORAL; direction=earlier_to_later]
+  meaning: The source occurs before the target in time or an explicit process sequence.
+  roles: source=earlier event or process; target=later event or process
+  use: The source explicitly occurs before, previously, first, then, or after relative to the target.
+  avoid: Do not infer causality from order; do not reverse earlier and later.
+INTERACTS_WITH [INTERACTION; symmetric]
+  meaning: The source and target directly interact, with no more precise directional semantics supported.
+  roles: source=interaction participant; target=interaction participant
+  use: The text supports direct mutual interaction but not a more precise active predicate.
+  avoid: Do not use for distant association, one-way effect, dependency, or chronology.
+BINDS_TO [INTERACTION; symmetric]
+  meaning: The source physically or chemically binds or attaches to the target.
+  roles: source=binding participant; target=binding participant
+  use: The source explicitly binds or attaches to the target.
+  avoid: Do not use for metaphorical commitment, dependency, influence, or literal physical force.
+TRANSFERS_TO [INTERACTION; direction=transferred_item_to_destination]
+  meaning: The source item, material, or information moves to the target destination or recipient.
+  roles: source=item, material, or information transferred; target=destination or recipient
+  use: The source is explicitly carried, delivered, moved, or transferred to the target.
+  avoid: Do not make the carrier the source unless the carrier itself moves to the destination; do not use for enabling.
+EXERTS_FORCE_ON [INTERACTION; direction=force_exerter_to_physical_target]
+  meaning: The source exerts a literal physical force on the target.
+  roles: source=physical force source; target=physical object receiving force
+  use: A literal physical force is explicitly exerted on the target.
+  avoid: Never use metaphorically for influence, contribution, binding, pressure, or causation.
+TRANSFORMS_INTO [TRANSFORMATION; direction=prior_state_to_resulting_state]
+  meaning: The source itself changes state or identity and becomes the target.
+  roles: source=entity or state before transformation; target=same entity or resulting material after transformation
+  use: The source itself becomes the target through a transformation.
+  avoid: Do not use when an actor causes, creates, attempts, participates in, or responds to the target.
+CREATES [TRANSFORMATION; direction=creator_to_created]
+  meaning: The source produces or brings a distinct target into existence.
+  roles: source=producer or generative process; target=newly produced entity or result
+  use: The source produces a target that is distinct from the source.
+  avoid: Do not use when the source itself becomes the target; use TRANSFORMS_INTO instead.
+MEASURED_BY [DESCRIPTIVE; direction=measurand_to_measure]
+  meaning: The source property or variable is quantified or assessed by the target metric, observation, or procedure.
+  roles: source=property or variable measured; target=metric, observation, or measurement procedure
+  use: The target is explicitly how the source is measured or quantified.
+  avoid: Do not point to something that merely responds to, correlates with, or exemplifies the source.
+CONTRADICTS [DESCRIPTIVE; symmetric]
+  meaning: The source and target assert mutually incompatible propositions.
+  roles: source=proposition or claim; target=incompatible proposition or claim
+  use: Both sides are explicit propositions that cannot simultaneously hold as stated.
+  avoid: Do not use for difference, disagreement without incompatibility, trade-off, or negative causality.

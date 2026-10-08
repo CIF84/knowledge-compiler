@@ -1,0 +1,93 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "claims": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "confidence": {
+            "maximum": 1,
+            "minimum": 0,
+            "type": "number"
+          },
+          "evidence": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "quote": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "quote"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "id": {
+            "type": "string"
+          },
+          "origin": {
+            "enum": [
+              "SOURCE",
+              "INFERRED"
+            ],
+            "type": "string"
+          },
+          "statement": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "statement",
+          "evidence",
+          "confidence",
+          "origin"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "semantic_evidence_bindings": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "evidence": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "quote": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "quote"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "semantic_object_id": {
+            "enum": [
+              "template-semantic-id"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "semantic_object_id",
+          "evidence"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "claims",
+    "semantic_evidence_bindings"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,253 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "comparison_conditions": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "comparison_operator": {
+            "enum": [
+              "GREATER_THAN"
+            ],
+            "type": "string"
+          },
+          "confidence": {
+            "maximum": 1,
+            "minimum": 0,
+            "type": "number"
+          },
+          "left_operand_entity_id": {
+            "enum": [
+              "template-object",
+              "template-process"
+            ],
+            "type": "string"
+          },
+          "origin": {
+            "enum": [
+              "SOURCE",
+              "INFERRED"
+            ],
+            "type": "string"
+          },
+          "outcome_entity_id": {
+            "enum": [
+              "template-object",
+              "template-process"
+            ],
+            "type": "string"
+          },
+          "proposition_type": {
+            "enum": [
+              "COMPARISON_CONDITION"
+            ],
+            "type": "string"
+          },
+          "relationship_type": {
+            "enum": [
+              "CAUSES"
+            ],
+            "type": "string"
+          },
+          "right_operand_entity_id": {
+            "enum": [
+              "template-object",
+              "template-process"
+            ],
+            "type": "string"
+          },
+          "statement": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "statement",
+          "confidence",
+          "origin",
+          "proposition_type",
+          "left_operand_entity_id",
+          "right_operand_entity_id",
+          "outcome_entity_id",
+          "relationship_type",
+          "comparison_operator"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "missing_symbols": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "reason": {
+            "type": "string"
+          },
+          "semantic_item": {
+            "type": "string"
+          },
+          "surface_form": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "surface_form",
+          "semantic_item",
+          "reason"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "relationships": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "confidence": {
+            "maximum": 1,
+            "minimum": 0,
+            "type": "number"
+          },
+          "id": {
+            "type": "string"
+          },
+          "origin": {
+            "enum": [
+              "SOURCE",
+              "INFERRED"
+            ],
+            "type": "string"
+          },
+          "relationship_type": {
+            "enum": [
+              "IS_A",
+              "PART_OF",
+              "CAUSES",
+              "INCREASES",
+              "DECREASES",
+              "ENABLES",
+              "REQUIRES",
+              "CONSTRAINS",
+              "PRECEDES",
+              "TRANSFORMS_INTO",
+              "INTERACTS_WITH",
+              "MEASURED_BY",
+              "EXAMPLE_OF",
+              "CONTRADICTS",
+              "CREATES",
+              "INDUCES",
+              "EXERTS_FORCE_ON",
+              "AFFECTS",
+              "BINDS_TO",
+              "TRANSFERS_TO"
+            ],
+            "type": "string"
+          },
+          "source_entity_id": {
+            "enum": [
+              "template-object",
+              "template-process"
+            ],
+            "type": "string"
+          },
+          "statement": {
+            "type": "string"
+          },
+          "target_entity_id": {
+            "enum": [
+              "template-object",
+              "template-process"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "source_entity_id",
+          "relationship_type",
+          "target_entity_id",
+          "statement",
+          "confidence",
+          "origin"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "transfer_events": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "comparison_operator": {
+            "type": "null"
+          },
+          "confidence": {
+            "maximum": 1,
+            "minimum": 0,
+            "type": "number"
+          },
+          "destination_entity_id": {
+            "enum": [
+              "template-object"
+            ],
+            "type": "string"
+          },
+          "event_entity_id": {
+            "enum": [
+              "template-process"
+            ],
+            "type": "string"
+          },
+          "object_entity_id": {
+            "enum": [
+              "template-object",
+              "template-process"
+            ],
+            "type": "string"
+          },
+          "origin": {
+            "enum": [
+              "SOURCE",
+              "INFERRED"
+            ],
+            "type": "string"
+          },
+          "proposition_type": {
+            "enum": [
+              "TRANSFER_EVENT"
+            ],
+            "type": "string"
+          },
+          "relationship_type": {
+            "enum": [
+              "TRANSFERS_TO"
+            ],
+            "type": "string"
+          },
+          "statement": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "statement",
+          "confidence",
+          "origin",
+          "proposition_type",
+          "event_entity_id",
+          "object_entity_id",
+          "destination_entity_id",
+          "relationship_type",
+          "comparison_operator"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "relationships",
+    "comparison_conditions",
+    "transfer_events",
+    "missing_symbols"
+  ],
+  "type": "object"
+}

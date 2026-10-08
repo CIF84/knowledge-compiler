@@ -1,0 +1,35 @@
+{
+  "allocations": {
+    "A": [
+      12000
+    ],
+    "B": [
+      4000,
+      8000
+    ],
+    "C+": [
+      2000,
+      3000,
+      3000,
+      4000
+    ],
+    "C0": [
+      12000
+    ],
+    "S": []
+  },
+  "failed_cell_rerun": "FORBIDDEN",
+  "follow_ups": 0,
+  "generated_output_per_arm_source": 12000,
+  "hidden_retries": 0,
+  "input_enforcement": "Require request-hash-bound certified exact token count before each transmission; refuse uncertified/missing counts. Reserve input+requested output inside remaining ceiling. Provider usage overrun/counter mismatch fails and short-circuits. No byte-count heuristic disguised as certification.",
+  "max_calls_five_sources": 40,
+  "per_arm_source_seconds": 900,
+  "per_call_seconds": 300,
+  "repairs": 0,
+  "sdk_retries": 0,
+  "semantic_retries": 0,
+  "timeout_enforcement": "Transport timeout=min(300,900-elapsed). Transport must enforce cancellation; post-response timing checked too. Timed-out response is preserved but never successful.",
+  "total_input_plus_output_per_arm_source": 32000,
+  "usage_missing": "FAIL_CLOSED_NO_LATER_STAGE"
+}

@@ -1,0 +1,18 @@
+{
+  "focused_and_control_plane": {"command": ".venv/bin/pytest tests/test_bench001.py tests/test_control_plane.py", "passed": 57, "failed": 0},
+  "full_offline_suite": {"command": ".venv/bin/pytest", "state": "FAILED_PRE_EXISTING_UPSTREAM_TEST", "exit_code": 1, "passed": 1183, "failed": 1, "seconds": 18.06, "diagnostic": "full-offline-suite.txt", "previous_run": {"passed": 1183, "failed": 1, "seconds": 18.63}, "waived_or_repaired": false},
+  "pre_existing_failure": {"canonical_input_commit": "7b83d8d4361d02dfbe1c8b5c0a7ae0d79fd4758a", "command": ".venv/bin/pytest tests/test_audit001_dossier.py", "passed": 9, "failed": 1, "test": "tests/test_audit001_dossier.py::test_deterministic_reproduction_and_all_historical_bytes", "diagnosis": "Frozen AUDIT-001 evidence-extracts.json records the then-current STATUS.md hash; regeneration uses current STATUS.md. BENCH-001 publication/activation changed STATUS.md before implementation. Byte mismatch was reproduced on canonical input state. No repair to frozen audit or its tool/test is authorized by BENCH-001."},
+  "synthetic_renderer": {"final_result": "PASS", "desktop": "1280x900", "mobile": "390x844", "viewport_checks": 6, "current_focus_count": 4, "browser_requests": 0, "provider_calls": 0, "benchmark_outputs": 0, "attempt_history": ["Bundled Playwright headless binary absent; no installation/download attempted.", "Existing Chrome launch denied by sandbox; retried only with approved local browser-launch escalation.", "First approved run exposed test-document lexical globals persisting across viewport loops. Corrected test to create fresh page realms; native renderer/semantics unchanged.", "Final offline synthetic browser run passed both sizes and all four current focus choices."], "runner": "tools/bench001_renderer_check.py", "node_version": "24.19.0", "browser": "Existing /Applications/Google Chrome.app/Contents/MacOS/Google Chrome; temporary isolated profile, offline context, all requests denied"},
+  "deterministic_regeneration": "PASS",
+  "protected_historical_bytes": "PASS",
+  "provider_calls": 0,
+  "retrieved_or_selected_benchmark_sources": 0,
+  "benchmark_outputs": 0,
+  "dependencies_added": [],
+  "unrelated_user_files": [".DS_Store", "audits/.DS_Store", "examples/.DS_Store", "examples/evaluations/.DS_Store"],
+  "git_diff_check": "PASS",
+  "secret_safety": "PASS_SCOPED_FILES_NO_CREDENTIAL_VALUES_READ_OR_RECORDED",
+  "control_plane": "PASS_NONE_POINTER_METADATA_NONE_PROMOTION_NOT_AUTHORIZED_OWNER_REVIEW_IN_CURRENT_GATE",
+  "preserved_unrelated_files": "PASS_ALL_FOUR_STARTUP_DS_STORE_HASHES_UNCHANGED_AND_UNSTAGED",
+  "git_coordination": "Canonical input and precommit origin/main both 7b83d8d4361d02dfbe1c8b5c0a7ae0d79fd4758a; fetch/push only, no benchmark network activity"
+}

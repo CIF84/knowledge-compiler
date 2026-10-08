@@ -1,0 +1,307 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "claims": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "confidence": {
+            "maximum": 1,
+            "minimum": 0,
+            "type": "number"
+          },
+          "evidence": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "quote": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "quote"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "id": {
+            "type": "string"
+          },
+          "origin": {
+            "enum": [
+              "SOURCE",
+              "INFERRED"
+            ],
+            "type": "string"
+          },
+          "statement": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "statement",
+          "evidence",
+          "confidence",
+          "origin"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "entities": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "aliases": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "description": {
+            "type": "string"
+          },
+          "entity_type": {
+            "enum": [
+              "CONCEPT",
+              "OBJECT",
+              "PROCESS",
+              "VARIABLE",
+              "SYSTEM",
+              "COMPONENT"
+            ],
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "description",
+          "entity_type",
+          "aliases"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "propositions": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "comparison_operator": {
+            "anyOf": [
+              {
+                "enum": [
+                  "GREATER_THAN"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "confidence": {
+            "maximum": 1,
+            "minimum": 0,
+            "type": "number"
+          },
+          "evidence": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "quote": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "quote"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "origin": {
+            "enum": [
+              "SOURCE",
+              "INFERRED"
+            ],
+            "type": "string"
+          },
+          "proposition_type": {
+            "enum": [
+              "COMPARISON_CONDITION",
+              "TRANSFER_EVENT"
+            ],
+            "type": "string"
+          },
+          "relationship_type": {
+            "enum": [
+              "IS_A",
+              "PART_OF",
+              "CAUSES",
+              "INCREASES",
+              "DECREASES",
+              "ENABLES",
+              "REQUIRES",
+              "CONSTRAINS",
+              "PRECEDES",
+              "TRANSFORMS_INTO",
+              "INTERACTS_WITH",
+              "MEASURED_BY",
+              "EXAMPLE_OF",
+              "CONTRADICTS",
+              "CREATES",
+              "INDUCES",
+              "EXERTS_FORCE_ON",
+              "AFFECTS",
+              "BINDS_TO",
+              "TRANSFERS_TO"
+            ],
+            "type": "string"
+          },
+          "role_bindings": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "entity_id": {
+                  "type": "string"
+                },
+                "role": {
+                  "enum": [
+                    "LEFT_OPERAND",
+                    "RIGHT_OPERAND",
+                    "OUTCOME",
+                    "EVENT",
+                    "OBJECT",
+                    "DESTINATION"
+                  ],
+                  "type": "string"
+                }
+              },
+              "required": [
+                "role",
+                "entity_id"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "statement": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "proposition_type",
+          "statement",
+          "role_bindings",
+          "relationship_type",
+          "comparison_operator",
+          "evidence",
+          "confidence",
+          "origin"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "relationships": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "confidence": {
+            "maximum": 1,
+            "minimum": 0,
+            "type": "number"
+          },
+          "evidence": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "quote": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "quote"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "id": {
+            "type": "string"
+          },
+          "origin": {
+            "enum": [
+              "SOURCE",
+              "INFERRED"
+            ],
+            "type": "string"
+          },
+          "relationship_type": {
+            "enum": [
+              "IS_A",
+              "PART_OF",
+              "CAUSES",
+              "INCREASES",
+              "DECREASES",
+              "ENABLES",
+              "REQUIRES",
+              "CONSTRAINS",
+              "PRECEDES",
+              "TRANSFORMS_INTO",
+              "INTERACTS_WITH",
+              "MEASURED_BY",
+              "EXAMPLE_OF",
+              "CONTRADICTS",
+              "CREATES",
+              "INDUCES",
+              "EXERTS_FORCE_ON",
+              "AFFECTS",
+              "BINDS_TO",
+              "TRANSFERS_TO"
+            ],
+            "type": "string"
+          },
+          "source_entity_id": {
+            "type": "string"
+          },
+          "statement": {
+            "type": "string"
+          },
+          "target_entity_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "source_entity_id",
+          "relationship_type",
+          "target_entity_id",
+          "statement",
+          "evidence",
+          "confidence",
+          "origin"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "entities",
+    "claims",
+    "relationships",
+    "propositions"
+  ],
+  "type": "object"
+}

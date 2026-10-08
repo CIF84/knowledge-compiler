@@ -1,0 +1,31 @@
+Command: .venv/bin/pytest
+Exit code: 1
+Final run: 1 failed, 1183 passed in 18.06s
+Previous run: 1 failed, 1183 passed in 18.63s
+
+Failure diagnostic excerpt (unchanged upstream test, not a BENCH-001 repair):
+=================================== FAILURES ===================================
+___________ test_deterministic_reproduction_and_all_historical_bytes ___________
+
+    def test_deterministic_reproduction_and_all_historical_bytes(generated):
+        assert generated == audit.build(ROOT)
+        for name, data in generated.items():
+>           assert (ROOT / name).read_bytes() == data
+E           assert b'{\n  "freez...acts.v1"\n}\n' == b'{\n  "freez...acts.v1"\n}\n'
+E
+E             At index 377361 diff: b'3' != b'4'
+E             Use -v to get more diff
+
+tests/test_audit001_dossier.py:24: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_audit001_dossier.py::test_deterministic_reproduction_and_all_historical_bytes
+1 failed, 1183 passed in 18.06s
+
+Before BENCH-001 implementation, running tests/test_audit001_dossier.py on
+canonical input 7b83d8d4361d02dfbe1c8b5c0a7ae0d79fd4758a produced this same
+assertion failure (1 failed, 9 passed). AUDIT-001's historical extraction records
+a frozen STATUS.md identity; audit.build reads mutable current STATUS.md. The
+canonical BENCH-001 publication/activation already changed STATUS.md. BENCH-001
+closure changes it again. All protected historical audit bytes remain identical.
+No tests were skipped/waived/modified to suppress this failure. No protected audit
+was regenerated. Full readiness remains INCONCLUSIVE pending owner review.

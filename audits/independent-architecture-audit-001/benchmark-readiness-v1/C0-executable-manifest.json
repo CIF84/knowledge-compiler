@@ -1,0 +1,27 @@
+{
+  "chrome_changes": "surrounding navigation/workspace omitted for neutral benchmark reader; model/debug badges and evidence-ID paragraphs removed; source recovery kept",
+  "confounders": [
+    "C0 native diagram styling differs from A/B/C+ minimal envelope",
+    "focus menu versus peer overview/detail",
+    "local navigation shell omitted; this is not a re-review of the full SPEC-038 workspace",
+    "missing claim foci and unsupported comparison renderer are retained, not rescued"
+  ],
+  "entry": "tools.bench001_harness.run_arm(C0)",
+  "extraction_prompt": "prompts/C0.txt",
+  "extraction_schema": "schemas/C0.json",
+  "native_pipeline": [
+    "normalize_document",
+    "OpenAILLMExtractor",
+    "deduplicate_entities",
+    "KnowledgeModel",
+    "validate_proposition_coverage",
+    "StructureDetector",
+    "compile_semantic_representation"
+  ],
+  "renderer": "native strategyRenderPlan plus native diagramCanvas and native _layout_for_plan; frozen function slices byte-identical; no product fixture substitution",
+  "reproducibility": "synthetic model and routing match unchanged native pipeline; native renderer bytes/geometry checked offline",
+  "retained_semantic_limitations": [
+    "Native extraction permits INFERRED outside-source knowledge; prompt is not rewritten for a source-bounded teaching task. Independent fidelity review must assess unsupported content.",
+    "Entity descriptions and representation grouping remain the current compiler's semantics; exact anchors are not an entailment/completeness certificate."
+  ]
+}

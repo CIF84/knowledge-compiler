@@ -255,20 +255,25 @@ Canonical benchmark question:
 ## Current approved work packet
 
 ```text
-specs/BENCH-001-ia001-benchmark-execution-readiness.md
+NONE
 ```
 
-Status: `APPROVED_FOR_IMPLEMENTATION`
+Status: `NONE`
 
-Authority: `OFFLINE_ONLY`
+Authority: `NONE`
 
-Human gate: `OWNER_REVIEW`
+Human gate: `NONE`
 
 Promotion: `NOT_AUTHORIZED`
 
 ## Current gate
 
-BENCH-001 is authorized to make the frozen independent benchmark executable **before any benchmark source is selected or exposed**.
+`OWNER_REVIEW` — BENCH-001 source-blind harness is implemented and frozen; no active
+execution authority remains. Mechanical readiness is `INCONCLUSIVE`, with next step
+`MORE_READINESS_DIAGNOSIS`, because the canonical pre-existing AUDIT-001 regeneration
+test fails after control-plane STATUS changes. Frozen AUDIT-001 evidence is unchanged.
+See `audits/independent-architecture-audit-001/benchmark-readiness-v1/readiness-report.json`
+for gates, limits and the preserved failure. Owner verdict is `PENDING`.
 
 Frozen benchmark arms:
 - S — source control;
@@ -279,11 +284,14 @@ Frozen benchmark arms:
 
 Future five-source maximum: 40 model calls. No judge, retry, repair or enrichment calls.
 
-BENCH-001 must freeze prompts/schemas, common model policy, executables/dependencies, neutral renderer, budgets, failure semantics, metrics, source-selector handoff, fidelity-review contract, blinding/custody tooling and learner-review templates.
+BENCH-001 freezes prompts/schemas, common model policy, executables/dependencies, neutral
+renderer, budgets, failure semantics, metrics, independent handoffs and review templates.
 
 Preferred offline common-model candidate: `gpt-6.1-sol` / high / `store=False`; no silent substitution. Remote provider support may remain unverified until a later execution packet.
 
-No benchmark source retrieval/selection, model/provider calls, benchmark output generation, learner/fidelity review, atomization/semantic-judge continuation, architecture promotion or benchmark winner selection is authorized.
+No benchmark source retrieval/selection, model/provider calls, benchmark output generation,
+learner/fidelity review, atomization/semantic-judge continuation, architecture promotion,
+benchmark winner selection or follow-up activation is authorized.
 
 ## Current product question
 

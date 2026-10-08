@@ -1,0 +1,22 @@
+{
+  "admission": "run_candidate_b_v2 unchanged",
+  "atomizer_or_semantic_judge": false,
+  "composer_envelope_schema": "schemas/C+-compose.json",
+  "composer_inputs": [
+    "original source",
+    "complete admitted entities/relationships/propositions/claims and evidence"
+  ],
+  "entry": "tools.bench001_harness.run_arm(C+)",
+  "extractor": "OpenAICandidateBV2Extractor",
+  "gate_weakening": false,
+  "live_outputs": 0,
+  "production_promotion": false,
+  "semantic_store_completeness_assumed": false,
+  "source_routing": "none",
+  "stages": [
+    "typed inventory",
+    "typed relationships/propositions",
+    "exact claim/evidence bindings",
+    "source-aware composer"
+  ]
+}

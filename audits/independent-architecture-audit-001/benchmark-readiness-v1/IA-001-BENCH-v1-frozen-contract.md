@@ -1,6 +1,6 @@
 # BENCH-001 — IA-001-BENCH-v1 Execution Readiness
 
-Status: `IMPLEMENTED_AWAITING_REVIEW`
+Status: `APPROVED_FOR_IMPLEMENTATION`
 Authority: `OFFLINE_ONLY`
 Human gate: `OWNER_REVIEW`
 Promotion: `NOT_AUTHORIZED`

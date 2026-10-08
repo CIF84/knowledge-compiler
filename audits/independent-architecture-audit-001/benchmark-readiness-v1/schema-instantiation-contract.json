@@ -1,0 +1,10 @@
+{
+  "bindings_factory": "knowledge_compiler.openai_decomposed_extractor.claim_evidence_schema",
+  "dynamic_parameters": [
+    "exact admitted frozen entity IDs/types",
+    "exact frozen semantic object IDs"
+  ],
+  "not_prompt_tuning": "Only enum identities/empty-array constraints bind mechanically to upstream admitted artifacts. Factory bytes and all semantic predicates/rules are frozen.",
+  "structure_factory": "knowledge_compiler.openai_decomposed_extractor_v2.stage2_v2_schema",
+  "templates_are_not_requests": true
+}
