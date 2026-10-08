@@ -1,0 +1,188 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "atom_id": {
+      "type": "string"
+    },
+    "atomization_proof_type": {
+      "enum": [
+        "DECLARED_NATIVE_GRAMMAR_COMPONENT_IDENTITY"
+      ],
+      "type": "string"
+    },
+    "atomization_status": {
+      "enum": [
+        "EXPLICIT_ATOMIC"
+      ],
+      "type": "string"
+    },
+    "candidate_text": {
+      "type": "string"
+    },
+    "component_ordinal": {
+      "minimum": 1,
+      "type": "integer"
+    },
+    "composition_role": {
+      "enum": [
+        "ALL_REQUIRED",
+        "IDENTITY_REQUIRED"
+      ],
+      "type": "string"
+    },
+    "evidence_packet_sha256": {
+      "type": "string"
+    },
+    "expected_preservation_flags": {
+      "additionalProperties": false,
+      "properties": {
+        "causal_force_preserved": {
+          "enum": [
+            "PASS",
+            "FAIL",
+            "UNRESOLVED",
+            "NOT_APPLICABLE"
+          ],
+          "type": "string"
+        },
+        "entities_preserved": {
+          "enum": [
+            "PASS",
+            "FAIL",
+            "UNRESOLVED",
+            "NOT_APPLICABLE"
+          ],
+          "type": "string"
+        },
+        "epistemic_force_preserved": {
+          "enum": [
+            "PASS",
+            "FAIL",
+            "UNRESOLVED",
+            "NOT_APPLICABLE"
+          ],
+          "type": "string"
+        },
+        "quantities_units_preserved": {
+          "enum": [
+            "PASS",
+            "FAIL",
+            "UNRESOLVED",
+            "NOT_APPLICABLE"
+          ],
+          "type": "string"
+        },
+        "relation_projection_valid": {
+          "enum": [
+            "PASS",
+            "FAIL",
+            "UNRESOLVED",
+            "NOT_APPLICABLE"
+          ],
+          "type": "string"
+        },
+        "scope_preserved": {
+          "enum": [
+            "PASS",
+            "FAIL",
+            "UNRESOLVED",
+            "NOT_APPLICABLE"
+          ],
+          "type": "string"
+        },
+        "temporal_context_preserved": {
+          "enum": [
+            "PASS",
+            "FAIL",
+            "UNRESOLVED",
+            "NOT_APPLICABLE"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "scope_preserved",
+        "epistemic_force_preserved",
+        "causal_force_preserved",
+        "entities_preserved",
+        "quantities_units_preserved",
+        "temporal_context_preserved",
+        "relation_projection_valid"
+      ],
+      "type": "object"
+    },
+    "expected_semantic_verdict": {
+      "enum": [
+        "ENTAILED",
+        "CONTRADICTED",
+        "UNCERTAIN",
+        "UNRESOLVED"
+      ],
+      "type": "string"
+    },
+    "fixture_id": {
+      "type": "string"
+    },
+    "provenance": {
+      "additionalProperties": false,
+      "properties": {
+        "component_sha256": {
+          "type": "string"
+        },
+        "fixture_packet_sha256": {
+          "type": "string"
+        },
+        "frozen_source_commitment_id": {
+          "type": "string"
+        },
+        "proof_scope": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "fixture_packet_sha256",
+        "component_sha256",
+        "frozen_source_commitment_id",
+        "proof_scope"
+      ],
+      "type": "object"
+    },
+    "required_preservation_flags": {
+      "items": {
+        "enum": [
+          "scope_preserved",
+          "epistemic_force_preserved",
+          "causal_force_preserved",
+          "entities_preserved",
+          "quantities_units_preserved",
+          "temporal_context_preserved",
+          "relation_projection_valid"
+        ],
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "supporting_evidence_ids": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "atom_id",
+    "fixture_id",
+    "component_ordinal",
+    "candidate_text",
+    "composition_role",
+    "evidence_packet_sha256",
+    "supporting_evidence_ids",
+    "expected_semantic_verdict",
+    "expected_preservation_flags",
+    "required_preservation_flags",
+    "atomization_status",
+    "atomization_proof_type",
+    "provenance"
+  ],
+  "type": "object"
+}

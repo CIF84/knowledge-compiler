@@ -220,50 +220,62 @@ Canonical rule:
 ## Current approved work packet
 
 ```text
-specs/SPEC-068-atomic-judgment-contract-repair.md
+NONE
 ```
 
-Status: `APPROVED_FOR_IMPLEMENTATION`
+Status: `NONE`
 
-Authority: `OFFLINE_ONLY`
+Authority: `NONE`
 
-Human gate: `OWNER_REVIEW`
+Human gate: `NONE`
 
 Promotion: `NOT_AUTHORIZED`
 
 ## Current gate
 
-SPEC-068 is authorized to audit the full frozen SPEC-066 corpus and establish an explicit fixture→atom→fixture-aggregation contract.
+`OWNER_REVIEW` — SPEC-068 offline implementation/evaluation complete.
 
-It must not assume opaque natural-language carriers are atomic.
+Mechanical branch: `ATOMIC_SUBSET_TOO_NARROW`.
+Recommended next step: `BOUNDED_ATOMIZATION_EXPERIMENT` (not activated).
+Owner verdict: `PENDING`. No promotion.
 
-Only `EXPLICIT_ATOMIC` and `EXPLICIT_COMPOSITE_DECOMPOSABLE` fixtures with safely derivable atom-level truth may enter a proposed future live subset.
+All 92 frozen fixtures reconcile: 0 explicit atomic, 16 explicit composite
+decomposable, 76 opaque unresolved, 0 malformed. The 16 native composites supply
+32 components with exact origins and safely derived truth: 24 ENTAILED and
+8 UNCERTAIN. Opaque carriers remain excluded; no natural-language semantic
+irreducibility or heuristic atomization is claimed.
 
-The packet must:
-- reconcile all 92 fixtures;
-- preserve every conjunct;
-- freeze atom IDs and fixture membership;
-- prove atom-level expected-label derivation;
-- define fail-closed fixture aggregation;
-- retain mixed-validity composite controls where supported;
-- measure category/domain coverage lost through conservative exclusion;
-- recalculate future J1/J2 manifests and call budgets from atoms rather than fixtures.
+Eight mixed-validity composite controls, including case-023, fail closed when
+one atom is uncertain or omitted. Receipt aggregation requires all atoms,
+preservation flags, evidence references and binding identities to pass.
 
-No model/provider calls, semantic judging, atomization by model, source retrieval, fixture repair, synthesis, or follow-up live execution are authorized.
+The safe pool retains all eight domains but only 2/18 parent-fixture categories.
+All novel faithful-positive classes and subtle drift categories are lost. No
+representative subset for the broad semantic-judge evaluation exists. Proposed
+narrow-control manifests contain 32 one-atom J1 calls and eight four-atom J2
+batches (40 maximum), with no sibling batch collisions. They are not authorized
+for execution and do not inherit SPEC-067's 60-call budget.
+
+Zero model/provider/evaluation-network calls, judging, synthesis or retrieval
+occurred. Frozen SPEC-066/067 evidence and production behavior are unchanged.
+No follow-up packet is active.
+
+Detailed evidence and the offline review command:
+`examples/evaluations/spec-068-atomic-judgment-contract-repair-20261008/owner-review.md`.
 
 ## Current product question
 
 ```text
-fixture
+92 frozen fixtures
   ↓
-independently validated atom(s)
+16 native composites → 32 admitted native components
+76 opaque carriers → excluded, unresolved
   ↓
-one atom = one semantic judgment
+safe fixture/atom/aggregation contract
   ↓
-fail-closed fixture aggregation
+2/18 categories retained; novel faithful positives missing
   ↓
-Can a representative live judge experiment
-be executed without pretending unresolved text is atomic?
+owner review of the next atomization boundary
 ```
 
 ## Frozen / protected state
